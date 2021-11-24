@@ -5,33 +5,32 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.17763.0")]
+public partial struct USAGE_PROPERTIES
 {
-    [SupportedOSPlatform("windows10.0.17763.0")]
-    public partial struct USAGE_PROPERTIES
-    {
-        public ushort level;
+    public ushort level;
 
-        public ushort page;
+    public ushort page;
 
-        public ushort usage;
+    public ushort usage;
 
-        [NativeTypeName("INT32")]
-        public int logicalMinimum;
+    [NativeTypeName("INT32")]
+    public int logicalMinimum;
 
-        [NativeTypeName("INT32")]
-        public int logicalMaximum;
+    [NativeTypeName("INT32")]
+    public int logicalMaximum;
 
-        public ushort unit;
+    public ushort unit;
 
-        public ushort exponent;
+    public ushort exponent;
 
-        public byte count;
+    public byte count;
 
-        [NativeTypeName("INT32")]
-        public int physicalMinimum;
+    [NativeTypeName("INT32")]
+    public int physicalMinimum;
 
-        [NativeTypeName("INT32")]
-        public int physicalMaximum;
-    }
+    [NativeTypeName("INT32")]
+    public int physicalMaximum;
 }

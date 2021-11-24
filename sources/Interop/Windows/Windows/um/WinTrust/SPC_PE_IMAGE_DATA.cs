@@ -3,13 +3,12 @@
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct SPC_PE_IMAGE_DATA
-    {
-        public CRYPT_BIT_BLOB Flags;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("PSPC_LINK")]
-        public SPC_LINK* pFile;
-    }
+public unsafe partial struct SPC_PE_IMAGE_DATA
+{
+    public CRYPT_BIT_BLOB Flags;
+
+    [NativeTypeName("PSPC_LINK")]
+    public SPC_LINK* pFile;
 }

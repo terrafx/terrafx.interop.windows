@@ -3,19 +3,18 @@
 // Ported from um/wincodec.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WICBitmapPattern
 {
-    public unsafe partial struct WICBitmapPattern
-    {
-        public ULARGE_INTEGER Position;
+    public ULARGE_INTEGER Position;
 
-        [NativeTypeName("ULONG")]
-        public uint Length;
+    [NativeTypeName("ULONG")]
+    public uint Length;
 
-        public byte* Pattern;
+    public byte* Pattern;
 
-        public byte* Mask;
+    public byte* Mask;
 
-        public BOOL EndOfStream;
-    }
+    public BOOL EndOfStream;
 }

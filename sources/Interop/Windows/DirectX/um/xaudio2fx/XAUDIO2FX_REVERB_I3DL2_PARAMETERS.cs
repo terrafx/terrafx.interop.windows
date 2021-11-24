@@ -5,39 +5,38 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct XAUDIO2FX_REVERB_I3DL2_PARAMETERS
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct XAUDIO2FX_REVERB_I3DL2_PARAMETERS
-    {
-        public float WetDryMix;
+    public float WetDryMix;
 
-        [NativeTypeName("INT32")]
-        public int Room;
+    [NativeTypeName("INT32")]
+    public int Room;
 
-        [NativeTypeName("INT32")]
-        public int RoomHF;
+    [NativeTypeName("INT32")]
+    public int RoomHF;
 
-        public float RoomRolloffFactor;
+    public float RoomRolloffFactor;
 
-        public float DecayTime;
+    public float DecayTime;
 
-        public float DecayHFRatio;
+    public float DecayHFRatio;
 
-        [NativeTypeName("INT32")]
-        public int Reflections;
+    [NativeTypeName("INT32")]
+    public int Reflections;
 
-        public float ReflectionsDelay;
+    public float ReflectionsDelay;
 
-        [NativeTypeName("INT32")]
-        public int Reverb;
+    [NativeTypeName("INT32")]
+    public int Reverb;
 
-        public float ReverbDelay;
+    public float ReverbDelay;
 
-        public float Diffusion;
+    public float Diffusion;
 
-        public float Density;
+    public float Density;
 
-        public float HFReference;
-    }
+    public float HFReference;
 }

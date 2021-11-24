@@ -3,11 +3,10 @@
 // Ported from um/wincodec.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WICPngHistProperties : uint
 {
-    public enum WICPngHistProperties : uint
-    {
-        WICPngHistFrequencies = 0x1,
-        WICPngHistProperties_FORCE_DWORD = 0x7fffffff,
-    }
+    WICPngHistFrequencies = 0x1,
+    WICPngHistProperties_FORCE_DWORD = 0x7fffffff,
 }

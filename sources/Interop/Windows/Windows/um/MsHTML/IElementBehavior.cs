@@ -7,90 +7,89 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3050F425-98B5-11CF-BB82-00AA00BDCE0B")]
+[NativeTypeName("struct IElementBehavior : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IElementBehavior : IElementBehavior.Interface
 {
-    [Guid("3050F425-98B5-11CF-BB82-00AA00BDCE0B")]
-    [NativeTypeName("struct IElementBehavior : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IElementBehavior : IElementBehavior.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IElementBehavior*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehavior*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IElementBehavior*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehavior*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IElementBehavior*, uint>)(lpVtbl[1]))((IElementBehavior*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IElementBehavior*, uint>)(lpVtbl[1]))((IElementBehavior*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IElementBehavior*, uint>)(lpVtbl[2]))((IElementBehavior*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IElementBehavior*, uint>)(lpVtbl[2]))((IElementBehavior*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Init(IElementBehaviorSite* pBehaviorSite)
+    {
+        return ((delegate* unmanaged<IElementBehavior*, IElementBehaviorSite*, int>)(lpVtbl[3]))((IElementBehavior*)Unsafe.AsPointer(ref this), pBehaviorSite);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Notify([NativeTypeName("LONG")] int lEvent, VARIANT* pVar)
+    {
+        return ((delegate* unmanaged<IElementBehavior*, int, VARIANT*, int>)(lpVtbl[4]))((IElementBehavior*)Unsafe.AsPointer(ref this), lEvent, pVar);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Detach()
+    {
+        return ((delegate* unmanaged<IElementBehavior*, int>)(lpVtbl[5]))((IElementBehavior*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Init(IElementBehaviorSite* pBehaviorSite)
-        {
-            return ((delegate* unmanaged<IElementBehavior*, IElementBehaviorSite*, int>)(lpVtbl[3]))((IElementBehavior*)Unsafe.AsPointer(ref this), pBehaviorSite);
-        }
+        HRESULT Init(IElementBehaviorSite* pBehaviorSite);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Notify([NativeTypeName("LONG")] int lEvent, VARIANT* pVar)
-        {
-            return ((delegate* unmanaged<IElementBehavior*, int, VARIANT*, int>)(lpVtbl[4]))((IElementBehavior*)Unsafe.AsPointer(ref this), lEvent, pVar);
-        }
+        HRESULT Notify([NativeTypeName("LONG")] int lEvent, VARIANT* pVar);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Detach()
-        {
-            return ((delegate* unmanaged<IElementBehavior*, int>)(lpVtbl[5]))((IElementBehavior*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Detach();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Init(IElementBehaviorSite* pBehaviorSite);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IElementBehavior*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT Notify([NativeTypeName("LONG")] int lEvent, VARIANT* pVar);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IElementBehavior*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT Detach();
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IElementBehavior*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IElementBehavior*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (IElementBehaviorSite *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IElementBehavior*, IElementBehaviorSite*, int> Init;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IElementBehavior*, uint> AddRef;
+        [NativeTypeName("HRESULT (LONG, VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IElementBehavior*, int, VARIANT*, int> Notify;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IElementBehavior*, uint> Release;
-
-            [NativeTypeName("HRESULT (IElementBehaviorSite *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IElementBehavior*, IElementBehaviorSite*, int> Init;
-
-            [NativeTypeName("HRESULT (LONG, VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IElementBehavior*, int, VARIANT*, int> Notify;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IElementBehavior*, int> Detach;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IElementBehavior*, int> Detach;
     }
 }

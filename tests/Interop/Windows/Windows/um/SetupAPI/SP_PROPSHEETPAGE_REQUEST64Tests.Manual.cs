@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SP_PROPSHEETPAGE_REQUEST64" /> struct.</summary>
+public static unsafe partial class SP_PROPSHEETPAGE_REQUEST64Tests
 {
-    /// <summary>Provides validation of the <see cref="SP_PROPSHEETPAGE_REQUEST64" /> struct.</summary>
-    public static unsafe partial class SP_PROPSHEETPAGE_REQUEST64Tests
+    /// <summary>Validates that the <see cref="SP_PROPSHEETPAGE_REQUEST64" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SP_PROPSHEETPAGE_REQUEST64" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SP_PROPSHEETPAGE_REQUEST64>(), Is.EqualTo(sizeof(SP_PROPSHEETPAGE_REQUEST64)));
-        }
+        Assert.That(Marshal.SizeOf<SP_PROPSHEETPAGE_REQUEST64>(), Is.EqualTo(sizeof(SP_PROPSHEETPAGE_REQUEST64)));
+    }
 
-        /// <summary>Validates that the <see cref="SP_PROPSHEETPAGE_REQUEST64" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SP_PROPSHEETPAGE_REQUEST64).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SP_PROPSHEETPAGE_REQUEST64" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SP_PROPSHEETPAGE_REQUEST64).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SP_PROPSHEETPAGE_REQUEST64" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SP_PROPSHEETPAGE_REQUEST64" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SP_PROPSHEETPAGE_REQUEST64), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(SP_PROPSHEETPAGE_REQUEST64), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(SP_PROPSHEETPAGE_REQUEST64), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(SP_PROPSHEETPAGE_REQUEST64), Is.EqualTo(16));
         }
     }
 }

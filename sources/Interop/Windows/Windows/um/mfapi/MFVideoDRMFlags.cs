@@ -3,12 +3,11 @@
 // Ported from um/mfapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MFVideoDRMFlags
 {
-    public enum MFVideoDRMFlags
-    {
-        MFVideoDRMFlag_None = 0,
-        MFVideoDRMFlag_AnalogProtected = 1,
-        MFVideoDRMFlag_DigitallyProtected = 2,
-    }
+    MFVideoDRMFlag_None = 0,
+    MFVideoDRMFlag_AnalogProtected = 1,
+    MFVideoDRMFlag_DigitallyProtected = 2,
 }

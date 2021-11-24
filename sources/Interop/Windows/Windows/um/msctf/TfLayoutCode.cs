@@ -3,12 +3,11 @@
 // Ported from um/msctf.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum TfLayoutCode
 {
-    public enum TfLayoutCode
-    {
-        TF_LC_CREATE = 0,
-        TF_LC_CHANGE = 1,
-        TF_LC_DESTROY = 2,
-    }
+    TF_LC_CREATE = 0,
+    TF_LC_CHANGE = 1,
+    TF_LC_DESTROY = 2,
 }

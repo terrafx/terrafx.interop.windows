@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TAPE_GET_MEDIA_PARAMETERS" /> struct.</summary>
+public static unsafe partial class TAPE_GET_MEDIA_PARAMETERSTests
 {
-    /// <summary>Provides validation of the <see cref="TAPE_GET_MEDIA_PARAMETERS" /> struct.</summary>
-    public static unsafe partial class TAPE_GET_MEDIA_PARAMETERSTests
+    /// <summary>Validates that the <see cref="TAPE_GET_MEDIA_PARAMETERS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TAPE_GET_MEDIA_PARAMETERS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TAPE_GET_MEDIA_PARAMETERS>(), Is.EqualTo(sizeof(TAPE_GET_MEDIA_PARAMETERS)));
-        }
+        Assert.That(Marshal.SizeOf<TAPE_GET_MEDIA_PARAMETERS>(), Is.EqualTo(sizeof(TAPE_GET_MEDIA_PARAMETERS)));
+    }
 
-        /// <summary>Validates that the <see cref="TAPE_GET_MEDIA_PARAMETERS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TAPE_GET_MEDIA_PARAMETERS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TAPE_GET_MEDIA_PARAMETERS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TAPE_GET_MEDIA_PARAMETERS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TAPE_GET_MEDIA_PARAMETERS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TAPE_GET_MEDIA_PARAMETERS), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="TAPE_GET_MEDIA_PARAMETERS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TAPE_GET_MEDIA_PARAMETERS), Is.EqualTo(32));
     }
 }

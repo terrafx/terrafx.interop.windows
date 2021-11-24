@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("FECEAAA3-8405-11CF-8BA1-00AA00476DA6")]
+public partial struct HTMLHistory
 {
-    [Guid("FECEAAA3-8405-11CF-8BA1-00AA00476DA6")]
-    public partial struct HTMLHistory
-    {
-    }
 }

@@ -3,13 +3,12 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum eAVEncMPVSceneDetection
 {
-    public enum eAVEncMPVSceneDetection
-    {
-        eAVEncMPVSceneDetection_None = 0,
-        eAVEncMPVSceneDetection_InsertIPicture = 1,
-        eAVEncMPVSceneDetection_StartNewGOP = 2,
-        eAVEncMPVSceneDetection_StartNewLocatableGOP = 3,
-    }
+    eAVEncMPVSceneDetection_None = 0,
+    eAVEncMPVSceneDetection_InsertIPicture = 1,
+    eAVEncMPVSceneDetection_StartNewGOP = 2,
+    eAVEncMPVSceneDetection_StartNewLocatableGOP = 3,
 }

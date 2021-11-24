@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("86BEC222-30F2-47E0-9F25-60D11CD75C28")]
+public partial struct ApplicationDocumentLists
 {
-    [Guid("86BEC222-30F2-47E0-9F25-60D11CD75C28")]
-    public partial struct ApplicationDocumentLists
-    {
-    }
 }

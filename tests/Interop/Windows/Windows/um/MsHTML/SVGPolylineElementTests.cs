@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SVGPolylineElement" /> struct.</summary>
+public static unsafe partial class SVGPolylineElementTests
 {
-    /// <summary>Provides validation of the <see cref="SVGPolylineElement" /> struct.</summary>
-    public static unsafe partial class SVGPolylineElementTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGPolylineElement" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGPolylineElement" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SVGPolylineElement).GUID, Is.EqualTo(IID_SVGPolylineElement));
-        }
+        Assert.That(typeof(SVGPolylineElement).GUID, Is.EqualTo(IID_SVGPolylineElement));
+    }
 
-        /// <summary>Validates that the <see cref="SVGPolylineElement" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SVGPolylineElement>(), Is.EqualTo(sizeof(SVGPolylineElement)));
-        }
+    /// <summary>Validates that the <see cref="SVGPolylineElement" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SVGPolylineElement>(), Is.EqualTo(sizeof(SVGPolylineElement)));
+    }
 
-        /// <summary>Validates that the <see cref="SVGPolylineElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SVGPolylineElement).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SVGPolylineElement" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SVGPolylineElement).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SVGPolylineElement" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SVGPolylineElement), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SVGPolylineElement" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SVGPolylineElement), Is.EqualTo(1));
     }
 }

@@ -7,90 +7,89 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("0D7D1D00-6FC0-11D0-A974-00C04FD705A2")]
+[NativeTypeName("struct IExpDispSupport : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IExpDispSupport : IExpDispSupport.Interface
 {
-    [Guid("0D7D1D00-6FC0-11D0-A974-00C04FD705A2")]
-    [NativeTypeName("struct IExpDispSupport : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IExpDispSupport : IExpDispSupport.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IExpDispSupport*, Guid*, void**, int>)(lpVtbl[0]))((IExpDispSupport*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IExpDispSupport*, Guid*, void**, int>)(lpVtbl[0]))((IExpDispSupport*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IExpDispSupport*, uint>)(lpVtbl[1]))((IExpDispSupport*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IExpDispSupport*, uint>)(lpVtbl[1]))((IExpDispSupport*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IExpDispSupport*, uint>)(lpVtbl[2]))((IExpDispSupport*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IExpDispSupport*, uint>)(lpVtbl[2]))((IExpDispSupport*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT FindConnectionPoint([NativeTypeName("const IID &")] Guid* riid, IConnectionPoint** ppccp)
+    {
+        return ((delegate* unmanaged<IExpDispSupport*, Guid*, IConnectionPoint**, int>)(lpVtbl[3]))((IExpDispSupport*)Unsafe.AsPointer(ref this), riid, ppccp);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT OnTranslateAccelerator(MSG* pMsg, [NativeTypeName("DWORD")] uint grfModifiers)
+    {
+        return ((delegate* unmanaged<IExpDispSupport*, MSG*, uint, int>)(lpVtbl[4]))((IExpDispSupport*)Unsafe.AsPointer(ref this), pMsg, grfModifiers);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT OnInvoke([NativeTypeName("DISPID")] int dispidMember, [NativeTypeName("const IID &")] Guid* iid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pdispparams, VARIANT* pVarResult, EXCEPINFO* pexcepinfo, uint* puArgErr)
+    {
+        return ((delegate* unmanaged<IExpDispSupport*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[5]))((IExpDispSupport*)Unsafe.AsPointer(ref this), dispidMember, iid, lcid, wFlags, pdispparams, pVarResult, pexcepinfo, puArgErr);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT FindConnectionPoint([NativeTypeName("const IID &")] Guid* riid, IConnectionPoint** ppccp)
-        {
-            return ((delegate* unmanaged<IExpDispSupport*, Guid*, IConnectionPoint**, int>)(lpVtbl[3]))((IExpDispSupport*)Unsafe.AsPointer(ref this), riid, ppccp);
-        }
+        HRESULT FindConnectionPoint([NativeTypeName("const IID &")] Guid* riid, IConnectionPoint** ppccp);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT OnTranslateAccelerator(MSG* pMsg, [NativeTypeName("DWORD")] uint grfModifiers)
-        {
-            return ((delegate* unmanaged<IExpDispSupport*, MSG*, uint, int>)(lpVtbl[4]))((IExpDispSupport*)Unsafe.AsPointer(ref this), pMsg, grfModifiers);
-        }
+        HRESULT OnTranslateAccelerator(MSG* pMsg, [NativeTypeName("DWORD")] uint grfModifiers);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT OnInvoke([NativeTypeName("DISPID")] int dispidMember, [NativeTypeName("const IID &")] Guid* iid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pdispparams, VARIANT* pVarResult, EXCEPINFO* pexcepinfo, uint* puArgErr)
-        {
-            return ((delegate* unmanaged<IExpDispSupport*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[5]))((IExpDispSupport*)Unsafe.AsPointer(ref this), dispidMember, iid, lcid, wFlags, pdispparams, pVarResult, pexcepinfo, puArgErr);
-        }
+        HRESULT OnInvoke([NativeTypeName("DISPID")] int dispidMember, [NativeTypeName("const IID &")] Guid* iid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pdispparams, VARIANT* pVarResult, EXCEPINFO* pexcepinfo, uint* puArgErr);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT FindConnectionPoint([NativeTypeName("const IID &")] Guid* riid, IConnectionPoint** ppccp);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IExpDispSupport*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT OnTranslateAccelerator(MSG* pMsg, [NativeTypeName("DWORD")] uint grfModifiers);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IExpDispSupport*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT OnInvoke([NativeTypeName("DISPID")] int dispidMember, [NativeTypeName("const IID &")] Guid* iid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pdispparams, VARIANT* pVarResult, EXCEPINFO* pexcepinfo, uint* puArgErr);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IExpDispSupport*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IExpDispSupport*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (const IID &, IConnectionPoint **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IExpDispSupport*, Guid*, IConnectionPoint**, int> FindConnectionPoint;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IExpDispSupport*, uint> AddRef;
+        [NativeTypeName("HRESULT (MSG *, DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IExpDispSupport*, MSG*, uint, int> OnTranslateAccelerator;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IExpDispSupport*, uint> Release;
-
-            [NativeTypeName("HRESULT (const IID &, IConnectionPoint **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IExpDispSupport*, Guid*, IConnectionPoint**, int> FindConnectionPoint;
-
-            [NativeTypeName("HRESULT (MSG *, DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IExpDispSupport*, MSG*, uint, int> OnTranslateAccelerator;
-
-            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IExpDispSupport*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> OnInvoke;
-        }
+        [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IExpDispSupport*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> OnInvoke;
     }
 }

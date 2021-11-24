@@ -5,26 +5,25 @@
 
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct HANDLETABLE
 {
-    public partial struct HANDLETABLE
+    [NativeTypeName("HGDIOBJ [1]")]
+    public _objectHandle_e__FixedBuffer objectHandle;
+
+    public unsafe partial struct _objectHandle_e__FixedBuffer
     {
-        [NativeTypeName("HGDIOBJ [1]")]
-        public _objectHandle_e__FixedBuffer objectHandle;
+        public HGDIOBJ e0;
 
-        public unsafe partial struct _objectHandle_e__FixedBuffer
+        public ref HGDIOBJ this[int index]
         {
-            public HGDIOBJ e0;
-
-            public ref HGDIOBJ this[int index]
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
             {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                fixed (HGDIOBJ* pThis = &e0)
                 {
-                    fixed (HGDIOBJ* pThis = &e0)
-                    {
-                        return ref pThis[index];
-                    }
+                    return ref pThis[index];
                 }
             }
         }

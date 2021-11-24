@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="QueryCancelAutoPlay" /> struct.</summary>
+public static unsafe partial class QueryCancelAutoPlayTests
 {
-    /// <summary>Provides validation of the <see cref="QueryCancelAutoPlay" /> struct.</summary>
-    public static unsafe partial class QueryCancelAutoPlayTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="QueryCancelAutoPlay" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="QueryCancelAutoPlay" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(QueryCancelAutoPlay).GUID, Is.EqualTo(IID_QueryCancelAutoPlay));
-        }
+        Assert.That(typeof(QueryCancelAutoPlay).GUID, Is.EqualTo(IID_QueryCancelAutoPlay));
+    }
 
-        /// <summary>Validates that the <see cref="QueryCancelAutoPlay" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<QueryCancelAutoPlay>(), Is.EqualTo(sizeof(QueryCancelAutoPlay)));
-        }
+    /// <summary>Validates that the <see cref="QueryCancelAutoPlay" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<QueryCancelAutoPlay>(), Is.EqualTo(sizeof(QueryCancelAutoPlay)));
+    }
 
-        /// <summary>Validates that the <see cref="QueryCancelAutoPlay" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(QueryCancelAutoPlay).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="QueryCancelAutoPlay" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(QueryCancelAutoPlay).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="QueryCancelAutoPlay" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(QueryCancelAutoPlay), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="QueryCancelAutoPlay" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(QueryCancelAutoPlay), Is.EqualTo(1));
     }
 }

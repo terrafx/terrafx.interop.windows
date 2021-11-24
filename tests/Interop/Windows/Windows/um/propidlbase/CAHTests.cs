@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CAH" /> struct.</summary>
+public static unsafe partial class CAHTests
 {
-    /// <summary>Provides validation of the <see cref="CAH" /> struct.</summary>
-    public static unsafe partial class CAHTests
+    /// <summary>Validates that the <see cref="CAH" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CAH" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CAH>(), Is.EqualTo(sizeof(CAH)));
-        }
+        Assert.That(Marshal.SizeOf<CAH>(), Is.EqualTo(sizeof(CAH)));
+    }
 
-        /// <summary>Validates that the <see cref="CAH" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CAH).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CAH" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CAH).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CAH" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CAH" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CAH), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(CAH), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(CAH), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(CAH), Is.EqualTo(8));
         }
     }
 }

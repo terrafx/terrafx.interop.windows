@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTTPSPolicyCallbackData" /> struct.</summary>
+public static unsafe partial class HTTPSPolicyCallbackDataTests
 {
-    /// <summary>Provides validation of the <see cref="HTTPSPolicyCallbackData" /> struct.</summary>
-    public static unsafe partial class HTTPSPolicyCallbackDataTests
+    /// <summary>Validates that the <see cref="HTTPSPolicyCallbackData" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="HTTPSPolicyCallbackData" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTTPSPolicyCallbackData>(), Is.EqualTo(sizeof(HTTPSPolicyCallbackData)));
-        }
+        Assert.That(Marshal.SizeOf<HTTPSPolicyCallbackData>(), Is.EqualTo(sizeof(HTTPSPolicyCallbackData)));
+    }
 
-        /// <summary>Validates that the <see cref="HTTPSPolicyCallbackData" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTTPSPolicyCallbackData).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTTPSPolicyCallbackData" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTTPSPolicyCallbackData).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTTPSPolicyCallbackData" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="HTTPSPolicyCallbackData" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(HTTPSPolicyCallbackData), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(HTTPSPolicyCallbackData), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(HTTPSPolicyCallbackData), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(HTTPSPolicyCallbackData), Is.EqualTo(16));
         }
     }
 }

@@ -3,11 +3,10 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DEVICE_DATA_SET_REPAIR_OUTPUT
 {
-    public partial struct DEVICE_DATA_SET_REPAIR_OUTPUT
-    {
-        [NativeTypeName("DEVICE_DSM_RANGE")]
-        public DEVICE_DATA_SET_RANGE ParityExtent;
-    }
+    [NativeTypeName("DEVICE_DSM_RANGE")]
+    public DEVICE_DATA_SET_RANGE ParityExtent;
 }

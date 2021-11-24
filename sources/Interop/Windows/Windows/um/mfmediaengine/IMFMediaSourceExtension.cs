@@ -8,182 +8,181 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+[Guid("E467B94E-A713-4562-A802-816A42E9008A")]
+[NativeTypeName("struct IMFMediaSourceExtension : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.Interface
 {
-    [SupportedOSPlatform("windows8.1")]
-    [Guid("E467B94E-A713-4562-A802-816A42E9008A")]
-    [NativeTypeName("struct IMFMediaSourceExtension : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMFMediaSourceExtension*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMFMediaSourceExtension*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMFMediaSourceExtension*, uint>)(lpVtbl[1]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMFMediaSourceExtension*, uint>)(lpVtbl[1]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMFMediaSourceExtension*, uint>)(lpVtbl[2]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMFMediaSourceExtension*, uint>)(lpVtbl[2]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public IMFSourceBufferList* GetSourceBuffers()
+    {
+        return ((delegate* unmanaged<IMFMediaSourceExtension*, IMFSourceBufferList*>)(lpVtbl[3]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public IMFSourceBufferList* GetActiveSourceBuffers()
+    {
+        return ((delegate* unmanaged<IMFMediaSourceExtension*, IMFSourceBufferList*>)(lpVtbl[4]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public MF_MSE_READY GetReadyState()
+    {
+        return ((delegate* unmanaged<IMFMediaSourceExtension*, MF_MSE_READY>)(lpVtbl[5]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public double GetDuration()
+    {
+        return ((delegate* unmanaged<IMFMediaSourceExtension*, double>)(lpVtbl[6]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT SetDuration(double duration)
+    {
+        return ((delegate* unmanaged<IMFMediaSourceExtension*, double, int>)(lpVtbl[7]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), duration);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT AddSourceBuffer([NativeTypeName("BSTR")] ushort* type, IMFSourceBufferNotify* pNotify, IMFSourceBuffer** ppSourceBuffer)
+    {
+        return ((delegate* unmanaged<IMFMediaSourceExtension*, ushort*, IMFSourceBufferNotify*, IMFSourceBuffer**, int>)(lpVtbl[8]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), type, pNotify, ppSourceBuffer);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT RemoveSourceBuffer(IMFSourceBuffer* pSourceBuffer)
+    {
+        return ((delegate* unmanaged<IMFMediaSourceExtension*, IMFSourceBuffer*, int>)(lpVtbl[9]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), pSourceBuffer);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT SetEndOfStream(MF_MSE_ERROR error)
+    {
+        return ((delegate* unmanaged<IMFMediaSourceExtension*, MF_MSE_ERROR, int>)(lpVtbl[10]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), error);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public BOOL IsTypeSupported([NativeTypeName("BSTR")] ushort* type)
+    {
+        return ((delegate* unmanaged<IMFMediaSourceExtension*, ushort*, int>)(lpVtbl[11]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), type);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public IMFSourceBuffer* GetSourceBuffer([NativeTypeName("DWORD")] uint dwStreamIndex)
+    {
+        return ((delegate* unmanaged<IMFMediaSourceExtension*, uint, IMFSourceBuffer*>)(lpVtbl[12]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), dwStreamIndex);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public IMFSourceBufferList* GetSourceBuffers()
-        {
-            return ((delegate* unmanaged<IMFMediaSourceExtension*, IMFSourceBufferList*>)(lpVtbl[3]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
-        }
+        IMFSourceBufferList* GetSourceBuffers();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public IMFSourceBufferList* GetActiveSourceBuffers()
-        {
-            return ((delegate* unmanaged<IMFMediaSourceExtension*, IMFSourceBufferList*>)(lpVtbl[4]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
-        }
+        IMFSourceBufferList* GetActiveSourceBuffers();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public MF_MSE_READY GetReadyState()
-        {
-            return ((delegate* unmanaged<IMFMediaSourceExtension*, MF_MSE_READY>)(lpVtbl[5]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
-        }
+        MF_MSE_READY GetReadyState();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public double GetDuration()
-        {
-            return ((delegate* unmanaged<IMFMediaSourceExtension*, double>)(lpVtbl[6]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
-        }
+        double GetDuration();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT SetDuration(double duration)
-        {
-            return ((delegate* unmanaged<IMFMediaSourceExtension*, double, int>)(lpVtbl[7]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), duration);
-        }
+        HRESULT SetDuration(double duration);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT AddSourceBuffer([NativeTypeName("BSTR")] ushort* type, IMFSourceBufferNotify* pNotify, IMFSourceBuffer** ppSourceBuffer)
-        {
-            return ((delegate* unmanaged<IMFMediaSourceExtension*, ushort*, IMFSourceBufferNotify*, IMFSourceBuffer**, int>)(lpVtbl[8]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), type, pNotify, ppSourceBuffer);
-        }
+        HRESULT AddSourceBuffer([NativeTypeName("BSTR")] ushort* type, IMFSourceBufferNotify* pNotify, IMFSourceBuffer** ppSourceBuffer);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT RemoveSourceBuffer(IMFSourceBuffer* pSourceBuffer)
-        {
-            return ((delegate* unmanaged<IMFMediaSourceExtension*, IMFSourceBuffer*, int>)(lpVtbl[9]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), pSourceBuffer);
-        }
+        HRESULT RemoveSourceBuffer(IMFSourceBuffer* pSourceBuffer);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT SetEndOfStream(MF_MSE_ERROR error)
-        {
-            return ((delegate* unmanaged<IMFMediaSourceExtension*, MF_MSE_ERROR, int>)(lpVtbl[10]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), error);
-        }
+        HRESULT SetEndOfStream(MF_MSE_ERROR error);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public BOOL IsTypeSupported([NativeTypeName("BSTR")] ushort* type)
-        {
-            return ((delegate* unmanaged<IMFMediaSourceExtension*, ushort*, int>)(lpVtbl[11]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), type);
-        }
+        BOOL IsTypeSupported([NativeTypeName("BSTR")] ushort* type);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public IMFSourceBuffer* GetSourceBuffer([NativeTypeName("DWORD")] uint dwStreamIndex)
-        {
-            return ((delegate* unmanaged<IMFMediaSourceExtension*, uint, IMFSourceBuffer*>)(lpVtbl[12]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), dwStreamIndex);
-        }
+        IMFSourceBuffer* GetSourceBuffer([NativeTypeName("DWORD")] uint dwStreamIndex);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            IMFSourceBufferList* GetSourceBuffers();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaSourceExtension*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            IMFSourceBufferList* GetActiveSourceBuffers();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaSourceExtension*, uint> AddRef;
 
-            [VtblIndex(5)]
-            MF_MSE_READY GetReadyState();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaSourceExtension*, uint> Release;
 
-            [VtblIndex(6)]
-            double GetDuration();
+        [NativeTypeName("IMFSourceBufferList *() __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaSourceExtension*, IMFSourceBufferList*> GetSourceBuffers;
 
-            [VtblIndex(7)]
-            HRESULT SetDuration(double duration);
+        [NativeTypeName("IMFSourceBufferList *() __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaSourceExtension*, IMFSourceBufferList*> GetActiveSourceBuffers;
 
-            [VtblIndex(8)]
-            HRESULT AddSourceBuffer([NativeTypeName("BSTR")] ushort* type, IMFSourceBufferNotify* pNotify, IMFSourceBuffer** ppSourceBuffer);
+        [NativeTypeName("MF_MSE_READY () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaSourceExtension*, MF_MSE_READY> GetReadyState;
 
-            [VtblIndex(9)]
-            HRESULT RemoveSourceBuffer(IMFSourceBuffer* pSourceBuffer);
+        [NativeTypeName("double () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaSourceExtension*, double> GetDuration;
 
-            [VtblIndex(10)]
-            HRESULT SetEndOfStream(MF_MSE_ERROR error);
+        [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaSourceExtension*, double, int> SetDuration;
 
-            [VtblIndex(11)]
-            BOOL IsTypeSupported([NativeTypeName("BSTR")] ushort* type);
+        [NativeTypeName("HRESULT (BSTR, IMFSourceBufferNotify *, IMFSourceBuffer **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaSourceExtension*, ushort*, IMFSourceBufferNotify*, IMFSourceBuffer**, int> AddSourceBuffer;
 
-            [VtblIndex(12)]
-            IMFSourceBuffer* GetSourceBuffer([NativeTypeName("DWORD")] uint dwStreamIndex);
-        }
+        [NativeTypeName("HRESULT (IMFSourceBuffer *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaSourceExtension*, IMFSourceBuffer*, int> RemoveSourceBuffer;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaSourceExtension*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (MF_MSE_ERROR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaSourceExtension*, MF_MSE_ERROR, int> SetEndOfStream;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaSourceExtension*, uint> AddRef;
+        [NativeTypeName("BOOL (BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaSourceExtension*, ushort*, int> IsTypeSupported;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaSourceExtension*, uint> Release;
-
-            [NativeTypeName("IMFSourceBufferList *() __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaSourceExtension*, IMFSourceBufferList*> GetSourceBuffers;
-
-            [NativeTypeName("IMFSourceBufferList *() __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaSourceExtension*, IMFSourceBufferList*> GetActiveSourceBuffers;
-
-            [NativeTypeName("MF_MSE_READY () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaSourceExtension*, MF_MSE_READY> GetReadyState;
-
-            [NativeTypeName("double () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaSourceExtension*, double> GetDuration;
-
-            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaSourceExtension*, double, int> SetDuration;
-
-            [NativeTypeName("HRESULT (BSTR, IMFSourceBufferNotify *, IMFSourceBuffer **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaSourceExtension*, ushort*, IMFSourceBufferNotify*, IMFSourceBuffer**, int> AddSourceBuffer;
-
-            [NativeTypeName("HRESULT (IMFSourceBuffer *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaSourceExtension*, IMFSourceBuffer*, int> RemoveSourceBuffer;
-
-            [NativeTypeName("HRESULT (MF_MSE_ERROR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaSourceExtension*, MF_MSE_ERROR, int> SetEndOfStream;
-
-            [NativeTypeName("BOOL (BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaSourceExtension*, ushort*, int> IsTypeSupported;
-
-            [NativeTypeName("IMFSourceBuffer *(DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaSourceExtension*, uint, IMFSourceBuffer*> GetSourceBuffer;
-        }
+        [NativeTypeName("IMFSourceBuffer *(DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaSourceExtension*, uint, IMFSourceBuffer*> GetSourceBuffer;
     }
 }

@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IPlayToManagerInterop" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class IPlayToManagerInteropTests
 {
-    /// <summary>Provides validation of the <see cref="IPlayToManagerInterop" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class IPlayToManagerInteropTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPlayToManagerInterop" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPlayToManagerInterop" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IPlayToManagerInterop).GUID, Is.EqualTo(IID_IPlayToManagerInterop));
-        }
+        Assert.That(typeof(IPlayToManagerInterop).GUID, Is.EqualTo(IID_IPlayToManagerInterop));
+    }
 
-        /// <summary>Validates that the <see cref="IPlayToManagerInterop" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IPlayToManagerInterop>(), Is.EqualTo(sizeof(IPlayToManagerInterop)));
-        }
+    /// <summary>Validates that the <see cref="IPlayToManagerInterop" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IPlayToManagerInterop>(), Is.EqualTo(sizeof(IPlayToManagerInterop)));
+    }
 
-        /// <summary>Validates that the <see cref="IPlayToManagerInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IPlayToManagerInterop).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IPlayToManagerInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IPlayToManagerInterop).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IPlayToManagerInterop" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IPlayToManagerInterop" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IPlayToManagerInterop), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IPlayToManagerInterop), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IPlayToManagerInterop), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IPlayToManagerInterop), Is.EqualTo(4));
         }
     }
 }

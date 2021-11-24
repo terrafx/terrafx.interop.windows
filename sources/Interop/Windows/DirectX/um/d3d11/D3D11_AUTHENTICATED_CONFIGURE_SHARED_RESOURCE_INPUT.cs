@@ -6,17 +6,16 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_AUTHENTICATED_CONFIGURE_SHARED_RESOURCE_INPUT
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_AUTHENTICATED_CONFIGURE_SHARED_RESOURCE_INPUT
-    {
-        public D3D11_AUTHENTICATED_CONFIGURE_INPUT Parameters;
+    public D3D11_AUTHENTICATED_CONFIGURE_INPUT Parameters;
 
-        public D3D11_AUTHENTICATED_PROCESS_IDENTIFIER_TYPE ProcessType;
+    public D3D11_AUTHENTICATED_PROCESS_IDENTIFIER_TYPE ProcessType;
 
-        public HANDLE ProcessHandle;
+    public HANDLE ProcessHandle;
 
-        public BOOL AllowAccess;
-    }
+    public BOOL AllowAccess;
 }

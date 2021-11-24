@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="VERIFY_INFORMATION" /> struct.</summary>
+public static unsafe partial class VERIFY_INFORMATIONTests
 {
-    /// <summary>Provides validation of the <see cref="VERIFY_INFORMATION" /> struct.</summary>
-    public static unsafe partial class VERIFY_INFORMATIONTests
+    /// <summary>Validates that the <see cref="VERIFY_INFORMATION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="VERIFY_INFORMATION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<VERIFY_INFORMATION>(), Is.EqualTo(sizeof(VERIFY_INFORMATION)));
-        }
+        Assert.That(Marshal.SizeOf<VERIFY_INFORMATION>(), Is.EqualTo(sizeof(VERIFY_INFORMATION)));
+    }
 
-        /// <summary>Validates that the <see cref="VERIFY_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(VERIFY_INFORMATION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="VERIFY_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(VERIFY_INFORMATION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="VERIFY_INFORMATION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(VERIFY_INFORMATION), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="VERIFY_INFORMATION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(VERIFY_INFORMATION), Is.EqualTo(16));
     }
 }

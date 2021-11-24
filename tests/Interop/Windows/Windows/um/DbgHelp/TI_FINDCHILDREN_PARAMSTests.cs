@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TI_FINDCHILDREN_PARAMS" /> struct.</summary>
+public static unsafe partial class TI_FINDCHILDREN_PARAMSTests
 {
-    /// <summary>Provides validation of the <see cref="TI_FINDCHILDREN_PARAMS" /> struct.</summary>
-    public static unsafe partial class TI_FINDCHILDREN_PARAMSTests
+    /// <summary>Validates that the <see cref="TI_FINDCHILDREN_PARAMS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TI_FINDCHILDREN_PARAMS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TI_FINDCHILDREN_PARAMS>(), Is.EqualTo(sizeof(TI_FINDCHILDREN_PARAMS)));
-        }
+        Assert.That(Marshal.SizeOf<TI_FINDCHILDREN_PARAMS>(), Is.EqualTo(sizeof(TI_FINDCHILDREN_PARAMS)));
+    }
 
-        /// <summary>Validates that the <see cref="TI_FINDCHILDREN_PARAMS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TI_FINDCHILDREN_PARAMS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TI_FINDCHILDREN_PARAMS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TI_FINDCHILDREN_PARAMS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TI_FINDCHILDREN_PARAMS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TI_FINDCHILDREN_PARAMS), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="TI_FINDCHILDREN_PARAMS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TI_FINDCHILDREN_PARAMS), Is.EqualTo(12));
     }
 }

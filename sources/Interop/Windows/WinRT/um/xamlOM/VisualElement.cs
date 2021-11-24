@@ -5,22 +5,21 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct VisualElement
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct VisualElement
-    {
-        public InstanceHandle Handle;
+    public InstanceHandle Handle;
 
-        public SourceInfo SrcInfo;
+    public SourceInfo SrcInfo;
 
-        [NativeTypeName("BSTR")]
-        public ushort* Type;
+    [NativeTypeName("BSTR")]
+    public ushort* Type;
 
-        [NativeTypeName("BSTR")]
-        public ushort* Name;
+    [NativeTypeName("BSTR")]
+    public ushort* Name;
 
-        [NativeTypeName("unsigned int")]
-        public uint NumChildren;
-    }
+    [NativeTypeName("unsigned int")]
+    public uint NumChildren;
 }

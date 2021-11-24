@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("DDC811A5-04ED-4BF3-A0CA-D00449F9355F")]
+public partial struct CODECAPI_AVDecDDMatrixDecodingMode
 {
-    [Guid("DDC811A5-04ED-4BF3-A0CA-D00449F9355F")]
-    public partial struct CODECAPI_AVDecDDMatrixDecodingMode
-    {
-    }
 }

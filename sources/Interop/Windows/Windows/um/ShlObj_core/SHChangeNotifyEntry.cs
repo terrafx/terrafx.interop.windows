@@ -5,14 +5,13 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SHChangeNotifyEntry
-    {
-        [NativeTypeName("LPCITEMIDLIST")]
-        public ITEMIDLIST* pidl;
+namespace TerraFX.Interop.Windows;
 
-        public BOOL fRecursive;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SHChangeNotifyEntry
+{
+    [NativeTypeName("LPCITEMIDLIST")]
+    public ITEMIDLIST* pidl;
+
+    public BOOL fRecursive;
 }

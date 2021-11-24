@@ -5,49 +5,48 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct IN_ADDR
 {
-    public partial struct IN_ADDR
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/inaddr.h:26:9)")]
+    public _S_un_e__Union S_un;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _S_un_e__Union
     {
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/inaddr.h:26:9)")]
-        public _S_un_e__Union S_un;
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/inaddr.h:27:17)")]
+        public _S_un_b_e__Struct S_un_b;
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _S_un_e__Union
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/inaddr.h:28:17)")]
+        public _S_un_w_e__Struct S_un_w;
+
+        [FieldOffset(0)]
+        [NativeTypeName("ULONG")]
+        public uint S_addr;
+
+        public partial struct _S_un_b_e__Struct
         {
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/inaddr.h:27:17)")]
-            public _S_un_b_e__Struct S_un_b;
+            [NativeTypeName("UCHAR")]
+            public byte s_b1;
 
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/inaddr.h:28:17)")]
-            public _S_un_w_e__Struct S_un_w;
+            [NativeTypeName("UCHAR")]
+            public byte s_b2;
 
-            [FieldOffset(0)]
-            [NativeTypeName("ULONG")]
-            public uint S_addr;
+            [NativeTypeName("UCHAR")]
+            public byte s_b3;
 
-            public partial struct _S_un_b_e__Struct
-            {
-                [NativeTypeName("UCHAR")]
-                public byte s_b1;
+            [NativeTypeName("UCHAR")]
+            public byte s_b4;
+        }
 
-                [NativeTypeName("UCHAR")]
-                public byte s_b2;
+        public partial struct _S_un_w_e__Struct
+        {
+            public ushort s_w1;
 
-                [NativeTypeName("UCHAR")]
-                public byte s_b3;
-
-                [NativeTypeName("UCHAR")]
-                public byte s_b4;
-            }
-
-            public partial struct _S_un_w_e__Struct
-            {
-                public ushort s_w1;
-
-                public ushort s_w2;
-            }
+            public ushort s_w2;
         }
     }
 }

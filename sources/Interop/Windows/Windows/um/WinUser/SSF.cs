@@ -3,17 +3,16 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class SSF
 {
-    public static partial class SSF
-    {
-        [NativeTypeName("#define SSF_SOUNDSENTRYON 0x00000001")]
-        public const int SSF_SOUNDSENTRYON = 0x00000001;
+    [NativeTypeName("#define SSF_SOUNDSENTRYON 0x00000001")]
+    public const int SSF_SOUNDSENTRYON = 0x00000001;
 
-        [NativeTypeName("#define SSF_AVAILABLE 0x00000002")]
-        public const int SSF_AVAILABLE = 0x00000002;
+    [NativeTypeName("#define SSF_AVAILABLE 0x00000002")]
+    public const int SSF_AVAILABLE = 0x00000002;
 
-        [NativeTypeName("#define SSF_INDICATOR 0x00000004")]
-        public const int SSF_INDICATOR = 0x00000004;
-    }
+    [NativeTypeName("#define SSF_INDICATOR 0x00000004")]
+    public const int SSF_INDICATOR = 0x00000004;
 }

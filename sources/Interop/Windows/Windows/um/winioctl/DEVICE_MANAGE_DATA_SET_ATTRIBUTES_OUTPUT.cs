@@ -5,36 +5,35 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT
-    {
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("DEVICE_DSM_ACTION")]
-        public uint Action;
+    [NativeTypeName("DEVICE_DSM_ACTION")]
+    public uint Action;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        [NativeTypeName("DWORD")]
-        public uint OperationStatus;
+    [NativeTypeName("DWORD")]
+    public uint OperationStatus;
 
-        [NativeTypeName("DWORD")]
-        public uint ExtendedError;
+    [NativeTypeName("DWORD")]
+    public uint ExtendedError;
 
-        [NativeTypeName("DWORD")]
-        public uint TargetDetailedError;
+    [NativeTypeName("DWORD")]
+    public uint TargetDetailedError;
 
-        [NativeTypeName("DWORD")]
-        public uint ReservedStatus;
+    [NativeTypeName("DWORD")]
+    public uint ReservedStatus;
 
-        [NativeTypeName("DWORD")]
-        public uint OutputBlockOffset;
+    [NativeTypeName("DWORD")]
+    public uint OutputBlockOffset;
 
-        [NativeTypeName("DWORD")]
-        public uint OutputBlockLength;
-    }
+    [NativeTypeName("DWORD")]
+    public uint OutputBlockLength;
 }

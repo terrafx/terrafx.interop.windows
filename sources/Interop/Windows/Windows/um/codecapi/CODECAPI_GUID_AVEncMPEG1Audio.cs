@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("D4DD1362-CD4A-4CD6-8138-B94DB4542B04")]
+public partial struct CODECAPI_GUID_AVEncMPEG1Audio
 {
-    [Guid("D4DD1362-CD4A-4CD6-8138-B94DB4542B04")]
-    public partial struct CODECAPI_GUID_AVEncMPEG1Audio
-    {
-    }
 }

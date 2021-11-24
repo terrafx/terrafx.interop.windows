@@ -3,13 +3,12 @@
 // Ported from um/mfapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct FaceRectInfo
-    {
-        public RECT Region;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("LONG")]
-        public int confidenceLevel;
-    }
+public partial struct FaceRectInfo
+{
+    public RECT Region;
+
+    [NativeTypeName("LONG")]
+    public int confidenceLevel;
 }

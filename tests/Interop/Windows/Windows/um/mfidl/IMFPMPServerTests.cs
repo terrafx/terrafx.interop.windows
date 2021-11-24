@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFPMPServer" /> struct.</summary>
+public static unsafe partial class IMFPMPServerTests
 {
-    /// <summary>Provides validation of the <see cref="IMFPMPServer" /> struct.</summary>
-    public static unsafe partial class IMFPMPServerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFPMPServer" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFPMPServer" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFPMPServer).GUID, Is.EqualTo(IID_IMFPMPServer));
-        }
+        Assert.That(typeof(IMFPMPServer).GUID, Is.EqualTo(IID_IMFPMPServer));
+    }
 
-        /// <summary>Validates that the <see cref="IMFPMPServer" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFPMPServer>(), Is.EqualTo(sizeof(IMFPMPServer)));
-        }
+    /// <summary>Validates that the <see cref="IMFPMPServer" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFPMPServer>(), Is.EqualTo(sizeof(IMFPMPServer)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFPMPServer" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFPMPServer).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFPMPServer" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFPMPServer).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFPMPServer" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFPMPServer" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFPMPServer), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFPMPServer), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFPMPServer), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFPMPServer), Is.EqualTo(4));
         }
     }
 }

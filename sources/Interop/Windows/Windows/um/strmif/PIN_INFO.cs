@@ -3,15 +3,14 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct PIN_INFO
 {
-    public unsafe partial struct PIN_INFO
-    {
-        public IBaseFilter* pFilter;
+    public IBaseFilter* pFilter;
 
-        public PIN_DIRECTION dir;
+    public PIN_DIRECTION dir;
 
-        [NativeTypeName("WCHAR [128]")]
-        public fixed ushort achName[128];
-    }
+    [NativeTypeName("WCHAR [128]")]
+    public fixed ushort achName[128];
 }

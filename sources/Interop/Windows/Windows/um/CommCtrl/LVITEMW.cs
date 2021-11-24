@@ -3,40 +3,39 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct LVITEMW
 {
-    public unsafe partial struct LVITEMW
-    {
-        public uint mask;
+    public uint mask;
 
-        public int iItem;
+    public int iItem;
 
-        public int iSubItem;
+    public int iSubItem;
 
-        public uint state;
+    public uint state;
 
-        public uint stateMask;
+    public uint stateMask;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszText;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszText;
 
-        public int cchTextMax;
+    public int cchTextMax;
 
-        public int iImage;
+    public int iImage;
 
-        public LPARAM lParam;
+    public LPARAM lParam;
 
-        public int iIndent;
+    public int iIndent;
 
-        public int iGroupId;
+    public int iGroupId;
 
-        public uint cColumns;
+    public uint cColumns;
 
-        [NativeTypeName("PUINT")]
-        public uint* puColumns;
+    [NativeTypeName("PUINT")]
+    public uint* puColumns;
 
-        public int* piColFmt;
+    public int* piColFmt;
 
-        public int iGroup;
-    }
+    public int iGroup;
 }

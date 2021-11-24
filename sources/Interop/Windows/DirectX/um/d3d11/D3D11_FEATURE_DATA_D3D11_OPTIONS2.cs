@@ -6,25 +6,24 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0")]
+public partial struct D3D11_FEATURE_DATA_D3D11_OPTIONS2
 {
-    [SupportedOSPlatform("windows10.0")]
-    public partial struct D3D11_FEATURE_DATA_D3D11_OPTIONS2
-    {
-        public BOOL PSSpecifiedStencilRefSupported;
+    public BOOL PSSpecifiedStencilRefSupported;
 
-        public BOOL TypedUAVLoadAdditionalFormats;
+    public BOOL TypedUAVLoadAdditionalFormats;
 
-        public BOOL ROVsSupported;
+    public BOOL ROVsSupported;
 
-        public D3D11_CONSERVATIVE_RASTERIZATION_TIER ConservativeRasterizationTier;
+    public D3D11_CONSERVATIVE_RASTERIZATION_TIER ConservativeRasterizationTier;
 
-        public D3D11_TILED_RESOURCES_TIER TiledResourcesTier;
+    public D3D11_TILED_RESOURCES_TIER TiledResourcesTier;
 
-        public BOOL MapOnDefaultTextures;
+    public BOOL MapOnDefaultTextures;
 
-        public BOOL StandardSwizzle;
+    public BOOL StandardSwizzle;
 
-        public BOOL UnifiedMemoryArchitecture;
-    }
+    public BOOL UnifiedMemoryArchitecture;
 }

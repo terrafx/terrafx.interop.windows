@@ -7,16 +7,15 @@ using NUnit.Framework;
 using System;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IID" /> class.</summary>
+public static partial class IIDTests
 {
-    /// <summary>Provides validation of the <see cref="IID" /> class.</summary>
-    public static partial class IIDTests
+    /// <summary>Validates that the value of the <see cref="IID_ID3D10ShaderReflection1" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D10ShaderReflection1Test()
     {
-        /// <summary>Validates that the value of the <see cref="IID_ID3D10ShaderReflection1" /> property is correct.</summary>
-        [Test]
-        public static void IID_ID3D10ShaderReflection1Test()
-        {
-            Assert.That(IID_ID3D10ShaderReflection1, Is.EqualTo(new Guid(0xc3457783, 0xa846, 0x47ce, 0x95, 0x20, 0xce, 0xa6, 0xf6, 0x6e, 0x74, 0x47)));
-        }
+        Assert.That(IID_ID3D10ShaderReflection1, Is.EqualTo(new Guid(0xc3457783, 0xa846, 0x47ce, 0x95, 0x20, 0xce, 0xa6, 0xf6, 0x6e, 0x74, 0x47)));
     }
 }

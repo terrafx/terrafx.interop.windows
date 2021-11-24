@@ -3,14 +3,13 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum STORAGE_TIER_MEDIA_TYPE
 {
-    public enum STORAGE_TIER_MEDIA_TYPE
-    {
-        StorageTierMediaTypeUnspecified = 0,
-        StorageTierMediaTypeDisk = 1,
-        StorageTierMediaTypeSsd = 2,
-        StorageTierMediaTypeScm = 4,
-        StorageTierMediaTypeMax,
-    }
+    StorageTierMediaTypeUnspecified = 0,
+    StorageTierMediaTypeDisk = 1,
+    StorageTierMediaTypeSsd = 2,
+    StorageTierMediaTypeScm = 4,
+    StorageTierMediaTypeMax,
 }

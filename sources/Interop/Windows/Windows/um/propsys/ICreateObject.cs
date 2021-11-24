@@ -7,64 +7,63 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("75121952-E0D0-43E5-9380-1D80483ACF72")]
+[NativeTypeName("struct ICreateObject : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ICreateObject : ICreateObject.Interface
 {
-    [Guid("75121952-E0D0-43E5-9380-1D80483ACF72")]
-    [NativeTypeName("struct ICreateObject : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICreateObject : ICreateObject.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ICreateObject*, Guid*, void**, int>)(lpVtbl[0]))((ICreateObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ICreateObject*, Guid*, void**, int>)(lpVtbl[0]))((ICreateObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ICreateObject*, uint>)(lpVtbl[1]))((ICreateObject*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ICreateObject*, uint>)(lpVtbl[1]))((ICreateObject*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ICreateObject*, uint>)(lpVtbl[2]))((ICreateObject*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ICreateObject*, uint>)(lpVtbl[2]))((ICreateObject*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT CreateObject([NativeTypeName("const IID &")] Guid* clsid, IUnknown* pUnkOuter, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+    {
+        return ((delegate* unmanaged<ICreateObject*, Guid*, IUnknown*, Guid*, void**, int>)(lpVtbl[3]))((ICreateObject*)Unsafe.AsPointer(ref this), clsid, pUnkOuter, riid, ppv);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT CreateObject([NativeTypeName("const IID &")] Guid* clsid, IUnknown* pUnkOuter, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
-        {
-            return ((delegate* unmanaged<ICreateObject*, Guid*, IUnknown*, Guid*, void**, int>)(lpVtbl[3]))((ICreateObject*)Unsafe.AsPointer(ref this), clsid, pUnkOuter, riid, ppv);
-        }
+        HRESULT CreateObject([NativeTypeName("const IID &")] Guid* clsid, IUnknown* pUnkOuter, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT CreateObject([NativeTypeName("const IID &")] Guid* clsid, IUnknown* pUnkOuter, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICreateObject*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICreateObject*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ICreateObject*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ICreateObject*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ICreateObject*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ICreateObject*, uint> Release;
-
-            [NativeTypeName("HRESULT (const IID &, IUnknown *, const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICreateObject*, Guid*, IUnknown*, Guid*, void**, int> CreateObject;
-        }
+        [NativeTypeName("HRESULT (const IID &, IUnknown *, const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICreateObject*, Guid*, IUnknown*, Guid*, void**, int> CreateObject;
     }
 }

@@ -3,12 +3,11 @@
 // Ported from um/oleidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum BINDSPEED
 {
-    public enum BINDSPEED
-    {
-        BINDSPEED_INDEFINITE = 1,
-        BINDSPEED_MODERATE = 2,
-        BINDSPEED_IMMEDIATE = 3,
-    }
+    BINDSPEED_INDEFINITE = 1,
+    BINDSPEED_MODERATE = 2,
+    BINDSPEED_IMMEDIATE = 3,
 }

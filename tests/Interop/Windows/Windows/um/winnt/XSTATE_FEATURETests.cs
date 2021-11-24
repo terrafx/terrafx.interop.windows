@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XSTATE_FEATURE" /> struct.</summary>
+public static unsafe partial class XSTATE_FEATURETests
 {
-    /// <summary>Provides validation of the <see cref="XSTATE_FEATURE" /> struct.</summary>
-    public static unsafe partial class XSTATE_FEATURETests
+    /// <summary>Validates that the <see cref="XSTATE_FEATURE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XSTATE_FEATURE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XSTATE_FEATURE>(), Is.EqualTo(sizeof(XSTATE_FEATURE)));
-        }
+        Assert.That(Marshal.SizeOf<XSTATE_FEATURE>(), Is.EqualTo(sizeof(XSTATE_FEATURE)));
+    }
 
-        /// <summary>Validates that the <see cref="XSTATE_FEATURE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XSTATE_FEATURE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XSTATE_FEATURE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XSTATE_FEATURE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XSTATE_FEATURE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(XSTATE_FEATURE), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="XSTATE_FEATURE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(XSTATE_FEATURE), Is.EqualTo(8));
     }
 }

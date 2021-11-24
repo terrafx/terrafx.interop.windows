@@ -5,24 +5,23 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct SP_DRVINSTALL_PARAMS32
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct SP_DRVINSTALL_PARAMS32
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint Rank;
+    [NativeTypeName("DWORD")]
+    public uint Rank;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        [NativeTypeName("DWORD_PTR")]
-        public nuint PrivateData;
+    [NativeTypeName("DWORD_PTR")]
+    public nuint PrivateData;
 
-        [NativeTypeName("DWORD")]
-        public uint Reserved;
-    }
+    [NativeTypeName("DWORD")]
+    public uint Reserved;
 }

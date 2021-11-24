@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum PUAFOUT
 {
-    [Flags]
-    public enum PUAFOUT
-    {
-        PUAFOUT_DEFAULT = 0,
-        PUAFOUT_ISLOCKZONEPOLICY = 0x1,
-    }
+    PUAFOUT_DEFAULT = 0,
+    PUAFOUT_ISLOCKZONEPOLICY = 0x1,
 }

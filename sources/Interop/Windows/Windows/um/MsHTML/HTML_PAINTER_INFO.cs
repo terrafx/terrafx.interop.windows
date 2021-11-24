@@ -5,19 +5,18 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct HTML_PAINTER_INFO
 {
-    public partial struct HTML_PAINTER_INFO
-    {
-        [NativeTypeName("LONG")]
-        public int lFlags;
+    [NativeTypeName("LONG")]
+    public int lFlags;
 
-        [NativeTypeName("LONG")]
-        public int lZOrder;
+    [NativeTypeName("LONG")]
+    public int lZOrder;
 
-        [NativeTypeName("IID")]
-        public Guid iidDrawObject;
+    [NativeTypeName("IID")]
+    public Guid iidDrawObject;
 
-        public RECT rcExpand;
-    }
+    public RECT rcExpand;
 }

@@ -7,38 +7,37 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct PAGESET
 {
-    public partial struct PAGESET
+    [NativeTypeName("ULONG")]
+    public uint cbStruct;
+
+    public BOOL fOddPages;
+
+    public BOOL fEvenPages;
+
+    [NativeTypeName("ULONG")]
+    public uint cPageRange;
+
+    [NativeTypeName("PAGERANGE [1]")]
+    public _rgPages_e__FixedBuffer rgPages;
+
+    public partial struct _rgPages_e__FixedBuffer
     {
-        [NativeTypeName("ULONG")]
-        public uint cbStruct;
+        public PAGERANGE e0;
 
-        public BOOL fOddPages;
-
-        public BOOL fEvenPages;
-
-        [NativeTypeName("ULONG")]
-        public uint cPageRange;
-
-        [NativeTypeName("PAGERANGE [1]")]
-        public _rgPages_e__FixedBuffer rgPages;
-
-        public partial struct _rgPages_e__FixedBuffer
+        public ref PAGERANGE this[int index]
         {
-            public PAGERANGE e0;
-
-            public ref PAGERANGE this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<PAGERANGE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<PAGERANGE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

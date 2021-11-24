@@ -3,34 +3,33 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct WS_DURATION
 {
-    public partial struct WS_DURATION
-    {
-        public BOOL negative;
+    public BOOL negative;
 
-        [NativeTypeName("ULONG")]
-        public uint years;
+    [NativeTypeName("ULONG")]
+    public uint years;
 
-        [NativeTypeName("ULONG")]
-        public uint months;
+    [NativeTypeName("ULONG")]
+    public uint months;
 
-        [NativeTypeName("ULONG")]
-        public uint days;
+    [NativeTypeName("ULONG")]
+    public uint days;
 
-        [NativeTypeName("ULONG")]
-        public uint hours;
+    [NativeTypeName("ULONG")]
+    public uint hours;
 
-        [NativeTypeName("ULONG")]
-        public uint minutes;
+    [NativeTypeName("ULONG")]
+    public uint minutes;
 
-        [NativeTypeName("ULONG")]
-        public uint seconds;
+    [NativeTypeName("ULONG")]
+    public uint seconds;
 
-        [NativeTypeName("ULONG")]
-        public uint milliseconds;
+    [NativeTypeName("ULONG")]
+    public uint milliseconds;
 
-        [NativeTypeName("ULONG")]
-        public uint ticks;
-    }
+    [NativeTypeName("ULONG")]
+    public uint ticks;
 }

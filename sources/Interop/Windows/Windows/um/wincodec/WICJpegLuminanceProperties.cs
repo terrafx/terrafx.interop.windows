@@ -3,11 +3,10 @@
 // Ported from um/wincodec.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WICJpegLuminanceProperties : uint
 {
-    public enum WICJpegLuminanceProperties : uint
-    {
-        WICJpegLuminanceTable = 0x1,
-        WICJpegLuminanceProperties_FORCE_DWORD = 0x7fffffff,
-    }
+    WICJpegLuminanceTable = 0x1,
+    WICJpegLuminanceProperties_FORCE_DWORD = 0x7fffffff,
 }

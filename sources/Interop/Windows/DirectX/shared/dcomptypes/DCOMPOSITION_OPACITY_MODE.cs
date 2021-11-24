@@ -3,12 +3,11 @@
 // Ported from shared/dcomptypes.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum DCOMPOSITION_OPACITY_MODE
 {
-    public enum DCOMPOSITION_OPACITY_MODE
-    {
-        DCOMPOSITION_OPACITY_MODE_LAYER = 0,
-        DCOMPOSITION_OPACITY_MODE_MULTIPLY = 1,
-        DCOMPOSITION_OPACITY_MODE_INHERIT = unchecked((int)(0xffffffff)),
-    }
+    DCOMPOSITION_OPACITY_MODE_LAYER = 0,
+    DCOMPOSITION_OPACITY_MODE_MULTIPLY = 1,
+    DCOMPOSITION_OPACITY_MODE_INHERIT = unchecked((int)(0xffffffff)),
 }

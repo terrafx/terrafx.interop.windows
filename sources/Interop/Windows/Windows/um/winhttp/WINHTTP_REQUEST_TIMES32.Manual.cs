@@ -5,15 +5,14 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 4)]
-    public unsafe partial struct WINHTTP_REQUEST_TIMES32
-    {
-        [NativeTypeName("ULONG")]
-        public uint cTimes;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("ULONGLONG [64]")]
-        public fixed ulong rgullTimes[64];
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 4)]
+public unsafe partial struct WINHTTP_REQUEST_TIMES32
+{
+    [NativeTypeName("ULONG")]
+    public uint cTimes;
+
+    [NativeTypeName("ULONGLONG [64]")]
+    public fixed ulong rgullTimes[64];
 }

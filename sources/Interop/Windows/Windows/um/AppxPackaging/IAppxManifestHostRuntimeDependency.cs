@@ -7,90 +7,89 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3455D234-8414-410D-95C7-7B35255B8391")]
+[NativeTypeName("struct IAppxManifestHostRuntimeDependency : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IAppxManifestHostRuntimeDependency : IAppxManifestHostRuntimeDependency.Interface
 {
-    [Guid("3455D234-8414-410D-95C7-7B35255B8391")]
-    [NativeTypeName("struct IAppxManifestHostRuntimeDependency : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestHostRuntimeDependency : IAppxManifestHostRuntimeDependency.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IAppxManifestHostRuntimeDependency*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestHostRuntimeDependency*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IAppxManifestHostRuntimeDependency*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestHostRuntimeDependency*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IAppxManifestHostRuntimeDependency*, uint>)(lpVtbl[1]))((IAppxManifestHostRuntimeDependency*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IAppxManifestHostRuntimeDependency*, uint>)(lpVtbl[1]))((IAppxManifestHostRuntimeDependency*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IAppxManifestHostRuntimeDependency*, uint>)(lpVtbl[2]))((IAppxManifestHostRuntimeDependency*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IAppxManifestHostRuntimeDependency*, uint>)(lpVtbl[2]))((IAppxManifestHostRuntimeDependency*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
+    {
+        return ((delegate* unmanaged<IAppxManifestHostRuntimeDependency*, ushort**, int>)(lpVtbl[3]))((IAppxManifestHostRuntimeDependency*)Unsafe.AsPointer(ref this), name);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetPublisher([NativeTypeName("LPWSTR *")] ushort** publisher)
+    {
+        return ((delegate* unmanaged<IAppxManifestHostRuntimeDependency*, ushort**, int>)(lpVtbl[4]))((IAppxManifestHostRuntimeDependency*)Unsafe.AsPointer(ref this), publisher);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetMinVersion([NativeTypeName("UINT64 *")] ulong* minVersion)
+    {
+        return ((delegate* unmanaged<IAppxManifestHostRuntimeDependency*, ulong*, int>)(lpVtbl[5]))((IAppxManifestHostRuntimeDependency*)Unsafe.AsPointer(ref this), minVersion);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
-        {
-            return ((delegate* unmanaged<IAppxManifestHostRuntimeDependency*, ushort**, int>)(lpVtbl[3]))((IAppxManifestHostRuntimeDependency*)Unsafe.AsPointer(ref this), name);
-        }
+        HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetPublisher([NativeTypeName("LPWSTR *")] ushort** publisher)
-        {
-            return ((delegate* unmanaged<IAppxManifestHostRuntimeDependency*, ushort**, int>)(lpVtbl[4]))((IAppxManifestHostRuntimeDependency*)Unsafe.AsPointer(ref this), publisher);
-        }
+        HRESULT GetPublisher([NativeTypeName("LPWSTR *")] ushort** publisher);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetMinVersion([NativeTypeName("UINT64 *")] ulong* minVersion)
-        {
-            return ((delegate* unmanaged<IAppxManifestHostRuntimeDependency*, ulong*, int>)(lpVtbl[5]))((IAppxManifestHostRuntimeDependency*)Unsafe.AsPointer(ref this), minVersion);
-        }
+        HRESULT GetMinVersion([NativeTypeName("UINT64 *")] ulong* minVersion);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestHostRuntimeDependency*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetPublisher([NativeTypeName("LPWSTR *")] ushort** publisher);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestHostRuntimeDependency*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetMinVersion([NativeTypeName("UINT64 *")] ulong* minVersion);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestHostRuntimeDependency*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestHostRuntimeDependency*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestHostRuntimeDependency*, ushort**, int> GetName;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestHostRuntimeDependency*, uint> AddRef;
+        [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestHostRuntimeDependency*, ushort**, int> GetPublisher;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestHostRuntimeDependency*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestHostRuntimeDependency*, ushort**, int> GetName;
-
-            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestHostRuntimeDependency*, ushort**, int> GetPublisher;
-
-            [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestHostRuntimeDependency*, ulong*, int> GetMinVersion;
-        }
+        [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestHostRuntimeDependency*, ulong*, int> GetMinVersion;
     }
 }

@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum TKBLayoutType
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum TKBLayoutType
-    {
-        TKBLT_UNDEFINED = 0,
-        TKBLT_CLASSIC = 1,
-        TKBLT_OPTIMIZED = 2,
-    }
+    TKBLT_UNDEFINED = 0,
+    TKBLT_CLASSIC = 1,
+    TKBLT_OPTIMIZED = 2,
 }

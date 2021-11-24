@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("D92995F8-CF5E-4A76-BF59-EAD39EA2B97E")]
+[NativeTypeName("struct INamespaceWalkCB : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct INamespaceWalkCB : INamespaceWalkCB.Interface
 {
-    [Guid("D92995F8-CF5E-4A76-BF59-EAD39EA2B97E")]
-    [NativeTypeName("struct INamespaceWalkCB : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct INamespaceWalkCB : INamespaceWalkCB.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<INamespaceWalkCB*, Guid*, void**, int>)(lpVtbl[0]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<INamespaceWalkCB*, Guid*, void**, int>)(lpVtbl[0]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<INamespaceWalkCB*, uint>)(lpVtbl[1]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<INamespaceWalkCB*, uint>)(lpVtbl[1]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<INamespaceWalkCB*, uint>)(lpVtbl[2]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<INamespaceWalkCB*, uint>)(lpVtbl[2]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT FoundItem(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
+    {
+        return ((delegate* unmanaged<INamespaceWalkCB*, IShellFolder*, ITEMIDLIST*, int>)(lpVtbl[3]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), psf, pidl);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT EnterFolder(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
+    {
+        return ((delegate* unmanaged<INamespaceWalkCB*, IShellFolder*, ITEMIDLIST*, int>)(lpVtbl[4]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), psf, pidl);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT LeaveFolder(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
+    {
+        return ((delegate* unmanaged<INamespaceWalkCB*, IShellFolder*, ITEMIDLIST*, int>)(lpVtbl[5]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), psf, pidl);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT InitializeProgressDialog([NativeTypeName("LPWSTR *")] ushort** ppszTitle, [NativeTypeName("LPWSTR *")] ushort** ppszCancel)
+    {
+        return ((delegate* unmanaged<INamespaceWalkCB*, ushort**, ushort**, int>)(lpVtbl[6]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), ppszTitle, ppszCancel);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT FoundItem(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
-        {
-            return ((delegate* unmanaged<INamespaceWalkCB*, IShellFolder*, ITEMIDLIST*, int>)(lpVtbl[3]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), psf, pidl);
-        }
+        HRESULT FoundItem(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT EnterFolder(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
-        {
-            return ((delegate* unmanaged<INamespaceWalkCB*, IShellFolder*, ITEMIDLIST*, int>)(lpVtbl[4]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), psf, pidl);
-        }
+        HRESULT EnterFolder(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT LeaveFolder(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
-        {
-            return ((delegate* unmanaged<INamespaceWalkCB*, IShellFolder*, ITEMIDLIST*, int>)(lpVtbl[5]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), psf, pidl);
-        }
+        HRESULT LeaveFolder(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT InitializeProgressDialog([NativeTypeName("LPWSTR *")] ushort** ppszTitle, [NativeTypeName("LPWSTR *")] ushort** ppszCancel)
-        {
-            return ((delegate* unmanaged<INamespaceWalkCB*, ushort**, ushort**, int>)(lpVtbl[6]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), ppszTitle, ppszCancel);
-        }
+        HRESULT InitializeProgressDialog([NativeTypeName("LPWSTR *")] ushort** ppszTitle, [NativeTypeName("LPWSTR *")] ushort** ppszCancel);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT FoundItem(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<INamespaceWalkCB*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT EnterFolder(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<INamespaceWalkCB*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT LeaveFolder(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<INamespaceWalkCB*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT InitializeProgressDialog([NativeTypeName("LPWSTR *")] ushort** ppszTitle, [NativeTypeName("LPWSTR *")] ushort** ppszCancel);
-        }
+        [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST) __attribute__((stdcall))")]
+        public delegate* unmanaged<INamespaceWalkCB*, IShellFolder*, ITEMIDLIST*, int> FoundItem;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<INamespaceWalkCB*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST) __attribute__((stdcall))")]
+        public delegate* unmanaged<INamespaceWalkCB*, IShellFolder*, ITEMIDLIST*, int> EnterFolder;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<INamespaceWalkCB*, uint> AddRef;
+        [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST) __attribute__((stdcall))")]
+        public delegate* unmanaged<INamespaceWalkCB*, IShellFolder*, ITEMIDLIST*, int> LeaveFolder;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<INamespaceWalkCB*, uint> Release;
-
-            [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST) __attribute__((stdcall))")]
-            public delegate* unmanaged<INamespaceWalkCB*, IShellFolder*, ITEMIDLIST*, int> FoundItem;
-
-            [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST) __attribute__((stdcall))")]
-            public delegate* unmanaged<INamespaceWalkCB*, IShellFolder*, ITEMIDLIST*, int> EnterFolder;
-
-            [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST) __attribute__((stdcall))")]
-            public delegate* unmanaged<INamespaceWalkCB*, IShellFolder*, ITEMIDLIST*, int> LeaveFolder;
-
-            [NativeTypeName("HRESULT (LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<INamespaceWalkCB*, ushort**, ushort**, int> InitializeProgressDialog;
-        }
+        [NativeTypeName("HRESULT (LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<INamespaceWalkCB*, ushort**, ushort**, int> InitializeProgressDialog;
     }
 }

@@ -3,15 +3,14 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum DISPID_SpeechRecognizerStatus
 {
-    public enum DISPID_SpeechRecognizerStatus
-    {
-        DISPID_SRSAudioStatus = 1,
-        DISPID_SRSCurrentStreamPosition = (DISPID_SRSAudioStatus + 1),
-        DISPID_SRSCurrentStreamNumber = (DISPID_SRSCurrentStreamPosition + 1),
-        DISPID_SRSNumberOfActiveRules = (DISPID_SRSCurrentStreamNumber + 1),
-        DISPID_SRSClsidEngine = (DISPID_SRSNumberOfActiveRules + 1),
-        DISPID_SRSSupportedLanguages = (DISPID_SRSClsidEngine + 1),
-    }
+    DISPID_SRSAudioStatus = 1,
+    DISPID_SRSCurrentStreamPosition = (DISPID_SRSAudioStatus + 1),
+    DISPID_SRSCurrentStreamNumber = (DISPID_SRSCurrentStreamPosition + 1),
+    DISPID_SRSNumberOfActiveRules = (DISPID_SRSCurrentStreamNumber + 1),
+    DISPID_SRSClsidEngine = (DISPID_SRSNumberOfActiveRules + 1),
+    DISPID_SRSSupportedLanguages = (DISPID_SRSClsidEngine + 1),
 }

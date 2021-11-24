@@ -3,14 +3,13 @@
 // Ported from shared/devpropdef.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class MAX
-    {
-        [NativeTypeName("#define MAX_DEVPROP_TYPE 0x00000019")]
-        public const int MAX_DEVPROP_TYPE = 0x00000019;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("#define MAX_DEVPROP_TYPEMOD 0x00002000")]
-        public const int MAX_DEVPROP_TYPEMOD = 0x00002000;
-    }
+public static partial class MAX
+{
+    [NativeTypeName("#define MAX_DEVPROP_TYPE 0x00000019")]
+    public const int MAX_DEVPROP_TYPE = 0x00000019;
+
+    [NativeTypeName("#define MAX_DEVPROP_TYPEMOD 0x00002000")]
+    public const int MAX_DEVPROP_TYPEMOD = 0x00002000;
 }

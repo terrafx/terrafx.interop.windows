@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XINPUT_GAMEPAD" /> struct.</summary>
+public static unsafe partial class XINPUT_GAMEPADTests
 {
-    /// <summary>Provides validation of the <see cref="XINPUT_GAMEPAD" /> struct.</summary>
-    public static unsafe partial class XINPUT_GAMEPADTests
+    /// <summary>Validates that the <see cref="XINPUT_GAMEPAD" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XINPUT_GAMEPAD" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XINPUT_GAMEPAD>(), Is.EqualTo(sizeof(XINPUT_GAMEPAD)));
-        }
+        Assert.That(Marshal.SizeOf<XINPUT_GAMEPAD>(), Is.EqualTo(sizeof(XINPUT_GAMEPAD)));
+    }
 
-        /// <summary>Validates that the <see cref="XINPUT_GAMEPAD" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XINPUT_GAMEPAD).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XINPUT_GAMEPAD" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XINPUT_GAMEPAD).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XINPUT_GAMEPAD" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(XINPUT_GAMEPAD), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="XINPUT_GAMEPAD" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(XINPUT_GAMEPAD), Is.EqualTo(12));
     }
 }

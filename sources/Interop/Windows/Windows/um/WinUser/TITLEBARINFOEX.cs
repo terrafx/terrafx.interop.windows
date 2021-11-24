@@ -7,41 +7,40 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct TITLEBARINFOEX
 {
-    public unsafe partial struct TITLEBARINFOEX
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
+
+    public RECT rcTitleBar;
+
+    [NativeTypeName("DWORD [6]")]
+    public fixed uint rgstate[6];
+
+    [NativeTypeName("RECT [6]")]
+    public _rgrect_e__FixedBuffer rgrect;
+
+    public partial struct _rgrect_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+        public RECT e0;
+        public RECT e1;
+        public RECT e2;
+        public RECT e3;
+        public RECT e4;
+        public RECT e5;
 
-        public RECT rcTitleBar;
-
-        [NativeTypeName("DWORD [6]")]
-        public fixed uint rgstate[6];
-
-        [NativeTypeName("RECT [6]")]
-        public _rgrect_e__FixedBuffer rgrect;
-
-        public partial struct _rgrect_e__FixedBuffer
+        public ref RECT this[int index]
         {
-            public RECT e0;
-            public RECT e1;
-            public RECT e2;
-            public RECT e3;
-            public RECT e4;
-            public RECT e5;
-
-            public ref RECT this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan()[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<RECT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 6);
+            get
+            {
+                return ref AsSpan()[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<RECT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 6);
     }
 }

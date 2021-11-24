@@ -8,77 +8,76 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class IID
 {
-    public static partial class IID
+    public static ref readonly Guid IID_IXblIdpAuthManager
     {
-        public static ref readonly Guid IID_IXblIdpAuthManager
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x08, 0xDB, 0x5D, 0xEB,
-                    0xBF, 0x8B,
-                    0x9B, 0x44,
-                    0xAC,
-                    0x21,
-                    0xB0,
-                    0x2D,
-                    0xDE,
-                    0xB3,
-                    0xB1,
-                    0x36
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x08, 0xDB, 0x5D, 0xEB,
+                0xBF, 0x8B,
+                0x9B, 0x44,
+                0xAC,
+                0x21,
+                0xB0,
+                0x2D,
+                0xDE,
+                0xB3,
+                0xB1,
+                0x36
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid IID_IXblIdpAuthTokenResult
+    public static ref readonly Guid IID_IXblIdpAuthTokenResult
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x25, 0x02, 0xCE, 0x46,
-                    0x67, 0xF2,
-                    0x68, 0x4D,
-                    0xB2,
-                    0x99,
-                    0xB2,
-                    0x76,
-                    0x25,
-                    0x52,
-                    0xDE,
-                    0xC1
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x25, 0x02, 0xCE, 0x46,
+                0x67, 0xF2,
+                0x68, 0x4D,
+                0xB2,
+                0x99,
+                0xB2,
+                0x76,
+                0x25,
+                0x52,
+                0xDE,
+                0xC1
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid IID_IXblIdpAuthTokenResult2
+    public static ref readonly Guid IID_IXblIdpAuthTokenResult2
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xB0, 0x60, 0xD7, 0x75,
-                    0xB9, 0x60,
-                    0x2D, 0x41,
-                    0x99,
-                    0x4F,
-                    0x26,
-                    0xB2,
-                    0xCD,
-                    0x5F,
-                    0x78,
-                    0x12
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0xB0, 0x60, 0xD7, 0x75,
+                0xB9, 0x60,
+                0x2D, 0x41,
+                0x99,
+                0x4F,
+                0x26,
+                0xB2,
+                0xCD,
+                0x5F,
+                0x78,
+                0x12
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

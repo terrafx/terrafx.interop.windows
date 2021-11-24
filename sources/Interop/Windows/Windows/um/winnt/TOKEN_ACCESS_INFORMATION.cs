@@ -3,43 +3,42 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct TOKEN_ACCESS_INFORMATION
 {
-    public unsafe partial struct TOKEN_ACCESS_INFORMATION
-    {
-        [NativeTypeName("PSID_AND_ATTRIBUTES_HASH")]
-        public SID_AND_ATTRIBUTES_HASH* SidHash;
+    [NativeTypeName("PSID_AND_ATTRIBUTES_HASH")]
+    public SID_AND_ATTRIBUTES_HASH* SidHash;
 
-        [NativeTypeName("PSID_AND_ATTRIBUTES_HASH")]
-        public SID_AND_ATTRIBUTES_HASH* RestrictedSidHash;
+    [NativeTypeName("PSID_AND_ATTRIBUTES_HASH")]
+    public SID_AND_ATTRIBUTES_HASH* RestrictedSidHash;
 
-        [NativeTypeName("PTOKEN_PRIVILEGES")]
-        public TOKEN_PRIVILEGES* Privileges;
+    [NativeTypeName("PTOKEN_PRIVILEGES")]
+    public TOKEN_PRIVILEGES* Privileges;
 
-        public LUID AuthenticationId;
+    public LUID AuthenticationId;
 
-        public TOKEN_TYPE TokenType;
+    public TOKEN_TYPE TokenType;
 
-        public SECURITY_IMPERSONATION_LEVEL ImpersonationLevel;
+    public SECURITY_IMPERSONATION_LEVEL ImpersonationLevel;
 
-        public TOKEN_MANDATORY_POLICY MandatoryPolicy;
+    public TOKEN_MANDATORY_POLICY MandatoryPolicy;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        [NativeTypeName("DWORD")]
-        public uint AppContainerNumber;
+    [NativeTypeName("DWORD")]
+    public uint AppContainerNumber;
 
-        [NativeTypeName("PSID")]
-        public void* PackageSid;
+    [NativeTypeName("PSID")]
+    public void* PackageSid;
 
-        [NativeTypeName("PSID_AND_ATTRIBUTES_HASH")]
-        public SID_AND_ATTRIBUTES_HASH* CapabilitiesHash;
+    [NativeTypeName("PSID_AND_ATTRIBUTES_HASH")]
+    public SID_AND_ATTRIBUTES_HASH* CapabilitiesHash;
 
-        [NativeTypeName("PSID")]
-        public void* TrustLevelSid;
+    [NativeTypeName("PSID")]
+    public void* TrustLevelSid;
 
-        [NativeTypeName("PSECURITY_ATTRIBUTES_OPAQUE")]
-        public void* SecurityAttributes;
-    }
+    [NativeTypeName("PSECURITY_ATTRIBUTES_OPAQUE")]
+    public void* SecurityAttributes;
 }

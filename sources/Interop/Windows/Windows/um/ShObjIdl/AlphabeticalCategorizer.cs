@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3C2654C6-7372-4F6B-B310-55D6128F49D2")]
+public partial struct AlphabeticalCategorizer
 {
-    [Guid("3C2654C6-7372-4F6B-B310-55D6128F49D2")]
-    public partial struct AlphabeticalCategorizer
-    {
-    }
 }

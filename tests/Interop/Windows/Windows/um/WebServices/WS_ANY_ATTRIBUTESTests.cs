@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WS_ANY_ATTRIBUTES" /> struct.</summary>
+public static unsafe partial class WS_ANY_ATTRIBUTESTests
 {
-    /// <summary>Provides validation of the <see cref="WS_ANY_ATTRIBUTES" /> struct.</summary>
-    public static unsafe partial class WS_ANY_ATTRIBUTESTests
+    /// <summary>Validates that the <see cref="WS_ANY_ATTRIBUTES" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WS_ANY_ATTRIBUTES" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WS_ANY_ATTRIBUTES>(), Is.EqualTo(sizeof(WS_ANY_ATTRIBUTES)));
-        }
+        Assert.That(Marshal.SizeOf<WS_ANY_ATTRIBUTES>(), Is.EqualTo(sizeof(WS_ANY_ATTRIBUTES)));
+    }
 
-        /// <summary>Validates that the <see cref="WS_ANY_ATTRIBUTES" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WS_ANY_ATTRIBUTES).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WS_ANY_ATTRIBUTES" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WS_ANY_ATTRIBUTES).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WS_ANY_ATTRIBUTES" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WS_ANY_ATTRIBUTES" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WS_ANY_ATTRIBUTES), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(WS_ANY_ATTRIBUTES), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(WS_ANY_ATTRIBUTES), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(WS_ANY_ATTRIBUTES), Is.EqualTo(8));
         }
     }
 }

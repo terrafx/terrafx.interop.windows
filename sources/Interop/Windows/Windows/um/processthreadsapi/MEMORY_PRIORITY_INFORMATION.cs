@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct MEMORY_PRIORITY_INFORMATION
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct MEMORY_PRIORITY_INFORMATION
-    {
-        [NativeTypeName("ULONG")]
-        public uint MemoryPriority;
-    }
+    [NativeTypeName("ULONG")]
+    public uint MemoryPriority;
 }

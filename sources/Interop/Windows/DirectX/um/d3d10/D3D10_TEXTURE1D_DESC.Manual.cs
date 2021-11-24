@@ -6,20 +6,19 @@
 using static TerraFX.Interop.DirectX.D3D10_USAGE;
 using static TerraFX.Interop.DirectX.D3D10_BIND_FLAG;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D10_TEXTURE1D_DESC
 {
-    public partial struct D3D10_TEXTURE1D_DESC
+    public D3D10_TEXTURE1D_DESC(DXGI_FORMAT format, uint width, uint arraySize = 1, uint mipLevels = 0, uint bindFlags = (uint)D3D10_BIND_SHADER_RESOURCE, D3D10_USAGE usage = D3D10_USAGE_DEFAULT, uint cpuaccessFlags = 0, uint miscFlags = 0)
     {
-        public D3D10_TEXTURE1D_DESC(DXGI_FORMAT format, uint width, uint arraySize = 1, uint mipLevels = 0, uint bindFlags = (uint)D3D10_BIND_SHADER_RESOURCE, D3D10_USAGE usage = D3D10_USAGE_DEFAULT, uint cpuaccessFlags = 0, uint miscFlags = 0)
-        {
-            Width = width;
-            MipLevels = mipLevels;
-            ArraySize = arraySize;
-            Format = format;
-            Usage = usage;
-            BindFlags = bindFlags;
-            CPUAccessFlags = cpuaccessFlags;
-            MiscFlags = miscFlags;
-        }
+        Width = width;
+        MipLevels = mipLevels;
+        ArraySize = arraySize;
+        Format = format;
+        Usage = usage;
+        BindFlags = bindFlags;
+        CPUAccessFlags = cpuaccessFlags;
+        MiscFlags = miscFlags;
     }
 }

@@ -5,20 +5,19 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct DEVICE_DSM_OFFLOAD_WRITE_PARAMETERS
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct DEVICE_DSM_OFFLOAD_WRITE_PARAMETERS
-    {
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        [NativeTypeName("DWORD")]
-        public uint Reserved;
+    [NativeTypeName("DWORD")]
+    public uint Reserved;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong TokenOffset;
+    [NativeTypeName("DWORDLONG")]
+    public ulong TokenOffset;
 
-        public STORAGE_OFFLOAD_TOKEN Token;
-    }
+    public STORAGE_OFFLOAD_TOKEN Token;
 }

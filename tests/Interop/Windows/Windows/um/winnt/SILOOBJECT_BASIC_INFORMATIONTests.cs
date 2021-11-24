@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SILOOBJECT_BASIC_INFORMATION" /> struct.</summary>
+public static unsafe partial class SILOOBJECT_BASIC_INFORMATIONTests
 {
-    /// <summary>Provides validation of the <see cref="SILOOBJECT_BASIC_INFORMATION" /> struct.</summary>
-    public static unsafe partial class SILOOBJECT_BASIC_INFORMATIONTests
+    /// <summary>Validates that the <see cref="SILOOBJECT_BASIC_INFORMATION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SILOOBJECT_BASIC_INFORMATION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SILOOBJECT_BASIC_INFORMATION>(), Is.EqualTo(sizeof(SILOOBJECT_BASIC_INFORMATION)));
-        }
+        Assert.That(Marshal.SizeOf<SILOOBJECT_BASIC_INFORMATION>(), Is.EqualTo(sizeof(SILOOBJECT_BASIC_INFORMATION)));
+    }
 
-        /// <summary>Validates that the <see cref="SILOOBJECT_BASIC_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SILOOBJECT_BASIC_INFORMATION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SILOOBJECT_BASIC_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SILOOBJECT_BASIC_INFORMATION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SILOOBJECT_BASIC_INFORMATION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SILOOBJECT_BASIC_INFORMATION), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="SILOOBJECT_BASIC_INFORMATION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SILOOBJECT_BASIC_INFORMATION), Is.EqualTo(16));
     }
 }

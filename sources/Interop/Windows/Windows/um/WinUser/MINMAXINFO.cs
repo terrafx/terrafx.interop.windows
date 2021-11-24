@@ -3,18 +3,17 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MINMAXINFO
 {
-    public partial struct MINMAXINFO
-    {
-        public POINT ptReserved;
+    public POINT ptReserved;
 
-        public POINT ptMaxSize;
+    public POINT ptMaxSize;
 
-        public POINT ptMaxPosition;
+    public POINT ptMaxPosition;
 
-        public POINT ptMinTrackSize;
+    public POINT ptMinTrackSize;
 
-        public POINT ptMaxTrackSize;
-    }
+    public POINT ptMaxTrackSize;
 }

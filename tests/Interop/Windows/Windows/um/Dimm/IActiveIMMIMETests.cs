@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IActiveIMMIME" /> struct.</summary>
+public static unsafe partial class IActiveIMMIMETests
 {
-    /// <summary>Provides validation of the <see cref="IActiveIMMIME" /> struct.</summary>
-    public static unsafe partial class IActiveIMMIMETests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IActiveIMMIME" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IActiveIMMIME" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IActiveIMMIME).GUID, Is.EqualTo(IID_IActiveIMMIME));
-        }
+        Assert.That(typeof(IActiveIMMIME).GUID, Is.EqualTo(IID_IActiveIMMIME));
+    }
 
-        /// <summary>Validates that the <see cref="IActiveIMMIME" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IActiveIMMIME>(), Is.EqualTo(sizeof(IActiveIMMIME)));
-        }
+    /// <summary>Validates that the <see cref="IActiveIMMIME" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IActiveIMMIME>(), Is.EqualTo(sizeof(IActiveIMMIME)));
+    }
 
-        /// <summary>Validates that the <see cref="IActiveIMMIME" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IActiveIMMIME).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IActiveIMMIME" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IActiveIMMIME).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IActiveIMMIME" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IActiveIMMIME" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IActiveIMMIME), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IActiveIMMIME), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IActiveIMMIME), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IActiveIMMIME), Is.EqualTo(4));
         }
     }
 }

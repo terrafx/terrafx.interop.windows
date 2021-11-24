@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAMDroppedFrames" /> struct.</summary>
+public static unsafe partial class IAMDroppedFramesTests
 {
-    /// <summary>Provides validation of the <see cref="IAMDroppedFrames" /> struct.</summary>
-    public static unsafe partial class IAMDroppedFramesTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMDroppedFrames" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMDroppedFrames" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAMDroppedFrames).GUID, Is.EqualTo(IID_IAMDroppedFrames));
-        }
+        Assert.That(typeof(IAMDroppedFrames).GUID, Is.EqualTo(IID_IAMDroppedFrames));
+    }
 
-        /// <summary>Validates that the <see cref="IAMDroppedFrames" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAMDroppedFrames>(), Is.EqualTo(sizeof(IAMDroppedFrames)));
-        }
+    /// <summary>Validates that the <see cref="IAMDroppedFrames" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAMDroppedFrames>(), Is.EqualTo(sizeof(IAMDroppedFrames)));
+    }
 
-        /// <summary>Validates that the <see cref="IAMDroppedFrames" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAMDroppedFrames).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAMDroppedFrames" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAMDroppedFrames).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAMDroppedFrames" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAMDroppedFrames" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAMDroppedFrames), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAMDroppedFrames), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAMDroppedFrames), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAMDroppedFrames), Is.EqualTo(4));
         }
     }
 }

@@ -3,11 +3,10 @@
 // Ported from um/d2d1_1.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public static partial class D2D1
 {
-    public static partial class D2D1
-    {
-        [NativeTypeName("#define D2D1_INVALID_PROPERTY_INDEX UINT_MAX")]
-        public const uint D2D1_INVALID_PROPERTY_INDEX = 0xffffffff;
-    }
+    [NativeTypeName("#define D2D1_INVALID_PROPERTY_INDEX UINT_MAX")]
+    public const uint D2D1_INVALID_PROPERTY_INDEX = 0xffffffff;
 }

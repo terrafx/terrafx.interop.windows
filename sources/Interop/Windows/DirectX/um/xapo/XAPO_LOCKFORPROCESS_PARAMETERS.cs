@@ -6,15 +6,14 @@
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct XAPO_LOCKFORPROCESS_PARAMETERS
-    {
-        [NativeTypeName("const WAVEFORMATEX *")]
-        public WAVEFORMATEX* pFormat;
+namespace TerraFX.Interop.DirectX;
 
-        [NativeTypeName("UINT32")]
-        public uint MaxFrameCount;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct XAPO_LOCKFORPROCESS_PARAMETERS
+{
+    [NativeTypeName("const WAVEFORMATEX *")]
+    public WAVEFORMATEX* pFormat;
+
+    [NativeTypeName("UINT32")]
+    public uint MaxFrameCount;
 }

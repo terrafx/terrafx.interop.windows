@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WbemRefresher" /> struct.</summary>
+public static unsafe partial class WbemRefresherTests
 {
-    /// <summary>Provides validation of the <see cref="WbemRefresher" /> struct.</summary>
-    public static unsafe partial class WbemRefresherTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="WbemRefresher" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="WbemRefresher" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(WbemRefresher).GUID, Is.EqualTo(IID_WbemRefresher));
-        }
+        Assert.That(typeof(WbemRefresher).GUID, Is.EqualTo(IID_WbemRefresher));
+    }
 
-        /// <summary>Validates that the <see cref="WbemRefresher" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WbemRefresher>(), Is.EqualTo(sizeof(WbemRefresher)));
-        }
+    /// <summary>Validates that the <see cref="WbemRefresher" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<WbemRefresher>(), Is.EqualTo(sizeof(WbemRefresher)));
+    }
 
-        /// <summary>Validates that the <see cref="WbemRefresher" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WbemRefresher).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WbemRefresher" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WbemRefresher).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WbemRefresher" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(WbemRefresher), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="WbemRefresher" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(WbemRefresher), Is.EqualTo(1));
     }
 }

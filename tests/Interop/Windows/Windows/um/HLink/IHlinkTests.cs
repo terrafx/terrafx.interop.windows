@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IHlink" /> struct.</summary>
+public static unsafe partial class IHlinkTests
 {
-    /// <summary>Provides validation of the <see cref="IHlink" /> struct.</summary>
-    public static unsafe partial class IHlinkTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHlink" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHlink" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IHlink).GUID, Is.EqualTo(IID_IHlink));
-        }
+        Assert.That(typeof(IHlink).GUID, Is.EqualTo(IID_IHlink));
+    }
 
-        /// <summary>Validates that the <see cref="IHlink" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IHlink>(), Is.EqualTo(sizeof(IHlink)));
-        }
+    /// <summary>Validates that the <see cref="IHlink" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IHlink>(), Is.EqualTo(sizeof(IHlink)));
+    }
 
-        /// <summary>Validates that the <see cref="IHlink" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IHlink).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IHlink" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IHlink).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IHlink" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IHlink" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IHlink), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IHlink), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IHlink), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IHlink), Is.EqualTo(4));
         }
     }
 }

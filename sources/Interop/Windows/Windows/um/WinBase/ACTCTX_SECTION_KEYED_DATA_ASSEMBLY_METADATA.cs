@@ -3,23 +3,22 @@
 // Ported from um/WinBase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA
 {
-    public unsafe partial struct ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA
-    {
-        [NativeTypeName("PVOID")]
-        public void* lpInformation;
+    [NativeTypeName("PVOID")]
+    public void* lpInformation;
 
-        [NativeTypeName("PVOID")]
-        public void* lpSectionBase;
+    [NativeTypeName("PVOID")]
+    public void* lpSectionBase;
 
-        [NativeTypeName("ULONG")]
-        public uint ulSectionLength;
+    [NativeTypeName("ULONG")]
+    public uint ulSectionLength;
 
-        [NativeTypeName("PVOID")]
-        public void* lpSectionGlobalDataBase;
+    [NativeTypeName("PVOID")]
+    public void* lpSectionGlobalDataBase;
 
-        [NativeTypeName("ULONG")]
-        public uint ulSectionGlobalDataLength;
-    }
+    [NativeTypeName("ULONG")]
+    public uint ulSectionGlobalDataLength;
 }

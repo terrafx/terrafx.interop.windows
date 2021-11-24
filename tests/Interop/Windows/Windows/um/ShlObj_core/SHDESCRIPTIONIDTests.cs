@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SHDESCRIPTIONID" /> struct.</summary>
+public static unsafe partial class SHDESCRIPTIONIDTests
 {
-    /// <summary>Provides validation of the <see cref="SHDESCRIPTIONID" /> struct.</summary>
-    public static unsafe partial class SHDESCRIPTIONIDTests
+    /// <summary>Validates that the <see cref="SHDESCRIPTIONID" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SHDESCRIPTIONID" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SHDESCRIPTIONID>(), Is.EqualTo(sizeof(SHDESCRIPTIONID)));
-        }
+        Assert.That(Marshal.SizeOf<SHDESCRIPTIONID>(), Is.EqualTo(sizeof(SHDESCRIPTIONID)));
+    }
 
-        /// <summary>Validates that the <see cref="SHDESCRIPTIONID" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SHDESCRIPTIONID).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SHDESCRIPTIONID" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SHDESCRIPTIONID).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SHDESCRIPTIONID" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SHDESCRIPTIONID), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="SHDESCRIPTIONID" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SHDESCRIPTIONID), Is.EqualTo(20));
     }
 }

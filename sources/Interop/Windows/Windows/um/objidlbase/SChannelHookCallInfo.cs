@@ -5,24 +5,23 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SChannelHookCallInfo
 {
-    public unsafe partial struct SChannelHookCallInfo
-    {
-        [NativeTypeName("IID")]
-        public Guid iid;
+    [NativeTypeName("IID")]
+    public Guid iid;
 
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public Guid uCausality;
+    public Guid uCausality;
 
-        [NativeTypeName("DWORD")]
-        public uint dwServerPid;
+    [NativeTypeName("DWORD")]
+    public uint dwServerPid;
 
-        [NativeTypeName("DWORD")]
-        public uint iMethod;
+    [NativeTypeName("DWORD")]
+    public uint iMethod;
 
-        public void* pObject;
-    }
+    public void* pObject;
 }

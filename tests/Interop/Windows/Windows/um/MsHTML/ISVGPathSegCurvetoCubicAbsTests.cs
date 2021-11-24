@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISVGPathSegCurvetoCubicAbs" /> struct.</summary>
+public static unsafe partial class ISVGPathSegCurvetoCubicAbsTests
 {
-    /// <summary>Provides validation of the <see cref="ISVGPathSegCurvetoCubicAbs" /> struct.</summary>
-    public static unsafe partial class ISVGPathSegCurvetoCubicAbsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISVGPathSegCurvetoCubicAbs" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISVGPathSegCurvetoCubicAbs" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISVGPathSegCurvetoCubicAbs).GUID, Is.EqualTo(IID_ISVGPathSegCurvetoCubicAbs));
-        }
+        Assert.That(typeof(ISVGPathSegCurvetoCubicAbs).GUID, Is.EqualTo(IID_ISVGPathSegCurvetoCubicAbs));
+    }
 
-        /// <summary>Validates that the <see cref="ISVGPathSegCurvetoCubicAbs" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISVGPathSegCurvetoCubicAbs>(), Is.EqualTo(sizeof(ISVGPathSegCurvetoCubicAbs)));
-        }
+    /// <summary>Validates that the <see cref="ISVGPathSegCurvetoCubicAbs" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISVGPathSegCurvetoCubicAbs>(), Is.EqualTo(sizeof(ISVGPathSegCurvetoCubicAbs)));
+    }
 
-        /// <summary>Validates that the <see cref="ISVGPathSegCurvetoCubicAbs" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISVGPathSegCurvetoCubicAbs).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISVGPathSegCurvetoCubicAbs" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISVGPathSegCurvetoCubicAbs).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISVGPathSegCurvetoCubicAbs" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISVGPathSegCurvetoCubicAbs" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISVGPathSegCurvetoCubicAbs), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISVGPathSegCurvetoCubicAbs), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISVGPathSegCurvetoCubicAbs), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISVGPathSegCurvetoCubicAbs), Is.EqualTo(4));
         }
     }
 }

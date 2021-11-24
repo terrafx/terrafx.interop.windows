@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="EXTLOGFONTA" /> struct.</summary>
+public static unsafe partial class EXTLOGFONTATests
 {
-    /// <summary>Provides validation of the <see cref="EXTLOGFONTA" /> struct.</summary>
-    public static unsafe partial class EXTLOGFONTATests
+    /// <summary>Validates that the <see cref="EXTLOGFONTA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="EXTLOGFONTA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<EXTLOGFONTA>(), Is.EqualTo(sizeof(EXTLOGFONTA)));
-        }
+        Assert.That(Marshal.SizeOf<EXTLOGFONTA>(), Is.EqualTo(sizeof(EXTLOGFONTA)));
+    }
 
-        /// <summary>Validates that the <see cref="EXTLOGFONTA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(EXTLOGFONTA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="EXTLOGFONTA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(EXTLOGFONTA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="EXTLOGFONTA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(EXTLOGFONTA), Is.EqualTo(192));
-        }
+    /// <summary>Validates that the <see cref="EXTLOGFONTA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(EXTLOGFONTA), Is.EqualTo(192));
     }
 }

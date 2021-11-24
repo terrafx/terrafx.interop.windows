@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D3D11_BUFFER_UAV_FLAG
 {
-    [Flags]
-    public enum D3D11_BUFFER_UAV_FLAG
-    {
-        D3D11_BUFFER_UAV_FLAG_RAW = 0x1,
-        D3D11_BUFFER_UAV_FLAG_APPEND = 0x2,
-        D3D11_BUFFER_UAV_FLAG_COUNTER = 0x4,
-    }
+    D3D11_BUFFER_UAV_FLAG_RAW = 0x1,
+    D3D11_BUFFER_UAV_FLAG_APPEND = 0x2,
+    D3D11_BUFFER_UAV_FLAG_COUNTER = 0x4,
 }

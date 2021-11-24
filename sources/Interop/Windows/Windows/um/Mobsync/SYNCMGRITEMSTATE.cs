@@ -3,11 +3,10 @@
 // Ported from um/Mobsync.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SYNCMGRITEMSTATE
 {
-    public enum SYNCMGRITEMSTATE
-    {
-        SYNCMGRITEMSTATE_UNCHECKED = 0,
-        SYNCMGRITEMSTATE_CHECKED = 0x1,
-    }
+    SYNCMGRITEMSTATE_UNCHECKED = 0,
+    SYNCMGRITEMSTATE_CHECKED = 0x1,
 }

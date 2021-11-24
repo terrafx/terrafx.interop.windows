@@ -6,38 +6,37 @@
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.17763.0")]
+[StructLayout(LayoutKind.Explicit)]
+public partial struct PRJ_NOTIFICATION_PARAMETERS
 {
-    [SupportedOSPlatform("windows10.0.17763.0")]
-    [StructLayout(LayoutKind.Explicit)]
-    public partial struct PRJ_NOTIFICATION_PARAMETERS
+    [FieldOffset(0)]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/projectedfslib.h:407:5)")]
+    public _PostCreate_e__Struct PostCreate;
+
+    [FieldOffset(0)]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/projectedfslib.h:411:5)")]
+    public _FileRenamed_e__Struct FileRenamed;
+
+    [FieldOffset(0)]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/projectedfslib.h:415:5)")]
+    public _FileDeletedOnHandleClose_e__Struct FileDeletedOnHandleClose;
+
+    public partial struct _PostCreate_e__Struct
     {
-        [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/projectedfslib.h:407:5)")]
-        public _PostCreate_e__Struct PostCreate;
+        public PRJ_NOTIFY_TYPES NotificationMask;
+    }
 
-        [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/projectedfslib.h:411:5)")]
-        public _FileRenamed_e__Struct FileRenamed;
+    public partial struct _FileRenamed_e__Struct
+    {
+        public PRJ_NOTIFY_TYPES NotificationMask;
+    }
 
-        [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/projectedfslib.h:415:5)")]
-        public _FileDeletedOnHandleClose_e__Struct FileDeletedOnHandleClose;
-
-        public partial struct _PostCreate_e__Struct
-        {
-            public PRJ_NOTIFY_TYPES NotificationMask;
-        }
-
-        public partial struct _FileRenamed_e__Struct
-        {
-            public PRJ_NOTIFY_TYPES NotificationMask;
-        }
-
-        public partial struct _FileDeletedOnHandleClose_e__Struct
-        {
-            [NativeTypeName("BOOLEAN")]
-            public byte IsFileModified;
-        }
+    public partial struct _FileDeletedOnHandleClose_e__Struct
+    {
+        [NativeTypeName("BOOLEAN")]
+        public byte IsFileModified;
     }
 }

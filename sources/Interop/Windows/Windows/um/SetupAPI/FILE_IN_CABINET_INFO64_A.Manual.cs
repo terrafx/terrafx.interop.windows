@@ -3,29 +3,28 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct FILE_IN_CABINET_INFO64_A
 {
-    public unsafe partial struct FILE_IN_CABINET_INFO64_A
-    {
-        [NativeTypeName("PCSTR")]
-        public sbyte* NameInCabinet;
+    [NativeTypeName("PCSTR")]
+    public sbyte* NameInCabinet;
 
-        [NativeTypeName("DWORD")]
-        public uint FileSize;
+    [NativeTypeName("DWORD")]
+    public uint FileSize;
 
-        [NativeTypeName("DWORD")]
-        public uint Win32Error;
+    [NativeTypeName("DWORD")]
+    public uint Win32Error;
 
-        [NativeTypeName("WORD")]
-        public ushort DosDate;
+    [NativeTypeName("WORD")]
+    public ushort DosDate;
 
-        [NativeTypeName("WORD")]
-        public ushort DosTime;
+    [NativeTypeName("WORD")]
+    public ushort DosTime;
 
-        [NativeTypeName("WORD")]
-        public ushort DosAttribs;
+    [NativeTypeName("WORD")]
+    public ushort DosAttribs;
 
-        [NativeTypeName("CHAR [260]")]
-        public fixed sbyte FullTargetName[260];
-    }
+    [NativeTypeName("CHAR [260]")]
+    public fixed sbyte FullTargetName[260];
 }

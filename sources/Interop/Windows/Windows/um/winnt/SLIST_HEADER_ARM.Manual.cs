@@ -6,55 +6,54 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public partial struct SLIST_HEADER_ARM
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public partial struct SLIST_HEADER_ARM
+    [FieldOffset(0)]
+    [NativeTypeName("ULONGLONG")]
+    public ulong Alignment;
+
+    [FieldOffset(0)]
+    [NativeTypeName("_SLIST_HEADER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:21266:5)")]
+    public _Anonymous_e__Struct Anonymous;
+
+    public ref SLIST_ENTRY Next
     {
-        [FieldOffset(0)]
-        [NativeTypeName("ULONGLONG")]
-        public ulong Alignment;
-
-        [FieldOffset(0)]
-        [NativeTypeName("_SLIST_HEADER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:21266:5)")]
-        public _Anonymous_e__Struct Anonymous;
-
-        public ref SLIST_ENTRY Next
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Next, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Next, 1));
         }
+    }
 
-        public ref ushort Depth
+    public ref ushort Depth
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Depth, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Depth, 1));
         }
+    }
 
-        public ref ushort Reserved
+    public ref ushort Reserved
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Reserved, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Reserved, 1));
         }
+    }
 
-        public partial struct _Anonymous_e__Struct
-        {
-            public SLIST_ENTRY Next;
+    public partial struct _Anonymous_e__Struct
+    {
+        public SLIST_ENTRY Next;
 
-            [NativeTypeName("WORD")]
-            public ushort Depth;
+        [NativeTypeName("WORD")]
+        public ushort Depth;
 
-            [NativeTypeName("WORD")]
-            public ushort Reserved;
-        }
+        [NativeTypeName("WORD")]
+        public ushort Reserved;
     }
 }

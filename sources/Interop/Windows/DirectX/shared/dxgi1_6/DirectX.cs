@@ -7,12 +7,11 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public static partial class DirectX
 {
-    public static partial class DirectX
-    {
-        [SupportedOSPlatform("windows10.0.17134.0")]
-        [DllImport("dxgi", ExactSpelling = true)]
-        public static extern HRESULT DXGIDeclareAdapterRemovalSupport();
-    }
+    [SupportedOSPlatform("windows10.0.17134.0")]
+    [DllImport("dxgi", ExactSpelling = true)]
+    public static extern HRESULT DXGIDeclareAdapterRemovalSupport();
 }

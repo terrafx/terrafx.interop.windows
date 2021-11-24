@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PROCESS_POWER_THROTTLING_STATE" /> struct.</summary>
+public static unsafe partial class PROCESS_POWER_THROTTLING_STATETests
 {
-    /// <summary>Provides validation of the <see cref="PROCESS_POWER_THROTTLING_STATE" /> struct.</summary>
-    public static unsafe partial class PROCESS_POWER_THROTTLING_STATETests
+    /// <summary>Validates that the <see cref="PROCESS_POWER_THROTTLING_STATE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PROCESS_POWER_THROTTLING_STATE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PROCESS_POWER_THROTTLING_STATE>(), Is.EqualTo(sizeof(PROCESS_POWER_THROTTLING_STATE)));
-        }
+        Assert.That(Marshal.SizeOf<PROCESS_POWER_THROTTLING_STATE>(), Is.EqualTo(sizeof(PROCESS_POWER_THROTTLING_STATE)));
+    }
 
-        /// <summary>Validates that the <see cref="PROCESS_POWER_THROTTLING_STATE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PROCESS_POWER_THROTTLING_STATE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PROCESS_POWER_THROTTLING_STATE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PROCESS_POWER_THROTTLING_STATE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PROCESS_POWER_THROTTLING_STATE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(PROCESS_POWER_THROTTLING_STATE), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="PROCESS_POWER_THROTTLING_STATE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(PROCESS_POWER_THROTTLING_STATE), Is.EqualTo(12));
     }
 }

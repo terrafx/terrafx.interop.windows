@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SpInprocRecognizer" /> struct.</summary>
+public static unsafe partial class SpInprocRecognizerTests
 {
-    /// <summary>Provides validation of the <see cref="SpInprocRecognizer" /> struct.</summary>
-    public static unsafe partial class SpInprocRecognizerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpInprocRecognizer" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpInprocRecognizer" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SpInprocRecognizer).GUID, Is.EqualTo(CLSID_SpInprocRecognizer));
-        }
+        Assert.That(typeof(SpInprocRecognizer).GUID, Is.EqualTo(CLSID_SpInprocRecognizer));
+    }
 
-        /// <summary>Validates that the <see cref="SpInprocRecognizer" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SpInprocRecognizer>(), Is.EqualTo(sizeof(SpInprocRecognizer)));
-        }
+    /// <summary>Validates that the <see cref="SpInprocRecognizer" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SpInprocRecognizer>(), Is.EqualTo(sizeof(SpInprocRecognizer)));
+    }
 
-        /// <summary>Validates that the <see cref="SpInprocRecognizer" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SpInprocRecognizer).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SpInprocRecognizer" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SpInprocRecognizer).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SpInprocRecognizer" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SpInprocRecognizer), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SpInprocRecognizer" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SpInprocRecognizer), Is.EqualTo(1));
     }
 }

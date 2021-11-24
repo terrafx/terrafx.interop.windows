@@ -5,21 +5,20 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SP_REGISTER_CONTROL_STATUS32A
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SP_REGISTER_CONTROL_STATUS32A
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("PCSTR")]
-        public sbyte* FileName;
+    [NativeTypeName("PCSTR")]
+    public sbyte* FileName;
 
-        [NativeTypeName("DWORD")]
-        public uint Win32Error;
+    [NativeTypeName("DWORD")]
+    public uint Win32Error;
 
-        [NativeTypeName("DWORD")]
-        public uint FailureCode;
-    }
+    [NativeTypeName("DWORD")]
+    public uint FailureCode;
 }

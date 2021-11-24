@@ -5,26 +5,25 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct MPEGLAYER3WAVEFORMAT
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct MPEGLAYER3WAVEFORMAT
-    {
-        public WAVEFORMATEX wfx;
+    public WAVEFORMATEX wfx;
 
-        [NativeTypeName("WORD")]
-        public ushort wID;
+    [NativeTypeName("WORD")]
+    public ushort wID;
 
-        [NativeTypeName("DWORD")]
-        public uint fdwFlags;
+    [NativeTypeName("DWORD")]
+    public uint fdwFlags;
 
-        [NativeTypeName("WORD")]
-        public ushort nBlockSize;
+    [NativeTypeName("WORD")]
+    public ushort nBlockSize;
 
-        [NativeTypeName("WORD")]
-        public ushort nFramesPerBlock;
+    [NativeTypeName("WORD")]
+    public ushort nFramesPerBlock;
 
-        [NativeTypeName("WORD")]
-        public ushort nCodecDelay;
-    }
+    [NativeTypeName("WORD")]
+    public ushort nCodecDelay;
 }

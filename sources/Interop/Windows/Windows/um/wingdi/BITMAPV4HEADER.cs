@@ -3,67 +3,66 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct BITMAPV4HEADER
 {
-    public partial struct BITMAPV4HEADER
-    {
-        [NativeTypeName("DWORD")]
-        public uint bV4Size;
+    [NativeTypeName("DWORD")]
+    public uint bV4Size;
 
-        [NativeTypeName("LONG")]
-        public int bV4Width;
+    [NativeTypeName("LONG")]
+    public int bV4Width;
 
-        [NativeTypeName("LONG")]
-        public int bV4Height;
+    [NativeTypeName("LONG")]
+    public int bV4Height;
 
-        [NativeTypeName("WORD")]
-        public ushort bV4Planes;
+    [NativeTypeName("WORD")]
+    public ushort bV4Planes;
 
-        [NativeTypeName("WORD")]
-        public ushort bV4BitCount;
+    [NativeTypeName("WORD")]
+    public ushort bV4BitCount;
 
-        [NativeTypeName("DWORD")]
-        public uint bV4V4Compression;
+    [NativeTypeName("DWORD")]
+    public uint bV4V4Compression;
 
-        [NativeTypeName("DWORD")]
-        public uint bV4SizeImage;
+    [NativeTypeName("DWORD")]
+    public uint bV4SizeImage;
 
-        [NativeTypeName("LONG")]
-        public int bV4XPelsPerMeter;
+    [NativeTypeName("LONG")]
+    public int bV4XPelsPerMeter;
 
-        [NativeTypeName("LONG")]
-        public int bV4YPelsPerMeter;
+    [NativeTypeName("LONG")]
+    public int bV4YPelsPerMeter;
 
-        [NativeTypeName("DWORD")]
-        public uint bV4ClrUsed;
+    [NativeTypeName("DWORD")]
+    public uint bV4ClrUsed;
 
-        [NativeTypeName("DWORD")]
-        public uint bV4ClrImportant;
+    [NativeTypeName("DWORD")]
+    public uint bV4ClrImportant;
 
-        [NativeTypeName("DWORD")]
-        public uint bV4RedMask;
+    [NativeTypeName("DWORD")]
+    public uint bV4RedMask;
 
-        [NativeTypeName("DWORD")]
-        public uint bV4GreenMask;
+    [NativeTypeName("DWORD")]
+    public uint bV4GreenMask;
 
-        [NativeTypeName("DWORD")]
-        public uint bV4BlueMask;
+    [NativeTypeName("DWORD")]
+    public uint bV4BlueMask;
 
-        [NativeTypeName("DWORD")]
-        public uint bV4AlphaMask;
+    [NativeTypeName("DWORD")]
+    public uint bV4AlphaMask;
 
-        [NativeTypeName("DWORD")]
-        public uint bV4CSType;
+    [NativeTypeName("DWORD")]
+    public uint bV4CSType;
 
-        public CIEXYZTRIPLE bV4Endpoints;
+    public CIEXYZTRIPLE bV4Endpoints;
 
-        [NativeTypeName("DWORD")]
-        public uint bV4GammaRed;
+    [NativeTypeName("DWORD")]
+    public uint bV4GammaRed;
 
-        [NativeTypeName("DWORD")]
-        public uint bV4GammaGreen;
+    [NativeTypeName("DWORD")]
+    public uint bV4GammaGreen;
 
-        [NativeTypeName("DWORD")]
-        public uint bV4GammaBlue;
-    }
+    [NativeTypeName("DWORD")]
+    public uint bV4GammaBlue;
 }

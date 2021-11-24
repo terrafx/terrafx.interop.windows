@@ -3,14 +3,13 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct DISPLAYCONFIG_RATIONAL
-    {
-        [NativeTypeName("UINT32")]
-        public uint Numerator;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("UINT32")]
-        public uint Denominator;
-    }
+public partial struct DISPLAYCONFIG_RATIONAL
+{
+    [NativeTypeName("UINT32")]
+    public uint Numerator;
+
+    [NativeTypeName("UINT32")]
+    public uint Denominator;
 }

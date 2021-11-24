@@ -6,16 +6,15 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public partial struct WICBitmapPlaneDescription
 {
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct WICBitmapPlaneDescription
-    {
-        [NativeTypeName("WICPixelFormatGUID")]
-        public Guid Format;
+    [NativeTypeName("WICPixelFormatGUID")]
+    public Guid Format;
 
-        public uint Width;
+    public uint Width;
 
-        public uint Height;
-    }
+    public uint Height;
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SCHANNEL_ALERT_TOKEN" /> struct.</summary>
+public static unsafe partial class SCHANNEL_ALERT_TOKENTests
 {
-    /// <summary>Provides validation of the <see cref="SCHANNEL_ALERT_TOKEN" /> struct.</summary>
-    public static unsafe partial class SCHANNEL_ALERT_TOKENTests
+    /// <summary>Validates that the <see cref="SCHANNEL_ALERT_TOKEN" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SCHANNEL_ALERT_TOKEN" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SCHANNEL_ALERT_TOKEN>(), Is.EqualTo(sizeof(SCHANNEL_ALERT_TOKEN)));
-        }
+        Assert.That(Marshal.SizeOf<SCHANNEL_ALERT_TOKEN>(), Is.EqualTo(sizeof(SCHANNEL_ALERT_TOKEN)));
+    }
 
-        /// <summary>Validates that the <see cref="SCHANNEL_ALERT_TOKEN" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SCHANNEL_ALERT_TOKEN).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SCHANNEL_ALERT_TOKEN" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SCHANNEL_ALERT_TOKEN).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SCHANNEL_ALERT_TOKEN" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SCHANNEL_ALERT_TOKEN), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="SCHANNEL_ALERT_TOKEN" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SCHANNEL_ALERT_TOKEN), Is.EqualTo(12));
     }
 }

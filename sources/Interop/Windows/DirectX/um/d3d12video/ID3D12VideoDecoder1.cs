@@ -9,126 +9,125 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+[Guid("79A2E5FB-CCD2-469A-9FDE-195D10951F7E")]
+[NativeTypeName("struct ID3D12VideoDecoder1 : ID3D12VideoDecoder")]
+[NativeInheritance("ID3D12VideoDecoder")]
+public unsafe partial struct ID3D12VideoDecoder1 : ID3D12VideoDecoder1.Interface
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    [Guid("79A2E5FB-CCD2-469A-9FDE-195D10951F7E")]
-    [NativeTypeName("struct ID3D12VideoDecoder1 : ID3D12VideoDecoder")]
-    [NativeInheritance("ID3D12VideoDecoder")]
-    public unsafe partial struct ID3D12VideoDecoder1 : ID3D12VideoDecoder1.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ID3D12VideoDecoder1*, uint>)(lpVtbl[1]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ID3D12VideoDecoder1*, uint>)(lpVtbl[1]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ID3D12VideoDecoder1*, uint>)(lpVtbl[2]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ID3D12VideoDecoder1*, uint>)(lpVtbl[2]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData)
+    {
+        return ((delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, uint*, void*, int>)(lpVtbl[3]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint* pDataSize, void* pData)
-        {
-            return ((delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, uint*, void*, int>)(lpVtbl[3]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), guid, pDataSize, pData);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData)
+    {
+        return ((delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, uint, void*, int>)(lpVtbl[4]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* guid, uint DataSize, [NativeTypeName("const void *")] void* pData)
-        {
-            return ((delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, uint, void*, int>)(lpVtbl[4]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), guid, DataSize, pData);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
+    {
+        return ((delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, IUnknown*, int>)(lpVtbl[5]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), guid, pData);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* guid, [NativeTypeName("const IUnknown *")] IUnknown* pData)
-        {
-            return ((delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, IUnknown*, int>)(lpVtbl[5]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), guid, pData);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT SetName([NativeTypeName("LPCWSTR")] ushort* Name)
+    {
+        return ((delegate* unmanaged<ID3D12VideoDecoder1*, ushort*, int>)(lpVtbl[6]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), Name);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT SetName([NativeTypeName("LPCWSTR")] ushort* Name)
-        {
-            return ((delegate* unmanaged<ID3D12VideoDecoder1*, ushort*, int>)(lpVtbl[6]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), Name);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppvDevice)
+    {
+        return ((delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, void**, int>)(lpVtbl[7]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), riid, ppvDevice);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(7)]
-        public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppvDevice)
-        {
-            return ((delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, void**, int>)(lpVtbl[7]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), riid, ppvDevice);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public D3D12_VIDEO_DECODER_DESC GetDesc()
+    {
+        D3D12_VIDEO_DECODER_DESC result;
+        return *((delegate* unmanaged<ID3D12VideoDecoder1*, D3D12_VIDEO_DECODER_DESC*, D3D12_VIDEO_DECODER_DESC*>)(lpVtbl[8]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), &result);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(8)]
-        public D3D12_VIDEO_DECODER_DESC GetDesc()
-        {
-            D3D12_VIDEO_DECODER_DESC result;
-            return *((delegate* unmanaged<ID3D12VideoDecoder1*, D3D12_VIDEO_DECODER_DESC*, D3D12_VIDEO_DECODER_DESC*>)(lpVtbl[8]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), &result);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT GetProtectedResourceSession([NativeTypeName("const IID &")] Guid* riid, void** ppProtectedSession)
+    {
+        return ((delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, void**, int>)(lpVtbl[9]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), riid, ppProtectedSession);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : ID3D12VideoDecoder.Interface
+    {
         [VtblIndex(9)]
-        public HRESULT GetProtectedResourceSession([NativeTypeName("const IID &")] Guid* riid, void** ppProtectedSession)
-        {
-            return ((delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, void**, int>)(lpVtbl[9]))((ID3D12VideoDecoder1*)Unsafe.AsPointer(ref this), riid, ppProtectedSession);
-        }
+        HRESULT GetProtectedResourceSession([NativeTypeName("const IID &")] Guid* riid, void** ppProtectedSession);
+    }
 
-        public interface Interface : ID3D12VideoDecoder.Interface
-        {
-            [VtblIndex(9)]
-            HRESULT GetProtectedResourceSession([NativeTypeName("const IID &")] Guid* riid, void** ppProtectedSession);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12VideoDecoder1*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12VideoDecoder1*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12VideoDecoder1*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12VideoDecoder1*, uint> Release;
+        [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, uint*, void*, int> GetPrivateData;
 
-            [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, uint*, void*, int> GetPrivateData;
+        [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, uint, void*, int> SetPrivateData;
 
-            [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, uint, void*, int> SetPrivateData;
+        [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
-            [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12VideoDecoder1*, ushort*, int> SetName;
 
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12VideoDecoder1*, ushort*, int> SetName;
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, void**, int> GetDevice;
 
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, void**, int> GetDevice;
+        [NativeTypeName("D3D12_VIDEO_DECODER_DESC () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12VideoDecoder1*, D3D12_VIDEO_DECODER_DESC*, D3D12_VIDEO_DECODER_DESC*> GetDesc;
 
-            [NativeTypeName("D3D12_VIDEO_DECODER_DESC () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12VideoDecoder1*, D3D12_VIDEO_DECODER_DESC*, D3D12_VIDEO_DECODER_DESC*> GetDesc;
-
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, void**, int> GetProtectedResourceSession;
-        }
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12VideoDecoder1*, Guid*, void**, int> GetProtectedResourceSession;
     }
 }

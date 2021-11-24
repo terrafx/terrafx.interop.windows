@@ -3,14 +3,13 @@
 // Ported from um/Audioclient.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class Windows
-    {
-        [NativeTypeName("#define AUDIOCLOCK_CHARACTERISTIC_FIXED_FREQ 0x00000001")]
-        public const int AUDIOCLOCK_CHARACTERISTIC_FIXED_FREQ = 0x00000001;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("#define AMBISONICS_PARAM_VERSION_1 1")]
-        public const int AMBISONICS_PARAM_VERSION_1 = 1;
-    }
+public static partial class Windows
+{
+    [NativeTypeName("#define AUDIOCLOCK_CHARACTERISTIC_FIXED_FREQ 0x00000001")]
+    public const int AUDIOCLOCK_CHARACTERISTIC_FIXED_FREQ = 0x00000001;
+
+    [NativeTypeName("#define AMBISONICS_PARAM_VERSION_1 1")]
+    public const int AMBISONICS_PARAM_VERSION_1 = 1;
 }

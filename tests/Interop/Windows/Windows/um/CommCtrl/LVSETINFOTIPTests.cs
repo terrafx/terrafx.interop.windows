@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="LVSETINFOTIP" /> struct.</summary>
+public static unsafe partial class LVSETINFOTIPTests
 {
-    /// <summary>Provides validation of the <see cref="LVSETINFOTIP" /> struct.</summary>
-    public static unsafe partial class LVSETINFOTIPTests
+    /// <summary>Validates that the <see cref="LVSETINFOTIP" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="LVSETINFOTIP" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<LVSETINFOTIP>(), Is.EqualTo(sizeof(LVSETINFOTIP)));
-        }
+        Assert.That(Marshal.SizeOf<LVSETINFOTIP>(), Is.EqualTo(sizeof(LVSETINFOTIP)));
+    }
 
-        /// <summary>Validates that the <see cref="LVSETINFOTIP" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(LVSETINFOTIP).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="LVSETINFOTIP" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(LVSETINFOTIP).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="LVSETINFOTIP" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="LVSETINFOTIP" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(LVSETINFOTIP), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(LVSETINFOTIP), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(LVSETINFOTIP), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(LVSETINFOTIP), Is.EqualTo(20));
         }
     }
 }

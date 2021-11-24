@@ -3,20 +3,19 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct IMAGEHLP_CBA_EVENT
 {
-    public unsafe partial struct IMAGEHLP_CBA_EVENT
-    {
-        [NativeTypeName("DWORD")]
-        public uint severity;
+    [NativeTypeName("DWORD")]
+    public uint severity;
 
-        [NativeTypeName("DWORD")]
-        public uint code;
+    [NativeTypeName("DWORD")]
+    public uint code;
 
-        [NativeTypeName("PCHAR")]
-        public sbyte* desc;
+    [NativeTypeName("PCHAR")]
+    public sbyte* desc;
 
-        [NativeTypeName("PVOID")]
-        public void* @object;
-    }
+    [NativeTypeName("PVOID")]
+    public void* @object;
 }

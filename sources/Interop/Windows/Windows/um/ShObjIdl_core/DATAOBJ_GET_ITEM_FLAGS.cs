@@ -5,15 +5,14 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum DATAOBJ_GET_ITEM_FLAGS
 {
-    [Flags]
-    public enum DATAOBJ_GET_ITEM_FLAGS
-    {
-        DOGIF_DEFAULT = 0,
-        DOGIF_TRAVERSE_LINK = 0x1,
-        DOGIF_NO_HDROP = 0x2,
-        DOGIF_NO_URL = 0x4,
-        DOGIF_ONLY_IF_ONE = 0x8,
-    }
+    DOGIF_DEFAULT = 0,
+    DOGIF_TRAVERSE_LINK = 0x1,
+    DOGIF_NO_HDROP = 0x2,
+    DOGIF_NO_URL = 0x4,
+    DOGIF_ONLY_IF_ONE = 0x8,
 }

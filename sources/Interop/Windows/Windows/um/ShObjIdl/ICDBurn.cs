@@ -7,90 +7,89 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3D73A659-E5D0-4D42-AFC0-5121BA425C8D")]
+[NativeTypeName("struct ICDBurn : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ICDBurn : ICDBurn.Interface
 {
-    [Guid("3D73A659-E5D0-4D42-AFC0-5121BA425C8D")]
-    [NativeTypeName("struct ICDBurn : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICDBurn : ICDBurn.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ICDBurn*, Guid*, void**, int>)(lpVtbl[0]))((ICDBurn*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ICDBurn*, Guid*, void**, int>)(lpVtbl[0]))((ICDBurn*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ICDBurn*, uint>)(lpVtbl[1]))((ICDBurn*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ICDBurn*, uint>)(lpVtbl[1]))((ICDBurn*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ICDBurn*, uint>)(lpVtbl[2]))((ICDBurn*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ICDBurn*, uint>)(lpVtbl[2]))((ICDBurn*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetRecorderDriveLetter([NativeTypeName("LPWSTR")] ushort* pszDrive, uint cch)
+    {
+        return ((delegate* unmanaged<ICDBurn*, ushort*, uint, int>)(lpVtbl[3]))((ICDBurn*)Unsafe.AsPointer(ref this), pszDrive, cch);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Burn(HWND hwnd)
+    {
+        return ((delegate* unmanaged<ICDBurn*, HWND, int>)(lpVtbl[4]))((ICDBurn*)Unsafe.AsPointer(ref this), hwnd);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT HasRecordableDrive(BOOL* pfHasRecorder)
+    {
+        return ((delegate* unmanaged<ICDBurn*, BOOL*, int>)(lpVtbl[5]))((ICDBurn*)Unsafe.AsPointer(ref this), pfHasRecorder);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetRecorderDriveLetter([NativeTypeName("LPWSTR")] ushort* pszDrive, uint cch)
-        {
-            return ((delegate* unmanaged<ICDBurn*, ushort*, uint, int>)(lpVtbl[3]))((ICDBurn*)Unsafe.AsPointer(ref this), pszDrive, cch);
-        }
+        HRESULT GetRecorderDriveLetter([NativeTypeName("LPWSTR")] ushort* pszDrive, uint cch);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Burn(HWND hwnd)
-        {
-            return ((delegate* unmanaged<ICDBurn*, HWND, int>)(lpVtbl[4]))((ICDBurn*)Unsafe.AsPointer(ref this), hwnd);
-        }
+        HRESULT Burn(HWND hwnd);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT HasRecordableDrive(BOOL* pfHasRecorder)
-        {
-            return ((delegate* unmanaged<ICDBurn*, BOOL*, int>)(lpVtbl[5]))((ICDBurn*)Unsafe.AsPointer(ref this), pfHasRecorder);
-        }
+        HRESULT HasRecordableDrive(BOOL* pfHasRecorder);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetRecorderDriveLetter([NativeTypeName("LPWSTR")] ushort* pszDrive, uint cch);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICDBurn*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT Burn(HWND hwnd);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ICDBurn*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT HasRecordableDrive(BOOL* pfHasRecorder);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ICDBurn*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICDBurn*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (LPWSTR, UINT) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICDBurn*, ushort*, uint, int> GetRecorderDriveLetter;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ICDBurn*, uint> AddRef;
+        [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICDBurn*, HWND, int> Burn;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ICDBurn*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPWSTR, UINT) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICDBurn*, ushort*, uint, int> GetRecorderDriveLetter;
-
-            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICDBurn*, HWND, int> Burn;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICDBurn*, BOOL*, int> HasRecordableDrive;
-        }
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICDBurn*, BOOL*, int> HasRecordableDrive;
     }
 }

@@ -3,13 +3,12 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum REFS_SMR_VOLUME_GC_STATE
 {
-    public enum REFS_SMR_VOLUME_GC_STATE
-    {
-        SmrGcStateInactive = 0,
-        SmrGcStatePaused = 1,
-        SmrGcStateActive = 2,
-        SmrGcStateActiveFullSpeed = 3,
-    }
+    SmrGcStateInactive = 0,
+    SmrGcStatePaused = 1,
+    SmrGcStateActive = 2,
+    SmrGcStateActiveFullSpeed = 3,
 }

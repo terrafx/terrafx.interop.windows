@@ -6,57 +6,56 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public partial struct LARGE_INTEGER
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public partial struct LARGE_INTEGER
+    [FieldOffset(0)]
+    [NativeTypeName("_LARGE_INTEGER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:857:5)")]
+    public _Anonymous_e__Struct Anonymous;
+
+    [FieldOffset(0)]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:861:5)")]
+    public _u_e__Struct u;
+
+    [FieldOffset(0)]
+    [NativeTypeName("LONGLONG")]
+    public long QuadPart;
+
+    public ref uint LowPart
     {
-        [FieldOffset(0)]
-        [NativeTypeName("_LARGE_INTEGER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:857:5)")]
-        public _Anonymous_e__Struct Anonymous;
-
-        [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:861:5)")]
-        public _u_e__Struct u;
-
-        [FieldOffset(0)]
-        [NativeTypeName("LONGLONG")]
-        public long QuadPart;
-
-        public ref uint LowPart
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.LowPart, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.LowPart, 1));
         }
+    }
 
-        public ref int HighPart
+    public ref int HighPart
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.HighPart, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.HighPart, 1));
         }
+    }
 
-        public partial struct _Anonymous_e__Struct
-        {
-            [NativeTypeName("DWORD")]
-            public uint LowPart;
+    public partial struct _Anonymous_e__Struct
+    {
+        [NativeTypeName("DWORD")]
+        public uint LowPart;
 
-            [NativeTypeName("LONG")]
-            public int HighPart;
-        }
+        [NativeTypeName("LONG")]
+        public int HighPart;
+    }
 
-        public partial struct _u_e__Struct
-        {
-            [NativeTypeName("DWORD")]
-            public uint LowPart;
+    public partial struct _u_e__Struct
+    {
+        [NativeTypeName("DWORD")]
+        public uint LowPart;
 
-            [NativeTypeName("LONG")]
-            public int HighPart;
-        }
+        [NativeTypeName("LONG")]
+        public int HighPart;
     }
 }

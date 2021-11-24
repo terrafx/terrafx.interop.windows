@@ -8,33 +8,32 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class IID
-    {
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid IID_ID3D10ShaderReflection1
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x83, 0x77, 0x45, 0xC3,
-                    0x46, 0xA8,
-                    0xCE, 0x47,
-                    0x95,
-                    0x20,
-                    0xCE,
-                    0xA6,
-                    0xF6,
-                    0x6E,
-                    0x74,
-                    0x47
-                };
+namespace TerraFX.Interop.Windows;
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+public static partial class IID
+{
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ID3D10ShaderReflection1
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x83, 0x77, 0x45, 0xC3,
+                0x46, 0xA8,
+                0xCE, 0x47,
+                0x95,
+                0x20,
+                0xCE,
+                0xA6,
+                0xF6,
+                0x6E,
+                0x74,
+                0x47
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

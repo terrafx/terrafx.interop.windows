@@ -3,13 +3,12 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct EMRSETVIEWPORTEXTEX
-    {
-        public EMR emr;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("SIZEL")]
-        public SIZE szlExtent;
-    }
+public partial struct EMRSETVIEWPORTEXTEX
+{
+    public EMR emr;
+
+    [NativeTypeName("SIZEL")]
+    public SIZE szlExtent;
 }

@@ -5,13 +5,12 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct SpatialAudioHrtfDirectivityCardioid
-    {
-        public SpatialAudioHrtfDirectivity directivity;
+namespace TerraFX.Interop.Windows;
 
-        public float Order;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct SpatialAudioHrtfDirectivityCardioid
+{
+    public SpatialAudioHrtfDirectivity directivity;
+
+    public float Order;
 }

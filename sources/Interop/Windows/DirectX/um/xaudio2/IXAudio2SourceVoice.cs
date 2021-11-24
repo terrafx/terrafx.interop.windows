@@ -6,338 +6,337 @@
 using System.Runtime.CompilerServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[NativeTypeName("struct IXAudio2SourceVoice : IXAudio2Voice")]
+[NativeInheritance("IXAudio2Voice")]
+public unsafe partial struct IXAudio2SourceVoice : IXAudio2SourceVoice.Interface
 {
-    [NativeTypeName("struct IXAudio2SourceVoice : IXAudio2Voice")]
-    [NativeInheritance("IXAudio2Voice")]
-    public unsafe partial struct IXAudio2SourceVoice : IXAudio2SourceVoice.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public void GetVoiceDetails(XAUDIO2_VOICE_DETAILS* pVoiceDetails)
     {
-        public void** lpVtbl;
+        ((delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_VOICE_DETAILS*, void>)(lpVtbl[0]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pVoiceDetails);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public void GetVoiceDetails(XAUDIO2_VOICE_DETAILS* pVoiceDetails)
-        {
-            ((delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_VOICE_DETAILS*, void>)(lpVtbl[0]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pVoiceDetails);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    public HRESULT SetOutputVoices([NativeTypeName("const XAUDIO2_VOICE_SENDS *")] XAUDIO2_VOICE_SENDS* pSendList)
+    {
+        return ((delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_VOICE_SENDS*, int>)(lpVtbl[1]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pSendList);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        public HRESULT SetOutputVoices([NativeTypeName("const XAUDIO2_VOICE_SENDS *")] XAUDIO2_VOICE_SENDS* pSendList)
-        {
-            return ((delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_VOICE_SENDS*, int>)(lpVtbl[1]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pSendList);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    public HRESULT SetEffectChain([NativeTypeName("const XAUDIO2_EFFECT_CHAIN *")] XAUDIO2_EFFECT_CHAIN* pEffectChain)
+    {
+        return ((delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_EFFECT_CHAIN*, int>)(lpVtbl[2]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pEffectChain);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        public HRESULT SetEffectChain([NativeTypeName("const XAUDIO2_EFFECT_CHAIN *")] XAUDIO2_EFFECT_CHAIN* pEffectChain)
-        {
-            return ((delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_EFFECT_CHAIN*, int>)(lpVtbl[2]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pEffectChain);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT EnableEffect([NativeTypeName("UINT32")] uint EffectIndex, [NativeTypeName("UINT32")] uint OperationSet = 0)
+    {
+        return ((delegate* unmanaged<IXAudio2SourceVoice*, uint, uint, int>)(lpVtbl[3]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), EffectIndex, OperationSet);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT EnableEffect([NativeTypeName("UINT32")] uint EffectIndex, [NativeTypeName("UINT32")] uint OperationSet = 0)
-        {
-            return ((delegate* unmanaged<IXAudio2SourceVoice*, uint, uint, int>)(lpVtbl[3]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), EffectIndex, OperationSet);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT DisableEffect([NativeTypeName("UINT32")] uint EffectIndex, [NativeTypeName("UINT32")] uint OperationSet = 0)
+    {
+        return ((delegate* unmanaged<IXAudio2SourceVoice*, uint, uint, int>)(lpVtbl[4]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), EffectIndex, OperationSet);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT DisableEffect([NativeTypeName("UINT32")] uint EffectIndex, [NativeTypeName("UINT32")] uint OperationSet = 0)
-        {
-            return ((delegate* unmanaged<IXAudio2SourceVoice*, uint, uint, int>)(lpVtbl[4]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), EffectIndex, OperationSet);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public void GetEffectState([NativeTypeName("UINT32")] uint EffectIndex, BOOL* pEnabled)
+    {
+        ((delegate* unmanaged<IXAudio2SourceVoice*, uint, BOOL*, void>)(lpVtbl[5]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), EffectIndex, pEnabled);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public void GetEffectState([NativeTypeName("UINT32")] uint EffectIndex, BOOL* pEnabled)
-        {
-            ((delegate* unmanaged<IXAudio2SourceVoice*, uint, BOOL*, void>)(lpVtbl[5]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), EffectIndex, pEnabled);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT SetEffectParameters([NativeTypeName("UINT32")] uint EffectIndex, [NativeTypeName("const void *")] void* pParameters, [NativeTypeName("UINT32")] uint ParametersByteSize, [NativeTypeName("UINT32")] uint OperationSet = 0)
+    {
+        return ((delegate* unmanaged<IXAudio2SourceVoice*, uint, void*, uint, uint, int>)(lpVtbl[6]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), EffectIndex, pParameters, ParametersByteSize, OperationSet);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT SetEffectParameters([NativeTypeName("UINT32")] uint EffectIndex, [NativeTypeName("const void *")] void* pParameters, [NativeTypeName("UINT32")] uint ParametersByteSize, [NativeTypeName("UINT32")] uint OperationSet = 0)
-        {
-            return ((delegate* unmanaged<IXAudio2SourceVoice*, uint, void*, uint, uint, int>)(lpVtbl[6]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), EffectIndex, pParameters, ParametersByteSize, OperationSet);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT GetEffectParameters([NativeTypeName("UINT32")] uint EffectIndex, void* pParameters, [NativeTypeName("UINT32")] uint ParametersByteSize)
+    {
+        return ((delegate* unmanaged<IXAudio2SourceVoice*, uint, void*, uint, int>)(lpVtbl[7]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), EffectIndex, pParameters, ParametersByteSize);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(7)]
-        public HRESULT GetEffectParameters([NativeTypeName("UINT32")] uint EffectIndex, void* pParameters, [NativeTypeName("UINT32")] uint ParametersByteSize)
-        {
-            return ((delegate* unmanaged<IXAudio2SourceVoice*, uint, void*, uint, int>)(lpVtbl[7]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), EffectIndex, pParameters, ParametersByteSize);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT SetFilterParameters([NativeTypeName("const XAUDIO2_FILTER_PARAMETERS *")] XAUDIO2_FILTER_PARAMETERS* pParameters, [NativeTypeName("UINT32")] uint OperationSet = 0)
+    {
+        return ((delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_FILTER_PARAMETERS*, uint, int>)(lpVtbl[8]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pParameters, OperationSet);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(8)]
-        public HRESULT SetFilterParameters([NativeTypeName("const XAUDIO2_FILTER_PARAMETERS *")] XAUDIO2_FILTER_PARAMETERS* pParameters, [NativeTypeName("UINT32")] uint OperationSet = 0)
-        {
-            return ((delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_FILTER_PARAMETERS*, uint, int>)(lpVtbl[8]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pParameters, OperationSet);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public void GetFilterParameters(XAUDIO2_FILTER_PARAMETERS* pParameters)
+    {
+        ((delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_FILTER_PARAMETERS*, void>)(lpVtbl[9]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pParameters);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(9)]
-        public void GetFilterParameters(XAUDIO2_FILTER_PARAMETERS* pParameters)
-        {
-            ((delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_FILTER_PARAMETERS*, void>)(lpVtbl[9]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pParameters);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT SetOutputFilterParameters(IXAudio2Voice* pDestinationVoice, [NativeTypeName("const XAUDIO2_FILTER_PARAMETERS *")] XAUDIO2_FILTER_PARAMETERS* pParameters, [NativeTypeName("UINT32")] uint OperationSet = 0)
+    {
+        return ((delegate* unmanaged<IXAudio2SourceVoice*, IXAudio2Voice*, XAUDIO2_FILTER_PARAMETERS*, uint, int>)(lpVtbl[10]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pDestinationVoice, pParameters, OperationSet);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(10)]
-        public HRESULT SetOutputFilterParameters(IXAudio2Voice* pDestinationVoice, [NativeTypeName("const XAUDIO2_FILTER_PARAMETERS *")] XAUDIO2_FILTER_PARAMETERS* pParameters, [NativeTypeName("UINT32")] uint OperationSet = 0)
-        {
-            return ((delegate* unmanaged<IXAudio2SourceVoice*, IXAudio2Voice*, XAUDIO2_FILTER_PARAMETERS*, uint, int>)(lpVtbl[10]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pDestinationVoice, pParameters, OperationSet);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public void GetOutputFilterParameters(IXAudio2Voice* pDestinationVoice, XAUDIO2_FILTER_PARAMETERS* pParameters)
+    {
+        ((delegate* unmanaged<IXAudio2SourceVoice*, IXAudio2Voice*, XAUDIO2_FILTER_PARAMETERS*, void>)(lpVtbl[11]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pDestinationVoice, pParameters);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(11)]
-        public void GetOutputFilterParameters(IXAudio2Voice* pDestinationVoice, XAUDIO2_FILTER_PARAMETERS* pParameters)
-        {
-            ((delegate* unmanaged<IXAudio2SourceVoice*, IXAudio2Voice*, XAUDIO2_FILTER_PARAMETERS*, void>)(lpVtbl[11]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pDestinationVoice, pParameters);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT SetVolume(float Volume, [NativeTypeName("UINT32")] uint OperationSet = 0)
+    {
+        return ((delegate* unmanaged<IXAudio2SourceVoice*, float, uint, int>)(lpVtbl[12]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), Volume, OperationSet);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(12)]
-        public HRESULT SetVolume(float Volume, [NativeTypeName("UINT32")] uint OperationSet = 0)
-        {
-            return ((delegate* unmanaged<IXAudio2SourceVoice*, float, uint, int>)(lpVtbl[12]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), Volume, OperationSet);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public void GetVolume(float* pVolume)
+    {
+        ((delegate* unmanaged<IXAudio2SourceVoice*, float*, void>)(lpVtbl[13]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pVolume);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(13)]
-        public void GetVolume(float* pVolume)
-        {
-            ((delegate* unmanaged<IXAudio2SourceVoice*, float*, void>)(lpVtbl[13]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pVolume);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT SetChannelVolumes([NativeTypeName("UINT32")] uint Channels, [NativeTypeName("const float *")] float* pVolumes, [NativeTypeName("UINT32")] uint OperationSet = 0)
+    {
+        return ((delegate* unmanaged<IXAudio2SourceVoice*, uint, float*, uint, int>)(lpVtbl[14]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), Channels, pVolumes, OperationSet);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(14)]
-        public HRESULT SetChannelVolumes([NativeTypeName("UINT32")] uint Channels, [NativeTypeName("const float *")] float* pVolumes, [NativeTypeName("UINT32")] uint OperationSet = 0)
-        {
-            return ((delegate* unmanaged<IXAudio2SourceVoice*, uint, float*, uint, int>)(lpVtbl[14]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), Channels, pVolumes, OperationSet);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public void GetChannelVolumes([NativeTypeName("UINT32")] uint Channels, float* pVolumes)
+    {
+        ((delegate* unmanaged<IXAudio2SourceVoice*, uint, float*, void>)(lpVtbl[15]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), Channels, pVolumes);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(15)]
-        public void GetChannelVolumes([NativeTypeName("UINT32")] uint Channels, float* pVolumes)
-        {
-            ((delegate* unmanaged<IXAudio2SourceVoice*, uint, float*, void>)(lpVtbl[15]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), Channels, pVolumes);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT SetOutputMatrix(IXAudio2Voice* pDestinationVoice, [NativeTypeName("UINT32")] uint SourceChannels, [NativeTypeName("UINT32")] uint DestinationChannels, [NativeTypeName("const float *")] float* pLevelMatrix, [NativeTypeName("UINT32")] uint OperationSet = 0)
+    {
+        return ((delegate* unmanaged<IXAudio2SourceVoice*, IXAudio2Voice*, uint, uint, float*, uint, int>)(lpVtbl[16]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrix, OperationSet);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(16)]
-        public HRESULT SetOutputMatrix(IXAudio2Voice* pDestinationVoice, [NativeTypeName("UINT32")] uint SourceChannels, [NativeTypeName("UINT32")] uint DestinationChannels, [NativeTypeName("const float *")] float* pLevelMatrix, [NativeTypeName("UINT32")] uint OperationSet = 0)
-        {
-            return ((delegate* unmanaged<IXAudio2SourceVoice*, IXAudio2Voice*, uint, uint, float*, uint, int>)(lpVtbl[16]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrix, OperationSet);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public void GetOutputMatrix(IXAudio2Voice* pDestinationVoice, [NativeTypeName("UINT32")] uint SourceChannels, [NativeTypeName("UINT32")] uint DestinationChannels, float* pLevelMatrix)
+    {
+        ((delegate* unmanaged<IXAudio2SourceVoice*, IXAudio2Voice*, uint, uint, float*, void>)(lpVtbl[17]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrix);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(17)]
-        public void GetOutputMatrix(IXAudio2Voice* pDestinationVoice, [NativeTypeName("UINT32")] uint SourceChannels, [NativeTypeName("UINT32")] uint DestinationChannels, float* pLevelMatrix)
-        {
-            ((delegate* unmanaged<IXAudio2SourceVoice*, IXAudio2Voice*, uint, uint, float*, void>)(lpVtbl[17]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrix);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public void DestroyVoice()
+    {
+        ((delegate* unmanaged<IXAudio2SourceVoice*, void>)(lpVtbl[18]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(18)]
-        public void DestroyVoice()
-        {
-            ((delegate* unmanaged<IXAudio2SourceVoice*, void>)(lpVtbl[18]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT Start([NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("UINT32")] uint OperationSet = 0)
+    {
+        return ((delegate* unmanaged<IXAudio2SourceVoice*, uint, uint, int>)(lpVtbl[19]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), Flags, OperationSet);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT Stop([NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("UINT32")] uint OperationSet = 0)
+    {
+        return ((delegate* unmanaged<IXAudio2SourceVoice*, uint, uint, int>)(lpVtbl[20]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), Flags, OperationSet);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(21)]
+    public HRESULT SubmitSourceBuffer([NativeTypeName("const XAUDIO2_BUFFER *")] XAUDIO2_BUFFER* pBuffer, [NativeTypeName("const XAUDIO2_BUFFER_WMA *")] XAUDIO2_BUFFER_WMA* pBufferWMA = null)
+    {
+        return ((delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_BUFFER*, XAUDIO2_BUFFER_WMA*, int>)(lpVtbl[21]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pBuffer, pBufferWMA);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(22)]
+    public HRESULT FlushSourceBuffers()
+    {
+        return ((delegate* unmanaged<IXAudio2SourceVoice*, int>)(lpVtbl[22]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(23)]
+    public HRESULT Discontinuity()
+    {
+        return ((delegate* unmanaged<IXAudio2SourceVoice*, int>)(lpVtbl[23]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(24)]
+    public HRESULT ExitLoop([NativeTypeName("UINT32")] uint OperationSet = 0)
+    {
+        return ((delegate* unmanaged<IXAudio2SourceVoice*, uint, int>)(lpVtbl[24]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), OperationSet);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(25)]
+    public void GetState(XAUDIO2_VOICE_STATE* pVoiceState, [NativeTypeName("UINT32")] uint Flags = 0)
+    {
+        ((delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_VOICE_STATE*, uint, void>)(lpVtbl[25]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pVoiceState, Flags);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(26)]
+    public HRESULT SetFrequencyRatio(float Ratio, [NativeTypeName("UINT32")] uint OperationSet = 0)
+    {
+        return ((delegate* unmanaged<IXAudio2SourceVoice*, float, uint, int>)(lpVtbl[26]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), Ratio, OperationSet);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(27)]
+    public void GetFrequencyRatio(float* pRatio)
+    {
+        ((delegate* unmanaged<IXAudio2SourceVoice*, float*, void>)(lpVtbl[27]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pRatio);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(28)]
+    public HRESULT SetSourceSampleRate([NativeTypeName("UINT32")] uint NewSourceSampleRate)
+    {
+        return ((delegate* unmanaged<IXAudio2SourceVoice*, uint, int>)(lpVtbl[28]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), NewSourceSampleRate);
+    }
+
+    public interface Interface : IXAudio2Voice.Interface
+    {
         [VtblIndex(19)]
-        public HRESULT Start([NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("UINT32")] uint OperationSet = 0)
-        {
-            return ((delegate* unmanaged<IXAudio2SourceVoice*, uint, uint, int>)(lpVtbl[19]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), Flags, OperationSet);
-        }
+        HRESULT Start([NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("UINT32")] uint OperationSet = 0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT Stop([NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("UINT32")] uint OperationSet = 0)
-        {
-            return ((delegate* unmanaged<IXAudio2SourceVoice*, uint, uint, int>)(lpVtbl[20]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), Flags, OperationSet);
-        }
+        HRESULT Stop([NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("UINT32")] uint OperationSet = 0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT SubmitSourceBuffer([NativeTypeName("const XAUDIO2_BUFFER *")] XAUDIO2_BUFFER* pBuffer, [NativeTypeName("const XAUDIO2_BUFFER_WMA *")] XAUDIO2_BUFFER_WMA* pBufferWMA = null)
-        {
-            return ((delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_BUFFER*, XAUDIO2_BUFFER_WMA*, int>)(lpVtbl[21]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pBuffer, pBufferWMA);
-        }
+        HRESULT SubmitSourceBuffer([NativeTypeName("const XAUDIO2_BUFFER *")] XAUDIO2_BUFFER* pBuffer, [NativeTypeName("const XAUDIO2_BUFFER_WMA *")] XAUDIO2_BUFFER_WMA* pBufferWMA = null);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        public HRESULT FlushSourceBuffers()
-        {
-            return ((delegate* unmanaged<IXAudio2SourceVoice*, int>)(lpVtbl[22]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT FlushSourceBuffers();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public HRESULT Discontinuity()
-        {
-            return ((delegate* unmanaged<IXAudio2SourceVoice*, int>)(lpVtbl[23]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Discontinuity();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT ExitLoop([NativeTypeName("UINT32")] uint OperationSet = 0)
-        {
-            return ((delegate* unmanaged<IXAudio2SourceVoice*, uint, int>)(lpVtbl[24]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), OperationSet);
-        }
+        HRESULT ExitLoop([NativeTypeName("UINT32")] uint OperationSet = 0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public void GetState(XAUDIO2_VOICE_STATE* pVoiceState, [NativeTypeName("UINT32")] uint Flags = 0)
-        {
-            ((delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_VOICE_STATE*, uint, void>)(lpVtbl[25]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pVoiceState, Flags);
-        }
+        void GetState(XAUDIO2_VOICE_STATE* pVoiceState, [NativeTypeName("UINT32")] uint Flags = 0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        public HRESULT SetFrequencyRatio(float Ratio, [NativeTypeName("UINT32")] uint OperationSet = 0)
-        {
-            return ((delegate* unmanaged<IXAudio2SourceVoice*, float, uint, int>)(lpVtbl[26]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), Ratio, OperationSet);
-        }
+        HRESULT SetFrequencyRatio(float Ratio, [NativeTypeName("UINT32")] uint OperationSet = 0);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        public void GetFrequencyRatio(float* pRatio)
-        {
-            ((delegate* unmanaged<IXAudio2SourceVoice*, float*, void>)(lpVtbl[27]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), pRatio);
-        }
+        void GetFrequencyRatio(float* pRatio);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        public HRESULT SetSourceSampleRate([NativeTypeName("UINT32")] uint NewSourceSampleRate)
-        {
-            return ((delegate* unmanaged<IXAudio2SourceVoice*, uint, int>)(lpVtbl[28]))((IXAudio2SourceVoice*)Unsafe.AsPointer(ref this), NewSourceSampleRate);
-        }
+        HRESULT SetSourceSampleRate([NativeTypeName("UINT32")] uint NewSourceSampleRate);
+    }
 
-        public interface Interface : IXAudio2Voice.Interface
-        {
-            [VtblIndex(19)]
-            HRESULT Start([NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("UINT32")] uint OperationSet = 0);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("void (XAUDIO2_VOICE_DETAILS *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_VOICE_DETAILS*, void> GetVoiceDetails;
 
-            [VtblIndex(20)]
-            HRESULT Stop([NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("UINT32")] uint OperationSet = 0);
+        [NativeTypeName("HRESULT (const XAUDIO2_VOICE_SENDS *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_VOICE_SENDS*, int> SetOutputVoices;
 
-            [VtblIndex(21)]
-            HRESULT SubmitSourceBuffer([NativeTypeName("const XAUDIO2_BUFFER *")] XAUDIO2_BUFFER* pBuffer, [NativeTypeName("const XAUDIO2_BUFFER_WMA *")] XAUDIO2_BUFFER_WMA* pBufferWMA = null);
+        [NativeTypeName("HRESULT (const XAUDIO2_EFFECT_CHAIN *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_EFFECT_CHAIN*, int> SetEffectChain;
 
-            [VtblIndex(22)]
-            HRESULT FlushSourceBuffers();
+        [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, uint, uint, int> EnableEffect;
 
-            [VtblIndex(23)]
-            HRESULT Discontinuity();
+        [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, uint, uint, int> DisableEffect;
 
-            [VtblIndex(24)]
-            HRESULT ExitLoop([NativeTypeName("UINT32")] uint OperationSet = 0);
+        [NativeTypeName("void (UINT32, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, uint, BOOL*, void> GetEffectState;
 
-            [VtblIndex(25)]
-            void GetState(XAUDIO2_VOICE_STATE* pVoiceState, [NativeTypeName("UINT32")] uint Flags = 0);
+        [NativeTypeName("HRESULT (UINT32, const void *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, uint, void*, uint, uint, int> SetEffectParameters;
 
-            [VtblIndex(26)]
-            HRESULT SetFrequencyRatio(float Ratio, [NativeTypeName("UINT32")] uint OperationSet = 0);
+        [NativeTypeName("HRESULT (UINT32, void *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, uint, void*, uint, int> GetEffectParameters;
 
-            [VtblIndex(27)]
-            void GetFrequencyRatio(float* pRatio);
+        [NativeTypeName("HRESULT (const XAUDIO2_FILTER_PARAMETERS *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_FILTER_PARAMETERS*, uint, int> SetFilterParameters;
 
-            [VtblIndex(28)]
-            HRESULT SetSourceSampleRate([NativeTypeName("UINT32")] uint NewSourceSampleRate);
-        }
+        [NativeTypeName("void (XAUDIO2_FILTER_PARAMETERS *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_FILTER_PARAMETERS*, void> GetFilterParameters;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("void (XAUDIO2_VOICE_DETAILS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_VOICE_DETAILS*, void> GetVoiceDetails;
+        [NativeTypeName("HRESULT (IXAudio2Voice *, const XAUDIO2_FILTER_PARAMETERS *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, IXAudio2Voice*, XAUDIO2_FILTER_PARAMETERS*, uint, int> SetOutputFilterParameters;
 
-            [NativeTypeName("HRESULT (const XAUDIO2_VOICE_SENDS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_VOICE_SENDS*, int> SetOutputVoices;
+        [NativeTypeName("void (IXAudio2Voice *, XAUDIO2_FILTER_PARAMETERS *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, IXAudio2Voice*, XAUDIO2_FILTER_PARAMETERS*, void> GetOutputFilterParameters;
 
-            [NativeTypeName("HRESULT (const XAUDIO2_EFFECT_CHAIN *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_EFFECT_CHAIN*, int> SetEffectChain;
+        [NativeTypeName("HRESULT (float, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, float, uint, int> SetVolume;
 
-            [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, uint, uint, int> EnableEffect;
+        [NativeTypeName("void (float *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, float*, void> GetVolume;
 
-            [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, uint, uint, int> DisableEffect;
+        [NativeTypeName("HRESULT (UINT32, const float *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, uint, float*, uint, int> SetChannelVolumes;
 
-            [NativeTypeName("void (UINT32, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, uint, BOOL*, void> GetEffectState;
+        [NativeTypeName("void (UINT32, float *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, uint, float*, void> GetChannelVolumes;
 
-            [NativeTypeName("HRESULT (UINT32, const void *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, uint, void*, uint, uint, int> SetEffectParameters;
+        [NativeTypeName("HRESULT (IXAudio2Voice *, UINT32, UINT32, const float *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, IXAudio2Voice*, uint, uint, float*, uint, int> SetOutputMatrix;
 
-            [NativeTypeName("HRESULT (UINT32, void *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, uint, void*, uint, int> GetEffectParameters;
+        [NativeTypeName("void (IXAudio2Voice *, UINT32, UINT32, float *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, IXAudio2Voice*, uint, uint, float*, void> GetOutputMatrix;
 
-            [NativeTypeName("HRESULT (const XAUDIO2_FILTER_PARAMETERS *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_FILTER_PARAMETERS*, uint, int> SetFilterParameters;
+        [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, void> DestroyVoice;
 
-            [NativeTypeName("void (XAUDIO2_FILTER_PARAMETERS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_FILTER_PARAMETERS*, void> GetFilterParameters;
+        [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, uint, uint, int> Start;
 
-            [NativeTypeName("HRESULT (IXAudio2Voice *, const XAUDIO2_FILTER_PARAMETERS *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, IXAudio2Voice*, XAUDIO2_FILTER_PARAMETERS*, uint, int> SetOutputFilterParameters;
+        [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, uint, uint, int> Stop;
 
-            [NativeTypeName("void (IXAudio2Voice *, XAUDIO2_FILTER_PARAMETERS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, IXAudio2Voice*, XAUDIO2_FILTER_PARAMETERS*, void> GetOutputFilterParameters;
+        [NativeTypeName("HRESULT (const XAUDIO2_BUFFER *, const XAUDIO2_BUFFER_WMA *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_BUFFER*, XAUDIO2_BUFFER_WMA*, int> SubmitSourceBuffer;
 
-            [NativeTypeName("HRESULT (float, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, float, uint, int> SetVolume;
+        [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, int> FlushSourceBuffers;
 
-            [NativeTypeName("void (float *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, float*, void> GetVolume;
+        [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, int> Discontinuity;
 
-            [NativeTypeName("HRESULT (UINT32, const float *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, uint, float*, uint, int> SetChannelVolumes;
+        [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, uint, int> ExitLoop;
 
-            [NativeTypeName("void (UINT32, float *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, uint, float*, void> GetChannelVolumes;
+        [NativeTypeName("void (XAUDIO2_VOICE_STATE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_VOICE_STATE*, uint, void> GetState;
 
-            [NativeTypeName("HRESULT (IXAudio2Voice *, UINT32, UINT32, const float *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, IXAudio2Voice*, uint, uint, float*, uint, int> SetOutputMatrix;
+        [NativeTypeName("HRESULT (float, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, float, uint, int> SetFrequencyRatio;
 
-            [NativeTypeName("void (IXAudio2Voice *, UINT32, UINT32, float *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, IXAudio2Voice*, uint, uint, float*, void> GetOutputMatrix;
+        [NativeTypeName("void (float *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, float*, void> GetFrequencyRatio;
 
-            [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, void> DestroyVoice;
-
-            [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, uint, uint, int> Start;
-
-            [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, uint, uint, int> Stop;
-
-            [NativeTypeName("HRESULT (const XAUDIO2_BUFFER *, const XAUDIO2_BUFFER_WMA *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_BUFFER*, XAUDIO2_BUFFER_WMA*, int> SubmitSourceBuffer;
-
-            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, int> FlushSourceBuffers;
-
-            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, int> Discontinuity;
-
-            [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, uint, int> ExitLoop;
-
-            [NativeTypeName("void (XAUDIO2_VOICE_STATE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, XAUDIO2_VOICE_STATE*, uint, void> GetState;
-
-            [NativeTypeName("HRESULT (float, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, float, uint, int> SetFrequencyRatio;
-
-            [NativeTypeName("void (float *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, float*, void> GetFrequencyRatio;
-
-            [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2SourceVoice*, uint, int> SetSourceSampleRate;
-        }
+        [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2SourceVoice*, uint, int> SetSourceSampleRate;
     }
 }

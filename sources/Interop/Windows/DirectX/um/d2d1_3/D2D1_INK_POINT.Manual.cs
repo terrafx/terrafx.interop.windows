@@ -5,13 +5,12 @@
 
 using static TerraFX.Interop.DirectX.DirectX;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D1_INK_POINT
 {
-    public partial struct D2D1_INK_POINT
+    public D2D1_INK_POINT([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F point, float radius)
     {
-        public D2D1_INK_POINT([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F point, float radius)
-        {
-            this = InkPoint(point, radius);
-        }
+        this = InkPoint(point, radius);
     }
 }

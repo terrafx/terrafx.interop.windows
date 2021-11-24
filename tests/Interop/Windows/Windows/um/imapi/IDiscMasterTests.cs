@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDiscMaster" /> struct.</summary>
+public static unsafe partial class IDiscMasterTests
 {
-    /// <summary>Provides validation of the <see cref="IDiscMaster" /> struct.</summary>
-    public static unsafe partial class IDiscMasterTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDiscMaster" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDiscMaster" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDiscMaster).GUID, Is.EqualTo(IID_IDiscMaster));
-        }
+        Assert.That(typeof(IDiscMaster).GUID, Is.EqualTo(IID_IDiscMaster));
+    }
 
-        /// <summary>Validates that the <see cref="IDiscMaster" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDiscMaster>(), Is.EqualTo(sizeof(IDiscMaster)));
-        }
+    /// <summary>Validates that the <see cref="IDiscMaster" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDiscMaster>(), Is.EqualTo(sizeof(IDiscMaster)));
+    }
 
-        /// <summary>Validates that the <see cref="IDiscMaster" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDiscMaster).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDiscMaster" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDiscMaster).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDiscMaster" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDiscMaster" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDiscMaster), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDiscMaster), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDiscMaster), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDiscMaster), Is.EqualTo(4));
         }
     }
 }

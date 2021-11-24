@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CREATESTRUCTW" /> struct.</summary>
+public static unsafe partial class CREATESTRUCTWTests
 {
-    /// <summary>Provides validation of the <see cref="CREATESTRUCTW" /> struct.</summary>
-    public static unsafe partial class CREATESTRUCTWTests
+    /// <summary>Validates that the <see cref="CREATESTRUCTW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CREATESTRUCTW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CREATESTRUCTW>(), Is.EqualTo(sizeof(CREATESTRUCTW)));
-        }
+        Assert.That(Marshal.SizeOf<CREATESTRUCTW>(), Is.EqualTo(sizeof(CREATESTRUCTW)));
+    }
 
-        /// <summary>Validates that the <see cref="CREATESTRUCTW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CREATESTRUCTW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CREATESTRUCTW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CREATESTRUCTW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CREATESTRUCTW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CREATESTRUCTW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CREATESTRUCTW), Is.EqualTo(80));
-            }
-            else
-            {
-                Assert.That(sizeof(CREATESTRUCTW), Is.EqualTo(48));
-            }
+            Assert.That(sizeof(CREATESTRUCTW), Is.EqualTo(80));
+        }
+        else
+        {
+            Assert.That(sizeof(CREATESTRUCTW), Is.EqualTo(48));
         }
     }
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DRAWITEMSTRUCT" /> struct.</summary>
+public static unsafe partial class DRAWITEMSTRUCTTests
 {
-    /// <summary>Provides validation of the <see cref="DRAWITEMSTRUCT" /> struct.</summary>
-    public static unsafe partial class DRAWITEMSTRUCTTests
+    /// <summary>Validates that the <see cref="DRAWITEMSTRUCT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DRAWITEMSTRUCT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DRAWITEMSTRUCT>(), Is.EqualTo(sizeof(DRAWITEMSTRUCT)));
-        }
+        Assert.That(Marshal.SizeOf<DRAWITEMSTRUCT>(), Is.EqualTo(sizeof(DRAWITEMSTRUCT)));
+    }
 
-        /// <summary>Validates that the <see cref="DRAWITEMSTRUCT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DRAWITEMSTRUCT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DRAWITEMSTRUCT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DRAWITEMSTRUCT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DRAWITEMSTRUCT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DRAWITEMSTRUCT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DRAWITEMSTRUCT), Is.EqualTo(64));
-            }
-            else
-            {
-                Assert.That(sizeof(DRAWITEMSTRUCT), Is.EqualTo(48));
-            }
+            Assert.That(sizeof(DRAWITEMSTRUCT), Is.EqualTo(64));
+        }
+        else
+        {
+            Assert.That(sizeof(DRAWITEMSTRUCT), Is.EqualTo(48));
         }
     }
 }

@@ -5,18 +5,17 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct DEVICEDUMP_SUBSECTION_POINTER
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct DEVICEDUMP_SUBSECTION_POINTER
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwSize;
+    [NativeTypeName("DWORD")]
+    public uint dwSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint dwOffset;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwOffset;
 }

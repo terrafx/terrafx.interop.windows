@@ -3,22 +3,21 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum DISPID_SpeechObjectToken
 {
-    public enum DISPID_SpeechObjectToken
-    {
-        DISPID_SOTId = 1,
-        DISPID_SOTDataKey = (DISPID_SOTId + 1),
-        DISPID_SOTCategory = (DISPID_SOTDataKey + 1),
-        DISPID_SOTGetDescription = (DISPID_SOTCategory + 1),
-        DISPID_SOTSetId = (DISPID_SOTGetDescription + 1),
-        DISPID_SOTGetAttribute = (DISPID_SOTSetId + 1),
-        DISPID_SOTCreateInstance = (DISPID_SOTGetAttribute + 1),
-        DISPID_SOTRemove = (DISPID_SOTCreateInstance + 1),
-        DISPID_SOTGetStorageFileName = (DISPID_SOTRemove + 1),
-        DISPID_SOTRemoveStorageFileName = (DISPID_SOTGetStorageFileName + 1),
-        DISPID_SOTIsUISupported = (DISPID_SOTRemoveStorageFileName + 1),
-        DISPID_SOTDisplayUI = (DISPID_SOTIsUISupported + 1),
-        DISPID_SOTMatchesAttributes = (DISPID_SOTDisplayUI + 1),
-    }
+    DISPID_SOTId = 1,
+    DISPID_SOTDataKey = (DISPID_SOTId + 1),
+    DISPID_SOTCategory = (DISPID_SOTDataKey + 1),
+    DISPID_SOTGetDescription = (DISPID_SOTCategory + 1),
+    DISPID_SOTSetId = (DISPID_SOTGetDescription + 1),
+    DISPID_SOTGetAttribute = (DISPID_SOTSetId + 1),
+    DISPID_SOTCreateInstance = (DISPID_SOTGetAttribute + 1),
+    DISPID_SOTRemove = (DISPID_SOTCreateInstance + 1),
+    DISPID_SOTGetStorageFileName = (DISPID_SOTRemove + 1),
+    DISPID_SOTRemoveStorageFileName = (DISPID_SOTGetStorageFileName + 1),
+    DISPID_SOTIsUISupported = (DISPID_SOTRemoveStorageFileName + 1),
+    DISPID_SOTDisplayUI = (DISPID_SOTIsUISupported + 1),
+    DISPID_SOTMatchesAttributes = (DISPID_SOTDisplayUI + 1),
 }

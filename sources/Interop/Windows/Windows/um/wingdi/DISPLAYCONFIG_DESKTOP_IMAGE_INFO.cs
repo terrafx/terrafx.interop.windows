@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.17763.0")]
+public partial struct DISPLAYCONFIG_DESKTOP_IMAGE_INFO
 {
-    [SupportedOSPlatform("windows10.0.17763.0")]
-    public partial struct DISPLAYCONFIG_DESKTOP_IMAGE_INFO
-    {
-        public POINTL PathSourceSize;
+    public POINTL PathSourceSize;
 
-        public RECTL DesktopImageRegion;
+    public RECTL DesktopImageRegion;
 
-        public RECTL DesktopImageClip;
-    }
+    public RECTL DesktopImageClip;
 }

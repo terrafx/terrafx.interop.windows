@@ -3,26 +3,25 @@
 // Ported from um/objidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct RemSTGMEDIUM
 {
-    public unsafe partial struct RemSTGMEDIUM
-    {
-        [NativeTypeName("DWORD")]
-        public uint tymed;
+    [NativeTypeName("DWORD")]
+    public uint tymed;
 
-        [NativeTypeName("DWORD")]
-        public uint dwHandleType;
+    [NativeTypeName("DWORD")]
+    public uint dwHandleType;
 
-        [NativeTypeName("ULONG")]
-        public uint pData;
+    [NativeTypeName("ULONG")]
+    public uint pData;
 
-        [NativeTypeName("ULONG")]
-        public uint pUnkForRelease;
+    [NativeTypeName("ULONG")]
+    public uint pUnkForRelease;
 
-        [NativeTypeName("ULONG")]
-        public uint cbData;
+    [NativeTypeName("ULONG")]
+    public uint cbData;
 
-        [NativeTypeName("byte [1]")]
-        public fixed byte data[1];
-    }
+    [NativeTypeName("byte [1]")]
+    public fixed byte data[1];
 }

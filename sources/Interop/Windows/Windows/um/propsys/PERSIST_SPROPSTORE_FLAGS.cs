@@ -3,12 +3,11 @@
 // Ported from um/propsys.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum PERSIST_SPROPSTORE_FLAGS
 {
-    public enum PERSIST_SPROPSTORE_FLAGS
-    {
-        FPSPS_DEFAULT = 0,
-        FPSPS_READONLY = 0x1,
-        FPSPS_TREAT_NEW_VALUES_AS_DIRTY = 0x2,
-    }
+    FPSPS_DEFAULT = 0,
+    FPSPS_READONLY = 0x1,
+    FPSPS_TREAT_NEW_VALUES_AS_DIRTY = 0x2,
 }

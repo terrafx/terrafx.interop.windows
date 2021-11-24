@@ -3,14 +3,13 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct SPNORMALIZATIONLIST
-    {
-        [NativeTypeName("ULONG")]
-        public uint ulSize;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("WCHAR **")]
-        public ushort** ppszzNormalizedList;
-    }
+public unsafe partial struct SPNORMALIZATIONLIST
+{
+    [NativeTypeName("ULONG")]
+    public uint ulSize;
+
+    [NativeTypeName("WCHAR **")]
+    public ushort** ppszzNormalizedList;
 }

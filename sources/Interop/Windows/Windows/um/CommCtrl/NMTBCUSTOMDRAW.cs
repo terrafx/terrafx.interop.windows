@@ -3,36 +3,35 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct NMTBCUSTOMDRAW
 {
-    public partial struct NMTBCUSTOMDRAW
-    {
-        public NMCUSTOMDRAW nmcd;
+    public NMCUSTOMDRAW nmcd;
 
-        public HBRUSH hbrMonoDither;
+    public HBRUSH hbrMonoDither;
 
-        public HBRUSH hbrLines;
+    public HBRUSH hbrLines;
 
-        public HPEN hpenLines;
+    public HPEN hpenLines;
 
-        public COLORREF clrText;
+    public COLORREF clrText;
 
-        public COLORREF clrMark;
+    public COLORREF clrMark;
 
-        public COLORREF clrTextHighlight;
+    public COLORREF clrTextHighlight;
 
-        public COLORREF clrBtnFace;
+    public COLORREF clrBtnFace;
 
-        public COLORREF clrBtnHighlight;
+    public COLORREF clrBtnHighlight;
 
-        public COLORREF clrHighlightHotTrack;
+    public COLORREF clrHighlightHotTrack;
 
-        public RECT rcText;
+    public RECT rcText;
 
-        public int nStringBkMode;
+    public int nStringBkMode;
 
-        public int nHLStringBkMode;
+    public int nHLStringBkMode;
 
-        public int iListGap;
-    }
+    public int iListGap;
 }

@@ -5,24 +5,23 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct DEVICE_INFO
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct DEVICE_INFO
-    {
-        [NativeTypeName("BSTR")]
-        public ushort* pFriendlyDeviceName;
+    [NativeTypeName("BSTR")]
+    public ushort* pFriendlyDeviceName;
 
-        [NativeTypeName("BSTR")]
-        public ushort* pUniqueDeviceName;
+    [NativeTypeName("BSTR")]
+    public ushort* pUniqueDeviceName;
 
-        [NativeTypeName("BSTR")]
-        public ushort* pManufacturerName;
+    [NativeTypeName("BSTR")]
+    public ushort* pManufacturerName;
 
-        [NativeTypeName("BSTR")]
-        public ushort* pModelName;
+    [NativeTypeName("BSTR")]
+    public ushort* pModelName;
 
-        [NativeTypeName("BSTR")]
-        public ushort* pIconURL;
-    }
+    [NativeTypeName("BSTR")]
+    public ushort* pIconURL;
 }

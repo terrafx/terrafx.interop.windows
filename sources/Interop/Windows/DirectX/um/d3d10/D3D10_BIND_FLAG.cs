@@ -5,17 +5,16 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D3D10_BIND_FLAG
 {
-    [Flags]
-    public enum D3D10_BIND_FLAG
-    {
-        D3D10_BIND_VERTEX_BUFFER = 0x1,
-        D3D10_BIND_INDEX_BUFFER = 0x2,
-        D3D10_BIND_CONSTANT_BUFFER = 0x4,
-        D3D10_BIND_SHADER_RESOURCE = 0x8,
-        D3D10_BIND_STREAM_OUTPUT = 0x10,
-        D3D10_BIND_RENDER_TARGET = 0x20,
-        D3D10_BIND_DEPTH_STENCIL = 0x40,
-    }
+    D3D10_BIND_VERTEX_BUFFER = 0x1,
+    D3D10_BIND_INDEX_BUFFER = 0x2,
+    D3D10_BIND_CONSTANT_BUFFER = 0x4,
+    D3D10_BIND_SHADER_RESOURCE = 0x8,
+    D3D10_BIND_STREAM_OUTPUT = 0x10,
+    D3D10_BIND_RENDER_TARGET = 0x20,
+    D3D10_BIND_DEPTH_STENCIL = 0x40,
 }

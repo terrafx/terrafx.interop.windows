@@ -6,68 +6,67 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[StructLayout(LayoutKind.Explicit)]
+public partial struct D3D11_AUTHENTICATED_PROTECTION_FLAGS
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public partial struct D3D11_AUTHENTICATED_PROTECTION_FLAGS
+    [FieldOffset(0)]
+    [NativeTypeName("struct __MIDL___MIDL_itf_d3d11_0000_0034_0001")]
+    public _Flags_e__Struct Flags;
+
+    [FieldOffset(0)]
+    public uint Value;
+
+    public partial struct _Flags_e__Struct
     {
-        [FieldOffset(0)]
-        [NativeTypeName("struct __MIDL___MIDL_itf_d3d11_0000_0034_0001")]
-        public _Flags_e__Struct Flags;
+        public uint _bitfield;
 
-        [FieldOffset(0)]
-        public uint Value;
-
-        public partial struct _Flags_e__Struct
+        [NativeTypeName("uint : 1")]
+        public uint ProtectionEnabled
         {
-            public uint _bitfield;
-
-            [NativeTypeName("uint : 1")]
-            public uint ProtectionEnabled
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
             {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return _bitfield & 0x1u;
-                }
-
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                set
-                {
-                    _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
-                }
+                return _bitfield & 0x1u;
             }
 
-            [NativeTypeName("uint : 1")]
-            public uint OverlayOrFullscreenRequired
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
             {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return (_bitfield >> 1) & 0x1u;
-                }
+                _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
+            }
+        }
 
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                set
-                {
-                    _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
-                }
+        [NativeTypeName("uint : 1")]
+        public uint OverlayOrFullscreenRequired
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (_bitfield >> 1) & 0x1u;
             }
 
-            [NativeTypeName("uint : 30")]
-            public uint Reserved
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
             {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return (_bitfield >> 2) & 0x3FFFFFFFu;
-                }
+                _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
+            }
+        }
 
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                set
-                {
-                    _bitfield = (_bitfield & ~(0x3FFFFFFFu << 2)) | ((value & 0x3FFFFFFFu) << 2);
-                }
+        [NativeTypeName("uint : 30")]
+        public uint Reserved
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return (_bitfield >> 2) & 0x3FFFFFFFu;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _bitfield = (_bitfield & ~(0x3FFFFFFFu << 2)) | ((value & 0x3FFFFFFFu) << 2);
             }
         }
     }

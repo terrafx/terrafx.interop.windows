@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PROPSHEETPAGEA" /> struct.</summary>
+public static unsafe partial class PROPSHEETPAGEATests
 {
-    /// <summary>Provides validation of the <see cref="PROPSHEETPAGEA" /> struct.</summary>
-    public static unsafe partial class PROPSHEETPAGEATests
+    /// <summary>Validates that the <see cref="PROPSHEETPAGEA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PROPSHEETPAGEA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PROPSHEETPAGEA>(), Is.EqualTo(sizeof(PROPSHEETPAGEA)));
-        }
+        Assert.That(Marshal.SizeOf<PROPSHEETPAGEA>(), Is.EqualTo(sizeof(PROPSHEETPAGEA)));
+    }
 
-        /// <summary>Validates that the <see cref="PROPSHEETPAGEA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PROPSHEETPAGEA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PROPSHEETPAGEA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PROPSHEETPAGEA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PROPSHEETPAGEA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="PROPSHEETPAGEA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(PROPSHEETPAGEA), Is.EqualTo(104));
-            }
-            else
-            {
-                Assert.That(sizeof(PROPSHEETPAGEA), Is.EqualTo(56));
-            }
+            Assert.That(sizeof(PROPSHEETPAGEA), Is.EqualTo(104));
+        }
+        else
+        {
+            Assert.That(sizeof(PROPSHEETPAGEA), Is.EqualTo(56));
         }
     }
 }

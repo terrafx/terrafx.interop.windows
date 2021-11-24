@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PROTOCOL_ARGUMENT" /> struct.</summary>
+public static unsafe partial class PROTOCOL_ARGUMENTTests
 {
-    /// <summary>Provides validation of the <see cref="PROTOCOL_ARGUMENT" /> struct.</summary>
-    public static unsafe partial class PROTOCOL_ARGUMENTTests
+    /// <summary>Validates that the <see cref="PROTOCOL_ARGUMENT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PROTOCOL_ARGUMENT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PROTOCOL_ARGUMENT>(), Is.EqualTo(sizeof(PROTOCOL_ARGUMENT)));
-        }
+        Assert.That(Marshal.SizeOf<PROTOCOL_ARGUMENT>(), Is.EqualTo(sizeof(PROTOCOL_ARGUMENT)));
+    }
 
-        /// <summary>Validates that the <see cref="PROTOCOL_ARGUMENT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PROTOCOL_ARGUMENT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PROTOCOL_ARGUMENT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PROTOCOL_ARGUMENT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PROTOCOL_ARGUMENT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="PROTOCOL_ARGUMENT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(PROTOCOL_ARGUMENT), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(PROTOCOL_ARGUMENT), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(PROTOCOL_ARGUMENT), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(PROTOCOL_ARGUMENT), Is.EqualTo(8));
         }
     }
 }

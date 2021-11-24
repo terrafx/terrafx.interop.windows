@@ -7,16 +7,15 @@ using NUnit.Framework;
 using System;
 using static TerraFX.Interop.Windows.LIBID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="LIBID" /> class.</summary>
+public static partial class LIBIDTests
 {
-    /// <summary>Provides validation of the <see cref="LIBID" /> class.</summary>
-    public static partial class LIBIDTests
+    /// <summary>Validates that the value of the <see cref="LIBID_InkD2DRendererLib" /> property is correct.</summary>
+    [Test]
+    public static void LIBID_InkD2DRendererLibTest()
     {
-        /// <summary>Validates that the value of the <see cref="LIBID_InkD2DRendererLib" /> property is correct.</summary>
-        [Test]
-        public static void LIBID_InkD2DRendererLibTest()
-        {
-            Assert.That(LIBID_InkD2DRendererLib, Is.EqualTo(new Guid(0x390d0ab0, 0x19e2, 0x46bb, 0x86, 0x2e, 0xb0, 0x9f, 0x3c, 0xdc, 0xf8, 0xb9)));
-        }
+        Assert.That(LIBID_InkD2DRendererLib, Is.EqualTo(new Guid(0x390d0ab0, 0x19e2, 0x46bb, 0x86, 0x2e, 0xb0, 0x9f, 0x3c, 0xdc, 0xf8, 0xb9)));
     }
 }

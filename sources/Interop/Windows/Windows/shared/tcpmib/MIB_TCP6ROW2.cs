@@ -3,31 +3,30 @@
 // Ported from shared/tcpmib.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MIB_TCP6ROW2
 {
-    public partial struct MIB_TCP6ROW2
-    {
-        public IN6_ADDR LocalAddr;
+    public IN6_ADDR LocalAddr;
 
-        [NativeTypeName("DWORD")]
-        public uint dwLocalScopeId;
+    [NativeTypeName("DWORD")]
+    public uint dwLocalScopeId;
 
-        [NativeTypeName("DWORD")]
-        public uint dwLocalPort;
+    [NativeTypeName("DWORD")]
+    public uint dwLocalPort;
 
-        public IN6_ADDR RemoteAddr;
+    public IN6_ADDR RemoteAddr;
 
-        [NativeTypeName("DWORD")]
-        public uint dwRemoteScopeId;
+    [NativeTypeName("DWORD")]
+    public uint dwRemoteScopeId;
 
-        [NativeTypeName("DWORD")]
-        public uint dwRemotePort;
+    [NativeTypeName("DWORD")]
+    public uint dwRemotePort;
 
-        public MIB_TCP_STATE State;
+    public MIB_TCP_STATE State;
 
-        [NativeTypeName("DWORD")]
-        public uint dwOwningPid;
+    [NativeTypeName("DWORD")]
+    public uint dwOwningPid;
 
-        public TCP_CONNECTION_OFFLOAD_STATE dwOffloadState;
-    }
+    public TCP_CONNECTION_OFFLOAD_STATE dwOffloadState;
 }

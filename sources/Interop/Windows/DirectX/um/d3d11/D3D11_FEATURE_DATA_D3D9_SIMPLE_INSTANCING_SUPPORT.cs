@@ -6,11 +6,10 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.1")]
+public partial struct D3D11_FEATURE_DATA_D3D9_SIMPLE_INSTANCING_SUPPORT
 {
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct D3D11_FEATURE_DATA_D3D9_SIMPLE_INSTANCING_SUPPORT
-    {
-        public BOOL SimpleInstancingSupported;
-    }
+    public BOOL SimpleInstancingSupported;
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TCITEMA" /> struct.</summary>
+public static unsafe partial class TCITEMATests
 {
-    /// <summary>Provides validation of the <see cref="TCITEMA" /> struct.</summary>
-    public static unsafe partial class TCITEMATests
+    /// <summary>Validates that the <see cref="TCITEMA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TCITEMA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TCITEMA>(), Is.EqualTo(sizeof(TCITEMA)));
-        }
+        Assert.That(Marshal.SizeOf<TCITEMA>(), Is.EqualTo(sizeof(TCITEMA)));
+    }
 
-        /// <summary>Validates that the <see cref="TCITEMA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TCITEMA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TCITEMA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TCITEMA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TCITEMA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="TCITEMA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(TCITEMA), Is.EqualTo(40));
-            }
-            else
-            {
-                Assert.That(sizeof(TCITEMA), Is.EqualTo(28));
-            }
+            Assert.That(sizeof(TCITEMA), Is.EqualTo(40));
+        }
+        else
+        {
+            Assert.That(sizeof(TCITEMA), Is.EqualTo(28));
         }
     }
 }

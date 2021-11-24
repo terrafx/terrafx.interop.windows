@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IPersistMediaPropertyBag" /> struct.</summary>
+public static unsafe partial class IPersistMediaPropertyBagTests
 {
-    /// <summary>Provides validation of the <see cref="IPersistMediaPropertyBag" /> struct.</summary>
-    public static unsafe partial class IPersistMediaPropertyBagTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPersistMediaPropertyBag" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPersistMediaPropertyBag" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IPersistMediaPropertyBag).GUID, Is.EqualTo(IID_IPersistMediaPropertyBag));
-        }
+        Assert.That(typeof(IPersistMediaPropertyBag).GUID, Is.EqualTo(IID_IPersistMediaPropertyBag));
+    }
 
-        /// <summary>Validates that the <see cref="IPersistMediaPropertyBag" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IPersistMediaPropertyBag>(), Is.EqualTo(sizeof(IPersistMediaPropertyBag)));
-        }
+    /// <summary>Validates that the <see cref="IPersistMediaPropertyBag" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IPersistMediaPropertyBag>(), Is.EqualTo(sizeof(IPersistMediaPropertyBag)));
+    }
 
-        /// <summary>Validates that the <see cref="IPersistMediaPropertyBag" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IPersistMediaPropertyBag).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IPersistMediaPropertyBag" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IPersistMediaPropertyBag).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IPersistMediaPropertyBag" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IPersistMediaPropertyBag" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IPersistMediaPropertyBag), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IPersistMediaPropertyBag), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IPersistMediaPropertyBag), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IPersistMediaPropertyBag), Is.EqualTo(4));
         }
     }
 }

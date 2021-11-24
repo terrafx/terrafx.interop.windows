@@ -5,45 +5,44 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public unsafe partial struct PSS_VA_SPACE_ENTRY
 {
-    [SupportedOSPlatform("windows8.1")]
-    public unsafe partial struct PSS_VA_SPACE_ENTRY
-    {
-        public void* BaseAddress;
+    public void* BaseAddress;
 
-        public void* AllocationBase;
+    public void* AllocationBase;
 
-        [NativeTypeName("DWORD")]
-        public uint AllocationProtect;
+    [NativeTypeName("DWORD")]
+    public uint AllocationProtect;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint RegionSize;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint RegionSize;
 
-        [NativeTypeName("DWORD")]
-        public uint State;
+    [NativeTypeName("DWORD")]
+    public uint State;
 
-        [NativeTypeName("DWORD")]
-        public uint Protect;
+    [NativeTypeName("DWORD")]
+    public uint Protect;
 
-        [NativeTypeName("DWORD")]
-        public uint Type;
+    [NativeTypeName("DWORD")]
+    public uint Type;
 
-        [NativeTypeName("DWORD")]
-        public uint TimeDateStamp;
+    [NativeTypeName("DWORD")]
+    public uint TimeDateStamp;
 
-        [NativeTypeName("DWORD")]
-        public uint SizeOfImage;
+    [NativeTypeName("DWORD")]
+    public uint SizeOfImage;
 
-        public void* ImageBase;
+    public void* ImageBase;
 
-        [NativeTypeName("DWORD")]
-        public uint CheckSum;
+    [NativeTypeName("DWORD")]
+    public uint CheckSum;
 
-        [NativeTypeName("WORD")]
-        public ushort MappedFileNameLength;
+    [NativeTypeName("WORD")]
+    public ushort MappedFileNameLength;
 
-        [NativeTypeName("const wchar_t *")]
-        public ushort* MappedFileName;
-    }
+    [NativeTypeName("const wchar_t *")]
+    public ushort* MappedFileName;
 }

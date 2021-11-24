@@ -5,14 +5,13 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    public static unsafe partial class Windows
-    {
-        [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL RegisterWaitUntilOOBECompleted([NativeTypeName("OOBE_COMPLETED_CALLBACK")] delegate* unmanaged<void*, void> OOBECompletedCallback, [NativeTypeName("PVOID")] void* CallbackContext, [NativeTypeName("PVOID *")] void** WaitHandle);
+namespace TerraFX.Interop.Windows;
 
-        [DllImport("kernel32", ExactSpelling = true)]
-        public static extern BOOL UnregisterWaitUntilOOBECompleted([NativeTypeName("PVOID")] void* WaitHandle);
-    }
+public static unsafe partial class Windows
+{
+    [DllImport("kernel32", ExactSpelling = true)]
+    public static extern BOOL RegisterWaitUntilOOBECompleted([NativeTypeName("OOBE_COMPLETED_CALLBACK")] delegate* unmanaged<void*, void> OOBECompletedCallback, [NativeTypeName("PVOID")] void* CallbackContext, [NativeTypeName("PVOID *")] void** WaitHandle);
+
+    [DllImport("kernel32", ExactSpelling = true)]
+    public static extern BOOL UnregisterWaitUntilOOBECompleted([NativeTypeName("PVOID")] void* WaitHandle);
 }

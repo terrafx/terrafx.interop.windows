@@ -6,114 +6,113 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public partial struct SLIST_HEADER_AMD64
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public partial struct SLIST_HEADER_AMD64
+    [FieldOffset(0)]
+    [NativeTypeName("_SLIST_HEADER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:21223:5)")]
+    public _Anonymous_e__Struct Anonymous;
+
+    [FieldOffset(0)]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:21227:5)")]
+    public _HeaderX64_e__Struct HeaderX64;
+
+    public ref ulong Alignment
     {
-        [FieldOffset(0)]
-        [NativeTypeName("_SLIST_HEADER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:21223:5)")]
-        public _Anonymous_e__Struct Anonymous;
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Alignment, 1));
+        }
+    }
 
-        [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:21227:5)")]
-        public _HeaderX64_e__Struct HeaderX64;
+    public ref ulong Region
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Region, 1));
+        }
+    }
 
-        public ref ulong Alignment
+    public partial struct _Anonymous_e__Struct
+    {
+        [NativeTypeName("ULONGLONG")]
+        public ulong Alignment;
+
+        [NativeTypeName("ULONGLONG")]
+        public ulong Region;
+    }
+
+    public partial struct _HeaderX64_e__Struct
+    {
+        public ulong _bitfield1;
+
+        [NativeTypeName("ULONGLONG : 16")]
+        public ulong Depth
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Alignment, 1));
+                return _bitfield1 & 0xFFFFUL;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _bitfield1 = (_bitfield1 & ~0xFFFFUL) | (value & 0xFFFFUL);
             }
         }
 
-        public ref ulong Region
+        [NativeTypeName("ULONGLONG : 48")]
+        public ulong Sequence
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Region, 1));
+                return (_bitfield1 >> 16) & 0xFFFFUL;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _bitfield1 = (_bitfield1 & ~(0xFFFFUL << 16)) | ((value & 0xFFFFUL) << 16);
             }
         }
 
-        public partial struct _Anonymous_e__Struct
-        {
-            [NativeTypeName("ULONGLONG")]
-            public ulong Alignment;
+        public ulong _bitfield2;
 
-            [NativeTypeName("ULONGLONG")]
-            public ulong Region;
+        [NativeTypeName("ULONGLONG : 4")]
+        public ulong Reserved
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return _bitfield2 & 0xFUL;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _bitfield2 = (_bitfield2 & ~0xFUL) | (value & 0xFUL);
+            }
         }
 
-        public partial struct _HeaderX64_e__Struct
+        [NativeTypeName("ULONGLONG : 60")]
+        public ulong NextEntry
         {
-            public ulong _bitfield1;
-
-            [NativeTypeName("ULONGLONG : 16")]
-            public ulong Depth
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
             {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return _bitfield1 & 0xFFFFUL;
-                }
-
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                set
-                {
-                    _bitfield1 = (_bitfield1 & ~0xFFFFUL) | (value & 0xFFFFUL);
-                }
+                return (_bitfield2 >> 4) & 0xFFFFFFFUL;
             }
 
-            [NativeTypeName("ULONGLONG : 48")]
-            public ulong Sequence
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
             {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return (_bitfield1 >> 16) & 0xFFFFUL;
-                }
-
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                set
-                {
-                    _bitfield1 = (_bitfield1 & ~(0xFFFFUL << 16)) | ((value & 0xFFFFUL) << 16);
-                }
-            }
-
-            public ulong _bitfield2;
-
-            [NativeTypeName("ULONGLONG : 4")]
-            public ulong Reserved
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return _bitfield2 & 0xFUL;
-                }
-
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                set
-                {
-                    _bitfield2 = (_bitfield2 & ~0xFUL) | (value & 0xFUL);
-                }
-            }
-
-            [NativeTypeName("ULONGLONG : 60")]
-            public ulong NextEntry
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return (_bitfield2 >> 4) & 0xFFFFFFFUL;
-                }
-
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                set
-                {
-                    _bitfield2 = (_bitfield2 & ~(0xFFFFFFFUL << 4)) | ((value & 0xFFFFFFFUL) << 4);
-                }
+                _bitfield2 = (_bitfield2 & ~(0xFFFFFFFUL << 4)) | ((value & 0xFFFFFFFUL) << 4);
             }
         }
     }

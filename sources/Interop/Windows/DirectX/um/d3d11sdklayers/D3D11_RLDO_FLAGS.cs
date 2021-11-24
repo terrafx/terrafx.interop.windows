@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D3D11_RLDO_FLAGS
 {
-    [Flags]
-    public enum D3D11_RLDO_FLAGS
-    {
-        D3D11_RLDO_SUMMARY = 0x1,
-        D3D11_RLDO_DETAIL = 0x2,
-        D3D11_RLDO_IGNORE_INTERNAL = 0x4,
-    }
+    D3D11_RLDO_SUMMARY = 0x1,
+    D3D11_RLDO_DETAIL = 0x2,
+    D3D11_RLDO_IGNORE_INTERNAL = 0x4,
 }

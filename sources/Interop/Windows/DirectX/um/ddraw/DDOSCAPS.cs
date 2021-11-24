@@ -3,11 +3,10 @@
 // Ported from um/ddraw.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DDOSCAPS
 {
-    public partial struct DDOSCAPS
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwCaps;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwCaps;
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IClassFactory" /> struct.</summary>
+public static unsafe partial class IClassFactoryTests
 {
-    /// <summary>Provides validation of the <see cref="IClassFactory" /> struct.</summary>
-    public static unsafe partial class IClassFactoryTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IClassFactory" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IClassFactory" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IClassFactory).GUID, Is.EqualTo(IID_IClassFactory));
-        }
+        Assert.That(typeof(IClassFactory).GUID, Is.EqualTo(IID_IClassFactory));
+    }
 
-        /// <summary>Validates that the <see cref="IClassFactory" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IClassFactory>(), Is.EqualTo(sizeof(IClassFactory)));
-        }
+    /// <summary>Validates that the <see cref="IClassFactory" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IClassFactory>(), Is.EqualTo(sizeof(IClassFactory)));
+    }
 
-        /// <summary>Validates that the <see cref="IClassFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IClassFactory).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IClassFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IClassFactory).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IClassFactory" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IClassFactory" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IClassFactory), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IClassFactory), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IClassFactory), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IClassFactory), Is.EqualTo(4));
         }
     }
 }

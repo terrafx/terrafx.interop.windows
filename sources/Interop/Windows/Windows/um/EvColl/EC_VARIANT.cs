@@ -6,135 +6,134 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct EC_VARIANT
 {
-    public unsafe partial struct EC_VARIANT
+    [NativeTypeName("_EC_VARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/EvColl.h:121:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    [NativeTypeName("DWORD")]
+    public uint Count;
+
+    [NativeTypeName("DWORD")]
+    public uint Type;
+
+    public ref BOOL BooleanVal
     {
-        [NativeTypeName("_EC_VARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/EvColl.h:121:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        [NativeTypeName("DWORD")]
-        public uint Count;
-
-        [NativeTypeName("DWORD")]
-        public uint Type;
-
-        public ref BOOL BooleanVal
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.BooleanVal, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.BooleanVal, 1));
         }
+    }
 
-        public ref uint UInt32Val
+    public ref uint UInt32Val
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.UInt32Val, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.UInt32Val, 1));
         }
+    }
 
-        public ref ulong DateTimeVal
+    public ref ulong DateTimeVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.DateTimeVal, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.DateTimeVal, 1));
         }
+    }
 
-        public ref ushort* StringVal
+    public ref ushort* StringVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.StringVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.StringVal;
         }
+    }
 
-        public ref byte* BinaryVal
+    public ref byte* BinaryVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.BinaryVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.BinaryVal;
         }
+    }
 
-        public ref BOOL* BooleanArr
+    public ref BOOL* BooleanArr
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.BooleanArr;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.BooleanArr;
         }
+    }
 
-        public ref int* Int32Arr
+    public ref int* Int32Arr
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.Int32Arr;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.Int32Arr;
         }
+    }
 
-        public ref ushort** StringArr
+    public ref ushort** StringArr
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.StringArr;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.StringArr;
         }
+    }
 
-        public ref EC_OBJECT_ARRAY_PROPERTY_HANDLE PropertyHandleVal
+    public ref EC_OBJECT_ARRAY_PROPERTY_HANDLE PropertyHandleVal
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.PropertyHandleVal;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.PropertyHandleVal;
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            public BOOL BooleanVal;
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        public BOOL BooleanVal;
 
-            [FieldOffset(0)]
-            [NativeTypeName("UINT32")]
-            public uint UInt32Val;
+        [FieldOffset(0)]
+        [NativeTypeName("UINT32")]
+        public uint UInt32Val;
 
-            [FieldOffset(0)]
-            [NativeTypeName("ULONGLONG")]
-            public ulong DateTimeVal;
+        [FieldOffset(0)]
+        [NativeTypeName("ULONGLONG")]
+        public ulong DateTimeVal;
 
-            [FieldOffset(0)]
-            [NativeTypeName("LPCWSTR")]
-            public ushort* StringVal;
+        [FieldOffset(0)]
+        [NativeTypeName("LPCWSTR")]
+        public ushort* StringVal;
 
-            [FieldOffset(0)]
-            [NativeTypeName("PBYTE")]
-            public byte* BinaryVal;
+        [FieldOffset(0)]
+        [NativeTypeName("PBYTE")]
+        public byte* BinaryVal;
 
-            [FieldOffset(0)]
-            public BOOL* BooleanArr;
+        [FieldOffset(0)]
+        public BOOL* BooleanArr;
 
-            [FieldOffset(0)]
-            [NativeTypeName("INT32 *")]
-            public int* Int32Arr;
+        [FieldOffset(0)]
+        [NativeTypeName("INT32 *")]
+        public int* Int32Arr;
 
-            [FieldOffset(0)]
-            [NativeTypeName("LPWSTR *")]
-            public ushort** StringArr;
+        [FieldOffset(0)]
+        [NativeTypeName("LPWSTR *")]
+        public ushort** StringArr;
 
-            [FieldOffset(0)]
-            public EC_OBJECT_ARRAY_PROPERTY_HANDLE PropertyHandleVal;
-        }
+        [FieldOffset(0)]
+        public EC_OBJECT_ARRAY_PROPERTY_HANDLE PropertyHandleVal;
     }
 }

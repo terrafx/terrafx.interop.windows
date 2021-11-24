@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MLOperatorAttributeNameValue" /> struct.</summary>
+public static unsafe partial class MLOperatorAttributeNameValueTests
 {
-    /// <summary>Provides validation of the <see cref="MLOperatorAttributeNameValue" /> struct.</summary>
-    public static unsafe partial class MLOperatorAttributeNameValueTests
+    /// <summary>Validates that the <see cref="MLOperatorAttributeNameValue" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MLOperatorAttributeNameValue" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MLOperatorAttributeNameValue>(), Is.EqualTo(sizeof(MLOperatorAttributeNameValue)));
-        }
+        Assert.That(Marshal.SizeOf<MLOperatorAttributeNameValue>(), Is.EqualTo(sizeof(MLOperatorAttributeNameValue)));
+    }
 
-        /// <summary>Validates that the <see cref="MLOperatorAttributeNameValue" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MLOperatorAttributeNameValue).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MLOperatorAttributeNameValue" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MLOperatorAttributeNameValue).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MLOperatorAttributeNameValue" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="MLOperatorAttributeNameValue" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(MLOperatorAttributeNameValue), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(MLOperatorAttributeNameValue), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(MLOperatorAttributeNameValue), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(MLOperatorAttributeNameValue), Is.EqualTo(16));
         }
     }
 }

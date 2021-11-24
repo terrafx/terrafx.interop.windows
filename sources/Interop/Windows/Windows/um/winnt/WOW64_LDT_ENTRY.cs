@@ -6,203 +6,202 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct WOW64_LDT_ENTRY
 {
-    public partial struct WOW64_LDT_ENTRY
+    [NativeTypeName("WORD")]
+    public ushort LimitLow;
+
+    [NativeTypeName("WORD")]
+    public ushort BaseLow;
+
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:9795:5)")]
+    public _HighWord_e__Union HighWord;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _HighWord_e__Union
     {
-        [NativeTypeName("WORD")]
-        public ushort LimitLow;
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:9796:9)")]
+        public _Bytes_e__Struct Bytes;
 
-        [NativeTypeName("WORD")]
-        public ushort BaseLow;
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:9802:9)")]
+        public _Bits_e__Struct Bits;
 
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:9795:5)")]
-        public _HighWord_e__Union HighWord;
-
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _HighWord_e__Union
+        public partial struct _Bytes_e__Struct
         {
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:9796:9)")]
-            public _Bytes_e__Struct Bytes;
+            public byte BaseMid;
 
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:9802:9)")]
-            public _Bits_e__Struct Bits;
+            public byte Flags1;
 
-            public partial struct _Bytes_e__Struct
+            public byte Flags2;
+
+            public byte BaseHi;
+        }
+
+        public partial struct _Bits_e__Struct
+        {
+            public uint _bitfield;
+
+            [NativeTypeName("DWORD : 8")]
+            public uint BaseMid
             {
-                public byte BaseMid;
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return _bitfield & 0xFFu;
+                }
 
-                public byte Flags1;
-
-                public byte Flags2;
-
-                public byte BaseHi;
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~0xFFu) | (value & 0xFFu);
+                }
             }
 
-            public partial struct _Bits_e__Struct
+            [NativeTypeName("DWORD : 5")]
+            public uint Type
             {
-                public uint _bitfield;
-
-                [NativeTypeName("DWORD : 8")]
-                public uint BaseMid
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return _bitfield & 0xFFu;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~0xFFu) | (value & 0xFFu);
-                    }
+                    return (_bitfield >> 8) & 0x1Fu;
                 }
 
-                [NativeTypeName("DWORD : 5")]
-                public uint Type
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 8) & 0x1Fu;
-                    }
+                    _bitfield = (_bitfield & ~(0x1Fu << 8)) | ((value & 0x1Fu) << 8);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1Fu << 8)) | ((value & 0x1Fu) << 8);
-                    }
+            [NativeTypeName("DWORD : 2")]
+            public uint Dpl
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 13) & 0x3u;
                 }
 
-                [NativeTypeName("DWORD : 2")]
-                public uint Dpl
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 13) & 0x3u;
-                    }
+                    _bitfield = (_bitfield & ~(0x3u << 13)) | ((value & 0x3u) << 13);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x3u << 13)) | ((value & 0x3u) << 13);
-                    }
+            [NativeTypeName("DWORD : 1")]
+            public uint Pres
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 15) & 0x1u;
                 }
 
-                [NativeTypeName("DWORD : 1")]
-                public uint Pres
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 15) & 0x1u;
-                    }
+                    _bitfield = (_bitfield & ~(0x1u << 15)) | ((value & 0x1u) << 15);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 15)) | ((value & 0x1u) << 15);
-                    }
+            [NativeTypeName("DWORD : 4")]
+            public uint LimitHi
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 16) & 0xFu;
                 }
 
-                [NativeTypeName("DWORD : 4")]
-                public uint LimitHi
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 16) & 0xFu;
-                    }
+                    _bitfield = (_bitfield & ~(0xFu << 16)) | ((value & 0xFu) << 16);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0xFu << 16)) | ((value & 0xFu) << 16);
-                    }
+            [NativeTypeName("DWORD : 1")]
+            public uint Sys
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 20) & 0x1u;
                 }
 
-                [NativeTypeName("DWORD : 1")]
-                public uint Sys
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 20) & 0x1u;
-                    }
+                    _bitfield = (_bitfield & ~(0x1u << 20)) | ((value & 0x1u) << 20);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 20)) | ((value & 0x1u) << 20);
-                    }
+            [NativeTypeName("DWORD : 1")]
+            public uint Reserved_0
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 21) & 0x1u;
                 }
 
-                [NativeTypeName("DWORD : 1")]
-                public uint Reserved_0
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 21) & 0x1u;
-                    }
+                    _bitfield = (_bitfield & ~(0x1u << 21)) | ((value & 0x1u) << 21);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 21)) | ((value & 0x1u) << 21);
-                    }
+            [NativeTypeName("DWORD : 1")]
+            public uint Default_Big
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 22) & 0x1u;
                 }
 
-                [NativeTypeName("DWORD : 1")]
-                public uint Default_Big
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 22) & 0x1u;
-                    }
+                    _bitfield = (_bitfield & ~(0x1u << 22)) | ((value & 0x1u) << 22);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 22)) | ((value & 0x1u) << 22);
-                    }
+            [NativeTypeName("DWORD : 1")]
+            public uint Granularity
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 23) & 0x1u;
                 }
 
-                [NativeTypeName("DWORD : 1")]
-                public uint Granularity
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 23) & 0x1u;
-                    }
+                    _bitfield = (_bitfield & ~(0x1u << 23)) | ((value & 0x1u) << 23);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 23)) | ((value & 0x1u) << 23);
-                    }
+            [NativeTypeName("DWORD : 8")]
+            public uint BaseHi
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 24) & 0xFFu;
                 }
 
-                [NativeTypeName("DWORD : 8")]
-                public uint BaseHi
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 24) & 0xFFu;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0xFFu << 24)) | ((value & 0xFFu) << 24);
-                    }
+                    _bitfield = (_bitfield & ~(0xFFu << 24)) | ((value & 0xFFu) << 24);
                 }
             }
         }

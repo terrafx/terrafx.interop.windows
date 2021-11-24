@@ -3,14 +3,13 @@
 // Ported from um/TextStor.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct TS_SELECTION_ANCHOR
 {
-    public unsafe partial struct TS_SELECTION_ANCHOR
-    {
-        public IAnchor* paStart;
+    public IAnchor* paStart;
 
-        public IAnchor* paEnd;
+    public IAnchor* paEnd;
 
-        public TS_SELECTIONSTYLE style;
-    }
+    public TS_SELECTIONSTYLE style;
 }

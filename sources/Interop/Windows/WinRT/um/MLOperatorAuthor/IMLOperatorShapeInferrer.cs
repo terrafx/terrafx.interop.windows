@@ -8,64 +8,63 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[Guid("540BE5BE-A6C9-40EE-83F6-D2B8B40A7798")]
+[NativeTypeName("struct IMLOperatorShapeInferrer : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMLOperatorShapeInferrer : IMLOperatorShapeInferrer.Interface
 {
-    [Guid("540BE5BE-A6C9-40EE-83F6-D2B8B40A7798")]
-    [NativeTypeName("struct IMLOperatorShapeInferrer : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMLOperatorShapeInferrer : IMLOperatorShapeInferrer.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMLOperatorShapeInferrer*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorShapeInferrer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMLOperatorShapeInferrer*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorShapeInferrer*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMLOperatorShapeInferrer*, uint>)(lpVtbl[1]))((IMLOperatorShapeInferrer*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMLOperatorShapeInferrer*, uint>)(lpVtbl[1]))((IMLOperatorShapeInferrer*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMLOperatorShapeInferrer*, uint>)(lpVtbl[2]))((IMLOperatorShapeInferrer*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMLOperatorShapeInferrer*, uint>)(lpVtbl[2]))((IMLOperatorShapeInferrer*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT InferOutputShapes(IMLOperatorShapeInferenceContext* context)
+    {
+        return ((delegate* unmanaged<IMLOperatorShapeInferrer*, IMLOperatorShapeInferenceContext*, int>)(lpVtbl[3]))((IMLOperatorShapeInferrer*)Unsafe.AsPointer(ref this), context);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT InferOutputShapes(IMLOperatorShapeInferenceContext* context)
-        {
-            return ((delegate* unmanaged<IMLOperatorShapeInferrer*, IMLOperatorShapeInferenceContext*, int>)(lpVtbl[3]))((IMLOperatorShapeInferrer*)Unsafe.AsPointer(ref this), context);
-        }
+        HRESULT InferOutputShapes(IMLOperatorShapeInferenceContext* context);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT InferOutputShapes(IMLOperatorShapeInferenceContext* context);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMLOperatorShapeInferrer*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMLOperatorShapeInferrer*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMLOperatorShapeInferrer*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMLOperatorShapeInferrer*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMLOperatorShapeInferrer*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMLOperatorShapeInferrer*, uint> Release;
-
-            [NativeTypeName("HRESULT (IMLOperatorShapeInferenceContext *) noexcept __attribute__((stdcall))")]
-            public delegate* unmanaged<IMLOperatorShapeInferrer*, IMLOperatorShapeInferenceContext*, int> InferOutputShapes;
-        }
+        [NativeTypeName("HRESULT (IMLOperatorShapeInferenceContext *) noexcept __attribute__((stdcall))")]
+        public delegate* unmanaged<IMLOperatorShapeInferrer*, IMLOperatorShapeInferenceContext*, int> InferOutputShapes;
     }
 }

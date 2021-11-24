@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct WS_XML_NODE_POSITION
-    {
-        public IntPtr buffer;
+namespace TerraFX.Interop.Windows;
 
-        public void* node;
-    }
+public unsafe partial struct WS_XML_NODE_POSITION
+{
+    public IntPtr buffer;
+
+    public void* node;
 }

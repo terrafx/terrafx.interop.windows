@@ -7,350 +7,349 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("A70EFE60-E2A3-11D0-A9BE-00AA0061BE93")]
+[NativeTypeName("struct IDvdInfo : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IDvdInfo : IDvdInfo.Interface
 {
-    [Guid("A70EFE60-E2A3-11D0-A9BE-00AA0061BE93")]
-    [NativeTypeName("struct IDvdInfo : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDvdInfo : IDvdInfo.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDvdInfo*, Guid*, void**, int>)(lpVtbl[0]))((IDvdInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, Guid*, void**, int>)(lpVtbl[0]))((IDvdInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDvdInfo*, uint>)(lpVtbl[1]))((IDvdInfo*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDvdInfo*, uint>)(lpVtbl[1]))((IDvdInfo*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDvdInfo*, uint>)(lpVtbl[2]))((IDvdInfo*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDvdInfo*, uint>)(lpVtbl[2]))((IDvdInfo*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetCurrentDomain(DVD_DOMAIN* pDomain)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, DVD_DOMAIN*, int>)(lpVtbl[3]))((IDvdInfo*)Unsafe.AsPointer(ref this), pDomain);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetCurrentLocation(DVD_PLAYBACK_LOCATION* pLocation)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, DVD_PLAYBACK_LOCATION*, int>)(lpVtbl[4]))((IDvdInfo*)Unsafe.AsPointer(ref this), pLocation);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetTotalTitleTime([NativeTypeName("ULONG *")] uint* pulTotalTime)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, uint*, int>)(lpVtbl[5]))((IDvdInfo*)Unsafe.AsPointer(ref this), pulTotalTime);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetCurrentButton([NativeTypeName("ULONG *")] uint* pulButtonsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentButton)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, uint*, uint*, int>)(lpVtbl[6]))((IDvdInfo*)Unsafe.AsPointer(ref this), pulButtonsAvailable, pulCurrentButton);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT GetCurrentAngle([NativeTypeName("ULONG *")] uint* pulAnglesAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentAngle)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, uint*, uint*, int>)(lpVtbl[7]))((IDvdInfo*)Unsafe.AsPointer(ref this), pulAnglesAvailable, pulCurrentAngle);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT GetCurrentAudio([NativeTypeName("ULONG *")] uint* pulStreamsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentStream)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, uint*, uint*, int>)(lpVtbl[8]))((IDvdInfo*)Unsafe.AsPointer(ref this), pulStreamsAvailable, pulCurrentStream);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT GetCurrentSubpicture([NativeTypeName("ULONG *")] uint* pulStreamsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentStream, BOOL* pIsDisabled)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, uint*, uint*, BOOL*, int>)(lpVtbl[9]))((IDvdInfo*)Unsafe.AsPointer(ref this), pulStreamsAvailable, pulCurrentStream, pIsDisabled);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT GetCurrentUOPS([NativeTypeName("VALID_UOP_SOMTHING_OR_OTHER *")] uint* pUOP)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, uint*, int>)(lpVtbl[10]))((IDvdInfo*)Unsafe.AsPointer(ref this), pUOP);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT GetAllSPRMs([NativeTypeName("SPRMARRAY *")] ushort** pRegisterArray)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, ushort**, int>)(lpVtbl[11]))((IDvdInfo*)Unsafe.AsPointer(ref this), pRegisterArray);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT GetAllGPRMs([NativeTypeName("GPRMARRAY *")] ushort** pRegisterArray)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, ushort**, int>)(lpVtbl[12]))((IDvdInfo*)Unsafe.AsPointer(ref this), pRegisterArray);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT GetAudioLanguage([NativeTypeName("ULONG")] uint ulStream, [NativeTypeName("LCID *")] uint* pLanguage)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, uint, uint*, int>)(lpVtbl[13]))((IDvdInfo*)Unsafe.AsPointer(ref this), ulStream, pLanguage);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT GetSubpictureLanguage([NativeTypeName("ULONG")] uint ulStream, [NativeTypeName("LCID *")] uint* pLanguage)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, uint, uint*, int>)(lpVtbl[14]))((IDvdInfo*)Unsafe.AsPointer(ref this), ulStream, pLanguage);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT GetTitleAttributes([NativeTypeName("ULONG")] uint ulTitle, DVD_ATR* pATR)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, uint, DVD_ATR*, int>)(lpVtbl[15]))((IDvdInfo*)Unsafe.AsPointer(ref this), ulTitle, pATR);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT GetVMGAttributes(DVD_ATR* pATR)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, DVD_ATR*, int>)(lpVtbl[16]))((IDvdInfo*)Unsafe.AsPointer(ref this), pATR);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT GetCurrentVideoAttributes([NativeTypeName("DVD_VideoATR *")] byte** pATR)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, byte**, int>)(lpVtbl[17]))((IDvdInfo*)Unsafe.AsPointer(ref this), pATR);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT GetCurrentAudioAttributes([NativeTypeName("DVD_AudioATR *")] byte** pATR)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, byte**, int>)(lpVtbl[18]))((IDvdInfo*)Unsafe.AsPointer(ref this), pATR);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT GetCurrentSubpictureAttributes([NativeTypeName("DVD_SubpictureATR *")] byte** pATR)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, byte**, int>)(lpVtbl[19]))((IDvdInfo*)Unsafe.AsPointer(ref this), pATR);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT GetCurrentVolumeInfo([NativeTypeName("ULONG *")] uint* pulNumOfVol, [NativeTypeName("ULONG *")] uint* pulThisVolNum, DVD_DISC_SIDE* pSide, [NativeTypeName("ULONG *")] uint* pulNumOfTitles)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, uint*, uint*, DVD_DISC_SIDE*, uint*, int>)(lpVtbl[20]))((IDvdInfo*)Unsafe.AsPointer(ref this), pulNumOfVol, pulThisVolNum, pSide, pulNumOfTitles);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(21)]
+    public HRESULT GetDVDTextInfo(byte* pTextManager, [NativeTypeName("ULONG")] uint ulBufSize, [NativeTypeName("ULONG *")] uint* pulActualSize)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, byte*, uint, uint*, int>)(lpVtbl[21]))((IDvdInfo*)Unsafe.AsPointer(ref this), pTextManager, ulBufSize, pulActualSize);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(22)]
+    public HRESULT GetPlayerParentalLevel([NativeTypeName("ULONG *")] uint* pulParentalLevel, [NativeTypeName("ULONG *")] uint* pulCountryCode)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, uint*, uint*, int>)(lpVtbl[22]))((IDvdInfo*)Unsafe.AsPointer(ref this), pulParentalLevel, pulCountryCode);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(23)]
+    public HRESULT GetNumberOfChapters([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG *")] uint* pulNumberOfChapters)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, uint, uint*, int>)(lpVtbl[23]))((IDvdInfo*)Unsafe.AsPointer(ref this), ulTitle, pulNumberOfChapters);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(24)]
+    public HRESULT GetTitleParentalLevels([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG *")] uint* pulParentalLevels)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, uint, uint*, int>)(lpVtbl[24]))((IDvdInfo*)Unsafe.AsPointer(ref this), ulTitle, pulParentalLevels);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(25)]
+    public HRESULT GetRoot([NativeTypeName("LPSTR")] sbyte* pRoot, [NativeTypeName("ULONG")] uint ulBufSize, [NativeTypeName("ULONG *")] uint* pulActualSize)
+    {
+        return ((delegate* unmanaged<IDvdInfo*, sbyte*, uint, uint*, int>)(lpVtbl[25]))((IDvdInfo*)Unsafe.AsPointer(ref this), pRoot, ulBufSize, pulActualSize);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetCurrentDomain(DVD_DOMAIN* pDomain)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, DVD_DOMAIN*, int>)(lpVtbl[3]))((IDvdInfo*)Unsafe.AsPointer(ref this), pDomain);
-        }
+        HRESULT GetCurrentDomain(DVD_DOMAIN* pDomain);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetCurrentLocation(DVD_PLAYBACK_LOCATION* pLocation)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, DVD_PLAYBACK_LOCATION*, int>)(lpVtbl[4]))((IDvdInfo*)Unsafe.AsPointer(ref this), pLocation);
-        }
+        HRESULT GetCurrentLocation(DVD_PLAYBACK_LOCATION* pLocation);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetTotalTitleTime([NativeTypeName("ULONG *")] uint* pulTotalTime)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, uint*, int>)(lpVtbl[5]))((IDvdInfo*)Unsafe.AsPointer(ref this), pulTotalTime);
-        }
+        HRESULT GetTotalTitleTime([NativeTypeName("ULONG *")] uint* pulTotalTime);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetCurrentButton([NativeTypeName("ULONG *")] uint* pulButtonsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentButton)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, uint*, uint*, int>)(lpVtbl[6]))((IDvdInfo*)Unsafe.AsPointer(ref this), pulButtonsAvailable, pulCurrentButton);
-        }
+        HRESULT GetCurrentButton([NativeTypeName("ULONG *")] uint* pulButtonsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentButton);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetCurrentAngle([NativeTypeName("ULONG *")] uint* pulAnglesAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentAngle)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, uint*, uint*, int>)(lpVtbl[7]))((IDvdInfo*)Unsafe.AsPointer(ref this), pulAnglesAvailable, pulCurrentAngle);
-        }
+        HRESULT GetCurrentAngle([NativeTypeName("ULONG *")] uint* pulAnglesAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentAngle);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT GetCurrentAudio([NativeTypeName("ULONG *")] uint* pulStreamsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentStream)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, uint*, uint*, int>)(lpVtbl[8]))((IDvdInfo*)Unsafe.AsPointer(ref this), pulStreamsAvailable, pulCurrentStream);
-        }
+        HRESULT GetCurrentAudio([NativeTypeName("ULONG *")] uint* pulStreamsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentStream);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetCurrentSubpicture([NativeTypeName("ULONG *")] uint* pulStreamsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentStream, BOOL* pIsDisabled)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, uint*, uint*, BOOL*, int>)(lpVtbl[9]))((IDvdInfo*)Unsafe.AsPointer(ref this), pulStreamsAvailable, pulCurrentStream, pIsDisabled);
-        }
+        HRESULT GetCurrentSubpicture([NativeTypeName("ULONG *")] uint* pulStreamsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentStream, BOOL* pIsDisabled);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetCurrentUOPS([NativeTypeName("VALID_UOP_SOMTHING_OR_OTHER *")] uint* pUOP)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, uint*, int>)(lpVtbl[10]))((IDvdInfo*)Unsafe.AsPointer(ref this), pUOP);
-        }
+        HRESULT GetCurrentUOPS([NativeTypeName("VALID_UOP_SOMTHING_OR_OTHER *")] uint* pUOP);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT GetAllSPRMs([NativeTypeName("SPRMARRAY *")] ushort** pRegisterArray)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, ushort**, int>)(lpVtbl[11]))((IDvdInfo*)Unsafe.AsPointer(ref this), pRegisterArray);
-        }
+        HRESULT GetAllSPRMs([NativeTypeName("SPRMARRAY *")] ushort** pRegisterArray);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT GetAllGPRMs([NativeTypeName("GPRMARRAY *")] ushort** pRegisterArray)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, ushort**, int>)(lpVtbl[12]))((IDvdInfo*)Unsafe.AsPointer(ref this), pRegisterArray);
-        }
+        HRESULT GetAllGPRMs([NativeTypeName("GPRMARRAY *")] ushort** pRegisterArray);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT GetAudioLanguage([NativeTypeName("ULONG")] uint ulStream, [NativeTypeName("LCID *")] uint* pLanguage)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, uint, uint*, int>)(lpVtbl[13]))((IDvdInfo*)Unsafe.AsPointer(ref this), ulStream, pLanguage);
-        }
+        HRESULT GetAudioLanguage([NativeTypeName("ULONG")] uint ulStream, [NativeTypeName("LCID *")] uint* pLanguage);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT GetSubpictureLanguage([NativeTypeName("ULONG")] uint ulStream, [NativeTypeName("LCID *")] uint* pLanguage)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, uint, uint*, int>)(lpVtbl[14]))((IDvdInfo*)Unsafe.AsPointer(ref this), ulStream, pLanguage);
-        }
+        HRESULT GetSubpictureLanguage([NativeTypeName("ULONG")] uint ulStream, [NativeTypeName("LCID *")] uint* pLanguage);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT GetTitleAttributes([NativeTypeName("ULONG")] uint ulTitle, DVD_ATR* pATR)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, uint, DVD_ATR*, int>)(lpVtbl[15]))((IDvdInfo*)Unsafe.AsPointer(ref this), ulTitle, pATR);
-        }
+        HRESULT GetTitleAttributes([NativeTypeName("ULONG")] uint ulTitle, DVD_ATR* pATR);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT GetVMGAttributes(DVD_ATR* pATR)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, DVD_ATR*, int>)(lpVtbl[16]))((IDvdInfo*)Unsafe.AsPointer(ref this), pATR);
-        }
+        HRESULT GetVMGAttributes(DVD_ATR* pATR);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT GetCurrentVideoAttributes([NativeTypeName("DVD_VideoATR *")] byte** pATR)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, byte**, int>)(lpVtbl[17]))((IDvdInfo*)Unsafe.AsPointer(ref this), pATR);
-        }
+        HRESULT GetCurrentVideoAttributes([NativeTypeName("DVD_VideoATR *")] byte** pATR);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT GetCurrentAudioAttributes([NativeTypeName("DVD_AudioATR *")] byte** pATR)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, byte**, int>)(lpVtbl[18]))((IDvdInfo*)Unsafe.AsPointer(ref this), pATR);
-        }
+        HRESULT GetCurrentAudioAttributes([NativeTypeName("DVD_AudioATR *")] byte** pATR);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT GetCurrentSubpictureAttributes([NativeTypeName("DVD_SubpictureATR *")] byte** pATR)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, byte**, int>)(lpVtbl[19]))((IDvdInfo*)Unsafe.AsPointer(ref this), pATR);
-        }
+        HRESULT GetCurrentSubpictureAttributes([NativeTypeName("DVD_SubpictureATR *")] byte** pATR);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT GetCurrentVolumeInfo([NativeTypeName("ULONG *")] uint* pulNumOfVol, [NativeTypeName("ULONG *")] uint* pulThisVolNum, DVD_DISC_SIDE* pSide, [NativeTypeName("ULONG *")] uint* pulNumOfTitles)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, uint*, uint*, DVD_DISC_SIDE*, uint*, int>)(lpVtbl[20]))((IDvdInfo*)Unsafe.AsPointer(ref this), pulNumOfVol, pulThisVolNum, pSide, pulNumOfTitles);
-        }
+        HRESULT GetCurrentVolumeInfo([NativeTypeName("ULONG *")] uint* pulNumOfVol, [NativeTypeName("ULONG *")] uint* pulThisVolNum, DVD_DISC_SIDE* pSide, [NativeTypeName("ULONG *")] uint* pulNumOfTitles);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT GetDVDTextInfo(byte* pTextManager, [NativeTypeName("ULONG")] uint ulBufSize, [NativeTypeName("ULONG *")] uint* pulActualSize)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, byte*, uint, uint*, int>)(lpVtbl[21]))((IDvdInfo*)Unsafe.AsPointer(ref this), pTextManager, ulBufSize, pulActualSize);
-        }
+        HRESULT GetDVDTextInfo(byte* pTextManager, [NativeTypeName("ULONG")] uint ulBufSize, [NativeTypeName("ULONG *")] uint* pulActualSize);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        public HRESULT GetPlayerParentalLevel([NativeTypeName("ULONG *")] uint* pulParentalLevel, [NativeTypeName("ULONG *")] uint* pulCountryCode)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, uint*, uint*, int>)(lpVtbl[22]))((IDvdInfo*)Unsafe.AsPointer(ref this), pulParentalLevel, pulCountryCode);
-        }
+        HRESULT GetPlayerParentalLevel([NativeTypeName("ULONG *")] uint* pulParentalLevel, [NativeTypeName("ULONG *")] uint* pulCountryCode);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public HRESULT GetNumberOfChapters([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG *")] uint* pulNumberOfChapters)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, uint, uint*, int>)(lpVtbl[23]))((IDvdInfo*)Unsafe.AsPointer(ref this), ulTitle, pulNumberOfChapters);
-        }
+        HRESULT GetNumberOfChapters([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG *")] uint* pulNumberOfChapters);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT GetTitleParentalLevels([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG *")] uint* pulParentalLevels)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, uint, uint*, int>)(lpVtbl[24]))((IDvdInfo*)Unsafe.AsPointer(ref this), ulTitle, pulParentalLevels);
-        }
+        HRESULT GetTitleParentalLevels([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG *")] uint* pulParentalLevels);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public HRESULT GetRoot([NativeTypeName("LPSTR")] sbyte* pRoot, [NativeTypeName("ULONG")] uint ulBufSize, [NativeTypeName("ULONG *")] uint* pulActualSize)
-        {
-            return ((delegate* unmanaged<IDvdInfo*, sbyte*, uint, uint*, int>)(lpVtbl[25]))((IDvdInfo*)Unsafe.AsPointer(ref this), pRoot, ulBufSize, pulActualSize);
-        }
+        HRESULT GetRoot([NativeTypeName("LPSTR")] sbyte* pRoot, [NativeTypeName("ULONG")] uint ulBufSize, [NativeTypeName("ULONG *")] uint* pulActualSize);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetCurrentDomain(DVD_DOMAIN* pDomain);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetCurrentLocation(DVD_PLAYBACK_LOCATION* pLocation);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetTotalTitleTime([NativeTypeName("ULONG *")] uint* pulTotalTime);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT GetCurrentButton([NativeTypeName("ULONG *")] uint* pulButtonsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentButton);
+        [NativeTypeName("HRESULT (DVD_DOMAIN *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, DVD_DOMAIN*, int> GetCurrentDomain;
 
-            [VtblIndex(7)]
-            HRESULT GetCurrentAngle([NativeTypeName("ULONG *")] uint* pulAnglesAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentAngle);
+        [NativeTypeName("HRESULT (DVD_PLAYBACK_LOCATION *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, DVD_PLAYBACK_LOCATION*, int> GetCurrentLocation;
 
-            [VtblIndex(8)]
-            HRESULT GetCurrentAudio([NativeTypeName("ULONG *")] uint* pulStreamsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentStream);
+        [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, uint*, int> GetTotalTitleTime;
 
-            [VtblIndex(9)]
-            HRESULT GetCurrentSubpicture([NativeTypeName("ULONG *")] uint* pulStreamsAvailable, [NativeTypeName("ULONG *")] uint* pulCurrentStream, BOOL* pIsDisabled);
+        [NativeTypeName("HRESULT (ULONG *, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, uint*, uint*, int> GetCurrentButton;
 
-            [VtblIndex(10)]
-            HRESULT GetCurrentUOPS([NativeTypeName("VALID_UOP_SOMTHING_OR_OTHER *")] uint* pUOP);
+        [NativeTypeName("HRESULT (ULONG *, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, uint*, uint*, int> GetCurrentAngle;
 
-            [VtblIndex(11)]
-            HRESULT GetAllSPRMs([NativeTypeName("SPRMARRAY *")] ushort** pRegisterArray);
+        [NativeTypeName("HRESULT (ULONG *, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, uint*, uint*, int> GetCurrentAudio;
 
-            [VtblIndex(12)]
-            HRESULT GetAllGPRMs([NativeTypeName("GPRMARRAY *")] ushort** pRegisterArray);
+        [NativeTypeName("HRESULT (ULONG *, ULONG *, BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, uint*, uint*, BOOL*, int> GetCurrentSubpicture;
 
-            [VtblIndex(13)]
-            HRESULT GetAudioLanguage([NativeTypeName("ULONG")] uint ulStream, [NativeTypeName("LCID *")] uint* pLanguage);
+        [NativeTypeName("HRESULT (VALID_UOP_SOMTHING_OR_OTHER *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, uint*, int> GetCurrentUOPS;
 
-            [VtblIndex(14)]
-            HRESULT GetSubpictureLanguage([NativeTypeName("ULONG")] uint ulStream, [NativeTypeName("LCID *")] uint* pLanguage);
+        [NativeTypeName("HRESULT (SPRMARRAY *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, ushort**, int> GetAllSPRMs;
 
-            [VtblIndex(15)]
-            HRESULT GetTitleAttributes([NativeTypeName("ULONG")] uint ulTitle, DVD_ATR* pATR);
+        [NativeTypeName("HRESULT (GPRMARRAY *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, ushort**, int> GetAllGPRMs;
 
-            [VtblIndex(16)]
-            HRESULT GetVMGAttributes(DVD_ATR* pATR);
+        [NativeTypeName("HRESULT (ULONG, LCID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, uint, uint*, int> GetAudioLanguage;
 
-            [VtblIndex(17)]
-            HRESULT GetCurrentVideoAttributes([NativeTypeName("DVD_VideoATR *")] byte** pATR);
+        [NativeTypeName("HRESULT (ULONG, LCID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, uint, uint*, int> GetSubpictureLanguage;
 
-            [VtblIndex(18)]
-            HRESULT GetCurrentAudioAttributes([NativeTypeName("DVD_AudioATR *")] byte** pATR);
+        [NativeTypeName("HRESULT (ULONG, DVD_ATR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, uint, DVD_ATR*, int> GetTitleAttributes;
 
-            [VtblIndex(19)]
-            HRESULT GetCurrentSubpictureAttributes([NativeTypeName("DVD_SubpictureATR *")] byte** pATR);
+        [NativeTypeName("HRESULT (DVD_ATR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, DVD_ATR*, int> GetVMGAttributes;
 
-            [VtblIndex(20)]
-            HRESULT GetCurrentVolumeInfo([NativeTypeName("ULONG *")] uint* pulNumOfVol, [NativeTypeName("ULONG *")] uint* pulThisVolNum, DVD_DISC_SIDE* pSide, [NativeTypeName("ULONG *")] uint* pulNumOfTitles);
+        [NativeTypeName("HRESULT (DVD_VideoATR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, byte**, int> GetCurrentVideoAttributes;
 
-            [VtblIndex(21)]
-            HRESULT GetDVDTextInfo(byte* pTextManager, [NativeTypeName("ULONG")] uint ulBufSize, [NativeTypeName("ULONG *")] uint* pulActualSize);
+        [NativeTypeName("HRESULT (DVD_AudioATR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, byte**, int> GetCurrentAudioAttributes;
 
-            [VtblIndex(22)]
-            HRESULT GetPlayerParentalLevel([NativeTypeName("ULONG *")] uint* pulParentalLevel, [NativeTypeName("ULONG *")] uint* pulCountryCode);
+        [NativeTypeName("HRESULT (DVD_SubpictureATR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, byte**, int> GetCurrentSubpictureAttributes;
 
-            [VtblIndex(23)]
-            HRESULT GetNumberOfChapters([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG *")] uint* pulNumberOfChapters);
+        [NativeTypeName("HRESULT (ULONG *, ULONG *, DVD_DISC_SIDE *, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, uint*, uint*, DVD_DISC_SIDE*, uint*, int> GetCurrentVolumeInfo;
 
-            [VtblIndex(24)]
-            HRESULT GetTitleParentalLevels([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG *")] uint* pulParentalLevels);
+        [NativeTypeName("HRESULT (BYTE *, ULONG, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, byte*, uint, uint*, int> GetDVDTextInfo;
 
-            [VtblIndex(25)]
-            HRESULT GetRoot([NativeTypeName("LPSTR")] sbyte* pRoot, [NativeTypeName("ULONG")] uint ulBufSize, [NativeTypeName("ULONG *")] uint* pulActualSize);
-        }
+        [NativeTypeName("HRESULT (ULONG *, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, uint*, uint*, int> GetPlayerParentalLevel;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (ULONG, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, uint, uint*, int> GetNumberOfChapters;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, uint> AddRef;
+        [NativeTypeName("HRESULT (ULONG, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, uint, uint*, int> GetTitleParentalLevels;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, uint> Release;
-
-            [NativeTypeName("HRESULT (DVD_DOMAIN *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, DVD_DOMAIN*, int> GetCurrentDomain;
-
-            [NativeTypeName("HRESULT (DVD_PLAYBACK_LOCATION *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, DVD_PLAYBACK_LOCATION*, int> GetCurrentLocation;
-
-            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, uint*, int> GetTotalTitleTime;
-
-            [NativeTypeName("HRESULT (ULONG *, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, uint*, uint*, int> GetCurrentButton;
-
-            [NativeTypeName("HRESULT (ULONG *, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, uint*, uint*, int> GetCurrentAngle;
-
-            [NativeTypeName("HRESULT (ULONG *, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, uint*, uint*, int> GetCurrentAudio;
-
-            [NativeTypeName("HRESULT (ULONG *, ULONG *, BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, uint*, uint*, BOOL*, int> GetCurrentSubpicture;
-
-            [NativeTypeName("HRESULT (VALID_UOP_SOMTHING_OR_OTHER *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, uint*, int> GetCurrentUOPS;
-
-            [NativeTypeName("HRESULT (SPRMARRAY *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, ushort**, int> GetAllSPRMs;
-
-            [NativeTypeName("HRESULT (GPRMARRAY *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, ushort**, int> GetAllGPRMs;
-
-            [NativeTypeName("HRESULT (ULONG, LCID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, uint, uint*, int> GetAudioLanguage;
-
-            [NativeTypeName("HRESULT (ULONG, LCID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, uint, uint*, int> GetSubpictureLanguage;
-
-            [NativeTypeName("HRESULT (ULONG, DVD_ATR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, uint, DVD_ATR*, int> GetTitleAttributes;
-
-            [NativeTypeName("HRESULT (DVD_ATR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, DVD_ATR*, int> GetVMGAttributes;
-
-            [NativeTypeName("HRESULT (DVD_VideoATR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, byte**, int> GetCurrentVideoAttributes;
-
-            [NativeTypeName("HRESULT (DVD_AudioATR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, byte**, int> GetCurrentAudioAttributes;
-
-            [NativeTypeName("HRESULT (DVD_SubpictureATR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, byte**, int> GetCurrentSubpictureAttributes;
-
-            [NativeTypeName("HRESULT (ULONG *, ULONG *, DVD_DISC_SIDE *, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, uint*, uint*, DVD_DISC_SIDE*, uint*, int> GetCurrentVolumeInfo;
-
-            [NativeTypeName("HRESULT (BYTE *, ULONG, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, byte*, uint, uint*, int> GetDVDTextInfo;
-
-            [NativeTypeName("HRESULT (ULONG *, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, uint*, uint*, int> GetPlayerParentalLevel;
-
-            [NativeTypeName("HRESULT (ULONG, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, uint, uint*, int> GetNumberOfChapters;
-
-            [NativeTypeName("HRESULT (ULONG, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, uint, uint*, int> GetTitleParentalLevels;
-
-            [NativeTypeName("HRESULT (LPSTR, ULONG, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdInfo*, sbyte*, uint, uint*, int> GetRoot;
-        }
+        [NativeTypeName("HRESULT (LPSTR, ULONG, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdInfo*, sbyte*, uint, uint*, int> GetRoot;
     }
 }

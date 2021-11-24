@@ -5,14 +5,13 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum THUMBBUTTONMASK
 {
-    [Flags]
-    public enum THUMBBUTTONMASK
-    {
-        THB_BITMAP = 0x1,
-        THB_ICON = 0x2,
-        THB_TOOLTIP = 0x4,
-        THB_FLAGS = 0x8,
-    }
+    THB_BITMAP = 0x1,
+    THB_ICON = 0x2,
+    THB_TOOLTIP = 0x4,
+    THB_FLAGS = 0x8,
 }

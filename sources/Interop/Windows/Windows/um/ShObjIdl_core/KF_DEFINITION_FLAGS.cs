@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum KF_DEFINITION_FLAGS
 {
-    [Flags]
-    public enum KF_DEFINITION_FLAGS
-    {
-        KFDF_LOCAL_REDIRECT_ONLY = 0x2,
-        KFDF_ROAMABLE = 0x4,
-        KFDF_PRECREATE = 0x8,
-        KFDF_STREAM = 0x10,
-        KFDF_PUBLISHEXPANDEDPATH = 0x20,
-        KFDF_NO_REDIRECT_UI = 0x40,
-    }
+    KFDF_LOCAL_REDIRECT_ONLY = 0x2,
+    KFDF_ROAMABLE = 0x4,
+    KFDF_PRECREATE = 0x8,
+    KFDF_STREAM = 0x10,
+    KFDF_PUBLISHEXPANDEDPATH = 0x20,
+    KFDF_NO_REDIRECT_UI = 0x40,
 }

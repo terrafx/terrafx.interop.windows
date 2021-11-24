@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SRCCODEINFOW" /> struct.</summary>
+public static unsafe partial class SRCCODEINFOWTests
 {
-    /// <summary>Provides validation of the <see cref="SRCCODEINFOW" /> struct.</summary>
-    public static unsafe partial class SRCCODEINFOWTests
+    /// <summary>Validates that the <see cref="SRCCODEINFOW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SRCCODEINFOW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SRCCODEINFOW>(), Is.EqualTo(sizeof(SRCCODEINFOW)));
-        }
+        Assert.That(Marshal.SizeOf<SRCCODEINFOW>(), Is.EqualTo(sizeof(SRCCODEINFOW)));
+    }
 
-        /// <summary>Validates that the <see cref="SRCCODEINFOW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SRCCODEINFOW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SRCCODEINFOW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SRCCODEINFOW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SRCCODEINFOW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SRCCODEINFOW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SRCCODEINFOW), Is.EqualTo(1080));
-            }
-            else
-            {
-                Assert.That(sizeof(SRCCODEINFOW), Is.EqualTo(1072));
-            }
+            Assert.That(sizeof(SRCCODEINFOW), Is.EqualTo(1080));
+        }
+        else
+        {
+            Assert.That(sizeof(SRCCODEINFOW), Is.EqualTo(1072));
         }
     }
 }

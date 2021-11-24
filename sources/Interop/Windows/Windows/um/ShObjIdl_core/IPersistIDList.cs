@@ -7,87 +7,86 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("1079ACFC-29BD-11D3-8E0D-00C04F6837D5")]
+[NativeTypeName("struct IPersistIDList : IPersist")]
+[NativeInheritance("IPersist")]
+public unsafe partial struct IPersistIDList : IPersistIDList.Interface
 {
-    [Guid("1079ACFC-29BD-11D3-8E0D-00C04F6837D5")]
-    [NativeTypeName("struct IPersistIDList : IPersist")]
-    [NativeInheritance("IPersist")]
-    public unsafe partial struct IPersistIDList : IPersistIDList.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IPersistIDList*, Guid*, void**, int>)(lpVtbl[0]))((IPersistIDList*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IPersistIDList*, Guid*, void**, int>)(lpVtbl[0]))((IPersistIDList*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IPersistIDList*, uint>)(lpVtbl[1]))((IPersistIDList*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IPersistIDList*, uint>)(lpVtbl[1]))((IPersistIDList*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IPersistIDList*, uint>)(lpVtbl[2]))((IPersistIDList*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IPersistIDList*, uint>)(lpVtbl[2]))((IPersistIDList*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
+    {
+        return ((delegate* unmanaged<IPersistIDList*, Guid*, int>)(lpVtbl[3]))((IPersistIDList*)Unsafe.AsPointer(ref this), pClassID);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
-        {
-            return ((delegate* unmanaged<IPersistIDList*, Guid*, int>)(lpVtbl[3]))((IPersistIDList*)Unsafe.AsPointer(ref this), pClassID);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT SetIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
+    {
+        return ((delegate* unmanaged<IPersistIDList*, ITEMIDLIST*, int>)(lpVtbl[4]))((IPersistIDList*)Unsafe.AsPointer(ref this), pidl);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
+    {
+        return ((delegate* unmanaged<IPersistIDList*, ITEMIDLIST**, int>)(lpVtbl[5]))((IPersistIDList*)Unsafe.AsPointer(ref this), ppidl);
+    }
+
+    public interface Interface : IPersist.Interface
+    {
         [VtblIndex(4)]
-        public HRESULT SetIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
-        {
-            return ((delegate* unmanaged<IPersistIDList*, ITEMIDLIST*, int>)(lpVtbl[4]))((IPersistIDList*)Unsafe.AsPointer(ref this), pidl);
-        }
+        HRESULT SetIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
-        {
-            return ((delegate* unmanaged<IPersistIDList*, ITEMIDLIST**, int>)(lpVtbl[5]))((IPersistIDList*)Unsafe.AsPointer(ref this), ppidl);
-        }
+        HRESULT GetIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl);
+    }
 
-        public interface Interface : IPersist.Interface
-        {
-            [VtblIndex(4)]
-            HRESULT SetIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistIDList*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(5)]
-            HRESULT GetIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistIDList*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistIDList*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistIDList*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistIDList*, uint> AddRef;
+        [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistIDList*, Guid*, int> GetClassID;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistIDList*, uint> Release;
+        [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistIDList*, ITEMIDLIST*, int> SetIDList;
 
-            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistIDList*, Guid*, int> GetClassID;
-
-            [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistIDList*, ITEMIDLIST*, int> SetIDList;
-
-            [NativeTypeName("HRESULT (LPITEMIDLIST *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistIDList*, ITEMIDLIST**, int> GetIDList;
-        }
+        [NativeTypeName("HRESULT (LPITEMIDLIST *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistIDList*, ITEMIDLIST**, int> GetIDList;
     }
 }

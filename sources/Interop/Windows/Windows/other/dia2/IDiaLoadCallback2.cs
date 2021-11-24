@@ -7,153 +7,152 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("4688A074-5A4D-4486-AEA8-7B90711D9F7C")]
+[NativeTypeName("struct IDiaLoadCallback2 : IDiaLoadCallback")]
+[NativeInheritance("IDiaLoadCallback")]
+public unsafe partial struct IDiaLoadCallback2 : IDiaLoadCallback2.Interface
 {
-    [Guid("4688A074-5A4D-4486-AEA8-7B90711D9F7C")]
-    [NativeTypeName("struct IDiaLoadCallback2 : IDiaLoadCallback")]
-    [NativeInheritance("IDiaLoadCallback")]
-    public unsafe partial struct IDiaLoadCallback2 : IDiaLoadCallback2.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDiaLoadCallback2*, Guid*, void**, int>)(lpVtbl[0]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDiaLoadCallback2*, Guid*, void**, int>)(lpVtbl[0]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDiaLoadCallback2*, uint>)(lpVtbl[1]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDiaLoadCallback2*, uint>)(lpVtbl[1]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDiaLoadCallback2*, uint>)(lpVtbl[2]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDiaLoadCallback2*, uint>)(lpVtbl[2]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT NotifyDebugDir(BOOL fExecutable, [NativeTypeName("DWORD")] uint cbData, byte* pbData)
+    {
+        return ((delegate* unmanaged<IDiaLoadCallback2*, BOOL, uint, byte*, int>)(lpVtbl[3]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this), fExecutable, cbData, pbData);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT NotifyDebugDir(BOOL fExecutable, [NativeTypeName("DWORD")] uint cbData, byte* pbData)
-        {
-            return ((delegate* unmanaged<IDiaLoadCallback2*, BOOL, uint, byte*, int>)(lpVtbl[3]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this), fExecutable, cbData, pbData);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT NotifyOpenDBG([NativeTypeName("LPCOLESTR")] ushort* dbgPath, HRESULT resultCode)
+    {
+        return ((delegate* unmanaged<IDiaLoadCallback2*, ushort*, HRESULT, int>)(lpVtbl[4]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this), dbgPath, resultCode);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT NotifyOpenDBG([NativeTypeName("LPCOLESTR")] ushort* dbgPath, HRESULT resultCode)
-        {
-            return ((delegate* unmanaged<IDiaLoadCallback2*, ushort*, HRESULT, int>)(lpVtbl[4]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this), dbgPath, resultCode);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT NotifyOpenPDB([NativeTypeName("LPCOLESTR")] ushort* pdbPath, HRESULT resultCode)
+    {
+        return ((delegate* unmanaged<IDiaLoadCallback2*, ushort*, HRESULT, int>)(lpVtbl[5]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this), pdbPath, resultCode);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT NotifyOpenPDB([NativeTypeName("LPCOLESTR")] ushort* pdbPath, HRESULT resultCode)
-        {
-            return ((delegate* unmanaged<IDiaLoadCallback2*, ushort*, HRESULT, int>)(lpVtbl[5]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this), pdbPath, resultCode);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT RestrictRegistryAccess()
+    {
+        return ((delegate* unmanaged<IDiaLoadCallback2*, int>)(lpVtbl[6]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT RestrictRegistryAccess()
-        {
-            return ((delegate* unmanaged<IDiaLoadCallback2*, int>)(lpVtbl[6]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT RestrictSymbolServerAccess()
+    {
+        return ((delegate* unmanaged<IDiaLoadCallback2*, int>)(lpVtbl[7]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(7)]
-        public HRESULT RestrictSymbolServerAccess()
-        {
-            return ((delegate* unmanaged<IDiaLoadCallback2*, int>)(lpVtbl[7]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT RestrictOriginalPathAccess()
+    {
+        return ((delegate* unmanaged<IDiaLoadCallback2*, int>)(lpVtbl[8]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT RestrictReferencePathAccess()
+    {
+        return ((delegate* unmanaged<IDiaLoadCallback2*, int>)(lpVtbl[9]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT RestrictDBGAccess()
+    {
+        return ((delegate* unmanaged<IDiaLoadCallback2*, int>)(lpVtbl[10]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT RestrictSystemRootAccess()
+    {
+        return ((delegate* unmanaged<IDiaLoadCallback2*, int>)(lpVtbl[11]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IDiaLoadCallback.Interface
+    {
         [VtblIndex(8)]
-        public HRESULT RestrictOriginalPathAccess()
-        {
-            return ((delegate* unmanaged<IDiaLoadCallback2*, int>)(lpVtbl[8]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT RestrictOriginalPathAccess();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT RestrictReferencePathAccess()
-        {
-            return ((delegate* unmanaged<IDiaLoadCallback2*, int>)(lpVtbl[9]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT RestrictReferencePathAccess();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT RestrictDBGAccess()
-        {
-            return ((delegate* unmanaged<IDiaLoadCallback2*, int>)(lpVtbl[10]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT RestrictDBGAccess();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT RestrictSystemRootAccess()
-        {
-            return ((delegate* unmanaged<IDiaLoadCallback2*, int>)(lpVtbl[11]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT RestrictSystemRootAccess();
+    }
 
-        public interface Interface : IDiaLoadCallback.Interface
-        {
-            [VtblIndex(8)]
-            HRESULT RestrictOriginalPathAccess();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLoadCallback2*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(9)]
-            HRESULT RestrictReferencePathAccess();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLoadCallback2*, uint> AddRef;
 
-            [VtblIndex(10)]
-            HRESULT RestrictDBGAccess();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLoadCallback2*, uint> Release;
 
-            [VtblIndex(11)]
-            HRESULT RestrictSystemRootAccess();
-        }
+        [NativeTypeName("HRESULT (BOOL, DWORD, BYTE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLoadCallback2*, BOOL, uint, byte*, int> NotifyDebugDir;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLoadCallback2*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (LPCOLESTR, HRESULT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLoadCallback2*, ushort*, HRESULT, int> NotifyOpenDBG;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLoadCallback2*, uint> AddRef;
+        [NativeTypeName("HRESULT (LPCOLESTR, HRESULT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLoadCallback2*, ushort*, HRESULT, int> NotifyOpenPDB;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLoadCallback2*, uint> Release;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictRegistryAccess;
 
-            [NativeTypeName("HRESULT (BOOL, DWORD, BYTE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLoadCallback2*, BOOL, uint, byte*, int> NotifyDebugDir;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictSymbolServerAccess;
 
-            [NativeTypeName("HRESULT (LPCOLESTR, HRESULT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLoadCallback2*, ushort*, HRESULT, int> NotifyOpenDBG;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictOriginalPathAccess;
 
-            [NativeTypeName("HRESULT (LPCOLESTR, HRESULT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLoadCallback2*, ushort*, HRESULT, int> NotifyOpenPDB;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictReferencePathAccess;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictRegistryAccess;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictDBGAccess;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictSymbolServerAccess;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictOriginalPathAccess;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictReferencePathAccess;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictDBGAccess;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictSystemRootAccess;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictSystemRootAccess;
     }
 }

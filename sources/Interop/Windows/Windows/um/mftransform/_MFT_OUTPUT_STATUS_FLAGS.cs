@@ -3,10 +3,9 @@
 // Ported from um/mftransform.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum _MFT_OUTPUT_STATUS_FLAGS
 {
-    public enum _MFT_OUTPUT_STATUS_FLAGS
-    {
-        MFT_OUTPUT_STATUS_SAMPLE_READY = 0x1,
-    }
+    MFT_OUTPUT_STATUS_SAMPLE_READY = 0x1,
 }

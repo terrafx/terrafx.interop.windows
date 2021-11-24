@@ -6,107 +6,106 @@
 using System.Runtime.CompilerServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct ID3D10EffectTechnique : ID3D10EffectTechnique.Interface
 {
-    public unsafe partial struct ID3D10EffectTechnique : ID3D10EffectTechnique.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public BOOL IsValid()
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ID3D10EffectTechnique*, int>)(lpVtbl[0]))((ID3D10EffectTechnique*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    public HRESULT GetDesc(D3D10_TECHNIQUE_DESC* pDesc)
+    {
+        return ((delegate* unmanaged<ID3D10EffectTechnique*, D3D10_TECHNIQUE_DESC*, int>)(lpVtbl[1]))((ID3D10EffectTechnique*)Unsafe.AsPointer(ref this), pDesc);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    public ID3D10EffectVariable* GetAnnotationByIndex(uint Index)
+    {
+        return ((delegate* unmanaged<ID3D10EffectTechnique*, uint, ID3D10EffectVariable*>)(lpVtbl[2]))((ID3D10EffectTechnique*)Unsafe.AsPointer(ref this), Index);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public ID3D10EffectVariable* GetAnnotationByName([NativeTypeName("LPCSTR")] sbyte* Name)
+    {
+        return ((delegate* unmanaged<ID3D10EffectTechnique*, sbyte*, ID3D10EffectVariable*>)(lpVtbl[3]))((ID3D10EffectTechnique*)Unsafe.AsPointer(ref this), Name);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public ID3D10EffectPass* GetPassByIndex(uint Index)
+    {
+        return ((delegate* unmanaged<ID3D10EffectTechnique*, uint, ID3D10EffectPass*>)(lpVtbl[4]))((ID3D10EffectTechnique*)Unsafe.AsPointer(ref this), Index);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public ID3D10EffectPass* GetPassByName([NativeTypeName("LPCSTR")] sbyte* Name)
+    {
+        return ((delegate* unmanaged<ID3D10EffectTechnique*, sbyte*, ID3D10EffectPass*>)(lpVtbl[5]))((ID3D10EffectTechnique*)Unsafe.AsPointer(ref this), Name);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT ComputeStateBlockMask(D3D10_STATE_BLOCK_MASK* pStateBlockMask)
+    {
+        return ((delegate* unmanaged<ID3D10EffectTechnique*, D3D10_STATE_BLOCK_MASK*, int>)(lpVtbl[6]))((ID3D10EffectTechnique*)Unsafe.AsPointer(ref this), pStateBlockMask);
+    }
+
+    public interface Interface
+    {
         [VtblIndex(0)]
-        public BOOL IsValid()
-        {
-            return ((delegate* unmanaged<ID3D10EffectTechnique*, int>)(lpVtbl[0]))((ID3D10EffectTechnique*)Unsafe.AsPointer(ref this));
-        }
+        BOOL IsValid();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(1)]
-        public HRESULT GetDesc(D3D10_TECHNIQUE_DESC* pDesc)
-        {
-            return ((delegate* unmanaged<ID3D10EffectTechnique*, D3D10_TECHNIQUE_DESC*, int>)(lpVtbl[1]))((ID3D10EffectTechnique*)Unsafe.AsPointer(ref this), pDesc);
-        }
+        HRESULT GetDesc(D3D10_TECHNIQUE_DESC* pDesc);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(2)]
-        public ID3D10EffectVariable* GetAnnotationByIndex(uint Index)
-        {
-            return ((delegate* unmanaged<ID3D10EffectTechnique*, uint, ID3D10EffectVariable*>)(lpVtbl[2]))((ID3D10EffectTechnique*)Unsafe.AsPointer(ref this), Index);
-        }
+        ID3D10EffectVariable* GetAnnotationByIndex(uint Index);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public ID3D10EffectVariable* GetAnnotationByName([NativeTypeName("LPCSTR")] sbyte* Name)
-        {
-            return ((delegate* unmanaged<ID3D10EffectTechnique*, sbyte*, ID3D10EffectVariable*>)(lpVtbl[3]))((ID3D10EffectTechnique*)Unsafe.AsPointer(ref this), Name);
-        }
+        ID3D10EffectVariable* GetAnnotationByName([NativeTypeName("LPCSTR")] sbyte* Name);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public ID3D10EffectPass* GetPassByIndex(uint Index)
-        {
-            return ((delegate* unmanaged<ID3D10EffectTechnique*, uint, ID3D10EffectPass*>)(lpVtbl[4]))((ID3D10EffectTechnique*)Unsafe.AsPointer(ref this), Index);
-        }
+        ID3D10EffectPass* GetPassByIndex(uint Index);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public ID3D10EffectPass* GetPassByName([NativeTypeName("LPCSTR")] sbyte* Name)
-        {
-            return ((delegate* unmanaged<ID3D10EffectTechnique*, sbyte*, ID3D10EffectPass*>)(lpVtbl[5]))((ID3D10EffectTechnique*)Unsafe.AsPointer(ref this), Name);
-        }
+        ID3D10EffectPass* GetPassByName([NativeTypeName("LPCSTR")] sbyte* Name);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT ComputeStateBlockMask(D3D10_STATE_BLOCK_MASK* pStateBlockMask)
-        {
-            return ((delegate* unmanaged<ID3D10EffectTechnique*, D3D10_STATE_BLOCK_MASK*, int>)(lpVtbl[6]))((ID3D10EffectTechnique*)Unsafe.AsPointer(ref this), pStateBlockMask);
-        }
+        HRESULT ComputeStateBlockMask(D3D10_STATE_BLOCK_MASK* pStateBlockMask);
+    }
 
-        public interface Interface
-        {
-            [VtblIndex(0)]
-            BOOL IsValid();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D10EffectTechnique*, int> IsValid;
 
-            [VtblIndex(1)]
-            HRESULT GetDesc(D3D10_TECHNIQUE_DESC* pDesc);
+        [NativeTypeName("HRESULT (D3D10_TECHNIQUE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D10EffectTechnique*, D3D10_TECHNIQUE_DESC*, int> GetDesc;
 
-            [VtblIndex(2)]
-            ID3D10EffectVariable* GetAnnotationByIndex(uint Index);
+        [NativeTypeName("ID3D10EffectVariable *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D10EffectTechnique*, uint, ID3D10EffectVariable*> GetAnnotationByIndex;
 
-            [VtblIndex(3)]
-            ID3D10EffectVariable* GetAnnotationByName([NativeTypeName("LPCSTR")] sbyte* Name);
+        [NativeTypeName("ID3D10EffectVariable *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D10EffectTechnique*, sbyte*, ID3D10EffectVariable*> GetAnnotationByName;
 
-            [VtblIndex(4)]
-            ID3D10EffectPass* GetPassByIndex(uint Index);
+        [NativeTypeName("ID3D10EffectPass *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D10EffectTechnique*, uint, ID3D10EffectPass*> GetPassByIndex;
 
-            [VtblIndex(5)]
-            ID3D10EffectPass* GetPassByName([NativeTypeName("LPCSTR")] sbyte* Name);
+        [NativeTypeName("ID3D10EffectPass *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D10EffectTechnique*, sbyte*, ID3D10EffectPass*> GetPassByName;
 
-            [VtblIndex(6)]
-            HRESULT ComputeStateBlockMask(D3D10_STATE_BLOCK_MASK* pStateBlockMask);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D10EffectTechnique*, int> IsValid;
-
-            [NativeTypeName("HRESULT (D3D10_TECHNIQUE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D10EffectTechnique*, D3D10_TECHNIQUE_DESC*, int> GetDesc;
-
-            [NativeTypeName("ID3D10EffectVariable *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D10EffectTechnique*, uint, ID3D10EffectVariable*> GetAnnotationByIndex;
-
-            [NativeTypeName("ID3D10EffectVariable *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D10EffectTechnique*, sbyte*, ID3D10EffectVariable*> GetAnnotationByName;
-
-            [NativeTypeName("ID3D10EffectPass *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D10EffectTechnique*, uint, ID3D10EffectPass*> GetPassByIndex;
-
-            [NativeTypeName("ID3D10EffectPass *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D10EffectTechnique*, sbyte*, ID3D10EffectPass*> GetPassByName;
-
-            [NativeTypeName("HRESULT (D3D10_STATE_BLOCK_MASK *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D10EffectTechnique*, D3D10_STATE_BLOCK_MASK*, int> ComputeStateBlockMask;
-        }
+        [NativeTypeName("HRESULT (D3D10_STATE_BLOCK_MASK *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D10EffectTechnique*, D3D10_STATE_BLOCK_MASK*, int> ComputeStateBlockMask;
     }
 }

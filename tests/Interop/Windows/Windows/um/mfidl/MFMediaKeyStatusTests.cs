@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MFMediaKeyStatus" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.19041.0")]
+public static unsafe partial class MFMediaKeyStatusTests
 {
-    /// <summary>Provides validation of the <see cref="MFMediaKeyStatus" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public static unsafe partial class MFMediaKeyStatusTests
+    /// <summary>Validates that the <see cref="MFMediaKeyStatus" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MFMediaKeyStatus" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MFMediaKeyStatus>(), Is.EqualTo(sizeof(MFMediaKeyStatus)));
-        }
+        Assert.That(Marshal.SizeOf<MFMediaKeyStatus>(), Is.EqualTo(sizeof(MFMediaKeyStatus)));
+    }
 
-        /// <summary>Validates that the <see cref="MFMediaKeyStatus" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MFMediaKeyStatus).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MFMediaKeyStatus" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MFMediaKeyStatus).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MFMediaKeyStatus" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="MFMediaKeyStatus" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(MFMediaKeyStatus), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(MFMediaKeyStatus), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(MFMediaKeyStatus), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(MFMediaKeyStatus), Is.EqualTo(12));
         }
     }
 }

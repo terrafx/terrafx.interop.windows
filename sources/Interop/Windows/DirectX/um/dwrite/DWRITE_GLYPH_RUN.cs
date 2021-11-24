@@ -5,29 +5,28 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct DWRITE_GLYPH_RUN
 {
-    public unsafe partial struct DWRITE_GLYPH_RUN
-    {
-        public IDWriteFontFace* fontFace;
+    public IDWriteFontFace* fontFace;
 
-        public float fontEmSize;
+    public float fontEmSize;
 
-        [NativeTypeName("UINT32")]
-        public uint glyphCount;
+    [NativeTypeName("UINT32")]
+    public uint glyphCount;
 
-        [NativeTypeName("const UINT16 *")]
-        public ushort* glyphIndices;
+    [NativeTypeName("const UINT16 *")]
+    public ushort* glyphIndices;
 
-        [NativeTypeName("const FLOAT *")]
-        public float* glyphAdvances;
+    [NativeTypeName("const FLOAT *")]
+    public float* glyphAdvances;
 
-        [NativeTypeName("const DWRITE_GLYPH_OFFSET *")]
-        public DWRITE_GLYPH_OFFSET* glyphOffsets;
+    [NativeTypeName("const DWRITE_GLYPH_OFFSET *")]
+    public DWRITE_GLYPH_OFFSET* glyphOffsets;
 
-        public BOOL isSideways;
+    public BOOL isSideways;
 
-        [NativeTypeName("UINT32")]
-        public uint bidiLevel;
-    }
+    [NativeTypeName("UINT32")]
+    public uint bidiLevel;
 }

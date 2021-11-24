@@ -5,13 +5,12 @@
 
 using static TerraFX.Interop.DirectX.DirectX;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D1_RENDERING_CONTROLS
 {
-    public partial struct D2D1_RENDERING_CONTROLS
+    public D2D1_RENDERING_CONTROLS(D2D1_BUFFER_PRECISION bufferPrecision, [NativeTypeName("D2D1_SIZE_U")] D2D_SIZE_U tileSize)
     {
-        public D2D1_RENDERING_CONTROLS(D2D1_BUFFER_PRECISION bufferPrecision, [NativeTypeName("D2D1_SIZE_U")] D2D_SIZE_U tileSize)
-        {
-            this = RenderingControls(bufferPrecision, tileSize);
-        }
+        this = RenderingControls(bufferPrecision, tileSize);
     }
 }

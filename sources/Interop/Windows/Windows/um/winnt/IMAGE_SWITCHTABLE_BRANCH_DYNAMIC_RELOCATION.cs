@@ -6,43 +6,42 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct IMAGE_SWITCHTABLE_BRANCH_DYNAMIC_RELOCATION
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct IMAGE_SWITCHTABLE_BRANCH_DYNAMIC_RELOCATION
+    public ushort _bitfield;
+
+    [NativeTypeName("WORD : 12")]
+    public ushort PageRelativeOffset
     {
-        public ushort _bitfield;
-
-        [NativeTypeName("WORD : 12")]
-        public ushort PageRelativeOffset
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (ushort)(_bitfield & 0xFFFu);
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (ushort)((_bitfield & ~0xFFFu) | (value & 0xFFFu));
-            }
+            return (ushort)(_bitfield & 0xFFFu);
         }
 
-        [NativeTypeName("WORD : 4")]
-        public ushort RegisterNumber
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (ushort)((_bitfield >> 12) & 0xFu);
-            }
+            _bitfield = (ushort)((_bitfield & ~0xFFFu) | (value & 0xFFFu));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (ushort)((_bitfield & ~(0xFu << 12)) | ((value & 0xFu) << 12));
-            }
+    [NativeTypeName("WORD : 4")]
+    public ushort RegisterNumber
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (ushort)((_bitfield >> 12) & 0xFu);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (ushort)((_bitfield & ~(0xFu << 12)) | ((value & 0xFu) << 12));
         }
     }
 }

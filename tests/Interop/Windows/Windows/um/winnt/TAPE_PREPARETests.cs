@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TAPE_PREPARE" /> struct.</summary>
+public static unsafe partial class TAPE_PREPARETests
 {
-    /// <summary>Provides validation of the <see cref="TAPE_PREPARE" /> struct.</summary>
-    public static unsafe partial class TAPE_PREPARETests
+    /// <summary>Validates that the <see cref="TAPE_PREPARE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TAPE_PREPARE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TAPE_PREPARE>(), Is.EqualTo(sizeof(TAPE_PREPARE)));
-        }
+        Assert.That(Marshal.SizeOf<TAPE_PREPARE>(), Is.EqualTo(sizeof(TAPE_PREPARE)));
+    }
 
-        /// <summary>Validates that the <see cref="TAPE_PREPARE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TAPE_PREPARE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TAPE_PREPARE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TAPE_PREPARE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TAPE_PREPARE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TAPE_PREPARE), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="TAPE_PREPARE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TAPE_PREPARE), Is.EqualTo(8));
     }
 }

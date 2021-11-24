@@ -5,12 +5,11 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
-{
-    public partial struct DXGI_OUTDUPL_MOVE_RECT
-    {
-        public POINT SourcePoint;
+namespace TerraFX.Interop.DirectX;
 
-        public RECT DestinationRect;
-    }
+public partial struct DXGI_OUTDUPL_MOVE_RECT
+{
+    public POINT SourcePoint;
+
+    public RECT DestinationRect;
 }

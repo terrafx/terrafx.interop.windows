@@ -3,12 +3,11 @@
 // Ported from um/MsiQuery.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MSIDBSTATE
 {
-    public enum MSIDBSTATE
-    {
-        MSIDBSTATE_ERROR = -1,
-        MSIDBSTATE_READ = 0,
-        MSIDBSTATE_WRITE = 1,
-    }
+    MSIDBSTATE_ERROR = -1,
+    MSIDBSTATE_READ = 0,
+    MSIDBSTATE_WRITE = 1,
 }

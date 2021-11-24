@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct WINHTTP_PROXY_RESULT
-    {
-        [NativeTypeName("DWORD")]
-        public uint cEntries;
+namespace TerraFX.Interop.Windows;
 
-        public WINHTTP_PROXY_RESULT_ENTRY* pEntries;
-    }
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct WINHTTP_PROXY_RESULT
+{
+    [NativeTypeName("DWORD")]
+    public uint cEntries;
+
+    public WINHTTP_PROXY_RESULT_ENTRY* pEntries;
 }

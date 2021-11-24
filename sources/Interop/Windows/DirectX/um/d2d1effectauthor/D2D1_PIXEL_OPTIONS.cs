@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D2D1_PIXEL_OPTIONS : uint
 {
-    [Flags]
-    public enum D2D1_PIXEL_OPTIONS : uint
-    {
-        D2D1_PIXEL_OPTIONS_NONE = 0,
-        D2D1_PIXEL_OPTIONS_TRIVIAL_SAMPLING = 1,
-        D2D1_PIXEL_OPTIONS_FORCE_DWORD = 0xffffffff,
-    }
+    D2D1_PIXEL_OPTIONS_NONE = 0,
+    D2D1_PIXEL_OPTIONS_TRIVIAL_SAMPLING = 1,
+    D2D1_PIXEL_OPTIONS_FORCE_DWORD = 0xffffffff,
 }

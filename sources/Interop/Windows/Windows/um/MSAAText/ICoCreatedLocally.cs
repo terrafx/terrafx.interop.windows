@@ -7,64 +7,63 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("0A53EB6C-1908-4742-8CFF-2CEE2E93F94C")]
+[NativeTypeName("struct ICoCreatedLocally : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ICoCreatedLocally : ICoCreatedLocally.Interface
 {
-    [Guid("0A53EB6C-1908-4742-8CFF-2CEE2E93F94C")]
-    [NativeTypeName("struct ICoCreatedLocally : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICoCreatedLocally : ICoCreatedLocally.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ICoCreatedLocally*, Guid*, void**, int>)(lpVtbl[0]))((ICoCreatedLocally*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ICoCreatedLocally*, Guid*, void**, int>)(lpVtbl[0]))((ICoCreatedLocally*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ICoCreatedLocally*, uint>)(lpVtbl[1]))((ICoCreatedLocally*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ICoCreatedLocally*, uint>)(lpVtbl[1]))((ICoCreatedLocally*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ICoCreatedLocally*, uint>)(lpVtbl[2]))((ICoCreatedLocally*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ICoCreatedLocally*, uint>)(lpVtbl[2]))((ICoCreatedLocally*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT LocalInit(IUnknown* punkLocalObject, [NativeTypeName("const IID &")] Guid* riidParam, IUnknown* punkParam, VARIANT varParam)
+    {
+        return ((delegate* unmanaged<ICoCreatedLocally*, IUnknown*, Guid*, IUnknown*, VARIANT, int>)(lpVtbl[3]))((ICoCreatedLocally*)Unsafe.AsPointer(ref this), punkLocalObject, riidParam, punkParam, varParam);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT LocalInit(IUnknown* punkLocalObject, [NativeTypeName("const IID &")] Guid* riidParam, IUnknown* punkParam, VARIANT varParam)
-        {
-            return ((delegate* unmanaged<ICoCreatedLocally*, IUnknown*, Guid*, IUnknown*, VARIANT, int>)(lpVtbl[3]))((ICoCreatedLocally*)Unsafe.AsPointer(ref this), punkLocalObject, riidParam, punkParam, varParam);
-        }
+        HRESULT LocalInit(IUnknown* punkLocalObject, [NativeTypeName("const IID &")] Guid* riidParam, IUnknown* punkParam, VARIANT varParam);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT LocalInit(IUnknown* punkLocalObject, [NativeTypeName("const IID &")] Guid* riidParam, IUnknown* punkParam, VARIANT varParam);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICoCreatedLocally*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICoCreatedLocally*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ICoCreatedLocally*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ICoCreatedLocally*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ICoCreatedLocally*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ICoCreatedLocally*, uint> Release;
-
-            [NativeTypeName("HRESULT (IUnknown *, const IID &, IUnknown *, VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICoCreatedLocally*, IUnknown*, Guid*, IUnknown*, VARIANT, int> LocalInit;
-        }
+        [NativeTypeName("HRESULT (IUnknown *, const IID &, IUnknown *, VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICoCreatedLocally*, IUnknown*, Guid*, IUnknown*, VARIANT, int> LocalInit;
     }
 }

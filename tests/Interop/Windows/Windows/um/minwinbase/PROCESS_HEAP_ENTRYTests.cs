@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PROCESS_HEAP_ENTRY" /> struct.</summary>
+public static unsafe partial class PROCESS_HEAP_ENTRYTests
 {
-    /// <summary>Provides validation of the <see cref="PROCESS_HEAP_ENTRY" /> struct.</summary>
-    public static unsafe partial class PROCESS_HEAP_ENTRYTests
+    /// <summary>Validates that the <see cref="PROCESS_HEAP_ENTRY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PROCESS_HEAP_ENTRY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PROCESS_HEAP_ENTRY>(), Is.EqualTo(sizeof(PROCESS_HEAP_ENTRY)));
-        }
+        Assert.That(Marshal.SizeOf<PROCESS_HEAP_ENTRY>(), Is.EqualTo(sizeof(PROCESS_HEAP_ENTRY)));
+    }
 
-        /// <summary>Validates that the <see cref="PROCESS_HEAP_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PROCESS_HEAP_ENTRY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PROCESS_HEAP_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PROCESS_HEAP_ENTRY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PROCESS_HEAP_ENTRY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="PROCESS_HEAP_ENTRY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(PROCESS_HEAP_ENTRY), Is.EqualTo(40));
-            }
-            else
-            {
-                Assert.That(sizeof(PROCESS_HEAP_ENTRY), Is.EqualTo(28));
-            }
+            Assert.That(sizeof(PROCESS_HEAP_ENTRY), Is.EqualTo(40));
+        }
+        else
+        {
+            Assert.That(sizeof(PROCESS_HEAP_ENTRY), Is.EqualTo(28));
         }
     }
 }

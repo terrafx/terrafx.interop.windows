@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("0FBB5752-1D43-47BF-BD79-F2293D8CE337")]
+public partial struct CODECAPI_AVEncMP12MuxSysAudioLock
 {
-    [Guid("0FBB5752-1D43-47BF-BD79-F2293D8CE337")]
-    public partial struct CODECAPI_AVEncMP12MuxSysAudioLock
-    {
-    }
 }

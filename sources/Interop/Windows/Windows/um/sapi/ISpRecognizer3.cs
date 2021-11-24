@@ -7,90 +7,89 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("DF1B943C-5838-4AA2-8706-D7CD5B333499")]
+[NativeTypeName("struct ISpRecognizer3 : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ISpRecognizer3 : ISpRecognizer3.Interface
 {
-    [Guid("DF1B943C-5838-4AA2-8706-D7CD5B333499")]
-    [NativeTypeName("struct ISpRecognizer3 : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpRecognizer3 : ISpRecognizer3.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ISpRecognizer3*, Guid*, void**, int>)(lpVtbl[0]))((ISpRecognizer3*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ISpRecognizer3*, Guid*, void**, int>)(lpVtbl[0]))((ISpRecognizer3*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ISpRecognizer3*, uint>)(lpVtbl[1]))((ISpRecognizer3*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ISpRecognizer3*, uint>)(lpVtbl[1]))((ISpRecognizer3*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ISpRecognizer3*, uint>)(lpVtbl[2]))((ISpRecognizer3*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ISpRecognizer3*, uint>)(lpVtbl[2]))((ISpRecognizer3*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetCategory(SPCATEGORYTYPE categoryType, ISpRecoCategory** ppCategory)
+    {
+        return ((delegate* unmanaged<ISpRecognizer3*, SPCATEGORYTYPE, ISpRecoCategory**, int>)(lpVtbl[3]))((ISpRecognizer3*)Unsafe.AsPointer(ref this), categoryType, ppCategory);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT SetActiveCategory(ISpRecoCategory* pCategory)
+    {
+        return ((delegate* unmanaged<ISpRecognizer3*, ISpRecoCategory*, int>)(lpVtbl[4]))((ISpRecognizer3*)Unsafe.AsPointer(ref this), pCategory);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetActiveCategory(ISpRecoCategory** ppCategory)
+    {
+        return ((delegate* unmanaged<ISpRecognizer3*, ISpRecoCategory**, int>)(lpVtbl[5]))((ISpRecognizer3*)Unsafe.AsPointer(ref this), ppCategory);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetCategory(SPCATEGORYTYPE categoryType, ISpRecoCategory** ppCategory)
-        {
-            return ((delegate* unmanaged<ISpRecognizer3*, SPCATEGORYTYPE, ISpRecoCategory**, int>)(lpVtbl[3]))((ISpRecognizer3*)Unsafe.AsPointer(ref this), categoryType, ppCategory);
-        }
+        HRESULT GetCategory(SPCATEGORYTYPE categoryType, ISpRecoCategory** ppCategory);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetActiveCategory(ISpRecoCategory* pCategory)
-        {
-            return ((delegate* unmanaged<ISpRecognizer3*, ISpRecoCategory*, int>)(lpVtbl[4]))((ISpRecognizer3*)Unsafe.AsPointer(ref this), pCategory);
-        }
+        HRESULT SetActiveCategory(ISpRecoCategory* pCategory);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetActiveCategory(ISpRecoCategory** ppCategory)
-        {
-            return ((delegate* unmanaged<ISpRecognizer3*, ISpRecoCategory**, int>)(lpVtbl[5]))((ISpRecognizer3*)Unsafe.AsPointer(ref this), ppCategory);
-        }
+        HRESULT GetActiveCategory(ISpRecoCategory** ppCategory);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetCategory(SPCATEGORYTYPE categoryType, ISpRecoCategory** ppCategory);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpRecognizer3*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT SetActiveCategory(ISpRecoCategory* pCategory);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpRecognizer3*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetActiveCategory(ISpRecoCategory** ppCategory);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpRecognizer3*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpRecognizer3*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (SPCATEGORYTYPE, ISpRecoCategory **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpRecognizer3*, SPCATEGORYTYPE, ISpRecoCategory**, int> GetCategory;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpRecognizer3*, uint> AddRef;
+        [NativeTypeName("HRESULT (ISpRecoCategory *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpRecognizer3*, ISpRecoCategory*, int> SetActiveCategory;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpRecognizer3*, uint> Release;
-
-            [NativeTypeName("HRESULT (SPCATEGORYTYPE, ISpRecoCategory **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpRecognizer3*, SPCATEGORYTYPE, ISpRecoCategory**, int> GetCategory;
-
-            [NativeTypeName("HRESULT (ISpRecoCategory *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpRecognizer3*, ISpRecoCategory*, int> SetActiveCategory;
-
-            [NativeTypeName("HRESULT (ISpRecoCategory **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpRecognizer3*, ISpRecoCategory**, int> GetActiveCategory;
-        }
+        [NativeTypeName("HRESULT (ISpRecoCategory **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpRecognizer3*, ISpRecoCategory**, int> GetActiveCategory;
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TAPE_CREATE_PARTITION" /> struct.</summary>
+public static unsafe partial class TAPE_CREATE_PARTITIONTests
 {
-    /// <summary>Provides validation of the <see cref="TAPE_CREATE_PARTITION" /> struct.</summary>
-    public static unsafe partial class TAPE_CREATE_PARTITIONTests
+    /// <summary>Validates that the <see cref="TAPE_CREATE_PARTITION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TAPE_CREATE_PARTITION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TAPE_CREATE_PARTITION>(), Is.EqualTo(sizeof(TAPE_CREATE_PARTITION)));
-        }
+        Assert.That(Marshal.SizeOf<TAPE_CREATE_PARTITION>(), Is.EqualTo(sizeof(TAPE_CREATE_PARTITION)));
+    }
 
-        /// <summary>Validates that the <see cref="TAPE_CREATE_PARTITION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TAPE_CREATE_PARTITION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TAPE_CREATE_PARTITION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TAPE_CREATE_PARTITION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TAPE_CREATE_PARTITION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TAPE_CREATE_PARTITION), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="TAPE_CREATE_PARTITION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TAPE_CREATE_PARTITION), Is.EqualTo(12));
     }
 }

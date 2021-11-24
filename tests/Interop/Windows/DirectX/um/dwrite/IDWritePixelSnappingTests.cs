@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDWritePixelSnapping" /> struct.</summary>
+public static unsafe partial class IDWritePixelSnappingTests
 {
-    /// <summary>Provides validation of the <see cref="IDWritePixelSnapping" /> struct.</summary>
-    public static unsafe partial class IDWritePixelSnappingTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWritePixelSnapping" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWritePixelSnapping" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDWritePixelSnapping).GUID, Is.EqualTo(IID_IDWritePixelSnapping));
-        }
+        Assert.That(typeof(IDWritePixelSnapping).GUID, Is.EqualTo(IID_IDWritePixelSnapping));
+    }
 
-        /// <summary>Validates that the <see cref="IDWritePixelSnapping" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDWritePixelSnapping>(), Is.EqualTo(sizeof(IDWritePixelSnapping)));
-        }
+    /// <summary>Validates that the <see cref="IDWritePixelSnapping" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDWritePixelSnapping>(), Is.EqualTo(sizeof(IDWritePixelSnapping)));
+    }
 
-        /// <summary>Validates that the <see cref="IDWritePixelSnapping" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDWritePixelSnapping).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDWritePixelSnapping" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDWritePixelSnapping).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDWritePixelSnapping" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDWritePixelSnapping" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDWritePixelSnapping), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDWritePixelSnapping), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDWritePixelSnapping), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDWritePixelSnapping), Is.EqualTo(4));
         }
     }
 }

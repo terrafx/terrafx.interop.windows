@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum POINTER_INPUT_TYPE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum POINTER_INPUT_TYPE
-    {
-        PT_POINTER = 1,
-        PT_TOUCH = 2,
-        PT_PEN = 3,
-        PT_MOUSE = 4,
-        PT_TOUCHPAD = 5,
-    }
+    PT_POINTER = 1,
+    PT_TOUCH = 2,
+    PT_PEN = 3,
+    PT_MOUSE = 4,
+    PT_TOUCHPAD = 5,
 }

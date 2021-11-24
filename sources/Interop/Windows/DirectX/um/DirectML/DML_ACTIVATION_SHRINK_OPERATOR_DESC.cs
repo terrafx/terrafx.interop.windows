@@ -5,19 +5,18 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+public unsafe partial struct DML_ACTIVATION_SHRINK_OPERATOR_DESC
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public unsafe partial struct DML_ACTIVATION_SHRINK_OPERATOR_DESC
-    {
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* InputTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* InputTensor;
 
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* OutputTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* OutputTensor;
 
-        public float Bias;
+    public float Bias;
 
-        public float Threshold;
-    }
+    public float Threshold;
 }

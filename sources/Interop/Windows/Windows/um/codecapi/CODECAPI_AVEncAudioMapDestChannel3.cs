@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("BC5D0B63-DF6A-4E16-9803-B82007A30C8D")]
+public partial struct CODECAPI_AVEncAudioMapDestChannel3
 {
-    [Guid("BC5D0B63-DF6A-4E16-9803-B82007A30C8D")]
-    public partial struct CODECAPI_AVEncAudioMapDestChannel3
-    {
-    }
 }

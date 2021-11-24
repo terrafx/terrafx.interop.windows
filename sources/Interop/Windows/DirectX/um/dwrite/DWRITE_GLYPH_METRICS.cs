@@ -3,29 +3,28 @@
 // Ported from um/dwrite.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DWRITE_GLYPH_METRICS
 {
-    public partial struct DWRITE_GLYPH_METRICS
-    {
-        [NativeTypeName("INT32")]
-        public int leftSideBearing;
+    [NativeTypeName("INT32")]
+    public int leftSideBearing;
 
-        [NativeTypeName("UINT32")]
-        public uint advanceWidth;
+    [NativeTypeName("UINT32")]
+    public uint advanceWidth;
 
-        [NativeTypeName("INT32")]
-        public int rightSideBearing;
+    [NativeTypeName("INT32")]
+    public int rightSideBearing;
 
-        [NativeTypeName("INT32")]
-        public int topSideBearing;
+    [NativeTypeName("INT32")]
+    public int topSideBearing;
 
-        [NativeTypeName("UINT32")]
-        public uint advanceHeight;
+    [NativeTypeName("UINT32")]
+    public uint advanceHeight;
 
-        [NativeTypeName("INT32")]
-        public int bottomSideBearing;
+    [NativeTypeName("INT32")]
+    public int bottomSideBearing;
 
-        [NativeTypeName("INT32")]
-        public int verticalOriginY;
-    }
+    [NativeTypeName("INT32")]
+    public int verticalOriginY;
 }

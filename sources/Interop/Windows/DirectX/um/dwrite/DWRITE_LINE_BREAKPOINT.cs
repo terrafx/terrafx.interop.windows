@@ -5,90 +5,89 @@
 
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DWRITE_LINE_BREAKPOINT
 {
-    public partial struct DWRITE_LINE_BREAKPOINT
+    public byte _bitfield;
+
+    [NativeTypeName("UINT8 : 2")]
+    public byte breakConditionBefore
     {
-        public byte _bitfield;
-
-        [NativeTypeName("UINT8 : 2")]
-        public byte breakConditionBefore
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)(_bitfield & 0x3u);
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (byte)((_bitfield & ~0x3u) | (value & 0x3u));
-            }
+            return (byte)(_bitfield & 0x3u);
         }
 
-        [NativeTypeName("UINT8 : 2")]
-        public byte breakConditionAfter
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)((_bitfield >> 2) & 0x3u);
-            }
+            _bitfield = (byte)((_bitfield & ~0x3u) | (value & 0x3u));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (byte)((_bitfield & ~(0x3u << 2)) | ((value & 0x3u) << 2));
-            }
+    [NativeTypeName("UINT8 : 2")]
+    public byte breakConditionAfter
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)((_bitfield >> 2) & 0x3u);
         }
 
-        [NativeTypeName("UINT8 : 1")]
-        public byte isWhitespace
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)((_bitfield >> 4) & 0x1u);
-            }
+            _bitfield = (byte)((_bitfield & ~(0x3u << 2)) | ((value & 0x3u) << 2));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (byte)((_bitfield & ~(0x1u << 4)) | ((value & 0x1u) << 4));
-            }
+    [NativeTypeName("UINT8 : 1")]
+    public byte isWhitespace
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)((_bitfield >> 4) & 0x1u);
         }
 
-        [NativeTypeName("UINT8 : 1")]
-        public byte isSoftHyphen
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)((_bitfield >> 5) & 0x1u);
-            }
+            _bitfield = (byte)((_bitfield & ~(0x1u << 4)) | ((value & 0x1u) << 4));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (byte)((_bitfield & ~(0x1u << 5)) | ((value & 0x1u) << 5));
-            }
+    [NativeTypeName("UINT8 : 1")]
+    public byte isSoftHyphen
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)((_bitfield >> 5) & 0x1u);
         }
 
-        [NativeTypeName("UINT8 : 2")]
-        public byte padding
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (byte)((_bitfield >> 6) & 0x3u);
-            }
+            _bitfield = (byte)((_bitfield & ~(0x1u << 5)) | ((value & 0x1u) << 5));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (byte)((_bitfield & ~(0x3u << 6)) | ((value & 0x3u) << 6));
-            }
+    [NativeTypeName("UINT8 : 2")]
+    public byte padding
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (byte)((_bitfield >> 6) & 0x3u);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (byte)((_bitfield & ~(0x3u << 6)) | ((value & 0x3u) << 6));
         }
     }
 }

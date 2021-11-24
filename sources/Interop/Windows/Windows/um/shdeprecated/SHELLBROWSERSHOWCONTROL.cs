@@ -3,13 +3,12 @@
 // Ported from um/shdeprecated.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SHELLBROWSERSHOWCONTROL
 {
-    public enum SHELLBROWSERSHOWCONTROL
-    {
-        SBSC_HIDE = 0,
-        SBSC_SHOW = 1,
-        SBSC_TOGGLE = 2,
-        SBSC_QUERY = 3,
-    }
+    SBSC_HIDE = 0,
+    SBSC_SHOW = 1,
+    SBSC_TOGGLE = 2,
+    SBSC_QUERY = 3,
 }

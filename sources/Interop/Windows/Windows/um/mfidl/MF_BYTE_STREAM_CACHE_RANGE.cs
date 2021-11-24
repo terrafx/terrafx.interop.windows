@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct MF_BYTE_STREAM_CACHE_RANGE
-    {
-        [NativeTypeName("QWORD")]
-        public ulong qwStartOffset;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("QWORD")]
-        public ulong qwEndOffset;
-    }
+[SupportedOSPlatform("windows8.0")]
+public partial struct MF_BYTE_STREAM_CACHE_RANGE
+{
+    [NativeTypeName("QWORD")]
+    public ulong qwStartOffset;
+
+    [NativeTypeName("QWORD")]
+    public ulong qwEndOffset;
 }

@@ -3,16 +3,15 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_TEX2D_ARRAY_RTV
 {
-    public partial struct D3D12_TEX2D_ARRAY_RTV
-    {
-        public uint MipSlice;
+    public uint MipSlice;
 
-        public uint FirstArraySlice;
+    public uint FirstArraySlice;
 
-        public uint ArraySize;
+    public uint ArraySize;
 
-        public uint PlaneSlice;
-    }
+    public uint PlaneSlice;
 }

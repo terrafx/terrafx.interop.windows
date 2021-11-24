@@ -3,20 +3,19 @@
 // Ported from um/davclnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct DAV_CALLBACK_AUTH_UNP
 {
-    public unsafe partial struct DAV_CALLBACK_AUTH_UNP
-    {
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszUserName;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszUserName;
 
-        [NativeTypeName("ULONG")]
-        public uint ulUserNameLength;
+    [NativeTypeName("ULONG")]
+    public uint ulUserNameLength;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszPassword;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszPassword;
 
-        [NativeTypeName("ULONG")]
-        public uint ulPasswordLength;
-    }
+    [NativeTypeName("ULONG")]
+    public uint ulPasswordLength;
 }

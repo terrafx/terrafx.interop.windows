@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDCompositionTurbulenceEffect" /> struct.</summary>
+public static unsafe partial class IDCompositionTurbulenceEffectTests
 {
-    /// <summary>Provides validation of the <see cref="IDCompositionTurbulenceEffect" /> struct.</summary>
-    public static unsafe partial class IDCompositionTurbulenceEffectTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDCompositionTurbulenceEffect" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDCompositionTurbulenceEffect" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDCompositionTurbulenceEffect).GUID, Is.EqualTo(IID_IDCompositionTurbulenceEffect));
-        }
+        Assert.That(typeof(IDCompositionTurbulenceEffect).GUID, Is.EqualTo(IID_IDCompositionTurbulenceEffect));
+    }
 
-        /// <summary>Validates that the <see cref="IDCompositionTurbulenceEffect" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDCompositionTurbulenceEffect>(), Is.EqualTo(sizeof(IDCompositionTurbulenceEffect)));
-        }
+    /// <summary>Validates that the <see cref="IDCompositionTurbulenceEffect" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDCompositionTurbulenceEffect>(), Is.EqualTo(sizeof(IDCompositionTurbulenceEffect)));
+    }
 
-        /// <summary>Validates that the <see cref="IDCompositionTurbulenceEffect" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDCompositionTurbulenceEffect).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDCompositionTurbulenceEffect" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDCompositionTurbulenceEffect).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDCompositionTurbulenceEffect" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDCompositionTurbulenceEffect" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDCompositionTurbulenceEffect), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDCompositionTurbulenceEffect), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDCompositionTurbulenceEffect), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDCompositionTurbulenceEffect), Is.EqualTo(4));
         }
     }
 }

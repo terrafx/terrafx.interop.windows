@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAppxManifestQualifiedResource" /> struct.</summary>
+public static unsafe partial class IAppxManifestQualifiedResourceTests
 {
-    /// <summary>Provides validation of the <see cref="IAppxManifestQualifiedResource" /> struct.</summary>
-    public static unsafe partial class IAppxManifestQualifiedResourceTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppxManifestQualifiedResource" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppxManifestQualifiedResource" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAppxManifestQualifiedResource).GUID, Is.EqualTo(IID_IAppxManifestQualifiedResource));
-        }
+        Assert.That(typeof(IAppxManifestQualifiedResource).GUID, Is.EqualTo(IID_IAppxManifestQualifiedResource));
+    }
 
-        /// <summary>Validates that the <see cref="IAppxManifestQualifiedResource" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAppxManifestQualifiedResource>(), Is.EqualTo(sizeof(IAppxManifestQualifiedResource)));
-        }
+    /// <summary>Validates that the <see cref="IAppxManifestQualifiedResource" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAppxManifestQualifiedResource>(), Is.EqualTo(sizeof(IAppxManifestQualifiedResource)));
+    }
 
-        /// <summary>Validates that the <see cref="IAppxManifestQualifiedResource" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAppxManifestQualifiedResource).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAppxManifestQualifiedResource" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAppxManifestQualifiedResource).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAppxManifestQualifiedResource" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAppxManifestQualifiedResource" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAppxManifestQualifiedResource), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAppxManifestQualifiedResource), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAppxManifestQualifiedResource), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAppxManifestQualifiedResource), Is.EqualTo(4));
         }
     }
 }

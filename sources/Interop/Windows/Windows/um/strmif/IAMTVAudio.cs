@@ -7,129 +7,128 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("83EC1C30-23D1-11D1-99E6-00A0C9560266")]
+[NativeTypeName("struct IAMTVAudio : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IAMTVAudio : IAMTVAudio.Interface
 {
-    [Guid("83EC1C30-23D1-11D1-99E6-00A0C9560266")]
-    [NativeTypeName("struct IAMTVAudio : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMTVAudio : IAMTVAudio.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IAMTVAudio*, Guid*, void**, int>)(lpVtbl[0]))((IAMTVAudio*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IAMTVAudio*, Guid*, void**, int>)(lpVtbl[0]))((IAMTVAudio*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IAMTVAudio*, uint>)(lpVtbl[1]))((IAMTVAudio*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IAMTVAudio*, uint>)(lpVtbl[1]))((IAMTVAudio*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IAMTVAudio*, uint>)(lpVtbl[2]))((IAMTVAudio*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IAMTVAudio*, uint>)(lpVtbl[2]))((IAMTVAudio*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetHardwareSupportedTVAudioModes([NativeTypeName("long *")] int* plModes)
+    {
+        return ((delegate* unmanaged<IAMTVAudio*, int*, int>)(lpVtbl[3]))((IAMTVAudio*)Unsafe.AsPointer(ref this), plModes);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetAvailableTVAudioModes([NativeTypeName("long *")] int* plModes)
+    {
+        return ((delegate* unmanaged<IAMTVAudio*, int*, int>)(lpVtbl[4]))((IAMTVAudio*)Unsafe.AsPointer(ref this), plModes);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT get_TVAudioMode([NativeTypeName("long *")] int* plMode)
+    {
+        return ((delegate* unmanaged<IAMTVAudio*, int*, int>)(lpVtbl[5]))((IAMTVAudio*)Unsafe.AsPointer(ref this), plMode);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT put_TVAudioMode([NativeTypeName("long")] int lMode)
+    {
+        return ((delegate* unmanaged<IAMTVAudio*, int, int>)(lpVtbl[6]))((IAMTVAudio*)Unsafe.AsPointer(ref this), lMode);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT RegisterNotificationCallBack(IAMTunerNotification* pNotify, [NativeTypeName("long")] int lEvents)
+    {
+        return ((delegate* unmanaged<IAMTVAudio*, IAMTunerNotification*, int, int>)(lpVtbl[7]))((IAMTVAudio*)Unsafe.AsPointer(ref this), pNotify, lEvents);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT UnRegisterNotificationCallBack(IAMTunerNotification* pNotify)
+    {
+        return ((delegate* unmanaged<IAMTVAudio*, IAMTunerNotification*, int>)(lpVtbl[8]))((IAMTVAudio*)Unsafe.AsPointer(ref this), pNotify);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetHardwareSupportedTVAudioModes([NativeTypeName("long *")] int* plModes)
-        {
-            return ((delegate* unmanaged<IAMTVAudio*, int*, int>)(lpVtbl[3]))((IAMTVAudio*)Unsafe.AsPointer(ref this), plModes);
-        }
+        HRESULT GetHardwareSupportedTVAudioModes([NativeTypeName("long *")] int* plModes);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetAvailableTVAudioModes([NativeTypeName("long *")] int* plModes)
-        {
-            return ((delegate* unmanaged<IAMTVAudio*, int*, int>)(lpVtbl[4]))((IAMTVAudio*)Unsafe.AsPointer(ref this), plModes);
-        }
+        HRESULT GetAvailableTVAudioModes([NativeTypeName("long *")] int* plModes);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT get_TVAudioMode([NativeTypeName("long *")] int* plMode)
-        {
-            return ((delegate* unmanaged<IAMTVAudio*, int*, int>)(lpVtbl[5]))((IAMTVAudio*)Unsafe.AsPointer(ref this), plMode);
-        }
+        HRESULT get_TVAudioMode([NativeTypeName("long *")] int* plMode);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT put_TVAudioMode([NativeTypeName("long")] int lMode)
-        {
-            return ((delegate* unmanaged<IAMTVAudio*, int, int>)(lpVtbl[6]))((IAMTVAudio*)Unsafe.AsPointer(ref this), lMode);
-        }
+        HRESULT put_TVAudioMode([NativeTypeName("long")] int lMode);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT RegisterNotificationCallBack(IAMTunerNotification* pNotify, [NativeTypeName("long")] int lEvents)
-        {
-            return ((delegate* unmanaged<IAMTVAudio*, IAMTunerNotification*, int, int>)(lpVtbl[7]))((IAMTVAudio*)Unsafe.AsPointer(ref this), pNotify, lEvents);
-        }
+        HRESULT RegisterNotificationCallBack(IAMTunerNotification* pNotify, [NativeTypeName("long")] int lEvents);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT UnRegisterNotificationCallBack(IAMTunerNotification* pNotify)
-        {
-            return ((delegate* unmanaged<IAMTVAudio*, IAMTunerNotification*, int>)(lpVtbl[8]))((IAMTVAudio*)Unsafe.AsPointer(ref this), pNotify);
-        }
+        HRESULT UnRegisterNotificationCallBack(IAMTunerNotification* pNotify);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetHardwareSupportedTVAudioModes([NativeTypeName("long *")] int* plModes);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMTVAudio*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetAvailableTVAudioModes([NativeTypeName("long *")] int* plModes);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMTVAudio*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT get_TVAudioMode([NativeTypeName("long *")] int* plMode);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMTVAudio*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT put_TVAudioMode([NativeTypeName("long")] int lMode);
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMTVAudio*, int*, int> GetHardwareSupportedTVAudioModes;
 
-            [VtblIndex(7)]
-            HRESULT RegisterNotificationCallBack(IAMTunerNotification* pNotify, [NativeTypeName("long")] int lEvents);
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMTVAudio*, int*, int> GetAvailableTVAudioModes;
 
-            [VtblIndex(8)]
-            HRESULT UnRegisterNotificationCallBack(IAMTunerNotification* pNotify);
-        }
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMTVAudio*, int*, int> get_TVAudioMode;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMTVAudio*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMTVAudio*, int, int> put_TVAudioMode;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMTVAudio*, uint> AddRef;
+        [NativeTypeName("HRESULT (IAMTunerNotification *, long) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMTVAudio*, IAMTunerNotification*, int, int> RegisterNotificationCallBack;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMTVAudio*, uint> Release;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMTVAudio*, int*, int> GetHardwareSupportedTVAudioModes;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMTVAudio*, int*, int> GetAvailableTVAudioModes;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMTVAudio*, int*, int> get_TVAudioMode;
-
-            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMTVAudio*, int, int> put_TVAudioMode;
-
-            [NativeTypeName("HRESULT (IAMTunerNotification *, long) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMTVAudio*, IAMTunerNotification*, int, int> RegisterNotificationCallBack;
-
-            [NativeTypeName("HRESULT (IAMTunerNotification *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMTVAudio*, IAMTunerNotification*, int> UnRegisterNotificationCallBack;
-        }
+        [NativeTypeName("HRESULT (IAMTunerNotification *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMTVAudio*, IAMTunerNotification*, int> UnRegisterNotificationCallBack;
     }
 }

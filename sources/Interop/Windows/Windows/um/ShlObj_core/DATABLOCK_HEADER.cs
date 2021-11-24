@@ -5,15 +5,14 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct DATABLOCK_HEADER
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint dwSignature;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct DATABLOCK_HEADER
+{
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
+
+    [NativeTypeName("DWORD")]
+    public uint dwSignature;
 }

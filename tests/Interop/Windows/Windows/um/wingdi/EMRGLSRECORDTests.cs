@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="EMRGLSRECORD" /> struct.</summary>
+public static unsafe partial class EMRGLSRECORDTests
 {
-    /// <summary>Provides validation of the <see cref="EMRGLSRECORD" /> struct.</summary>
-    public static unsafe partial class EMRGLSRECORDTests
+    /// <summary>Validates that the <see cref="EMRGLSRECORD" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="EMRGLSRECORD" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<EMRGLSRECORD>(), Is.EqualTo(sizeof(EMRGLSRECORD)));
-        }
+        Assert.That(Marshal.SizeOf<EMRGLSRECORD>(), Is.EqualTo(sizeof(EMRGLSRECORD)));
+    }
 
-        /// <summary>Validates that the <see cref="EMRGLSRECORD" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(EMRGLSRECORD).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="EMRGLSRECORD" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(EMRGLSRECORD).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="EMRGLSRECORD" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(EMRGLSRECORD), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="EMRGLSRECORD" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(EMRGLSRECORD), Is.EqualTo(16));
     }
 }

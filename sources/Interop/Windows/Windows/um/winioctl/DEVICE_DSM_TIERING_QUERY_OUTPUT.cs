@@ -7,49 +7,48 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DEVICE_DSM_TIERING_QUERY_OUTPUT
 {
-    public partial struct DEVICE_DSM_TIERING_QUERY_OUTPUT
+    [NativeTypeName("DWORD")]
+    public uint Version;
+
+    [NativeTypeName("DWORD")]
+    public uint Size;
+
+    [NativeTypeName("DWORD")]
+    public uint Flags;
+
+    [NativeTypeName("DWORD")]
+    public uint Reserved;
+
+    [NativeTypeName("DWORDLONG")]
+    public ulong Alignment;
+
+    [NativeTypeName("DWORD")]
+    public uint TotalNumberOfRegions;
+
+    [NativeTypeName("DWORD")]
+    public uint NumberOfRegionsReturned;
+
+    [NativeTypeName("STORAGE_TIER_REGION [1]")]
+    public _Regions_e__FixedBuffer Regions;
+
+    public partial struct _Regions_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+        public STORAGE_TIER_REGION e0;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
-
-        [NativeTypeName("DWORD")]
-        public uint Flags;
-
-        [NativeTypeName("DWORD")]
-        public uint Reserved;
-
-        [NativeTypeName("DWORDLONG")]
-        public ulong Alignment;
-
-        [NativeTypeName("DWORD")]
-        public uint TotalNumberOfRegions;
-
-        [NativeTypeName("DWORD")]
-        public uint NumberOfRegionsReturned;
-
-        [NativeTypeName("STORAGE_TIER_REGION [1]")]
-        public _Regions_e__FixedBuffer Regions;
-
-        public partial struct _Regions_e__FixedBuffer
+        public ref STORAGE_TIER_REGION this[int index]
         {
-            public STORAGE_TIER_REGION e0;
-
-            public ref STORAGE_TIER_REGION this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<STORAGE_TIER_REGION> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<STORAGE_TIER_REGION> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

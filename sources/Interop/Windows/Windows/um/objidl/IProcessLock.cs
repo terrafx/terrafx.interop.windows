@@ -7,81 +7,80 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("000001D5-0000-0000-C000-000000000046")]
+[NativeTypeName("struct IProcessLock : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IProcessLock : IProcessLock.Interface
 {
-    [Guid("000001D5-0000-0000-C000-000000000046")]
-    [NativeTypeName("struct IProcessLock : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IProcessLock : IProcessLock.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IProcessLock*, Guid*, void**, int>)(lpVtbl[0]))((IProcessLock*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IProcessLock*, Guid*, void**, int>)(lpVtbl[0]))((IProcessLock*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IProcessLock*, uint>)(lpVtbl[1]))((IProcessLock*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IProcessLock*, uint>)(lpVtbl[1]))((IProcessLock*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IProcessLock*, uint>)(lpVtbl[2]))((IProcessLock*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IProcessLock*, uint>)(lpVtbl[2]))((IProcessLock*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRefOnProcess()
+    {
+        return ((delegate* unmanaged<IProcessLock*, uint>)(lpVtbl[3]))((IProcessLock*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    [return: NativeTypeName("ULONG")]
+    public uint ReleaseRefOnProcess()
+    {
+        return ((delegate* unmanaged<IProcessLock*, uint>)(lpVtbl[4]))((IProcessLock*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
         [return: NativeTypeName("ULONG")]
-        public uint AddRefOnProcess()
-        {
-            return ((delegate* unmanaged<IProcessLock*, uint>)(lpVtbl[3]))((IProcessLock*)Unsafe.AsPointer(ref this));
-        }
+        uint AddRefOnProcess();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
         [return: NativeTypeName("ULONG")]
-        public uint ReleaseRefOnProcess()
-        {
-            return ((delegate* unmanaged<IProcessLock*, uint>)(lpVtbl[4]))((IProcessLock*)Unsafe.AsPointer(ref this));
-        }
+        uint ReleaseRefOnProcess();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            [return: NativeTypeName("ULONG")]
-            uint AddRefOnProcess();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IProcessLock*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            [return: NativeTypeName("ULONG")]
-            uint ReleaseRefOnProcess();
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IProcessLock*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IProcessLock*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IProcessLock*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IProcessLock*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IProcessLock*, uint> AddRefOnProcess;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IProcessLock*, uint> Release;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IProcessLock*, uint> AddRefOnProcess;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IProcessLock*, uint> ReleaseRefOnProcess;
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IProcessLock*, uint> ReleaseRefOnProcess;
     }
 }

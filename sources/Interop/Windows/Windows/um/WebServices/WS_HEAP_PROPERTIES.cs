@@ -3,13 +3,12 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct WS_HEAP_PROPERTIES
-    {
-        public WS_HEAP_PROPERTY* properties;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("ULONG")]
-        public uint propertyCount;
-    }
+public unsafe partial struct WS_HEAP_PROPERTIES
+{
+    public WS_HEAP_PROPERTY* properties;
+
+    [NativeTypeName("ULONG")]
+    public uint propertyCount;
 }

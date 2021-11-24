@@ -3,11 +3,10 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum D3D12_HEAP_SERIALIZATION_TIER
 {
-    public enum D3D12_HEAP_SERIALIZATION_TIER
-    {
-        D3D12_HEAP_SERIALIZATION_TIER_0 = 0,
-        D3D12_HEAP_SERIALIZATION_TIER_10 = 10,
-    }
+    D3D12_HEAP_SERIALIZATION_TIER_0 = 0,
+    D3D12_HEAP_SERIALIZATION_TIER_10 = 10,
 }

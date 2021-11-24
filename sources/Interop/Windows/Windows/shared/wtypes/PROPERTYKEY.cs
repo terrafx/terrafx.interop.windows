@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct PROPERTYKEY
-    {
-        public Guid fmtid;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint pid;
-    }
+public partial struct PROPERTYKEY
+{
+    public Guid fmtid;
+
+    [NativeTypeName("DWORD")]
+    public uint pid;
 }

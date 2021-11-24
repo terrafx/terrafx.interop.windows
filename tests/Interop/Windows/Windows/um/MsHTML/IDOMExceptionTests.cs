@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDOMException" /> struct.</summary>
+public static unsafe partial class IDOMExceptionTests
 {
-    /// <summary>Provides validation of the <see cref="IDOMException" /> struct.</summary>
-    public static unsafe partial class IDOMExceptionTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDOMException" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDOMException" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDOMException).GUID, Is.EqualTo(IID_IDOMException));
-        }
+        Assert.That(typeof(IDOMException).GUID, Is.EqualTo(IID_IDOMException));
+    }
 
-        /// <summary>Validates that the <see cref="IDOMException" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDOMException>(), Is.EqualTo(sizeof(IDOMException)));
-        }
+    /// <summary>Validates that the <see cref="IDOMException" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDOMException>(), Is.EqualTo(sizeof(IDOMException)));
+    }
 
-        /// <summary>Validates that the <see cref="IDOMException" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDOMException).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDOMException" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDOMException).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDOMException" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDOMException" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDOMException), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDOMException), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDOMException), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDOMException), Is.EqualTo(4));
         }
     }
 }

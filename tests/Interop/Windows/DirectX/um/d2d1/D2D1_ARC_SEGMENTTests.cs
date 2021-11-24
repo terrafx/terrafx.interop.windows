@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="D2D1_ARC_SEGMENT" /> struct.</summary>
+public static unsafe partial class D2D1_ARC_SEGMENTTests
 {
-    /// <summary>Provides validation of the <see cref="D2D1_ARC_SEGMENT" /> struct.</summary>
-    public static unsafe partial class D2D1_ARC_SEGMENTTests
+    /// <summary>Validates that the <see cref="D2D1_ARC_SEGMENT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="D2D1_ARC_SEGMENT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<D2D1_ARC_SEGMENT>(), Is.EqualTo(sizeof(D2D1_ARC_SEGMENT)));
-        }
+        Assert.That(Marshal.SizeOf<D2D1_ARC_SEGMENT>(), Is.EqualTo(sizeof(D2D1_ARC_SEGMENT)));
+    }
 
-        /// <summary>Validates that the <see cref="D2D1_ARC_SEGMENT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(D2D1_ARC_SEGMENT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="D2D1_ARC_SEGMENT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(D2D1_ARC_SEGMENT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="D2D1_ARC_SEGMENT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(D2D1_ARC_SEGMENT), Is.EqualTo(28));
-        }
+    /// <summary>Validates that the <see cref="D2D1_ARC_SEGMENT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(D2D1_ARC_SEGMENT), Is.EqualTo(28));
     }
 }

@@ -3,14 +3,13 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_XML_READER_BINARY_ENCODING
 {
-    public unsafe partial struct WS_XML_READER_BINARY_ENCODING
-    {
-        public WS_XML_READER_ENCODING encoding;
+    public WS_XML_READER_ENCODING encoding;
 
-        public WS_XML_DICTIONARY* staticDictionary;
+    public WS_XML_DICTIONARY* staticDictionary;
 
-        public WS_XML_DICTIONARY* dynamicDictionary;
-    }
+    public WS_XML_DICTIONARY* dynamicDictionary;
 }

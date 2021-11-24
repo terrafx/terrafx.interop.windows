@@ -3,42 +3,41 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CRYPT_RETRIEVE_AUX_INFO
 {
-    public unsafe partial struct CRYPT_RETRIEVE_AUX_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public FILETIME* pLastSyncTime;
+    public FILETIME* pLastSyncTime;
 
-        [NativeTypeName("DWORD")]
-        public uint dwMaxUrlRetrievalByteCount;
+    [NativeTypeName("DWORD")]
+    public uint dwMaxUrlRetrievalByteCount;
 
-        [NativeTypeName("PCRYPTNET_URL_CACHE_PRE_FETCH_INFO")]
-        public CRYPTNET_URL_CACHE_PRE_FETCH_INFO* pPreFetchInfo;
+    [NativeTypeName("PCRYPTNET_URL_CACHE_PRE_FETCH_INFO")]
+    public CRYPTNET_URL_CACHE_PRE_FETCH_INFO* pPreFetchInfo;
 
-        [NativeTypeName("PCRYPTNET_URL_CACHE_FLUSH_INFO")]
-        public CRYPTNET_URL_CACHE_FLUSH_INFO* pFlushInfo;
+    [NativeTypeName("PCRYPTNET_URL_CACHE_FLUSH_INFO")]
+    public CRYPTNET_URL_CACHE_FLUSH_INFO* pFlushInfo;
 
-        [NativeTypeName("PCRYPTNET_URL_CACHE_RESPONSE_INFO *")]
-        public CRYPTNET_URL_CACHE_RESPONSE_INFO** ppResponseInfo;
+    [NativeTypeName("PCRYPTNET_URL_CACHE_RESPONSE_INFO *")]
+    public CRYPTNET_URL_CACHE_RESPONSE_INFO** ppResponseInfo;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pwszCacheFileNamePrefix;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pwszCacheFileNamePrefix;
 
-        [NativeTypeName("LPFILETIME")]
-        public FILETIME* pftCacheResync;
+    [NativeTypeName("LPFILETIME")]
+    public FILETIME* pftCacheResync;
 
-        public BOOL fProxyCacheRetrieval;
+    public BOOL fProxyCacheRetrieval;
 
-        [NativeTypeName("DWORD")]
-        public uint dwHttpStatusCode;
+    [NativeTypeName("DWORD")]
+    public uint dwHttpStatusCode;
 
-        [NativeTypeName("LPWSTR *")]
-        public ushort** ppwszErrorResponseHeaders;
+    [NativeTypeName("LPWSTR *")]
+    public ushort** ppwszErrorResponseHeaders;
 
-        [NativeTypeName("PCRYPT_DATA_BLOB *")]
-        public CRYPT_DATA_BLOB** ppErrorContentBlob;
-    }
+    [NativeTypeName("PCRYPT_DATA_BLOB *")]
+    public CRYPT_DATA_BLOB** ppErrorContentBlob;
 }

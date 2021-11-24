@@ -5,18 +5,17 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR
 {
-    public unsafe partial struct CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwFieldID;
+    [NativeTypeName("DWORD")]
+    public uint dwFieldID;
 
-        public CREDENTIAL_PROVIDER_FIELD_TYPE cpft;
+    public CREDENTIAL_PROVIDER_FIELD_TYPE cpft;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszLabel;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszLabel;
 
-        public Guid guidFieldType;
-    }
+    public Guid guidFieldType;
 }

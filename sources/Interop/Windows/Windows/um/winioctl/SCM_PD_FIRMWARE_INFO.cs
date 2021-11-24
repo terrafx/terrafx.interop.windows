@@ -7,40 +7,39 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SCM_PD_FIRMWARE_INFO
 {
-    public partial struct SCM_PD_FIRMWARE_INFO
+    [NativeTypeName("DWORD")]
+    public uint Version;
+
+    [NativeTypeName("DWORD")]
+    public uint Size;
+
+    public byte ActiveSlot;
+
+    public byte NextActiveSlot;
+
+    public byte SlotCount;
+
+    [NativeTypeName("SCM_PD_FIRMWARE_SLOT_INFO [1]")]
+    public _Slots_e__FixedBuffer Slots;
+
+    public partial struct _Slots_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+        public SCM_PD_FIRMWARE_SLOT_INFO e0;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
-
-        public byte ActiveSlot;
-
-        public byte NextActiveSlot;
-
-        public byte SlotCount;
-
-        [NativeTypeName("SCM_PD_FIRMWARE_SLOT_INFO [1]")]
-        public _Slots_e__FixedBuffer Slots;
-
-        public partial struct _Slots_e__FixedBuffer
+        public ref SCM_PD_FIRMWARE_SLOT_INFO this[int index]
         {
-            public SCM_PD_FIRMWARE_SLOT_INFO e0;
-
-            public ref SCM_PD_FIRMWARE_SLOT_INFO this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<SCM_PD_FIRMWARE_SLOT_INFO> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<SCM_PD_FIRMWARE_SLOT_INFO> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

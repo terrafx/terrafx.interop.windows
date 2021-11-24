@@ -3,14 +3,13 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct SecHandle
-    {
-        [NativeTypeName("ULONG_PTR")]
-        public nuint dwLower;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint dwUpper;
-    }
+public partial struct SecHandle
+{
+    [NativeTypeName("ULONG_PTR")]
+    public nuint dwLower;
+
+    [NativeTypeName("ULONG_PTR")]
+    public nuint dwUpper;
 }

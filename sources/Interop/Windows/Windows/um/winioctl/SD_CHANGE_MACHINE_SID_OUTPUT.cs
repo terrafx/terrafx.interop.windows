@@ -3,29 +3,28 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SD_CHANGE_MACHINE_SID_OUTPUT
 {
-    public partial struct SD_CHANGE_MACHINE_SID_OUTPUT
-    {
-        [NativeTypeName("DWORDLONG")]
-        public ulong NumSDChangedSuccess;
+    [NativeTypeName("DWORDLONG")]
+    public ulong NumSDChangedSuccess;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong NumSDChangedFail;
+    [NativeTypeName("DWORDLONG")]
+    public ulong NumSDChangedFail;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong NumSDUnused;
+    [NativeTypeName("DWORDLONG")]
+    public ulong NumSDUnused;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong NumSDTotal;
+    [NativeTypeName("DWORDLONG")]
+    public ulong NumSDTotal;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong NumMftSDChangedSuccess;
+    [NativeTypeName("DWORDLONG")]
+    public ulong NumMftSDChangedSuccess;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong NumMftSDChangedFail;
+    [NativeTypeName("DWORDLONG")]
+    public ulong NumMftSDChangedFail;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong NumMftSDTotal;
-    }
+    [NativeTypeName("DWORDLONG")]
+    public ulong NumMftSDTotal;
 }

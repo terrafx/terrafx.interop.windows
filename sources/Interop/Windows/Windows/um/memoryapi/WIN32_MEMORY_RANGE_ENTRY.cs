@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct WIN32_MEMORY_RANGE_ENTRY
-    {
-        [NativeTypeName("PVOID")]
-        public void* VirtualAddress;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint NumberOfBytes;
-    }
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct WIN32_MEMORY_RANGE_ENTRY
+{
+    [NativeTypeName("PVOID")]
+    public void* VirtualAddress;
+
+    [NativeTypeName("SIZE_T")]
+    public nuint NumberOfBytes;
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAccServerDocMgr" /> struct.</summary>
+public static unsafe partial class IAccServerDocMgrTests
 {
-    /// <summary>Provides validation of the <see cref="IAccServerDocMgr" /> struct.</summary>
-    public static unsafe partial class IAccServerDocMgrTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAccServerDocMgr" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAccServerDocMgr" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAccServerDocMgr).GUID, Is.EqualTo(IID_IAccServerDocMgr));
-        }
+        Assert.That(typeof(IAccServerDocMgr).GUID, Is.EqualTo(IID_IAccServerDocMgr));
+    }
 
-        /// <summary>Validates that the <see cref="IAccServerDocMgr" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAccServerDocMgr>(), Is.EqualTo(sizeof(IAccServerDocMgr)));
-        }
+    /// <summary>Validates that the <see cref="IAccServerDocMgr" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAccServerDocMgr>(), Is.EqualTo(sizeof(IAccServerDocMgr)));
+    }
 
-        /// <summary>Validates that the <see cref="IAccServerDocMgr" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAccServerDocMgr).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAccServerDocMgr" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAccServerDocMgr).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAccServerDocMgr" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAccServerDocMgr" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAccServerDocMgr), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAccServerDocMgr), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAccServerDocMgr), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAccServerDocMgr), Is.EqualTo(4));
         }
     }
 }

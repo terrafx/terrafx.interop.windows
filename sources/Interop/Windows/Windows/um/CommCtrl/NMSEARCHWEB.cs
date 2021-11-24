@@ -3,16 +3,15 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct NMSEARCHWEB
 {
-    public partial struct NMSEARCHWEB
-    {
-        public NMHDR hdr;
+    public NMHDR hdr;
 
-        public EC_SEARCHWEB_ENTRYPOINT entrypoint;
+    public EC_SEARCHWEB_ENTRYPOINT entrypoint;
 
-        public BOOL hasQueryText;
+    public BOOL hasQueryText;
 
-        public BOOL invokeSucceeded;
-    }
+    public BOOL invokeSucceeded;
 }

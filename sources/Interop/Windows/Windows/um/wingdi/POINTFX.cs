@@ -3,12 +3,11 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct POINTFX
-    {
-        public FIXED x;
+namespace TerraFX.Interop.Windows;
 
-        public FIXED y;
-    }
+public partial struct POINTFX
+{
+    public FIXED x;
+
+    public FIXED y;
 }

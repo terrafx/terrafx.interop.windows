@@ -6,39 +6,38 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct TF_LMLATTELEMENT
 {
-    public unsafe partial struct TF_LMLATTELEMENT
+    [NativeTypeName("DWORD")]
+    public uint dwFrameStart;
+
+    [NativeTypeName("DWORD")]
+    public uint dwFrameLen;
+
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
+
+    [NativeTypeName("TF_LMLATTELEMENT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ctffunc.h:2394:36)")]
+    public _Anonymous_e__Union Anonymous;
+
+    [NativeTypeName("BSTR")]
+    public ushort* bstrText;
+
+    public ref int iCost
     {
-        [NativeTypeName("DWORD")]
-        public uint dwFrameStart;
-
-        [NativeTypeName("DWORD")]
-        public uint dwFrameLen;
-
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
-
-        [NativeTypeName("TF_LMLATTELEMENT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ctffunc.h:2394:36)")]
-        public _Anonymous_e__Union Anonymous;
-
-        [NativeTypeName("BSTR")]
-        public ushort* bstrText;
-
-        public ref int iCost
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.iCost, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.iCost, 1));
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            public int iCost;
-        }
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        public int iCost;
     }
 }

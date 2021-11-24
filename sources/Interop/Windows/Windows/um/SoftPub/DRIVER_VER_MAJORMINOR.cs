@@ -3,14 +3,13 @@
 // Ported from um/SoftPub.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct DRIVER_VER_MAJORMINOR
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwMajor;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint dwMinor;
-    }
+public partial struct DRIVER_VER_MAJORMINOR
+{
+    [NativeTypeName("DWORD")]
+    public uint dwMajor;
+
+    [NativeTypeName("DWORD")]
+    public uint dwMinor;
 }

@@ -5,22 +5,21 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct TF_LANGBARITEMINFO
 {
-    public unsafe partial struct TF_LANGBARITEMINFO
-    {
-        [NativeTypeName("CLSID")]
-        public Guid clsidService;
+    [NativeTypeName("CLSID")]
+    public Guid clsidService;
 
-        public Guid guidItem;
+    public Guid guidItem;
 
-        [NativeTypeName("DWORD")]
-        public uint dwStyle;
+    [NativeTypeName("DWORD")]
+    public uint dwStyle;
 
-        [NativeTypeName("ULONG")]
-        public uint ulSort;
+    [NativeTypeName("ULONG")]
+    public uint ulSort;
 
-        [NativeTypeName("WCHAR [32]")]
-        public fixed ushort szDescription[32];
-    }
+    [NativeTypeName("WCHAR [32]")]
+    public fixed ushort szDescription[32];
 }

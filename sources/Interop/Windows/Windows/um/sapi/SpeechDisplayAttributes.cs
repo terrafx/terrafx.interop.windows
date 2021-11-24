@@ -5,13 +5,12 @@
 
 using static TerraFX.Interop.Windows.SPDISPLAYATTRIBUTES;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechDisplayAttributes
 {
-    public enum SpeechDisplayAttributes
-    {
-        SDA_No_Trailing_Space = 0,
-        SDA_One_Trailing_Space = SPAF_ONE_TRAILING_SPACE,
-        SDA_Two_Trailing_Spaces = SPAF_TWO_TRAILING_SPACES,
-        SDA_Consume_Leading_Spaces = SPAF_CONSUME_LEADING_SPACES,
-    }
+    SDA_No_Trailing_Space = 0,
+    SDA_One_Trailing_Space = SPAF_ONE_TRAILING_SPACE,
+    SDA_Two_Trailing_Spaces = SPAF_TWO_TRAILING_SPACES,
+    SDA_Consume_Leading_Spaces = SPAF_CONSUME_LEADING_SPACES,
 }

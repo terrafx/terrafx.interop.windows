@@ -7,16 +7,15 @@ using NUnit.Framework;
 using System;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CLSID" /> class.</summary>
+public static partial class CLSIDTests
 {
-    /// <summary>Provides validation of the <see cref="CLSID" /> class.</summary>
-    public static partial class CLSIDTests
+    /// <summary>Validates that the value of the <see cref="CLSID_SoftwareBitmapNativeFactory" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_SoftwareBitmapNativeFactoryTest()
     {
-        /// <summary>Validates that the value of the <see cref="CLSID_SoftwareBitmapNativeFactory" /> property is correct.</summary>
-        [Test]
-        public static void CLSID_SoftwareBitmapNativeFactoryTest()
-        {
-            Assert.That(CLSID_SoftwareBitmapNativeFactory, Is.EqualTo(new Guid(0x84e65691, 0x8602, 0x4a84, 0xbe, 0x46, 0x70, 0x8b, 0xe9, 0xcd, 0x4b, 0x74)));
-        }
+        Assert.That(CLSID_SoftwareBitmapNativeFactory, Is.EqualTo(new Guid(0x84e65691, 0x8602, 0x4a84, 0xbe, 0x46, 0x70, 0x8b, 0xe9, 0xcd, 0x4b, 0x74)));
     }
 }

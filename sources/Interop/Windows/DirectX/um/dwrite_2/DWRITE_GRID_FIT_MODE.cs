@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.1")]
+public enum DWRITE_GRID_FIT_MODE
 {
-    [SupportedOSPlatform("windows8.1")]
-    public enum DWRITE_GRID_FIT_MODE
-    {
-        DWRITE_GRID_FIT_MODE_DEFAULT,
-        DWRITE_GRID_FIT_MODE_DISABLED,
-        DWRITE_GRID_FIT_MODE_ENABLED,
-    }
+    DWRITE_GRID_FIT_MODE_DEFAULT,
+    DWRITE_GRID_FIT_MODE_DISABLED,
+    DWRITE_GRID_FIT_MODE_ENABLED,
 }

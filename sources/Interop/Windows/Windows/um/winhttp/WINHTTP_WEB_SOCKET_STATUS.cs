@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct WINHTTP_WEB_SOCKET_STATUS
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwBytesTransferred;
+namespace TerraFX.Interop.Windows;
 
-        public WINHTTP_WEB_SOCKET_BUFFER_TYPE eBufferType;
-    }
+[SupportedOSPlatform("windows8.0")]
+public partial struct WINHTTP_WEB_SOCKET_STATUS
+{
+    [NativeTypeName("DWORD")]
+    public uint dwBytesTransferred;
+
+    public WINHTTP_WEB_SOCKET_BUFFER_TYPE eBufferType;
 }

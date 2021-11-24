@@ -7,62 +7,61 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct CONSOLE_SCREEN_BUFFER_INFOEX
 {
-    public partial struct CONSOLE_SCREEN_BUFFER_INFOEX
+    [NativeTypeName("ULONG")]
+    public uint cbSize;
+
+    public COORD dwSize;
+
+    public COORD dwCursorPosition;
+
+    [NativeTypeName("WORD")]
+    public ushort wAttributes;
+
+    public SMALL_RECT srWindow;
+
+    public COORD dwMaximumWindowSize;
+
+    [NativeTypeName("WORD")]
+    public ushort wPopupAttributes;
+
+    public BOOL bFullscreenSupported;
+
+    [NativeTypeName("COLORREF [16]")]
+    public _ColorTable_e__FixedBuffer ColorTable;
+
+    public partial struct _ColorTable_e__FixedBuffer
     {
-        [NativeTypeName("ULONG")]
-        public uint cbSize;
+        public COLORREF e0;
+        public COLORREF e1;
+        public COLORREF e2;
+        public COLORREF e3;
+        public COLORREF e4;
+        public COLORREF e5;
+        public COLORREF e6;
+        public COLORREF e7;
+        public COLORREF e8;
+        public COLORREF e9;
+        public COLORREF e10;
+        public COLORREF e11;
+        public COLORREF e12;
+        public COLORREF e13;
+        public COLORREF e14;
+        public COLORREF e15;
 
-        public COORD dwSize;
-
-        public COORD dwCursorPosition;
-
-        [NativeTypeName("WORD")]
-        public ushort wAttributes;
-
-        public SMALL_RECT srWindow;
-
-        public COORD dwMaximumWindowSize;
-
-        [NativeTypeName("WORD")]
-        public ushort wPopupAttributes;
-
-        public BOOL bFullscreenSupported;
-
-        [NativeTypeName("COLORREF [16]")]
-        public _ColorTable_e__FixedBuffer ColorTable;
-
-        public partial struct _ColorTable_e__FixedBuffer
+        public ref COLORREF this[int index]
         {
-            public COLORREF e0;
-            public COLORREF e1;
-            public COLORREF e2;
-            public COLORREF e3;
-            public COLORREF e4;
-            public COLORREF e5;
-            public COLORREF e6;
-            public COLORREF e7;
-            public COLORREF e8;
-            public COLORREF e9;
-            public COLORREF e10;
-            public COLORREF e11;
-            public COLORREF e12;
-            public COLORREF e13;
-            public COLORREF e14;
-            public COLORREF e15;
-
-            public ref COLORREF this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan()[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<COLORREF> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
+            get
+            {
+                return ref AsSpan()[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<COLORREF> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
     }
 }

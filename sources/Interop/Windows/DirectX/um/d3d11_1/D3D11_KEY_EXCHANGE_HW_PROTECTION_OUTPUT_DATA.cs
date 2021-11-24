@@ -5,24 +5,23 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA
-    {
-        public uint PrivateDataSize;
+    public uint PrivateDataSize;
 
-        public uint MaxHWProtectionDataSize;
+    public uint MaxHWProtectionDataSize;
 
-        public uint HWProtectionDataSize;
+    public uint HWProtectionDataSize;
 
-        [NativeTypeName("UINT64")]
-        public ulong TransportTime;
+    [NativeTypeName("UINT64")]
+    public ulong TransportTime;
 
-        [NativeTypeName("UINT64")]
-        public ulong ExecutionTime;
+    [NativeTypeName("UINT64")]
+    public ulong ExecutionTime;
 
-        [NativeTypeName("BYTE [4]")]
-        public fixed byte pbOutput[4];
-    }
+    [NativeTypeName("BYTE [4]")]
+    public fixed byte pbOutput[4];
 }

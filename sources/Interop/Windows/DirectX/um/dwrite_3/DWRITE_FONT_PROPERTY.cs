@@ -3,16 +3,15 @@
 // Ported from um/dwrite_3.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct DWRITE_FONT_PROPERTY
 {
-    public unsafe partial struct DWRITE_FONT_PROPERTY
-    {
-        public DWRITE_FONT_PROPERTY_ID propertyId;
+    public DWRITE_FONT_PROPERTY_ID propertyId;
 
-        [NativeTypeName("const WCHAR *")]
-        public ushort* propertyValue;
+    [NativeTypeName("const WCHAR *")]
+    public ushort* propertyValue;
 
-        [NativeTypeName("const WCHAR *")]
-        public ushort* localeName;
-    }
+    [NativeTypeName("const WCHAR *")]
+    public ushort* localeName;
 }

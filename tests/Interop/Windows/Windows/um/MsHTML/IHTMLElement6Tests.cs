@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IHTMLElement6" /> struct.</summary>
+public static unsafe partial class IHTMLElement6Tests
 {
-    /// <summary>Provides validation of the <see cref="IHTMLElement6" /> struct.</summary>
-    public static unsafe partial class IHTMLElement6Tests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLElement6" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLElement6" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IHTMLElement6).GUID, Is.EqualTo(IID_IHTMLElement6));
-        }
+        Assert.That(typeof(IHTMLElement6).GUID, Is.EqualTo(IID_IHTMLElement6));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLElement6" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IHTMLElement6>(), Is.EqualTo(sizeof(IHTMLElement6)));
-        }
+    /// <summary>Validates that the <see cref="IHTMLElement6" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IHTMLElement6>(), Is.EqualTo(sizeof(IHTMLElement6)));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLElement6" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IHTMLElement6).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IHTMLElement6" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IHTMLElement6).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLElement6" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IHTMLElement6" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IHTMLElement6), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IHTMLElement6), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IHTMLElement6), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IHTMLElement6), Is.EqualTo(4));
         }
     }
 }

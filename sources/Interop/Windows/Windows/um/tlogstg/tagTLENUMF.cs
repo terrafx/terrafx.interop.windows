@@ -3,16 +3,15 @@
 // Ported from um/tlogstg.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum tagTLENUMF
 {
-    public enum tagTLENUMF
-    {
-        TLEF_RELATIVE_INCLUDE_CURRENT = 0x1,
-        TLEF_RELATIVE_BACK = 0x10,
-        TLEF_RELATIVE_FORE = 0x20,
-        TLEF_INCLUDE_UNINVOKEABLE = 0x40,
-        TLEF_ABSOLUTE = 0x31,
-        TLEF_EXCLUDE_SUBFRAME_ENTRIES = 0x80,
-        TLEF_EXCLUDE_ABOUT_PAGES = 0x100,
-    }
+    TLEF_RELATIVE_INCLUDE_CURRENT = 0x1,
+    TLEF_RELATIVE_BACK = 0x10,
+    TLEF_RELATIVE_FORE = 0x20,
+    TLEF_INCLUDE_UNINVOKEABLE = 0x40,
+    TLEF_ABSOLUTE = 0x31,
+    TLEF_EXCLUDE_SUBFRAME_ENTRIES = 0x80,
+    TLEF_EXCLUDE_ABOUT_PAGES = 0x100,
 }

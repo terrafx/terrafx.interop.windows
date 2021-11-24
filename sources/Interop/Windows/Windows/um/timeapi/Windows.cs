@@ -5,37 +5,36 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static unsafe partial class Windows
 {
-    public static unsafe partial class Windows
-    {
-        [DllImport("winmm", ExactSpelling = true)]
-        [return: NativeTypeName("MMRESULT")]
-        public static extern uint timeGetSystemTime([NativeTypeName("LPMMTIME")] MMTIME* pmmt, uint cbmmt);
+    [DllImport("winmm", ExactSpelling = true)]
+    [return: NativeTypeName("MMRESULT")]
+    public static extern uint timeGetSystemTime([NativeTypeName("LPMMTIME")] MMTIME* pmmt, uint cbmmt);
 
-        [DllImport("winmm", ExactSpelling = true)]
-        [return: NativeTypeName("DWORD")]
-        public static extern uint timeGetTime();
+    [DllImport("winmm", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    public static extern uint timeGetTime();
 
-        [DllImport("winmm", ExactSpelling = true)]
-        [return: NativeTypeName("MMRESULT")]
-        public static extern uint timeGetDevCaps([NativeTypeName("LPTIMECAPS")] TIMECAPS* ptc, uint cbtc);
+    [DllImport("winmm", ExactSpelling = true)]
+    [return: NativeTypeName("MMRESULT")]
+    public static extern uint timeGetDevCaps([NativeTypeName("LPTIMECAPS")] TIMECAPS* ptc, uint cbtc);
 
-        [DllImport("winmm", ExactSpelling = true)]
-        [return: NativeTypeName("MMRESULT")]
-        public static extern uint timeBeginPeriod(uint uPeriod);
+    [DllImport("winmm", ExactSpelling = true)]
+    [return: NativeTypeName("MMRESULT")]
+    public static extern uint timeBeginPeriod(uint uPeriod);
 
-        [DllImport("winmm", ExactSpelling = true)]
-        [return: NativeTypeName("MMRESULT")]
-        public static extern uint timeEndPeriod(uint uPeriod);
+    [DllImport("winmm", ExactSpelling = true)]
+    [return: NativeTypeName("MMRESULT")]
+    public static extern uint timeEndPeriod(uint uPeriod);
 
-        [NativeTypeName("#define TIMERR_NOERROR (0)")]
-        public const int TIMERR_NOERROR = (0);
+    [NativeTypeName("#define TIMERR_NOERROR (0)")]
+    public const int TIMERR_NOERROR = (0);
 
-        [NativeTypeName("#define TIMERR_NOCANDO (TIMERR_BASE+1)")]
-        public const int TIMERR_NOCANDO = (96 + 1);
+    [NativeTypeName("#define TIMERR_NOCANDO (TIMERR_BASE+1)")]
+    public const int TIMERR_NOCANDO = (96 + 1);
 
-        [NativeTypeName("#define TIMERR_STRUCT (TIMERR_BASE+33)")]
-        public const int TIMERR_STRUCT = (96 + 33);
-    }
+    [NativeTypeName("#define TIMERR_STRUCT (TIMERR_BASE+33)")]
+    public const int TIMERR_STRUCT = (96 + 33);
 }

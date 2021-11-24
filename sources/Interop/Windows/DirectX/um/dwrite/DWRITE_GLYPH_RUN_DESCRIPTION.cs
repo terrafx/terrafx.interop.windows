@@ -3,23 +3,22 @@
 // Ported from um/dwrite.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct DWRITE_GLYPH_RUN_DESCRIPTION
 {
-    public unsafe partial struct DWRITE_GLYPH_RUN_DESCRIPTION
-    {
-        [NativeTypeName("const WCHAR *")]
-        public ushort* localeName;
+    [NativeTypeName("const WCHAR *")]
+    public ushort* localeName;
 
-        [NativeTypeName("const WCHAR *")]
-        public ushort* @string;
+    [NativeTypeName("const WCHAR *")]
+    public ushort* @string;
 
-        [NativeTypeName("UINT32")]
-        public uint stringLength;
+    [NativeTypeName("UINT32")]
+    public uint stringLength;
 
-        [NativeTypeName("const UINT16 *")]
-        public ushort* clusterMap;
+    [NativeTypeName("const UINT16 *")]
+    public ushort* clusterMap;
 
-        [NativeTypeName("UINT32")]
-        public uint textPosition;
-    }
+    [NativeTypeName("UINT32")]
+    public uint textPosition;
 }

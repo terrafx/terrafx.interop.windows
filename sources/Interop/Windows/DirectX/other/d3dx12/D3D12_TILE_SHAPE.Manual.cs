@@ -3,15 +3,14 @@
 // Ported from d3dx12.h in DirectX-Graphics-Samples commit a7a87f1853b5540f10920518021d91ae641033fb
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D12_TILE_SHAPE
 {
-    public unsafe partial struct D3D12_TILE_SHAPE
+    public D3D12_TILE_SHAPE(uint widthInTexels, uint heightInTexels, uint depthInTexels)
     {
-        public D3D12_TILE_SHAPE(uint widthInTexels, uint heightInTexels, uint depthInTexels)
-        {
-            WidthInTexels = widthInTexels;
-            HeightInTexels = heightInTexels;
-            DepthInTexels = depthInTexels;
-        }
+        WidthInTexels = widthInTexels;
+        HeightInTexels = heightInTexels;
+        DepthInTexels = depthInTexels;
     }
 }

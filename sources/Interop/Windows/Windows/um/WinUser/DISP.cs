@@ -3,32 +3,31 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class DISP
 {
-    public static partial class DISP
-    {
-        [NativeTypeName("#define DISP_CHANGE_SUCCESSFUL 0")]
-        public const int DISP_CHANGE_SUCCESSFUL = 0;
+    [NativeTypeName("#define DISP_CHANGE_SUCCESSFUL 0")]
+    public const int DISP_CHANGE_SUCCESSFUL = 0;
 
-        [NativeTypeName("#define DISP_CHANGE_RESTART 1")]
-        public const int DISP_CHANGE_RESTART = 1;
+    [NativeTypeName("#define DISP_CHANGE_RESTART 1")]
+    public const int DISP_CHANGE_RESTART = 1;
 
-        [NativeTypeName("#define DISP_CHANGE_FAILED -1")]
-        public const int DISP_CHANGE_FAILED = -1;
+    [NativeTypeName("#define DISP_CHANGE_FAILED -1")]
+    public const int DISP_CHANGE_FAILED = -1;
 
-        [NativeTypeName("#define DISP_CHANGE_BADMODE -2")]
-        public const int DISP_CHANGE_BADMODE = -2;
+    [NativeTypeName("#define DISP_CHANGE_BADMODE -2")]
+    public const int DISP_CHANGE_BADMODE = -2;
 
-        [NativeTypeName("#define DISP_CHANGE_NOTUPDATED -3")]
-        public const int DISP_CHANGE_NOTUPDATED = -3;
+    [NativeTypeName("#define DISP_CHANGE_NOTUPDATED -3")]
+    public const int DISP_CHANGE_NOTUPDATED = -3;
 
-        [NativeTypeName("#define DISP_CHANGE_BADFLAGS -4")]
-        public const int DISP_CHANGE_BADFLAGS = -4;
+    [NativeTypeName("#define DISP_CHANGE_BADFLAGS -4")]
+    public const int DISP_CHANGE_BADFLAGS = -4;
 
-        [NativeTypeName("#define DISP_CHANGE_BADPARAM -5")]
-        public const int DISP_CHANGE_BADPARAM = -5;
+    [NativeTypeName("#define DISP_CHANGE_BADPARAM -5")]
+    public const int DISP_CHANGE_BADPARAM = -5;
 
-        [NativeTypeName("#define DISP_CHANGE_BADDUALVIEW -6")]
-        public const int DISP_CHANGE_BADDUALVIEW = -6;
-    }
+    [NativeTypeName("#define DISP_CHANGE_BADDUALVIEW -6")]
+    public const int DISP_CHANGE_BADDUALVIEW = -6;
 }

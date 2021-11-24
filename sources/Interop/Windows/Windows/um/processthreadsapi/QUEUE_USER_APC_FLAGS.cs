@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum QUEUE_USER_APC_FLAGS
 {
-    [Flags]
-    public enum QUEUE_USER_APC_FLAGS
-    {
-        QUEUE_USER_APC_FLAGS_NONE = 0x0,
-        QUEUE_USER_APC_FLAGS_SPECIAL_USER_APC = 0x1,
-    }
+    QUEUE_USER_APC_FLAGS_NONE = 0x0,
+    QUEUE_USER_APC_FLAGS_SPECIAL_USER_APC = 0x1,
 }

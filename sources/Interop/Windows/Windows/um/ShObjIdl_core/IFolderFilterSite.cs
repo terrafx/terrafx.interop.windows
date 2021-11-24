@@ -7,64 +7,63 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("C0A651F5-B48B-11D2-B5ED-006097C686F6")]
+[NativeTypeName("struct IFolderFilterSite : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IFolderFilterSite : IFolderFilterSite.Interface
 {
-    [Guid("C0A651F5-B48B-11D2-B5ED-006097C686F6")]
-    [NativeTypeName("struct IFolderFilterSite : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IFolderFilterSite : IFolderFilterSite.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IFolderFilterSite*, Guid*, void**, int>)(lpVtbl[0]))((IFolderFilterSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IFolderFilterSite*, Guid*, void**, int>)(lpVtbl[0]))((IFolderFilterSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IFolderFilterSite*, uint>)(lpVtbl[1]))((IFolderFilterSite*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IFolderFilterSite*, uint>)(lpVtbl[1]))((IFolderFilterSite*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IFolderFilterSite*, uint>)(lpVtbl[2]))((IFolderFilterSite*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IFolderFilterSite*, uint>)(lpVtbl[2]))((IFolderFilterSite*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT SetFilter(IUnknown* punk)
+    {
+        return ((delegate* unmanaged<IFolderFilterSite*, IUnknown*, int>)(lpVtbl[3]))((IFolderFilterSite*)Unsafe.AsPointer(ref this), punk);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT SetFilter(IUnknown* punk)
-        {
-            return ((delegate* unmanaged<IFolderFilterSite*, IUnknown*, int>)(lpVtbl[3]))((IFolderFilterSite*)Unsafe.AsPointer(ref this), punk);
-        }
+        HRESULT SetFilter(IUnknown* punk);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT SetFilter(IUnknown* punk);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFolderFilterSite*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFolderFilterSite*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IFolderFilterSite*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IFolderFilterSite*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IFolderFilterSite*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IFolderFilterSite*, uint> Release;
-
-            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IFolderFilterSite*, IUnknown*, int> SetFilter;
-        }
+        [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IFolderFilterSite*, IUnknown*, int> SetFilter;
     }
 }

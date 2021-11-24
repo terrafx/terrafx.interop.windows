@@ -7,780 +7,779 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("305104E7-98B5-11CF-BB82-00AA00BDCE0B")]
+[NativeTypeName("struct ISVGSVGElement : IDispatch")]
+[NativeInheritance("IDispatch")]
+public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
 {
-    [Guid("305104E7-98B5-11CF-BB82-00AA00BDCE0B")]
-    [NativeTypeName("struct ISVGSVGElement : IDispatch")]
-    [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISVGSVGElement : ISVGSVGElement.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ISVGSVGElement*, Guid*, void**, int>)(lpVtbl[0]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, Guid*, void**, int>)(lpVtbl[0]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, uint>)(lpVtbl[1]))((ISVGSVGElement*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, uint>)(lpVtbl[1]))((ISVGSVGElement*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, uint>)(lpVtbl[2]))((ISVGSVGElement*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, uint>)(lpVtbl[2]))((ISVGSVGElement*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetTypeInfoCount(uint* pctinfo)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, uint*, int>)(lpVtbl[3]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pctinfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetTypeInfoCount(uint* pctinfo)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, uint*, int>)(lpVtbl[3]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pctinfo);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT putref_x(ISVGAnimatedLength* v)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int>)(lpVtbl[7]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT get_x(ISVGAnimatedLength** p)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int>)(lpVtbl[8]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT putref_y(ISVGAnimatedLength* v)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int>)(lpVtbl[9]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT get_y(ISVGAnimatedLength** p)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int>)(lpVtbl[10]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT putref_width(ISVGAnimatedLength* v)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int>)(lpVtbl[11]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT get_width(ISVGAnimatedLength** p)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int>)(lpVtbl[12]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT putref_height(ISVGAnimatedLength* v)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int>)(lpVtbl[13]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT get_height(ISVGAnimatedLength** p)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int>)(lpVtbl[14]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT put_contentScriptType([NativeTypeName("BSTR")] ushort* v)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ushort*, int>)(lpVtbl[15]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT get_contentScriptType([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ushort**, int>)(lpVtbl[16]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT put_contentStyleType([NativeTypeName("BSTR")] ushort* v)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ushort*, int>)(lpVtbl[17]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT get_contentStyleType([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ushort**, int>)(lpVtbl[18]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT putref_viewport(ISVGRect* v)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGRect*, int>)(lpVtbl[19]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT get_viewport(ISVGRect** p)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGRect**, int>)(lpVtbl[20]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(21)]
+    public HRESULT put_pixelUnitToMillimeterX(float v)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, float, int>)(lpVtbl[21]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(22)]
+    public HRESULT get_pixelUnitToMillimeterX(float* p)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, float*, int>)(lpVtbl[22]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(23)]
+    public HRESULT put_pixelUnitToMillimeterY(float v)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, float, int>)(lpVtbl[23]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(24)]
+    public HRESULT get_pixelUnitToMillimeterY(float* p)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, float*, int>)(lpVtbl[24]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(25)]
+    public HRESULT put_screenPixelToMillimeterX(float v)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, float, int>)(lpVtbl[25]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(26)]
+    public HRESULT get_screenPixelToMillimeterX(float* p)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, float*, int>)(lpVtbl[26]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(27)]
+    public HRESULT put_screenPixelToMillimeterY(float v)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, float, int>)(lpVtbl[27]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(28)]
+    public HRESULT get_screenPixelToMillimeterY(float* p)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, float*, int>)(lpVtbl[28]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(29)]
+    public HRESULT put_useCurrentView([NativeTypeName("VARIANT_BOOL")] short v)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, short, int>)(lpVtbl[29]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(30)]
+    public HRESULT get_useCurrentView([NativeTypeName("VARIANT_BOOL *")] short* p)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, short*, int>)(lpVtbl[30]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(31)]
+    public HRESULT putref_currentView(ISVGViewSpec* v)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGViewSpec*, int>)(lpVtbl[31]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(32)]
+    public HRESULT get_currentView(ISVGViewSpec** p)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGViewSpec**, int>)(lpVtbl[32]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(33)]
+    public HRESULT put_currentScale(float v)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, float, int>)(lpVtbl[33]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(34)]
+    public HRESULT get_currentScale(float* p)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, float*, int>)(lpVtbl[34]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(35)]
+    public HRESULT putref_currentTranslate(ISVGPoint* v)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGPoint*, int>)(lpVtbl[35]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(36)]
+    public HRESULT get_currentTranslate(ISVGPoint** p)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGPoint**, int>)(lpVtbl[36]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(37)]
+    public HRESULT suspendRedraw([NativeTypeName("ULONG")] uint maxWaitMilliseconds, [NativeTypeName("ULONG *")] uint* pResult)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, uint, uint*, int>)(lpVtbl[37]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), maxWaitMilliseconds, pResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(38)]
+    public HRESULT unsuspendRedraw([NativeTypeName("ULONG")] uint suspendHandeID)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, uint, int>)(lpVtbl[38]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), suspendHandeID);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(39)]
+    public HRESULT unsuspendRedrawAll()
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, int>)(lpVtbl[39]))((ISVGSVGElement*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(40)]
+    public HRESULT forceRedraw()
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, int>)(lpVtbl[40]))((ISVGSVGElement*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(41)]
+    public HRESULT pauseAnimations()
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, int>)(lpVtbl[41]))((ISVGSVGElement*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(42)]
+    public HRESULT unpauseAnimations()
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, int>)(lpVtbl[42]))((ISVGSVGElement*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(43)]
+    public HRESULT animationsPaused([NativeTypeName("VARIANT_BOOL *")] short* pResult)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, short*, int>)(lpVtbl[43]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(44)]
+    public HRESULT getCurrentTime(float* pResult)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, float*, int>)(lpVtbl[44]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(45)]
+    public HRESULT setCurrentTime(float seconds)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, float, int>)(lpVtbl[45]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), seconds);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(46)]
+    public HRESULT getIntersectionList(ISVGRect* rect, ISVGElement* referenceElement, VARIANT* pResult)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGRect*, ISVGElement*, VARIANT*, int>)(lpVtbl[46]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), rect, referenceElement, pResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(47)]
+    public HRESULT getEnclosureList(ISVGRect* rect, ISVGElement* referenceElement, VARIANT* pResult)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGRect*, ISVGElement*, VARIANT*, int>)(lpVtbl[47]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), rect, referenceElement, pResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(48)]
+    public HRESULT checkIntersection(ISVGElement* element, ISVGRect* rect, [NativeTypeName("VARIANT_BOOL *")] short* pResult)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGElement*, ISVGRect*, short*, int>)(lpVtbl[48]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), element, rect, pResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(49)]
+    public HRESULT checkEnclosure(ISVGElement* element, ISVGRect* rect, [NativeTypeName("VARIANT_BOOL *")] short* pResult)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGElement*, ISVGRect*, short*, int>)(lpVtbl[49]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), element, rect, pResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(50)]
+    public HRESULT deselectAll()
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, int>)(lpVtbl[50]))((ISVGSVGElement*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(51)]
+    public HRESULT createSVGNumber(ISVGNumber** pResult)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGNumber**, int>)(lpVtbl[51]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(52)]
+    public HRESULT createSVGLength(ISVGLength** pResult)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGLength**, int>)(lpVtbl[52]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(53)]
+    public HRESULT createSVGAngle(ISVGAngle** pResult)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGAngle**, int>)(lpVtbl[53]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(54)]
+    public HRESULT createSVGPoint(ISVGPoint** pResult)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGPoint**, int>)(lpVtbl[54]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(55)]
+    public HRESULT createSVGMatrix(ISVGMatrix** pResult)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGMatrix**, int>)(lpVtbl[55]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(56)]
+    public HRESULT createSVGRect(ISVGRect** pResult)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGRect**, int>)(lpVtbl[56]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(57)]
+    public HRESULT createSVGTransform(ISVGTransform** pResult)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGTransform**, int>)(lpVtbl[57]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(58)]
+    public HRESULT createSVGTransformFromMatrix(ISVGMatrix* matrix, ISVGTransform** pResult)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ISVGMatrix*, ISVGTransform**, int>)(lpVtbl[58]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), matrix, pResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(59)]
+    public HRESULT getElementById([NativeTypeName("BSTR")] ushort* elementId, IHTMLElement** pResult)
+    {
+        return ((delegate* unmanaged<ISVGSVGElement*, ushort*, IHTMLElement**, int>)(lpVtbl[59]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), elementId, pResult);
+    }
+
+    public interface Interface : IDispatch.Interface
+    {
         [VtblIndex(7)]
-        public HRESULT putref_x(ISVGAnimatedLength* v)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int>)(lpVtbl[7]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT putref_x(ISVGAnimatedLength* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT get_x(ISVGAnimatedLength** p)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int>)(lpVtbl[8]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_x(ISVGAnimatedLength** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT putref_y(ISVGAnimatedLength* v)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int>)(lpVtbl[9]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT putref_y(ISVGAnimatedLength* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT get_y(ISVGAnimatedLength** p)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int>)(lpVtbl[10]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_y(ISVGAnimatedLength** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT putref_width(ISVGAnimatedLength* v)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int>)(lpVtbl[11]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT putref_width(ISVGAnimatedLength* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT get_width(ISVGAnimatedLength** p)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int>)(lpVtbl[12]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_width(ISVGAnimatedLength** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT putref_height(ISVGAnimatedLength* v)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int>)(lpVtbl[13]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT putref_height(ISVGAnimatedLength* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT get_height(ISVGAnimatedLength** p)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int>)(lpVtbl[14]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_height(ISVGAnimatedLength** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT put_contentScriptType([NativeTypeName("BSTR")] ushort* v)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ushort*, int>)(lpVtbl[15]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_contentScriptType([NativeTypeName("BSTR")] ushort* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT get_contentScriptType([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ushort**, int>)(lpVtbl[16]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_contentScriptType([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT put_contentStyleType([NativeTypeName("BSTR")] ushort* v)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ushort*, int>)(lpVtbl[17]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_contentStyleType([NativeTypeName("BSTR")] ushort* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT get_contentStyleType([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ushort**, int>)(lpVtbl[18]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_contentStyleType([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT putref_viewport(ISVGRect* v)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGRect*, int>)(lpVtbl[19]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT putref_viewport(ISVGRect* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT get_viewport(ISVGRect** p)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGRect**, int>)(lpVtbl[20]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_viewport(ISVGRect** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT put_pixelUnitToMillimeterX(float v)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, float, int>)(lpVtbl[21]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_pixelUnitToMillimeterX(float v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        public HRESULT get_pixelUnitToMillimeterX(float* p)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, float*, int>)(lpVtbl[22]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_pixelUnitToMillimeterX(float* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public HRESULT put_pixelUnitToMillimeterY(float v)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, float, int>)(lpVtbl[23]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_pixelUnitToMillimeterY(float v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT get_pixelUnitToMillimeterY(float* p)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, float*, int>)(lpVtbl[24]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_pixelUnitToMillimeterY(float* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public HRESULT put_screenPixelToMillimeterX(float v)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, float, int>)(lpVtbl[25]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_screenPixelToMillimeterX(float v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        public HRESULT get_screenPixelToMillimeterX(float* p)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, float*, int>)(lpVtbl[26]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_screenPixelToMillimeterX(float* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        public HRESULT put_screenPixelToMillimeterY(float v)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, float, int>)(lpVtbl[27]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_screenPixelToMillimeterY(float v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        public HRESULT get_screenPixelToMillimeterY(float* p)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, float*, int>)(lpVtbl[28]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_screenPixelToMillimeterY(float* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
-        public HRESULT put_useCurrentView([NativeTypeName("VARIANT_BOOL")] short v)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, short, int>)(lpVtbl[29]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_useCurrentView([NativeTypeName("VARIANT_BOOL")] short v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
-        public HRESULT get_useCurrentView([NativeTypeName("VARIANT_BOOL *")] short* p)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, short*, int>)(lpVtbl[30]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_useCurrentView([NativeTypeName("VARIANT_BOOL *")] short* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        public HRESULT putref_currentView(ISVGViewSpec* v)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGViewSpec*, int>)(lpVtbl[31]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT putref_currentView(ISVGViewSpec* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(32)]
-        public HRESULT get_currentView(ISVGViewSpec** p)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGViewSpec**, int>)(lpVtbl[32]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_currentView(ISVGViewSpec** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(33)]
-        public HRESULT put_currentScale(float v)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, float, int>)(lpVtbl[33]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_currentScale(float v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(34)]
-        public HRESULT get_currentScale(float* p)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, float*, int>)(lpVtbl[34]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_currentScale(float* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(35)]
-        public HRESULT putref_currentTranslate(ISVGPoint* v)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGPoint*, int>)(lpVtbl[35]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT putref_currentTranslate(ISVGPoint* v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(36)]
-        public HRESULT get_currentTranslate(ISVGPoint** p)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGPoint**, int>)(lpVtbl[36]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_currentTranslate(ISVGPoint** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(37)]
-        public HRESULT suspendRedraw([NativeTypeName("ULONG")] uint maxWaitMilliseconds, [NativeTypeName("ULONG *")] uint* pResult)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, uint, uint*, int>)(lpVtbl[37]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), maxWaitMilliseconds, pResult);
-        }
+        HRESULT suspendRedraw([NativeTypeName("ULONG")] uint maxWaitMilliseconds, [NativeTypeName("ULONG *")] uint* pResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(38)]
-        public HRESULT unsuspendRedraw([NativeTypeName("ULONG")] uint suspendHandeID)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, uint, int>)(lpVtbl[38]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), suspendHandeID);
-        }
+        HRESULT unsuspendRedraw([NativeTypeName("ULONG")] uint suspendHandeID);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(39)]
-        public HRESULT unsuspendRedrawAll()
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, int>)(lpVtbl[39]))((ISVGSVGElement*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT unsuspendRedrawAll();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(40)]
-        public HRESULT forceRedraw()
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, int>)(lpVtbl[40]))((ISVGSVGElement*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT forceRedraw();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(41)]
-        public HRESULT pauseAnimations()
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, int>)(lpVtbl[41]))((ISVGSVGElement*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT pauseAnimations();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(42)]
-        public HRESULT unpauseAnimations()
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, int>)(lpVtbl[42]))((ISVGSVGElement*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT unpauseAnimations();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(43)]
-        public HRESULT animationsPaused([NativeTypeName("VARIANT_BOOL *")] short* pResult)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, short*, int>)(lpVtbl[43]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
-        }
+        HRESULT animationsPaused([NativeTypeName("VARIANT_BOOL *")] short* pResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(44)]
-        public HRESULT getCurrentTime(float* pResult)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, float*, int>)(lpVtbl[44]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
-        }
+        HRESULT getCurrentTime(float* pResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(45)]
-        public HRESULT setCurrentTime(float seconds)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, float, int>)(lpVtbl[45]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), seconds);
-        }
+        HRESULT setCurrentTime(float seconds);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(46)]
-        public HRESULT getIntersectionList(ISVGRect* rect, ISVGElement* referenceElement, VARIANT* pResult)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGRect*, ISVGElement*, VARIANT*, int>)(lpVtbl[46]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), rect, referenceElement, pResult);
-        }
+        HRESULT getIntersectionList(ISVGRect* rect, ISVGElement* referenceElement, VARIANT* pResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(47)]
-        public HRESULT getEnclosureList(ISVGRect* rect, ISVGElement* referenceElement, VARIANT* pResult)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGRect*, ISVGElement*, VARIANT*, int>)(lpVtbl[47]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), rect, referenceElement, pResult);
-        }
+        HRESULT getEnclosureList(ISVGRect* rect, ISVGElement* referenceElement, VARIANT* pResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(48)]
-        public HRESULT checkIntersection(ISVGElement* element, ISVGRect* rect, [NativeTypeName("VARIANT_BOOL *")] short* pResult)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGElement*, ISVGRect*, short*, int>)(lpVtbl[48]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), element, rect, pResult);
-        }
+        HRESULT checkIntersection(ISVGElement* element, ISVGRect* rect, [NativeTypeName("VARIANT_BOOL *")] short* pResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(49)]
-        public HRESULT checkEnclosure(ISVGElement* element, ISVGRect* rect, [NativeTypeName("VARIANT_BOOL *")] short* pResult)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGElement*, ISVGRect*, short*, int>)(lpVtbl[49]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), element, rect, pResult);
-        }
+        HRESULT checkEnclosure(ISVGElement* element, ISVGRect* rect, [NativeTypeName("VARIANT_BOOL *")] short* pResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(50)]
-        public HRESULT deselectAll()
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, int>)(lpVtbl[50]))((ISVGSVGElement*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT deselectAll();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(51)]
-        public HRESULT createSVGNumber(ISVGNumber** pResult)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGNumber**, int>)(lpVtbl[51]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
-        }
+        HRESULT createSVGNumber(ISVGNumber** pResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(52)]
-        public HRESULT createSVGLength(ISVGLength** pResult)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGLength**, int>)(lpVtbl[52]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
-        }
+        HRESULT createSVGLength(ISVGLength** pResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(53)]
-        public HRESULT createSVGAngle(ISVGAngle** pResult)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGAngle**, int>)(lpVtbl[53]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
-        }
+        HRESULT createSVGAngle(ISVGAngle** pResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(54)]
-        public HRESULT createSVGPoint(ISVGPoint** pResult)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGPoint**, int>)(lpVtbl[54]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
-        }
+        HRESULT createSVGPoint(ISVGPoint** pResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(55)]
-        public HRESULT createSVGMatrix(ISVGMatrix** pResult)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGMatrix**, int>)(lpVtbl[55]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
-        }
+        HRESULT createSVGMatrix(ISVGMatrix** pResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(56)]
-        public HRESULT createSVGRect(ISVGRect** pResult)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGRect**, int>)(lpVtbl[56]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
-        }
+        HRESULT createSVGRect(ISVGRect** pResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(57)]
-        public HRESULT createSVGTransform(ISVGTransform** pResult)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGTransform**, int>)(lpVtbl[57]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), pResult);
-        }
+        HRESULT createSVGTransform(ISVGTransform** pResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(58)]
-        public HRESULT createSVGTransformFromMatrix(ISVGMatrix* matrix, ISVGTransform** pResult)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ISVGMatrix*, ISVGTransform**, int>)(lpVtbl[58]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), matrix, pResult);
-        }
+        HRESULT createSVGTransformFromMatrix(ISVGMatrix* matrix, ISVGTransform** pResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(59)]
-        public HRESULT getElementById([NativeTypeName("BSTR")] ushort* elementId, IHTMLElement** pResult)
-        {
-            return ((delegate* unmanaged<ISVGSVGElement*, ushort*, IHTMLElement**, int>)(lpVtbl[59]))((ISVGSVGElement*)Unsafe.AsPointer(ref this), elementId, pResult);
-        }
+        HRESULT getElementById([NativeTypeName("BSTR")] ushort* elementId, IHTMLElement** pResult);
+    }
 
-        public interface Interface : IDispatch.Interface
-        {
-            [VtblIndex(7)]
-            HRESULT putref_x(ISVGAnimatedLength* v);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(8)]
-            HRESULT get_x(ISVGAnimatedLength** p);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, uint> AddRef;
 
-            [VtblIndex(9)]
-            HRESULT putref_y(ISVGAnimatedLength* v);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, uint> Release;
 
-            [VtblIndex(10)]
-            HRESULT get_y(ISVGAnimatedLength** p);
+        [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, uint*, int> GetTypeInfoCount;
 
-            [VtblIndex(11)]
-            HRESULT putref_width(ISVGAnimatedLength* v);
+        [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
-            [VtblIndex(12)]
-            HRESULT get_width(ISVGAnimatedLength** p);
+        [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
-            [VtblIndex(13)]
-            HRESULT putref_height(ISVGAnimatedLength* v);
+        [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
-            [VtblIndex(14)]
-            HRESULT get_height(ISVGAnimatedLength** p);
+        [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int> putref_x;
 
-            [VtblIndex(15)]
-            HRESULT put_contentScriptType([NativeTypeName("BSTR")] ushort* v);
+        [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int> get_x;
 
-            [VtblIndex(16)]
-            HRESULT get_contentScriptType([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int> putref_y;
 
-            [VtblIndex(17)]
-            HRESULT put_contentStyleType([NativeTypeName("BSTR")] ushort* v);
+        [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int> get_y;
 
-            [VtblIndex(18)]
-            HRESULT get_contentStyleType([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int> putref_width;
 
-            [VtblIndex(19)]
-            HRESULT putref_viewport(ISVGRect* v);
+        [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int> get_width;
 
-            [VtblIndex(20)]
-            HRESULT get_viewport(ISVGRect** p);
+        [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int> putref_height;
 
-            [VtblIndex(21)]
-            HRESULT put_pixelUnitToMillimeterX(float v);
+        [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int> get_height;
 
-            [VtblIndex(22)]
-            HRESULT get_pixelUnitToMillimeterX(float* p);
+        [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ushort*, int> put_contentScriptType;
 
-            [VtblIndex(23)]
-            HRESULT put_pixelUnitToMillimeterY(float v);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ushort**, int> get_contentScriptType;
 
-            [VtblIndex(24)]
-            HRESULT get_pixelUnitToMillimeterY(float* p);
+        [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ushort*, int> put_contentStyleType;
 
-            [VtblIndex(25)]
-            HRESULT put_screenPixelToMillimeterX(float v);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ushort**, int> get_contentStyleType;
 
-            [VtblIndex(26)]
-            HRESULT get_screenPixelToMillimeterX(float* p);
+        [NativeTypeName("HRESULT (ISVGRect *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGRect*, int> putref_viewport;
 
-            [VtblIndex(27)]
-            HRESULT put_screenPixelToMillimeterY(float v);
+        [NativeTypeName("HRESULT (ISVGRect **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGRect**, int> get_viewport;
 
-            [VtblIndex(28)]
-            HRESULT get_screenPixelToMillimeterY(float* p);
+        [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, float, int> put_pixelUnitToMillimeterX;
 
-            [VtblIndex(29)]
-            HRESULT put_useCurrentView([NativeTypeName("VARIANT_BOOL")] short v);
+        [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, float*, int> get_pixelUnitToMillimeterX;
 
-            [VtblIndex(30)]
-            HRESULT get_useCurrentView([NativeTypeName("VARIANT_BOOL *")] short* p);
+        [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, float, int> put_pixelUnitToMillimeterY;
 
-            [VtblIndex(31)]
-            HRESULT putref_currentView(ISVGViewSpec* v);
+        [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, float*, int> get_pixelUnitToMillimeterY;
 
-            [VtblIndex(32)]
-            HRESULT get_currentView(ISVGViewSpec** p);
+        [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, float, int> put_screenPixelToMillimeterX;
 
-            [VtblIndex(33)]
-            HRESULT put_currentScale(float v);
+        [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, float*, int> get_screenPixelToMillimeterX;
 
-            [VtblIndex(34)]
-            HRESULT get_currentScale(float* p);
+        [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, float, int> put_screenPixelToMillimeterY;
 
-            [VtblIndex(35)]
-            HRESULT putref_currentTranslate(ISVGPoint* v);
+        [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, float*, int> get_screenPixelToMillimeterY;
 
-            [VtblIndex(36)]
-            HRESULT get_currentTranslate(ISVGPoint** p);
+        [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, short, int> put_useCurrentView;
 
-            [VtblIndex(37)]
-            HRESULT suspendRedraw([NativeTypeName("ULONG")] uint maxWaitMilliseconds, [NativeTypeName("ULONG *")] uint* pResult);
+        [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, short*, int> get_useCurrentView;
 
-            [VtblIndex(38)]
-            HRESULT unsuspendRedraw([NativeTypeName("ULONG")] uint suspendHandeID);
+        [NativeTypeName("HRESULT (ISVGViewSpec *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGViewSpec*, int> putref_currentView;
 
-            [VtblIndex(39)]
-            HRESULT unsuspendRedrawAll();
+        [NativeTypeName("HRESULT (ISVGViewSpec **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGViewSpec**, int> get_currentView;
 
-            [VtblIndex(40)]
-            HRESULT forceRedraw();
+        [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, float, int> put_currentScale;
 
-            [VtblIndex(41)]
-            HRESULT pauseAnimations();
+        [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, float*, int> get_currentScale;
 
-            [VtblIndex(42)]
-            HRESULT unpauseAnimations();
+        [NativeTypeName("HRESULT (ISVGPoint *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGPoint*, int> putref_currentTranslate;
 
-            [VtblIndex(43)]
-            HRESULT animationsPaused([NativeTypeName("VARIANT_BOOL *")] short* pResult);
+        [NativeTypeName("HRESULT (ISVGPoint **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGPoint**, int> get_currentTranslate;
 
-            [VtblIndex(44)]
-            HRESULT getCurrentTime(float* pResult);
+        [NativeTypeName("HRESULT (ULONG, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, uint, uint*, int> suspendRedraw;
 
-            [VtblIndex(45)]
-            HRESULT setCurrentTime(float seconds);
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, uint, int> unsuspendRedraw;
 
-            [VtblIndex(46)]
-            HRESULT getIntersectionList(ISVGRect* rect, ISVGElement* referenceElement, VARIANT* pResult);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, int> unsuspendRedrawAll;
 
-            [VtblIndex(47)]
-            HRESULT getEnclosureList(ISVGRect* rect, ISVGElement* referenceElement, VARIANT* pResult);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, int> forceRedraw;
 
-            [VtblIndex(48)]
-            HRESULT checkIntersection(ISVGElement* element, ISVGRect* rect, [NativeTypeName("VARIANT_BOOL *")] short* pResult);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, int> pauseAnimations;
 
-            [VtblIndex(49)]
-            HRESULT checkEnclosure(ISVGElement* element, ISVGRect* rect, [NativeTypeName("VARIANT_BOOL *")] short* pResult);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, int> unpauseAnimations;
 
-            [VtblIndex(50)]
-            HRESULT deselectAll();
+        [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, short*, int> animationsPaused;
 
-            [VtblIndex(51)]
-            HRESULT createSVGNumber(ISVGNumber** pResult);
+        [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, float*, int> getCurrentTime;
 
-            [VtblIndex(52)]
-            HRESULT createSVGLength(ISVGLength** pResult);
+        [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, float, int> setCurrentTime;
 
-            [VtblIndex(53)]
-            HRESULT createSVGAngle(ISVGAngle** pResult);
+        [NativeTypeName("HRESULT (ISVGRect *, ISVGElement *, VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGRect*, ISVGElement*, VARIANT*, int> getIntersectionList;
 
-            [VtblIndex(54)]
-            HRESULT createSVGPoint(ISVGPoint** pResult);
+        [NativeTypeName("HRESULT (ISVGRect *, ISVGElement *, VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGRect*, ISVGElement*, VARIANT*, int> getEnclosureList;
 
-            [VtblIndex(55)]
-            HRESULT createSVGMatrix(ISVGMatrix** pResult);
+        [NativeTypeName("HRESULT (ISVGElement *, ISVGRect *, VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGElement*, ISVGRect*, short*, int> checkIntersection;
 
-            [VtblIndex(56)]
-            HRESULT createSVGRect(ISVGRect** pResult);
+        [NativeTypeName("HRESULT (ISVGElement *, ISVGRect *, VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGElement*, ISVGRect*, short*, int> checkEnclosure;
 
-            [VtblIndex(57)]
-            HRESULT createSVGTransform(ISVGTransform** pResult);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, int> deselectAll;
 
-            [VtblIndex(58)]
-            HRESULT createSVGTransformFromMatrix(ISVGMatrix* matrix, ISVGTransform** pResult);
+        [NativeTypeName("HRESULT (ISVGNumber **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGNumber**, int> createSVGNumber;
 
-            [VtblIndex(59)]
-            HRESULT getElementById([NativeTypeName("BSTR")] ushort* elementId, IHTMLElement** pResult);
-        }
+        [NativeTypeName("HRESULT (ISVGLength **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGLength**, int> createSVGLength;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (ISVGAngle **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGAngle**, int> createSVGAngle;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, uint> AddRef;
+        [NativeTypeName("HRESULT (ISVGPoint **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGPoint**, int> createSVGPoint;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, uint> Release;
+        [NativeTypeName("HRESULT (ISVGMatrix **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGMatrix**, int> createSVGMatrix;
 
-            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, uint*, int> GetTypeInfoCount;
+        [NativeTypeName("HRESULT (ISVGRect **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGRect**, int> createSVGRect;
 
-            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        [NativeTypeName("HRESULT (ISVGTransform **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGTransform**, int> createSVGTransform;
 
-            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        [NativeTypeName("HRESULT (ISVGMatrix *, ISVGTransform **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ISVGMatrix*, ISVGTransform**, int> createSVGTransformFromMatrix;
 
-            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
-
-            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int> putref_x;
-
-            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int> get_x;
-
-            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int> putref_y;
-
-            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int> get_y;
-
-            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int> putref_width;
-
-            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int> get_width;
-
-            [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength*, int> putref_height;
-
-            [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGAnimatedLength**, int> get_height;
-
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ushort*, int> put_contentScriptType;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ushort**, int> get_contentScriptType;
-
-            [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ushort*, int> put_contentStyleType;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ushort**, int> get_contentStyleType;
-
-            [NativeTypeName("HRESULT (ISVGRect *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGRect*, int> putref_viewport;
-
-            [NativeTypeName("HRESULT (ISVGRect **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGRect**, int> get_viewport;
-
-            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, float, int> put_pixelUnitToMillimeterX;
-
-            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, float*, int> get_pixelUnitToMillimeterX;
-
-            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, float, int> put_pixelUnitToMillimeterY;
-
-            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, float*, int> get_pixelUnitToMillimeterY;
-
-            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, float, int> put_screenPixelToMillimeterX;
-
-            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, float*, int> get_screenPixelToMillimeterX;
-
-            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, float, int> put_screenPixelToMillimeterY;
-
-            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, float*, int> get_screenPixelToMillimeterY;
-
-            [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, short, int> put_useCurrentView;
-
-            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, short*, int> get_useCurrentView;
-
-            [NativeTypeName("HRESULT (ISVGViewSpec *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGViewSpec*, int> putref_currentView;
-
-            [NativeTypeName("HRESULT (ISVGViewSpec **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGViewSpec**, int> get_currentView;
-
-            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, float, int> put_currentScale;
-
-            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, float*, int> get_currentScale;
-
-            [NativeTypeName("HRESULT (ISVGPoint *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGPoint*, int> putref_currentTranslate;
-
-            [NativeTypeName("HRESULT (ISVGPoint **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGPoint**, int> get_currentTranslate;
-
-            [NativeTypeName("HRESULT (ULONG, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, uint, uint*, int> suspendRedraw;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, uint, int> unsuspendRedraw;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, int> unsuspendRedrawAll;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, int> forceRedraw;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, int> pauseAnimations;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, int> unpauseAnimations;
-
-            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, short*, int> animationsPaused;
-
-            [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, float*, int> getCurrentTime;
-
-            [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, float, int> setCurrentTime;
-
-            [NativeTypeName("HRESULT (ISVGRect *, ISVGElement *, VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGRect*, ISVGElement*, VARIANT*, int> getIntersectionList;
-
-            [NativeTypeName("HRESULT (ISVGRect *, ISVGElement *, VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGRect*, ISVGElement*, VARIANT*, int> getEnclosureList;
-
-            [NativeTypeName("HRESULT (ISVGElement *, ISVGRect *, VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGElement*, ISVGRect*, short*, int> checkIntersection;
-
-            [NativeTypeName("HRESULT (ISVGElement *, ISVGRect *, VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGElement*, ISVGRect*, short*, int> checkEnclosure;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, int> deselectAll;
-
-            [NativeTypeName("HRESULT (ISVGNumber **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGNumber**, int> createSVGNumber;
-
-            [NativeTypeName("HRESULT (ISVGLength **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGLength**, int> createSVGLength;
-
-            [NativeTypeName("HRESULT (ISVGAngle **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGAngle**, int> createSVGAngle;
-
-            [NativeTypeName("HRESULT (ISVGPoint **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGPoint**, int> createSVGPoint;
-
-            [NativeTypeName("HRESULT (ISVGMatrix **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGMatrix**, int> createSVGMatrix;
-
-            [NativeTypeName("HRESULT (ISVGRect **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGRect**, int> createSVGRect;
-
-            [NativeTypeName("HRESULT (ISVGTransform **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGTransform**, int> createSVGTransform;
-
-            [NativeTypeName("HRESULT (ISVGMatrix *, ISVGTransform **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ISVGMatrix*, ISVGTransform**, int> createSVGTransformFromMatrix;
-
-            [NativeTypeName("HRESULT (BSTR, IHTMLElement **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISVGSVGElement*, ushort*, IHTMLElement**, int> getElementById;
-        }
+        [NativeTypeName("HRESULT (BSTR, IHTMLElement **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISVGSVGElement*, ushort*, IHTMLElement**, int> getElementById;
     }
 }

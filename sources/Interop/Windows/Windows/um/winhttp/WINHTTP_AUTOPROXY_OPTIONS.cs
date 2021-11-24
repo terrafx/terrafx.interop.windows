@@ -3,25 +3,24 @@
 // Ported from um/winhttp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WINHTTP_AUTOPROXY_OPTIONS
 {
-    public unsafe partial struct WINHTTP_AUTOPROXY_OPTIONS
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint dwAutoDetectFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwAutoDetectFlags;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* lpszAutoConfigUrl;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* lpszAutoConfigUrl;
 
-        [NativeTypeName("LPVOID")]
-        public void* lpvReserved;
+    [NativeTypeName("LPVOID")]
+    public void* lpvReserved;
 
-        [NativeTypeName("DWORD")]
-        public uint dwReserved;
+    [NativeTypeName("DWORD")]
+    public uint dwReserved;
 
-        public BOOL fAutoLogonIfChallenged;
-    }
+    public BOOL fAutoLogonIfChallenged;
 }

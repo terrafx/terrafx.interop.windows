@@ -3,16 +3,15 @@
 // Ported from um/d2d1svg.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D1_SVG_VIEWBOX
 {
-    public partial struct D2D1_SVG_VIEWBOX
-    {
-        public float x;
+    public float x;
 
-        public float y;
+    public float y;
 
-        public float width;
+    public float width;
 
-        public float height;
-    }
+    public float height;
 }

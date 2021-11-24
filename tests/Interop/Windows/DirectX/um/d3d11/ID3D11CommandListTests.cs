@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ID3D11CommandList" /> struct.</summary>
+public static unsafe partial class ID3D11CommandListTests
 {
-    /// <summary>Provides validation of the <see cref="ID3D11CommandList" /> struct.</summary>
-    public static unsafe partial class ID3D11CommandListTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ID3D11CommandList" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ID3D11CommandList" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ID3D11CommandList).GUID, Is.EqualTo(IID_ID3D11CommandList));
-        }
+        Assert.That(typeof(ID3D11CommandList).GUID, Is.EqualTo(IID_ID3D11CommandList));
+    }
 
-        /// <summary>Validates that the <see cref="ID3D11CommandList" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ID3D11CommandList>(), Is.EqualTo(sizeof(ID3D11CommandList)));
-        }
+    /// <summary>Validates that the <see cref="ID3D11CommandList" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ID3D11CommandList>(), Is.EqualTo(sizeof(ID3D11CommandList)));
+    }
 
-        /// <summary>Validates that the <see cref="ID3D11CommandList" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ID3D11CommandList).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ID3D11CommandList" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ID3D11CommandList).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ID3D11CommandList" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ID3D11CommandList" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ID3D11CommandList), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ID3D11CommandList), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ID3D11CommandList), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ID3D11CommandList), Is.EqualTo(4));
         }
     }
 }

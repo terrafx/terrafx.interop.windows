@@ -5,11 +5,10 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+public enum PRJ_EXT_INFO_TYPE
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public enum PRJ_EXT_INFO_TYPE
-    {
-        PRJ_EXT_INFO_TYPE_SYMLINK = 1,
-    }
+    PRJ_EXT_INFO_TYPE_SYMLINK = 1,
 }

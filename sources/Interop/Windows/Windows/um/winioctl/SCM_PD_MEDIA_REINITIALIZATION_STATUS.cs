@@ -3,13 +3,12 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SCM_PD_MEDIA_REINITIALIZATION_STATUS
 {
-    public enum SCM_PD_MEDIA_REINITIALIZATION_STATUS
-    {
-        ScmPhysicalDeviceReinit_Success = 0,
-        ScmPhysicalDeviceReinit_RebootNeeded,
-        ScmPhysicalDeviceReinit_ColdBootNeeded,
-        ScmPhysicalDeviceReinit_Max,
-    }
+    ScmPhysicalDeviceReinit_Success = 0,
+    ScmPhysicalDeviceReinit_RebootNeeded,
+    ScmPhysicalDeviceReinit_ColdBootNeeded,
+    ScmPhysicalDeviceReinit_Max,
 }

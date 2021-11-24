@@ -5,24 +5,23 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D11_CLASS_INSTANCE_DESC
 {
-    public partial struct D3D11_CLASS_INSTANCE_DESC
-    {
-        public uint InstanceId;
+    public uint InstanceId;
 
-        public uint InstanceIndex;
+    public uint InstanceIndex;
 
-        public uint TypeId;
+    public uint TypeId;
 
-        public uint ConstantBuffer;
+    public uint ConstantBuffer;
 
-        public uint BaseConstantBufferOffset;
+    public uint BaseConstantBufferOffset;
 
-        public uint BaseTexture;
+    public uint BaseTexture;
 
-        public uint BaseSampler;
+    public uint BaseSampler;
 
-        public BOOL Created;
-    }
+    public BOOL Created;
 }

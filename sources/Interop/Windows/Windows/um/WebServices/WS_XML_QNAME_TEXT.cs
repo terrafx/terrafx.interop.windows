@@ -3,16 +3,15 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_XML_QNAME_TEXT
 {
-    public unsafe partial struct WS_XML_QNAME_TEXT
-    {
-        public WS_XML_TEXT text;
+    public WS_XML_TEXT text;
 
-        public WS_XML_STRING* prefix;
+    public WS_XML_STRING* prefix;
 
-        public WS_XML_STRING* localName;
+    public WS_XML_STRING* localName;
 
-        public WS_XML_STRING* ns;
-    }
+    public WS_XML_STRING* ns;
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("696E1D33-548F-4036-825F-7026C60011BD")]
+public partial struct CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_Bitstream
 {
-    [Guid("696E1D33-548F-4036-825F-7026C60011BD")]
-    public partial struct CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_Bitstream
-    {
-    }
 }

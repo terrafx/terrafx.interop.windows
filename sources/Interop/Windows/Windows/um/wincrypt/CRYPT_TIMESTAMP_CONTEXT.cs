@@ -3,16 +3,15 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CRYPT_TIMESTAMP_CONTEXT
 {
-    public unsafe partial struct CRYPT_TIMESTAMP_CONTEXT
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbEncoded;
+    [NativeTypeName("DWORD")]
+    public uint cbEncoded;
 
-        public byte* pbEncoded;
+    public byte* pbEncoded;
 
-        [NativeTypeName("PCRYPT_TIMESTAMP_INFO")]
-        public CRYPT_TIMESTAMP_INFO* pTimeStamp;
-    }
+    [NativeTypeName("PCRYPT_TIMESTAMP_INFO")]
+    public CRYPT_TIMESTAMP_INFO* pTimeStamp;
 }

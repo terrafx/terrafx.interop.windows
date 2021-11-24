@@ -3,18 +3,17 @@
 // Ported from um/tpcshrd.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct PROPERTY_METRICS
 {
-    public partial struct PROPERTY_METRICS
-    {
-        [NativeTypeName("LONG")]
-        public int nLogicalMin;
+    [NativeTypeName("LONG")]
+    public int nLogicalMin;
 
-        [NativeTypeName("LONG")]
-        public int nLogicalMax;
+    [NativeTypeName("LONG")]
+    public int nLogicalMax;
 
-        public PROPERTY_UNITS Units;
+    public PROPERTY_UNITS Units;
 
-        public float fResolution;
-    }
+    public float fResolution;
 }

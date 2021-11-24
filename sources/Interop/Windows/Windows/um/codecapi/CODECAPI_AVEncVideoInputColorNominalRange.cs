@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("16CF25C6-A2A6-48E9-AE80-21AEC41D427E")]
+public partial struct CODECAPI_AVEncVideoInputColorNominalRange
 {
-    [Guid("16CF25C6-A2A6-48E9-AE80-21AEC41D427E")]
-    public partial struct CODECAPI_AVEncVideoInputColorNominalRange
-    {
-    }
 }

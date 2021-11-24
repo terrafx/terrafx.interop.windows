@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DHPRIVKEY_VER3" /> struct.</summary>
+public static unsafe partial class DHPRIVKEY_VER3Tests
 {
-    /// <summary>Provides validation of the <see cref="DHPRIVKEY_VER3" /> struct.</summary>
-    public static unsafe partial class DHPRIVKEY_VER3Tests
+    /// <summary>Validates that the <see cref="DHPRIVKEY_VER3" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DHPRIVKEY_VER3" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DHPRIVKEY_VER3>(), Is.EqualTo(sizeof(DHPRIVKEY_VER3)));
-        }
+        Assert.That(Marshal.SizeOf<DHPRIVKEY_VER3>(), Is.EqualTo(sizeof(DHPRIVKEY_VER3)));
+    }
 
-        /// <summary>Validates that the <see cref="DHPRIVKEY_VER3" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DHPRIVKEY_VER3).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DHPRIVKEY_VER3" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DHPRIVKEY_VER3).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DHPRIVKEY_VER3" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DHPRIVKEY_VER3), Is.EqualTo(44));
-        }
+    /// <summary>Validates that the <see cref="DHPRIVKEY_VER3" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DHPRIVKEY_VER3), Is.EqualTo(44));
     }
 }

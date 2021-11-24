@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("6097B4C9-7C1D-4E64-BFCC-9E9765318AE7")]
+public partial struct CODECAPI_AVEncVideoOutputChromaResolution
 {
-    [Guid("6097B4C9-7C1D-4E64-BFCC-9E9765318AE7")]
-    public partial struct CODECAPI_AVEncVideoOutputChromaResolution
-    {
-    }
 }

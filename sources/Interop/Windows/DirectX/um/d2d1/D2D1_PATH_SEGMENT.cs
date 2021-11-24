@@ -5,14 +5,13 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D2D1_PATH_SEGMENT : uint
 {
-    [Flags]
-    public enum D2D1_PATH_SEGMENT : uint
-    {
-        D2D1_PATH_SEGMENT_NONE = 0x00000000,
-        D2D1_PATH_SEGMENT_FORCE_UNSTROKED = 0x00000001,
-        D2D1_PATH_SEGMENT_FORCE_ROUND_LINE_JOIN = 0x00000002,
-        D2D1_PATH_SEGMENT_FORCE_DWORD = 0xffffffff,
-    }
+    D2D1_PATH_SEGMENT_NONE = 0x00000000,
+    D2D1_PATH_SEGMENT_FORCE_UNSTROKED = 0x00000001,
+    D2D1_PATH_SEGMENT_FORCE_ROUND_LINE_JOIN = 0x00000002,
+    D2D1_PATH_SEGMENT_FORCE_DWORD = 0xffffffff,
 }

@@ -3,13 +3,12 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct TBADDBITMAP
-    {
-        public HINSTANCE hInst;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("UINT_PTR")]
-        public nuint nID;
-    }
+public partial struct TBADDBITMAP
+{
+    public HINSTANCE hInst;
+
+    [NativeTypeName("UINT_PTR")]
+    public nuint nID;
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XINPUT_BATTERY_INFORMATION" /> struct.</summary>
+public static unsafe partial class XINPUT_BATTERY_INFORMATIONTests
 {
-    /// <summary>Provides validation of the <see cref="XINPUT_BATTERY_INFORMATION" /> struct.</summary>
-    public static unsafe partial class XINPUT_BATTERY_INFORMATIONTests
+    /// <summary>Validates that the <see cref="XINPUT_BATTERY_INFORMATION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XINPUT_BATTERY_INFORMATION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XINPUT_BATTERY_INFORMATION>(), Is.EqualTo(sizeof(XINPUT_BATTERY_INFORMATION)));
-        }
+        Assert.That(Marshal.SizeOf<XINPUT_BATTERY_INFORMATION>(), Is.EqualTo(sizeof(XINPUT_BATTERY_INFORMATION)));
+    }
 
-        /// <summary>Validates that the <see cref="XINPUT_BATTERY_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XINPUT_BATTERY_INFORMATION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XINPUT_BATTERY_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XINPUT_BATTERY_INFORMATION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XINPUT_BATTERY_INFORMATION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(XINPUT_BATTERY_INFORMATION), Is.EqualTo(2));
-        }
+    /// <summary>Validates that the <see cref="XINPUT_BATTERY_INFORMATION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(XINPUT_BATTERY_INFORMATION), Is.EqualTo(2));
     }
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ADDRINFOEX4" /> struct.</summary>
+public static unsafe partial class ADDRINFOEX4Tests
 {
-    /// <summary>Provides validation of the <see cref="ADDRINFOEX4" /> struct.</summary>
-    public static unsafe partial class ADDRINFOEX4Tests
+    /// <summary>Validates that the <see cref="ADDRINFOEX4" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="ADDRINFOEX4" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ADDRINFOEX4>(), Is.EqualTo(sizeof(ADDRINFOEX4)));
-        }
+        Assert.That(Marshal.SizeOf<ADDRINFOEX4>(), Is.EqualTo(sizeof(ADDRINFOEX4)));
+    }
 
-        /// <summary>Validates that the <see cref="ADDRINFOEX4" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ADDRINFOEX4).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ADDRINFOEX4" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ADDRINFOEX4).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ADDRINFOEX4" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ADDRINFOEX4" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ADDRINFOEX4), Is.EqualTo(104));
-            }
-            else
-            {
-                Assert.That(sizeof(ADDRINFOEX4), Is.EqualTo(60));
-            }
+            Assert.That(sizeof(ADDRINFOEX4), Is.EqualTo(104));
+        }
+        else
+        {
+            Assert.That(sizeof(ADDRINFOEX4), Is.EqualTo(60));
         }
     }
 }

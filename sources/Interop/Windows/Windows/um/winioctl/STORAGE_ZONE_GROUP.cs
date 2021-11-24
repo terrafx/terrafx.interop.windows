@@ -3,16 +3,15 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct STORAGE_ZONE_GROUP
 {
-    public partial struct STORAGE_ZONE_GROUP
-    {
-        [NativeTypeName("DWORD")]
-        public uint ZoneCount;
+    [NativeTypeName("DWORD")]
+    public uint ZoneCount;
 
-        public STORAGE_ZONE_TYPES ZoneType;
+    public STORAGE_ZONE_TYPES ZoneType;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong ZoneSize;
-    }
+    [NativeTypeName("DWORDLONG")]
+    public ulong ZoneSize;
 }

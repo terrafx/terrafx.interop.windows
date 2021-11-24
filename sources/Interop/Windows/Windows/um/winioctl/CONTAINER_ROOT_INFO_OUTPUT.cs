@@ -3,14 +3,13 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct CONTAINER_ROOT_INFO_OUTPUT
-    {
-        [NativeTypeName("WORD")]
-        public ushort ContainerRootIdLength;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte ContainerRootId[1];
-    }
+public unsafe partial struct CONTAINER_ROOT_INFO_OUTPUT
+{
+    [NativeTypeName("WORD")]
+    public ushort ContainerRootIdLength;
+
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte ContainerRootId[1];
 }

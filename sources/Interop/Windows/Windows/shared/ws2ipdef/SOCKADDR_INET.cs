@@ -5,19 +5,18 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public partial struct SOCKADDR_INET
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public partial struct SOCKADDR_INET
-    {
-        [FieldOffset(0)]
-        public SOCKADDR_IN Ipv4;
+    [FieldOffset(0)]
+    public SOCKADDR_IN Ipv4;
 
-        [FieldOffset(0)]
-        public SOCKADDR_IN6 Ipv6;
+    [FieldOffset(0)]
+    public SOCKADDR_IN6 Ipv6;
 
-        [FieldOffset(0)]
-        [NativeTypeName("ADDRESS_FAMILY")]
-        public ushort si_family;
-    }
+    [FieldOffset(0)]
+    [NativeTypeName("ADDRESS_FAMILY")]
+    public ushort si_family;
 }

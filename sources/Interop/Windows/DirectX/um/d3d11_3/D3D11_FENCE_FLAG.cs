@@ -5,14 +5,13 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D3D11_FENCE_FLAG
 {
-    [Flags]
-    public enum D3D11_FENCE_FLAG
-    {
-        D3D11_FENCE_FLAG_NONE = 0,
-        D3D11_FENCE_FLAG_SHARED = 0x2,
-        D3D11_FENCE_FLAG_SHARED_CROSS_ADAPTER = 0x4,
-        D3D11_FENCE_FLAG_NON_MONITORED = 0x8,
-    }
+    D3D11_FENCE_FLAG_NONE = 0,
+    D3D11_FENCE_FLAG_SHARED = 0x2,
+    D3D11_FENCE_FLAG_SHARED_CROSS_ADAPTER = 0x4,
+    D3D11_FENCE_FLAG_NON_MONITORED = 0x8,
 }

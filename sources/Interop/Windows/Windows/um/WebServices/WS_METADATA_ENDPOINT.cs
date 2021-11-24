@@ -5,26 +5,25 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_METADATA_ENDPOINT
 {
-    public unsafe partial struct WS_METADATA_ENDPOINT
-    {
-        public WS_ENDPOINT_ADDRESS endpointAddress;
+    public WS_ENDPOINT_ADDRESS endpointAddress;
 
-        public IntPtr endpointPolicy;
+    public IntPtr endpointPolicy;
 
-        public WS_XML_STRING* portName;
+    public WS_XML_STRING* portName;
 
-        public WS_XML_STRING* serviceName;
+    public WS_XML_STRING* serviceName;
 
-        public WS_XML_STRING* serviceNs;
+    public WS_XML_STRING* serviceNs;
 
-        public WS_XML_STRING* bindingName;
+    public WS_XML_STRING* bindingName;
 
-        public WS_XML_STRING* bindingNs;
+    public WS_XML_STRING* bindingNs;
 
-        public WS_XML_STRING* portTypeName;
+    public WS_XML_STRING* portTypeName;
 
-        public WS_XML_STRING* portTypeNs;
-    }
+    public WS_XML_STRING* portTypeNs;
 }

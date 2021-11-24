@@ -7,139 +7,138 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("0000010A-0000-0000-C000-000000000046")]
+[NativeTypeName("struct IPersistStorage : IPersist")]
+[NativeInheritance("IPersist")]
+public unsafe partial struct IPersistStorage : IPersistStorage.Interface
 {
-    [Guid("0000010A-0000-0000-C000-000000000046")]
-    [NativeTypeName("struct IPersistStorage : IPersist")]
-    [NativeInheritance("IPersist")]
-    public unsafe partial struct IPersistStorage : IPersistStorage.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IPersistStorage*, Guid*, void**, int>)(lpVtbl[0]))((IPersistStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IPersistStorage*, Guid*, void**, int>)(lpVtbl[0]))((IPersistStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IPersistStorage*, uint>)(lpVtbl[1]))((IPersistStorage*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IPersistStorage*, uint>)(lpVtbl[1]))((IPersistStorage*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IPersistStorage*, uint>)(lpVtbl[2]))((IPersistStorage*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IPersistStorage*, uint>)(lpVtbl[2]))((IPersistStorage*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
+    {
+        return ((delegate* unmanaged<IPersistStorage*, Guid*, int>)(lpVtbl[3]))((IPersistStorage*)Unsafe.AsPointer(ref this), pClassID);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
-        {
-            return ((delegate* unmanaged<IPersistStorage*, Guid*, int>)(lpVtbl[3]))((IPersistStorage*)Unsafe.AsPointer(ref this), pClassID);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT IsDirty()
+    {
+        return ((delegate* unmanaged<IPersistStorage*, int>)(lpVtbl[4]))((IPersistStorage*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT InitNew(IStorage* pStg)
+    {
+        return ((delegate* unmanaged<IPersistStorage*, IStorage*, int>)(lpVtbl[5]))((IPersistStorage*)Unsafe.AsPointer(ref this), pStg);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Load(IStorage* pStg)
+    {
+        return ((delegate* unmanaged<IPersistStorage*, IStorage*, int>)(lpVtbl[6]))((IPersistStorage*)Unsafe.AsPointer(ref this), pStg);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT Save(IStorage* pStgSave, BOOL fSameAsLoad)
+    {
+        return ((delegate* unmanaged<IPersistStorage*, IStorage*, BOOL, int>)(lpVtbl[7]))((IPersistStorage*)Unsafe.AsPointer(ref this), pStgSave, fSameAsLoad);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT SaveCompleted(IStorage* pStgNew)
+    {
+        return ((delegate* unmanaged<IPersistStorage*, IStorage*, int>)(lpVtbl[8]))((IPersistStorage*)Unsafe.AsPointer(ref this), pStgNew);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT HandsOffStorage()
+    {
+        return ((delegate* unmanaged<IPersistStorage*, int>)(lpVtbl[9]))((IPersistStorage*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IPersist.Interface
+    {
         [VtblIndex(4)]
-        public HRESULT IsDirty()
-        {
-            return ((delegate* unmanaged<IPersistStorage*, int>)(lpVtbl[4]))((IPersistStorage*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT IsDirty();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT InitNew(IStorage* pStg)
-        {
-            return ((delegate* unmanaged<IPersistStorage*, IStorage*, int>)(lpVtbl[5]))((IPersistStorage*)Unsafe.AsPointer(ref this), pStg);
-        }
+        HRESULT InitNew(IStorage* pStg);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Load(IStorage* pStg)
-        {
-            return ((delegate* unmanaged<IPersistStorage*, IStorage*, int>)(lpVtbl[6]))((IPersistStorage*)Unsafe.AsPointer(ref this), pStg);
-        }
+        HRESULT Load(IStorage* pStg);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT Save(IStorage* pStgSave, BOOL fSameAsLoad)
-        {
-            return ((delegate* unmanaged<IPersistStorage*, IStorage*, BOOL, int>)(lpVtbl[7]))((IPersistStorage*)Unsafe.AsPointer(ref this), pStgSave, fSameAsLoad);
-        }
+        HRESULT Save(IStorage* pStgSave, BOOL fSameAsLoad);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT SaveCompleted(IStorage* pStgNew)
-        {
-            return ((delegate* unmanaged<IPersistStorage*, IStorage*, int>)(lpVtbl[8]))((IPersistStorage*)Unsafe.AsPointer(ref this), pStgNew);
-        }
+        HRESULT SaveCompleted(IStorage* pStgNew);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT HandsOffStorage()
-        {
-            return ((delegate* unmanaged<IPersistStorage*, int>)(lpVtbl[9]))((IPersistStorage*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT HandsOffStorage();
+    }
 
-        public interface Interface : IPersist.Interface
-        {
-            [VtblIndex(4)]
-            HRESULT IsDirty();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistStorage*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(5)]
-            HRESULT InitNew(IStorage* pStg);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistStorage*, uint> AddRef;
 
-            [VtblIndex(6)]
-            HRESULT Load(IStorage* pStg);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistStorage*, uint> Release;
 
-            [VtblIndex(7)]
-            HRESULT Save(IStorage* pStgSave, BOOL fSameAsLoad);
+        [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistStorage*, Guid*, int> GetClassID;
 
-            [VtblIndex(8)]
-            HRESULT SaveCompleted(IStorage* pStgNew);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistStorage*, int> IsDirty;
 
-            [VtblIndex(9)]
-            HRESULT HandsOffStorage();
-        }
+        [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistStorage*, IStorage*, int> InitNew;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistStorage*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistStorage*, IStorage*, int> Load;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistStorage*, uint> AddRef;
+        [NativeTypeName("HRESULT (IStorage *, BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistStorage*, IStorage*, BOOL, int> Save;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistStorage*, uint> Release;
+        [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistStorage*, IStorage*, int> SaveCompleted;
 
-            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistStorage*, Guid*, int> GetClassID;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistStorage*, int> IsDirty;
-
-            [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistStorage*, IStorage*, int> InitNew;
-
-            [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistStorage*, IStorage*, int> Load;
-
-            [NativeTypeName("HRESULT (IStorage *, BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistStorage*, IStorage*, BOOL, int> Save;
-
-            [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistStorage*, IStorage*, int> SaveCompleted;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistStorage*, int> HandsOffStorage;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistStorage*, int> HandsOffStorage;
     }
 }

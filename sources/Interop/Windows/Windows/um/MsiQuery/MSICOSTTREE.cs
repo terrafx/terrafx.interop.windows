@@ -3,13 +3,12 @@
 // Ported from um/MsiQuery.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MSICOSTTREE
 {
-    public enum MSICOSTTREE
-    {
-        MSICOSTTREE_SELFONLY = 0,
-        MSICOSTTREE_CHILDREN = 1,
-        MSICOSTTREE_PARENTS = 2,
-        MSICOSTTREE_RESERVED = 3,
-    }
+    MSICOSTTREE_SELFONLY = 0,
+    MSICOSTTREE_CHILDREN = 1,
+    MSICOSTTREE_PARENTS = 2,
+    MSICOSTTREE_RESERVED = 3,
 }

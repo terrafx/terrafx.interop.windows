@@ -3,17 +3,16 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct BANDSITEINFO
 {
-    public partial struct BANDSITEINFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwMask;
+    [NativeTypeName("DWORD")]
+    public uint dwMask;
 
-        [NativeTypeName("DWORD")]
-        public uint dwState;
+    [NativeTypeName("DWORD")]
+    public uint dwState;
 
-        [NativeTypeName("DWORD")]
-        public uint dwStyle;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwStyle;
 }

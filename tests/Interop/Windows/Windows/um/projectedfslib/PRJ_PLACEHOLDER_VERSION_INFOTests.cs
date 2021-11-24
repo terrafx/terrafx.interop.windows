@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PRJ_PLACEHOLDER_VERSION_INFO" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.17763.0")]
+public static unsafe partial class PRJ_PLACEHOLDER_VERSION_INFOTests
 {
-    /// <summary>Provides validation of the <see cref="PRJ_PLACEHOLDER_VERSION_INFO" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0.17763.0")]
-    public static unsafe partial class PRJ_PLACEHOLDER_VERSION_INFOTests
+    /// <summary>Validates that the <see cref="PRJ_PLACEHOLDER_VERSION_INFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PRJ_PLACEHOLDER_VERSION_INFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PRJ_PLACEHOLDER_VERSION_INFO>(), Is.EqualTo(sizeof(PRJ_PLACEHOLDER_VERSION_INFO)));
-        }
+        Assert.That(Marshal.SizeOf<PRJ_PLACEHOLDER_VERSION_INFO>(), Is.EqualTo(sizeof(PRJ_PLACEHOLDER_VERSION_INFO)));
+    }
 
-        /// <summary>Validates that the <see cref="PRJ_PLACEHOLDER_VERSION_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PRJ_PLACEHOLDER_VERSION_INFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PRJ_PLACEHOLDER_VERSION_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PRJ_PLACEHOLDER_VERSION_INFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PRJ_PLACEHOLDER_VERSION_INFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(PRJ_PLACEHOLDER_VERSION_INFO), Is.EqualTo(256));
-        }
+    /// <summary>Validates that the <see cref="PRJ_PLACEHOLDER_VERSION_INFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(PRJ_PLACEHOLDER_VERSION_INFO), Is.EqualTo(256));
     }
 }

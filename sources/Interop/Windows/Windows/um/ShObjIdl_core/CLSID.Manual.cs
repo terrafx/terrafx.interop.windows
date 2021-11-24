@@ -7,16 +7,16 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static unsafe partial class CLSID
 {
-    public static unsafe partial class CLSID
+    public static ref readonly Guid CLSID_ShellLibrary
     {
-        public static ref readonly Guid CLSID_ShellLibrary
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x1D, 0x21, 0xB3, 0xD9,
                     0x7F, 0xE5,
                     0x26, 0x44,
@@ -30,8 +30,7 @@ namespace TerraFX.Interop.Windows
                     0x97
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

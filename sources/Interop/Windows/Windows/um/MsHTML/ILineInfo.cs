@@ -7,116 +7,115 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3050F7E2-98B5-11CF-BB82-00AA00BDCE0B")]
+[NativeTypeName("struct ILineInfo : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ILineInfo : ILineInfo.Interface
 {
-    [Guid("3050F7E2-98B5-11CF-BB82-00AA00BDCE0B")]
-    [NativeTypeName("struct ILineInfo : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ILineInfo : ILineInfo.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ILineInfo*, Guid*, void**, int>)(lpVtbl[0]))((ILineInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ILineInfo*, Guid*, void**, int>)(lpVtbl[0]))((ILineInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ILineInfo*, uint>)(lpVtbl[1]))((ILineInfo*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ILineInfo*, uint>)(lpVtbl[1]))((ILineInfo*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ILineInfo*, uint>)(lpVtbl[2]))((ILineInfo*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ILineInfo*, uint>)(lpVtbl[2]))((ILineInfo*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT get_x([NativeTypeName("long *")] int* p)
+    {
+        return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[3]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT get_baseLine([NativeTypeName("long *")] int* p)
+    {
+        return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[4]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT get_textDescent([NativeTypeName("long *")] int* p)
+    {
+        return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[5]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT get_textHeight([NativeTypeName("long *")] int* p)
+    {
+        return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[6]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT get_lineDirection([NativeTypeName("LONG *")] int* p)
+    {
+        return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[7]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT get_x([NativeTypeName("long *")] int* p)
-        {
-            return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[3]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_x([NativeTypeName("long *")] int* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT get_baseLine([NativeTypeName("long *")] int* p)
-        {
-            return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[4]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_baseLine([NativeTypeName("long *")] int* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT get_textDescent([NativeTypeName("long *")] int* p)
-        {
-            return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[5]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_textDescent([NativeTypeName("long *")] int* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT get_textHeight([NativeTypeName("long *")] int* p)
-        {
-            return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[6]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_textHeight([NativeTypeName("long *")] int* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT get_lineDirection([NativeTypeName("LONG *")] int* p)
-        {
-            return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[7]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_lineDirection([NativeTypeName("LONG *")] int* p);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT get_x([NativeTypeName("long *")] int* p);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ILineInfo*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT get_baseLine([NativeTypeName("long *")] int* p);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ILineInfo*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT get_textDescent([NativeTypeName("long *")] int* p);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ILineInfo*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT get_textHeight([NativeTypeName("long *")] int* p);
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ILineInfo*, int*, int> get_x;
 
-            [VtblIndex(7)]
-            HRESULT get_lineDirection([NativeTypeName("LONG *")] int* p);
-        }
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ILineInfo*, int*, int> get_baseLine;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ILineInfo*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ILineInfo*, int*, int> get_textDescent;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ILineInfo*, uint> AddRef;
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ILineInfo*, int*, int> get_textHeight;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ILineInfo*, uint> Release;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ILineInfo*, int*, int> get_x;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ILineInfo*, int*, int> get_baseLine;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ILineInfo*, int*, int> get_textDescent;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ILineInfo*, int*, int> get_textHeight;
-
-            [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ILineInfo*, int*, int> get_lineDirection;
-        }
+        [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ILineInfo*, int*, int> get_lineDirection;
     }
 }

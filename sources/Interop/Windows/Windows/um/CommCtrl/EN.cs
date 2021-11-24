@@ -3,17 +3,16 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class EN
 {
-    public static partial class EN
-    {
-        [NativeTypeName("#define EN_FIRST (0U-1520U)")]
-        public const uint EN_FIRST = unchecked(0U - 1520U);
+    [NativeTypeName("#define EN_FIRST (0U-1520U)")]
+    public const uint EN_FIRST = unchecked(0U - 1520U);
 
-        [NativeTypeName("#define EN_LAST (0U-1540U)")]
-        public const uint EN_LAST = unchecked(0U - 1540U);
+    [NativeTypeName("#define EN_LAST (0U-1540U)")]
+    public const uint EN_LAST = unchecked(0U - 1540U);
 
-        [NativeTypeName("#define EN_SEARCHWEB (EN_FIRST - 0)")]
-        public const uint EN_SEARCHWEB = unchecked((0U - 1520U) - 0);
-    }
+    [NativeTypeName("#define EN_SEARCHWEB (EN_FIRST - 0)")]
+    public const uint EN_SEARCHWEB = unchecked((0U - 1520U) - 0);
 }

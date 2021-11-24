@@ -9,122 +9,121 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0")]
+[Guid("DA20D8EF-812A-4C43-9802-62EC4ABD7ADE")]
+[NativeTypeName("struct IDWriteFontList1 : IDWriteFontList")]
+[NativeInheritance("IDWriteFontList")]
+public unsafe partial struct IDWriteFontList1 : IDWriteFontList1.Interface
 {
-    [SupportedOSPlatform("windows10.0")]
-    [Guid("DA20D8EF-812A-4C43-9802-62EC4ABD7ADE")]
-    [NativeTypeName("struct IDWriteFontList1 : IDWriteFontList")]
-    [NativeInheritance("IDWriteFontList")]
-    public unsafe partial struct IDWriteFontList1 : IDWriteFontList1.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDWriteFontList1*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFontList1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDWriteFontList1*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFontList1*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDWriteFontList1*, uint>)(lpVtbl[1]))((IDWriteFontList1*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDWriteFontList1*, uint>)(lpVtbl[1]))((IDWriteFontList1*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDWriteFontList1*, uint>)(lpVtbl[2]))((IDWriteFontList1*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDWriteFontList1*, uint>)(lpVtbl[2]))((IDWriteFontList1*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetFontCollection(IDWriteFontCollection** fontCollection)
+    {
+        return ((delegate* unmanaged<IDWriteFontList1*, IDWriteFontCollection**, int>)(lpVtbl[3]))((IDWriteFontList1*)Unsafe.AsPointer(ref this), fontCollection);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetFontCollection(IDWriteFontCollection** fontCollection)
-        {
-            return ((delegate* unmanaged<IDWriteFontList1*, IDWriteFontCollection**, int>)(lpVtbl[3]))((IDWriteFontList1*)Unsafe.AsPointer(ref this), fontCollection);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    [return: NativeTypeName("UINT32")]
+    public uint GetFontCount()
+    {
+        return ((delegate* unmanaged<IDWriteFontList1*, uint>)(lpVtbl[4]))((IDWriteFontList1*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        [return: NativeTypeName("UINT32")]
-        public uint GetFontCount()
-        {
-            return ((delegate* unmanaged<IDWriteFontList1*, uint>)(lpVtbl[4]))((IDWriteFontList1*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetFont([NativeTypeName("UINT32")] uint index, IDWriteFont** font)
+    {
+        return ((delegate* unmanaged<IDWriteFontList1*, uint, IDWriteFont**, int>)(lpVtbl[5]))((IDWriteFontList1*)Unsafe.AsPointer(ref this), index, font);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT GetFont([NativeTypeName("UINT32")] uint index, IDWriteFont** font)
-        {
-            return ((delegate* unmanaged<IDWriteFontList1*, uint, IDWriteFont**, int>)(lpVtbl[5]))((IDWriteFontList1*)Unsafe.AsPointer(ref this), index, font);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public DWRITE_LOCALITY GetFontLocality([NativeTypeName("UINT32")] uint listIndex)
+    {
+        return ((delegate* unmanaged<IDWriteFontList1*, uint, DWRITE_LOCALITY>)(lpVtbl[6]))((IDWriteFontList1*)Unsafe.AsPointer(ref this), listIndex);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT GetFont([NativeTypeName("UINT32")] uint listIndex, IDWriteFont3** font)
+    {
+        return ((delegate* unmanaged<IDWriteFontList1*, uint, IDWriteFont3**, int>)(lpVtbl[7]))((IDWriteFontList1*)Unsafe.AsPointer(ref this), listIndex, font);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT GetFontFaceReference([NativeTypeName("UINT32")] uint listIndex, IDWriteFontFaceReference** fontFaceReference)
+    {
+        return ((delegate* unmanaged<IDWriteFontList1*, uint, IDWriteFontFaceReference**, int>)(lpVtbl[8]))((IDWriteFontList1*)Unsafe.AsPointer(ref this), listIndex, fontFaceReference);
+    }
+
+    public interface Interface : IDWriteFontList.Interface
+    {
         [VtblIndex(6)]
-        public DWRITE_LOCALITY GetFontLocality([NativeTypeName("UINT32")] uint listIndex)
-        {
-            return ((delegate* unmanaged<IDWriteFontList1*, uint, DWRITE_LOCALITY>)(lpVtbl[6]))((IDWriteFontList1*)Unsafe.AsPointer(ref this), listIndex);
-        }
+        DWRITE_LOCALITY GetFontLocality([NativeTypeName("UINT32")] uint listIndex);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetFont([NativeTypeName("UINT32")] uint listIndex, IDWriteFont3** font)
-        {
-            return ((delegate* unmanaged<IDWriteFontList1*, uint, IDWriteFont3**, int>)(lpVtbl[7]))((IDWriteFontList1*)Unsafe.AsPointer(ref this), listIndex, font);
-        }
+        HRESULT GetFont([NativeTypeName("UINT32")] uint listIndex, IDWriteFont3** font);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT GetFontFaceReference([NativeTypeName("UINT32")] uint listIndex, IDWriteFontFaceReference** fontFaceReference)
-        {
-            return ((delegate* unmanaged<IDWriteFontList1*, uint, IDWriteFontFaceReference**, int>)(lpVtbl[8]))((IDWriteFontList1*)Unsafe.AsPointer(ref this), listIndex, fontFaceReference);
-        }
+        HRESULT GetFontFaceReference([NativeTypeName("UINT32")] uint listIndex, IDWriteFontFaceReference** fontFaceReference);
+    }
 
-        public interface Interface : IDWriteFontList.Interface
-        {
-            [VtblIndex(6)]
-            DWRITE_LOCALITY GetFontLocality([NativeTypeName("UINT32")] uint listIndex);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDWriteFontList1*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(7)]
-            HRESULT GetFont([NativeTypeName("UINT32")] uint listIndex, IDWriteFont3** font);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDWriteFontList1*, uint> AddRef;
 
-            [VtblIndex(8)]
-            HRESULT GetFontFaceReference([NativeTypeName("UINT32")] uint listIndex, IDWriteFontFaceReference** fontFaceReference);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDWriteFontList1*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDWriteFontList1*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (IDWriteFontCollection **) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDWriteFontList1*, IDWriteFontCollection**, int> GetFontCollection;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDWriteFontList1*, uint> AddRef;
+        [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDWriteFontList1*, uint> GetFontCount;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDWriteFontList1*, uint> Release;
+        [NativeTypeName("HRESULT (UINT32, IDWriteFont **) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDWriteFontList1*, uint, IDWriteFont**, int> GetFont;
 
-            [NativeTypeName("HRESULT (IDWriteFontCollection **) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDWriteFontList1*, IDWriteFontCollection**, int> GetFontCollection;
+        [NativeTypeName("DWRITE_LOCALITY (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDWriteFontList1*, uint, DWRITE_LOCALITY> GetFontLocality;
 
-            [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDWriteFontList1*, uint> GetFontCount;
+        [NativeTypeName("HRESULT (UINT32, IDWriteFont3 **) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDWriteFontList1*, uint, IDWriteFont3**, int> GetFont1;
 
-            [NativeTypeName("HRESULT (UINT32, IDWriteFont **) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDWriteFontList1*, uint, IDWriteFont**, int> GetFont;
-
-            [NativeTypeName("DWRITE_LOCALITY (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDWriteFontList1*, uint, DWRITE_LOCALITY> GetFontLocality;
-
-            [NativeTypeName("HRESULT (UINT32, IDWriteFont3 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDWriteFontList1*, uint, IDWriteFont3**, int> GetFont1;
-
-            [NativeTypeName("HRESULT (UINT32, IDWriteFontFaceReference **) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDWriteFontList1*, uint, IDWriteFontFaceReference**, int> GetFontFaceReference;
-        }
+        [NativeTypeName("HRESULT (UINT32, IDWriteFontFaceReference **) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDWriteFontList1*, uint, IDWriteFontFaceReference**, int> GetFontFaceReference;
     }
 }

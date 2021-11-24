@@ -5,26 +5,25 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct RemotableHandle
 {
-    public partial struct RemotableHandle
+    [NativeTypeName("LONG")]
+    public int fContext;
+
+    [NativeTypeName("union __MIDL_IWinTypes_0009")]
+    public _u_e__Union u;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _u_e__Union
     {
+        [FieldOffset(0)]
         [NativeTypeName("LONG")]
-        public int fContext;
+        public int hInproc;
 
-        [NativeTypeName("union __MIDL_IWinTypes_0009")]
-        public _u_e__Union u;
-
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _u_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("LONG")]
-            public int hInproc;
-
-            [FieldOffset(0)]
-            [NativeTypeName("LONG")]
-            public int hRemote;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("LONG")]
+        public int hRemote;
     }
 }

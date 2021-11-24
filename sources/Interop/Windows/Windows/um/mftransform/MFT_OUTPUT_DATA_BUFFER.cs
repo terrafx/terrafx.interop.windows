@@ -3,18 +3,17 @@
 // Ported from um/mftransform.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct MFT_OUTPUT_DATA_BUFFER
 {
-    public unsafe partial struct MFT_OUTPUT_DATA_BUFFER
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwStreamID;
+    [NativeTypeName("DWORD")]
+    public uint dwStreamID;
 
-        public IMFSample* pSample;
+    public IMFSample* pSample;
 
-        [NativeTypeName("DWORD")]
-        public uint dwStatus;
+    [NativeTypeName("DWORD")]
+    public uint dwStatus;
 
-        public IMFCollection* pEvents;
-    }
+    public IMFCollection* pEvents;
 }

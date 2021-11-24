@@ -3,14 +3,13 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct WS_HTTP_SSL_POLICY_DESCRIPTION
 {
-    public partial struct WS_HTTP_SSL_POLICY_DESCRIPTION
-    {
-        public WS_CHANNEL_PROPERTIES channelProperties;
+    public WS_CHANNEL_PROPERTIES channelProperties;
 
-        public WS_SECURITY_PROPERTIES securityProperties;
+    public WS_SECURITY_PROPERTIES securityProperties;
 
-        public WS_SSL_TRANSPORT_SECURITY_BINDING_POLICY_DESCRIPTION sslTransportSecurityBinding;
-    }
+    public WS_SSL_TRANSPORT_SECURITY_BINDING_POLICY_DESCRIPTION sslTransportSecurityBinding;
 }

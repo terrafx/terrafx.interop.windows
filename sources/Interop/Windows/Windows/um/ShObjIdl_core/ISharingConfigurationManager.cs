@@ -7,142 +7,141 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("B4CD448A-9C86-4466-9201-2E62105B87AE")]
+[NativeTypeName("struct ISharingConfigurationManager : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ISharingConfigurationManager : ISharingConfigurationManager.Interface
 {
-    [Guid("B4CD448A-9C86-4466-9201-2E62105B87AE")]
-    [NativeTypeName("struct ISharingConfigurationManager : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISharingConfigurationManager : ISharingConfigurationManager.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ISharingConfigurationManager*, Guid*, void**, int>)(lpVtbl[0]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ISharingConfigurationManager*, Guid*, void**, int>)(lpVtbl[0]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ISharingConfigurationManager*, uint>)(lpVtbl[1]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ISharingConfigurationManager*, uint>)(lpVtbl[1]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ISharingConfigurationManager*, uint>)(lpVtbl[2]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ISharingConfigurationManager*, uint>)(lpVtbl[2]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT CreateShare(DEF_SHARE_ID dsid, SHARE_ROLE role)
+    {
+        return ((delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, SHARE_ROLE, int>)(lpVtbl[3]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), dsid, role);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT DeleteShare(DEF_SHARE_ID dsid)
+    {
+        return ((delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, int>)(lpVtbl[4]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), dsid);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT ShareExists(DEF_SHARE_ID dsid)
+    {
+        return ((delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, int>)(lpVtbl[5]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), dsid);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetSharePermissions(DEF_SHARE_ID dsid, SHARE_ROLE* pRole)
+    {
+        return ((delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, SHARE_ROLE*, int>)(lpVtbl[6]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), dsid, pRole);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT SharePrinters()
+    {
+        return ((delegate* unmanaged<ISharingConfigurationManager*, int>)(lpVtbl[7]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT StopSharingPrinters()
+    {
+        return ((delegate* unmanaged<ISharingConfigurationManager*, int>)(lpVtbl[8]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT ArePrintersShared()
+    {
+        return ((delegate* unmanaged<ISharingConfigurationManager*, int>)(lpVtbl[9]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT CreateShare(DEF_SHARE_ID dsid, SHARE_ROLE role)
-        {
-            return ((delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, SHARE_ROLE, int>)(lpVtbl[3]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), dsid, role);
-        }
+        HRESULT CreateShare(DEF_SHARE_ID dsid, SHARE_ROLE role);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT DeleteShare(DEF_SHARE_ID dsid)
-        {
-            return ((delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, int>)(lpVtbl[4]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), dsid);
-        }
+        HRESULT DeleteShare(DEF_SHARE_ID dsid);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT ShareExists(DEF_SHARE_ID dsid)
-        {
-            return ((delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, int>)(lpVtbl[5]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), dsid);
-        }
+        HRESULT ShareExists(DEF_SHARE_ID dsid);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetSharePermissions(DEF_SHARE_ID dsid, SHARE_ROLE* pRole)
-        {
-            return ((delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, SHARE_ROLE*, int>)(lpVtbl[6]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), dsid, pRole);
-        }
+        HRESULT GetSharePermissions(DEF_SHARE_ID dsid, SHARE_ROLE* pRole);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT SharePrinters()
-        {
-            return ((delegate* unmanaged<ISharingConfigurationManager*, int>)(lpVtbl[7]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT SharePrinters();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT StopSharingPrinters()
-        {
-            return ((delegate* unmanaged<ISharingConfigurationManager*, int>)(lpVtbl[8]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT StopSharingPrinters();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT ArePrintersShared()
-        {
-            return ((delegate* unmanaged<ISharingConfigurationManager*, int>)(lpVtbl[9]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT ArePrintersShared();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT CreateShare(DEF_SHARE_ID dsid, SHARE_ROLE role);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISharingConfigurationManager*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT DeleteShare(DEF_SHARE_ID dsid);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISharingConfigurationManager*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT ShareExists(DEF_SHARE_ID dsid);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISharingConfigurationManager*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT GetSharePermissions(DEF_SHARE_ID dsid, SHARE_ROLE* pRole);
+        [NativeTypeName("HRESULT (DEF_SHARE_ID, SHARE_ROLE) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, SHARE_ROLE, int> CreateShare;
 
-            [VtblIndex(7)]
-            HRESULT SharePrinters();
+        [NativeTypeName("HRESULT (DEF_SHARE_ID) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, int> DeleteShare;
 
-            [VtblIndex(8)]
-            HRESULT StopSharingPrinters();
+        [NativeTypeName("HRESULT (DEF_SHARE_ID) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, int> ShareExists;
 
-            [VtblIndex(9)]
-            HRESULT ArePrintersShared();
-        }
+        [NativeTypeName("HRESULT (DEF_SHARE_ID, SHARE_ROLE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, SHARE_ROLE*, int> GetSharePermissions;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISharingConfigurationManager*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISharingConfigurationManager*, int> SharePrinters;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISharingConfigurationManager*, uint> AddRef;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISharingConfigurationManager*, int> StopSharingPrinters;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISharingConfigurationManager*, uint> Release;
-
-            [NativeTypeName("HRESULT (DEF_SHARE_ID, SHARE_ROLE) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, SHARE_ROLE, int> CreateShare;
-
-            [NativeTypeName("HRESULT (DEF_SHARE_ID) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, int> DeleteShare;
-
-            [NativeTypeName("HRESULT (DEF_SHARE_ID) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, int> ShareExists;
-
-            [NativeTypeName("HRESULT (DEF_SHARE_ID, SHARE_ROLE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, SHARE_ROLE*, int> GetSharePermissions;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISharingConfigurationManager*, int> SharePrinters;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISharingConfigurationManager*, int> StopSharingPrinters;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISharingConfigurationManager*, int> ArePrintersShared;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISharingConfigurationManager*, int> ArePrintersShared;
     }
 }

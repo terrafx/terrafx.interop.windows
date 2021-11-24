@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MFT_STREAM_STATE_PARAM" /> struct.</summary>
+public static unsafe partial class MFT_STREAM_STATE_PARAMTests
 {
-    /// <summary>Provides validation of the <see cref="MFT_STREAM_STATE_PARAM" /> struct.</summary>
-    public static unsafe partial class MFT_STREAM_STATE_PARAMTests
+    /// <summary>Validates that the <see cref="MFT_STREAM_STATE_PARAM" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MFT_STREAM_STATE_PARAM" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MFT_STREAM_STATE_PARAM>(), Is.EqualTo(sizeof(MFT_STREAM_STATE_PARAM)));
-        }
+        Assert.That(Marshal.SizeOf<MFT_STREAM_STATE_PARAM>(), Is.EqualTo(sizeof(MFT_STREAM_STATE_PARAM)));
+    }
 
-        /// <summary>Validates that the <see cref="MFT_STREAM_STATE_PARAM" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MFT_STREAM_STATE_PARAM).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MFT_STREAM_STATE_PARAM" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MFT_STREAM_STATE_PARAM).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MFT_STREAM_STATE_PARAM" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MFT_STREAM_STATE_PARAM), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="MFT_STREAM_STATE_PARAM" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MFT_STREAM_STATE_PARAM), Is.EqualTo(8));
     }
 }

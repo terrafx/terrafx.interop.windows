@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SPRECOCONTEXTSTATUS" /> struct.</summary>
+public static unsafe partial class SPRECOCONTEXTSTATUSTests
 {
-    /// <summary>Provides validation of the <see cref="SPRECOCONTEXTSTATUS" /> struct.</summary>
-    public static unsafe partial class SPRECOCONTEXTSTATUSTests
+    /// <summary>Validates that the <see cref="SPRECOCONTEXTSTATUS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SPRECOCONTEXTSTATUS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SPRECOCONTEXTSTATUS>(), Is.EqualTo(sizeof(SPRECOCONTEXTSTATUS)));
-        }
+        Assert.That(Marshal.SizeOf<SPRECOCONTEXTSTATUS>(), Is.EqualTo(sizeof(SPRECOCONTEXTSTATUS)));
+    }
 
-        /// <summary>Validates that the <see cref="SPRECOCONTEXTSTATUS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SPRECOCONTEXTSTATUS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SPRECOCONTEXTSTATUS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SPRECOCONTEXTSTATUS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SPRECOCONTEXTSTATUS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SPRECOCONTEXTSTATUS), Is.EqualTo(524));
-        }
+    /// <summary>Validates that the <see cref="SPRECOCONTEXTSTATUS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SPRECOCONTEXTSTATUS), Is.EqualTo(524));
     }
 }

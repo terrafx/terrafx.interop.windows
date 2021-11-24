@@ -8,54 +8,53 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class CLSID
 {
-    public static partial class CLSID
+    public static ref readonly Guid CLSID_XblIdpAuthManager
     {
-        public static ref readonly Guid CLSID_XblIdpAuthManager
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x4B, 0x53, 0x23, 0xCE,
-                    0xD8, 0x56,
-                    0x78, 0x49,
-                    0x86,
-                    0xA2,
-                    0x7E,
-                    0xE5,
-                    0x70,
-                    0x64,
-                    0x04,
-                    0x68
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x4B, 0x53, 0x23, 0xCE,
+                0xD8, 0x56,
+                0x78, 0x49,
+                0x86,
+                0xA2,
+                0x7E,
+                0xE5,
+                0x70,
+                0x64,
+                0x04,
+                0x68
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid CLSID_XblIdpAuthTokenResult
+    public static ref readonly Guid CLSID_XblIdpAuthTokenResult
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x41, 0x34, 0x49, 0x9F,
-                    0x4A, 0x74,
-                    0x0C, 0x41,
-                    0xAE,
-                    0x2B,
-                    0x9A,
-                    0x22,
-                    0xF7,
-                    0xC7,
-                    0x73,
-                    0x1F
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x41, 0x34, 0x49, 0x9F,
+                0x4A, 0x74,
+                0x0C, 0x41,
+                0xAE,
+                0x2B,
+                0x9A,
+                0x22,
+                0xF7,
+                0xC7,
+                0x73,
+                0x1F
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

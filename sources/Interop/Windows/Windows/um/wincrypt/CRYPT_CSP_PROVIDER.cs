@@ -3,16 +3,15 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CRYPT_CSP_PROVIDER
 {
-    public unsafe partial struct CRYPT_CSP_PROVIDER
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwKeySpec;
+    [NativeTypeName("DWORD")]
+    public uint dwKeySpec;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pwszProviderName;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pwszProviderName;
 
-        public CRYPT_BIT_BLOB Signature;
-    }
+    public CRYPT_BIT_BLOB Signature;
 }

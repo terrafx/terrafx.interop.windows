@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MIBICMPINFO" /> struct.</summary>
+public static unsafe partial class MIBICMPINFOTests
 {
-    /// <summary>Provides validation of the <see cref="MIBICMPINFO" /> struct.</summary>
-    public static unsafe partial class MIBICMPINFOTests
+    /// <summary>Validates that the <see cref="MIBICMPINFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MIBICMPINFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MIBICMPINFO>(), Is.EqualTo(sizeof(MIBICMPINFO)));
-        }
+        Assert.That(Marshal.SizeOf<MIBICMPINFO>(), Is.EqualTo(sizeof(MIBICMPINFO)));
+    }
 
-        /// <summary>Validates that the <see cref="MIBICMPINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MIBICMPINFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MIBICMPINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MIBICMPINFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MIBICMPINFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MIBICMPINFO), Is.EqualTo(104));
-        }
+    /// <summary>Validates that the <see cref="MIBICMPINFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MIBICMPINFO), Is.EqualTo(104));
     }
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMLOperatorKernelCreationContext" /> struct.</summary>
+public static unsafe partial class IMLOperatorKernelCreationContextTests
 {
-    /// <summary>Provides validation of the <see cref="IMLOperatorKernelCreationContext" /> struct.</summary>
-    public static unsafe partial class IMLOperatorKernelCreationContextTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMLOperatorKernelCreationContext" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMLOperatorKernelCreationContext" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMLOperatorKernelCreationContext).GUID, Is.EqualTo(IID_IMLOperatorKernelCreationContext));
-        }
+        Assert.That(typeof(IMLOperatorKernelCreationContext).GUID, Is.EqualTo(IID_IMLOperatorKernelCreationContext));
+    }
 
-        /// <summary>Validates that the <see cref="IMLOperatorKernelCreationContext" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMLOperatorKernelCreationContext>(), Is.EqualTo(sizeof(IMLOperatorKernelCreationContext)));
-        }
+    /// <summary>Validates that the <see cref="IMLOperatorKernelCreationContext" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMLOperatorKernelCreationContext>(), Is.EqualTo(sizeof(IMLOperatorKernelCreationContext)));
+    }
 
-        /// <summary>Validates that the <see cref="IMLOperatorKernelCreationContext" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMLOperatorKernelCreationContext).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMLOperatorKernelCreationContext" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMLOperatorKernelCreationContext).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMLOperatorKernelCreationContext" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMLOperatorKernelCreationContext" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMLOperatorKernelCreationContext), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMLOperatorKernelCreationContext), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMLOperatorKernelCreationContext), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMLOperatorKernelCreationContext), Is.EqualTo(4));
         }
     }
 }

@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.1")]
+public enum DCOMPOSITION_BACKFACE_VISIBILITY
 {
-    [SupportedOSPlatform("windows8.1")]
-    public enum DCOMPOSITION_BACKFACE_VISIBILITY
-    {
-        DCOMPOSITION_BACKFACE_VISIBILITY_VISIBLE = 0,
-        DCOMPOSITION_BACKFACE_VISIBILITY_HIDDEN = 1,
-        DCOMPOSITION_BACKFACE_VISIBILITY_INHERIT = unchecked((int)(0xffffffff)),
-    }
+    DCOMPOSITION_BACKFACE_VISIBILITY_VISIBLE = 0,
+    DCOMPOSITION_BACKFACE_VISIBILITY_HIDDEN = 1,
+    DCOMPOSITION_BACKFACE_VISIBILITY_INHERIT = unchecked((int)(0xffffffff)),
 }

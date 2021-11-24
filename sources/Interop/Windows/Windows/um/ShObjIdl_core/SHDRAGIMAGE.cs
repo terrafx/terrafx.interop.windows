@@ -3,16 +3,15 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SHDRAGIMAGE
 {
-    public partial struct SHDRAGIMAGE
-    {
-        public SIZE sizeDragImage;
+    public SIZE sizeDragImage;
 
-        public POINT ptOffset;
+    public POINT ptOffset;
 
-        public HBITMAP hbmpDragImage;
+    public HBITMAP hbmpDragImage;
 
-        public COLORREF crColorKey;
-    }
+    public COLORREF crColorKey;
 }

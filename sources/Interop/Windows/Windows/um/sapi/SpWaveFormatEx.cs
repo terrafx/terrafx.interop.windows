@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("C79A574C-63BE-44B9-801F-283F87F898BE")]
+public partial struct SpWaveFormatEx
 {
-    [Guid("C79A574C-63BE-44B9-801F-283F87F898BE")]
-    public partial struct SpWaveFormatEx
-    {
-    }
 }

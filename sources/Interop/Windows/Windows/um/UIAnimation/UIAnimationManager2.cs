@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("D25D8842-8884-4A4A-B321-091314379BDD")]
+public partial struct UIAnimationManager2
 {
-    [Guid("D25D8842-8884-4A4A-B321-091314379BDD")]
-    public partial struct UIAnimationManager2
-    {
-    }
 }

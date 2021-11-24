@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("30510741-98B5-11CF-BB82-00AA00BDCE0B")]
+public partial struct HTMLCSSStyleDeclaration
 {
-    [Guid("30510741-98B5-11CF-BB82-00AA00BDCE0B")]
-    public partial struct HTMLCSSStyleDeclaration
-    {
-    }
 }

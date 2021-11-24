@@ -3,14 +3,13 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct READ_FILE_USN_DATA
-    {
-        [NativeTypeName("WORD")]
-        public ushort MinMajorVersion;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("WORD")]
-        public ushort MaxMajorVersion;
-    }
+public partial struct READ_FILE_USN_DATA
+{
+    [NativeTypeName("WORD")]
+    public ushort MinMajorVersion;
+
+    [NativeTypeName("WORD")]
+    public ushort MaxMajorVersion;
 }

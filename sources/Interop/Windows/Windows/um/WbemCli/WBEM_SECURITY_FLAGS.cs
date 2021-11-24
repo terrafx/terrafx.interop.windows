@@ -3,17 +3,16 @@
 // Ported from um/WbemCli.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WBEM_SECURITY_FLAGS
 {
-    public enum WBEM_SECURITY_FLAGS
-    {
-        WBEM_ENABLE = 1,
-        WBEM_METHOD_EXECUTE = 2,
-        WBEM_FULL_WRITE_REP = 4,
-        WBEM_PARTIAL_WRITE_REP = 8,
-        WBEM_WRITE_PROVIDER = 0x10,
-        WBEM_REMOTE_ACCESS = 0x20,
-        WBEM_RIGHT_SUBSCRIBE = 0x40,
-        WBEM_RIGHT_PUBLISH = 0x80,
-    }
+    WBEM_ENABLE = 1,
+    WBEM_METHOD_EXECUTE = 2,
+    WBEM_FULL_WRITE_REP = 4,
+    WBEM_PARTIAL_WRITE_REP = 8,
+    WBEM_WRITE_PROVIDER = 0x10,
+    WBEM_REMOTE_ACCESS = 0x20,
+    WBEM_RIGHT_SUBSCRIBE = 0x40,
+    WBEM_RIGHT_PUBLISH = 0x80,
 }

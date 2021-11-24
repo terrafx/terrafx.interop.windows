@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct POWERBROADCAST_SETTING
 {
-    public unsafe partial struct POWERBROADCAST_SETTING
-    {
-        public Guid PowerSetting;
+    public Guid PowerSetting;
 
-        [NativeTypeName("DWORD")]
-        public uint DataLength;
+    [NativeTypeName("DWORD")]
+    public uint DataLength;
 
-        [NativeTypeName("UCHAR [1]")]
-        public fixed byte Data[1];
-    }
+    [NativeTypeName("UCHAR [1]")]
+    public fixed byte Data[1];
 }

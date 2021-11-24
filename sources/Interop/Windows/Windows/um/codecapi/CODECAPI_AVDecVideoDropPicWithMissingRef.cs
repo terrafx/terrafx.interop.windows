@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("F8226383-14C2-4567-9734-5004E96FF887")]
+public partial struct CODECAPI_AVDecVideoDropPicWithMissingRef
 {
-    [Guid("F8226383-14C2-4567-9734-5004E96FF887")]
-    public partial struct CODECAPI_AVDecVideoDropPicWithMissingRef
-    {
-    }
 }

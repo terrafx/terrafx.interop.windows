@@ -3,12 +3,11 @@
 // Ported from shared/ws2ipdef.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct IN_PKTINFO_EX
-    {
-        public IN_PKTINFO pkt_info;
+namespace TerraFX.Interop.Windows;
 
-        public SCOPE_ID scope_id;
-    }
+public partial struct IN_PKTINFO_EX
+{
+    public IN_PKTINFO pkt_info;
+
+    public SCOPE_ID scope_id;
 }

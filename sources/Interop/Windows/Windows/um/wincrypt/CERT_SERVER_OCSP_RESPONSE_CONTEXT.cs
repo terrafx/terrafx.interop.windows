@@ -3,16 +3,15 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CERT_SERVER_OCSP_RESPONSE_CONTEXT
 {
-    public unsafe partial struct CERT_SERVER_OCSP_RESPONSE_CONTEXT
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public byte* pbEncodedOcspResponse;
+    public byte* pbEncodedOcspResponse;
 
-        [NativeTypeName("DWORD")]
-        public uint cbEncodedOcspResponse;
-    }
+    [NativeTypeName("DWORD")]
+    public uint cbEncodedOcspResponse;
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SPEVENTEX" /> struct.</summary>
+public static unsafe partial class SPEVENTEXTests
 {
-    /// <summary>Provides validation of the <see cref="SPEVENTEX" /> struct.</summary>
-    public static unsafe partial class SPEVENTEXTests
+    /// <summary>Validates that the <see cref="SPEVENTEX" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SPEVENTEX" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SPEVENTEX>(), Is.EqualTo(sizeof(SPEVENTEX)));
-        }
+        Assert.That(Marshal.SizeOf<SPEVENTEX>(), Is.EqualTo(sizeof(SPEVENTEX)));
+    }
 
-        /// <summary>Validates that the <see cref="SPEVENTEX" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SPEVENTEX).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SPEVENTEX" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SPEVENTEX).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SPEVENTEX" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SPEVENTEX" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SPEVENTEX), Is.EqualTo(40));
-            }
-            else
-            {
-                Assert.That(sizeof(SPEVENTEX), Is.EqualTo(32));
-            }
+            Assert.That(sizeof(SPEVENTEX), Is.EqualTo(40));
+        }
+        else
+        {
+            Assert.That(sizeof(SPEVENTEX), Is.EqualTo(32));
         }
     }
 }

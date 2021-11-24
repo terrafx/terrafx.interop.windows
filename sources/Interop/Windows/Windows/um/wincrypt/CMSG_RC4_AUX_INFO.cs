@@ -3,14 +3,13 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct CMSG_RC4_AUX_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint dwBitLen;
-    }
+public partial struct CMSG_RC4_AUX_INFO
+{
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
+
+    [NativeTypeName("DWORD")]
+    public uint dwBitLen;
 }

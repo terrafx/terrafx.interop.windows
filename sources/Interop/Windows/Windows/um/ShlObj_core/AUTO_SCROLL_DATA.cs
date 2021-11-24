@@ -7,42 +7,41 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct AUTO_SCROLL_DATA
 {
+    public int iNextSample;
+
+    [NativeTypeName("DWORD")]
+    public uint dwLastScroll;
+
+    public BOOL bFull;
+
+    [NativeTypeName("POINT [3]")]
+    public _pts_e__FixedBuffer pts;
+
+    [NativeTypeName("DWORD [3]")]
+    public fixed uint dwTimes[3];
+
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct AUTO_SCROLL_DATA
+    public partial struct _pts_e__FixedBuffer
     {
-        public int iNextSample;
+        public POINT e0;
+        public POINT e1;
+        public POINT e2;
 
-        [NativeTypeName("DWORD")]
-        public uint dwLastScroll;
-
-        public BOOL bFull;
-
-        [NativeTypeName("POINT [3]")]
-        public _pts_e__FixedBuffer pts;
-
-        [NativeTypeName("DWORD [3]")]
-        public fixed uint dwTimes[3];
-
-        [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public partial struct _pts_e__FixedBuffer
+        public ref POINT this[int index]
         {
-            public POINT e0;
-            public POINT e1;
-            public POINT e2;
-
-            public ref POINT this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan()[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<POINT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
+            get
+            {
+                return ref AsSpan()[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<POINT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
     }
 }

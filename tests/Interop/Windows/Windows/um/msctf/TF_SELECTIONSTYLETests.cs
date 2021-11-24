@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TF_SELECTIONSTYLE" /> struct.</summary>
+public static unsafe partial class TF_SELECTIONSTYLETests
 {
-    /// <summary>Provides validation of the <see cref="TF_SELECTIONSTYLE" /> struct.</summary>
-    public static unsafe partial class TF_SELECTIONSTYLETests
+    /// <summary>Validates that the <see cref="TF_SELECTIONSTYLE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TF_SELECTIONSTYLE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TF_SELECTIONSTYLE>(), Is.EqualTo(sizeof(TF_SELECTIONSTYLE)));
-        }
+        Assert.That(Marshal.SizeOf<TF_SELECTIONSTYLE>(), Is.EqualTo(sizeof(TF_SELECTIONSTYLE)));
+    }
 
-        /// <summary>Validates that the <see cref="TF_SELECTIONSTYLE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TF_SELECTIONSTYLE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TF_SELECTIONSTYLE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TF_SELECTIONSTYLE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TF_SELECTIONSTYLE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TF_SELECTIONSTYLE), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="TF_SELECTIONSTYLE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TF_SELECTIONSTYLE), Is.EqualTo(8));
     }
 }

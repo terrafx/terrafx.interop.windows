@@ -3,17 +3,16 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct PKCS12_PBES2_EXPORT_PARAMS
 {
-    public unsafe partial struct PKCS12_PBES2_EXPORT_PARAMS
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwSize;
+    [NativeTypeName("DWORD")]
+    public uint dwSize;
 
-        [NativeTypeName("PVOID")]
-        public void* hNcryptDescriptor;
+    [NativeTypeName("PVOID")]
+    public void* hNcryptDescriptor;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pwszPbes2Alg;
-    }
+    [NativeTypeName("LPWSTR")]
+    public ushort* pwszPbes2Alg;
 }

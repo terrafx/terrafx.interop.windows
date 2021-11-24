@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("8694F076-CD75-481D-A5C6-A904DCC828F0")]
+public partial struct CODECAPI_AVEncDDCopyright
 {
-    [Guid("8694F076-CD75-481D-A5C6-A904DCC828F0")]
-    public partial struct CODECAPI_AVEncDDCopyright
-    {
-    }
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Guid("4FC3B166-972A-40CF-BC37-7DB03DB2FBA3")]
+public partial struct AudioVolumeMeter
 {
-    [Guid("4FC3B166-972A-40CF-BC37-7DB03DB2FBA3")]
-    public partial struct AudioVolumeMeter
-    {
-    }
 }

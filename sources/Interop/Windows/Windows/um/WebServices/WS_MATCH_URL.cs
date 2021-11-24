@@ -3,19 +3,18 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class WS_MATCH_URL
 {
-    public static partial class WS_MATCH_URL
-    {
-        public const int WS_MATCH_URL_DNS_HOST = 0x1;
-        public const int WS_MATCH_URL_DNS_FULLY_QUALIFIED_HOST = 0x2;
-        public const int WS_MATCH_URL_NETBIOS_HOST = 0x4;
-        public const int WS_MATCH_URL_LOCAL_HOST = 0x8;
-        public const int WS_MATCH_URL_HOST_ADDRESSES = 0x10;
-        public const int WS_MATCH_URL_THIS_HOST = (WS_MATCH_URL_DNS_HOST | WS_MATCH_URL_DNS_FULLY_QUALIFIED_HOST | WS_MATCH_URL_NETBIOS_HOST | WS_MATCH_URL_LOCAL_HOST | WS_MATCH_URL_HOST_ADDRESSES);
-        public const int WS_MATCH_URL_PORT = 0x20;
-        public const int WS_MATCH_URL_EXACT_PATH = 0x40;
-        public const int WS_MATCH_URL_PREFIX_PATH = 0x80;
-        public const int WS_MATCH_URL_NO_QUERY = 0x100;
-    }
+    public const int WS_MATCH_URL_DNS_HOST = 0x1;
+    public const int WS_MATCH_URL_DNS_FULLY_QUALIFIED_HOST = 0x2;
+    public const int WS_MATCH_URL_NETBIOS_HOST = 0x4;
+    public const int WS_MATCH_URL_LOCAL_HOST = 0x8;
+    public const int WS_MATCH_URL_HOST_ADDRESSES = 0x10;
+    public const int WS_MATCH_URL_THIS_HOST = (WS_MATCH_URL_DNS_HOST | WS_MATCH_URL_DNS_FULLY_QUALIFIED_HOST | WS_MATCH_URL_NETBIOS_HOST | WS_MATCH_URL_LOCAL_HOST | WS_MATCH_URL_HOST_ADDRESSES);
+    public const int WS_MATCH_URL_PORT = 0x20;
+    public const int WS_MATCH_URL_EXACT_PATH = 0x40;
+    public const int WS_MATCH_URL_PREFIX_PATH = 0x80;
+    public const int WS_MATCH_URL_NO_QUERY = 0x100;
 }

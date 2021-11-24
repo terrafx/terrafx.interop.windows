@@ -7,30 +7,29 @@ using NUnit.Framework;
 using System;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IID" /> class.</summary>
+public static partial class IIDTests
 {
-    /// <summary>Provides validation of the <see cref="IID" /> class.</summary>
-    public static partial class IIDTests
+    /// <summary>Validates that the value of the <see cref="IID_IXmlReader" /> property is correct.</summary>
+    [Test]
+    public static void IID_IXmlReaderTest()
     {
-        /// <summary>Validates that the value of the <see cref="IID_IXmlReader" /> property is correct.</summary>
-        [Test]
-        public static void IID_IXmlReaderTest()
-        {
-            Assert.That(IID_IXmlReader, Is.EqualTo(new Guid(0x7279FC81, 0x709D, 0x4095, 0xB6, 0x3D, 0x69, 0xFE, 0x4B, 0x0D, 0x90, 0x30)));
-        }
+        Assert.That(IID_IXmlReader, Is.EqualTo(new Guid(0x7279FC81, 0x709D, 0x4095, 0xB6, 0x3D, 0x69, 0xFE, 0x4B, 0x0D, 0x90, 0x30)));
+    }
 
-        /// <summary>Validates that the value of the <see cref="IID_IXmlWriter" /> property is correct.</summary>
-        [Test]
-        public static void IID_IXmlWriterTest()
-        {
-            Assert.That(IID_IXmlWriter, Is.EqualTo(new Guid(0x7279FC88, 0x709D, 0x4095, 0xB6, 0x3D, 0x69, 0xFE, 0x4B, 0x0D, 0x90, 0x30)));
-        }
+    /// <summary>Validates that the value of the <see cref="IID_IXmlWriter" /> property is correct.</summary>
+    [Test]
+    public static void IID_IXmlWriterTest()
+    {
+        Assert.That(IID_IXmlWriter, Is.EqualTo(new Guid(0x7279FC88, 0x709D, 0x4095, 0xB6, 0x3D, 0x69, 0xFE, 0x4B, 0x0D, 0x90, 0x30)));
+    }
 
-        /// <summary>Validates that the value of the <see cref="IID_IXmlResolver" /> property is correct.</summary>
-        [Test]
-        public static void IID_IXmlResolverTest()
-        {
-            Assert.That(IID_IXmlResolver, Is.EqualTo(new Guid(0x7279FC82, 0x709D, 0x4095, 0xB6, 0x3D, 0x69, 0xFE, 0x4B, 0x0D, 0x90, 0x30)));
-        }
+    /// <summary>Validates that the value of the <see cref="IID_IXmlResolver" /> property is correct.</summary>
+    [Test]
+    public static void IID_IXmlResolverTest()
+    {
+        Assert.That(IID_IXmlResolver, Is.EqualTo(new Guid(0x7279FC82, 0x709D, 0x4095, 0xB6, 0x3D, 0x69, 0xFE, 0x4B, 0x0D, 0x90, 0x30)));
     }
 }

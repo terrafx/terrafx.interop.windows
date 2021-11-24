@@ -5,23 +5,22 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DDOPTSURFACEDESC
 {
-    public partial struct DDOPTSURFACEDESC
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwSize;
+    [NativeTypeName("DWORD")]
+    public uint dwSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        public DDSCAPS2 ddSCaps;
+    public DDSCAPS2 ddSCaps;
 
-        public DDOSCAPS ddOSCaps;
+    public DDOSCAPS ddOSCaps;
 
-        public Guid guid;
+    public Guid guid;
 
-        [NativeTypeName("DWORD")]
-        public uint dwCompressionRatio;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwCompressionRatio;
 }

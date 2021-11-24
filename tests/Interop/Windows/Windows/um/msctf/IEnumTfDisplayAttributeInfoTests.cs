@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IEnumTfDisplayAttributeInfo" /> struct.</summary>
+public static unsafe partial class IEnumTfDisplayAttributeInfoTests
 {
-    /// <summary>Provides validation of the <see cref="IEnumTfDisplayAttributeInfo" /> struct.</summary>
-    public static unsafe partial class IEnumTfDisplayAttributeInfoTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEnumTfDisplayAttributeInfo" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEnumTfDisplayAttributeInfo" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IEnumTfDisplayAttributeInfo).GUID, Is.EqualTo(IID_IEnumTfDisplayAttributeInfo));
-        }
+        Assert.That(typeof(IEnumTfDisplayAttributeInfo).GUID, Is.EqualTo(IID_IEnumTfDisplayAttributeInfo));
+    }
 
-        /// <summary>Validates that the <see cref="IEnumTfDisplayAttributeInfo" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IEnumTfDisplayAttributeInfo>(), Is.EqualTo(sizeof(IEnumTfDisplayAttributeInfo)));
-        }
+    /// <summary>Validates that the <see cref="IEnumTfDisplayAttributeInfo" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IEnumTfDisplayAttributeInfo>(), Is.EqualTo(sizeof(IEnumTfDisplayAttributeInfo)));
+    }
 
-        /// <summary>Validates that the <see cref="IEnumTfDisplayAttributeInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IEnumTfDisplayAttributeInfo).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IEnumTfDisplayAttributeInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IEnumTfDisplayAttributeInfo).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IEnumTfDisplayAttributeInfo" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IEnumTfDisplayAttributeInfo" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IEnumTfDisplayAttributeInfo), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IEnumTfDisplayAttributeInfo), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IEnumTfDisplayAttributeInfo), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IEnumTfDisplayAttributeInfo), Is.EqualTo(4));
         }
     }
 }

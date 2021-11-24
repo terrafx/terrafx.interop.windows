@@ -6,23 +6,22 @@
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct XAUDIO2_DEBUG_CONFIGURATION
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct XAUDIO2_DEBUG_CONFIGURATION
-    {
-        [NativeTypeName("UINT32")]
-        public uint TraceMask;
+    [NativeTypeName("UINT32")]
+    public uint TraceMask;
 
-        [NativeTypeName("UINT32")]
-        public uint BreakMask;
+    [NativeTypeName("UINT32")]
+    public uint BreakMask;
 
-        public BOOL LogThreadID;
+    public BOOL LogThreadID;
 
-        public BOOL LogFileline;
+    public BOOL LogFileline;
 
-        public BOOL LogFunctionName;
+    public BOOL LogFunctionName;
 
-        public BOOL LogTiming;
-    }
+    public BOOL LogTiming;
 }

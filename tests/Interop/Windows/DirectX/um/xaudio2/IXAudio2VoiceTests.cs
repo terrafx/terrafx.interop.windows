@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IXAudio2Voice" /> struct.</summary>
+public static unsafe partial class IXAudio2VoiceTests
 {
-    /// <summary>Provides validation of the <see cref="IXAudio2Voice" /> struct.</summary>
-    public static unsafe partial class IXAudio2VoiceTests
+    /// <summary>Validates that the <see cref="IXAudio2Voice" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IXAudio2Voice" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IXAudio2Voice>(), Is.EqualTo(sizeof(IXAudio2Voice)));
-        }
+        Assert.That(Marshal.SizeOf<IXAudio2Voice>(), Is.EqualTo(sizeof(IXAudio2Voice)));
+    }
 
-        /// <summary>Validates that the <see cref="IXAudio2Voice" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IXAudio2Voice).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IXAudio2Voice" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IXAudio2Voice).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IXAudio2Voice" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IXAudio2Voice" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IXAudio2Voice), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IXAudio2Voice), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IXAudio2Voice), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IXAudio2Voice), Is.EqualTo(4));
         }
     }
 }

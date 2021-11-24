@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DiaSourceAlt" /> struct.</summary>
+public static unsafe partial class DiaSourceAltTests
 {
-    /// <summary>Provides validation of the <see cref="DiaSourceAlt" /> struct.</summary>
-    public static unsafe partial class DiaSourceAltTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DiaSourceAlt" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DiaSourceAlt" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DiaSourceAlt).GUID, Is.EqualTo(CLSID_DiaSourceAlt));
-        }
+        Assert.That(typeof(DiaSourceAlt).GUID, Is.EqualTo(CLSID_DiaSourceAlt));
+    }
 
-        /// <summary>Validates that the <see cref="DiaSourceAlt" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DiaSourceAlt>(), Is.EqualTo(sizeof(DiaSourceAlt)));
-        }
+    /// <summary>Validates that the <see cref="DiaSourceAlt" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DiaSourceAlt>(), Is.EqualTo(sizeof(DiaSourceAlt)));
+    }
 
-        /// <summary>Validates that the <see cref="DiaSourceAlt" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DiaSourceAlt).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DiaSourceAlt" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DiaSourceAlt).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DiaSourceAlt" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DiaSourceAlt), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="DiaSourceAlt" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DiaSourceAlt), Is.EqualTo(1));
     }
 }

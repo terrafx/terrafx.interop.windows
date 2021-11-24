@@ -7,64 +7,63 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("676AA6DD-238A-410D-BB99-65668D01605A")]
+[NativeTypeName("struct IMFTopologyNodeAttributeEditor : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMFTopologyNodeAttributeEditor : IMFTopologyNodeAttributeEditor.Interface
 {
-    [Guid("676AA6DD-238A-410D-BB99-65668D01605A")]
-    [NativeTypeName("struct IMFTopologyNodeAttributeEditor : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTopologyNodeAttributeEditor : IMFTopologyNodeAttributeEditor.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMFTopologyNodeAttributeEditor*, Guid*, void**, int>)(lpVtbl[0]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMFTopologyNodeAttributeEditor*, Guid*, void**, int>)(lpVtbl[0]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMFTopologyNodeAttributeEditor*, uint>)(lpVtbl[1]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMFTopologyNodeAttributeEditor*, uint>)(lpVtbl[1]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMFTopologyNodeAttributeEditor*, uint>)(lpVtbl[2]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMFTopologyNodeAttributeEditor*, uint>)(lpVtbl[2]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT UpdateNodeAttributes([NativeTypeName("TOPOID")] ulong TopoId, [NativeTypeName("DWORD")] uint cUpdates, MFTOPONODE_ATTRIBUTE_UPDATE* pUpdates)
+    {
+        return ((delegate* unmanaged<IMFTopologyNodeAttributeEditor*, ulong, uint, MFTOPONODE_ATTRIBUTE_UPDATE*, int>)(lpVtbl[3]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this), TopoId, cUpdates, pUpdates);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT UpdateNodeAttributes([NativeTypeName("TOPOID")] ulong TopoId, [NativeTypeName("DWORD")] uint cUpdates, MFTOPONODE_ATTRIBUTE_UPDATE* pUpdates)
-        {
-            return ((delegate* unmanaged<IMFTopologyNodeAttributeEditor*, ulong, uint, MFTOPONODE_ATTRIBUTE_UPDATE*, int>)(lpVtbl[3]))((IMFTopologyNodeAttributeEditor*)Unsafe.AsPointer(ref this), TopoId, cUpdates, pUpdates);
-        }
+        HRESULT UpdateNodeAttributes([NativeTypeName("TOPOID")] ulong TopoId, [NativeTypeName("DWORD")] uint cUpdates, MFTOPONODE_ATTRIBUTE_UPDATE* pUpdates);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT UpdateNodeAttributes([NativeTypeName("TOPOID")] ulong TopoId, [NativeTypeName("DWORD")] uint cUpdates, MFTOPONODE_ATTRIBUTE_UPDATE* pUpdates);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFTopologyNodeAttributeEditor*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFTopologyNodeAttributeEditor*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFTopologyNodeAttributeEditor*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFTopologyNodeAttributeEditor*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFTopologyNodeAttributeEditor*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFTopologyNodeAttributeEditor*, uint> Release;
-
-            [NativeTypeName("HRESULT (TOPOID, DWORD, MFTOPONODE_ATTRIBUTE_UPDATE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFTopologyNodeAttributeEditor*, ulong, uint, MFTOPONODE_ATTRIBUTE_UPDATE*, int> UpdateNodeAttributes;
-        }
+        [NativeTypeName("HRESULT (TOPOID, DWORD, MFTOPONODE_ATTRIBUTE_UPDATE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFTopologyNodeAttributeEditor*, ulong, uint, MFTOPONODE_ATTRIBUTE_UPDATE*, int> UpdateNodeAttributes;
     }
 }

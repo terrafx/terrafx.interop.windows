@@ -6,14 +6,13 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+[SupportedOSPlatform("windows10.0")]
+public enum APPX_ENCRYPTED_PACKAGE_OPTIONS
 {
-    [Flags]
-    [SupportedOSPlatform("windows10.0")]
-    public enum APPX_ENCRYPTED_PACKAGE_OPTIONS
-    {
-        APPX_ENCRYPTED_PACKAGE_OPTION_NONE = 0,
-        APPX_ENCRYPTED_PACKAGE_OPTION_DIFFUSION = 0x1,
-        APPX_ENCRYPTED_PACKAGE_OPTION_PAGE_HASHING = 0x2,
-    }
+    APPX_ENCRYPTED_PACKAGE_OPTION_NONE = 0,
+    APPX_ENCRYPTED_PACKAGE_OPTION_DIFFUSION = 0x1,
+    APPX_ENCRYPTED_PACKAGE_OPTION_PAGE_HASHING = 0x2,
 }

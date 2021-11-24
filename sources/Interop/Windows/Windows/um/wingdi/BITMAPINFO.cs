@@ -7,30 +7,29 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct BITMAPINFO
 {
-    public partial struct BITMAPINFO
+    public BITMAPINFOHEADER bmiHeader;
+
+    [NativeTypeName("RGBQUAD [1]")]
+    public _bmiColors_e__FixedBuffer bmiColors;
+
+    public partial struct _bmiColors_e__FixedBuffer
     {
-        public BITMAPINFOHEADER bmiHeader;
+        public RGBQUAD e0;
 
-        [NativeTypeName("RGBQUAD [1]")]
-        public _bmiColors_e__FixedBuffer bmiColors;
-
-        public partial struct _bmiColors_e__FixedBuffer
+        public ref RGBQUAD this[int index]
         {
-            public RGBQUAD e0;
-
-            public ref RGBQUAD this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<RGBQUAD> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<RGBQUAD> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

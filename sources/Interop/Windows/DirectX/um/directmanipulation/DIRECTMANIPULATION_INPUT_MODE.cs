@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public enum DIRECTMANIPULATION_INPUT_MODE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum DIRECTMANIPULATION_INPUT_MODE
-    {
-        DIRECTMANIPULATION_INPUT_MODE_AUTOMATIC = 0,
-        DIRECTMANIPULATION_INPUT_MODE_MANUAL = 1,
-    }
+    DIRECTMANIPULATION_INPUT_MODE_AUTOMATIC = 0,
+    DIRECTMANIPULATION_INPUT_MODE_MANUAL = 1,
 }

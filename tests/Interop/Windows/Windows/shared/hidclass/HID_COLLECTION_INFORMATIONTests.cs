@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HID_COLLECTION_INFORMATION" /> struct.</summary>
+public static unsafe partial class HID_COLLECTION_INFORMATIONTests
 {
-    /// <summary>Provides validation of the <see cref="HID_COLLECTION_INFORMATION" /> struct.</summary>
-    public static unsafe partial class HID_COLLECTION_INFORMATIONTests
+    /// <summary>Validates that the <see cref="HID_COLLECTION_INFORMATION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="HID_COLLECTION_INFORMATION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HID_COLLECTION_INFORMATION>(), Is.EqualTo(sizeof(HID_COLLECTION_INFORMATION)));
-        }
+        Assert.That(Marshal.SizeOf<HID_COLLECTION_INFORMATION>(), Is.EqualTo(sizeof(HID_COLLECTION_INFORMATION)));
+    }
 
-        /// <summary>Validates that the <see cref="HID_COLLECTION_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HID_COLLECTION_INFORMATION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HID_COLLECTION_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HID_COLLECTION_INFORMATION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HID_COLLECTION_INFORMATION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HID_COLLECTION_INFORMATION), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="HID_COLLECTION_INFORMATION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HID_COLLECTION_INFORMATION), Is.EqualTo(12));
     }
 }

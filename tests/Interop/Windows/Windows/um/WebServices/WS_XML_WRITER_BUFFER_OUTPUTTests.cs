@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WS_XML_WRITER_BUFFER_OUTPUT" /> struct.</summary>
+public static unsafe partial class WS_XML_WRITER_BUFFER_OUTPUTTests
 {
-    /// <summary>Provides validation of the <see cref="WS_XML_WRITER_BUFFER_OUTPUT" /> struct.</summary>
-    public static unsafe partial class WS_XML_WRITER_BUFFER_OUTPUTTests
+    /// <summary>Validates that the <see cref="WS_XML_WRITER_BUFFER_OUTPUT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WS_XML_WRITER_BUFFER_OUTPUT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WS_XML_WRITER_BUFFER_OUTPUT>(), Is.EqualTo(sizeof(WS_XML_WRITER_BUFFER_OUTPUT)));
-        }
+        Assert.That(Marshal.SizeOf<WS_XML_WRITER_BUFFER_OUTPUT>(), Is.EqualTo(sizeof(WS_XML_WRITER_BUFFER_OUTPUT)));
+    }
 
-        /// <summary>Validates that the <see cref="WS_XML_WRITER_BUFFER_OUTPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WS_XML_WRITER_BUFFER_OUTPUT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WS_XML_WRITER_BUFFER_OUTPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WS_XML_WRITER_BUFFER_OUTPUT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WS_XML_WRITER_BUFFER_OUTPUT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(WS_XML_WRITER_BUFFER_OUTPUT), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="WS_XML_WRITER_BUFFER_OUTPUT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(WS_XML_WRITER_BUFFER_OUTPUT), Is.EqualTo(4));
     }
 }

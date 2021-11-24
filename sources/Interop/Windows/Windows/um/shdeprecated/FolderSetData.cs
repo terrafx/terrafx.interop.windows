@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct FOLDERSETDATA
 {
-    public partial struct FOLDERSETDATA
-    {
-        public FOLDERSETTINGS _fs;
+    public FOLDERSETTINGS _fs;
 
-        [NativeTypeName("SHELLVIEWID")]
-        public Guid _vidRestore;
+    [NativeTypeName("SHELLVIEWID")]
+    public Guid _vidRestore;
 
-        [NativeTypeName("DWORD")]
-        public uint _dwViewPriority;
-    }
+    [NativeTypeName("DWORD")]
+    public uint _dwViewPriority;
 }

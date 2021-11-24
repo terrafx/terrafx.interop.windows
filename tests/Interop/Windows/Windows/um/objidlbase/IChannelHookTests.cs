@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IChannelHook" /> struct.</summary>
+public static unsafe partial class IChannelHookTests
 {
-    /// <summary>Provides validation of the <see cref="IChannelHook" /> struct.</summary>
-    public static unsafe partial class IChannelHookTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IChannelHook" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IChannelHook" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IChannelHook).GUID, Is.EqualTo(IID_IChannelHook));
-        }
+        Assert.That(typeof(IChannelHook).GUID, Is.EqualTo(IID_IChannelHook));
+    }
 
-        /// <summary>Validates that the <see cref="IChannelHook" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IChannelHook>(), Is.EqualTo(sizeof(IChannelHook)));
-        }
+    /// <summary>Validates that the <see cref="IChannelHook" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IChannelHook>(), Is.EqualTo(sizeof(IChannelHook)));
+    }
 
-        /// <summary>Validates that the <see cref="IChannelHook" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IChannelHook).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IChannelHook" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IChannelHook).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IChannelHook" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IChannelHook" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IChannelHook), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IChannelHook), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IChannelHook), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IChannelHook), Is.EqualTo(4));
         }
     }
 }

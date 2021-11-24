@@ -8,58 +8,57 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class IID
 {
-    public static partial class IID
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ITfInputScope
     {
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid IID_ITfInputScope
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xEE, 0xEA, 0xE1, 0xFD,
-                    0x24, 0x69,
-                    0xDF, 0x4C,
-                    0x91,
-                    0xE7,
-                    0xDA,
-                    0x38,
-                    0xCF,
-                    0xF5,
-                    0x55,
-                    0x9D
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0xEE, 0xEA, 0xE1, 0xFD,
+                0x24, 0x69,
+                0xDF, 0x4C,
+                0x91,
+                0xE7,
+                0xDA,
+                0x38,
+                0xCF,
+                0xF5,
+                0x55,
+                0x9D
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid IID_ITfInputScope2
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ITfInputScope2
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xA0, 0xEA, 0x31, 0x57,
-                    0xC2, 0x6B,
-                    0x81, 0x46,
-                    0xA5,
-                    0x32,
-                    0x92,
-                    0xFB,
-                    0xB7,
-                    0x4D,
-                    0x7C,
-                    0x41
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0xA0, 0xEA, 0x31, 0x57,
+                0xC2, 0x6B,
+                0x81, 0x46,
+                0xA5,
+                0x32,
+                0x92,
+                0xFB,
+                0xB7,
+                0x4D,
+                0x7C,
+                0x41
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

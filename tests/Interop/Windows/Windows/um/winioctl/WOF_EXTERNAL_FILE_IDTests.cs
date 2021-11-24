@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WOF_EXTERNAL_FILE_ID" /> struct.</summary>
+public static unsafe partial class WOF_EXTERNAL_FILE_IDTests
 {
-    /// <summary>Provides validation of the <see cref="WOF_EXTERNAL_FILE_ID" /> struct.</summary>
-    public static unsafe partial class WOF_EXTERNAL_FILE_IDTests
+    /// <summary>Validates that the <see cref="WOF_EXTERNAL_FILE_ID" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WOF_EXTERNAL_FILE_ID" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WOF_EXTERNAL_FILE_ID>(), Is.EqualTo(sizeof(WOF_EXTERNAL_FILE_ID)));
-        }
+        Assert.That(Marshal.SizeOf<WOF_EXTERNAL_FILE_ID>(), Is.EqualTo(sizeof(WOF_EXTERNAL_FILE_ID)));
+    }
 
-        /// <summary>Validates that the <see cref="WOF_EXTERNAL_FILE_ID" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WOF_EXTERNAL_FILE_ID).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WOF_EXTERNAL_FILE_ID" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WOF_EXTERNAL_FILE_ID).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WOF_EXTERNAL_FILE_ID" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(WOF_EXTERNAL_FILE_ID), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="WOF_EXTERNAL_FILE_ID" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(WOF_EXTERNAL_FILE_ID), Is.EqualTo(16));
     }
 }

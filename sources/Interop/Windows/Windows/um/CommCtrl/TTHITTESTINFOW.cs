@@ -3,14 +3,13 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TTHITTESTINFOW
 {
-    public partial struct TTHITTESTINFOW
-    {
-        public HWND hwnd;
+    public HWND hwnd;
 
-        public POINT pt;
+    public POINT pt;
 
-        public TTTOOLINFOW ti;
-    }
+    public TTTOOLINFOW ti;
 }

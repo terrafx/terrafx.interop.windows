@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="INoMarshal" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class INoMarshalTests
 {
-    /// <summary>Provides validation of the <see cref="INoMarshal" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class INoMarshalTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="INoMarshal" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="INoMarshal" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(INoMarshal).GUID, Is.EqualTo(IID_INoMarshal));
-        }
+        Assert.That(typeof(INoMarshal).GUID, Is.EqualTo(IID_INoMarshal));
+    }
 
-        /// <summary>Validates that the <see cref="INoMarshal" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<INoMarshal>(), Is.EqualTo(sizeof(INoMarshal)));
-        }
+    /// <summary>Validates that the <see cref="INoMarshal" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<INoMarshal>(), Is.EqualTo(sizeof(INoMarshal)));
+    }
 
-        /// <summary>Validates that the <see cref="INoMarshal" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(INoMarshal).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="INoMarshal" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(INoMarshal).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="INoMarshal" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="INoMarshal" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(INoMarshal), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(INoMarshal), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(INoMarshal), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(INoMarshal), Is.EqualTo(4));
         }
     }
 }

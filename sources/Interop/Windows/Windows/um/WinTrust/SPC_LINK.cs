@@ -6,56 +6,55 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SPC_LINK
 {
-    public unsafe partial struct SPC_LINK
+    [NativeTypeName("DWORD")]
+    public uint dwLinkChoice;
+
+    [NativeTypeName("SPC_LINK_::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinTrust.h:1280:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public ref ushort* pwszUrl
     {
-        [NativeTypeName("DWORD")]
-        public uint dwLinkChoice;
-
-        [NativeTypeName("SPC_LINK_::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinTrust.h:1280:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public ref ushort* pwszUrl
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pwszUrl;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pwszUrl;
         }
+    }
 
-        public ref SPC_SERIALIZED_OBJECT Moniker
+    public ref SPC_SERIALIZED_OBJECT Moniker
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Moniker, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Moniker, 1));
         }
+    }
 
-        public ref ushort* pwszFile
+    public ref ushort* pwszFile
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pwszFile;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pwszFile;
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("LPWSTR")]
-            public ushort* pwszUrl;
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("LPWSTR")]
+        public ushort* pwszUrl;
 
-            [FieldOffset(0)]
-            public SPC_SERIALIZED_OBJECT Moniker;
+        [FieldOffset(0)]
+        public SPC_SERIALIZED_OBJECT Moniker;
 
-            [FieldOffset(0)]
-            [NativeTypeName("LPWSTR")]
-            public ushort* pwszFile;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("LPWSTR")]
+        public ushort* pwszFile;
     }
 }

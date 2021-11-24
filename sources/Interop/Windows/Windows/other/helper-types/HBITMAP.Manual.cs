@@ -2,12 +2,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct HBITMAP : IEquatable<HBITMAP>
-    {
-        public static explicit operator HBITMAP(HGDIOBJ value) => new HBITMAP(value.Value);
+namespace TerraFX.Interop.Windows;
 
-        public static implicit operator HGDIOBJ(HBITMAP value) => new HGDIOBJ(value.Value);
-    }
+public unsafe partial struct HBITMAP : IEquatable<HBITMAP>
+{
+    public static explicit operator HBITMAP(HGDIOBJ value) => new HBITMAP(value.Value);
+
+    public static implicit operator HGDIOBJ(HBITMAP value) => new HGDIOBJ(value.Value);
 }

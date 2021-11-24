@@ -3,11 +3,10 @@
 // Ported from um/dwrite_3.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum DWRITE_FONT_FAMILY_MODEL
 {
-    public enum DWRITE_FONT_FAMILY_MODEL
-    {
-        DWRITE_FONT_FAMILY_MODEL_TYPOGRAPHIC,
-        DWRITE_FONT_FAMILY_MODEL_WEIGHT_STRETCH_STYLE,
-    }
+    DWRITE_FONT_FAMILY_MODEL_TYPOGRAPHIC,
+    DWRITE_FONT_FAMILY_MODEL_WEIGHT_STRETCH_STYLE,
 }

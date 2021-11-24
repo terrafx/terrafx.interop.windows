@@ -8,78 +8,77 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+[Guid("409CD537-8532-40CB-9774-E2FEB2DF4E9C")]
+[NativeTypeName("struct IWICDdsDecoder : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IWICDdsDecoder : IWICDdsDecoder.Interface
 {
-    [SupportedOSPlatform("windows8.1")]
-    [Guid("409CD537-8532-40CB-9774-E2FEB2DF4E9C")]
-    [NativeTypeName("struct IWICDdsDecoder : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWICDdsDecoder : IWICDdsDecoder.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IWICDdsDecoder*, Guid*, void**, int>)(lpVtbl[0]))((IWICDdsDecoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IWICDdsDecoder*, Guid*, void**, int>)(lpVtbl[0]))((IWICDdsDecoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IWICDdsDecoder*, uint>)(lpVtbl[1]))((IWICDdsDecoder*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IWICDdsDecoder*, uint>)(lpVtbl[1]))((IWICDdsDecoder*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IWICDdsDecoder*, uint>)(lpVtbl[2]))((IWICDdsDecoder*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IWICDdsDecoder*, uint>)(lpVtbl[2]))((IWICDdsDecoder*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetParameters(WICDdsParameters* pParameters)
+    {
+        return ((delegate* unmanaged<IWICDdsDecoder*, WICDdsParameters*, int>)(lpVtbl[3]))((IWICDdsDecoder*)Unsafe.AsPointer(ref this), pParameters);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetFrame(uint arrayIndex, uint mipLevel, uint sliceIndex, IWICBitmapFrameDecode** ppIBitmapFrame)
+    {
+        return ((delegate* unmanaged<IWICDdsDecoder*, uint, uint, uint, IWICBitmapFrameDecode**, int>)(lpVtbl[4]))((IWICDdsDecoder*)Unsafe.AsPointer(ref this), arrayIndex, mipLevel, sliceIndex, ppIBitmapFrame);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetParameters(WICDdsParameters* pParameters)
-        {
-            return ((delegate* unmanaged<IWICDdsDecoder*, WICDdsParameters*, int>)(lpVtbl[3]))((IWICDdsDecoder*)Unsafe.AsPointer(ref this), pParameters);
-        }
+        HRESULT GetParameters(WICDdsParameters* pParameters);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetFrame(uint arrayIndex, uint mipLevel, uint sliceIndex, IWICBitmapFrameDecode** ppIBitmapFrame)
-        {
-            return ((delegate* unmanaged<IWICDdsDecoder*, uint, uint, uint, IWICBitmapFrameDecode**, int>)(lpVtbl[4]))((IWICDdsDecoder*)Unsafe.AsPointer(ref this), arrayIndex, mipLevel, sliceIndex, ppIBitmapFrame);
-        }
+        HRESULT GetFrame(uint arrayIndex, uint mipLevel, uint sliceIndex, IWICBitmapFrameDecode** ppIBitmapFrame);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetParameters(WICDdsParameters* pParameters);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IWICDdsDecoder*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetFrame(uint arrayIndex, uint mipLevel, uint sliceIndex, IWICBitmapFrameDecode** ppIBitmapFrame);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IWICDdsDecoder*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IWICDdsDecoder*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IWICDdsDecoder*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IWICDdsDecoder*, uint> AddRef;
+        [NativeTypeName("HRESULT (WICDdsParameters *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IWICDdsDecoder*, WICDdsParameters*, int> GetParameters;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IWICDdsDecoder*, uint> Release;
-
-            [NativeTypeName("HRESULT (WICDdsParameters *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IWICDdsDecoder*, WICDdsParameters*, int> GetParameters;
-
-            [NativeTypeName("HRESULT (UINT, UINT, UINT, IWICBitmapFrameDecode **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IWICDdsDecoder*, uint, uint, uint, IWICBitmapFrameDecode**, int> GetFrame;
-        }
+        [NativeTypeName("HRESULT (UINT, UINT, UINT, IWICBitmapFrameDecode **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IWICDdsDecoder*, uint, uint, uint, IWICBitmapFrameDecode**, int> GetFrame;
     }
 }

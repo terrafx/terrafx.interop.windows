@@ -3,11 +3,10 @@
 // Ported from um/mftransform.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MFT_AUDIO_DECODER_DEGRADATION_REASON
 {
-    public enum MFT_AUDIO_DECODER_DEGRADATION_REASON
-    {
-        MFT_AUDIO_DECODER_DEGRADATION_REASON_NONE = 0,
-        MFT_AUDIO_DECODER_DEGRADATION_REASON_LICENSING_REQUIREMENT = 1,
-    }
+    MFT_AUDIO_DECODER_DEGRADATION_REASON_NONE = 0,
+    MFT_AUDIO_DECODER_DEGRADATION_REASON_LICENSING_REQUIREMENT = 1,
 }

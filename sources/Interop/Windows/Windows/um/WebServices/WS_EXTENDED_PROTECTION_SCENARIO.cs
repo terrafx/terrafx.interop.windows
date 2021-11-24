@@ -3,11 +3,10 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WS_EXTENDED_PROTECTION_SCENARIO
 {
-    public enum WS_EXTENDED_PROTECTION_SCENARIO
-    {
-        WS_EXTENDED_PROTECTION_SCENARIO_BOUND_SERVER = 1,
-        WS_EXTENDED_PROTECTION_SCENARIO_TERMINATED_SSL = 2,
-    }
+    WS_EXTENDED_PROTECTION_SCENARIO_BOUND_SERVER = 1,
+    WS_EXTENDED_PROTECTION_SCENARIO_TERMINATED_SSL = 2,
 }

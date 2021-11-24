@@ -3,24 +3,23 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_RAYTRACING_GEOMETRY_TRIANGLES_DESC
 {
-    public partial struct D3D12_RAYTRACING_GEOMETRY_TRIANGLES_DESC
-    {
-        [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
-        public ulong Transform3x4;
+    [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
+    public ulong Transform3x4;
 
-        public DXGI_FORMAT IndexFormat;
+    public DXGI_FORMAT IndexFormat;
 
-        public DXGI_FORMAT VertexFormat;
+    public DXGI_FORMAT VertexFormat;
 
-        public uint IndexCount;
+    public uint IndexCount;
 
-        public uint VertexCount;
+    public uint VertexCount;
 
-        [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
-        public ulong IndexBuffer;
+    [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
+    public ulong IndexBuffer;
 
-        public D3D12_GPU_VIRTUAL_ADDRESS_AND_STRIDE VertexBuffer;
-    }
+    public D3D12_GPU_VIRTUAL_ADDRESS_AND_STRIDE VertexBuffer;
 }

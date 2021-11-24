@@ -5,29 +5,28 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct POINT : IEquatable<POINT>
 {
-    public partial struct POINT : IEquatable<POINT>
+    public POINT([NativeTypeName("INT32")] int x = 0, [NativeTypeName("INT32")] int y = 0)
     {
-        public POINT([NativeTypeName("INT32")] int x = 0, [NativeTypeName("INT32")] int y = 0)
-        {
-            this.x = x;
-            this.y = y;
-        }
-
-        public static bool operator ==([NativeTypeName("const POINT &")] in POINT l, [NativeTypeName("const POINT &")] in POINT r)
-        {
-            return (l.x == r.x)
-                && (l.y == r.y);
-        }
-
-        public static bool operator !=([NativeTypeName("const POINT &")] in POINT l, [NativeTypeName("const POINT &")] in POINT r)
-            => !(l == r);
-
-        public override bool Equals(object? obj) => (obj is POINT other) && Equals(other);
-
-        public bool Equals(POINT other) => this == other;
-
-        public override int GetHashCode() => HashCode.Combine(x, y);
+        this.x = x;
+        this.y = y;
     }
+
+    public static bool operator ==([NativeTypeName("const POINT &")] in POINT l, [NativeTypeName("const POINT &")] in POINT r)
+    {
+        return (l.x == r.x)
+            && (l.y == r.y);
+    }
+
+    public static bool operator !=([NativeTypeName("const POINT &")] in POINT l, [NativeTypeName("const POINT &")] in POINT r)
+        => !(l == r);
+
+    public override bool Equals(object? obj) => (obj is POINT other) && Equals(other);
+
+    public bool Equals(POINT other) => this == other;
+
+    public override int GetHashCode() => HashCode.Combine(x, y);
 }

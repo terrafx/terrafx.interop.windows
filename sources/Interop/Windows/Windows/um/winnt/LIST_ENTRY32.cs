@@ -3,14 +3,13 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct LIST_ENTRY32
-    {
-        [NativeTypeName("DWORD")]
-        public uint Flink;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint Blink;
-    }
+public partial struct LIST_ENTRY32
+{
+    [NativeTypeName("DWORD")]
+    public uint Flink;
+
+    [NativeTypeName("DWORD")]
+    public uint Blink;
 }

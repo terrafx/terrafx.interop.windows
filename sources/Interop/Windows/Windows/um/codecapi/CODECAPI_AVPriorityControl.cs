@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("54BA3DC8-BDDE-4329-B187-2018BC5C2BA1")]
+public partial struct CODECAPI_AVPriorityControl
 {
-    [Guid("54BA3DC8-BDDE-4329-B187-2018BC5C2BA1")]
-    public partial struct CODECAPI_AVPriorityControl
-    {
-    }
 }

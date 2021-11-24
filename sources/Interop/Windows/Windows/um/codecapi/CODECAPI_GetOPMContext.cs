@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("2F036C05-4C14-4689-8839-294C6D73E053")]
+public partial struct CODECAPI_GetOPMContext
 {
-    [Guid("2F036C05-4C14-4689-8839-294C6D73E053")]
-    public partial struct CODECAPI_GetOPMContext
-    {
-    }
 }

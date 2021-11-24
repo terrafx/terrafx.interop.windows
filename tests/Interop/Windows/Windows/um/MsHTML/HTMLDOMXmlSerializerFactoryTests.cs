@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLDOMXmlSerializerFactory" /> struct.</summary>
+public static unsafe partial class HTMLDOMXmlSerializerFactoryTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLDOMXmlSerializerFactory" /> struct.</summary>
-    public static unsafe partial class HTMLDOMXmlSerializerFactoryTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLDOMXmlSerializerFactory" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLDOMXmlSerializerFactory" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLDOMXmlSerializerFactory).GUID, Is.EqualTo(IID_HTMLDOMXmlSerializerFactory));
-        }
+        Assert.That(typeof(HTMLDOMXmlSerializerFactory).GUID, Is.EqualTo(IID_HTMLDOMXmlSerializerFactory));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLDOMXmlSerializerFactory" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLDOMXmlSerializerFactory>(), Is.EqualTo(sizeof(HTMLDOMXmlSerializerFactory)));
-        }
+    /// <summary>Validates that the <see cref="HTMLDOMXmlSerializerFactory" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLDOMXmlSerializerFactory>(), Is.EqualTo(sizeof(HTMLDOMXmlSerializerFactory)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLDOMXmlSerializerFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLDOMXmlSerializerFactory).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLDOMXmlSerializerFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLDOMXmlSerializerFactory).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLDOMXmlSerializerFactory" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTMLDOMXmlSerializerFactory), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTMLDOMXmlSerializerFactory" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTMLDOMXmlSerializerFactory), Is.EqualTo(1));
     }
 }

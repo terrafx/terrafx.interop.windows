@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("7AB770C7-0E23-4D7A-8AA2-19BFAD479829")]
+public partial struct ImageProperties
 {
-    [Guid("7AB770C7-0E23-4D7A-8AA2-19BFAD479829")]
-    public partial struct ImageProperties
-    {
-    }
 }

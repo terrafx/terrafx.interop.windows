@@ -6,13 +6,12 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+[SupportedOSPlatform("windows10.0")]
+public enum DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG
 {
-    [Flags]
-    [SupportedOSPlatform("windows10.0")]
-    public enum DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG
-    {
-        DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG_PRESENT = 0x1,
-        DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG_OVERLAY_PRESENT = 0x2,
-    }
+    DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG_PRESENT = 0x1,
+    DXGI_SWAP_CHAIN_COLOR_SPACE_SUPPORT_FLAG_OVERLAY_PRESENT = 0x2,
 }

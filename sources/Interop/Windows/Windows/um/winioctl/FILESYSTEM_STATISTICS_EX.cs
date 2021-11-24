@@ -5,54 +5,53 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public partial struct FILESYSTEM_STATISTICS_EX
 {
-    [SupportedOSPlatform("windows10.0")]
-    public partial struct FILESYSTEM_STATISTICS_EX
-    {
-        [NativeTypeName("WORD")]
-        public ushort FileSystemType;
+    [NativeTypeName("WORD")]
+    public ushort FileSystemType;
 
-        [NativeTypeName("WORD")]
-        public ushort Version;
+    [NativeTypeName("WORD")]
+    public ushort Version;
 
-        [NativeTypeName("DWORD")]
-        public uint SizeOfCompleteStructure;
+    [NativeTypeName("DWORD")]
+    public uint SizeOfCompleteStructure;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong UserFileReads;
+    [NativeTypeName("DWORDLONG")]
+    public ulong UserFileReads;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong UserFileReadBytes;
+    [NativeTypeName("DWORDLONG")]
+    public ulong UserFileReadBytes;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong UserDiskReads;
+    [NativeTypeName("DWORDLONG")]
+    public ulong UserDiskReads;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong UserFileWrites;
+    [NativeTypeName("DWORDLONG")]
+    public ulong UserFileWrites;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong UserFileWriteBytes;
+    [NativeTypeName("DWORDLONG")]
+    public ulong UserFileWriteBytes;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong UserDiskWrites;
+    [NativeTypeName("DWORDLONG")]
+    public ulong UserDiskWrites;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong MetaDataReads;
+    [NativeTypeName("DWORDLONG")]
+    public ulong MetaDataReads;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong MetaDataReadBytes;
+    [NativeTypeName("DWORDLONG")]
+    public ulong MetaDataReadBytes;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong MetaDataDiskReads;
+    [NativeTypeName("DWORDLONG")]
+    public ulong MetaDataDiskReads;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong MetaDataWrites;
+    [NativeTypeName("DWORDLONG")]
+    public ulong MetaDataWrites;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong MetaDataWriteBytes;
+    [NativeTypeName("DWORDLONG")]
+    public ulong MetaDataWriteBytes;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong MetaDataDiskWrites;
-    }
+    [NativeTypeName("DWORDLONG")]
+    public ulong MetaDataDiskWrites;
 }

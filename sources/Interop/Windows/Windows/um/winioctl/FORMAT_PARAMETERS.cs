@@ -3,22 +3,21 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct FORMAT_PARAMETERS
 {
-    public partial struct FORMAT_PARAMETERS
-    {
-        public MEDIA_TYPE MediaType;
+    public MEDIA_TYPE MediaType;
 
-        [NativeTypeName("DWORD")]
-        public uint StartCylinderNumber;
+    [NativeTypeName("DWORD")]
+    public uint StartCylinderNumber;
 
-        [NativeTypeName("DWORD")]
-        public uint EndCylinderNumber;
+    [NativeTypeName("DWORD")]
+    public uint EndCylinderNumber;
 
-        [NativeTypeName("DWORD")]
-        public uint StartHeadNumber;
+    [NativeTypeName("DWORD")]
+    public uint StartHeadNumber;
 
-        [NativeTypeName("DWORD")]
-        public uint EndHeadNumber;
-    }
+    [NativeTypeName("DWORD")]
+    public uint EndHeadNumber;
 }

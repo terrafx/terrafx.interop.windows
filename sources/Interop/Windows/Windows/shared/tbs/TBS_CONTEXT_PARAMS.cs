@@ -3,11 +3,10 @@
 // Ported from shared/tbs.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TBS_CONTEXT_PARAMS
 {
-    public partial struct TBS_CONTEXT_PARAMS
-    {
-        [NativeTypeName("UINT32")]
-        public uint version;
-    }
+    [NativeTypeName("UINT32")]
+    public uint version;
 }

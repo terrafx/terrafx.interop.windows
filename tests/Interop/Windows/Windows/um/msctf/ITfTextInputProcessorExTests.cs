@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ITfTextInputProcessorEx" /> struct.</summary>
+public static unsafe partial class ITfTextInputProcessorExTests
 {
-    /// <summary>Provides validation of the <see cref="ITfTextInputProcessorEx" /> struct.</summary>
-    public static unsafe partial class ITfTextInputProcessorExTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfTextInputProcessorEx" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfTextInputProcessorEx" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ITfTextInputProcessorEx).GUID, Is.EqualTo(IID_ITfTextInputProcessorEx));
-        }
+        Assert.That(typeof(ITfTextInputProcessorEx).GUID, Is.EqualTo(IID_ITfTextInputProcessorEx));
+    }
 
-        /// <summary>Validates that the <see cref="ITfTextInputProcessorEx" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ITfTextInputProcessorEx>(), Is.EqualTo(sizeof(ITfTextInputProcessorEx)));
-        }
+    /// <summary>Validates that the <see cref="ITfTextInputProcessorEx" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ITfTextInputProcessorEx>(), Is.EqualTo(sizeof(ITfTextInputProcessorEx)));
+    }
 
-        /// <summary>Validates that the <see cref="ITfTextInputProcessorEx" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ITfTextInputProcessorEx).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ITfTextInputProcessorEx" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ITfTextInputProcessorEx).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ITfTextInputProcessorEx" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ITfTextInputProcessorEx" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ITfTextInputProcessorEx), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ITfTextInputProcessorEx), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ITfTextInputProcessorEx), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ITfTextInputProcessorEx), Is.EqualTo(4));
         }
     }
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IContextMenu" /> struct.</summary>
+public static unsafe partial class IContextMenuTests
 {
-    /// <summary>Provides validation of the <see cref="IContextMenu" /> struct.</summary>
-    public static unsafe partial class IContextMenuTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IContextMenu" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IContextMenu" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IContextMenu).GUID, Is.EqualTo(IID_IContextMenu));
-        }
+        Assert.That(typeof(IContextMenu).GUID, Is.EqualTo(IID_IContextMenu));
+    }
 
-        /// <summary>Validates that the <see cref="IContextMenu" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IContextMenu>(), Is.EqualTo(sizeof(IContextMenu)));
-        }
+    /// <summary>Validates that the <see cref="IContextMenu" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IContextMenu>(), Is.EqualTo(sizeof(IContextMenu)));
+    }
 
-        /// <summary>Validates that the <see cref="IContextMenu" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IContextMenu).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IContextMenu" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IContextMenu).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IContextMenu" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IContextMenu" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IContextMenu), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IContextMenu), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IContextMenu), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IContextMenu), Is.EqualTo(4));
         }
     }
 }

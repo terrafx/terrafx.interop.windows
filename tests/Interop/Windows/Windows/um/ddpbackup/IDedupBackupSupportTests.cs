@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDedupBackupSupport" /> struct.</summary>
+public static unsafe partial class IDedupBackupSupportTests
 {
-    /// <summary>Provides validation of the <see cref="IDedupBackupSupport" /> struct.</summary>
-    public static unsafe partial class IDedupBackupSupportTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDedupBackupSupport" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDedupBackupSupport" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDedupBackupSupport).GUID, Is.EqualTo(IID_IDedupBackupSupport));
-        }
+        Assert.That(typeof(IDedupBackupSupport).GUID, Is.EqualTo(IID_IDedupBackupSupport));
+    }
 
-        /// <summary>Validates that the <see cref="IDedupBackupSupport" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDedupBackupSupport>(), Is.EqualTo(sizeof(IDedupBackupSupport)));
-        }
+    /// <summary>Validates that the <see cref="IDedupBackupSupport" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDedupBackupSupport>(), Is.EqualTo(sizeof(IDedupBackupSupport)));
+    }
 
-        /// <summary>Validates that the <see cref="IDedupBackupSupport" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDedupBackupSupport).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDedupBackupSupport" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDedupBackupSupport).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDedupBackupSupport" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDedupBackupSupport" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDedupBackupSupport), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDedupBackupSupport), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDedupBackupSupport), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDedupBackupSupport), Is.EqualTo(4));
         }
     }
 }

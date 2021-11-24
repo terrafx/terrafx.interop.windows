@@ -5,19 +5,18 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SCM_LOGICAL_DEVICE_INSTANCE
 {
-    public unsafe partial struct SCM_LOGICAL_DEVICE_INSTANCE
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        public Guid DeviceGuid;
+    public Guid DeviceGuid;
 
-        [NativeTypeName("WCHAR [256]")]
-        public fixed ushort SymbolicLink[256];
-    }
+    [NativeTypeName("WCHAR [256]")]
+    public fixed ushort SymbolicLink[256];
 }

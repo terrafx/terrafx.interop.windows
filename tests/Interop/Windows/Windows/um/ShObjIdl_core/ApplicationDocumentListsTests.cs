@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ApplicationDocumentLists" /> struct.</summary>
+public static unsafe partial class ApplicationDocumentListsTests
 {
-    /// <summary>Provides validation of the <see cref="ApplicationDocumentLists" /> struct.</summary>
-    public static unsafe partial class ApplicationDocumentListsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ApplicationDocumentLists" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ApplicationDocumentLists" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ApplicationDocumentLists).GUID, Is.EqualTo(IID_ApplicationDocumentLists));
-        }
+        Assert.That(typeof(ApplicationDocumentLists).GUID, Is.EqualTo(IID_ApplicationDocumentLists));
+    }
 
-        /// <summary>Validates that the <see cref="ApplicationDocumentLists" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ApplicationDocumentLists>(), Is.EqualTo(sizeof(ApplicationDocumentLists)));
-        }
+    /// <summary>Validates that the <see cref="ApplicationDocumentLists" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ApplicationDocumentLists>(), Is.EqualTo(sizeof(ApplicationDocumentLists)));
+    }
 
-        /// <summary>Validates that the <see cref="ApplicationDocumentLists" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ApplicationDocumentLists).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ApplicationDocumentLists" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ApplicationDocumentLists).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ApplicationDocumentLists" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(ApplicationDocumentLists), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="ApplicationDocumentLists" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(ApplicationDocumentLists), Is.EqualTo(1));
     }
 }

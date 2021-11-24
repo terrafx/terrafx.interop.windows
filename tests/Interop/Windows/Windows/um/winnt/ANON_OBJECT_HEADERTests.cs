@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ANON_OBJECT_HEADER" /> struct.</summary>
+public static unsafe partial class ANON_OBJECT_HEADERTests
 {
-    /// <summary>Provides validation of the <see cref="ANON_OBJECT_HEADER" /> struct.</summary>
-    public static unsafe partial class ANON_OBJECT_HEADERTests
+    /// <summary>Validates that the <see cref="ANON_OBJECT_HEADER" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="ANON_OBJECT_HEADER" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ANON_OBJECT_HEADER>(), Is.EqualTo(sizeof(ANON_OBJECT_HEADER)));
-        }
+        Assert.That(Marshal.SizeOf<ANON_OBJECT_HEADER>(), Is.EqualTo(sizeof(ANON_OBJECT_HEADER)));
+    }
 
-        /// <summary>Validates that the <see cref="ANON_OBJECT_HEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ANON_OBJECT_HEADER).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ANON_OBJECT_HEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ANON_OBJECT_HEADER).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ANON_OBJECT_HEADER" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(ANON_OBJECT_HEADER), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="ANON_OBJECT_HEADER" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(ANON_OBJECT_HEADER), Is.EqualTo(32));
     }
 }

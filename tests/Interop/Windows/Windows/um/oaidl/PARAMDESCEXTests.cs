@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PARAMDESCEX" /> struct.</summary>
+public static unsafe partial class PARAMDESCEXTests
 {
-    /// <summary>Provides validation of the <see cref="PARAMDESCEX" /> struct.</summary>
-    public static unsafe partial class PARAMDESCEXTests
+    /// <summary>Validates that the <see cref="PARAMDESCEX" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PARAMDESCEX" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PARAMDESCEX>(), Is.EqualTo(sizeof(PARAMDESCEX)));
-        }
+        Assert.That(Marshal.SizeOf<PARAMDESCEX>(), Is.EqualTo(sizeof(PARAMDESCEX)));
+    }
 
-        /// <summary>Validates that the <see cref="PARAMDESCEX" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PARAMDESCEX).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PARAMDESCEX" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PARAMDESCEX).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PARAMDESCEX" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="PARAMDESCEX" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(PARAMDESCEX), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(PARAMDESCEX), Is.EqualTo(24));
-            }
+            Assert.That(sizeof(PARAMDESCEX), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(PARAMDESCEX), Is.EqualTo(24));
         }
     }
 }

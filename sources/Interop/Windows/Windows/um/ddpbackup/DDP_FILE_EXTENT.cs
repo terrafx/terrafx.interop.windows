@@ -3,14 +3,13 @@
 // Ported from um/ddpbackup.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct DDP_FILE_EXTENT
-    {
-        [NativeTypeName("long long")]
-        public long Length;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("long long")]
-        public long Offset;
-    }
+public partial struct DDP_FILE_EXTENT
+{
+    [NativeTypeName("long long")]
+    public long Length;
+
+    [NativeTypeName("long long")]
+    public long Offset;
 }

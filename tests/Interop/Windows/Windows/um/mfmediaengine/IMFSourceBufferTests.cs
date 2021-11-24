@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFSourceBuffer" /> struct.</summary>
+[SupportedOSPlatform("windows8.1")]
+public static unsafe partial class IMFSourceBufferTests
 {
-    /// <summary>Provides validation of the <see cref="IMFSourceBuffer" /> struct.</summary>
-    [SupportedOSPlatform("windows8.1")]
-    public static unsafe partial class IMFSourceBufferTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFSourceBuffer" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFSourceBuffer" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFSourceBuffer).GUID, Is.EqualTo(IID_IMFSourceBuffer));
-        }
+        Assert.That(typeof(IMFSourceBuffer).GUID, Is.EqualTo(IID_IMFSourceBuffer));
+    }
 
-        /// <summary>Validates that the <see cref="IMFSourceBuffer" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFSourceBuffer>(), Is.EqualTo(sizeof(IMFSourceBuffer)));
-        }
+    /// <summary>Validates that the <see cref="IMFSourceBuffer" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFSourceBuffer>(), Is.EqualTo(sizeof(IMFSourceBuffer)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFSourceBuffer" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFSourceBuffer).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFSourceBuffer" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFSourceBuffer).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFSourceBuffer" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFSourceBuffer" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFSourceBuffer), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFSourceBuffer), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFSourceBuffer), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFSourceBuffer), Is.EqualTo(4));
         }
     }
 }

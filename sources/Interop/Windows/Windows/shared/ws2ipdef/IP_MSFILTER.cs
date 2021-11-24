@@ -7,37 +7,36 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct IP_MSFILTER
 {
-    public partial struct IP_MSFILTER
+    public IN_ADDR imsf_multiaddr;
+
+    public IN_ADDR imsf_interface;
+
+    public MULTICAST_MODE_TYPE imsf_fmode;
+
+    [NativeTypeName("ULONG")]
+    public uint imsf_numsrc;
+
+    [NativeTypeName("IN_ADDR [1]")]
+    public _imsf_slist_e__FixedBuffer imsf_slist;
+
+    public partial struct _imsf_slist_e__FixedBuffer
     {
-        public IN_ADDR imsf_multiaddr;
+        public IN_ADDR e0;
 
-        public IN_ADDR imsf_interface;
-
-        public MULTICAST_MODE_TYPE imsf_fmode;
-
-        [NativeTypeName("ULONG")]
-        public uint imsf_numsrc;
-
-        [NativeTypeName("IN_ADDR [1]")]
-        public _imsf_slist_e__FixedBuffer imsf_slist;
-
-        public partial struct _imsf_slist_e__FixedBuffer
+        public ref IN_ADDR this[int index]
         {
-            public IN_ADDR e0;
-
-            public ref IN_ADDR this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<IN_ADDR> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<IN_ADDR> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

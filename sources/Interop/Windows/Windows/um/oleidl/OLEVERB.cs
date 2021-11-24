@@ -3,20 +3,19 @@
 // Ported from um/oleidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct OLEVERB
 {
-    public unsafe partial struct OLEVERB
-    {
-        [NativeTypeName("LONG")]
-        public int lVerb;
+    [NativeTypeName("LONG")]
+    public int lVerb;
 
-        [NativeTypeName("LPOLESTR")]
-        public ushort* lpszVerbName;
+    [NativeTypeName("LPOLESTR")]
+    public ushort* lpszVerbName;
 
-        [NativeTypeName("DWORD")]
-        public uint fuFlags;
+    [NativeTypeName("DWORD")]
+    public uint fuFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint grfAttribs;
-    }
+    [NativeTypeName("DWORD")]
+    public uint grfAttribs;
 }

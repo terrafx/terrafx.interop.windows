@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="QUERYCONTEXT" /> struct.</summary>
+public static unsafe partial class QUERYCONTEXTTests
 {
-    /// <summary>Provides validation of the <see cref="QUERYCONTEXT" /> struct.</summary>
-    public static unsafe partial class QUERYCONTEXTTests
+    /// <summary>Validates that the <see cref="QUERYCONTEXT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="QUERYCONTEXT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<QUERYCONTEXT>(), Is.EqualTo(sizeof(QUERYCONTEXT)));
-        }
+        Assert.That(Marshal.SizeOf<QUERYCONTEXT>(), Is.EqualTo(sizeof(QUERYCONTEXT)));
+    }
 
-        /// <summary>Validates that the <see cref="QUERYCONTEXT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(QUERYCONTEXT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="QUERYCONTEXT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(QUERYCONTEXT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="QUERYCONTEXT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(QUERYCONTEXT), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="QUERYCONTEXT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(QUERYCONTEXT), Is.EqualTo(32));
     }
 }

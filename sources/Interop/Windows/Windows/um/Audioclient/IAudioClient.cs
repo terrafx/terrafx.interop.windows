@@ -7,207 +7,206 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("1CB9AD4C-DBFA-4C32-B178-C2F568A703B2")]
+[NativeTypeName("struct IAudioClient : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IAudioClient : IAudioClient.Interface
 {
-    [Guid("1CB9AD4C-DBFA-4C32-B178-C2F568A703B2")]
-    [NativeTypeName("struct IAudioClient : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAudioClient : IAudioClient.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IAudioClient*, Guid*, void**, int>)(lpVtbl[0]))((IAudioClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IAudioClient*, Guid*, void**, int>)(lpVtbl[0]))((IAudioClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IAudioClient*, uint>)(lpVtbl[1]))((IAudioClient*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IAudioClient*, uint>)(lpVtbl[1]))((IAudioClient*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IAudioClient*, uint>)(lpVtbl[2]))((IAudioClient*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IAudioClient*, uint>)(lpVtbl[2]))((IAudioClient*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Initialize(AUDCLNT_SHAREMODE ShareMode, [NativeTypeName("DWORD")] uint StreamFlags, [NativeTypeName("REFERENCE_TIME")] long hnsBufferDuration, [NativeTypeName("REFERENCE_TIME")] long hnsPeriodicity, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, [NativeTypeName("LPCGUID")] Guid* AudioSessionGuid)
+    {
+        return ((delegate* unmanaged<IAudioClient*, AUDCLNT_SHAREMODE, uint, long, long, WAVEFORMATEX*, Guid*, int>)(lpVtbl[3]))((IAudioClient*)Unsafe.AsPointer(ref this), ShareMode, StreamFlags, hnsBufferDuration, hnsPeriodicity, pFormat, AudioSessionGuid);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetBufferSize([NativeTypeName("UINT32 *")] uint* pNumBufferFrames)
+    {
+        return ((delegate* unmanaged<IAudioClient*, uint*, int>)(lpVtbl[4]))((IAudioClient*)Unsafe.AsPointer(ref this), pNumBufferFrames);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetStreamLatency([NativeTypeName("REFERENCE_TIME *")] long* phnsLatency)
+    {
+        return ((delegate* unmanaged<IAudioClient*, long*, int>)(lpVtbl[5]))((IAudioClient*)Unsafe.AsPointer(ref this), phnsLatency);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetCurrentPadding([NativeTypeName("UINT32 *")] uint* pNumPaddingFrames)
+    {
+        return ((delegate* unmanaged<IAudioClient*, uint*, int>)(lpVtbl[6]))((IAudioClient*)Unsafe.AsPointer(ref this), pNumPaddingFrames);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT IsFormatSupported(AUDCLNT_SHAREMODE ShareMode, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, WAVEFORMATEX** ppClosestMatch)
+    {
+        return ((delegate* unmanaged<IAudioClient*, AUDCLNT_SHAREMODE, WAVEFORMATEX*, WAVEFORMATEX**, int>)(lpVtbl[7]))((IAudioClient*)Unsafe.AsPointer(ref this), ShareMode, pFormat, ppClosestMatch);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT GetMixFormat(WAVEFORMATEX** ppDeviceFormat)
+    {
+        return ((delegate* unmanaged<IAudioClient*, WAVEFORMATEX**, int>)(lpVtbl[8]))((IAudioClient*)Unsafe.AsPointer(ref this), ppDeviceFormat);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT GetDevicePeriod([NativeTypeName("REFERENCE_TIME *")] long* phnsDefaultDevicePeriod, [NativeTypeName("REFERENCE_TIME *")] long* phnsMinimumDevicePeriod)
+    {
+        return ((delegate* unmanaged<IAudioClient*, long*, long*, int>)(lpVtbl[9]))((IAudioClient*)Unsafe.AsPointer(ref this), phnsDefaultDevicePeriod, phnsMinimumDevicePeriod);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT Start()
+    {
+        return ((delegate* unmanaged<IAudioClient*, int>)(lpVtbl[10]))((IAudioClient*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT Stop()
+    {
+        return ((delegate* unmanaged<IAudioClient*, int>)(lpVtbl[11]))((IAudioClient*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT Reset()
+    {
+        return ((delegate* unmanaged<IAudioClient*, int>)(lpVtbl[12]))((IAudioClient*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT SetEventHandle(HANDLE eventHandle)
+    {
+        return ((delegate* unmanaged<IAudioClient*, HANDLE, int>)(lpVtbl[13]))((IAudioClient*)Unsafe.AsPointer(ref this), eventHandle);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT GetService([NativeTypeName("const IID &")] Guid* riid, void** ppv)
+    {
+        return ((delegate* unmanaged<IAudioClient*, Guid*, void**, int>)(lpVtbl[14]))((IAudioClient*)Unsafe.AsPointer(ref this), riid, ppv);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Initialize(AUDCLNT_SHAREMODE ShareMode, [NativeTypeName("DWORD")] uint StreamFlags, [NativeTypeName("REFERENCE_TIME")] long hnsBufferDuration, [NativeTypeName("REFERENCE_TIME")] long hnsPeriodicity, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, [NativeTypeName("LPCGUID")] Guid* AudioSessionGuid)
-        {
-            return ((delegate* unmanaged<IAudioClient*, AUDCLNT_SHAREMODE, uint, long, long, WAVEFORMATEX*, Guid*, int>)(lpVtbl[3]))((IAudioClient*)Unsafe.AsPointer(ref this), ShareMode, StreamFlags, hnsBufferDuration, hnsPeriodicity, pFormat, AudioSessionGuid);
-        }
+        HRESULT Initialize(AUDCLNT_SHAREMODE ShareMode, [NativeTypeName("DWORD")] uint StreamFlags, [NativeTypeName("REFERENCE_TIME")] long hnsBufferDuration, [NativeTypeName("REFERENCE_TIME")] long hnsPeriodicity, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, [NativeTypeName("LPCGUID")] Guid* AudioSessionGuid);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetBufferSize([NativeTypeName("UINT32 *")] uint* pNumBufferFrames)
-        {
-            return ((delegate* unmanaged<IAudioClient*, uint*, int>)(lpVtbl[4]))((IAudioClient*)Unsafe.AsPointer(ref this), pNumBufferFrames);
-        }
+        HRESULT GetBufferSize([NativeTypeName("UINT32 *")] uint* pNumBufferFrames);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetStreamLatency([NativeTypeName("REFERENCE_TIME *")] long* phnsLatency)
-        {
-            return ((delegate* unmanaged<IAudioClient*, long*, int>)(lpVtbl[5]))((IAudioClient*)Unsafe.AsPointer(ref this), phnsLatency);
-        }
+        HRESULT GetStreamLatency([NativeTypeName("REFERENCE_TIME *")] long* phnsLatency);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetCurrentPadding([NativeTypeName("UINT32 *")] uint* pNumPaddingFrames)
-        {
-            return ((delegate* unmanaged<IAudioClient*, uint*, int>)(lpVtbl[6]))((IAudioClient*)Unsafe.AsPointer(ref this), pNumPaddingFrames);
-        }
+        HRESULT GetCurrentPadding([NativeTypeName("UINT32 *")] uint* pNumPaddingFrames);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT IsFormatSupported(AUDCLNT_SHAREMODE ShareMode, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, WAVEFORMATEX** ppClosestMatch)
-        {
-            return ((delegate* unmanaged<IAudioClient*, AUDCLNT_SHAREMODE, WAVEFORMATEX*, WAVEFORMATEX**, int>)(lpVtbl[7]))((IAudioClient*)Unsafe.AsPointer(ref this), ShareMode, pFormat, ppClosestMatch);
-        }
+        HRESULT IsFormatSupported(AUDCLNT_SHAREMODE ShareMode, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, WAVEFORMATEX** ppClosestMatch);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT GetMixFormat(WAVEFORMATEX** ppDeviceFormat)
-        {
-            return ((delegate* unmanaged<IAudioClient*, WAVEFORMATEX**, int>)(lpVtbl[8]))((IAudioClient*)Unsafe.AsPointer(ref this), ppDeviceFormat);
-        }
+        HRESULT GetMixFormat(WAVEFORMATEX** ppDeviceFormat);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetDevicePeriod([NativeTypeName("REFERENCE_TIME *")] long* phnsDefaultDevicePeriod, [NativeTypeName("REFERENCE_TIME *")] long* phnsMinimumDevicePeriod)
-        {
-            return ((delegate* unmanaged<IAudioClient*, long*, long*, int>)(lpVtbl[9]))((IAudioClient*)Unsafe.AsPointer(ref this), phnsDefaultDevicePeriod, phnsMinimumDevicePeriod);
-        }
+        HRESULT GetDevicePeriod([NativeTypeName("REFERENCE_TIME *")] long* phnsDefaultDevicePeriod, [NativeTypeName("REFERENCE_TIME *")] long* phnsMinimumDevicePeriod);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT Start()
-        {
-            return ((delegate* unmanaged<IAudioClient*, int>)(lpVtbl[10]))((IAudioClient*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Start();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT Stop()
-        {
-            return ((delegate* unmanaged<IAudioClient*, int>)(lpVtbl[11]))((IAudioClient*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Stop();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT Reset()
-        {
-            return ((delegate* unmanaged<IAudioClient*, int>)(lpVtbl[12]))((IAudioClient*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Reset();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT SetEventHandle(HANDLE eventHandle)
-        {
-            return ((delegate* unmanaged<IAudioClient*, HANDLE, int>)(lpVtbl[13]))((IAudioClient*)Unsafe.AsPointer(ref this), eventHandle);
-        }
+        HRESULT SetEventHandle(HANDLE eventHandle);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT GetService([NativeTypeName("const IID &")] Guid* riid, void** ppv)
-        {
-            return ((delegate* unmanaged<IAudioClient*, Guid*, void**, int>)(lpVtbl[14]))((IAudioClient*)Unsafe.AsPointer(ref this), riid, ppv);
-        }
+        HRESULT GetService([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Initialize(AUDCLNT_SHAREMODE ShareMode, [NativeTypeName("DWORD")] uint StreamFlags, [NativeTypeName("REFERENCE_TIME")] long hnsBufferDuration, [NativeTypeName("REFERENCE_TIME")] long hnsPeriodicity, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, [NativeTypeName("LPCGUID")] Guid* AudioSessionGuid);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAudioClient*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetBufferSize([NativeTypeName("UINT32 *")] uint* pNumBufferFrames);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAudioClient*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetStreamLatency([NativeTypeName("REFERENCE_TIME *")] long* phnsLatency);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAudioClient*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT GetCurrentPadding([NativeTypeName("UINT32 *")] uint* pNumPaddingFrames);
+        [NativeTypeName("HRESULT (AUDCLNT_SHAREMODE, DWORD, REFERENCE_TIME, REFERENCE_TIME, const WAVEFORMATEX *, LPCGUID) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAudioClient*, AUDCLNT_SHAREMODE, uint, long, long, WAVEFORMATEX*, Guid*, int> Initialize;
 
-            [VtblIndex(7)]
-            HRESULT IsFormatSupported(AUDCLNT_SHAREMODE ShareMode, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, WAVEFORMATEX** ppClosestMatch);
+        [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAudioClient*, uint*, int> GetBufferSize;
 
-            [VtblIndex(8)]
-            HRESULT GetMixFormat(WAVEFORMATEX** ppDeviceFormat);
+        [NativeTypeName("HRESULT (REFERENCE_TIME *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAudioClient*, long*, int> GetStreamLatency;
 
-            [VtblIndex(9)]
-            HRESULT GetDevicePeriod([NativeTypeName("REFERENCE_TIME *")] long* phnsDefaultDevicePeriod, [NativeTypeName("REFERENCE_TIME *")] long* phnsMinimumDevicePeriod);
+        [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAudioClient*, uint*, int> GetCurrentPadding;
 
-            [VtblIndex(10)]
-            HRESULT Start();
+        [NativeTypeName("HRESULT (AUDCLNT_SHAREMODE, const WAVEFORMATEX *, WAVEFORMATEX **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAudioClient*, AUDCLNT_SHAREMODE, WAVEFORMATEX*, WAVEFORMATEX**, int> IsFormatSupported;
 
-            [VtblIndex(11)]
-            HRESULT Stop();
+        [NativeTypeName("HRESULT (WAVEFORMATEX **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAudioClient*, WAVEFORMATEX**, int> GetMixFormat;
 
-            [VtblIndex(12)]
-            HRESULT Reset();
+        [NativeTypeName("HRESULT (REFERENCE_TIME *, REFERENCE_TIME *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAudioClient*, long*, long*, int> GetDevicePeriod;
 
-            [VtblIndex(13)]
-            HRESULT SetEventHandle(HANDLE eventHandle);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAudioClient*, int> Start;
 
-            [VtblIndex(14)]
-            HRESULT GetService([NativeTypeName("const IID &")] Guid* riid, void** ppv);
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAudioClient*, int> Stop;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAudioClient*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAudioClient*, int> Reset;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAudioClient*, uint> AddRef;
+        [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAudioClient*, HANDLE, int> SetEventHandle;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAudioClient*, uint> Release;
-
-            [NativeTypeName("HRESULT (AUDCLNT_SHAREMODE, DWORD, REFERENCE_TIME, REFERENCE_TIME, const WAVEFORMATEX *, LPCGUID) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAudioClient*, AUDCLNT_SHAREMODE, uint, long, long, WAVEFORMATEX*, Guid*, int> Initialize;
-
-            [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAudioClient*, uint*, int> GetBufferSize;
-
-            [NativeTypeName("HRESULT (REFERENCE_TIME *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAudioClient*, long*, int> GetStreamLatency;
-
-            [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAudioClient*, uint*, int> GetCurrentPadding;
-
-            [NativeTypeName("HRESULT (AUDCLNT_SHAREMODE, const WAVEFORMATEX *, WAVEFORMATEX **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAudioClient*, AUDCLNT_SHAREMODE, WAVEFORMATEX*, WAVEFORMATEX**, int> IsFormatSupported;
-
-            [NativeTypeName("HRESULT (WAVEFORMATEX **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAudioClient*, WAVEFORMATEX**, int> GetMixFormat;
-
-            [NativeTypeName("HRESULT (REFERENCE_TIME *, REFERENCE_TIME *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAudioClient*, long*, long*, int> GetDevicePeriod;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAudioClient*, int> Start;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAudioClient*, int> Stop;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAudioClient*, int> Reset;
-
-            [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAudioClient*, HANDLE, int> SetEventHandle;
-
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAudioClient*, Guid*, void**, int> GetService;
-        }
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAudioClient*, Guid*, void**, int> GetService;
     }
 }

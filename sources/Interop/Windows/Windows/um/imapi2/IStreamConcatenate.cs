@@ -7,213 +7,212 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("27354146-7F64-5B0F-8F00-5D77AFBE261E")]
+[NativeTypeName("struct IStreamConcatenate : IStream")]
+[NativeInheritance("IStream")]
+public unsafe partial struct IStreamConcatenate : IStreamConcatenate.Interface
 {
-    [Guid("27354146-7F64-5B0F-8F00-5D77AFBE261E")]
-    [NativeTypeName("struct IStreamConcatenate : IStream")]
-    [NativeInheritance("IStream")]
-    public unsafe partial struct IStreamConcatenate : IStreamConcatenate.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IStreamConcatenate*, Guid*, void**, int>)(lpVtbl[0]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IStreamConcatenate*, Guid*, void**, int>)(lpVtbl[0]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IStreamConcatenate*, uint>)(lpVtbl[1]))((IStreamConcatenate*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IStreamConcatenate*, uint>)(lpVtbl[1]))((IStreamConcatenate*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IStreamConcatenate*, uint>)(lpVtbl[2]))((IStreamConcatenate*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IStreamConcatenate*, uint>)(lpVtbl[2]))((IStreamConcatenate*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Read(void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead)
+    {
+        return ((delegate* unmanaged<IStreamConcatenate*, void*, uint, uint*, int>)(lpVtbl[3]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), pv, cb, pcbRead);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT Read(void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead)
-        {
-            return ((delegate* unmanaged<IStreamConcatenate*, void*, uint, uint*, int>)(lpVtbl[3]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), pv, cb, pcbRead);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Write([NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten)
+    {
+        return ((delegate* unmanaged<IStreamConcatenate*, void*, uint, uint*, int>)(lpVtbl[4]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), pv, cb, pcbWritten);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT Write([NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten)
-        {
-            return ((delegate* unmanaged<IStreamConcatenate*, void*, uint, uint*, int>)(lpVtbl[4]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), pv, cb, pcbWritten);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Seek(LARGE_INTEGER dlibMove, [NativeTypeName("DWORD")] uint dwOrigin, ULARGE_INTEGER* plibNewPosition)
+    {
+        return ((delegate* unmanaged<IStreamConcatenate*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int>)(lpVtbl[5]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), dlibMove, dwOrigin, plibNewPosition);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT Seek(LARGE_INTEGER dlibMove, [NativeTypeName("DWORD")] uint dwOrigin, ULARGE_INTEGER* plibNewPosition)
-        {
-            return ((delegate* unmanaged<IStreamConcatenate*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int>)(lpVtbl[5]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), dlibMove, dwOrigin, plibNewPosition);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT SetSize(ULARGE_INTEGER libNewSize)
+    {
+        return ((delegate* unmanaged<IStreamConcatenate*, ULARGE_INTEGER, int>)(lpVtbl[6]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), libNewSize);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT SetSize(ULARGE_INTEGER libNewSize)
-        {
-            return ((delegate* unmanaged<IStreamConcatenate*, ULARGE_INTEGER, int>)(lpVtbl[6]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), libNewSize);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT CopyTo(IStream* pstm, ULARGE_INTEGER cb, ULARGE_INTEGER* pcbRead, ULARGE_INTEGER* pcbWritten)
+    {
+        return ((delegate* unmanaged<IStreamConcatenate*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int>)(lpVtbl[7]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), pstm, cb, pcbRead, pcbWritten);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(7)]
-        public HRESULT CopyTo(IStream* pstm, ULARGE_INTEGER cb, ULARGE_INTEGER* pcbRead, ULARGE_INTEGER* pcbWritten)
-        {
-            return ((delegate* unmanaged<IStreamConcatenate*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int>)(lpVtbl[7]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), pstm, cb, pcbRead, pcbWritten);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT Commit([NativeTypeName("DWORD")] uint grfCommitFlags)
+    {
+        return ((delegate* unmanaged<IStreamConcatenate*, uint, int>)(lpVtbl[8]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), grfCommitFlags);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(8)]
-        public HRESULT Commit([NativeTypeName("DWORD")] uint grfCommitFlags)
-        {
-            return ((delegate* unmanaged<IStreamConcatenate*, uint, int>)(lpVtbl[8]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), grfCommitFlags);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT Revert()
+    {
+        return ((delegate* unmanaged<IStreamConcatenate*, int>)(lpVtbl[9]))((IStreamConcatenate*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(9)]
-        public HRESULT Revert()
-        {
-            return ((delegate* unmanaged<IStreamConcatenate*, int>)(lpVtbl[9]))((IStreamConcatenate*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT LockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
+    {
+        return ((delegate* unmanaged<IStreamConcatenate*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[10]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(10)]
-        public HRESULT LockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
-        {
-            return ((delegate* unmanaged<IStreamConcatenate*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[10]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT UnlockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
+    {
+        return ((delegate* unmanaged<IStreamConcatenate*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[11]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(11)]
-        public HRESULT UnlockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
-        {
-            return ((delegate* unmanaged<IStreamConcatenate*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[11]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT Stat(STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag)
+    {
+        return ((delegate* unmanaged<IStreamConcatenate*, STATSTG*, uint, int>)(lpVtbl[12]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), pstatstg, grfStatFlag);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(12)]
-        public HRESULT Stat(STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag)
-        {
-            return ((delegate* unmanaged<IStreamConcatenate*, STATSTG*, uint, int>)(lpVtbl[12]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), pstatstg, grfStatFlag);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT Clone(IStream** ppstm)
+    {
+        return ((delegate* unmanaged<IStreamConcatenate*, IStream**, int>)(lpVtbl[13]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), ppstm);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(13)]
-        public HRESULT Clone(IStream** ppstm)
-        {
-            return ((delegate* unmanaged<IStreamConcatenate*, IStream**, int>)(lpVtbl[13]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), ppstm);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT Initialize(IStream* stream1, IStream* stream2)
+    {
+        return ((delegate* unmanaged<IStreamConcatenate*, IStream*, IStream*, int>)(lpVtbl[14]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), stream1, stream2);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT Initialize2(IStream** streams, [NativeTypeName("ULONG")] uint streamCount)
+    {
+        return ((delegate* unmanaged<IStreamConcatenate*, IStream**, uint, int>)(lpVtbl[15]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), streams, streamCount);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT Append(IStream* stream)
+    {
+        return ((delegate* unmanaged<IStreamConcatenate*, IStream*, int>)(lpVtbl[16]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), stream);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT Append2(IStream** streams, [NativeTypeName("ULONG")] uint streamCount)
+    {
+        return ((delegate* unmanaged<IStreamConcatenate*, IStream**, uint, int>)(lpVtbl[17]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), streams, streamCount);
+    }
+
+    public interface Interface : IStream.Interface
+    {
         [VtblIndex(14)]
-        public HRESULT Initialize(IStream* stream1, IStream* stream2)
-        {
-            return ((delegate* unmanaged<IStreamConcatenate*, IStream*, IStream*, int>)(lpVtbl[14]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), stream1, stream2);
-        }
+        HRESULT Initialize(IStream* stream1, IStream* stream2);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT Initialize2(IStream** streams, [NativeTypeName("ULONG")] uint streamCount)
-        {
-            return ((delegate* unmanaged<IStreamConcatenate*, IStream**, uint, int>)(lpVtbl[15]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), streams, streamCount);
-        }
+        HRESULT Initialize2(IStream** streams, [NativeTypeName("ULONG")] uint streamCount);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT Append(IStream* stream)
-        {
-            return ((delegate* unmanaged<IStreamConcatenate*, IStream*, int>)(lpVtbl[16]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), stream);
-        }
+        HRESULT Append(IStream* stream);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT Append2(IStream** streams, [NativeTypeName("ULONG")] uint streamCount)
-        {
-            return ((delegate* unmanaged<IStreamConcatenate*, IStream**, uint, int>)(lpVtbl[17]))((IStreamConcatenate*)Unsafe.AsPointer(ref this), streams, streamCount);
-        }
+        HRESULT Append2(IStream** streams, [NativeTypeName("ULONG")] uint streamCount);
+    }
 
-        public interface Interface : IStream.Interface
-        {
-            [VtblIndex(14)]
-            HRESULT Initialize(IStream* stream1, IStream* stream2);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IStreamConcatenate*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(15)]
-            HRESULT Initialize2(IStream** streams, [NativeTypeName("ULONG")] uint streamCount);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IStreamConcatenate*, uint> AddRef;
 
-            [VtblIndex(16)]
-            HRESULT Append(IStream* stream);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IStreamConcatenate*, uint> Release;
 
-            [VtblIndex(17)]
-            HRESULT Append2(IStream** streams, [NativeTypeName("ULONG")] uint streamCount);
-        }
+        [NativeTypeName("HRESULT (void *, ULONG, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IStreamConcatenate*, void*, uint, uint*, int> Read;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IStreamConcatenate*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (const void *, ULONG, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IStreamConcatenate*, void*, uint, uint*, int> Write;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IStreamConcatenate*, uint> AddRef;
+        [NativeTypeName("HRESULT (LARGE_INTEGER, DWORD, ULARGE_INTEGER *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IStreamConcatenate*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int> Seek;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IStreamConcatenate*, uint> Release;
+        [NativeTypeName("HRESULT (ULARGE_INTEGER) __attribute__((stdcall))")]
+        public delegate* unmanaged<IStreamConcatenate*, ULARGE_INTEGER, int> SetSize;
 
-            [NativeTypeName("HRESULT (void *, ULONG, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IStreamConcatenate*, void*, uint, uint*, int> Read;
+        [NativeTypeName("HRESULT (IStream *, ULARGE_INTEGER, ULARGE_INTEGER *, ULARGE_INTEGER *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IStreamConcatenate*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int> CopyTo;
 
-            [NativeTypeName("HRESULT (const void *, ULONG, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IStreamConcatenate*, void*, uint, uint*, int> Write;
+        [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IStreamConcatenate*, uint, int> Commit;
 
-            [NativeTypeName("HRESULT (LARGE_INTEGER, DWORD, ULARGE_INTEGER *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IStreamConcatenate*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int> Seek;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IStreamConcatenate*, int> Revert;
 
-            [NativeTypeName("HRESULT (ULARGE_INTEGER) __attribute__((stdcall))")]
-            public delegate* unmanaged<IStreamConcatenate*, ULARGE_INTEGER, int> SetSize;
+        [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IStreamConcatenate*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> LockRegion;
 
-            [NativeTypeName("HRESULT (IStream *, ULARGE_INTEGER, ULARGE_INTEGER *, ULARGE_INTEGER *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IStreamConcatenate*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int> CopyTo;
+        [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IStreamConcatenate*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> UnlockRegion;
 
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IStreamConcatenate*, uint, int> Commit;
+        [NativeTypeName("HRESULT (STATSTG *, DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IStreamConcatenate*, STATSTG*, uint, int> Stat;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IStreamConcatenate*, int> Revert;
+        [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IStreamConcatenate*, IStream**, int> Clone;
 
-            [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IStreamConcatenate*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> LockRegion;
+        [NativeTypeName("HRESULT (IStream *, IStream *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IStreamConcatenate*, IStream*, IStream*, int> Initialize;
 
-            [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IStreamConcatenate*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> UnlockRegion;
+        [NativeTypeName("HRESULT (IStream **, ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IStreamConcatenate*, IStream**, uint, int> Initialize2;
 
-            [NativeTypeName("HRESULT (STATSTG *, DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IStreamConcatenate*, STATSTG*, uint, int> Stat;
+        [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IStreamConcatenate*, IStream*, int> Append;
 
-            [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IStreamConcatenate*, IStream**, int> Clone;
-
-            [NativeTypeName("HRESULT (IStream *, IStream *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IStreamConcatenate*, IStream*, IStream*, int> Initialize;
-
-            [NativeTypeName("HRESULT (IStream **, ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IStreamConcatenate*, IStream**, uint, int> Initialize2;
-
-            [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IStreamConcatenate*, IStream*, int> Append;
-
-            [NativeTypeName("HRESULT (IStream **, ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IStreamConcatenate*, IStream**, uint, int> Append2;
-        }
+        [NativeTypeName("HRESULT (IStream **, ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IStreamConcatenate*, IStream**, uint, int> Append2;
     }
 }

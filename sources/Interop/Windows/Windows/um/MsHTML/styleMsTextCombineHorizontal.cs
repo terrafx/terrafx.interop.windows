@@ -3,14 +3,13 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum styleMsTextCombineHorizontal
 {
-    public enum styleMsTextCombineHorizontal
-    {
-        styleMsTextCombineHorizontalNone = 0,
-        styleMsTextCombineHorizontalAll = 1,
-        styleMsTextCombineHorizontalDigits = 2,
-        styleMsTextCombineHorizontalNotSet = 3,
-        styleMsTextCombineHorizontal_Max = 2147483647,
-    }
+    styleMsTextCombineHorizontalNone = 0,
+    styleMsTextCombineHorizontalAll = 1,
+    styleMsTextCombineHorizontalDigits = 2,
+    styleMsTextCombineHorizontalNotSet = 3,
+    styleMsTextCombineHorizontal_Max = 2147483647,
 }

@@ -3,12 +3,11 @@
 // Ported from um/shdeprecated.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum BNSTATE
 {
-    public enum BNSTATE
-    {
-        BNS_NORMAL = 0,
-        BNS_BEGIN_NAVIGATE = 1,
-        BNS_NAVIGATE = 2,
-    }
+    BNS_NORMAL = 0,
+    BNS_BEGIN_NAVIGATE = 1,
+    BNS_NAVIGATE = 2,
 }

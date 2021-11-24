@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MSDiscRecorderObj" /> struct.</summary>
+public static unsafe partial class MSDiscRecorderObjTests
 {
-    /// <summary>Provides validation of the <see cref="MSDiscRecorderObj" /> struct.</summary>
-    public static unsafe partial class MSDiscRecorderObjTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="MSDiscRecorderObj" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="MSDiscRecorderObj" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(MSDiscRecorderObj).GUID, Is.EqualTo(CLSID_MSDiscRecorderObj));
-        }
+        Assert.That(typeof(MSDiscRecorderObj).GUID, Is.EqualTo(CLSID_MSDiscRecorderObj));
+    }
 
-        /// <summary>Validates that the <see cref="MSDiscRecorderObj" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MSDiscRecorderObj>(), Is.EqualTo(sizeof(MSDiscRecorderObj)));
-        }
+    /// <summary>Validates that the <see cref="MSDiscRecorderObj" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<MSDiscRecorderObj>(), Is.EqualTo(sizeof(MSDiscRecorderObj)));
+    }
 
-        /// <summary>Validates that the <see cref="MSDiscRecorderObj" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MSDiscRecorderObj).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MSDiscRecorderObj" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MSDiscRecorderObj).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MSDiscRecorderObj" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MSDiscRecorderObj), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="MSDiscRecorderObj" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MSDiscRecorderObj), Is.EqualTo(1));
     }
 }

@@ -3,13 +3,12 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum CRED_PROTECTION_TYPE
 {
-    public enum CRED_PROTECTION_TYPE
-    {
-        CredUnprotected,
-        CredUserProtection,
-        CredTrustedProtection,
-        CredForSystemProtection,
-    }
+    CredUnprotected,
+    CredUserProtection,
+    CredTrustedProtection,
+    CredForSystemProtection,
 }

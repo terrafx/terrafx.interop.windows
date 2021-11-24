@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.22000.0")]
+public partial struct AudioClientProperties
 {
-    [SupportedOSPlatform("windows10.0.22000.0")]
-    public partial struct AudioClientProperties
-    {
-        [NativeTypeName("UINT32")]
-        public uint cbSize;
+    [NativeTypeName("UINT32")]
+    public uint cbSize;
 
-        public BOOL bIsOffload;
+    public BOOL bIsOffload;
 
-        public AUDIO_STREAM_CATEGORY eCategory;
+    public AUDIO_STREAM_CATEGORY eCategory;
 
-        public AUDCLNT_STREAMOPTIONS Options;
-    }
+    public AUDCLNT_STREAMOPTIONS Options;
 }

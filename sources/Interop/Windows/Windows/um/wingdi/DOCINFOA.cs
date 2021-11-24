@@ -3,22 +3,21 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct DOCINFOA
 {
-    public unsafe partial struct DOCINFOA
-    {
-        public int cbSize;
+    public int cbSize;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* lpszDocName;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* lpszDocName;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* lpszOutput;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* lpszOutput;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* lpszDatatype;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* lpszDatatype;
 
-        [NativeTypeName("DWORD")]
-        public uint fwType;
-    }
+    [NativeTypeName("DWORD")]
+    public uint fwType;
 }

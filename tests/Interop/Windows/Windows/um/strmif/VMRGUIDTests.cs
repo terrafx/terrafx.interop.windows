@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="VMRGUID" /> struct.</summary>
+public static unsafe partial class VMRGUIDTests
 {
-    /// <summary>Provides validation of the <see cref="VMRGUID" /> struct.</summary>
-    public static unsafe partial class VMRGUIDTests
+    /// <summary>Validates that the <see cref="VMRGUID" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="VMRGUID" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<VMRGUID>(), Is.EqualTo(sizeof(VMRGUID)));
-        }
+        Assert.That(Marshal.SizeOf<VMRGUID>(), Is.EqualTo(sizeof(VMRGUID)));
+    }
 
-        /// <summary>Validates that the <see cref="VMRGUID" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(VMRGUID).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="VMRGUID" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(VMRGUID).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="VMRGUID" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="VMRGUID" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(VMRGUID), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(VMRGUID), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(VMRGUID), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(VMRGUID), Is.EqualTo(20));
         }
     }
 }

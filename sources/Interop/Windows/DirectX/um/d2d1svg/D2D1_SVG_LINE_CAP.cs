@@ -5,13 +5,12 @@
 
 using static TerraFX.Interop.DirectX.D2D1_CAP_STYLE;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum D2D1_SVG_LINE_CAP : uint
 {
-    public enum D2D1_SVG_LINE_CAP : uint
-    {
-        D2D1_SVG_LINE_CAP_BUTT = D2D1_CAP_STYLE_FLAT,
-        D2D1_SVG_LINE_CAP_SQUARE = D2D1_CAP_STYLE_SQUARE,
-        D2D1_SVG_LINE_CAP_ROUND = D2D1_CAP_STYLE_ROUND,
-        D2D1_SVG_LINE_CAP_FORCE_DWORD = 0xffffffff,
-    }
+    D2D1_SVG_LINE_CAP_BUTT = D2D1_CAP_STYLE_FLAT,
+    D2D1_SVG_LINE_CAP_SQUARE = D2D1_CAP_STYLE_SQUARE,
+    D2D1_SVG_LINE_CAP_ROUND = D2D1_CAP_STYLE_ROUND,
+    D2D1_SVG_LINE_CAP_FORCE_DWORD = 0xffffffff,
 }

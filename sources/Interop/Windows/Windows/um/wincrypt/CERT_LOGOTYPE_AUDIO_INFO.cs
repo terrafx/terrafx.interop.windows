@@ -3,23 +3,22 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CERT_LOGOTYPE_AUDIO_INFO
 {
-    public unsafe partial struct CERT_LOGOTYPE_AUDIO_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwFileSize;
+    [NativeTypeName("DWORD")]
+    public uint dwFileSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwPlayTime;
+    [NativeTypeName("DWORD")]
+    public uint dwPlayTime;
 
-        [NativeTypeName("DWORD")]
-        public uint dwChannels;
+    [NativeTypeName("DWORD")]
+    public uint dwChannels;
 
-        [NativeTypeName("DWORD")]
-        public uint dwSampleRate;
+    [NativeTypeName("DWORD")]
+    public uint dwSampleRate;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pwszLanguage;
-    }
+    [NativeTypeName("LPWSTR")]
+    public ushort* pwszLanguage;
 }

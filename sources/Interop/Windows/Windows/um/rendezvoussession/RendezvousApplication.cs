@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("0B7E019A-B5DE-47FA-8966-9082F82FB192")]
+public partial struct RendezvousApplication
 {
-    [Guid("0B7E019A-B5DE-47FA-8966-9082F82FB192")]
-    public partial struct RendezvousApplication
-    {
-    }
 }

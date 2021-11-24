@@ -3,14 +3,13 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum HTMLBorder
 {
-    public enum HTMLBorder
-    {
-        HTMLBorderNone = 0,
-        HTMLBorderThick = 0x40000,
-        HTMLBorderDialog = 0x400000,
-        HTMLBorderThin = 0x800000,
-        HTMLBorder_Max = 2147483647,
-    }
+    HTMLBorderNone = 0,
+    HTMLBorderThick = 0x40000,
+    HTMLBorderDialog = 0x400000,
+    HTMLBorderThin = 0x800000,
+    HTMLBorder_Max = 2147483647,
 }

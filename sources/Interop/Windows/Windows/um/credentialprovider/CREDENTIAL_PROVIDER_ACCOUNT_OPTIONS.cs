@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS
-    {
-        CPAO_NONE = 0,
-        CPAO_EMPTY_LOCAL = 0x1,
-        CPAO_EMPTY_CONNECTED = 0x2,
-    }
+    CPAO_NONE = 0,
+    CPAO_EMPTY_LOCAL = 0x1,
+    CPAO_EMPTY_CONNECTED = 0x2,
 }

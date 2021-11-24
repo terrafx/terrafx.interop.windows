@@ -7,11 +7,10 @@ using System;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public static unsafe partial class DirectX
 {
-    public static unsafe partial class DirectX
-    {
-        [DllImport("dwrite", ExactSpelling = true)]
-        public static extern HRESULT DWriteCreateFactory(DWRITE_FACTORY_TYPE factoryType, [NativeTypeName("const IID &")] Guid* iid, IUnknown** factory);
-    }
+    [DllImport("dwrite", ExactSpelling = true)]
+    public static extern HRESULT DWriteCreateFactory(DWRITE_FACTORY_TYPE factoryType, [NativeTypeName("const IID &")] Guid* iid, IUnknown** factory);
 }

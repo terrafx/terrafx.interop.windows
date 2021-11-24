@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DOMKeyboardEvent" /> struct.</summary>
+public static unsafe partial class DOMKeyboardEventTests
 {
-    /// <summary>Provides validation of the <see cref="DOMKeyboardEvent" /> struct.</summary>
-    public static unsafe partial class DOMKeyboardEventTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DOMKeyboardEvent" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DOMKeyboardEvent" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DOMKeyboardEvent).GUID, Is.EqualTo(IID_DOMKeyboardEvent));
-        }
+        Assert.That(typeof(DOMKeyboardEvent).GUID, Is.EqualTo(IID_DOMKeyboardEvent));
+    }
 
-        /// <summary>Validates that the <see cref="DOMKeyboardEvent" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DOMKeyboardEvent>(), Is.EqualTo(sizeof(DOMKeyboardEvent)));
-        }
+    /// <summary>Validates that the <see cref="DOMKeyboardEvent" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DOMKeyboardEvent>(), Is.EqualTo(sizeof(DOMKeyboardEvent)));
+    }
 
-        /// <summary>Validates that the <see cref="DOMKeyboardEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DOMKeyboardEvent).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DOMKeyboardEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DOMKeyboardEvent).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DOMKeyboardEvent" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DOMKeyboardEvent), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="DOMKeyboardEvent" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DOMKeyboardEvent), Is.EqualTo(1));
     }
 }

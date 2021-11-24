@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WINHTTP_PROXY_RESULT_ENTRY" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class WINHTTP_PROXY_RESULT_ENTRYTests
 {
-    /// <summary>Provides validation of the <see cref="WINHTTP_PROXY_RESULT_ENTRY" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class WINHTTP_PROXY_RESULT_ENTRYTests
+    /// <summary>Validates that the <see cref="WINHTTP_PROXY_RESULT_ENTRY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WINHTTP_PROXY_RESULT_ENTRY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WINHTTP_PROXY_RESULT_ENTRY>(), Is.EqualTo(sizeof(WINHTTP_PROXY_RESULT_ENTRY)));
-        }
+        Assert.That(Marshal.SizeOf<WINHTTP_PROXY_RESULT_ENTRY>(), Is.EqualTo(sizeof(WINHTTP_PROXY_RESULT_ENTRY)));
+    }
 
-        /// <summary>Validates that the <see cref="WINHTTP_PROXY_RESULT_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WINHTTP_PROXY_RESULT_ENTRY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WINHTTP_PROXY_RESULT_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WINHTTP_PROXY_RESULT_ENTRY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WINHTTP_PROXY_RESULT_ENTRY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WINHTTP_PROXY_RESULT_ENTRY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WINHTTP_PROXY_RESULT_ENTRY), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(WINHTTP_PROXY_RESULT_ENTRY), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(WINHTTP_PROXY_RESULT_ENTRY), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(WINHTTP_PROXY_RESULT_ENTRY), Is.EqualTo(20));
         }
     }
 }

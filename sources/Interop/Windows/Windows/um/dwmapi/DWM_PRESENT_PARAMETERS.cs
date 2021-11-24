@@ -5,27 +5,26 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct DWM_PRESENT_PARAMETERS
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct DWM_PRESENT_PARAMETERS
-    {
-        [NativeTypeName("UINT32")]
-        public uint cbSize;
+    [NativeTypeName("UINT32")]
+    public uint cbSize;
 
-        public BOOL fQueue;
+    public BOOL fQueue;
 
-        [NativeTypeName("DWM_FRAME_COUNT")]
-        public ulong cRefreshStart;
+    [NativeTypeName("DWM_FRAME_COUNT")]
+    public ulong cRefreshStart;
 
-        public uint cBuffer;
+    public uint cBuffer;
 
-        public BOOL fUseSourceRate;
+    public BOOL fUseSourceRate;
 
-        public UNSIGNED_RATIO rateSource;
+    public UNSIGNED_RATIO rateSource;
 
-        public uint cRefreshesPerFrame;
+    public uint cRefreshesPerFrame;
 
-        public DWM_SOURCE_FRAME_SAMPLING eSampling;
-    }
+    public DWM_SOURCE_FRAME_SAMPLING eSampling;
 }

@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows10.0.17763.0")]
-    public unsafe partial struct PRJ_PLACEHOLDER_VERSION_INFO
-    {
-        [NativeTypeName("UINT8 [128]")]
-        public fixed byte ProviderID[128];
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("UINT8 [128]")]
-        public fixed byte ContentID[128];
-    }
+[SupportedOSPlatform("windows10.0.17763.0")]
+public unsafe partial struct PRJ_PLACEHOLDER_VERSION_INFO
+{
+    [NativeTypeName("UINT8 [128]")]
+    public fixed byte ProviderID[128];
+
+    [NativeTypeName("UINT8 [128]")]
+    public fixed byte ContentID[128];
 }

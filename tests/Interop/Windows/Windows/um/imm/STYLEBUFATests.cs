@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="STYLEBUFA" /> struct.</summary>
+public static unsafe partial class STYLEBUFATests
 {
-    /// <summary>Provides validation of the <see cref="STYLEBUFA" /> struct.</summary>
-    public static unsafe partial class STYLEBUFATests
+    /// <summary>Validates that the <see cref="STYLEBUFA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="STYLEBUFA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<STYLEBUFA>(), Is.EqualTo(sizeof(STYLEBUFA)));
-        }
+        Assert.That(Marshal.SizeOf<STYLEBUFA>(), Is.EqualTo(sizeof(STYLEBUFA)));
+    }
 
-        /// <summary>Validates that the <see cref="STYLEBUFA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(STYLEBUFA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="STYLEBUFA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(STYLEBUFA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="STYLEBUFA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(STYLEBUFA), Is.EqualTo(36));
-        }
+    /// <summary>Validates that the <see cref="STYLEBUFA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(STYLEBUFA), Is.EqualTo(36));
     }
 }

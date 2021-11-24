@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IBindCtx" /> struct.</summary>
+public static unsafe partial class IBindCtxTests
 {
-    /// <summary>Provides validation of the <see cref="IBindCtx" /> struct.</summary>
-    public static unsafe partial class IBindCtxTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IBindCtx" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IBindCtx" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IBindCtx).GUID, Is.EqualTo(IID_IBindCtx));
-        }
+        Assert.That(typeof(IBindCtx).GUID, Is.EqualTo(IID_IBindCtx));
+    }
 
-        /// <summary>Validates that the <see cref="IBindCtx" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IBindCtx>(), Is.EqualTo(sizeof(IBindCtx)));
-        }
+    /// <summary>Validates that the <see cref="IBindCtx" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IBindCtx>(), Is.EqualTo(sizeof(IBindCtx)));
+    }
 
-        /// <summary>Validates that the <see cref="IBindCtx" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IBindCtx).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IBindCtx" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IBindCtx).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IBindCtx" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IBindCtx" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IBindCtx), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IBindCtx), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IBindCtx), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IBindCtx), Is.EqualTo(4));
         }
     }
 }

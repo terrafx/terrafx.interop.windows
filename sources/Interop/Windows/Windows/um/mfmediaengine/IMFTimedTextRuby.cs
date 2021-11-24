@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("76C6A6F5-4955-4DE5-B27B-14B734CC14B4")]
+[NativeTypeName("struct IMFTimedTextRuby : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMFTimedTextRuby : IMFTimedTextRuby.Interface
 {
-    [Guid("76C6A6F5-4955-4DE5-B27B-14B734CC14B4")]
-    [NativeTypeName("struct IMFTimedTextRuby : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTimedTextRuby : IMFTimedTextRuby.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMFTimedTextRuby*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMFTimedTextRuby*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMFTimedTextRuby*, uint>)(lpVtbl[1]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMFTimedTextRuby*, uint>)(lpVtbl[1]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMFTimedTextRuby*, uint>)(lpVtbl[2]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMFTimedTextRuby*, uint>)(lpVtbl[2]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetRubyText([NativeTypeName("LPWSTR *")] ushort** rubyText)
+    {
+        return ((delegate* unmanaged<IMFTimedTextRuby*, ushort**, int>)(lpVtbl[3]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), rubyText);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetRubyPosition(MF_TIMED_TEXT_RUBY_POSITION* value)
+    {
+        return ((delegate* unmanaged<IMFTimedTextRuby*, MF_TIMED_TEXT_RUBY_POSITION*, int>)(lpVtbl[4]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), value);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetRubyAlign(MF_TIMED_TEXT_RUBY_ALIGN* value)
+    {
+        return ((delegate* unmanaged<IMFTimedTextRuby*, MF_TIMED_TEXT_RUBY_ALIGN*, int>)(lpVtbl[5]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), value);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetRubyReserve(MF_TIMED_TEXT_RUBY_RESERVE* value)
+    {
+        return ((delegate* unmanaged<IMFTimedTextRuby*, MF_TIMED_TEXT_RUBY_RESERVE*, int>)(lpVtbl[6]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), value);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetRubyText([NativeTypeName("LPWSTR *")] ushort** rubyText)
-        {
-            return ((delegate* unmanaged<IMFTimedTextRuby*, ushort**, int>)(lpVtbl[3]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), rubyText);
-        }
+        HRESULT GetRubyText([NativeTypeName("LPWSTR *")] ushort** rubyText);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetRubyPosition(MF_TIMED_TEXT_RUBY_POSITION* value)
-        {
-            return ((delegate* unmanaged<IMFTimedTextRuby*, MF_TIMED_TEXT_RUBY_POSITION*, int>)(lpVtbl[4]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), value);
-        }
+        HRESULT GetRubyPosition(MF_TIMED_TEXT_RUBY_POSITION* value);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetRubyAlign(MF_TIMED_TEXT_RUBY_ALIGN* value)
-        {
-            return ((delegate* unmanaged<IMFTimedTextRuby*, MF_TIMED_TEXT_RUBY_ALIGN*, int>)(lpVtbl[5]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), value);
-        }
+        HRESULT GetRubyAlign(MF_TIMED_TEXT_RUBY_ALIGN* value);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetRubyReserve(MF_TIMED_TEXT_RUBY_RESERVE* value)
-        {
-            return ((delegate* unmanaged<IMFTimedTextRuby*, MF_TIMED_TEXT_RUBY_RESERVE*, int>)(lpVtbl[6]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), value);
-        }
+        HRESULT GetRubyReserve(MF_TIMED_TEXT_RUBY_RESERVE* value);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetRubyText([NativeTypeName("LPWSTR *")] ushort** rubyText);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFTimedTextRuby*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetRubyPosition(MF_TIMED_TEXT_RUBY_POSITION* value);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFTimedTextRuby*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetRubyAlign(MF_TIMED_TEXT_RUBY_ALIGN* value);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFTimedTextRuby*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT GetRubyReserve(MF_TIMED_TEXT_RUBY_RESERVE* value);
-        }
+        [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFTimedTextRuby*, ushort**, int> GetRubyText;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFTimedTextRuby*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (MF_TIMED_TEXT_RUBY_POSITION *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFTimedTextRuby*, MF_TIMED_TEXT_RUBY_POSITION*, int> GetRubyPosition;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFTimedTextRuby*, uint> AddRef;
+        [NativeTypeName("HRESULT (MF_TIMED_TEXT_RUBY_ALIGN *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFTimedTextRuby*, MF_TIMED_TEXT_RUBY_ALIGN*, int> GetRubyAlign;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFTimedTextRuby*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFTimedTextRuby*, ushort**, int> GetRubyText;
-
-            [NativeTypeName("HRESULT (MF_TIMED_TEXT_RUBY_POSITION *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFTimedTextRuby*, MF_TIMED_TEXT_RUBY_POSITION*, int> GetRubyPosition;
-
-            [NativeTypeName("HRESULT (MF_TIMED_TEXT_RUBY_ALIGN *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFTimedTextRuby*, MF_TIMED_TEXT_RUBY_ALIGN*, int> GetRubyAlign;
-
-            [NativeTypeName("HRESULT (MF_TIMED_TEXT_RUBY_RESERVE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFTimedTextRuby*, MF_TIMED_TEXT_RUBY_RESERVE*, int> GetRubyReserve;
-        }
+        [NativeTypeName("HRESULT (MF_TIMED_TEXT_RUBY_RESERVE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFTimedTextRuby*, MF_TIMED_TEXT_RUBY_RESERVE*, int> GetRubyReserve;
     }
 }

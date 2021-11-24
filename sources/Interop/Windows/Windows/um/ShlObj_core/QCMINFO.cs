@@ -3,19 +3,18 @@
 // Ported from um/ShlObj_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct QCMINFO
 {
-    public unsafe partial struct QCMINFO
-    {
-        public HMENU hmenu;
+    public HMENU hmenu;
 
-        public uint indexMenu;
+    public uint indexMenu;
 
-        public uint idCmdFirst;
+    public uint idCmdFirst;
 
-        public uint idCmdLast;
+    public uint idCmdLast;
 
-        [NativeTypeName("const QCMINFO_IDMAP *")]
-        public QCMINFO_IDMAP* pIdMap;
-    }
+    [NativeTypeName("const QCMINFO_IDMAP *")]
+    public QCMINFO_IDMAP* pIdMap;
 }

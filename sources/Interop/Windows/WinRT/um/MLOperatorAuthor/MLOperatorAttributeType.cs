@@ -3,17 +3,16 @@
 // Ported from um/MLOperatorAuthor.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[NativeTypeName("uint32_t")]
+public enum MLOperatorAttributeType : uint
 {
-    [NativeTypeName("uint32_t")]
-    public enum MLOperatorAttributeType : uint
-    {
-        Undefined = 0,
-        Float = 2,
-        Int = 3,
-        String = 4,
-        FloatArray = 7,
-        IntArray = 8,
-        StringArray = 9,
-    }
+    Undefined = 0,
+    Float = 2,
+    Int = 3,
+    String = 4,
+    FloatArray = 7,
+    IntArray = 8,
+    StringArray = 9,
 }

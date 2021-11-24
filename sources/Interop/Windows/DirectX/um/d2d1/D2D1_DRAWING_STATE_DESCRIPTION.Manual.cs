@@ -11,16 +11,16 @@ using static TerraFX.Interop.DirectX.D2D1_ANTIALIAS_MODE;
 using static TerraFX.Interop.DirectX.D2D1_TEXT_ANTIALIAS_MODE;
 using static TerraFX.Interop.DirectX.DirectX;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D1_DRAWING_STATE_DESCRIPTION
 {
-    public partial struct D2D1_DRAWING_STATE_DESCRIPTION
+    public static ref readonly D2D1_DRAWING_STATE_DESCRIPTION DEFAULT
     {
-        public static ref readonly D2D1_DRAWING_STATE_DESCRIPTION DEFAULT
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x00, 0x00, 0x00, 0x00,
                     0x00, 0x00, 0x00, 0x00,
                     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -33,19 +33,18 @@ namespace TerraFX.Interop.DirectX
                     0x00, 0x00, 0x00, 0x00,
                 };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<D2D1_DRAWING_STATE_DESCRIPTION>());
-                return ref Unsafe.As<byte, D2D1_DRAWING_STATE_DESCRIPTION>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<D2D1_DRAWING_STATE_DESCRIPTION>());
+            return ref Unsafe.As<byte, D2D1_DRAWING_STATE_DESCRIPTION>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public D2D1_DRAWING_STATE_DESCRIPTION(D2D1_ANTIALIAS_MODE antialiasMode = D2D1_ANTIALIAS_MODE_PER_PRIMITIVE, D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode = D2D1_TEXT_ANTIALIAS_MODE_DEFAULT, [NativeTypeName("D2D1_TAG")] ulong tag1 = 0, [NativeTypeName("D2D1_TAG")] ulong tag2 = 0)
-            : this(antialiasMode, textAntialiasMode, tag1, tag2, IdentityMatrix)
-        {
-        }
+    public D2D1_DRAWING_STATE_DESCRIPTION(D2D1_ANTIALIAS_MODE antialiasMode = D2D1_ANTIALIAS_MODE_PER_PRIMITIVE, D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode = D2D1_TEXT_ANTIALIAS_MODE_DEFAULT, [NativeTypeName("D2D1_TAG")] ulong tag1 = 0, [NativeTypeName("D2D1_TAG")] ulong tag2 = 0)
+        : this(antialiasMode, textAntialiasMode, tag1, tag2, IdentityMatrix)
+    {
+    }
 
-        public D2D1_DRAWING_STATE_DESCRIPTION([Optional] D2D1_ANTIALIAS_MODE antialiasMode, [Optional] D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode, [NativeTypeName("D2D1_TAG"), Optional] ulong tag1, [NativeTypeName("D2D1_TAG"), Optional] ulong tag2, [NativeTypeName("const D2D1_MATRIX_3X2_F &")] D2D_MATRIX_3X2_F transform)
-        {
-            this = DrawingStateDescription(antialiasMode, textAntialiasMode, tag1, tag2, transform);
-        }
+    public D2D1_DRAWING_STATE_DESCRIPTION([Optional] D2D1_ANTIALIAS_MODE antialiasMode, [Optional] D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode, [NativeTypeName("D2D1_TAG"), Optional] ulong tag1, [NativeTypeName("D2D1_TAG"), Optional] ulong tag2, [NativeTypeName("const D2D1_MATRIX_3X2_F &")] D2D_MATRIX_3X2_F transform)
+    {
+        this = DrawingStateDescription(antialiasMode, textAntialiasMode, tag1, tag2, transform);
     }
 }

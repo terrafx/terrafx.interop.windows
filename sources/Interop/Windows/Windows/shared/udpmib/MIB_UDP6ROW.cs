@@ -3,16 +3,15 @@
 // Ported from shared/udpmib.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MIB_UDP6ROW
 {
-    public partial struct MIB_UDP6ROW
-    {
-        public IN6_ADDR dwLocalAddr;
+    public IN6_ADDR dwLocalAddr;
 
-        [NativeTypeName("DWORD")]
-        public uint dwLocalScopeId;
+    [NativeTypeName("DWORD")]
+    public uint dwLocalScopeId;
 
-        [NativeTypeName("DWORD")]
-        public uint dwLocalPort;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwLocalPort;
 }

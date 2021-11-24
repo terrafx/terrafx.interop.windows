@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("A7E025DD-5303-4A62-89D6-E747E1EFAC73")]
+[NativeTypeName("struct IMFSAMIStyle : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface
 {
-    [Guid("A7E025DD-5303-4A62-89D6-E747E1EFAC73")]
-    [NativeTypeName("struct IMFSAMIStyle : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMFSAMIStyle*, Guid*, void**, int>)(lpVtbl[0]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMFSAMIStyle*, Guid*, void**, int>)(lpVtbl[0]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMFSAMIStyle*, uint>)(lpVtbl[1]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMFSAMIStyle*, uint>)(lpVtbl[1]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMFSAMIStyle*, uint>)(lpVtbl[2]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMFSAMIStyle*, uint>)(lpVtbl[2]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetStyleCount([NativeTypeName("DWORD *")] uint* pdwCount)
+    {
+        return ((delegate* unmanaged<IMFSAMIStyle*, uint*, int>)(lpVtbl[3]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), pdwCount);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetStyles(PROPVARIANT* pPropVarStyleArray)
+    {
+        return ((delegate* unmanaged<IMFSAMIStyle*, PROPVARIANT*, int>)(lpVtbl[4]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), pPropVarStyleArray);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT SetSelectedStyle([NativeTypeName("LPCWSTR")] ushort* pwszStyle)
+    {
+        return ((delegate* unmanaged<IMFSAMIStyle*, ushort*, int>)(lpVtbl[5]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), pwszStyle);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetSelectedStyle([NativeTypeName("LPWSTR *")] ushort** ppwszStyle)
+    {
+        return ((delegate* unmanaged<IMFSAMIStyle*, ushort**, int>)(lpVtbl[6]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), ppwszStyle);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetStyleCount([NativeTypeName("DWORD *")] uint* pdwCount)
-        {
-            return ((delegate* unmanaged<IMFSAMIStyle*, uint*, int>)(lpVtbl[3]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), pdwCount);
-        }
+        HRESULT GetStyleCount([NativeTypeName("DWORD *")] uint* pdwCount);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetStyles(PROPVARIANT* pPropVarStyleArray)
-        {
-            return ((delegate* unmanaged<IMFSAMIStyle*, PROPVARIANT*, int>)(lpVtbl[4]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), pPropVarStyleArray);
-        }
+        HRESULT GetStyles(PROPVARIANT* pPropVarStyleArray);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetSelectedStyle([NativeTypeName("LPCWSTR")] ushort* pwszStyle)
-        {
-            return ((delegate* unmanaged<IMFSAMIStyle*, ushort*, int>)(lpVtbl[5]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), pwszStyle);
-        }
+        HRESULT SetSelectedStyle([NativeTypeName("LPCWSTR")] ushort* pwszStyle);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetSelectedStyle([NativeTypeName("LPWSTR *")] ushort** ppwszStyle)
-        {
-            return ((delegate* unmanaged<IMFSAMIStyle*, ushort**, int>)(lpVtbl[6]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), ppwszStyle);
-        }
+        HRESULT GetSelectedStyle([NativeTypeName("LPWSTR *")] ushort** ppwszStyle);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetStyleCount([NativeTypeName("DWORD *")] uint* pdwCount);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSAMIStyle*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetStyles(PROPVARIANT* pPropVarStyleArray);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSAMIStyle*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT SetSelectedStyle([NativeTypeName("LPCWSTR")] ushort* pwszStyle);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSAMIStyle*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT GetSelectedStyle([NativeTypeName("LPWSTR *")] ushort** ppwszStyle);
-        }
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSAMIStyle*, uint*, int> GetStyleCount;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSAMIStyle*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSAMIStyle*, PROPVARIANT*, int> GetStyles;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSAMIStyle*, uint> AddRef;
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSAMIStyle*, ushort*, int> SetSelectedStyle;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSAMIStyle*, uint> Release;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSAMIStyle*, uint*, int> GetStyleCount;
-
-            [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSAMIStyle*, PROPVARIANT*, int> GetStyles;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSAMIStyle*, ushort*, int> SetSelectedStyle;
-
-            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSAMIStyle*, ushort**, int> GetSelectedStyle;
-        }
+        [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSAMIStyle*, ushort**, int> GetSelectedStyle;
     }
 }

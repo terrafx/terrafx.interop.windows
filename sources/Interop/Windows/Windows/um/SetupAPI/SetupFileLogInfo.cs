@@ -3,15 +3,14 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SetupFileLogInfo
 {
-    public enum SetupFileLogInfo
-    {
-        SetupFileLogSourceFilename,
-        SetupFileLogChecksum,
-        SetupFileLogDiskTagfile,
-        SetupFileLogDiskDescription,
-        SetupFileLogOtherInfo,
-        SetupFileLogMax,
-    }
+    SetupFileLogSourceFilename,
+    SetupFileLogChecksum,
+    SetupFileLogDiskTagfile,
+    SetupFileLogDiskDescription,
+    SetupFileLogOtherInfo,
+    SetupFileLogMax,
 }

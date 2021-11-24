@@ -3,12 +3,11 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum CAPTIONSTATES
 {
-    public enum CAPTIONSTATES
-    {
-        CS_ACTIVE = 1,
-        CS_INACTIVE = 2,
-        CS_DISABLED = 3,
-    }
+    CS_ACTIVE = 1,
+    CS_INACTIVE = 2,
+    CS_DISABLED = 3,
 }

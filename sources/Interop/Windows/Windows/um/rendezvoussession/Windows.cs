@@ -8,33 +8,32 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class Windows
-    {
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid DIID_DRendezvousSessionEvents
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xF8, 0x9C, 0xA1, 0x3F,
-                    0xC4, 0x64,
-                    0x53, 0x4F,
-                    0xAE,
-                    0x60,
-                    0x63,
-                    0x5B,
-                    0x38,
-                    0x06,
-                    0xEC,
-                    0xA6
-                };
+namespace TerraFX.Interop.Windows;
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+public static partial class Windows
+{
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid DIID_DRendezvousSessionEvents
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xF8, 0x9C, 0xA1, 0x3F,
+                0xC4, 0x64,
+                0x53, 0x4F,
+                0xAE,
+                0x60,
+                0x63,
+                0x5B,
+                0x38,
+                0x06,
+                0xEC,
+                0xA6
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

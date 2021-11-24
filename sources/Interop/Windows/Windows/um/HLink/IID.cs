@@ -8,172 +8,171 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class IID
 {
-    public static partial class IID
+    [NativeTypeName("#define IID_IHlinkSource IID_IHlinkTarget")]
+    public static ref readonly Guid IID_IHlinkSource => ref IID_IHlinkTarget;
+
+    public static ref readonly Guid IID_IHlink
     {
-        [NativeTypeName("#define IID_IHlinkSource IID_IHlinkTarget")]
-        public static ref readonly Guid IID_IHlinkSource => ref IID_IHlinkTarget;
-
-        public static ref readonly Guid IID_IHlink
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xC3, 0xC9, 0xEA, 0x79,
-                    0xF9, 0xBA,
-                    0xCE, 0x11,
-                    0x8C,
-                    0x82,
-                    0x00,
-                    0xAA,
-                    0x00,
-                    0x4B,
-                    0xA9,
-                    0x0B
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0xC3, 0xC9, 0xEA, 0x79,
+                0xF9, 0xBA,
+                0xCE, 0x11,
+                0x8C,
+                0x82,
+                0x00,
+                0xAA,
+                0x00,
+                0x4B,
+                0xA9,
+                0x0B
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid IID_IHlinkSite
+    public static ref readonly Guid IID_IHlinkSite
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xC2, 0xC9, 0xEA, 0x79,
-                    0xF9, 0xBA,
-                    0xCE, 0x11,
-                    0x8C,
-                    0x82,
-                    0x00,
-                    0xAA,
-                    0x00,
-                    0x4B,
-                    0xA9,
-                    0x0B
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0xC2, 0xC9, 0xEA, 0x79,
+                0xF9, 0xBA,
+                0xCE, 0x11,
+                0x8C,
+                0x82,
+                0x00,
+                0xAA,
+                0x00,
+                0x4B,
+                0xA9,
+                0x0B
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid IID_IHlinkTarget
+    public static ref readonly Guid IID_IHlinkTarget
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xC4, 0xC9, 0xEA, 0x79,
-                    0xF9, 0xBA,
-                    0xCE, 0x11,
-                    0x8C,
-                    0x82,
-                    0x00,
-                    0xAA,
-                    0x00,
-                    0x4B,
-                    0xA9,
-                    0x0B
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0xC4, 0xC9, 0xEA, 0x79,
+                0xF9, 0xBA,
+                0xCE, 0x11,
+                0x8C,
+                0x82,
+                0x00,
+                0xAA,
+                0x00,
+                0x4B,
+                0xA9,
+                0x0B
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid IID_IHlinkFrame
+    public static ref readonly Guid IID_IHlinkFrame
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xC5, 0xC9, 0xEA, 0x79,
-                    0xF9, 0xBA,
-                    0xCE, 0x11,
-                    0x8C,
-                    0x82,
-                    0x00,
-                    0xAA,
-                    0x00,
-                    0x4B,
-                    0xA9,
-                    0x0B
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0xC5, 0xC9, 0xEA, 0x79,
+                0xF9, 0xBA,
+                0xCE, 0x11,
+                0x8C,
+                0x82,
+                0x00,
+                0xAA,
+                0x00,
+                0x4B,
+                0xA9,
+                0x0B
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid IID_IEnumHLITEM
+    public static ref readonly Guid IID_IEnumHLITEM
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xC6, 0xC9, 0xEA, 0x79,
-                    0xF9, 0xBA,
-                    0xCE, 0x11,
-                    0x8C,
-                    0x82,
-                    0x00,
-                    0xAA,
-                    0x00,
-                    0x4B,
-                    0xA9,
-                    0x0B
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0xC6, 0xC9, 0xEA, 0x79,
+                0xF9, 0xBA,
+                0xCE, 0x11,
+                0x8C,
+                0x82,
+                0x00,
+                0xAA,
+                0x00,
+                0x4B,
+                0xA9,
+                0x0B
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid IID_IHlinkBrowseContext
+    public static ref readonly Guid IID_IHlinkBrowseContext
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xC7, 0xC9, 0xEA, 0x79,
-                    0xF9, 0xBA,
-                    0xCE, 0x11,
-                    0x8C,
-                    0x82,
-                    0x00,
-                    0xAA,
-                    0x00,
-                    0x4B,
-                    0xA9,
-                    0x0B
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0xC7, 0xC9, 0xEA, 0x79,
+                0xF9, 0xBA,
+                0xCE, 0x11,
+                0x8C,
+                0x82,
+                0x00,
+                0xAA,
+                0x00,
+                0x4B,
+                0xA9,
+                0x0B
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid IID_IExtensionServices
+    public static ref readonly Guid IID_IExtensionServices
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xCB, 0xC9, 0xEA, 0x79,
-                    0xF9, 0xBA,
-                    0xCE, 0x11,
-                    0x8C,
-                    0x82,
-                    0x00,
-                    0xAA,
-                    0x00,
-                    0x4B,
-                    0xA9,
-                    0x0B
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0xCB, 0xC9, 0xEA, 0x79,
+                0xF9, 0xBA,
+                0xCE, 0x11,
+                0x8C,
+                0x82,
+                0x00,
+                0xAA,
+                0x00,
+                0x4B,
+                0xA9,
+                0x0B
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

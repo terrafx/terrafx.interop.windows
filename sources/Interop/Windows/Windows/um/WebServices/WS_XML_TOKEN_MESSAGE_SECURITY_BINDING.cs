@@ -5,14 +5,13 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct WS_XML_TOKEN_MESSAGE_SECURITY_BINDING
 {
-    public partial struct WS_XML_TOKEN_MESSAGE_SECURITY_BINDING
-    {
-        public WS_SECURITY_BINDING binding;
+    public WS_SECURITY_BINDING binding;
 
-        public WS_MESSAGE_SECURITY_USAGE bindingUsage;
+    public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 
-        public IntPtr xmlToken;
-    }
+    public IntPtr xmlToken;
 }

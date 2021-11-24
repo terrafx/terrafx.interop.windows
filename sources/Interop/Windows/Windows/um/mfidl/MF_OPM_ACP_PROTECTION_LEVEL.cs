@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum MF_OPM_ACP_PROTECTION_LEVEL
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum MF_OPM_ACP_PROTECTION_LEVEL
-    {
-        MF_OPM_ACP_OFF = 0,
-        MF_OPM_ACP_LEVEL_ONE = 1,
-        MF_OPM_ACP_LEVEL_TWO = 2,
-        MF_OPM_ACP_LEVEL_THREE = 3,
-        MF_OPM_ACP_FORCE_ULONG = 0x7fffffff,
-    }
+    MF_OPM_ACP_OFF = 0,
+    MF_OPM_ACP_LEVEL_ONE = 1,
+    MF_OPM_ACP_LEVEL_TWO = 2,
+    MF_OPM_ACP_LEVEL_THREE = 3,
+    MF_OPM_ACP_FORCE_ULONG = 0x7fffffff,
 }

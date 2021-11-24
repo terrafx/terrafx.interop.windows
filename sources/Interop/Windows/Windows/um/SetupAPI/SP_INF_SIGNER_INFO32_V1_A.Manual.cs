@@ -5,21 +5,20 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SP_INF_SIGNER_INFO32_V1_A
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SP_INF_SIGNER_INFO32_V1_A
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("CHAR [260]")]
-        public fixed sbyte CatalogFile[260];
+    [NativeTypeName("CHAR [260]")]
+    public fixed sbyte CatalogFile[260];
 
-        [NativeTypeName("CHAR [260]")]
-        public fixed sbyte DigitalSigner[260];
+    [NativeTypeName("CHAR [260]")]
+    public fixed sbyte DigitalSigner[260];
 
-        [NativeTypeName("CHAR [260]")]
-        public fixed sbyte DigitalSignerVersion[260];
-    }
+    [NativeTypeName("CHAR [260]")]
+    public fixed sbyte DigitalSignerVersion[260];
 }

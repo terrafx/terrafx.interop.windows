@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("00000122-0000-0000-C000-000000000046")]
+[NativeTypeName("struct IDropTarget : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IDropTarget : IDropTarget.Interface
 {
-    [Guid("00000122-0000-0000-C000-000000000046")]
-    [NativeTypeName("struct IDropTarget : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDropTarget : IDropTarget.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDropTarget*, Guid*, void**, int>)(lpVtbl[0]))((IDropTarget*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDropTarget*, Guid*, void**, int>)(lpVtbl[0]))((IDropTarget*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDropTarget*, uint>)(lpVtbl[1]))((IDropTarget*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDropTarget*, uint>)(lpVtbl[1]))((IDropTarget*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDropTarget*, uint>)(lpVtbl[2]))((IDropTarget*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDropTarget*, uint>)(lpVtbl[2]))((IDropTarget*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT DragEnter(IDataObject* pDataObj, [NativeTypeName("DWORD")] uint grfKeyState, POINTL pt, [NativeTypeName("DWORD *")] uint* pdwEffect)
+    {
+        return ((delegate* unmanaged<IDropTarget*, IDataObject*, uint, POINTL, uint*, int>)(lpVtbl[3]))((IDropTarget*)Unsafe.AsPointer(ref this), pDataObj, grfKeyState, pt, pdwEffect);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT DragOver([NativeTypeName("DWORD")] uint grfKeyState, POINTL pt, [NativeTypeName("DWORD *")] uint* pdwEffect)
+    {
+        return ((delegate* unmanaged<IDropTarget*, uint, POINTL, uint*, int>)(lpVtbl[4]))((IDropTarget*)Unsafe.AsPointer(ref this), grfKeyState, pt, pdwEffect);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT DragLeave()
+    {
+        return ((delegate* unmanaged<IDropTarget*, int>)(lpVtbl[5]))((IDropTarget*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Drop(IDataObject* pDataObj, [NativeTypeName("DWORD")] uint grfKeyState, POINTL pt, [NativeTypeName("DWORD *")] uint* pdwEffect)
+    {
+        return ((delegate* unmanaged<IDropTarget*, IDataObject*, uint, POINTL, uint*, int>)(lpVtbl[6]))((IDropTarget*)Unsafe.AsPointer(ref this), pDataObj, grfKeyState, pt, pdwEffect);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT DragEnter(IDataObject* pDataObj, [NativeTypeName("DWORD")] uint grfKeyState, POINTL pt, [NativeTypeName("DWORD *")] uint* pdwEffect)
-        {
-            return ((delegate* unmanaged<IDropTarget*, IDataObject*, uint, POINTL, uint*, int>)(lpVtbl[3]))((IDropTarget*)Unsafe.AsPointer(ref this), pDataObj, grfKeyState, pt, pdwEffect);
-        }
+        HRESULT DragEnter(IDataObject* pDataObj, [NativeTypeName("DWORD")] uint grfKeyState, POINTL pt, [NativeTypeName("DWORD *")] uint* pdwEffect);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT DragOver([NativeTypeName("DWORD")] uint grfKeyState, POINTL pt, [NativeTypeName("DWORD *")] uint* pdwEffect)
-        {
-            return ((delegate* unmanaged<IDropTarget*, uint, POINTL, uint*, int>)(lpVtbl[4]))((IDropTarget*)Unsafe.AsPointer(ref this), grfKeyState, pt, pdwEffect);
-        }
+        HRESULT DragOver([NativeTypeName("DWORD")] uint grfKeyState, POINTL pt, [NativeTypeName("DWORD *")] uint* pdwEffect);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT DragLeave()
-        {
-            return ((delegate* unmanaged<IDropTarget*, int>)(lpVtbl[5]))((IDropTarget*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT DragLeave();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Drop(IDataObject* pDataObj, [NativeTypeName("DWORD")] uint grfKeyState, POINTL pt, [NativeTypeName("DWORD *")] uint* pdwEffect)
-        {
-            return ((delegate* unmanaged<IDropTarget*, IDataObject*, uint, POINTL, uint*, int>)(lpVtbl[6]))((IDropTarget*)Unsafe.AsPointer(ref this), pDataObj, grfKeyState, pt, pdwEffect);
-        }
+        HRESULT Drop(IDataObject* pDataObj, [NativeTypeName("DWORD")] uint grfKeyState, POINTL pt, [NativeTypeName("DWORD *")] uint* pdwEffect);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT DragEnter(IDataObject* pDataObj, [NativeTypeName("DWORD")] uint grfKeyState, POINTL pt, [NativeTypeName("DWORD *")] uint* pdwEffect);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDropTarget*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT DragOver([NativeTypeName("DWORD")] uint grfKeyState, POINTL pt, [NativeTypeName("DWORD *")] uint* pdwEffect);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDropTarget*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT DragLeave();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDropTarget*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT Drop(IDataObject* pDataObj, [NativeTypeName("DWORD")] uint grfKeyState, POINTL pt, [NativeTypeName("DWORD *")] uint* pdwEffect);
-        }
+        [NativeTypeName("HRESULT (IDataObject *, DWORD, POINTL, DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDropTarget*, IDataObject*, uint, POINTL, uint*, int> DragEnter;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDropTarget*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (DWORD, POINTL, DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDropTarget*, uint, POINTL, uint*, int> DragOver;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDropTarget*, uint> AddRef;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDropTarget*, int> DragLeave;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDropTarget*, uint> Release;
-
-            [NativeTypeName("HRESULT (IDataObject *, DWORD, POINTL, DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDropTarget*, IDataObject*, uint, POINTL, uint*, int> DragEnter;
-
-            [NativeTypeName("HRESULT (DWORD, POINTL, DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDropTarget*, uint, POINTL, uint*, int> DragOver;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDropTarget*, int> DragLeave;
-
-            [NativeTypeName("HRESULT (IDataObject *, DWORD, POINTL, DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDropTarget*, IDataObject*, uint, POINTL, uint*, int> Drop;
-        }
+        [NativeTypeName("HRESULT (IDataObject *, DWORD, POINTL, DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDropTarget*, IDataObject*, uint, POINTL, uint*, int> Drop;
     }
 }

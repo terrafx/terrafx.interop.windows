@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.17763.0")]
+public enum PRJ_COMPLETE_COMMAND_TYPE
 {
-    [SupportedOSPlatform("windows10.0.17763.0")]
-    public enum PRJ_COMPLETE_COMMAND_TYPE
-    {
-        PRJ_COMPLETE_COMMAND_TYPE_NOTIFICATION = 1,
-        PRJ_COMPLETE_COMMAND_TYPE_ENUMERATION = 2,
-    }
+    PRJ_COMPLETE_COMMAND_TYPE_NOTIFICATION = 1,
+    PRJ_COMPLETE_COMMAND_TYPE_ENUMERATION = 2,
 }

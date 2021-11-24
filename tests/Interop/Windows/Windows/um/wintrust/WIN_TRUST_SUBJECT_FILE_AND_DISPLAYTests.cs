@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WIN_TRUST_SUBJECT_FILE_AND_DISPLAY" /> struct.</summary>
+public static unsafe partial class WIN_TRUST_SUBJECT_FILE_AND_DISPLAYTests
 {
-    /// <summary>Provides validation of the <see cref="WIN_TRUST_SUBJECT_FILE_AND_DISPLAY" /> struct.</summary>
-    public static unsafe partial class WIN_TRUST_SUBJECT_FILE_AND_DISPLAYTests
+    /// <summary>Validates that the <see cref="WIN_TRUST_SUBJECT_FILE_AND_DISPLAY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WIN_TRUST_SUBJECT_FILE_AND_DISPLAY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WIN_TRUST_SUBJECT_FILE_AND_DISPLAY>(), Is.EqualTo(sizeof(WIN_TRUST_SUBJECT_FILE_AND_DISPLAY)));
-        }
+        Assert.That(Marshal.SizeOf<WIN_TRUST_SUBJECT_FILE_AND_DISPLAY>(), Is.EqualTo(sizeof(WIN_TRUST_SUBJECT_FILE_AND_DISPLAY)));
+    }
 
-        /// <summary>Validates that the <see cref="WIN_TRUST_SUBJECT_FILE_AND_DISPLAY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WIN_TRUST_SUBJECT_FILE_AND_DISPLAY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WIN_TRUST_SUBJECT_FILE_AND_DISPLAY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WIN_TRUST_SUBJECT_FILE_AND_DISPLAY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WIN_TRUST_SUBJECT_FILE_AND_DISPLAY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WIN_TRUST_SUBJECT_FILE_AND_DISPLAY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WIN_TRUST_SUBJECT_FILE_AND_DISPLAY), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(WIN_TRUST_SUBJECT_FILE_AND_DISPLAY), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(WIN_TRUST_SUBJECT_FILE_AND_DISPLAY), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(WIN_TRUST_SUBJECT_FILE_AND_DISPLAY), Is.EqualTo(12));
         }
     }
 }

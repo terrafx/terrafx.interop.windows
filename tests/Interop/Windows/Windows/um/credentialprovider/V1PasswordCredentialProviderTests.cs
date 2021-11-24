@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="V1PasswordCredentialProvider" /> struct.</summary>
+public static unsafe partial class V1PasswordCredentialProviderTests
 {
-    /// <summary>Provides validation of the <see cref="V1PasswordCredentialProvider" /> struct.</summary>
-    public static unsafe partial class V1PasswordCredentialProviderTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="V1PasswordCredentialProvider" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="V1PasswordCredentialProvider" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(V1PasswordCredentialProvider).GUID, Is.EqualTo(IID_V1PasswordCredentialProvider));
-        }
+        Assert.That(typeof(V1PasswordCredentialProvider).GUID, Is.EqualTo(IID_V1PasswordCredentialProvider));
+    }
 
-        /// <summary>Validates that the <see cref="V1PasswordCredentialProvider" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<V1PasswordCredentialProvider>(), Is.EqualTo(sizeof(V1PasswordCredentialProvider)));
-        }
+    /// <summary>Validates that the <see cref="V1PasswordCredentialProvider" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<V1PasswordCredentialProvider>(), Is.EqualTo(sizeof(V1PasswordCredentialProvider)));
+    }
 
-        /// <summary>Validates that the <see cref="V1PasswordCredentialProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(V1PasswordCredentialProvider).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="V1PasswordCredentialProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(V1PasswordCredentialProvider).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="V1PasswordCredentialProvider" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(V1PasswordCredentialProvider), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="V1PasswordCredentialProvider" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(V1PasswordCredentialProvider), Is.EqualTo(1));
     }
 }

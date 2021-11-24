@@ -8,54 +8,53 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class IID
 {
-    public static partial class IID
+    public static ref readonly Guid IID_IWeakReference
     {
-        public static ref readonly Guid IID_IWeakReference
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x37, 0x00, 0x00, 0x00,
-                    0x00, 0x00,
-                    0x00, 0x00,
-                    0xC0,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x46
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x37, 0x00, 0x00, 0x00,
+                0x00, 0x00,
+                0x00, 0x00,
+                0xC0,
+                0x00,
+                0x00,
+                0x00,
+                0x00,
+                0x00,
+                0x00,
+                0x46
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid IID_IWeakReferenceSource
+    public static ref readonly Guid IID_IWeakReferenceSource
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x38, 0x00, 0x00, 0x00,
-                    0x00, 0x00,
-                    0x00, 0x00,
-                    0xC0,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x00,
-                    0x46
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x38, 0x00, 0x00, 0x00,
+                0x00, 0x00,
+                0x00, 0x00,
+                0xC0,
+                0x00,
+                0x00,
+                0x00,
+                0x00,
+                0x00,
+                0x00,
+                0x46
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

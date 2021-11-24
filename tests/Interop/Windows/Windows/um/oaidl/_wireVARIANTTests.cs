@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="_wireVARIANT" /> struct.</summary>
+public static unsafe partial class _wireVARIANTTests
 {
-    /// <summary>Provides validation of the <see cref="_wireVARIANT" /> struct.</summary>
-    public static unsafe partial class _wireVARIANTTests
+    /// <summary>Validates that the <see cref="_wireVARIANT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="_wireVARIANT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<_wireVARIANT>(), Is.EqualTo(sizeof(_wireVARIANT)));
-        }
+        Assert.That(Marshal.SizeOf<_wireVARIANT>(), Is.EqualTo(sizeof(_wireVARIANT)));
+    }
 
-        /// <summary>Validates that the <see cref="_wireVARIANT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(_wireVARIANT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="_wireVARIANT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(_wireVARIANT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="_wireVARIANT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(_wireVARIANT), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="_wireVARIANT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(_wireVARIANT), Is.EqualTo(32));
     }
 }

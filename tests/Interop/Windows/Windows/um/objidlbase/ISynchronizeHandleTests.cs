@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISynchronizeHandle" /> struct.</summary>
+public static unsafe partial class ISynchronizeHandleTests
 {
-    /// <summary>Provides validation of the <see cref="ISynchronizeHandle" /> struct.</summary>
-    public static unsafe partial class ISynchronizeHandleTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISynchronizeHandle" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISynchronizeHandle" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISynchronizeHandle).GUID, Is.EqualTo(IID_ISynchronizeHandle));
-        }
+        Assert.That(typeof(ISynchronizeHandle).GUID, Is.EqualTo(IID_ISynchronizeHandle));
+    }
 
-        /// <summary>Validates that the <see cref="ISynchronizeHandle" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISynchronizeHandle>(), Is.EqualTo(sizeof(ISynchronizeHandle)));
-        }
+    /// <summary>Validates that the <see cref="ISynchronizeHandle" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISynchronizeHandle>(), Is.EqualTo(sizeof(ISynchronizeHandle)));
+    }
 
-        /// <summary>Validates that the <see cref="ISynchronizeHandle" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISynchronizeHandle).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISynchronizeHandle" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISynchronizeHandle).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISynchronizeHandle" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISynchronizeHandle" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISynchronizeHandle), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISynchronizeHandle), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISynchronizeHandle), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISynchronizeHandle), Is.EqualTo(4));
         }
     }
 }

@@ -5,25 +5,24 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct STORAGE_DIAGNOSTIC_DATA
 {
-    public unsafe partial struct STORAGE_DIAGNOSTIC_DATA
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        public Guid ProviderId;
+    public Guid ProviderId;
 
-        [NativeTypeName("DWORD")]
-        public uint BufferSize;
+    [NativeTypeName("DWORD")]
+    public uint BufferSize;
 
-        [NativeTypeName("DWORD")]
-        public uint Reserved;
+    [NativeTypeName("DWORD")]
+    public uint Reserved;
 
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte DiagnosticDataBuffer[1];
-    }
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte DiagnosticDataBuffer[1];
 }

@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CODECAPI_AVEncVideoOutputFrameRate" /> struct.</summary>
+public static unsafe partial class CODECAPI_AVEncVideoOutputFrameRateTests
 {
-    /// <summary>Provides validation of the <see cref="CODECAPI_AVEncVideoOutputFrameRate" /> struct.</summary>
-    public static unsafe partial class CODECAPI_AVEncVideoOutputFrameRateTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncVideoOutputFrameRate" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncVideoOutputFrameRate" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncVideoOutputFrameRate).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoOutputFrameRate));
-        }
+        Assert.That(typeof(CODECAPI_AVEncVideoOutputFrameRate).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoOutputFrameRate));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoOutputFrameRate" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoOutputFrameRate>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoOutputFrameRate)));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoOutputFrameRate" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoOutputFrameRate>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoOutputFrameRate)));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoOutputFrameRate" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncVideoOutputFrameRate).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoOutputFrameRate" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CODECAPI_AVEncVideoOutputFrameRate).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoOutputFrameRate" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CODECAPI_AVEncVideoOutputFrameRate), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoOutputFrameRate" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CODECAPI_AVEncVideoOutputFrameRate), Is.EqualTo(1));
     }
 }

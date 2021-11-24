@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct VIRTUAL_STORAGE_TYPE
-    {
-        [NativeTypeName("DWORD")]
-        public uint DeviceId;
+namespace TerraFX.Interop.Windows;
 
-        public Guid VendorId;
-    }
+public partial struct VIRTUAL_STORAGE_TYPE
+{
+    [NativeTypeName("DWORD")]
+    public uint DeviceId;
+
+    public Guid VendorId;
 }

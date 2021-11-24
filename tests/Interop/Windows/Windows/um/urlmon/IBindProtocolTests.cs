@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IBindProtocol" /> struct.</summary>
+public static unsafe partial class IBindProtocolTests
 {
-    /// <summary>Provides validation of the <see cref="IBindProtocol" /> struct.</summary>
-    public static unsafe partial class IBindProtocolTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IBindProtocol" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IBindProtocol" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IBindProtocol).GUID, Is.EqualTo(IID_IBindProtocol));
-        }
+        Assert.That(typeof(IBindProtocol).GUID, Is.EqualTo(IID_IBindProtocol));
+    }
 
-        /// <summary>Validates that the <see cref="IBindProtocol" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IBindProtocol>(), Is.EqualTo(sizeof(IBindProtocol)));
-        }
+    /// <summary>Validates that the <see cref="IBindProtocol" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IBindProtocol>(), Is.EqualTo(sizeof(IBindProtocol)));
+    }
 
-        /// <summary>Validates that the <see cref="IBindProtocol" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IBindProtocol).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IBindProtocol" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IBindProtocol).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IBindProtocol" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IBindProtocol" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IBindProtocol), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IBindProtocol), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IBindProtocol), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IBindProtocol), Is.EqualTo(4));
         }
     }
 }

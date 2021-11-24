@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DDiscMaster2Events" /> struct.</summary>
+public static unsafe partial class DDiscMaster2EventsTests
 {
-    /// <summary>Provides validation of the <see cref="DDiscMaster2Events" /> struct.</summary>
-    public static unsafe partial class DDiscMaster2EventsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DDiscMaster2Events" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DDiscMaster2Events" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DDiscMaster2Events).GUID, Is.EqualTo(IID_DDiscMaster2Events));
-        }
+        Assert.That(typeof(DDiscMaster2Events).GUID, Is.EqualTo(IID_DDiscMaster2Events));
+    }
 
-        /// <summary>Validates that the <see cref="DDiscMaster2Events" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DDiscMaster2Events>(), Is.EqualTo(sizeof(DDiscMaster2Events)));
-        }
+    /// <summary>Validates that the <see cref="DDiscMaster2Events" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DDiscMaster2Events>(), Is.EqualTo(sizeof(DDiscMaster2Events)));
+    }
 
-        /// <summary>Validates that the <see cref="DDiscMaster2Events" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DDiscMaster2Events).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DDiscMaster2Events" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DDiscMaster2Events).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DDiscMaster2Events" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DDiscMaster2Events" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DDiscMaster2Events), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(DDiscMaster2Events), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(DDiscMaster2Events), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(DDiscMaster2Events), Is.EqualTo(4));
         }
     }
 }

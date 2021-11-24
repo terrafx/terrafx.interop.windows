@@ -5,53 +5,52 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct MANAGEDAPPLICATION
 {
-    public unsafe partial struct MANAGEDAPPLICATION
-    {
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszPackageName;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszPackageName;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszPublisher;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszPublisher;
 
-        [NativeTypeName("DWORD")]
-        public uint dwVersionHi;
+    [NativeTypeName("DWORD")]
+    public uint dwVersionHi;
 
-        [NativeTypeName("DWORD")]
-        public uint dwVersionLo;
+    [NativeTypeName("DWORD")]
+    public uint dwVersionLo;
 
-        [NativeTypeName("DWORD")]
-        public uint dwRevision;
+    [NativeTypeName("DWORD")]
+    public uint dwRevision;
 
-        public Guid GpoId;
+    public Guid GpoId;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszPolicyName;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszPolicyName;
 
-        public Guid ProductId;
+    public Guid ProductId;
 
-        [NativeTypeName("LANGID")]
-        public ushort Language;
+    [NativeTypeName("LANGID")]
+    public ushort Language;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszOwner;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszOwner;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszCompany;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszCompany;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszComments;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszComments;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszContact;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszContact;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszSupportUrl;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszSupportUrl;
 
-        [NativeTypeName("DWORD")]
-        public uint dwPathType;
+    [NativeTypeName("DWORD")]
+    public uint dwPathType;
 
-        public BOOL bInstalled;
-    }
+    public BOOL bInstalled;
 }

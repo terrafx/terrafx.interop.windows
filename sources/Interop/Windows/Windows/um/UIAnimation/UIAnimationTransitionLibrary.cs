@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("1D6322AD-AA85-4EF5-A828-86D71067D145")]
+public partial struct UIAnimationTransitionLibrary
 {
-    [Guid("1D6322AD-AA85-4EF5-A828-86D71067D145")]
-    public partial struct UIAnimationTransitionLibrary
-    {
-    }
 }

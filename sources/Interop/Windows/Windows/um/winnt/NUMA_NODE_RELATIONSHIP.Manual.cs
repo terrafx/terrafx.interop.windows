@@ -6,17 +6,16 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct NUMA_NODE_RELATIONSHIP
 {
-    public unsafe partial struct NUMA_NODE_RELATIONSHIP
+    public Span<GROUP_AFFINITY> GroupMasks
     {
-        public Span<GROUP_AFFINITY> GroupMasks
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.GroupMasks.AsSpan(GroupCount);
-            }
+            return Anonymous.GroupMasks.AsSpan(GroupCount);
         }
     }
 }

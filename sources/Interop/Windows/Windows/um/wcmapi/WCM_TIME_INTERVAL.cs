@@ -5,30 +5,29 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct WCM_TIME_INTERVAL
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct WCM_TIME_INTERVAL
-    {
-        [NativeTypeName("WORD")]
-        public ushort wYear;
+    [NativeTypeName("WORD")]
+    public ushort wYear;
 
-        [NativeTypeName("WORD")]
-        public ushort wMonth;
+    [NativeTypeName("WORD")]
+    public ushort wMonth;
 
-        [NativeTypeName("WORD")]
-        public ushort wDay;
+    [NativeTypeName("WORD")]
+    public ushort wDay;
 
-        [NativeTypeName("WORD")]
-        public ushort wHour;
+    [NativeTypeName("WORD")]
+    public ushort wHour;
 
-        [NativeTypeName("WORD")]
-        public ushort wMinute;
+    [NativeTypeName("WORD")]
+    public ushort wMinute;
 
-        [NativeTypeName("WORD")]
-        public ushort wSecond;
+    [NativeTypeName("WORD")]
+    public ushort wSecond;
 
-        [NativeTypeName("WORD")]
-        public ushort wMilliseconds;
-    }
+    [NativeTypeName("WORD")]
+    public ushort wMilliseconds;
 }

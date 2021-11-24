@@ -3,23 +3,22 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SP_DRVINSTALL_PARAMS64
 {
-    public partial struct SP_DRVINSTALL_PARAMS64
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint Rank;
+    [NativeTypeName("DWORD")]
+    public uint Rank;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        [NativeTypeName("DWORD_PTR")]
-        public nuint PrivateData;
+    [NativeTypeName("DWORD_PTR")]
+    public nuint PrivateData;
 
-        [NativeTypeName("DWORD")]
-        public uint Reserved;
-    }
+    [NativeTypeName("DWORD")]
+    public uint Reserved;
 }

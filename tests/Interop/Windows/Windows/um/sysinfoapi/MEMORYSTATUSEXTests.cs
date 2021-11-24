@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MEMORYSTATUSEX" /> struct.</summary>
+public static unsafe partial class MEMORYSTATUSEXTests
 {
-    /// <summary>Provides validation of the <see cref="MEMORYSTATUSEX" /> struct.</summary>
-    public static unsafe partial class MEMORYSTATUSEXTests
+    /// <summary>Validates that the <see cref="MEMORYSTATUSEX" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MEMORYSTATUSEX" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MEMORYSTATUSEX>(), Is.EqualTo(sizeof(MEMORYSTATUSEX)));
-        }
+        Assert.That(Marshal.SizeOf<MEMORYSTATUSEX>(), Is.EqualTo(sizeof(MEMORYSTATUSEX)));
+    }
 
-        /// <summary>Validates that the <see cref="MEMORYSTATUSEX" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MEMORYSTATUSEX).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MEMORYSTATUSEX" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MEMORYSTATUSEX).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MEMORYSTATUSEX" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MEMORYSTATUSEX), Is.EqualTo(64));
-        }
+    /// <summary>Validates that the <see cref="MEMORYSTATUSEX" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MEMORYSTATUSEX), Is.EqualTo(64));
     }
 }

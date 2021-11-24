@@ -7,34 +7,33 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct FILE_TYPE_NOTIFICATION_INPUT
 {
-    public partial struct FILE_TYPE_NOTIFICATION_INPUT
+    [NativeTypeName("DWORD")]
+    public uint Flags;
+
+    [NativeTypeName("DWORD")]
+    public uint NumFileTypeIDs;
+
+    [NativeTypeName("GUID [1]")]
+    public _FileTypeID_e__FixedBuffer FileTypeID;
+
+    public partial struct _FileTypeID_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+        public Guid e0;
 
-        [NativeTypeName("DWORD")]
-        public uint NumFileTypeIDs;
-
-        [NativeTypeName("GUID [1]")]
-        public _FileTypeID_e__FixedBuffer FileTypeID;
-
-        public partial struct _FileTypeID_e__FixedBuffer
+        public ref Guid this[int index]
         {
-            public Guid e0;
-
-            public ref Guid this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<Guid> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<Guid> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

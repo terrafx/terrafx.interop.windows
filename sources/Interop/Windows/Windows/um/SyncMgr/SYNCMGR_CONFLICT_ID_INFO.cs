@@ -3,12 +3,11 @@
 // Ported from um/SyncMgr.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct SYNCMGR_CONFLICT_ID_INFO
-    {
-        public BYTE_BLOB* pblobID;
+namespace TerraFX.Interop.Windows;
 
-        public BYTE_BLOB* pblobExtra;
-    }
+public unsafe partial struct SYNCMGR_CONFLICT_ID_INFO
+{
+    public BYTE_BLOB* pblobID;
+
+    public BYTE_BLOB* pblobExtra;
 }

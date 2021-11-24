@@ -3,21 +3,20 @@
 // Ported from um/amvideo.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct ANALOGVIDEOINFO
 {
-    public partial struct ANALOGVIDEOINFO
-    {
-        public RECT rcSource;
+    public RECT rcSource;
 
-        public RECT rcTarget;
+    public RECT rcTarget;
 
-        [NativeTypeName("DWORD")]
-        public uint dwActiveWidth;
+    [NativeTypeName("DWORD")]
+    public uint dwActiveWidth;
 
-        [NativeTypeName("DWORD")]
-        public uint dwActiveHeight;
+    [NativeTypeName("DWORD")]
+    public uint dwActiveHeight;
 
-        [NativeTypeName("REFERENCE_TIME")]
-        public long AvgTimePerFrame;
-    }
+    [NativeTypeName("REFERENCE_TIME")]
+    public long AvgTimePerFrame;
 }

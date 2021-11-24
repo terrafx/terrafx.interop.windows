@@ -6,117 +6,116 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct HIDP_BUTTON_CAPS
 {
-    public unsafe partial struct HIDP_BUTTON_CAPS
+    [NativeTypeName("USAGE")]
+    public ushort UsagePage;
+
+    [NativeTypeName("UCHAR")]
+    public byte ReportID;
+
+    [NativeTypeName("BOOLEAN")]
+    public byte IsAlias;
+
+    public ushort BitField;
+
+    public ushort LinkCollection;
+
+    [NativeTypeName("USAGE")]
+    public ushort LinkUsage;
+
+    [NativeTypeName("USAGE")]
+    public ushort LinkUsagePage;
+
+    [NativeTypeName("BOOLEAN")]
+    public byte IsRange;
+
+    [NativeTypeName("BOOLEAN")]
+    public byte IsStringRange;
+
+    [NativeTypeName("BOOLEAN")]
+    public byte IsDesignatorRange;
+
+    [NativeTypeName("BOOLEAN")]
+    public byte IsAbsolute;
+
+    [NativeTypeName("ULONG [10]")]
+    public fixed uint Reserved[10];
+
+    [NativeTypeName("_HIDP_BUTTON_CAPS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/hidpi.h:86:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public ref _Anonymous_e__Union._Range_e__Struct Range
     {
-        [NativeTypeName("USAGE")]
-        public ushort UsagePage;
-
-        [NativeTypeName("UCHAR")]
-        public byte ReportID;
-
-        [NativeTypeName("BOOLEAN")]
-        public byte IsAlias;
-
-        public ushort BitField;
-
-        public ushort LinkCollection;
-
-        [NativeTypeName("USAGE")]
-        public ushort LinkUsage;
-
-        [NativeTypeName("USAGE")]
-        public ushort LinkUsagePage;
-
-        [NativeTypeName("BOOLEAN")]
-        public byte IsRange;
-
-        [NativeTypeName("BOOLEAN")]
-        public byte IsStringRange;
-
-        [NativeTypeName("BOOLEAN")]
-        public byte IsDesignatorRange;
-
-        [NativeTypeName("BOOLEAN")]
-        public byte IsAbsolute;
-
-        [NativeTypeName("ULONG [10]")]
-        public fixed uint Reserved[10];
-
-        [NativeTypeName("_HIDP_BUTTON_CAPS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/hidpi.h:86:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public ref _Anonymous_e__Union._Range_e__Struct Range
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Range, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Range, 1));
+        }
+    }
+
+    public ref _Anonymous_e__Union._NotRange_e__Struct NotRange
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.NotRange, 1));
+        }
+    }
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/hidpi.h:87:9)")]
+        public _Range_e__Struct Range;
+
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/hidpi.h:93:9)")]
+        public _NotRange_e__Struct NotRange;
+
+        public partial struct _Range_e__Struct
+        {
+            [NativeTypeName("USAGE")]
+            public ushort UsageMin;
+
+            [NativeTypeName("USAGE")]
+            public ushort UsageMax;
+
+            public ushort StringMin;
+
+            public ushort StringMax;
+
+            public ushort DesignatorMin;
+
+            public ushort DesignatorMax;
+
+            public ushort DataIndexMin;
+
+            public ushort DataIndexMax;
         }
 
-        public ref _Anonymous_e__Union._NotRange_e__Struct NotRange
+        public partial struct _NotRange_e__Struct
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.NotRange, 1));
-            }
-        }
+            [NativeTypeName("USAGE")]
+            public ushort Usage;
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/hidpi.h:87:9)")]
-            public _Range_e__Struct Range;
+            [NativeTypeName("USAGE")]
+            public ushort Reserved1;
 
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/hidpi.h:93:9)")]
-            public _NotRange_e__Struct NotRange;
+            public ushort StringIndex;
 
-            public partial struct _Range_e__Struct
-            {
-                [NativeTypeName("USAGE")]
-                public ushort UsageMin;
+            public ushort Reserved2;
 
-                [NativeTypeName("USAGE")]
-                public ushort UsageMax;
+            public ushort DesignatorIndex;
 
-                public ushort StringMin;
+            public ushort Reserved3;
 
-                public ushort StringMax;
+            public ushort DataIndex;
 
-                public ushort DesignatorMin;
-
-                public ushort DesignatorMax;
-
-                public ushort DataIndexMin;
-
-                public ushort DataIndexMax;
-            }
-
-            public partial struct _NotRange_e__Struct
-            {
-                [NativeTypeName("USAGE")]
-                public ushort Usage;
-
-                [NativeTypeName("USAGE")]
-                public ushort Reserved1;
-
-                public ushort StringIndex;
-
-                public ushort Reserved2;
-
-                public ushort DesignatorIndex;
-
-                public ushort Reserved3;
-
-                public ushort DataIndex;
-
-                public ushort Reserved4;
-            }
+            public ushort Reserved4;
         }
     }
 }

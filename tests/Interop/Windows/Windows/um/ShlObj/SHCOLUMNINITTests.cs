@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SHCOLUMNINIT" /> struct.</summary>
+public static unsafe partial class SHCOLUMNINITTests
 {
-    /// <summary>Provides validation of the <see cref="SHCOLUMNINIT" /> struct.</summary>
-    public static unsafe partial class SHCOLUMNINITTests
+    /// <summary>Validates that the <see cref="SHCOLUMNINIT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SHCOLUMNINIT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SHCOLUMNINIT>(), Is.EqualTo(sizeof(SHCOLUMNINIT)));
-        }
+        Assert.That(Marshal.SizeOf<SHCOLUMNINIT>(), Is.EqualTo(sizeof(SHCOLUMNINIT)));
+    }
 
-        /// <summary>Validates that the <see cref="SHCOLUMNINIT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SHCOLUMNINIT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SHCOLUMNINIT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SHCOLUMNINIT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SHCOLUMNINIT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SHCOLUMNINIT), Is.EqualTo(528));
-        }
+    /// <summary>Validates that the <see cref="SHCOLUMNINIT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SHCOLUMNINIT), Is.EqualTo(528));
     }
 }

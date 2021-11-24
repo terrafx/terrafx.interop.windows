@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFMediaEngineNotify" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class IMFMediaEngineNotifyTests
 {
-    /// <summary>Provides validation of the <see cref="IMFMediaEngineNotify" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class IMFMediaEngineNotifyTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFMediaEngineNotify" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFMediaEngineNotify" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFMediaEngineNotify).GUID, Is.EqualTo(IID_IMFMediaEngineNotify));
-        }
+        Assert.That(typeof(IMFMediaEngineNotify).GUID, Is.EqualTo(IID_IMFMediaEngineNotify));
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaEngineNotify" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFMediaEngineNotify>(), Is.EqualTo(sizeof(IMFMediaEngineNotify)));
-        }
+    /// <summary>Validates that the <see cref="IMFMediaEngineNotify" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFMediaEngineNotify>(), Is.EqualTo(sizeof(IMFMediaEngineNotify)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaEngineNotify" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFMediaEngineNotify).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFMediaEngineNotify" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFMediaEngineNotify).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaEngineNotify" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFMediaEngineNotify" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFMediaEngineNotify), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFMediaEngineNotify), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFMediaEngineNotify), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFMediaEngineNotify), Is.EqualTo(4));
         }
     }
 }

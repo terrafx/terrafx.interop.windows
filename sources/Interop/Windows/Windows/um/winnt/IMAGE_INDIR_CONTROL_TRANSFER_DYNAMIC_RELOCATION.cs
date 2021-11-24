@@ -6,91 +6,90 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct IMAGE_INDIR_CONTROL_TRANSFER_DYNAMIC_RELOCATION
+    public ushort _bitfield;
+
+    [NativeTypeName("WORD : 12")]
+    public ushort PageRelativeOffset
     {
-        public ushort _bitfield;
-
-        [NativeTypeName("WORD : 12")]
-        public ushort PageRelativeOffset
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (ushort)(_bitfield & 0xFFFu);
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (ushort)((_bitfield & ~0xFFFu) | (value & 0xFFFu));
-            }
+            return (ushort)(_bitfield & 0xFFFu);
         }
 
-        [NativeTypeName("WORD : 1")]
-        public ushort IndirectCall
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (ushort)((_bitfield >> 12) & 0x1u);
-            }
+            _bitfield = (ushort)((_bitfield & ~0xFFFu) | (value & 0xFFFu));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (ushort)((_bitfield & ~(0x1u << 12)) | ((value & 0x1u) << 12));
-            }
+    [NativeTypeName("WORD : 1")]
+    public ushort IndirectCall
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (ushort)((_bitfield >> 12) & 0x1u);
         }
 
-        [NativeTypeName("WORD : 1")]
-        public ushort RexWPrefix
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (ushort)((_bitfield >> 13) & 0x1u);
-            }
+            _bitfield = (ushort)((_bitfield & ~(0x1u << 12)) | ((value & 0x1u) << 12));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (ushort)((_bitfield & ~(0x1u << 13)) | ((value & 0x1u) << 13));
-            }
+    [NativeTypeName("WORD : 1")]
+    public ushort RexWPrefix
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (ushort)((_bitfield >> 13) & 0x1u);
         }
 
-        [NativeTypeName("WORD : 1")]
-        public ushort CfgCheck
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (ushort)((_bitfield >> 14) & 0x1u);
-            }
+            _bitfield = (ushort)((_bitfield & ~(0x1u << 13)) | ((value & 0x1u) << 13));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (ushort)((_bitfield & ~(0x1u << 14)) | ((value & 0x1u) << 14));
-            }
+    [NativeTypeName("WORD : 1")]
+    public ushort CfgCheck
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (ushort)((_bitfield >> 14) & 0x1u);
         }
 
-        [NativeTypeName("WORD : 1")]
-        public ushort Reserved
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (ushort)((_bitfield >> 15) & 0x1u);
-            }
+            _bitfield = (ushort)((_bitfield & ~(0x1u << 14)) | ((value & 0x1u) << 14));
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (ushort)((_bitfield & ~(0x1u << 15)) | ((value & 0x1u) << 15));
-            }
+    [NativeTypeName("WORD : 1")]
+    public ushort Reserved
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (ushort)((_bitfield >> 15) & 0x1u);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (ushort)((_bitfield & ~(0x1u << 15)) | ((value & 0x1u) << 15));
         }
     }
 }

@@ -7,285 +7,284 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("A39184B7-6A36-42DE-8EEC-7DF9F3F59F33")]
+[NativeTypeName("struct IDiaFrameData : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface
 {
-    [Guid("A39184B7-6A36-42DE-8EEC-7DF9F3F59F33")]
-    [NativeTypeName("struct IDiaFrameData : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaFrameData : IDiaFrameData.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDiaFrameData*, Guid*, void**, int>)(lpVtbl[0]))((IDiaFrameData*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDiaFrameData*, Guid*, void**, int>)(lpVtbl[0]))((IDiaFrameData*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDiaFrameData*, uint>)(lpVtbl[1]))((IDiaFrameData*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDiaFrameData*, uint>)(lpVtbl[1]))((IDiaFrameData*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDiaFrameData*, uint>)(lpVtbl[2]))((IDiaFrameData*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDiaFrameData*, uint>)(lpVtbl[2]))((IDiaFrameData*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT get_addressSection([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[3]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT get_addressOffset([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[4]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[5]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaFrameData*, ulong*, int>)(lpVtbl[6]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT get_lengthBlock([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[7]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT get_lengthLocals([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[8]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT get_lengthParams([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[9]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT get_maxStack([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[10]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT get_lengthProlog([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[11]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT get_lengthSavedRegisters([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[12]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT get_program([NativeTypeName("BSTR *")] ushort** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaFrameData*, ushort**, int>)(lpVtbl[13]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT get_systemExceptionHandling(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaFrameData*, BOOL*, int>)(lpVtbl[14]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT get_cplusplusExceptionHandling(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaFrameData*, BOOL*, int>)(lpVtbl[15]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT get_functionStart(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaFrameData*, BOOL*, int>)(lpVtbl[16]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT get_allocatesBasePointer(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaFrameData*, BOOL*, int>)(lpVtbl[17]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT get_type([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[18]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT get_functionParent(IDiaFrameData** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaFrameData*, IDiaFrameData**, int>)(lpVtbl[19]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT execute(IDiaStackWalkFrame* frame)
+    {
+        return ((delegate* unmanaged<IDiaFrameData*, IDiaStackWalkFrame*, int>)(lpVtbl[20]))((IDiaFrameData*)Unsafe.AsPointer(ref this), frame);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT get_addressSection([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[3]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_addressSection([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT get_addressOffset([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[4]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_addressOffset([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[5]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaFrameData*, ulong*, int>)(lpVtbl[6]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT get_lengthBlock([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[7]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_lengthBlock([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT get_lengthLocals([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[8]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_lengthLocals([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT get_lengthParams([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[9]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_lengthParams([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT get_maxStack([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[10]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_maxStack([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT get_lengthProlog([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[11]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_lengthProlog([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT get_lengthSavedRegisters([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[12]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_lengthSavedRegisters([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT get_program([NativeTypeName("BSTR *")] ushort** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaFrameData*, ushort**, int>)(lpVtbl[13]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_program([NativeTypeName("BSTR *")] ushort** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT get_systemExceptionHandling(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaFrameData*, BOOL*, int>)(lpVtbl[14]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_systemExceptionHandling(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT get_cplusplusExceptionHandling(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaFrameData*, BOOL*, int>)(lpVtbl[15]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_cplusplusExceptionHandling(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT get_functionStart(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaFrameData*, BOOL*, int>)(lpVtbl[16]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_functionStart(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT get_allocatesBasePointer(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaFrameData*, BOOL*, int>)(lpVtbl[17]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_allocatesBasePointer(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT get_type([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaFrameData*, uint*, int>)(lpVtbl[18]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_type([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT get_functionParent(IDiaFrameData** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaFrameData*, IDiaFrameData**, int>)(lpVtbl[19]))((IDiaFrameData*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_functionParent(IDiaFrameData** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT execute(IDiaStackWalkFrame* frame)
-        {
-            return ((delegate* unmanaged<IDiaFrameData*, IDiaStackWalkFrame*, int>)(lpVtbl[20]))((IDiaFrameData*)Unsafe.AsPointer(ref this), frame);
-        }
+        HRESULT execute(IDiaStackWalkFrame* frame);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT get_addressSection([NativeTypeName("DWORD *")] uint* pRetVal);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaFrameData*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT get_addressOffset([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaFrameData*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaFrameData*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaFrameData*, uint*, int> get_addressSection;
 
-            [VtblIndex(7)]
-            HRESULT get_lengthBlock([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaFrameData*, uint*, int> get_addressOffset;
 
-            [VtblIndex(8)]
-            HRESULT get_lengthLocals([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaFrameData*, uint*, int> get_relativeVirtualAddress;
 
-            [VtblIndex(9)]
-            HRESULT get_lengthParams([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaFrameData*, ulong*, int> get_virtualAddress;
 
-            [VtblIndex(10)]
-            HRESULT get_maxStack([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaFrameData*, uint*, int> get_lengthBlock;
 
-            [VtblIndex(11)]
-            HRESULT get_lengthProlog([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaFrameData*, uint*, int> get_lengthLocals;
 
-            [VtblIndex(12)]
-            HRESULT get_lengthSavedRegisters([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaFrameData*, uint*, int> get_lengthParams;
 
-            [VtblIndex(13)]
-            HRESULT get_program([NativeTypeName("BSTR *")] ushort** pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaFrameData*, uint*, int> get_maxStack;
 
-            [VtblIndex(14)]
-            HRESULT get_systemExceptionHandling(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaFrameData*, uint*, int> get_lengthProlog;
 
-            [VtblIndex(15)]
-            HRESULT get_cplusplusExceptionHandling(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaFrameData*, uint*, int> get_lengthSavedRegisters;
 
-            [VtblIndex(16)]
-            HRESULT get_functionStart(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaFrameData*, ushort**, int> get_program;
 
-            [VtblIndex(17)]
-            HRESULT get_allocatesBasePointer(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaFrameData*, BOOL*, int> get_systemExceptionHandling;
 
-            [VtblIndex(18)]
-            HRESULT get_type([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaFrameData*, BOOL*, int> get_cplusplusExceptionHandling;
 
-            [VtblIndex(19)]
-            HRESULT get_functionParent(IDiaFrameData** pRetVal);
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaFrameData*, BOOL*, int> get_functionStart;
 
-            [VtblIndex(20)]
-            HRESULT execute(IDiaStackWalkFrame* frame);
-        }
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaFrameData*, BOOL*, int> get_allocatesBasePointer;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaFrameData*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaFrameData*, uint*, int> get_type;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaFrameData*, uint> AddRef;
+        [NativeTypeName("HRESULT (IDiaFrameData **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaFrameData*, IDiaFrameData**, int> get_functionParent;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaFrameData*, uint> Release;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_addressSection;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_addressOffset;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_relativeVirtualAddress;
-
-            [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaFrameData*, ulong*, int> get_virtualAddress;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_lengthBlock;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_lengthLocals;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_lengthParams;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_maxStack;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_lengthProlog;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_lengthSavedRegisters;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaFrameData*, ushort**, int> get_program;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaFrameData*, BOOL*, int> get_systemExceptionHandling;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaFrameData*, BOOL*, int> get_cplusplusExceptionHandling;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaFrameData*, BOOL*, int> get_functionStart;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaFrameData*, BOOL*, int> get_allocatesBasePointer;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaFrameData*, uint*, int> get_type;
-
-            [NativeTypeName("HRESULT (IDiaFrameData **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaFrameData*, IDiaFrameData**, int> get_functionParent;
-
-            [NativeTypeName("HRESULT (IDiaStackWalkFrame *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaFrameData*, IDiaStackWalkFrame*, int> execute;
-        }
+        [NativeTypeName("HRESULT (IDiaStackWalkFrame *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaFrameData*, IDiaStackWalkFrame*, int> execute;
     }
 }

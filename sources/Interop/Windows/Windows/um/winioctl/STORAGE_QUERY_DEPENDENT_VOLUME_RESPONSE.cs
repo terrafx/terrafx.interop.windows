@@ -6,47 +6,46 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
 {
-    public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
+    [NativeTypeName("DWORD")]
+    public uint ResponseLevel;
+
+    [NativeTypeName("DWORD")]
+    public uint NumberEntries;
+
+    [NativeTypeName("_STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:14049:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public ref STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY Lev1Depends
     {
-        [NativeTypeName("DWORD")]
-        public uint ResponseLevel;
-
-        [NativeTypeName("DWORD")]
-        public uint NumberEntries;
-
-        [NativeTypeName("_STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:14049:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public ref STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY Lev1Depends
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Lev1Depends, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Lev1Depends, 1));
         }
+    }
 
-        public ref STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY Lev2Depends
+    public ref STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY Lev2Depends
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Lev2Depends, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Lev2Depends, 1));
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY []")]
-            public STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY Lev1Depends;
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY []")]
+        public STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY Lev1Depends;
 
-            [FieldOffset(0)]
-            [NativeTypeName("STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY []")]
-            public STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY Lev2Depends;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY []")]
+        public STORAGE_QUERY_DEPENDENT_VOLUME_LEV2_ENTRY Lev2Depends;
     }
 }

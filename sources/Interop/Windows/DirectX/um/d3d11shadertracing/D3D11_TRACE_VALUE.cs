@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
-{
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct D3D11_TRACE_VALUE
-    {
-        [NativeTypeName("UINT [4]")]
-        public fixed uint Bits[4];
+namespace TerraFX.Interop.DirectX;
 
-        [NativeTypeName("D3D11_TRACE_COMPONENT_MASK")]
-        public byte ValidMask;
-    }
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct D3D11_TRACE_VALUE
+{
+    [NativeTypeName("UINT [4]")]
+    public fixed uint Bits[4];
+
+    [NativeTypeName("D3D11_TRACE_COMPONENT_MASK")]
+    public byte ValidMask;
 }

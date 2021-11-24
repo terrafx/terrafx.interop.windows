@@ -5,28 +5,27 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct AM_MEDIA_TYPE
 {
-    public unsafe partial struct AM_MEDIA_TYPE
-    {
-        public Guid majortype;
+    public Guid majortype;
 
-        public Guid subtype;
+    public Guid subtype;
 
-        public BOOL bFixedSizeSamples;
+    public BOOL bFixedSizeSamples;
 
-        public BOOL bTemporalCompression;
+    public BOOL bTemporalCompression;
 
-        [NativeTypeName("ULONG")]
-        public uint lSampleSize;
+    [NativeTypeName("ULONG")]
+    public uint lSampleSize;
 
-        public Guid formattype;
+    public Guid formattype;
 
-        public IUnknown* pUnk;
+    public IUnknown* pUnk;
 
-        [NativeTypeName("ULONG")]
-        public uint cbFormat;
+    [NativeTypeName("ULONG")]
+    public uint cbFormat;
 
-        public byte* pbFormat;
-    }
+    public byte* pbFormat;
 }

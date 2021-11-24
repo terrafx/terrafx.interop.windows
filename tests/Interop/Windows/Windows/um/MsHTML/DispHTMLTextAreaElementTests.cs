@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DispHTMLTextAreaElement" /> struct.</summary>
+public static unsafe partial class DispHTMLTextAreaElementTests
 {
-    /// <summary>Provides validation of the <see cref="DispHTMLTextAreaElement" /> struct.</summary>
-    public static unsafe partial class DispHTMLTextAreaElementTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispHTMLTextAreaElement" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispHTMLTextAreaElement" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DispHTMLTextAreaElement).GUID, Is.EqualTo(IID_DispHTMLTextAreaElement));
-        }
+        Assert.That(typeof(DispHTMLTextAreaElement).GUID, Is.EqualTo(IID_DispHTMLTextAreaElement));
+    }
 
-        /// <summary>Validates that the <see cref="DispHTMLTextAreaElement" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DispHTMLTextAreaElement>(), Is.EqualTo(sizeof(DispHTMLTextAreaElement)));
-        }
+    /// <summary>Validates that the <see cref="DispHTMLTextAreaElement" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DispHTMLTextAreaElement>(), Is.EqualTo(sizeof(DispHTMLTextAreaElement)));
+    }
 
-        /// <summary>Validates that the <see cref="DispHTMLTextAreaElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DispHTMLTextAreaElement).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DispHTMLTextAreaElement" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DispHTMLTextAreaElement).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DispHTMLTextAreaElement" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DispHTMLTextAreaElement" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DispHTMLTextAreaElement), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(DispHTMLTextAreaElement), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(DispHTMLTextAreaElement), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(DispHTMLTextAreaElement), Is.EqualTo(4));
         }
     }
 }

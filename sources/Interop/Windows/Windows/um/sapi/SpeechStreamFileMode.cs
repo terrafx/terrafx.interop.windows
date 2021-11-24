@@ -5,13 +5,12 @@
 
 using static TerraFX.Interop.Windows.SPFILEMODE;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechStreamFileMode
 {
-    public enum SpeechStreamFileMode
-    {
-        SSFMOpenForRead = SPFM_OPEN_READONLY,
-        SSFMOpenReadWrite = SPFM_OPEN_READWRITE,
-        SSFMCreate = SPFM_CREATE,
-        SSFMCreateForWrite = SPFM_CREATE_ALWAYS,
-    }
+    SSFMOpenForRead = SPFM_OPEN_READONLY,
+    SSFMOpenReadWrite = SPFM_OPEN_READWRITE,
+    SSFMCreate = SPFM_CREATE,
+    SSFMCreateForWrite = SPFM_CREATE_ALWAYS,
 }

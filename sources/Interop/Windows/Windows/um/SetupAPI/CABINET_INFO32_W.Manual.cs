@@ -5,24 +5,23 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct CABINET_INFO32_W
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct CABINET_INFO32_W
-    {
-        [NativeTypeName("PCWSTR")]
-        public ushort* CabinetPath;
+    [NativeTypeName("PCWSTR")]
+    public ushort* CabinetPath;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* CabinetFile;
+    [NativeTypeName("PCWSTR")]
+    public ushort* CabinetFile;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* DiskName;
+    [NativeTypeName("PCWSTR")]
+    public ushort* DiskName;
 
-        [NativeTypeName("USHORT")]
-        public ushort SetId;
+    [NativeTypeName("USHORT")]
+    public ushort SetId;
 
-        [NativeTypeName("USHORT")]
-        public ushort CabinetNumber;
-    }
+    [NativeTypeName("USHORT")]
+    public ushort CabinetNumber;
 }

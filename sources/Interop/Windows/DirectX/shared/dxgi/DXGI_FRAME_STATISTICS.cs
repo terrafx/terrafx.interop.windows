@@ -5,18 +5,17 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DXGI_FRAME_STATISTICS
 {
-    public partial struct DXGI_FRAME_STATISTICS
-    {
-        public uint PresentCount;
+    public uint PresentCount;
 
-        public uint PresentRefreshCount;
+    public uint PresentRefreshCount;
 
-        public uint SyncRefreshCount;
+    public uint SyncRefreshCount;
 
-        public LARGE_INTEGER SyncQPCTime;
+    public LARGE_INTEGER SyncQPCTime;
 
-        public LARGE_INTEGER SyncGPUTime;
-    }
+    public LARGE_INTEGER SyncGPUTime;
 }

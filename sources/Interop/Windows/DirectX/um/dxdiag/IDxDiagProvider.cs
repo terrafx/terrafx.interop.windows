@@ -7,76 +7,75 @@ using System;
 using System.Runtime.CompilerServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[NativeTypeName("struct IDxDiagProvider : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IDxDiagProvider : IDxDiagProvider.Interface
 {
-    [NativeTypeName("struct IDxDiagProvider : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDxDiagProvider : IDxDiagProvider.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDxDiagProvider*, Guid*, void**, int>)(lpVtbl[0]))((IDxDiagProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDxDiagProvider*, Guid*, void**, int>)(lpVtbl[0]))((IDxDiagProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDxDiagProvider*, uint>)(lpVtbl[1]))((IDxDiagProvider*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDxDiagProvider*, uint>)(lpVtbl[1]))((IDxDiagProvider*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDxDiagProvider*, uint>)(lpVtbl[2]))((IDxDiagProvider*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDxDiagProvider*, uint>)(lpVtbl[2]))((IDxDiagProvider*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Initialize(DXDIAG_INIT_PARAMS* pParams)
+    {
+        return ((delegate* unmanaged<IDxDiagProvider*, DXDIAG_INIT_PARAMS*, int>)(lpVtbl[3]))((IDxDiagProvider*)Unsafe.AsPointer(ref this), pParams);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetRootContainer(IDxDiagContainer** ppInstance)
+    {
+        return ((delegate* unmanaged<IDxDiagProvider*, IDxDiagContainer**, int>)(lpVtbl[4]))((IDxDiagProvider*)Unsafe.AsPointer(ref this), ppInstance);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Initialize(DXDIAG_INIT_PARAMS* pParams)
-        {
-            return ((delegate* unmanaged<IDxDiagProvider*, DXDIAG_INIT_PARAMS*, int>)(lpVtbl[3]))((IDxDiagProvider*)Unsafe.AsPointer(ref this), pParams);
-        }
+        HRESULT Initialize(DXDIAG_INIT_PARAMS* pParams);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetRootContainer(IDxDiagContainer** ppInstance)
-        {
-            return ((delegate* unmanaged<IDxDiagProvider*, IDxDiagContainer**, int>)(lpVtbl[4]))((IDxDiagProvider*)Unsafe.AsPointer(ref this), ppInstance);
-        }
+        HRESULT GetRootContainer(IDxDiagContainer** ppInstance);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Initialize(DXDIAG_INIT_PARAMS* pParams);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDxDiagProvider*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetRootContainer(IDxDiagContainer** ppInstance);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDxDiagProvider*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDxDiagProvider*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDxDiagProvider*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDxDiagProvider*, uint> AddRef;
+        [NativeTypeName("HRESULT (DXDIAG_INIT_PARAMS *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDxDiagProvider*, DXDIAG_INIT_PARAMS*, int> Initialize;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDxDiagProvider*, uint> Release;
-
-            [NativeTypeName("HRESULT (DXDIAG_INIT_PARAMS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDxDiagProvider*, DXDIAG_INIT_PARAMS*, int> Initialize;
-
-            [NativeTypeName("HRESULT (IDxDiagContainer **) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDxDiagProvider*, IDxDiagContainer**, int> GetRootContainer;
-        }
+        [NativeTypeName("HRESULT (IDxDiagContainer **) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDxDiagProvider*, IDxDiagContainer**, int> GetRootContainer;
     }
 }

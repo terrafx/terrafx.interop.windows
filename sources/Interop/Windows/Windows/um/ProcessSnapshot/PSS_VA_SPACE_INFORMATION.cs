@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public partial struct PSS_VA_SPACE_INFORMATION
 {
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct PSS_VA_SPACE_INFORMATION
-    {
-        [NativeTypeName("DWORD")]
-        public uint RegionCount;
-    }
+    [NativeTypeName("DWORD")]
+    public uint RegionCount;
 }

@@ -5,31 +5,30 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct IMAGE_THUNK_DATA64
 {
-    public partial struct IMAGE_THUNK_DATA64
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19464:5)")]
+    public _u1_e__Union u1;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _u1_e__Union
     {
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19464:5)")]
-        public _u1_e__Union u1;
+        [FieldOffset(0)]
+        [NativeTypeName("ULONGLONG")]
+        public ulong ForwarderString;
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _u1_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("ULONGLONG")]
-            public ulong ForwarderString;
+        [FieldOffset(0)]
+        [NativeTypeName("ULONGLONG")]
+        public ulong Function;
 
-            [FieldOffset(0)]
-            [NativeTypeName("ULONGLONG")]
-            public ulong Function;
+        [FieldOffset(0)]
+        [NativeTypeName("ULONGLONG")]
+        public ulong Ordinal;
 
-            [FieldOffset(0)]
-            [NativeTypeName("ULONGLONG")]
-            public ulong Ordinal;
-
-            [FieldOffset(0)]
-            [NativeTypeName("ULONGLONG")]
-            public ulong AddressOfData;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("ULONGLONG")]
+        public ulong AddressOfData;
     }
 }

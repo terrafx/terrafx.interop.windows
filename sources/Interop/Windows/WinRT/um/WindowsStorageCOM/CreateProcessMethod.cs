@@ -3,12 +3,11 @@
 // Ported from um/WindowsStorageCOM.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+public enum CreateProcessMethod
 {
-    public enum CreateProcessMethod
-    {
-        CpCreateProcess = 0,
-        CpCreateProcessAsUser = 1,
-        CpAicLaunchAdminProcess = 2,
-    }
+    CpCreateProcess = 0,
+    CpCreateProcessAsUser = 1,
+    CpAicLaunchAdminProcess = 2,
 }

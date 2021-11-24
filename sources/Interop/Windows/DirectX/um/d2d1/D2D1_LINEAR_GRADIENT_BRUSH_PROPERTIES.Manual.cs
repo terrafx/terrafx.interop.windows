@@ -5,13 +5,12 @@
 
 using static TerraFX.Interop.DirectX.DirectX;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES
 {
-    public partial struct D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES
+    public D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F startPoint, [NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F endPoint)
     {
-        public D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F startPoint, [NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F endPoint)
-        {
-            this = LinearGradientBrushProperties(startPoint, endPoint);
-        }
+        this = LinearGradientBrushProperties(startPoint, endPoint);
     }
 }

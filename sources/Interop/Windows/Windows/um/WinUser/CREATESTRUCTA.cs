@@ -3,37 +3,36 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CREATESTRUCTA
 {
-    public unsafe partial struct CREATESTRUCTA
-    {
-        [NativeTypeName("LPVOID")]
-        public void* lpCreateParams;
+    [NativeTypeName("LPVOID")]
+    public void* lpCreateParams;
 
-        public HINSTANCE hInstance;
+    public HINSTANCE hInstance;
 
-        public HMENU hMenu;
+    public HMENU hMenu;
 
-        public HWND hwndParent;
+    public HWND hwndParent;
 
-        public int cy;
+    public int cy;
 
-        public int cx;
+    public int cx;
 
-        public int y;
+    public int y;
 
-        public int x;
+    public int x;
 
-        [NativeTypeName("LONG")]
-        public int style;
+    [NativeTypeName("LONG")]
+    public int style;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* lpszName;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* lpszName;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* lpszClass;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* lpszClass;
 
-        [NativeTypeName("DWORD")]
-        public uint dwExStyle;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwExStyle;
 }

@@ -3,12 +3,11 @@
 // Ported from um/dwmapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum DWM_SOURCE_FRAME_SAMPLING
 {
-    public enum DWM_SOURCE_FRAME_SAMPLING
-    {
-        DWM_SOURCE_FRAME_SAMPLING_POINT,
-        DWM_SOURCE_FRAME_SAMPLING_COVERAGE,
-        DWM_SOURCE_FRAME_SAMPLING_LAST,
-    }
+    DWM_SOURCE_FRAME_SAMPLING_POINT,
+    DWM_SOURCE_FRAME_SAMPLING_COVERAGE,
+    DWM_SOURCE_FRAME_SAMPLING_LAST,
 }

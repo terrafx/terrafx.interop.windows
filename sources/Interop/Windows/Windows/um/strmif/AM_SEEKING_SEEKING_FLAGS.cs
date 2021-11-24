@@ -3,18 +3,17 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum AM_SEEKING_SEEKING_FLAGS
 {
-    public enum AM_SEEKING_SEEKING_FLAGS
-    {
-        AM_SEEKING_NoPositioning = 0,
-        AM_SEEKING_AbsolutePositioning = 0x1,
-        AM_SEEKING_RelativePositioning = 0x2,
-        AM_SEEKING_IncrementalPositioning = 0x3,
-        AM_SEEKING_PositioningBitsMask = 0x3,
-        AM_SEEKING_SeekToKeyFrame = 0x4,
-        AM_SEEKING_ReturnTime = 0x8,
-        AM_SEEKING_Segment = 0x10,
-        AM_SEEKING_NoFlush = 0x20,
-    }
+    AM_SEEKING_NoPositioning = 0,
+    AM_SEEKING_AbsolutePositioning = 0x1,
+    AM_SEEKING_RelativePositioning = 0x2,
+    AM_SEEKING_IncrementalPositioning = 0x3,
+    AM_SEEKING_PositioningBitsMask = 0x3,
+    AM_SEEKING_SeekToKeyFrame = 0x4,
+    AM_SEEKING_ReturnTime = 0x8,
+    AM_SEEKING_Segment = 0x10,
+    AM_SEEKING_NoFlush = 0x20,
 }

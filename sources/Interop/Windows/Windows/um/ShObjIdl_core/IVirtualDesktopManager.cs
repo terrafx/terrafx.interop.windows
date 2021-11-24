@@ -7,90 +7,89 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("A5CD92FF-29BE-454C-8D04-D82879FB3F1B")]
+[NativeTypeName("struct IVirtualDesktopManager : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IVirtualDesktopManager : IVirtualDesktopManager.Interface
 {
-    [Guid("A5CD92FF-29BE-454C-8D04-D82879FB3F1B")]
-    [NativeTypeName("struct IVirtualDesktopManager : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVirtualDesktopManager : IVirtualDesktopManager.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IVirtualDesktopManager*, Guid*, void**, int>)(lpVtbl[0]))((IVirtualDesktopManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IVirtualDesktopManager*, Guid*, void**, int>)(lpVtbl[0]))((IVirtualDesktopManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IVirtualDesktopManager*, uint>)(lpVtbl[1]))((IVirtualDesktopManager*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IVirtualDesktopManager*, uint>)(lpVtbl[1]))((IVirtualDesktopManager*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IVirtualDesktopManager*, uint>)(lpVtbl[2]))((IVirtualDesktopManager*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IVirtualDesktopManager*, uint>)(lpVtbl[2]))((IVirtualDesktopManager*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT IsWindowOnCurrentVirtualDesktop(HWND topLevelWindow, BOOL* onCurrentDesktop)
+    {
+        return ((delegate* unmanaged<IVirtualDesktopManager*, HWND, BOOL*, int>)(lpVtbl[3]))((IVirtualDesktopManager*)Unsafe.AsPointer(ref this), topLevelWindow, onCurrentDesktop);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetWindowDesktopId(HWND topLevelWindow, Guid* desktopId)
+    {
+        return ((delegate* unmanaged<IVirtualDesktopManager*, HWND, Guid*, int>)(lpVtbl[4]))((IVirtualDesktopManager*)Unsafe.AsPointer(ref this), topLevelWindow, desktopId);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT MoveWindowToDesktop(HWND topLevelWindow, [NativeTypeName("const GUID &")] Guid* desktopId)
+    {
+        return ((delegate* unmanaged<IVirtualDesktopManager*, HWND, Guid*, int>)(lpVtbl[5]))((IVirtualDesktopManager*)Unsafe.AsPointer(ref this), topLevelWindow, desktopId);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT IsWindowOnCurrentVirtualDesktop(HWND topLevelWindow, BOOL* onCurrentDesktop)
-        {
-            return ((delegate* unmanaged<IVirtualDesktopManager*, HWND, BOOL*, int>)(lpVtbl[3]))((IVirtualDesktopManager*)Unsafe.AsPointer(ref this), topLevelWindow, onCurrentDesktop);
-        }
+        HRESULT IsWindowOnCurrentVirtualDesktop(HWND topLevelWindow, BOOL* onCurrentDesktop);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetWindowDesktopId(HWND topLevelWindow, Guid* desktopId)
-        {
-            return ((delegate* unmanaged<IVirtualDesktopManager*, HWND, Guid*, int>)(lpVtbl[4]))((IVirtualDesktopManager*)Unsafe.AsPointer(ref this), topLevelWindow, desktopId);
-        }
+        HRESULT GetWindowDesktopId(HWND topLevelWindow, Guid* desktopId);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT MoveWindowToDesktop(HWND topLevelWindow, [NativeTypeName("const GUID &")] Guid* desktopId)
-        {
-            return ((delegate* unmanaged<IVirtualDesktopManager*, HWND, Guid*, int>)(lpVtbl[5]))((IVirtualDesktopManager*)Unsafe.AsPointer(ref this), topLevelWindow, desktopId);
-        }
+        HRESULT MoveWindowToDesktop(HWND topLevelWindow, [NativeTypeName("const GUID &")] Guid* desktopId);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT IsWindowOnCurrentVirtualDesktop(HWND topLevelWindow, BOOL* onCurrentDesktop);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IVirtualDesktopManager*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetWindowDesktopId(HWND topLevelWindow, Guid* desktopId);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IVirtualDesktopManager*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT MoveWindowToDesktop(HWND topLevelWindow, [NativeTypeName("const GUID &")] Guid* desktopId);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IVirtualDesktopManager*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IVirtualDesktopManager*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (HWND, BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IVirtualDesktopManager*, HWND, BOOL*, int> IsWindowOnCurrentVirtualDesktop;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IVirtualDesktopManager*, uint> AddRef;
+        [NativeTypeName("HRESULT (HWND, GUID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IVirtualDesktopManager*, HWND, Guid*, int> GetWindowDesktopId;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IVirtualDesktopManager*, uint> Release;
-
-            [NativeTypeName("HRESULT (HWND, BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IVirtualDesktopManager*, HWND, BOOL*, int> IsWindowOnCurrentVirtualDesktop;
-
-            [NativeTypeName("HRESULT (HWND, GUID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IVirtualDesktopManager*, HWND, Guid*, int> GetWindowDesktopId;
-
-            [NativeTypeName("HRESULT (HWND, const GUID &) __attribute__((stdcall))")]
-            public delegate* unmanaged<IVirtualDesktopManager*, HWND, Guid*, int> MoveWindowToDesktop;
-        }
+        [NativeTypeName("HRESULT (HWND, const GUID &) __attribute__((stdcall))")]
+        public delegate* unmanaged<IVirtualDesktopManager*, HWND, Guid*, int> MoveWindowToDesktop;
     }
 }

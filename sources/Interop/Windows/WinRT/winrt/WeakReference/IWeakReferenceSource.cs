@@ -8,64 +8,63 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[Guid("00000038-0000-0000-C000-000000000046")]
+[NativeTypeName("struct IWeakReferenceSource : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IWeakReferenceSource : IWeakReferenceSource.Interface
 {
-    [Guid("00000038-0000-0000-C000-000000000046")]
-    [NativeTypeName("struct IWeakReferenceSource : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IWeakReferenceSource : IWeakReferenceSource.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IWeakReferenceSource*, Guid*, void**, int>)(lpVtbl[0]))((IWeakReferenceSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IWeakReferenceSource*, Guid*, void**, int>)(lpVtbl[0]))((IWeakReferenceSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IWeakReferenceSource*, uint>)(lpVtbl[1]))((IWeakReferenceSource*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IWeakReferenceSource*, uint>)(lpVtbl[1]))((IWeakReferenceSource*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IWeakReferenceSource*, uint>)(lpVtbl[2]))((IWeakReferenceSource*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IWeakReferenceSource*, uint>)(lpVtbl[2]))((IWeakReferenceSource*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetWeakReference(IWeakReference** weakReference)
+    {
+        return ((delegate* unmanaged<IWeakReferenceSource*, IWeakReference**, int>)(lpVtbl[3]))((IWeakReferenceSource*)Unsafe.AsPointer(ref this), weakReference);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetWeakReference(IWeakReference** weakReference)
-        {
-            return ((delegate* unmanaged<IWeakReferenceSource*, IWeakReference**, int>)(lpVtbl[3]))((IWeakReferenceSource*)Unsafe.AsPointer(ref this), weakReference);
-        }
+        HRESULT GetWeakReference(IWeakReference** weakReference);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetWeakReference(IWeakReference** weakReference);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IWeakReferenceSource*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IWeakReferenceSource*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IWeakReferenceSource*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IWeakReferenceSource*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IWeakReferenceSource*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IWeakReferenceSource*, uint> Release;
-
-            [NativeTypeName("HRESULT (IWeakReference **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IWeakReferenceSource*, IWeakReference**, int> GetWeakReference;
-        }
+        [NativeTypeName("HRESULT (IWeakReference **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IWeakReferenceSource*, IWeakReference**, int> GetWeakReference;
     }
 }

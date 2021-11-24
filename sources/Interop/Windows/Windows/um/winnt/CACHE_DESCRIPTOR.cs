@@ -3,20 +3,19 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct CACHE_DESCRIPTOR
 {
-    public partial struct CACHE_DESCRIPTOR
-    {
-        public byte Level;
+    public byte Level;
 
-        public byte Associativity;
+    public byte Associativity;
 
-        [NativeTypeName("WORD")]
-        public ushort LineSize;
+    [NativeTypeName("WORD")]
+    public ushort LineSize;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        public PROCESSOR_CACHE_TYPE Type;
-    }
+    public PROCESSOR_CACHE_TYPE Type;
 }

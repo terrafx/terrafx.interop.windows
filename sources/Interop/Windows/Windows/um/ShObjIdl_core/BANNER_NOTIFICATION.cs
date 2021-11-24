@@ -3,16 +3,15 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct BANNER_NOTIFICATION
 {
-    public unsafe partial struct BANNER_NOTIFICATION
-    {
-        public BANNER_NOTIFICATION_EVENT @event;
+    public BANNER_NOTIFICATION_EVENT @event;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* providerIdentity;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* providerIdentity;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* contentId;
-    }
+    [NativeTypeName("LPCWSTR")]
+    public ushort* contentId;
 }

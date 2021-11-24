@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SVGMatrix" /> struct.</summary>
+public static unsafe partial class SVGMatrixTests
 {
-    /// <summary>Provides validation of the <see cref="SVGMatrix" /> struct.</summary>
-    public static unsafe partial class SVGMatrixTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGMatrix" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGMatrix" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SVGMatrix).GUID, Is.EqualTo(IID_SVGMatrix));
-        }
+        Assert.That(typeof(SVGMatrix).GUID, Is.EqualTo(IID_SVGMatrix));
+    }
 
-        /// <summary>Validates that the <see cref="SVGMatrix" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SVGMatrix>(), Is.EqualTo(sizeof(SVGMatrix)));
-        }
+    /// <summary>Validates that the <see cref="SVGMatrix" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SVGMatrix>(), Is.EqualTo(sizeof(SVGMatrix)));
+    }
 
-        /// <summary>Validates that the <see cref="SVGMatrix" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SVGMatrix).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SVGMatrix" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SVGMatrix).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SVGMatrix" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SVGMatrix), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SVGMatrix" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SVGMatrix), Is.EqualTo(1));
     }
 }

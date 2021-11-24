@@ -3,13 +3,12 @@
 // Ported from um/ShlObj_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum IESHORTCUTFLAGS
 {
-    public enum IESHORTCUTFLAGS
-    {
-        IESHORTCUT_NEWBROWSER = 0x01,
-        IESHORTCUT_OPENNEWTAB = 0x02,
-        IESHORTCUT_FORCENAVIGATE = 0x04,
-        IESHORTCUT_BACKGROUNDTAB = 0x08,
-    }
+    IESHORTCUT_NEWBROWSER = 0x01,
+    IESHORTCUT_OPENNEWTAB = 0x02,
+    IESHORTCUT_FORCENAVIGATE = 0x04,
+    IESHORTCUT_BACKGROUNDTAB = 0x08,
 }

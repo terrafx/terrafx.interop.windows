@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAppxManifestDriverDependency" /> struct.</summary>
+public static unsafe partial class IAppxManifestDriverDependencyTests
 {
-    /// <summary>Provides validation of the <see cref="IAppxManifestDriverDependency" /> struct.</summary>
-    public static unsafe partial class IAppxManifestDriverDependencyTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppxManifestDriverDependency" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppxManifestDriverDependency" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAppxManifestDriverDependency).GUID, Is.EqualTo(IID_IAppxManifestDriverDependency));
-        }
+        Assert.That(typeof(IAppxManifestDriverDependency).GUID, Is.EqualTo(IID_IAppxManifestDriverDependency));
+    }
 
-        /// <summary>Validates that the <see cref="IAppxManifestDriverDependency" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAppxManifestDriverDependency>(), Is.EqualTo(sizeof(IAppxManifestDriverDependency)));
-        }
+    /// <summary>Validates that the <see cref="IAppxManifestDriverDependency" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAppxManifestDriverDependency>(), Is.EqualTo(sizeof(IAppxManifestDriverDependency)));
+    }
 
-        /// <summary>Validates that the <see cref="IAppxManifestDriverDependency" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAppxManifestDriverDependency).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAppxManifestDriverDependency" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAppxManifestDriverDependency).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAppxManifestDriverDependency" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAppxManifestDriverDependency" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAppxManifestDriverDependency), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAppxManifestDriverDependency), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAppxManifestDriverDependency), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAppxManifestDriverDependency), Is.EqualTo(4));
         }
     }
 }

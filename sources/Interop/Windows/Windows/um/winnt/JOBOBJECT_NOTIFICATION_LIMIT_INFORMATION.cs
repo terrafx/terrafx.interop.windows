@@ -5,27 +5,26 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION
-    {
-        [NativeTypeName("DWORD64")]
-        public ulong IoReadBytesLimit;
+    [NativeTypeName("DWORD64")]
+    public ulong IoReadBytesLimit;
 
-        [NativeTypeName("DWORD64")]
-        public ulong IoWriteBytesLimit;
+    [NativeTypeName("DWORD64")]
+    public ulong IoWriteBytesLimit;
 
-        public LARGE_INTEGER PerJobUserTimeLimit;
+    public LARGE_INTEGER PerJobUserTimeLimit;
 
-        [NativeTypeName("DWORD64")]
-        public ulong JobMemoryLimit;
+    [NativeTypeName("DWORD64")]
+    public ulong JobMemoryLimit;
 
-        public JOBOBJECT_RATE_CONTROL_TOLERANCE RateControlTolerance;
+    public JOBOBJECT_RATE_CONTROL_TOLERANCE RateControlTolerance;
 
-        public JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL RateControlToleranceInterval;
+    public JOBOBJECT_RATE_CONTROL_TOLERANCE_INTERVAL RateControlToleranceInterval;
 
-        [NativeTypeName("DWORD")]
-        public uint LimitFlags;
-    }
+    [NativeTypeName("DWORD")]
+    public uint LimitFlags;
 }

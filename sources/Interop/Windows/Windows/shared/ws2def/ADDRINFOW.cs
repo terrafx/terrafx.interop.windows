@@ -3,28 +3,27 @@
 // Ported from shared/ws2def.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct ADDRINFOW
 {
-    public unsafe partial struct ADDRINFOW
-    {
-        public int ai_flags;
+    public int ai_flags;
 
-        public int ai_family;
+    public int ai_family;
 
-        public int ai_socktype;
+    public int ai_socktype;
 
-        public int ai_protocol;
+    public int ai_protocol;
 
-        [NativeTypeName("size_t")]
-        public nuint ai_addrlen;
+    [NativeTypeName("size_t")]
+    public nuint ai_addrlen;
 
-        [NativeTypeName("PWSTR")]
-        public ushort* ai_canonname;
+    [NativeTypeName("PWSTR")]
+    public ushort* ai_canonname;
 
-        [NativeTypeName("struct sockaddr *")]
-        public SOCKADDR* ai_addr;
+    [NativeTypeName("struct sockaddr *")]
+    public SOCKADDR* ai_addr;
 
-        [NativeTypeName("struct addrinfoW *")]
-        public ADDRINFOW* ai_next;
-    }
+    [NativeTypeName("struct addrinfoW *")]
+    public ADDRINFOW* ai_next;
 }

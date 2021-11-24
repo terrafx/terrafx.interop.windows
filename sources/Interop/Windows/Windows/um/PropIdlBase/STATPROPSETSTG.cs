@@ -5,26 +5,25 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct STATPROPSETSTG
 {
-    public partial struct STATPROPSETSTG
-    {
-        [NativeTypeName("FMTID")]
-        public Guid fmtid;
+    [NativeTypeName("FMTID")]
+    public Guid fmtid;
 
-        [NativeTypeName("CLSID")]
-        public Guid clsid;
+    [NativeTypeName("CLSID")]
+    public Guid clsid;
 
-        [NativeTypeName("DWORD")]
-        public uint grfFlags;
+    [NativeTypeName("DWORD")]
+    public uint grfFlags;
 
-        public FILETIME mtime;
+    public FILETIME mtime;
 
-        public FILETIME ctime;
+    public FILETIME ctime;
 
-        public FILETIME atime;
+    public FILETIME atime;
 
-        [NativeTypeName("DWORD")]
-        public uint dwOSVersion;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwOSVersion;
 }

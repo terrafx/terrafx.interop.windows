@@ -7,350 +7,349 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("4221B2E1-8955-46C0-BD5B-DE9897565DE7")]
+[NativeTypeName("struct IUriBuilder : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IUriBuilder : IUriBuilder.Interface
 {
-    [Guid("4221B2E1-8955-46C0-BD5B-DE9897565DE7")]
-    [NativeTypeName("struct IUriBuilder : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUriBuilder : IUriBuilder.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IUriBuilder*, Guid*, void**, int>)(lpVtbl[0]))((IUriBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, Guid*, void**, int>)(lpVtbl[0]))((IUriBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IUriBuilder*, uint>)(lpVtbl[1]))((IUriBuilder*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IUriBuilder*, uint>)(lpVtbl[1]))((IUriBuilder*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IUriBuilder*, uint>)(lpVtbl[2]))((IUriBuilder*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IUriBuilder*, uint>)(lpVtbl[2]))((IUriBuilder*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT CreateUriSimple([NativeTypeName("DWORD")] uint dwAllowEncodingPropertyMask, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUri** ppIUri)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, uint, nuint, IUri**, int>)(lpVtbl[3]))((IUriBuilder*)Unsafe.AsPointer(ref this), dwAllowEncodingPropertyMask, dwReserved, ppIUri);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT CreateUri([NativeTypeName("DWORD")] uint dwCreateFlags, [NativeTypeName("DWORD")] uint dwAllowEncodingPropertyMask, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUri** ppIUri)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, uint, uint, nuint, IUri**, int>)(lpVtbl[4]))((IUriBuilder*)Unsafe.AsPointer(ref this), dwCreateFlags, dwAllowEncodingPropertyMask, dwReserved, ppIUri);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT CreateUriWithFlags([NativeTypeName("DWORD")] uint dwCreateFlags, [NativeTypeName("DWORD")] uint dwUriBuilderFlags, [NativeTypeName("DWORD")] uint dwAllowEncodingPropertyMask, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUri** ppIUri)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, uint, uint, uint, nuint, IUri**, int>)(lpVtbl[5]))((IUriBuilder*)Unsafe.AsPointer(ref this), dwCreateFlags, dwUriBuilderFlags, dwAllowEncodingPropertyMask, dwReserved, ppIUri);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetIUri(IUri** ppIUri)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, IUri**, int>)(lpVtbl[6]))((IUriBuilder*)Unsafe.AsPointer(ref this), ppIUri);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT SetIUri(IUri* pIUri)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, IUri*, int>)(lpVtbl[7]))((IUriBuilder*)Unsafe.AsPointer(ref this), pIUri);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT GetFragment([NativeTypeName("DWORD *")] uint* pcchFragment, [NativeTypeName("LPCWSTR *")] ushort** ppwzFragment)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, uint*, ushort**, int>)(lpVtbl[8]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchFragment, ppwzFragment);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT GetHost([NativeTypeName("DWORD *")] uint* pcchHost, [NativeTypeName("LPCWSTR *")] ushort** ppwzHost)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, uint*, ushort**, int>)(lpVtbl[9]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchHost, ppwzHost);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT GetPassword([NativeTypeName("DWORD *")] uint* pcchPassword, [NativeTypeName("LPCWSTR *")] ushort** ppwzPassword)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, uint*, ushort**, int>)(lpVtbl[10]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchPassword, ppwzPassword);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT GetPath([NativeTypeName("DWORD *")] uint* pcchPath, [NativeTypeName("LPCWSTR *")] ushort** ppwzPath)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, uint*, ushort**, int>)(lpVtbl[11]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchPath, ppwzPath);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT GetPort(BOOL* pfHasPort, [NativeTypeName("DWORD *")] uint* pdwPort)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, BOOL*, uint*, int>)(lpVtbl[12]))((IUriBuilder*)Unsafe.AsPointer(ref this), pfHasPort, pdwPort);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT GetQuery([NativeTypeName("DWORD *")] uint* pcchQuery, [NativeTypeName("LPCWSTR *")] ushort** ppwzQuery)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, uint*, ushort**, int>)(lpVtbl[13]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchQuery, ppwzQuery);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT GetSchemeName([NativeTypeName("DWORD *")] uint* pcchSchemeName, [NativeTypeName("LPCWSTR *")] ushort** ppwzSchemeName)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, uint*, ushort**, int>)(lpVtbl[14]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchSchemeName, ppwzSchemeName);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT GetUserName([NativeTypeName("DWORD *")] uint* pcchUserName, [NativeTypeName("LPCWSTR *")] ushort** ppwzUserName)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, uint*, ushort**, int>)(lpVtbl[15]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchUserName, ppwzUserName);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT SetFragment([NativeTypeName("LPCWSTR")] ushort* pwzNewValue)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, ushort*, int>)(lpVtbl[16]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT SetHost([NativeTypeName("LPCWSTR")] ushort* pwzNewValue)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, ushort*, int>)(lpVtbl[17]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT SetPassword([NativeTypeName("LPCWSTR")] ushort* pwzNewValue)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, ushort*, int>)(lpVtbl[18]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT SetPath([NativeTypeName("LPCWSTR")] ushort* pwzNewValue)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, ushort*, int>)(lpVtbl[19]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT SetPort(BOOL fHasPort, [NativeTypeName("DWORD")] uint dwNewValue)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, BOOL, uint, int>)(lpVtbl[20]))((IUriBuilder*)Unsafe.AsPointer(ref this), fHasPort, dwNewValue);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(21)]
+    public HRESULT SetQuery([NativeTypeName("LPCWSTR")] ushort* pwzNewValue)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, ushort*, int>)(lpVtbl[21]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(22)]
+    public HRESULT SetSchemeName([NativeTypeName("LPCWSTR")] ushort* pwzNewValue)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, ushort*, int>)(lpVtbl[22]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(23)]
+    public HRESULT SetUserName([NativeTypeName("LPCWSTR")] ushort* pwzNewValue)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, ushort*, int>)(lpVtbl[23]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(24)]
+    public HRESULT RemoveProperties([NativeTypeName("DWORD")] uint dwPropertyMask)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, uint, int>)(lpVtbl[24]))((IUriBuilder*)Unsafe.AsPointer(ref this), dwPropertyMask);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(25)]
+    public HRESULT HasBeenModified(BOOL* pfModified)
+    {
+        return ((delegate* unmanaged<IUriBuilder*, BOOL*, int>)(lpVtbl[25]))((IUriBuilder*)Unsafe.AsPointer(ref this), pfModified);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT CreateUriSimple([NativeTypeName("DWORD")] uint dwAllowEncodingPropertyMask, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUri** ppIUri)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, uint, nuint, IUri**, int>)(lpVtbl[3]))((IUriBuilder*)Unsafe.AsPointer(ref this), dwAllowEncodingPropertyMask, dwReserved, ppIUri);
-        }
+        HRESULT CreateUriSimple([NativeTypeName("DWORD")] uint dwAllowEncodingPropertyMask, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUri** ppIUri);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT CreateUri([NativeTypeName("DWORD")] uint dwCreateFlags, [NativeTypeName("DWORD")] uint dwAllowEncodingPropertyMask, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUri** ppIUri)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, uint, uint, nuint, IUri**, int>)(lpVtbl[4]))((IUriBuilder*)Unsafe.AsPointer(ref this), dwCreateFlags, dwAllowEncodingPropertyMask, dwReserved, ppIUri);
-        }
+        HRESULT CreateUri([NativeTypeName("DWORD")] uint dwCreateFlags, [NativeTypeName("DWORD")] uint dwAllowEncodingPropertyMask, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUri** ppIUri);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT CreateUriWithFlags([NativeTypeName("DWORD")] uint dwCreateFlags, [NativeTypeName("DWORD")] uint dwUriBuilderFlags, [NativeTypeName("DWORD")] uint dwAllowEncodingPropertyMask, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUri** ppIUri)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, uint, uint, uint, nuint, IUri**, int>)(lpVtbl[5]))((IUriBuilder*)Unsafe.AsPointer(ref this), dwCreateFlags, dwUriBuilderFlags, dwAllowEncodingPropertyMask, dwReserved, ppIUri);
-        }
+        HRESULT CreateUriWithFlags([NativeTypeName("DWORD")] uint dwCreateFlags, [NativeTypeName("DWORD")] uint dwUriBuilderFlags, [NativeTypeName("DWORD")] uint dwAllowEncodingPropertyMask, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUri** ppIUri);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetIUri(IUri** ppIUri)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, IUri**, int>)(lpVtbl[6]))((IUriBuilder*)Unsafe.AsPointer(ref this), ppIUri);
-        }
+        HRESULT GetIUri(IUri** ppIUri);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT SetIUri(IUri* pIUri)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, IUri*, int>)(lpVtbl[7]))((IUriBuilder*)Unsafe.AsPointer(ref this), pIUri);
-        }
+        HRESULT SetIUri(IUri* pIUri);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT GetFragment([NativeTypeName("DWORD *")] uint* pcchFragment, [NativeTypeName("LPCWSTR *")] ushort** ppwzFragment)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, uint*, ushort**, int>)(lpVtbl[8]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchFragment, ppwzFragment);
-        }
+        HRESULT GetFragment([NativeTypeName("DWORD *")] uint* pcchFragment, [NativeTypeName("LPCWSTR *")] ushort** ppwzFragment);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetHost([NativeTypeName("DWORD *")] uint* pcchHost, [NativeTypeName("LPCWSTR *")] ushort** ppwzHost)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, uint*, ushort**, int>)(lpVtbl[9]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchHost, ppwzHost);
-        }
+        HRESULT GetHost([NativeTypeName("DWORD *")] uint* pcchHost, [NativeTypeName("LPCWSTR *")] ushort** ppwzHost);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetPassword([NativeTypeName("DWORD *")] uint* pcchPassword, [NativeTypeName("LPCWSTR *")] ushort** ppwzPassword)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, uint*, ushort**, int>)(lpVtbl[10]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchPassword, ppwzPassword);
-        }
+        HRESULT GetPassword([NativeTypeName("DWORD *")] uint* pcchPassword, [NativeTypeName("LPCWSTR *")] ushort** ppwzPassword);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT GetPath([NativeTypeName("DWORD *")] uint* pcchPath, [NativeTypeName("LPCWSTR *")] ushort** ppwzPath)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, uint*, ushort**, int>)(lpVtbl[11]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchPath, ppwzPath);
-        }
+        HRESULT GetPath([NativeTypeName("DWORD *")] uint* pcchPath, [NativeTypeName("LPCWSTR *")] ushort** ppwzPath);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT GetPort(BOOL* pfHasPort, [NativeTypeName("DWORD *")] uint* pdwPort)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, BOOL*, uint*, int>)(lpVtbl[12]))((IUriBuilder*)Unsafe.AsPointer(ref this), pfHasPort, pdwPort);
-        }
+        HRESULT GetPort(BOOL* pfHasPort, [NativeTypeName("DWORD *")] uint* pdwPort);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT GetQuery([NativeTypeName("DWORD *")] uint* pcchQuery, [NativeTypeName("LPCWSTR *")] ushort** ppwzQuery)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, uint*, ushort**, int>)(lpVtbl[13]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchQuery, ppwzQuery);
-        }
+        HRESULT GetQuery([NativeTypeName("DWORD *")] uint* pcchQuery, [NativeTypeName("LPCWSTR *")] ushort** ppwzQuery);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT GetSchemeName([NativeTypeName("DWORD *")] uint* pcchSchemeName, [NativeTypeName("LPCWSTR *")] ushort** ppwzSchemeName)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, uint*, ushort**, int>)(lpVtbl[14]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchSchemeName, ppwzSchemeName);
-        }
+        HRESULT GetSchemeName([NativeTypeName("DWORD *")] uint* pcchSchemeName, [NativeTypeName("LPCWSTR *")] ushort** ppwzSchemeName);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT GetUserName([NativeTypeName("DWORD *")] uint* pcchUserName, [NativeTypeName("LPCWSTR *")] ushort** ppwzUserName)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, uint*, ushort**, int>)(lpVtbl[15]))((IUriBuilder*)Unsafe.AsPointer(ref this), pcchUserName, ppwzUserName);
-        }
+        HRESULT GetUserName([NativeTypeName("DWORD *")] uint* pcchUserName, [NativeTypeName("LPCWSTR *")] ushort** ppwzUserName);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT SetFragment([NativeTypeName("LPCWSTR")] ushort* pwzNewValue)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, ushort*, int>)(lpVtbl[16]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
-        }
+        HRESULT SetFragment([NativeTypeName("LPCWSTR")] ushort* pwzNewValue);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT SetHost([NativeTypeName("LPCWSTR")] ushort* pwzNewValue)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, ushort*, int>)(lpVtbl[17]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
-        }
+        HRESULT SetHost([NativeTypeName("LPCWSTR")] ushort* pwzNewValue);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT SetPassword([NativeTypeName("LPCWSTR")] ushort* pwzNewValue)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, ushort*, int>)(lpVtbl[18]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
-        }
+        HRESULT SetPassword([NativeTypeName("LPCWSTR")] ushort* pwzNewValue);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT SetPath([NativeTypeName("LPCWSTR")] ushort* pwzNewValue)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, ushort*, int>)(lpVtbl[19]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
-        }
+        HRESULT SetPath([NativeTypeName("LPCWSTR")] ushort* pwzNewValue);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT SetPort(BOOL fHasPort, [NativeTypeName("DWORD")] uint dwNewValue)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, BOOL, uint, int>)(lpVtbl[20]))((IUriBuilder*)Unsafe.AsPointer(ref this), fHasPort, dwNewValue);
-        }
+        HRESULT SetPort(BOOL fHasPort, [NativeTypeName("DWORD")] uint dwNewValue);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT SetQuery([NativeTypeName("LPCWSTR")] ushort* pwzNewValue)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, ushort*, int>)(lpVtbl[21]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
-        }
+        HRESULT SetQuery([NativeTypeName("LPCWSTR")] ushort* pwzNewValue);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        public HRESULT SetSchemeName([NativeTypeName("LPCWSTR")] ushort* pwzNewValue)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, ushort*, int>)(lpVtbl[22]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
-        }
+        HRESULT SetSchemeName([NativeTypeName("LPCWSTR")] ushort* pwzNewValue);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public HRESULT SetUserName([NativeTypeName("LPCWSTR")] ushort* pwzNewValue)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, ushort*, int>)(lpVtbl[23]))((IUriBuilder*)Unsafe.AsPointer(ref this), pwzNewValue);
-        }
+        HRESULT SetUserName([NativeTypeName("LPCWSTR")] ushort* pwzNewValue);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT RemoveProperties([NativeTypeName("DWORD")] uint dwPropertyMask)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, uint, int>)(lpVtbl[24]))((IUriBuilder*)Unsafe.AsPointer(ref this), dwPropertyMask);
-        }
+        HRESULT RemoveProperties([NativeTypeName("DWORD")] uint dwPropertyMask);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public HRESULT HasBeenModified(BOOL* pfModified)
-        {
-            return ((delegate* unmanaged<IUriBuilder*, BOOL*, int>)(lpVtbl[25]))((IUriBuilder*)Unsafe.AsPointer(ref this), pfModified);
-        }
+        HRESULT HasBeenModified(BOOL* pfModified);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT CreateUriSimple([NativeTypeName("DWORD")] uint dwAllowEncodingPropertyMask, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUri** ppIUri);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT CreateUri([NativeTypeName("DWORD")] uint dwCreateFlags, [NativeTypeName("DWORD")] uint dwAllowEncodingPropertyMask, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUri** ppIUri);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT CreateUriWithFlags([NativeTypeName("DWORD")] uint dwCreateFlags, [NativeTypeName("DWORD")] uint dwUriBuilderFlags, [NativeTypeName("DWORD")] uint dwAllowEncodingPropertyMask, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUri** ppIUri);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT GetIUri(IUri** ppIUri);
+        [NativeTypeName("HRESULT (DWORD, DWORD_PTR, IUri **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, uint, nuint, IUri**, int> CreateUriSimple;
 
-            [VtblIndex(7)]
-            HRESULT SetIUri(IUri* pIUri);
+        [NativeTypeName("HRESULT (DWORD, DWORD, DWORD_PTR, IUri **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, uint, uint, nuint, IUri**, int> CreateUri;
 
-            [VtblIndex(8)]
-            HRESULT GetFragment([NativeTypeName("DWORD *")] uint* pcchFragment, [NativeTypeName("LPCWSTR *")] ushort** ppwzFragment);
+        [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, DWORD_PTR, IUri **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, uint, uint, uint, nuint, IUri**, int> CreateUriWithFlags;
 
-            [VtblIndex(9)]
-            HRESULT GetHost([NativeTypeName("DWORD *")] uint* pcchHost, [NativeTypeName("LPCWSTR *")] ushort** ppwzHost);
+        [NativeTypeName("HRESULT (IUri **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, IUri**, int> GetIUri;
 
-            [VtblIndex(10)]
-            HRESULT GetPassword([NativeTypeName("DWORD *")] uint* pcchPassword, [NativeTypeName("LPCWSTR *")] ushort** ppwzPassword);
+        [NativeTypeName("HRESULT (IUri *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, IUri*, int> SetIUri;
 
-            [VtblIndex(11)]
-            HRESULT GetPath([NativeTypeName("DWORD *")] uint* pcchPath, [NativeTypeName("LPCWSTR *")] ushort** ppwzPath);
+        [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, uint*, ushort**, int> GetFragment;
 
-            [VtblIndex(12)]
-            HRESULT GetPort(BOOL* pfHasPort, [NativeTypeName("DWORD *")] uint* pdwPort);
+        [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, uint*, ushort**, int> GetHost;
 
-            [VtblIndex(13)]
-            HRESULT GetQuery([NativeTypeName("DWORD *")] uint* pcchQuery, [NativeTypeName("LPCWSTR *")] ushort** ppwzQuery);
+        [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, uint*, ushort**, int> GetPassword;
 
-            [VtblIndex(14)]
-            HRESULT GetSchemeName([NativeTypeName("DWORD *")] uint* pcchSchemeName, [NativeTypeName("LPCWSTR *")] ushort** ppwzSchemeName);
+        [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, uint*, ushort**, int> GetPath;
 
-            [VtblIndex(15)]
-            HRESULT GetUserName([NativeTypeName("DWORD *")] uint* pcchUserName, [NativeTypeName("LPCWSTR *")] ushort** ppwzUserName);
+        [NativeTypeName("HRESULT (BOOL *, DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, BOOL*, uint*, int> GetPort;
 
-            [VtblIndex(16)]
-            HRESULT SetFragment([NativeTypeName("LPCWSTR")] ushort* pwzNewValue);
+        [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, uint*, ushort**, int> GetQuery;
 
-            [VtblIndex(17)]
-            HRESULT SetHost([NativeTypeName("LPCWSTR")] ushort* pwzNewValue);
+        [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, uint*, ushort**, int> GetSchemeName;
 
-            [VtblIndex(18)]
-            HRESULT SetPassword([NativeTypeName("LPCWSTR")] ushort* pwzNewValue);
+        [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, uint*, ushort**, int> GetUserName;
 
-            [VtblIndex(19)]
-            HRESULT SetPath([NativeTypeName("LPCWSTR")] ushort* pwzNewValue);
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, ushort*, int> SetFragment;
 
-            [VtblIndex(20)]
-            HRESULT SetPort(BOOL fHasPort, [NativeTypeName("DWORD")] uint dwNewValue);
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, ushort*, int> SetHost;
 
-            [VtblIndex(21)]
-            HRESULT SetQuery([NativeTypeName("LPCWSTR")] ushort* pwzNewValue);
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, ushort*, int> SetPassword;
 
-            [VtblIndex(22)]
-            HRESULT SetSchemeName([NativeTypeName("LPCWSTR")] ushort* pwzNewValue);
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, ushort*, int> SetPath;
 
-            [VtblIndex(23)]
-            HRESULT SetUserName([NativeTypeName("LPCWSTR")] ushort* pwzNewValue);
+        [NativeTypeName("HRESULT (BOOL, DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, BOOL, uint, int> SetPort;
 
-            [VtblIndex(24)]
-            HRESULT RemoveProperties([NativeTypeName("DWORD")] uint dwPropertyMask);
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, ushort*, int> SetQuery;
 
-            [VtblIndex(25)]
-            HRESULT HasBeenModified(BOOL* pfModified);
-        }
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, ushort*, int> SetSchemeName;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, ushort*, int> SetUserName;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, uint> AddRef;
+        [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, uint, int> RemoveProperties;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, uint> Release;
-
-            [NativeTypeName("HRESULT (DWORD, DWORD_PTR, IUri **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, uint, nuint, IUri**, int> CreateUriSimple;
-
-            [NativeTypeName("HRESULT (DWORD, DWORD, DWORD_PTR, IUri **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, uint, uint, nuint, IUri**, int> CreateUri;
-
-            [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, DWORD_PTR, IUri **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, uint, uint, uint, nuint, IUri**, int> CreateUriWithFlags;
-
-            [NativeTypeName("HRESULT (IUri **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, IUri**, int> GetIUri;
-
-            [NativeTypeName("HRESULT (IUri *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, IUri*, int> SetIUri;
-
-            [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, uint*, ushort**, int> GetFragment;
-
-            [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, uint*, ushort**, int> GetHost;
-
-            [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, uint*, ushort**, int> GetPassword;
-
-            [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, uint*, ushort**, int> GetPath;
-
-            [NativeTypeName("HRESULT (BOOL *, DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, BOOL*, uint*, int> GetPort;
-
-            [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, uint*, ushort**, int> GetQuery;
-
-            [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, uint*, ushort**, int> GetSchemeName;
-
-            [NativeTypeName("HRESULT (DWORD *, LPCWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, uint*, ushort**, int> GetUserName;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, ushort*, int> SetFragment;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, ushort*, int> SetHost;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, ushort*, int> SetPassword;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, ushort*, int> SetPath;
-
-            [NativeTypeName("HRESULT (BOOL, DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, BOOL, uint, int> SetPort;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, ushort*, int> SetQuery;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, ushort*, int> SetSchemeName;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, ushort*, int> SetUserName;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, uint, int> RemoveProperties;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUriBuilder*, BOOL*, int> HasBeenModified;
-        }
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUriBuilder*, BOOL*, int> HasBeenModified;
     }
 }

@@ -3,31 +3,30 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct LVCOLUMNW
 {
-    public unsafe partial struct LVCOLUMNW
-    {
-        public uint mask;
+    public uint mask;
 
-        public int fmt;
+    public int fmt;
 
-        public int cx;
+    public int cx;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszText;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszText;
 
-        public int cchTextMax;
+    public int cchTextMax;
 
-        public int iSubItem;
+    public int iSubItem;
 
-        public int iImage;
+    public int iImage;
 
-        public int iOrder;
+    public int iOrder;
 
-        public int cxMin;
+    public int cxMin;
 
-        public int cxDefault;
+    public int cxDefault;
 
-        public int cxIdeal;
-    }
+    public int cxIdeal;
 }

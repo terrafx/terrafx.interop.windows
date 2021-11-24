@@ -8,45 +8,44 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
-{
-    public unsafe partial struct D3D12_VIEW_INSTANCING_DESC
-    {
-        public static ref readonly D3D12_VIEW_INSTANCING_DESC DEFAULT
-        {
-            get
-            {
-                ReadOnlySpan<byte> data;
+namespace TerraFX.Interop.DirectX;
 
-                if (Environment.Is64BitProcess)
-                {
-                    data = new byte[] {
+public unsafe partial struct D3D12_VIEW_INSTANCING_DESC
+{
+    public static ref readonly D3D12_VIEW_INSTANCING_DESC DEFAULT
+    {
+        get
+        {
+            ReadOnlySpan<byte> data;
+
+            if (Environment.Is64BitProcess)
+            {
+                data = new byte[] {
                         0x00, 0x00, 0x00, 0x00,
                         0x00, 0x00, 0x00, 0x00,
                         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                         0x00, 0x00, 0x00, 0x00,
                         0x00, 0x00, 0x00, 0x00
                     };
-                }
-                else
-                {
-                    data = new byte[] {
+            }
+            else
+            {
+                data = new byte[] {
                         0x00, 0x00, 0x00, 0x00,
                         0x00, 0x00, 0x00, 0x00,
                         0x00, 0x00, 0x00, 0x00
                     };
-                }
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<D3D12_VIEW_INSTANCING_DESC>());
-                return ref Unsafe.As<byte, D3D12_VIEW_INSTANCING_DESC>(ref MemoryMarshal.GetReference(data));
             }
-        }
 
-        public D3D12_VIEW_INSTANCING_DESC(uint InViewInstanceCount, [NativeTypeName("const D3D12_VIEW_INSTANCE_LOCATION *")] D3D12_VIEW_INSTANCE_LOCATION* InViewInstanceLocations, D3D12_VIEW_INSTANCING_FLAGS InFlags)
-        {
-            ViewInstanceCount = InViewInstanceCount;
-            pViewInstanceLocations = InViewInstanceLocations;
-            Flags = InFlags;
+            Debug.Assert(data.Length == Unsafe.SizeOf<D3D12_VIEW_INSTANCING_DESC>());
+            return ref Unsafe.As<byte, D3D12_VIEW_INSTANCING_DESC>(ref MemoryMarshal.GetReference(data));
         }
-}
+    }
+
+    public D3D12_VIEW_INSTANCING_DESC(uint InViewInstanceCount, [NativeTypeName("const D3D12_VIEW_INSTANCE_LOCATION *")] D3D12_VIEW_INSTANCE_LOCATION* InViewInstanceLocations, D3D12_VIEW_INSTANCING_FLAGS InFlags)
+    {
+        ViewInstanceCount = InViewInstanceCount;
+        pViewInstanceLocations = InViewInstanceLocations;
+        Flags = InFlags;
+    }
 }

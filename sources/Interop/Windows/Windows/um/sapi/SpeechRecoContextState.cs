@@ -5,11 +5,10 @@
 
 using static TerraFX.Interop.Windows.SPCONTEXTSTATE;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechRecoContextState
 {
-    public enum SpeechRecoContextState
-    {
-        SRCS_Disabled = SPCS_DISABLED,
-        SRCS_Enabled = SPCS_ENABLED,
-    }
+    SRCS_Disabled = SPCS_DISABLED,
+    SRCS_Enabled = SPCS_ENABLED,
 }

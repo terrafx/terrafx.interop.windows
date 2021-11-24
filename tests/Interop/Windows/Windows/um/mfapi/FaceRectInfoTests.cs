@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="FaceRectInfo" /> struct.</summary>
+public static unsafe partial class FaceRectInfoTests
 {
-    /// <summary>Provides validation of the <see cref="FaceRectInfo" /> struct.</summary>
-    public static unsafe partial class FaceRectInfoTests
+    /// <summary>Validates that the <see cref="FaceRectInfo" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="FaceRectInfo" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<FaceRectInfo>(), Is.EqualTo(sizeof(FaceRectInfo)));
-        }
+        Assert.That(Marshal.SizeOf<FaceRectInfo>(), Is.EqualTo(sizeof(FaceRectInfo)));
+    }
 
-        /// <summary>Validates that the <see cref="FaceRectInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(FaceRectInfo).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="FaceRectInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(FaceRectInfo).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="FaceRectInfo" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(FaceRectInfo), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="FaceRectInfo" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(FaceRectInfo), Is.EqualTo(20));
     }
 }

@@ -5,10 +5,9 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct VIRTUALIZATION_INSTANCE_INFO_OUTPUT
 {
-    public partial struct VIRTUALIZATION_INSTANCE_INFO_OUTPUT
-    {
-        public Guid VirtualizationInstanceID;
-    }
+    public Guid VirtualizationInstanceID;
 }

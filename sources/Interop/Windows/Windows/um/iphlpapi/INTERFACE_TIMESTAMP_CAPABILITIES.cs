@@ -5,19 +5,18 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.22000.0")]
+public partial struct INTERFACE_TIMESTAMP_CAPABILITIES
 {
-    [SupportedOSPlatform("windows10.0.22000.0")]
-    public partial struct INTERFACE_TIMESTAMP_CAPABILITIES
-    {
-        [NativeTypeName("ULONG64")]
-        public ulong HardwareClockFrequencyHz;
+    [NativeTypeName("ULONG64")]
+    public ulong HardwareClockFrequencyHz;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte SupportsCrossTimestamp;
+    [NativeTypeName("BOOLEAN")]
+    public byte SupportsCrossTimestamp;
 
-        public INTERFACE_HARDWARE_TIMESTAMP_CAPABILITIES HardwareCapabilities;
+    public INTERFACE_HARDWARE_TIMESTAMP_CAPABILITIES HardwareCapabilities;
 
-        public INTERFACE_SOFTWARE_TIMESTAMP_CAPABILITIES SoftwareCapabilities;
-    }
+    public INTERFACE_SOFTWARE_TIMESTAMP_CAPABILITIES SoftwareCapabilities;
 }

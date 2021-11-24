@@ -3,26 +3,25 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct VMRVideoDesc
 {
-    public partial struct VMRVideoDesc
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwSize;
+    [NativeTypeName("DWORD")]
+    public uint dwSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwSampleWidth;
+    [NativeTypeName("DWORD")]
+    public uint dwSampleWidth;
 
-        [NativeTypeName("DWORD")]
-        public uint dwSampleHeight;
+    [NativeTypeName("DWORD")]
+    public uint dwSampleHeight;
 
-        public BOOL SingleFieldPerSample;
+    public BOOL SingleFieldPerSample;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFourCC;
+    [NativeTypeName("DWORD")]
+    public uint dwFourCC;
 
-        public VMRFrequency InputSampleFreq;
+    public VMRFrequency InputSampleFreq;
 
-        public VMRFrequency OutputFrameFreq;
-    }
+    public VMRFrequency OutputFrameFreq;
 }

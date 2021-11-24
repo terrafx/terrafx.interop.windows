@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+public unsafe partial struct MFMediaKeyStatus
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public unsafe partial struct MFMediaKeyStatus
-    {
-        public byte* pbKeyId;
+    public byte* pbKeyId;
 
-        public uint cbKeyId;
+    public uint cbKeyId;
 
-        public MF_MEDIAKEY_STATUS eMediaKeyStatus;
-    }
+    public MF_MEDIAKEY_STATUS eMediaKeyStatus;
 }

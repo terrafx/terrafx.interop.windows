@@ -5,26 +5,25 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 4)]
+public unsafe partial struct PACKAGE_INFO
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 4)]
-    public unsafe partial struct PACKAGE_INFO
-    {
-        [NativeTypeName("UINT32")]
-        public uint reserved;
+    [NativeTypeName("UINT32")]
+    public uint reserved;
 
-        [NativeTypeName("UINT32")]
-        public uint flags;
+    [NativeTypeName("UINT32")]
+    public uint flags;
 
-        [NativeTypeName("PWSTR")]
-        public ushort* path;
+    [NativeTypeName("PWSTR")]
+    public ushort* path;
 
-        [NativeTypeName("PWSTR")]
-        public ushort* packageFullName;
+    [NativeTypeName("PWSTR")]
+    public ushort* packageFullName;
 
-        [NativeTypeName("PWSTR")]
-        public ushort* packageFamilyName;
+    [NativeTypeName("PWSTR")]
+    public ushort* packageFamilyName;
 
-        public PACKAGE_ID packageId;
-    }
+    public PACKAGE_ID packageId;
 }

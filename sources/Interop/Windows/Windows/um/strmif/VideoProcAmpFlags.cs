@@ -3,11 +3,10 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum VideoProcAmpFlags
 {
-    public enum VideoProcAmpFlags
-    {
-        VideoProcAmp_Flags_Auto = 0x1,
-        VideoProcAmp_Flags_Manual = 0x2,
-    }
+    VideoProcAmp_Flags_Auto = 0x1,
+    VideoProcAmp_Flags_Manual = 0x2,
 }

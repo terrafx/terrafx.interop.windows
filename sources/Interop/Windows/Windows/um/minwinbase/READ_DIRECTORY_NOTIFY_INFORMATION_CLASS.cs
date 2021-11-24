@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.16299.0")]
+public enum READ_DIRECTORY_NOTIFY_INFORMATION_CLASS
 {
-    [SupportedOSPlatform("windows10.0.16299.0")]
-    public enum READ_DIRECTORY_NOTIFY_INFORMATION_CLASS
-    {
-        ReadDirectoryNotifyInformation = 1,
-        ReadDirectoryNotifyExtendedInformation,
-    }
+    ReadDirectoryNotifyInformation = 1,
+    ReadDirectoryNotifyExtendedInformation,
 }

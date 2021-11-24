@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IPublishingWizard" /> struct.</summary>
+public static unsafe partial class IPublishingWizardTests
 {
-    /// <summary>Provides validation of the <see cref="IPublishingWizard" /> struct.</summary>
-    public static unsafe partial class IPublishingWizardTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPublishingWizard" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPublishingWizard" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IPublishingWizard).GUID, Is.EqualTo(IID_IPublishingWizard));
-        }
+        Assert.That(typeof(IPublishingWizard).GUID, Is.EqualTo(IID_IPublishingWizard));
+    }
 
-        /// <summary>Validates that the <see cref="IPublishingWizard" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IPublishingWizard>(), Is.EqualTo(sizeof(IPublishingWizard)));
-        }
+    /// <summary>Validates that the <see cref="IPublishingWizard" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IPublishingWizard>(), Is.EqualTo(sizeof(IPublishingWizard)));
+    }
 
-        /// <summary>Validates that the <see cref="IPublishingWizard" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IPublishingWizard).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IPublishingWizard" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IPublishingWizard).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IPublishingWizard" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IPublishingWizard" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IPublishingWizard), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IPublishingWizard), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IPublishingWizard), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IPublishingWizard), Is.EqualTo(4));
         }
     }
 }

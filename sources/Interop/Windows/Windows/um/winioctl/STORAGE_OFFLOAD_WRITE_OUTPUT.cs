@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct STORAGE_OFFLOAD_WRITE_OUTPUT
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct STORAGE_OFFLOAD_WRITE_OUTPUT
-    {
-        [NativeTypeName("DWORD")]
-        public uint OffloadWriteFlags;
+    [NativeTypeName("DWORD")]
+    public uint OffloadWriteFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint Reserved;
+    [NativeTypeName("DWORD")]
+    public uint Reserved;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong LengthCopied;
-    }
+    [NativeTypeName("DWORDLONG")]
+    public ulong LengthCopied;
 }

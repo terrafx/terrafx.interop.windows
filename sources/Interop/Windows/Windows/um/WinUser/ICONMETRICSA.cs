@@ -3,18 +3,17 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct ICONMETRICSA
 {
-    public partial struct ICONMETRICSA
-    {
-        public uint cbSize;
+    public uint cbSize;
 
-        public int iHorzSpacing;
+    public int iHorzSpacing;
 
-        public int iVertSpacing;
+    public int iVertSpacing;
 
-        public int iTitleWrap;
+    public int iTitleWrap;
 
-        public LOGFONTA lfFont;
-    }
+    public LOGFONTA lfFont;
 }

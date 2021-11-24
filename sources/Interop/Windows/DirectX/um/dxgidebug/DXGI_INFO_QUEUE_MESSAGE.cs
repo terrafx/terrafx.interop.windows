@@ -7,25 +7,24 @@ using System;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct DXGI_INFO_QUEUE_MESSAGE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct DXGI_INFO_QUEUE_MESSAGE
-    {
-        [NativeTypeName("DXGI_DEBUG_ID")]
-        public Guid Producer;
+    [NativeTypeName("DXGI_DEBUG_ID")]
+    public Guid Producer;
 
-        public DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category;
+    public DXGI_INFO_QUEUE_MESSAGE_CATEGORY Category;
 
-        public DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity;
+    public DXGI_INFO_QUEUE_MESSAGE_SEVERITY Severity;
 
-        [NativeTypeName("DXGI_INFO_QUEUE_MESSAGE_ID")]
-        public int ID;
+    [NativeTypeName("DXGI_INFO_QUEUE_MESSAGE_ID")]
+    public int ID;
 
-        [NativeTypeName("const char *")]
-        public sbyte* pDescription;
+    [NativeTypeName("const char *")]
+    public sbyte* pDescription;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint DescriptionByteLength;
-    }
+    [NativeTypeName("SIZE_T")]
+    public nuint DescriptionByteLength;
 }

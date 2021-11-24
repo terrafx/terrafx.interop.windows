@@ -9,156 +9,155 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[SupportedOSPlatform("windows10.0")]
+[Guid("18C9E2B6-3F43-4116-9F2B-FF935D7770D2")]
+[NativeTypeName("struct IXamlDiagnostics : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface
 {
-    [SupportedOSPlatform("windows10.0")]
-    [Guid("18C9E2B6-3F43-4116-9F2B-FF935D7770D2")]
-    [NativeTypeName("struct IXamlDiagnostics : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IXamlDiagnostics*, Guid*, void**, int>)(lpVtbl[0]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IXamlDiagnostics*, Guid*, void**, int>)(lpVtbl[0]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IXamlDiagnostics*, uint>)(lpVtbl[1]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IXamlDiagnostics*, uint>)(lpVtbl[1]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IXamlDiagnostics*, uint>)(lpVtbl[2]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IXamlDiagnostics*, uint>)(lpVtbl[2]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetDispatcher(IInspectable** ppDispatcher)
+    {
+        return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int>)(lpVtbl[3]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), ppDispatcher);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetUiLayer(IInspectable** ppLayer)
+    {
+        return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int>)(lpVtbl[4]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), ppLayer);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetApplication(IInspectable** ppApplication)
+    {
+        return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int>)(lpVtbl[5]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), ppApplication);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetIInspectableFromHandle(InstanceHandle instanceHandle, IInspectable** ppInstance)
+    {
+        return ((delegate* unmanaged<IXamlDiagnostics*, InstanceHandle, IInspectable**, int>)(lpVtbl[6]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), instanceHandle, ppInstance);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT GetHandleFromIInspectable(IInspectable* pInstance, InstanceHandle* pHandle)
+    {
+        return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable*, InstanceHandle*, int>)(lpVtbl[7]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInstance, pHandle);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT HitTest(RECT rect, [NativeTypeName("unsigned int *")] uint* pCount, InstanceHandle** ppInstanceHandles)
+    {
+        return ((delegate* unmanaged<IXamlDiagnostics*, RECT, uint*, InstanceHandle**, int>)(lpVtbl[8]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), rect, pCount, ppInstanceHandles);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT RegisterInstance(IInspectable* pInstance, InstanceHandle* pInstanceHandle)
+    {
+        return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable*, InstanceHandle*, int>)(lpVtbl[9]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInstance, pInstanceHandle);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT GetInitializationData([NativeTypeName("BSTR *")] ushort** pInitializationData)
+    {
+        return ((delegate* unmanaged<IXamlDiagnostics*, ushort**, int>)(lpVtbl[10]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInitializationData);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetDispatcher(IInspectable** ppDispatcher)
-        {
-            return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int>)(lpVtbl[3]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), ppDispatcher);
-        }
+        HRESULT GetDispatcher(IInspectable** ppDispatcher);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetUiLayer(IInspectable** ppLayer)
-        {
-            return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int>)(lpVtbl[4]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), ppLayer);
-        }
+        HRESULT GetUiLayer(IInspectable** ppLayer);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetApplication(IInspectable** ppApplication)
-        {
-            return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int>)(lpVtbl[5]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), ppApplication);
-        }
+        HRESULT GetApplication(IInspectable** ppApplication);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetIInspectableFromHandle(InstanceHandle instanceHandle, IInspectable** ppInstance)
-        {
-            return ((delegate* unmanaged<IXamlDiagnostics*, InstanceHandle, IInspectable**, int>)(lpVtbl[6]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), instanceHandle, ppInstance);
-        }
+        HRESULT GetIInspectableFromHandle(InstanceHandle instanceHandle, IInspectable** ppInstance);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetHandleFromIInspectable(IInspectable* pInstance, InstanceHandle* pHandle)
-        {
-            return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable*, InstanceHandle*, int>)(lpVtbl[7]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInstance, pHandle);
-        }
+        HRESULT GetHandleFromIInspectable(IInspectable* pInstance, InstanceHandle* pHandle);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT HitTest(RECT rect, [NativeTypeName("unsigned int *")] uint* pCount, InstanceHandle** ppInstanceHandles)
-        {
-            return ((delegate* unmanaged<IXamlDiagnostics*, RECT, uint*, InstanceHandle**, int>)(lpVtbl[8]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), rect, pCount, ppInstanceHandles);
-        }
+        HRESULT HitTest(RECT rect, [NativeTypeName("unsigned int *")] uint* pCount, InstanceHandle** ppInstanceHandles);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT RegisterInstance(IInspectable* pInstance, InstanceHandle* pInstanceHandle)
-        {
-            return ((delegate* unmanaged<IXamlDiagnostics*, IInspectable*, InstanceHandle*, int>)(lpVtbl[9]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInstance, pInstanceHandle);
-        }
+        HRESULT RegisterInstance(IInspectable* pInstance, InstanceHandle* pInstanceHandle);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetInitializationData([NativeTypeName("BSTR *")] ushort** pInitializationData)
-        {
-            return ((delegate* unmanaged<IXamlDiagnostics*, ushort**, int>)(lpVtbl[10]))((IXamlDiagnostics*)Unsafe.AsPointer(ref this), pInitializationData);
-        }
+        HRESULT GetInitializationData([NativeTypeName("BSTR *")] ushort** pInitializationData);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetDispatcher(IInspectable** ppDispatcher);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXamlDiagnostics*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetUiLayer(IInspectable** ppLayer);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IXamlDiagnostics*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetApplication(IInspectable** ppApplication);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IXamlDiagnostics*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT GetIInspectableFromHandle(InstanceHandle instanceHandle, IInspectable** ppInstance);
+        [NativeTypeName("HRESULT (IInspectable **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int> GetDispatcher;
 
-            [VtblIndex(7)]
-            HRESULT GetHandleFromIInspectable(IInspectable* pInstance, InstanceHandle* pHandle);
+        [NativeTypeName("HRESULT (IInspectable **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int> GetUiLayer;
 
-            [VtblIndex(8)]
-            HRESULT HitTest(RECT rect, [NativeTypeName("unsigned int *")] uint* pCount, InstanceHandle** ppInstanceHandles);
+        [NativeTypeName("HRESULT (IInspectable **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int> GetApplication;
 
-            [VtblIndex(9)]
-            HRESULT RegisterInstance(IInspectable* pInstance, InstanceHandle* pInstanceHandle);
+        [NativeTypeName("HRESULT (InstanceHandle, IInspectable **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXamlDiagnostics*, InstanceHandle, IInspectable**, int> GetIInspectableFromHandle;
 
-            [VtblIndex(10)]
-            HRESULT GetInitializationData([NativeTypeName("BSTR *")] ushort** pInitializationData);
-        }
+        [NativeTypeName("HRESULT (IInspectable *, InstanceHandle *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXamlDiagnostics*, IInspectable*, InstanceHandle*, int> GetHandleFromIInspectable;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXamlDiagnostics*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (RECT, unsigned int *, InstanceHandle **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXamlDiagnostics*, RECT, uint*, InstanceHandle**, int> HitTest;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IXamlDiagnostics*, uint> AddRef;
+        [NativeTypeName("HRESULT (IInspectable *, InstanceHandle *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXamlDiagnostics*, IInspectable*, InstanceHandle*, int> RegisterInstance;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IXamlDiagnostics*, uint> Release;
-
-            [NativeTypeName("HRESULT (IInspectable **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int> GetDispatcher;
-
-            [NativeTypeName("HRESULT (IInspectable **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int> GetUiLayer;
-
-            [NativeTypeName("HRESULT (IInspectable **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int> GetApplication;
-
-            [NativeTypeName("HRESULT (InstanceHandle, IInspectable **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXamlDiagnostics*, InstanceHandle, IInspectable**, int> GetIInspectableFromHandle;
-
-            [NativeTypeName("HRESULT (IInspectable *, InstanceHandle *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXamlDiagnostics*, IInspectable*, InstanceHandle*, int> GetHandleFromIInspectable;
-
-            [NativeTypeName("HRESULT (RECT, unsigned int *, InstanceHandle **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXamlDiagnostics*, RECT, uint*, InstanceHandle**, int> HitTest;
-
-            [NativeTypeName("HRESULT (IInspectable *, InstanceHandle *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXamlDiagnostics*, IInspectable*, InstanceHandle*, int> RegisterInstance;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXamlDiagnostics*, ushort**, int> GetInitializationData;
-        }
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXamlDiagnostics*, ushort**, int> GetInitializationData;
     }
 }

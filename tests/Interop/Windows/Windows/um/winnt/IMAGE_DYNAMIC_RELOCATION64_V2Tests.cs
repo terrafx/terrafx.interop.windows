@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMAGE_DYNAMIC_RELOCATION64_V2" /> struct.</summary>
+public static unsafe partial class IMAGE_DYNAMIC_RELOCATION64_V2Tests
 {
-    /// <summary>Provides validation of the <see cref="IMAGE_DYNAMIC_RELOCATION64_V2" /> struct.</summary>
-    public static unsafe partial class IMAGE_DYNAMIC_RELOCATION64_V2Tests
+    /// <summary>Validates that the <see cref="IMAGE_DYNAMIC_RELOCATION64_V2" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IMAGE_DYNAMIC_RELOCATION64_V2" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMAGE_DYNAMIC_RELOCATION64_V2>(), Is.EqualTo(sizeof(IMAGE_DYNAMIC_RELOCATION64_V2)));
-        }
+        Assert.That(Marshal.SizeOf<IMAGE_DYNAMIC_RELOCATION64_V2>(), Is.EqualTo(sizeof(IMAGE_DYNAMIC_RELOCATION64_V2)));
+    }
 
-        /// <summary>Validates that the <see cref="IMAGE_DYNAMIC_RELOCATION64_V2" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMAGE_DYNAMIC_RELOCATION64_V2).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMAGE_DYNAMIC_RELOCATION64_V2" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMAGE_DYNAMIC_RELOCATION64_V2).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMAGE_DYNAMIC_RELOCATION64_V2" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(IMAGE_DYNAMIC_RELOCATION64_V2), Is.EqualTo(24));
-        }
+    /// <summary>Validates that the <see cref="IMAGE_DYNAMIC_RELOCATION64_V2" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(IMAGE_DYNAMIC_RELOCATION64_V2), Is.EqualTo(24));
     }
 }

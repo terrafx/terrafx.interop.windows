@@ -3,14 +3,13 @@
 // Ported from um/UserEnv.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum GPO_LINK
 {
-    public enum GPO_LINK
-    {
-        GPLinkUnknown = 0,
-        GPLinkMachine,
-        GPLinkSite,
-        GPLinkDomain,
-        GPLinkOrganizationalUnit,
-    }
+    GPLinkUnknown = 0,
+    GPLinkMachine,
+    GPLinkSite,
+    GPLinkDomain,
+    GPLinkOrganizationalUnit,
 }

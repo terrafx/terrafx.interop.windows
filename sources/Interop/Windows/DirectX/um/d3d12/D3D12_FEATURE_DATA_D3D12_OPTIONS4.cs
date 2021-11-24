@@ -5,14 +5,13 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_FEATURE_DATA_D3D12_OPTIONS4
 {
-    public partial struct D3D12_FEATURE_DATA_D3D12_OPTIONS4
-    {
-        public BOOL MSAA64KBAlignedTextureSupported;
+    public BOOL MSAA64KBAlignedTextureSupported;
 
-        public D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER SharedResourceCompatibilityTier;
+    public D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER SharedResourceCompatibilityTier;
 
-        public BOOL Native16BitShaderOpsSupported;
-    }
+    public BOOL Native16BitShaderOpsSupported;
 }

@@ -5,26 +5,25 @@
 
 using TerraFX.Interop.DirectX;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct VMRVIDEOSTREAMINFO
 {
-    public unsafe partial struct VMRVIDEOSTREAMINFO
-    {
-        [NativeTypeName("LPDIRECTDRAWSURFACE7")]
-        public IDirectDrawSurface7* pddsVideoSurface;
+    [NativeTypeName("LPDIRECTDRAWSURFACE7")]
+    public IDirectDrawSurface7* pddsVideoSurface;
 
-        [NativeTypeName("DWORD")]
-        public uint dwWidth;
+    [NativeTypeName("DWORD")]
+    public uint dwWidth;
 
-        [NativeTypeName("DWORD")]
-        public uint dwHeight;
+    [NativeTypeName("DWORD")]
+    public uint dwHeight;
 
-        [NativeTypeName("DWORD")]
-        public uint dwStrmID;
+    [NativeTypeName("DWORD")]
+    public uint dwStrmID;
 
-        public float fAlpha;
+    public float fAlpha;
 
-        public DDCOLORKEY ddClrKey;
+    public DDCOLORKEY ddClrKey;
 
-        public NORMALIZEDRECT rNormal;
-    }
+    public NORMALIZEDRECT rNormal;
 }

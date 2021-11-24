@@ -3,14 +3,13 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct CRYPT_RSAES_OAEP_PARAMETERS
 {
-    public partial struct CRYPT_RSAES_OAEP_PARAMETERS
-    {
-        public CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
+    public CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
 
-        public CRYPT_MASK_GEN_ALGORITHM MaskGenAlgorithm;
+    public CRYPT_MASK_GEN_ALGORITHM MaskGenAlgorithm;
 
-        public CRYPT_PSOURCE_ALGORITHM PSourceAlgorithm;
-    }
+    public CRYPT_PSOURCE_ALGORITHM PSourceAlgorithm;
 }

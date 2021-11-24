@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IWbemObjectSink" /> struct.</summary>
+public static unsafe partial class IWbemObjectSinkTests
 {
-    /// <summary>Provides validation of the <see cref="IWbemObjectSink" /> struct.</summary>
-    public static unsafe partial class IWbemObjectSinkTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWbemObjectSink" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWbemObjectSink" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IWbemObjectSink).GUID, Is.EqualTo(IID_IWbemObjectSink));
-        }
+        Assert.That(typeof(IWbemObjectSink).GUID, Is.EqualTo(IID_IWbemObjectSink));
+    }
 
-        /// <summary>Validates that the <see cref="IWbemObjectSink" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IWbemObjectSink>(), Is.EqualTo(sizeof(IWbemObjectSink)));
-        }
+    /// <summary>Validates that the <see cref="IWbemObjectSink" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IWbemObjectSink>(), Is.EqualTo(sizeof(IWbemObjectSink)));
+    }
 
-        /// <summary>Validates that the <see cref="IWbemObjectSink" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IWbemObjectSink).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IWbemObjectSink" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IWbemObjectSink).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IWbemObjectSink" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IWbemObjectSink" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IWbemObjectSink), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IWbemObjectSink), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IWbemObjectSink), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IWbemObjectSink), Is.EqualTo(4));
         }
     }
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NOTIFYICONIDENTIFIER32" /> struct.</summary>
+public static unsafe partial class NOTIFYICONIDENTIFIER32Tests
 {
-    /// <summary>Provides validation of the <see cref="NOTIFYICONIDENTIFIER32" /> struct.</summary>
-    public static unsafe partial class NOTIFYICONIDENTIFIER32Tests
+    /// <summary>Validates that the <see cref="NOTIFYICONIDENTIFIER32" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NOTIFYICONIDENTIFIER32" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NOTIFYICONIDENTIFIER32>(), Is.EqualTo(sizeof(NOTIFYICONIDENTIFIER32)));
-        }
+        Assert.That(Marshal.SizeOf<NOTIFYICONIDENTIFIER32>(), Is.EqualTo(sizeof(NOTIFYICONIDENTIFIER32)));
+    }
 
-        /// <summary>Validates that the <see cref="NOTIFYICONIDENTIFIER32" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NOTIFYICONIDENTIFIER32).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NOTIFYICONIDENTIFIER32" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NOTIFYICONIDENTIFIER32).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NOTIFYICONIDENTIFIER32" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="NOTIFYICONIDENTIFIER32" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(NOTIFYICONIDENTIFIER32), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(NOTIFYICONIDENTIFIER32), Is.EqualTo(28));
-            }
+            Assert.That(sizeof(NOTIFYICONIDENTIFIER32), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(NOTIFYICONIDENTIFIER32), Is.EqualTo(28));
         }
     }
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CADATE" /> struct.</summary>
+public static unsafe partial class CADATETests
 {
-    /// <summary>Provides validation of the <see cref="CADATE" /> struct.</summary>
-    public static unsafe partial class CADATETests
+    /// <summary>Validates that the <see cref="CADATE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CADATE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CADATE>(), Is.EqualTo(sizeof(CADATE)));
-        }
+        Assert.That(Marshal.SizeOf<CADATE>(), Is.EqualTo(sizeof(CADATE)));
+    }
 
-        /// <summary>Validates that the <see cref="CADATE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CADATE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CADATE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CADATE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CADATE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CADATE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CADATE), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(CADATE), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(CADATE), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(CADATE), Is.EqualTo(8));
         }
     }
 }

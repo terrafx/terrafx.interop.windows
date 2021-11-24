@@ -3,14 +3,13 @@
 // Ported from um/mfplay.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MFP_MEDIAPLAYER_STATE
 {
-    public enum MFP_MEDIAPLAYER_STATE
-    {
-        MFP_MEDIAPLAYER_STATE_EMPTY = 0,
-        MFP_MEDIAPLAYER_STATE_STOPPED = 0x1,
-        MFP_MEDIAPLAYER_STATE_PLAYING = 0x2,
-        MFP_MEDIAPLAYER_STATE_PAUSED = 0x3,
-        MFP_MEDIAPLAYER_STATE_SHUTDOWN = 0x4,
-    }
+    MFP_MEDIAPLAYER_STATE_EMPTY = 0,
+    MFP_MEDIAPLAYER_STATE_STOPPED = 0x1,
+    MFP_MEDIAPLAYER_STATE_PLAYING = 0x2,
+    MFP_MEDIAPLAYER_STATE_PAUSED = 0x3,
+    MFP_MEDIAPLAYER_STATE_SHUTDOWN = 0x4,
 }

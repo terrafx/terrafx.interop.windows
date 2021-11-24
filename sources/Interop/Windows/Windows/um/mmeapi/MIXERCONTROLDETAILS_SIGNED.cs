@@ -5,12 +5,11 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct MIXERCONTROLDETAILS_SIGNED
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct MIXERCONTROLDETAILS_SIGNED
-    {
-        [NativeTypeName("LONG")]
-        public int lValue;
-    }
+    [NativeTypeName("LONG")]
+    public int lValue;
 }

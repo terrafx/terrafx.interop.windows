@@ -7,42 +7,41 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct EMRPOLYTEXTOUTA
 {
-    public partial struct EMRPOLYTEXTOUTA
+    public EMR emr;
+
+    public RECTL rclBounds;
+
+    [NativeTypeName("DWORD")]
+    public uint iGraphicsMode;
+
+    public float exScale;
+
+    public float eyScale;
+
+    [NativeTypeName("LONG")]
+    public int cStrings;
+
+    [NativeTypeName("EMRTEXT [1]")]
+    public _aemrtext_e__FixedBuffer aemrtext;
+
+    public partial struct _aemrtext_e__FixedBuffer
     {
-        public EMR emr;
+        public EMRTEXT e0;
 
-        public RECTL rclBounds;
-
-        [NativeTypeName("DWORD")]
-        public uint iGraphicsMode;
-
-        public float exScale;
-
-        public float eyScale;
-
-        [NativeTypeName("LONG")]
-        public int cStrings;
-
-        [NativeTypeName("EMRTEXT [1]")]
-        public _aemrtext_e__FixedBuffer aemrtext;
-
-        public partial struct _aemrtext_e__FixedBuffer
+        public ref EMRTEXT this[int index]
         {
-            public EMRTEXT e0;
-
-            public ref EMRTEXT this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<EMRTEXT> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<EMRTEXT> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

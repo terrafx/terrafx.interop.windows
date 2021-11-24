@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum NMCII_FLAGS
 {
-    [Flags]
-    public enum NMCII_FLAGS
-    {
-        NMCII_NONE = 0,
-        NMCII_ITEMS = 0x1,
-        NMCII_FOLDERS = 0x2,
-    }
+    NMCII_NONE = 0,
+    NMCII_ITEMS = 0x1,
+    NMCII_FOLDERS = 0x2,
 }

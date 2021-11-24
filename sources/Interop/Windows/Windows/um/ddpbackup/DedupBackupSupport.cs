@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("73D6B2AD-2984-4715-B2E3-924C149744DD")]
+public partial struct DedupBackupSupport
 {
-    [Guid("73D6B2AD-2984-4715-B2E3-924C149744DD")]
-    public partial struct DedupBackupSupport
-    {
-    }
 }

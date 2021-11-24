@@ -3,17 +3,16 @@
 // Ported from um/MLOperatorAuthor.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+public unsafe partial struct MLOperatorEdgeTypeConstraint
 {
-    public unsafe partial struct MLOperatorEdgeTypeConstraint
-    {
-        [NativeTypeName("const char *")]
-        public sbyte* typeLabel;
+    [NativeTypeName("const char *")]
+    public sbyte* typeLabel;
 
-        [NativeTypeName("const MLOperatorEdgeDescription *")]
-        public MLOperatorEdgeDescription* allowedTypes;
+    [NativeTypeName("const MLOperatorEdgeDescription *")]
+    public MLOperatorEdgeDescription* allowedTypes;
 
-        [NativeTypeName("uint32_t")]
-        public uint allowedTypeCount;
-    }
+    [NativeTypeName("uint32_t")]
+    public uint allowedTypeCount;
 }

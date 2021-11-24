@@ -5,22 +5,21 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SHFILEINFO32A
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SHFILEINFO32A
-    {
-        public HICON hIcon;
+    public HICON hIcon;
 
-        public int iIcon;
+    public int iIcon;
 
-        [NativeTypeName("DWORD")]
-        public uint dwAttributes;
+    [NativeTypeName("DWORD")]
+    public uint dwAttributes;
 
-        [NativeTypeName("CHAR [260]")]
-        public fixed sbyte szDisplayName[260];
+    [NativeTypeName("CHAR [260]")]
+    public fixed sbyte szDisplayName[260];
 
-        [NativeTypeName("CHAR [80]")]
-        public fixed sbyte szTypeName[80];
-    }
+    [NativeTypeName("CHAR [80]")]
+    public fixed sbyte szTypeName[80];
 }

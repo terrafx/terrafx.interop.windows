@@ -5,14 +5,13 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct VOLUMEWAVEFILTER
-    {
-        public WAVEFILTER wfltr;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint dwVolume;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct VOLUMEWAVEFILTER
+{
+    public WAVEFILTER wfltr;
+
+    [NativeTypeName("DWORD")]
+    public uint dwVolume;
 }

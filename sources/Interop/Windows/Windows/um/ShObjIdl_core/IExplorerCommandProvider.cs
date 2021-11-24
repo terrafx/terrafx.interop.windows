@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("64961751-0835-43C0-8FFE-D57686530E64")]
+[NativeTypeName("struct IExplorerCommandProvider : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IExplorerCommandProvider : IExplorerCommandProvider.Interface
 {
-    [Guid("64961751-0835-43C0-8FFE-D57686530E64")]
-    [NativeTypeName("struct IExplorerCommandProvider : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IExplorerCommandProvider : IExplorerCommandProvider.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IExplorerCommandProvider*, Guid*, void**, int>)(lpVtbl[0]))((IExplorerCommandProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IExplorerCommandProvider*, Guid*, void**, int>)(lpVtbl[0]))((IExplorerCommandProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IExplorerCommandProvider*, uint>)(lpVtbl[1]))((IExplorerCommandProvider*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IExplorerCommandProvider*, uint>)(lpVtbl[1]))((IExplorerCommandProvider*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IExplorerCommandProvider*, uint>)(lpVtbl[2]))((IExplorerCommandProvider*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IExplorerCommandProvider*, uint>)(lpVtbl[2]))((IExplorerCommandProvider*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetCommands(IUnknown* punkSite, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+    {
+        return ((delegate* unmanaged<IExplorerCommandProvider*, IUnknown*, Guid*, void**, int>)(lpVtbl[3]))((IExplorerCommandProvider*)Unsafe.AsPointer(ref this), punkSite, riid, ppv);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetCommand([NativeTypeName("const GUID &")] Guid* rguidCommandId, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+    {
+        return ((delegate* unmanaged<IExplorerCommandProvider*, Guid*, Guid*, void**, int>)(lpVtbl[4]))((IExplorerCommandProvider*)Unsafe.AsPointer(ref this), rguidCommandId, riid, ppv);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetCommands(IUnknown* punkSite, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
-        {
-            return ((delegate* unmanaged<IExplorerCommandProvider*, IUnknown*, Guid*, void**, int>)(lpVtbl[3]))((IExplorerCommandProvider*)Unsafe.AsPointer(ref this), punkSite, riid, ppv);
-        }
+        HRESULT GetCommands(IUnknown* punkSite, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetCommand([NativeTypeName("const GUID &")] Guid* rguidCommandId, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
-        {
-            return ((delegate* unmanaged<IExplorerCommandProvider*, Guid*, Guid*, void**, int>)(lpVtbl[4]))((IExplorerCommandProvider*)Unsafe.AsPointer(ref this), rguidCommandId, riid, ppv);
-        }
+        HRESULT GetCommand([NativeTypeName("const GUID &")] Guid* rguidCommandId, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetCommands(IUnknown* punkSite, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IExplorerCommandProvider*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetCommand([NativeTypeName("const GUID &")] Guid* rguidCommandId, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IExplorerCommandProvider*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IExplorerCommandProvider*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IExplorerCommandProvider*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IExplorerCommandProvider*, uint> AddRef;
+        [NativeTypeName("HRESULT (IUnknown *, const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IExplorerCommandProvider*, IUnknown*, Guid*, void**, int> GetCommands;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IExplorerCommandProvider*, uint> Release;
-
-            [NativeTypeName("HRESULT (IUnknown *, const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IExplorerCommandProvider*, IUnknown*, Guid*, void**, int> GetCommands;
-
-            [NativeTypeName("HRESULT (const GUID &, const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IExplorerCommandProvider*, Guid*, Guid*, void**, int> GetCommand;
-        }
+        [NativeTypeName("HRESULT (const GUID &, const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IExplorerCommandProvider*, Guid*, Guid*, void**, int> GetCommand;
     }
 }

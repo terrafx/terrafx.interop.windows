@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CDBurn" /> struct.</summary>
+public static unsafe partial class CDBurnTests
 {
-    /// <summary>Provides validation of the <see cref="CDBurn" /> struct.</summary>
-    public static unsafe partial class CDBurnTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CDBurn" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CDBurn" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CDBurn).GUID, Is.EqualTo(IID_CDBurn));
-        }
+        Assert.That(typeof(CDBurn).GUID, Is.EqualTo(IID_CDBurn));
+    }
 
-        /// <summary>Validates that the <see cref="CDBurn" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CDBurn>(), Is.EqualTo(sizeof(CDBurn)));
-        }
+    /// <summary>Validates that the <see cref="CDBurn" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CDBurn>(), Is.EqualTo(sizeof(CDBurn)));
+    }
 
-        /// <summary>Validates that the <see cref="CDBurn" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CDBurn).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CDBurn" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CDBurn).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CDBurn" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CDBurn), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CDBurn" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CDBurn), Is.EqualTo(1));
     }
 }

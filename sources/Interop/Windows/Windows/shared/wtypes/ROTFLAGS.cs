@@ -3,14 +3,13 @@
 // Ported from shared/wtypes.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class ROTFLAGS
-    {
-        [NativeTypeName("#define ROTFLAGS_REGISTRATIONKEEPSALIVE 0x1")]
-        public const int ROTFLAGS_REGISTRATIONKEEPSALIVE = 0x1;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("#define ROTFLAGS_ALLOWANYCLIENT 0x2")]
-        public const int ROTFLAGS_ALLOWANYCLIENT = 0x2;
-    }
+public static partial class ROTFLAGS
+{
+    [NativeTypeName("#define ROTFLAGS_REGISTRATIONKEEPSALIVE 0x1")]
+    public const int ROTFLAGS_REGISTRATIONKEEPSALIVE = 0x1;
+
+    [NativeTypeName("#define ROTFLAGS_ALLOWANYCLIENT 0x2")]
+    public const int ROTFLAGS_ALLOWANYCLIENT = 0x2;
 }

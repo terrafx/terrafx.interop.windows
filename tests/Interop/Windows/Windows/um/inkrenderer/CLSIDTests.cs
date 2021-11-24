@@ -7,16 +7,15 @@ using NUnit.Framework;
 using System;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CLSID" /> class.</summary>
+public static partial class CLSIDTests
 {
-    /// <summary>Provides validation of the <see cref="CLSID" /> class.</summary>
-    public static partial class CLSIDTests
+    /// <summary>Validates that the value of the <see cref="CLSID_InkD2DRenderer" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_InkD2DRendererTest()
     {
-        /// <summary>Validates that the value of the <see cref="CLSID_InkD2DRenderer" /> property is correct.</summary>
-        [Test]
-        public static void CLSID_InkD2DRendererTest()
-        {
-            Assert.That(CLSID_InkD2DRenderer, Is.EqualTo(new Guid(0x4044e60c, 0x7b01, 0x4671, 0xa9, 0x7c, 0x04, 0xe0, 0x21, 0x0a, 0x07, 0xa5)));
-        }
+        Assert.That(CLSID_InkD2DRenderer, Is.EqualTo(new Guid(0x4044e60c, 0x7b01, 0x4671, 0xa9, 0x7c, 0x04, 0xe0, 0x21, 0x0a, 0x07, 0xa5)));
     }
 }

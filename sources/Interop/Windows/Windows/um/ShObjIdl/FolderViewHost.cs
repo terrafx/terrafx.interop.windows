@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("20B1CB23-6968-4EB9-B7D4-A66D00D07CEE")]
+public partial struct FolderViewHost
 {
-    [Guid("20B1CB23-6968-4EB9-B7D4-A66D00D07CEE")]
-    public partial struct FolderViewHost
-    {
-    }
 }

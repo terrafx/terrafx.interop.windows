@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISpLexicon" /> struct.</summary>
+public static unsafe partial class ISpLexiconTests
 {
-    /// <summary>Provides validation of the <see cref="ISpLexicon" /> struct.</summary>
-    public static unsafe partial class ISpLexiconTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpLexicon" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpLexicon" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISpLexicon).GUID, Is.EqualTo(IID_ISpLexicon));
-        }
+        Assert.That(typeof(ISpLexicon).GUID, Is.EqualTo(IID_ISpLexicon));
+    }
 
-        /// <summary>Validates that the <see cref="ISpLexicon" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISpLexicon>(), Is.EqualTo(sizeof(ISpLexicon)));
-        }
+    /// <summary>Validates that the <see cref="ISpLexicon" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISpLexicon>(), Is.EqualTo(sizeof(ISpLexicon)));
+    }
 
-        /// <summary>Validates that the <see cref="ISpLexicon" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISpLexicon).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISpLexicon" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISpLexicon).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISpLexicon" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISpLexicon" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISpLexicon), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISpLexicon), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISpLexicon), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISpLexicon), Is.EqualTo(4));
         }
     }
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IShellPropSheetExt" /> struct.</summary>
+public static unsafe partial class IShellPropSheetExtTests
 {
-    /// <summary>Provides validation of the <see cref="IShellPropSheetExt" /> struct.</summary>
-    public static unsafe partial class IShellPropSheetExtTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IShellPropSheetExt" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IShellPropSheetExt" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IShellPropSheetExt).GUID, Is.EqualTo(IID_IShellPropSheetExt));
-        }
+        Assert.That(typeof(IShellPropSheetExt).GUID, Is.EqualTo(IID_IShellPropSheetExt));
+    }
 
-        /// <summary>Validates that the <see cref="IShellPropSheetExt" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IShellPropSheetExt>(), Is.EqualTo(sizeof(IShellPropSheetExt)));
-        }
+    /// <summary>Validates that the <see cref="IShellPropSheetExt" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IShellPropSheetExt>(), Is.EqualTo(sizeof(IShellPropSheetExt)));
+    }
 
-        /// <summary>Validates that the <see cref="IShellPropSheetExt" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IShellPropSheetExt).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IShellPropSheetExt" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IShellPropSheetExt).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IShellPropSheetExt" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IShellPropSheetExt" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IShellPropSheetExt), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IShellPropSheetExt), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IShellPropSheetExt), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IShellPropSheetExt), Is.EqualTo(4));
         }
     }
 }

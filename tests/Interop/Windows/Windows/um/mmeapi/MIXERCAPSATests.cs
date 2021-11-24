@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MIXERCAPSA" /> struct.</summary>
+public static unsafe partial class MIXERCAPSATests
 {
-    /// <summary>Provides validation of the <see cref="MIXERCAPSA" /> struct.</summary>
-    public static unsafe partial class MIXERCAPSATests
+    /// <summary>Validates that the <see cref="MIXERCAPSA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MIXERCAPSA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MIXERCAPSA>(), Is.EqualTo(sizeof(MIXERCAPSA)));
-        }
+        Assert.That(Marshal.SizeOf<MIXERCAPSA>(), Is.EqualTo(sizeof(MIXERCAPSA)));
+    }
 
-        /// <summary>Validates that the <see cref="MIXERCAPSA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MIXERCAPSA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MIXERCAPSA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MIXERCAPSA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MIXERCAPSA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MIXERCAPSA), Is.EqualTo(48));
-        }
+    /// <summary>Validates that the <see cref="MIXERCAPSA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MIXERCAPSA), Is.EqualTo(48));
     }
 }

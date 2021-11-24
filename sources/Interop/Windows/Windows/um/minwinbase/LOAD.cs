@@ -3,11 +3,10 @@
 // Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class LOAD
 {
-    public static partial class LOAD
-    {
-        [NativeTypeName("#define LOAD_DLL_DEBUG_EVENT 6")]
-        public const int LOAD_DLL_DEBUG_EVENT = 6;
-    }
+    [NativeTypeName("#define LOAD_DLL_DEBUG_EVENT 6")]
+    public const int LOAD_DLL_DEBUG_EVENT = 6;
 }

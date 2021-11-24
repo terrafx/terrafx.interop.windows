@@ -3,63 +3,62 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct LVGROUP
 {
-    public unsafe partial struct LVGROUP
-    {
-        public uint cbSize;
+    public uint cbSize;
 
-        public uint mask;
+    public uint mask;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszHeader;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszHeader;
 
-        public int cchHeader;
+    public int cchHeader;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszFooter;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszFooter;
 
-        public int cchFooter;
+    public int cchFooter;
 
-        public int iGroupId;
+    public int iGroupId;
 
-        public uint stateMask;
+    public uint stateMask;
 
-        public uint state;
+    public uint state;
 
-        public uint uAlign;
+    public uint uAlign;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszSubtitle;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszSubtitle;
 
-        public uint cchSubtitle;
+    public uint cchSubtitle;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszTask;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszTask;
 
-        public uint cchTask;
+    public uint cchTask;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszDescriptionTop;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszDescriptionTop;
 
-        public uint cchDescriptionTop;
+    public uint cchDescriptionTop;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszDescriptionBottom;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszDescriptionBottom;
 
-        public uint cchDescriptionBottom;
+    public uint cchDescriptionBottom;
 
-        public int iTitleImage;
+    public int iTitleImage;
 
-        public int iExtendedImage;
+    public int iExtendedImage;
 
-        public int iFirstItem;
+    public int iFirstItem;
 
-        public uint cItems;
+    public uint cItems;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszSubsetTitle;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszSubsetTitle;
 
-        public uint cchSubsetTitle;
-    }
+    public uint cchSubsetTitle;
 }

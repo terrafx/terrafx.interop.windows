@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DLGITEMTEMPLATE" /> struct.</summary>
+public static unsafe partial class DLGITEMTEMPLATETests
 {
-    /// <summary>Provides validation of the <see cref="DLGITEMTEMPLATE" /> struct.</summary>
-    public static unsafe partial class DLGITEMTEMPLATETests
+    /// <summary>Validates that the <see cref="DLGITEMTEMPLATE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DLGITEMTEMPLATE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DLGITEMTEMPLATE>(), Is.EqualTo(sizeof(DLGITEMTEMPLATE)));
-        }
+        Assert.That(Marshal.SizeOf<DLGITEMTEMPLATE>(), Is.EqualTo(sizeof(DLGITEMTEMPLATE)));
+    }
 
-        /// <summary>Validates that the <see cref="DLGITEMTEMPLATE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DLGITEMTEMPLATE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DLGITEMTEMPLATE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DLGITEMTEMPLATE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DLGITEMTEMPLATE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DLGITEMTEMPLATE), Is.EqualTo(18));
-        }
+    /// <summary>Validates that the <see cref="DLGITEMTEMPLATE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DLGITEMTEMPLATE), Is.EqualTo(18));
     }
 }

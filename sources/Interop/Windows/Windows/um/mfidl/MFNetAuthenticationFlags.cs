@@ -3,12 +3,11 @@
 // Ported from um/mfidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MFNetAuthenticationFlags
 {
-    public enum MFNetAuthenticationFlags
-    {
-        MFNET_AUTHENTICATION_PROXY = 0x1,
-        MFNET_AUTHENTICATION_CLEAR_TEXT = 0x2,
-        MFNET_AUTHENTICATION_LOGGED_ON_USER = 0x4,
-    }
+    MFNET_AUTHENTICATION_PROXY = 0x1,
+    MFNET_AUTHENTICATION_CLEAR_TEXT = 0x2,
+    MFNET_AUTHENTICATION_LOGGED_ON_USER = 0x4,
 }

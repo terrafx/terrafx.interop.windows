@@ -7,16 +7,15 @@ using NUnit.Framework;
 using System;
 using static TerraFX.Interop.Windows.GUID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="GUID" /> class.</summary>
+public static partial class GUIDTests
 {
-    /// <summary>Provides validation of the <see cref="GUID" /> class.</summary>
-    public static partial class GUIDTests
+    /// <summary>Validates that the value of the <see cref="GUID_INTEGRATIONSTYLE_SEARCHBOX" /> property is correct.</summary>
+    [Test]
+    public static void GUID_INTEGRATIONSTYLE_SEARCHBOXTest()
     {
-        /// <summary>Validates that the value of the <see cref="GUID_INTEGRATIONSTYLE_SEARCHBOX" /> property is correct.</summary>
-        [Test]
-        public static void GUID_INTEGRATIONSTYLE_SEARCHBOXTest()
-        {
-            Assert.That(GUID_INTEGRATIONSTYLE_SEARCHBOX, Is.EqualTo(new Guid(0xe6d1bd11, 0x82f7, 0x4903, 0xae, 0x21, 0x1a, 0x63, 0x97, 0xcd, 0xe2, 0xeb)));
-        }
+        Assert.That(GUID_INTEGRATIONSTYLE_SEARCHBOX, Is.EqualTo(new Guid(0xe6d1bd11, 0x82f7, 0x4903, 0xae, 0x21, 0x1a, 0x63, 0x97, 0xcd, 0xe2, 0xeb)));
     }
 }

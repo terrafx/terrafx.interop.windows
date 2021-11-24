@@ -7,31 +7,30 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct VOLUME_DISK_EXTENTS
 {
-    public partial struct VOLUME_DISK_EXTENTS
+    [NativeTypeName("DWORD")]
+    public uint NumberOfDiskExtents;
+
+    [NativeTypeName("DISK_EXTENT [1]")]
+    public _Extents_e__FixedBuffer Extents;
+
+    public partial struct _Extents_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint NumberOfDiskExtents;
+        public DISK_EXTENT e0;
 
-        [NativeTypeName("DISK_EXTENT [1]")]
-        public _Extents_e__FixedBuffer Extents;
-
-        public partial struct _Extents_e__FixedBuffer
+        public ref DISK_EXTENT this[int index]
         {
-            public DISK_EXTENT e0;
-
-            public ref DISK_EXTENT this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<DISK_EXTENT> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<DISK_EXTENT> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

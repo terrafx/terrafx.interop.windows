@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDXGIOutput" /> struct.</summary>
+public static unsafe partial class IDXGIOutputTests
 {
-    /// <summary>Provides validation of the <see cref="IDXGIOutput" /> struct.</summary>
-    public static unsafe partial class IDXGIOutputTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDXGIOutput" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDXGIOutput" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDXGIOutput).GUID, Is.EqualTo(IID_IDXGIOutput));
-        }
+        Assert.That(typeof(IDXGIOutput).GUID, Is.EqualTo(IID_IDXGIOutput));
+    }
 
-        /// <summary>Validates that the <see cref="IDXGIOutput" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDXGIOutput>(), Is.EqualTo(sizeof(IDXGIOutput)));
-        }
+    /// <summary>Validates that the <see cref="IDXGIOutput" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDXGIOutput>(), Is.EqualTo(sizeof(IDXGIOutput)));
+    }
 
-        /// <summary>Validates that the <see cref="IDXGIOutput" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDXGIOutput).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDXGIOutput" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDXGIOutput).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDXGIOutput" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDXGIOutput" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDXGIOutput), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDXGIOutput), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDXGIOutput), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDXGIOutput), Is.EqualTo(4));
         }
     }
 }

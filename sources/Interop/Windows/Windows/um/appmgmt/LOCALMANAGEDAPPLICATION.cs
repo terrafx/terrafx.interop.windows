@@ -3,20 +3,19 @@
 // Ported from um/appmgmt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct LOCALMANAGEDAPPLICATION
 {
-    public unsafe partial struct LOCALMANAGEDAPPLICATION
-    {
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszDeploymentName;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszDeploymentName;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszPolicyName;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszPolicyName;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszProductId;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszProductId;
 
-        [NativeTypeName("DWORD")]
-        public uint dwState;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwState;
 }

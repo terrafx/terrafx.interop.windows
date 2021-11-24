@@ -3,22 +3,21 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CMSG_MAIL_LIST_RECIPIENT_INFO
 {
-    public unsafe partial struct CMSG_MAIL_LIST_RECIPIENT_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwVersion;
+    [NativeTypeName("DWORD")]
+    public uint dwVersion;
 
-        public CRYPT_DATA_BLOB KeyId;
+    public CRYPT_DATA_BLOB KeyId;
 
-        public CRYPT_ALGORITHM_IDENTIFIER KeyEncryptionAlgorithm;
+    public CRYPT_ALGORITHM_IDENTIFIER KeyEncryptionAlgorithm;
 
-        public CRYPT_DATA_BLOB EncryptedKey;
+    public CRYPT_DATA_BLOB EncryptedKey;
 
-        public FILETIME Date;
+    public FILETIME Date;
 
-        [NativeTypeName("PCRYPT_ATTRIBUTE_TYPE_VALUE")]
-        public CRYPT_ATTRIBUTE_TYPE_VALUE* pOtherAttr;
-    }
+    [NativeTypeName("PCRYPT_ATTRIBUTE_TYPE_VALUE")]
+    public CRYPT_ATTRIBUTE_TYPE_VALUE* pOtherAttr;
 }

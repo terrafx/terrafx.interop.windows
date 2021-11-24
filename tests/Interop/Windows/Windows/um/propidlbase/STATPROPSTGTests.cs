@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="STATPROPSTG" /> struct.</summary>
+public static unsafe partial class STATPROPSTGTests
 {
-    /// <summary>Provides validation of the <see cref="STATPROPSTG" /> struct.</summary>
-    public static unsafe partial class STATPROPSTGTests
+    /// <summary>Validates that the <see cref="STATPROPSTG" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="STATPROPSTG" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<STATPROPSTG>(), Is.EqualTo(sizeof(STATPROPSTG)));
-        }
+        Assert.That(Marshal.SizeOf<STATPROPSTG>(), Is.EqualTo(sizeof(STATPROPSTG)));
+    }
 
-        /// <summary>Validates that the <see cref="STATPROPSTG" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(STATPROPSTG).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="STATPROPSTG" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(STATPROPSTG).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="STATPROPSTG" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="STATPROPSTG" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(STATPROPSTG), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(STATPROPSTG), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(STATPROPSTG), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(STATPROPSTG), Is.EqualTo(12));
         }
     }
 }

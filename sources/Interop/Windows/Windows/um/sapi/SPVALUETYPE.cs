@@ -3,18 +3,17 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SPVALUETYPE
 {
-    public enum SPVALUETYPE
-    {
-        SPDF_PROPERTY = 0x1,
-        SPDF_REPLACEMENT = 0x2,
-        SPDF_RULE = 0x4,
-        SPDF_DISPLAYTEXT = 0x8,
-        SPDF_LEXICALFORM = 0x10,
-        SPDF_PRONUNCIATION = 0x20,
-        SPDF_AUDIO = 0x40,
-        SPDF_ALTERNATES = 0x80,
-        SPDF_ALL = 0xff,
-    }
+    SPDF_PROPERTY = 0x1,
+    SPDF_REPLACEMENT = 0x2,
+    SPDF_RULE = 0x4,
+    SPDF_DISPLAYTEXT = 0x8,
+    SPDF_LEXICALFORM = 0x10,
+    SPDF_PRONUNCIATION = 0x20,
+    SPDF_AUDIO = 0x40,
+    SPDF_ALTERNATES = 0x80,
+    SPDF_ALL = 0xff,
 }

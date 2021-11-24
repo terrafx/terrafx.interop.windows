@@ -7,142 +7,141 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("8895B1C6-B41F-4C1C-A562-0D564250836F")]
+[NativeTypeName("struct IPreviewHandler : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface
 {
-    [Guid("8895B1C6-B41F-4C1C-A562-0D564250836F")]
-    [NativeTypeName("struct IPreviewHandler : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IPreviewHandler*, Guid*, void**, int>)(lpVtbl[0]))((IPreviewHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IPreviewHandler*, Guid*, void**, int>)(lpVtbl[0]))((IPreviewHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IPreviewHandler*, uint>)(lpVtbl[1]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IPreviewHandler*, uint>)(lpVtbl[1]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IPreviewHandler*, uint>)(lpVtbl[2]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IPreviewHandler*, uint>)(lpVtbl[2]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT SetWindow(HWND hwnd, [NativeTypeName("const RECT *")] RECT* prc)
+    {
+        return ((delegate* unmanaged<IPreviewHandler*, HWND, RECT*, int>)(lpVtbl[3]))((IPreviewHandler*)Unsafe.AsPointer(ref this), hwnd, prc);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT SetRect([NativeTypeName("const RECT *")] RECT* prc)
+    {
+        return ((delegate* unmanaged<IPreviewHandler*, RECT*, int>)(lpVtbl[4]))((IPreviewHandler*)Unsafe.AsPointer(ref this), prc);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT DoPreview()
+    {
+        return ((delegate* unmanaged<IPreviewHandler*, int>)(lpVtbl[5]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Unload()
+    {
+        return ((delegate* unmanaged<IPreviewHandler*, int>)(lpVtbl[6]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT SetFocus()
+    {
+        return ((delegate* unmanaged<IPreviewHandler*, int>)(lpVtbl[7]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT QueryFocus(HWND* phwnd)
+    {
+        return ((delegate* unmanaged<IPreviewHandler*, HWND*, int>)(lpVtbl[8]))((IPreviewHandler*)Unsafe.AsPointer(ref this), phwnd);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT TranslateAcceleratorW(MSG* pmsg)
+    {
+        return ((delegate* unmanaged<IPreviewHandler*, MSG*, int>)(lpVtbl[9]))((IPreviewHandler*)Unsafe.AsPointer(ref this), pmsg);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT SetWindow(HWND hwnd, [NativeTypeName("const RECT *")] RECT* prc)
-        {
-            return ((delegate* unmanaged<IPreviewHandler*, HWND, RECT*, int>)(lpVtbl[3]))((IPreviewHandler*)Unsafe.AsPointer(ref this), hwnd, prc);
-        }
+        HRESULT SetWindow(HWND hwnd, [NativeTypeName("const RECT *")] RECT* prc);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetRect([NativeTypeName("const RECT *")] RECT* prc)
-        {
-            return ((delegate* unmanaged<IPreviewHandler*, RECT*, int>)(lpVtbl[4]))((IPreviewHandler*)Unsafe.AsPointer(ref this), prc);
-        }
+        HRESULT SetRect([NativeTypeName("const RECT *")] RECT* prc);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT DoPreview()
-        {
-            return ((delegate* unmanaged<IPreviewHandler*, int>)(lpVtbl[5]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT DoPreview();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Unload()
-        {
-            return ((delegate* unmanaged<IPreviewHandler*, int>)(lpVtbl[6]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Unload();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT SetFocus()
-        {
-            return ((delegate* unmanaged<IPreviewHandler*, int>)(lpVtbl[7]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT SetFocus();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT QueryFocus(HWND* phwnd)
-        {
-            return ((delegate* unmanaged<IPreviewHandler*, HWND*, int>)(lpVtbl[8]))((IPreviewHandler*)Unsafe.AsPointer(ref this), phwnd);
-        }
+        HRESULT QueryFocus(HWND* phwnd);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT TranslateAcceleratorW(MSG* pmsg)
-        {
-            return ((delegate* unmanaged<IPreviewHandler*, MSG*, int>)(lpVtbl[9]))((IPreviewHandler*)Unsafe.AsPointer(ref this), pmsg);
-        }
+        HRESULT TranslateAcceleratorW(MSG* pmsg);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT SetWindow(HWND hwnd, [NativeTypeName("const RECT *")] RECT* prc);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPreviewHandler*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT SetRect([NativeTypeName("const RECT *")] RECT* prc);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPreviewHandler*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT DoPreview();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPreviewHandler*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT Unload();
+        [NativeTypeName("HRESULT (HWND, const RECT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPreviewHandler*, HWND, RECT*, int> SetWindow;
 
-            [VtblIndex(7)]
-            HRESULT SetFocus();
+        [NativeTypeName("HRESULT (const RECT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPreviewHandler*, RECT*, int> SetRect;
 
-            [VtblIndex(8)]
-            HRESULT QueryFocus(HWND* phwnd);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPreviewHandler*, int> DoPreview;
 
-            [VtblIndex(9)]
-            HRESULT TranslateAcceleratorW(MSG* pmsg);
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPreviewHandler*, int> Unload;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPreviewHandler*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPreviewHandler*, int> SetFocus;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPreviewHandler*, uint> AddRef;
+        [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPreviewHandler*, HWND*, int> QueryFocus;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPreviewHandler*, uint> Release;
-
-            [NativeTypeName("HRESULT (HWND, const RECT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPreviewHandler*, HWND, RECT*, int> SetWindow;
-
-            [NativeTypeName("HRESULT (const RECT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPreviewHandler*, RECT*, int> SetRect;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPreviewHandler*, int> DoPreview;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPreviewHandler*, int> Unload;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPreviewHandler*, int> SetFocus;
-
-            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPreviewHandler*, HWND*, int> QueryFocus;
-
-            [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPreviewHandler*, MSG*, int> TranslateAcceleratorW;
-        }
+        [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPreviewHandler*, MSG*, int> TranslateAcceleratorW;
     }
 }

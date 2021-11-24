@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IIsolatedAppLauncher" /> struct.</summary>
+public static unsafe partial class IIsolatedAppLauncherTests
 {
-    /// <summary>Provides validation of the <see cref="IIsolatedAppLauncher" /> struct.</summary>
-    public static unsafe partial class IIsolatedAppLauncherTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IIsolatedAppLauncher" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IIsolatedAppLauncher" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IIsolatedAppLauncher).GUID, Is.EqualTo(IID_IIsolatedAppLauncher));
-        }
+        Assert.That(typeof(IIsolatedAppLauncher).GUID, Is.EqualTo(IID_IIsolatedAppLauncher));
+    }
 
-        /// <summary>Validates that the <see cref="IIsolatedAppLauncher" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IIsolatedAppLauncher>(), Is.EqualTo(sizeof(IIsolatedAppLauncher)));
-        }
+    /// <summary>Validates that the <see cref="IIsolatedAppLauncher" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IIsolatedAppLauncher>(), Is.EqualTo(sizeof(IIsolatedAppLauncher)));
+    }
 
-        /// <summary>Validates that the <see cref="IIsolatedAppLauncher" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IIsolatedAppLauncher).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IIsolatedAppLauncher" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IIsolatedAppLauncher).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IIsolatedAppLauncher" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IIsolatedAppLauncher" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IIsolatedAppLauncher), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IIsolatedAppLauncher), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IIsolatedAppLauncher), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IIsolatedAppLauncher), Is.EqualTo(4));
         }
     }
 }

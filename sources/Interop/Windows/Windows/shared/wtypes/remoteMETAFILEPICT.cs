@@ -3,19 +3,18 @@
 // Ported from shared/wtypes.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct remoteMETAFILEPICT
 {
-    public unsafe partial struct remoteMETAFILEPICT
-    {
-        [NativeTypeName("LONG")]
-        public int mm;
+    [NativeTypeName("LONG")]
+    public int mm;
 
-        [NativeTypeName("LONG")]
-        public int xExt;
+    [NativeTypeName("LONG")]
+    public int xExt;
 
-        [NativeTypeName("LONG")]
-        public int yExt;
+    [NativeTypeName("LONG")]
+    public int yExt;
 
-        public userHMETAFILE* hMF;
-    }
+    public userHMETAFILE* hMF;
 }

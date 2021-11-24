@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLBaseFontElement" /> struct.</summary>
+public static unsafe partial class HTMLBaseFontElementTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLBaseFontElement" /> struct.</summary>
-    public static unsafe partial class HTMLBaseFontElementTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLBaseFontElement" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLBaseFontElement" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLBaseFontElement).GUID, Is.EqualTo(IID_HTMLBaseFontElement));
-        }
+        Assert.That(typeof(HTMLBaseFontElement).GUID, Is.EqualTo(IID_HTMLBaseFontElement));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLBaseFontElement" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLBaseFontElement>(), Is.EqualTo(sizeof(HTMLBaseFontElement)));
-        }
+    /// <summary>Validates that the <see cref="HTMLBaseFontElement" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLBaseFontElement>(), Is.EqualTo(sizeof(HTMLBaseFontElement)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLBaseFontElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLBaseFontElement).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLBaseFontElement" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLBaseFontElement).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLBaseFontElement" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTMLBaseFontElement), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTMLBaseFontElement" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTMLBaseFontElement), Is.EqualTo(1));
     }
 }

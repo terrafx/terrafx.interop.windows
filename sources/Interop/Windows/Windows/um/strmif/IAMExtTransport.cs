@@ -7,415 +7,414 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("A03CD5F0-3045-11CF-8C44-00AA006B6814")]
+[NativeTypeName("struct IAMExtTransport : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface
 {
-    [Guid("A03CD5F0-3045-11CF-8C44-00AA006B6814")]
-    [NativeTypeName("struct IAMExtTransport : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMExtTransport : IAMExtTransport.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IAMExtTransport*, Guid*, void**, int>)(lpVtbl[0]))((IAMExtTransport*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, Guid*, void**, int>)(lpVtbl[0]))((IAMExtTransport*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, uint>)(lpVtbl[1]))((IAMExtTransport*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, uint>)(lpVtbl[1]))((IAMExtTransport*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, uint>)(lpVtbl[2]))((IAMExtTransport*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, uint>)(lpVtbl[2]))((IAMExtTransport*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetCapability([NativeTypeName("long")] int Capability, [NativeTypeName("long *")] int* pValue, double* pdblValue)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int, int*, double*, int>)(lpVtbl[3]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Capability, pValue, pdblValue);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT put_MediaState([NativeTypeName("long")] int State)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int, int>)(lpVtbl[4]))((IAMExtTransport*)Unsafe.AsPointer(ref this), State);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT get_MediaState([NativeTypeName("long *")] int* pState)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int*, int>)(lpVtbl[5]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pState);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT put_LocalControl([NativeTypeName("long")] int State)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int, int>)(lpVtbl[6]))((IAMExtTransport*)Unsafe.AsPointer(ref this), State);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT get_LocalControl([NativeTypeName("long *")] int* pState)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int*, int>)(lpVtbl[7]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pState);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT GetStatus([NativeTypeName("long")] int StatusItem, [NativeTypeName("long *")] int* pValue)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int, int*, int>)(lpVtbl[8]))((IAMExtTransport*)Unsafe.AsPointer(ref this), StatusItem, pValue);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT GetTransportBasicParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue, [NativeTypeName("LPOLESTR *")] ushort** ppszData)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int, int*, ushort**, int>)(lpVtbl[9]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, pValue, ppszData);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT SetTransportBasicParameters([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value, [NativeTypeName("LPCOLESTR")] ushort* pszData)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int, int, ushort*, int>)(lpVtbl[10]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, Value, pszData);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT GetTransportVideoParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int, int*, int>)(lpVtbl[11]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, pValue);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT SetTransportVideoParameters([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int, int, int>)(lpVtbl[12]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, Value);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT GetTransportAudioParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int, int*, int>)(lpVtbl[13]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, pValue);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT SetTransportAudioParameters([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int, int, int>)(lpVtbl[14]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, Value);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT put_Mode([NativeTypeName("long")] int Mode)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int, int>)(lpVtbl[15]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Mode);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT get_Mode([NativeTypeName("long *")] int* pMode)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int*, int>)(lpVtbl[16]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pMode);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT put_Rate(double dblRate)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, double, int>)(lpVtbl[17]))((IAMExtTransport*)Unsafe.AsPointer(ref this), dblRate);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT get_Rate(double* pdblRate)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, double*, int>)(lpVtbl[18]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pdblRate);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT GetChase([NativeTypeName("long *")] int* pEnabled, [NativeTypeName("long *")] int* pOffset, HEVENT* phEvent)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int*, int*, HEVENT*, int>)(lpVtbl[19]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pEnabled, pOffset, phEvent);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT SetChase([NativeTypeName("long")] int Enable, [NativeTypeName("long")] int Offset, HEVENT hEvent)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int, int, HEVENT, int>)(lpVtbl[20]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Enable, Offset, hEvent);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(21)]
+    public HRESULT GetBump([NativeTypeName("long *")] int* pSpeed, [NativeTypeName("long *")] int* pDuration)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int*, int*, int>)(lpVtbl[21]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pSpeed, pDuration);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(22)]
+    public HRESULT SetBump([NativeTypeName("long")] int Speed, [NativeTypeName("long")] int Duration)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int, int, int>)(lpVtbl[22]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Speed, Duration);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(23)]
+    public HRESULT get_AntiClogControl([NativeTypeName("long *")] int* pEnabled)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int*, int>)(lpVtbl[23]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pEnabled);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(24)]
+    public HRESULT put_AntiClogControl([NativeTypeName("long")] int Enable)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int, int>)(lpVtbl[24]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Enable);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(25)]
+    public HRESULT GetEditPropertySet([NativeTypeName("long")] int EditID, [NativeTypeName("long *")] int* pState)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int, int*, int>)(lpVtbl[25]))((IAMExtTransport*)Unsafe.AsPointer(ref this), EditID, pState);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(26)]
+    public HRESULT SetEditPropertySet([NativeTypeName("long *")] int* pEditID, [NativeTypeName("long")] int State)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int*, int, int>)(lpVtbl[26]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pEditID, State);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(27)]
+    public HRESULT GetEditProperty([NativeTypeName("long")] int EditID, [NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int, int, int*, int>)(lpVtbl[27]))((IAMExtTransport*)Unsafe.AsPointer(ref this), EditID, Param, pValue);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(28)]
+    public HRESULT SetEditProperty([NativeTypeName("long")] int EditID, [NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int, int, int, int>)(lpVtbl[28]))((IAMExtTransport*)Unsafe.AsPointer(ref this), EditID, Param, Value);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(29)]
+    public HRESULT get_EditStart([NativeTypeName("long *")] int* pValue)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int*, int>)(lpVtbl[29]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pValue);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(30)]
+    public HRESULT put_EditStart([NativeTypeName("long")] int Value)
+    {
+        return ((delegate* unmanaged<IAMExtTransport*, int, int>)(lpVtbl[30]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Value);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetCapability([NativeTypeName("long")] int Capability, [NativeTypeName("long *")] int* pValue, double* pdblValue)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int, int*, double*, int>)(lpVtbl[3]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Capability, pValue, pdblValue);
-        }
+        HRESULT GetCapability([NativeTypeName("long")] int Capability, [NativeTypeName("long *")] int* pValue, double* pdblValue);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT put_MediaState([NativeTypeName("long")] int State)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int, int>)(lpVtbl[4]))((IAMExtTransport*)Unsafe.AsPointer(ref this), State);
-        }
+        HRESULT put_MediaState([NativeTypeName("long")] int State);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT get_MediaState([NativeTypeName("long *")] int* pState)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int*, int>)(lpVtbl[5]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pState);
-        }
+        HRESULT get_MediaState([NativeTypeName("long *")] int* pState);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT put_LocalControl([NativeTypeName("long")] int State)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int, int>)(lpVtbl[6]))((IAMExtTransport*)Unsafe.AsPointer(ref this), State);
-        }
+        HRESULT put_LocalControl([NativeTypeName("long")] int State);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT get_LocalControl([NativeTypeName("long *")] int* pState)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int*, int>)(lpVtbl[7]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pState);
-        }
+        HRESULT get_LocalControl([NativeTypeName("long *")] int* pState);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT GetStatus([NativeTypeName("long")] int StatusItem, [NativeTypeName("long *")] int* pValue)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int, int*, int>)(lpVtbl[8]))((IAMExtTransport*)Unsafe.AsPointer(ref this), StatusItem, pValue);
-        }
+        HRESULT GetStatus([NativeTypeName("long")] int StatusItem, [NativeTypeName("long *")] int* pValue);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetTransportBasicParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue, [NativeTypeName("LPOLESTR *")] ushort** ppszData)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int, int*, ushort**, int>)(lpVtbl[9]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, pValue, ppszData);
-        }
+        HRESULT GetTransportBasicParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue, [NativeTypeName("LPOLESTR *")] ushort** ppszData);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT SetTransportBasicParameters([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value, [NativeTypeName("LPCOLESTR")] ushort* pszData)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int, int, ushort*, int>)(lpVtbl[10]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, Value, pszData);
-        }
+        HRESULT SetTransportBasicParameters([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value, [NativeTypeName("LPCOLESTR")] ushort* pszData);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT GetTransportVideoParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int, int*, int>)(lpVtbl[11]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, pValue);
-        }
+        HRESULT GetTransportVideoParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT SetTransportVideoParameters([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int, int, int>)(lpVtbl[12]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, Value);
-        }
+        HRESULT SetTransportVideoParameters([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT GetTransportAudioParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int, int*, int>)(lpVtbl[13]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, pValue);
-        }
+        HRESULT GetTransportAudioParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT SetTransportAudioParameters([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int, int, int>)(lpVtbl[14]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Param, Value);
-        }
+        HRESULT SetTransportAudioParameters([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT put_Mode([NativeTypeName("long")] int Mode)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int, int>)(lpVtbl[15]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Mode);
-        }
+        HRESULT put_Mode([NativeTypeName("long")] int Mode);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT get_Mode([NativeTypeName("long *")] int* pMode)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int*, int>)(lpVtbl[16]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pMode);
-        }
+        HRESULT get_Mode([NativeTypeName("long *")] int* pMode);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT put_Rate(double dblRate)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, double, int>)(lpVtbl[17]))((IAMExtTransport*)Unsafe.AsPointer(ref this), dblRate);
-        }
+        HRESULT put_Rate(double dblRate);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT get_Rate(double* pdblRate)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, double*, int>)(lpVtbl[18]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pdblRate);
-        }
+        HRESULT get_Rate(double* pdblRate);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT GetChase([NativeTypeName("long *")] int* pEnabled, [NativeTypeName("long *")] int* pOffset, HEVENT* phEvent)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int*, int*, HEVENT*, int>)(lpVtbl[19]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pEnabled, pOffset, phEvent);
-        }
+        HRESULT GetChase([NativeTypeName("long *")] int* pEnabled, [NativeTypeName("long *")] int* pOffset, HEVENT* phEvent);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT SetChase([NativeTypeName("long")] int Enable, [NativeTypeName("long")] int Offset, HEVENT hEvent)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int, int, HEVENT, int>)(lpVtbl[20]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Enable, Offset, hEvent);
-        }
+        HRESULT SetChase([NativeTypeName("long")] int Enable, [NativeTypeName("long")] int Offset, HEVENT hEvent);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT GetBump([NativeTypeName("long *")] int* pSpeed, [NativeTypeName("long *")] int* pDuration)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int*, int*, int>)(lpVtbl[21]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pSpeed, pDuration);
-        }
+        HRESULT GetBump([NativeTypeName("long *")] int* pSpeed, [NativeTypeName("long *")] int* pDuration);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        public HRESULT SetBump([NativeTypeName("long")] int Speed, [NativeTypeName("long")] int Duration)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int, int, int>)(lpVtbl[22]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Speed, Duration);
-        }
+        HRESULT SetBump([NativeTypeName("long")] int Speed, [NativeTypeName("long")] int Duration);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public HRESULT get_AntiClogControl([NativeTypeName("long *")] int* pEnabled)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int*, int>)(lpVtbl[23]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pEnabled);
-        }
+        HRESULT get_AntiClogControl([NativeTypeName("long *")] int* pEnabled);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT put_AntiClogControl([NativeTypeName("long")] int Enable)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int, int>)(lpVtbl[24]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Enable);
-        }
+        HRESULT put_AntiClogControl([NativeTypeName("long")] int Enable);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public HRESULT GetEditPropertySet([NativeTypeName("long")] int EditID, [NativeTypeName("long *")] int* pState)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int, int*, int>)(lpVtbl[25]))((IAMExtTransport*)Unsafe.AsPointer(ref this), EditID, pState);
-        }
+        HRESULT GetEditPropertySet([NativeTypeName("long")] int EditID, [NativeTypeName("long *")] int* pState);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        public HRESULT SetEditPropertySet([NativeTypeName("long *")] int* pEditID, [NativeTypeName("long")] int State)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int*, int, int>)(lpVtbl[26]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pEditID, State);
-        }
+        HRESULT SetEditPropertySet([NativeTypeName("long *")] int* pEditID, [NativeTypeName("long")] int State);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        public HRESULT GetEditProperty([NativeTypeName("long")] int EditID, [NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int, int, int*, int>)(lpVtbl[27]))((IAMExtTransport*)Unsafe.AsPointer(ref this), EditID, Param, pValue);
-        }
+        HRESULT GetEditProperty([NativeTypeName("long")] int EditID, [NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        public HRESULT SetEditProperty([NativeTypeName("long")] int EditID, [NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int, int, int, int>)(lpVtbl[28]))((IAMExtTransport*)Unsafe.AsPointer(ref this), EditID, Param, Value);
-        }
+        HRESULT SetEditProperty([NativeTypeName("long")] int EditID, [NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
-        public HRESULT get_EditStart([NativeTypeName("long *")] int* pValue)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int*, int>)(lpVtbl[29]))((IAMExtTransport*)Unsafe.AsPointer(ref this), pValue);
-        }
+        HRESULT get_EditStart([NativeTypeName("long *")] int* pValue);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
-        public HRESULT put_EditStart([NativeTypeName("long")] int Value)
-        {
-            return ((delegate* unmanaged<IAMExtTransport*, int, int>)(lpVtbl[30]))((IAMExtTransport*)Unsafe.AsPointer(ref this), Value);
-        }
+        HRESULT put_EditStart([NativeTypeName("long")] int Value);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetCapability([NativeTypeName("long")] int Capability, [NativeTypeName("long *")] int* pValue, double* pdblValue);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT put_MediaState([NativeTypeName("long")] int State);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT get_MediaState([NativeTypeName("long *")] int* pState);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT put_LocalControl([NativeTypeName("long")] int State);
+        [NativeTypeName("HRESULT (long, long *, double *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int, int*, double*, int> GetCapability;
 
-            [VtblIndex(7)]
-            HRESULT get_LocalControl([NativeTypeName("long *")] int* pState);
+        [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int, int> put_MediaState;
 
-            [VtblIndex(8)]
-            HRESULT GetStatus([NativeTypeName("long")] int StatusItem, [NativeTypeName("long *")] int* pValue);
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int*, int> get_MediaState;
 
-            [VtblIndex(9)]
-            HRESULT GetTransportBasicParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue, [NativeTypeName("LPOLESTR *")] ushort** ppszData);
+        [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int, int> put_LocalControl;
 
-            [VtblIndex(10)]
-            HRESULT SetTransportBasicParameters([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value, [NativeTypeName("LPCOLESTR")] ushort* pszData);
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int*, int> get_LocalControl;
 
-            [VtblIndex(11)]
-            HRESULT GetTransportVideoParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue);
+        [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int, int*, int> GetStatus;
 
-            [VtblIndex(12)]
-            HRESULT SetTransportVideoParameters([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value);
+        [NativeTypeName("HRESULT (long, long *, LPOLESTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int, int*, ushort**, int> GetTransportBasicParameters;
 
-            [VtblIndex(13)]
-            HRESULT GetTransportAudioParameters([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue);
+        [NativeTypeName("HRESULT (long, long, LPCOLESTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int, int, ushort*, int> SetTransportBasicParameters;
 
-            [VtblIndex(14)]
-            HRESULT SetTransportAudioParameters([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value);
+        [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int, int*, int> GetTransportVideoParameters;
 
-            [VtblIndex(15)]
-            HRESULT put_Mode([NativeTypeName("long")] int Mode);
+        [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int, int, int> SetTransportVideoParameters;
 
-            [VtblIndex(16)]
-            HRESULT get_Mode([NativeTypeName("long *")] int* pMode);
+        [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int, int*, int> GetTransportAudioParameters;
 
-            [VtblIndex(17)]
-            HRESULT put_Rate(double dblRate);
+        [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int, int, int> SetTransportAudioParameters;
 
-            [VtblIndex(18)]
-            HRESULT get_Rate(double* pdblRate);
+        [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int, int> put_Mode;
 
-            [VtblIndex(19)]
-            HRESULT GetChase([NativeTypeName("long *")] int* pEnabled, [NativeTypeName("long *")] int* pOffset, HEVENT* phEvent);
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int*, int> get_Mode;
 
-            [VtblIndex(20)]
-            HRESULT SetChase([NativeTypeName("long")] int Enable, [NativeTypeName("long")] int Offset, HEVENT hEvent);
+        [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, double, int> put_Rate;
 
-            [VtblIndex(21)]
-            HRESULT GetBump([NativeTypeName("long *")] int* pSpeed, [NativeTypeName("long *")] int* pDuration);
+        [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, double*, int> get_Rate;
 
-            [VtblIndex(22)]
-            HRESULT SetBump([NativeTypeName("long")] int Speed, [NativeTypeName("long")] int Duration);
+        [NativeTypeName("HRESULT (long *, long *, HEVENT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int*, int*, HEVENT*, int> GetChase;
 
-            [VtblIndex(23)]
-            HRESULT get_AntiClogControl([NativeTypeName("long *")] int* pEnabled);
+        [NativeTypeName("HRESULT (long, long, HEVENT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int, int, HEVENT, int> SetChase;
 
-            [VtblIndex(24)]
-            HRESULT put_AntiClogControl([NativeTypeName("long")] int Enable);
+        [NativeTypeName("HRESULT (long *, long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int*, int*, int> GetBump;
 
-            [VtblIndex(25)]
-            HRESULT GetEditPropertySet([NativeTypeName("long")] int EditID, [NativeTypeName("long *")] int* pState);
+        [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int, int, int> SetBump;
 
-            [VtblIndex(26)]
-            HRESULT SetEditPropertySet([NativeTypeName("long *")] int* pEditID, [NativeTypeName("long")] int State);
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int*, int> get_AntiClogControl;
 
-            [VtblIndex(27)]
-            HRESULT GetEditProperty([NativeTypeName("long")] int EditID, [NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue);
+        [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int, int> put_AntiClogControl;
 
-            [VtblIndex(28)]
-            HRESULT SetEditProperty([NativeTypeName("long")] int EditID, [NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value);
+        [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int, int*, int> GetEditPropertySet;
 
-            [VtblIndex(29)]
-            HRESULT get_EditStart([NativeTypeName("long *")] int* pValue);
+        [NativeTypeName("HRESULT (long *, long) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int*, int, int> SetEditPropertySet;
 
-            [VtblIndex(30)]
-            HRESULT put_EditStart([NativeTypeName("long")] int Value);
-        }
+        [NativeTypeName("HRESULT (long, long, long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int, int, int*, int> GetEditProperty;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (long, long, long) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int, int, int, int> SetEditProperty;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, uint> AddRef;
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int*, int> get_EditStart;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, uint> Release;
-
-            [NativeTypeName("HRESULT (long, long *, double *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int, int*, double*, int> GetCapability;
-
-            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int, int> put_MediaState;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int*, int> get_MediaState;
-
-            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int, int> put_LocalControl;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int*, int> get_LocalControl;
-
-            [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int, int*, int> GetStatus;
-
-            [NativeTypeName("HRESULT (long, long *, LPOLESTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int, int*, ushort**, int> GetTransportBasicParameters;
-
-            [NativeTypeName("HRESULT (long, long, LPCOLESTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int, int, ushort*, int> SetTransportBasicParameters;
-
-            [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int, int*, int> GetTransportVideoParameters;
-
-            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int, int, int> SetTransportVideoParameters;
-
-            [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int, int*, int> GetTransportAudioParameters;
-
-            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int, int, int> SetTransportAudioParameters;
-
-            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int, int> put_Mode;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int*, int> get_Mode;
-
-            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, double, int> put_Rate;
-
-            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, double*, int> get_Rate;
-
-            [NativeTypeName("HRESULT (long *, long *, HEVENT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int*, int*, HEVENT*, int> GetChase;
-
-            [NativeTypeName("HRESULT (long, long, HEVENT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int, int, HEVENT, int> SetChase;
-
-            [NativeTypeName("HRESULT (long *, long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int*, int*, int> GetBump;
-
-            [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int, int, int> SetBump;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int*, int> get_AntiClogControl;
-
-            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int, int> put_AntiClogControl;
-
-            [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int, int*, int> GetEditPropertySet;
-
-            [NativeTypeName("HRESULT (long *, long) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int*, int, int> SetEditPropertySet;
-
-            [NativeTypeName("HRESULT (long, long, long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int, int, int*, int> GetEditProperty;
-
-            [NativeTypeName("HRESULT (long, long, long) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int, int, int, int> SetEditProperty;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int*, int> get_EditStart;
-
-            [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMExtTransport*, int, int> put_EditStart;
-        }
+        [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMExtTransport*, int, int> put_EditStart;
     }
 }

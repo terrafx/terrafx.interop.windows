@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("45BA127D-10A8-46EA-8AB7-56EA9078943C")]
+public partial struct ApplicationActivationManager
 {
-    [Guid("45BA127D-10A8-46EA-8AB7-56EA9078943C")]
-    public partial struct ApplicationActivationManager
-    {
-    }
 }

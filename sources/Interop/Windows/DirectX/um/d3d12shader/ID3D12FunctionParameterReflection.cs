@@ -7,30 +7,29 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Guid("EC25F42D-7006-4F2B-B33E-02CC3375733F")]
+public unsafe partial struct ID3D12FunctionParameterReflection : ID3D12FunctionParameterReflection.Interface
 {
-    [Guid("EC25F42D-7006-4F2B-B33E-02CC3375733F")]
-    public unsafe partial struct ID3D12FunctionParameterReflection : ID3D12FunctionParameterReflection.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT GetDesc(D3D12_PARAMETER_DESC* pDesc)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ID3D12FunctionParameterReflection*, D3D12_PARAMETER_DESC*, int>)(lpVtbl[0]))((ID3D12FunctionParameterReflection*)Unsafe.AsPointer(ref this), pDesc);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface
+    {
         [VtblIndex(0)]
-        public HRESULT GetDesc(D3D12_PARAMETER_DESC* pDesc)
-        {
-            return ((delegate* unmanaged<ID3D12FunctionParameterReflection*, D3D12_PARAMETER_DESC*, int>)(lpVtbl[0]))((ID3D12FunctionParameterReflection*)Unsafe.AsPointer(ref this), pDesc);
-        }
+        HRESULT GetDesc(D3D12_PARAMETER_DESC* pDesc);
+    }
 
-        public interface Interface
-        {
-            [VtblIndex(0)]
-            HRESULT GetDesc(D3D12_PARAMETER_DESC* pDesc);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (D3D12_PARAMETER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12FunctionParameterReflection*, D3D12_PARAMETER_DESC*, int> GetDesc;
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (D3D12_PARAMETER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12FunctionParameterReflection*, D3D12_PARAMETER_DESC*, int> GetDesc;
     }
 }

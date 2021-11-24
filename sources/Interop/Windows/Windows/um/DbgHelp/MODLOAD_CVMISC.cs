@@ -3,26 +3,25 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MODLOAD_CVMISC
 {
-    public partial struct MODLOAD_CVMISC
-    {
-        [NativeTypeName("DWORD")]
-        public uint oCV;
+    [NativeTypeName("DWORD")]
+    public uint oCV;
 
-        [NativeTypeName("size_t")]
-        public nuint cCV;
+    [NativeTypeName("size_t")]
+    public nuint cCV;
 
-        [NativeTypeName("DWORD")]
-        public uint oMisc;
+    [NativeTypeName("DWORD")]
+    public uint oMisc;
 
-        [NativeTypeName("size_t")]
-        public nuint cMisc;
+    [NativeTypeName("size_t")]
+    public nuint cMisc;
 
-        [NativeTypeName("DWORD")]
-        public uint dtImage;
+    [NativeTypeName("DWORD")]
+    public uint dtImage;
 
-        [NativeTypeName("DWORD")]
-        public uint cImage;
-    }
+    [NativeTypeName("DWORD")]
+    public uint cImage;
 }

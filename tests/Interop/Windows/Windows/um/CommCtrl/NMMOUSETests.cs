@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NMMOUSE" /> struct.</summary>
+public static unsafe partial class NMMOUSETests
 {
-    /// <summary>Provides validation of the <see cref="NMMOUSE" /> struct.</summary>
-    public static unsafe partial class NMMOUSETests
+    /// <summary>Validates that the <see cref="NMMOUSE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NMMOUSE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NMMOUSE>(), Is.EqualTo(sizeof(NMMOUSE)));
-        }
+        Assert.That(Marshal.SizeOf<NMMOUSE>(), Is.EqualTo(sizeof(NMMOUSE)));
+    }
 
-        /// <summary>Validates that the <see cref="NMMOUSE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NMMOUSE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NMMOUSE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NMMOUSE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NMMOUSE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="NMMOUSE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(NMMOUSE), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(NMMOUSE), Is.EqualTo(32));
-            }
+            Assert.That(sizeof(NMMOUSE), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(NMMOUSE), Is.EqualTo(32));
         }
     }
 }

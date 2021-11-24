@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("F02C1A0D-BE21-4350-88B0-7367FC96EF3C")]
+public partial struct NetworkExplorerFolder
 {
-    [Guid("F02C1A0D-BE21-4350-88B0-7367FC96EF3C")]
-    public partial struct NetworkExplorerFolder
-    {
-    }
 }

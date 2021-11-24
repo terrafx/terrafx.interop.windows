@@ -5,21 +5,20 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct PACKET_DESCRIPTION
 {
-    public unsafe partial struct PACKET_DESCRIPTION
-    {
-        [NativeTypeName("ULONG")]
-        public uint cbPacketSize;
+    [NativeTypeName("ULONG")]
+    public uint cbPacketSize;
 
-        [NativeTypeName("ULONG")]
-        public uint cPacketProperties;
+    [NativeTypeName("ULONG")]
+    public uint cPacketProperties;
 
-        public PACKET_PROPERTY* pPacketProperties;
+    public PACKET_PROPERTY* pPacketProperties;
 
-        [NativeTypeName("ULONG")]
-        public uint cButtons;
+    [NativeTypeName("ULONG")]
+    public uint cButtons;
 
-        public Guid* pguidButtons;
-    }
+    public Guid* pguidButtons;
 }

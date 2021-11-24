@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct FILE_ALIGNMENT_INFO
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct FILE_ALIGNMENT_INFO
-    {
-        [NativeTypeName("ULONG")]
-        public uint AlignmentRequirement;
-    }
+    [NativeTypeName("ULONG")]
+    public uint AlignmentRequirement;
 }

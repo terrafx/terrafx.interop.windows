@@ -5,21 +5,20 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct DRAGINFO32W
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct DRAGINFO32W
-    {
-        public uint uSize;
+    public uint uSize;
 
-        public POINT pt;
+    public POINT pt;
 
-        public BOOL fNC;
+    public BOOL fNC;
 
-        [NativeTypeName("PZZWSTR")]
-        public ushort* lpFileList;
+    [NativeTypeName("PZZWSTR")]
+    public ushort* lpFileList;
 
-        [NativeTypeName("DWORD")]
-        public uint grfKeyState;
-    }
+    [NativeTypeName("DWORD")]
+    public uint grfKeyState;
 }

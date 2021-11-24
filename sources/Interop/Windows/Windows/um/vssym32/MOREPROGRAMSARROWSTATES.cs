@@ -3,12 +3,11 @@
 // Ported from um/vssym32.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MOREPROGRAMSARROWSTATES
 {
-    public enum MOREPROGRAMSARROWSTATES
-    {
-        SPS_NORMAL = 1,
-        SPS_HOT = 2,
-        SPS_PRESSED = 3,
-    }
+    SPS_NORMAL = 1,
+    SPS_HOT = 2,
+    SPS_PRESSED = 3,
 }

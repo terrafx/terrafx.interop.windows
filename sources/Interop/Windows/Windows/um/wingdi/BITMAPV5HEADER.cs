@@ -3,79 +3,78 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct BITMAPV5HEADER
 {
-    public partial struct BITMAPV5HEADER
-    {
-        [NativeTypeName("DWORD")]
-        public uint bV5Size;
+    [NativeTypeName("DWORD")]
+    public uint bV5Size;
 
-        [NativeTypeName("LONG")]
-        public int bV5Width;
+    [NativeTypeName("LONG")]
+    public int bV5Width;
 
-        [NativeTypeName("LONG")]
-        public int bV5Height;
+    [NativeTypeName("LONG")]
+    public int bV5Height;
 
-        [NativeTypeName("WORD")]
-        public ushort bV5Planes;
+    [NativeTypeName("WORD")]
+    public ushort bV5Planes;
 
-        [NativeTypeName("WORD")]
-        public ushort bV5BitCount;
+    [NativeTypeName("WORD")]
+    public ushort bV5BitCount;
 
-        [NativeTypeName("DWORD")]
-        public uint bV5Compression;
+    [NativeTypeName("DWORD")]
+    public uint bV5Compression;
 
-        [NativeTypeName("DWORD")]
-        public uint bV5SizeImage;
+    [NativeTypeName("DWORD")]
+    public uint bV5SizeImage;
 
-        [NativeTypeName("LONG")]
-        public int bV5XPelsPerMeter;
+    [NativeTypeName("LONG")]
+    public int bV5XPelsPerMeter;
 
-        [NativeTypeName("LONG")]
-        public int bV5YPelsPerMeter;
+    [NativeTypeName("LONG")]
+    public int bV5YPelsPerMeter;
 
-        [NativeTypeName("DWORD")]
-        public uint bV5ClrUsed;
+    [NativeTypeName("DWORD")]
+    public uint bV5ClrUsed;
 
-        [NativeTypeName("DWORD")]
-        public uint bV5ClrImportant;
+    [NativeTypeName("DWORD")]
+    public uint bV5ClrImportant;
 
-        [NativeTypeName("DWORD")]
-        public uint bV5RedMask;
+    [NativeTypeName("DWORD")]
+    public uint bV5RedMask;
 
-        [NativeTypeName("DWORD")]
-        public uint bV5GreenMask;
+    [NativeTypeName("DWORD")]
+    public uint bV5GreenMask;
 
-        [NativeTypeName("DWORD")]
-        public uint bV5BlueMask;
+    [NativeTypeName("DWORD")]
+    public uint bV5BlueMask;
 
-        [NativeTypeName("DWORD")]
-        public uint bV5AlphaMask;
+    [NativeTypeName("DWORD")]
+    public uint bV5AlphaMask;
 
-        [NativeTypeName("DWORD")]
-        public uint bV5CSType;
+    [NativeTypeName("DWORD")]
+    public uint bV5CSType;
 
-        public CIEXYZTRIPLE bV5Endpoints;
+    public CIEXYZTRIPLE bV5Endpoints;
 
-        [NativeTypeName("DWORD")]
-        public uint bV5GammaRed;
+    [NativeTypeName("DWORD")]
+    public uint bV5GammaRed;
 
-        [NativeTypeName("DWORD")]
-        public uint bV5GammaGreen;
+    [NativeTypeName("DWORD")]
+    public uint bV5GammaGreen;
 
-        [NativeTypeName("DWORD")]
-        public uint bV5GammaBlue;
+    [NativeTypeName("DWORD")]
+    public uint bV5GammaBlue;
 
-        [NativeTypeName("DWORD")]
-        public uint bV5Intent;
+    [NativeTypeName("DWORD")]
+    public uint bV5Intent;
 
-        [NativeTypeName("DWORD")]
-        public uint bV5ProfileData;
+    [NativeTypeName("DWORD")]
+    public uint bV5ProfileData;
 
-        [NativeTypeName("DWORD")]
-        public uint bV5ProfileSize;
+    [NativeTypeName("DWORD")]
+    public uint bV5ProfileSize;
 
-        [NativeTypeName("DWORD")]
-        public uint bV5Reserved;
-    }
+    [NativeTypeName("DWORD")]
+    public uint bV5Reserved;
 }

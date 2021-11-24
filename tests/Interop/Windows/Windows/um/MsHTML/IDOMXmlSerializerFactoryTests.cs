@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDOMXmlSerializerFactory" /> struct.</summary>
+public static unsafe partial class IDOMXmlSerializerFactoryTests
 {
-    /// <summary>Provides validation of the <see cref="IDOMXmlSerializerFactory" /> struct.</summary>
-    public static unsafe partial class IDOMXmlSerializerFactoryTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDOMXmlSerializerFactory" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDOMXmlSerializerFactory" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDOMXmlSerializerFactory).GUID, Is.EqualTo(IID_IDOMXmlSerializerFactory));
-        }
+        Assert.That(typeof(IDOMXmlSerializerFactory).GUID, Is.EqualTo(IID_IDOMXmlSerializerFactory));
+    }
 
-        /// <summary>Validates that the <see cref="IDOMXmlSerializerFactory" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDOMXmlSerializerFactory>(), Is.EqualTo(sizeof(IDOMXmlSerializerFactory)));
-        }
+    /// <summary>Validates that the <see cref="IDOMXmlSerializerFactory" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDOMXmlSerializerFactory>(), Is.EqualTo(sizeof(IDOMXmlSerializerFactory)));
+    }
 
-        /// <summary>Validates that the <see cref="IDOMXmlSerializerFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDOMXmlSerializerFactory).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDOMXmlSerializerFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDOMXmlSerializerFactory).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDOMXmlSerializerFactory" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDOMXmlSerializerFactory" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDOMXmlSerializerFactory), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDOMXmlSerializerFactory), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDOMXmlSerializerFactory), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDOMXmlSerializerFactory), Is.EqualTo(4));
         }
     }
 }

@@ -3,13 +3,12 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct CHANGER_INITIALIZE_ELEMENT_STATUS
-    {
-        public CHANGER_ELEMENT_LIST ElementList;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte BarCodeScan;
-    }
+public partial struct CHANGER_INITIALIZE_ELEMENT_STATUS
+{
+    public CHANGER_ELEMENT_LIST ElementList;
+
+    [NativeTypeName("BOOLEAN")]
+    public byte BarCodeScan;
 }

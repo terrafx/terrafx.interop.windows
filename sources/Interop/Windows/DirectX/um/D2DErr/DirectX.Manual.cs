@@ -7,12 +7,11 @@ using TerraFX.Interop.Windows;
 using static TerraFX.Interop.Windows.FACILITY;
 using static TerraFX.Interop.Windows.Windows;
 
-namespace TerraFX.Interop.DirectX
-{
-    public static partial class DirectX
-    {
-        public static HRESULT MAKE_D2DHR(int sev, int code) => MAKE_HRESULT(sev, FACILITY_D2D, code);
+namespace TerraFX.Interop.DirectX;
 
-        public static HRESULT MAKE_D2DHR_ERR(int code) => MAKE_D2DHR(1, code);
-    }
+public static partial class DirectX
+{
+    public static HRESULT MAKE_D2DHR(int sev, int code) => MAKE_HRESULT(sev, FACILITY_D2D, code);
+
+    public static HRESULT MAKE_D2DHR_ERR(int code) => MAKE_D2DHR(1, code);
 }

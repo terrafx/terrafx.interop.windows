@@ -3,24 +3,23 @@
 // Ported from um/mfapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MT_CUSTOM_VIDEO_PRIMARIES
 {
-    public partial struct MT_CUSTOM_VIDEO_PRIMARIES
-    {
-        public float fRx;
+    public float fRx;
 
-        public float fRy;
+    public float fRy;
 
-        public float fGx;
+    public float fGx;
 
-        public float fGy;
+    public float fGy;
 
-        public float fBx;
+    public float fBx;
 
-        public float fBy;
+    public float fBy;
 
-        public float fWx;
+    public float fWx;
 
-        public float fWy;
-    }
+    public float fWy;
 }

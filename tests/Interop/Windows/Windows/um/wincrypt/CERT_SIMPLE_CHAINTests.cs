@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CERT_SIMPLE_CHAIN" /> struct.</summary>
+public static unsafe partial class CERT_SIMPLE_CHAINTests
 {
-    /// <summary>Provides validation of the <see cref="CERT_SIMPLE_CHAIN" /> struct.</summary>
-    public static unsafe partial class CERT_SIMPLE_CHAINTests
+    /// <summary>Validates that the <see cref="CERT_SIMPLE_CHAIN" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CERT_SIMPLE_CHAIN" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CERT_SIMPLE_CHAIN>(), Is.EqualTo(sizeof(CERT_SIMPLE_CHAIN)));
-        }
+        Assert.That(Marshal.SizeOf<CERT_SIMPLE_CHAIN>(), Is.EqualTo(sizeof(CERT_SIMPLE_CHAIN)));
+    }
 
-        /// <summary>Validates that the <see cref="CERT_SIMPLE_CHAIN" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CERT_SIMPLE_CHAIN).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CERT_SIMPLE_CHAIN" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CERT_SIMPLE_CHAIN).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CERT_SIMPLE_CHAIN" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CERT_SIMPLE_CHAIN" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CERT_SIMPLE_CHAIN), Is.EqualTo(40));
-            }
-            else
-            {
-                Assert.That(sizeof(CERT_SIMPLE_CHAIN), Is.EqualTo(32));
-            }
+            Assert.That(sizeof(CERT_SIMPLE_CHAIN), Is.EqualTo(40));
+        }
+        else
+        {
+            Assert.That(sizeof(CERT_SIMPLE_CHAIN), Is.EqualTo(32));
         }
     }
 }

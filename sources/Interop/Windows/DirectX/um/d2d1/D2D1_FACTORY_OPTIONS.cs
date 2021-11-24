@@ -3,10 +3,9 @@
 // Ported from um/d2d1.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D1_FACTORY_OPTIONS
 {
-    public partial struct D2D1_FACTORY_OPTIONS
-    {
-        public D2D1_DEBUG_LEVEL debugLevel;
-    }
+    public D2D1_DEBUG_LEVEL debugLevel;
 }

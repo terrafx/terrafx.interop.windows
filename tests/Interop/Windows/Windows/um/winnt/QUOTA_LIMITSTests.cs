@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="QUOTA_LIMITS" /> struct.</summary>
+public static unsafe partial class QUOTA_LIMITSTests
 {
-    /// <summary>Provides validation of the <see cref="QUOTA_LIMITS" /> struct.</summary>
-    public static unsafe partial class QUOTA_LIMITSTests
+    /// <summary>Validates that the <see cref="QUOTA_LIMITS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="QUOTA_LIMITS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<QUOTA_LIMITS>(), Is.EqualTo(sizeof(QUOTA_LIMITS)));
-        }
+        Assert.That(Marshal.SizeOf<QUOTA_LIMITS>(), Is.EqualTo(sizeof(QUOTA_LIMITS)));
+    }
 
-        /// <summary>Validates that the <see cref="QUOTA_LIMITS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(QUOTA_LIMITS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="QUOTA_LIMITS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(QUOTA_LIMITS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="QUOTA_LIMITS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="QUOTA_LIMITS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(QUOTA_LIMITS), Is.EqualTo(48));
-            }
-            else
-            {
-                Assert.That(sizeof(QUOTA_LIMITS), Is.EqualTo(32));
-            }
+            Assert.That(sizeof(QUOTA_LIMITS), Is.EqualTo(48));
+        }
+        else
+        {
+            Assert.That(sizeof(QUOTA_LIMITS), Is.EqualTo(32));
         }
     }
 }

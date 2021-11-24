@@ -5,12 +5,11 @@
 
 using static TerraFX.Interop.Windows.SPGRAMMARSTATE;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechGrammarState
 {
-    public enum SpeechGrammarState
-    {
-        SGSEnabled = SPGS_ENABLED,
-        SGSDisabled = SPGS_DISABLED,
-        SGSExclusive = SPGS_EXCLUSIVE,
-    }
+    SGSEnabled = SPGS_ENABLED,
+    SGSDisabled = SPGS_DISABLED,
+    SGSExclusive = SPGS_EXCLUSIVE,
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("7A0F6AB7-ED84-46B6-B47E-02AA159A152B")]
+public partial struct SimpleConflictPresenter
 {
-    [Guid("7A0F6AB7-ED84-46B6-B47E-02AA159A152B")]
-    public partial struct SimpleConflictPresenter
-    {
-    }
 }

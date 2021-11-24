@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("458725B9-129D-4135-A998-9CEAFEC27007")]
+[NativeTypeName("struct ISyncMgrConflictResolutionItems : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ISyncMgrConflictResolutionItems : ISyncMgrConflictResolutionItems.Interface
 {
-    [Guid("458725B9-129D-4135-A998-9CEAFEC27007")]
-    [NativeTypeName("struct ISyncMgrConflictResolutionItems : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrConflictResolutionItems : ISyncMgrConflictResolutionItems.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ISyncMgrConflictResolutionItems*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrConflictResolutionItems*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ISyncMgrConflictResolutionItems*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrConflictResolutionItems*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint>)(lpVtbl[1]))((ISyncMgrConflictResolutionItems*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint>)(lpVtbl[1]))((ISyncMgrConflictResolutionItems*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint>)(lpVtbl[2]))((ISyncMgrConflictResolutionItems*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint>)(lpVtbl[2]))((ISyncMgrConflictResolutionItems*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetCount(uint* pCount)
+    {
+        return ((delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint*, int>)(lpVtbl[3]))((ISyncMgrConflictResolutionItems*)Unsafe.AsPointer(ref this), pCount);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetItem(uint iIndex, CONFIRM_CONFLICT_RESULT_INFO* pItemInfo)
+    {
+        return ((delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint, CONFIRM_CONFLICT_RESULT_INFO*, int>)(lpVtbl[4]))((ISyncMgrConflictResolutionItems*)Unsafe.AsPointer(ref this), iIndex, pItemInfo);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetCount(uint* pCount)
-        {
-            return ((delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint*, int>)(lpVtbl[3]))((ISyncMgrConflictResolutionItems*)Unsafe.AsPointer(ref this), pCount);
-        }
+        HRESULT GetCount(uint* pCount);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetItem(uint iIndex, CONFIRM_CONFLICT_RESULT_INFO* pItemInfo)
-        {
-            return ((delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint, CONFIRM_CONFLICT_RESULT_INFO*, int>)(lpVtbl[4]))((ISyncMgrConflictResolutionItems*)Unsafe.AsPointer(ref this), iIndex, pItemInfo);
-        }
+        HRESULT GetItem(uint iIndex, CONFIRM_CONFLICT_RESULT_INFO* pItemInfo);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetCount(uint* pCount);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISyncMgrConflictResolutionItems*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetItem(uint iIndex, CONFIRM_CONFLICT_RESULT_INFO* pItemInfo);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISyncMgrConflictResolutionItems*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint> AddRef;
+        [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint*, int> GetCount;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint> Release;
-
-            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint*, int> GetCount;
-
-            [NativeTypeName("HRESULT (UINT, CONFIRM_CONFLICT_RESULT_INFO *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint, CONFIRM_CONFLICT_RESULT_INFO*, int> GetItem;
-        }
+        [NativeTypeName("HRESULT (UINT, CONFIRM_CONFLICT_RESULT_INFO *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint, CONFIRM_CONFLICT_RESULT_INFO*, int> GetItem;
     }
 }

@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum EXPLORER_BROWSER_FILL_FLAGS
 {
-    [Flags]
-    public enum EXPLORER_BROWSER_FILL_FLAGS
-    {
-        EBF_NONE = 0,
-        EBF_SELECTFROMDATAOBJECT = 0x100,
-        EBF_NODROPTARGET = 0x200,
-    }
+    EBF_NONE = 0,
+    EBF_SELECTFROMDATAOBJECT = 0x100,
+    EBF_NODROPTARGET = 0x200,
 }

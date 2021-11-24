@@ -7,37 +7,36 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SCM_REGIONS
 {
-    public partial struct SCM_REGIONS
+    [NativeTypeName("DWORD")]
+    public uint Version;
+
+    [NativeTypeName("DWORD")]
+    public uint Size;
+
+    [NativeTypeName("DWORD")]
+    public uint RegionCount;
+
+    [NativeTypeName("SCM_REGION [1]")]
+    public _Regions_e__FixedBuffer Regions;
+
+    public partial struct _Regions_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+        public SCM_REGION e0;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
-
-        [NativeTypeName("DWORD")]
-        public uint RegionCount;
-
-        [NativeTypeName("SCM_REGION [1]")]
-        public _Regions_e__FixedBuffer Regions;
-
-        public partial struct _Regions_e__FixedBuffer
+        public ref SCM_REGION this[int index]
         {
-            public SCM_REGION e0;
-
-            public ref SCM_REGION this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<SCM_REGION> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<SCM_REGION> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

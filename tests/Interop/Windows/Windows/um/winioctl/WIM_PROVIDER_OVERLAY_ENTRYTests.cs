@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WIM_PROVIDER_OVERLAY_ENTRY" /> struct.</summary>
+public static unsafe partial class WIM_PROVIDER_OVERLAY_ENTRYTests
 {
-    /// <summary>Provides validation of the <see cref="WIM_PROVIDER_OVERLAY_ENTRY" /> struct.</summary>
-    public static unsafe partial class WIM_PROVIDER_OVERLAY_ENTRYTests
+    /// <summary>Validates that the <see cref="WIM_PROVIDER_OVERLAY_ENTRY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WIM_PROVIDER_OVERLAY_ENTRY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WIM_PROVIDER_OVERLAY_ENTRY>(), Is.EqualTo(sizeof(WIM_PROVIDER_OVERLAY_ENTRY)));
-        }
+        Assert.That(Marshal.SizeOf<WIM_PROVIDER_OVERLAY_ENTRY>(), Is.EqualTo(sizeof(WIM_PROVIDER_OVERLAY_ENTRY)));
+    }
 
-        /// <summary>Validates that the <see cref="WIM_PROVIDER_OVERLAY_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WIM_PROVIDER_OVERLAY_ENTRY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WIM_PROVIDER_OVERLAY_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WIM_PROVIDER_OVERLAY_ENTRY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WIM_PROVIDER_OVERLAY_ENTRY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(WIM_PROVIDER_OVERLAY_ENTRY), Is.EqualTo(48));
-        }
+    /// <summary>Validates that the <see cref="WIM_PROVIDER_OVERLAY_ENTRY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(WIM_PROVIDER_OVERLAY_ENTRY), Is.EqualTo(48));
     }
 }

@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct AMCOPPStatusOutput
 {
-    public unsafe partial struct AMCOPPStatusOutput
-    {
-        public Guid macKDI;
+    public Guid macKDI;
 
-        [NativeTypeName("DWORD")]
-        public uint cbSizeData;
+    [NativeTypeName("DWORD")]
+    public uint cbSizeData;
 
-        [NativeTypeName("BYTE [4076]")]
-        public fixed byte COPPStatus[4076];
-    }
+    [NativeTypeName("BYTE [4076]")]
+    public fixed byte COPPStatus[4076];
 }

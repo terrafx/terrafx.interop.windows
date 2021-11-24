@@ -5,19 +5,18 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CRYPT_PROVIDER_DEFUSAGE
 {
-    public unsafe partial struct CRYPT_PROVIDER_DEFUSAGE
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbStruct;
+    [NativeTypeName("DWORD")]
+    public uint cbStruct;
 
-        public Guid gActionID;
+    public Guid gActionID;
 
-        [NativeTypeName("LPVOID")]
-        public void* pDefPolicyCallbackData;
+    [NativeTypeName("LPVOID")]
+    public void* pDefPolicyCallbackData;
 
-        [NativeTypeName("LPVOID")]
-        public void* pDefSIPClientData;
-    }
+    [NativeTypeName("LPVOID")]
+    public void* pDefSIPClientData;
 }

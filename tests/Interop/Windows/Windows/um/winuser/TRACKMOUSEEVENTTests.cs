@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TRACKMOUSEEVENT" /> struct.</summary>
+public static unsafe partial class TRACKMOUSEEVENTTests
 {
-    /// <summary>Provides validation of the <see cref="TRACKMOUSEEVENT" /> struct.</summary>
-    public static unsafe partial class TRACKMOUSEEVENTTests
+    /// <summary>Validates that the <see cref="TRACKMOUSEEVENT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TRACKMOUSEEVENT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TRACKMOUSEEVENT>(), Is.EqualTo(sizeof(TRACKMOUSEEVENT)));
-        }
+        Assert.That(Marshal.SizeOf<TRACKMOUSEEVENT>(), Is.EqualTo(sizeof(TRACKMOUSEEVENT)));
+    }
 
-        /// <summary>Validates that the <see cref="TRACKMOUSEEVENT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TRACKMOUSEEVENT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TRACKMOUSEEVENT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TRACKMOUSEEVENT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TRACKMOUSEEVENT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="TRACKMOUSEEVENT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(TRACKMOUSEEVENT), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(TRACKMOUSEEVENT), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(TRACKMOUSEEVENT), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(TRACKMOUSEEVENT), Is.EqualTo(16));
         }
     }
 }

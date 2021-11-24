@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SCM_PD_FIRMWARE_INFO" /> struct.</summary>
+public static unsafe partial class SCM_PD_FIRMWARE_INFOTests
 {
-    /// <summary>Provides validation of the <see cref="SCM_PD_FIRMWARE_INFO" /> struct.</summary>
-    public static unsafe partial class SCM_PD_FIRMWARE_INFOTests
+    /// <summary>Validates that the <see cref="SCM_PD_FIRMWARE_INFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SCM_PD_FIRMWARE_INFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SCM_PD_FIRMWARE_INFO>(), Is.EqualTo(sizeof(SCM_PD_FIRMWARE_INFO)));
-        }
+        Assert.That(Marshal.SizeOf<SCM_PD_FIRMWARE_INFO>(), Is.EqualTo(sizeof(SCM_PD_FIRMWARE_INFO)));
+    }
 
-        /// <summary>Validates that the <see cref="SCM_PD_FIRMWARE_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SCM_PD_FIRMWARE_INFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SCM_PD_FIRMWARE_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SCM_PD_FIRMWARE_INFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SCM_PD_FIRMWARE_INFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SCM_PD_FIRMWARE_INFO), Is.EqualTo(60));
-        }
+    /// <summary>Validates that the <see cref="SCM_PD_FIRMWARE_INFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SCM_PD_FIRMWARE_INFO), Is.EqualTo(60));
     }
 }

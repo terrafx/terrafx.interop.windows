@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("4C896039-7B6D-49E6-A8C1-45116A98292B")]
+[NativeTypeName("struct IAccClientDocMgr : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IAccClientDocMgr : IAccClientDocMgr.Interface
 {
-    [Guid("4C896039-7B6D-49E6-A8C1-45116A98292B")]
-    [NativeTypeName("struct IAccClientDocMgr : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAccClientDocMgr : IAccClientDocMgr.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IAccClientDocMgr*, Guid*, void**, int>)(lpVtbl[0]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IAccClientDocMgr*, Guid*, void**, int>)(lpVtbl[0]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IAccClientDocMgr*, uint>)(lpVtbl[1]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IAccClientDocMgr*, uint>)(lpVtbl[1]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IAccClientDocMgr*, uint>)(lpVtbl[2]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IAccClientDocMgr*, uint>)(lpVtbl[2]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetDocuments(IEnumUnknown** enumUnknown)
+    {
+        return ((delegate* unmanaged<IAccClientDocMgr*, IEnumUnknown**, int>)(lpVtbl[3]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), enumUnknown);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT LookupByHWND(HWND hWnd, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
+    {
+        return ((delegate* unmanaged<IAccClientDocMgr*, HWND, Guid*, IUnknown**, int>)(lpVtbl[4]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), hWnd, riid, ppunk);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT LookupByPoint(POINT pt, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
+    {
+        return ((delegate* unmanaged<IAccClientDocMgr*, POINT, Guid*, IUnknown**, int>)(lpVtbl[5]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), pt, riid, ppunk);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetFocused([NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
+    {
+        return ((delegate* unmanaged<IAccClientDocMgr*, Guid*, IUnknown**, int>)(lpVtbl[6]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), riid, ppunk);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetDocuments(IEnumUnknown** enumUnknown)
-        {
-            return ((delegate* unmanaged<IAccClientDocMgr*, IEnumUnknown**, int>)(lpVtbl[3]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), enumUnknown);
-        }
+        HRESULT GetDocuments(IEnumUnknown** enumUnknown);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT LookupByHWND(HWND hWnd, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
-        {
-            return ((delegate* unmanaged<IAccClientDocMgr*, HWND, Guid*, IUnknown**, int>)(lpVtbl[4]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), hWnd, riid, ppunk);
-        }
+        HRESULT LookupByHWND(HWND hWnd, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT LookupByPoint(POINT pt, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
-        {
-            return ((delegate* unmanaged<IAccClientDocMgr*, POINT, Guid*, IUnknown**, int>)(lpVtbl[5]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), pt, riid, ppunk);
-        }
+        HRESULT LookupByPoint(POINT pt, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetFocused([NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
-        {
-            return ((delegate* unmanaged<IAccClientDocMgr*, Guid*, IUnknown**, int>)(lpVtbl[6]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), riid, ppunk);
-        }
+        HRESULT GetFocused([NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetDocuments(IEnumUnknown** enumUnknown);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAccClientDocMgr*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT LookupByHWND(HWND hWnd, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAccClientDocMgr*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT LookupByPoint(POINT pt, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAccClientDocMgr*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT GetFocused([NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk);
-        }
+        [NativeTypeName("HRESULT (IEnumUnknown **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAccClientDocMgr*, IEnumUnknown**, int> GetDocuments;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAccClientDocMgr*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (HWND, const IID &, IUnknown **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAccClientDocMgr*, HWND, Guid*, IUnknown**, int> LookupByHWND;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAccClientDocMgr*, uint> AddRef;
+        [NativeTypeName("HRESULT (POINT, const IID &, IUnknown **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAccClientDocMgr*, POINT, Guid*, IUnknown**, int> LookupByPoint;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAccClientDocMgr*, uint> Release;
-
-            [NativeTypeName("HRESULT (IEnumUnknown **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAccClientDocMgr*, IEnumUnknown**, int> GetDocuments;
-
-            [NativeTypeName("HRESULT (HWND, const IID &, IUnknown **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAccClientDocMgr*, HWND, Guid*, IUnknown**, int> LookupByHWND;
-
-            [NativeTypeName("HRESULT (POINT, const IID &, IUnknown **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAccClientDocMgr*, POINT, Guid*, IUnknown**, int> LookupByPoint;
-
-            [NativeTypeName("HRESULT (const IID &, IUnknown **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAccClientDocMgr*, Guid*, IUnknown**, int> GetFocused;
-        }
+        [NativeTypeName("HRESULT (const IID &, IUnknown **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAccClientDocMgr*, Guid*, IUnknown**, int> GetFocused;
     }
 }

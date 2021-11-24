@@ -5,23 +5,22 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SYSTEM_ALARM_OBJECT_ACE
 {
-    public partial struct SYSTEM_ALARM_OBJECT_ACE
-    {
-        public ACE_HEADER Header;
+    public ACE_HEADER Header;
 
-        [NativeTypeName("ACCESS_MASK")]
-        public uint Mask;
+    [NativeTypeName("ACCESS_MASK")]
+    public uint Mask;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        public Guid ObjectType;
+    public Guid ObjectType;
 
-        public Guid InheritedObjectType;
+    public Guid InheritedObjectType;
 
-        [NativeTypeName("DWORD")]
-        public uint SidStart;
-    }
+    [NativeTypeName("DWORD")]
+    public uint SidStart;
 }

@@ -7,86 +7,85 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct EMRPLGBLT
 {
-    public partial struct EMRPLGBLT
+    public EMR emr;
+
+    public RECTL rclBounds;
+
+    [NativeTypeName("POINTL [3]")]
+    public _aptlDest_e__FixedBuffer aptlDest;
+
+    [NativeTypeName("LONG")]
+    public int xSrc;
+
+    [NativeTypeName("LONG")]
+    public int ySrc;
+
+    [NativeTypeName("LONG")]
+    public int cxSrc;
+
+    [NativeTypeName("LONG")]
+    public int cySrc;
+
+    public XFORM xformSrc;
+
+    public COLORREF crBkColorSrc;
+
+    [NativeTypeName("DWORD")]
+    public uint iUsageSrc;
+
+    [NativeTypeName("DWORD")]
+    public uint offBmiSrc;
+
+    [NativeTypeName("DWORD")]
+    public uint cbBmiSrc;
+
+    [NativeTypeName("DWORD")]
+    public uint offBitsSrc;
+
+    [NativeTypeName("DWORD")]
+    public uint cbBitsSrc;
+
+    [NativeTypeName("LONG")]
+    public int xMask;
+
+    [NativeTypeName("LONG")]
+    public int yMask;
+
+    [NativeTypeName("DWORD")]
+    public uint iUsageMask;
+
+    [NativeTypeName("DWORD")]
+    public uint offBmiMask;
+
+    [NativeTypeName("DWORD")]
+    public uint cbBmiMask;
+
+    [NativeTypeName("DWORD")]
+    public uint offBitsMask;
+
+    [NativeTypeName("DWORD")]
+    public uint cbBitsMask;
+
+    public partial struct _aptlDest_e__FixedBuffer
     {
-        public EMR emr;
+        public POINTL e0;
+        public POINTL e1;
+        public POINTL e2;
 
-        public RECTL rclBounds;
-
-        [NativeTypeName("POINTL [3]")]
-        public _aptlDest_e__FixedBuffer aptlDest;
-
-        [NativeTypeName("LONG")]
-        public int xSrc;
-
-        [NativeTypeName("LONG")]
-        public int ySrc;
-
-        [NativeTypeName("LONG")]
-        public int cxSrc;
-
-        [NativeTypeName("LONG")]
-        public int cySrc;
-
-        public XFORM xformSrc;
-
-        public COLORREF crBkColorSrc;
-
-        [NativeTypeName("DWORD")]
-        public uint iUsageSrc;
-
-        [NativeTypeName("DWORD")]
-        public uint offBmiSrc;
-
-        [NativeTypeName("DWORD")]
-        public uint cbBmiSrc;
-
-        [NativeTypeName("DWORD")]
-        public uint offBitsSrc;
-
-        [NativeTypeName("DWORD")]
-        public uint cbBitsSrc;
-
-        [NativeTypeName("LONG")]
-        public int xMask;
-
-        [NativeTypeName("LONG")]
-        public int yMask;
-
-        [NativeTypeName("DWORD")]
-        public uint iUsageMask;
-
-        [NativeTypeName("DWORD")]
-        public uint offBmiMask;
-
-        [NativeTypeName("DWORD")]
-        public uint cbBmiMask;
-
-        [NativeTypeName("DWORD")]
-        public uint offBitsMask;
-
-        [NativeTypeName("DWORD")]
-        public uint cbBitsMask;
-
-        public partial struct _aptlDest_e__FixedBuffer
+        public ref POINTL this[int index]
         {
-            public POINTL e0;
-            public POINTL e1;
-            public POINTL e2;
-
-            public ref POINTL this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan()[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<POINTL> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
+            get
+            {
+                return ref AsSpan()[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<POINTL> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
     }
 }

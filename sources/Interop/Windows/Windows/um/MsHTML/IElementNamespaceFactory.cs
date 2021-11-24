@@ -7,64 +7,63 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3050F672-98B5-11CF-BB82-00AA00BDCE0B")]
+[NativeTypeName("struct IElementNamespaceFactory : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IElementNamespaceFactory : IElementNamespaceFactory.Interface
 {
-    [Guid("3050F672-98B5-11CF-BB82-00AA00BDCE0B")]
-    [NativeTypeName("struct IElementNamespaceFactory : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IElementNamespaceFactory : IElementNamespaceFactory.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IElementNamespaceFactory*, Guid*, void**, int>)(lpVtbl[0]))((IElementNamespaceFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IElementNamespaceFactory*, Guid*, void**, int>)(lpVtbl[0]))((IElementNamespaceFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IElementNamespaceFactory*, uint>)(lpVtbl[1]))((IElementNamespaceFactory*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IElementNamespaceFactory*, uint>)(lpVtbl[1]))((IElementNamespaceFactory*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IElementNamespaceFactory*, uint>)(lpVtbl[2]))((IElementNamespaceFactory*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IElementNamespaceFactory*, uint>)(lpVtbl[2]))((IElementNamespaceFactory*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Create(IElementNamespace* pNamespace)
+    {
+        return ((delegate* unmanaged<IElementNamespaceFactory*, IElementNamespace*, int>)(lpVtbl[3]))((IElementNamespaceFactory*)Unsafe.AsPointer(ref this), pNamespace);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Create(IElementNamespace* pNamespace)
-        {
-            return ((delegate* unmanaged<IElementNamespaceFactory*, IElementNamespace*, int>)(lpVtbl[3]))((IElementNamespaceFactory*)Unsafe.AsPointer(ref this), pNamespace);
-        }
+        HRESULT Create(IElementNamespace* pNamespace);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Create(IElementNamespace* pNamespace);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IElementNamespaceFactory*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IElementNamespaceFactory*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IElementNamespaceFactory*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IElementNamespaceFactory*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IElementNamespaceFactory*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IElementNamespaceFactory*, uint> Release;
-
-            [NativeTypeName("HRESULT (IElementNamespace *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IElementNamespaceFactory*, IElementNamespace*, int> Create;
-        }
+        [NativeTypeName("HRESULT (IElementNamespace *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IElementNamespaceFactory*, IElementNamespace*, int> Create;
     }
 }

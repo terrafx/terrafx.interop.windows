@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="EMREXTTEXTOUTA" /> struct.</summary>
+public static unsafe partial class EMREXTTEXTOUTATests
 {
-    /// <summary>Provides validation of the <see cref="EMREXTTEXTOUTA" /> struct.</summary>
-    public static unsafe partial class EMREXTTEXTOUTATests
+    /// <summary>Validates that the <see cref="EMREXTTEXTOUTA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="EMREXTTEXTOUTA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<EMREXTTEXTOUTA>(), Is.EqualTo(sizeof(EMREXTTEXTOUTA)));
-        }
+        Assert.That(Marshal.SizeOf<EMREXTTEXTOUTA>(), Is.EqualTo(sizeof(EMREXTTEXTOUTA)));
+    }
 
-        /// <summary>Validates that the <see cref="EMREXTTEXTOUTA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(EMREXTTEXTOUTA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="EMREXTTEXTOUTA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(EMREXTTEXTOUTA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="EMREXTTEXTOUTA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(EMREXTTEXTOUTA), Is.EqualTo(76));
-        }
+    /// <summary>Validates that the <see cref="EMREXTTEXTOUTA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(EMREXTTEXTOUTA), Is.EqualTo(76));
     }
 }

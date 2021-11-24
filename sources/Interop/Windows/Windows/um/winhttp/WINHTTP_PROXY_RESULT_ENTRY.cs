@@ -5,22 +5,21 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct WINHTTP_PROXY_RESULT_ENTRY
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct WINHTTP_PROXY_RESULT_ENTRY
-    {
-        public BOOL fProxy;
+    public BOOL fProxy;
 
-        public BOOL fBypass;
+    public BOOL fBypass;
 
-        [NativeTypeName("INTERNET_SCHEME")]
-        public int ProxyScheme;
+    [NativeTypeName("INTERNET_SCHEME")]
+    public int ProxyScheme;
 
-        [NativeTypeName("PWSTR")]
-        public ushort* pwszProxy;
+    [NativeTypeName("PWSTR")]
+    public ushort* pwszProxy;
 
-        [NativeTypeName("INTERNET_PORT")]
-        public ushort ProxyPort;
-    }
+    [NativeTypeName("INTERNET_PORT")]
+    public ushort ProxyPort;
 }

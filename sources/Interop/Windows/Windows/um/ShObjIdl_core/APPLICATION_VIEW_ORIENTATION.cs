@@ -3,11 +3,10 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum APPLICATION_VIEW_ORIENTATION
 {
-    public enum APPLICATION_VIEW_ORIENTATION
-    {
-        AVO_LANDSCAPE = 0,
-        AVO_PORTRAIT = (AVO_LANDSCAPE + 1),
-    }
+    AVO_LANDSCAPE = 0,
+    AVO_PORTRAIT = (AVO_LANDSCAPE + 1),
 }

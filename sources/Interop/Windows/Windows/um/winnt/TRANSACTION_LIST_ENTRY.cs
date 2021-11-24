@@ -5,11 +5,10 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TRANSACTION_LIST_ENTRY
 {
-    public partial struct TRANSACTION_LIST_ENTRY
-    {
-        [NativeTypeName("UOW")]
-        public Guid UOW;
-    }
+    [NativeTypeName("UOW")]
+    public Guid UOW;
 }

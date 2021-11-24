@@ -5,21 +5,20 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct SpatialAudioMetadataItemsInfo
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct SpatialAudioMetadataItemsInfo
-    {
-        [NativeTypeName("UINT16")]
-        public ushort FrameCount;
+    [NativeTypeName("UINT16")]
+    public ushort FrameCount;
 
-        [NativeTypeName("UINT16")]
-        public ushort ItemCount;
+    [NativeTypeName("UINT16")]
+    public ushort ItemCount;
 
-        [NativeTypeName("UINT16")]
-        public ushort MaxItemCount;
+    [NativeTypeName("UINT16")]
+    public ushort MaxItemCount;
 
-        [NativeTypeName("UINT32")]
-        public uint MaxValueBufferLength;
-    }
+    [NativeTypeName("UINT32")]
+    public uint MaxValueBufferLength;
 }

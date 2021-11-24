@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum AUTHENTICATEF
 {
-    [Flags]
-    public enum AUTHENTICATEF
-    {
-        AUTHENTICATEF_PROXY = 0x1,
-        AUTHENTICATEF_BASIC = 0x2,
-        AUTHENTICATEF_HTTP = 0x4,
-    }
+    AUTHENTICATEF_PROXY = 0x1,
+    AUTHENTICATEF_BASIC = 0x2,
+    AUTHENTICATEF_HTTP = 0x4,
 }

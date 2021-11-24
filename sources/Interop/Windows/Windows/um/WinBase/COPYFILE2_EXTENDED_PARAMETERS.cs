@@ -5,23 +5,22 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct COPYFILE2_EXTENDED_PARAMETERS
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct COPYFILE2_EXTENDED_PARAMETERS
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwSize;
+    [NativeTypeName("DWORD")]
+    public uint dwSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwCopyFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwCopyFlags;
 
-        public BOOL* pfCancel;
+    public BOOL* pfCancel;
 
-        [NativeTypeName("PCOPYFILE2_PROGRESS_ROUTINE")]
-        public delegate* unmanaged<COPYFILE2_MESSAGE*, void*, COPYFILE2_MESSAGE_ACTION> pProgressRoutine;
+    [NativeTypeName("PCOPYFILE2_PROGRESS_ROUTINE")]
+    public delegate* unmanaged<COPYFILE2_MESSAGE*, void*, COPYFILE2_MESSAGE_ACTION> pProgressRoutine;
 
-        [NativeTypeName("PVOID")]
-        public void* pvCallbackContext;
-    }
+    [NativeTypeName("PVOID")]
+    public void* pvCallbackContext;
 }

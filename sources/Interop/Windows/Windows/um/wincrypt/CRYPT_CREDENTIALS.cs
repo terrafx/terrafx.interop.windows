@@ -3,17 +3,16 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CRYPT_CREDENTIALS
 {
-    public unsafe partial struct CRYPT_CREDENTIALS
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* pszCredentialsOid;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* pszCredentialsOid;
 
-        [NativeTypeName("LPVOID")]
-        public void* pvCredentials;
-    }
+    [NativeTypeName("LPVOID")]
+    public void* pvCredentials;
 }

@@ -3,24 +3,23 @@
 // Ported from shared/ksmedia.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct KSJACK_DESCRIPTION
 {
-    public partial struct KSJACK_DESCRIPTION
-    {
-        [NativeTypeName("DWORD")]
-        public uint ChannelMapping;
+    [NativeTypeName("DWORD")]
+    public uint ChannelMapping;
 
-        [NativeTypeName("DWORD")]
-        public uint Color;
+    [NativeTypeName("DWORD")]
+    public uint Color;
 
-        public EPcxConnectionType ConnectionType;
+    public EPcxConnectionType ConnectionType;
 
-        public EPcxGeoLocation GeoLocation;
+    public EPcxGeoLocation GeoLocation;
 
-        public EPcxGenLocation GenLocation;
+    public EPcxGenLocation GenLocation;
 
-        public EPxcPortConnection PortConnection;
+    public EPxcPortConnection PortConnection;
 
-        public BOOL IsConnected;
-    }
+    public BOOL IsConnected;
 }

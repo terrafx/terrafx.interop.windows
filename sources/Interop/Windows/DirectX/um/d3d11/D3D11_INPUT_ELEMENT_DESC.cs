@@ -3,23 +3,22 @@
 // Ported from um/d3d11.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D11_INPUT_ELEMENT_DESC
 {
-    public unsafe partial struct D3D11_INPUT_ELEMENT_DESC
-    {
-        [NativeTypeName("LPCSTR")]
-        public sbyte* SemanticName;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* SemanticName;
 
-        public uint SemanticIndex;
+    public uint SemanticIndex;
 
-        public DXGI_FORMAT Format;
+    public DXGI_FORMAT Format;
 
-        public uint InputSlot;
+    public uint InputSlot;
 
-        public uint AlignedByteOffset;
+    public uint AlignedByteOffset;
 
-        public D3D11_INPUT_CLASSIFICATION InputSlotClass;
+    public D3D11_INPUT_CLASSIFICATION InputSlotClass;
 
-        public uint InstanceDataStepRate;
-    }
+    public uint InstanceDataStepRate;
 }

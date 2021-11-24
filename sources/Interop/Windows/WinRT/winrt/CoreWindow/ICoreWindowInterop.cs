@@ -8,77 +8,76 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[Guid("45D64A29-A63E-4CB6-B498-5781D298CB4F")]
+[NativeTypeName("struct ICoreWindowInterop : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ICoreWindowInterop : ICoreWindowInterop.Interface
 {
-    [Guid("45D64A29-A63E-4CB6-B498-5781D298CB4F")]
-    [NativeTypeName("struct ICoreWindowInterop : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICoreWindowInterop : ICoreWindowInterop.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ICoreWindowInterop*, Guid*, void**, int>)(lpVtbl[0]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ICoreWindowInterop*, Guid*, void**, int>)(lpVtbl[0]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ICoreWindowInterop*, uint>)(lpVtbl[1]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ICoreWindowInterop*, uint>)(lpVtbl[1]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ICoreWindowInterop*, uint>)(lpVtbl[2]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ICoreWindowInterop*, uint>)(lpVtbl[2]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT get_WindowHandle(HWND* hwnd)
+    {
+        return ((delegate* unmanaged<ICoreWindowInterop*, HWND*, int>)(lpVtbl[3]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this), hwnd);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT put_MessageHandled([NativeTypeName("boolean")] byte value)
+    {
+        return ((delegate* unmanaged<ICoreWindowInterop*, byte, int>)(lpVtbl[4]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this), value);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT get_WindowHandle(HWND* hwnd)
-        {
-            return ((delegate* unmanaged<ICoreWindowInterop*, HWND*, int>)(lpVtbl[3]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this), hwnd);
-        }
+        HRESULT get_WindowHandle(HWND* hwnd);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT put_MessageHandled([NativeTypeName("boolean")] byte value)
-        {
-            return ((delegate* unmanaged<ICoreWindowInterop*, byte, int>)(lpVtbl[4]))((ICoreWindowInterop*)Unsafe.AsPointer(ref this), value);
-        }
+        HRESULT put_MessageHandled([NativeTypeName("boolean")] byte value);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT get_WindowHandle(HWND* hwnd);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICoreWindowInterop*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT put_MessageHandled([NativeTypeName("boolean")] byte value);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ICoreWindowInterop*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICoreWindowInterop*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ICoreWindowInterop*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ICoreWindowInterop*, uint> AddRef;
+        [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICoreWindowInterop*, HWND*, int> get_WindowHandle;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ICoreWindowInterop*, uint> Release;
-
-            [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICoreWindowInterop*, HWND*, int> get_WindowHandle;
-
-            [NativeTypeName("HRESULT (boolean) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICoreWindowInterop*, byte, int> put_MessageHandled;
-        }
+        [NativeTypeName("HRESULT (boolean) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICoreWindowInterop*, byte, int> put_MessageHandled;
     }
 }

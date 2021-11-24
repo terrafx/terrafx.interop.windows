@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MFASYNCRESULT" /> struct.</summary>
+public static unsafe partial class MFASYNCRESULTTests
 {
-    /// <summary>Provides validation of the <see cref="MFASYNCRESULT" /> struct.</summary>
-    public static unsafe partial class MFASYNCRESULTTests
+    /// <summary>Validates that the <see cref="MFASYNCRESULT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MFASYNCRESULT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MFASYNCRESULT>(), Is.EqualTo(sizeof(MFASYNCRESULT)));
-        }
+        Assert.That(Marshal.SizeOf<MFASYNCRESULT>(), Is.EqualTo(sizeof(MFASYNCRESULT)));
+    }
 
-        /// <summary>Validates that the <see cref="MFASYNCRESULT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MFASYNCRESULT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MFASYNCRESULT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MFASYNCRESULT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MFASYNCRESULT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="MFASYNCRESULT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(MFASYNCRESULT), Is.EqualTo(64));
-            }
-            else
-            {
-                Assert.That(sizeof(MFASYNCRESULT), Is.EqualTo(40));
-            }
+            Assert.That(sizeof(MFASYNCRESULT), Is.EqualTo(64));
+        }
+        else
+        {
+            Assert.That(sizeof(MFASYNCRESULT), Is.EqualTo(40));
         }
     }
 }

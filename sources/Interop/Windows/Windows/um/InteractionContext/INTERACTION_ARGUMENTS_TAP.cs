@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct INTERACTION_ARGUMENTS_TAP
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct INTERACTION_ARGUMENTS_TAP
-    {
-        [NativeTypeName("UINT32")]
-        public uint count;
-    }
+    [NativeTypeName("UINT32")]
+    public uint count;
 }

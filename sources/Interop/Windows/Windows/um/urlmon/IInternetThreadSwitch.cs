@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("79EAC9E8-BAF9-11CE-8C82-00AA004BA90B")]
+[NativeTypeName("struct IInternetThreadSwitch : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IInternetThreadSwitch : IInternetThreadSwitch.Interface
 {
-    [Guid("79EAC9E8-BAF9-11CE-8C82-00AA004BA90B")]
-    [NativeTypeName("struct IInternetThreadSwitch : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInternetThreadSwitch : IInternetThreadSwitch.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IInternetThreadSwitch*, Guid*, void**, int>)(lpVtbl[0]))((IInternetThreadSwitch*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IInternetThreadSwitch*, Guid*, void**, int>)(lpVtbl[0]))((IInternetThreadSwitch*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IInternetThreadSwitch*, uint>)(lpVtbl[1]))((IInternetThreadSwitch*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IInternetThreadSwitch*, uint>)(lpVtbl[1]))((IInternetThreadSwitch*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IInternetThreadSwitch*, uint>)(lpVtbl[2]))((IInternetThreadSwitch*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IInternetThreadSwitch*, uint>)(lpVtbl[2]))((IInternetThreadSwitch*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Prepare()
+    {
+        return ((delegate* unmanaged<IInternetThreadSwitch*, int>)(lpVtbl[3]))((IInternetThreadSwitch*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Continue()
+    {
+        return ((delegate* unmanaged<IInternetThreadSwitch*, int>)(lpVtbl[4]))((IInternetThreadSwitch*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Prepare()
-        {
-            return ((delegate* unmanaged<IInternetThreadSwitch*, int>)(lpVtbl[3]))((IInternetThreadSwitch*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Prepare();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Continue()
-        {
-            return ((delegate* unmanaged<IInternetThreadSwitch*, int>)(lpVtbl[4]))((IInternetThreadSwitch*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Continue();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Prepare();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IInternetThreadSwitch*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT Continue();
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IInternetThreadSwitch*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IInternetThreadSwitch*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IInternetThreadSwitch*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IInternetThreadSwitch*, uint> AddRef;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IInternetThreadSwitch*, int> Prepare;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IInternetThreadSwitch*, uint> Release;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IInternetThreadSwitch*, int> Prepare;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IInternetThreadSwitch*, int> Continue;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IInternetThreadSwitch*, int> Continue;
     }
 }

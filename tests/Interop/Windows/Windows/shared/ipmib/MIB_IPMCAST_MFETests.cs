@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MIB_IPMCAST_MFE" /> struct.</summary>
+public static unsafe partial class MIB_IPMCAST_MFETests
 {
-    /// <summary>Provides validation of the <see cref="MIB_IPMCAST_MFE" /> struct.</summary>
-    public static unsafe partial class MIB_IPMCAST_MFETests
+    /// <summary>Validates that the <see cref="MIB_IPMCAST_MFE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MIB_IPMCAST_MFE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MIB_IPMCAST_MFE>(), Is.EqualTo(sizeof(MIB_IPMCAST_MFE)));
-        }
+        Assert.That(Marshal.SizeOf<MIB_IPMCAST_MFE>(), Is.EqualTo(sizeof(MIB_IPMCAST_MFE)));
+    }
 
-        /// <summary>Validates that the <see cref="MIB_IPMCAST_MFE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MIB_IPMCAST_MFE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MIB_IPMCAST_MFE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MIB_IPMCAST_MFE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MIB_IPMCAST_MFE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MIB_IPMCAST_MFE), Is.EqualTo(76));
-        }
+    /// <summary>Validates that the <see cref="MIB_IPMCAST_MFE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MIB_IPMCAST_MFE), Is.EqualTo(76));
     }
 }

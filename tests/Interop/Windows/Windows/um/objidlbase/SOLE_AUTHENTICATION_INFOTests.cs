@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SOLE_AUTHENTICATION_INFO" /> struct.</summary>
+public static unsafe partial class SOLE_AUTHENTICATION_INFOTests
 {
-    /// <summary>Provides validation of the <see cref="SOLE_AUTHENTICATION_INFO" /> struct.</summary>
-    public static unsafe partial class SOLE_AUTHENTICATION_INFOTests
+    /// <summary>Validates that the <see cref="SOLE_AUTHENTICATION_INFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SOLE_AUTHENTICATION_INFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SOLE_AUTHENTICATION_INFO>(), Is.EqualTo(sizeof(SOLE_AUTHENTICATION_INFO)));
-        }
+        Assert.That(Marshal.SizeOf<SOLE_AUTHENTICATION_INFO>(), Is.EqualTo(sizeof(SOLE_AUTHENTICATION_INFO)));
+    }
 
-        /// <summary>Validates that the <see cref="SOLE_AUTHENTICATION_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SOLE_AUTHENTICATION_INFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SOLE_AUTHENTICATION_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SOLE_AUTHENTICATION_INFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SOLE_AUTHENTICATION_INFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SOLE_AUTHENTICATION_INFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SOLE_AUTHENTICATION_INFO), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(SOLE_AUTHENTICATION_INFO), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(SOLE_AUTHENTICATION_INFO), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(SOLE_AUTHENTICATION_INFO), Is.EqualTo(12));
         }
     }
 }

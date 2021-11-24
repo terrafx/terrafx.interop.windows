@@ -3,20 +3,19 @@
 // Ported from um/urlmon.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct PROTOCOLDATA
 {
-    public unsafe partial struct PROTOCOLDATA
-    {
-        [NativeTypeName("DWORD")]
-        public uint grfFlags;
+    [NativeTypeName("DWORD")]
+    public uint grfFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint dwState;
+    [NativeTypeName("DWORD")]
+    public uint dwState;
 
-        [NativeTypeName("LPVOID")]
-        public void* pData;
+    [NativeTypeName("LPVOID")]
+    public void* pData;
 
-        [NativeTypeName("ULONG")]
-        public uint cbData;
-    }
+    [NativeTypeName("ULONG")]
+    public uint cbData;
 }

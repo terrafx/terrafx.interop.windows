@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DispSVGMetadataElement" /> struct.</summary>
+public static unsafe partial class DispSVGMetadataElementTests
 {
-    /// <summary>Provides validation of the <see cref="DispSVGMetadataElement" /> struct.</summary>
-    public static unsafe partial class DispSVGMetadataElementTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispSVGMetadataElement" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispSVGMetadataElement" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DispSVGMetadataElement).GUID, Is.EqualTo(IID_DispSVGMetadataElement));
-        }
+        Assert.That(typeof(DispSVGMetadataElement).GUID, Is.EqualTo(IID_DispSVGMetadataElement));
+    }
 
-        /// <summary>Validates that the <see cref="DispSVGMetadataElement" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DispSVGMetadataElement>(), Is.EqualTo(sizeof(DispSVGMetadataElement)));
-        }
+    /// <summary>Validates that the <see cref="DispSVGMetadataElement" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DispSVGMetadataElement>(), Is.EqualTo(sizeof(DispSVGMetadataElement)));
+    }
 
-        /// <summary>Validates that the <see cref="DispSVGMetadataElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DispSVGMetadataElement).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DispSVGMetadataElement" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DispSVGMetadataElement).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DispSVGMetadataElement" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DispSVGMetadataElement" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DispSVGMetadataElement), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(DispSVGMetadataElement), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(DispSVGMetadataElement), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(DispSVGMetadataElement), Is.EqualTo(4));
         }
     }
 }

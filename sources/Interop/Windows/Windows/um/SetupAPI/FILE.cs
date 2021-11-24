@@ -3,20 +3,19 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class FILE
 {
-    public static partial class FILE
-    {
-        [NativeTypeName("#define FILE_COMPRESSION_NONE 0")]
-        public const int FILE_COMPRESSION_NONE = 0;
+    [NativeTypeName("#define FILE_COMPRESSION_NONE 0")]
+    public const int FILE_COMPRESSION_NONE = 0;
 
-        [NativeTypeName("#define FILE_COMPRESSION_WINLZA 1")]
-        public const int FILE_COMPRESSION_WINLZA = 1;
+    [NativeTypeName("#define FILE_COMPRESSION_WINLZA 1")]
+    public const int FILE_COMPRESSION_WINLZA = 1;
 
-        [NativeTypeName("#define FILE_COMPRESSION_MSZIP 2")]
-        public const int FILE_COMPRESSION_MSZIP = 2;
+    [NativeTypeName("#define FILE_COMPRESSION_MSZIP 2")]
+    public const int FILE_COMPRESSION_MSZIP = 2;
 
-        [NativeTypeName("#define FILE_COMPRESSION_NTCAB 3")]
-        public const int FILE_COMPRESSION_NTCAB = 3;
-    }
+    [NativeTypeName("#define FILE_COMPRESSION_NTCAB 3")]
+    public const int FILE_COMPRESSION_NTCAB = 3;
 }

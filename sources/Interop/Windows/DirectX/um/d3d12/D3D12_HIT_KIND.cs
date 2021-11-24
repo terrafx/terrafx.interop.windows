@@ -3,11 +3,10 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum D3D12_HIT_KIND
 {
-    public enum D3D12_HIT_KIND
-    {
-        D3D12_HIT_KIND_TRIANGLE_FRONT_FACE = 0xfe,
-        D3D12_HIT_KIND_TRIANGLE_BACK_FACE = 0xff,
-    }
+    D3D12_HIT_KIND_TRIANGLE_FRONT_FACE = 0xfe,
+    D3D12_HIT_KIND_TRIANGLE_BACK_FACE = 0xff,
 }

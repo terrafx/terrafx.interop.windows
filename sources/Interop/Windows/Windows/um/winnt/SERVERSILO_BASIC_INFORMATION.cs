@@ -3,25 +3,24 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SERVERSILO_BASIC_INFORMATION
 {
-    public unsafe partial struct SERVERSILO_BASIC_INFORMATION
-    {
-        [NativeTypeName("DWORD")]
-        public uint ServiceSessionId;
+    [NativeTypeName("DWORD")]
+    public uint ServiceSessionId;
 
-        public SERVERSILO_STATE State;
+    public SERVERSILO_STATE State;
 
-        [NativeTypeName("DWORD")]
-        public uint ExitStatus;
+    [NativeTypeName("DWORD")]
+    public uint ExitStatus;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte IsDownlevelContainer;
+    [NativeTypeName("BOOLEAN")]
+    public byte IsDownlevelContainer;
 
-        [NativeTypeName("PVOID")]
-        public void* ApiSetSchema;
+    [NativeTypeName("PVOID")]
+    public void* ApiSetSchema;
 
-        [NativeTypeName("PVOID")]
-        public void* HostApiSetSchema;
-    }
+    [NativeTypeName("PVOID")]
+    public void* HostApiSetSchema;
 }

@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFContentDecryptionModuleAccess" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.19041.0")]
+public static unsafe partial class IMFContentDecryptionModuleAccessTests
 {
-    /// <summary>Provides validation of the <see cref="IMFContentDecryptionModuleAccess" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public static unsafe partial class IMFContentDecryptionModuleAccessTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFContentDecryptionModuleAccess" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFContentDecryptionModuleAccess" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFContentDecryptionModuleAccess).GUID, Is.EqualTo(IID_IMFContentDecryptionModuleAccess));
-        }
+        Assert.That(typeof(IMFContentDecryptionModuleAccess).GUID, Is.EqualTo(IID_IMFContentDecryptionModuleAccess));
+    }
 
-        /// <summary>Validates that the <see cref="IMFContentDecryptionModuleAccess" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFContentDecryptionModuleAccess>(), Is.EqualTo(sizeof(IMFContentDecryptionModuleAccess)));
-        }
+    /// <summary>Validates that the <see cref="IMFContentDecryptionModuleAccess" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFContentDecryptionModuleAccess>(), Is.EqualTo(sizeof(IMFContentDecryptionModuleAccess)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFContentDecryptionModuleAccess" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFContentDecryptionModuleAccess).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFContentDecryptionModuleAccess" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFContentDecryptionModuleAccess).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFContentDecryptionModuleAccess" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFContentDecryptionModuleAccess" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFContentDecryptionModuleAccess), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFContentDecryptionModuleAccess), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFContentDecryptionModuleAccess), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFContentDecryptionModuleAccess), Is.EqualTo(4));
         }
     }
 }

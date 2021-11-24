@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFSaveJob" /> struct.</summary>
+public static unsafe partial class IMFSaveJobTests
 {
-    /// <summary>Provides validation of the <see cref="IMFSaveJob" /> struct.</summary>
-    public static unsafe partial class IMFSaveJobTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFSaveJob" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFSaveJob" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFSaveJob).GUID, Is.EqualTo(IID_IMFSaveJob));
-        }
+        Assert.That(typeof(IMFSaveJob).GUID, Is.EqualTo(IID_IMFSaveJob));
+    }
 
-        /// <summary>Validates that the <see cref="IMFSaveJob" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFSaveJob>(), Is.EqualTo(sizeof(IMFSaveJob)));
-        }
+    /// <summary>Validates that the <see cref="IMFSaveJob" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFSaveJob>(), Is.EqualTo(sizeof(IMFSaveJob)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFSaveJob" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFSaveJob).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFSaveJob" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFSaveJob).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFSaveJob" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFSaveJob" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFSaveJob), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFSaveJob), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFSaveJob), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFSaveJob), Is.EqualTo(4));
         }
     }
 }

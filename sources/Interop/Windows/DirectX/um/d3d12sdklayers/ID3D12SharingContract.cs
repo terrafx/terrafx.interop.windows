@@ -8,103 +8,102 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Guid("0ADF7D52-929C-4E61-ADDB-FFED30DE66EF")]
+[NativeTypeName("struct ID3D12SharingContract : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ID3D12SharingContract : ID3D12SharingContract.Interface
 {
-    [Guid("0ADF7D52-929C-4E61-ADDB-FFED30DE66EF")]
-    [NativeTypeName("struct ID3D12SharingContract : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D12SharingContract : ID3D12SharingContract.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ID3D12SharingContract*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ID3D12SharingContract*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ID3D12SharingContract*, uint>)(lpVtbl[1]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ID3D12SharingContract*, uint>)(lpVtbl[1]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ID3D12SharingContract*, uint>)(lpVtbl[2]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ID3D12SharingContract*, uint>)(lpVtbl[2]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public void Present(ID3D12Resource* pResource, uint Subresource, HWND window)
+    {
+        ((delegate* unmanaged<ID3D12SharingContract*, ID3D12Resource*, uint, HWND, void>)(lpVtbl[3]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this), pResource, Subresource, window);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public void SharedFenceSignal(ID3D12Fence* pFence, [NativeTypeName("UINT64")] ulong FenceValue)
+    {
+        ((delegate* unmanaged<ID3D12SharingContract*, ID3D12Fence*, ulong, void>)(lpVtbl[4]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this), pFence, FenceValue);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public void BeginCapturableWork([NativeTypeName("const GUID &")] Guid* guid)
+    {
+        ((delegate* unmanaged<ID3D12SharingContract*, Guid*, void>)(lpVtbl[5]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this), guid);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public void EndCapturableWork([NativeTypeName("const GUID &")] Guid* guid)
+    {
+        ((delegate* unmanaged<ID3D12SharingContract*, Guid*, void>)(lpVtbl[6]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this), guid);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public void Present(ID3D12Resource* pResource, uint Subresource, HWND window)
-        {
-            ((delegate* unmanaged<ID3D12SharingContract*, ID3D12Resource*, uint, HWND, void>)(lpVtbl[3]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this), pResource, Subresource, window);
-        }
+        void Present(ID3D12Resource* pResource, uint Subresource, HWND window);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public void SharedFenceSignal(ID3D12Fence* pFence, [NativeTypeName("UINT64")] ulong FenceValue)
-        {
-            ((delegate* unmanaged<ID3D12SharingContract*, ID3D12Fence*, ulong, void>)(lpVtbl[4]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this), pFence, FenceValue);
-        }
+        void SharedFenceSignal(ID3D12Fence* pFence, [NativeTypeName("UINT64")] ulong FenceValue);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public void BeginCapturableWork([NativeTypeName("const GUID &")] Guid* guid)
-        {
-            ((delegate* unmanaged<ID3D12SharingContract*, Guid*, void>)(lpVtbl[5]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this), guid);
-        }
+        void BeginCapturableWork([NativeTypeName("const GUID &")] Guid* guid);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public void EndCapturableWork([NativeTypeName("const GUID &")] Guid* guid)
-        {
-            ((delegate* unmanaged<ID3D12SharingContract*, Guid*, void>)(lpVtbl[6]))((ID3D12SharingContract*)Unsafe.AsPointer(ref this), guid);
-        }
+        void EndCapturableWork([NativeTypeName("const GUID &")] Guid* guid);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            void Present(ID3D12Resource* pResource, uint Subresource, HWND window);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12SharingContract*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            void SharedFenceSignal(ID3D12Fence* pFence, [NativeTypeName("UINT64")] ulong FenceValue);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12SharingContract*, uint> AddRef;
 
-            [VtblIndex(5)]
-            void BeginCapturableWork([NativeTypeName("const GUID &")] Guid* guid);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12SharingContract*, uint> Release;
 
-            [VtblIndex(6)]
-            void EndCapturableWork([NativeTypeName("const GUID &")] Guid* guid);
-        }
+        [NativeTypeName("void (ID3D12Resource *, UINT, HWND) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12SharingContract*, ID3D12Resource*, uint, HWND, void> Present;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12SharingContract*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("void (ID3D12Fence *, UINT64) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12SharingContract*, ID3D12Fence*, ulong, void> SharedFenceSignal;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12SharingContract*, uint> AddRef;
+        [NativeTypeName("void (const GUID &) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12SharingContract*, Guid*, void> BeginCapturableWork;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12SharingContract*, uint> Release;
-
-            [NativeTypeName("void (ID3D12Resource *, UINT, HWND) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12SharingContract*, ID3D12Resource*, uint, HWND, void> Present;
-
-            [NativeTypeName("void (ID3D12Fence *, UINT64) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12SharingContract*, ID3D12Fence*, ulong, void> SharedFenceSignal;
-
-            [NativeTypeName("void (const GUID &) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12SharingContract*, Guid*, void> BeginCapturableWork;
-
-            [NativeTypeName("void (const GUID &) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12SharingContract*, Guid*, void> EndCapturableWork;
-        }
+        [NativeTypeName("void (const GUID &) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12SharingContract*, Guid*, void> EndCapturableWork;
     }
 }

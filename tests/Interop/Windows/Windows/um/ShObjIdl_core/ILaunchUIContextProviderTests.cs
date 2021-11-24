@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ILaunchUIContextProvider" /> struct.</summary>
+public static unsafe partial class ILaunchUIContextProviderTests
 {
-    /// <summary>Provides validation of the <see cref="ILaunchUIContextProvider" /> struct.</summary>
-    public static unsafe partial class ILaunchUIContextProviderTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ILaunchUIContextProvider" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ILaunchUIContextProvider" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ILaunchUIContextProvider).GUID, Is.EqualTo(IID_ILaunchUIContextProvider));
-        }
+        Assert.That(typeof(ILaunchUIContextProvider).GUID, Is.EqualTo(IID_ILaunchUIContextProvider));
+    }
 
-        /// <summary>Validates that the <see cref="ILaunchUIContextProvider" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ILaunchUIContextProvider>(), Is.EqualTo(sizeof(ILaunchUIContextProvider)));
-        }
+    /// <summary>Validates that the <see cref="ILaunchUIContextProvider" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ILaunchUIContextProvider>(), Is.EqualTo(sizeof(ILaunchUIContextProvider)));
+    }
 
-        /// <summary>Validates that the <see cref="ILaunchUIContextProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ILaunchUIContextProvider).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ILaunchUIContextProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ILaunchUIContextProvider).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ILaunchUIContextProvider" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ILaunchUIContextProvider" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ILaunchUIContextProvider), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ILaunchUIContextProvider), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ILaunchUIContextProvider), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ILaunchUIContextProvider), Is.EqualTo(4));
         }
     }
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("29CE1D46-B481-4AA0-A08A-D3EBC8ACA402")]
+public partial struct AccessibilityDockingService
 {
-    [Guid("29CE1D46-B481-4AA0-A08A-D3EBC8ACA402")]
-    public partial struct AccessibilityDockingService
-    {
-    }
 }

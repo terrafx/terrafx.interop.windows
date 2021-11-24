@@ -5,21 +5,20 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct MilMatrix3x2D
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct MilMatrix3x2D
-    {
-        public double S_11;
+    public double S_11;
 
-        public double S_12;
+    public double S_12;
 
-        public double S_21;
+    public double S_21;
 
-        public double S_22;
+    public double S_22;
 
-        public double DX;
+    public double DX;
 
-        public double DY;
-    }
+    public double DY;
 }

@@ -3,13 +3,12 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum FILLVERTSTATES
 {
-    public enum FILLVERTSTATES
-    {
-        PBFVS_NORMAL = 1,
-        PBFVS_ERROR = 2,
-        PBFVS_PAUSED = 3,
-        PBFVS_PARTIAL = 4,
-    }
+    PBFVS_NORMAL = 1,
+    PBFVS_ERROR = 2,
+    PBFVS_PAUSED = 3,
+    PBFVS_PARTIAL = 4,
 }

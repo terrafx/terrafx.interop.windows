@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMultisession" /> struct.</summary>
+public static unsafe partial class IMultisessionTests
 {
-    /// <summary>Provides validation of the <see cref="IMultisession" /> struct.</summary>
-    public static unsafe partial class IMultisessionTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMultisession" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMultisession" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMultisession).GUID, Is.EqualTo(IID_IMultisession));
-        }
+        Assert.That(typeof(IMultisession).GUID, Is.EqualTo(IID_IMultisession));
+    }
 
-        /// <summary>Validates that the <see cref="IMultisession" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMultisession>(), Is.EqualTo(sizeof(IMultisession)));
-        }
+    /// <summary>Validates that the <see cref="IMultisession" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMultisession>(), Is.EqualTo(sizeof(IMultisession)));
+    }
 
-        /// <summary>Validates that the <see cref="IMultisession" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMultisession).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMultisession" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMultisession).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMultisession" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMultisession" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMultisession), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMultisession), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMultisession), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMultisession), Is.EqualTo(4));
         }
     }
 }

@@ -3,19 +3,18 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CRL_ENTRY
 {
-    public unsafe partial struct CRL_ENTRY
-    {
-        [NativeTypeName("CRYPT_INTEGER_BLOB")]
-        public CRYPT_DATA_BLOB SerialNumber;
+    [NativeTypeName("CRYPT_INTEGER_BLOB")]
+    public CRYPT_DATA_BLOB SerialNumber;
 
-        public FILETIME RevocationDate;
+    public FILETIME RevocationDate;
 
-        [NativeTypeName("DWORD")]
-        public uint cExtension;
+    [NativeTypeName("DWORD")]
+    public uint cExtension;
 
-        [NativeTypeName("PCERT_EXTENSION")]
-        public CERT_EXTENSION* rgExtension;
-    }
+    [NativeTypeName("PCERT_EXTENSION")]
+    public CERT_EXTENSION* rgExtension;
 }

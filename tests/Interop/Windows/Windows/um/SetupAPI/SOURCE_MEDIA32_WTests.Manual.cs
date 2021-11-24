@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SOURCE_MEDIA32_W" /> struct.</summary>
+public static unsafe partial class SOURCE_MEDIA32_WTests
 {
-    /// <summary>Provides validation of the <see cref="SOURCE_MEDIA32_W" /> struct.</summary>
-    public static unsafe partial class SOURCE_MEDIA32_WTests
+    /// <summary>Validates that the <see cref="SOURCE_MEDIA32_W" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SOURCE_MEDIA32_W" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SOURCE_MEDIA32_W>(), Is.EqualTo(sizeof(SOURCE_MEDIA32_W)));
-        }
+        Assert.That(Marshal.SizeOf<SOURCE_MEDIA32_W>(), Is.EqualTo(sizeof(SOURCE_MEDIA32_W)));
+    }
 
-        /// <summary>Validates that the <see cref="SOURCE_MEDIA32_W" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SOURCE_MEDIA32_W).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SOURCE_MEDIA32_W" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SOURCE_MEDIA32_W).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SOURCE_MEDIA32_W" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SOURCE_MEDIA32_W" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SOURCE_MEDIA32_W), Is.EqualTo(44));
-            }
-            else
-            {
-                Assert.That(sizeof(SOURCE_MEDIA32_W), Is.EqualTo(24));
-            }
+            Assert.That(sizeof(SOURCE_MEDIA32_W), Is.EqualTo(44));
+        }
+        else
+        {
+            Assert.That(sizeof(SOURCE_MEDIA32_W), Is.EqualTo(24));
         }
     }
 }

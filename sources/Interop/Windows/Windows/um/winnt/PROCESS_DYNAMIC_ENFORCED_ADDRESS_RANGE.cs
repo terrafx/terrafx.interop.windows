@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+public partial struct PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public partial struct PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE
-    {
-        [NativeTypeName("ULONG_PTR")]
-        public nuint BaseAddress;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint BaseAddress;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint Size;
+    [NativeTypeName("SIZE_T")]
+    public nuint Size;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
-    }
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 }

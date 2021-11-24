@@ -3,49 +3,48 @@
 // Ported from um/mfmp2dlna.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MFMPEG2DLNASINKSTATS
 {
-    public partial struct MFMPEG2DLNASINKSTATS
-    {
-        [NativeTypeName("DWORDLONG")]
-        public ulong cBytesWritten;
+    [NativeTypeName("DWORDLONG")]
+    public ulong cBytesWritten;
 
-        public BOOL fPAL;
+    public BOOL fPAL;
 
-        [NativeTypeName("DWORD")]
-        public uint fccVideo;
+    [NativeTypeName("DWORD")]
+    public uint fccVideo;
 
-        [NativeTypeName("DWORD")]
-        public uint dwVideoWidth;
+    [NativeTypeName("DWORD")]
+    public uint dwVideoWidth;
 
-        [NativeTypeName("DWORD")]
-        public uint dwVideoHeight;
+    [NativeTypeName("DWORD")]
+    public uint dwVideoHeight;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong cVideoFramesReceived;
+    [NativeTypeName("DWORDLONG")]
+    public ulong cVideoFramesReceived;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong cVideoFramesEncoded;
+    [NativeTypeName("DWORDLONG")]
+    public ulong cVideoFramesEncoded;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong cVideoFramesSkipped;
+    [NativeTypeName("DWORDLONG")]
+    public ulong cVideoFramesSkipped;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong cBlackVideoFramesEncoded;
+    [NativeTypeName("DWORDLONG")]
+    public ulong cBlackVideoFramesEncoded;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong cVideoFramesDuplicated;
+    [NativeTypeName("DWORDLONG")]
+    public ulong cVideoFramesDuplicated;
 
-        [NativeTypeName("DWORD")]
-        public uint cAudioSamplesPerSec;
+    [NativeTypeName("DWORD")]
+    public uint cAudioSamplesPerSec;
 
-        [NativeTypeName("DWORD")]
-        public uint cAudioChannels;
+    [NativeTypeName("DWORD")]
+    public uint cAudioChannels;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong cAudioBytesReceived;
+    [NativeTypeName("DWORDLONG")]
+    public ulong cAudioBytesReceived;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong cAudioFramesEncoded;
-    }
+    [NativeTypeName("DWORDLONG")]
+    public ulong cAudioFramesEncoded;
 }

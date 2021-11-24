@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PROCESSENTRY32W" /> struct.</summary>
+public static unsafe partial class PROCESSENTRY32WTests
 {
-    /// <summary>Provides validation of the <see cref="PROCESSENTRY32W" /> struct.</summary>
-    public static unsafe partial class PROCESSENTRY32WTests
+    /// <summary>Validates that the <see cref="PROCESSENTRY32W" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PROCESSENTRY32W" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PROCESSENTRY32W>(), Is.EqualTo(sizeof(PROCESSENTRY32W)));
-        }
+        Assert.That(Marshal.SizeOf<PROCESSENTRY32W>(), Is.EqualTo(sizeof(PROCESSENTRY32W)));
+    }
 
-        /// <summary>Validates that the <see cref="PROCESSENTRY32W" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PROCESSENTRY32W).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PROCESSENTRY32W" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PROCESSENTRY32W).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PROCESSENTRY32W" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="PROCESSENTRY32W" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(PROCESSENTRY32W), Is.EqualTo(568));
-            }
-            else
-            {
-                Assert.That(sizeof(PROCESSENTRY32W), Is.EqualTo(556));
-            }
+            Assert.That(sizeof(PROCESSENTRY32W), Is.EqualTo(568));
+        }
+        else
+        {
+            Assert.That(sizeof(PROCESSENTRY32W), Is.EqualTo(556));
         }
     }
 }

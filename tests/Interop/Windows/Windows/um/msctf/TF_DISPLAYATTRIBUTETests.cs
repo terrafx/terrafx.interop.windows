@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TF_DISPLAYATTRIBUTE" /> struct.</summary>
+public static unsafe partial class TF_DISPLAYATTRIBUTETests
 {
-    /// <summary>Provides validation of the <see cref="TF_DISPLAYATTRIBUTE" /> struct.</summary>
-    public static unsafe partial class TF_DISPLAYATTRIBUTETests
+    /// <summary>Validates that the <see cref="TF_DISPLAYATTRIBUTE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TF_DISPLAYATTRIBUTE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TF_DISPLAYATTRIBUTE>(), Is.EqualTo(sizeof(TF_DISPLAYATTRIBUTE)));
-        }
+        Assert.That(Marshal.SizeOf<TF_DISPLAYATTRIBUTE>(), Is.EqualTo(sizeof(TF_DISPLAYATTRIBUTE)));
+    }
 
-        /// <summary>Validates that the <see cref="TF_DISPLAYATTRIBUTE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TF_DISPLAYATTRIBUTE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TF_DISPLAYATTRIBUTE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TF_DISPLAYATTRIBUTE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TF_DISPLAYATTRIBUTE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TF_DISPLAYATTRIBUTE), Is.EqualTo(36));
-        }
+    /// <summary>Validates that the <see cref="TF_DISPLAYATTRIBUTE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TF_DISPLAYATTRIBUTE), Is.EqualTo(36));
     }
 }

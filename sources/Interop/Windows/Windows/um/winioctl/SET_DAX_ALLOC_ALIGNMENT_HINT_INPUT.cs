@@ -3,20 +3,19 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SET_DAX_ALLOC_ALIGNMENT_HINT_INPUT
 {
-    public partial struct SET_DAX_ALLOC_ALIGNMENT_HINT_INPUT
-    {
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        [NativeTypeName("DWORD")]
-        public uint AlignmentShift;
+    [NativeTypeName("DWORD")]
+    public uint AlignmentShift;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong FileOffsetToAlign;
+    [NativeTypeName("DWORDLONG")]
+    public ulong FileOffsetToAlign;
 
-        [NativeTypeName("DWORD")]
-        public uint FallbackAlignmentShift;
-    }
+    [NativeTypeName("DWORD")]
+    public uint FallbackAlignmentShift;
 }

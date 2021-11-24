@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SAFEARR_VARIANT" /> struct.</summary>
+public static unsafe partial class SAFEARR_VARIANTTests
 {
-    /// <summary>Provides validation of the <see cref="SAFEARR_VARIANT" /> struct.</summary>
-    public static unsafe partial class SAFEARR_VARIANTTests
+    /// <summary>Validates that the <see cref="SAFEARR_VARIANT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SAFEARR_VARIANT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SAFEARR_VARIANT>(), Is.EqualTo(sizeof(SAFEARR_VARIANT)));
-        }
+        Assert.That(Marshal.SizeOf<SAFEARR_VARIANT>(), Is.EqualTo(sizeof(SAFEARR_VARIANT)));
+    }
 
-        /// <summary>Validates that the <see cref="SAFEARR_VARIANT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SAFEARR_VARIANT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SAFEARR_VARIANT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SAFEARR_VARIANT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SAFEARR_VARIANT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SAFEARR_VARIANT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SAFEARR_VARIANT), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(SAFEARR_VARIANT), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(SAFEARR_VARIANT), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(SAFEARR_VARIANT), Is.EqualTo(8));
         }
     }
 }

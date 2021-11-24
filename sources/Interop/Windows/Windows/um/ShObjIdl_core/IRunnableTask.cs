@@ -7,118 +7,117 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("85788D00-6807-11D0-B810-00C04FD706EC")]
+[NativeTypeName("struct IRunnableTask : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IRunnableTask : IRunnableTask.Interface
 {
-    [Guid("85788D00-6807-11D0-B810-00C04FD706EC")]
-    [NativeTypeName("struct IRunnableTask : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRunnableTask : IRunnableTask.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IRunnableTask*, Guid*, void**, int>)(lpVtbl[0]))((IRunnableTask*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IRunnableTask*, Guid*, void**, int>)(lpVtbl[0]))((IRunnableTask*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IRunnableTask*, uint>)(lpVtbl[1]))((IRunnableTask*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IRunnableTask*, uint>)(lpVtbl[1]))((IRunnableTask*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IRunnableTask*, uint>)(lpVtbl[2]))((IRunnableTask*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IRunnableTask*, uint>)(lpVtbl[2]))((IRunnableTask*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Run()
+    {
+        return ((delegate* unmanaged<IRunnableTask*, int>)(lpVtbl[3]))((IRunnableTask*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Kill(BOOL bWait)
+    {
+        return ((delegate* unmanaged<IRunnableTask*, BOOL, int>)(lpVtbl[4]))((IRunnableTask*)Unsafe.AsPointer(ref this), bWait);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Suspend()
+    {
+        return ((delegate* unmanaged<IRunnableTask*, int>)(lpVtbl[5]))((IRunnableTask*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Resume()
+    {
+        return ((delegate* unmanaged<IRunnableTask*, int>)(lpVtbl[6]))((IRunnableTask*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    [return: NativeTypeName("ULONG")]
+    public uint IsRunning()
+    {
+        return ((delegate* unmanaged<IRunnableTask*, uint>)(lpVtbl[7]))((IRunnableTask*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Run()
-        {
-            return ((delegate* unmanaged<IRunnableTask*, int>)(lpVtbl[3]))((IRunnableTask*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Run();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Kill(BOOL bWait)
-        {
-            return ((delegate* unmanaged<IRunnableTask*, BOOL, int>)(lpVtbl[4]))((IRunnableTask*)Unsafe.AsPointer(ref this), bWait);
-        }
+        HRESULT Kill(BOOL bWait);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Suspend()
-        {
-            return ((delegate* unmanaged<IRunnableTask*, int>)(lpVtbl[5]))((IRunnableTask*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Suspend();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Resume()
-        {
-            return ((delegate* unmanaged<IRunnableTask*, int>)(lpVtbl[6]))((IRunnableTask*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Resume();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("ULONG")]
-        public uint IsRunning()
-        {
-            return ((delegate* unmanaged<IRunnableTask*, uint>)(lpVtbl[7]))((IRunnableTask*)Unsafe.AsPointer(ref this));
-        }
+        uint IsRunning();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Run();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRunnableTask*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT Kill(BOOL bWait);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IRunnableTask*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT Suspend();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IRunnableTask*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT Resume();
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IRunnableTask*, int> Run;
 
-            [VtblIndex(7)]
-            [return: NativeTypeName("ULONG")]
-            uint IsRunning();
-        }
+        [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRunnableTask*, BOOL, int> Kill;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRunnableTask*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IRunnableTask*, int> Suspend;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IRunnableTask*, uint> AddRef;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IRunnableTask*, int> Resume;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IRunnableTask*, uint> Release;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IRunnableTask*, int> Run;
-
-            [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRunnableTask*, BOOL, int> Kill;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IRunnableTask*, int> Suspend;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IRunnableTask*, int> Resume;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IRunnableTask*, uint> IsRunning;
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IRunnableTask*, uint> IsRunning;
     }
 }

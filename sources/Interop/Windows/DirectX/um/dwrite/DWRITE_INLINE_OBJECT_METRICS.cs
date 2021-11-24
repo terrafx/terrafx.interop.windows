@@ -5,16 +5,15 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DWRITE_INLINE_OBJECT_METRICS
 {
-    public partial struct DWRITE_INLINE_OBJECT_METRICS
-    {
-        public float width;
+    public float width;
 
-        public float height;
+    public float height;
 
-        public float baseline;
+    public float baseline;
 
-        public BOOL supportsSideways;
-    }
+    public BOOL supportsSideways;
 }

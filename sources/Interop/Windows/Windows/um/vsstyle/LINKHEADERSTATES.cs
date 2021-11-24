@@ -3,11 +3,10 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum LINKHEADERSTATES
 {
-    public enum LINKHEADERSTATES
-    {
-        FLH_NORMAL = 1,
-        FLH_HOVER = 2,
-    }
+    FLH_NORMAL = 1,
+    FLH_HOVER = 2,
 }

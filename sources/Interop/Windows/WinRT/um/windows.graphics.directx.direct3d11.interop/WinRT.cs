@@ -7,14 +7,13 @@ using System.Runtime.InteropServices;
 using TerraFX.Interop.DirectX;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
-{
-    public static unsafe partial class WinRT
-    {
-        [DllImport("d3d11", ExactSpelling = true)]
-        public static extern HRESULT CreateDirect3D11DeviceFromDXGIDevice(IDXGIDevice* dxgiDevice, IInspectable** graphicsDevice);
+namespace TerraFX.Interop.WinRT;
 
-        [DllImport("d3d11", ExactSpelling = true)]
-        public static extern HRESULT CreateDirect3D11SurfaceFromDXGISurface(IDXGISurface* dgxiSurface, IInspectable** graphicsSurface);
-    }
+public static unsafe partial class WinRT
+{
+    [DllImport("d3d11", ExactSpelling = true)]
+    public static extern HRESULT CreateDirect3D11DeviceFromDXGIDevice(IDXGIDevice* dxgiDevice, IInspectable** graphicsDevice);
+
+    [DllImport("d3d11", ExactSpelling = true)]
+    public static extern HRESULT CreateDirect3D11SurfaceFromDXGISurface(IDXGISurface* dgxiSurface, IInspectable** graphicsSurface);
 }

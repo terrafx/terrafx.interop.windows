@@ -5,17 +5,16 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct SP_REMOVEDEVICE_PARAMS32
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct SP_REMOVEDEVICE_PARAMS32
-    {
-        public SP_CLASSINSTALL_HEADER32 ClassInstallHeader;
+    public SP_CLASSINSTALL_HEADER32 ClassInstallHeader;
 
-        [NativeTypeName("DWORD")]
-        public uint Scope;
+    [NativeTypeName("DWORD")]
+    public uint Scope;
 
-        [NativeTypeName("DWORD")]
-        public uint HwProfile;
-    }
+    [NativeTypeName("DWORD")]
+    public uint HwProfile;
 }

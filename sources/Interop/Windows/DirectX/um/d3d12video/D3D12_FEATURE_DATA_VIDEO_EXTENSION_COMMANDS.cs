@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+public unsafe partial struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMANDS
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public unsafe partial struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMANDS
-    {
-        public uint NodeIndex;
+    public uint NodeIndex;
 
-        public uint CommandCount;
+    public uint CommandCount;
 
-        public D3D12_VIDEO_EXTENSION_COMMAND_INFO* pCommandInfos;
-    }
+    public D3D12_VIDEO_EXTENSION_COMMAND_INFO* pCommandInfos;
 }

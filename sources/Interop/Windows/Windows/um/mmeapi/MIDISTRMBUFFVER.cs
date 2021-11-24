@@ -5,18 +5,17 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct MIDISTRMBUFFVER
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct MIDISTRMBUFFVER
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwVersion;
+    [NativeTypeName("DWORD")]
+    public uint dwVersion;
 
-        [NativeTypeName("DWORD")]
-        public uint dwMid;
+    [NativeTypeName("DWORD")]
+    public uint dwMid;
 
-        [NativeTypeName("DWORD")]
-        public uint dwOEMVersion;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwOEMVersion;
 }

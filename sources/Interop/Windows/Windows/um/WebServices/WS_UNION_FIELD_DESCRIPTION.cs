@@ -3,12 +3,11 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct WS_UNION_FIELD_DESCRIPTION
-    {
-        public int value;
+namespace TerraFX.Interop.Windows;
 
-        public WS_FIELD_DESCRIPTION field;
-    }
+public partial struct WS_UNION_FIELD_DESCRIPTION
+{
+    public int value;
+
+    public WS_FIELD_DESCRIPTION field;
 }

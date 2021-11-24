@@ -3,13 +3,12 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum VfwCompressDialogs
 {
-    public enum VfwCompressDialogs
-    {
-        VfwCompressDialog_Config = 0x1,
-        VfwCompressDialog_About = 0x2,
-        VfwCompressDialog_QueryConfig = 0x4,
-        VfwCompressDialog_QueryAbout = 0x8,
-    }
+    VfwCompressDialog_Config = 0x1,
+    VfwCompressDialog_About = 0x2,
+    VfwCompressDialog_QueryConfig = 0x4,
+    VfwCompressDialog_QueryAbout = 0x8,
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("8D8B8E30-C451-421B-8553-D2976AFA648C")]
+public partial struct SyncMgrScheduleWizard
 {
-    [Guid("8D8B8E30-C451-421B-8553-D2976AFA648C")]
-    public partial struct SyncMgrScheduleWizard
-    {
-    }
 }

@@ -3,20 +3,19 @@
 // Ported from um/urlmon.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DATAINFO
 {
-    public partial struct DATAINFO
-    {
-        [NativeTypeName("ULONG")]
-        public uint ulTotalSize;
+    [NativeTypeName("ULONG")]
+    public uint ulTotalSize;
 
-        [NativeTypeName("ULONG")]
-        public uint ulavrPacketSize;
+    [NativeTypeName("ULONG")]
+    public uint ulavrPacketSize;
 
-        [NativeTypeName("ULONG")]
-        public uint ulConnectSpeed;
+    [NativeTypeName("ULONG")]
+    public uint ulConnectSpeed;
 
-        [NativeTypeName("ULONG")]
-        public uint ulProcessorSpeed;
-    }
+    [NativeTypeName("ULONG")]
+    public uint ulProcessorSpeed;
 }

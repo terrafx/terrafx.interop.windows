@@ -6,86 +6,85 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SYSTEM_INFO
 {
-    public unsafe partial struct SYSTEM_INFO
+    [NativeTypeName("_SYSTEM_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/sysinfoapi.h:48:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    [NativeTypeName("DWORD")]
+    public uint dwPageSize;
+
+    [NativeTypeName("LPVOID")]
+    public void* lpMinimumApplicationAddress;
+
+    [NativeTypeName("LPVOID")]
+    public void* lpMaximumApplicationAddress;
+
+    [NativeTypeName("DWORD_PTR")]
+    public nuint dwActiveProcessorMask;
+
+    [NativeTypeName("DWORD")]
+    public uint dwNumberOfProcessors;
+
+    [NativeTypeName("DWORD")]
+    public uint dwProcessorType;
+
+    [NativeTypeName("DWORD")]
+    public uint dwAllocationGranularity;
+
+    [NativeTypeName("WORD")]
+    public ushort wProcessorLevel;
+
+    [NativeTypeName("WORD")]
+    public ushort wProcessorRevision;
+
+    public ref uint dwOemId
     {
-        [NativeTypeName("_SYSTEM_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/sysinfoapi.h:48:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        [NativeTypeName("DWORD")]
-        public uint dwPageSize;
-
-        [NativeTypeName("LPVOID")]
-        public void* lpMinimumApplicationAddress;
-
-        [NativeTypeName("LPVOID")]
-        public void* lpMaximumApplicationAddress;
-
-        [NativeTypeName("DWORD_PTR")]
-        public nuint dwActiveProcessorMask;
-
-        [NativeTypeName("DWORD")]
-        public uint dwNumberOfProcessors;
-
-        [NativeTypeName("DWORD")]
-        public uint dwProcessorType;
-
-        [NativeTypeName("DWORD")]
-        public uint dwAllocationGranularity;
-
-        [NativeTypeName("WORD")]
-        public ushort wProcessorLevel;
-
-        [NativeTypeName("WORD")]
-        public ushort wProcessorRevision;
-
-        public ref uint dwOemId
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwOemId, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwOemId, 1));
         }
+    }
 
-        public ref ushort wProcessorArchitecture
+    public ref ushort wProcessorArchitecture
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.wProcessorArchitecture, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.wProcessorArchitecture, 1));
         }
+    }
 
-        public ref ushort wReserved
+    public ref ushort wReserved
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.wReserved, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.wReserved, 1));
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint dwOemId;
+
+        [FieldOffset(0)]
+        [NativeTypeName("_SYSTEM_INFO::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/sysinfoapi.h:50:9)")]
+        public _Anonymous_e__Struct Anonymous;
+
+        public partial struct _Anonymous_e__Struct
         {
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint dwOemId;
+            [NativeTypeName("WORD")]
+            public ushort wProcessorArchitecture;
 
-            [FieldOffset(0)]
-            [NativeTypeName("_SYSTEM_INFO::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/sysinfoapi.h:50:9)")]
-            public _Anonymous_e__Struct Anonymous;
-
-            public partial struct _Anonymous_e__Struct
-            {
-                [NativeTypeName("WORD")]
-                public ushort wProcessorArchitecture;
-
-                [NativeTypeName("WORD")]
-                public ushort wReserved;
-            }
+            [NativeTypeName("WORD")]
+            public ushort wReserved;
         }
     }
 }

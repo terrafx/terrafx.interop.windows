@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("5440837F-4BFF-4AE5-A1B1-7722ECC6332A")]
+public partial struct AccStore
 {
-    [Guid("5440837F-4BFF-4AE5-A1B1-7722ECC6332A")]
-    public partial struct AccStore
-    {
-    }
 }

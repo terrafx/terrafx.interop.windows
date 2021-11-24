@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum LIBRARYSAVEFLAGS
 {
-    [Flags]
-    public enum LIBRARYSAVEFLAGS
-    {
-        LSF_FAILIFTHERE = 0,
-        LSF_OVERRIDEEXISTING = 0x1,
-        LSF_MAKEUNIQUENAME = 0x2,
-    }
+    LSF_FAILIFTHERE = 0,
+    LSF_OVERRIDEEXISTING = 0x1,
+    LSF_MAKEUNIQUENAME = 0x2,
 }

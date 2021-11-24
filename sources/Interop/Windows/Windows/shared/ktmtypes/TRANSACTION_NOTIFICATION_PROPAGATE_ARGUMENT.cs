@@ -5,18 +5,17 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TRANSACTION_NOTIFICATION_PROPAGATE_ARGUMENT
 {
-    public partial struct TRANSACTION_NOTIFICATION_PROPAGATE_ARGUMENT
-    {
-        [NativeTypeName("ULONG")]
-        public uint PropagationCookie;
+    [NativeTypeName("ULONG")]
+    public uint PropagationCookie;
 
-        public Guid UOW;
+    public Guid UOW;
 
-        public Guid TmIdentity;
+    public Guid TmIdentity;
 
-        [NativeTypeName("ULONG")]
-        public uint BufferLength;
-    }
+    [NativeTypeName("ULONG")]
+    public uint BufferLength;
 }

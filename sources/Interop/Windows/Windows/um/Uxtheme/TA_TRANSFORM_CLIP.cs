@@ -3,26 +3,25 @@
 // Ported from um/Uxtheme.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TA_TRANSFORM_CLIP
 {
-    public partial struct TA_TRANSFORM_CLIP
-    {
-        public TA_TRANSFORM header;
+    public TA_TRANSFORM header;
 
-        public float rLeft;
+    public float rLeft;
 
-        public float rTop;
+    public float rTop;
 
-        public float rRight;
+    public float rRight;
 
-        public float rBottom;
+    public float rBottom;
 
-        public float rInitialLeft;
+    public float rInitialLeft;
 
-        public float rInitialTop;
+    public float rInitialTop;
 
-        public float rInitialRight;
+    public float rInitialRight;
 
-        public float rInitialBottom;
-    }
+    public float rInitialBottom;
 }

@@ -3,12 +3,11 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum eAVDecVideoSWPowerLevel
 {
-    public enum eAVDecVideoSWPowerLevel
-    {
-        eAVDecVideoSWPowerLevel_BatteryLife = 0,
-        eAVDecVideoSWPowerLevel_Balanced = 50,
-        eAVDecVideoSWPowerLevel_VideoQuality = 100,
-    }
+    eAVDecVideoSWPowerLevel_BatteryLife = 0,
+    eAVDecVideoSWPowerLevel_Balanced = 50,
+    eAVDecVideoSWPowerLevel_VideoQuality = 100,
 }

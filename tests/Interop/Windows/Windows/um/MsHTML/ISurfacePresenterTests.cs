@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISurfacePresenter" /> struct.</summary>
+public static unsafe partial class ISurfacePresenterTests
 {
-    /// <summary>Provides validation of the <see cref="ISurfacePresenter" /> struct.</summary>
-    public static unsafe partial class ISurfacePresenterTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISurfacePresenter" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISurfacePresenter" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISurfacePresenter).GUID, Is.EqualTo(IID_ISurfacePresenter));
-        }
+        Assert.That(typeof(ISurfacePresenter).GUID, Is.EqualTo(IID_ISurfacePresenter));
+    }
 
-        /// <summary>Validates that the <see cref="ISurfacePresenter" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISurfacePresenter>(), Is.EqualTo(sizeof(ISurfacePresenter)));
-        }
+    /// <summary>Validates that the <see cref="ISurfacePresenter" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISurfacePresenter>(), Is.EqualTo(sizeof(ISurfacePresenter)));
+    }
 
-        /// <summary>Validates that the <see cref="ISurfacePresenter" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISurfacePresenter).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISurfacePresenter" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISurfacePresenter).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISurfacePresenter" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISurfacePresenter" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISurfacePresenter), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISurfacePresenter), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISurfacePresenter), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISurfacePresenter), Is.EqualTo(4));
         }
     }
 }

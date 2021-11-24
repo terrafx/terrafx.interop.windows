@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public enum MF_TIMED_TEXT_CUE_EVENT
 {
-    [SupportedOSPlatform("windows10.0")]
-    public enum MF_TIMED_TEXT_CUE_EVENT
-    {
-        MF_TIMED_TEXT_CUE_EVENT_ACTIVE = 0,
-        MF_TIMED_TEXT_CUE_EVENT_INACTIVE = (MF_TIMED_TEXT_CUE_EVENT_ACTIVE + 1),
-        MF_TIMED_TEXT_CUE_EVENT_CLEAR = (MF_TIMED_TEXT_CUE_EVENT_INACTIVE + 1),
-    }
+    MF_TIMED_TEXT_CUE_EVENT_ACTIVE = 0,
+    MF_TIMED_TEXT_CUE_EVENT_INACTIVE = (MF_TIMED_TEXT_CUE_EVENT_ACTIVE + 1),
+    MF_TIMED_TEXT_CUE_EVENT_CLEAR = (MF_TIMED_TEXT_CUE_EVENT_INACTIVE + 1),
 }

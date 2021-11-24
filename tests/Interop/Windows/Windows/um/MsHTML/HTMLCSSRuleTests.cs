@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLCSSRule" /> struct.</summary>
+public static unsafe partial class HTMLCSSRuleTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLCSSRule" /> struct.</summary>
-    public static unsafe partial class HTMLCSSRuleTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLCSSRule" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLCSSRule" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLCSSRule).GUID, Is.EqualTo(IID_HTMLCSSRule));
-        }
+        Assert.That(typeof(HTMLCSSRule).GUID, Is.EqualTo(IID_HTMLCSSRule));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLCSSRule" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLCSSRule>(), Is.EqualTo(sizeof(HTMLCSSRule)));
-        }
+    /// <summary>Validates that the <see cref="HTMLCSSRule" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLCSSRule>(), Is.EqualTo(sizeof(HTMLCSSRule)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLCSSRule" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLCSSRule).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLCSSRule" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLCSSRule).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLCSSRule" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTMLCSSRule), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTMLCSSRule" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTMLCSSRule), Is.EqualTo(1));
     }
 }

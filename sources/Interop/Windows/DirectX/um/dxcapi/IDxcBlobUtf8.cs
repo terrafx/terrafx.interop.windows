@@ -8,113 +8,112 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Guid("3DA636C9-BA71-4024-A301-30CBF125305B")]
+[NativeTypeName("struct IDxcBlobUtf8 : IDxcBlobEncoding")]
+[NativeInheritance("IDxcBlobEncoding")]
+public unsafe partial struct IDxcBlobUtf8 : IDxcBlobUtf8.Interface
 {
-    [Guid("3DA636C9-BA71-4024-A301-30CBF125305B")]
-    [NativeTypeName("struct IDxcBlobUtf8 : IDxcBlobEncoding")]
-    [NativeInheritance("IDxcBlobEncoding")]
-    public unsafe partial struct IDxcBlobUtf8 : IDxcBlobUtf8.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDxcBlobUtf8*, Guid*, void**, int>)(lpVtbl[0]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDxcBlobUtf8*, Guid*, void**, int>)(lpVtbl[0]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDxcBlobUtf8*, uint>)(lpVtbl[1]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDxcBlobUtf8*, uint>)(lpVtbl[1]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDxcBlobUtf8*, uint>)(lpVtbl[2]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDxcBlobUtf8*, uint>)(lpVtbl[2]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    [return: NativeTypeName("LPVOID")]
+    public void* GetBufferPointer()
+    {
+        return ((delegate* unmanaged<IDxcBlobUtf8*, void*>)(lpVtbl[3]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        [return: NativeTypeName("LPVOID")]
-        public void* GetBufferPointer()
-        {
-            return ((delegate* unmanaged<IDxcBlobUtf8*, void*>)(lpVtbl[3]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    [return: NativeTypeName("SIZE_T")]
+    public nuint GetBufferSize()
+    {
+        return ((delegate* unmanaged<IDxcBlobUtf8*, nuint>)(lpVtbl[4]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        [return: NativeTypeName("SIZE_T")]
-        public nuint GetBufferSize()
-        {
-            return ((delegate* unmanaged<IDxcBlobUtf8*, nuint>)(lpVtbl[4]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetEncoding(BOOL* pKnown, [NativeTypeName("UINT32 *")] uint* pCodePage)
+    {
+        return ((delegate* unmanaged<IDxcBlobUtf8*, BOOL*, uint*, int>)(lpVtbl[5]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this), pKnown, pCodePage);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT GetEncoding(BOOL* pKnown, [NativeTypeName("UINT32 *")] uint* pCodePage)
-        {
-            return ((delegate* unmanaged<IDxcBlobUtf8*, BOOL*, uint*, int>)(lpVtbl[5]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this), pKnown, pCodePage);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    [return: NativeTypeName("LPCSTR")]
+    public sbyte* GetStringPointer()
+    {
+        return ((delegate* unmanaged<IDxcBlobUtf8*, sbyte*>)(lpVtbl[6]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    [return: NativeTypeName("SIZE_T")]
+    public nuint GetStringLength()
+    {
+        return ((delegate* unmanaged<IDxcBlobUtf8*, nuint>)(lpVtbl[7]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IDxcBlobEncoding.Interface
+    {
         [VtblIndex(6)]
         [return: NativeTypeName("LPCSTR")]
-        public sbyte* GetStringPointer()
-        {
-            return ((delegate* unmanaged<IDxcBlobUtf8*, sbyte*>)(lpVtbl[6]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
-        }
+        sbyte* GetStringPointer();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("SIZE_T")]
-        public nuint GetStringLength()
-        {
-            return ((delegate* unmanaged<IDxcBlobUtf8*, nuint>)(lpVtbl[7]))((IDxcBlobUtf8*)Unsafe.AsPointer(ref this));
-        }
+        nuint GetStringLength();
+    }
 
-        public interface Interface : IDxcBlobEncoding.Interface
-        {
-            [VtblIndex(6)]
-            [return: NativeTypeName("LPCSTR")]
-            sbyte* GetStringPointer();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDxcBlobUtf8*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(7)]
-            [return: NativeTypeName("SIZE_T")]
-            nuint GetStringLength();
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDxcBlobUtf8*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDxcBlobUtf8*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDxcBlobUtf8*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDxcBlobUtf8*, uint> AddRef;
+        [NativeTypeName("LPVOID () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDxcBlobUtf8*, void*> GetBufferPointer;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDxcBlobUtf8*, uint> Release;
+        [NativeTypeName("SIZE_T () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDxcBlobUtf8*, nuint> GetBufferSize;
 
-            [NativeTypeName("LPVOID () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDxcBlobUtf8*, void*> GetBufferPointer;
+        [NativeTypeName("HRESULT (BOOL *, UINT32 *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDxcBlobUtf8*, BOOL*, uint*, int> GetEncoding;
 
-            [NativeTypeName("SIZE_T () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDxcBlobUtf8*, nuint> GetBufferSize;
+        [NativeTypeName("LPCSTR () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDxcBlobUtf8*, sbyte*> GetStringPointer;
 
-            [NativeTypeName("HRESULT (BOOL *, UINT32 *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDxcBlobUtf8*, BOOL*, uint*, int> GetEncoding;
-
-            [NativeTypeName("LPCSTR () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDxcBlobUtf8*, sbyte*> GetStringPointer;
-
-            [NativeTypeName("SIZE_T () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDxcBlobUtf8*, nuint> GetStringLength;
-        }
+        [NativeTypeName("SIZE_T () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDxcBlobUtf8*, nuint> GetStringLength;
     }
 }

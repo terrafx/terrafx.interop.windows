@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct FILE_STORAGE_TIER_REGION
 {
-    public partial struct FILE_STORAGE_TIER_REGION
-    {
-        public Guid TierId;
+    public Guid TierId;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong Offset;
+    [NativeTypeName("DWORDLONG")]
+    public ulong Offset;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong Length;
-    }
+    [NativeTypeName("DWORDLONG")]
+    public ulong Length;
 }

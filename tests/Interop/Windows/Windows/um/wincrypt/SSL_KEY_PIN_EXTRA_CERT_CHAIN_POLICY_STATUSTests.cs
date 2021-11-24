@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS" /> struct.</summary>
+public static unsafe partial class SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUSTests
 {
-    /// <summary>Provides validation of the <see cref="SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS" /> struct.</summary>
-    public static unsafe partial class SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUSTests
+    /// <summary>Validates that the <see cref="SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS>(), Is.EqualTo(sizeof(SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS)));
-        }
+        Assert.That(Marshal.SizeOf<SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS>(), Is.EqualTo(sizeof(SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS)));
+    }
 
-        /// <summary>Validates that the <see cref="SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS), Is.EqualTo(1032));
-        }
+    /// <summary>Validates that the <see cref="SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SSL_KEY_PIN_EXTRA_CERT_CHAIN_POLICY_STATUS), Is.EqualTo(1032));
     }
 }

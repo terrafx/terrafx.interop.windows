@@ -7,90 +7,89 @@ using TerraFX.Interop.Windows;
 using TerraFX.Samples.DirectX;
 using static TerraFX.Interop.DirectX.DXGI_FORMAT;
 
-namespace TerraFX.Samples.WinForms
+namespace TerraFX.Samples.WinForms;
+
+public partial class DXPanel : Panel
 {
-    public partial class DXPanel : Panel
+    private DXSample? _dxSample;
+    private bool _useWarpDevice;
+
+    public DXPanel()
     {
-        private DXSample? _dxSample;
-        private bool _useWarpDevice;
+        InitializeComponent();
+    }
 
-        public DXPanel()
+    public DXSample? DXSample
+    {
+        get
         {
-            InitializeComponent();
+            return _dxSample;
         }
 
-        public DXSample? DXSample
+        set
         {
-            get
+            if (value == _dxSample)
             {
-                return _dxSample;
+                return;
             }
 
-            set
+            if (_dxSample is not null)
             {
-                if (value == _dxSample)
-                {
-                    return;
-                }
-
-                if (_dxSample is not null)
-                {
-                    _dxSample.OnDestroy();
-                }
-
-                if (value is not null)
-                {
-                    var backgroundColor = new Vector4(BackColor.R / 255.0f, BackColor.G / 255.0f, BackColor.B / 255.0f, BackColor.A / 255.0f);
-                    value.OnInit(DXGI_FORMAT_UNKNOWN, backgroundColor, DXGI_FORMAT_UNKNOWN, 1.0f, 2, (HWND)(Handle), true, ClientSize, _useWarpDevice);
-                }
-
-                _dxSample = value;
-                Invalidate();
+                _dxSample.OnDestroy();
             }
+
+            if (value is not null)
+            {
+                var backgroundColor = new Vector4(BackColor.R / 255.0f, BackColor.G / 255.0f, BackColor.B / 255.0f, BackColor.A / 255.0f);
+                value.OnInit(DXGI_FORMAT_UNKNOWN, backgroundColor, DXGI_FORMAT_UNKNOWN, 1.0f, 2, (HWND)Handle, true, ClientSize, _useWarpDevice);
+            }
+
+            _dxSample = value;
+            Invalidate();
+        }
+    }
+
+    public bool UseWarpDevice
+    {
+        get
+        {
+            return (_dxSample?.UseWarpDevice).GetValueOrDefault();
         }
 
-        public bool UseWarpDevice
-        {
-            get
-            {
-                return (_dxSample?.UseWarpDevice).GetValueOrDefault();
-            }
-
-            set
-            {
-                if (_dxSample is not null)
-                {
-                    _dxSample.OnDestroy();
-
-                    var backgroundColor = new Vector4(0.0f, 0.2f, 0.4f, 1.0f);
-                    _dxSample.OnInit(DXGI_FORMAT_UNKNOWN, backgroundColor, DXGI_FORMAT_UNKNOWN, 1.0f, 2, (HWND)(Handle), true, ClientSize, _useWarpDevice);
-                }
-                _useWarpDevice = value;
-            }
-        }
-
-        protected override void OnBackColorChanged(EventArgs e)
+        set
         {
             if (_dxSample is not null)
             {
-                _dxSample.BackgroundColor = new Vector4(BackColor.R / 255.0f, BackColor.G / 255.0f, BackColor.B / 255.0f, BackColor.A / 255.0f);
+                _dxSample.OnDestroy();
+
+                var backgroundColor = new Vector4(0.0f, 0.2f, 0.4f, 1.0f);
+                _dxSample.OnInit(DXGI_FORMAT_UNKNOWN, backgroundColor, DXGI_FORMAT_UNKNOWN, 1.0f, 2, (HWND)Handle, true, ClientSize, _useWarpDevice);
             }
-            base.OnBackColorChanged(e);
+            _useWarpDevice = value;
         }
+    }
 
-        private void DXPanel_ClientSizeChanged(object? sender, EventArgs eventArgs)
+    protected override void OnBackColorChanged(EventArgs e)
+    {
+        if (_dxSample is not null)
         {
-            _dxSample?.OnWindowSizeChanged(ClientSize);
+            _dxSample.BackgroundColor = new Vector4(BackColor.R / 255.0f, BackColor.G / 255.0f, BackColor.B / 255.0f, BackColor.A / 255.0f);
         }
+        base.OnBackColorChanged(e);
+    }
 
-        private void DXPanel_KeyUp(object sender, KeyEventArgs eventArgs)
-        {
-            _dxSample?.OnKeyUp(eventArgs.KeyValue);
-        }
+    private void DXPanel_ClientSizeChanged(object? sender, EventArgs eventArgs)
+    {
+        _dxSample?.OnWindowSizeChanged(ClientSize);
+    }
 
-        private void DXPanel_KeyDown(object sender, KeyEventArgs eventArgs)
-        {
-            _dxSample?.OnKeyDown(eventArgs.KeyValue);
-        }
+    private void DXPanel_KeyUp(object sender, KeyEventArgs eventArgs)
+    {
+        _dxSample?.OnKeyUp(eventArgs.KeyValue);
+    }
+
+    private void DXPanel_KeyDown(object sender, KeyEventArgs eventArgs)
+    {
+        _dxSample?.OnKeyDown(eventArgs.KeyValue);
     }
 }

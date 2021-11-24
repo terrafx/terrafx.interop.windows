@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("B28A6E64-3FF9-446A-8A4B-0D7A53413236")]
+public partial struct CODECAPI_AVScenarioInfo
 {
-    [Guid("B28A6E64-3FF9-446A-8A4B-0D7A53413236")]
-    public partial struct CODECAPI_AVScenarioInfo
-    {
-    }
 }

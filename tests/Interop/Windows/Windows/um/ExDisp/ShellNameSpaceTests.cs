@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ShellNameSpace" /> struct.</summary>
+public static unsafe partial class ShellNameSpaceTests
 {
-    /// <summary>Provides validation of the <see cref="ShellNameSpace" /> struct.</summary>
-    public static unsafe partial class ShellNameSpaceTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ShellNameSpace" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ShellNameSpace" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ShellNameSpace).GUID, Is.EqualTo(IID_ShellNameSpace));
-        }
+        Assert.That(typeof(ShellNameSpace).GUID, Is.EqualTo(IID_ShellNameSpace));
+    }
 
-        /// <summary>Validates that the <see cref="ShellNameSpace" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ShellNameSpace>(), Is.EqualTo(sizeof(ShellNameSpace)));
-        }
+    /// <summary>Validates that the <see cref="ShellNameSpace" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ShellNameSpace>(), Is.EqualTo(sizeof(ShellNameSpace)));
+    }
 
-        /// <summary>Validates that the <see cref="ShellNameSpace" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ShellNameSpace).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ShellNameSpace" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ShellNameSpace).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ShellNameSpace" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(ShellNameSpace), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="ShellNameSpace" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(ShellNameSpace), Is.EqualTo(1));
     }
 }

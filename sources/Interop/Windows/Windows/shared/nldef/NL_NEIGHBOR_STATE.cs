@@ -3,17 +3,16 @@
 // Ported from shared/nldef.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum NL_NEIGHBOR_STATE
 {
-    public enum NL_NEIGHBOR_STATE
-    {
-        NlnsUnreachable,
-        NlnsIncomplete,
-        NlnsProbe,
-        NlnsDelay,
-        NlnsStale,
-        NlnsReachable,
-        NlnsPermanent,
-        NlnsMaximum,
-    }
+    NlnsUnreachable,
+    NlnsIncomplete,
+    NlnsProbe,
+    NlnsDelay,
+    NlnsStale,
+    NlnsReachable,
+    NlnsPermanent,
+    NlnsMaximum,
 }

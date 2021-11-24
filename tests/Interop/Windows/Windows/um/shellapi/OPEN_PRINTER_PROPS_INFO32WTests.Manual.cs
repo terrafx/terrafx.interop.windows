@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="OPEN_PRINTER_PROPS_INFO32W" /> struct.</summary>
+public static unsafe partial class OPEN_PRINTER_PROPS_INFO32WTests
 {
-    /// <summary>Provides validation of the <see cref="OPEN_PRINTER_PROPS_INFO32W" /> struct.</summary>
-    public static unsafe partial class OPEN_PRINTER_PROPS_INFO32WTests
+    /// <summary>Validates that the <see cref="OPEN_PRINTER_PROPS_INFO32W" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="OPEN_PRINTER_PROPS_INFO32W" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<OPEN_PRINTER_PROPS_INFO32W>(), Is.EqualTo(sizeof(OPEN_PRINTER_PROPS_INFO32W)));
-        }
+        Assert.That(Marshal.SizeOf<OPEN_PRINTER_PROPS_INFO32W>(), Is.EqualTo(sizeof(OPEN_PRINTER_PROPS_INFO32W)));
+    }
 
-        /// <summary>Validates that the <see cref="OPEN_PRINTER_PROPS_INFO32W" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(OPEN_PRINTER_PROPS_INFO32W).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="OPEN_PRINTER_PROPS_INFO32W" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(OPEN_PRINTER_PROPS_INFO32W).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="OPEN_PRINTER_PROPS_INFO32W" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="OPEN_PRINTER_PROPS_INFO32W" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(OPEN_PRINTER_PROPS_INFO32W), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(OPEN_PRINTER_PROPS_INFO32W), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(OPEN_PRINTER_PROPS_INFO32W), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(OPEN_PRINTER_PROPS_INFO32W), Is.EqualTo(20));
         }
     }
 }

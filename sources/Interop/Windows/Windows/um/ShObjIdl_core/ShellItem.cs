@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("9AC9FBE1-E0A2-4AD6-B4EE-E212013EA917")]
+public partial struct ShellItem
 {
-    [Guid("9AC9FBE1-E0A2-4AD6-B4EE-E212013EA917")]
-    public partial struct ShellItem
-    {
-    }
 }

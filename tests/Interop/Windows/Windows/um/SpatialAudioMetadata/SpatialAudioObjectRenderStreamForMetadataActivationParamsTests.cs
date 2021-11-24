@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SpatialAudioObjectRenderStreamForMetadataActivationParams" /> struct.</summary>
+public static unsafe partial class SpatialAudioObjectRenderStreamForMetadataActivationParamsTests
 {
-    /// <summary>Provides validation of the <see cref="SpatialAudioObjectRenderStreamForMetadataActivationParams" /> struct.</summary>
-    public static unsafe partial class SpatialAudioObjectRenderStreamForMetadataActivationParamsTests
+    /// <summary>Validates that the <see cref="SpatialAudioObjectRenderStreamForMetadataActivationParams" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SpatialAudioObjectRenderStreamForMetadataActivationParams" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SpatialAudioObjectRenderStreamForMetadataActivationParams>(), Is.EqualTo(sizeof(SpatialAudioObjectRenderStreamForMetadataActivationParams)));
-        }
+        Assert.That(Marshal.SizeOf<SpatialAudioObjectRenderStreamForMetadataActivationParams>(), Is.EqualTo(sizeof(SpatialAudioObjectRenderStreamForMetadataActivationParams)));
+    }
 
-        /// <summary>Validates that the <see cref="SpatialAudioObjectRenderStreamForMetadataActivationParams" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SpatialAudioObjectRenderStreamForMetadataActivationParams).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SpatialAudioObjectRenderStreamForMetadataActivationParams" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SpatialAudioObjectRenderStreamForMetadataActivationParams).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SpatialAudioObjectRenderStreamForMetadataActivationParams" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SpatialAudioObjectRenderStreamForMetadataActivationParams" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SpatialAudioObjectRenderStreamForMetadataActivationParams), Is.EqualTo(66));
-            }
-            else
-            {
-                Assert.That(sizeof(SpatialAudioObjectRenderStreamForMetadataActivationParams), Is.EqualTo(50));
-            }
+            Assert.That(sizeof(SpatialAudioObjectRenderStreamForMetadataActivationParams), Is.EqualTo(66));
+        }
+        else
+        {
+            Assert.That(sizeof(SpatialAudioObjectRenderStreamForMetadataActivationParams), Is.EqualTo(50));
         }
     }
 }

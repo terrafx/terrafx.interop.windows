@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DLLVERSIONINFO2" /> struct.</summary>
+public static unsafe partial class DLLVERSIONINFO2Tests
 {
-    /// <summary>Provides validation of the <see cref="DLLVERSIONINFO2" /> struct.</summary>
-    public static unsafe partial class DLLVERSIONINFO2Tests
+    /// <summary>Validates that the <see cref="DLLVERSIONINFO2" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DLLVERSIONINFO2" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DLLVERSIONINFO2>(), Is.EqualTo(sizeof(DLLVERSIONINFO2)));
-        }
+        Assert.That(Marshal.SizeOf<DLLVERSIONINFO2>(), Is.EqualTo(sizeof(DLLVERSIONINFO2)));
+    }
 
-        /// <summary>Validates that the <see cref="DLLVERSIONINFO2" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DLLVERSIONINFO2).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DLLVERSIONINFO2" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DLLVERSIONINFO2).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DLLVERSIONINFO2" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DLLVERSIONINFO2), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="DLLVERSIONINFO2" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DLLVERSIONINFO2), Is.EqualTo(32));
     }
 }

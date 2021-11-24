@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("B0C8BF60-16F7-4951-A30B-1DB1609293D6")]
+public partial struct CODECAPI_AVEncNumWorkerThreads
 {
-    [Guid("B0C8BF60-16F7-4951-A30B-1DB1609293D6")]
-    public partial struct CODECAPI_AVEncNumWorkerThreads
-    {
-    }
 }

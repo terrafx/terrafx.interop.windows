@@ -3,12 +3,11 @@
 // Ported from um/MLOperatorAuthor.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[NativeTypeName("uint32_t")]
+public enum MLOperatorEdgeType : uint
 {
-    [NativeTypeName("uint32_t")]
-    public enum MLOperatorEdgeType : uint
-    {
-        Undefined = 0,
-        Tensor = 1,
-    }
+    Undefined = 0,
+    Tensor = 1,
 }

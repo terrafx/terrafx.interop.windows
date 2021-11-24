@@ -5,23 +5,22 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct WS_NETPIPE_URL
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct WS_NETPIPE_URL
-    {
-        public WS_URL url;
+    public WS_URL url;
 
-        public WS_STRING host;
+    public WS_STRING host;
 
-        public ushort port;
+    public ushort port;
 
-        public WS_STRING portAsString;
+    public WS_STRING portAsString;
 
-        public WS_STRING path;
+    public WS_STRING path;
 
-        public WS_STRING query;
+    public WS_STRING query;
 
-        public WS_STRING fragment;
-    }
+    public WS_STRING fragment;
 }

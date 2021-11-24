@@ -3,22 +3,21 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct JOBOBJECT_SECURITY_LIMIT_INFORMATION
 {
-    public unsafe partial struct JOBOBJECT_SECURITY_LIMIT_INFORMATION
-    {
-        [NativeTypeName("DWORD")]
-        public uint SecurityLimitFlags;
+    [NativeTypeName("DWORD")]
+    public uint SecurityLimitFlags;
 
-        public HANDLE JobToken;
+    public HANDLE JobToken;
 
-        [NativeTypeName("PTOKEN_GROUPS")]
-        public TOKEN_GROUPS* SidsToDisable;
+    [NativeTypeName("PTOKEN_GROUPS")]
+    public TOKEN_GROUPS* SidsToDisable;
 
-        [NativeTypeName("PTOKEN_PRIVILEGES")]
-        public TOKEN_PRIVILEGES* PrivilegesToDelete;
+    [NativeTypeName("PTOKEN_PRIVILEGES")]
+    public TOKEN_PRIVILEGES* PrivilegesToDelete;
 
-        [NativeTypeName("PTOKEN_GROUPS")]
-        public TOKEN_GROUPS* RestrictedSids;
-    }
+    [NativeTypeName("PTOKEN_GROUPS")]
+    public TOKEN_GROUPS* RestrictedSids;
 }

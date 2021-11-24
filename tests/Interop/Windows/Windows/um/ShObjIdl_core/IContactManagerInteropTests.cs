@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IContactManagerInterop" /> struct.</summary>
+public static unsafe partial class IContactManagerInteropTests
 {
-    /// <summary>Provides validation of the <see cref="IContactManagerInterop" /> struct.</summary>
-    public static unsafe partial class IContactManagerInteropTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IContactManagerInterop" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IContactManagerInterop" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IContactManagerInterop).GUID, Is.EqualTo(IID_IContactManagerInterop));
-        }
+        Assert.That(typeof(IContactManagerInterop).GUID, Is.EqualTo(IID_IContactManagerInterop));
+    }
 
-        /// <summary>Validates that the <see cref="IContactManagerInterop" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IContactManagerInterop>(), Is.EqualTo(sizeof(IContactManagerInterop)));
-        }
+    /// <summary>Validates that the <see cref="IContactManagerInterop" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IContactManagerInterop>(), Is.EqualTo(sizeof(IContactManagerInterop)));
+    }
 
-        /// <summary>Validates that the <see cref="IContactManagerInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IContactManagerInterop).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IContactManagerInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IContactManagerInterop).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IContactManagerInterop" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IContactManagerInterop" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IContactManagerInterop), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IContactManagerInterop), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IContactManagerInterop), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IContactManagerInterop), Is.EqualTo(4));
         }
     }
 }

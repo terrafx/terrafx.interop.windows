@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DVD_MultichannelAudioAttributes" /> struct.</summary>
+public static unsafe partial class DVD_MultichannelAudioAttributesTests
 {
-    /// <summary>Provides validation of the <see cref="DVD_MultichannelAudioAttributes" /> struct.</summary>
-    public static unsafe partial class DVD_MultichannelAudioAttributesTests
+    /// <summary>Validates that the <see cref="DVD_MultichannelAudioAttributes" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DVD_MultichannelAudioAttributes" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DVD_MultichannelAudioAttributes>(), Is.EqualTo(sizeof(DVD_MultichannelAudioAttributes)));
-        }
+        Assert.That(Marshal.SizeOf<DVD_MultichannelAudioAttributes>(), Is.EqualTo(sizeof(DVD_MultichannelAudioAttributes)));
+    }
 
-        /// <summary>Validates that the <see cref="DVD_MultichannelAudioAttributes" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DVD_MultichannelAudioAttributes).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DVD_MultichannelAudioAttributes" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DVD_MultichannelAudioAttributes).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DVD_MultichannelAudioAttributes" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DVD_MultichannelAudioAttributes), Is.EqualTo(288));
-        }
+    /// <summary>Validates that the <see cref="DVD_MultichannelAudioAttributes" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DVD_MultichannelAudioAttributes), Is.EqualTo(288));
     }
 }

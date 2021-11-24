@@ -6,11 +6,10 @@
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+public static unsafe partial class WinRT
 {
-    public static unsafe partial class WinRT
-    {
-        [DllImport("windows.ai.machinelearning.dll", ExactSpelling = true)]
-        public static extern HRESULT MLCreateOperatorRegistry(IMLOperatorRegistry** registry);
-    }
+    [DllImport("windows.ai.machinelearning.dll", ExactSpelling = true)]
+    public static extern HRESULT MLCreateOperatorRegistry(IMLOperatorRegistry** registry);
 }

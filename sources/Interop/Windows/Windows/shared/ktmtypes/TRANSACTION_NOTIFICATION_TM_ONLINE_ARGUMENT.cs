@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENT
-    {
-        public Guid TmIdentity;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("ULONG")]
-        public uint Flags;
-    }
+public partial struct TRANSACTION_NOTIFICATION_TM_ONLINE_ARGUMENT
+{
+    public Guid TmIdentity;
+
+    [NativeTypeName("ULONG")]
+    public uint Flags;
 }

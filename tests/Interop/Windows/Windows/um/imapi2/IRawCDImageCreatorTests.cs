@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IRawCDImageCreator" /> struct.</summary>
+public static unsafe partial class IRawCDImageCreatorTests
 {
-    /// <summary>Provides validation of the <see cref="IRawCDImageCreator" /> struct.</summary>
-    public static unsafe partial class IRawCDImageCreatorTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IRawCDImageCreator" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IRawCDImageCreator" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IRawCDImageCreator).GUID, Is.EqualTo(IID_IRawCDImageCreator));
-        }
+        Assert.That(typeof(IRawCDImageCreator).GUID, Is.EqualTo(IID_IRawCDImageCreator));
+    }
 
-        /// <summary>Validates that the <see cref="IRawCDImageCreator" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IRawCDImageCreator>(), Is.EqualTo(sizeof(IRawCDImageCreator)));
-        }
+    /// <summary>Validates that the <see cref="IRawCDImageCreator" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IRawCDImageCreator>(), Is.EqualTo(sizeof(IRawCDImageCreator)));
+    }
 
-        /// <summary>Validates that the <see cref="IRawCDImageCreator" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IRawCDImageCreator).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IRawCDImageCreator" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IRawCDImageCreator).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IRawCDImageCreator" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IRawCDImageCreator" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IRawCDImageCreator), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IRawCDImageCreator), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IRawCDImageCreator), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IRawCDImageCreator), Is.EqualTo(4));
         }
     }
 }

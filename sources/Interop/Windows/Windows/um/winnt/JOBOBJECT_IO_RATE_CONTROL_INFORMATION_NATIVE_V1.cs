@@ -3,28 +3,27 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1
 {
-    public unsafe partial struct JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V1
-    {
-        [NativeTypeName("LONG64")]
-        public long MaxIops;
+    [NativeTypeName("LONG64")]
+    public long MaxIops;
 
-        [NativeTypeName("LONG64")]
-        public long MaxBandwidth;
+    [NativeTypeName("LONG64")]
+    public long MaxBandwidth;
 
-        [NativeTypeName("LONG64")]
-        public long ReservationIops;
+    [NativeTypeName("LONG64")]
+    public long ReservationIops;
 
-        [NativeTypeName("PWSTR")]
-        public ushort* VolumeName;
+    [NativeTypeName("PWSTR")]
+    public ushort* VolumeName;
 
-        [NativeTypeName("DWORD")]
-        public uint BaseIoSize;
+    [NativeTypeName("DWORD")]
+    public uint BaseIoSize;
 
-        public JOB_OBJECT_IO_RATE_CONTROL_FLAGS ControlFlags;
+    public JOB_OBJECT_IO_RATE_CONTROL_FLAGS ControlFlags;
 
-        [NativeTypeName("WORD")]
-        public ushort VolumeNameLength;
-    }
+    [NativeTypeName("WORD")]
+    public ushort VolumeNameLength;
 }

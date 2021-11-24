@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="_wireBRECORD" /> struct.</summary>
+public static unsafe partial class _wireBRECORDTests
 {
-    /// <summary>Provides validation of the <see cref="_wireBRECORD" /> struct.</summary>
-    public static unsafe partial class _wireBRECORDTests
+    /// <summary>Validates that the <see cref="_wireBRECORD" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="_wireBRECORD" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<_wireBRECORD>(), Is.EqualTo(sizeof(_wireBRECORD)));
-        }
+        Assert.That(Marshal.SizeOf<_wireBRECORD>(), Is.EqualTo(sizeof(_wireBRECORD)));
+    }
 
-        /// <summary>Validates that the <see cref="_wireBRECORD" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(_wireBRECORD).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="_wireBRECORD" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(_wireBRECORD).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="_wireBRECORD" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="_wireBRECORD" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(_wireBRECORD), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(_wireBRECORD), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(_wireBRECORD), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(_wireBRECORD), Is.EqualTo(16));
         }
     }
 }

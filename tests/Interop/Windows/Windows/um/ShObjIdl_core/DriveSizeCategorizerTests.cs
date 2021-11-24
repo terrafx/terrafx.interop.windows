@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DriveSizeCategorizer" /> struct.</summary>
+public static unsafe partial class DriveSizeCategorizerTests
 {
-    /// <summary>Provides validation of the <see cref="DriveSizeCategorizer" /> struct.</summary>
-    public static unsafe partial class DriveSizeCategorizerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DriveSizeCategorizer" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DriveSizeCategorizer" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DriveSizeCategorizer).GUID, Is.EqualTo(IID_DriveSizeCategorizer));
-        }
+        Assert.That(typeof(DriveSizeCategorizer).GUID, Is.EqualTo(IID_DriveSizeCategorizer));
+    }
 
-        /// <summary>Validates that the <see cref="DriveSizeCategorizer" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DriveSizeCategorizer>(), Is.EqualTo(sizeof(DriveSizeCategorizer)));
-        }
+    /// <summary>Validates that the <see cref="DriveSizeCategorizer" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DriveSizeCategorizer>(), Is.EqualTo(sizeof(DriveSizeCategorizer)));
+    }
 
-        /// <summary>Validates that the <see cref="DriveSizeCategorizer" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DriveSizeCategorizer).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DriveSizeCategorizer" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DriveSizeCategorizer).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DriveSizeCategorizer" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DriveSizeCategorizer), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="DriveSizeCategorizer" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DriveSizeCategorizer), Is.EqualTo(1));
     }
 }

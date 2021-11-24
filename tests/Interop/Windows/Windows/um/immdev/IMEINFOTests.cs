@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMEINFO" /> struct.</summary>
+public static unsafe partial class IMEINFOTests
 {
-    /// <summary>Provides validation of the <see cref="IMEINFO" /> struct.</summary>
-    public static unsafe partial class IMEINFOTests
+    /// <summary>Validates that the <see cref="IMEINFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IMEINFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMEINFO>(), Is.EqualTo(sizeof(IMEINFO)));
-        }
+        Assert.That(Marshal.SizeOf<IMEINFO>(), Is.EqualTo(sizeof(IMEINFO)));
+    }
 
-        /// <summary>Validates that the <see cref="IMEINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMEINFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMEINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMEINFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMEINFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(IMEINFO), Is.EqualTo(28));
-        }
+    /// <summary>Validates that the <see cref="IMEINFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(IMEINFO), Is.EqualTo(28));
     }
 }

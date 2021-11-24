@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("BC812430-E75E-4FD1-9641-1F9F1E2D9A1F")]
+public partial struct IsolatedAppLauncher
 {
-    [Guid("BC812430-E75E-4FD1-9641-1F9F1E2D9A1F")]
-    public partial struct IsolatedAppLauncher
-    {
-    }
 }

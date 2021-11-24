@@ -3,11 +3,10 @@
 // Ported from um/immdev.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class NI
 {
-    public static partial class NI
-    {
-        [NativeTypeName("#define NI_CONTEXTUPDATED 0x0003")]
-        public const int NI_CONTEXTUPDATED = 0x0003;
-    }
+    [NativeTypeName("#define NI_CONTEXTUPDATED 0x0003")]
+    public const int NI_CONTEXTUPDATED = 0x0003;
 }

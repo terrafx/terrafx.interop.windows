@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CRYPT_TIMESTAMP_PARA" /> struct.</summary>
+public static unsafe partial class CRYPT_TIMESTAMP_PARATests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_TIMESTAMP_PARA" /> struct.</summary>
-    public static unsafe partial class CRYPT_TIMESTAMP_PARATests
+    /// <summary>Validates that the <see cref="CRYPT_TIMESTAMP_PARA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CRYPT_TIMESTAMP_PARA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CRYPT_TIMESTAMP_PARA>(), Is.EqualTo(sizeof(CRYPT_TIMESTAMP_PARA)));
-        }
+        Assert.That(Marshal.SizeOf<CRYPT_TIMESTAMP_PARA>(), Is.EqualTo(sizeof(CRYPT_TIMESTAMP_PARA)));
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_TIMESTAMP_PARA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CRYPT_TIMESTAMP_PARA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CRYPT_TIMESTAMP_PARA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CRYPT_TIMESTAMP_PARA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_TIMESTAMP_PARA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CRYPT_TIMESTAMP_PARA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CRYPT_TIMESTAMP_PARA), Is.EqualTo(48));
-            }
-            else
-            {
-                Assert.That(sizeof(CRYPT_TIMESTAMP_PARA), Is.EqualTo(24));
-            }
+            Assert.That(sizeof(CRYPT_TIMESTAMP_PARA), Is.EqualTo(48));
+        }
+        else
+        {
+            Assert.That(sizeof(CRYPT_TIMESTAMP_PARA), Is.EqualTo(24));
         }
     }
 }

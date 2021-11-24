@@ -3,20 +3,19 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct ICONINFO
 {
-    public partial struct ICONINFO
-    {
-        public BOOL fIcon;
+    public BOOL fIcon;
 
-        [NativeTypeName("DWORD")]
-        public uint xHotspot;
+    [NativeTypeName("DWORD")]
+    public uint xHotspot;
 
-        [NativeTypeName("DWORD")]
-        public uint yHotspot;
+    [NativeTypeName("DWORD")]
+    public uint yHotspot;
 
-        public HBITMAP hbmMask;
+    public HBITMAP hbmMask;
 
-        public HBITMAP hbmColor;
-    }
+    public HBITMAP hbmColor;
 }

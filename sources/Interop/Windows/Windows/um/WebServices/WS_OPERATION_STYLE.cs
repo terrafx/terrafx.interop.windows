@@ -3,11 +3,10 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WS_OPERATION_STYLE
 {
-    public enum WS_OPERATION_STYLE
-    {
-        WS_NON_RPC_LITERAL_OPERATION = 0,
-        WS_RPC_LITERAL_OPERATION = 1,
-    }
+    WS_NON_RPC_LITERAL_OPERATION = 0,
+    WS_RPC_LITERAL_OPERATION = 1,
 }

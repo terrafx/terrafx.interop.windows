@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum REGCLS
 {
-    [Flags]
-    public enum REGCLS
-    {
-        REGCLS_SINGLEUSE = 0,
-        REGCLS_MULTIPLEUSE = 1,
-        REGCLS_MULTI_SEPARATE = 2,
-        REGCLS_SUSPENDED = 4,
-        REGCLS_SURROGATE = 8,
-        REGCLS_AGILE = 0x10,
-    }
+    REGCLS_SINGLEUSE = 0,
+    REGCLS_MULTIPLEUSE = 1,
+    REGCLS_MULTI_SEPARATE = 2,
+    REGCLS_SUSPENDED = 4,
+    REGCLS_SURROGATE = 8,
+    REGCLS_AGILE = 0x10,
 }

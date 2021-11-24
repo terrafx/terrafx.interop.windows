@@ -6,13 +6,12 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+[SupportedOSPlatform("windows8.1")]
+public enum PSS_THREAD_FLAGS
 {
-    [Flags]
-    [SupportedOSPlatform("windows8.1")]
-    public enum PSS_THREAD_FLAGS
-    {
-        PSS_THREAD_FLAGS_NONE = 0x0000,
-        PSS_THREAD_FLAGS_TERMINATED = 0x0001,
-    }
+    PSS_THREAD_FLAGS_NONE = 0x0000,
+    PSS_THREAD_FLAGS_TERMINATED = 0x0001,
 }

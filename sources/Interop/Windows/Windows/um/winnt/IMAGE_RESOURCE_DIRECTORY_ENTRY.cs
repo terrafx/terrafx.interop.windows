@@ -6,201 +6,200 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
 {
-    public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
+    [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19662:5)")]
+    public _Anonymous1_e__Union Anonymous1;
+
+    [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19670:5)")]
+    public _Anonymous2_e__Union Anonymous2;
+
+    public uint NameOffset
     {
-        [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19662:5)")]
-        public _Anonymous1_e__Union Anonymous1;
-
-        [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19670:5)")]
-        public _Anonymous2_e__Union Anonymous2;
-
-        public uint NameOffset
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous1.Anonymous.NameOffset;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous1.Anonymous.NameOffset = value;
-            }
+            return Anonymous1.Anonymous.NameOffset;
         }
 
-        public uint NameIsString
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous1.Anonymous.NameIsString;
-            }
+            Anonymous1.Anonymous.NameOffset = value;
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous1.Anonymous.NameIsString = value;
-            }
+    public uint NameIsString
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous1.Anonymous.NameIsString;
         }
 
-        public ref uint Name
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Name, 1));
-            }
+            Anonymous1.Anonymous.NameIsString = value;
+        }
+    }
+
+    public ref uint Name
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Name, 1));
+        }
+    }
+
+    public ref ushort Id
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Id, 1));
+        }
+    }
+
+    public ref uint OffsetToData
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.OffsetToData, 1));
+        }
+    }
+
+    public uint OffsetToDirectory
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous2.Anonymous.OffsetToDirectory;
         }
 
-        public ref ushort Id
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous1.Id, 1));
-            }
+            Anonymous2.Anonymous.OffsetToDirectory = value;
+        }
+    }
+
+    public uint DataIsDirectory
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous2.Anonymous.DataIsDirectory;
         }
 
-        public ref uint OffsetToData
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous2.OffsetToData, 1));
-            }
+            Anonymous2.Anonymous.DataIsDirectory = value;
         }
+    }
 
-        public uint OffsetToDirectory
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous1_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19663:9)")]
+        public _Anonymous_e__Struct Anonymous;
+
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint Name;
+
+        [FieldOffset(0)]
+        [NativeTypeName("WORD")]
+        public ushort Id;
+
+        public partial struct _Anonymous_e__Struct
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            public uint _bitfield;
+
+            [NativeTypeName("DWORD : 31")]
+            public uint NameOffset
             {
-                return Anonymous2.Anonymous.OffsetToDirectory;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous2.Anonymous.OffsetToDirectory = value;
-            }
-        }
-
-        public uint DataIsDirectory
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous2.Anonymous.DataIsDirectory;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous2.Anonymous.DataIsDirectory = value;
-            }
-        }
-
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous1_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19663:9)")]
-            public _Anonymous_e__Struct Anonymous;
-
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint Name;
-
-            [FieldOffset(0)]
-            [NativeTypeName("WORD")]
-            public ushort Id;
-
-            public partial struct _Anonymous_e__Struct
-            {
-                public uint _bitfield;
-
-                [NativeTypeName("DWORD : 31")]
-                public uint NameOffset
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return _bitfield & 0x7FFFFFFFu;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~0x7FFFFFFFu) | (value & 0x7FFFFFFFu);
-                    }
+                    return _bitfield & 0x7FFFFFFFu;
                 }
 
-                [NativeTypeName("DWORD : 1")]
-                public uint NameIsString
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 31) & 0x1u;
-                    }
+                    _bitfield = (_bitfield & ~0x7FFFFFFFu) | (value & 0x7FFFFFFFu);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 31)) | ((value & 0x1u) << 31);
-                    }
+            [NativeTypeName("DWORD : 1")]
+            public uint NameIsString
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 31) & 0x1u;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0x1u << 31)) | ((value & 0x1u) << 31);
                 }
             }
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous2_e__Union
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous2_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint OffsetToData;
+
+        [FieldOffset(0)]
+        [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19672:9)")]
+        public _Anonymous_e__Struct Anonymous;
+
+        public partial struct _Anonymous_e__Struct
         {
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint OffsetToData;
+            public uint _bitfield;
 
-            [FieldOffset(0)]
-            [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19672:9)")]
-            public _Anonymous_e__Struct Anonymous;
-
-            public partial struct _Anonymous_e__Struct
+            [NativeTypeName("DWORD : 31")]
+            public uint OffsetToDirectory
             {
-                public uint _bitfield;
-
-                [NativeTypeName("DWORD : 31")]
-                public uint OffsetToDirectory
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return _bitfield & 0x7FFFFFFFu;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~0x7FFFFFFFu) | (value & 0x7FFFFFFFu);
-                    }
+                    return _bitfield & 0x7FFFFFFFu;
                 }
 
-                [NativeTypeName("DWORD : 1")]
-                public uint DataIsDirectory
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 31) & 0x1u;
-                    }
+                    _bitfield = (_bitfield & ~0x7FFFFFFFu) | (value & 0x7FFFFFFFu);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 31)) | ((value & 0x1u) << 31);
-                    }
+            [NativeTypeName("DWORD : 1")]
+            public uint DataIsDirectory
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 31) & 0x1u;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0x1u << 31)) | ((value & 0x1u) << 31);
                 }
             }
         }

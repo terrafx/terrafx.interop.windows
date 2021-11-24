@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDWriteAsyncResult" /> struct.</summary>
+public static unsafe partial class IDWriteAsyncResultTests
 {
-    /// <summary>Provides validation of the <see cref="IDWriteAsyncResult" /> struct.</summary>
-    public static unsafe partial class IDWriteAsyncResultTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteAsyncResult" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteAsyncResult" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDWriteAsyncResult).GUID, Is.EqualTo(IID_IDWriteAsyncResult));
-        }
+        Assert.That(typeof(IDWriteAsyncResult).GUID, Is.EqualTo(IID_IDWriteAsyncResult));
+    }
 
-        /// <summary>Validates that the <see cref="IDWriteAsyncResult" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDWriteAsyncResult>(), Is.EqualTo(sizeof(IDWriteAsyncResult)));
-        }
+    /// <summary>Validates that the <see cref="IDWriteAsyncResult" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDWriteAsyncResult>(), Is.EqualTo(sizeof(IDWriteAsyncResult)));
+    }
 
-        /// <summary>Validates that the <see cref="IDWriteAsyncResult" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDWriteAsyncResult).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDWriteAsyncResult" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDWriteAsyncResult).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDWriteAsyncResult" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDWriteAsyncResult" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDWriteAsyncResult), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDWriteAsyncResult), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDWriteAsyncResult), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDWriteAsyncResult), Is.EqualTo(4));
         }
     }
 }

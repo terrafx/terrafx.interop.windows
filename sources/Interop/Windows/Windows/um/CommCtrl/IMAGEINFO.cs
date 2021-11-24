@@ -3,18 +3,17 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct IMAGEINFO
 {
-    public partial struct IMAGEINFO
-    {
-        public HBITMAP hbmImage;
+    public HBITMAP hbmImage;
 
-        public HBITMAP hbmMask;
+    public HBITMAP hbmMask;
 
-        public int Unused1;
+    public int Unused1;
 
-        public int Unused2;
+    public int Unused2;
 
-        public RECT rcImage;
-    }
+    public RECT rcImage;
 }

@@ -5,11 +5,10 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_TEX2D_VDOV
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_TEX2D_VDOV
-    {
-        public uint ArraySlice;
-    }
+    public uint ArraySlice;
 }

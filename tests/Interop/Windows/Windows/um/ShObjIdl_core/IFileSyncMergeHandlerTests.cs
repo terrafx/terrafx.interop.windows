@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IFileSyncMergeHandler" /> struct.</summary>
+public static unsafe partial class IFileSyncMergeHandlerTests
 {
-    /// <summary>Provides validation of the <see cref="IFileSyncMergeHandler" /> struct.</summary>
-    public static unsafe partial class IFileSyncMergeHandlerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IFileSyncMergeHandler" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IFileSyncMergeHandler" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IFileSyncMergeHandler).GUID, Is.EqualTo(IID_IFileSyncMergeHandler));
-        }
+        Assert.That(typeof(IFileSyncMergeHandler).GUID, Is.EqualTo(IID_IFileSyncMergeHandler));
+    }
 
-        /// <summary>Validates that the <see cref="IFileSyncMergeHandler" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IFileSyncMergeHandler>(), Is.EqualTo(sizeof(IFileSyncMergeHandler)));
-        }
+    /// <summary>Validates that the <see cref="IFileSyncMergeHandler" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IFileSyncMergeHandler>(), Is.EqualTo(sizeof(IFileSyncMergeHandler)));
+    }
 
-        /// <summary>Validates that the <see cref="IFileSyncMergeHandler" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IFileSyncMergeHandler).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IFileSyncMergeHandler" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IFileSyncMergeHandler).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IFileSyncMergeHandler" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IFileSyncMergeHandler" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IFileSyncMergeHandler), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IFileSyncMergeHandler), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IFileSyncMergeHandler), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IFileSyncMergeHandler), Is.EqualTo(4));
         }
     }
 }

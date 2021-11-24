@@ -5,18 +5,17 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_FEATURE_DATA_VIDEO_DECODER_HEAP_SIZE1
 {
-    public partial struct D3D12_FEATURE_DATA_VIDEO_DECODER_HEAP_SIZE1
-    {
-        public D3D12_VIDEO_DECODER_HEAP_DESC VideoDecoderHeapDesc;
+    public D3D12_VIDEO_DECODER_HEAP_DESC VideoDecoderHeapDesc;
 
-        public BOOL Protected;
+    public BOOL Protected;
 
-        [NativeTypeName("UINT64")]
-        public ulong MemoryPoolL0Size;
+    [NativeTypeName("UINT64")]
+    public ulong MemoryPoolL0Size;
 
-        [NativeTypeName("UINT64")]
-        public ulong MemoryPoolL1Size;
-    }
+    [NativeTypeName("UINT64")]
+    public ulong MemoryPoolL1Size;
 }

@@ -3,10 +3,9 @@
 // Ported from um/mfidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MFCLOCK_RELATIONAL_FLAGS
 {
-    public enum MFCLOCK_RELATIONAL_FLAGS
-    {
-        MFCLOCK_RELATIONAL_FLAG_JITTER_NEVER_AHEAD = 0x1,
-    }
+    MFCLOCK_RELATIONAL_FLAG_JITTER_NEVER_AHEAD = 0x1,
 }

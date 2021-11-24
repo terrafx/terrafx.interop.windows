@@ -5,25 +5,24 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct GDI_NONREMOTE
 {
-    public partial struct GDI_NONREMOTE
+    [NativeTypeName("LONG")]
+    public int fContext;
+
+    [NativeTypeName("union __MIDL_IWinTypes_0002")]
+    public _u_e__Union u;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _u_e__Union
     {
+        [FieldOffset(0)]
         [NativeTypeName("LONG")]
-        public int fContext;
+        public int hInproc;
 
-        [NativeTypeName("union __MIDL_IWinTypes_0002")]
-        public _u_e__Union u;
-
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _u_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("LONG")]
-            public int hInproc;
-
-            [FieldOffset(0)]
-            public DWORD_BLOB* hRemote;
-        }
+        [FieldOffset(0)]
+        public DWORD_BLOB* hRemote;
     }
 }

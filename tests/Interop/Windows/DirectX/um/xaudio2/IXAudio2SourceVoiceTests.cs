@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IXAudio2SourceVoice" /> struct.</summary>
+public static unsafe partial class IXAudio2SourceVoiceTests
 {
-    /// <summary>Provides validation of the <see cref="IXAudio2SourceVoice" /> struct.</summary>
-    public static unsafe partial class IXAudio2SourceVoiceTests
+    /// <summary>Validates that the <see cref="IXAudio2SourceVoice" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IXAudio2SourceVoice" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IXAudio2SourceVoice>(), Is.EqualTo(sizeof(IXAudio2SourceVoice)));
-        }
+        Assert.That(Marshal.SizeOf<IXAudio2SourceVoice>(), Is.EqualTo(sizeof(IXAudio2SourceVoice)));
+    }
 
-        /// <summary>Validates that the <see cref="IXAudio2SourceVoice" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IXAudio2SourceVoice).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IXAudio2SourceVoice" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IXAudio2SourceVoice).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IXAudio2SourceVoice" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IXAudio2SourceVoice" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IXAudio2SourceVoice), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IXAudio2SourceVoice), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IXAudio2SourceVoice), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IXAudio2SourceVoice), Is.EqualTo(4));
         }
     }
 }

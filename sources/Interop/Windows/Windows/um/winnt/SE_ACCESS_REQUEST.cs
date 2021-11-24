@@ -3,32 +3,31 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SE_ACCESS_REQUEST
 {
-    public unsafe partial struct SE_ACCESS_REQUEST
-    {
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("PSE_SECURITY_DESCRIPTOR")]
-        public SE_SECURITY_DESCRIPTOR* SeSecurityDescriptor;
+    [NativeTypeName("PSE_SECURITY_DESCRIPTOR")]
+    public SE_SECURITY_DESCRIPTOR* SeSecurityDescriptor;
 
-        [NativeTypeName("ACCESS_MASK")]
-        public uint DesiredAccess;
+    [NativeTypeName("ACCESS_MASK")]
+    public uint DesiredAccess;
 
-        [NativeTypeName("ACCESS_MASK")]
-        public uint PreviouslyGrantedAccess;
+    [NativeTypeName("ACCESS_MASK")]
+    public uint PreviouslyGrantedAccess;
 
-        [NativeTypeName("PSID")]
-        public void* PrincipalSelfSid;
+    [NativeTypeName("PSID")]
+    public void* PrincipalSelfSid;
 
-        [NativeTypeName("PGENERIC_MAPPING")]
-        public GENERIC_MAPPING* GenericMapping;
+    [NativeTypeName("PGENERIC_MAPPING")]
+    public GENERIC_MAPPING* GenericMapping;
 
-        [NativeTypeName("DWORD")]
-        public uint ObjectTypeListCount;
+    [NativeTypeName("DWORD")]
+    public uint ObjectTypeListCount;
 
-        [NativeTypeName("POBJECT_TYPE_LIST")]
-        public OBJECT_TYPE_LIST* ObjectTypeList;
-    }
+    [NativeTypeName("POBJECT_TYPE_LIST")]
+    public OBJECT_TYPE_LIST* ObjectTypeList;
 }

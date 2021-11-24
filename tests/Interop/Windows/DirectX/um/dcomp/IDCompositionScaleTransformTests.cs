@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDCompositionScaleTransform" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class IDCompositionScaleTransformTests
 {
-    /// <summary>Provides validation of the <see cref="IDCompositionScaleTransform" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class IDCompositionScaleTransformTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDCompositionScaleTransform" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDCompositionScaleTransform" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDCompositionScaleTransform).GUID, Is.EqualTo(IID_IDCompositionScaleTransform));
-        }
+        Assert.That(typeof(IDCompositionScaleTransform).GUID, Is.EqualTo(IID_IDCompositionScaleTransform));
+    }
 
-        /// <summary>Validates that the <see cref="IDCompositionScaleTransform" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDCompositionScaleTransform>(), Is.EqualTo(sizeof(IDCompositionScaleTransform)));
-        }
+    /// <summary>Validates that the <see cref="IDCompositionScaleTransform" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDCompositionScaleTransform>(), Is.EqualTo(sizeof(IDCompositionScaleTransform)));
+    }
 
-        /// <summary>Validates that the <see cref="IDCompositionScaleTransform" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDCompositionScaleTransform).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDCompositionScaleTransform" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDCompositionScaleTransform).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDCompositionScaleTransform" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDCompositionScaleTransform" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDCompositionScaleTransform), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDCompositionScaleTransform), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDCompositionScaleTransform), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDCompositionScaleTransform), Is.EqualTo(4));
         }
     }
 }

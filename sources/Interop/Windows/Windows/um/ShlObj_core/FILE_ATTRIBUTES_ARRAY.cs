@@ -5,20 +5,19 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct FILE_ATTRIBUTES_ARRAY
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct FILE_ATTRIBUTES_ARRAY
-    {
-        public uint cItems;
+    public uint cItems;
 
-        [NativeTypeName("DWORD")]
-        public uint dwSumFileAttributes;
+    [NativeTypeName("DWORD")]
+    public uint dwSumFileAttributes;
 
-        [NativeTypeName("DWORD")]
-        public uint dwProductFileAttributes;
+    [NativeTypeName("DWORD")]
+    public uint dwProductFileAttributes;
 
-        [NativeTypeName("DWORD [1]")]
-        public fixed uint rgdwFileAttributes[1];
-    }
+    [NativeTypeName("DWORD [1]")]
+    public fixed uint rgdwFileAttributes[1];
 }

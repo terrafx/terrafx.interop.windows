@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct NL_BANDWIDTH_INFORMATION
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct NL_BANDWIDTH_INFORMATION
-    {
-        [NativeTypeName("ULONG64")]
-        public ulong Bandwidth;
+    [NativeTypeName("ULONG64")]
+    public ulong Bandwidth;
 
-        [NativeTypeName("ULONG64")]
-        public ulong Instability;
+    [NativeTypeName("ULONG64")]
+    public ulong Instability;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte BandwidthPeaked;
-    }
+    [NativeTypeName("BOOLEAN")]
+    public byte BandwidthPeaked;
 }

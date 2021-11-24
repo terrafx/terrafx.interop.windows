@@ -5,11 +5,10 @@
 
 using static TerraFX.Interop.Windows.SPBOOKMARKOPTIONS;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechBookmarkOptions
 {
-    public enum SpeechBookmarkOptions
-    {
-        SBONone = SPBO_NONE,
-        SBOPause = SPBO_PAUSE,
-    }
+    SBONone = SPBO_NONE,
+    SBOPause = SPBO_PAUSE,
 }

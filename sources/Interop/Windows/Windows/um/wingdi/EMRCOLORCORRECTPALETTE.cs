@@ -3,22 +3,21 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct EMRCOLORCORRECTPALETTE
 {
-    public partial struct EMRCOLORCORRECTPALETTE
-    {
-        public EMR emr;
+    public EMR emr;
 
-        [NativeTypeName("DWORD")]
-        public uint ihPalette;
+    [NativeTypeName("DWORD")]
+    public uint ihPalette;
 
-        [NativeTypeName("DWORD")]
-        public uint nFirstEntry;
+    [NativeTypeName("DWORD")]
+    public uint nFirstEntry;
 
-        [NativeTypeName("DWORD")]
-        public uint nPalEntries;
+    [NativeTypeName("DWORD")]
+    public uint nPalEntries;
 
-        [NativeTypeName("DWORD")]
-        public uint nReserved;
-    }
+    [NativeTypeName("DWORD")]
+    public uint nReserved;
 }

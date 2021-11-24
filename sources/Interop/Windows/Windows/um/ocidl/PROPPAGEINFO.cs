@@ -3,25 +3,24 @@
 // Ported from um/ocidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct PROPPAGEINFO
 {
-    public unsafe partial struct PROPPAGEINFO
-    {
-        [NativeTypeName("ULONG")]
-        public uint cb;
+    [NativeTypeName("ULONG")]
+    public uint cb;
 
-        [NativeTypeName("LPOLESTR")]
-        public ushort* pszTitle;
+    [NativeTypeName("LPOLESTR")]
+    public ushort* pszTitle;
 
-        public SIZE size;
+    public SIZE size;
 
-        [NativeTypeName("LPOLESTR")]
-        public ushort* pszDocString;
+    [NativeTypeName("LPOLESTR")]
+    public ushort* pszDocString;
 
-        [NativeTypeName("LPOLESTR")]
-        public ushort* pszHelpFile;
+    [NativeTypeName("LPOLESTR")]
+    public ushort* pszHelpFile;
 
-        [NativeTypeName("DWORD")]
-        public uint dwHelpContext;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwHelpContext;
 }

@@ -5,42 +5,41 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct DEVICE_COPY_OFFLOAD_DESCRIPTOR
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct DEVICE_COPY_OFFLOAD_DESCRIPTOR
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("DWORD")]
-        public uint MaximumTokenLifetime;
+    [NativeTypeName("DWORD")]
+    public uint MaximumTokenLifetime;
 
-        [NativeTypeName("DWORD")]
-        public uint DefaultTokenLifetime;
+    [NativeTypeName("DWORD")]
+    public uint DefaultTokenLifetime;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong MaximumTransferSize;
+    [NativeTypeName("DWORDLONG")]
+    public ulong MaximumTransferSize;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong OptimalTransferCount;
+    [NativeTypeName("DWORDLONG")]
+    public ulong OptimalTransferCount;
 
-        [NativeTypeName("DWORD")]
-        public uint MaximumDataDescriptors;
+    [NativeTypeName("DWORD")]
+    public uint MaximumDataDescriptors;
 
-        [NativeTypeName("DWORD")]
-        public uint MaximumTransferLengthPerDescriptor;
+    [NativeTypeName("DWORD")]
+    public uint MaximumTransferLengthPerDescriptor;
 
-        [NativeTypeName("DWORD")]
-        public uint OptimalTransferLengthPerDescriptor;
+    [NativeTypeName("DWORD")]
+    public uint OptimalTransferLengthPerDescriptor;
 
-        [NativeTypeName("WORD")]
-        public ushort OptimalTransferLengthGranularity;
+    [NativeTypeName("WORD")]
+    public ushort OptimalTransferLengthGranularity;
 
-        [NativeTypeName("BYTE [2]")]
-        public fixed byte Reserved[2];
-    }
+    [NativeTypeName("BYTE [2]")]
+    public fixed byte Reserved[2];
 }

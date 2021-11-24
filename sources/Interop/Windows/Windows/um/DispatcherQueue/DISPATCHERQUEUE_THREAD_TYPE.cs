@@ -3,11 +3,10 @@
 // Ported from um/DispatcherQueue.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum DISPATCHERQUEUE_THREAD_TYPE
 {
-    public enum DISPATCHERQUEUE_THREAD_TYPE
-    {
-        DQTYPE_THREAD_DEDICATED = 1,
-        DQTYPE_THREAD_CURRENT = 2,
-    }
+    DQTYPE_THREAD_DEDICATED = 1,
+    DQTYPE_THREAD_CURRENT = 2,
 }

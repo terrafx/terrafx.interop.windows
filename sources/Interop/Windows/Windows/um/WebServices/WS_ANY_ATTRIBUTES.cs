@@ -3,13 +3,12 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct WS_ANY_ATTRIBUTES
-    {
-        public WS_ANY_ATTRIBUTE* attributes;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("ULONG")]
-        public uint attributeCount;
-    }
+public unsafe partial struct WS_ANY_ATTRIBUTES
+{
+    public WS_ANY_ATTRIBUTE* attributes;
+
+    [NativeTypeName("ULONG")]
+    public uint attributeCount;
 }

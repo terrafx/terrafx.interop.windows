@@ -5,21 +5,20 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+public partial struct DXCoreHardwareID
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public partial struct DXCoreHardwareID
-    {
-        [NativeTypeName("uint32_t")]
-        public uint vendorID;
+    [NativeTypeName("uint32_t")]
+    public uint vendorID;
 
-        [NativeTypeName("uint32_t")]
-        public uint deviceID;
+    [NativeTypeName("uint32_t")]
+    public uint deviceID;
 
-        [NativeTypeName("uint32_t")]
-        public uint subSysID;
+    [NativeTypeName("uint32_t")]
+    public uint subSysID;
 
-        [NativeTypeName("uint32_t")]
-        public uint revision;
-    }
+    [NativeTypeName("uint32_t")]
+    public uint revision;
 }

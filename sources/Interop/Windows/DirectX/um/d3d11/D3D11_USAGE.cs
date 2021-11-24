@@ -3,13 +3,12 @@
 // Ported from um/d3d11.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum D3D11_USAGE
 {
-    public enum D3D11_USAGE
-    {
-        D3D11_USAGE_DEFAULT = 0,
-        D3D11_USAGE_IMMUTABLE = 1,
-        D3D11_USAGE_DYNAMIC = 2,
-        D3D11_USAGE_STAGING = 3,
-    }
+    D3D11_USAGE_DEFAULT = 0,
+    D3D11_USAGE_IMMUTABLE = 1,
+    D3D11_USAGE_DYNAMIC = 2,
+    D3D11_USAGE_STAGING = 3,
 }

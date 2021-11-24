@@ -8,36 +8,35 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class Windows
 {
-    public static partial class Windows
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid Identity_LocalUserProvider
     {
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid Identity_LocalUserProvider
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x9B, 0x52, 0x98, 0xA1,
-                    0x0F, 0x73,
-                    0x89, 0x40,
-                    0xB6,
-                    0x46,
-                    0xA1,
-                    0x25,
-                    0x57,
-                    0xF5,
-                    0x66,
-                    0x5E
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x9B, 0x52, 0x98, 0xA1,
+                0x0F, 0x73,
+                0x89, 0x40,
+                0xB6,
+                0x46,
+                0xA1,
+                0x25,
+                0x57,
+                0xF5,
+                0x66,
+                0x5E
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
-
-        [NativeTypeName("#define CREDENTIAL_PROVIDER_NO_DEFAULT ((DWORD)-1)")]
-        public const uint CREDENTIAL_PROVIDER_NO_DEFAULT = unchecked((uint)(-1));
     }
+
+    [NativeTypeName("#define CREDENTIAL_PROVIDER_NO_DEFAULT ((DWORD)-1)")]
+    public const uint CREDENTIAL_PROVIDER_NO_DEFAULT = unchecked((uint)(-1));
 }

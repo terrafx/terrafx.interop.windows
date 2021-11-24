@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="POINTFLOAT" /> struct.</summary>
+public static unsafe partial class POINTFLOATTests
 {
-    /// <summary>Provides validation of the <see cref="POINTFLOAT" /> struct.</summary>
-    public static unsafe partial class POINTFLOATTests
+    /// <summary>Validates that the <see cref="POINTFLOAT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="POINTFLOAT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<POINTFLOAT>(), Is.EqualTo(sizeof(POINTFLOAT)));
-        }
+        Assert.That(Marshal.SizeOf<POINTFLOAT>(), Is.EqualTo(sizeof(POINTFLOAT)));
+    }
 
-        /// <summary>Validates that the <see cref="POINTFLOAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(POINTFLOAT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="POINTFLOAT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(POINTFLOAT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="POINTFLOAT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(POINTFLOAT), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="POINTFLOAT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(POINTFLOAT), Is.EqualTo(8));
     }
 }

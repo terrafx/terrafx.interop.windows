@@ -6,68 +6,67 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CRYPT_OID_INFO
 {
-    public unsafe partial struct CRYPT_OID_INFO
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
+
+    [NativeTypeName("LPCSTR")]
+    public sbyte* pszOID;
+
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pwszName;
+
+    [NativeTypeName("DWORD")]
+    public uint dwGroupId;
+
+    [NativeTypeName("_CRYPT_OID_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:6206:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public CRYPT_DATA_BLOB ExtraInfo;
+
+    public ref uint dwValue
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwValue, 1));
+        }
+    }
+
+    public ref uint Algid
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Algid, 1));
+        }
+    }
+
+    public ref uint dwLength
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwLength, 1));
+        }
+    }
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
         [NativeTypeName("DWORD")]
-        public uint cbSize;
+        public uint dwValue;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* pszOID;
+        [FieldOffset(0)]
+        [NativeTypeName("ALG_ID")]
+        public uint Algid;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pwszName;
-
+        [FieldOffset(0)]
         [NativeTypeName("DWORD")]
-        public uint dwGroupId;
-
-        [NativeTypeName("_CRYPT_OID_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:6206:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public CRYPT_DATA_BLOB ExtraInfo;
-
-        public ref uint dwValue
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwValue, 1));
-            }
-        }
-
-        public ref uint Algid
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Algid, 1));
-            }
-        }
-
-        public ref uint dwLength
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwLength, 1));
-            }
-        }
-
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint dwValue;
-
-            [FieldOffset(0)]
-            [NativeTypeName("ALG_ID")]
-            public uint Algid;
-
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint dwLength;
-        }
+        public uint dwLength;
     }
 }

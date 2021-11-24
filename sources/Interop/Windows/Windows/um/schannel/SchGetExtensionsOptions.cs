@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum SchGetExtensionsOptions
 {
-    [Flags]
-    public enum SchGetExtensionsOptions
-    {
-        SCH_EXTENSIONS_OPTIONS_NONE = 0x0,
-        SCH_NO_RECORD_HEADER = 0x1,
-    }
+    SCH_EXTENSIONS_OPTIONS_NONE = 0x0,
+    SCH_NO_RECORD_HEADER = 0x1,
 }

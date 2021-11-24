@@ -6,75 +6,74 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+public unsafe partial struct MLOperatorAttributeNameValue
 {
-    public unsafe partial struct MLOperatorAttributeNameValue
+    [NativeTypeName("const char *")]
+    public sbyte* name;
+
+    public MLOperatorAttributeType type;
+
+    [NativeTypeName("uint32_t")]
+    public uint valueCount;
+
+    [NativeTypeName("MLOperatorAttributeNameValue::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/MLOperatorAuthor.h:600:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public ref void* reserved
     {
-        [NativeTypeName("const char *")]
-        public sbyte* name;
-
-        public MLOperatorAttributeType type;
-
-        [NativeTypeName("uint32_t")]
-        public uint valueCount;
-
-        [NativeTypeName("MLOperatorAttributeNameValue::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/MLOperatorAuthor.h:600:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public ref void* reserved
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.reserved;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.reserved;
         }
+    }
 
-        public ref long* ints
+    public ref long* ints
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.ints;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.ints;
         }
+    }
 
-        public ref sbyte** strings
+    public ref sbyte** strings
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.strings;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.strings;
         }
+    }
 
-        public ref float* floats
+    public ref float* floats
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.floats;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.floats;
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("const void *")]
-            public void* reserved;
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("const void *")]
+        public void* reserved;
 
-            [FieldOffset(0)]
-            [NativeTypeName("const int64_t *")]
-            public long* ints;
+        [FieldOffset(0)]
+        [NativeTypeName("const int64_t *")]
+        public long* ints;
 
-            [FieldOffset(0)]
-            [NativeTypeName("const char *const *")]
-            public sbyte** strings;
+        [FieldOffset(0)]
+        [NativeTypeName("const char *const *")]
+        public sbyte** strings;
 
-            [FieldOffset(0)]
-            [NativeTypeName("const float *")]
-            public float* floats;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("const float *")]
+        public float* floats;
     }
 }

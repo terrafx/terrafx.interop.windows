@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct TRANSACTIONMANAGER_BASIC_INFORMATION
-    {
-        public Guid TmIdentity;
+namespace TerraFX.Interop.Windows;
 
-        public LARGE_INTEGER VirtualClock;
-    }
+public partial struct TRANSACTIONMANAGER_BASIC_INFORMATION
+{
+    public Guid TmIdentity;
+
+    public LARGE_INTEGER VirtualClock;
 }

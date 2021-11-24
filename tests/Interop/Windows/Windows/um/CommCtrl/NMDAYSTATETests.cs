@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NMDAYSTATE" /> struct.</summary>
+public static unsafe partial class NMDAYSTATETests
 {
-    /// <summary>Provides validation of the <see cref="NMDAYSTATE" /> struct.</summary>
-    public static unsafe partial class NMDAYSTATETests
+    /// <summary>Validates that the <see cref="NMDAYSTATE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NMDAYSTATE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NMDAYSTATE>(), Is.EqualTo(sizeof(NMDAYSTATE)));
-        }
+        Assert.That(Marshal.SizeOf<NMDAYSTATE>(), Is.EqualTo(sizeof(NMDAYSTATE)));
+    }
 
-        /// <summary>Validates that the <see cref="NMDAYSTATE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NMDAYSTATE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NMDAYSTATE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NMDAYSTATE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NMDAYSTATE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="NMDAYSTATE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(NMDAYSTATE), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(NMDAYSTATE), Is.EqualTo(36));
-            }
+            Assert.That(sizeof(NMDAYSTATE), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(NMDAYSTATE), Is.EqualTo(36));
         }
     }
 }

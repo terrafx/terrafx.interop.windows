@@ -5,16 +5,15 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.18362.0")]
+public enum WICHeifHdrProperties : uint
 {
-    [SupportedOSPlatform("windows10.0.18362.0")]
-    public enum WICHeifHdrProperties : uint
-    {
-        WICHeifHdrMaximumLuminanceLevel = 0x1,
-        WICHeifHdrMaximumFrameAverageLuminanceLevel = 0x2,
-        WICHeifHdrMinimumMasteringDisplayLuminanceLevel = 0x3,
-        WICHeifHdrMaximumMasteringDisplayLuminanceLevel = 0x4,
-        WICHeifHdrCustomVideoPrimaries = 0x5,
-        WICHeifHdrProperties_FORCE_DWORD = 0x7fffffff,
-    }
+    WICHeifHdrMaximumLuminanceLevel = 0x1,
+    WICHeifHdrMaximumFrameAverageLuminanceLevel = 0x2,
+    WICHeifHdrMinimumMasteringDisplayLuminanceLevel = 0x3,
+    WICHeifHdrMaximumMasteringDisplayLuminanceLevel = 0x4,
+    WICHeifHdrCustomVideoPrimaries = 0x5,
+    WICHeifHdrProperties_FORCE_DWORD = 0x7fffffff,
 }

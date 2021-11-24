@@ -8,334 +8,333 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Guid("4305EE5B-C4A0-4C88-9385-67124E017683")]
+[NativeTypeName("struct IDCompositionLinearTransferEffect : IDCompositionFilterEffect")]
+[NativeInheritance("IDCompositionFilterEffect")]
+public unsafe partial struct IDCompositionLinearTransferEffect : IDCompositionLinearTransferEffect.Interface
 {
-    [Guid("4305EE5B-C4A0-4C88-9385-67124E017683")]
-    [NativeTypeName("struct IDCompositionLinearTransferEffect : IDCompositionFilterEffect")]
-    [NativeInheritance("IDCompositionFilterEffect")]
-    public unsafe partial struct IDCompositionLinearTransferEffect : IDCompositionLinearTransferEffect.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, uint>)(lpVtbl[1]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, uint>)(lpVtbl[1]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, uint>)(lpVtbl[2]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, uint>)(lpVtbl[2]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT SetInput(uint index, IUnknown* input, uint flags)
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, uint, IUnknown*, uint, int>)(lpVtbl[3]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), index, input, flags);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT SetInput(uint index, IUnknown* input, uint flags)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, uint, IUnknown*, uint, int>)(lpVtbl[3]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), index, input, flags);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT SetRedYIntercept(IDCompositionAnimation* animation)
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int>)(lpVtbl[4]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), animation);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT SetRedYIntercept(float redYIntercept)
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int>)(lpVtbl[5]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), redYIntercept);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT SetRedSlope(IDCompositionAnimation* animation)
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int>)(lpVtbl[6]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), animation);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT SetRedSlope(float redSlope)
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int>)(lpVtbl[7]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), redSlope);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT SetRedDisable(BOOL redDisable)
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int>)(lpVtbl[8]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), redDisable);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT SetGreenYIntercept(IDCompositionAnimation* animation)
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int>)(lpVtbl[9]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), animation);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT SetGreenYIntercept(float greenYIntercept)
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int>)(lpVtbl[10]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), greenYIntercept);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT SetGreenSlope(IDCompositionAnimation* animation)
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int>)(lpVtbl[11]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), animation);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT SetGreenSlope(float greenSlope)
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int>)(lpVtbl[12]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), greenSlope);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT SetGreenDisable(BOOL greenDisable)
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int>)(lpVtbl[13]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), greenDisable);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT SetBlueYIntercept(IDCompositionAnimation* animation)
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int>)(lpVtbl[14]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), animation);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT SetBlueYIntercept(float blueYIntercept)
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int>)(lpVtbl[15]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), blueYIntercept);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT SetBlueSlope(IDCompositionAnimation* animation)
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int>)(lpVtbl[16]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), animation);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT SetBlueSlope(float blueSlope)
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int>)(lpVtbl[17]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), blueSlope);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT SetBlueDisable(BOOL blueDisable)
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int>)(lpVtbl[18]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), blueDisable);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT SetAlphaYIntercept(IDCompositionAnimation* animation)
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int>)(lpVtbl[19]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), animation);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT SetAlphaYIntercept(float alphaYIntercept)
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int>)(lpVtbl[20]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), alphaYIntercept);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(21)]
+    public HRESULT SetAlphaSlope(IDCompositionAnimation* animation)
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int>)(lpVtbl[21]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), animation);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(22)]
+    public HRESULT SetAlphaSlope(float alphaSlope)
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int>)(lpVtbl[22]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), alphaSlope);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(23)]
+    public HRESULT SetAlphaDisable(BOOL alphaDisable)
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int>)(lpVtbl[23]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), alphaDisable);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(24)]
+    public HRESULT SetClampOutput(BOOL clampOutput)
+    {
+        return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int>)(lpVtbl[24]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), clampOutput);
+    }
+
+    public interface Interface : IDCompositionFilterEffect.Interface
+    {
         [VtblIndex(4)]
-        public HRESULT SetRedYIntercept(IDCompositionAnimation* animation)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int>)(lpVtbl[4]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), animation);
-        }
+        HRESULT SetRedYIntercept(IDCompositionAnimation* animation);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetRedYIntercept(float redYIntercept)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int>)(lpVtbl[5]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), redYIntercept);
-        }
+        HRESULT SetRedYIntercept(float redYIntercept);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT SetRedSlope(IDCompositionAnimation* animation)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int>)(lpVtbl[6]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), animation);
-        }
+        HRESULT SetRedSlope(IDCompositionAnimation* animation);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT SetRedSlope(float redSlope)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int>)(lpVtbl[7]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), redSlope);
-        }
+        HRESULT SetRedSlope(float redSlope);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT SetRedDisable(BOOL redDisable)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int>)(lpVtbl[8]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), redDisable);
-        }
+        HRESULT SetRedDisable(BOOL redDisable);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT SetGreenYIntercept(IDCompositionAnimation* animation)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int>)(lpVtbl[9]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), animation);
-        }
+        HRESULT SetGreenYIntercept(IDCompositionAnimation* animation);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT SetGreenYIntercept(float greenYIntercept)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int>)(lpVtbl[10]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), greenYIntercept);
-        }
+        HRESULT SetGreenYIntercept(float greenYIntercept);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT SetGreenSlope(IDCompositionAnimation* animation)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int>)(lpVtbl[11]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), animation);
-        }
+        HRESULT SetGreenSlope(IDCompositionAnimation* animation);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT SetGreenSlope(float greenSlope)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int>)(lpVtbl[12]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), greenSlope);
-        }
+        HRESULT SetGreenSlope(float greenSlope);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT SetGreenDisable(BOOL greenDisable)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int>)(lpVtbl[13]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), greenDisable);
-        }
+        HRESULT SetGreenDisable(BOOL greenDisable);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT SetBlueYIntercept(IDCompositionAnimation* animation)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int>)(lpVtbl[14]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), animation);
-        }
+        HRESULT SetBlueYIntercept(IDCompositionAnimation* animation);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT SetBlueYIntercept(float blueYIntercept)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int>)(lpVtbl[15]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), blueYIntercept);
-        }
+        HRESULT SetBlueYIntercept(float blueYIntercept);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT SetBlueSlope(IDCompositionAnimation* animation)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int>)(lpVtbl[16]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), animation);
-        }
+        HRESULT SetBlueSlope(IDCompositionAnimation* animation);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT SetBlueSlope(float blueSlope)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int>)(lpVtbl[17]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), blueSlope);
-        }
+        HRESULT SetBlueSlope(float blueSlope);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT SetBlueDisable(BOOL blueDisable)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int>)(lpVtbl[18]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), blueDisable);
-        }
+        HRESULT SetBlueDisable(BOOL blueDisable);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT SetAlphaYIntercept(IDCompositionAnimation* animation)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int>)(lpVtbl[19]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), animation);
-        }
+        HRESULT SetAlphaYIntercept(IDCompositionAnimation* animation);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT SetAlphaYIntercept(float alphaYIntercept)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int>)(lpVtbl[20]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), alphaYIntercept);
-        }
+        HRESULT SetAlphaYIntercept(float alphaYIntercept);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT SetAlphaSlope(IDCompositionAnimation* animation)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int>)(lpVtbl[21]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), animation);
-        }
+        HRESULT SetAlphaSlope(IDCompositionAnimation* animation);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        public HRESULT SetAlphaSlope(float alphaSlope)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int>)(lpVtbl[22]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), alphaSlope);
-        }
+        HRESULT SetAlphaSlope(float alphaSlope);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public HRESULT SetAlphaDisable(BOOL alphaDisable)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int>)(lpVtbl[23]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), alphaDisable);
-        }
+        HRESULT SetAlphaDisable(BOOL alphaDisable);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT SetClampOutput(BOOL clampOutput)
-        {
-            return ((delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int>)(lpVtbl[24]))((IDCompositionLinearTransferEffect*)Unsafe.AsPointer(ref this), clampOutput);
-        }
+        HRESULT SetClampOutput(BOOL clampOutput);
+    }
 
-        public interface Interface : IDCompositionFilterEffect.Interface
-        {
-            [VtblIndex(4)]
-            HRESULT SetRedYIntercept(IDCompositionAnimation* animation);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(5)]
-            HRESULT SetRedYIntercept(float redYIntercept);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, uint> AddRef;
 
-            [VtblIndex(6)]
-            HRESULT SetRedSlope(IDCompositionAnimation* animation);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, uint> Release;
 
-            [VtblIndex(7)]
-            HRESULT SetRedSlope(float redSlope);
+        [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, uint, IUnknown*, uint, int> SetInput;
 
-            [VtblIndex(8)]
-            HRESULT SetRedDisable(BOOL redDisable);
+        [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetRedYIntercept;
 
-            [VtblIndex(9)]
-            HRESULT SetGreenYIntercept(IDCompositionAnimation* animation);
+        [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetRedYIntercept1;
 
-            [VtblIndex(10)]
-            HRESULT SetGreenYIntercept(float greenYIntercept);
+        [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetRedSlope;
 
-            [VtblIndex(11)]
-            HRESULT SetGreenSlope(IDCompositionAnimation* animation);
+        [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetRedSlope1;
 
-            [VtblIndex(12)]
-            HRESULT SetGreenSlope(float greenSlope);
+        [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int> SetRedDisable;
 
-            [VtblIndex(13)]
-            HRESULT SetGreenDisable(BOOL greenDisable);
+        [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetGreenYIntercept;
 
-            [VtblIndex(14)]
-            HRESULT SetBlueYIntercept(IDCompositionAnimation* animation);
+        [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetGreenYIntercept1;
 
-            [VtblIndex(15)]
-            HRESULT SetBlueYIntercept(float blueYIntercept);
+        [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetGreenSlope;
 
-            [VtblIndex(16)]
-            HRESULT SetBlueSlope(IDCompositionAnimation* animation);
+        [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetGreenSlope1;
 
-            [VtblIndex(17)]
-            HRESULT SetBlueSlope(float blueSlope);
+        [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int> SetGreenDisable;
 
-            [VtblIndex(18)]
-            HRESULT SetBlueDisable(BOOL blueDisable);
+        [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetBlueYIntercept;
 
-            [VtblIndex(19)]
-            HRESULT SetAlphaYIntercept(IDCompositionAnimation* animation);
+        [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetBlueYIntercept1;
 
-            [VtblIndex(20)]
-            HRESULT SetAlphaYIntercept(float alphaYIntercept);
+        [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetBlueSlope;
 
-            [VtblIndex(21)]
-            HRESULT SetAlphaSlope(IDCompositionAnimation* animation);
+        [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetBlueSlope1;
 
-            [VtblIndex(22)]
-            HRESULT SetAlphaSlope(float alphaSlope);
+        [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int> SetBlueDisable;
 
-            [VtblIndex(23)]
-            HRESULT SetAlphaDisable(BOOL alphaDisable);
+        [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetAlphaYIntercept;
 
-            [VtblIndex(24)]
-            HRESULT SetClampOutput(BOOL clampOutput);
-        }
+        [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetAlphaYIntercept1;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetAlphaSlope;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, uint> AddRef;
+        [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetAlphaSlope1;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, uint> Release;
+        [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int> SetAlphaDisable;
 
-            [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, uint, IUnknown*, uint, int> SetInput;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetRedYIntercept;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetRedYIntercept1;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetRedSlope;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetRedSlope1;
-
-            [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int> SetRedDisable;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetGreenYIntercept;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetGreenYIntercept1;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetGreenSlope;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetGreenSlope1;
-
-            [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int> SetGreenDisable;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetBlueYIntercept;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetBlueYIntercept1;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetBlueSlope;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetBlueSlope1;
-
-            [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int> SetBlueDisable;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetAlphaYIntercept;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetAlphaYIntercept1;
-
-            [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetAlphaSlope;
-
-            [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetAlphaSlope1;
-
-            [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int> SetAlphaDisable;
-
-            [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int> SetClampOutput;
-        }
+        [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int> SetClampOutput;
     }
 }

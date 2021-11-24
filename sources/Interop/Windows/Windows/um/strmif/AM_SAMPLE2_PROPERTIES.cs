@@ -3,36 +3,35 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct AM_SAMPLE2_PROPERTIES
 {
-    public unsafe partial struct AM_SAMPLE2_PROPERTIES
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbData;
+    [NativeTypeName("DWORD")]
+    public uint cbData;
 
-        [NativeTypeName("DWORD")]
-        public uint dwTypeSpecificFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwTypeSpecificFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint dwSampleFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwSampleFlags;
 
-        [NativeTypeName("LONG")]
-        public int lActual;
+    [NativeTypeName("LONG")]
+    public int lActual;
 
-        [NativeTypeName("REFERENCE_TIME")]
-        public long tStart;
+    [NativeTypeName("REFERENCE_TIME")]
+    public long tStart;
 
-        [NativeTypeName("REFERENCE_TIME")]
-        public long tStop;
+    [NativeTypeName("REFERENCE_TIME")]
+    public long tStop;
 
-        [NativeTypeName("DWORD")]
-        public uint dwStreamId;
+    [NativeTypeName("DWORD")]
+    public uint dwStreamId;
 
-        public AM_MEDIA_TYPE* pMediaType;
+    public AM_MEDIA_TYPE* pMediaType;
 
-        public byte* pbBuffer;
+    public byte* pbBuffer;
 
-        [NativeTypeName("LONG")]
-        public int cbBuffer;
-    }
+    [NativeTypeName("LONG")]
+    public int cbBuffer;
 }

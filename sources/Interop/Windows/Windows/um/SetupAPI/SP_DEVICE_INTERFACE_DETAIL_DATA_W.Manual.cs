@@ -6,61 +6,60 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public unsafe partial struct SP_DEVICE_INTERFACE_DETAIL_DATA_W
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct SP_DEVICE_INTERFACE_DETAIL_DATA_W
+    public static uint SizeOf
     {
-        public static uint SizeOf
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return (uint)(sizeof(SP_DEVICE_INTERFACE_DETAIL_DATA32_W));
-                }
-                else
-                {
-                    return (uint)(sizeof(SP_DEVICE_INTERFACE_DETAIL_DATA64_W));
-                }
+                return (uint)(sizeof(SP_DEVICE_INTERFACE_DETAIL_DATA32_W));
+            }
+            else
+            {
+                return (uint)(sizeof(SP_DEVICE_INTERFACE_DETAIL_DATA64_W));
             }
         }
+    }
 
-        [FieldOffset(0)]
-        public SP_DEVICE_INTERFACE_DETAIL_DATA32_W _value32;
+    [FieldOffset(0)]
+    public SP_DEVICE_INTERFACE_DETAIL_DATA32_W _value32;
 
-        [FieldOffset(0)]
-        public SP_DEVICE_INTERFACE_DETAIL_DATA64_W _value64;
+    [FieldOffset(0)]
+    public SP_DEVICE_INTERFACE_DETAIL_DATA64_W _value64;
 
-        [NativeTypeName("DWORD")]
-        public ref uint cbSize
+    [NativeTypeName("DWORD")]
+    public ref uint cbSize
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cbSize, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cbSize, 1));
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cbSize, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cbSize, 1));
             }
         }
+    }
 
-        [NativeTypeName("WCHAR [1]")]
-        public Span<ushort> DevicePath
+    [NativeTypeName("WCHAR [1]")]
+    public Span<ushort> DevicePath
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return MemoryMarshal.CreateSpan(ref _value32.DevicePath[0], 1);
-                }
-                else
-                {
-                    return MemoryMarshal.CreateSpan(ref _value64.DevicePath[0], 1);
-                }
+                return MemoryMarshal.CreateSpan(ref _value32.DevicePath[0], 1);
+            }
+            else
+            {
+                return MemoryMarshal.CreateSpan(ref _value64.DevicePath[0], 1);
             }
         }
     }

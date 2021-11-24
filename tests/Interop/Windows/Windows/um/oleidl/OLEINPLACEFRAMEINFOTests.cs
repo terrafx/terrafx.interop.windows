@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="OLEINPLACEFRAMEINFO" /> struct.</summary>
+public static unsafe partial class OLEINPLACEFRAMEINFOTests
 {
-    /// <summary>Provides validation of the <see cref="OLEINPLACEFRAMEINFO" /> struct.</summary>
-    public static unsafe partial class OLEINPLACEFRAMEINFOTests
+    /// <summary>Validates that the <see cref="OLEINPLACEFRAMEINFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="OLEINPLACEFRAMEINFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<OLEINPLACEFRAMEINFO>(), Is.EqualTo(sizeof(OLEINPLACEFRAMEINFO)));
-        }
+        Assert.That(Marshal.SizeOf<OLEINPLACEFRAMEINFO>(), Is.EqualTo(sizeof(OLEINPLACEFRAMEINFO)));
+    }
 
-        /// <summary>Validates that the <see cref="OLEINPLACEFRAMEINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(OLEINPLACEFRAMEINFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="OLEINPLACEFRAMEINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(OLEINPLACEFRAMEINFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="OLEINPLACEFRAMEINFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="OLEINPLACEFRAMEINFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(OLEINPLACEFRAMEINFO), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(OLEINPLACEFRAMEINFO), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(OLEINPLACEFRAMEINFO), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(OLEINPLACEFRAMEINFO), Is.EqualTo(20));
         }
     }
 }

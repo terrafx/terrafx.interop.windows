@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("FEC87AAF-35F9-447A-ADB7-20234491401A")]
+[NativeTypeName("struct IPreviewHandlerFrame : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IPreviewHandlerFrame : IPreviewHandlerFrame.Interface
 {
-    [Guid("FEC87AAF-35F9-447A-ADB7-20234491401A")]
-    [NativeTypeName("struct IPreviewHandlerFrame : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPreviewHandlerFrame : IPreviewHandlerFrame.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IPreviewHandlerFrame*, Guid*, void**, int>)(lpVtbl[0]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IPreviewHandlerFrame*, Guid*, void**, int>)(lpVtbl[0]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IPreviewHandlerFrame*, uint>)(lpVtbl[1]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IPreviewHandlerFrame*, uint>)(lpVtbl[1]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IPreviewHandlerFrame*, uint>)(lpVtbl[2]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IPreviewHandlerFrame*, uint>)(lpVtbl[2]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetWindowContext(PREVIEWHANDLERFRAMEINFO* pinfo)
+    {
+        return ((delegate* unmanaged<IPreviewHandlerFrame*, PREVIEWHANDLERFRAMEINFO*, int>)(lpVtbl[3]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this), pinfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT TranslateAcceleratorW(MSG* pmsg)
+    {
+        return ((delegate* unmanaged<IPreviewHandlerFrame*, MSG*, int>)(lpVtbl[4]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this), pmsg);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetWindowContext(PREVIEWHANDLERFRAMEINFO* pinfo)
-        {
-            return ((delegate* unmanaged<IPreviewHandlerFrame*, PREVIEWHANDLERFRAMEINFO*, int>)(lpVtbl[3]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this), pinfo);
-        }
+        HRESULT GetWindowContext(PREVIEWHANDLERFRAMEINFO* pinfo);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT TranslateAcceleratorW(MSG* pmsg)
-        {
-            return ((delegate* unmanaged<IPreviewHandlerFrame*, MSG*, int>)(lpVtbl[4]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this), pmsg);
-        }
+        HRESULT TranslateAcceleratorW(MSG* pmsg);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetWindowContext(PREVIEWHANDLERFRAMEINFO* pinfo);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPreviewHandlerFrame*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT TranslateAcceleratorW(MSG* pmsg);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPreviewHandlerFrame*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPreviewHandlerFrame*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPreviewHandlerFrame*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPreviewHandlerFrame*, uint> AddRef;
+        [NativeTypeName("HRESULT (PREVIEWHANDLERFRAMEINFO *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPreviewHandlerFrame*, PREVIEWHANDLERFRAMEINFO*, int> GetWindowContext;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPreviewHandlerFrame*, uint> Release;
-
-            [NativeTypeName("HRESULT (PREVIEWHANDLERFRAMEINFO *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPreviewHandlerFrame*, PREVIEWHANDLERFRAMEINFO*, int> GetWindowContext;
-
-            [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPreviewHandlerFrame*, MSG*, int> TranslateAcceleratorW;
-        }
+        [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPreviewHandlerFrame*, MSG*, int> TranslateAcceleratorW;
     }
 }

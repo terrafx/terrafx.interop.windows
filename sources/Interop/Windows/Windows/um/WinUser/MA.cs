@@ -3,20 +3,19 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class MA
 {
-    public static partial class MA
-    {
-        [NativeTypeName("#define MA_ACTIVATE 1")]
-        public const int MA_ACTIVATE = 1;
+    [NativeTypeName("#define MA_ACTIVATE 1")]
+    public const int MA_ACTIVATE = 1;
 
-        [NativeTypeName("#define MA_ACTIVATEANDEAT 2")]
-        public const int MA_ACTIVATEANDEAT = 2;
+    [NativeTypeName("#define MA_ACTIVATEANDEAT 2")]
+    public const int MA_ACTIVATEANDEAT = 2;
 
-        [NativeTypeName("#define MA_NOACTIVATE 3")]
-        public const int MA_NOACTIVATE = 3;
+    [NativeTypeName("#define MA_NOACTIVATE 3")]
+    public const int MA_NOACTIVATE = 3;
 
-        [NativeTypeName("#define MA_NOACTIVATEANDEAT 4")]
-        public const int MA_NOACTIVATEANDEAT = 4;
-    }
+    [NativeTypeName("#define MA_NOACTIVATEANDEAT 4")]
+    public const int MA_NOACTIVATEANDEAT = 4;
 }

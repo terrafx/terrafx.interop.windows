@@ -3,14 +3,13 @@
 // Ported from um/mssip.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct MS_ADDINFO_FLAT
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbStruct;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("struct SIP_INDIRECT_DATA_ *")]
-        public SIP_INDIRECT_DATA* pIndirectData;
-    }
+public unsafe partial struct MS_ADDINFO_FLAT
+{
+    [NativeTypeName("DWORD")]
+    public uint cbStruct;
+
+    [NativeTypeName("struct SIP_INDIRECT_DATA_ *")]
+    public SIP_INDIRECT_DATA* pIndirectData;
 }

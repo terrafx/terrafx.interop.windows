@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ICONINFOEXA" /> struct.</summary>
+public static unsafe partial class ICONINFOEXATests
 {
-    /// <summary>Provides validation of the <see cref="ICONINFOEXA" /> struct.</summary>
-    public static unsafe partial class ICONINFOEXATests
+    /// <summary>Validates that the <see cref="ICONINFOEXA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="ICONINFOEXA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ICONINFOEXA>(), Is.EqualTo(sizeof(ICONINFOEXA)));
-        }
+        Assert.That(Marshal.SizeOf<ICONINFOEXA>(), Is.EqualTo(sizeof(ICONINFOEXA)));
+    }
 
-        /// <summary>Validates that the <see cref="ICONINFOEXA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ICONINFOEXA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ICONINFOEXA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ICONINFOEXA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ICONINFOEXA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ICONINFOEXA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ICONINFOEXA), Is.EqualTo(560));
-            }
-            else
-            {
-                Assert.That(sizeof(ICONINFOEXA), Is.EqualTo(548));
-            }
+            Assert.That(sizeof(ICONINFOEXA), Is.EqualTo(560));
+        }
+        else
+        {
+            Assert.That(sizeof(ICONINFOEXA), Is.EqualTo(548));
         }
     }
 }

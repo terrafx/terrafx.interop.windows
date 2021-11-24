@@ -3,16 +3,15 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SHRINK_VOLUME_INFORMATION
 {
-    public partial struct SHRINK_VOLUME_INFORMATION
-    {
-        public SHRINK_VOLUME_REQUEST_TYPES ShrinkRequestType;
+    public SHRINK_VOLUME_REQUEST_TYPES ShrinkRequestType;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong Flags;
+    [NativeTypeName("DWORDLONG")]
+    public ulong Flags;
 
-        [NativeTypeName("LONGLONG")]
-        public long NewNumberOfSectors;
-    }
+    [NativeTypeName("LONGLONG")]
+    public long NewNumberOfSectors;
 }

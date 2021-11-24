@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IOleControlSite" /> struct.</summary>
+public static unsafe partial class IOleControlSiteTests
 {
-    /// <summary>Provides validation of the <see cref="IOleControlSite" /> struct.</summary>
-    public static unsafe partial class IOleControlSiteTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IOleControlSite" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IOleControlSite" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IOleControlSite).GUID, Is.EqualTo(IID_IOleControlSite));
-        }
+        Assert.That(typeof(IOleControlSite).GUID, Is.EqualTo(IID_IOleControlSite));
+    }
 
-        /// <summary>Validates that the <see cref="IOleControlSite" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IOleControlSite>(), Is.EqualTo(sizeof(IOleControlSite)));
-        }
+    /// <summary>Validates that the <see cref="IOleControlSite" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IOleControlSite>(), Is.EqualTo(sizeof(IOleControlSite)));
+    }
 
-        /// <summary>Validates that the <see cref="IOleControlSite" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IOleControlSite).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IOleControlSite" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IOleControlSite).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IOleControlSite" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IOleControlSite" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IOleControlSite), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IOleControlSite), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IOleControlSite), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IOleControlSite), Is.EqualTo(4));
         }
     }
 }

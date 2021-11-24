@@ -3,11 +3,10 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class DEFAULT
 {
-    public static partial class DEFAULT
-    {
-        [NativeTypeName("#define DEFAULT_WEIGHT ( 1 )")]
-        public const int DEFAULT_WEIGHT = (1);
-    }
+    [NativeTypeName("#define DEFAULT_WEIGHT ( 1 )")]
+    public const int DEFAULT_WEIGHT = (1);
 }

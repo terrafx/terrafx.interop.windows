@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="JOBOBJECT_BASIC_PROCESS_ID_LIST" /> struct.</summary>
+public static unsafe partial class JOBOBJECT_BASIC_PROCESS_ID_LISTTests
 {
-    /// <summary>Provides validation of the <see cref="JOBOBJECT_BASIC_PROCESS_ID_LIST" /> struct.</summary>
-    public static unsafe partial class JOBOBJECT_BASIC_PROCESS_ID_LISTTests
+    /// <summary>Validates that the <see cref="JOBOBJECT_BASIC_PROCESS_ID_LIST" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="JOBOBJECT_BASIC_PROCESS_ID_LIST" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<JOBOBJECT_BASIC_PROCESS_ID_LIST>(), Is.EqualTo(sizeof(JOBOBJECT_BASIC_PROCESS_ID_LIST)));
-        }
+        Assert.That(Marshal.SizeOf<JOBOBJECT_BASIC_PROCESS_ID_LIST>(), Is.EqualTo(sizeof(JOBOBJECT_BASIC_PROCESS_ID_LIST)));
+    }
 
-        /// <summary>Validates that the <see cref="JOBOBJECT_BASIC_PROCESS_ID_LIST" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(JOBOBJECT_BASIC_PROCESS_ID_LIST).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="JOBOBJECT_BASIC_PROCESS_ID_LIST" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(JOBOBJECT_BASIC_PROCESS_ID_LIST).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="JOBOBJECT_BASIC_PROCESS_ID_LIST" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="JOBOBJECT_BASIC_PROCESS_ID_LIST" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(JOBOBJECT_BASIC_PROCESS_ID_LIST), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(JOBOBJECT_BASIC_PROCESS_ID_LIST), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(JOBOBJECT_BASIC_PROCESS_ID_LIST), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(JOBOBJECT_BASIC_PROCESS_ID_LIST), Is.EqualTo(12));
         }
     }
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DispSVGTextPathElement" /> struct.</summary>
+public static unsafe partial class DispSVGTextPathElementTests
 {
-    /// <summary>Provides validation of the <see cref="DispSVGTextPathElement" /> struct.</summary>
-    public static unsafe partial class DispSVGTextPathElementTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispSVGTextPathElement" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispSVGTextPathElement" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DispSVGTextPathElement).GUID, Is.EqualTo(IID_DispSVGTextPathElement));
-        }
+        Assert.That(typeof(DispSVGTextPathElement).GUID, Is.EqualTo(IID_DispSVGTextPathElement));
+    }
 
-        /// <summary>Validates that the <see cref="DispSVGTextPathElement" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DispSVGTextPathElement>(), Is.EqualTo(sizeof(DispSVGTextPathElement)));
-        }
+    /// <summary>Validates that the <see cref="DispSVGTextPathElement" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DispSVGTextPathElement>(), Is.EqualTo(sizeof(DispSVGTextPathElement)));
+    }
 
-        /// <summary>Validates that the <see cref="DispSVGTextPathElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DispSVGTextPathElement).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DispSVGTextPathElement" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DispSVGTextPathElement).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DispSVGTextPathElement" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DispSVGTextPathElement" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DispSVGTextPathElement), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(DispSVGTextPathElement), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(DispSVGTextPathElement), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(DispSVGTextPathElement), Is.EqualTo(4));
         }
     }
 }

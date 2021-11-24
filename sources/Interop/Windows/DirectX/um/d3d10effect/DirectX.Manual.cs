@@ -3,13 +3,12 @@
 // Ported from um/d3d10effect.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public static unsafe partial class DirectX
 {
-    public static unsafe partial class DirectX
+    public static int D3D10_BYTES_FROM_BITS(int x)
     {
-        public static int D3D10_BYTES_FROM_BITS(int x)
-        {
-            return (((x) + 7) / 8);
-        }
+        return (((x) + 7) / 8);
     }
 }

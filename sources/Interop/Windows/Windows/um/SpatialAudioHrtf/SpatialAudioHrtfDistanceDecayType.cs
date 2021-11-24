@@ -3,11 +3,10 @@
 // Ported from um/SpatialAudioHrtf.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpatialAudioHrtfDistanceDecayType
 {
-    public enum SpatialAudioHrtfDistanceDecayType
-    {
-        SpatialAudioHrtfDistanceDecay_NaturalDecay = 0,
-        SpatialAudioHrtfDistanceDecay_CustomDecay = (SpatialAudioHrtfDistanceDecay_NaturalDecay + 1),
-    }
+    SpatialAudioHrtfDistanceDecay_NaturalDecay = 0,
+    SpatialAudioHrtfDistanceDecay_CustomDecay = (SpatialAudioHrtfDistanceDecay_NaturalDecay + 1),
 }

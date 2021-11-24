@@ -5,23 +5,22 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct GETVERSIONINPARAMS
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct GETVERSIONINPARAMS
-    {
-        public byte bVersion;
+    public byte bVersion;
 
-        public byte bRevision;
+    public byte bRevision;
 
-        public byte bReserved;
+    public byte bReserved;
 
-        public byte bIDEDeviceMap;
+    public byte bIDEDeviceMap;
 
-        [NativeTypeName("DWORD")]
-        public uint fCapabilities;
+    [NativeTypeName("DWORD")]
+    public uint fCapabilities;
 
-        [NativeTypeName("DWORD [4]")]
-        public fixed uint dwReserved[4];
-    }
+    [NativeTypeName("DWORD [4]")]
+    public fixed uint dwReserved[4];
 }

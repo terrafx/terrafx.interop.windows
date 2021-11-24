@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SHFILEINFO64A" /> struct.</summary>
+public static unsafe partial class SHFILEINFO64ATests
 {
-    /// <summary>Provides validation of the <see cref="SHFILEINFO64A" /> struct.</summary>
-    public static unsafe partial class SHFILEINFO64ATests
+    /// <summary>Validates that the <see cref="SHFILEINFO64A" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SHFILEINFO64A" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SHFILEINFO64A>(), Is.EqualTo(sizeof(SHFILEINFO64A)));
-        }
+        Assert.That(Marshal.SizeOf<SHFILEINFO64A>(), Is.EqualTo(sizeof(SHFILEINFO64A)));
+    }
 
-        /// <summary>Validates that the <see cref="SHFILEINFO64A" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SHFILEINFO64A).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SHFILEINFO64A" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SHFILEINFO64A).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SHFILEINFO64A" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SHFILEINFO64A" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SHFILEINFO64A), Is.EqualTo(360));
-            }
-            else
-            {
-                Assert.That(sizeof(SHFILEINFO64A), Is.EqualTo(352));
-            }
+            Assert.That(sizeof(SHFILEINFO64A), Is.EqualTo(360));
+        }
+        else
+        {
+            Assert.That(sizeof(SHFILEINFO64A), Is.EqualTo(352));
         }
     }
 }

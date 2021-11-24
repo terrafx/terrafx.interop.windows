@@ -5,27 +5,26 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct POINTER_TOUCH_INFO
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct POINTER_TOUCH_INFO
-    {
-        public POINTER_INFO pointerInfo;
+    public POINTER_INFO pointerInfo;
 
-        [NativeTypeName("TOUCH_FLAGS")]
-        public uint touchFlags;
+    [NativeTypeName("TOUCH_FLAGS")]
+    public uint touchFlags;
 
-        [NativeTypeName("TOUCH_MASK")]
-        public uint touchMask;
+    [NativeTypeName("TOUCH_MASK")]
+    public uint touchMask;
 
-        public RECT rcContact;
+    public RECT rcContact;
 
-        public RECT rcContactRaw;
+    public RECT rcContactRaw;
 
-        [NativeTypeName("UINT32")]
-        public uint orientation;
+    [NativeTypeName("UINT32")]
+    public uint orientation;
 
-        [NativeTypeName("UINT32")]
-        public uint pressure;
-    }
+    [NativeTypeName("UINT32")]
+    public uint pressure;
 }

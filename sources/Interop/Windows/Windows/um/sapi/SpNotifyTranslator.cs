@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("E2AE5372-5D40-11D2-960E-00C04F8EE628")]
+public partial struct SpNotifyTranslator
 {
-    [Guid("E2AE5372-5D40-11D2-960E-00C04F8EE628")]
-    public partial struct SpNotifyTranslator
-    {
-    }
 }

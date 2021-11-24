@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SP_ORIGINAL_FILE_INFO64_W" /> struct.</summary>
+public static unsafe partial class SP_ORIGINAL_FILE_INFO64_WTests
 {
-    /// <summary>Provides validation of the <see cref="SP_ORIGINAL_FILE_INFO64_W" /> struct.</summary>
-    public static unsafe partial class SP_ORIGINAL_FILE_INFO64_WTests
+    /// <summary>Validates that the <see cref="SP_ORIGINAL_FILE_INFO64_W" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SP_ORIGINAL_FILE_INFO64_W" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SP_ORIGINAL_FILE_INFO64_W>(), Is.EqualTo(sizeof(SP_ORIGINAL_FILE_INFO64_W)));
-        }
+        Assert.That(Marshal.SizeOf<SP_ORIGINAL_FILE_INFO64_W>(), Is.EqualTo(sizeof(SP_ORIGINAL_FILE_INFO64_W)));
+    }
 
-        /// <summary>Validates that the <see cref="SP_ORIGINAL_FILE_INFO64_W" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SP_ORIGINAL_FILE_INFO64_W).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SP_ORIGINAL_FILE_INFO64_W" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SP_ORIGINAL_FILE_INFO64_W).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SP_ORIGINAL_FILE_INFO64_W" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SP_ORIGINAL_FILE_INFO64_W), Is.EqualTo(1044));
-        }
+    /// <summary>Validates that the <see cref="SP_ORIGINAL_FILE_INFO64_W" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SP_ORIGINAL_FILE_INFO64_W), Is.EqualTo(1044));
     }
 }

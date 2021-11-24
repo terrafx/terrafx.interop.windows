@@ -3,23 +3,22 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TAPE_SET_DRIVE_PARAMETERS
 {
-    public partial struct TAPE_SET_DRIVE_PARAMETERS
-    {
-        [NativeTypeName("BOOLEAN")]
-        public byte ECC;
+    [NativeTypeName("BOOLEAN")]
+    public byte ECC;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte Compression;
+    [NativeTypeName("BOOLEAN")]
+    public byte Compression;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte DataPadding;
+    [NativeTypeName("BOOLEAN")]
+    public byte DataPadding;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte ReportSetmarks;
+    [NativeTypeName("BOOLEAN")]
+    public byte ReportSetmarks;
 
-        [NativeTypeName("DWORD")]
-        public uint EOTWarningZoneSize;
-    }
+    [NativeTypeName("DWORD")]
+    public uint EOTWarningZoneSize;
 }

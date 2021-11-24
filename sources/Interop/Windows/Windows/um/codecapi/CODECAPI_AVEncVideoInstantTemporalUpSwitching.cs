@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("A3308307-0D96-4BA4-B1F0-B91A5E49DF10")]
+public partial struct CODECAPI_AVEncVideoInstantTemporalUpSwitching
 {
-    [Guid("A3308307-0D96-4BA4-B1F0-B91A5E49DF10")]
-    public partial struct CODECAPI_AVEncVideoInstantTemporalUpSwitching
-    {
-    }
 }

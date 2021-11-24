@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IGraphicsCaptureItemInterop" /> struct.</summary>
+public static unsafe partial class IGraphicsCaptureItemInteropTests
 {
-    /// <summary>Provides validation of the <see cref="IGraphicsCaptureItemInterop" /> struct.</summary>
-    public static unsafe partial class IGraphicsCaptureItemInteropTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IGraphicsCaptureItemInterop" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IGraphicsCaptureItemInterop" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IGraphicsCaptureItemInterop).GUID, Is.EqualTo(IID_IGraphicsCaptureItemInterop));
-        }
+        Assert.That(typeof(IGraphicsCaptureItemInterop).GUID, Is.EqualTo(IID_IGraphicsCaptureItemInterop));
+    }
 
-        /// <summary>Validates that the <see cref="IGraphicsCaptureItemInterop" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IGraphicsCaptureItemInterop>(), Is.EqualTo(sizeof(IGraphicsCaptureItemInterop)));
-        }
+    /// <summary>Validates that the <see cref="IGraphicsCaptureItemInterop" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IGraphicsCaptureItemInterop>(), Is.EqualTo(sizeof(IGraphicsCaptureItemInterop)));
+    }
 
-        /// <summary>Validates that the <see cref="IGraphicsCaptureItemInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IGraphicsCaptureItemInterop).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IGraphicsCaptureItemInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IGraphicsCaptureItemInterop).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IGraphicsCaptureItemInterop" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IGraphicsCaptureItemInterop" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IGraphicsCaptureItemInterop), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IGraphicsCaptureItemInterop), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IGraphicsCaptureItemInterop), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IGraphicsCaptureItemInterop), Is.EqualTo(4));
         }
     }
 }

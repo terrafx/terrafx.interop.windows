@@ -7,59 +7,58 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct SP_NEWDEVICEWIZARD_DATA32
 {
+    public SP_CLASSINSTALL_HEADER32 ClassInstallHeader;
+
+    [NativeTypeName("DWORD")]
+    public uint Flags;
+
+    [NativeTypeName("HPROPSHEETPAGE [20]")]
+    public _DynamicPages_e__FixedBuffer DynamicPages;
+
+    [NativeTypeName("DWORD")]
+    public uint NumDynamicPages;
+
+    public HWND hwndWizardDlg;
+
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct SP_NEWDEVICEWIZARD_DATA32
+    public partial struct _DynamicPages_e__FixedBuffer
     {
-        public SP_CLASSINSTALL_HEADER32 ClassInstallHeader;
+        public HPROPSHEETPAGE e0;
+        public HPROPSHEETPAGE e1;
+        public HPROPSHEETPAGE e2;
+        public HPROPSHEETPAGE e3;
+        public HPROPSHEETPAGE e4;
+        public HPROPSHEETPAGE e5;
+        public HPROPSHEETPAGE e6;
+        public HPROPSHEETPAGE e7;
+        public HPROPSHEETPAGE e8;
+        public HPROPSHEETPAGE e9;
+        public HPROPSHEETPAGE e10;
+        public HPROPSHEETPAGE e11;
+        public HPROPSHEETPAGE e12;
+        public HPROPSHEETPAGE e13;
+        public HPROPSHEETPAGE e14;
+        public HPROPSHEETPAGE e15;
+        public HPROPSHEETPAGE e16;
+        public HPROPSHEETPAGE e17;
+        public HPROPSHEETPAGE e18;
+        public HPROPSHEETPAGE e19;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
-
-        [NativeTypeName("HPROPSHEETPAGE [20]")]
-        public _DynamicPages_e__FixedBuffer DynamicPages;
-
-        [NativeTypeName("DWORD")]
-        public uint NumDynamicPages;
-
-        public HWND hwndWizardDlg;
-
-        [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public partial struct _DynamicPages_e__FixedBuffer
+        public ref HPROPSHEETPAGE this[int index]
         {
-            public HPROPSHEETPAGE e0;
-            public HPROPSHEETPAGE e1;
-            public HPROPSHEETPAGE e2;
-            public HPROPSHEETPAGE e3;
-            public HPROPSHEETPAGE e4;
-            public HPROPSHEETPAGE e5;
-            public HPROPSHEETPAGE e6;
-            public HPROPSHEETPAGE e7;
-            public HPROPSHEETPAGE e8;
-            public HPROPSHEETPAGE e9;
-            public HPROPSHEETPAGE e10;
-            public HPROPSHEETPAGE e11;
-            public HPROPSHEETPAGE e12;
-            public HPROPSHEETPAGE e13;
-            public HPROPSHEETPAGE e14;
-            public HPROPSHEETPAGE e15;
-            public HPROPSHEETPAGE e16;
-            public HPROPSHEETPAGE e17;
-            public HPROPSHEETPAGE e18;
-            public HPROPSHEETPAGE e19;
-
-            public ref HPROPSHEETPAGE this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan()[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<HPROPSHEETPAGE> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 20);
+            get
+            {
+                return ref AsSpan()[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<HPROPSHEETPAGE> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 20);
     }
 }

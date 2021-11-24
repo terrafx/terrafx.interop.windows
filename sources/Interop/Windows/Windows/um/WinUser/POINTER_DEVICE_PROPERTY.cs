@@ -5,31 +5,30 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct POINTER_DEVICE_PROPERTY
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct POINTER_DEVICE_PROPERTY
-    {
-        [NativeTypeName("INT32")]
-        public int logicalMin;
+    [NativeTypeName("INT32")]
+    public int logicalMin;
 
-        [NativeTypeName("INT32")]
-        public int logicalMax;
+    [NativeTypeName("INT32")]
+    public int logicalMax;
 
-        [NativeTypeName("INT32")]
-        public int physicalMin;
+    [NativeTypeName("INT32")]
+    public int physicalMin;
 
-        [NativeTypeName("INT32")]
-        public int physicalMax;
+    [NativeTypeName("INT32")]
+    public int physicalMax;
 
-        [NativeTypeName("UINT32")]
-        public uint unit;
+    [NativeTypeName("UINT32")]
+    public uint unit;
 
-        [NativeTypeName("UINT32")]
-        public uint unitExponent;
+    [NativeTypeName("UINT32")]
+    public uint unitExponent;
 
-        public ushort usagePageId;
+    public ushort usagePageId;
 
-        public ushort usageId;
-    }
+    public ushort usageId;
 }

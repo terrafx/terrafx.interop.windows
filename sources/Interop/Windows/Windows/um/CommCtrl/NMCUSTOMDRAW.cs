@@ -3,24 +3,23 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct NMCUSTOMDRAW
 {
-    public partial struct NMCUSTOMDRAW
-    {
-        public NMHDR hdr;
+    public NMHDR hdr;
 
-        [NativeTypeName("DWORD")]
-        public uint dwDrawStage;
+    [NativeTypeName("DWORD")]
+    public uint dwDrawStage;
 
-        public HDC hdc;
+    public HDC hdc;
 
-        public RECT rc;
+    public RECT rc;
 
-        [NativeTypeName("DWORD_PTR")]
-        public nuint dwItemSpec;
+    [NativeTypeName("DWORD_PTR")]
+    public nuint dwItemSpec;
 
-        public uint uItemState;
+    public uint uItemState;
 
-        public LPARAM lItemlParam;
-    }
+    public LPARAM lItemlParam;
 }

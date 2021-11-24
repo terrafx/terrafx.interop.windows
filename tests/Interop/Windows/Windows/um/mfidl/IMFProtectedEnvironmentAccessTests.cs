@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFProtectedEnvironmentAccess" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class IMFProtectedEnvironmentAccessTests
 {
-    /// <summary>Provides validation of the <see cref="IMFProtectedEnvironmentAccess" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class IMFProtectedEnvironmentAccessTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFProtectedEnvironmentAccess" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFProtectedEnvironmentAccess" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFProtectedEnvironmentAccess).GUID, Is.EqualTo(IID_IMFProtectedEnvironmentAccess));
-        }
+        Assert.That(typeof(IMFProtectedEnvironmentAccess).GUID, Is.EqualTo(IID_IMFProtectedEnvironmentAccess));
+    }
 
-        /// <summary>Validates that the <see cref="IMFProtectedEnvironmentAccess" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFProtectedEnvironmentAccess>(), Is.EqualTo(sizeof(IMFProtectedEnvironmentAccess)));
-        }
+    /// <summary>Validates that the <see cref="IMFProtectedEnvironmentAccess" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFProtectedEnvironmentAccess>(), Is.EqualTo(sizeof(IMFProtectedEnvironmentAccess)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFProtectedEnvironmentAccess" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFProtectedEnvironmentAccess).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFProtectedEnvironmentAccess" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFProtectedEnvironmentAccess).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFProtectedEnvironmentAccess" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFProtectedEnvironmentAccess" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFProtectedEnvironmentAccess), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFProtectedEnvironmentAccess), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFProtectedEnvironmentAccess), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFProtectedEnvironmentAccess), Is.EqualTo(4));
         }
     }
 }

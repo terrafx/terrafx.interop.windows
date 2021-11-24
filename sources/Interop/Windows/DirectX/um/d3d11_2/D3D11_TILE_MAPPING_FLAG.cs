@@ -6,12 +6,11 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+[SupportedOSPlatform("windows8.1")]
+public enum D3D11_TILE_MAPPING_FLAG
 {
-    [Flags]
-    [SupportedOSPlatform("windows8.1")]
-    public enum D3D11_TILE_MAPPING_FLAG
-    {
-        D3D11_TILE_MAPPING_NO_OVERWRITE = 0x1,
-    }
+    D3D11_TILE_MAPPING_NO_OVERWRITE = 0x1,
 }

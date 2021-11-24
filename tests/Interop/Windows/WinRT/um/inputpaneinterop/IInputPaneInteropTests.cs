@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IInputPaneInterop" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.14393.0")]
+public static unsafe partial class IInputPaneInteropTests
 {
-    /// <summary>Provides validation of the <see cref="IInputPaneInterop" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0.14393.0")]
-    public static unsafe partial class IInputPaneInteropTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInputPaneInterop" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInputPaneInterop" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IInputPaneInterop).GUID, Is.EqualTo(IID_IInputPaneInterop));
-        }
+        Assert.That(typeof(IInputPaneInterop).GUID, Is.EqualTo(IID_IInputPaneInterop));
+    }
 
-        /// <summary>Validates that the <see cref="IInputPaneInterop" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IInputPaneInterop>(), Is.EqualTo(sizeof(IInputPaneInterop)));
-        }
+    /// <summary>Validates that the <see cref="IInputPaneInterop" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IInputPaneInterop>(), Is.EqualTo(sizeof(IInputPaneInterop)));
+    }
 
-        /// <summary>Validates that the <see cref="IInputPaneInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IInputPaneInterop).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IInputPaneInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IInputPaneInterop).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IInputPaneInterop" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IInputPaneInterop" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IInputPaneInterop), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IInputPaneInterop), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IInputPaneInterop), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IInputPaneInterop), Is.EqualTo(4));
         }
     }
 }

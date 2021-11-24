@@ -8,32 +8,31 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public partial struct MFPinholeCameraIntrinsics
 {
-    [SupportedOSPlatform("windows10.0")]
-    public partial struct MFPinholeCameraIntrinsics
+    [NativeTypeName("UINT32")]
+    public uint IntrinsicModelCount;
+
+    [NativeTypeName("MFPinholeCameraIntrinsic_IntrinsicModel [1]")]
+    public _IntrinsicModels_e__FixedBuffer IntrinsicModels;
+
+    public partial struct _IntrinsicModels_e__FixedBuffer
     {
-        [NativeTypeName("UINT32")]
-        public uint IntrinsicModelCount;
+        public MFPinholeCameraIntrinsic_IntrinsicModel e0;
 
-        [NativeTypeName("MFPinholeCameraIntrinsic_IntrinsicModel [1]")]
-        public _IntrinsicModels_e__FixedBuffer IntrinsicModels;
-
-        public partial struct _IntrinsicModels_e__FixedBuffer
+        public ref MFPinholeCameraIntrinsic_IntrinsicModel this[int index]
         {
-            public MFPinholeCameraIntrinsic_IntrinsicModel e0;
-
-            public ref MFPinholeCameraIntrinsic_IntrinsicModel this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<MFPinholeCameraIntrinsic_IntrinsicModel> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<MFPinholeCameraIntrinsic_IntrinsicModel> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

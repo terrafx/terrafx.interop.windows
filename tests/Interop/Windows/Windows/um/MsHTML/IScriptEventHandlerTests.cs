@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IScriptEventHandler" /> struct.</summary>
+public static unsafe partial class IScriptEventHandlerTests
 {
-    /// <summary>Provides validation of the <see cref="IScriptEventHandler" /> struct.</summary>
-    public static unsafe partial class IScriptEventHandlerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IScriptEventHandler" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IScriptEventHandler" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IScriptEventHandler).GUID, Is.EqualTo(IID_IScriptEventHandler));
-        }
+        Assert.That(typeof(IScriptEventHandler).GUID, Is.EqualTo(IID_IScriptEventHandler));
+    }
 
-        /// <summary>Validates that the <see cref="IScriptEventHandler" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IScriptEventHandler>(), Is.EqualTo(sizeof(IScriptEventHandler)));
-        }
+    /// <summary>Validates that the <see cref="IScriptEventHandler" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IScriptEventHandler>(), Is.EqualTo(sizeof(IScriptEventHandler)));
+    }
 
-        /// <summary>Validates that the <see cref="IScriptEventHandler" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IScriptEventHandler).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IScriptEventHandler" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IScriptEventHandler).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IScriptEventHandler" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IScriptEventHandler" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IScriptEventHandler), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IScriptEventHandler), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IScriptEventHandler), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IScriptEventHandler), Is.EqualTo(4));
         }
     }
 }

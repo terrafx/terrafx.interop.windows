@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
-{
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct DXGI_INFO_QUEUE_FILTER
-    {
-        public DXGI_INFO_QUEUE_FILTER_DESC AllowList;
+namespace TerraFX.Interop.DirectX;
 
-        public DXGI_INFO_QUEUE_FILTER_DESC DenyList;
-    }
+[SupportedOSPlatform("windows8.0")]
+public partial struct DXGI_INFO_QUEUE_FILTER
+{
+    public DXGI_INFO_QUEUE_FILTER_DESC AllowList;
+
+    public DXGI_INFO_QUEUE_FILTER_DESC DenyList;
 }

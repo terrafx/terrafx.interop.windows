@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DXGI_RGBA" /> struct.</summary>
+public static unsafe partial class DXGI_RGBATests
 {
-    /// <summary>Provides validation of the <see cref="DXGI_RGBA" /> struct.</summary>
-    public static unsafe partial class DXGI_RGBATests
+    /// <summary>Validates that the <see cref="DXGI_RGBA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DXGI_RGBA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DXGI_RGBA>(), Is.EqualTo(sizeof(DXGI_RGBA)));
-        }
+        Assert.That(Marshal.SizeOf<DXGI_RGBA>(), Is.EqualTo(sizeof(DXGI_RGBA)));
+    }
 
-        /// <summary>Validates that the <see cref="DXGI_RGBA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DXGI_RGBA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DXGI_RGBA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DXGI_RGBA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DXGI_RGBA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DXGI_RGBA), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="DXGI_RGBA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DXGI_RGBA), Is.EqualTo(16));
     }
 }

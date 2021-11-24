@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3BDD78E2-C16E-47FD-B883-CE6FACC1A208")]
+[NativeTypeName("struct ITfMouseTrackerACP : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ITfMouseTrackerACP : ITfMouseTrackerACP.Interface
 {
-    [Guid("3BDD78E2-C16E-47FD-B883-CE6FACC1A208")]
-    [NativeTypeName("struct ITfMouseTrackerACP : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfMouseTrackerACP : ITfMouseTrackerACP.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ITfMouseTrackerACP*, Guid*, void**, int>)(lpVtbl[0]))((ITfMouseTrackerACP*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ITfMouseTrackerACP*, Guid*, void**, int>)(lpVtbl[0]))((ITfMouseTrackerACP*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ITfMouseTrackerACP*, uint>)(lpVtbl[1]))((ITfMouseTrackerACP*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ITfMouseTrackerACP*, uint>)(lpVtbl[1]))((ITfMouseTrackerACP*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ITfMouseTrackerACP*, uint>)(lpVtbl[2]))((ITfMouseTrackerACP*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ITfMouseTrackerACP*, uint>)(lpVtbl[2]))((ITfMouseTrackerACP*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT AdviseMouseSink(ITfRangeACP* range, ITfMouseSink* pSink, [NativeTypeName("DWORD *")] uint* pdwCookie)
+    {
+        return ((delegate* unmanaged<ITfMouseTrackerACP*, ITfRangeACP*, ITfMouseSink*, uint*, int>)(lpVtbl[3]))((ITfMouseTrackerACP*)Unsafe.AsPointer(ref this), range, pSink, pdwCookie);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT UnadviseMouseSink([NativeTypeName("DWORD")] uint dwCookie)
+    {
+        return ((delegate* unmanaged<ITfMouseTrackerACP*, uint, int>)(lpVtbl[4]))((ITfMouseTrackerACP*)Unsafe.AsPointer(ref this), dwCookie);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT AdviseMouseSink(ITfRangeACP* range, ITfMouseSink* pSink, [NativeTypeName("DWORD *")] uint* pdwCookie)
-        {
-            return ((delegate* unmanaged<ITfMouseTrackerACP*, ITfRangeACP*, ITfMouseSink*, uint*, int>)(lpVtbl[3]))((ITfMouseTrackerACP*)Unsafe.AsPointer(ref this), range, pSink, pdwCookie);
-        }
+        HRESULT AdviseMouseSink(ITfRangeACP* range, ITfMouseSink* pSink, [NativeTypeName("DWORD *")] uint* pdwCookie);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT UnadviseMouseSink([NativeTypeName("DWORD")] uint dwCookie)
-        {
-            return ((delegate* unmanaged<ITfMouseTrackerACP*, uint, int>)(lpVtbl[4]))((ITfMouseTrackerACP*)Unsafe.AsPointer(ref this), dwCookie);
-        }
+        HRESULT UnadviseMouseSink([NativeTypeName("DWORD")] uint dwCookie);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT AdviseMouseSink(ITfRangeACP* range, ITfMouseSink* pSink, [NativeTypeName("DWORD *")] uint* pdwCookie);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfMouseTrackerACP*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT UnadviseMouseSink([NativeTypeName("DWORD")] uint dwCookie);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfMouseTrackerACP*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfMouseTrackerACP*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfMouseTrackerACP*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfMouseTrackerACP*, uint> AddRef;
+        [NativeTypeName("HRESULT (ITfRangeACP *, ITfMouseSink *, DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfMouseTrackerACP*, ITfRangeACP*, ITfMouseSink*, uint*, int> AdviseMouseSink;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfMouseTrackerACP*, uint> Release;
-
-            [NativeTypeName("HRESULT (ITfRangeACP *, ITfMouseSink *, DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfMouseTrackerACP*, ITfRangeACP*, ITfMouseSink*, uint*, int> AdviseMouseSink;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfMouseTrackerACP*, uint, int> UnadviseMouseSink;
-        }
+        [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfMouseTrackerACP*, uint, int> UnadviseMouseSink;
     }
 }

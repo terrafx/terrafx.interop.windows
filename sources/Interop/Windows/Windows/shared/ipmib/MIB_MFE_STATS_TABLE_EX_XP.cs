@@ -5,29 +5,28 @@
 
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MIB_MFE_STATS_TABLE_EX_XP
 {
-    public partial struct MIB_MFE_STATS_TABLE_EX_XP
+    [NativeTypeName("DWORD")]
+    public uint dwNumEntries;
+
+    [NativeTypeName("PMIB_IPMCAST_MFE_STATS_EX_XP [1]")]
+    public _table_e__FixedBuffer table;
+
+    public unsafe partial struct _table_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint dwNumEntries;
+        public MIB_IPMCAST_MFE_STATS_EX_XP* e0;
 
-        [NativeTypeName("PMIB_IPMCAST_MFE_STATS_EX_XP [1]")]
-        public _table_e__FixedBuffer table;
-
-        public unsafe partial struct _table_e__FixedBuffer
+        public ref MIB_IPMCAST_MFE_STATS_EX_XP* this[int index]
         {
-            public MIB_IPMCAST_MFE_STATS_EX_XP* e0;
-
-            public ref MIB_IPMCAST_MFE_STATS_EX_XP* this[int index]
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
             {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                fixed (MIB_IPMCAST_MFE_STATS_EX_XP** pThis = &e0)
                 {
-                    fixed (MIB_IPMCAST_MFE_STATS_EX_XP** pThis = &e0)
-                    {
-                        return ref pThis[index];
-                    }
+                    return ref pThis[index];
                 }
             }
         }

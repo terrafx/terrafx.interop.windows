@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CRYPT_MASK_GEN_ALGORITHM" /> struct.</summary>
+public static unsafe partial class CRYPT_MASK_GEN_ALGORITHMTests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_MASK_GEN_ALGORITHM" /> struct.</summary>
-    public static unsafe partial class CRYPT_MASK_GEN_ALGORITHMTests
+    /// <summary>Validates that the <see cref="CRYPT_MASK_GEN_ALGORITHM" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CRYPT_MASK_GEN_ALGORITHM" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CRYPT_MASK_GEN_ALGORITHM>(), Is.EqualTo(sizeof(CRYPT_MASK_GEN_ALGORITHM)));
-        }
+        Assert.That(Marshal.SizeOf<CRYPT_MASK_GEN_ALGORITHM>(), Is.EqualTo(sizeof(CRYPT_MASK_GEN_ALGORITHM)));
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_MASK_GEN_ALGORITHM" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CRYPT_MASK_GEN_ALGORITHM).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CRYPT_MASK_GEN_ALGORITHM" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CRYPT_MASK_GEN_ALGORITHM).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_MASK_GEN_ALGORITHM" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CRYPT_MASK_GEN_ALGORITHM" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CRYPT_MASK_GEN_ALGORITHM), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(CRYPT_MASK_GEN_ALGORITHM), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(CRYPT_MASK_GEN_ALGORITHM), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(CRYPT_MASK_GEN_ALGORITHM), Is.EqualTo(16));
         }
     }
 }

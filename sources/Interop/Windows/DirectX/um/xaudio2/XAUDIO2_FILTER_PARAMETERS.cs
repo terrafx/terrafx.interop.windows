@@ -5,15 +5,14 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct XAUDIO2_FILTER_PARAMETERS
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct XAUDIO2_FILTER_PARAMETERS
-    {
-        public XAUDIO2_FILTER_TYPE Type;
+    public XAUDIO2_FILTER_TYPE Type;
 
-        public float Frequency;
+    public float Frequency;
 
-        public float OneOverQ;
-    }
+    public float OneOverQ;
 }

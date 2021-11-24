@@ -5,11 +5,10 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum DESKTOP_SLIDESHOW_OPTIONS
 {
-    [Flags]
-    public enum DESKTOP_SLIDESHOW_OPTIONS
-    {
-        DSO_SHUFFLEIMAGES = 0x1,
-    }
+    DSO_SHUFFLEIMAGES = 0x1,
 }

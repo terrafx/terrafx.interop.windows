@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WINDOWINFO" /> struct.</summary>
+public static unsafe partial class WINDOWINFOTests
 {
-    /// <summary>Provides validation of the <see cref="WINDOWINFO" /> struct.</summary>
-    public static unsafe partial class WINDOWINFOTests
+    /// <summary>Validates that the <see cref="WINDOWINFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WINDOWINFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WINDOWINFO>(), Is.EqualTo(sizeof(WINDOWINFO)));
-        }
+        Assert.That(Marshal.SizeOf<WINDOWINFO>(), Is.EqualTo(sizeof(WINDOWINFO)));
+    }
 
-        /// <summary>Validates that the <see cref="WINDOWINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WINDOWINFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WINDOWINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WINDOWINFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WINDOWINFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(WINDOWINFO), Is.EqualTo(60));
-        }
+    /// <summary>Validates that the <see cref="WINDOWINFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(WINDOWINFO), Is.EqualTo(60));
     }
 }

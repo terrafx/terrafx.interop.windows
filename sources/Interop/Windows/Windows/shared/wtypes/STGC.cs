@@ -3,14 +3,13 @@
 // Ported from shared/wtypes.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum STGC
 {
-    public enum STGC
-    {
-        STGC_DEFAULT = 0,
-        STGC_OVERWRITE = 1,
-        STGC_ONLYIFCURRENT = 2,
-        STGC_DANGEROUSLYCOMMITMERELYTODISKCACHE = 4,
-        STGC_CONSOLIDATE = 8,
-    }
+    STGC_DEFAULT = 0,
+    STGC_OVERWRITE = 1,
+    STGC_ONLYIFCURRENT = 2,
+    STGC_DANGEROUSLYCOMMITMERELYTODISKCACHE = 4,
+    STGC_CONSOLIDATE = 8,
 }

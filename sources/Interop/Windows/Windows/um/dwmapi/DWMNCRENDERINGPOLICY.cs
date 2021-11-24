@@ -3,13 +3,12 @@
 // Ported from um/dwmapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum DWMNCRENDERINGPOLICY
 {
-    public enum DWMNCRENDERINGPOLICY
-    {
-        DWMNCRP_USEWINDOWSTYLE,
-        DWMNCRP_DISABLED,
-        DWMNCRP_ENABLED,
-        DWMNCRP_LAST,
-    }
+    DWMNCRP_USEWINDOWSTYLE,
+    DWMNCRP_DISABLED,
+    DWMNCRP_ENABLED,
+    DWMNCRP_LAST,
 }

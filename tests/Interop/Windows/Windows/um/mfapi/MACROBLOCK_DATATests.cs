@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MACROBLOCK_DATA" /> struct.</summary>
+public static unsafe partial class MACROBLOCK_DATATests
 {
-    /// <summary>Provides validation of the <see cref="MACROBLOCK_DATA" /> struct.</summary>
-    public static unsafe partial class MACROBLOCK_DATATests
+    /// <summary>Validates that the <see cref="MACROBLOCK_DATA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MACROBLOCK_DATA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MACROBLOCK_DATA>(), Is.EqualTo(sizeof(MACROBLOCK_DATA)));
-        }
+        Assert.That(Marshal.SizeOf<MACROBLOCK_DATA>(), Is.EqualTo(sizeof(MACROBLOCK_DATA)));
+    }
 
-        /// <summary>Validates that the <see cref="MACROBLOCK_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MACROBLOCK_DATA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MACROBLOCK_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MACROBLOCK_DATA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MACROBLOCK_DATA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MACROBLOCK_DATA), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="MACROBLOCK_DATA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MACROBLOCK_DATA), Is.EqualTo(12));
     }
 }

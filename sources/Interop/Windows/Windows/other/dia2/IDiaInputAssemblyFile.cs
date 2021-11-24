@@ -7,129 +7,128 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3BFE56B0-390C-4863-9430-1F3D083B7684")]
+[NativeTypeName("struct IDiaInputAssemblyFile : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Interface
 {
-    [Guid("3BFE56B0-390C-4863-9430-1F3D083B7684")]
-    [NativeTypeName("struct IDiaInputAssemblyFile : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDiaInputAssemblyFile*, Guid*, void**, int>)(lpVtbl[0]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDiaInputAssemblyFile*, Guid*, void**, int>)(lpVtbl[0]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint>)(lpVtbl[1]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint>)(lpVtbl[1]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint>)(lpVtbl[2]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint>)(lpVtbl[2]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT get_uniqueId([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int>)(lpVtbl[3]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT get_index([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int>)(lpVtbl[4]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT get_timestamp([NativeTypeName("DWORD *")] uint* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int>)(lpVtbl[5]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT get_pdbAvailableAtILMerge(BOOL* pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaInputAssemblyFile*, BOOL*, int>)(lpVtbl[6]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT get_fileName([NativeTypeName("BSTR *")] ushort** pRetVal)
+    {
+        return ((delegate* unmanaged<IDiaInputAssemblyFile*, ushort**, int>)(lpVtbl[7]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT get_version([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)
+    {
+        return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint, uint*, byte*, int>)(lpVtbl[8]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), cbData, pcbData, pbData);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT get_uniqueId([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int>)(lpVtbl[3]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_uniqueId([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT get_index([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int>)(lpVtbl[4]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_index([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT get_timestamp([NativeTypeName("DWORD *")] uint* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int>)(lpVtbl[5]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_timestamp([NativeTypeName("DWORD *")] uint* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT get_pdbAvailableAtILMerge(BOOL* pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaInputAssemblyFile*, BOOL*, int>)(lpVtbl[6]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_pdbAvailableAtILMerge(BOOL* pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT get_fileName([NativeTypeName("BSTR *")] ushort** pRetVal)
-        {
-            return ((delegate* unmanaged<IDiaInputAssemblyFile*, ushort**, int>)(lpVtbl[7]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
-        }
+        HRESULT get_fileName([NativeTypeName("BSTR *")] ushort** pRetVal);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT get_version([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)
-        {
-            return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint, uint*, byte*, int>)(lpVtbl[8]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), cbData, pcbData, pbData);
-        }
+        HRESULT get_version([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT get_uniqueId([NativeTypeName("DWORD *")] uint* pRetVal);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaInputAssemblyFile*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT get_index([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaInputAssemblyFile*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT get_timestamp([NativeTypeName("DWORD *")] uint* pRetVal);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaInputAssemblyFile*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT get_pdbAvailableAtILMerge(BOOL* pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int> get_uniqueId;
 
-            [VtblIndex(7)]
-            HRESULT get_fileName([NativeTypeName("BSTR *")] ushort** pRetVal);
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int> get_index;
 
-            [VtblIndex(8)]
-            HRESULT get_version([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData);
-        }
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int> get_timestamp;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaInputAssemblyFile*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaInputAssemblyFile*, BOOL*, int> get_pdbAvailableAtILMerge;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaInputAssemblyFile*, uint> AddRef;
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaInputAssemblyFile*, ushort**, int> get_fileName;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaInputAssemblyFile*, uint> Release;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int> get_uniqueId;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int> get_index;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int> get_timestamp;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaInputAssemblyFile*, BOOL*, int> get_pdbAvailableAtILMerge;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaInputAssemblyFile*, ushort**, int> get_fileName;
-
-            [NativeTypeName("HRESULT (DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDiaInputAssemblyFile*, uint, uint*, byte*, int> get_version;
-        }
+        [NativeTypeName("HRESULT (DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDiaInputAssemblyFile*, uint, uint*, byte*, int> get_version;
     }
 }

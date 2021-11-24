@@ -5,25 +5,24 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_CUSTOM_TYPE_DESCRIPTION
 {
-    public unsafe partial struct WS_CUSTOM_TYPE_DESCRIPTION
-    {
-        [NativeTypeName("ULONG")]
-        public uint size;
+    [NativeTypeName("ULONG")]
+    public uint size;
 
-        [NativeTypeName("ULONG")]
-        public uint alignment;
+    [NativeTypeName("ULONG")]
+    public uint alignment;
 
-        [NativeTypeName("WS_READ_TYPE_CALLBACK")]
-        public delegate* unmanaged<IntPtr, WS_TYPE_MAPPING, void*, IntPtr, void*, uint, IntPtr, HRESULT> readCallback;
+    [NativeTypeName("WS_READ_TYPE_CALLBACK")]
+    public delegate* unmanaged<IntPtr, WS_TYPE_MAPPING, void*, IntPtr, void*, uint, IntPtr, HRESULT> readCallback;
 
-        [NativeTypeName("WS_WRITE_TYPE_CALLBACK")]
-        public delegate* unmanaged<IntPtr, WS_TYPE_MAPPING, void*, void*, uint, IntPtr, HRESULT> writeCallback;
+    [NativeTypeName("WS_WRITE_TYPE_CALLBACK")]
+    public delegate* unmanaged<IntPtr, WS_TYPE_MAPPING, void*, void*, uint, IntPtr, HRESULT> writeCallback;
 
-        public void* descriptionData;
+    public void* descriptionData;
 
-        [NativeTypeName("WS_IS_DEFAULT_VALUE_CALLBACK")]
-        public delegate* unmanaged<void*, void*, void*, uint, BOOL*, IntPtr, HRESULT> isDefaultValueCallback;
-    }
+    [NativeTypeName("WS_IS_DEFAULT_VALUE_CALLBACK")]
+    public delegate* unmanaged<void*, void*, void*, uint, BOOL*, IntPtr, HRESULT> isDefaultValueCallback;
 }

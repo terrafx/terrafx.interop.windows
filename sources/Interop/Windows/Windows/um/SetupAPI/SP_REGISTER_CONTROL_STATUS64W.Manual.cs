@@ -3,20 +3,19 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SP_REGISTER_CONTROL_STATUS64W
 {
-    public unsafe partial struct SP_REGISTER_CONTROL_STATUS64W
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* FileName;
+    [NativeTypeName("PCWSTR")]
+    public ushort* FileName;
 
-        [NativeTypeName("DWORD")]
-        public uint Win32Error;
+    [NativeTypeName("DWORD")]
+    public uint Win32Error;
 
-        [NativeTypeName("DWORD")]
-        public uint FailureCode;
-    }
+    [NativeTypeName("DWORD")]
+    public uint FailureCode;
 }

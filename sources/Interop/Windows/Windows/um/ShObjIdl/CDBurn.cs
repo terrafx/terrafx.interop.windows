@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("FBEB8A05-BEEE-4442-804E-409D6C4515E9")]
+public partial struct CDBurn
 {
-    [Guid("FBEB8A05-BEEE-4442-804E-409D6C4515E9")]
-    public partial struct CDBurn
-    {
-    }
 }

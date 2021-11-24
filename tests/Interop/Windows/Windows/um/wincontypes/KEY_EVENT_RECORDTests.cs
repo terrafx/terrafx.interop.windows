@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="KEY_EVENT_RECORD" /> struct.</summary>
+public static unsafe partial class KEY_EVENT_RECORDTests
 {
-    /// <summary>Provides validation of the <see cref="KEY_EVENT_RECORD" /> struct.</summary>
-    public static unsafe partial class KEY_EVENT_RECORDTests
+    /// <summary>Validates that the <see cref="KEY_EVENT_RECORD" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="KEY_EVENT_RECORD" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<KEY_EVENT_RECORD>(), Is.EqualTo(sizeof(KEY_EVENT_RECORD)));
-        }
+        Assert.That(Marshal.SizeOf<KEY_EVENT_RECORD>(), Is.EqualTo(sizeof(KEY_EVENT_RECORD)));
+    }
 
-        /// <summary>Validates that the <see cref="KEY_EVENT_RECORD" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(KEY_EVENT_RECORD).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="KEY_EVENT_RECORD" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(KEY_EVENT_RECORD).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="KEY_EVENT_RECORD" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(KEY_EVENT_RECORD), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="KEY_EVENT_RECORD" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(KEY_EVENT_RECORD), Is.EqualTo(16));
     }
 }

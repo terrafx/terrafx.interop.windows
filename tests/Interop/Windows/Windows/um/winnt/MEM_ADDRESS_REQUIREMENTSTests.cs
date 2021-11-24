@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MEM_ADDRESS_REQUIREMENTS" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
+public static unsafe partial class MEM_ADDRESS_REQUIREMENTSTests
 {
-    /// <summary>Provides validation of the <see cref="MEM_ADDRESS_REQUIREMENTS" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0")]
-    public static unsafe partial class MEM_ADDRESS_REQUIREMENTSTests
+    /// <summary>Validates that the <see cref="MEM_ADDRESS_REQUIREMENTS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MEM_ADDRESS_REQUIREMENTS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MEM_ADDRESS_REQUIREMENTS>(), Is.EqualTo(sizeof(MEM_ADDRESS_REQUIREMENTS)));
-        }
+        Assert.That(Marshal.SizeOf<MEM_ADDRESS_REQUIREMENTS>(), Is.EqualTo(sizeof(MEM_ADDRESS_REQUIREMENTS)));
+    }
 
-        /// <summary>Validates that the <see cref="MEM_ADDRESS_REQUIREMENTS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MEM_ADDRESS_REQUIREMENTS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MEM_ADDRESS_REQUIREMENTS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MEM_ADDRESS_REQUIREMENTS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MEM_ADDRESS_REQUIREMENTS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="MEM_ADDRESS_REQUIREMENTS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(MEM_ADDRESS_REQUIREMENTS), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(MEM_ADDRESS_REQUIREMENTS), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(MEM_ADDRESS_REQUIREMENTS), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(MEM_ADDRESS_REQUIREMENTS), Is.EqualTo(12));
         }
     }
 }

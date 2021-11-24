@@ -7,117 +7,116 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("305104C2-98B5-11CF-BB82-00AA00BDCE0B")]
+[NativeTypeName("struct IHTMLStyleEnabled : IDispatch")]
+[NativeInheritance("IDispatch")]
+public unsafe partial struct IHTMLStyleEnabled : IHTMLStyleEnabled.Interface
 {
-    [Guid("305104C2-98B5-11CF-BB82-00AA00BDCE0B")]
-    [NativeTypeName("struct IHTMLStyleEnabled : IDispatch")]
-    [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLStyleEnabled : IHTMLStyleEnabled.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IHTMLStyleEnabled*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IHTMLStyleEnabled*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IHTMLStyleEnabled*, uint>)(lpVtbl[1]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IHTMLStyleEnabled*, uint>)(lpVtbl[1]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IHTMLStyleEnabled*, uint>)(lpVtbl[2]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IHTMLStyleEnabled*, uint>)(lpVtbl[2]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetTypeInfoCount(uint* pctinfo)
+    {
+        return ((delegate* unmanaged<IHTMLStyleEnabled*, uint*, int>)(lpVtbl[3]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this), pctinfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetTypeInfoCount(uint* pctinfo)
-        {
-            return ((delegate* unmanaged<IHTMLStyleEnabled*, uint*, int>)(lpVtbl[3]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this), pctinfo);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+    {
+        return ((delegate* unmanaged<IHTMLStyleEnabled*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
-        {
-            return ((delegate* unmanaged<IHTMLStyleEnabled*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    {
+        return ((delegate* unmanaged<IHTMLStyleEnabled*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
-        {
-            return ((delegate* unmanaged<IHTMLStyleEnabled*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
+    {
+        return ((delegate* unmanaged<IHTMLStyleEnabled*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
-        {
-            return ((delegate* unmanaged<IHTMLStyleEnabled*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT msGetPropertyEnabled([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL *")] short* p)
+    {
+        return ((delegate* unmanaged<IHTMLStyleEnabled*, ushort*, short*, int>)(lpVtbl[7]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this), name, p);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT msPutPropertyEnabled([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL")] short b)
+    {
+        return ((delegate* unmanaged<IHTMLStyleEnabled*, ushort*, short, int>)(lpVtbl[8]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this), name, b);
+    }
+
+    public interface Interface : IDispatch.Interface
+    {
         [VtblIndex(7)]
-        public HRESULT msGetPropertyEnabled([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL *")] short* p)
-        {
-            return ((delegate* unmanaged<IHTMLStyleEnabled*, ushort*, short*, int>)(lpVtbl[7]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this), name, p);
-        }
+        HRESULT msGetPropertyEnabled([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL *")] short* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT msPutPropertyEnabled([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL")] short b)
-        {
-            return ((delegate* unmanaged<IHTMLStyleEnabled*, ushort*, short, int>)(lpVtbl[8]))((IHTMLStyleEnabled*)Unsafe.AsPointer(ref this), name, b);
-        }
+        HRESULT msPutPropertyEnabled([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL")] short b);
+    }
 
-        public interface Interface : IDispatch.Interface
-        {
-            [VtblIndex(7)]
-            HRESULT msGetPropertyEnabled([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL *")] short* p);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLStyleEnabled*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(8)]
-            HRESULT msPutPropertyEnabled([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL")] short b);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLStyleEnabled*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLStyleEnabled*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLStyleEnabled*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLStyleEnabled*, uint> AddRef;
+        [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLStyleEnabled*, uint*, int> GetTypeInfoCount;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLStyleEnabled*, uint> Release;
+        [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLStyleEnabled*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
-            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLStyleEnabled*, uint*, int> GetTypeInfoCount;
+        [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLStyleEnabled*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
-            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLStyleEnabled*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLStyleEnabled*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
-            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLStyleEnabled*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLStyleEnabled*, ushort*, short*, int> msGetPropertyEnabled;
 
-            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLStyleEnabled*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
-
-            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLStyleEnabled*, ushort*, short*, int> msGetPropertyEnabled;
-
-            [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLStyleEnabled*, ushort*, short, int> msPutPropertyEnabled;
-        }
+        [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLStyleEnabled*, ushort*, short, int> msPutPropertyEnabled;
     }
 }

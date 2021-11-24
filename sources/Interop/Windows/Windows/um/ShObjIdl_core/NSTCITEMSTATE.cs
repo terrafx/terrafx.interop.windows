@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum NSTCITEMSTATE
 {
-    [Flags]
-    public enum NSTCITEMSTATE
-    {
-        NSTCIS_NONE = 0,
-        NSTCIS_SELECTED = 0x1,
-        NSTCIS_EXPANDED = 0x2,
-        NSTCIS_BOLD = 0x4,
-        NSTCIS_DISABLED = 0x8,
-        NSTCIS_SELECTEDNOEXPAND = 0x10,
-    }
+    NSTCIS_NONE = 0,
+    NSTCIS_SELECTED = 0x1,
+    NSTCIS_EXPANDED = 0x2,
+    NSTCIS_BOLD = 0x4,
+    NSTCIS_DISABLED = 0x8,
+    NSTCIS_SELECTEDNOEXPAND = 0x10,
 }

@@ -3,18 +3,17 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CTL_FIND_USAGE_PARA
 {
-    public unsafe partial struct CTL_FIND_USAGE_PARA
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public CTL_USAGE SubjectUsage;
+    public CTL_USAGE SubjectUsage;
 
-        public CRYPT_DATA_BLOB ListIdentifier;
+    public CRYPT_DATA_BLOB ListIdentifier;
 
-        [NativeTypeName("PCERT_INFO")]
-        public CERT_INFO* pSigner;
-    }
+    [NativeTypeName("PCERT_INFO")]
+    public CERT_INFO* pSigner;
 }

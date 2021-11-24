@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IHTMLAreasCollection3" /> struct.</summary>
+public static unsafe partial class IHTMLAreasCollection3Tests
 {
-    /// <summary>Provides validation of the <see cref="IHTMLAreasCollection3" /> struct.</summary>
-    public static unsafe partial class IHTMLAreasCollection3Tests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLAreasCollection3" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLAreasCollection3" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IHTMLAreasCollection3).GUID, Is.EqualTo(IID_IHTMLAreasCollection3));
-        }
+        Assert.That(typeof(IHTMLAreasCollection3).GUID, Is.EqualTo(IID_IHTMLAreasCollection3));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLAreasCollection3" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IHTMLAreasCollection3>(), Is.EqualTo(sizeof(IHTMLAreasCollection3)));
-        }
+    /// <summary>Validates that the <see cref="IHTMLAreasCollection3" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IHTMLAreasCollection3>(), Is.EqualTo(sizeof(IHTMLAreasCollection3)));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLAreasCollection3" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IHTMLAreasCollection3).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IHTMLAreasCollection3" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IHTMLAreasCollection3).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLAreasCollection3" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IHTMLAreasCollection3" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IHTMLAreasCollection3), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IHTMLAreasCollection3), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IHTMLAreasCollection3), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IHTMLAreasCollection3), Is.EqualTo(4));
         }
     }
 }

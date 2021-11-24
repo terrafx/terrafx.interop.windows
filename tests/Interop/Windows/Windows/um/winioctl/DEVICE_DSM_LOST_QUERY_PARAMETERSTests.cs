@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DEVICE_DSM_LOST_QUERY_PARAMETERS" /> struct.</summary>
+public static unsafe partial class DEVICE_DSM_LOST_QUERY_PARAMETERSTests
 {
-    /// <summary>Provides validation of the <see cref="DEVICE_DSM_LOST_QUERY_PARAMETERS" /> struct.</summary>
-    public static unsafe partial class DEVICE_DSM_LOST_QUERY_PARAMETERSTests
+    /// <summary>Validates that the <see cref="DEVICE_DSM_LOST_QUERY_PARAMETERS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DEVICE_DSM_LOST_QUERY_PARAMETERS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DEVICE_DSM_LOST_QUERY_PARAMETERS>(), Is.EqualTo(sizeof(DEVICE_DSM_LOST_QUERY_PARAMETERS)));
-        }
+        Assert.That(Marshal.SizeOf<DEVICE_DSM_LOST_QUERY_PARAMETERS>(), Is.EqualTo(sizeof(DEVICE_DSM_LOST_QUERY_PARAMETERS)));
+    }
 
-        /// <summary>Validates that the <see cref="DEVICE_DSM_LOST_QUERY_PARAMETERS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DEVICE_DSM_LOST_QUERY_PARAMETERS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DEVICE_DSM_LOST_QUERY_PARAMETERS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DEVICE_DSM_LOST_QUERY_PARAMETERS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DEVICE_DSM_LOST_QUERY_PARAMETERS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DEVICE_DSM_LOST_QUERY_PARAMETERS), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="DEVICE_DSM_LOST_QUERY_PARAMETERS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DEVICE_DSM_LOST_QUERY_PARAMETERS), Is.EqualTo(16));
     }
 }

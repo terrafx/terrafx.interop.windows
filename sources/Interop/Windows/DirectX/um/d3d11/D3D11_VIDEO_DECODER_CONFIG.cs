@@ -6,43 +6,42 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_VIDEO_DECODER_CONFIG
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_VIDEO_DECODER_CONFIG
-    {
-        public Guid guidConfigBitstreamEncryption;
+    public Guid guidConfigBitstreamEncryption;
 
-        public Guid guidConfigMBcontrolEncryption;
+    public Guid guidConfigMBcontrolEncryption;
 
-        public Guid guidConfigResidDiffEncryption;
+    public Guid guidConfigResidDiffEncryption;
 
-        public uint ConfigBitstreamRaw;
+    public uint ConfigBitstreamRaw;
 
-        public uint ConfigMBcontrolRasterOrder;
+    public uint ConfigMBcontrolRasterOrder;
 
-        public uint ConfigResidDiffHost;
+    public uint ConfigResidDiffHost;
 
-        public uint ConfigSpatialResid8;
+    public uint ConfigSpatialResid8;
 
-        public uint ConfigResid8Subtraction;
+    public uint ConfigResid8Subtraction;
 
-        public uint ConfigSpatialHost8or9Clipping;
+    public uint ConfigSpatialHost8or9Clipping;
 
-        public uint ConfigSpatialResidInterleaved;
+    public uint ConfigSpatialResidInterleaved;
 
-        public uint ConfigIntraResidUnsigned;
+    public uint ConfigIntraResidUnsigned;
 
-        public uint ConfigResidDiffAccelerator;
+    public uint ConfigResidDiffAccelerator;
 
-        public uint ConfigHostInverseScan;
+    public uint ConfigHostInverseScan;
 
-        public uint ConfigSpecificIDCT;
+    public uint ConfigSpecificIDCT;
 
-        public uint Config4GroupedCoefs;
+    public uint Config4GroupedCoefs;
 
-        public ushort ConfigMinRenderTargetBuffCount;
+    public ushort ConfigMinRenderTargetBuffCount;
 
-        public ushort ConfigDecoderSpecific;
-    }
+    public ushort ConfigDecoderSpecific;
 }

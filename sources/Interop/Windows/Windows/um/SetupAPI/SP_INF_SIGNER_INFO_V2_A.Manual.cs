@@ -6,109 +6,108 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public unsafe partial struct SP_INF_SIGNER_INFO_V2_A
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct SP_INF_SIGNER_INFO_V2_A
+    public static uint SizeOf
     {
-        public static uint SizeOf
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return (uint)(sizeof(SP_INF_SIGNER_INFO32_V2_A));
-                }
-                else
-                {
-                    return (uint)(sizeof(SP_INF_SIGNER_INFO64_V2_A));
-                }
+                return (uint)(sizeof(SP_INF_SIGNER_INFO32_V2_A));
+            }
+            else
+            {
+                return (uint)(sizeof(SP_INF_SIGNER_INFO64_V2_A));
             }
         }
+    }
 
-        [FieldOffset(0)]
-        public SP_INF_SIGNER_INFO32_V2_A _value32;
+    [FieldOffset(0)]
+    public SP_INF_SIGNER_INFO32_V2_A _value32;
 
-        [FieldOffset(0)]
-        public SP_INF_SIGNER_INFO64_V2_A _value64;
+    [FieldOffset(0)]
+    public SP_INF_SIGNER_INFO64_V2_A _value64;
 
-        [NativeTypeName("DWORD")]
-        public ref uint cbSize
+    [NativeTypeName("DWORD")]
+    public ref uint cbSize
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cbSize, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cbSize, 1));
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cbSize, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cbSize, 1));
             }
         }
+    }
 
-        [NativeTypeName("CHAR [260]")]
-        public Span<sbyte> CatalogFile
+    [NativeTypeName("CHAR [260]")]
+    public Span<sbyte> CatalogFile
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return MemoryMarshal.CreateSpan(ref _value32.CatalogFile[0], 1);
-                }
-                else
-                {
-                    return MemoryMarshal.CreateSpan(ref _value64.CatalogFile[0], 1);
-                }
+                return MemoryMarshal.CreateSpan(ref _value32.CatalogFile[0], 1);
+            }
+            else
+            {
+                return MemoryMarshal.CreateSpan(ref _value64.CatalogFile[0], 1);
             }
         }
+    }
 
-        [NativeTypeName("CHAR [260]")]
-        public Span<sbyte> DigitalSigner
+    [NativeTypeName("CHAR [260]")]
+    public Span<sbyte> DigitalSigner
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return MemoryMarshal.CreateSpan(ref _value32.DigitalSigner[0], 1);
-                }
-                else
-                {
-                    return MemoryMarshal.CreateSpan(ref _value64.DigitalSigner[0], 1);
-                }
+                return MemoryMarshal.CreateSpan(ref _value32.DigitalSigner[0], 1);
+            }
+            else
+            {
+                return MemoryMarshal.CreateSpan(ref _value64.DigitalSigner[0], 1);
             }
         }
+    }
 
-        [NativeTypeName("CHAR [260]")]
-        public Span<sbyte> DigitalSignerVersion
+    [NativeTypeName("CHAR [260]")]
+    public Span<sbyte> DigitalSignerVersion
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return MemoryMarshal.CreateSpan(ref _value32.DigitalSignerVersion[0], 1);
-                }
-                else
-                {
-                    return MemoryMarshal.CreateSpan(ref _value64.DigitalSignerVersion[0], 1);
-                }
+                return MemoryMarshal.CreateSpan(ref _value32.DigitalSignerVersion[0], 1);
+            }
+            else
+            {
+                return MemoryMarshal.CreateSpan(ref _value64.DigitalSignerVersion[0], 1);
             }
         }
+    }
 
-        [NativeTypeName("DWORD")]
-        public ref uint SignerScore
+    [NativeTypeName("DWORD")]
+    public ref uint SignerScore
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.SignerScore, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.SignerScore, 1));
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.SignerScore, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.SignerScore, 1));
             }
         }
     }

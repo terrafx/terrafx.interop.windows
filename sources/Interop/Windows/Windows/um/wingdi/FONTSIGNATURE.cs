@@ -3,14 +3,13 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct FONTSIGNATURE
-    {
-        [NativeTypeName("DWORD [4]")]
-        public fixed uint fsUsb[4];
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD [2]")]
-        public fixed uint fsCsb[2];
-    }
+public unsafe partial struct FONTSIGNATURE
+{
+    [NativeTypeName("DWORD [4]")]
+    public fixed uint fsUsb[4];
+
+    [NativeTypeName("DWORD [2]")]
+    public fixed uint fsCsb[2];
 }

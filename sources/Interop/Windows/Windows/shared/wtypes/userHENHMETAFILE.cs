@@ -5,29 +5,28 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct userHENHMETAFILE
 {
-    public partial struct userHENHMETAFILE
+    [NativeTypeName("LONG")]
+    public int fContext;
+
+    [NativeTypeName("union __MIDL_IWinTypes_0006")]
+    public _u_e__Union u;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _u_e__Union
     {
+        [FieldOffset(0)]
         [NativeTypeName("LONG")]
-        public int fContext;
+        public int hInproc;
 
-        [NativeTypeName("union __MIDL_IWinTypes_0006")]
-        public _u_e__Union u;
+        [FieldOffset(0)]
+        public BYTE_BLOB* hRemote;
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _u_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("LONG")]
-            public int hInproc;
-
-            [FieldOffset(0)]
-            public BYTE_BLOB* hRemote;
-
-            [FieldOffset(0)]
-            [NativeTypeName("long long")]
-            public long hInproc64;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("long long")]
+        public long hInproc64;
     }
 }

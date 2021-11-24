@@ -5,26 +5,25 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SCH_CRED
 {
-    public unsafe partial struct SCH_CRED
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwVersion;
+    [NativeTypeName("DWORD")]
+    public uint dwVersion;
 
-        [NativeTypeName("DWORD")]
-        public uint cCreds;
+    [NativeTypeName("DWORD")]
+    public uint cCreds;
 
-        [NativeTypeName("PVOID *")]
-        public void** paSecret;
+    [NativeTypeName("PVOID *")]
+    public void** paSecret;
 
-        [NativeTypeName("PVOID *")]
-        public void** paPublic;
+    [NativeTypeName("PVOID *")]
+    public void** paPublic;
 
-        [NativeTypeName("DWORD")]
-        public uint cMappers;
+    [NativeTypeName("DWORD")]
+    public uint cMappers;
 
-        [NativeTypeName("struct _HMAPPER **")]
-        public IntPtr* aphMappers;
-    }
+    [NativeTypeName("struct _HMAPPER **")]
+    public IntPtr* aphMappers;
 }

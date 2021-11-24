@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="RETRIEVAL_POINTER_COUNT" /> struct.</summary>
+public static unsafe partial class RETRIEVAL_POINTER_COUNTTests
 {
-    /// <summary>Provides validation of the <see cref="RETRIEVAL_POINTER_COUNT" /> struct.</summary>
-    public static unsafe partial class RETRIEVAL_POINTER_COUNTTests
+    /// <summary>Validates that the <see cref="RETRIEVAL_POINTER_COUNT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="RETRIEVAL_POINTER_COUNT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<RETRIEVAL_POINTER_COUNT>(), Is.EqualTo(sizeof(RETRIEVAL_POINTER_COUNT)));
-        }
+        Assert.That(Marshal.SizeOf<RETRIEVAL_POINTER_COUNT>(), Is.EqualTo(sizeof(RETRIEVAL_POINTER_COUNT)));
+    }
 
-        /// <summary>Validates that the <see cref="RETRIEVAL_POINTER_COUNT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(RETRIEVAL_POINTER_COUNT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="RETRIEVAL_POINTER_COUNT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(RETRIEVAL_POINTER_COUNT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="RETRIEVAL_POINTER_COUNT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(RETRIEVAL_POINTER_COUNT), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="RETRIEVAL_POINTER_COUNT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(RETRIEVAL_POINTER_COUNT), Is.EqualTo(4));
     }
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IExpDispSupportXP" /> struct.</summary>
+public static unsafe partial class IExpDispSupportXPTests
 {
-    /// <summary>Provides validation of the <see cref="IExpDispSupportXP" /> struct.</summary>
-    public static unsafe partial class IExpDispSupportXPTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IExpDispSupportXP" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IExpDispSupportXP" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IExpDispSupportXP).GUID, Is.EqualTo(IID_IExpDispSupportXP));
-        }
+        Assert.That(typeof(IExpDispSupportXP).GUID, Is.EqualTo(IID_IExpDispSupportXP));
+    }
 
-        /// <summary>Validates that the <see cref="IExpDispSupportXP" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IExpDispSupportXP>(), Is.EqualTo(sizeof(IExpDispSupportXP)));
-        }
+    /// <summary>Validates that the <see cref="IExpDispSupportXP" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IExpDispSupportXP>(), Is.EqualTo(sizeof(IExpDispSupportXP)));
+    }
 
-        /// <summary>Validates that the <see cref="IExpDispSupportXP" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IExpDispSupportXP).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IExpDispSupportXP" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IExpDispSupportXP).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IExpDispSupportXP" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IExpDispSupportXP" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IExpDispSupportXP), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IExpDispSupportXP), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IExpDispSupportXP), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IExpDispSupportXP), Is.EqualTo(4));
         }
     }
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.Windows;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DRendezvousSessionEvents" /> struct.</summary>
+public static unsafe partial class DRendezvousSessionEventsTests
 {
-    /// <summary>Provides validation of the <see cref="DRendezvousSessionEvents" /> struct.</summary>
-    public static unsafe partial class DRendezvousSessionEventsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DRendezvousSessionEvents" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DRendezvousSessionEvents" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DRendezvousSessionEvents).GUID, Is.EqualTo(DIID_DRendezvousSessionEvents));
-        }
+        Assert.That(typeof(DRendezvousSessionEvents).GUID, Is.EqualTo(DIID_DRendezvousSessionEvents));
+    }
 
-        /// <summary>Validates that the <see cref="DRendezvousSessionEvents" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DRendezvousSessionEvents>(), Is.EqualTo(sizeof(DRendezvousSessionEvents)));
-        }
+    /// <summary>Validates that the <see cref="DRendezvousSessionEvents" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DRendezvousSessionEvents>(), Is.EqualTo(sizeof(DRendezvousSessionEvents)));
+    }
 
-        /// <summary>Validates that the <see cref="DRendezvousSessionEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DRendezvousSessionEvents).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DRendezvousSessionEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DRendezvousSessionEvents).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DRendezvousSessionEvents" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DRendezvousSessionEvents" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DRendezvousSessionEvents), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(DRendezvousSessionEvents), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(DRendezvousSessionEvents), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(DRendezvousSessionEvents), Is.EqualTo(4));
         }
     }
 }

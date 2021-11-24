@@ -3,14 +3,13 @@
 // Ported from um/mfapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct CapturedMetadataWhiteBalanceGains
 {
-    public partial struct CapturedMetadataWhiteBalanceGains
-    {
-        public float R;
+    public float R;
 
-        public float G;
+    public float G;
 
-        public float B;
-    }
+    public float B;
 }

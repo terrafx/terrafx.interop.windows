@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("ADD36AA8-751A-4579-A266-D66F5202CCBB")]
+public partial struct InternetPrintOrdering
 {
-    [Guid("ADD36AA8-751A-4579-A266-D66F5202CCBB")]
-    public partial struct InternetPrintOrdering
-    {
-    }
 }

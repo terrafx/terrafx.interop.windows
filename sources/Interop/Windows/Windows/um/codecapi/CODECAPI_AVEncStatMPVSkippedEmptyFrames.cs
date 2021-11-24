@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("32195FD3-590D-4812-A7ED-6D639A1F9711")]
+public partial struct CODECAPI_AVEncStatMPVSkippedEmptyFrames
 {
-    [Guid("32195FD3-590D-4812-A7ED-6D639A1F9711")]
-    public partial struct CODECAPI_AVEncStatMPVSkippedEmptyFrames
-    {
-    }
 }

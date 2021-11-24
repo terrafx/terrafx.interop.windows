@@ -7,144 +7,143 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("D5F56AFC-593B-101A-B569-08002B2DBF7A")]
+[NativeTypeName("struct IRpcStubBuffer : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface
 {
-    [Guid("D5F56AFC-593B-101A-B569-08002B2DBF7A")]
-    [NativeTypeName("struct IRpcStubBuffer : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IRpcStubBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IRpcStubBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IRpcStubBuffer*, uint>)(lpVtbl[1]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IRpcStubBuffer*, uint>)(lpVtbl[1]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IRpcStubBuffer*, uint>)(lpVtbl[2]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IRpcStubBuffer*, uint>)(lpVtbl[2]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Connect(IUnknown* pUnkServer)
+    {
+        return ((delegate* unmanaged<IRpcStubBuffer*, IUnknown*, int>)(lpVtbl[3]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), pUnkServer);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public void Disconnect()
+    {
+        ((delegate* unmanaged<IRpcStubBuffer*, void>)(lpVtbl[4]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Invoke(RPCOLEMESSAGE* _prpcmsg, IRpcChannelBuffer* _pRpcChannelBuffer)
+    {
+        return ((delegate* unmanaged<IRpcStubBuffer*, RPCOLEMESSAGE*, IRpcChannelBuffer*, int>)(lpVtbl[5]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), _prpcmsg, _pRpcChannelBuffer);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public IRpcStubBuffer* IsIIDSupported([NativeTypeName("const IID &")] Guid* riid)
+    {
+        return ((delegate* unmanaged<IRpcStubBuffer*, Guid*, IRpcStubBuffer*>)(lpVtbl[6]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), riid);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    [return: NativeTypeName("ULONG")]
+    public uint CountRefs()
+    {
+        return ((delegate* unmanaged<IRpcStubBuffer*, uint>)(lpVtbl[7]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT DebugServerQueryInterface(void** ppv)
+    {
+        return ((delegate* unmanaged<IRpcStubBuffer*, void**, int>)(lpVtbl[8]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), ppv);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public void DebugServerRelease(void* pv)
+    {
+        ((delegate* unmanaged<IRpcStubBuffer*, void*, void>)(lpVtbl[9]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), pv);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Connect(IUnknown* pUnkServer)
-        {
-            return ((delegate* unmanaged<IRpcStubBuffer*, IUnknown*, int>)(lpVtbl[3]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), pUnkServer);
-        }
+        HRESULT Connect(IUnknown* pUnkServer);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public void Disconnect()
-        {
-            ((delegate* unmanaged<IRpcStubBuffer*, void>)(lpVtbl[4]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this));
-        }
+        void Disconnect();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Invoke(RPCOLEMESSAGE* _prpcmsg, IRpcChannelBuffer* _pRpcChannelBuffer)
-        {
-            return ((delegate* unmanaged<IRpcStubBuffer*, RPCOLEMESSAGE*, IRpcChannelBuffer*, int>)(lpVtbl[5]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), _prpcmsg, _pRpcChannelBuffer);
-        }
+        HRESULT Invoke(RPCOLEMESSAGE* _prpcmsg, IRpcChannelBuffer* _pRpcChannelBuffer);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public IRpcStubBuffer* IsIIDSupported([NativeTypeName("const IID &")] Guid* riid)
-        {
-            return ((delegate* unmanaged<IRpcStubBuffer*, Guid*, IRpcStubBuffer*>)(lpVtbl[6]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), riid);
-        }
+        IRpcStubBuffer* IsIIDSupported([NativeTypeName("const IID &")] Guid* riid);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
         [return: NativeTypeName("ULONG")]
-        public uint CountRefs()
-        {
-            return ((delegate* unmanaged<IRpcStubBuffer*, uint>)(lpVtbl[7]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this));
-        }
+        uint CountRefs();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT DebugServerQueryInterface(void** ppv)
-        {
-            return ((delegate* unmanaged<IRpcStubBuffer*, void**, int>)(lpVtbl[8]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), ppv);
-        }
+        HRESULT DebugServerQueryInterface(void** ppv);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public void DebugServerRelease(void* pv)
-        {
-            ((delegate* unmanaged<IRpcStubBuffer*, void*, void>)(lpVtbl[9]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), pv);
-        }
+        void DebugServerRelease(void* pv);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Connect(IUnknown* pUnkServer);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRpcStubBuffer*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            void Disconnect();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IRpcStubBuffer*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT Invoke(RPCOLEMESSAGE* _prpcmsg, IRpcChannelBuffer* _pRpcChannelBuffer);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IRpcStubBuffer*, uint> Release;
 
-            [VtblIndex(6)]
-            IRpcStubBuffer* IsIIDSupported([NativeTypeName("const IID &")] Guid* riid);
+        [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRpcStubBuffer*, IUnknown*, int> Connect;
 
-            [VtblIndex(7)]
-            [return: NativeTypeName("ULONG")]
-            uint CountRefs();
+        [NativeTypeName("void () __attribute__((stdcall))")]
+        public delegate* unmanaged<IRpcStubBuffer*, void> Disconnect;
 
-            [VtblIndex(8)]
-            HRESULT DebugServerQueryInterface(void** ppv);
+        [NativeTypeName("HRESULT (RPCOLEMESSAGE *, IRpcChannelBuffer *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRpcStubBuffer*, RPCOLEMESSAGE*, IRpcChannelBuffer*, int> Invoke;
 
-            [VtblIndex(9)]
-            void DebugServerRelease(void* pv);
-        }
+        [NativeTypeName("IRpcStubBuffer *(const IID &) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRpcStubBuffer*, Guid*, IRpcStubBuffer*> IsIIDSupported;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRpcStubBuffer*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IRpcStubBuffer*, uint> CountRefs;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IRpcStubBuffer*, uint> AddRef;
+        [NativeTypeName("HRESULT (void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRpcStubBuffer*, void**, int> DebugServerQueryInterface;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IRpcStubBuffer*, uint> Release;
-
-            [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRpcStubBuffer*, IUnknown*, int> Connect;
-
-            [NativeTypeName("void () __attribute__((stdcall))")]
-            public delegate* unmanaged<IRpcStubBuffer*, void> Disconnect;
-
-            [NativeTypeName("HRESULT (RPCOLEMESSAGE *, IRpcChannelBuffer *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRpcStubBuffer*, RPCOLEMESSAGE*, IRpcChannelBuffer*, int> Invoke;
-
-            [NativeTypeName("IRpcStubBuffer *(const IID &) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRpcStubBuffer*, Guid*, IRpcStubBuffer*> IsIIDSupported;
-
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IRpcStubBuffer*, uint> CountRefs;
-
-            [NativeTypeName("HRESULT (void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRpcStubBuffer*, void**, int> DebugServerQueryInterface;
-
-            [NativeTypeName("void (void *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRpcStubBuffer*, void*, void> DebugServerRelease;
-        }
+        [NativeTypeName("void (void *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRpcStubBuffer*, void*, void> DebugServerRelease;
     }
 }

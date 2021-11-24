@@ -5,18 +5,17 @@
 
 using static TerraFX.Interop.Windows.SPPARTOFSPEECH;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechPartOfSpeech
 {
-    public enum SpeechPartOfSpeech
-    {
-        SPSNotOverriden = SPPS_NotOverriden,
-        SPSUnknown = SPPS_Unknown,
-        SPSNoun = SPPS_Noun,
-        SPSVerb = SPPS_Verb,
-        SPSModifier = SPPS_Modifier,
-        SPSFunction = SPPS_Function,
-        SPSInterjection = SPPS_Interjection,
-        SPSLMA = SPPS_LMA,
-        SPSSuppressWord = SPPS_SuppressWord,
-    }
+    SPSNotOverriden = SPPS_NotOverriden,
+    SPSUnknown = SPPS_Unknown,
+    SPSNoun = SPPS_Noun,
+    SPSVerb = SPPS_Verb,
+    SPSModifier = SPPS_Modifier,
+    SPSFunction = SPPS_Function,
+    SPSInterjection = SPPS_Interjection,
+    SPSLMA = SPPS_LMA,
+    SPSSuppressWord = SPPS_SuppressWord,
 }

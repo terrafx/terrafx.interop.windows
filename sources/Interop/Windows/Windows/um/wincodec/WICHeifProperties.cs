@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.17763.0")]
+public enum WICHeifProperties : uint
 {
-    [SupportedOSPlatform("windows10.0.17763.0")]
-    public enum WICHeifProperties : uint
-    {
-        WICHeifOrientation = 0x1,
-        WICHeifProperties_FORCE_DWORD = 0x7fffffff,
-    }
+    WICHeifOrientation = 0x1,
+    WICHeifProperties_FORCE_DWORD = 0x7fffffff,
 }

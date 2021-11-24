@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA
-    {
-        [NativeTypeName("DWORD")]
-        public uint TaskIndex;
+    [NativeTypeName("DWORD")]
+    public uint TaskIndex;
 
-        [NativeTypeName("WCHAR [260]")]
-        public fixed ushort ClassName[260];
+    [NativeTypeName("WCHAR [260]")]
+    public fixed ushort ClassName[260];
 
-        [NativeTypeName("LONG")]
-        public int BasePriority;
-    }
+    [NativeTypeName("LONG")]
+    public int BasePriority;
 }

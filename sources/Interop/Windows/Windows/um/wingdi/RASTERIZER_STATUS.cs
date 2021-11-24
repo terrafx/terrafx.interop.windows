@@ -3,14 +3,13 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct RASTERIZER_STATUS
 {
-    public partial struct RASTERIZER_STATUS
-    {
-        public short nSize;
+    public short nSize;
 
-        public short wFlags;
+    public short wFlags;
 
-        public short nLanguageID;
-    }
+    public short nLanguageID;
 }

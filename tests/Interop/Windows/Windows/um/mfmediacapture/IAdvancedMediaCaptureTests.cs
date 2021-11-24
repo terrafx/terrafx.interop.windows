@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAdvancedMediaCapture" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class IAdvancedMediaCaptureTests
 {
-    /// <summary>Provides validation of the <see cref="IAdvancedMediaCapture" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class IAdvancedMediaCaptureTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAdvancedMediaCapture" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAdvancedMediaCapture" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAdvancedMediaCapture).GUID, Is.EqualTo(IID_IAdvancedMediaCapture));
-        }
+        Assert.That(typeof(IAdvancedMediaCapture).GUID, Is.EqualTo(IID_IAdvancedMediaCapture));
+    }
 
-        /// <summary>Validates that the <see cref="IAdvancedMediaCapture" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAdvancedMediaCapture>(), Is.EqualTo(sizeof(IAdvancedMediaCapture)));
-        }
+    /// <summary>Validates that the <see cref="IAdvancedMediaCapture" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAdvancedMediaCapture>(), Is.EqualTo(sizeof(IAdvancedMediaCapture)));
+    }
 
-        /// <summary>Validates that the <see cref="IAdvancedMediaCapture" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAdvancedMediaCapture).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAdvancedMediaCapture" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAdvancedMediaCapture).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAdvancedMediaCapture" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAdvancedMediaCapture" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAdvancedMediaCapture), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAdvancedMediaCapture), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAdvancedMediaCapture), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAdvancedMediaCapture), Is.EqualTo(4));
         }
     }
 }

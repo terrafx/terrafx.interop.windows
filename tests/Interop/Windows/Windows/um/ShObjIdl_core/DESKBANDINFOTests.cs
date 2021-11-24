@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DESKBANDINFO" /> struct.</summary>
+public static unsafe partial class DESKBANDINFOTests
 {
-    /// <summary>Provides validation of the <see cref="DESKBANDINFO" /> struct.</summary>
-    public static unsafe partial class DESKBANDINFOTests
+    /// <summary>Validates that the <see cref="DESKBANDINFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DESKBANDINFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DESKBANDINFO>(), Is.EqualTo(sizeof(DESKBANDINFO)));
-        }
+        Assert.That(Marshal.SizeOf<DESKBANDINFO>(), Is.EqualTo(sizeof(DESKBANDINFO)));
+    }
 
-        /// <summary>Validates that the <see cref="DESKBANDINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DESKBANDINFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DESKBANDINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DESKBANDINFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DESKBANDINFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DESKBANDINFO), Is.EqualTo(556));
-        }
+    /// <summary>Validates that the <see cref="DESKBANDINFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DESKBANDINFO), Is.EqualTo(556));
     }
 }

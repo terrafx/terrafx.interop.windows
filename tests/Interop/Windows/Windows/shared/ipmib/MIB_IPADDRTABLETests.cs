@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MIB_IPADDRTABLE" /> struct.</summary>
+public static unsafe partial class MIB_IPADDRTABLETests
 {
-    /// <summary>Provides validation of the <see cref="MIB_IPADDRTABLE" /> struct.</summary>
-    public static unsafe partial class MIB_IPADDRTABLETests
+    /// <summary>Validates that the <see cref="MIB_IPADDRTABLE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MIB_IPADDRTABLE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MIB_IPADDRTABLE>(), Is.EqualTo(sizeof(MIB_IPADDRTABLE)));
-        }
+        Assert.That(Marshal.SizeOf<MIB_IPADDRTABLE>(), Is.EqualTo(sizeof(MIB_IPADDRTABLE)));
+    }
 
-        /// <summary>Validates that the <see cref="MIB_IPADDRTABLE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MIB_IPADDRTABLE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MIB_IPADDRTABLE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MIB_IPADDRTABLE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MIB_IPADDRTABLE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MIB_IPADDRTABLE), Is.EqualTo(28));
-        }
+    /// <summary>Validates that the <see cref="MIB_IPADDRTABLE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MIB_IPADDRTABLE), Is.EqualTo(28));
     }
 }

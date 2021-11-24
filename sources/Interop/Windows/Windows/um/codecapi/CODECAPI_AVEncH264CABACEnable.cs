@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("EE6CAD62-D305-4248-A50E-E1B255F7CAF8")]
+public partial struct CODECAPI_AVEncH264CABACEnable
 {
-    [Guid("EE6CAD62-D305-4248-A50E-E1B255F7CAF8")]
-    public partial struct CODECAPI_AVEncH264CABACEnable
-    {
-    }
 }

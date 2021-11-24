@@ -5,13 +5,12 @@
 
 using static TerraFX.Interop.Windows.SPAUDIOSTATE;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechAudioState
 {
-    public enum SpeechAudioState
-    {
-        SASClosed = SPAS_CLOSED,
-        SASStop = SPAS_STOP,
-        SASPause = SPAS_PAUSE,
-        SASRun = SPAS_RUN,
-    }
+    SASClosed = SPAS_CLOSED,
+    SASStop = SPAS_STOP,
+    SASPause = SPAS_PAUSE,
+    SASRun = SPAS_RUN,
 }

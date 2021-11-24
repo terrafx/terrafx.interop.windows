@@ -5,18 +5,17 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CRYPT_PROVIDER_PRIVDATA
 {
-    public unsafe partial struct CRYPT_PROVIDER_PRIVDATA
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbStruct;
+    [NativeTypeName("DWORD")]
+    public uint cbStruct;
 
-        public Guid gProviderID;
+    public Guid gProviderID;
 
-        [NativeTypeName("DWORD")]
-        public uint cbProvData;
+    [NativeTypeName("DWORD")]
+    public uint cbProvData;
 
-        public void* pvProvData;
-    }
+    public void* pvProvData;
 }

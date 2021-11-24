@@ -5,15 +5,14 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct GP_LOG_PAGE_DESCRIPTOR
-    {
-        [NativeTypeName("WORD")]
-        public ushort LogAddress;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("WORD")]
-        public ushort LogSectors;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct GP_LOG_PAGE_DESCRIPTOR
+{
+    [NativeTypeName("WORD")]
+    public ushort LogAddress;
+
+    [NativeTypeName("WORD")]
+    public ushort LogSectors;
 }

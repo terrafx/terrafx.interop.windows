@@ -7,41 +7,40 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct EMRGRADIENTFILL
 {
-    public partial struct EMRGRADIENTFILL
+    public EMR emr;
+
+    public RECTL rclBounds;
+
+    [NativeTypeName("DWORD")]
+    public uint nVer;
+
+    [NativeTypeName("DWORD")]
+    public uint nTri;
+
+    [NativeTypeName("ULONG")]
+    public uint ulMode;
+
+    [NativeTypeName("TRIVERTEX [1]")]
+    public _Ver_e__FixedBuffer Ver;
+
+    public partial struct _Ver_e__FixedBuffer
     {
-        public EMR emr;
+        public TRIVERTEX e0;
 
-        public RECTL rclBounds;
-
-        [NativeTypeName("DWORD")]
-        public uint nVer;
-
-        [NativeTypeName("DWORD")]
-        public uint nTri;
-
-        [NativeTypeName("ULONG")]
-        public uint ulMode;
-
-        [NativeTypeName("TRIVERTEX [1]")]
-        public _Ver_e__FixedBuffer Ver;
-
-        public partial struct _Ver_e__FixedBuffer
+        public ref TRIVERTEX this[int index]
         {
-            public TRIVERTEX e0;
-
-            public ref TRIVERTEX this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<TRIVERTEX> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<TRIVERTEX> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

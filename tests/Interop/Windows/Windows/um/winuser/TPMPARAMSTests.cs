@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TPMPARAMS" /> struct.</summary>
+public static unsafe partial class TPMPARAMSTests
 {
-    /// <summary>Provides validation of the <see cref="TPMPARAMS" /> struct.</summary>
-    public static unsafe partial class TPMPARAMSTests
+    /// <summary>Validates that the <see cref="TPMPARAMS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TPMPARAMS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TPMPARAMS>(), Is.EqualTo(sizeof(TPMPARAMS)));
-        }
+        Assert.That(Marshal.SizeOf<TPMPARAMS>(), Is.EqualTo(sizeof(TPMPARAMS)));
+    }
 
-        /// <summary>Validates that the <see cref="TPMPARAMS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TPMPARAMS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TPMPARAMS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TPMPARAMS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TPMPARAMS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TPMPARAMS), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="TPMPARAMS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TPMPARAMS), Is.EqualTo(20));
     }
 }

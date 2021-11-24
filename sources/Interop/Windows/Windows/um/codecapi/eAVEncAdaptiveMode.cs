@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum eAVEncAdaptiveMode
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum eAVEncAdaptiveMode
-    {
-        eAVEncAdaptiveMode_None = 0,
-        eAVEncAdaptiveMode_Resolution = 1,
-        eAVEncAdaptiveMode_FrameRate = 2,
-    }
+    eAVEncAdaptiveMode_None = 0,
+    eAVEncAdaptiveMode_Resolution = 1,
+    eAVEncAdaptiveMode_FrameRate = 2,
 }

@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NetworkConnections" /> struct.</summary>
+public static unsafe partial class NetworkConnectionsTests
 {
-    /// <summary>Provides validation of the <see cref="NetworkConnections" /> struct.</summary>
-    public static unsafe partial class NetworkConnectionsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="NetworkConnections" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="NetworkConnections" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(NetworkConnections).GUID, Is.EqualTo(IID_NetworkConnections));
-        }
+        Assert.That(typeof(NetworkConnections).GUID, Is.EqualTo(IID_NetworkConnections));
+    }
 
-        /// <summary>Validates that the <see cref="NetworkConnections" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NetworkConnections>(), Is.EqualTo(sizeof(NetworkConnections)));
-        }
+    /// <summary>Validates that the <see cref="NetworkConnections" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<NetworkConnections>(), Is.EqualTo(sizeof(NetworkConnections)));
+    }
 
-        /// <summary>Validates that the <see cref="NetworkConnections" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NetworkConnections).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NetworkConnections" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NetworkConnections).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NetworkConnections" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(NetworkConnections), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="NetworkConnections" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(NetworkConnections), Is.EqualTo(1));
     }
 }

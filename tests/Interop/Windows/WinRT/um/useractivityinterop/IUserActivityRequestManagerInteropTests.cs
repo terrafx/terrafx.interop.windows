@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IUserActivityRequestManagerInterop" /> struct.</summary>
+public static unsafe partial class IUserActivityRequestManagerInteropTests
 {
-    /// <summary>Provides validation of the <see cref="IUserActivityRequestManagerInterop" /> struct.</summary>
-    public static unsafe partial class IUserActivityRequestManagerInteropTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IUserActivityRequestManagerInterop" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IUserActivityRequestManagerInterop" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IUserActivityRequestManagerInterop).GUID, Is.EqualTo(IID_IUserActivityRequestManagerInterop));
-        }
+        Assert.That(typeof(IUserActivityRequestManagerInterop).GUID, Is.EqualTo(IID_IUserActivityRequestManagerInterop));
+    }
 
-        /// <summary>Validates that the <see cref="IUserActivityRequestManagerInterop" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IUserActivityRequestManagerInterop>(), Is.EqualTo(sizeof(IUserActivityRequestManagerInterop)));
-        }
+    /// <summary>Validates that the <see cref="IUserActivityRequestManagerInterop" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IUserActivityRequestManagerInterop>(), Is.EqualTo(sizeof(IUserActivityRequestManagerInterop)));
+    }
 
-        /// <summary>Validates that the <see cref="IUserActivityRequestManagerInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IUserActivityRequestManagerInterop).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IUserActivityRequestManagerInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IUserActivityRequestManagerInterop).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IUserActivityRequestManagerInterop" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IUserActivityRequestManagerInterop" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IUserActivityRequestManagerInterop), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IUserActivityRequestManagerInterop), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IUserActivityRequestManagerInterop), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IUserActivityRequestManagerInterop), Is.EqualTo(4));
         }
     }
 }

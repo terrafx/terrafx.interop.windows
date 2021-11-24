@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="INTENT_TO_SEAL_ATTRIBUTE" /> struct.</summary>
+public static unsafe partial class INTENT_TO_SEAL_ATTRIBUTETests
 {
-    /// <summary>Provides validation of the <see cref="INTENT_TO_SEAL_ATTRIBUTE" /> struct.</summary>
-    public static unsafe partial class INTENT_TO_SEAL_ATTRIBUTETests
+    /// <summary>Validates that the <see cref="INTENT_TO_SEAL_ATTRIBUTE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="INTENT_TO_SEAL_ATTRIBUTE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<INTENT_TO_SEAL_ATTRIBUTE>(), Is.EqualTo(sizeof(INTENT_TO_SEAL_ATTRIBUTE)));
-        }
+        Assert.That(Marshal.SizeOf<INTENT_TO_SEAL_ATTRIBUTE>(), Is.EqualTo(sizeof(INTENT_TO_SEAL_ATTRIBUTE)));
+    }
 
-        /// <summary>Validates that the <see cref="INTENT_TO_SEAL_ATTRIBUTE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(INTENT_TO_SEAL_ATTRIBUTE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="INTENT_TO_SEAL_ATTRIBUTE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(INTENT_TO_SEAL_ATTRIBUTE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="INTENT_TO_SEAL_ATTRIBUTE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(INTENT_TO_SEAL_ATTRIBUTE), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="INTENT_TO_SEAL_ATTRIBUTE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(INTENT_TO_SEAL_ATTRIBUTE), Is.EqualTo(8));
     }
 }

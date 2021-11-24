@@ -7,16 +7,15 @@ using NUnit.Framework;
 using System;
 using static TerraFX.Interop.Windows.LIBID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="LIBID" /> class.</summary>
+public static partial class LIBIDTests
 {
-    /// <summary>Provides validation of the <see cref="LIBID" /> class.</summary>
-    public static partial class LIBIDTests
+    /// <summary>Validates that the value of the <see cref="LIBID_InkDesktopHostLib" /> property is correct.</summary>
+    [Test]
+    public static void LIBID_InkDesktopHostLibTest()
     {
-        /// <summary>Validates that the value of the <see cref="LIBID_InkDesktopHostLib" /> property is correct.</summary>
-        [Test]
-        public static void LIBID_InkDesktopHostLibTest()
-        {
-            Assert.That(LIBID_InkDesktopHostLib, Is.EqualTo(new Guid(0x2aef0967, 0xc833, 0x4f38, 0x91, 0xf3, 0x16, 0xe6, 0x7d, 0x55, 0xd7, 0x17)));
-        }
+        Assert.That(LIBID_InkDesktopHostLib, Is.EqualTo(new Guid(0x2aef0967, 0xc833, 0x4f38, 0x91, 0xf3, 0x16, 0xe6, 0x7d, 0x55, 0xd7, 0x17)));
     }
 }

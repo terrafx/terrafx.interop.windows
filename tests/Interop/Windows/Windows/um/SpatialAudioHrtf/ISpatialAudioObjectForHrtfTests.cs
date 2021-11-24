@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISpatialAudioObjectForHrtf" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.15063.0")]
+public static unsafe partial class ISpatialAudioObjectForHrtfTests
 {
-    /// <summary>Provides validation of the <see cref="ISpatialAudioObjectForHrtf" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0.15063.0")]
-    public static unsafe partial class ISpatialAudioObjectForHrtfTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpatialAudioObjectForHrtf" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpatialAudioObjectForHrtf" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISpatialAudioObjectForHrtf).GUID, Is.EqualTo(IID_ISpatialAudioObjectForHrtf));
-        }
+        Assert.That(typeof(ISpatialAudioObjectForHrtf).GUID, Is.EqualTo(IID_ISpatialAudioObjectForHrtf));
+    }
 
-        /// <summary>Validates that the <see cref="ISpatialAudioObjectForHrtf" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISpatialAudioObjectForHrtf>(), Is.EqualTo(sizeof(ISpatialAudioObjectForHrtf)));
-        }
+    /// <summary>Validates that the <see cref="ISpatialAudioObjectForHrtf" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISpatialAudioObjectForHrtf>(), Is.EqualTo(sizeof(ISpatialAudioObjectForHrtf)));
+    }
 
-        /// <summary>Validates that the <see cref="ISpatialAudioObjectForHrtf" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISpatialAudioObjectForHrtf).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISpatialAudioObjectForHrtf" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISpatialAudioObjectForHrtf).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISpatialAudioObjectForHrtf" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISpatialAudioObjectForHrtf" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISpatialAudioObjectForHrtf), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISpatialAudioObjectForHrtf), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISpatialAudioObjectForHrtf), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISpatialAudioObjectForHrtf), Is.EqualTo(4));
         }
     }
 }

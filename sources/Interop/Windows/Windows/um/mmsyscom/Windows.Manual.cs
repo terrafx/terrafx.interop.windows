@@ -3,13 +3,12 @@
 // Ported from um/mmsyscom.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static unsafe partial class Windows
 {
-    public static unsafe partial class Windows
+    public static uint MAKEFOURCC(byte ch0, byte ch1, byte ch2, byte ch3)
     {
-        public static uint MAKEFOURCC(byte ch0, byte ch1, byte ch2, byte ch3)
-        {
-            return ((uint)(byte)(ch0) | ((uint)(byte)(ch1) << 8) | ((uint)(byte)(ch2) << 16) | ((uint)(byte)(ch3) << 24));
-        }
+        return ((uint)(byte)(ch0) | ((uint)(byte)(ch1) << 8) | ((uint)(byte)(ch2) << 16) | ((uint)(byte)(ch3) << 24));
     }
 }

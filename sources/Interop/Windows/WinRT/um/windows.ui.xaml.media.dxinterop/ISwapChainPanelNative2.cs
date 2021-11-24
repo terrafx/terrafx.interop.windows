@@ -10,75 +10,74 @@ using System.Runtime.Versioning;
 using TerraFX.Interop.DirectX;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[SupportedOSPlatform("windows8.1")]
+[Guid("D5A2F60C-37B2-44A2-937B-8D8EB9726821")]
+[NativeTypeName("struct ISwapChainPanelNative2 : ISwapChainPanelNative")]
+[NativeInheritance("ISwapChainPanelNative")]
+public unsafe partial struct ISwapChainPanelNative2 : ISwapChainPanelNative2.Interface
 {
-    [SupportedOSPlatform("windows8.1")]
-    [Guid("D5A2F60C-37B2-44A2-937B-8D8EB9726821")]
-    [NativeTypeName("struct ISwapChainPanelNative2 : ISwapChainPanelNative")]
-    [NativeInheritance("ISwapChainPanelNative")]
-    public unsafe partial struct ISwapChainPanelNative2 : ISwapChainPanelNative2.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ISwapChainPanelNative2*, Guid*, void**, int>)(lpVtbl[0]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ISwapChainPanelNative2*, Guid*, void**, int>)(lpVtbl[0]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ISwapChainPanelNative2*, uint>)(lpVtbl[1]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ISwapChainPanelNative2*, uint>)(lpVtbl[1]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ISwapChainPanelNative2*, uint>)(lpVtbl[2]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ISwapChainPanelNative2*, uint>)(lpVtbl[2]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT SetSwapChain(IDXGISwapChain* swapChain)
+    {
+        return ((delegate* unmanaged<ISwapChainPanelNative2*, IDXGISwapChain*, int>)(lpVtbl[3]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this), swapChain);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT SetSwapChain(IDXGISwapChain* swapChain)
-        {
-            return ((delegate* unmanaged<ISwapChainPanelNative2*, IDXGISwapChain*, int>)(lpVtbl[3]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this), swapChain);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT SetSwapChainHandle(HANDLE swapChainHandle)
+    {
+        return ((delegate* unmanaged<ISwapChainPanelNative2*, HANDLE, int>)(lpVtbl[4]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this), swapChainHandle);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : ISwapChainPanelNative.Interface
+    {
         [VtblIndex(4)]
-        public HRESULT SetSwapChainHandle(HANDLE swapChainHandle)
-        {
-            return ((delegate* unmanaged<ISwapChainPanelNative2*, HANDLE, int>)(lpVtbl[4]))((ISwapChainPanelNative2*)Unsafe.AsPointer(ref this), swapChainHandle);
-        }
+        HRESULT SetSwapChainHandle(HANDLE swapChainHandle);
+    }
 
-        public interface Interface : ISwapChainPanelNative.Interface
-        {
-            [VtblIndex(4)]
-            HRESULT SetSwapChainHandle(HANDLE swapChainHandle);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISwapChainPanelNative2*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISwapChainPanelNative2*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISwapChainPanelNative2*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISwapChainPanelNative2*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISwapChainPanelNative2*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISwapChainPanelNative2*, uint> Release;
+        [NativeTypeName("HRESULT (IDXGISwapChain *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISwapChainPanelNative2*, IDXGISwapChain*, int> SetSwapChain;
 
-            [NativeTypeName("HRESULT (IDXGISwapChain *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISwapChainPanelNative2*, IDXGISwapChain*, int> SetSwapChain;
-
-            [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISwapChainPanelNative2*, HANDLE, int> SetSwapChainHandle;
-        }
+        [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISwapChainPanelNative2*, HANDLE, int> SetSwapChainHandle;
     }
 }

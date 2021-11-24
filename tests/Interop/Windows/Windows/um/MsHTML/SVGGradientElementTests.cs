@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SVGGradientElement" /> struct.</summary>
+public static unsafe partial class SVGGradientElementTests
 {
-    /// <summary>Provides validation of the <see cref="SVGGradientElement" /> struct.</summary>
-    public static unsafe partial class SVGGradientElementTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGGradientElement" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGGradientElement" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SVGGradientElement).GUID, Is.EqualTo(IID_SVGGradientElement));
-        }
+        Assert.That(typeof(SVGGradientElement).GUID, Is.EqualTo(IID_SVGGradientElement));
+    }
 
-        /// <summary>Validates that the <see cref="SVGGradientElement" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SVGGradientElement>(), Is.EqualTo(sizeof(SVGGradientElement)));
-        }
+    /// <summary>Validates that the <see cref="SVGGradientElement" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SVGGradientElement>(), Is.EqualTo(sizeof(SVGGradientElement)));
+    }
 
-        /// <summary>Validates that the <see cref="SVGGradientElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SVGGradientElement).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SVGGradientElement" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SVGGradientElement).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SVGGradientElement" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SVGGradientElement), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SVGGradientElement" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SVGGradientElement), Is.EqualTo(1));
     }
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HD_TEXTFILTERW" /> struct.</summary>
+public static unsafe partial class HD_TEXTFILTERWTests
 {
-    /// <summary>Provides validation of the <see cref="HD_TEXTFILTERW" /> struct.</summary>
-    public static unsafe partial class HD_TEXTFILTERWTests
+    /// <summary>Validates that the <see cref="HD_TEXTFILTERW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="HD_TEXTFILTERW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HD_TEXTFILTERW>(), Is.EqualTo(sizeof(HD_TEXTFILTERW)));
-        }
+        Assert.That(Marshal.SizeOf<HD_TEXTFILTERW>(), Is.EqualTo(sizeof(HD_TEXTFILTERW)));
+    }
 
-        /// <summary>Validates that the <see cref="HD_TEXTFILTERW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HD_TEXTFILTERW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HD_TEXTFILTERW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HD_TEXTFILTERW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HD_TEXTFILTERW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="HD_TEXTFILTERW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(HD_TEXTFILTERW), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(HD_TEXTFILTERW), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(HD_TEXTFILTERW), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(HD_TEXTFILTERW), Is.EqualTo(8));
         }
     }
 }

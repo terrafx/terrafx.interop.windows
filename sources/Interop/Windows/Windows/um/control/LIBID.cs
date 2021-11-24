@@ -8,33 +8,32 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class LIBID
-    {
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid LIBID_QuartzTypeLib
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xB0, 0x68, 0xA8, 0x56,
-                    0xD4, 0x0A,
-                    0xCE, 0x11,
-                    0xB0,
-                    0x3A,
-                    0x00,
-                    0x20,
-                    0xAF,
-                    0x0B,
-                    0xA7,
-                    0x70
-                };
+namespace TerraFX.Interop.Windows;
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+public static partial class LIBID
+{
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid LIBID_QuartzTypeLib
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0xB0, 0x68, 0xA8, 0x56,
+                0xD4, 0x0A,
+                0xCE, 0x11,
+                0xB0,
+                0x3A,
+                0x00,
+                0x20,
+                0xAF,
+                0x0B,
+                0xA7,
+                0x70
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

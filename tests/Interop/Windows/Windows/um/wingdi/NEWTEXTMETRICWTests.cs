@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NEWTEXTMETRICW" /> struct.</summary>
+public static unsafe partial class NEWTEXTMETRICWTests
 {
-    /// <summary>Provides validation of the <see cref="NEWTEXTMETRICW" /> struct.</summary>
-    public static unsafe partial class NEWTEXTMETRICWTests
+    /// <summary>Validates that the <see cref="NEWTEXTMETRICW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NEWTEXTMETRICW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NEWTEXTMETRICW>(), Is.EqualTo(sizeof(NEWTEXTMETRICW)));
-        }
+        Assert.That(Marshal.SizeOf<NEWTEXTMETRICW>(), Is.EqualTo(sizeof(NEWTEXTMETRICW)));
+    }
 
-        /// <summary>Validates that the <see cref="NEWTEXTMETRICW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NEWTEXTMETRICW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NEWTEXTMETRICW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NEWTEXTMETRICW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NEWTEXTMETRICW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(NEWTEXTMETRICW), Is.EqualTo(76));
-        }
+    /// <summary>Validates that the <see cref="NEWTEXTMETRICW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(NEWTEXTMETRICW), Is.EqualTo(76));
     }
 }

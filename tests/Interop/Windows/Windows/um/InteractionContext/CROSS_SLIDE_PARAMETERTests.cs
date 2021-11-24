@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CROSS_SLIDE_PARAMETER" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class CROSS_SLIDE_PARAMETERTests
 {
-    /// <summary>Provides validation of the <see cref="CROSS_SLIDE_PARAMETER" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class CROSS_SLIDE_PARAMETERTests
+    /// <summary>Validates that the <see cref="CROSS_SLIDE_PARAMETER" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CROSS_SLIDE_PARAMETER" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CROSS_SLIDE_PARAMETER>(), Is.EqualTo(sizeof(CROSS_SLIDE_PARAMETER)));
-        }
+        Assert.That(Marshal.SizeOf<CROSS_SLIDE_PARAMETER>(), Is.EqualTo(sizeof(CROSS_SLIDE_PARAMETER)));
+    }
 
-        /// <summary>Validates that the <see cref="CROSS_SLIDE_PARAMETER" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CROSS_SLIDE_PARAMETER).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CROSS_SLIDE_PARAMETER" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CROSS_SLIDE_PARAMETER).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CROSS_SLIDE_PARAMETER" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CROSS_SLIDE_PARAMETER), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="CROSS_SLIDE_PARAMETER" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CROSS_SLIDE_PARAMETER), Is.EqualTo(8));
     }
 }

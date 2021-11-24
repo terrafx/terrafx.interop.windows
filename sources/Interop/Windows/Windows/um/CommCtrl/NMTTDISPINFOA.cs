@@ -3,22 +3,21 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct NMTTDISPINFOA
 {
-    public unsafe partial struct NMTTDISPINFOA
-    {
-        public NMHDR hdr;
+    public NMHDR hdr;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* lpszText;
+    [NativeTypeName("LPSTR")]
+    public sbyte* lpszText;
 
-        [NativeTypeName("char [80]")]
-        public fixed sbyte szText[80];
+    [NativeTypeName("char [80]")]
+    public fixed sbyte szText[80];
 
-        public HINSTANCE hinst;
+    public HINSTANCE hinst;
 
-        public uint uFlags;
+    public uint uFlags;
 
-        public LPARAM lParam;
-    }
+    public LPARAM lParam;
 }

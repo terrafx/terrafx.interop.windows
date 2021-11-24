@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SOCKADDR_DL" /> struct.</summary>
+public static unsafe partial class SOCKADDR_DLTests
 {
-    /// <summary>Provides validation of the <see cref="SOCKADDR_DL" /> struct.</summary>
-    public static unsafe partial class SOCKADDR_DLTests
+    /// <summary>Validates that the <see cref="SOCKADDR_DL" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SOCKADDR_DL" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SOCKADDR_DL>(), Is.EqualTo(sizeof(SOCKADDR_DL)));
-        }
+        Assert.That(Marshal.SizeOf<SOCKADDR_DL>(), Is.EqualTo(sizeof(SOCKADDR_DL)));
+    }
 
-        /// <summary>Validates that the <see cref="SOCKADDR_DL" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SOCKADDR_DL).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SOCKADDR_DL" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SOCKADDR_DL).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SOCKADDR_DL" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SOCKADDR_DL), Is.EqualTo(14));
-        }
+    /// <summary>Validates that the <see cref="SOCKADDR_DL" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SOCKADDR_DL), Is.EqualTo(14));
     }
 }

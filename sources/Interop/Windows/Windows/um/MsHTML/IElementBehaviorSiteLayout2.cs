@@ -7,64 +7,63 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3050F847-98B5-11CF-BB82-00AA00BDCE0B")]
+[NativeTypeName("struct IElementBehaviorSiteLayout2 : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IElementBehaviorSiteLayout2 : IElementBehaviorSiteLayout2.Interface
 {
-    [Guid("3050F847-98B5-11CF-BB82-00AA00BDCE0B")]
-    [NativeTypeName("struct IElementBehaviorSiteLayout2 : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IElementBehaviorSiteLayout2 : IElementBehaviorSiteLayout2.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IElementBehaviorSiteLayout2*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorSiteLayout2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IElementBehaviorSiteLayout2*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorSiteLayout2*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IElementBehaviorSiteLayout2*, uint>)(lpVtbl[1]))((IElementBehaviorSiteLayout2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IElementBehaviorSiteLayout2*, uint>)(lpVtbl[1]))((IElementBehaviorSiteLayout2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IElementBehaviorSiteLayout2*, uint>)(lpVtbl[2]))((IElementBehaviorSiteLayout2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IElementBehaviorSiteLayout2*, uint>)(lpVtbl[2]))((IElementBehaviorSiteLayout2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetFontInfo(LOGFONTW* plf)
+    {
+        return ((delegate* unmanaged<IElementBehaviorSiteLayout2*, LOGFONTW*, int>)(lpVtbl[3]))((IElementBehaviorSiteLayout2*)Unsafe.AsPointer(ref this), plf);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetFontInfo(LOGFONTW* plf)
-        {
-            return ((delegate* unmanaged<IElementBehaviorSiteLayout2*, LOGFONTW*, int>)(lpVtbl[3]))((IElementBehaviorSiteLayout2*)Unsafe.AsPointer(ref this), plf);
-        }
+        HRESULT GetFontInfo(LOGFONTW* plf);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetFontInfo(LOGFONTW* plf);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IElementBehaviorSiteLayout2*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IElementBehaviorSiteLayout2*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IElementBehaviorSiteLayout2*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IElementBehaviorSiteLayout2*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IElementBehaviorSiteLayout2*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IElementBehaviorSiteLayout2*, uint> Release;
-
-            [NativeTypeName("HRESULT (LOGFONTW *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IElementBehaviorSiteLayout2*, LOGFONTW*, int> GetFontInfo;
-        }
+        [NativeTypeName("HRESULT (LOGFONTW *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IElementBehaviorSiteLayout2*, LOGFONTW*, int> GetFontInfo;
     }
 }

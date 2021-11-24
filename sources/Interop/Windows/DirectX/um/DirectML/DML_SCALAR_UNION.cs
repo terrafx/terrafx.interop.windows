@@ -5,51 +5,50 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[StructLayout(LayoutKind.Explicit)]
+public unsafe partial struct DML_SCALAR_UNION
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct DML_SCALAR_UNION
-    {
-        [FieldOffset(0)]
-        [NativeTypeName("BYTE [8]")]
-        public fixed byte Bytes[8];
+    [FieldOffset(0)]
+    [NativeTypeName("BYTE [8]")]
+    public fixed byte Bytes[8];
 
-        [FieldOffset(0)]
-        [NativeTypeName("INT8")]
-        public sbyte Int8;
+    [FieldOffset(0)]
+    [NativeTypeName("INT8")]
+    public sbyte Int8;
 
-        [FieldOffset(0)]
-        [NativeTypeName("UINT8")]
-        public byte UInt8;
+    [FieldOffset(0)]
+    [NativeTypeName("UINT8")]
+    public byte UInt8;
 
-        [FieldOffset(0)]
-        [NativeTypeName("INT16")]
-        public short Int16;
+    [FieldOffset(0)]
+    [NativeTypeName("INT16")]
+    public short Int16;
 
-        [FieldOffset(0)]
-        [NativeTypeName("UINT16")]
-        public ushort UInt16;
+    [FieldOffset(0)]
+    [NativeTypeName("UINT16")]
+    public ushort UInt16;
 
-        [FieldOffset(0)]
-        [NativeTypeName("INT32")]
-        public int Int32;
+    [FieldOffset(0)]
+    [NativeTypeName("INT32")]
+    public int Int32;
 
-        [FieldOffset(0)]
-        [NativeTypeName("UINT32")]
-        public uint UInt32;
+    [FieldOffset(0)]
+    [NativeTypeName("UINT32")]
+    public uint UInt32;
 
-        [FieldOffset(0)]
-        [NativeTypeName("INT64")]
-        public long Int64;
+    [FieldOffset(0)]
+    [NativeTypeName("INT64")]
+    public long Int64;
 
-        [FieldOffset(0)]
-        [NativeTypeName("UINT64")]
-        public ulong UInt64;
+    [FieldOffset(0)]
+    [NativeTypeName("UINT64")]
+    public ulong UInt64;
 
-        [FieldOffset(0)]
-        public float Float32;
+    [FieldOffset(0)]
+    public float Float32;
 
-        [FieldOffset(0)]
-        public double Float64;
-    }
+    [FieldOffset(0)]
+    public double Float64;
 }

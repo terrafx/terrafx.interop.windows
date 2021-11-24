@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMLOperatorRegistry" /> struct.</summary>
+public static unsafe partial class IMLOperatorRegistryTests
 {
-    /// <summary>Provides validation of the <see cref="IMLOperatorRegistry" /> struct.</summary>
-    public static unsafe partial class IMLOperatorRegistryTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMLOperatorRegistry" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMLOperatorRegistry" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMLOperatorRegistry).GUID, Is.EqualTo(IID_IMLOperatorRegistry));
-        }
+        Assert.That(typeof(IMLOperatorRegistry).GUID, Is.EqualTo(IID_IMLOperatorRegistry));
+    }
 
-        /// <summary>Validates that the <see cref="IMLOperatorRegistry" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMLOperatorRegistry>(), Is.EqualTo(sizeof(IMLOperatorRegistry)));
-        }
+    /// <summary>Validates that the <see cref="IMLOperatorRegistry" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMLOperatorRegistry>(), Is.EqualTo(sizeof(IMLOperatorRegistry)));
+    }
 
-        /// <summary>Validates that the <see cref="IMLOperatorRegistry" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMLOperatorRegistry).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMLOperatorRegistry" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMLOperatorRegistry).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMLOperatorRegistry" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMLOperatorRegistry" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMLOperatorRegistry), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMLOperatorRegistry), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMLOperatorRegistry), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMLOperatorRegistry), Is.EqualTo(4));
         }
     }
 }

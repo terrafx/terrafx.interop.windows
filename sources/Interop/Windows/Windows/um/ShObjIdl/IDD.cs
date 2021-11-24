@@ -3,14 +3,13 @@
 // Ported from um/ShObjIdl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class IDD
-    {
-        [NativeTypeName("#define IDD_WIZEXTN_FIRST 0x5000")]
-        public const int IDD_WIZEXTN_FIRST = 0x5000;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("#define IDD_WIZEXTN_LAST 0x5100")]
-        public const int IDD_WIZEXTN_LAST = 0x5100;
-    }
+public static partial class IDD
+{
+    [NativeTypeName("#define IDD_WIZEXTN_FIRST 0x5000")]
+    public const int IDD_WIZEXTN_FIRST = 0x5000;
+
+    [NativeTypeName("#define IDD_WIZEXTN_LAST 0x5100")]
+    public const int IDD_WIZEXTN_LAST = 0x5100;
 }

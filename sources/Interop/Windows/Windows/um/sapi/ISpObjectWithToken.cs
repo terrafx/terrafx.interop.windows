@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("5B559F40-E952-11D2-BB91-00C04F8EE6C0")]
+[NativeTypeName("struct ISpObjectWithToken : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ISpObjectWithToken : ISpObjectWithToken.Interface
 {
-    [Guid("5B559F40-E952-11D2-BB91-00C04F8EE6C0")]
-    [NativeTypeName("struct ISpObjectWithToken : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISpObjectWithToken : ISpObjectWithToken.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ISpObjectWithToken*, Guid*, void**, int>)(lpVtbl[0]))((ISpObjectWithToken*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ISpObjectWithToken*, Guid*, void**, int>)(lpVtbl[0]))((ISpObjectWithToken*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ISpObjectWithToken*, uint>)(lpVtbl[1]))((ISpObjectWithToken*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ISpObjectWithToken*, uint>)(lpVtbl[1]))((ISpObjectWithToken*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ISpObjectWithToken*, uint>)(lpVtbl[2]))((ISpObjectWithToken*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ISpObjectWithToken*, uint>)(lpVtbl[2]))((ISpObjectWithToken*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT SetObjectToken(ISpObjectToken* pToken)
+    {
+        return ((delegate* unmanaged<ISpObjectWithToken*, ISpObjectToken*, int>)(lpVtbl[3]))((ISpObjectWithToken*)Unsafe.AsPointer(ref this), pToken);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetObjectToken(ISpObjectToken** ppToken)
+    {
+        return ((delegate* unmanaged<ISpObjectWithToken*, ISpObjectToken**, int>)(lpVtbl[4]))((ISpObjectWithToken*)Unsafe.AsPointer(ref this), ppToken);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT SetObjectToken(ISpObjectToken* pToken)
-        {
-            return ((delegate* unmanaged<ISpObjectWithToken*, ISpObjectToken*, int>)(lpVtbl[3]))((ISpObjectWithToken*)Unsafe.AsPointer(ref this), pToken);
-        }
+        HRESULT SetObjectToken(ISpObjectToken* pToken);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetObjectToken(ISpObjectToken** ppToken)
-        {
-            return ((delegate* unmanaged<ISpObjectWithToken*, ISpObjectToken**, int>)(lpVtbl[4]))((ISpObjectWithToken*)Unsafe.AsPointer(ref this), ppToken);
-        }
+        HRESULT GetObjectToken(ISpObjectToken** ppToken);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT SetObjectToken(ISpObjectToken* pToken);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpObjectWithToken*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetObjectToken(ISpObjectToken** ppToken);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpObjectWithToken*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpObjectWithToken*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpObjectWithToken*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpObjectWithToken*, uint> AddRef;
+        [NativeTypeName("HRESULT (ISpObjectToken *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpObjectWithToken*, ISpObjectToken*, int> SetObjectToken;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpObjectWithToken*, uint> Release;
-
-            [NativeTypeName("HRESULT (ISpObjectToken *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpObjectWithToken*, ISpObjectToken*, int> SetObjectToken;
-
-            [NativeTypeName("HRESULT (ISpObjectToken **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpObjectWithToken*, ISpObjectToken**, int> GetObjectToken;
-        }
+        [NativeTypeName("HRESULT (ISpObjectToken **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpObjectWithToken*, ISpObjectToken**, int> GetObjectToken;
     }
 }

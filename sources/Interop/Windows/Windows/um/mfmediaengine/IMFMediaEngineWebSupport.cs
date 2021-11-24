@@ -7,90 +7,89 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("BA2743A1-07E0-48EF-84B6-9A2ED023CA6C")]
+[NativeTypeName("struct IMFMediaEngineWebSupport : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMFMediaEngineWebSupport : IMFMediaEngineWebSupport.Interface
 {
-    [Guid("BA2743A1-07E0-48EF-84B6-9A2ED023CA6C")]
-    [NativeTypeName("struct IMFMediaEngineWebSupport : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaEngineWebSupport : IMFMediaEngineWebSupport.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMFMediaEngineWebSupport*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMFMediaEngineWebSupport*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMFMediaEngineWebSupport*, uint>)(lpVtbl[1]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMFMediaEngineWebSupport*, uint>)(lpVtbl[1]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMFMediaEngineWebSupport*, uint>)(lpVtbl[2]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMFMediaEngineWebSupport*, uint>)(lpVtbl[2]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public BOOL ShouldDelayTheLoadEvent()
+    {
+        return ((delegate* unmanaged<IMFMediaEngineWebSupport*, int>)(lpVtbl[3]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT ConnectWebAudio([NativeTypeName("DWORD")] uint dwSampleRate, IAudioSourceProvider** ppSourceProvider)
+    {
+        return ((delegate* unmanaged<IMFMediaEngineWebSupport*, uint, IAudioSourceProvider**, int>)(lpVtbl[4]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this), dwSampleRate, ppSourceProvider);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT DisconnectWebAudio()
+    {
+        return ((delegate* unmanaged<IMFMediaEngineWebSupport*, int>)(lpVtbl[5]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public BOOL ShouldDelayTheLoadEvent()
-        {
-            return ((delegate* unmanaged<IMFMediaEngineWebSupport*, int>)(lpVtbl[3]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this));
-        }
+        BOOL ShouldDelayTheLoadEvent();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT ConnectWebAudio([NativeTypeName("DWORD")] uint dwSampleRate, IAudioSourceProvider** ppSourceProvider)
-        {
-            return ((delegate* unmanaged<IMFMediaEngineWebSupport*, uint, IAudioSourceProvider**, int>)(lpVtbl[4]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this), dwSampleRate, ppSourceProvider);
-        }
+        HRESULT ConnectWebAudio([NativeTypeName("DWORD")] uint dwSampleRate, IAudioSourceProvider** ppSourceProvider);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT DisconnectWebAudio()
-        {
-            return ((delegate* unmanaged<IMFMediaEngineWebSupport*, int>)(lpVtbl[5]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT DisconnectWebAudio();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            BOOL ShouldDelayTheLoadEvent();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngineWebSupport*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT ConnectWebAudio([NativeTypeName("DWORD")] uint dwSampleRate, IAudioSourceProvider** ppSourceProvider);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngineWebSupport*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT DisconnectWebAudio();
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngineWebSupport*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngineWebSupport*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("BOOL () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngineWebSupport*, int> ShouldDelayTheLoadEvent;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngineWebSupport*, uint> AddRef;
+        [NativeTypeName("HRESULT (DWORD, IAudioSourceProvider **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngineWebSupport*, uint, IAudioSourceProvider**, int> ConnectWebAudio;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngineWebSupport*, uint> Release;
-
-            [NativeTypeName("BOOL () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngineWebSupport*, int> ShouldDelayTheLoadEvent;
-
-            [NativeTypeName("HRESULT (DWORD, IAudioSourceProvider **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngineWebSupport*, uint, IAudioSourceProvider**, int> ConnectWebAudio;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaEngineWebSupport*, int> DisconnectWebAudio;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaEngineWebSupport*, int> DisconnectWebAudio;
     }
 }

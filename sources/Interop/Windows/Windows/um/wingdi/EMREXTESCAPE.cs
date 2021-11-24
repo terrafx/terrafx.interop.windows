@@ -3,17 +3,16 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct EMREXTESCAPE
 {
-    public unsafe partial struct EMREXTESCAPE
-    {
-        public EMR emr;
+    public EMR emr;
 
-        public int iEscape;
+    public int iEscape;
 
-        public int cbEscData;
+    public int cbEscData;
 
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte EscData[1];
-    }
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte EscData[1];
 }

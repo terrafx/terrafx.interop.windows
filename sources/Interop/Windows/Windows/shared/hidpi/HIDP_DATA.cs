@@ -6,45 +6,44 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct HIDP_DATA
 {
-    public partial struct HIDP_DATA
+    public ushort DataIndex;
+
+    public ushort Reserved;
+
+    [NativeTypeName("_HIDP_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/hidpi.h:269:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public ref uint RawValue
     {
-        public ushort DataIndex;
-
-        public ushort Reserved;
-
-        [NativeTypeName("_HIDP_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/hidpi.h:269:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public ref uint RawValue
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.RawValue, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.RawValue, 1));
         }
+    }
 
-        public ref byte On
+    public ref byte On
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.On, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.On, 1));
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("ULONG")]
-            public uint RawValue;
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("ULONG")]
+        public uint RawValue;
 
-            [FieldOffset(0)]
-            [NativeTypeName("BOOLEAN")]
-            public byte On;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("BOOLEAN")]
+        public byte On;
     }
 }

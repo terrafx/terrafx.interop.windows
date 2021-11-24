@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDMLPageable" /> struct.</summary>
+public static unsafe partial class IDMLPageableTests
 {
-    /// <summary>Provides validation of the <see cref="IDMLPageable" /> struct.</summary>
-    public static unsafe partial class IDMLPageableTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDMLPageable" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDMLPageable" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDMLPageable).GUID, Is.EqualTo(IID_IDMLPageable));
-        }
+        Assert.That(typeof(IDMLPageable).GUID, Is.EqualTo(IID_IDMLPageable));
+    }
 
-        /// <summary>Validates that the <see cref="IDMLPageable" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDMLPageable>(), Is.EqualTo(sizeof(IDMLPageable)));
-        }
+    /// <summary>Validates that the <see cref="IDMLPageable" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDMLPageable>(), Is.EqualTo(sizeof(IDMLPageable)));
+    }
 
-        /// <summary>Validates that the <see cref="IDMLPageable" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDMLPageable).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDMLPageable" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDMLPageable).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDMLPageable" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDMLPageable" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDMLPageable), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDMLPageable), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDMLPageable), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDMLPageable), Is.EqualTo(4));
         }
     }
 }

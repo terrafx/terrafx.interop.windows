@@ -6,16 +6,15 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+[SupportedOSPlatform("windows8.0")]
+public enum CROSS_SLIDE_FLAGS
 {
-    [Flags]
-    [SupportedOSPlatform("windows8.0")]
-    public enum CROSS_SLIDE_FLAGS
-    {
-        CROSS_SLIDE_FLAGS_NONE = 0x00000000,
-        CROSS_SLIDE_FLAGS_SELECT = 0x00000001,
-        CROSS_SLIDE_FLAGS_SPEED_BUMP = 0x00000002,
-        CROSS_SLIDE_FLAGS_REARRANGE = 0x00000004,
-        CROSS_SLIDE_FLAGS_MAX = unchecked((int)(0xffffffff)),
-    }
+    CROSS_SLIDE_FLAGS_NONE = 0x00000000,
+    CROSS_SLIDE_FLAGS_SELECT = 0x00000001,
+    CROSS_SLIDE_FLAGS_SPEED_BUMP = 0x00000002,
+    CROSS_SLIDE_FLAGS_REARRANGE = 0x00000004,
+    CROSS_SLIDE_FLAGS_MAX = unchecked((int)(0xffffffff)),
 }

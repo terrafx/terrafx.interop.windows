@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SPRECORESULTTIMES" /> struct.</summary>
+public static unsafe partial class SPRECORESULTTIMESTests
 {
-    /// <summary>Provides validation of the <see cref="SPRECORESULTTIMES" /> struct.</summary>
-    public static unsafe partial class SPRECORESULTTIMESTests
+    /// <summary>Validates that the <see cref="SPRECORESULTTIMES" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SPRECORESULTTIMES" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SPRECORESULTTIMES>(), Is.EqualTo(sizeof(SPRECORESULTTIMES)));
-        }
+        Assert.That(Marshal.SizeOf<SPRECORESULTTIMES>(), Is.EqualTo(sizeof(SPRECORESULTTIMES)));
+    }
 
-        /// <summary>Validates that the <see cref="SPRECORESULTTIMES" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SPRECORESULTTIMES).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SPRECORESULTTIMES" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SPRECORESULTTIMES).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SPRECORESULTTIMES" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SPRECORESULTTIMES), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="SPRECORESULTTIMES" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SPRECORESULTTIMES), Is.EqualTo(32));
     }
 }

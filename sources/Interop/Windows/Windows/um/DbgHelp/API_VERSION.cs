@@ -3,16 +3,15 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct API_VERSION
 {
-    public partial struct API_VERSION
-    {
-        public ushort MajorVersion;
+    public ushort MajorVersion;
 
-        public ushort MinorVersion;
+    public ushort MinorVersion;
 
-        public ushort Revision;
+    public ushort Revision;
 
-        public ushort Reserved;
-    }
+    public ushort Reserved;
 }

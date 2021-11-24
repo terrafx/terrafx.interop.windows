@@ -3,46 +3,45 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct PPM_WMI_PERF_STATE
 {
-    public partial struct PPM_WMI_PERF_STATE
-    {
-        [NativeTypeName("DWORD")]
-        public uint Frequency;
+    [NativeTypeName("DWORD")]
+    public uint Frequency;
 
-        [NativeTypeName("DWORD")]
-        public uint Power;
+    [NativeTypeName("DWORD")]
+    public uint Power;
 
-        public byte PercentFrequency;
+    public byte PercentFrequency;
 
-        public byte IncreaseLevel;
+    public byte IncreaseLevel;
 
-        public byte DecreaseLevel;
+    public byte DecreaseLevel;
 
-        public byte Type;
+    public byte Type;
 
-        [NativeTypeName("DWORD")]
-        public uint IncreaseTime;
+    [NativeTypeName("DWORD")]
+    public uint IncreaseTime;
 
-        [NativeTypeName("DWORD")]
-        public uint DecreaseTime;
+    [NativeTypeName("DWORD")]
+    public uint DecreaseTime;
 
-        [NativeTypeName("DWORD64")]
-        public ulong Control;
+    [NativeTypeName("DWORD64")]
+    public ulong Control;
 
-        [NativeTypeName("DWORD64")]
-        public ulong Status;
+    [NativeTypeName("DWORD64")]
+    public ulong Status;
 
-        [NativeTypeName("DWORD")]
-        public uint HitCount;
+    [NativeTypeName("DWORD")]
+    public uint HitCount;
 
-        [NativeTypeName("DWORD")]
-        public uint Reserved1;
+    [NativeTypeName("DWORD")]
+    public uint Reserved1;
 
-        [NativeTypeName("DWORD64")]
-        public ulong Reserved2;
+    [NativeTypeName("DWORD64")]
+    public ulong Reserved2;
 
-        [NativeTypeName("DWORD64")]
-        public ulong Reserved3;
-    }
+    [NativeTypeName("DWORD64")]
+    public ulong Reserved3;
 }

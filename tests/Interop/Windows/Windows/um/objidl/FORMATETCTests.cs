@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="FORMATETC" /> struct.</summary>
+public static unsafe partial class FORMATETCTests
 {
-    /// <summary>Provides validation of the <see cref="FORMATETC" /> struct.</summary>
-    public static unsafe partial class FORMATETCTests
+    /// <summary>Validates that the <see cref="FORMATETC" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="FORMATETC" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<FORMATETC>(), Is.EqualTo(sizeof(FORMATETC)));
-        }
+        Assert.That(Marshal.SizeOf<FORMATETC>(), Is.EqualTo(sizeof(FORMATETC)));
+    }
 
-        /// <summary>Validates that the <see cref="FORMATETC" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(FORMATETC).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="FORMATETC" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(FORMATETC).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="FORMATETC" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="FORMATETC" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(FORMATETC), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(FORMATETC), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(FORMATETC), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(FORMATETC), Is.EqualTo(20));
         }
     }
 }

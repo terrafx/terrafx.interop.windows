@@ -2,20 +2,19 @@
 
 using System;
 
-namespace TerraFX.Samples.DirectX.D3D11
+namespace TerraFX.Samples.DirectX.D3D11;
+
+public unsafe class HelloWindow11 : DX11Sample
 {
-    public unsafe class HelloWindow11 : DX11Sample
+    public HelloWindow11(string name) : base(name)
     {
-        public HelloWindow11(string name) : base(name)
-        {
-        }
+    }
 
-        public override void OnUpdate(TimeSpan delta)
-        {
-        }
+    public override void OnUpdate(TimeSpan delta)
+    {
+    }
 
-        protected override void Draw()
-        {
-        }
+    protected override void Draw()
+    {
     }
 }

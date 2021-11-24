@@ -7,119 +7,118 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct QUERY_FILE_LAYOUT_INPUT
 {
-    public partial struct QUERY_FILE_LAYOUT_INPUT
+    [NativeTypeName("_QUERY_FILE_LAYOUT_INPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:14989:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    [NativeTypeName("DWORD")]
+    public uint Flags;
+
+    public QUERY_FILE_LAYOUT_FILTER_TYPE FilterType;
+
+    [NativeTypeName("DWORD")]
+    public uint Reserved;
+
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:15016:5)")]
+    public _Filter_e__Union Filter;
+
+    public ref uint FilterEntryCount
     {
-        [NativeTypeName("_QUERY_FILE_LAYOUT_INPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:14989:5)")]
-        public _Anonymous_e__Union Anonymous;
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.FilterEntryCount, 1));
+        }
+    }
 
+    public ref uint NumberOfPairs
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.NumberOfPairs, 1));
+        }
+    }
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
         [NativeTypeName("DWORD")]
-        public uint Flags;
+        public uint FilterEntryCount;
 
-        public QUERY_FILE_LAYOUT_FILTER_TYPE FilterType;
-
+        [FieldOffset(0)]
         [NativeTypeName("DWORD")]
-        public uint Reserved;
+        public uint NumberOfPairs;
+    }
 
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:15016:5)")]
-        public _Filter_e__Union Filter;
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Filter_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("CLUSTER_RANGE [1]")]
+        public _ClusterRanges_e__FixedBuffer ClusterRanges;
 
-        public ref uint FilterEntryCount
+        [FieldOffset(0)]
+        [NativeTypeName("FILE_REFERENCE_RANGE [1]")]
+        public _FileReferenceRanges_e__FixedBuffer FileReferenceRanges;
+
+        [FieldOffset(0)]
+        [NativeTypeName("STORAGE_RESERVE_ID [1]")]
+        public _StorageReserveIds_e__FixedBuffer StorageReserveIds;
+
+        public partial struct _ClusterRanges_e__FixedBuffer
         {
+            public CLUSTER_RANGE e0;
+
+            public ref CLUSTER_RANGE this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan(int.MaxValue)[index];
+                }
+            }
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.FilterEntryCount, 1));
-            }
+            public Span<CLUSTER_RANGE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
 
-        public ref uint NumberOfPairs
+        public partial struct _FileReferenceRanges_e__FixedBuffer
         {
+            public FILE_REFERENCE_RANGE e0;
+
+            public ref FILE_REFERENCE_RANGE this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref AsSpan(int.MaxValue)[index];
+                }
+            }
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.NumberOfPairs, 1));
-            }
+            public Span<FILE_REFERENCE_RANGE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
+        public partial struct _StorageReserveIds_e__FixedBuffer
         {
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint FilterEntryCount;
+            public STORAGE_RESERVE_ID e0;
 
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint NumberOfPairs;
-        }
-
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Filter_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("CLUSTER_RANGE [1]")]
-            public _ClusterRanges_e__FixedBuffer ClusterRanges;
-
-            [FieldOffset(0)]
-            [NativeTypeName("FILE_REFERENCE_RANGE [1]")]
-            public _FileReferenceRanges_e__FixedBuffer FileReferenceRanges;
-
-            [FieldOffset(0)]
-            [NativeTypeName("STORAGE_RESERVE_ID [1]")]
-            public _StorageReserveIds_e__FixedBuffer StorageReserveIds;
-
-            public partial struct _ClusterRanges_e__FixedBuffer
+            public ref STORAGE_RESERVE_ID this[int index]
             {
-                public CLUSTER_RANGE e0;
-
-                public ref CLUSTER_RANGE this[int index]
-                {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return ref AsSpan(int.MaxValue)[index];
-                    }
-                }
-
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                public Span<CLUSTER_RANGE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+                get
+                {
+                    return ref AsSpan(int.MaxValue)[index];
+                }
             }
 
-            public partial struct _FileReferenceRanges_e__FixedBuffer
-            {
-                public FILE_REFERENCE_RANGE e0;
-
-                public ref FILE_REFERENCE_RANGE this[int index]
-                {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return ref AsSpan(int.MaxValue)[index];
-                    }
-                }
-
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                public Span<FILE_REFERENCE_RANGE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
-            }
-
-            public partial struct _StorageReserveIds_e__FixedBuffer
-            {
-                public STORAGE_RESERVE_ID e0;
-
-                public ref STORAGE_RESERVE_ID this[int index]
-                {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return ref AsSpan(int.MaxValue)[index];
-                    }
-                }
-
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                public Span<STORAGE_RESERVE_ID> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
-            }
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            public Span<STORAGE_RESERVE_ID> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
     }
 }

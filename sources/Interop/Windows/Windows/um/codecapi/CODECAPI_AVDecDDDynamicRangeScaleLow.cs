@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("044E62E4-11A5-42D5-A3B2-3BB2C7C2D7CF")]
+public partial struct CODECAPI_AVDecDDDynamicRangeScaleLow
 {
-    [Guid("044E62E4-11A5-42D5-A3B2-3BB2C7C2D7CF")]
-    public partial struct CODECAPI_AVDecDDDynamicRangeScaleLow
-    {
-    }
 }

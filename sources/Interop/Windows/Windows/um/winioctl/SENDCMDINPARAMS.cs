@@ -5,25 +5,24 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SENDCMDINPARAMS
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SENDCMDINPARAMS
-    {
-        [NativeTypeName("DWORD")]
-        public uint cBufferSize;
+    [NativeTypeName("DWORD")]
+    public uint cBufferSize;
 
-        public IDEREGS irDriveRegs;
+    public IDEREGS irDriveRegs;
 
-        public byte bDriveNumber;
+    public byte bDriveNumber;
 
-        [NativeTypeName("BYTE [3]")]
-        public fixed byte bReserved[3];
+    [NativeTypeName("BYTE [3]")]
+    public fixed byte bReserved[3];
 
-        [NativeTypeName("DWORD [4]")]
-        public fixed uint dwReserved[4];
+    [NativeTypeName("DWORD [4]")]
+    public fixed uint dwReserved[4];
 
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte bBuffer[1];
-    }
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte bBuffer[1];
 }

@@ -5,16 +5,15 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public partial struct JOBOBJECT_NET_RATE_CONTROL_INFORMATION
 {
-    [SupportedOSPlatform("windows10.0")]
-    public partial struct JOBOBJECT_NET_RATE_CONTROL_INFORMATION
-    {
-        [NativeTypeName("DWORD64")]
-        public ulong MaxBandwidth;
+    [NativeTypeName("DWORD64")]
+    public ulong MaxBandwidth;
 
-        public JOB_OBJECT_NET_RATE_CONTROL_FLAGS ControlFlags;
+    public JOB_OBJECT_NET_RATE_CONTROL_FLAGS ControlFlags;
 
-        public byte DscpTag;
-    }
+    public byte DscpTag;
 }

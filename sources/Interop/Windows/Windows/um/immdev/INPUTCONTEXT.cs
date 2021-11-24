@@ -7,79 +7,78 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct INPUTCONTEXT
 {
-    public unsafe partial struct INPUTCONTEXT
+    public HWND hWnd;
+
+    public BOOL fOpen;
+
+    public POINT ptStatusWndPos;
+
+    public POINT ptSoftKbdPos;
+
+    [NativeTypeName("DWORD")]
+    public uint fdwConversion;
+
+    [NativeTypeName("DWORD")]
+    public uint fdwSentence;
+
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/immdev.h:873:5)")]
+    public _lfFont_e__Union lfFont;
+
+    public COMPOSITIONFORM cfCompForm;
+
+    [NativeTypeName("CANDIDATEFORM [4]")]
+    public _cfCandForm_e__FixedBuffer cfCandForm;
+
+    public HIMCC hCompStr;
+
+    public HIMCC hCandInfo;
+
+    public HIMCC hGuideLine;
+
+    public HIMCC hPrivate;
+
+    [NativeTypeName("DWORD")]
+    public uint dwNumMsgBuf;
+
+    public HIMCC hMsgBuf;
+
+    [NativeTypeName("DWORD")]
+    public uint fdwInit;
+
+    [NativeTypeName("DWORD [3]")]
+    public fixed uint dwReserve[3];
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _lfFont_e__Union
     {
-        public HWND hWnd;
+        [FieldOffset(0)]
+        public LOGFONTA A;
 
-        public BOOL fOpen;
+        [FieldOffset(0)]
+        public LOGFONTW W;
+    }
 
-        public POINT ptStatusWndPos;
+    public partial struct _cfCandForm_e__FixedBuffer
+    {
+        public CANDIDATEFORM e0;
+        public CANDIDATEFORM e1;
+        public CANDIDATEFORM e2;
+        public CANDIDATEFORM e3;
 
-        public POINT ptSoftKbdPos;
-
-        [NativeTypeName("DWORD")]
-        public uint fdwConversion;
-
-        [NativeTypeName("DWORD")]
-        public uint fdwSentence;
-
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/immdev.h:873:5)")]
-        public _lfFont_e__Union lfFont;
-
-        public COMPOSITIONFORM cfCompForm;
-
-        [NativeTypeName("CANDIDATEFORM [4]")]
-        public _cfCandForm_e__FixedBuffer cfCandForm;
-
-        public HIMCC hCompStr;
-
-        public HIMCC hCandInfo;
-
-        public HIMCC hGuideLine;
-
-        public HIMCC hPrivate;
-
-        [NativeTypeName("DWORD")]
-        public uint dwNumMsgBuf;
-
-        public HIMCC hMsgBuf;
-
-        [NativeTypeName("DWORD")]
-        public uint fdwInit;
-
-        [NativeTypeName("DWORD [3]")]
-        public fixed uint dwReserve[3];
-
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _lfFont_e__Union
+        public ref CANDIDATEFORM this[int index]
         {
-            [FieldOffset(0)]
-            public LOGFONTA A;
-
-            [FieldOffset(0)]
-            public LOGFONTW W;
-        }
-
-        public partial struct _cfCandForm_e__FixedBuffer
-        {
-            public CANDIDATEFORM e0;
-            public CANDIDATEFORM e1;
-            public CANDIDATEFORM e2;
-            public CANDIDATEFORM e3;
-
-            public ref CANDIDATEFORM this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan()[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<CANDIDATEFORM> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 4);
+            get
+            {
+                return ref AsSpan()[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<CANDIDATEFORM> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 4);
     }
 }

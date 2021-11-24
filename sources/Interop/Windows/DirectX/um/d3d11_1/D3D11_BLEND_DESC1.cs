@@ -8,39 +8,38 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D11_BLEND_DESC1
 {
-    public partial struct D3D11_BLEND_DESC1
+    public BOOL AlphaToCoverageEnable;
+
+    public BOOL IndependentBlendEnable;
+
+    [NativeTypeName("D3D11_RENDER_TARGET_BLEND_DESC1 [8]")]
+    public _RenderTarget_e__FixedBuffer RenderTarget;
+
+    public partial struct _RenderTarget_e__FixedBuffer
     {
-        public BOOL AlphaToCoverageEnable;
+        public D3D11_RENDER_TARGET_BLEND_DESC1 e0;
+        public D3D11_RENDER_TARGET_BLEND_DESC1 e1;
+        public D3D11_RENDER_TARGET_BLEND_DESC1 e2;
+        public D3D11_RENDER_TARGET_BLEND_DESC1 e3;
+        public D3D11_RENDER_TARGET_BLEND_DESC1 e4;
+        public D3D11_RENDER_TARGET_BLEND_DESC1 e5;
+        public D3D11_RENDER_TARGET_BLEND_DESC1 e6;
+        public D3D11_RENDER_TARGET_BLEND_DESC1 e7;
 
-        public BOOL IndependentBlendEnable;
-
-        [NativeTypeName("D3D11_RENDER_TARGET_BLEND_DESC1 [8]")]
-        public _RenderTarget_e__FixedBuffer RenderTarget;
-
-        public partial struct _RenderTarget_e__FixedBuffer
+        public ref D3D11_RENDER_TARGET_BLEND_DESC1 this[int index]
         {
-            public D3D11_RENDER_TARGET_BLEND_DESC1 e0;
-            public D3D11_RENDER_TARGET_BLEND_DESC1 e1;
-            public D3D11_RENDER_TARGET_BLEND_DESC1 e2;
-            public D3D11_RENDER_TARGET_BLEND_DESC1 e3;
-            public D3D11_RENDER_TARGET_BLEND_DESC1 e4;
-            public D3D11_RENDER_TARGET_BLEND_DESC1 e5;
-            public D3D11_RENDER_TARGET_BLEND_DESC1 e6;
-            public D3D11_RENDER_TARGET_BLEND_DESC1 e7;
-
-            public ref D3D11_RENDER_TARGET_BLEND_DESC1 this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan()[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<D3D11_RENDER_TARGET_BLEND_DESC1> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
+            get
+            {
+                return ref AsSpan()[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<D3D11_RENDER_TARGET_BLEND_DESC1> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
     }
 }

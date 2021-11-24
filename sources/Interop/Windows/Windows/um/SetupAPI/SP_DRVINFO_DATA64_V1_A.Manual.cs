@@ -3,26 +3,25 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SP_DRVINFO_DATA64_V1_A
 {
-    public unsafe partial struct SP_DRVINFO_DATA64_V1_A
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint DriverType;
+    [NativeTypeName("DWORD")]
+    public uint DriverType;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint Reserved;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint Reserved;
 
-        [NativeTypeName("CHAR [256]")]
-        public fixed sbyte Description[256];
+    [NativeTypeName("CHAR [256]")]
+    public fixed sbyte Description[256];
 
-        [NativeTypeName("CHAR [256]")]
-        public fixed sbyte MfgName[256];
+    [NativeTypeName("CHAR [256]")]
+    public fixed sbyte MfgName[256];
 
-        [NativeTypeName("CHAR [256]")]
-        public fixed sbyte ProviderName[256];
-    }
+    [NativeTypeName("CHAR [256]")]
+    public fixed sbyte ProviderName[256];
 }

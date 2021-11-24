@@ -3,14 +3,13 @@
 // Ported from shared/minwindef.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct FILETIME
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwLowDateTime;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint dwHighDateTime;
-    }
+public partial struct FILETIME
+{
+    [NativeTypeName("DWORD")]
+    public uint dwLowDateTime;
+
+    [NativeTypeName("DWORD")]
+    public uint dwHighDateTime;
 }

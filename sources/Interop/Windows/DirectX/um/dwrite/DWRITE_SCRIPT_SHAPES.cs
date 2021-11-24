@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum DWRITE_SCRIPT_SHAPES
 {
-    [Flags]
-    public enum DWRITE_SCRIPT_SHAPES
-    {
-        DWRITE_SCRIPT_SHAPES_DEFAULT = 0,
-        DWRITE_SCRIPT_SHAPES_NO_VISUAL = 1,
-    }
+    DWRITE_SCRIPT_SHAPES_DEFAULT = 0,
+    DWRITE_SCRIPT_SHAPES_NO_VISUAL = 1,
 }

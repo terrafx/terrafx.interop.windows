@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("61B68808-8EEE-4FD1-ACB8-3D804C8DB056")]
+public partial struct Contact
 {
-    [Guid("61B68808-8EEE-4FD1-ACB8-3D804C8DB056")]
-    public partial struct Contact
-    {
-    }
 }

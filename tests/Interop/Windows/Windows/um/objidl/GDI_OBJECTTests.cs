@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="GDI_OBJECT" /> struct.</summary>
+public static unsafe partial class GDI_OBJECTTests
 {
-    /// <summary>Provides validation of the <see cref="GDI_OBJECT" /> struct.</summary>
-    public static unsafe partial class GDI_OBJECTTests
+    /// <summary>Validates that the <see cref="GDI_OBJECT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="GDI_OBJECT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<GDI_OBJECT>(), Is.EqualTo(sizeof(GDI_OBJECT)));
-        }
+        Assert.That(Marshal.SizeOf<GDI_OBJECT>(), Is.EqualTo(sizeof(GDI_OBJECT)));
+    }
 
-        /// <summary>Validates that the <see cref="GDI_OBJECT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(GDI_OBJECT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="GDI_OBJECT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(GDI_OBJECT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="GDI_OBJECT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="GDI_OBJECT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(GDI_OBJECT), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(GDI_OBJECT), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(GDI_OBJECT), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(GDI_OBJECT), Is.EqualTo(8));
         }
     }
 }

@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("00000147-0000-0000-C000-000000000046")]
+[NativeTypeName("struct IAddrTrackingControl : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IAddrTrackingControl : IAddrTrackingControl.Interface
 {
-    [Guid("00000147-0000-0000-C000-000000000046")]
-    [NativeTypeName("struct IAddrTrackingControl : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAddrTrackingControl : IAddrTrackingControl.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IAddrTrackingControl*, Guid*, void**, int>)(lpVtbl[0]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IAddrTrackingControl*, Guid*, void**, int>)(lpVtbl[0]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IAddrTrackingControl*, uint>)(lpVtbl[1]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IAddrTrackingControl*, uint>)(lpVtbl[1]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IAddrTrackingControl*, uint>)(lpVtbl[2]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IAddrTrackingControl*, uint>)(lpVtbl[2]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT EnableCOMDynamicAddrTracking()
+    {
+        return ((delegate* unmanaged<IAddrTrackingControl*, int>)(lpVtbl[3]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT DisableCOMDynamicAddrTracking()
+    {
+        return ((delegate* unmanaged<IAddrTrackingControl*, int>)(lpVtbl[4]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT EnableCOMDynamicAddrTracking()
-        {
-            return ((delegate* unmanaged<IAddrTrackingControl*, int>)(lpVtbl[3]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT EnableCOMDynamicAddrTracking();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT DisableCOMDynamicAddrTracking()
-        {
-            return ((delegate* unmanaged<IAddrTrackingControl*, int>)(lpVtbl[4]))((IAddrTrackingControl*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT DisableCOMDynamicAddrTracking();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT EnableCOMDynamicAddrTracking();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAddrTrackingControl*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT DisableCOMDynamicAddrTracking();
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAddrTrackingControl*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAddrTrackingControl*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAddrTrackingControl*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAddrTrackingControl*, uint> AddRef;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAddrTrackingControl*, int> EnableCOMDynamicAddrTracking;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAddrTrackingControl*, uint> Release;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAddrTrackingControl*, int> EnableCOMDynamicAddrTracking;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAddrTrackingControl*, int> DisableCOMDynamicAddrTracking;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAddrTrackingControl*, int> DisableCOMDynamicAddrTracking;
     }
 }

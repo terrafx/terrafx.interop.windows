@@ -3,20 +3,19 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SD_CHANGE_MACHINE_SID_INPUT
 {
-    public partial struct SD_CHANGE_MACHINE_SID_INPUT
-    {
-        [NativeTypeName("WORD")]
-        public ushort CurrentMachineSIDOffset;
+    [NativeTypeName("WORD")]
+    public ushort CurrentMachineSIDOffset;
 
-        [NativeTypeName("WORD")]
-        public ushort CurrentMachineSIDLength;
+    [NativeTypeName("WORD")]
+    public ushort CurrentMachineSIDLength;
 
-        [NativeTypeName("WORD")]
-        public ushort NewMachineSIDOffset;
+    [NativeTypeName("WORD")]
+    public ushort NewMachineSIDOffset;
 
-        [NativeTypeName("WORD")]
-        public ushort NewMachineSIDLength;
-    }
+    [NativeTypeName("WORD")]
+    public ushort NewMachineSIDLength;
 }

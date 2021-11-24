@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum WCM_CONNECTION_COST_SOURCE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum WCM_CONNECTION_COST_SOURCE
-    {
-        WCM_CONNECTION_COST_SOURCE_DEFAULT = 0,
-        WCM_CONNECTION_COST_SOURCE_GP = 1,
-        WCM_CONNECTION_COST_SOURCE_USER = 2,
-        WCM_CONNECTION_COST_SOURCE_OPERATOR = 3,
-    }
+    WCM_CONNECTION_COST_SOURCE_DEFAULT = 0,
+    WCM_CONNECTION_COST_SOURCE_GP = 1,
+    WCM_CONNECTION_COST_SOURCE_USER = 2,
+    WCM_CONNECTION_COST_SOURCE_OPERATOR = 3,
 }

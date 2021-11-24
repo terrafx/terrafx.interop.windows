@@ -7,116 +7,115 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("11E1FBF9-2D56-4A6B-8DB3-7CD193A471F2")]
+[NativeTypeName("struct IPropertyEnumType : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IPropertyEnumType : IPropertyEnumType.Interface
 {
-    [Guid("11E1FBF9-2D56-4A6B-8DB3-7CD193A471F2")]
-    [NativeTypeName("struct IPropertyEnumType : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPropertyEnumType : IPropertyEnumType.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IPropertyEnumType*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IPropertyEnumType*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IPropertyEnumType*, uint>)(lpVtbl[1]))((IPropertyEnumType*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IPropertyEnumType*, uint>)(lpVtbl[1]))((IPropertyEnumType*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IPropertyEnumType*, uint>)(lpVtbl[2]))((IPropertyEnumType*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IPropertyEnumType*, uint>)(lpVtbl[2]))((IPropertyEnumType*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetEnumType(PROPENUMTYPE* penumtype)
+    {
+        return ((delegate* unmanaged<IPropertyEnumType*, PROPENUMTYPE*, int>)(lpVtbl[3]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), penumtype);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetValue(PROPVARIANT* ppropvar)
+    {
+        return ((delegate* unmanaged<IPropertyEnumType*, PROPVARIANT*, int>)(lpVtbl[4]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), ppropvar);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetRangeMinValue(PROPVARIANT* ppropvarMin)
+    {
+        return ((delegate* unmanaged<IPropertyEnumType*, PROPVARIANT*, int>)(lpVtbl[5]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), ppropvarMin);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetRangeSetValue(PROPVARIANT* ppropvarSet)
+    {
+        return ((delegate* unmanaged<IPropertyEnumType*, PROPVARIANT*, int>)(lpVtbl[6]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), ppropvarSet);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT GetDisplayText([NativeTypeName("LPWSTR *")] ushort** ppszDisplay)
+    {
+        return ((delegate* unmanaged<IPropertyEnumType*, ushort**, int>)(lpVtbl[7]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), ppszDisplay);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetEnumType(PROPENUMTYPE* penumtype)
-        {
-            return ((delegate* unmanaged<IPropertyEnumType*, PROPENUMTYPE*, int>)(lpVtbl[3]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), penumtype);
-        }
+        HRESULT GetEnumType(PROPENUMTYPE* penumtype);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetValue(PROPVARIANT* ppropvar)
-        {
-            return ((delegate* unmanaged<IPropertyEnumType*, PROPVARIANT*, int>)(lpVtbl[4]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), ppropvar);
-        }
+        HRESULT GetValue(PROPVARIANT* ppropvar);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetRangeMinValue(PROPVARIANT* ppropvarMin)
-        {
-            return ((delegate* unmanaged<IPropertyEnumType*, PROPVARIANT*, int>)(lpVtbl[5]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), ppropvarMin);
-        }
+        HRESULT GetRangeMinValue(PROPVARIANT* ppropvarMin);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetRangeSetValue(PROPVARIANT* ppropvarSet)
-        {
-            return ((delegate* unmanaged<IPropertyEnumType*, PROPVARIANT*, int>)(lpVtbl[6]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), ppropvarSet);
-        }
+        HRESULT GetRangeSetValue(PROPVARIANT* ppropvarSet);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetDisplayText([NativeTypeName("LPWSTR *")] ushort** ppszDisplay)
-        {
-            return ((delegate* unmanaged<IPropertyEnumType*, ushort**, int>)(lpVtbl[7]))((IPropertyEnumType*)Unsafe.AsPointer(ref this), ppszDisplay);
-        }
+        HRESULT GetDisplayText([NativeTypeName("LPWSTR *")] ushort** ppszDisplay);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetEnumType(PROPENUMTYPE* penumtype);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPropertyEnumType*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetValue(PROPVARIANT* ppropvar);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPropertyEnumType*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetRangeMinValue(PROPVARIANT* ppropvarMin);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPropertyEnumType*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT GetRangeSetValue(PROPVARIANT* ppropvarSet);
+        [NativeTypeName("HRESULT (PROPENUMTYPE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPropertyEnumType*, PROPENUMTYPE*, int> GetEnumType;
 
-            [VtblIndex(7)]
-            HRESULT GetDisplayText([NativeTypeName("LPWSTR *")] ushort** ppszDisplay);
-        }
+        [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPropertyEnumType*, PROPVARIANT*, int> GetValue;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPropertyEnumType*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPropertyEnumType*, PROPVARIANT*, int> GetRangeMinValue;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPropertyEnumType*, uint> AddRef;
+        [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPropertyEnumType*, PROPVARIANT*, int> GetRangeSetValue;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPropertyEnumType*, uint> Release;
-
-            [NativeTypeName("HRESULT (PROPENUMTYPE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPropertyEnumType*, PROPENUMTYPE*, int> GetEnumType;
-
-            [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPropertyEnumType*, PROPVARIANT*, int> GetValue;
-
-            [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPropertyEnumType*, PROPVARIANT*, int> GetRangeMinValue;
-
-            [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPropertyEnumType*, PROPVARIANT*, int> GetRangeSetValue;
-
-            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPropertyEnumType*, ushort**, int> GetDisplayText;
-        }
+        [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPropertyEnumType*, ushort**, int> GetDisplayText;
     }
 }

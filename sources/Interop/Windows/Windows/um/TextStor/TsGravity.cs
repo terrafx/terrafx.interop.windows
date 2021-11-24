@@ -3,11 +3,10 @@
 // Ported from um/TextStor.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum TsGravity
 {
-    public enum TsGravity
-    {
-        TS_GR_BACKWARD = 0,
-        TS_GR_FORWARD = 1,
-    }
+    TS_GR_BACKWARD = 0,
+    TS_GR_FORWARD = 1,
 }

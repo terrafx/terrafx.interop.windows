@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("B196B284-BAB4-101A-B69C-00AA00341D07")]
+[NativeTypeName("struct IConnectionPointContainer : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IConnectionPointContainer : IConnectionPointContainer.Interface
 {
-    [Guid("B196B284-BAB4-101A-B69C-00AA00341D07")]
-    [NativeTypeName("struct IConnectionPointContainer : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IConnectionPointContainer : IConnectionPointContainer.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IConnectionPointContainer*, Guid*, void**, int>)(lpVtbl[0]))((IConnectionPointContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IConnectionPointContainer*, Guid*, void**, int>)(lpVtbl[0]))((IConnectionPointContainer*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IConnectionPointContainer*, uint>)(lpVtbl[1]))((IConnectionPointContainer*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IConnectionPointContainer*, uint>)(lpVtbl[1]))((IConnectionPointContainer*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IConnectionPointContainer*, uint>)(lpVtbl[2]))((IConnectionPointContainer*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IConnectionPointContainer*, uint>)(lpVtbl[2]))((IConnectionPointContainer*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT EnumConnectionPoints(IEnumConnectionPoints** ppEnum)
+    {
+        return ((delegate* unmanaged<IConnectionPointContainer*, IEnumConnectionPoints**, int>)(lpVtbl[3]))((IConnectionPointContainer*)Unsafe.AsPointer(ref this), ppEnum);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT FindConnectionPoint([NativeTypeName("const IID &")] Guid* riid, IConnectionPoint** ppCP)
+    {
+        return ((delegate* unmanaged<IConnectionPointContainer*, Guid*, IConnectionPoint**, int>)(lpVtbl[4]))((IConnectionPointContainer*)Unsafe.AsPointer(ref this), riid, ppCP);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT EnumConnectionPoints(IEnumConnectionPoints** ppEnum)
-        {
-            return ((delegate* unmanaged<IConnectionPointContainer*, IEnumConnectionPoints**, int>)(lpVtbl[3]))((IConnectionPointContainer*)Unsafe.AsPointer(ref this), ppEnum);
-        }
+        HRESULT EnumConnectionPoints(IEnumConnectionPoints** ppEnum);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT FindConnectionPoint([NativeTypeName("const IID &")] Guid* riid, IConnectionPoint** ppCP)
-        {
-            return ((delegate* unmanaged<IConnectionPointContainer*, Guid*, IConnectionPoint**, int>)(lpVtbl[4]))((IConnectionPointContainer*)Unsafe.AsPointer(ref this), riid, ppCP);
-        }
+        HRESULT FindConnectionPoint([NativeTypeName("const IID &")] Guid* riid, IConnectionPoint** ppCP);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT EnumConnectionPoints(IEnumConnectionPoints** ppEnum);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IConnectionPointContainer*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT FindConnectionPoint([NativeTypeName("const IID &")] Guid* riid, IConnectionPoint** ppCP);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IConnectionPointContainer*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IConnectionPointContainer*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IConnectionPointContainer*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IConnectionPointContainer*, uint> AddRef;
+        [NativeTypeName("HRESULT (IEnumConnectionPoints **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IConnectionPointContainer*, IEnumConnectionPoints**, int> EnumConnectionPoints;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IConnectionPointContainer*, uint> Release;
-
-            [NativeTypeName("HRESULT (IEnumConnectionPoints **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IConnectionPointContainer*, IEnumConnectionPoints**, int> EnumConnectionPoints;
-
-            [NativeTypeName("HRESULT (const IID &, IConnectionPoint **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IConnectionPointContainer*, Guid*, IConnectionPoint**, int> FindConnectionPoint;
-        }
+        [NativeTypeName("HRESULT (const IID &, IConnectionPoint **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IConnectionPointContainer*, Guid*, IConnectionPoint**, int> FindConnectionPoint;
     }
 }

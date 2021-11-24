@@ -6,59 +6,58 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO
 {
-    public unsafe partial struct WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO
+    [NativeTypeName("_WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/SoftPub.h:133:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    [NativeTypeName("PCCERT_CHAIN_CONTEXT")]
+    public CERT_CHAIN_CONTEXT* pChainContext;
+
+    [NativeTypeName("DWORD")]
+    public uint dwSignerType;
+
+    [NativeTypeName("PCMSG_SIGNER_INFO")]
+    public CMSG_SIGNER_INFO* pMsgSignerInfo;
+
+    [NativeTypeName("DWORD")]
+    public uint dwError;
+
+    [NativeTypeName("DWORD")]
+    public uint cCounterSigner;
+
+    [NativeTypeName("PWTD_GENERIC_CHAIN_POLICY_SIGNER_INFO *")]
+    public WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO** rgpCounterSigner;
+
+    public ref uint cbStruct
     {
-        [NativeTypeName("_WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/SoftPub.h:133:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        [NativeTypeName("PCCERT_CHAIN_CONTEXT")]
-        public CERT_CHAIN_CONTEXT* pChainContext;
-
-        [NativeTypeName("DWORD")]
-        public uint dwSignerType;
-
-        [NativeTypeName("PCMSG_SIGNER_INFO")]
-        public CMSG_SIGNER_INFO* pMsgSignerInfo;
-
-        [NativeTypeName("DWORD")]
-        public uint dwError;
-
-        [NativeTypeName("DWORD")]
-        public uint cCounterSigner;
-
-        [NativeTypeName("PWTD_GENERIC_CHAIN_POLICY_SIGNER_INFO *")]
-        public WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO** rgpCounterSigner;
-
-        public ref uint cbStruct
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cbStruct, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cbStruct, 1));
         }
+    }
 
-        public ref uint cbSize
+    public ref uint cbSize
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cbSize, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.cbSize, 1));
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint cbStruct;
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint cbStruct;
 
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint cbSize;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint cbSize;
     }
 }

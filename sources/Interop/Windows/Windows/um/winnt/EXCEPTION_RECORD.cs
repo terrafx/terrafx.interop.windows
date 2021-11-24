@@ -7,57 +7,56 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct EXCEPTION_RECORD
 {
-    public unsafe partial struct EXCEPTION_RECORD
+    [NativeTypeName("DWORD")]
+    public uint ExceptionCode;
+
+    [NativeTypeName("DWORD")]
+    public uint ExceptionFlags;
+
+    [NativeTypeName("struct _EXCEPTION_RECORD *")]
+    public EXCEPTION_RECORD* ExceptionRecord;
+
+    [NativeTypeName("PVOID")]
+    public void* ExceptionAddress;
+
+    [NativeTypeName("DWORD")]
+    public uint NumberParameters;
+
+    [NativeTypeName("ULONG_PTR [15]")]
+    public _ExceptionInformation_e__FixedBuffer ExceptionInformation;
+
+    public partial struct _ExceptionInformation_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint ExceptionCode;
+        public nuint e0;
+        public nuint e1;
+        public nuint e2;
+        public nuint e3;
+        public nuint e4;
+        public nuint e5;
+        public nuint e6;
+        public nuint e7;
+        public nuint e8;
+        public nuint e9;
+        public nuint e10;
+        public nuint e11;
+        public nuint e12;
+        public nuint e13;
+        public nuint e14;
 
-        [NativeTypeName("DWORD")]
-        public uint ExceptionFlags;
-
-        [NativeTypeName("struct _EXCEPTION_RECORD *")]
-        public EXCEPTION_RECORD* ExceptionRecord;
-
-        [NativeTypeName("PVOID")]
-        public void* ExceptionAddress;
-
-        [NativeTypeName("DWORD")]
-        public uint NumberParameters;
-
-        [NativeTypeName("ULONG_PTR [15]")]
-        public _ExceptionInformation_e__FixedBuffer ExceptionInformation;
-
-        public partial struct _ExceptionInformation_e__FixedBuffer
+        public ref nuint this[int index]
         {
-            public nuint e0;
-            public nuint e1;
-            public nuint e2;
-            public nuint e3;
-            public nuint e4;
-            public nuint e5;
-            public nuint e6;
-            public nuint e7;
-            public nuint e8;
-            public nuint e9;
-            public nuint e10;
-            public nuint e11;
-            public nuint e12;
-            public nuint e13;
-            public nuint e14;
-
-            public ref nuint this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan()[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<nuint> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 15);
+            get
+            {
+                return ref AsSpan()[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<nuint> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 15);
     }
 }

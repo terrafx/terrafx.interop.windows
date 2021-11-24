@@ -5,30 +5,29 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct WAVEFORMATEX
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct WAVEFORMATEX
-    {
-        [NativeTypeName("WORD")]
-        public ushort wFormatTag;
+    [NativeTypeName("WORD")]
+    public ushort wFormatTag;
 
-        [NativeTypeName("WORD")]
-        public ushort nChannels;
+    [NativeTypeName("WORD")]
+    public ushort nChannels;
 
-        [NativeTypeName("DWORD")]
-        public uint nSamplesPerSec;
+    [NativeTypeName("DWORD")]
+    public uint nSamplesPerSec;
 
-        [NativeTypeName("DWORD")]
-        public uint nAvgBytesPerSec;
+    [NativeTypeName("DWORD")]
+    public uint nAvgBytesPerSec;
 
-        [NativeTypeName("WORD")]
-        public ushort nBlockAlign;
+    [NativeTypeName("WORD")]
+    public ushort nBlockAlign;
 
-        [NativeTypeName("WORD")]
-        public ushort wBitsPerSample;
+    [NativeTypeName("WORD")]
+    public ushort wBitsPerSample;
 
-        [NativeTypeName("WORD")]
-        public ushort cbSize;
-    }
+    [NativeTypeName("WORD")]
+    public ushort cbSize;
 }

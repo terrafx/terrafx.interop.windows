@@ -7,94 +7,93 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("6915C085-510B-44CD-94AF-28DFA56CF92B")]
+[NativeTypeName("struct IInputObject2 : IInputObject")]
+[NativeInheritance("IInputObject")]
+public unsafe partial struct IInputObject2 : IInputObject2.Interface
 {
-    [Guid("6915C085-510B-44CD-94AF-28DFA56CF92B")]
-    [NativeTypeName("struct IInputObject2 : IInputObject")]
-    [NativeInheritance("IInputObject")]
-    public unsafe partial struct IInputObject2 : IInputObject2.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IInputObject2*, Guid*, void**, int>)(lpVtbl[0]))((IInputObject2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IInputObject2*, Guid*, void**, int>)(lpVtbl[0]))((IInputObject2*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IInputObject2*, uint>)(lpVtbl[1]))((IInputObject2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IInputObject2*, uint>)(lpVtbl[1]))((IInputObject2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IInputObject2*, uint>)(lpVtbl[2]))((IInputObject2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IInputObject2*, uint>)(lpVtbl[2]))((IInputObject2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT UIActivateIO(BOOL fActivate, MSG* pMsg)
+    {
+        return ((delegate* unmanaged<IInputObject2*, BOOL, MSG*, int>)(lpVtbl[3]))((IInputObject2*)Unsafe.AsPointer(ref this), fActivate, pMsg);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT UIActivateIO(BOOL fActivate, MSG* pMsg)
-        {
-            return ((delegate* unmanaged<IInputObject2*, BOOL, MSG*, int>)(lpVtbl[3]))((IInputObject2*)Unsafe.AsPointer(ref this), fActivate, pMsg);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT HasFocusIO()
+    {
+        return ((delegate* unmanaged<IInputObject2*, int>)(lpVtbl[4]))((IInputObject2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT HasFocusIO()
-        {
-            return ((delegate* unmanaged<IInputObject2*, int>)(lpVtbl[4]))((IInputObject2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT TranslateAcceleratorIO(MSG* pMsg)
+    {
+        return ((delegate* unmanaged<IInputObject2*, MSG*, int>)(lpVtbl[5]))((IInputObject2*)Unsafe.AsPointer(ref this), pMsg);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT TranslateAcceleratorIO(MSG* pMsg)
-        {
-            return ((delegate* unmanaged<IInputObject2*, MSG*, int>)(lpVtbl[5]))((IInputObject2*)Unsafe.AsPointer(ref this), pMsg);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT TranslateAcceleratorGlobal(MSG* pMsg)
+    {
+        return ((delegate* unmanaged<IInputObject2*, MSG*, int>)(lpVtbl[6]))((IInputObject2*)Unsafe.AsPointer(ref this), pMsg);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IInputObject.Interface
+    {
         [VtblIndex(6)]
-        public HRESULT TranslateAcceleratorGlobal(MSG* pMsg)
-        {
-            return ((delegate* unmanaged<IInputObject2*, MSG*, int>)(lpVtbl[6]))((IInputObject2*)Unsafe.AsPointer(ref this), pMsg);
-        }
+        HRESULT TranslateAcceleratorGlobal(MSG* pMsg);
+    }
 
-        public interface Interface : IInputObject.Interface
-        {
-            [VtblIndex(6)]
-            HRESULT TranslateAcceleratorGlobal(MSG* pMsg);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IInputObject2*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IInputObject2*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IInputObject2*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IInputObject2*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IInputObject2*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IInputObject2*, uint> Release;
+        [NativeTypeName("HRESULT (BOOL, MSG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IInputObject2*, BOOL, MSG*, int> UIActivateIO;
 
-            [NativeTypeName("HRESULT (BOOL, MSG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IInputObject2*, BOOL, MSG*, int> UIActivateIO;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IInputObject2*, int> HasFocusIO;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IInputObject2*, int> HasFocusIO;
+        [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IInputObject2*, MSG*, int> TranslateAcceleratorIO;
 
-            [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IInputObject2*, MSG*, int> TranslateAcceleratorIO;
-
-            [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IInputObject2*, MSG*, int> TranslateAcceleratorGlobal;
-        }
+        [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IInputObject2*, MSG*, int> TranslateAcceleratorGlobal;
     }
 }

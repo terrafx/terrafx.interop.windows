@@ -5,26 +5,25 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WINTRUST_BLOB_INFO
 {
-    public unsafe partial struct WINTRUST_BLOB_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbStruct;
+    [NativeTypeName("DWORD")]
+    public uint cbStruct;
 
-        public Guid gSubject;
+    public Guid gSubject;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pcwszDisplayName;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pcwszDisplayName;
 
-        [NativeTypeName("DWORD")]
-        public uint cbMemObject;
+    [NativeTypeName("DWORD")]
+    public uint cbMemObject;
 
-        public byte* pbMemObject;
+    public byte* pbMemObject;
 
-        [NativeTypeName("DWORD")]
-        public uint cbMemSignedMsg;
+    [NativeTypeName("DWORD")]
+    public uint cbMemSignedMsg;
 
-        public byte* pbMemSignedMsg;
-    }
+    public byte* pbMemSignedMsg;
 }

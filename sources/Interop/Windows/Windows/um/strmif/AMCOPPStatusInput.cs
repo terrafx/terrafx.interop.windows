@@ -5,21 +5,20 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct AMCOPPStatusInput
 {
-    public unsafe partial struct AMCOPPStatusInput
-    {
-        public Guid rApp;
+    public Guid rApp;
 
-        public Guid guidStatusRequestID;
+    public Guid guidStatusRequestID;
 
-        [NativeTypeName("DWORD")]
-        public uint dwSequence;
+    [NativeTypeName("DWORD")]
+    public uint dwSequence;
 
-        [NativeTypeName("DWORD")]
-        public uint cbSizeData;
+    [NativeTypeName("DWORD")]
+    public uint cbSizeData;
 
-        [NativeTypeName("BYTE [4056]")]
-        public fixed byte StatusData[4056];
-    }
+    [NativeTypeName("BYTE [4056]")]
+    public fixed byte StatusData[4056];
 }

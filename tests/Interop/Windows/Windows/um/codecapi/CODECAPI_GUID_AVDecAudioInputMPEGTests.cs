@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CODECAPI_GUID_AVDecAudioInputMPEG" /> struct.</summary>
+public static unsafe partial class CODECAPI_GUID_AVDecAudioInputMPEGTests
 {
-    /// <summary>Provides validation of the <see cref="CODECAPI_GUID_AVDecAudioInputMPEG" /> struct.</summary>
-    public static unsafe partial class CODECAPI_GUID_AVDecAudioInputMPEGTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_GUID_AVDecAudioInputMPEG" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_GUID_AVDecAudioInputMPEG" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CODECAPI_GUID_AVDecAudioInputMPEG).GUID, Is.EqualTo(IID_CODECAPI_GUID_AVDecAudioInputMPEG));
-        }
+        Assert.That(typeof(CODECAPI_GUID_AVDecAudioInputMPEG).GUID, Is.EqualTo(IID_CODECAPI_GUID_AVDecAudioInputMPEG));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioInputMPEG" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CODECAPI_GUID_AVDecAudioInputMPEG>(), Is.EqualTo(sizeof(CODECAPI_GUID_AVDecAudioInputMPEG)));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioInputMPEG" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CODECAPI_GUID_AVDecAudioInputMPEG>(), Is.EqualTo(sizeof(CODECAPI_GUID_AVDecAudioInputMPEG)));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioInputMPEG" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CODECAPI_GUID_AVDecAudioInputMPEG).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioInputMPEG" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CODECAPI_GUID_AVDecAudioInputMPEG).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioInputMPEG" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CODECAPI_GUID_AVDecAudioInputMPEG), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioInputMPEG" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CODECAPI_GUID_AVDecAudioInputMPEG), Is.EqualTo(1));
     }
 }

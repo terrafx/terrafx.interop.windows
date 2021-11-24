@@ -5,10 +5,9 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TRANSACTIONMANAGER_OLDEST_INFORMATION
 {
-    public partial struct TRANSACTIONMANAGER_OLDEST_INFORMATION
-    {
-        public Guid OldestTransactionGuid;
-    }
+    public Guid OldestTransactionGuid;
 }

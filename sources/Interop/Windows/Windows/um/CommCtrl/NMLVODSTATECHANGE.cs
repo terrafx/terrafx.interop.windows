@@ -3,18 +3,17 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct NMLVODSTATECHANGE
 {
-    public partial struct NMLVODSTATECHANGE
-    {
-        public NMHDR hdr;
+    public NMHDR hdr;
 
-        public int iFrom;
+    public int iFrom;
 
-        public int iTo;
+    public int iTo;
 
-        public uint uNewState;
+    public uint uNewState;
 
-        public uint uOldState;
-    }
+    public uint uOldState;
 }

@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WbemClassObject" /> struct.</summary>
+public static unsafe partial class WbemClassObjectTests
 {
-    /// <summary>Provides validation of the <see cref="WbemClassObject" /> struct.</summary>
-    public static unsafe partial class WbemClassObjectTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="WbemClassObject" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="WbemClassObject" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(WbemClassObject).GUID, Is.EqualTo(IID_WbemClassObject));
-        }
+        Assert.That(typeof(WbemClassObject).GUID, Is.EqualTo(IID_WbemClassObject));
+    }
 
-        /// <summary>Validates that the <see cref="WbemClassObject" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WbemClassObject>(), Is.EqualTo(sizeof(WbemClassObject)));
-        }
+    /// <summary>Validates that the <see cref="WbemClassObject" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<WbemClassObject>(), Is.EqualTo(sizeof(WbemClassObject)));
+    }
 
-        /// <summary>Validates that the <see cref="WbemClassObject" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WbemClassObject).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WbemClassObject" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WbemClassObject).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WbemClassObject" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(WbemClassObject), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="WbemClassObject" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(WbemClassObject), Is.EqualTo(1));
     }
 }

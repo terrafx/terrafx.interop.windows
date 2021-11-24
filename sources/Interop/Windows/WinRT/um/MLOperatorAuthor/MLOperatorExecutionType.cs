@@ -5,13 +5,12 @@
 
 using TerraFX.Interop.DirectX;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[NativeTypeName("uint32_t")]
+public enum MLOperatorExecutionType : uint
 {
-    [NativeTypeName("uint32_t")]
-    public enum MLOperatorExecutionType : uint
-    {
-        Undefined = 0,
-        Cpu = 1,
-        D3D12 = 2,
-    }
+    Undefined = 0,
+    Cpu = 1,
+    D3D12 = 2,
 }

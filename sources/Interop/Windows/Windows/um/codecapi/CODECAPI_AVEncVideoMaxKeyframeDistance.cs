@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("2987123A-BA93-4704-B489-EC1E5F25292C")]
+public partial struct CODECAPI_AVEncVideoMaxKeyframeDistance
 {
-    [Guid("2987123A-BA93-4704-B489-EC1E5F25292C")]
-    public partial struct CODECAPI_AVEncVideoMaxKeyframeDistance
-    {
-    }
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AsyncIUnknown" /> struct.</summary>
+public static unsafe partial class AsyncIUnknownTests
 {
-    /// <summary>Provides validation of the <see cref="AsyncIUnknown" /> struct.</summary>
-    public static unsafe partial class AsyncIUnknownTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="AsyncIUnknown" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="AsyncIUnknown" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(AsyncIUnknown).GUID, Is.EqualTo(IID_AsyncIUnknown));
-        }
+        Assert.That(typeof(AsyncIUnknown).GUID, Is.EqualTo(IID_AsyncIUnknown));
+    }
 
-        /// <summary>Validates that the <see cref="AsyncIUnknown" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<AsyncIUnknown>(), Is.EqualTo(sizeof(AsyncIUnknown)));
-        }
+    /// <summary>Validates that the <see cref="AsyncIUnknown" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<AsyncIUnknown>(), Is.EqualTo(sizeof(AsyncIUnknown)));
+    }
 
-        /// <summary>Validates that the <see cref="AsyncIUnknown" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(AsyncIUnknown).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="AsyncIUnknown" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(AsyncIUnknown).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="AsyncIUnknown" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="AsyncIUnknown" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(AsyncIUnknown), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(AsyncIUnknown), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(AsyncIUnknown), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(AsyncIUnknown), Is.EqualTo(4));
         }
     }
 }

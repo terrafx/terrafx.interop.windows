@@ -3,11 +3,10 @@
 // Ported from um/IPTypes.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class PEER
 {
-    public static partial class PEER
-    {
-        [NativeTypeName("#define PEER_TO_PEER_NODETYPE 2")]
-        public const int PEER_TO_PEER_NODETYPE = 2;
-    }
+    [NativeTypeName("#define PEER_TO_PEER_NODETYPE 2")]
+    public const int PEER_TO_PEER_NODETYPE = 2;
 }

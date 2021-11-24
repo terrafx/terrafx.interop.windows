@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("17B75166-928F-417D-9685-64AA135565C1")]
+public partial struct ImageTranscode
 {
-    [Guid("17B75166-928F-417D-9685-64AA135565C1")]
-    public partial struct ImageTranscode
-    {
-    }
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY" /> struct.</summary>
+public static unsafe partial class WS_REQUEST_SECURITY_TOKEN_PROPERTYTests
 {
-    /// <summary>Provides validation of the <see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY" /> struct.</summary>
-    public static unsafe partial class WS_REQUEST_SECURITY_TOKEN_PROPERTYTests
+    /// <summary>Validates that the <see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WS_REQUEST_SECURITY_TOKEN_PROPERTY>(), Is.EqualTo(sizeof(WS_REQUEST_SECURITY_TOKEN_PROPERTY)));
-        }
+        Assert.That(Marshal.SizeOf<WS_REQUEST_SECURITY_TOKEN_PROPERTY>(), Is.EqualTo(sizeof(WS_REQUEST_SECURITY_TOKEN_PROPERTY)));
+    }
 
-        /// <summary>Validates that the <see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WS_REQUEST_SECURITY_TOKEN_PROPERTY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WS_REQUEST_SECURITY_TOKEN_PROPERTY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WS_REQUEST_SECURITY_TOKEN_PROPERTY), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(WS_REQUEST_SECURITY_TOKEN_PROPERTY), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(WS_REQUEST_SECURITY_TOKEN_PROPERTY), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(WS_REQUEST_SECURITY_TOKEN_PROPERTY), Is.EqualTo(12));
         }
     }
 }

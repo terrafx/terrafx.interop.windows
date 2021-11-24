@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
-{
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_AUTHENTICATED_QUERY_RESTRICTED_SHARED_RESOURCE_PROCESS_COUNT_OUTPUT
-    {
-        public D3D11_AUTHENTICATED_QUERY_OUTPUT Output;
+namespace TerraFX.Interop.DirectX;
 
-        public uint RestrictedSharedResourceProcessCount;
-    }
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_AUTHENTICATED_QUERY_RESTRICTED_SHARED_RESOURCE_PROCESS_COUNT_OUTPUT
+{
+    public D3D11_AUTHENTICATED_QUERY_OUTPUT Output;
+
+    public uint RestrictedSharedResourceProcessCount;
 }

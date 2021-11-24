@@ -5,11 +5,10 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_SERVICE_PROPERTY_CLOSE_CALLBACK
 {
-    public unsafe partial struct WS_SERVICE_PROPERTY_CLOSE_CALLBACK
-    {
-        [NativeTypeName("WS_SERVICE_CLOSE_CHANNEL_CALLBACK")]
-        public delegate* unmanaged<IntPtr, WS_ASYNC_CONTEXT*, HRESULT> callback;
-    }
+    [NativeTypeName("WS_SERVICE_CLOSE_CHANNEL_CALLBACK")]
+    public delegate* unmanaged<IntPtr, WS_ASYNC_CONTEXT*, HRESULT> callback;
 }

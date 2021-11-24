@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
-{
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_AUTHENTICATED_QUERY_PROTECTION_OUTPUT
-    {
-        public D3D11_AUTHENTICATED_QUERY_OUTPUT Output;
+namespace TerraFX.Interop.DirectX;
 
-        public D3D11_AUTHENTICATED_PROTECTION_FLAGS ProtectionFlags;
-    }
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_AUTHENTICATED_QUERY_PROTECTION_OUTPUT
+{
+    public D3D11_AUTHENTICATED_QUERY_OUTPUT Output;
+
+    public D3D11_AUTHENTICATED_PROTECTION_FLAGS ProtectionFlags;
 }

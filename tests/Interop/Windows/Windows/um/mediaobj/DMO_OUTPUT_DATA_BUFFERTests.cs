@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DMO_OUTPUT_DATA_BUFFER" /> struct.</summary>
+public static unsafe partial class DMO_OUTPUT_DATA_BUFFERTests
 {
-    /// <summary>Provides validation of the <see cref="DMO_OUTPUT_DATA_BUFFER" /> struct.</summary>
-    public static unsafe partial class DMO_OUTPUT_DATA_BUFFERTests
+    /// <summary>Validates that the <see cref="DMO_OUTPUT_DATA_BUFFER" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DMO_OUTPUT_DATA_BUFFER" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DMO_OUTPUT_DATA_BUFFER>(), Is.EqualTo(sizeof(DMO_OUTPUT_DATA_BUFFER)));
-        }
+        Assert.That(Marshal.SizeOf<DMO_OUTPUT_DATA_BUFFER>(), Is.EqualTo(sizeof(DMO_OUTPUT_DATA_BUFFER)));
+    }
 
-        /// <summary>Validates that the <see cref="DMO_OUTPUT_DATA_BUFFER" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DMO_OUTPUT_DATA_BUFFER).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DMO_OUTPUT_DATA_BUFFER" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DMO_OUTPUT_DATA_BUFFER).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DMO_OUTPUT_DATA_BUFFER" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DMO_OUTPUT_DATA_BUFFER" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DMO_OUTPUT_DATA_BUFFER), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(DMO_OUTPUT_DATA_BUFFER), Is.EqualTo(24));
-            }
+            Assert.That(sizeof(DMO_OUTPUT_DATA_BUFFER), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(DMO_OUTPUT_DATA_BUFFER), Is.EqualTo(24));
         }
     }
 }

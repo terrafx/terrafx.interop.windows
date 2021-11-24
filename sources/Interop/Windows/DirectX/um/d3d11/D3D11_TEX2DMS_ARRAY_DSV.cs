@@ -3,12 +3,11 @@
 // Ported from um/d3d11.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
-{
-    public partial struct D3D11_TEX2DMS_ARRAY_DSV
-    {
-        public uint FirstArraySlice;
+namespace TerraFX.Interop.DirectX;
 
-        public uint ArraySize;
-    }
+public partial struct D3D11_TEX2DMS_ARRAY_DSV
+{
+    public uint FirstArraySlice;
+
+    public uint ArraySize;
 }

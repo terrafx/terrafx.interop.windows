@@ -5,17 +5,16 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct NOTIFYICONIDENTIFIER64
 {
-    public partial struct NOTIFYICONIDENTIFIER64
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public HWND hWnd;
+    public HWND hWnd;
 
-        public uint uID;
+    public uint uID;
 
-        public Guid guidItem;
-    }
+    public Guid guidItem;
 }

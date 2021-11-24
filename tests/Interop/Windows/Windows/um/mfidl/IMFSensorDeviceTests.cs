@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFSensorDevice" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.14393.0")]
+public static unsafe partial class IMFSensorDeviceTests
 {
-    /// <summary>Provides validation of the <see cref="IMFSensorDevice" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0.14393.0")]
-    public static unsafe partial class IMFSensorDeviceTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFSensorDevice" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFSensorDevice" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFSensorDevice).GUID, Is.EqualTo(IID_IMFSensorDevice));
-        }
+        Assert.That(typeof(IMFSensorDevice).GUID, Is.EqualTo(IID_IMFSensorDevice));
+    }
 
-        /// <summary>Validates that the <see cref="IMFSensorDevice" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFSensorDevice>(), Is.EqualTo(sizeof(IMFSensorDevice)));
-        }
+    /// <summary>Validates that the <see cref="IMFSensorDevice" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFSensorDevice>(), Is.EqualTo(sizeof(IMFSensorDevice)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFSensorDevice" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFSensorDevice).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFSensorDevice" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFSensorDevice).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFSensorDevice" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFSensorDevice" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFSensorDevice), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFSensorDevice), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFSensorDevice), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFSensorDevice), Is.EqualTo(4));
         }
     }
 }

@@ -3,14 +3,13 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum VMRPresentationFlags
 {
-    public enum VMRPresentationFlags
-    {
-        VMRSample_SyncPoint = 0x1,
-        VMRSample_Preroll = 0x2,
-        VMRSample_Discontinuity = 0x4,
-        VMRSample_TimeValid = 0x8,
-        VMRSample_SrcDstRectsValid = 0x10,
-    }
+    VMRSample_SyncPoint = 0x1,
+    VMRSample_Preroll = 0x2,
+    VMRSample_Discontinuity = 0x4,
+    VMRSample_TimeValid = 0x8,
+    VMRSample_SrcDstRectsValid = 0x10,
 }

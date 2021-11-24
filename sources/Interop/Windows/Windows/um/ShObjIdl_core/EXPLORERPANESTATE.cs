@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum EXPLORERPANESTATE
 {
-    [Flags]
-    public enum EXPLORERPANESTATE
-    {
-        EPS_DONTCARE = 0,
-        EPS_DEFAULT_ON = 0x1,
-        EPS_DEFAULT_OFF = 0x2,
-        EPS_STATEMASK = 0xffff,
-        EPS_INITIALSTATE = 0x10000,
-        EPS_FORCE = 0x20000,
-    }
+    EPS_DONTCARE = 0,
+    EPS_DEFAULT_ON = 0x1,
+    EPS_DEFAULT_OFF = 0x2,
+    EPS_STATEMASK = 0xffff,
+    EPS_INITIALSTATE = 0x10000,
+    EPS_FORCE = 0x20000,
 }

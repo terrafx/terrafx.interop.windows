@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MFVideoCompressedInfo" /> struct.</summary>
+public static unsafe partial class MFVideoCompressedInfoTests
 {
-    /// <summary>Provides validation of the <see cref="MFVideoCompressedInfo" /> struct.</summary>
-    public static unsafe partial class MFVideoCompressedInfoTests
+    /// <summary>Validates that the <see cref="MFVideoCompressedInfo" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MFVideoCompressedInfo" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MFVideoCompressedInfo>(), Is.EqualTo(sizeof(MFVideoCompressedInfo)));
-        }
+        Assert.That(Marshal.SizeOf<MFVideoCompressedInfo>(), Is.EqualTo(sizeof(MFVideoCompressedInfo)));
+    }
 
-        /// <summary>Validates that the <see cref="MFVideoCompressedInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MFVideoCompressedInfo).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MFVideoCompressedInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MFVideoCompressedInfo).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MFVideoCompressedInfo" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MFVideoCompressedInfo), Is.EqualTo(24));
-        }
+    /// <summary>Validates that the <see cref="MFVideoCompressedInfo" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MFVideoCompressedInfo), Is.EqualTo(24));
     }
 }

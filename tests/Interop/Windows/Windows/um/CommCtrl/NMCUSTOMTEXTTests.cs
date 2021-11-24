@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NMCUSTOMTEXT" /> struct.</summary>
+public static unsafe partial class NMCUSTOMTEXTTests
 {
-    /// <summary>Provides validation of the <see cref="NMCUSTOMTEXT" /> struct.</summary>
-    public static unsafe partial class NMCUSTOMTEXTTests
+    /// <summary>Validates that the <see cref="NMCUSTOMTEXT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NMCUSTOMTEXT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NMCUSTOMTEXT>(), Is.EqualTo(sizeof(NMCUSTOMTEXT)));
-        }
+        Assert.That(Marshal.SizeOf<NMCUSTOMTEXT>(), Is.EqualTo(sizeof(NMCUSTOMTEXT)));
+    }
 
-        /// <summary>Validates that the <see cref="NMCUSTOMTEXT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NMCUSTOMTEXT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NMCUSTOMTEXT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NMCUSTOMTEXT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NMCUSTOMTEXT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="NMCUSTOMTEXT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(NMCUSTOMTEXT), Is.EqualTo(64));
-            }
-            else
-            {
-                Assert.That(sizeof(NMCUSTOMTEXT), Is.EqualTo(36));
-            }
+            Assert.That(sizeof(NMCUSTOMTEXT), Is.EqualTo(64));
+        }
+        else
+        {
+            Assert.That(sizeof(NMCUSTOMTEXT), Is.EqualTo(36));
         }
     }
 }

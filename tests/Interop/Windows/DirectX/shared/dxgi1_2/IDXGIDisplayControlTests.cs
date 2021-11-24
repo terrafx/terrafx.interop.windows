@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDXGIDisplayControl" /> struct.</summary>
+public static unsafe partial class IDXGIDisplayControlTests
 {
-    /// <summary>Provides validation of the <see cref="IDXGIDisplayControl" /> struct.</summary>
-    public static unsafe partial class IDXGIDisplayControlTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDXGIDisplayControl" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDXGIDisplayControl" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDXGIDisplayControl).GUID, Is.EqualTo(IID_IDXGIDisplayControl));
-        }
+        Assert.That(typeof(IDXGIDisplayControl).GUID, Is.EqualTo(IID_IDXGIDisplayControl));
+    }
 
-        /// <summary>Validates that the <see cref="IDXGIDisplayControl" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDXGIDisplayControl>(), Is.EqualTo(sizeof(IDXGIDisplayControl)));
-        }
+    /// <summary>Validates that the <see cref="IDXGIDisplayControl" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDXGIDisplayControl>(), Is.EqualTo(sizeof(IDXGIDisplayControl)));
+    }
 
-        /// <summary>Validates that the <see cref="IDXGIDisplayControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDXGIDisplayControl).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDXGIDisplayControl" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDXGIDisplayControl).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDXGIDisplayControl" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDXGIDisplayControl" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDXGIDisplayControl), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDXGIDisplayControl), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDXGIDisplayControl), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDXGIDisplayControl), Is.EqualTo(4));
         }
     }
 }

@@ -3,14 +3,13 @@
 // Ported from um/objidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum CALLTYPE
 {
-    public enum CALLTYPE
-    {
-        CALLTYPE_TOPLEVEL = 1,
-        CALLTYPE_NESTED = 2,
-        CALLTYPE_ASYNC = 3,
-        CALLTYPE_TOPLEVEL_CALLPENDING = 4,
-        CALLTYPE_ASYNC_CALLPENDING = 5,
-    }
+    CALLTYPE_TOPLEVEL = 1,
+    CALLTYPE_NESTED = 2,
+    CALLTYPE_ASYNC = 3,
+    CALLTYPE_TOPLEVEL_CALLPENDING = 4,
+    CALLTYPE_ASYNC_CALLPENDING = 5,
 }

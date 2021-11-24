@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WINDOWPOS" /> struct.</summary>
+public static unsafe partial class WINDOWPOSTests
 {
-    /// <summary>Provides validation of the <see cref="WINDOWPOS" /> struct.</summary>
-    public static unsafe partial class WINDOWPOSTests
+    /// <summary>Validates that the <see cref="WINDOWPOS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WINDOWPOS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WINDOWPOS>(), Is.EqualTo(sizeof(WINDOWPOS)));
-        }
+        Assert.That(Marshal.SizeOf<WINDOWPOS>(), Is.EqualTo(sizeof(WINDOWPOS)));
+    }
 
-        /// <summary>Validates that the <see cref="WINDOWPOS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WINDOWPOS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WINDOWPOS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WINDOWPOS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WINDOWPOS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WINDOWPOS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WINDOWPOS), Is.EqualTo(40));
-            }
-            else
-            {
-                Assert.That(sizeof(WINDOWPOS), Is.EqualTo(28));
-            }
+            Assert.That(sizeof(WINDOWPOS), Is.EqualTo(40));
+        }
+        else
+        {
+            Assert.That(sizeof(WINDOWPOS), Is.EqualTo(28));
         }
     }
 }

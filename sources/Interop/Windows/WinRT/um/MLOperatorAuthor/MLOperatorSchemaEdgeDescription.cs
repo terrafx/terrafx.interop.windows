@@ -6,57 +6,56 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+public unsafe partial struct MLOperatorSchemaEdgeDescription
 {
-    public unsafe partial struct MLOperatorSchemaEdgeDescription
+    public MLOperatorParameterOptions options;
+
+    public MLOperatorSchemaEdgeTypeFormat typeFormat;
+
+    [NativeTypeName("MLOperatorSchemaEdgeDescription::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/MLOperatorAuthor.h:424:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public ref void* reserved
     {
-        public MLOperatorParameterOptions options;
-
-        public MLOperatorSchemaEdgeTypeFormat typeFormat;
-
-        [NativeTypeName("MLOperatorSchemaEdgeDescription::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/MLOperatorAuthor.h:424:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public ref void* reserved
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.reserved;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.reserved;
         }
+    }
 
-        public ref sbyte* typeLabel
+    public ref sbyte* typeLabel
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.typeLabel;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.typeLabel;
         }
+    }
 
-        public ref MLOperatorEdgeDescription edgeDescription
+    public ref MLOperatorEdgeDescription edgeDescription
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.edgeDescription, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.edgeDescription, 1));
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("const void *")]
-            public void* reserved;
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("const void *")]
+        public void* reserved;
 
-            [FieldOffset(0)]
-            [NativeTypeName("const char *")]
-            public sbyte* typeLabel;
+        [FieldOffset(0)]
+        [NativeTypeName("const char *")]
+        public sbyte* typeLabel;
 
-            [FieldOffset(0)]
-            public MLOperatorEdgeDescription edgeDescription;
-        }
+        [FieldOffset(0)]
+        public MLOperatorEdgeDescription edgeDescription;
     }
 }

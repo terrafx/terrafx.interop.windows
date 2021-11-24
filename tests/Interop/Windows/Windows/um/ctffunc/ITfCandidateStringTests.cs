@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ITfCandidateString" /> struct.</summary>
+public static unsafe partial class ITfCandidateStringTests
 {
-    /// <summary>Provides validation of the <see cref="ITfCandidateString" /> struct.</summary>
-    public static unsafe partial class ITfCandidateStringTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfCandidateString" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfCandidateString" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ITfCandidateString).GUID, Is.EqualTo(IID_ITfCandidateString));
-        }
+        Assert.That(typeof(ITfCandidateString).GUID, Is.EqualTo(IID_ITfCandidateString));
+    }
 
-        /// <summary>Validates that the <see cref="ITfCandidateString" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ITfCandidateString>(), Is.EqualTo(sizeof(ITfCandidateString)));
-        }
+    /// <summary>Validates that the <see cref="ITfCandidateString" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ITfCandidateString>(), Is.EqualTo(sizeof(ITfCandidateString)));
+    }
 
-        /// <summary>Validates that the <see cref="ITfCandidateString" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ITfCandidateString).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ITfCandidateString" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ITfCandidateString).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ITfCandidateString" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ITfCandidateString" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ITfCandidateString), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ITfCandidateString), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ITfCandidateString), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ITfCandidateString), Is.EqualTo(4));
         }
     }
 }

@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="FsiNamedStreams" /> struct.</summary>
+public static unsafe partial class FsiNamedStreamsTests
 {
-    /// <summary>Provides validation of the <see cref="FsiNamedStreams" /> struct.</summary>
-    public static unsafe partial class FsiNamedStreamsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="FsiNamedStreams" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="FsiNamedStreams" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(FsiNamedStreams).GUID, Is.EqualTo(CLSID_FsiNamedStreams));
-        }
+        Assert.That(typeof(FsiNamedStreams).GUID, Is.EqualTo(CLSID_FsiNamedStreams));
+    }
 
-        /// <summary>Validates that the <see cref="FsiNamedStreams" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<FsiNamedStreams>(), Is.EqualTo(sizeof(FsiNamedStreams)));
-        }
+    /// <summary>Validates that the <see cref="FsiNamedStreams" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<FsiNamedStreams>(), Is.EqualTo(sizeof(FsiNamedStreams)));
+    }
 
-        /// <summary>Validates that the <see cref="FsiNamedStreams" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(FsiNamedStreams).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="FsiNamedStreams" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(FsiNamedStreams).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="FsiNamedStreams" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(FsiNamedStreams), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="FsiNamedStreams" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(FsiNamedStreams), Is.EqualTo(1));
     }
 }

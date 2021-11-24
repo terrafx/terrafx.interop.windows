@@ -9,108 +9,107 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[SupportedOSPlatform("windows10.0")]
+[Guid("4652651D-C1FE-4BA1-9F0A-C0F56596F721")]
+[NativeTypeName("struct IProtectionPolicyManagerInterop : IInspectable")]
+[NativeInheritance("IInspectable")]
+public unsafe partial struct IProtectionPolicyManagerInterop : IProtectionPolicyManagerInterop.Interface
 {
-    [SupportedOSPlatform("windows10.0")]
-    [Guid("4652651D-C1FE-4BA1-9F0A-C0F56596F721")]
-    [NativeTypeName("struct IProtectionPolicyManagerInterop : IInspectable")]
-    [NativeInheritance("IInspectable")]
-    public unsafe partial struct IProtectionPolicyManagerInterop : IProtectionPolicyManagerInterop.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, Guid*, void**, int>)(lpVtbl[0]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, Guid*, void**, int>)(lpVtbl[0]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, uint>)(lpVtbl[1]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, uint>)(lpVtbl[1]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, uint>)(lpVtbl[2]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, uint>)(lpVtbl[2]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+    {
+        return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
-        {
-            return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetRuntimeClassName(HSTRING* className)
+    {
+        return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, HSTRING*, int>)(lpVtbl[4]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this), className);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT GetRuntimeClassName(HSTRING* className)
-        {
-            return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, HSTRING*, int>)(lpVtbl[4]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this), className);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetTrustLevel(TrustLevel* trustLevel)
+    {
+        return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, TrustLevel*, int>)(lpVtbl[5]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this), trustLevel);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT GetTrustLevel(TrustLevel* trustLevel)
-        {
-            return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, TrustLevel*, int>)(lpVtbl[5]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this), trustLevel);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT RequestAccessForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING targetIdentity, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
+    {
+        return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, HWND, HSTRING, HSTRING, Guid*, void**, int>)(lpVtbl[6]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, targetIdentity, riid, asyncOperation);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** result)
+    {
+        return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, HWND, Guid*, void**, int>)(lpVtbl[7]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this), appWindow, riid, result);
+    }
+
+    public interface Interface : IInspectable.Interface
+    {
         [VtblIndex(6)]
-        public HRESULT RequestAccessForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING targetIdentity, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
-        {
-            return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, HWND, HSTRING, HSTRING, Guid*, void**, int>)(lpVtbl[6]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, targetIdentity, riid, asyncOperation);
-        }
+        HRESULT RequestAccessForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING targetIdentity, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** result)
-        {
-            return ((delegate* unmanaged<IProtectionPolicyManagerInterop*, HWND, Guid*, void**, int>)(lpVtbl[7]))((IProtectionPolicyManagerInterop*)Unsafe.AsPointer(ref this), appWindow, riid, result);
-        }
+        HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** result);
+    }
 
-        public interface Interface : IInspectable.Interface
-        {
-            [VtblIndex(6)]
-            HRESULT RequestAccessForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING targetIdentity, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IProtectionPolicyManagerInterop*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(7)]
-            HRESULT GetForWindow(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** result);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IProtectionPolicyManagerInterop*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IProtectionPolicyManagerInterop*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IProtectionPolicyManagerInterop*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IProtectionPolicyManagerInterop*, uint> AddRef;
+        [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IProtectionPolicyManagerInterop*, uint*, Guid**, int> GetIids;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IProtectionPolicyManagerInterop*, uint> Release;
+        [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IProtectionPolicyManagerInterop*, HSTRING*, int> GetRuntimeClassName;
 
-            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IProtectionPolicyManagerInterop*, uint*, Guid**, int> GetIids;
+        [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IProtectionPolicyManagerInterop*, TrustLevel*, int> GetTrustLevel;
 
-            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IProtectionPolicyManagerInterop*, HSTRING*, int> GetRuntimeClassName;
+        [NativeTypeName("HRESULT (HWND, HSTRING, HSTRING, const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IProtectionPolicyManagerInterop*, HWND, HSTRING, HSTRING, Guid*, void**, int> RequestAccessForWindowAsync;
 
-            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IProtectionPolicyManagerInterop*, TrustLevel*, int> GetTrustLevel;
-
-            [NativeTypeName("HRESULT (HWND, HSTRING, HSTRING, const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IProtectionPolicyManagerInterop*, HWND, HSTRING, HSTRING, Guid*, void**, int> RequestAccessForWindowAsync;
-
-            [NativeTypeName("HRESULT (HWND, const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IProtectionPolicyManagerInterop*, HWND, Guid*, void**, int> GetForWindow;
-        }
+        [NativeTypeName("HRESULT (HWND, const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IProtectionPolicyManagerInterop*, HWND, Guid*, void**, int> GetForWindow;
     }
 }

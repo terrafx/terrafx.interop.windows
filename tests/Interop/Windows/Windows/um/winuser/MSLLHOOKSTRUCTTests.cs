@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MSLLHOOKSTRUCT" /> struct.</summary>
+public static unsafe partial class MSLLHOOKSTRUCTTests
 {
-    /// <summary>Provides validation of the <see cref="MSLLHOOKSTRUCT" /> struct.</summary>
-    public static unsafe partial class MSLLHOOKSTRUCTTests
+    /// <summary>Validates that the <see cref="MSLLHOOKSTRUCT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MSLLHOOKSTRUCT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MSLLHOOKSTRUCT>(), Is.EqualTo(sizeof(MSLLHOOKSTRUCT)));
-        }
+        Assert.That(Marshal.SizeOf<MSLLHOOKSTRUCT>(), Is.EqualTo(sizeof(MSLLHOOKSTRUCT)));
+    }
 
-        /// <summary>Validates that the <see cref="MSLLHOOKSTRUCT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MSLLHOOKSTRUCT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MSLLHOOKSTRUCT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MSLLHOOKSTRUCT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MSLLHOOKSTRUCT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="MSLLHOOKSTRUCT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(MSLLHOOKSTRUCT), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(MSLLHOOKSTRUCT), Is.EqualTo(24));
-            }
+            Assert.That(sizeof(MSLLHOOKSTRUCT), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(MSLLHOOKSTRUCT), Is.EqualTo(24));
         }
     }
 }

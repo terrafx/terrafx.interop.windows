@@ -5,32 +5,31 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct NEWCPLINFOW
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct NEWCPLINFOW
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwSize;
+    [NativeTypeName("DWORD")]
+    public uint dwSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint dwHelpContext;
+    [NativeTypeName("DWORD")]
+    public uint dwHelpContext;
 
-        [NativeTypeName("LONG_PTR")]
-        public nint lData;
+    [NativeTypeName("LONG_PTR")]
+    public nint lData;
 
-        public HICON hIcon;
+    public HICON hIcon;
 
-        [NativeTypeName("WCHAR [32]")]
-        public fixed ushort szName[32];
+    [NativeTypeName("WCHAR [32]")]
+    public fixed ushort szName[32];
 
-        [NativeTypeName("WCHAR [64]")]
-        public fixed ushort szInfo[64];
+    [NativeTypeName("WCHAR [64]")]
+    public fixed ushort szInfo[64];
 
-        [NativeTypeName("WCHAR [128]")]
-        public fixed ushort szHelpFile[128];
-    }
+    [NativeTypeName("WCHAR [128]")]
+    public fixed ushort szHelpFile[128];
 }

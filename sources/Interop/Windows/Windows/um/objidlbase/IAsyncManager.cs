@@ -7,90 +7,89 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("0000002A-0000-0000-C000-000000000046")]
+[NativeTypeName("struct IAsyncManager : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IAsyncManager : IAsyncManager.Interface
 {
-    [Guid("0000002A-0000-0000-C000-000000000046")]
-    [NativeTypeName("struct IAsyncManager : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAsyncManager : IAsyncManager.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IAsyncManager*, Guid*, void**, int>)(lpVtbl[0]))((IAsyncManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IAsyncManager*, Guid*, void**, int>)(lpVtbl[0]))((IAsyncManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IAsyncManager*, uint>)(lpVtbl[1]))((IAsyncManager*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IAsyncManager*, uint>)(lpVtbl[1]))((IAsyncManager*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IAsyncManager*, uint>)(lpVtbl[2]))((IAsyncManager*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IAsyncManager*, uint>)(lpVtbl[2]))((IAsyncManager*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT CompleteCall(HRESULT Result)
+    {
+        return ((delegate* unmanaged<IAsyncManager*, HRESULT, int>)(lpVtbl[3]))((IAsyncManager*)Unsafe.AsPointer(ref this), Result);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetCallContext([NativeTypeName("const IID &")] Guid* riid, void** pInterface)
+    {
+        return ((delegate* unmanaged<IAsyncManager*, Guid*, void**, int>)(lpVtbl[4]))((IAsyncManager*)Unsafe.AsPointer(ref this), riid, pInterface);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetState([NativeTypeName("ULONG *")] uint* pulStateFlags)
+    {
+        return ((delegate* unmanaged<IAsyncManager*, uint*, int>)(lpVtbl[5]))((IAsyncManager*)Unsafe.AsPointer(ref this), pulStateFlags);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT CompleteCall(HRESULT Result)
-        {
-            return ((delegate* unmanaged<IAsyncManager*, HRESULT, int>)(lpVtbl[3]))((IAsyncManager*)Unsafe.AsPointer(ref this), Result);
-        }
+        HRESULT CompleteCall(HRESULT Result);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetCallContext([NativeTypeName("const IID &")] Guid* riid, void** pInterface)
-        {
-            return ((delegate* unmanaged<IAsyncManager*, Guid*, void**, int>)(lpVtbl[4]))((IAsyncManager*)Unsafe.AsPointer(ref this), riid, pInterface);
-        }
+        HRESULT GetCallContext([NativeTypeName("const IID &")] Guid* riid, void** pInterface);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetState([NativeTypeName("ULONG *")] uint* pulStateFlags)
-        {
-            return ((delegate* unmanaged<IAsyncManager*, uint*, int>)(lpVtbl[5]))((IAsyncManager*)Unsafe.AsPointer(ref this), pulStateFlags);
-        }
+        HRESULT GetState([NativeTypeName("ULONG *")] uint* pulStateFlags);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT CompleteCall(HRESULT Result);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAsyncManager*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetCallContext([NativeTypeName("const IID &")] Guid* riid, void** pInterface);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAsyncManager*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetState([NativeTypeName("ULONG *")] uint* pulStateFlags);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAsyncManager*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAsyncManager*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAsyncManager*, HRESULT, int> CompleteCall;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAsyncManager*, uint> AddRef;
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAsyncManager*, Guid*, void**, int> GetCallContext;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAsyncManager*, uint> Release;
-
-            [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAsyncManager*, HRESULT, int> CompleteCall;
-
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAsyncManager*, Guid*, void**, int> GetCallContext;
-
-            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAsyncManager*, uint*, int> GetState;
-        }
+        [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAsyncManager*, uint*, int> GetState;
     }
 }

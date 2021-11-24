@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="D2D_SIZE_U" /> struct.</summary>
+public static unsafe partial class D2D_SIZE_UTests
 {
-    /// <summary>Provides validation of the <see cref="D2D_SIZE_U" /> struct.</summary>
-    public static unsafe partial class D2D_SIZE_UTests
+    /// <summary>Validates that the <see cref="D2D_SIZE_U" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="D2D_SIZE_U" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<D2D_SIZE_U>(), Is.EqualTo(sizeof(D2D_SIZE_U)));
-        }
+        Assert.That(Marshal.SizeOf<D2D_SIZE_U>(), Is.EqualTo(sizeof(D2D_SIZE_U)));
+    }
 
-        /// <summary>Validates that the <see cref="D2D_SIZE_U" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(D2D_SIZE_U).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="D2D_SIZE_U" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(D2D_SIZE_U).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="D2D_SIZE_U" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(D2D_SIZE_U), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="D2D_SIZE_U" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(D2D_SIZE_U), Is.EqualTo(8));
     }
 }

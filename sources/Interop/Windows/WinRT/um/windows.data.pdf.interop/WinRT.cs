@@ -11,48 +11,47 @@ using System.Runtime.Versioning;
 using TerraFX.Interop.DirectX;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+public static unsafe partial class WinRT
 {
-    public static unsafe partial class WinRT
+    [SupportedOSPlatform("windows8.1")]
+    [DllImport("windows.data.pdf.dll", ExactSpelling = true)]
+    public static extern HRESULT PdfCreateRenderer(IDXGIDevice* pDevice, IPdfRendererNative** ppRenderer);
+
+    [NativeTypeName("const D2D_RECT_F")]
+    public static ref readonly D2D_RECT_F sc_PdfRenderParamsDefaultSrcRect
     {
-        [SupportedOSPlatform("windows8.1")]
-        [DllImport("windows.data.pdf.dll", ExactSpelling = true)]
-        public static extern HRESULT PdfCreateRenderer(IDXGIDevice* pDevice, IPdfRendererNative** ppRenderer);
-
-        [NativeTypeName("const D2D_RECT_F")]
-        public static ref readonly D2D_RECT_F sc_PdfRenderParamsDefaultSrcRect
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x00, 0x00, 0x00, 0x00,
-                    0x00, 0x00, 0x00, 0x00,
-                    0x00, 0x00, 0x00, 0x00,
-                    0x00, 0x00, 0x00, 0x00
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<D2D_RECT_F>());
-                return ref Unsafe.As<byte, D2D_RECT_F>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<D2D_RECT_F>());
+            return ref Unsafe.As<byte, D2D_RECT_F>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const D2D_COLOR_F")]
-        public static ref readonly DXGI_RGBA sc_PdfRenderParamsDefaultBkColor
+    [NativeTypeName("const D2D_COLOR_F")]
+    public static ref readonly DXGI_RGBA sc_PdfRenderParamsDefaultBkColor
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x00, 0x00, 0x80, 0x3F,
-                    0x00, 0x00, 0x80, 0x3F,
-                    0x00, 0x00, 0x80, 0x3F,
-                    0x00, 0x00, 0x80, 0x3F
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x00, 0x00, 0x80, 0x3F,
+                0x00, 0x00, 0x80, 0x3F,
+                0x00, 0x00, 0x80, 0x3F,
+                0x00, 0x00, 0x80, 0x3F
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<DXGI_RGBA>());
-                return ref Unsafe.As<byte, DXGI_RGBA>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<DXGI_RGBA>());
+            return ref Unsafe.As<byte, DXGI_RGBA>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

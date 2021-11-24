@@ -7,155 +7,154 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("9C2C4058-23F5-41DE-877A-DF3AF236A09E")]
+[NativeTypeName("struct IConnector : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IConnector : IConnector.Interface
 {
-    [Guid("9C2C4058-23F5-41DE-877A-DF3AF236A09E")]
-    [NativeTypeName("struct IConnector : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IConnector : IConnector.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IConnector*, Guid*, void**, int>)(lpVtbl[0]))((IConnector*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IConnector*, Guid*, void**, int>)(lpVtbl[0]))((IConnector*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IConnector*, uint>)(lpVtbl[1]))((IConnector*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IConnector*, uint>)(lpVtbl[1]))((IConnector*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IConnector*, uint>)(lpVtbl[2]))((IConnector*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IConnector*, uint>)(lpVtbl[2]))((IConnector*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetType(ConnectorType* pType)
+    {
+        return ((delegate* unmanaged<IConnector*, ConnectorType*, int>)(lpVtbl[3]))((IConnector*)Unsafe.AsPointer(ref this), pType);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetDataFlow(DataFlow* pFlow)
+    {
+        return ((delegate* unmanaged<IConnector*, DataFlow*, int>)(lpVtbl[4]))((IConnector*)Unsafe.AsPointer(ref this), pFlow);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT ConnectTo(IConnector* pConnectTo)
+    {
+        return ((delegate* unmanaged<IConnector*, IConnector*, int>)(lpVtbl[5]))((IConnector*)Unsafe.AsPointer(ref this), pConnectTo);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Disconnect()
+    {
+        return ((delegate* unmanaged<IConnector*, int>)(lpVtbl[6]))((IConnector*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT IsConnected(BOOL* pbConnected)
+    {
+        return ((delegate* unmanaged<IConnector*, BOOL*, int>)(lpVtbl[7]))((IConnector*)Unsafe.AsPointer(ref this), pbConnected);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT GetConnectedTo(IConnector** ppConTo)
+    {
+        return ((delegate* unmanaged<IConnector*, IConnector**, int>)(lpVtbl[8]))((IConnector*)Unsafe.AsPointer(ref this), ppConTo);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT GetConnectorIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrConnectorId)
+    {
+        return ((delegate* unmanaged<IConnector*, ushort**, int>)(lpVtbl[9]))((IConnector*)Unsafe.AsPointer(ref this), ppwstrConnectorId);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT GetDeviceIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrDeviceId)
+    {
+        return ((delegate* unmanaged<IConnector*, ushort**, int>)(lpVtbl[10]))((IConnector*)Unsafe.AsPointer(ref this), ppwstrDeviceId);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetType(ConnectorType* pType)
-        {
-            return ((delegate* unmanaged<IConnector*, ConnectorType*, int>)(lpVtbl[3]))((IConnector*)Unsafe.AsPointer(ref this), pType);
-        }
+        HRESULT GetType(ConnectorType* pType);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetDataFlow(DataFlow* pFlow)
-        {
-            return ((delegate* unmanaged<IConnector*, DataFlow*, int>)(lpVtbl[4]))((IConnector*)Unsafe.AsPointer(ref this), pFlow);
-        }
+        HRESULT GetDataFlow(DataFlow* pFlow);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT ConnectTo(IConnector* pConnectTo)
-        {
-            return ((delegate* unmanaged<IConnector*, IConnector*, int>)(lpVtbl[5]))((IConnector*)Unsafe.AsPointer(ref this), pConnectTo);
-        }
+        HRESULT ConnectTo(IConnector* pConnectTo);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Disconnect()
-        {
-            return ((delegate* unmanaged<IConnector*, int>)(lpVtbl[6]))((IConnector*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Disconnect();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT IsConnected(BOOL* pbConnected)
-        {
-            return ((delegate* unmanaged<IConnector*, BOOL*, int>)(lpVtbl[7]))((IConnector*)Unsafe.AsPointer(ref this), pbConnected);
-        }
+        HRESULT IsConnected(BOOL* pbConnected);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT GetConnectedTo(IConnector** ppConTo)
-        {
-            return ((delegate* unmanaged<IConnector*, IConnector**, int>)(lpVtbl[8]))((IConnector*)Unsafe.AsPointer(ref this), ppConTo);
-        }
+        HRESULT GetConnectedTo(IConnector** ppConTo);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetConnectorIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrConnectorId)
-        {
-            return ((delegate* unmanaged<IConnector*, ushort**, int>)(lpVtbl[9]))((IConnector*)Unsafe.AsPointer(ref this), ppwstrConnectorId);
-        }
+        HRESULT GetConnectorIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrConnectorId);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetDeviceIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrDeviceId)
-        {
-            return ((delegate* unmanaged<IConnector*, ushort**, int>)(lpVtbl[10]))((IConnector*)Unsafe.AsPointer(ref this), ppwstrDeviceId);
-        }
+        HRESULT GetDeviceIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrDeviceId);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetType(ConnectorType* pType);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IConnector*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetDataFlow(DataFlow* pFlow);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IConnector*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT ConnectTo(IConnector* pConnectTo);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IConnector*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT Disconnect();
+        [NativeTypeName("HRESULT (ConnectorType *) __attribute__((stdcall))")]
+        public new delegate* unmanaged<IConnector*, ConnectorType*, int> GetType;
 
-            [VtblIndex(7)]
-            HRESULT IsConnected(BOOL* pbConnected);
+        [NativeTypeName("HRESULT (DataFlow *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IConnector*, DataFlow*, int> GetDataFlow;
 
-            [VtblIndex(8)]
-            HRESULT GetConnectedTo(IConnector** ppConTo);
+        [NativeTypeName("HRESULT (IConnector *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IConnector*, IConnector*, int> ConnectTo;
 
-            [VtblIndex(9)]
-            HRESULT GetConnectorIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrConnectorId);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IConnector*, int> Disconnect;
 
-            [VtblIndex(10)]
-            HRESULT GetDeviceIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrDeviceId);
-        }
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IConnector*, BOOL*, int> IsConnected;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IConnector*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (IConnector **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IConnector*, IConnector**, int> GetConnectedTo;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IConnector*, uint> AddRef;
+        [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IConnector*, ushort**, int> GetConnectorIdConnectedTo;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IConnector*, uint> Release;
-
-            [NativeTypeName("HRESULT (ConnectorType *) __attribute__((stdcall))")]
-            public new delegate* unmanaged<IConnector*, ConnectorType*, int> GetType;
-
-            [NativeTypeName("HRESULT (DataFlow *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IConnector*, DataFlow*, int> GetDataFlow;
-
-            [NativeTypeName("HRESULT (IConnector *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IConnector*, IConnector*, int> ConnectTo;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IConnector*, int> Disconnect;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IConnector*, BOOL*, int> IsConnected;
-
-            [NativeTypeName("HRESULT (IConnector **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IConnector*, IConnector**, int> GetConnectedTo;
-
-            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IConnector*, ushort**, int> GetConnectorIdConnectedTo;
-
-            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IConnector*, ushort**, int> GetDeviceIdConnectedTo;
-        }
+        [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IConnector*, ushort**, int> GetDeviceIdConnectedTo;
     }
 }

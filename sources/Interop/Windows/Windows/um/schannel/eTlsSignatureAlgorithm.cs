@@ -3,13 +3,12 @@
 // Ported from um/schannel.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum eTlsSignatureAlgorithm
 {
-    public enum eTlsSignatureAlgorithm
-    {
-        TlsSignatureAlgorithm_Anonymous = 0,
-        TlsSignatureAlgorithm_Rsa = 1,
-        TlsSignatureAlgorithm_Dsa = 2,
-        TlsSignatureAlgorithm_Ecdsa = 3,
-    }
+    TlsSignatureAlgorithm_Anonymous = 0,
+    TlsSignatureAlgorithm_Rsa = 1,
+    TlsSignatureAlgorithm_Dsa = 2,
+    TlsSignatureAlgorithm_Ecdsa = 3,
 }

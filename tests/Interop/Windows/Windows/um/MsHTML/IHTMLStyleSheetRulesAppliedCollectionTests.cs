@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IHTMLStyleSheetRulesAppliedCollection" /> struct.</summary>
+public static unsafe partial class IHTMLStyleSheetRulesAppliedCollectionTests
 {
-    /// <summary>Provides validation of the <see cref="IHTMLStyleSheetRulesAppliedCollection" /> struct.</summary>
-    public static unsafe partial class IHTMLStyleSheetRulesAppliedCollectionTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLStyleSheetRulesAppliedCollection" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLStyleSheetRulesAppliedCollection" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IHTMLStyleSheetRulesAppliedCollection).GUID, Is.EqualTo(IID_IHTMLStyleSheetRulesAppliedCollection));
-        }
+        Assert.That(typeof(IHTMLStyleSheetRulesAppliedCollection).GUID, Is.EqualTo(IID_IHTMLStyleSheetRulesAppliedCollection));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLStyleSheetRulesAppliedCollection" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IHTMLStyleSheetRulesAppliedCollection>(), Is.EqualTo(sizeof(IHTMLStyleSheetRulesAppliedCollection)));
-        }
+    /// <summary>Validates that the <see cref="IHTMLStyleSheetRulesAppliedCollection" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IHTMLStyleSheetRulesAppliedCollection>(), Is.EqualTo(sizeof(IHTMLStyleSheetRulesAppliedCollection)));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLStyleSheetRulesAppliedCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IHTMLStyleSheetRulesAppliedCollection).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IHTMLStyleSheetRulesAppliedCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IHTMLStyleSheetRulesAppliedCollection).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLStyleSheetRulesAppliedCollection" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IHTMLStyleSheetRulesAppliedCollection" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IHTMLStyleSheetRulesAppliedCollection), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IHTMLStyleSheetRulesAppliedCollection), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IHTMLStyleSheetRulesAppliedCollection), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IHTMLStyleSheetRulesAppliedCollection), Is.EqualTo(4));
         }
     }
 }

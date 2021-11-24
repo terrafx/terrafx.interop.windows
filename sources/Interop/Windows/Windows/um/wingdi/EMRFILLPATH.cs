@@ -3,12 +3,11 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct EMRFILLPATH
-    {
-        public EMR emr;
+namespace TerraFX.Interop.Windows;
 
-        public RECTL rclBounds;
-    }
+public partial struct EMRFILLPATH
+{
+    public EMR emr;
+
+    public RECTL rclBounds;
 }

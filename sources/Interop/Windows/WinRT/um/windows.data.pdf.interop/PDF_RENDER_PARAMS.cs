@@ -6,23 +6,22 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.DirectX;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[SupportedOSPlatform("windows8.1")]
+public partial struct PDF_RENDER_PARAMS
 {
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct PDF_RENDER_PARAMS
-    {
-        public D2D_RECT_F SourceRect;
+    public D2D_RECT_F SourceRect;
 
-        [NativeTypeName("UINT32")]
-        public uint DestinationWidth;
+    [NativeTypeName("UINT32")]
+    public uint DestinationWidth;
 
-        [NativeTypeName("UINT32")]
-        public uint DestinationHeight;
+    [NativeTypeName("UINT32")]
+    public uint DestinationHeight;
 
-        [NativeTypeName("D2D_COLOR_F")]
-        public DXGI_RGBA BackgroundColor;
+    [NativeTypeName("D2D_COLOR_F")]
+    public DXGI_RGBA BackgroundColor;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte IgnoreHighContrast;
-    }
+    [NativeTypeName("BOOLEAN")]
+    public byte IgnoreHighContrast;
 }

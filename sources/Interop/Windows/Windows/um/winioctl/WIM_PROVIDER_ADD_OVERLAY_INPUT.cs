@@ -3,20 +3,19 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct WIM_PROVIDER_ADD_OVERLAY_INPUT
 {
-    public partial struct WIM_PROVIDER_ADD_OVERLAY_INPUT
-    {
-        [NativeTypeName("DWORD")]
-        public uint WimType;
+    [NativeTypeName("DWORD")]
+    public uint WimType;
 
-        [NativeTypeName("DWORD")]
-        public uint WimIndex;
+    [NativeTypeName("DWORD")]
+    public uint WimIndex;
 
-        [NativeTypeName("DWORD")]
-        public uint WimFileNameOffset;
+    [NativeTypeName("DWORD")]
+    public uint WimFileNameOffset;
 
-        [NativeTypeName("DWORD")]
-        public uint WimFileNameLength;
-    }
+    [NativeTypeName("DWORD")]
+    public uint WimFileNameLength;
 }

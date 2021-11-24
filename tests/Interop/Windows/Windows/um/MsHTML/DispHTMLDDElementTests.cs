@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DispHTMLDDElement" /> struct.</summary>
+public static unsafe partial class DispHTMLDDElementTests
 {
-    /// <summary>Provides validation of the <see cref="DispHTMLDDElement" /> struct.</summary>
-    public static unsafe partial class DispHTMLDDElementTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispHTMLDDElement" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispHTMLDDElement" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DispHTMLDDElement).GUID, Is.EqualTo(IID_DispHTMLDDElement));
-        }
+        Assert.That(typeof(DispHTMLDDElement).GUID, Is.EqualTo(IID_DispHTMLDDElement));
+    }
 
-        /// <summary>Validates that the <see cref="DispHTMLDDElement" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DispHTMLDDElement>(), Is.EqualTo(sizeof(DispHTMLDDElement)));
-        }
+    /// <summary>Validates that the <see cref="DispHTMLDDElement" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DispHTMLDDElement>(), Is.EqualTo(sizeof(DispHTMLDDElement)));
+    }
 
-        /// <summary>Validates that the <see cref="DispHTMLDDElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DispHTMLDDElement).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DispHTMLDDElement" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DispHTMLDDElement).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DispHTMLDDElement" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DispHTMLDDElement" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DispHTMLDDElement), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(DispHTMLDDElement), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(DispHTMLDDElement), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(DispHTMLDDElement), Is.EqualTo(4));
         }
     }
 }

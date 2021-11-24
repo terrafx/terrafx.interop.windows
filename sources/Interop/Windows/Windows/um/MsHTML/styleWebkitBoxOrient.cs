@@ -3,15 +3,14 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum styleWebkitBoxOrient
 {
-    public enum styleWebkitBoxOrient
-    {
-        styleWebkitBoxOrientHorizontal = 0,
-        styleWebkitBoxOrientInlineAxis = 1,
-        styleWebkitBoxOrientVertical = 2,
-        styleWebkitBoxOrientBlockAxis = 3,
-        styleWebkitBoxOrientNotSet = 4,
-        styleWebkitBoxOrient_Max = 2147483647,
-    }
+    styleWebkitBoxOrientHorizontal = 0,
+    styleWebkitBoxOrientInlineAxis = 1,
+    styleWebkitBoxOrientVertical = 2,
+    styleWebkitBoxOrientBlockAxis = 3,
+    styleWebkitBoxOrientNotSet = 4,
+    styleWebkitBoxOrient_Max = 2147483647,
 }

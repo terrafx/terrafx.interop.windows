@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DWORD_BLOB" /> struct.</summary>
+public static unsafe partial class DWORD_BLOBTests
 {
-    /// <summary>Provides validation of the <see cref="DWORD_BLOB" /> struct.</summary>
-    public static unsafe partial class DWORD_BLOBTests
+    /// <summary>Validates that the <see cref="DWORD_BLOB" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DWORD_BLOB" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DWORD_BLOB>(), Is.EqualTo(sizeof(DWORD_BLOB)));
-        }
+        Assert.That(Marshal.SizeOf<DWORD_BLOB>(), Is.EqualTo(sizeof(DWORD_BLOB)));
+    }
 
-        /// <summary>Validates that the <see cref="DWORD_BLOB" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DWORD_BLOB).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DWORD_BLOB" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DWORD_BLOB).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DWORD_BLOB" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DWORD_BLOB), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="DWORD_BLOB" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DWORD_BLOB), Is.EqualTo(8));
     }
 }

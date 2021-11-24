@@ -3,11 +3,10 @@
 // Ported from um/HLink.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum HLINKSETF
 {
-    public enum HLINKSETF
-    {
-        HLINKSETF_TARGET = 0x1,
-        HLINKSETF_LOCATION = 0x2,
-    }
+    HLINKSETF_TARGET = 0x1,
+    HLINKSETF_LOCATION = 0x2,
 }

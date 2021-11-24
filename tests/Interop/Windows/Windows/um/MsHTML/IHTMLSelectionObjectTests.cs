@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IHTMLSelectionObject" /> struct.</summary>
+public static unsafe partial class IHTMLSelectionObjectTests
 {
-    /// <summary>Provides validation of the <see cref="IHTMLSelectionObject" /> struct.</summary>
-    public static unsafe partial class IHTMLSelectionObjectTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLSelectionObject" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLSelectionObject" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IHTMLSelectionObject).GUID, Is.EqualTo(IID_IHTMLSelectionObject));
-        }
+        Assert.That(typeof(IHTMLSelectionObject).GUID, Is.EqualTo(IID_IHTMLSelectionObject));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLSelectionObject" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IHTMLSelectionObject>(), Is.EqualTo(sizeof(IHTMLSelectionObject)));
-        }
+    /// <summary>Validates that the <see cref="IHTMLSelectionObject" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IHTMLSelectionObject>(), Is.EqualTo(sizeof(IHTMLSelectionObject)));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLSelectionObject" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IHTMLSelectionObject).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IHTMLSelectionObject" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IHTMLSelectionObject).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLSelectionObject" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IHTMLSelectionObject" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IHTMLSelectionObject), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IHTMLSelectionObject), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IHTMLSelectionObject), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IHTMLSelectionObject), Is.EqualTo(4));
         }
     }
 }

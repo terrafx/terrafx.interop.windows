@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MofCompiler" /> struct.</summary>
+public static unsafe partial class MofCompilerTests
 {
-    /// <summary>Provides validation of the <see cref="MofCompiler" /> struct.</summary>
-    public static unsafe partial class MofCompilerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="MofCompiler" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="MofCompiler" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(MofCompiler).GUID, Is.EqualTo(IID_MofCompiler));
-        }
+        Assert.That(typeof(MofCompiler).GUID, Is.EqualTo(IID_MofCompiler));
+    }
 
-        /// <summary>Validates that the <see cref="MofCompiler" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MofCompiler>(), Is.EqualTo(sizeof(MofCompiler)));
-        }
+    /// <summary>Validates that the <see cref="MofCompiler" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<MofCompiler>(), Is.EqualTo(sizeof(MofCompiler)));
+    }
 
-        /// <summary>Validates that the <see cref="MofCompiler" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MofCompiler).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MofCompiler" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MofCompiler).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MofCompiler" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MofCompiler), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="MofCompiler" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MofCompiler), Is.EqualTo(1));
     }
 }

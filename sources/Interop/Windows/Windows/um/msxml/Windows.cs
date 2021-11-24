@@ -8,31 +8,30 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class Windows
-    {
-        public static ref readonly Guid DIID_XMLDOMDocumentEvents
-        {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x27, 0xA4, 0xFA, 0x3E,
-                    0x2F, 0x27,
-                    0xD2, 0x11,
-                    0x83,
-                    0x6F,
-                    0x00,
-                    0x00,
-                    0xF8,
-                    0x7A,
-                    0x77,
-                    0x82
-                };
+namespace TerraFX.Interop.Windows;
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+public static partial class Windows
+{
+    public static ref readonly Guid DIID_XMLDOMDocumentEvents
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = new byte[] {
+                0x27, 0xA4, 0xFA, 0x3E,
+                0x2F, 0x27,
+                0xD2, 0x11,
+                0x83,
+                0x6F,
+                0x00,
+                0x00,
+                0xF8,
+                0x7A,
+                0x77,
+                0x82
+            };
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

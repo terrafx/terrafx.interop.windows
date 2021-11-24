@@ -3,21 +3,20 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct LOOKUP_STREAM_FROM_CLUSTER_ENTRY
 {
-    public unsafe partial struct LOOKUP_STREAM_FROM_CLUSTER_ENTRY
-    {
-        [NativeTypeName("DWORD")]
-        public uint OffsetToNext;
+    [NativeTypeName("DWORD")]
+    public uint OffsetToNext;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        public LARGE_INTEGER Reserved;
+    public LARGE_INTEGER Reserved;
 
-        public LARGE_INTEGER Cluster;
+    public LARGE_INTEGER Cluster;
 
-        [NativeTypeName("WCHAR [1]")]
-        public fixed ushort FileName[1];
-    }
+    [NativeTypeName("WCHAR [1]")]
+    public fixed ushort FileName[1];
 }

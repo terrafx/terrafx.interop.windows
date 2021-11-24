@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CMSG_CMS_SIGNER_INFO" /> struct.</summary>
+public static unsafe partial class CMSG_CMS_SIGNER_INFOTests
 {
-    /// <summary>Provides validation of the <see cref="CMSG_CMS_SIGNER_INFO" /> struct.</summary>
-    public static unsafe partial class CMSG_CMS_SIGNER_INFOTests
+    /// <summary>Validates that the <see cref="CMSG_CMS_SIGNER_INFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CMSG_CMS_SIGNER_INFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CMSG_CMS_SIGNER_INFO>(), Is.EqualTo(sizeof(CMSG_CMS_SIGNER_INFO)));
-        }
+        Assert.That(Marshal.SizeOf<CMSG_CMS_SIGNER_INFO>(), Is.EqualTo(sizeof(CMSG_CMS_SIGNER_INFO)));
+    }
 
-        /// <summary>Validates that the <see cref="CMSG_CMS_SIGNER_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CMSG_CMS_SIGNER_INFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CMSG_CMS_SIGNER_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CMSG_CMS_SIGNER_INFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CMSG_CMS_SIGNER_INFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CMSG_CMS_SIGNER_INFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CMSG_CMS_SIGNER_INFO), Is.EqualTo(144));
-            }
-            else
-            {
-                Assert.That(sizeof(CMSG_CMS_SIGNER_INFO), Is.EqualTo(72));
-            }
+            Assert.That(sizeof(CMSG_CMS_SIGNER_INFO), Is.EqualTo(144));
+        }
+        else
+        {
+            Assert.That(sizeof(CMSG_CMS_SIGNER_INFO), Is.EqualTo(72));
         }
     }
 }

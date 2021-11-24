@@ -3,12 +3,11 @@
 // Ported from um/ocidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum OLEDCFLAGS
 {
-    public enum OLEDCFLAGS
-    {
-        OLEDC_NODRAW = 0x1,
-        OLEDC_PAINTBKGND = 0x2,
-        OLEDC_OFFSCREEN = 0x4,
-    }
+    OLEDC_NODRAW = 0x1,
+    OLEDC_PAINTBKGND = 0x2,
+    OLEDC_OFFSCREEN = 0x4,
 }

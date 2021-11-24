@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAppxManifestDeviceCapabilitiesEnumerator" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class IAppxManifestDeviceCapabilitiesEnumeratorTests
 {
-    /// <summary>Provides validation of the <see cref="IAppxManifestDeviceCapabilitiesEnumerator" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class IAppxManifestDeviceCapabilitiesEnumeratorTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppxManifestDeviceCapabilitiesEnumerator" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppxManifestDeviceCapabilitiesEnumerator" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAppxManifestDeviceCapabilitiesEnumerator).GUID, Is.EqualTo(IID_IAppxManifestDeviceCapabilitiesEnumerator));
-        }
+        Assert.That(typeof(IAppxManifestDeviceCapabilitiesEnumerator).GUID, Is.EqualTo(IID_IAppxManifestDeviceCapabilitiesEnumerator));
+    }
 
-        /// <summary>Validates that the <see cref="IAppxManifestDeviceCapabilitiesEnumerator" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAppxManifestDeviceCapabilitiesEnumerator>(), Is.EqualTo(sizeof(IAppxManifestDeviceCapabilitiesEnumerator)));
-        }
+    /// <summary>Validates that the <see cref="IAppxManifestDeviceCapabilitiesEnumerator" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAppxManifestDeviceCapabilitiesEnumerator>(), Is.EqualTo(sizeof(IAppxManifestDeviceCapabilitiesEnumerator)));
+    }
 
-        /// <summary>Validates that the <see cref="IAppxManifestDeviceCapabilitiesEnumerator" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAppxManifestDeviceCapabilitiesEnumerator).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAppxManifestDeviceCapabilitiesEnumerator" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAppxManifestDeviceCapabilitiesEnumerator).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAppxManifestDeviceCapabilitiesEnumerator" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAppxManifestDeviceCapabilitiesEnumerator" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAppxManifestDeviceCapabilitiesEnumerator), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAppxManifestDeviceCapabilitiesEnumerator), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAppxManifestDeviceCapabilitiesEnumerator), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAppxManifestDeviceCapabilitiesEnumerator), Is.EqualTo(4));
         }
     }
 }

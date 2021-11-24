@@ -7,41 +7,40 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct TXFS_READ_BACKUP_INFORMATION_OUT
 {
-    public unsafe partial struct TXFS_READ_BACKUP_INFORMATION_OUT
+    [NativeTypeName("_TXFS_READ_BACKUP_INFORMATION_OUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:13536:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public ref uint BufferLength
     {
-        [NativeTypeName("_TXFS_READ_BACKUP_INFORMATION_OUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:13536:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public ref uint BufferLength
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.BufferLength, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.BufferLength, 1));
         }
+    }
 
-        public Span<byte> Buffer
+    public Span<byte> Buffer
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return MemoryMarshal.CreateSpan(ref Anonymous.Buffer[0], 1);
-            }
+            return MemoryMarshal.CreateSpan(ref Anonymous.Buffer[0], 1);
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint BufferLength;
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint BufferLength;
 
-            [FieldOffset(0)]
-            [NativeTypeName("BYTE [1]")]
-            public fixed byte Buffer[1];
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("BYTE [1]")]
+        public fixed byte Buffer[1];
     }
 }

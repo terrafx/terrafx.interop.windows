@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public partial struct SecPkgContext_EarlyStart
 {
-    [SupportedOSPlatform("windows10.0")]
-    public partial struct SecPkgContext_EarlyStart
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwEarlyStartFlags;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwEarlyStartFlags;
 }

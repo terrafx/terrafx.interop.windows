@@ -3,26 +3,25 @@
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WINTRUST_CERT_INFO
 {
-    public unsafe partial struct WINTRUST_CERT_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbStruct;
+    [NativeTypeName("DWORD")]
+    public uint cbStruct;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pcwszDisplayName;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pcwszDisplayName;
 
-        public CERT_CONTEXT* psCertContext;
+    public CERT_CONTEXT* psCertContext;
 
-        [NativeTypeName("DWORD")]
-        public uint chStores;
+    [NativeTypeName("DWORD")]
+    public uint chStores;
 
-        public HCERTSTORE* pahStores;
+    public HCERTSTORE* pahStores;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        public FILETIME* psftVerifyAsOf;
-    }
+    public FILETIME* psftVerifyAsOf;
 }

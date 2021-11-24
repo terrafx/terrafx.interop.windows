@@ -3,11 +3,10 @@
 // Ported from shared/dxgiformat.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public static partial class DXGI
 {
-    public static partial class DXGI
-    {
-        [NativeTypeName("#define DXGI_FORMAT_DEFINED 1")]
-        public const int DXGI_FORMAT_DEFINED = 1;
-    }
+    [NativeTypeName("#define DXGI_FORMAT_DEFINED 1")]
+    public const int DXGI_FORMAT_DEFINED = 1;
 }

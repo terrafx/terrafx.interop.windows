@@ -5,23 +5,22 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct STORAGE_HW_FIRMWARE_ACTIVATE
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct STORAGE_HW_FIRMWARE_ACTIVATE
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        public byte Slot;
+    public byte Slot;
 
-        [NativeTypeName("BYTE [3]")]
-        public fixed byte Reserved0[3];
-    }
+    [NativeTypeName("BYTE [3]")]
+    public fixed byte Reserved0[3];
 }

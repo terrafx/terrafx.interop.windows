@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IPublishedApp" /> struct.</summary>
+public static unsafe partial class IPublishedAppTests
 {
-    /// <summary>Provides validation of the <see cref="IPublishedApp" /> struct.</summary>
-    public static unsafe partial class IPublishedAppTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPublishedApp" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IPublishedApp" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IPublishedApp).GUID, Is.EqualTo(IID_IPublishedApp));
-        }
+        Assert.That(typeof(IPublishedApp).GUID, Is.EqualTo(IID_IPublishedApp));
+    }
 
-        /// <summary>Validates that the <see cref="IPublishedApp" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IPublishedApp>(), Is.EqualTo(sizeof(IPublishedApp)));
-        }
+    /// <summary>Validates that the <see cref="IPublishedApp" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IPublishedApp>(), Is.EqualTo(sizeof(IPublishedApp)));
+    }
 
-        /// <summary>Validates that the <see cref="IPublishedApp" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IPublishedApp).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IPublishedApp" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IPublishedApp).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IPublishedApp" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IPublishedApp" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IPublishedApp), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IPublishedApp), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IPublishedApp), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IPublishedApp), Is.EqualTo(4));
         }
     }
 }

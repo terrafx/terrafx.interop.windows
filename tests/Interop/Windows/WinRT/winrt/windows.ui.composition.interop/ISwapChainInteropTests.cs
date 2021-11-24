@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISwapChainInterop" /> struct.</summary>
+public static unsafe partial class ISwapChainInteropTests
 {
-    /// <summary>Provides validation of the <see cref="ISwapChainInterop" /> struct.</summary>
-    public static unsafe partial class ISwapChainInteropTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISwapChainInterop" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISwapChainInterop" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISwapChainInterop).GUID, Is.EqualTo(IID_ISwapChainInterop));
-        }
+        Assert.That(typeof(ISwapChainInterop).GUID, Is.EqualTo(IID_ISwapChainInterop));
+    }
 
-        /// <summary>Validates that the <see cref="ISwapChainInterop" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISwapChainInterop>(), Is.EqualTo(sizeof(ISwapChainInterop)));
-        }
+    /// <summary>Validates that the <see cref="ISwapChainInterop" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISwapChainInterop>(), Is.EqualTo(sizeof(ISwapChainInterop)));
+    }
 
-        /// <summary>Validates that the <see cref="ISwapChainInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISwapChainInterop).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISwapChainInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISwapChainInterop).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISwapChainInterop" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISwapChainInterop" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISwapChainInterop), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISwapChainInterop), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISwapChainInterop), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISwapChainInterop), Is.EqualTo(4));
         }
     }
 }

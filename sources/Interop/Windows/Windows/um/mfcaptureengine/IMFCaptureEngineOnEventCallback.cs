@@ -8,65 +8,64 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+[Guid("AEDA51C0-9025-4983-9012-DE597B88B089")]
+[NativeTypeName("struct IMFCaptureEngineOnEventCallback : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMFCaptureEngineOnEventCallback : IMFCaptureEngineOnEventCallback.Interface
 {
-    [SupportedOSPlatform("windows8.0")]
-    [Guid("AEDA51C0-9025-4983-9012-DE597B88B089")]
-    [NativeTypeName("struct IMFCaptureEngineOnEventCallback : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFCaptureEngineOnEventCallback : IMFCaptureEngineOnEventCallback.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMFCaptureEngineOnEventCallback*, Guid*, void**, int>)(lpVtbl[0]))((IMFCaptureEngineOnEventCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMFCaptureEngineOnEventCallback*, Guid*, void**, int>)(lpVtbl[0]))((IMFCaptureEngineOnEventCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMFCaptureEngineOnEventCallback*, uint>)(lpVtbl[1]))((IMFCaptureEngineOnEventCallback*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMFCaptureEngineOnEventCallback*, uint>)(lpVtbl[1]))((IMFCaptureEngineOnEventCallback*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMFCaptureEngineOnEventCallback*, uint>)(lpVtbl[2]))((IMFCaptureEngineOnEventCallback*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMFCaptureEngineOnEventCallback*, uint>)(lpVtbl[2]))((IMFCaptureEngineOnEventCallback*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT OnEvent(IMFMediaEvent* pEvent)
+    {
+        return ((delegate* unmanaged<IMFCaptureEngineOnEventCallback*, IMFMediaEvent*, int>)(lpVtbl[3]))((IMFCaptureEngineOnEventCallback*)Unsafe.AsPointer(ref this), pEvent);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT OnEvent(IMFMediaEvent* pEvent)
-        {
-            return ((delegate* unmanaged<IMFCaptureEngineOnEventCallback*, IMFMediaEvent*, int>)(lpVtbl[3]))((IMFCaptureEngineOnEventCallback*)Unsafe.AsPointer(ref this), pEvent);
-        }
+        HRESULT OnEvent(IMFMediaEvent* pEvent);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT OnEvent(IMFMediaEvent* pEvent);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFCaptureEngineOnEventCallback*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFCaptureEngineOnEventCallback*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFCaptureEngineOnEventCallback*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFCaptureEngineOnEventCallback*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFCaptureEngineOnEventCallback*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFCaptureEngineOnEventCallback*, uint> Release;
-
-            [NativeTypeName("HRESULT (IMFMediaEvent *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFCaptureEngineOnEventCallback*, IMFMediaEvent*, int> OnEvent;
-        }
+        [NativeTypeName("HRESULT (IMFMediaEvent *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFCaptureEngineOnEventCallback*, IMFMediaEvent*, int> OnEvent;
     }
 }

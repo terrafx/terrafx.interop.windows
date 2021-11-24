@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.1")]
+public partial struct D3D11_TILE_SHAPE
 {
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct D3D11_TILE_SHAPE
-    {
-        public uint WidthInTexels;
+    public uint WidthInTexels;
 
-        public uint HeightInTexels;
+    public uint HeightInTexels;
 
-        public uint DepthInTexels;
-    }
+    public uint DepthInTexels;
 }

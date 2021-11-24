@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AMCOPPStatusOutput" /> struct.</summary>
+public static unsafe partial class AMCOPPStatusOutputTests
 {
-    /// <summary>Provides validation of the <see cref="AMCOPPStatusOutput" /> struct.</summary>
-    public static unsafe partial class AMCOPPStatusOutputTests
+    /// <summary>Validates that the <see cref="AMCOPPStatusOutput" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="AMCOPPStatusOutput" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<AMCOPPStatusOutput>(), Is.EqualTo(sizeof(AMCOPPStatusOutput)));
-        }
+        Assert.That(Marshal.SizeOf<AMCOPPStatusOutput>(), Is.EqualTo(sizeof(AMCOPPStatusOutput)));
+    }
 
-        /// <summary>Validates that the <see cref="AMCOPPStatusOutput" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(AMCOPPStatusOutput).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="AMCOPPStatusOutput" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(AMCOPPStatusOutput).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="AMCOPPStatusOutput" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(AMCOPPStatusOutput), Is.EqualTo(4096));
-        }
+    /// <summary>Validates that the <see cref="AMCOPPStatusOutput" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(AMCOPPStatusOutput), Is.EqualTo(4096));
     }
 }

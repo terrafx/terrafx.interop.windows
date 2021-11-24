@@ -3,17 +3,16 @@
 // Ported from shared/mmreg.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class MIXERCONTROL
 {
-    public static partial class MIXERCONTROL
-    {
-        [NativeTypeName("#define MIXERCONTROL_CONTROLTYPE_SRS_MTS (MIXERCONTROL_CONTROLTYPE_BOOLEAN + 6)")]
-        public const int MIXERCONTROL_CONTROLTYPE_SRS_MTS = ((0x20000000 | 0x00000000 | 0x00010000) + 6);
+    [NativeTypeName("#define MIXERCONTROL_CONTROLTYPE_SRS_MTS (MIXERCONTROL_CONTROLTYPE_BOOLEAN + 6)")]
+    public const int MIXERCONTROL_CONTROLTYPE_SRS_MTS = ((0x20000000 | 0x00000000 | 0x00010000) + 6);
 
-        [NativeTypeName("#define MIXERCONTROL_CONTROLTYPE_SRS_ONOFF (MIXERCONTROL_CONTROLTYPE_BOOLEAN + 7)")]
-        public const int MIXERCONTROL_CONTROLTYPE_SRS_ONOFF = ((0x20000000 | 0x00000000 | 0x00010000) + 7);
+    [NativeTypeName("#define MIXERCONTROL_CONTROLTYPE_SRS_ONOFF (MIXERCONTROL_CONTROLTYPE_BOOLEAN + 7)")]
+    public const int MIXERCONTROL_CONTROLTYPE_SRS_ONOFF = ((0x20000000 | 0x00000000 | 0x00010000) + 7);
 
-        [NativeTypeName("#define MIXERCONTROL_CONTROLTYPE_SRS_SYNTHSELECT (MIXERCONTROL_CONTROLTYPE_BOOLEAN + 8)")]
-        public const int MIXERCONTROL_CONTROLTYPE_SRS_SYNTHSELECT = ((0x20000000 | 0x00000000 | 0x00010000) + 8);
-    }
+    [NativeTypeName("#define MIXERCONTROL_CONTROLTYPE_SRS_SYNTHSELECT (MIXERCONTROL_CONTROLTYPE_BOOLEAN + 8)")]
+    public const int MIXERCONTROL_CONTROLTYPE_SRS_SYNTHSELECT = ((0x20000000 | 0x00000000 | 0x00010000) + 8);
 }

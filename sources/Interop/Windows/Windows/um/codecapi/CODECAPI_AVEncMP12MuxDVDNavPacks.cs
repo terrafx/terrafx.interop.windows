@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("C7607CED-8CF1-4A99-83A1-EE5461BE3574")]
+public partial struct CODECAPI_AVEncMP12MuxDVDNavPacks
 {
-    [Guid("C7607CED-8CF1-4A99-83A1-EE5461BE3574")]
-    public partial struct CODECAPI_AVEncMP12MuxDVDNavPacks
-    {
-    }
 }

@@ -5,27 +5,26 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct MIXERCAPSW
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct MIXERCAPSW
-    {
-        [NativeTypeName("WORD")]
-        public ushort wMid;
+    [NativeTypeName("WORD")]
+    public ushort wMid;
 
-        [NativeTypeName("WORD")]
-        public ushort wPid;
+    [NativeTypeName("WORD")]
+    public ushort wPid;
 
-        [NativeTypeName("MMVERSION")]
-        public uint vDriverVersion;
+    [NativeTypeName("MMVERSION")]
+    public uint vDriverVersion;
 
-        [NativeTypeName("WCHAR [32]")]
-        public fixed ushort szPname[32];
+    [NativeTypeName("WCHAR [32]")]
+    public fixed ushort szPname[32];
 
-        [NativeTypeName("DWORD")]
-        public uint fdwSupport;
+    [NativeTypeName("DWORD")]
+    public uint fdwSupport;
 
-        [NativeTypeName("DWORD")]
-        public uint cDestinations;
-    }
+    [NativeTypeName("DWORD")]
+    public uint cDestinations;
 }

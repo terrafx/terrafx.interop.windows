@@ -3,48 +3,47 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct LOADED_IMAGE
 {
-    public unsafe partial struct LOADED_IMAGE
-    {
-        [NativeTypeName("PSTR")]
-        public sbyte* ModuleName;
+    [NativeTypeName("PSTR")]
+    public sbyte* ModuleName;
 
-        public HANDLE hFile;
+    public HANDLE hFile;
 
-        [NativeTypeName("PUCHAR")]
-        public byte* MappedAddress;
+    [NativeTypeName("PUCHAR")]
+    public byte* MappedAddress;
 
-        [NativeTypeName("PIMAGE_NT_HEADERS64")]
-        public IMAGE_NT_HEADERS64* FileHeader;
+    [NativeTypeName("PIMAGE_NT_HEADERS64")]
+    public IMAGE_NT_HEADERS64* FileHeader;
 
-        [NativeTypeName("PIMAGE_SECTION_HEADER")]
-        public IMAGE_SECTION_HEADER* LastRvaSection;
+    [NativeTypeName("PIMAGE_SECTION_HEADER")]
+    public IMAGE_SECTION_HEADER* LastRvaSection;
 
-        [NativeTypeName("ULONG")]
-        public uint NumberOfSections;
+    [NativeTypeName("ULONG")]
+    public uint NumberOfSections;
 
-        [NativeTypeName("PIMAGE_SECTION_HEADER")]
-        public IMAGE_SECTION_HEADER* Sections;
+    [NativeTypeName("PIMAGE_SECTION_HEADER")]
+    public IMAGE_SECTION_HEADER* Sections;
 
-        [NativeTypeName("ULONG")]
-        public uint Characteristics;
+    [NativeTypeName("ULONG")]
+    public uint Characteristics;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte fSystemImage;
+    [NativeTypeName("BOOLEAN")]
+    public byte fSystemImage;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte fDOSImage;
+    [NativeTypeName("BOOLEAN")]
+    public byte fDOSImage;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte fReadOnly;
+    [NativeTypeName("BOOLEAN")]
+    public byte fReadOnly;
 
-        [NativeTypeName("UCHAR")]
-        public byte Version;
+    [NativeTypeName("UCHAR")]
+    public byte Version;
 
-        public LIST_ENTRY Links;
+    public LIST_ENTRY Links;
 
-        [NativeTypeName("ULONG")]
-        public uint SizeOfImage;
-    }
+    [NativeTypeName("ULONG")]
+    public uint SizeOfImage;
 }

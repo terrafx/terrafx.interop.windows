@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AttachmentServices" /> struct.</summary>
+public static unsafe partial class AttachmentServicesTests
 {
-    /// <summary>Provides validation of the <see cref="AttachmentServices" /> struct.</summary>
-    public static unsafe partial class AttachmentServicesTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="AttachmentServices" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="AttachmentServices" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(AttachmentServices).GUID, Is.EqualTo(IID_AttachmentServices));
-        }
+        Assert.That(typeof(AttachmentServices).GUID, Is.EqualTo(IID_AttachmentServices));
+    }
 
-        /// <summary>Validates that the <see cref="AttachmentServices" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<AttachmentServices>(), Is.EqualTo(sizeof(AttachmentServices)));
-        }
+    /// <summary>Validates that the <see cref="AttachmentServices" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<AttachmentServices>(), Is.EqualTo(sizeof(AttachmentServices)));
+    }
 
-        /// <summary>Validates that the <see cref="AttachmentServices" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(AttachmentServices).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="AttachmentServices" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(AttachmentServices).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="AttachmentServices" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(AttachmentServices), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="AttachmentServices" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(AttachmentServices), Is.EqualTo(1));
     }
 }

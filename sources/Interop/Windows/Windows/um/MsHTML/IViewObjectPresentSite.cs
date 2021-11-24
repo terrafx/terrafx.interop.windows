@@ -8,90 +8,89 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.DirectX;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("305106E1-98B5-11CF-BB82-00AA00BDCE0B")]
+[NativeTypeName("struct IViewObjectPresentSite : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IViewObjectPresentSite : IViewObjectPresentSite.Interface
 {
-    [Guid("305106E1-98B5-11CF-BB82-00AA00BDCE0B")]
-    [NativeTypeName("struct IViewObjectPresentSite : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IViewObjectPresentSite : IViewObjectPresentSite.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IViewObjectPresentSite*, Guid*, void**, int>)(lpVtbl[0]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IViewObjectPresentSite*, Guid*, void**, int>)(lpVtbl[0]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IViewObjectPresentSite*, uint>)(lpVtbl[1]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IViewObjectPresentSite*, uint>)(lpVtbl[1]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IViewObjectPresentSite*, uint>)(lpVtbl[2]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IViewObjectPresentSite*, uint>)(lpVtbl[2]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT CreateSurfacePresenter(IUnknown* pDevice, uint width, uint height, uint backBufferCount, DXGI_FORMAT format, VIEW_OBJECT_ALPHA_MODE mode, ISurfacePresenter** ppQueue)
+    {
+        return ((delegate* unmanaged<IViewObjectPresentSite*, IUnknown*, uint, uint, uint, DXGI_FORMAT, VIEW_OBJECT_ALPHA_MODE, ISurfacePresenter**, int>)(lpVtbl[3]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this), pDevice, width, height, backBufferCount, format, mode, ppQueue);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT IsHardwareComposition(BOOL* pIsHardwareComposition)
+    {
+        return ((delegate* unmanaged<IViewObjectPresentSite*, BOOL*, int>)(lpVtbl[4]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this), pIsHardwareComposition);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT SetCompositionMode(VIEW_OBJECT_COMPOSITION_MODE mode)
+    {
+        return ((delegate* unmanaged<IViewObjectPresentSite*, VIEW_OBJECT_COMPOSITION_MODE, int>)(lpVtbl[5]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this), mode);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT CreateSurfacePresenter(IUnknown* pDevice, uint width, uint height, uint backBufferCount, DXGI_FORMAT format, VIEW_OBJECT_ALPHA_MODE mode, ISurfacePresenter** ppQueue)
-        {
-            return ((delegate* unmanaged<IViewObjectPresentSite*, IUnknown*, uint, uint, uint, DXGI_FORMAT, VIEW_OBJECT_ALPHA_MODE, ISurfacePresenter**, int>)(lpVtbl[3]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this), pDevice, width, height, backBufferCount, format, mode, ppQueue);
-        }
+        HRESULT CreateSurfacePresenter(IUnknown* pDevice, uint width, uint height, uint backBufferCount, DXGI_FORMAT format, VIEW_OBJECT_ALPHA_MODE mode, ISurfacePresenter** ppQueue);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT IsHardwareComposition(BOOL* pIsHardwareComposition)
-        {
-            return ((delegate* unmanaged<IViewObjectPresentSite*, BOOL*, int>)(lpVtbl[4]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this), pIsHardwareComposition);
-        }
+        HRESULT IsHardwareComposition(BOOL* pIsHardwareComposition);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetCompositionMode(VIEW_OBJECT_COMPOSITION_MODE mode)
-        {
-            return ((delegate* unmanaged<IViewObjectPresentSite*, VIEW_OBJECT_COMPOSITION_MODE, int>)(lpVtbl[5]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this), mode);
-        }
+        HRESULT SetCompositionMode(VIEW_OBJECT_COMPOSITION_MODE mode);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT CreateSurfacePresenter(IUnknown* pDevice, uint width, uint height, uint backBufferCount, DXGI_FORMAT format, VIEW_OBJECT_ALPHA_MODE mode, ISurfacePresenter** ppQueue);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IViewObjectPresentSite*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT IsHardwareComposition(BOOL* pIsHardwareComposition);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IViewObjectPresentSite*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT SetCompositionMode(VIEW_OBJECT_COMPOSITION_MODE mode);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IViewObjectPresentSite*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IViewObjectPresentSite*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (IUnknown *, UINT, UINT, UINT, DXGI_FORMAT, VIEW_OBJECT_ALPHA_MODE, ISurfacePresenter **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IViewObjectPresentSite*, IUnknown*, uint, uint, uint, DXGI_FORMAT, VIEW_OBJECT_ALPHA_MODE, ISurfacePresenter**, int> CreateSurfacePresenter;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IViewObjectPresentSite*, uint> AddRef;
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IViewObjectPresentSite*, BOOL*, int> IsHardwareComposition;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IViewObjectPresentSite*, uint> Release;
-
-            [NativeTypeName("HRESULT (IUnknown *, UINT, UINT, UINT, DXGI_FORMAT, VIEW_OBJECT_ALPHA_MODE, ISurfacePresenter **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IViewObjectPresentSite*, IUnknown*, uint, uint, uint, DXGI_FORMAT, VIEW_OBJECT_ALPHA_MODE, ISurfacePresenter**, int> CreateSurfacePresenter;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IViewObjectPresentSite*, BOOL*, int> IsHardwareComposition;
-
-            [NativeTypeName("HRESULT (VIEW_OBJECT_COMPOSITION_MODE) __attribute__((stdcall))")]
-            public delegate* unmanaged<IViewObjectPresentSite*, VIEW_OBJECT_COMPOSITION_MODE, int> SetCompositionMode;
-        }
+        [NativeTypeName("HRESULT (VIEW_OBJECT_COMPOSITION_MODE) __attribute__((stdcall))")]
+        public delegate* unmanaged<IViewObjectPresentSite*, VIEW_OBJECT_COMPOSITION_MODE, int> SetCompositionMode;
     }
 }

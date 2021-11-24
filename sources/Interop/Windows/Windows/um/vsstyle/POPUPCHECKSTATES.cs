@@ -3,13 +3,12 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum POPUPCHECKSTATES
 {
-    public enum POPUPCHECKSTATES
-    {
-        MC_CHECKMARKNORMAL = 1,
-        MC_CHECKMARKDISABLED = 2,
-        MC_BULLETNORMAL = 3,
-        MC_BULLETDISABLED = 4,
-    }
+    MC_CHECKMARKNORMAL = 1,
+    MC_CHECKMARKDISABLED = 2,
+    MC_BULLETNORMAL = 3,
+    MC_BULLETDISABLED = 4,
 }

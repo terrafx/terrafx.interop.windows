@@ -3,41 +3,40 @@
 // Ported from um/mfobjects.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MFVideoInfo
 {
-    public partial struct MFVideoInfo
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwWidth;
+    [NativeTypeName("DWORD")]
+    public uint dwWidth;
 
-        [NativeTypeName("DWORD")]
-        public uint dwHeight;
+    [NativeTypeName("DWORD")]
+    public uint dwHeight;
 
-        public MFRatio PixelAspectRatio;
+    public MFRatio PixelAspectRatio;
 
-        public MFVideoChromaSubsampling SourceChromaSubsampling;
+    public MFVideoChromaSubsampling SourceChromaSubsampling;
 
-        public MFVideoInterlaceMode InterlaceMode;
+    public MFVideoInterlaceMode InterlaceMode;
 
-        public MFVideoTransferFunction TransferFunction;
+    public MFVideoTransferFunction TransferFunction;
 
-        public MFVideoPrimaries ColorPrimaries;
+    public MFVideoPrimaries ColorPrimaries;
 
-        public MFVideoTransferMatrix TransferMatrix;
+    public MFVideoTransferMatrix TransferMatrix;
 
-        public MFVideoLighting SourceLighting;
+    public MFVideoLighting SourceLighting;
 
-        public MFRatio FramesPerSecond;
+    public MFRatio FramesPerSecond;
 
-        public MFNominalRange NominalRange;
+    public MFNominalRange NominalRange;
 
-        public MFVideoArea GeometricAperture;
+    public MFVideoArea GeometricAperture;
 
-        public MFVideoArea MinimumDisplayAperture;
+    public MFVideoArea MinimumDisplayAperture;
 
-        public MFVideoArea PanScanAperture;
+    public MFVideoArea PanScanAperture;
 
-        [NativeTypeName("unsigned long long")]
-        public ulong VideoFlags;
-    }
+    [NativeTypeName("unsigned long long")]
+    public ulong VideoFlags;
 }

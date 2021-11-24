@@ -7,64 +7,63 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("000214E8-0000-0000-C000-000000000046")]
+[NativeTypeName("struct IShellExtInit : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IShellExtInit : IShellExtInit.Interface
 {
-    [Guid("000214E8-0000-0000-C000-000000000046")]
-    [NativeTypeName("struct IShellExtInit : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellExtInit : IShellExtInit.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IShellExtInit*, Guid*, void**, int>)(lpVtbl[0]))((IShellExtInit*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IShellExtInit*, Guid*, void**, int>)(lpVtbl[0]))((IShellExtInit*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IShellExtInit*, uint>)(lpVtbl[1]))((IShellExtInit*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IShellExtInit*, uint>)(lpVtbl[1]))((IShellExtInit*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IShellExtInit*, uint>)(lpVtbl[2]))((IShellExtInit*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IShellExtInit*, uint>)(lpVtbl[2]))((IShellExtInit*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Initialize([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, IDataObject* pdtobj, HKEY hkeyProgID)
+    {
+        return ((delegate* unmanaged<IShellExtInit*, ITEMIDLIST*, IDataObject*, HKEY, int>)(lpVtbl[3]))((IShellExtInit*)Unsafe.AsPointer(ref this), pidlFolder, pdtobj, hkeyProgID);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Initialize([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, IDataObject* pdtobj, HKEY hkeyProgID)
-        {
-            return ((delegate* unmanaged<IShellExtInit*, ITEMIDLIST*, IDataObject*, HKEY, int>)(lpVtbl[3]))((IShellExtInit*)Unsafe.AsPointer(ref this), pidlFolder, pdtobj, hkeyProgID);
-        }
+        HRESULT Initialize([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, IDataObject* pdtobj, HKEY hkeyProgID);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Initialize([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, IDataObject* pdtobj, HKEY hkeyProgID);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellExtInit*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellExtInit*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellExtInit*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellExtInit*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellExtInit*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellExtInit*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPCITEMIDLIST, IDataObject *, HKEY) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellExtInit*, ITEMIDLIST*, IDataObject*, HKEY, int> Initialize;
-        }
+        [NativeTypeName("HRESULT (LPCITEMIDLIST, IDataObject *, HKEY) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellExtInit*, ITEMIDLIST*, IDataObject*, HKEY, int> Initialize;
     }
 }

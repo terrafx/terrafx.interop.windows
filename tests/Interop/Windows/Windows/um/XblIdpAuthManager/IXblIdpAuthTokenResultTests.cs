@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IXblIdpAuthTokenResult" /> struct.</summary>
+public static unsafe partial class IXblIdpAuthTokenResultTests
 {
-    /// <summary>Provides validation of the <see cref="IXblIdpAuthTokenResult" /> struct.</summary>
-    public static unsafe partial class IXblIdpAuthTokenResultTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IXblIdpAuthTokenResult" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IXblIdpAuthTokenResult" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IXblIdpAuthTokenResult).GUID, Is.EqualTo(IID_IXblIdpAuthTokenResult));
-        }
+        Assert.That(typeof(IXblIdpAuthTokenResult).GUID, Is.EqualTo(IID_IXblIdpAuthTokenResult));
+    }
 
-        /// <summary>Validates that the <see cref="IXblIdpAuthTokenResult" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IXblIdpAuthTokenResult>(), Is.EqualTo(sizeof(IXblIdpAuthTokenResult)));
-        }
+    /// <summary>Validates that the <see cref="IXblIdpAuthTokenResult" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IXblIdpAuthTokenResult>(), Is.EqualTo(sizeof(IXblIdpAuthTokenResult)));
+    }
 
-        /// <summary>Validates that the <see cref="IXblIdpAuthTokenResult" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IXblIdpAuthTokenResult).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IXblIdpAuthTokenResult" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IXblIdpAuthTokenResult).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IXblIdpAuthTokenResult" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IXblIdpAuthTokenResult" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IXblIdpAuthTokenResult), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IXblIdpAuthTokenResult), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IXblIdpAuthTokenResult), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IXblIdpAuthTokenResult), Is.EqualTo(4));
         }
     }
 }

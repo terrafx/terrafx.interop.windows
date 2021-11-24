@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("8278F931-2A3E-11D2-838F-00C04FD918D0")]
+public partial struct TrackShellMenu
 {
-    [Guid("8278F931-2A3E-11D2-838F-00C04FD918D0")]
-    public partial struct TrackShellMenu
-    {
-    }
 }

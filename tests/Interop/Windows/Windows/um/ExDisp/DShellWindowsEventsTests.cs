@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DShellWindowsEvents" /> struct.</summary>
+public static unsafe partial class DShellWindowsEventsTests
 {
-    /// <summary>Provides validation of the <see cref="DShellWindowsEvents" /> struct.</summary>
-    public static unsafe partial class DShellWindowsEventsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DShellWindowsEvents" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DShellWindowsEvents" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DShellWindowsEvents).GUID, Is.EqualTo(IID_DShellWindowsEvents));
-        }
+        Assert.That(typeof(DShellWindowsEvents).GUID, Is.EqualTo(IID_DShellWindowsEvents));
+    }
 
-        /// <summary>Validates that the <see cref="DShellWindowsEvents" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DShellWindowsEvents>(), Is.EqualTo(sizeof(DShellWindowsEvents)));
-        }
+    /// <summary>Validates that the <see cref="DShellWindowsEvents" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DShellWindowsEvents>(), Is.EqualTo(sizeof(DShellWindowsEvents)));
+    }
 
-        /// <summary>Validates that the <see cref="DShellWindowsEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DShellWindowsEvents).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DShellWindowsEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DShellWindowsEvents).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DShellWindowsEvents" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DShellWindowsEvents" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DShellWindowsEvents), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(DShellWindowsEvents), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(DShellWindowsEvents), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(DShellWindowsEvents), Is.EqualTo(4));
         }
     }
 }

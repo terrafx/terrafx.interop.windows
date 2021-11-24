@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public enum MF_MSE_READY
 {
-    [SupportedOSPlatform("windows8.1")]
-    public enum MF_MSE_READY
-    {
-        MF_MSE_READY_CLOSED = 1,
-        MF_MSE_READY_OPEN = 2,
-        MF_MSE_READY_ENDED = 3,
-    }
+    MF_MSE_READY_CLOSED = 1,
+    MF_MSE_READY_OPEN = 2,
+    MF_MSE_READY_ENDED = 3,
 }

@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_ENCRYPTED_BLOCK_INFO
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_ENCRYPTED_BLOCK_INFO
-    {
-        public uint NumEncryptedBytesAtBeginning;
+    public uint NumEncryptedBytesAtBeginning;
 
-        public uint NumBytesInSkipPattern;
+    public uint NumBytesInSkipPattern;
 
-        public uint NumBytesInEncryptPattern;
-    }
+    public uint NumBytesInEncryptPattern;
 }

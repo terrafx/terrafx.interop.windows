@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ITfFnGetLinguisticAlternates" /> struct.</summary>
+[SupportedOSPlatform("windows8.1")]
+public static unsafe partial class ITfFnGetLinguisticAlternatesTests
 {
-    /// <summary>Provides validation of the <see cref="ITfFnGetLinguisticAlternates" /> struct.</summary>
-    [SupportedOSPlatform("windows8.1")]
-    public static unsafe partial class ITfFnGetLinguisticAlternatesTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfFnGetLinguisticAlternates" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfFnGetLinguisticAlternates" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ITfFnGetLinguisticAlternates).GUID, Is.EqualTo(IID_ITfFnGetLinguisticAlternates));
-        }
+        Assert.That(typeof(ITfFnGetLinguisticAlternates).GUID, Is.EqualTo(IID_ITfFnGetLinguisticAlternates));
+    }
 
-        /// <summary>Validates that the <see cref="ITfFnGetLinguisticAlternates" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ITfFnGetLinguisticAlternates>(), Is.EqualTo(sizeof(ITfFnGetLinguisticAlternates)));
-        }
+    /// <summary>Validates that the <see cref="ITfFnGetLinguisticAlternates" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ITfFnGetLinguisticAlternates>(), Is.EqualTo(sizeof(ITfFnGetLinguisticAlternates)));
+    }
 
-        /// <summary>Validates that the <see cref="ITfFnGetLinguisticAlternates" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ITfFnGetLinguisticAlternates).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ITfFnGetLinguisticAlternates" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ITfFnGetLinguisticAlternates).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ITfFnGetLinguisticAlternates" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ITfFnGetLinguisticAlternates" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ITfFnGetLinguisticAlternates), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ITfFnGetLinguisticAlternates), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ITfFnGetLinguisticAlternates), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ITfFnGetLinguisticAlternates), Is.EqualTo(4));
         }
     }
 }

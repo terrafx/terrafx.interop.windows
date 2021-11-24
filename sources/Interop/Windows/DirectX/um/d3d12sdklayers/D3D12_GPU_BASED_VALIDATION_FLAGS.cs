@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D3D12_GPU_BASED_VALIDATION_FLAGS
 {
-    [Flags]
-    public enum D3D12_GPU_BASED_VALIDATION_FLAGS
-    {
-        D3D12_GPU_BASED_VALIDATION_FLAGS_NONE = 0,
-        D3D12_GPU_BASED_VALIDATION_FLAGS_DISABLE_STATE_TRACKING = 0x1,
-    }
+    D3D12_GPU_BASED_VALIDATION_FLAGS_NONE = 0,
+    D3D12_GPU_BASED_VALIDATION_FLAGS_DISABLE_STATE_TRACKING = 0x1,
 }

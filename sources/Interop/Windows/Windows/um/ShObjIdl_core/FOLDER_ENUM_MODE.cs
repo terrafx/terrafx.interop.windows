@@ -3,11 +3,10 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum FOLDER_ENUM_MODE
 {
-    public enum FOLDER_ENUM_MODE
-    {
-        FEM_VIEWRESULT = 0,
-        FEM_NAVIGATION = 1,
-    }
+    FEM_VIEWRESULT = 0,
+    FEM_NAVIGATION = 1,
 }

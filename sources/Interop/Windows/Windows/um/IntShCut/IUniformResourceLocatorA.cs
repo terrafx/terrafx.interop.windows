@@ -7,90 +7,89 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("FBF23B80-E3F0-101B-8488-00AA003E56F8")]
+[NativeTypeName("struct IUniformResourceLocatorA : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IUniformResourceLocatorA : IUniformResourceLocatorA.Interface
 {
-    [Guid("FBF23B80-E3F0-101B-8488-00AA003E56F8")]
-    [NativeTypeName("struct IUniformResourceLocatorA : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUniformResourceLocatorA : IUniformResourceLocatorA.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IUniformResourceLocatorA*, Guid*, void**, int>)(lpVtbl[0]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IUniformResourceLocatorA*, Guid*, void**, int>)(lpVtbl[0]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IUniformResourceLocatorA*, uint>)(lpVtbl[1]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IUniformResourceLocatorA*, uint>)(lpVtbl[1]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IUniformResourceLocatorA*, uint>)(lpVtbl[2]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IUniformResourceLocatorA*, uint>)(lpVtbl[2]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT SetURL([NativeTypeName("LPCSTR")] sbyte* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags)
+    {
+        return ((delegate* unmanaged<IUniformResourceLocatorA*, sbyte*, uint, int>)(lpVtbl[3]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this), pcszURL, dwInFlags);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetURL([NativeTypeName("LPSTR *")] sbyte** ppszURL)
+    {
+        return ((delegate* unmanaged<IUniformResourceLocatorA*, sbyte**, int>)(lpVtbl[4]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this), ppszURL);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT InvokeCommand([NativeTypeName("PURLINVOKECOMMANDINFOA")] URLINVOKECOMMANDINFOA* purlici)
+    {
+        return ((delegate* unmanaged<IUniformResourceLocatorA*, URLINVOKECOMMANDINFOA*, int>)(lpVtbl[5]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this), purlici);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT SetURL([NativeTypeName("LPCSTR")] sbyte* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags)
-        {
-            return ((delegate* unmanaged<IUniformResourceLocatorA*, sbyte*, uint, int>)(lpVtbl[3]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this), pcszURL, dwInFlags);
-        }
+        HRESULT SetURL([NativeTypeName("LPCSTR")] sbyte* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetURL([NativeTypeName("LPSTR *")] sbyte** ppszURL)
-        {
-            return ((delegate* unmanaged<IUniformResourceLocatorA*, sbyte**, int>)(lpVtbl[4]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this), ppszURL);
-        }
+        HRESULT GetURL([NativeTypeName("LPSTR *")] sbyte** ppszURL);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT InvokeCommand([NativeTypeName("PURLINVOKECOMMANDINFOA")] URLINVOKECOMMANDINFOA* purlici)
-        {
-            return ((delegate* unmanaged<IUniformResourceLocatorA*, URLINVOKECOMMANDINFOA*, int>)(lpVtbl[5]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this), purlici);
-        }
+        HRESULT InvokeCommand([NativeTypeName("PURLINVOKECOMMANDINFOA")] URLINVOKECOMMANDINFOA* purlici);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT SetURL([NativeTypeName("LPCSTR")] sbyte* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUniformResourceLocatorA*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetURL([NativeTypeName("LPSTR *")] sbyte** ppszURL);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IUniformResourceLocatorA*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT InvokeCommand([NativeTypeName("PURLINVOKECOMMANDINFOA")] URLINVOKECOMMANDINFOA* purlici);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IUniformResourceLocatorA*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUniformResourceLocatorA*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (LPCSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUniformResourceLocatorA*, sbyte*, uint, int> SetURL;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IUniformResourceLocatorA*, uint> AddRef;
+        [NativeTypeName("HRESULT (LPSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUniformResourceLocatorA*, sbyte**, int> GetURL;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IUniformResourceLocatorA*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPCSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUniformResourceLocatorA*, sbyte*, uint, int> SetURL;
-
-            [NativeTypeName("HRESULT (LPSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUniformResourceLocatorA*, sbyte**, int> GetURL;
-
-            [NativeTypeName("HRESULT (PURLINVOKECOMMANDINFOA) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUniformResourceLocatorA*, URLINVOKECOMMANDINFOA*, int> InvokeCommand;
-        }
+        [NativeTypeName("HRESULT (PURLINVOKECOMMANDINFOA) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUniformResourceLocatorA*, URLINVOKECOMMANDINFOA*, int> InvokeCommand;
     }
 }

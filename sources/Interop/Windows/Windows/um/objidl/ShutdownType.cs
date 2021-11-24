@@ -3,11 +3,10 @@
 // Ported from um/objidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum ShutdownType
 {
-    public enum ShutdownType
-    {
-        IdleShutdown = 0,
-        ForcedShutdown = (IdleShutdown + 1),
-    }
+    IdleShutdown = 0,
+    ForcedShutdown = (IdleShutdown + 1),
 }

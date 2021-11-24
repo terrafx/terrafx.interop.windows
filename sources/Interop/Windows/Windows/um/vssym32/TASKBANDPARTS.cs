@@ -3,12 +3,11 @@
 // Ported from um/vssym32.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum TASKBANDPARTS
 {
-    public enum TASKBANDPARTS
-    {
-        TDP_GROUPCOUNT = 1,
-        TDP_FLASHBUTTON = 2,
-        TDP_FLASHBUTTONGROUPMENU = 3,
-    }
+    TDP_GROUPCOUNT = 1,
+    TDP_FLASHBUTTON = 2,
+    TDP_FLASHBUTTONGROUPMENU = 3,
 }

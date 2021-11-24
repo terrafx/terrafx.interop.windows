@@ -3,20 +3,19 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class Windows
 {
-    public static partial class Windows
-    {
-        public const int ADVISE_NONE = 0;
+    public const int ADVISE_NONE = 0;
 
-        public const int ADVISE_CLIPPING = 0x1;
+    public const int ADVISE_CLIPPING = 0x1;
 
-        public const int ADVISE_PALETTE = 0x2;
+    public const int ADVISE_PALETTE = 0x2;
 
-        public const int ADVISE_COLORKEY = 0x4;
+    public const int ADVISE_COLORKEY = 0x4;
 
-        public const int ADVISE_POSITION = 0x8;
+    public const int ADVISE_POSITION = 0x8;
 
-        public const int ADVISE_DISPLAY_CHANGE = 0x10;
-    }
+    public const int ADVISE_DISPLAY_CHANGE = 0x10;
 }

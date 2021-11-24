@@ -3,12 +3,11 @@
 // Ported from um/msctf.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct TF_SELECTION
-    {
-        public ITfRange* range;
+namespace TerraFX.Interop.Windows;
 
-        public TF_SELECTIONSTYLE style;
-    }
+public unsafe partial struct TF_SELECTION
+{
+    public ITfRange* range;
+
+    public TF_SELECTIONSTYLE style;
 }

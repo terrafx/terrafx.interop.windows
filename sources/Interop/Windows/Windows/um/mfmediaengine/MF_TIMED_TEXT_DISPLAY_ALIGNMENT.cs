@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public enum MF_TIMED_TEXT_DISPLAY_ALIGNMENT
 {
-    [SupportedOSPlatform("windows10.0")]
-    public enum MF_TIMED_TEXT_DISPLAY_ALIGNMENT
-    {
-        MF_TIMED_TEXT_DISPLAY_ALIGNMENT_BEFORE = 0,
-        MF_TIMED_TEXT_DISPLAY_ALIGNMENT_AFTER = 1,
-        MF_TIMED_TEXT_DISPLAY_ALIGNMENT_CENTER = 2,
-    }
+    MF_TIMED_TEXT_DISPLAY_ALIGNMENT_BEFORE = 0,
+    MF_TIMED_TEXT_DISPLAY_ALIGNMENT_AFTER = 1,
+    MF_TIMED_TEXT_DISPLAY_ALIGNMENT_CENTER = 2,
 }

@@ -5,12 +5,11 @@
 
 using static TerraFX.Interop.Windows.Windows;
 
-namespace TerraFX.Interop.DirectX
-{
-    public static unsafe partial class DirectX
-    {
-        public static void* XAPOAlloc(nuint size) => CoTaskMemAlloc(size);
+namespace TerraFX.Interop.DirectX;
 
-        public static void XAPOFree(void* p) => CoTaskMemFree(p);
-    }
+public static unsafe partial class DirectX
+{
+    public static void* XAPOAlloc(nuint size) => CoTaskMemAlloc(size);
+
+    public static void XAPOFree(void* p) => CoTaskMemFree(p);
 }

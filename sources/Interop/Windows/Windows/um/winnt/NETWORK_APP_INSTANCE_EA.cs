@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct NETWORK_APP_INSTANCE_EA
-    {
-        public Guid AppInstanceID;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint CsvFlags;
-    }
+public partial struct NETWORK_APP_INSTANCE_EA
+{
+    public Guid AppInstanceID;
+
+    [NativeTypeName("DWORD")]
+    public uint CsvFlags;
 }

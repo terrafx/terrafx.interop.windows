@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SHELLFLAGSTATE" /> struct.</summary>
+public static unsafe partial class SHELLFLAGSTATETests
 {
-    /// <summary>Provides validation of the <see cref="SHELLFLAGSTATE" /> struct.</summary>
-    public static unsafe partial class SHELLFLAGSTATETests
+    /// <summary>Validates that the <see cref="SHELLFLAGSTATE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SHELLFLAGSTATE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SHELLFLAGSTATE>(), Is.EqualTo(sizeof(SHELLFLAGSTATE)));
-        }
+        Assert.That(Marshal.SizeOf<SHELLFLAGSTATE>(), Is.EqualTo(sizeof(SHELLFLAGSTATE)));
+    }
 
-        /// <summary>Validates that the <see cref="SHELLFLAGSTATE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SHELLFLAGSTATE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SHELLFLAGSTATE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SHELLFLAGSTATE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SHELLFLAGSTATE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SHELLFLAGSTATE), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="SHELLFLAGSTATE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SHELLFLAGSTATE), Is.EqualTo(4));
     }
 }

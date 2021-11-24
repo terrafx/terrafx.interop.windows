@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISVGClipPathElement" /> struct.</summary>
+public static unsafe partial class ISVGClipPathElementTests
 {
-    /// <summary>Provides validation of the <see cref="ISVGClipPathElement" /> struct.</summary>
-    public static unsafe partial class ISVGClipPathElementTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISVGClipPathElement" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISVGClipPathElement" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISVGClipPathElement).GUID, Is.EqualTo(IID_ISVGClipPathElement));
-        }
+        Assert.That(typeof(ISVGClipPathElement).GUID, Is.EqualTo(IID_ISVGClipPathElement));
+    }
 
-        /// <summary>Validates that the <see cref="ISVGClipPathElement" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISVGClipPathElement>(), Is.EqualTo(sizeof(ISVGClipPathElement)));
-        }
+    /// <summary>Validates that the <see cref="ISVGClipPathElement" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISVGClipPathElement>(), Is.EqualTo(sizeof(ISVGClipPathElement)));
+    }
 
-        /// <summary>Validates that the <see cref="ISVGClipPathElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISVGClipPathElement).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISVGClipPathElement" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISVGClipPathElement).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISVGClipPathElement" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISVGClipPathElement" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISVGClipPathElement), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISVGClipPathElement), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISVGClipPathElement), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISVGClipPathElement), Is.EqualTo(4));
         }
     }
 }

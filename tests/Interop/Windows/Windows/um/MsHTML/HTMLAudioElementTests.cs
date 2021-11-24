@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLAudioElement" /> struct.</summary>
+public static unsafe partial class HTMLAudioElementTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLAudioElement" /> struct.</summary>
-    public static unsafe partial class HTMLAudioElementTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLAudioElement" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLAudioElement" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLAudioElement).GUID, Is.EqualTo(IID_HTMLAudioElement));
-        }
+        Assert.That(typeof(HTMLAudioElement).GUID, Is.EqualTo(IID_HTMLAudioElement));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLAudioElement" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLAudioElement>(), Is.EqualTo(sizeof(HTMLAudioElement)));
-        }
+    /// <summary>Validates that the <see cref="HTMLAudioElement" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLAudioElement>(), Is.EqualTo(sizeof(HTMLAudioElement)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLAudioElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLAudioElement).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLAudioElement" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLAudioElement).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLAudioElement" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTMLAudioElement), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTMLAudioElement" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTMLAudioElement), Is.EqualTo(1));
     }
 }

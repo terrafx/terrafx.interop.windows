@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("05F0428A-EE30-489D-AE28-205C72446710")]
+public partial struct CODECAPI_AVEncMP12MuxSysRateBound
 {
-    [Guid("05F0428A-EE30-489D-AE28-205C72446710")]
-    public partial struct CODECAPI_AVEncMP12MuxSysRateBound
-    {
-    }
 }

@@ -5,14 +5,13 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class Windows
-    {
-        [DllImport("msiltcfg", ExactSpelling = true)]
-        public static extern uint ShutdownMsi([NativeTypeName("DWORD")] uint dwReserved);
+namespace TerraFX.Interop.Windows;
 
-        [DllImport("msiltcfg", ExactSpelling = true)]
-        public static extern uint RestartMsi([NativeTypeName("DWORD")] uint dwReserved);
-    }
+public static partial class Windows
+{
+    [DllImport("msiltcfg", ExactSpelling = true)]
+    public static extern uint ShutdownMsi([NativeTypeName("DWORD")] uint dwReserved);
+
+    [DllImport("msiltcfg", ExactSpelling = true)]
+    public static extern uint RestartMsi([NativeTypeName("DWORD")] uint dwReserved);
 }

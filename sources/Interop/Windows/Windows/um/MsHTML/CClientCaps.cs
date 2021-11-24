@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("7E8BC44E-AEFF-11D1-89C2-00C04FB6BFC4")]
+public partial struct CClientCaps
 {
-    [Guid("7E8BC44E-AEFF-11D1-89C2-00C04FB6BFC4")]
-    public partial struct CClientCaps
-    {
-    }
 }

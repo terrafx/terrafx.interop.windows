@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ITfCategoryMgr" /> struct.</summary>
+public static unsafe partial class ITfCategoryMgrTests
 {
-    /// <summary>Provides validation of the <see cref="ITfCategoryMgr" /> struct.</summary>
-    public static unsafe partial class ITfCategoryMgrTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfCategoryMgr" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfCategoryMgr" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ITfCategoryMgr).GUID, Is.EqualTo(IID_ITfCategoryMgr));
-        }
+        Assert.That(typeof(ITfCategoryMgr).GUID, Is.EqualTo(IID_ITfCategoryMgr));
+    }
 
-        /// <summary>Validates that the <see cref="ITfCategoryMgr" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ITfCategoryMgr>(), Is.EqualTo(sizeof(ITfCategoryMgr)));
-        }
+    /// <summary>Validates that the <see cref="ITfCategoryMgr" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ITfCategoryMgr>(), Is.EqualTo(sizeof(ITfCategoryMgr)));
+    }
 
-        /// <summary>Validates that the <see cref="ITfCategoryMgr" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ITfCategoryMgr).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ITfCategoryMgr" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ITfCategoryMgr).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ITfCategoryMgr" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ITfCategoryMgr" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ITfCategoryMgr), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ITfCategoryMgr), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ITfCategoryMgr), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ITfCategoryMgr), Is.EqualTo(4));
         }
     }
 }

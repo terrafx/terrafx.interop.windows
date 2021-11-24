@@ -5,67 +5,66 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD
+    [NativeTypeName("BYTE [16]")]
+    public fixed byte Cdb[16];
+
+    [NativeTypeName("BYTE [16]")]
+    public fixed byte Command[16];
+
+    [NativeTypeName("DWORDLONG")]
+    public ulong StartTime;
+
+    [NativeTypeName("DWORDLONG")]
+    public ulong EndTime;
+
+    [NativeTypeName("DWORD")]
+    public uint OperationStatus;
+
+    [NativeTypeName("DWORD")]
+    public uint OperationError;
+
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:6109:9)")]
+    public _StackSpecific_e__Union StackSpecific;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _StackSpecific_e__Union
     {
-        [NativeTypeName("BYTE [16]")]
-        public fixed byte Cdb[16];
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:6110:10)")]
+        public _ExternalStack_e__Struct ExternalStack;
 
-        [NativeTypeName("BYTE [16]")]
-        public fixed byte Command[16];
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:6114:10)")]
+        public _AtaPort_e__Struct AtaPort;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong StartTime;
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:6118:10)")]
+        public _StorPort_e__Struct StorPort;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong EndTime;
-
-        [NativeTypeName("DWORD")]
-        public uint OperationStatus;
-
-        [NativeTypeName("DWORD")]
-        public uint OperationError;
-
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:6109:9)")]
-        public _StackSpecific_e__Union StackSpecific;
-
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _StackSpecific_e__Union
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public partial struct _ExternalStack_e__Struct
         {
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:6110:10)")]
-            public _ExternalStack_e__Struct ExternalStack;
+            [NativeTypeName("DWORD")]
+            public uint dwReserved;
+        }
 
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:6114:10)")]
-            public _AtaPort_e__Struct AtaPort;
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public partial struct _AtaPort_e__Struct
+        {
+            [NativeTypeName("DWORD")]
+            public uint dwAtaPortSpecific;
+        }
 
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:6118:10)")]
-            public _StorPort_e__Struct StorPort;
-
-            [StructLayout(LayoutKind.Sequential, Pack = 1)]
-            public partial struct _ExternalStack_e__Struct
-            {
-                [NativeTypeName("DWORD")]
-                public uint dwReserved;
-            }
-
-            [StructLayout(LayoutKind.Sequential, Pack = 1)]
-            public partial struct _AtaPort_e__Struct
-            {
-                [NativeTypeName("DWORD")]
-                public uint dwAtaPortSpecific;
-            }
-
-            [StructLayout(LayoutKind.Sequential, Pack = 1)]
-            public partial struct _StorPort_e__Struct
-            {
-                [NativeTypeName("DWORD")]
-                public uint SrbTag;
-            }
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        public partial struct _StorPort_e__Struct
+        {
+            [NativeTypeName("DWORD")]
+            public uint SrbTag;
         }
     }
 }

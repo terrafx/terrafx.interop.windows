@@ -3,24 +3,23 @@
 // Ported from shared/ws2def.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WSAMSG
 {
-    public unsafe partial struct WSAMSG
-    {
-        [NativeTypeName("LPSOCKADDR")]
-        public SOCKADDR* name;
+    [NativeTypeName("LPSOCKADDR")]
+    public SOCKADDR* name;
 
-        public int namelen;
+    public int namelen;
 
-        [NativeTypeName("LPWSABUF")]
-        public WSABUF* lpBuffers;
+    [NativeTypeName("LPWSABUF")]
+    public WSABUF* lpBuffers;
 
-        [NativeTypeName("ULONG")]
-        public uint dwBufferCount;
+    [NativeTypeName("ULONG")]
+    public uint dwBufferCount;
 
-        public WSABUF Control;
+    public WSABUF Control;
 
-        [NativeTypeName("ULONG")]
-        public uint dwFlags;
-    }
+    [NativeTypeName("ULONG")]
+    public uint dwFlags;
 }

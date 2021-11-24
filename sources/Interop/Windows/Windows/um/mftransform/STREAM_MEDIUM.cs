@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct STREAM_MEDIUM
-    {
-        public Guid gidMedium;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("UINT32")]
-        public uint unMediumInstance;
-    }
+public partial struct STREAM_MEDIUM
+{
+    public Guid gidMedium;
+
+    [NativeTypeName("UINT32")]
+    public uint unMediumInstance;
 }

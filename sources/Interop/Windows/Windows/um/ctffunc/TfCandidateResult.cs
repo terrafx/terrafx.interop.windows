@@ -3,12 +3,11 @@
 // Ported from um/ctffunc.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum TfCandidateResult
 {
-    public enum TfCandidateResult
-    {
-        CAND_FINALIZED = 0,
-        CAND_SELECTED = 0x1,
-        CAND_CANCELED = 0x2,
-    }
+    CAND_FINALIZED = 0,
+    CAND_SELECTED = 0x1,
+    CAND_CANCELED = 0x2,
 }

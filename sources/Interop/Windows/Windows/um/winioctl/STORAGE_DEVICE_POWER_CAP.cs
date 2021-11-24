@@ -5,20 +5,19 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public partial struct STORAGE_DEVICE_POWER_CAP
 {
-    [SupportedOSPlatform("windows10.0")]
-    public partial struct STORAGE_DEVICE_POWER_CAP
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        public STORAGE_DEVICE_POWER_CAP_UNITS Units;
+    public STORAGE_DEVICE_POWER_CAP_UNITS Units;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong MaxPower;
-    }
+    [NativeTypeName("DWORDLONG")]
+    public ulong MaxPower;
 }

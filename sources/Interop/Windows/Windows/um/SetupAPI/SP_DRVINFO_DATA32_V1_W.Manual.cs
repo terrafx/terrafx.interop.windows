@@ -5,27 +5,26 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SP_DRVINFO_DATA32_V1_W
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SP_DRVINFO_DATA32_V1_W
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint DriverType;
+    [NativeTypeName("DWORD")]
+    public uint DriverType;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint Reserved;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint Reserved;
 
-        [NativeTypeName("WCHAR [256]")]
-        public fixed ushort Description[256];
+    [NativeTypeName("WCHAR [256]")]
+    public fixed ushort Description[256];
 
-        [NativeTypeName("WCHAR [256]")]
-        public fixed ushort MfgName[256];
+    [NativeTypeName("WCHAR [256]")]
+    public fixed ushort MfgName[256];
 
-        [NativeTypeName("WCHAR [256]")]
-        public fixed ushort ProviderName[256];
-    }
+    [NativeTypeName("WCHAR [256]")]
+    public fixed ushort ProviderName[256];
 }

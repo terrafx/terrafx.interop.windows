@@ -3,15 +3,14 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum styleBlockProgression
 {
-    public enum styleBlockProgression
-    {
-        styleBlockProgressionTb = 0,
-        styleBlockProgressionRl = 1,
-        styleBlockProgressionBt = 2,
-        styleBlockProgressionLr = 3,
-        styleBlockProgressionNotSet = 4,
-        styleBlockProgression_Max = 2147483647,
-    }
+    styleBlockProgressionTb = 0,
+    styleBlockProgressionRl = 1,
+    styleBlockProgressionBt = 2,
+    styleBlockProgressionLr = 3,
+    styleBlockProgressionNotSet = 4,
+    styleBlockProgression_Max = 2147483647,
 }

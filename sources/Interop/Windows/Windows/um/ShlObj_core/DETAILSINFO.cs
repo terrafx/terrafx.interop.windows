@@ -3,19 +3,18 @@
 // Ported from um/ShlObj_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct DETAILSINFO
 {
-    public unsafe partial struct DETAILSINFO
-    {
-        [NativeTypeName("LPCITEMIDLIST")]
-        public ITEMIDLIST* pidl;
+    [NativeTypeName("LPCITEMIDLIST")]
+    public ITEMIDLIST* pidl;
 
-        public int fmt;
+    public int fmt;
 
-        public int cxChar;
+    public int cxChar;
 
-        public STRRET str;
+    public STRRET str;
 
-        public int iImage;
-    }
+    public int iImage;
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MIDIOUTCAPSA" /> struct.</summary>
+public static unsafe partial class MIDIOUTCAPSATests
 {
-    /// <summary>Provides validation of the <see cref="MIDIOUTCAPSA" /> struct.</summary>
-    public static unsafe partial class MIDIOUTCAPSATests
+    /// <summary>Validates that the <see cref="MIDIOUTCAPSA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MIDIOUTCAPSA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MIDIOUTCAPSA>(), Is.EqualTo(sizeof(MIDIOUTCAPSA)));
-        }
+        Assert.That(Marshal.SizeOf<MIDIOUTCAPSA>(), Is.EqualTo(sizeof(MIDIOUTCAPSA)));
+    }
 
-        /// <summary>Validates that the <see cref="MIDIOUTCAPSA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MIDIOUTCAPSA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MIDIOUTCAPSA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MIDIOUTCAPSA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MIDIOUTCAPSA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MIDIOUTCAPSA), Is.EqualTo(52));
-        }
+    /// <summary>Validates that the <see cref="MIDIOUTCAPSA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MIDIOUTCAPSA), Is.EqualTo(52));
     }
 }

@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MFCameraIntrinsic_PinholeCameraModel" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
+public static unsafe partial class MFCameraIntrinsic_PinholeCameraModelTests
 {
-    /// <summary>Provides validation of the <see cref="MFCameraIntrinsic_PinholeCameraModel" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0")]
-    public static unsafe partial class MFCameraIntrinsic_PinholeCameraModelTests
+    /// <summary>Validates that the <see cref="MFCameraIntrinsic_PinholeCameraModel" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MFCameraIntrinsic_PinholeCameraModel" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MFCameraIntrinsic_PinholeCameraModel>(), Is.EqualTo(sizeof(MFCameraIntrinsic_PinholeCameraModel)));
-        }
+        Assert.That(Marshal.SizeOf<MFCameraIntrinsic_PinholeCameraModel>(), Is.EqualTo(sizeof(MFCameraIntrinsic_PinholeCameraModel)));
+    }
 
-        /// <summary>Validates that the <see cref="MFCameraIntrinsic_PinholeCameraModel" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MFCameraIntrinsic_PinholeCameraModel).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MFCameraIntrinsic_PinholeCameraModel" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MFCameraIntrinsic_PinholeCameraModel).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MFCameraIntrinsic_PinholeCameraModel" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MFCameraIntrinsic_PinholeCameraModel), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="MFCameraIntrinsic_PinholeCameraModel" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MFCameraIntrinsic_PinholeCameraModel), Is.EqualTo(16));
     }
 }

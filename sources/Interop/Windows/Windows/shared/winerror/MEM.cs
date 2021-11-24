@@ -3,17 +3,16 @@
 // Ported from shared/winerror.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class MEM
 {
-    public static partial class MEM
-    {
-        [NativeTypeName("#define MEM_E_INVALID_ROOT _HRESULT_TYPEDEF_(0x80080009L)")]
-        public const int MEM_E_INVALID_ROOT = unchecked((int)(0x80080009));
+    [NativeTypeName("#define MEM_E_INVALID_ROOT _HRESULT_TYPEDEF_(0x80080009L)")]
+    public const int MEM_E_INVALID_ROOT = unchecked((int)(0x80080009));
 
-        [NativeTypeName("#define MEM_E_INVALID_LINK _HRESULT_TYPEDEF_(0x80080010L)")]
-        public const int MEM_E_INVALID_LINK = unchecked((int)(0x80080010));
+    [NativeTypeName("#define MEM_E_INVALID_LINK _HRESULT_TYPEDEF_(0x80080010L)")]
+    public const int MEM_E_INVALID_LINK = unchecked((int)(0x80080010));
 
-        [NativeTypeName("#define MEM_E_INVALID_SIZE _HRESULT_TYPEDEF_(0x80080011L)")]
-        public const int MEM_E_INVALID_SIZE = unchecked((int)(0x80080011));
-    }
+    [NativeTypeName("#define MEM_E_INVALID_SIZE _HRESULT_TYPEDEF_(0x80080011L)")]
+    public const int MEM_E_INVALID_SIZE = unchecked((int)(0x80080011));
 }

@@ -3,13 +3,12 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct CERT_POLICIES_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cPolicyInfo;
+namespace TerraFX.Interop.Windows;
 
-        public CERT_POLICY_INFO* rgPolicyInfo;
-    }
+public unsafe partial struct CERT_POLICIES_INFO
+{
+    [NativeTypeName("DWORD")]
+    public uint cPolicyInfo;
+
+    public CERT_POLICY_INFO* rgPolicyInfo;
 }

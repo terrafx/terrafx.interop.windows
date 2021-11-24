@@ -5,11 +5,10 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D3D11_1_CREATE_DEVICE_CONTEXT_STATE_FLAG
 {
-    [Flags]
-    public enum D3D11_1_CREATE_DEVICE_CONTEXT_STATE_FLAG
-    {
-        D3D11_1_CREATE_DEVICE_CONTEXT_STATE_SINGLETHREADED = 0x1,
-    }
+    D3D11_1_CREATE_DEVICE_CONTEXT_STATE_SINGLETHREADED = 0x1,
 }

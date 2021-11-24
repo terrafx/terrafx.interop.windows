@@ -3,12 +3,11 @@
 // Ported from shared/wtypes.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum STGMOVE
 {
-    public enum STGMOVE
-    {
-        STGMOVE_MOVE = 0,
-        STGMOVE_COPY = 1,
-        STGMOVE_SHALLOWCOPY = 2,
-    }
+    STGMOVE_MOVE = 0,
+    STGMOVE_COPY = 1,
+    STGMOVE_SHALLOWCOPY = 2,
 }

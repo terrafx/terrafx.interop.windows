@@ -5,58 +5,57 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct TYPEATTR
 {
-    public unsafe partial struct TYPEATTR
-    {
-        public Guid guid;
+    public Guid guid;
 
-        [NativeTypeName("LCID")]
-        public uint lcid;
+    [NativeTypeName("LCID")]
+    public uint lcid;
 
-        [NativeTypeName("DWORD")]
-        public uint dwReserved;
+    [NativeTypeName("DWORD")]
+    public uint dwReserved;
 
-        [NativeTypeName("MEMBERID")]
-        public int memidConstructor;
+    [NativeTypeName("MEMBERID")]
+    public int memidConstructor;
 
-        [NativeTypeName("MEMBERID")]
-        public int memidDestructor;
+    [NativeTypeName("MEMBERID")]
+    public int memidDestructor;
 
-        [NativeTypeName("LPOLESTR")]
-        public ushort* lpstrSchema;
+    [NativeTypeName("LPOLESTR")]
+    public ushort* lpstrSchema;
 
-        [NativeTypeName("ULONG")]
-        public uint cbSizeInstance;
+    [NativeTypeName("ULONG")]
+    public uint cbSizeInstance;
 
-        public TYPEKIND typekind;
+    public TYPEKIND typekind;
 
-        [NativeTypeName("WORD")]
-        public ushort cFuncs;
+    [NativeTypeName("WORD")]
+    public ushort cFuncs;
 
-        [NativeTypeName("WORD")]
-        public ushort cVars;
+    [NativeTypeName("WORD")]
+    public ushort cVars;
 
-        [NativeTypeName("WORD")]
-        public ushort cImplTypes;
+    [NativeTypeName("WORD")]
+    public ushort cImplTypes;
 
-        [NativeTypeName("WORD")]
-        public ushort cbSizeVft;
+    [NativeTypeName("WORD")]
+    public ushort cbSizeVft;
 
-        [NativeTypeName("WORD")]
-        public ushort cbAlignment;
+    [NativeTypeName("WORD")]
+    public ushort cbAlignment;
 
-        [NativeTypeName("WORD")]
-        public ushort wTypeFlags;
+    [NativeTypeName("WORD")]
+    public ushort wTypeFlags;
 
-        [NativeTypeName("WORD")]
-        public ushort wMajorVerNum;
+    [NativeTypeName("WORD")]
+    public ushort wMajorVerNum;
 
-        [NativeTypeName("WORD")]
-        public ushort wMinorVerNum;
+    [NativeTypeName("WORD")]
+    public ushort wMinorVerNum;
 
-        public TYPEDESC tdescAlias;
+    public TYPEDESC tdescAlias;
 
-        public IDLDESC idldescType;
-    }
+    public IDLDESC idldescType;
 }

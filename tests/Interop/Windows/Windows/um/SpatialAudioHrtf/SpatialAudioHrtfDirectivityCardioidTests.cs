@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SpatialAudioHrtfDirectivityCardioid" /> struct.</summary>
+public static unsafe partial class SpatialAudioHrtfDirectivityCardioidTests
 {
-    /// <summary>Provides validation of the <see cref="SpatialAudioHrtfDirectivityCardioid" /> struct.</summary>
-    public static unsafe partial class SpatialAudioHrtfDirectivityCardioidTests
+    /// <summary>Validates that the <see cref="SpatialAudioHrtfDirectivityCardioid" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SpatialAudioHrtfDirectivityCardioid" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SpatialAudioHrtfDirectivityCardioid>(), Is.EqualTo(sizeof(SpatialAudioHrtfDirectivityCardioid)));
-        }
+        Assert.That(Marshal.SizeOf<SpatialAudioHrtfDirectivityCardioid>(), Is.EqualTo(sizeof(SpatialAudioHrtfDirectivityCardioid)));
+    }
 
-        /// <summary>Validates that the <see cref="SpatialAudioHrtfDirectivityCardioid" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SpatialAudioHrtfDirectivityCardioid).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SpatialAudioHrtfDirectivityCardioid" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SpatialAudioHrtfDirectivityCardioid).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SpatialAudioHrtfDirectivityCardioid" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SpatialAudioHrtfDirectivityCardioid), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="SpatialAudioHrtfDirectivityCardioid" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SpatialAudioHrtfDirectivityCardioid), Is.EqualTo(12));
     }
 }

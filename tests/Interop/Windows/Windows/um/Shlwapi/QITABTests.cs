@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="QITAB" /> struct.</summary>
+public static unsafe partial class QITABTests
 {
-    /// <summary>Provides validation of the <see cref="QITAB" /> struct.</summary>
-    public static unsafe partial class QITABTests
+    /// <summary>Validates that the <see cref="QITAB" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="QITAB" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<QITAB>(), Is.EqualTo(sizeof(QITAB)));
-        }
+        Assert.That(Marshal.SizeOf<QITAB>(), Is.EqualTo(sizeof(QITAB)));
+    }
 
-        /// <summary>Validates that the <see cref="QITAB" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(QITAB).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="QITAB" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(QITAB).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="QITAB" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="QITAB" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(QITAB), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(QITAB), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(QITAB), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(QITAB), Is.EqualTo(8));
         }
     }
 }

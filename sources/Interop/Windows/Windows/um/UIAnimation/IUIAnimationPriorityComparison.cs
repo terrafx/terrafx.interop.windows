@@ -7,64 +7,63 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("83FA9B74-5F86-4618-BC6A-A2FAC19B3F44")]
+[NativeTypeName("struct IUIAnimationPriorityComparison : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IUIAnimationPriorityComparison : IUIAnimationPriorityComparison.Interface
 {
-    [Guid("83FA9B74-5F86-4618-BC6A-A2FAC19B3F44")]
-    [NativeTypeName("struct IUIAnimationPriorityComparison : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUIAnimationPriorityComparison : IUIAnimationPriorityComparison.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IUIAnimationPriorityComparison*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationPriorityComparison*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IUIAnimationPriorityComparison*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationPriorityComparison*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IUIAnimationPriorityComparison*, uint>)(lpVtbl[1]))((IUIAnimationPriorityComparison*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IUIAnimationPriorityComparison*, uint>)(lpVtbl[1]))((IUIAnimationPriorityComparison*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IUIAnimationPriorityComparison*, uint>)(lpVtbl[2]))((IUIAnimationPriorityComparison*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IUIAnimationPriorityComparison*, uint>)(lpVtbl[2]))((IUIAnimationPriorityComparison*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT HasPriority(IUIAnimationStoryboard* scheduledStoryboard, IUIAnimationStoryboard* newStoryboard, UI_ANIMATION_PRIORITY_EFFECT priorityEffect)
+    {
+        return ((delegate* unmanaged<IUIAnimationPriorityComparison*, IUIAnimationStoryboard*, IUIAnimationStoryboard*, UI_ANIMATION_PRIORITY_EFFECT, int>)(lpVtbl[3]))((IUIAnimationPriorityComparison*)Unsafe.AsPointer(ref this), scheduledStoryboard, newStoryboard, priorityEffect);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT HasPriority(IUIAnimationStoryboard* scheduledStoryboard, IUIAnimationStoryboard* newStoryboard, UI_ANIMATION_PRIORITY_EFFECT priorityEffect)
-        {
-            return ((delegate* unmanaged<IUIAnimationPriorityComparison*, IUIAnimationStoryboard*, IUIAnimationStoryboard*, UI_ANIMATION_PRIORITY_EFFECT, int>)(lpVtbl[3]))((IUIAnimationPriorityComparison*)Unsafe.AsPointer(ref this), scheduledStoryboard, newStoryboard, priorityEffect);
-        }
+        HRESULT HasPriority(IUIAnimationStoryboard* scheduledStoryboard, IUIAnimationStoryboard* newStoryboard, UI_ANIMATION_PRIORITY_EFFECT priorityEffect);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT HasPriority(IUIAnimationStoryboard* scheduledStoryboard, IUIAnimationStoryboard* newStoryboard, UI_ANIMATION_PRIORITY_EFFECT priorityEffect);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationPriorityComparison*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationPriorityComparison*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationPriorityComparison*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationPriorityComparison*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationPriorityComparison*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationPriorityComparison*, uint> Release;
-
-            [NativeTypeName("HRESULT (IUIAnimationStoryboard *, IUIAnimationStoryboard *, UI_ANIMATION_PRIORITY_EFFECT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationPriorityComparison*, IUIAnimationStoryboard*, IUIAnimationStoryboard*, UI_ANIMATION_PRIORITY_EFFECT, int> HasPriority;
-        }
+        [NativeTypeName("HRESULT (IUIAnimationStoryboard *, IUIAnimationStoryboard *, UI_ANIMATION_PRIORITY_EFFECT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationPriorityComparison*, IUIAnimationStoryboard*, IUIAnimationStoryboard*, UI_ANIMATION_PRIORITY_EFFECT, int> HasPriority;
     }
 }

@@ -5,14 +5,13 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum SV3CVW3_FLAGS
 {
-    [Flags]
-    public enum SV3CVW3_FLAGS
-    {
-        SV3CVW3_DEFAULT = 0,
-        SV3CVW3_NONINTERACTIVE = 0x1,
-        SV3CVW3_FORCEVIEWMODE = 0x2,
-        SV3CVW3_FORCEFOLDERFLAGS = 0x4,
-    }
+    SV3CVW3_DEFAULT = 0,
+    SV3CVW3_NONINTERACTIVE = 0x1,
+    SV3CVW3_FORCEVIEWMODE = 0x2,
+    SV3CVW3_FORCEFOLDERFLAGS = 0x4,
 }

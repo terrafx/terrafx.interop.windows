@@ -3,20 +3,19 @@
 // Ported from um/Uxtheme.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class SZ
 {
-    public static partial class SZ
-    {
-        [NativeTypeName("#define SZ_THDOCPROP_DISPLAYNAME L\"DisplayName\"")]
-        public const string SZ_THDOCPROP_DISPLAYNAME = "DisplayName";
+    [NativeTypeName("#define SZ_THDOCPROP_DISPLAYNAME L\"DisplayName\"")]
+    public const string SZ_THDOCPROP_DISPLAYNAME = "DisplayName";
 
-        [NativeTypeName("#define SZ_THDOCPROP_CANONICALNAME L\"ThemeName\"")]
-        public const string SZ_THDOCPROP_CANONICALNAME = "ThemeName";
+    [NativeTypeName("#define SZ_THDOCPROP_CANONICALNAME L\"ThemeName\"")]
+    public const string SZ_THDOCPROP_CANONICALNAME = "ThemeName";
 
-        [NativeTypeName("#define SZ_THDOCPROP_TOOLTIP L\"ToolTip\"")]
-        public const string SZ_THDOCPROP_TOOLTIP = "ToolTip";
+    [NativeTypeName("#define SZ_THDOCPROP_TOOLTIP L\"ToolTip\"")]
+    public const string SZ_THDOCPROP_TOOLTIP = "ToolTip";
 
-        [NativeTypeName("#define SZ_THDOCPROP_AUTHOR L\"author\"")]
-        public const string SZ_THDOCPROP_AUTHOR = "author";
-    }
+    [NativeTypeName("#define SZ_THDOCPROP_AUTHOR L\"author\"")]
+    public const string SZ_THDOCPROP_AUTHOR = "author";
 }

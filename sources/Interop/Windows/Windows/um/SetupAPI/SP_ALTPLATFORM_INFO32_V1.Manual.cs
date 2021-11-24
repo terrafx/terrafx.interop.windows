@@ -5,27 +5,26 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct SP_ALTPLATFORM_INFO32_V1
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct SP_ALTPLATFORM_INFO32_V1
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint Platform;
+    [NativeTypeName("DWORD")]
+    public uint Platform;
 
-        [NativeTypeName("DWORD")]
-        public uint MajorVersion;
+    [NativeTypeName("DWORD")]
+    public uint MajorVersion;
 
-        [NativeTypeName("DWORD")]
-        public uint MinorVersion;
+    [NativeTypeName("DWORD")]
+    public uint MinorVersion;
 
-        [NativeTypeName("WORD")]
-        public ushort ProcessorArchitecture;
+    [NativeTypeName("WORD")]
+    public ushort ProcessorArchitecture;
 
-        [NativeTypeName("WORD")]
-        public ushort Reserved;
-    }
+    [NativeTypeName("WORD")]
+    public ushort Reserved;
 }

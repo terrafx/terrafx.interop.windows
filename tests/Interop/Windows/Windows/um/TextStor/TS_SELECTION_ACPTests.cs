@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TS_SELECTION_ACP" /> struct.</summary>
+public static unsafe partial class TS_SELECTION_ACPTests
 {
-    /// <summary>Provides validation of the <see cref="TS_SELECTION_ACP" /> struct.</summary>
-    public static unsafe partial class TS_SELECTION_ACPTests
+    /// <summary>Validates that the <see cref="TS_SELECTION_ACP" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TS_SELECTION_ACP" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TS_SELECTION_ACP>(), Is.EqualTo(sizeof(TS_SELECTION_ACP)));
-        }
+        Assert.That(Marshal.SizeOf<TS_SELECTION_ACP>(), Is.EqualTo(sizeof(TS_SELECTION_ACP)));
+    }
 
-        /// <summary>Validates that the <see cref="TS_SELECTION_ACP" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TS_SELECTION_ACP).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TS_SELECTION_ACP" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TS_SELECTION_ACP).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TS_SELECTION_ACP" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TS_SELECTION_ACP), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="TS_SELECTION_ACP" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TS_SELECTION_ACP), Is.EqualTo(16));
     }
 }

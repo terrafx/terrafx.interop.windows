@@ -3,17 +3,16 @@
 // Ported from shared/Iprtrmib.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MIB_PROXYARP
 {
-    public partial struct MIB_PROXYARP
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwAddress;
+    [NativeTypeName("DWORD")]
+    public uint dwAddress;
 
-        [NativeTypeName("DWORD")]
-        public uint dwMask;
+    [NativeTypeName("DWORD")]
+    public uint dwMask;
 
-        [NativeTypeName("DWORD")]
-        public uint dwIfIndex;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwIfIndex;
 }

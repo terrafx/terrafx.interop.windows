@@ -5,55 +5,54 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public unsafe partial struct PSS_THREAD_ENTRY
 {
-    [SupportedOSPlatform("windows8.1")]
-    public unsafe partial struct PSS_THREAD_ENTRY
-    {
-        [NativeTypeName("DWORD")]
-        public uint ExitStatus;
+    [NativeTypeName("DWORD")]
+    public uint ExitStatus;
 
-        public void* TebBaseAddress;
+    public void* TebBaseAddress;
 
-        [NativeTypeName("DWORD")]
-        public uint ProcessId;
+    [NativeTypeName("DWORD")]
+    public uint ProcessId;
 
-        [NativeTypeName("DWORD")]
-        public uint ThreadId;
+    [NativeTypeName("DWORD")]
+    public uint ThreadId;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint AffinityMask;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint AffinityMask;
 
-        public int Priority;
+    public int Priority;
 
-        public int BasePriority;
+    public int BasePriority;
 
-        public void* LastSyscallFirstArgument;
+    public void* LastSyscallFirstArgument;
 
-        [NativeTypeName("WORD")]
-        public ushort LastSyscallNumber;
+    [NativeTypeName("WORD")]
+    public ushort LastSyscallNumber;
 
-        public FILETIME CreateTime;
+    public FILETIME CreateTime;
 
-        public FILETIME ExitTime;
+    public FILETIME ExitTime;
 
-        public FILETIME KernelTime;
+    public FILETIME KernelTime;
 
-        public FILETIME UserTime;
+    public FILETIME UserTime;
 
-        public void* Win32StartAddress;
+    public void* Win32StartAddress;
 
-        public FILETIME CaptureTime;
+    public FILETIME CaptureTime;
 
-        public PSS_THREAD_FLAGS Flags;
+    public PSS_THREAD_FLAGS Flags;
 
-        [NativeTypeName("WORD")]
-        public ushort SuspendCount;
+    [NativeTypeName("WORD")]
+    public ushort SuspendCount;
 
-        [NativeTypeName("WORD")]
-        public ushort SizeOfContextRecord;
+    [NativeTypeName("WORD")]
+    public ushort SizeOfContextRecord;
 
-        [NativeTypeName("PCONTEXT")]
-        public void* ContextRecord;
-    }
+    [NativeTypeName("PCONTEXT")]
+    public void* ContextRecord;
 }

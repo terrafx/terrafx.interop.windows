@@ -5,24 +5,23 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 2)]
+public partial struct BITMAPFILEHEADER
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 2)]
-    public partial struct BITMAPFILEHEADER
-    {
-        [NativeTypeName("WORD")]
-        public ushort bfType;
+    [NativeTypeName("WORD")]
+    public ushort bfType;
 
-        [NativeTypeName("DWORD")]
-        public uint bfSize;
+    [NativeTypeName("DWORD")]
+    public uint bfSize;
 
-        [NativeTypeName("WORD")]
-        public ushort bfReserved1;
+    [NativeTypeName("WORD")]
+    public ushort bfReserved1;
 
-        [NativeTypeName("WORD")]
-        public ushort bfReserved2;
+    [NativeTypeName("WORD")]
+    public ushort bfReserved2;
 
-        [NativeTypeName("DWORD")]
-        public uint bfOffBits;
-    }
+    [NativeTypeName("DWORD")]
+    public uint bfOffBits;
 }

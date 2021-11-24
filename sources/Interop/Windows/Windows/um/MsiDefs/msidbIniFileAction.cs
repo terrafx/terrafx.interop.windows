@@ -3,14 +3,13 @@
 // Ported from um/MsiDefs.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum msidbIniFileAction
 {
-    public enum msidbIniFileAction
-    {
-        msidbIniFileActionAddLine = 0x00000000,
-        msidbIniFileActionCreateLine = 0x00000001,
-        msidbIniFileActionRemoveLine = 0x00000002,
-        msidbIniFileActionAddTag = 0x00000003,
-        msidbIniFileActionRemoveTag = 0x00000004,
-    }
+    msidbIniFileActionAddLine = 0x00000000,
+    msidbIniFileActionCreateLine = 0x00000001,
+    msidbIniFileActionRemoveLine = 0x00000002,
+    msidbIniFileActionAddTag = 0x00000003,
+    msidbIniFileActionRemoveTag = 0x00000004,
 }

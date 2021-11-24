@@ -7,38 +7,37 @@ using TerraFX.Interop.Windows;
 using static TerraFX.Interop.Windows.IID;
 using static TerraFX.Interop.Windows.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+public static unsafe partial class WinRT
 {
-    public static unsafe partial class WinRT
+    public static HRESULT ActivateInstance<T>(HSTRING activatableClassId, T** instance)
+        where T : unmanaged
     {
-        public static HRESULT ActivateInstance<T>(HSTRING activatableClassId, T** instance)
-            where T : unmanaged
+        *instance = null;
+
+        IInspectable* pInspectable;
+        HRESULT hr = RoActivateInstance(activatableClassId, &pInspectable);
+
+        if (SUCCEEDED(hr))
         {
-            *instance = null;
-
-            IInspectable* pInspectable;
-            HRESULT hr = RoActivateInstance(activatableClassId, &pInspectable);
-
-            if (SUCCEEDED(hr))
+            if (__uuidof<T>() == IID_IInspectable)
             {
-                if (__uuidof<T>() == IID_IInspectable)
-                {
-                    *instance = (T*) pInspectable;
-                }
-                else
-                {
-                    hr = pInspectable->QueryInterface(__uuidof<T>(), (void**) instance);
-                    _ = pInspectable->Release();
-                }
+                *instance = (T*)pInspectable;
             }
-
-            return hr;
+            else
+            {
+                hr = pInspectable->QueryInterface(__uuidof<T>(), (void**)instance);
+                _ = pInspectable->Release();
+            }
         }
 
-        public static HRESULT GetActivationFactory<T>(HSTRING activatableClassId, T** factory)
-            where T : unmanaged
-        {
-            return RoGetActivationFactory(activatableClassId, __uuidof<T>(), (void**) factory);
-        }
+        return hr;
+    }
+
+    public static HRESULT GetActivationFactory<T>(HSTRING activatableClassId, T** factory)
+        where T : unmanaged
+    {
+        return RoGetActivationFactory(activatableClassId, __uuidof<T>(), (void**)factory);
     }
 }

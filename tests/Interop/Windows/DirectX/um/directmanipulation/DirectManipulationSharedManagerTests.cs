@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DirectManipulationSharedManager" /> struct.</summary>
+public static unsafe partial class DirectManipulationSharedManagerTests
 {
-    /// <summary>Provides validation of the <see cref="DirectManipulationSharedManager" /> struct.</summary>
-    public static unsafe partial class DirectManipulationSharedManagerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DirectManipulationSharedManager" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DirectManipulationSharedManager" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DirectManipulationSharedManager).GUID, Is.EqualTo(CLSID_DirectManipulationSharedManager));
-        }
+        Assert.That(typeof(DirectManipulationSharedManager).GUID, Is.EqualTo(CLSID_DirectManipulationSharedManager));
+    }
 
-        /// <summary>Validates that the <see cref="DirectManipulationSharedManager" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DirectManipulationSharedManager>(), Is.EqualTo(sizeof(DirectManipulationSharedManager)));
-        }
+    /// <summary>Validates that the <see cref="DirectManipulationSharedManager" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DirectManipulationSharedManager>(), Is.EqualTo(sizeof(DirectManipulationSharedManager)));
+    }
 
-        /// <summary>Validates that the <see cref="DirectManipulationSharedManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DirectManipulationSharedManager).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DirectManipulationSharedManager" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DirectManipulationSharedManager).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DirectManipulationSharedManager" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DirectManipulationSharedManager), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="DirectManipulationSharedManager" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DirectManipulationSharedManager), Is.EqualTo(1));
     }
 }

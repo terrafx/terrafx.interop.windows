@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="REGISTERWORDA" /> struct.</summary>
+public static unsafe partial class REGISTERWORDATests
 {
-    /// <summary>Provides validation of the <see cref="REGISTERWORDA" /> struct.</summary>
-    public static unsafe partial class REGISTERWORDATests
+    /// <summary>Validates that the <see cref="REGISTERWORDA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="REGISTERWORDA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<REGISTERWORDA>(), Is.EqualTo(sizeof(REGISTERWORDA)));
-        }
+        Assert.That(Marshal.SizeOf<REGISTERWORDA>(), Is.EqualTo(sizeof(REGISTERWORDA)));
+    }
 
-        /// <summary>Validates that the <see cref="REGISTERWORDA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(REGISTERWORDA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="REGISTERWORDA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(REGISTERWORDA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="REGISTERWORDA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="REGISTERWORDA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(REGISTERWORDA), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(REGISTERWORDA), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(REGISTERWORDA), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(REGISTERWORDA), Is.EqualTo(8));
         }
     }
 }

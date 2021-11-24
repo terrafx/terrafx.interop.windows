@@ -7,30 +7,29 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct WICRawToneCurve
 {
-    public partial struct WICRawToneCurve
+    public uint cPoints;
+
+    [NativeTypeName("WICRawToneCurvePoint [1]")]
+    public _aPoints_e__FixedBuffer aPoints;
+
+    public partial struct _aPoints_e__FixedBuffer
     {
-        public uint cPoints;
+        public WICRawToneCurvePoint e0;
 
-        [NativeTypeName("WICRawToneCurvePoint [1]")]
-        public _aPoints_e__FixedBuffer aPoints;
-
-        public partial struct _aPoints_e__FixedBuffer
+        public ref WICRawToneCurvePoint this[int index]
         {
-            public WICRawToneCurvePoint e0;
-
-            public ref WICRawToneCurvePoint this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<WICRawToneCurvePoint> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<WICRawToneCurvePoint> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

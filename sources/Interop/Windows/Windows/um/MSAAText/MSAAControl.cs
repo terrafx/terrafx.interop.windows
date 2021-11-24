@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("08CD963F-7A3E-4F5C-9BD8-D692BB043C5B")]
+public partial struct MSAAControl
 {
-    [Guid("08CD963F-7A3E-4F5C-9BD8-D692BB043C5B")]
-    public partial struct MSAAControl
-    {
-    }
 }

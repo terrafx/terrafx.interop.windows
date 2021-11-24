@@ -3,11 +3,10 @@
 // Ported from um/propsys.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class PKEY
 {
-    public static partial class PKEY
-    {
-        [NativeTypeName("#define PKEY_PIDSTR_MAX 10")]
-        public const int PKEY_PIDSTR_MAX = 10;
-    }
+    [NativeTypeName("#define PKEY_PIDSTR_MAX 10")]
+    public const int PKEY_PIDSTR_MAX = 10;
 }

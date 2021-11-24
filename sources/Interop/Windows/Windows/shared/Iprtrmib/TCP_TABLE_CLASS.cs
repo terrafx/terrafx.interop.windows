@@ -3,18 +3,17 @@
 // Ported from shared/Iprtrmib.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum TCP_TABLE_CLASS
 {
-    public enum TCP_TABLE_CLASS
-    {
-        TCP_TABLE_BASIC_LISTENER,
-        TCP_TABLE_BASIC_CONNECTIONS,
-        TCP_TABLE_BASIC_ALL,
-        TCP_TABLE_OWNER_PID_LISTENER,
-        TCP_TABLE_OWNER_PID_CONNECTIONS,
-        TCP_TABLE_OWNER_PID_ALL,
-        TCP_TABLE_OWNER_MODULE_LISTENER,
-        TCP_TABLE_OWNER_MODULE_CONNECTIONS,
-        TCP_TABLE_OWNER_MODULE_ALL,
-    }
+    TCP_TABLE_BASIC_LISTENER,
+    TCP_TABLE_BASIC_CONNECTIONS,
+    TCP_TABLE_BASIC_ALL,
+    TCP_TABLE_OWNER_PID_LISTENER,
+    TCP_TABLE_OWNER_PID_CONNECTIONS,
+    TCP_TABLE_OWNER_PID_ALL,
+    TCP_TABLE_OWNER_MODULE_LISTENER,
+    TCP_TABLE_OWNER_MODULE_CONNECTIONS,
+    TCP_TABLE_OWNER_MODULE_ALL,
 }

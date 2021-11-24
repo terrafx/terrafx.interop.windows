@@ -3,13 +3,12 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct CMSG_KEY_AGREE_KEY_ENCRYPT_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+namespace TerraFX.Interop.Windows;
 
-        public CRYPT_DATA_BLOB EncryptedKey;
-    }
+public partial struct CMSG_KEY_AGREE_KEY_ENCRYPT_INFO
+{
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
+
+    public CRYPT_DATA_BLOB EncryptedKey;
 }

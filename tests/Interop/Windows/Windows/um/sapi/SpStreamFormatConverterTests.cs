@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SpStreamFormatConverter" /> struct.</summary>
+public static unsafe partial class SpStreamFormatConverterTests
 {
-    /// <summary>Provides validation of the <see cref="SpStreamFormatConverter" /> struct.</summary>
-    public static unsafe partial class SpStreamFormatConverterTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpStreamFormatConverter" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpStreamFormatConverter" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SpStreamFormatConverter).GUID, Is.EqualTo(CLSID_SpStreamFormatConverter));
-        }
+        Assert.That(typeof(SpStreamFormatConverter).GUID, Is.EqualTo(CLSID_SpStreamFormatConverter));
+    }
 
-        /// <summary>Validates that the <see cref="SpStreamFormatConverter" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SpStreamFormatConverter>(), Is.EqualTo(sizeof(SpStreamFormatConverter)));
-        }
+    /// <summary>Validates that the <see cref="SpStreamFormatConverter" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SpStreamFormatConverter>(), Is.EqualTo(sizeof(SpStreamFormatConverter)));
+    }
 
-        /// <summary>Validates that the <see cref="SpStreamFormatConverter" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SpStreamFormatConverter).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SpStreamFormatConverter" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SpStreamFormatConverter).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SpStreamFormatConverter" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SpStreamFormatConverter), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SpStreamFormatConverter" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SpStreamFormatConverter), Is.EqualTo(1));
     }
 }

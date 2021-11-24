@@ -10,20 +10,20 @@ using System.Runtime.InteropServices;
 using static TerraFX.Interop.DirectX.D2D1_LAYER_OPTIONS1;
 using static TerraFX.Interop.DirectX.DirectX;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D2D1_LAYER_PARAMETERS1
 {
-    public unsafe partial struct D2D1_LAYER_PARAMETERS1
+    public static ref readonly D2D1_LAYER_PARAMETERS1 DEFAULT
     {
-        public static ref readonly D2D1_LAYER_PARAMETERS1 DEFAULT
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            ReadOnlySpan<byte> data;
+
+            if (Environment.Is64BitProcess)
             {
-                ReadOnlySpan<byte> data;
-
-                if (Environment.Is64BitProcess)
-                {
-                    data = new byte[] {
+                data = new byte[] {
                         0xFF, 0xFF, 0x7F, 0xFF,
                         0xFF, 0xFF, 0x7F, 0xFF,
                         0xFF, 0xFF, 0x7F, 0x7F,
@@ -41,51 +41,50 @@ namespace TerraFX.Interop.DirectX
                         0x00, 0x00, 0x00, 0x00,
                         0x00, 0x00, 0x00, 0x00
                     };
-                }
-                else
-                {
-                    data = new byte[] {
-                        0xFF, 0xFF, 0x7F, 0xFF,
-                        0xFF, 0xFF, 0x7F, 0xFF,
-                        0xFF, 0xFF, 0x7F, 0x7F,
-                        0xFF, 0xFF, 0x7F, 0x7F,
-                        0x00, 0x00, 0x00, 0x00,
-                        0x00, 0x00, 0x00, 0x00,
-                        0x00, 0x00, 0x80, 0x3F,
-                        0x00, 0x00, 0x00, 0x00,
-                        0x00, 0x00, 0x00, 0x00,
-                        0x00, 0x00, 0x80, 0x3F,
-                        0x00, 0x00, 0x00, 0x00,
-                        0x00, 0x00, 0x00, 0x00,
-                        0x00, 0x00, 0x80, 0x3F,
-                        0x00, 0x00, 0x00, 0x00,
-                        0x00, 0x00, 0x00, 0x00
-                    };
-                }
-
-                Debug.Assert(data.Length == Unsafe.SizeOf<D2D1_LAYER_PARAMETERS1>());
-                return ref Unsafe.As<byte, D2D1_LAYER_PARAMETERS1>(ref MemoryMarshal.GetReference(data));
             }
-        }
+            else
+            {
+                data = new byte[] {
+                        0xFF, 0xFF, 0x7F, 0xFF,
+                        0xFF, 0xFF, 0x7F, 0xFF,
+                        0xFF, 0xFF, 0x7F, 0x7F,
+                        0xFF, 0xFF, 0x7F, 0x7F,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x80, 0x3F,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x80, 0x3F,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x80, 0x3F,
+                        0x00, 0x00, 0x00, 0x00,
+                        0x00, 0x00, 0x00, 0x00
+                    };
+            }
 
-        public D2D1_LAYER_PARAMETERS1([Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, float opacity = 1.0f, ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS1 layerOptions = D2D1_LAYER_OPTIONS1_NONE)
-             : this(InfiniteRect, geometricMask, maskAntialiasMode, IdentityMatrix, opacity, opacityBrush, layerOptions)
-        {
+            Debug.Assert(data.Length == Unsafe.SizeOf<D2D1_LAYER_PARAMETERS1>());
+            return ref Unsafe.As<byte, D2D1_LAYER_PARAMETERS1>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public D2D1_LAYER_PARAMETERS1([NativeTypeName("const D2D1_RECT_F")] in D2D_RECT_F contentBounds, [Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, float opacity = 1.0f, ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS1 layerOptions = D2D1_LAYER_OPTIONS1_NONE)
-            : this(contentBounds, geometricMask, maskAntialiasMode, IdentityMatrix, opacity, opacityBrush, layerOptions)
-        {
-        }
+    public D2D1_LAYER_PARAMETERS1([Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, float opacity = 1.0f, ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS1 layerOptions = D2D1_LAYER_OPTIONS1_NONE)
+         : this(InfiniteRect, geometricMask, maskAntialiasMode, IdentityMatrix, opacity, opacityBrush, layerOptions)
+    {
+    }
 
-        public D2D1_LAYER_PARAMETERS1([Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F maskTransform, float opacity = 1.0f, ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS1 layerOptions = D2D1_LAYER_OPTIONS1_NONE)
-            : this(InfiniteRect, geometricMask, maskAntialiasMode, maskTransform, opacity, opacityBrush, layerOptions)
-        {
-        }
+    public D2D1_LAYER_PARAMETERS1([NativeTypeName("const D2D1_RECT_F")] in D2D_RECT_F contentBounds, [Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, float opacity = 1.0f, ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS1 layerOptions = D2D1_LAYER_OPTIONS1_NONE)
+        : this(contentBounds, geometricMask, maskAntialiasMode, IdentityMatrix, opacity, opacityBrush, layerOptions)
+    {
+    }
 
-        public D2D1_LAYER_PARAMETERS1([NativeTypeName("const D2D1_RECT_F")] in D2D_RECT_F contentBounds, [Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F maskTransform, float opacity = 1.0f, ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS1 layerOptions = D2D1_LAYER_OPTIONS1_NONE)
-        {
-            this = LayerParameters1(contentBounds, geometricMask, maskAntialiasMode, maskTransform, opacity, opacityBrush, layerOptions);
-        }
+    public D2D1_LAYER_PARAMETERS1([Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F maskTransform, float opacity = 1.0f, ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS1 layerOptions = D2D1_LAYER_OPTIONS1_NONE)
+        : this(InfiniteRect, geometricMask, maskAntialiasMode, maskTransform, opacity, opacityBrush, layerOptions)
+    {
+    }
+
+    public D2D1_LAYER_PARAMETERS1([NativeTypeName("const D2D1_RECT_F")] in D2D_RECT_F contentBounds, [Optional] ID2D1Geometry* geometricMask, [Optional] D2D1_ANTIALIAS_MODE maskAntialiasMode, [NativeTypeName("D2D1_MATRIX_3X2_F")] D2D_MATRIX_3X2_F maskTransform, float opacity = 1.0f, ID2D1Brush* opacityBrush = null, D2D1_LAYER_OPTIONS1 layerOptions = D2D1_LAYER_OPTIONS1_NONE)
+    {
+        this = LayerParameters1(contentBounds, geometricMask, maskAntialiasMode, maskTransform, opacity, opacityBrush, layerOptions);
     }
 }

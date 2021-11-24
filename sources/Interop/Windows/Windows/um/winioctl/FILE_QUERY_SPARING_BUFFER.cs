@@ -3,20 +3,19 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct FILE_QUERY_SPARING_BUFFER
 {
-    public partial struct FILE_QUERY_SPARING_BUFFER
-    {
-        [NativeTypeName("DWORD")]
-        public uint SparingUnitBytes;
+    [NativeTypeName("DWORD")]
+    public uint SparingUnitBytes;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte SoftwareSparing;
+    [NativeTypeName("BOOLEAN")]
+    public byte SoftwareSparing;
 
-        [NativeTypeName("DWORD")]
-        public uint TotalSpareBlocks;
+    [NativeTypeName("DWORD")]
+    public uint TotalSpareBlocks;
 
-        [NativeTypeName("DWORD")]
-        public uint FreeSpareBlocks;
-    }
+    [NativeTypeName("DWORD")]
+    public uint FreeSpareBlocks;
 }

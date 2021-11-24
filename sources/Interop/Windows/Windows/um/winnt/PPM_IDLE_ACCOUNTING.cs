@@ -7,40 +7,39 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct PPM_IDLE_ACCOUNTING
 {
-    public partial struct PPM_IDLE_ACCOUNTING
+    [NativeTypeName("DWORD")]
+    public uint StateCount;
+
+    [NativeTypeName("DWORD")]
+    public uint TotalTransitions;
+
+    [NativeTypeName("DWORD")]
+    public uint ResetCount;
+
+    [NativeTypeName("DWORD64")]
+    public ulong StartTime;
+
+    [NativeTypeName("PPM_IDLE_STATE_ACCOUNTING [1]")]
+    public _State_e__FixedBuffer State;
+
+    public partial struct _State_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint StateCount;
+        public PPM_IDLE_STATE_ACCOUNTING e0;
 
-        [NativeTypeName("DWORD")]
-        public uint TotalTransitions;
-
-        [NativeTypeName("DWORD")]
-        public uint ResetCount;
-
-        [NativeTypeName("DWORD64")]
-        public ulong StartTime;
-
-        [NativeTypeName("PPM_IDLE_STATE_ACCOUNTING [1]")]
-        public _State_e__FixedBuffer State;
-
-        public partial struct _State_e__FixedBuffer
+        public ref PPM_IDLE_STATE_ACCOUNTING this[int index]
         {
-            public PPM_IDLE_STATE_ACCOUNTING e0;
-
-            public ref PPM_IDLE_STATE_ACCOUNTING this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<PPM_IDLE_STATE_ACCOUNTING> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<PPM_IDLE_STATE_ACCOUNTING> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

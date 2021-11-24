@@ -7,90 +7,89 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("B84E2FC3-F8EC-4BC1-8AE2-156346F5FFEA")]
+[NativeTypeName("struct IAppxManifestOSPackageDependenciesEnumerator : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IAppxManifestOSPackageDependenciesEnumerator : IAppxManifestOSPackageDependenciesEnumerator.Interface
 {
-    [Guid("B84E2FC3-F8EC-4BC1-8AE2-156346F5FFEA")]
-    [NativeTypeName("struct IAppxManifestOSPackageDependenciesEnumerator : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestOSPackageDependenciesEnumerator : IAppxManifestOSPackageDependenciesEnumerator.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestOSPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestOSPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, uint>)(lpVtbl[1]))((IAppxManifestOSPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, uint>)(lpVtbl[1]))((IAppxManifestOSPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, uint>)(lpVtbl[2]))((IAppxManifestOSPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, uint>)(lpVtbl[2]))((IAppxManifestOSPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetCurrent(IAppxManifestOSPackageDependency** osPackageDependency)
+    {
+        return ((delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, IAppxManifestOSPackageDependency**, int>)(lpVtbl[3]))((IAppxManifestOSPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this), osPackageDependency);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetHasCurrent(BOOL* hasCurrent)
+    {
+        return ((delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxManifestOSPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT MoveNext(BOOL* hasNext)
+    {
+        return ((delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxManifestOSPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this), hasNext);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetCurrent(IAppxManifestOSPackageDependency** osPackageDependency)
-        {
-            return ((delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, IAppxManifestOSPackageDependency**, int>)(lpVtbl[3]))((IAppxManifestOSPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this), osPackageDependency);
-        }
+        HRESULT GetCurrent(IAppxManifestOSPackageDependency** osPackageDependency);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetHasCurrent(BOOL* hasCurrent)
-        {
-            return ((delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxManifestOSPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
-        }
+        HRESULT GetHasCurrent(BOOL* hasCurrent);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT MoveNext(BOOL* hasNext)
-        {
-            return ((delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxManifestOSPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this), hasNext);
-        }
+        HRESULT MoveNext(BOOL* hasNext);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetCurrent(IAppxManifestOSPackageDependency** osPackageDependency);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetHasCurrent(BOOL* hasCurrent);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT MoveNext(BOOL* hasNext);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (IAppxManifestOSPackageDependency **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, IAppxManifestOSPackageDependency**, int> GetCurrent;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, uint> AddRef;
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, BOOL*, int> GetHasCurrent;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, uint> Release;
-
-            [NativeTypeName("HRESULT (IAppxManifestOSPackageDependency **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, IAppxManifestOSPackageDependency**, int> GetCurrent;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, BOOL*, int> GetHasCurrent;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, BOOL*, int> MoveNext;
-        }
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestOSPackageDependenciesEnumerator*, BOOL*, int> MoveNext;
     }
 }

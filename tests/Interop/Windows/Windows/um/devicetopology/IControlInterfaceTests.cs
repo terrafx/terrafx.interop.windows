@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IControlInterface" /> struct.</summary>
+public static unsafe partial class IControlInterfaceTests
 {
-    /// <summary>Provides validation of the <see cref="IControlInterface" /> struct.</summary>
-    public static unsafe partial class IControlInterfaceTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IControlInterface" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IControlInterface" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IControlInterface).GUID, Is.EqualTo(IID_IControlInterface));
-        }
+        Assert.That(typeof(IControlInterface).GUID, Is.EqualTo(IID_IControlInterface));
+    }
 
-        /// <summary>Validates that the <see cref="IControlInterface" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IControlInterface>(), Is.EqualTo(sizeof(IControlInterface)));
-        }
+    /// <summary>Validates that the <see cref="IControlInterface" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IControlInterface>(), Is.EqualTo(sizeof(IControlInterface)));
+    }
 
-        /// <summary>Validates that the <see cref="IControlInterface" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IControlInterface).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IControlInterface" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IControlInterface).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IControlInterface" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IControlInterface" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IControlInterface), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IControlInterface), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IControlInterface), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IControlInterface), Is.EqualTo(4));
         }
     }
 }

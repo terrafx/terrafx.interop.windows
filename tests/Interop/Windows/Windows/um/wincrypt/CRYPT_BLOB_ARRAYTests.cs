@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CRYPT_BLOB_ARRAY" /> struct.</summary>
+public static unsafe partial class CRYPT_BLOB_ARRAYTests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_BLOB_ARRAY" /> struct.</summary>
-    public static unsafe partial class CRYPT_BLOB_ARRAYTests
+    /// <summary>Validates that the <see cref="CRYPT_BLOB_ARRAY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CRYPT_BLOB_ARRAY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CRYPT_BLOB_ARRAY>(), Is.EqualTo(sizeof(CRYPT_BLOB_ARRAY)));
-        }
+        Assert.That(Marshal.SizeOf<CRYPT_BLOB_ARRAY>(), Is.EqualTo(sizeof(CRYPT_BLOB_ARRAY)));
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_BLOB_ARRAY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CRYPT_BLOB_ARRAY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CRYPT_BLOB_ARRAY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CRYPT_BLOB_ARRAY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_BLOB_ARRAY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CRYPT_BLOB_ARRAY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CRYPT_BLOB_ARRAY), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(CRYPT_BLOB_ARRAY), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(CRYPT_BLOB_ARRAY), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(CRYPT_BLOB_ARRAY), Is.EqualTo(8));
         }
     }
 }

@@ -7,39 +7,38 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct EMRSETPALETTEENTRIES
 {
-    public partial struct EMRSETPALETTEENTRIES
+    public EMR emr;
+
+    [NativeTypeName("DWORD")]
+    public uint ihPal;
+
+    [NativeTypeName("DWORD")]
+    public uint iStart;
+
+    [NativeTypeName("DWORD")]
+    public uint cEntries;
+
+    [NativeTypeName("PALETTEENTRY [1]")]
+    public _aPalEntries_e__FixedBuffer aPalEntries;
+
+    public partial struct _aPalEntries_e__FixedBuffer
     {
-        public EMR emr;
+        public PALETTEENTRY e0;
 
-        [NativeTypeName("DWORD")]
-        public uint ihPal;
-
-        [NativeTypeName("DWORD")]
-        public uint iStart;
-
-        [NativeTypeName("DWORD")]
-        public uint cEntries;
-
-        [NativeTypeName("PALETTEENTRY [1]")]
-        public _aPalEntries_e__FixedBuffer aPalEntries;
-
-        public partial struct _aPalEntries_e__FixedBuffer
+        public ref PALETTEENTRY this[int index]
         {
-            public PALETTEENTRY e0;
-
-            public ref PALETTEENTRY this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<PALETTEENTRY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<PALETTEENTRY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

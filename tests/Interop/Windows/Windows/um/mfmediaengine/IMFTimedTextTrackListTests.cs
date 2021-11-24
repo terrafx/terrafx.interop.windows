@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFTimedTextTrackList" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
+public static unsafe partial class IMFTimedTextTrackListTests
 {
-    /// <summary>Provides validation of the <see cref="IMFTimedTextTrackList" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0")]
-    public static unsafe partial class IMFTimedTextTrackListTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFTimedTextTrackList" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFTimedTextTrackList" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFTimedTextTrackList).GUID, Is.EqualTo(IID_IMFTimedTextTrackList));
-        }
+        Assert.That(typeof(IMFTimedTextTrackList).GUID, Is.EqualTo(IID_IMFTimedTextTrackList));
+    }
 
-        /// <summary>Validates that the <see cref="IMFTimedTextTrackList" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFTimedTextTrackList>(), Is.EqualTo(sizeof(IMFTimedTextTrackList)));
-        }
+    /// <summary>Validates that the <see cref="IMFTimedTextTrackList" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFTimedTextTrackList>(), Is.EqualTo(sizeof(IMFTimedTextTrackList)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFTimedTextTrackList" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFTimedTextTrackList).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFTimedTextTrackList" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFTimedTextTrackList).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFTimedTextTrackList" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFTimedTextTrackList" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFTimedTextTrackList), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFTimedTextTrackList), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFTimedTextTrackList), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFTimedTextTrackList), Is.EqualTo(4));
         }
     }
 }

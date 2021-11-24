@@ -3,35 +3,34 @@
 // Ported from um/fileapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct BY_HANDLE_FILE_INFORMATION
 {
-    public partial struct BY_HANDLE_FILE_INFORMATION
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwFileAttributes;
+    [NativeTypeName("DWORD")]
+    public uint dwFileAttributes;
 
-        public FILETIME ftCreationTime;
+    public FILETIME ftCreationTime;
 
-        public FILETIME ftLastAccessTime;
+    public FILETIME ftLastAccessTime;
 
-        public FILETIME ftLastWriteTime;
+    public FILETIME ftLastWriteTime;
 
-        [NativeTypeName("DWORD")]
-        public uint dwVolumeSerialNumber;
+    [NativeTypeName("DWORD")]
+    public uint dwVolumeSerialNumber;
 
-        [NativeTypeName("DWORD")]
-        public uint nFileSizeHigh;
+    [NativeTypeName("DWORD")]
+    public uint nFileSizeHigh;
 
-        [NativeTypeName("DWORD")]
-        public uint nFileSizeLow;
+    [NativeTypeName("DWORD")]
+    public uint nFileSizeLow;
 
-        [NativeTypeName("DWORD")]
-        public uint nNumberOfLinks;
+    [NativeTypeName("DWORD")]
+    public uint nNumberOfLinks;
 
-        [NativeTypeName("DWORD")]
-        public uint nFileIndexHigh;
+    [NativeTypeName("DWORD")]
+    public uint nFileIndexHigh;
 
-        [NativeTypeName("DWORD")]
-        public uint nFileIndexLow;
-    }
+    [NativeTypeName("DWORD")]
+    public uint nFileIndexLow;
 }

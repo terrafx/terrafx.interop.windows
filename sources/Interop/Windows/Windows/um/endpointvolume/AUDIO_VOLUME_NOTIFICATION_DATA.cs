@@ -5,19 +5,18 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct AUDIO_VOLUME_NOTIFICATION_DATA
 {
-    public unsafe partial struct AUDIO_VOLUME_NOTIFICATION_DATA
-    {
-        public Guid guidEventContext;
+    public Guid guidEventContext;
 
-        public BOOL bMuted;
+    public BOOL bMuted;
 
-        public float fMasterVolume;
+    public float fMasterVolume;
 
-        public uint nChannels;
+    public uint nChannels;
 
-        [NativeTypeName("float [1]")]
-        public fixed float afChannelVolumes[1];
-    }
+    [NativeTypeName("float [1]")]
+    public fixed float afChannelVolumes[1];
 }

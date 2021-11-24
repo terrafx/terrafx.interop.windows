@@ -3,10 +3,9 @@
 // Ported from shared/Iprtrmib.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum TCPIP_OWNER_MODULE_INFO_CLASS
 {
-    public enum TCPIP_OWNER_MODULE_INFO_CLASS
-    {
-        TCPIP_OWNER_MODULE_INFO_BASIC,
-    }
+    TCPIP_OWNER_MODULE_INFO_BASIC,
 }

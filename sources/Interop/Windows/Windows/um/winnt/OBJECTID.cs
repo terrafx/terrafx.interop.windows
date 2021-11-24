@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct OBJECTID
-    {
-        public Guid Lineage;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint Uniquifier;
-    }
+public partial struct OBJECTID
+{
+    public Guid Lineage;
+
+    [NativeTypeName("DWORD")]
+    public uint Uniquifier;
 }

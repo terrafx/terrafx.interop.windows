@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CODECAPI_AVDecDDDynamicRangeScaleHigh" /> struct.</summary>
+public static unsafe partial class CODECAPI_AVDecDDDynamicRangeScaleHighTests
 {
-    /// <summary>Provides validation of the <see cref="CODECAPI_AVDecDDDynamicRangeScaleHigh" /> struct.</summary>
-    public static unsafe partial class CODECAPI_AVDecDDDynamicRangeScaleHighTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVDecDDDynamicRangeScaleHigh" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVDecDDDynamicRangeScaleHigh" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CODECAPI_AVDecDDDynamicRangeScaleHigh).GUID, Is.EqualTo(IID_CODECAPI_AVDecDDDynamicRangeScaleHigh));
-        }
+        Assert.That(typeof(CODECAPI_AVDecDDDynamicRangeScaleHigh).GUID, Is.EqualTo(IID_CODECAPI_AVDecDDDynamicRangeScaleHigh));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVDecDDDynamicRangeScaleHigh" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CODECAPI_AVDecDDDynamicRangeScaleHigh>(), Is.EqualTo(sizeof(CODECAPI_AVDecDDDynamicRangeScaleHigh)));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVDecDDDynamicRangeScaleHigh" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CODECAPI_AVDecDDDynamicRangeScaleHigh>(), Is.EqualTo(sizeof(CODECAPI_AVDecDDDynamicRangeScaleHigh)));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVDecDDDynamicRangeScaleHigh" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CODECAPI_AVDecDDDynamicRangeScaleHigh).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVDecDDDynamicRangeScaleHigh" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CODECAPI_AVDecDDDynamicRangeScaleHigh).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVDecDDDynamicRangeScaleHigh" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CODECAPI_AVDecDDDynamicRangeScaleHigh), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVDecDDDynamicRangeScaleHigh" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CODECAPI_AVDecDDDynamicRangeScaleHigh), Is.EqualTo(1));
     }
 }

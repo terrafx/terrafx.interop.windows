@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("EC770CF3-6908-4B4B-AA30-7FB986214FEA")]
+public partial struct CODECAPI_AVEncMPVUseConcealmentMotionVectors
 {
-    [Guid("EC770CF3-6908-4B4B-AA30-7FB986214FEA")]
-    public partial struct CODECAPI_AVEncMPVUseConcealmentMotionVectors
-    {
-    }
 }

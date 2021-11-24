@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="GET_FILTER_FILE_IDENTIFIER_INPUT" /> struct.</summary>
+public static unsafe partial class GET_FILTER_FILE_IDENTIFIER_INPUTTests
 {
-    /// <summary>Provides validation of the <see cref="GET_FILTER_FILE_IDENTIFIER_INPUT" /> struct.</summary>
-    public static unsafe partial class GET_FILTER_FILE_IDENTIFIER_INPUTTests
+    /// <summary>Validates that the <see cref="GET_FILTER_FILE_IDENTIFIER_INPUT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="GET_FILTER_FILE_IDENTIFIER_INPUT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<GET_FILTER_FILE_IDENTIFIER_INPUT>(), Is.EqualTo(sizeof(GET_FILTER_FILE_IDENTIFIER_INPUT)));
-        }
+        Assert.That(Marshal.SizeOf<GET_FILTER_FILE_IDENTIFIER_INPUT>(), Is.EqualTo(sizeof(GET_FILTER_FILE_IDENTIFIER_INPUT)));
+    }
 
-        /// <summary>Validates that the <see cref="GET_FILTER_FILE_IDENTIFIER_INPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(GET_FILTER_FILE_IDENTIFIER_INPUT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="GET_FILTER_FILE_IDENTIFIER_INPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(GET_FILTER_FILE_IDENTIFIER_INPUT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="GET_FILTER_FILE_IDENTIFIER_INPUT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(GET_FILTER_FILE_IDENTIFIER_INPUT), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="GET_FILTER_FILE_IDENTIFIER_INPUT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(GET_FILTER_FILE_IDENTIFIER_INPUT), Is.EqualTo(4));
     }
 }

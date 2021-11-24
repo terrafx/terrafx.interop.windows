@@ -3,14 +3,13 @@
 // Ported from um/ShObjIdl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum NSTCECLICKTYPE
 {
-    public enum NSTCECLICKTYPE
-    {
-        NSTCECT_LBUTTON = 0x1,
-        NSTCECT_MBUTTON = 0x2,
-        NSTCECT_RBUTTON = 0x3,
-        NSTCECT_BUTTON = 0x3,
-        NSTCECT_DBLCLICK = 0x4,
-    }
+    NSTCECT_LBUTTON = 0x1,
+    NSTCECT_MBUTTON = 0x2,
+    NSTCECT_RBUTTON = 0x3,
+    NSTCECT_BUTTON = 0x3,
+    NSTCECT_DBLCLICK = 0x4,
 }

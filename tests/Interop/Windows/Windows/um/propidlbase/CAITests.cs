@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CAI" /> struct.</summary>
+public static unsafe partial class CAITests
 {
-    /// <summary>Provides validation of the <see cref="CAI" /> struct.</summary>
-    public static unsafe partial class CAITests
+    /// <summary>Validates that the <see cref="CAI" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CAI" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CAI>(), Is.EqualTo(sizeof(CAI)));
-        }
+        Assert.That(Marshal.SizeOf<CAI>(), Is.EqualTo(sizeof(CAI)));
+    }
 
-        /// <summary>Validates that the <see cref="CAI" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CAI).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CAI" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CAI).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CAI" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CAI" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CAI), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(CAI), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(CAI), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(CAI), Is.EqualTo(8));
         }
     }
 }

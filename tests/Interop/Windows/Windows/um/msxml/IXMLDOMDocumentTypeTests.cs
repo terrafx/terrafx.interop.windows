@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IXMLDOMDocumentType" /> struct.</summary>
+public static unsafe partial class IXMLDOMDocumentTypeTests
 {
-    /// <summary>Provides validation of the <see cref="IXMLDOMDocumentType" /> struct.</summary>
-    public static unsafe partial class IXMLDOMDocumentTypeTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IXMLDOMDocumentType" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IXMLDOMDocumentType" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IXMLDOMDocumentType).GUID, Is.EqualTo(IID_IXMLDOMDocumentType));
-        }
+        Assert.That(typeof(IXMLDOMDocumentType).GUID, Is.EqualTo(IID_IXMLDOMDocumentType));
+    }
 
-        /// <summary>Validates that the <see cref="IXMLDOMDocumentType" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IXMLDOMDocumentType>(), Is.EqualTo(sizeof(IXMLDOMDocumentType)));
-        }
+    /// <summary>Validates that the <see cref="IXMLDOMDocumentType" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IXMLDOMDocumentType>(), Is.EqualTo(sizeof(IXMLDOMDocumentType)));
+    }
 
-        /// <summary>Validates that the <see cref="IXMLDOMDocumentType" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IXMLDOMDocumentType).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IXMLDOMDocumentType" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IXMLDOMDocumentType).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IXMLDOMDocumentType" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IXMLDOMDocumentType" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IXMLDOMDocumentType), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IXMLDOMDocumentType), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IXMLDOMDocumentType), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IXMLDOMDocumentType), Is.EqualTo(4));
         }
     }
 }

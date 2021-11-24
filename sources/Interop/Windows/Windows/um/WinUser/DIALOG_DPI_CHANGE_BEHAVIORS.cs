@@ -6,15 +6,14 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+[SupportedOSPlatform("windows10.0.15063.0")]
+public enum DIALOG_DPI_CHANGE_BEHAVIORS
 {
-    [Flags]
-    [SupportedOSPlatform("windows10.0.15063.0")]
-    public enum DIALOG_DPI_CHANGE_BEHAVIORS
-    {
-        DDC_DEFAULT = 0x0000,
-        DDC_DISABLE_ALL = 0x0001,
-        DDC_DISABLE_RESIZE = 0x0002,
-        DDC_DISABLE_CONTROL_RELAYOUT = 0x0004,
-    }
+    DDC_DEFAULT = 0x0000,
+    DDC_DISABLE_ALL = 0x0001,
+    DDC_DISABLE_RESIZE = 0x0002,
+    DDC_DISABLE_CONTROL_RELAYOUT = 0x0004,
 }

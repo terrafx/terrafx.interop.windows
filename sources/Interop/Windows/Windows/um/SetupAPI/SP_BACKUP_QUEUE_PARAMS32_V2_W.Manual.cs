@@ -5,20 +5,19 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SP_BACKUP_QUEUE_PARAMS32_V2_W
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SP_BACKUP_QUEUE_PARAMS32_V2_W
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("WCHAR [260]")]
-        public fixed ushort FullInfPath[260];
+    [NativeTypeName("WCHAR [260]")]
+    public fixed ushort FullInfPath[260];
 
-        public int FilenameOffset;
+    public int FilenameOffset;
 
-        [NativeTypeName("WCHAR [260]")]
-        public fixed ushort ReinstallInstance[260];
-    }
+    [NativeTypeName("WCHAR [260]")]
+    public fixed ushort ReinstallInstance[260];
 }

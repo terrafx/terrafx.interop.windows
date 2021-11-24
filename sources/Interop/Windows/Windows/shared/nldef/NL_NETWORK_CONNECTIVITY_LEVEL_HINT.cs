@@ -5,16 +5,15 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+public enum NL_NETWORK_CONNECTIVITY_LEVEL_HINT
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public enum NL_NETWORK_CONNECTIVITY_LEVEL_HINT
-    {
-        NetworkConnectivityLevelHintUnknown = 0,
-        NetworkConnectivityLevelHintNone,
-        NetworkConnectivityLevelHintLocalAccess,
-        NetworkConnectivityLevelHintInternetAccess,
-        NetworkConnectivityLevelHintConstrainedInternetAccess,
-        NetworkConnectivityLevelHintHidden,
-    }
+    NetworkConnectivityLevelHintUnknown = 0,
+    NetworkConnectivityLevelHintNone,
+    NetworkConnectivityLevelHintLocalAccess,
+    NetworkConnectivityLevelHintInternetAccess,
+    NetworkConnectivityLevelHintConstrainedInternetAccess,
+    NetworkConnectivityLevelHintHidden,
 }

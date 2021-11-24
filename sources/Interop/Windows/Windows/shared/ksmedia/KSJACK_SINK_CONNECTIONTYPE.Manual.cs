@@ -3,11 +3,10 @@
 // Ported from shared/ksmedia.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum KSJACK_SINK_CONNECTIONTYPE
 {
-    public enum KSJACK_SINK_CONNECTIONTYPE
-    {
-        KSJACK_SINK_CONNECTIONTYPE_HDMI = 0,
-        KSJACK_SINK_CONNECTIONTYPE_DISPLAYPORT,
-    }
+    KSJACK_SINK_CONNECTIONTYPE_HDMI = 0,
+    KSJACK_SINK_CONNECTIONTYPE_DISPLAYPORT,
 }

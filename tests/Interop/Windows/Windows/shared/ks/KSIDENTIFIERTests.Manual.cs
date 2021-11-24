@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="KSIDENTIFIER" /> struct.</summary>
+public static unsafe class KSIDENTIFIERTests
 {
-    /// <summary>Provides validation of the <see cref="KSIDENTIFIER" /> struct.</summary>
-    public static unsafe class KSIDENTIFIERTests
+    /// <summary>Validates that the <see cref="KSIDENTIFIER" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="KSIDENTIFIER" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<KSIDENTIFIER>(), Is.EqualTo(sizeof(KSIDENTIFIER)));
-        }
+        Assert.That(Marshal.SizeOf<KSIDENTIFIER>(), Is.EqualTo(sizeof(KSIDENTIFIER)));
+    }
 
-        /// <summary>Validates that the <see cref="KSIDENTIFIER" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(KSIDENTIFIER).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="KSIDENTIFIER" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(KSIDENTIFIER).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="KSIDENTIFIER" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(KSIDENTIFIER), Is.EqualTo(24));
-        }
+    /// <summary>Validates that the <see cref="KSIDENTIFIER" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(KSIDENTIFIER), Is.EqualTo(24));
     }
 }

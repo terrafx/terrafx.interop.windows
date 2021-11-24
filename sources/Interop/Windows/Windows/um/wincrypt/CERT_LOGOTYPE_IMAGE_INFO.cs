@@ -6,59 +6,58 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CERT_LOGOTYPE_IMAGE_INFO
 {
-    public unsafe partial struct CERT_LOGOTYPE_IMAGE_INFO
+    [NativeTypeName("DWORD")]
+    public uint dwLogotypeImageInfoChoice;
+
+    [NativeTypeName("DWORD")]
+    public uint dwFileSize;
+
+    [NativeTypeName("DWORD")]
+    public uint dwXSize;
+
+    [NativeTypeName("DWORD")]
+    public uint dwYSize;
+
+    [NativeTypeName("DWORD")]
+    public uint dwLogotypeImageResolutionChoice;
+
+    [NativeTypeName("_CERT_LOGOTYPE_IMAGE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:5456:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    [NativeTypeName("LPWSTR")]
+    public ushort* pwszLanguage;
+
+    public ref uint dwNumBits
     {
-        [NativeTypeName("DWORD")]
-        public uint dwLogotypeImageInfoChoice;
-
-        [NativeTypeName("DWORD")]
-        public uint dwFileSize;
-
-        [NativeTypeName("DWORD")]
-        public uint dwXSize;
-
-        [NativeTypeName("DWORD")]
-        public uint dwYSize;
-
-        [NativeTypeName("DWORD")]
-        public uint dwLogotypeImageResolutionChoice;
-
-        [NativeTypeName("_CERT_LOGOTYPE_IMAGE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:5456:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        [NativeTypeName("LPWSTR")]
-        public ushort* pwszLanguage;
-
-        public ref uint dwNumBits
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwNumBits, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwNumBits, 1));
         }
+    }
 
-        public ref uint dwTableSize
+    public ref uint dwTableSize
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwTableSize, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwTableSize, 1));
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint dwNumBits;
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint dwNumBits;
 
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint dwTableSize;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint dwTableSize;
     }
 }

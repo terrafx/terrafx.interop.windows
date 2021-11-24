@@ -3,16 +3,15 @@
 // Ported from um/DirectML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct DML_BINDING_TABLE_DESC
 {
-    public unsafe partial struct DML_BINDING_TABLE_DESC
-    {
-        public IDMLDispatchable* Dispatchable;
+    public IDMLDispatchable* Dispatchable;
 
-        public D3D12_CPU_DESCRIPTOR_HANDLE CPUDescriptorHandle;
+    public D3D12_CPU_DESCRIPTOR_HANDLE CPUDescriptorHandle;
 
-        public D3D12_GPU_DESCRIPTOR_HANDLE GPUDescriptorHandle;
+    public D3D12_GPU_DESCRIPTOR_HANDLE GPUDescriptorHandle;
 
-        public uint SizeInDescriptors;
-    }
+    public uint SizeInDescriptors;
 }

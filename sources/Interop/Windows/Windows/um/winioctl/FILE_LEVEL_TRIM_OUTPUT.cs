@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct FILE_LEVEL_TRIM_OUTPUT
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct FILE_LEVEL_TRIM_OUTPUT
-    {
-        [NativeTypeName("DWORD")]
-        public uint NumRangesProcessed;
-    }
+    [NativeTypeName("DWORD")]
+    public uint NumRangesProcessed;
 }

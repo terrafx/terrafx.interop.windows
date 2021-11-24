@@ -3,13 +3,12 @@
 // Ported from um/objidlbase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum GLOBALOPT_EH_VALUES
 {
-    public enum GLOBALOPT_EH_VALUES
-    {
-        COMGLB_EXCEPTION_HANDLE = 0,
-        COMGLB_EXCEPTION_DONOT_HANDLE_FATAL = 1,
-        COMGLB_EXCEPTION_DONOT_HANDLE = COMGLB_EXCEPTION_DONOT_HANDLE_FATAL,
-        COMGLB_EXCEPTION_DONOT_HANDLE_ANY = 2,
-    }
+    COMGLB_EXCEPTION_HANDLE = 0,
+    COMGLB_EXCEPTION_DONOT_HANDLE_FATAL = 1,
+    COMGLB_EXCEPTION_DONOT_HANDLE = COMGLB_EXCEPTION_DONOT_HANDLE_FATAL,
+    COMGLB_EXCEPTION_DONOT_HANDLE_ANY = 2,
 }

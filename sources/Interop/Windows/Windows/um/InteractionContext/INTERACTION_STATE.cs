@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum INTERACTION_STATE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum INTERACTION_STATE
-    {
-        INTERACTION_STATE_IDLE = 0x00000000,
-        INTERACTION_STATE_IN_INTERACTION = 0x00000001,
-        INTERACTION_STATE_POSSIBLE_DOUBLE_TAP = 0x00000002,
-        INTERACTION_STATE_MAX = unchecked((int)(0xffffffff)),
-    }
+    INTERACTION_STATE_IDLE = 0x00000000,
+    INTERACTION_STATE_IN_INTERACTION = 0x00000001,
+    INTERACTION_STATE_POSSIBLE_DOUBLE_TAP = 0x00000002,
+    INTERACTION_STATE_MAX = unchecked((int)(0xffffffff)),
 }

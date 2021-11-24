@@ -5,10 +5,9 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D11_FEATURE_DATA_ARCHITECTURE_INFO
 {
-    public partial struct D3D11_FEATURE_DATA_ARCHITECTURE_INFO
-    {
-        public BOOL TileBasedDeferredRenderer;
-    }
+    public BOOL TileBasedDeferredRenderer;
 }

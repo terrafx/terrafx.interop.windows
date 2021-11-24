@@ -5,11 +5,10 @@
 
 using TerraFX.Interop.DirectX;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class MAX
 {
-    public static partial class MAX
-    {
-        [NativeTypeName("#define MAX_DDDEVICEID_STRING 512")]
-        public const int MAX_DDDEVICEID_STRING = 512;
-    }
+    [NativeTypeName("#define MAX_DDDEVICEID_STRING 512")]
+    public const int MAX_DDDEVICEID_STRING = 512;
 }

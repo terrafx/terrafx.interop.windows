@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IUIAnimationVariableChangeHandler2" /> struct.</summary>
+public static unsafe partial class IUIAnimationVariableChangeHandler2Tests
 {
-    /// <summary>Provides validation of the <see cref="IUIAnimationVariableChangeHandler2" /> struct.</summary>
-    public static unsafe partial class IUIAnimationVariableChangeHandler2Tests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IUIAnimationVariableChangeHandler2" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IUIAnimationVariableChangeHandler2" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IUIAnimationVariableChangeHandler2).GUID, Is.EqualTo(IID_IUIAnimationVariableChangeHandler2));
-        }
+        Assert.That(typeof(IUIAnimationVariableChangeHandler2).GUID, Is.EqualTo(IID_IUIAnimationVariableChangeHandler2));
+    }
 
-        /// <summary>Validates that the <see cref="IUIAnimationVariableChangeHandler2" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IUIAnimationVariableChangeHandler2>(), Is.EqualTo(sizeof(IUIAnimationVariableChangeHandler2)));
-        }
+    /// <summary>Validates that the <see cref="IUIAnimationVariableChangeHandler2" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IUIAnimationVariableChangeHandler2>(), Is.EqualTo(sizeof(IUIAnimationVariableChangeHandler2)));
+    }
 
-        /// <summary>Validates that the <see cref="IUIAnimationVariableChangeHandler2" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IUIAnimationVariableChangeHandler2).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IUIAnimationVariableChangeHandler2" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IUIAnimationVariableChangeHandler2).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IUIAnimationVariableChangeHandler2" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IUIAnimationVariableChangeHandler2" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IUIAnimationVariableChangeHandler2), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IUIAnimationVariableChangeHandler2), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IUIAnimationVariableChangeHandler2), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IUIAnimationVariableChangeHandler2), Is.EqualTo(4));
         }
     }
 }

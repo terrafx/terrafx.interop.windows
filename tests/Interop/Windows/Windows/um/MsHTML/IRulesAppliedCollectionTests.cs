@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IRulesAppliedCollection" /> struct.</summary>
+public static unsafe partial class IRulesAppliedCollectionTests
 {
-    /// <summary>Provides validation of the <see cref="IRulesAppliedCollection" /> struct.</summary>
-    public static unsafe partial class IRulesAppliedCollectionTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IRulesAppliedCollection" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IRulesAppliedCollection" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IRulesAppliedCollection).GUID, Is.EqualTo(IID_IRulesAppliedCollection));
-        }
+        Assert.That(typeof(IRulesAppliedCollection).GUID, Is.EqualTo(IID_IRulesAppliedCollection));
+    }
 
-        /// <summary>Validates that the <see cref="IRulesAppliedCollection" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IRulesAppliedCollection>(), Is.EqualTo(sizeof(IRulesAppliedCollection)));
-        }
+    /// <summary>Validates that the <see cref="IRulesAppliedCollection" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IRulesAppliedCollection>(), Is.EqualTo(sizeof(IRulesAppliedCollection)));
+    }
 
-        /// <summary>Validates that the <see cref="IRulesAppliedCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IRulesAppliedCollection).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IRulesAppliedCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IRulesAppliedCollection).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IRulesAppliedCollection" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IRulesAppliedCollection" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IRulesAppliedCollection), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IRulesAppliedCollection), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IRulesAppliedCollection), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IRulesAppliedCollection), Is.EqualTo(4));
         }
     }
 }

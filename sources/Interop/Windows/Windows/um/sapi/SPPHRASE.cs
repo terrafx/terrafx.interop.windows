@@ -3,14 +3,13 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    [NativeTypeName("struct SPPHRASE : SPPHRASE_53")]
-    [NativeInheritance("SPPHRASE_53")]
-    public partial struct SPPHRASE
-    {
-        public SPPHRASE_53 Base;
+namespace TerraFX.Interop.Windows;
 
-        public SPSEMANTICFORMAT SemanticTagFormat;
-    }
+[NativeTypeName("struct SPPHRASE : SPPHRASE_53")]
+[NativeInheritance("SPPHRASE_53")]
+public partial struct SPPHRASE
+{
+    public SPPHRASE_53 Base;
+
+    public SPSEMANTICFORMAT SemanticTagFormat;
 }

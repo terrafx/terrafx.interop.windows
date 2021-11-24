@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum DWRITE_FONT_SIMULATIONS
 {
-    [Flags]
-    public enum DWRITE_FONT_SIMULATIONS
-    {
-        DWRITE_FONT_SIMULATIONS_NONE = 0x0000,
-        DWRITE_FONT_SIMULATIONS_BOLD = 0x0001,
-        DWRITE_FONT_SIMULATIONS_OBLIQUE = 0x0002,
-    }
+    DWRITE_FONT_SIMULATIONS_NONE = 0x0000,
+    DWRITE_FONT_SIMULATIONS_BOLD = 0x0001,
+    DWRITE_FONT_SIMULATIONS_OBLIQUE = 0x0002,
 }

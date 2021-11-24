@@ -3,28 +3,27 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct EMRCREATEMONOBRUSH
 {
-    public partial struct EMRCREATEMONOBRUSH
-    {
-        public EMR emr;
+    public EMR emr;
 
-        [NativeTypeName("DWORD")]
-        public uint ihBrush;
+    [NativeTypeName("DWORD")]
+    public uint ihBrush;
 
-        [NativeTypeName("DWORD")]
-        public uint iUsage;
+    [NativeTypeName("DWORD")]
+    public uint iUsage;
 
-        [NativeTypeName("DWORD")]
-        public uint offBmi;
+    [NativeTypeName("DWORD")]
+    public uint offBmi;
 
-        [NativeTypeName("DWORD")]
-        public uint cbBmi;
+    [NativeTypeName("DWORD")]
+    public uint cbBmi;
 
-        [NativeTypeName("DWORD")]
-        public uint offBits;
+    [NativeTypeName("DWORD")]
+    public uint offBits;
 
-        [NativeTypeName("DWORD")]
-        public uint cbBits;
-    }
+    [NativeTypeName("DWORD")]
+    public uint cbBits;
 }

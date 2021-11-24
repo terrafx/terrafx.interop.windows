@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("455F24E9-7396-4A16-9715-7C0FDBE3EFE3")]
+public partial struct SpNullPhoneConverter
 {
-    [Guid("455F24E9-7396-4A16-9715-7C0FDBE3EFE3")]
-    public partial struct SpNullPhoneConverter
-    {
-    }
 }

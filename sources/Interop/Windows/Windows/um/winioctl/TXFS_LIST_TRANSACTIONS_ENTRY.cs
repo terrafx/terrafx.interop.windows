@@ -5,22 +5,21 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TXFS_LIST_TRANSACTIONS_ENTRY
 {
-    public partial struct TXFS_LIST_TRANSACTIONS_ENTRY
-    {
-        public Guid TransactionId;
+    public Guid TransactionId;
 
-        [NativeTypeName("DWORD")]
-        public uint TransactionState;
+    [NativeTypeName("DWORD")]
+    public uint TransactionState;
 
-        [NativeTypeName("DWORD")]
-        public uint Reserved1;
+    [NativeTypeName("DWORD")]
+    public uint Reserved1;
 
-        [NativeTypeName("DWORD")]
-        public uint Reserved2;
+    [NativeTypeName("DWORD")]
+    public uint Reserved2;
 
-        [NativeTypeName("LONGLONG")]
-        public long Reserved3;
-    }
+    [NativeTypeName("LONGLONG")]
+    public long Reserved3;
 }

@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum MF_VIDEO_PROCESSOR_MIRROR
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum MF_VIDEO_PROCESSOR_MIRROR
-    {
-        MIRROR_NONE = 0,
-        MIRROR_HORIZONTAL = 1,
-        MIRROR_VERTICAL = 2,
-    }
+    MIRROR_NONE = 0,
+    MIRROR_HORIZONTAL = 1,
+    MIRROR_VERTICAL = 2,
 }

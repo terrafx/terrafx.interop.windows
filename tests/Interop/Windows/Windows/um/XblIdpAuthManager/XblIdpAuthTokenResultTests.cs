@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XblIdpAuthTokenResult" /> struct.</summary>
+public static unsafe partial class XblIdpAuthTokenResultTests
 {
-    /// <summary>Provides validation of the <see cref="XblIdpAuthTokenResult" /> struct.</summary>
-    public static unsafe partial class XblIdpAuthTokenResultTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="XblIdpAuthTokenResult" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="XblIdpAuthTokenResult" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(XblIdpAuthTokenResult).GUID, Is.EqualTo(CLSID_XblIdpAuthTokenResult));
-        }
+        Assert.That(typeof(XblIdpAuthTokenResult).GUID, Is.EqualTo(CLSID_XblIdpAuthTokenResult));
+    }
 
-        /// <summary>Validates that the <see cref="XblIdpAuthTokenResult" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XblIdpAuthTokenResult>(), Is.EqualTo(sizeof(XblIdpAuthTokenResult)));
-        }
+    /// <summary>Validates that the <see cref="XblIdpAuthTokenResult" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<XblIdpAuthTokenResult>(), Is.EqualTo(sizeof(XblIdpAuthTokenResult)));
+    }
 
-        /// <summary>Validates that the <see cref="XblIdpAuthTokenResult" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XblIdpAuthTokenResult).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XblIdpAuthTokenResult" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XblIdpAuthTokenResult).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XblIdpAuthTokenResult" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(XblIdpAuthTokenResult), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="XblIdpAuthTokenResult" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(XblIdpAuthTokenResult), Is.EqualTo(1));
     }
 }

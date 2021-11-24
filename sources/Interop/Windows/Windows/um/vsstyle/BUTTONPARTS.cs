@@ -3,20 +3,19 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum BUTTONPARTS
 {
-    public enum BUTTONPARTS
-    {
-        BP_PUSHBUTTON = 1,
-        BP_RADIOBUTTON = 2,
-        BP_CHECKBOX = 3,
-        BP_GROUPBOX = 4,
-        BP_USERBUTTON = 5,
-        BP_COMMANDLINK = 6,
-        BP_COMMANDLINKGLYPH = 7,
-        BP_RADIOBUTTON_HCDISABLED = 8,
-        BP_CHECKBOX_HCDISABLED = 9,
-        BP_GROUPBOX_HCDISABLED = 10,
-        BP_PUSHBUTTONDROPDOWN = 11,
-    }
+    BP_PUSHBUTTON = 1,
+    BP_RADIOBUTTON = 2,
+    BP_CHECKBOX = 3,
+    BP_GROUPBOX = 4,
+    BP_USERBUTTON = 5,
+    BP_COMMANDLINK = 6,
+    BP_COMMANDLINKGLYPH = 7,
+    BP_RADIOBUTTON_HCDISABLED = 8,
+    BP_CHECKBOX_HCDISABLED = 9,
+    BP_GROUPBOX_HCDISABLED = 10,
+    BP_PUSHBUTTONDROPDOWN = 11,
 }

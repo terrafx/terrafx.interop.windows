@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMultiQI" /> struct.</summary>
+public static unsafe partial class IMultiQITests
 {
-    /// <summary>Provides validation of the <see cref="IMultiQI" /> struct.</summary>
-    public static unsafe partial class IMultiQITests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMultiQI" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMultiQI" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMultiQI).GUID, Is.EqualTo(IID_IMultiQI));
-        }
+        Assert.That(typeof(IMultiQI).GUID, Is.EqualTo(IID_IMultiQI));
+    }
 
-        /// <summary>Validates that the <see cref="IMultiQI" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMultiQI>(), Is.EqualTo(sizeof(IMultiQI)));
-        }
+    /// <summary>Validates that the <see cref="IMultiQI" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMultiQI>(), Is.EqualTo(sizeof(IMultiQI)));
+    }
 
-        /// <summary>Validates that the <see cref="IMultiQI" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMultiQI).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMultiQI" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMultiQI).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMultiQI" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMultiQI" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMultiQI), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMultiQI), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMultiQI), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMultiQI), Is.EqualTo(4));
         }
     }
 }

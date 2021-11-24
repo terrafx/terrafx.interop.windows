@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("E6442437-6C68-4F52-94DD-2CFED267EFB9")]
+public partial struct TrayDeskBand
 {
-    [Guid("E6442437-6C68-4F52-94DD-2CFED267EFB9")]
-    public partial struct TrayDeskBand
-    {
-    }
 }

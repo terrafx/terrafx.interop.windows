@@ -5,48 +5,47 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SAFEARRAYUNION
 {
-    public partial struct SAFEARRAYUNION
+    [NativeTypeName("ULONG")]
+    public uint sfType;
+
+    [NativeTypeName("union __MIDL_IOleAutomationTypes_0001")]
+    public _u_e__Union u;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _u_e__Union
     {
-        [NativeTypeName("ULONG")]
-        public uint sfType;
+        [FieldOffset(0)]
+        public SAFEARR_BSTR BstrStr;
 
-        [NativeTypeName("union __MIDL_IOleAutomationTypes_0001")]
-        public _u_e__Union u;
+        [FieldOffset(0)]
+        public SAFEARR_UNKNOWN UnknownStr;
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _u_e__Union
-        {
-            [FieldOffset(0)]
-            public SAFEARR_BSTR BstrStr;
+        [FieldOffset(0)]
+        public SAFEARR_DISPATCH DispatchStr;
 
-            [FieldOffset(0)]
-            public SAFEARR_UNKNOWN UnknownStr;
+        [FieldOffset(0)]
+        public SAFEARR_VARIANT VariantStr;
 
-            [FieldOffset(0)]
-            public SAFEARR_DISPATCH DispatchStr;
+        [FieldOffset(0)]
+        public SAFEARR_BRECORD RecordStr;
 
-            [FieldOffset(0)]
-            public SAFEARR_VARIANT VariantStr;
+        [FieldOffset(0)]
+        public SAFEARR_HAVEIID HaveIidStr;
 
-            [FieldOffset(0)]
-            public SAFEARR_BRECORD RecordStr;
+        [FieldOffset(0)]
+        public BYTE_SIZEDARR ByteStr;
 
-            [FieldOffset(0)]
-            public SAFEARR_HAVEIID HaveIidStr;
+        [FieldOffset(0)]
+        public WORD_SIZEDARR WordStr;
 
-            [FieldOffset(0)]
-            public BYTE_SIZEDARR ByteStr;
+        [FieldOffset(0)]
+        public DWORD_SIZEDARR LongStr;
 
-            [FieldOffset(0)]
-            public WORD_SIZEDARR WordStr;
-
-            [FieldOffset(0)]
-            public DWORD_SIZEDARR LongStr;
-
-            [FieldOffset(0)]
-            public HYPER_SIZEDARR HyperStr;
-        }
+        [FieldOffset(0)]
+        public HYPER_SIZEDARR HyperStr;
     }
 }

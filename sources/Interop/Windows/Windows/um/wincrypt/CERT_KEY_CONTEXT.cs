@@ -6,46 +6,45 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct CERT_KEY_CONTEXT
 {
-    public partial struct CERT_KEY_CONTEXT
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
+
+    [NativeTypeName("_CERT_KEY_CONTEXT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:9358:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    [NativeTypeName("DWORD")]
+    public uint dwKeySpec;
+
+    public ref HCRYPTPROV hCryptProv
     {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
-
-        [NativeTypeName("_CERT_KEY_CONTEXT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:9358:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        [NativeTypeName("DWORD")]
-        public uint dwKeySpec;
-
-        public ref HCRYPTPROV hCryptProv
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hCryptProv, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hCryptProv, 1));
         }
+    }
 
-        public ref nuint hNCryptKey
+    public ref nuint hNCryptKey
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hNCryptKey, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hNCryptKey, 1));
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            public HCRYPTPROV hCryptProv;
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        public HCRYPTPROV hCryptProv;
 
-            [FieldOffset(0)]
-            [NativeTypeName("NCRYPT_KEY_HANDLE")]
-            public nuint hNCryptKey;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("NCRYPT_KEY_HANDLE")]
+        public nuint hNCryptKey;
     }
 }

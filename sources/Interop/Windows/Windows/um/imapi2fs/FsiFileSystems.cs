@@ -3,14 +3,13 @@
 // Ported from um/imapi2fs.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum FsiFileSystems
 {
-    public enum FsiFileSystems
-    {
-        FsiFileSystemNone = 0,
-        FsiFileSystemISO9660 = 1,
-        FsiFileSystemJoliet = 2,
-        FsiFileSystemUDF = 4,
-        FsiFileSystemUnknown = 0x40000000,
-    }
+    FsiFileSystemNone = 0,
+    FsiFileSystemISO9660 = 1,
+    FsiFileSystemJoliet = 2,
+    FsiFileSystemUDF = 4,
+    FsiFileSystemUnknown = 0x40000000,
 }

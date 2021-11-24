@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="OLECMD" /> struct.</summary>
+public static unsafe partial class OLECMDTests
 {
-    /// <summary>Provides validation of the <see cref="OLECMD" /> struct.</summary>
-    public static unsafe partial class OLECMDTests
+    /// <summary>Validates that the <see cref="OLECMD" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="OLECMD" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<OLECMD>(), Is.EqualTo(sizeof(OLECMD)));
-        }
+        Assert.That(Marshal.SizeOf<OLECMD>(), Is.EqualTo(sizeof(OLECMD)));
+    }
 
-        /// <summary>Validates that the <see cref="OLECMD" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(OLECMD).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="OLECMD" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(OLECMD).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="OLECMD" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(OLECMD), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="OLECMD" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(OLECMD), Is.EqualTo(8));
     }
 }

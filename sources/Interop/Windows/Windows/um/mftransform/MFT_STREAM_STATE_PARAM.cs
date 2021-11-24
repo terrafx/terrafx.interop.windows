@@ -3,13 +3,12 @@
 // Ported from um/mftransform.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct MFT_STREAM_STATE_PARAM
-    {
-        [NativeTypeName("DWORD")]
-        public uint StreamId;
+namespace TerraFX.Interop.Windows;
 
-        public MF_STREAM_STATE State;
-    }
+public partial struct MFT_STREAM_STATE_PARAM
+{
+    [NativeTypeName("DWORD")]
+    public uint StreamId;
+
+    public MF_STREAM_STATE State;
 }

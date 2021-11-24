@@ -3,21 +3,20 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct STORAGE_DIAGNOSTIC_REQUEST
 {
-    public partial struct STORAGE_DIAGNOSTIC_REQUEST
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        public STORAGE_DIAGNOSTIC_TARGET_TYPE TargetType;
+    public STORAGE_DIAGNOSTIC_TARGET_TYPE TargetType;
 
-        public STORAGE_DIAGNOSTIC_LEVEL Level;
-    }
+    public STORAGE_DIAGNOSTIC_LEVEL Level;
 }

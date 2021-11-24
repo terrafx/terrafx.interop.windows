@@ -8,148 +8,147 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Guid("58346CDA-DDE7-4497-9461-6F87AF5E0659")]
+[NativeTypeName("struct IDxcResult : IDxcOperationResult")]
+[NativeInheritance("IDxcOperationResult")]
+public unsafe partial struct IDxcResult : IDxcResult.Interface
 {
-    [Guid("58346CDA-DDE7-4497-9461-6F87AF5E0659")]
-    [NativeTypeName("struct IDxcResult : IDxcOperationResult")]
-    [NativeInheritance("IDxcOperationResult")]
-    public unsafe partial struct IDxcResult : IDxcResult.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDxcResult*, Guid*, void**, int>)(lpVtbl[0]))((IDxcResult*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDxcResult*, Guid*, void**, int>)(lpVtbl[0]))((IDxcResult*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDxcResult*, uint>)(lpVtbl[1]))((IDxcResult*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDxcResult*, uint>)(lpVtbl[1]))((IDxcResult*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDxcResult*, uint>)(lpVtbl[2]))((IDxcResult*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDxcResult*, uint>)(lpVtbl[2]))((IDxcResult*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetStatus(HRESULT* pStatus)
+    {
+        return ((delegate* unmanaged<IDxcResult*, HRESULT*, int>)(lpVtbl[3]))((IDxcResult*)Unsafe.AsPointer(ref this), pStatus);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetStatus(HRESULT* pStatus)
-        {
-            return ((delegate* unmanaged<IDxcResult*, HRESULT*, int>)(lpVtbl[3]))((IDxcResult*)Unsafe.AsPointer(ref this), pStatus);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetResult(IDxcBlob** ppResult)
+    {
+        return ((delegate* unmanaged<IDxcResult*, IDxcBlob**, int>)(lpVtbl[4]))((IDxcResult*)Unsafe.AsPointer(ref this), ppResult);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT GetResult(IDxcBlob** ppResult)
-        {
-            return ((delegate* unmanaged<IDxcResult*, IDxcBlob**, int>)(lpVtbl[4]))((IDxcResult*)Unsafe.AsPointer(ref this), ppResult);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetErrorBuffer(IDxcBlobEncoding** ppErrors)
+    {
+        return ((delegate* unmanaged<IDxcResult*, IDxcBlobEncoding**, int>)(lpVtbl[5]))((IDxcResult*)Unsafe.AsPointer(ref this), ppErrors);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT GetErrorBuffer(IDxcBlobEncoding** ppErrors)
-        {
-            return ((delegate* unmanaged<IDxcResult*, IDxcBlobEncoding**, int>)(lpVtbl[5]))((IDxcResult*)Unsafe.AsPointer(ref this), ppErrors);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public BOOL HasOutput(DXC_OUT_KIND dxcOutKind)
+    {
+        return ((delegate* unmanaged<IDxcResult*, DXC_OUT_KIND, int>)(lpVtbl[6]))((IDxcResult*)Unsafe.AsPointer(ref this), dxcOutKind);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT GetOutput(DXC_OUT_KIND dxcOutKind, [NativeTypeName("const IID &")] Guid* iid, void** ppvObject, IDxcBlobUtf16** ppOutputName)
+    {
+        return ((delegate* unmanaged<IDxcResult*, DXC_OUT_KIND, Guid*, void**, IDxcBlobUtf16**, int>)(lpVtbl[7]))((IDxcResult*)Unsafe.AsPointer(ref this), dxcOutKind, iid, ppvObject, ppOutputName);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    [return: NativeTypeName("UINT32")]
+    public uint GetNumOutputs()
+    {
+        return ((delegate* unmanaged<IDxcResult*, uint>)(lpVtbl[8]))((IDxcResult*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public DXC_OUT_KIND GetOutputByIndex([NativeTypeName("UINT32")] uint Index)
+    {
+        return ((delegate* unmanaged<IDxcResult*, uint, DXC_OUT_KIND>)(lpVtbl[9]))((IDxcResult*)Unsafe.AsPointer(ref this), Index);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public DXC_OUT_KIND PrimaryOutput()
+    {
+        return ((delegate* unmanaged<IDxcResult*, DXC_OUT_KIND>)(lpVtbl[10]))((IDxcResult*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IDxcOperationResult.Interface
+    {
         [VtblIndex(6)]
-        public BOOL HasOutput(DXC_OUT_KIND dxcOutKind)
-        {
-            return ((delegate* unmanaged<IDxcResult*, DXC_OUT_KIND, int>)(lpVtbl[6]))((IDxcResult*)Unsafe.AsPointer(ref this), dxcOutKind);
-        }
+        BOOL HasOutput(DXC_OUT_KIND dxcOutKind);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetOutput(DXC_OUT_KIND dxcOutKind, [NativeTypeName("const IID &")] Guid* iid, void** ppvObject, IDxcBlobUtf16** ppOutputName)
-        {
-            return ((delegate* unmanaged<IDxcResult*, DXC_OUT_KIND, Guid*, void**, IDxcBlobUtf16**, int>)(lpVtbl[7]))((IDxcResult*)Unsafe.AsPointer(ref this), dxcOutKind, iid, ppvObject, ppOutputName);
-        }
+        HRESULT GetOutput(DXC_OUT_KIND dxcOutKind, [NativeTypeName("const IID &")] Guid* iid, void** ppvObject, IDxcBlobUtf16** ppOutputName);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
         [return: NativeTypeName("UINT32")]
-        public uint GetNumOutputs()
-        {
-            return ((delegate* unmanaged<IDxcResult*, uint>)(lpVtbl[8]))((IDxcResult*)Unsafe.AsPointer(ref this));
-        }
+        uint GetNumOutputs();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public DXC_OUT_KIND GetOutputByIndex([NativeTypeName("UINT32")] uint Index)
-        {
-            return ((delegate* unmanaged<IDxcResult*, uint, DXC_OUT_KIND>)(lpVtbl[9]))((IDxcResult*)Unsafe.AsPointer(ref this), Index);
-        }
+        DXC_OUT_KIND GetOutputByIndex([NativeTypeName("UINT32")] uint Index);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public DXC_OUT_KIND PrimaryOutput()
-        {
-            return ((delegate* unmanaged<IDxcResult*, DXC_OUT_KIND>)(lpVtbl[10]))((IDxcResult*)Unsafe.AsPointer(ref this));
-        }
+        DXC_OUT_KIND PrimaryOutput();
+    }
 
-        public interface Interface : IDxcOperationResult.Interface
-        {
-            [VtblIndex(6)]
-            BOOL HasOutput(DXC_OUT_KIND dxcOutKind);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDxcResult*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(7)]
-            HRESULT GetOutput(DXC_OUT_KIND dxcOutKind, [NativeTypeName("const IID &")] Guid* iid, void** ppvObject, IDxcBlobUtf16** ppOutputName);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDxcResult*, uint> AddRef;
 
-            [VtblIndex(8)]
-            [return: NativeTypeName("UINT32")]
-            uint GetNumOutputs();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDxcResult*, uint> Release;
 
-            [VtblIndex(9)]
-            DXC_OUT_KIND GetOutputByIndex([NativeTypeName("UINT32")] uint Index);
+        [NativeTypeName("HRESULT (HRESULT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDxcResult*, HRESULT*, int> GetStatus;
 
-            [VtblIndex(10)]
-            DXC_OUT_KIND PrimaryOutput();
-        }
+        [NativeTypeName("HRESULT (IDxcBlob **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDxcResult*, IDxcBlob**, int> GetResult;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDxcResult*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (IDxcBlobEncoding **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDxcResult*, IDxcBlobEncoding**, int> GetErrorBuffer;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDxcResult*, uint> AddRef;
+        [NativeTypeName("BOOL (DXC_OUT_KIND) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDxcResult*, DXC_OUT_KIND, int> HasOutput;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDxcResult*, uint> Release;
+        [NativeTypeName("HRESULT (DXC_OUT_KIND, const IID &, void **, IDxcBlobUtf16 **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDxcResult*, DXC_OUT_KIND, Guid*, void**, IDxcBlobUtf16**, int> GetOutput;
 
-            [NativeTypeName("HRESULT (HRESULT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDxcResult*, HRESULT*, int> GetStatus;
+        [NativeTypeName("UINT32 ()")]
+        public delegate* unmanaged<IDxcResult*, uint> GetNumOutputs;
 
-            [NativeTypeName("HRESULT (IDxcBlob **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDxcResult*, IDxcBlob**, int> GetResult;
+        [NativeTypeName("DXC_OUT_KIND (UINT32)")]
+        public delegate* unmanaged<IDxcResult*, uint, DXC_OUT_KIND> GetOutputByIndex;
 
-            [NativeTypeName("HRESULT (IDxcBlobEncoding **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDxcResult*, IDxcBlobEncoding**, int> GetErrorBuffer;
-
-            [NativeTypeName("BOOL (DXC_OUT_KIND) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDxcResult*, DXC_OUT_KIND, int> HasOutput;
-
-            [NativeTypeName("HRESULT (DXC_OUT_KIND, const IID &, void **, IDxcBlobUtf16 **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDxcResult*, DXC_OUT_KIND, Guid*, void**, IDxcBlobUtf16**, int> GetOutput;
-
-            [NativeTypeName("UINT32 ()")]
-            public delegate* unmanaged<IDxcResult*, uint> GetNumOutputs;
-
-            [NativeTypeName("DXC_OUT_KIND (UINT32)")]
-            public delegate* unmanaged<IDxcResult*, uint, DXC_OUT_KIND> GetOutputByIndex;
-
-            [NativeTypeName("DXC_OUT_KIND ()")]
-            public delegate* unmanaged<IDxcResult*, DXC_OUT_KIND> PrimaryOutput;
-        }
+        [NativeTypeName("DXC_OUT_KIND ()")]
+        public delegate* unmanaged<IDxcResult*, DXC_OUT_KIND> PrimaryOutput;
     }
 }

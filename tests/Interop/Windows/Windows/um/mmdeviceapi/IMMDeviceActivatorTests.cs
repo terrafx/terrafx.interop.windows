@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMMDeviceActivator" /> struct.</summary>
+public static unsafe partial class IMMDeviceActivatorTests
 {
-    /// <summary>Provides validation of the <see cref="IMMDeviceActivator" /> struct.</summary>
-    public static unsafe partial class IMMDeviceActivatorTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMMDeviceActivator" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMMDeviceActivator" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMMDeviceActivator).GUID, Is.EqualTo(IID_IMMDeviceActivator));
-        }
+        Assert.That(typeof(IMMDeviceActivator).GUID, Is.EqualTo(IID_IMMDeviceActivator));
+    }
 
-        /// <summary>Validates that the <see cref="IMMDeviceActivator" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMMDeviceActivator>(), Is.EqualTo(sizeof(IMMDeviceActivator)));
-        }
+    /// <summary>Validates that the <see cref="IMMDeviceActivator" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMMDeviceActivator>(), Is.EqualTo(sizeof(IMMDeviceActivator)));
+    }
 
-        /// <summary>Validates that the <see cref="IMMDeviceActivator" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMMDeviceActivator).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMMDeviceActivator" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMMDeviceActivator).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMMDeviceActivator" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMMDeviceActivator" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMMDeviceActivator), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMMDeviceActivator), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMMDeviceActivator), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMMDeviceActivator), Is.EqualTo(4));
         }
     }
 }

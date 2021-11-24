@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("50CA0A46-1588-4161-8ED2-EF9E469CED5D")]
+public partial struct AppxPackagingDiagnosticEventSinkManager
 {
-    [Guid("50CA0A46-1588-4161-8ED2-EF9E469CED5D")]
-    public partial struct AppxPackagingDiagnosticEventSinkManager
-    {
-    }
 }

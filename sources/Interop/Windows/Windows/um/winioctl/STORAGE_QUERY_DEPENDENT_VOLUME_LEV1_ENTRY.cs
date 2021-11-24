@@ -3,19 +3,18 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY
 {
-    public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_LEV1_ENTRY
-    {
-        [NativeTypeName("DWORD")]
-        public uint EntryLength;
+    [NativeTypeName("DWORD")]
+    public uint EntryLength;
 
-        [NativeTypeName("DWORD")]
-        public uint DependencyTypeFlags;
+    [NativeTypeName("DWORD")]
+    public uint DependencyTypeFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint ProviderSpecificFlags;
+    [NativeTypeName("DWORD")]
+    public uint ProviderSpecificFlags;
 
-        public VIRTUAL_STORAGE_TYPE VirtualStorageType;
-    }
+    public VIRTUAL_STORAGE_TYPE VirtualStorageType;
 }

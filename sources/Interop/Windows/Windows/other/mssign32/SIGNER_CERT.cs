@@ -6,60 +6,59 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SIGNER_CERT
 {
-    public unsafe partial struct SIGNER_CERT
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
+
+    [NativeTypeName("DWORD")]
+    public uint dwCertChoice;
+
+    [NativeTypeName("_SIGNER_CERT::(anonymous union at ./mssign32.h:111:9)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public HWND hwnd;
+
+    public ref ushort* pwszSpcFile
     {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
-
-        [NativeTypeName("DWORD")]
-        public uint dwCertChoice;
-
-        [NativeTypeName("_SIGNER_CERT::(anonymous union at ./mssign32.h:111:9)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public HWND hwnd;
-
-        public ref ushort* pwszSpcFile
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pwszSpcFile;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pwszSpcFile;
         }
+    }
 
-        public ref SIGNER_CERT_STORE_INFO* pCertStoreInfo
+    public ref SIGNER_CERT_STORE_INFO* pCertStoreInfo
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pCertStoreInfo;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pCertStoreInfo;
         }
+    }
 
-        public ref SIGNER_SPC_CHAIN_INFO* pSpcChainInfo
+    public ref SIGNER_SPC_CHAIN_INFO* pSpcChainInfo
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pSpcChainInfo;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pSpcChainInfo;
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("LPCWSTR")]
-            public ushort* pwszSpcFile;
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("LPCWSTR")]
+        public ushort* pwszSpcFile;
 
-            [FieldOffset(0)]
-            public SIGNER_CERT_STORE_INFO* pCertStoreInfo;
+        [FieldOffset(0)]
+        public SIGNER_CERT_STORE_INFO* pCertStoreInfo;
 
-            [FieldOffset(0)]
-            public SIGNER_SPC_CHAIN_INFO* pSpcChainInfo;
-        }
+        [FieldOffset(0)]
+        public SIGNER_SPC_CHAIN_INFO* pSpcChainInfo;
     }
 }

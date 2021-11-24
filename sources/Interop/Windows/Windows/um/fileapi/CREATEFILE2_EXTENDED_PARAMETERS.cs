@@ -5,26 +5,25 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct CREATEFILE2_EXTENDED_PARAMETERS
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct CREATEFILE2_EXTENDED_PARAMETERS
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwSize;
+    [NativeTypeName("DWORD")]
+    public uint dwSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFileAttributes;
+    [NativeTypeName("DWORD")]
+    public uint dwFileAttributes;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFileFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFileFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint dwSecurityQosFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwSecurityQosFlags;
 
-        [NativeTypeName("LPSECURITY_ATTRIBUTES")]
-        public SECURITY_ATTRIBUTES* lpSecurityAttributes;
+    [NativeTypeName("LPSECURITY_ATTRIBUTES")]
+    public SECURITY_ATTRIBUTES* lpSecurityAttributes;
 
-        public HANDLE hTemplateFile;
-    }
+    public HANDLE hTemplateFile;
 }

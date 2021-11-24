@@ -5,21 +5,20 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SET_POWER_SETTING_VALUE
 {
-    public unsafe partial struct SET_POWER_SETTING_VALUE
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        public Guid Guid;
+    public Guid Guid;
 
-        public SYSTEM_POWER_CONDITION PowerCondition;
+    public SYSTEM_POWER_CONDITION PowerCondition;
 
-        [NativeTypeName("DWORD")]
-        public uint DataLength;
+    [NativeTypeName("DWORD")]
+    public uint DataLength;
 
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte Data[1];
-    }
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte Data[1];
 }

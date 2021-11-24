@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="REARRANGE_FILE_DATA" /> struct.</summary>
+public static unsafe partial class REARRANGE_FILE_DATATests
 {
-    /// <summary>Provides validation of the <see cref="REARRANGE_FILE_DATA" /> struct.</summary>
-    public static unsafe partial class REARRANGE_FILE_DATATests
+    /// <summary>Validates that the <see cref="REARRANGE_FILE_DATA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="REARRANGE_FILE_DATA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<REARRANGE_FILE_DATA>(), Is.EqualTo(sizeof(REARRANGE_FILE_DATA)));
-        }
+        Assert.That(Marshal.SizeOf<REARRANGE_FILE_DATA>(), Is.EqualTo(sizeof(REARRANGE_FILE_DATA)));
+    }
 
-        /// <summary>Validates that the <see cref="REARRANGE_FILE_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(REARRANGE_FILE_DATA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="REARRANGE_FILE_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(REARRANGE_FILE_DATA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="REARRANGE_FILE_DATA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(REARRANGE_FILE_DATA), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="REARRANGE_FILE_DATA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(REARRANGE_FILE_DATA), Is.EqualTo(32));
     }
 }

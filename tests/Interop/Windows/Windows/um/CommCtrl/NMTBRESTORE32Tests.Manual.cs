@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NMTBRESTORE32" /> struct.</summary>
+public static unsafe partial class NMTBRESTORE32Tests
 {
-    /// <summary>Provides validation of the <see cref="NMTBRESTORE32" /> struct.</summary>
-    public static unsafe partial class NMTBRESTORE32Tests
+    /// <summary>Validates that the <see cref="NMTBRESTORE32" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NMTBRESTORE32" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NMTBRESTORE32>(), Is.EqualTo(sizeof(NMTBRESTORE32)));
-        }
+        Assert.That(Marshal.SizeOf<NMTBRESTORE32>(), Is.EqualTo(sizeof(NMTBRESTORE32)));
+    }
 
-        /// <summary>Validates that the <see cref="NMTBRESTORE32" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NMTBRESTORE32).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NMTBRESTORE32" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NMTBRESTORE32).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NMTBRESTORE32" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="NMTBRESTORE32" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(NMTBRESTORE32), Is.EqualTo(88));
-            }
-            else
-            {
-                Assert.That(sizeof(NMTBRESTORE32), Is.EqualTo(56));
-            }
+            Assert.That(sizeof(NMTBRESTORE32), Is.EqualTo(88));
+        }
+        else
+        {
+            Assert.That(sizeof(NMTBRESTORE32), Is.EqualTo(56));
         }
     }
 }

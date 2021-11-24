@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="FILE_ATTRIBUTES_ARRAY" /> struct.</summary>
+public static unsafe partial class FILE_ATTRIBUTES_ARRAYTests
 {
-    /// <summary>Provides validation of the <see cref="FILE_ATTRIBUTES_ARRAY" /> struct.</summary>
-    public static unsafe partial class FILE_ATTRIBUTES_ARRAYTests
+    /// <summary>Validates that the <see cref="FILE_ATTRIBUTES_ARRAY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="FILE_ATTRIBUTES_ARRAY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<FILE_ATTRIBUTES_ARRAY>(), Is.EqualTo(sizeof(FILE_ATTRIBUTES_ARRAY)));
-        }
+        Assert.That(Marshal.SizeOf<FILE_ATTRIBUTES_ARRAY>(), Is.EqualTo(sizeof(FILE_ATTRIBUTES_ARRAY)));
+    }
 
-        /// <summary>Validates that the <see cref="FILE_ATTRIBUTES_ARRAY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(FILE_ATTRIBUTES_ARRAY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="FILE_ATTRIBUTES_ARRAY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(FILE_ATTRIBUTES_ARRAY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="FILE_ATTRIBUTES_ARRAY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(FILE_ATTRIBUTES_ARRAY), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="FILE_ATTRIBUTES_ARRAY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(FILE_ATTRIBUTES_ARRAY), Is.EqualTo(16));
     }
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IHTMLStyleFontFace" /> struct.</summary>
+public static unsafe partial class IHTMLStyleFontFaceTests
 {
-    /// <summary>Provides validation of the <see cref="IHTMLStyleFontFace" /> struct.</summary>
-    public static unsafe partial class IHTMLStyleFontFaceTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLStyleFontFace" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLStyleFontFace" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IHTMLStyleFontFace).GUID, Is.EqualTo(IID_IHTMLStyleFontFace));
-        }
+        Assert.That(typeof(IHTMLStyleFontFace).GUID, Is.EqualTo(IID_IHTMLStyleFontFace));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLStyleFontFace" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IHTMLStyleFontFace>(), Is.EqualTo(sizeof(IHTMLStyleFontFace)));
-        }
+    /// <summary>Validates that the <see cref="IHTMLStyleFontFace" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IHTMLStyleFontFace>(), Is.EqualTo(sizeof(IHTMLStyleFontFace)));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLStyleFontFace" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IHTMLStyleFontFace).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IHTMLStyleFontFace" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IHTMLStyleFontFace).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLStyleFontFace" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IHTMLStyleFontFace" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IHTMLStyleFontFace), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IHTMLStyleFontFace), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IHTMLStyleFontFace), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IHTMLStyleFontFace), Is.EqualTo(4));
         }
     }
 }

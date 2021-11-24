@@ -5,23 +5,22 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D12_FEATURE_DATA_QUERY_META_COMMAND
 {
-    public unsafe partial struct D3D12_FEATURE_DATA_QUERY_META_COMMAND
-    {
-        public Guid CommandId;
+    public Guid CommandId;
 
-        public uint NodeMask;
+    public uint NodeMask;
 
-        [NativeTypeName("const void *")]
-        public void* pQueryInputData;
+    [NativeTypeName("const void *")]
+    public void* pQueryInputData;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint QueryInputDataSizeInBytes;
+    [NativeTypeName("SIZE_T")]
+    public nuint QueryInputDataSizeInBytes;
 
-        public void* pQueryOutputData;
+    public void* pQueryOutputData;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint QueryOutputDataSizeInBytes;
-    }
+    [NativeTypeName("SIZE_T")]
+    public nuint QueryOutputDataSizeInBytes;
 }

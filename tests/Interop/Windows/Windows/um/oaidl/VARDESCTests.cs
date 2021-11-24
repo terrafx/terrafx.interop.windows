@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="VARDESC" /> struct.</summary>
+public static unsafe partial class VARDESCTests
 {
-    /// <summary>Provides validation of the <see cref="VARDESC" /> struct.</summary>
-    public static unsafe partial class VARDESCTests
+    /// <summary>Validates that the <see cref="VARDESC" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="VARDESC" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<VARDESC>(), Is.EqualTo(sizeof(VARDESC)));
-        }
+        Assert.That(Marshal.SizeOf<VARDESC>(), Is.EqualTo(sizeof(VARDESC)));
+    }
 
-        /// <summary>Validates that the <see cref="VARDESC" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(VARDESC).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="VARDESC" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(VARDESC).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="VARDESC" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="VARDESC" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(VARDESC), Is.EqualTo(64));
-            }
-            else
-            {
-                Assert.That(sizeof(VARDESC), Is.EqualTo(36));
-            }
+            Assert.That(sizeof(VARDESC), Is.EqualTo(64));
+        }
+        else
+        {
+            Assert.That(sizeof(VARDESC), Is.EqualTo(36));
         }
     }
 }

@@ -3,12 +3,11 @@
 // Ported from um/d3d11_1.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
-{
-    public partial struct D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK
-    {
-        public uint ClearSize;
+namespace TerraFX.Interop.DirectX;
 
-        public uint EncryptedSize;
-    }
+public partial struct D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK
+{
+    public uint ClearSize;
+
+    public uint EncryptedSize;
 }

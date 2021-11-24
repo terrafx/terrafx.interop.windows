@@ -3,14 +3,13 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class SYSTEM
-    {
-        [NativeTypeName("#define SYSTEM_FONT 13")]
-        public const int SYSTEM_FONT = 13;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("#define SYSTEM_FIXED_FONT 16")]
-        public const int SYSTEM_FIXED_FONT = 16;
-    }
+public static partial class SYSTEM
+{
+    [NativeTypeName("#define SYSTEM_FONT 13")]
+    public const int SYSTEM_FONT = 13;
+
+    [NativeTypeName("#define SYSTEM_FIXED_FONT 16")]
+    public const int SYSTEM_FIXED_FONT = 16;
 }

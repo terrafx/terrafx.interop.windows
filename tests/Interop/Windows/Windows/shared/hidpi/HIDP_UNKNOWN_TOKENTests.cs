@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HIDP_UNKNOWN_TOKEN" /> struct.</summary>
+public static unsafe partial class HIDP_UNKNOWN_TOKENTests
 {
-    /// <summary>Provides validation of the <see cref="HIDP_UNKNOWN_TOKEN" /> struct.</summary>
-    public static unsafe partial class HIDP_UNKNOWN_TOKENTests
+    /// <summary>Validates that the <see cref="HIDP_UNKNOWN_TOKEN" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="HIDP_UNKNOWN_TOKEN" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HIDP_UNKNOWN_TOKEN>(), Is.EqualTo(sizeof(HIDP_UNKNOWN_TOKEN)));
-        }
+        Assert.That(Marshal.SizeOf<HIDP_UNKNOWN_TOKEN>(), Is.EqualTo(sizeof(HIDP_UNKNOWN_TOKEN)));
+    }
 
-        /// <summary>Validates that the <see cref="HIDP_UNKNOWN_TOKEN" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HIDP_UNKNOWN_TOKEN).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HIDP_UNKNOWN_TOKEN" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HIDP_UNKNOWN_TOKEN).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HIDP_UNKNOWN_TOKEN" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HIDP_UNKNOWN_TOKEN), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="HIDP_UNKNOWN_TOKEN" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HIDP_UNKNOWN_TOKEN), Is.EqualTo(8));
     }
 }

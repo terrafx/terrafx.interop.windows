@@ -3,14 +3,13 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct CERT_RDN
-    {
-        [NativeTypeName("DWORD")]
-        public uint cRDNAttr;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("PCERT_RDN_ATTR")]
-        public CERT_RDN_ATTR* rgRDNAttr;
-    }
+public unsafe partial struct CERT_RDN
+{
+    [NativeTypeName("DWORD")]
+    public uint cRDNAttr;
+
+    [NativeTypeName("PCERT_RDN_ATTR")]
+    public CERT_RDN_ATTR* rgRDNAttr;
 }

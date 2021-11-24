@@ -3,14 +3,13 @@
 // Ported from um/d3d12shader.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public static partial class DirectX
 {
-    public static partial class DirectX
-    {
-        public static D3D12_SHADER_VERSION_TYPE D3D12_SHVER_GET_TYPE(int _Version) => (D3D12_SHADER_VERSION_TYPE)((_Version >> 16) & 0xFFFF);
+    public static D3D12_SHADER_VERSION_TYPE D3D12_SHVER_GET_TYPE(int _Version) => (D3D12_SHADER_VERSION_TYPE)((_Version >> 16) & 0xFFFF);
 
-        public static int D3D12_SHVER_GET_MAJOR(int _Version) => (_Version >> 4) & 0xF;
+    public static int D3D12_SHVER_GET_MAJOR(int _Version) => (_Version >> 4) & 0xF;
 
-        public static int D3D12_SHVER_GET_MINOR(int _Version) => (_Version >> 0) & 0xF;
-    }
+    public static int D3D12_SHVER_GET_MINOR(int _Version) => (_Version >> 0) & 0xF;
 }

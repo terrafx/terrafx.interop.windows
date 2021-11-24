@@ -3,12 +3,11 @@
 // Ported from um/mfobjects.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MF_FILE_ACCESSMODE
 {
-    public enum MF_FILE_ACCESSMODE
-    {
-        MF_ACCESSMODE_READ = 1,
-        MF_ACCESSMODE_WRITE = 2,
-        MF_ACCESSMODE_READWRITE = 3,
-    }
+    MF_ACCESSMODE_READ = 1,
+    MF_ACCESSMODE_WRITE = 2,
+    MF_ACCESSMODE_READWRITE = 3,
 }

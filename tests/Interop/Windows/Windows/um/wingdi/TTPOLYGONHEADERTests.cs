@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TTPOLYGONHEADER" /> struct.</summary>
+public static unsafe partial class TTPOLYGONHEADERTests
 {
-    /// <summary>Provides validation of the <see cref="TTPOLYGONHEADER" /> struct.</summary>
-    public static unsafe partial class TTPOLYGONHEADERTests
+    /// <summary>Validates that the <see cref="TTPOLYGONHEADER" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TTPOLYGONHEADER" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TTPOLYGONHEADER>(), Is.EqualTo(sizeof(TTPOLYGONHEADER)));
-        }
+        Assert.That(Marshal.SizeOf<TTPOLYGONHEADER>(), Is.EqualTo(sizeof(TTPOLYGONHEADER)));
+    }
 
-        /// <summary>Validates that the <see cref="TTPOLYGONHEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TTPOLYGONHEADER).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TTPOLYGONHEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TTPOLYGONHEADER).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TTPOLYGONHEADER" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TTPOLYGONHEADER), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="TTPOLYGONHEADER" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TTPOLYGONHEADER), Is.EqualTo(16));
     }
 }

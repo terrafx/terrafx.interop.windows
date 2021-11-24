@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("EB36F845-2395-4719-B85C-D0D80E184BD9")]
+public partial struct HTMLStyleSheetRulesAppliedCollection
 {
-    [Guid("EB36F845-2395-4719-B85C-D0D80E184BD9")]
-    public partial struct HTMLStyleSheetRulesAppliedCollection
-    {
-    }
 }

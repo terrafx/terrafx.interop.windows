@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="FXReverb" /> struct.</summary>
+public static unsafe partial class FXReverbTests
 {
-    /// <summary>Provides validation of the <see cref="FXReverb" /> struct.</summary>
-    public static unsafe partial class FXReverbTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="FXReverb" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="FXReverb" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(FXReverb).GUID, Is.EqualTo(CLSID_FXReverb));
-        }
+        Assert.That(typeof(FXReverb).GUID, Is.EqualTo(CLSID_FXReverb));
+    }
 
-        /// <summary>Validates that the <see cref="FXReverb" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<FXReverb>(), Is.EqualTo(sizeof(FXReverb)));
-        }
+    /// <summary>Validates that the <see cref="FXReverb" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<FXReverb>(), Is.EqualTo(sizeof(FXReverb)));
+    }
 
-        /// <summary>Validates that the <see cref="FXReverb" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(FXReverb).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="FXReverb" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(FXReverb).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="FXReverb" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(FXReverb), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="FXReverb" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(FXReverb), Is.EqualTo(1));
     }
 }

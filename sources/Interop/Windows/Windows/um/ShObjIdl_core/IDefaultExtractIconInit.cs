@@ -7,129 +7,128 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("41DED17D-D6B3-4261-997D-88C60E4B1D58")]
+[NativeTypeName("struct IDefaultExtractIconInit : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.Interface
 {
-    [Guid("41DED17D-D6B3-4261-997D-88C60E4B1D58")]
-    [NativeTypeName("struct IDefaultExtractIconInit : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDefaultExtractIconInit : IDefaultExtractIconInit.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDefaultExtractIconInit*, Guid*, void**, int>)(lpVtbl[0]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDefaultExtractIconInit*, Guid*, void**, int>)(lpVtbl[0]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDefaultExtractIconInit*, uint>)(lpVtbl[1]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDefaultExtractIconInit*, uint>)(lpVtbl[1]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDefaultExtractIconInit*, uint>)(lpVtbl[2]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDefaultExtractIconInit*, uint>)(lpVtbl[2]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT SetFlags(uint uFlags)
+    {
+        return ((delegate* unmanaged<IDefaultExtractIconInit*, uint, int>)(lpVtbl[3]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), uFlags);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT SetKey(HKEY hkey)
+    {
+        return ((delegate* unmanaged<IDefaultExtractIconInit*, HKEY, int>)(lpVtbl[4]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), hkey);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT SetNormalIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon)
+    {
+        return ((delegate* unmanaged<IDefaultExtractIconInit*, ushort*, int, int>)(lpVtbl[5]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), pszFile, iIcon);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT SetOpenIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon)
+    {
+        return ((delegate* unmanaged<IDefaultExtractIconInit*, ushort*, int, int>)(lpVtbl[6]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), pszFile, iIcon);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT SetShortcutIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon)
+    {
+        return ((delegate* unmanaged<IDefaultExtractIconInit*, ushort*, int, int>)(lpVtbl[7]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), pszFile, iIcon);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT SetDefaultIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon)
+    {
+        return ((delegate* unmanaged<IDefaultExtractIconInit*, ushort*, int, int>)(lpVtbl[8]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), pszFile, iIcon);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT SetFlags(uint uFlags)
-        {
-            return ((delegate* unmanaged<IDefaultExtractIconInit*, uint, int>)(lpVtbl[3]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), uFlags);
-        }
+        HRESULT SetFlags(uint uFlags);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetKey(HKEY hkey)
-        {
-            return ((delegate* unmanaged<IDefaultExtractIconInit*, HKEY, int>)(lpVtbl[4]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), hkey);
-        }
+        HRESULT SetKey(HKEY hkey);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetNormalIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon)
-        {
-            return ((delegate* unmanaged<IDefaultExtractIconInit*, ushort*, int, int>)(lpVtbl[5]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), pszFile, iIcon);
-        }
+        HRESULT SetNormalIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT SetOpenIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon)
-        {
-            return ((delegate* unmanaged<IDefaultExtractIconInit*, ushort*, int, int>)(lpVtbl[6]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), pszFile, iIcon);
-        }
+        HRESULT SetOpenIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT SetShortcutIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon)
-        {
-            return ((delegate* unmanaged<IDefaultExtractIconInit*, ushort*, int, int>)(lpVtbl[7]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), pszFile, iIcon);
-        }
+        HRESULT SetShortcutIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT SetDefaultIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon)
-        {
-            return ((delegate* unmanaged<IDefaultExtractIconInit*, ushort*, int, int>)(lpVtbl[8]))((IDefaultExtractIconInit*)Unsafe.AsPointer(ref this), pszFile, iIcon);
-        }
+        HRESULT SetDefaultIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT SetFlags(uint uFlags);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDefaultExtractIconInit*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT SetKey(HKEY hkey);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDefaultExtractIconInit*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT SetNormalIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDefaultExtractIconInit*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT SetOpenIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon);
+        [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDefaultExtractIconInit*, uint, int> SetFlags;
 
-            [VtblIndex(7)]
-            HRESULT SetShortcutIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon);
+        [NativeTypeName("HRESULT (HKEY) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDefaultExtractIconInit*, HKEY, int> SetKey;
 
-            [VtblIndex(8)]
-            HRESULT SetDefaultIcon([NativeTypeName("LPCWSTR")] ushort* pszFile, int iIcon);
-        }
+        [NativeTypeName("HRESULT (LPCWSTR, int) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDefaultExtractIconInit*, ushort*, int, int> SetNormalIcon;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDefaultExtractIconInit*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (LPCWSTR, int) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDefaultExtractIconInit*, ushort*, int, int> SetOpenIcon;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDefaultExtractIconInit*, uint> AddRef;
+        [NativeTypeName("HRESULT (LPCWSTR, int) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDefaultExtractIconInit*, ushort*, int, int> SetShortcutIcon;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDefaultExtractIconInit*, uint> Release;
-
-            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDefaultExtractIconInit*, uint, int> SetFlags;
-
-            [NativeTypeName("HRESULT (HKEY) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDefaultExtractIconInit*, HKEY, int> SetKey;
-
-            [NativeTypeName("HRESULT (LPCWSTR, int) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDefaultExtractIconInit*, ushort*, int, int> SetNormalIcon;
-
-            [NativeTypeName("HRESULT (LPCWSTR, int) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDefaultExtractIconInit*, ushort*, int, int> SetOpenIcon;
-
-            [NativeTypeName("HRESULT (LPCWSTR, int) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDefaultExtractIconInit*, ushort*, int, int> SetShortcutIcon;
-
-            [NativeTypeName("HRESULT (LPCWSTR, int) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDefaultExtractIconInit*, ushort*, int, int> SetDefaultIcon;
-        }
+        [NativeTypeName("HRESULT (LPCWSTR, int) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDefaultExtractIconInit*, ushort*, int, int> SetDefaultIcon;
     }
 }

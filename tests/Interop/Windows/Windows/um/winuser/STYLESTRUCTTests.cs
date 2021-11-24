@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="STYLESTRUCT" /> struct.</summary>
+public static unsafe partial class STYLESTRUCTTests
 {
-    /// <summary>Provides validation of the <see cref="STYLESTRUCT" /> struct.</summary>
-    public static unsafe partial class STYLESTRUCTTests
+    /// <summary>Validates that the <see cref="STYLESTRUCT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="STYLESTRUCT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<STYLESTRUCT>(), Is.EqualTo(sizeof(STYLESTRUCT)));
-        }
+        Assert.That(Marshal.SizeOf<STYLESTRUCT>(), Is.EqualTo(sizeof(STYLESTRUCT)));
+    }
 
-        /// <summary>Validates that the <see cref="STYLESTRUCT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(STYLESTRUCT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="STYLESTRUCT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(STYLESTRUCT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="STYLESTRUCT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(STYLESTRUCT), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="STYLESTRUCT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(STYLESTRUCT), Is.EqualTo(8));
     }
 }

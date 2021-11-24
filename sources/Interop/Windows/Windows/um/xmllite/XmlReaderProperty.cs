@@ -3,18 +3,17 @@
 // Ported from um/xmllite.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum XmlReaderProperty
 {
-    public enum XmlReaderProperty
-    {
-        XmlReaderProperty_MultiLanguage = 0,
-        XmlReaderProperty_ConformanceLevel = (XmlReaderProperty_MultiLanguage + 1),
-        XmlReaderProperty_RandomAccess = (XmlReaderProperty_ConformanceLevel + 1),
-        XmlReaderProperty_XmlResolver = (XmlReaderProperty_RandomAccess + 1),
-        XmlReaderProperty_DtdProcessing = (XmlReaderProperty_XmlResolver + 1),
-        XmlReaderProperty_ReadState = (XmlReaderProperty_DtdProcessing + 1),
-        XmlReaderProperty_MaxElementDepth = (XmlReaderProperty_ReadState + 1),
-        XmlReaderProperty_MaxEntityExpansion = (XmlReaderProperty_MaxElementDepth + 1),
-        _XmlReaderProperty_Last = XmlReaderProperty_MaxEntityExpansion,
-    }
+    XmlReaderProperty_MultiLanguage = 0,
+    XmlReaderProperty_ConformanceLevel = (XmlReaderProperty_MultiLanguage + 1),
+    XmlReaderProperty_RandomAccess = (XmlReaderProperty_ConformanceLevel + 1),
+    XmlReaderProperty_XmlResolver = (XmlReaderProperty_RandomAccess + 1),
+    XmlReaderProperty_DtdProcessing = (XmlReaderProperty_XmlResolver + 1),
+    XmlReaderProperty_ReadState = (XmlReaderProperty_DtdProcessing + 1),
+    XmlReaderProperty_MaxElementDepth = (XmlReaderProperty_ReadState + 1),
+    XmlReaderProperty_MaxEntityExpansion = (XmlReaderProperty_MaxElementDepth + 1),
+    _XmlReaderProperty_Last = XmlReaderProperty_MaxEntityExpansion,
 }

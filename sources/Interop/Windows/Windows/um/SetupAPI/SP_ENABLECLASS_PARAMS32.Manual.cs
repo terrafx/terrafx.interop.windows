@@ -6,16 +6,15 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct SP_ENABLECLASS_PARAMS32
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct SP_ENABLECLASS_PARAMS32
-    {
-        public SP_CLASSINSTALL_HEADER32 ClassInstallHeader;
+    public SP_CLASSINSTALL_HEADER32 ClassInstallHeader;
 
-        public Guid ClassGuid;
+    public Guid ClassGuid;
 
-        [NativeTypeName("DWORD")]
-        public uint EnableMessage;
-    }
+    [NativeTypeName("DWORD")]
+    public uint EnableMessage;
 }

@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SVGPreserveAspectRatio" /> struct.</summary>
+public static unsafe partial class SVGPreserveAspectRatioTests
 {
-    /// <summary>Provides validation of the <see cref="SVGPreserveAspectRatio" /> struct.</summary>
-    public static unsafe partial class SVGPreserveAspectRatioTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGPreserveAspectRatio" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGPreserveAspectRatio" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SVGPreserveAspectRatio).GUID, Is.EqualTo(IID_SVGPreserveAspectRatio));
-        }
+        Assert.That(typeof(SVGPreserveAspectRatio).GUID, Is.EqualTo(IID_SVGPreserveAspectRatio));
+    }
 
-        /// <summary>Validates that the <see cref="SVGPreserveAspectRatio" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SVGPreserveAspectRatio>(), Is.EqualTo(sizeof(SVGPreserveAspectRatio)));
-        }
+    /// <summary>Validates that the <see cref="SVGPreserveAspectRatio" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SVGPreserveAspectRatio>(), Is.EqualTo(sizeof(SVGPreserveAspectRatio)));
+    }
 
-        /// <summary>Validates that the <see cref="SVGPreserveAspectRatio" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SVGPreserveAspectRatio).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SVGPreserveAspectRatio" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SVGPreserveAspectRatio).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SVGPreserveAspectRatio" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SVGPreserveAspectRatio), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SVGPreserveAspectRatio" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SVGPreserveAspectRatio), Is.EqualTo(1));
     }
 }

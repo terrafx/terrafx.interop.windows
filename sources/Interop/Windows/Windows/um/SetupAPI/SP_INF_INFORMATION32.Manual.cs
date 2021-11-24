@@ -5,18 +5,17 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SP_INF_INFORMATION32
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SP_INF_INFORMATION32
-    {
-        [NativeTypeName("DWORD")]
-        public uint InfStyle;
+    [NativeTypeName("DWORD")]
+    public uint InfStyle;
 
-        [NativeTypeName("DWORD")]
-        public uint InfCount;
+    [NativeTypeName("DWORD")]
+    public uint InfCount;
 
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte VersionData[1];
-    }
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte VersionData[1];
 }

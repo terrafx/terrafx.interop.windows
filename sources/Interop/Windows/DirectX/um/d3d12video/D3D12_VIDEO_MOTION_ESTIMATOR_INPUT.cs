@@ -5,19 +5,18 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+public unsafe partial struct D3D12_VIDEO_MOTION_ESTIMATOR_INPUT
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public unsafe partial struct D3D12_VIDEO_MOTION_ESTIMATOR_INPUT
-    {
-        public ID3D12Resource* pInputTexture2D;
+    public ID3D12Resource* pInputTexture2D;
 
-        public uint InputSubresourceIndex;
+    public uint InputSubresourceIndex;
 
-        public ID3D12Resource* pReferenceTexture2D;
+    public ID3D12Resource* pReferenceTexture2D;
 
-        public uint ReferenceSubresourceIndex;
+    public uint ReferenceSubresourceIndex;
 
-        public ID3D12VideoMotionVectorHeap* pHintMotionVectorHeap;
-    }
+    public ID3D12VideoMotionVectorHeap* pHintMotionVectorHeap;
 }

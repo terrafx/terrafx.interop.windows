@@ -7,155 +7,154 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("71C6E74C-0F28-11D8-A82A-00065B84435C")]
+[NativeTypeName("struct ITfInputProcessorProfileMgr : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ITfInputProcessorProfileMgr : ITfInputProcessorProfileMgr.Interface
 {
-    [Guid("71C6E74C-0F28-11D8-A82A-00065B84435C")]
-    [NativeTypeName("struct ITfInputProcessorProfileMgr : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITfInputProcessorProfileMgr : ITfInputProcessorProfileMgr.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, uint>)(lpVtbl[1]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, uint>)(lpVtbl[1]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, uint>)(lpVtbl[2]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, uint>)(lpVtbl[2]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT ActivateProfile([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hkl, [NativeTypeName("DWORD")] uint dwFlags)
+    {
+        return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, uint, ushort, Guid*, Guid*, HKL, uint, int>)(lpVtbl[3]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), dwProfileType, langid, clsid, guidProfile, hkl, dwFlags);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT DeactivateProfile([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hkl, [NativeTypeName("DWORD")] uint dwFlags)
+    {
+        return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, uint, ushort, Guid*, Guid*, HKL, uint, int>)(lpVtbl[4]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), dwProfileType, langid, clsid, guidProfile, hkl, dwFlags);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetProfile([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hkl, TF_INPUTPROCESSORPROFILE* pProfile)
+    {
+        return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, uint, ushort, Guid*, Guid*, HKL, TF_INPUTPROCESSORPROFILE*, int>)(lpVtbl[5]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), dwProfileType, langid, clsid, guidProfile, hkl, pProfile);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT EnumProfiles([NativeTypeName("LANGID")] ushort langid, IEnumTfInputProcessorProfiles** ppEnum)
+    {
+        return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, ushort, IEnumTfInputProcessorProfiles**, int>)(lpVtbl[6]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), langid, ppEnum);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT ReleaseInputProcessor([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("DWORD")] uint dwFlags)
+    {
+        return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, uint, int>)(lpVtbl[7]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), rclsid, dwFlags);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT RegisterProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cchDesc, [NativeTypeName("const WCHAR *")] ushort* pchIconFile, [NativeTypeName("ULONG")] uint cchFile, [NativeTypeName("ULONG")] uint uIconIndex, HKL hklsubstitute, [NativeTypeName("DWORD")] uint dwPreferredLayout, BOOL bEnabledByDefault, [NativeTypeName("DWORD")] uint dwFlags)
+    {
+        return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, ushort, Guid*, ushort*, uint, ushort*, uint, uint, HKL, uint, BOOL, uint, int>)(lpVtbl[8]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, pchDesc, cchDesc, pchIconFile, cchFile, uIconIndex, hklsubstitute, dwPreferredLayout, bEnabledByDefault, dwFlags);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT UnregisterProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("DWORD")] uint dwFlags)
+    {
+        return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, ushort, Guid*, uint, int>)(lpVtbl[9]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, dwFlags);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT GetActiveProfile([NativeTypeName("const GUID &")] Guid* catid, TF_INPUTPROCESSORPROFILE* pProfile)
+    {
+        return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, TF_INPUTPROCESSORPROFILE*, int>)(lpVtbl[10]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), catid, pProfile);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT ActivateProfile([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hkl, [NativeTypeName("DWORD")] uint dwFlags)
-        {
-            return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, uint, ushort, Guid*, Guid*, HKL, uint, int>)(lpVtbl[3]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), dwProfileType, langid, clsid, guidProfile, hkl, dwFlags);
-        }
+        HRESULT ActivateProfile([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hkl, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT DeactivateProfile([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hkl, [NativeTypeName("DWORD")] uint dwFlags)
-        {
-            return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, uint, ushort, Guid*, Guid*, HKL, uint, int>)(lpVtbl[4]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), dwProfileType, langid, clsid, guidProfile, hkl, dwFlags);
-        }
+        HRESULT DeactivateProfile([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hkl, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetProfile([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hkl, TF_INPUTPROCESSORPROFILE* pProfile)
-        {
-            return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, uint, ushort, Guid*, Guid*, HKL, TF_INPUTPROCESSORPROFILE*, int>)(lpVtbl[5]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), dwProfileType, langid, clsid, guidProfile, hkl, pProfile);
-        }
+        HRESULT GetProfile([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hkl, TF_INPUTPROCESSORPROFILE* pProfile);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT EnumProfiles([NativeTypeName("LANGID")] ushort langid, IEnumTfInputProcessorProfiles** ppEnum)
-        {
-            return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, ushort, IEnumTfInputProcessorProfiles**, int>)(lpVtbl[6]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), langid, ppEnum);
-        }
+        HRESULT EnumProfiles([NativeTypeName("LANGID")] ushort langid, IEnumTfInputProcessorProfiles** ppEnum);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT ReleaseInputProcessor([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("DWORD")] uint dwFlags)
-        {
-            return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, uint, int>)(lpVtbl[7]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), rclsid, dwFlags);
-        }
+        HRESULT ReleaseInputProcessor([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT RegisterProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cchDesc, [NativeTypeName("const WCHAR *")] ushort* pchIconFile, [NativeTypeName("ULONG")] uint cchFile, [NativeTypeName("ULONG")] uint uIconIndex, HKL hklsubstitute, [NativeTypeName("DWORD")] uint dwPreferredLayout, BOOL bEnabledByDefault, [NativeTypeName("DWORD")] uint dwFlags)
-        {
-            return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, ushort, Guid*, ushort*, uint, ushort*, uint, uint, HKL, uint, BOOL, uint, int>)(lpVtbl[8]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, pchDesc, cchDesc, pchIconFile, cchFile, uIconIndex, hklsubstitute, dwPreferredLayout, bEnabledByDefault, dwFlags);
-        }
+        HRESULT RegisterProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cchDesc, [NativeTypeName("const WCHAR *")] ushort* pchIconFile, [NativeTypeName("ULONG")] uint cchFile, [NativeTypeName("ULONG")] uint uIconIndex, HKL hklsubstitute, [NativeTypeName("DWORD")] uint dwPreferredLayout, BOOL bEnabledByDefault, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT UnregisterProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("DWORD")] uint dwFlags)
-        {
-            return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, ushort, Guid*, uint, int>)(lpVtbl[9]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, dwFlags);
-        }
+        HRESULT UnregisterProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("DWORD")] uint dwFlags);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetActiveProfile([NativeTypeName("const GUID &")] Guid* catid, TF_INPUTPROCESSORPROFILE* pProfile)
-        {
-            return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, TF_INPUTPROCESSORPROFILE*, int>)(lpVtbl[10]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), catid, pProfile);
-        }
+        HRESULT GetActiveProfile([NativeTypeName("const GUID &")] Guid* catid, TF_INPUTPROCESSORPROFILE* pProfile);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT ActivateProfile([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hkl, [NativeTypeName("DWORD")] uint dwFlags);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT DeactivateProfile([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hkl, [NativeTypeName("DWORD")] uint dwFlags);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfInputProcessorProfileMgr*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetProfile([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hkl, TF_INPUTPROCESSORPROFILE* pProfile);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfInputProcessorProfileMgr*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT EnumProfiles([NativeTypeName("LANGID")] ushort langid, IEnumTfInputProcessorProfiles** ppEnum);
+        [NativeTypeName("HRESULT (DWORD, LANGID, const IID &, const GUID &, HKL, DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfInputProcessorProfileMgr*, uint, ushort, Guid*, Guid*, HKL, uint, int> ActivateProfile;
 
-            [VtblIndex(7)]
-            HRESULT ReleaseInputProcessor([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("DWORD")] uint dwFlags);
+        [NativeTypeName("HRESULT (DWORD, LANGID, const IID &, const GUID &, HKL, DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfInputProcessorProfileMgr*, uint, ushort, Guid*, Guid*, HKL, uint, int> DeactivateProfile;
 
-            [VtblIndex(8)]
-            HRESULT RegisterProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cchDesc, [NativeTypeName("const WCHAR *")] ushort* pchIconFile, [NativeTypeName("ULONG")] uint cchFile, [NativeTypeName("ULONG")] uint uIconIndex, HKL hklsubstitute, [NativeTypeName("DWORD")] uint dwPreferredLayout, BOOL bEnabledByDefault, [NativeTypeName("DWORD")] uint dwFlags);
+        [NativeTypeName("HRESULT (DWORD, LANGID, const IID &, const GUID &, HKL, TF_INPUTPROCESSORPROFILE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfInputProcessorProfileMgr*, uint, ushort, Guid*, Guid*, HKL, TF_INPUTPROCESSORPROFILE*, int> GetProfile;
 
-            [VtblIndex(9)]
-            HRESULT UnregisterProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("DWORD")] uint dwFlags);
+        [NativeTypeName("HRESULT (LANGID, IEnumTfInputProcessorProfiles **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfInputProcessorProfileMgr*, ushort, IEnumTfInputProcessorProfiles**, int> EnumProfiles;
 
-            [VtblIndex(10)]
-            HRESULT GetActiveProfile([NativeTypeName("const GUID &")] Guid* catid, TF_INPUTPROCESSORPROFILE* pProfile);
-        }
+        [NativeTypeName("HRESULT (const IID &, DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, uint, int> ReleaseInputProcessor;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &, const WCHAR *, ULONG, const WCHAR *, ULONG, ULONG, HKL, DWORD, BOOL, DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, ushort, Guid*, ushort*, uint, ushort*, uint, uint, HKL, uint, BOOL, uint, int> RegisterProfile;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfInputProcessorProfileMgr*, uint> AddRef;
+        [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &, DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, ushort, Guid*, uint, int> UnregisterProfile;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfInputProcessorProfileMgr*, uint> Release;
-
-            [NativeTypeName("HRESULT (DWORD, LANGID, const IID &, const GUID &, HKL, DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfInputProcessorProfileMgr*, uint, ushort, Guid*, Guid*, HKL, uint, int> ActivateProfile;
-
-            [NativeTypeName("HRESULT (DWORD, LANGID, const IID &, const GUID &, HKL, DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfInputProcessorProfileMgr*, uint, ushort, Guid*, Guid*, HKL, uint, int> DeactivateProfile;
-
-            [NativeTypeName("HRESULT (DWORD, LANGID, const IID &, const GUID &, HKL, TF_INPUTPROCESSORPROFILE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfInputProcessorProfileMgr*, uint, ushort, Guid*, Guid*, HKL, TF_INPUTPROCESSORPROFILE*, int> GetProfile;
-
-            [NativeTypeName("HRESULT (LANGID, IEnumTfInputProcessorProfiles **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfInputProcessorProfileMgr*, ushort, IEnumTfInputProcessorProfiles**, int> EnumProfiles;
-
-            [NativeTypeName("HRESULT (const IID &, DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, uint, int> ReleaseInputProcessor;
-
-            [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &, const WCHAR *, ULONG, const WCHAR *, ULONG, ULONG, HKL, DWORD, BOOL, DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, ushort, Guid*, ushort*, uint, ushort*, uint, uint, HKL, uint, BOOL, uint, int> RegisterProfile;
-
-            [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &, DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, ushort, Guid*, uint, int> UnregisterProfile;
-
-            [NativeTypeName("HRESULT (const GUID &, TF_INPUTPROCESSORPROFILE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, TF_INPUTPROCESSORPROFILE*, int> GetActiveProfile;
-        }
+        [NativeTypeName("HRESULT (const GUID &, TF_INPUTPROCESSORPROFILE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, TF_INPUTPROCESSORPROFILE*, int> GetActiveProfile;
     }
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3CFB7855-9CC9-47FF-B829-B36786C92346")]
+public partial struct CODECAPI_AVEncMPAOriginalBitstream
 {
-    [Guid("3CFB7855-9CC9-47FF-B829-B36786C92346")]
-    public partial struct CODECAPI_AVEncMPAOriginalBitstream
-    {
-    }
 }

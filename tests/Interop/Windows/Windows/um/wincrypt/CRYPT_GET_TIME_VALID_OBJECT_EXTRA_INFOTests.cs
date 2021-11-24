@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO" /> struct.</summary>
+public static unsafe partial class CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFOTests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO" /> struct.</summary>
-    public static unsafe partial class CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFOTests
+    /// <summary>Validates that the <see cref="CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO>(), Is.EqualTo(sizeof(CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO)));
-        }
+        Assert.That(Marshal.SizeOf<CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO>(), Is.EqualTo(sizeof(CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO)));
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO), Is.EqualTo(48));
-            }
-            else
-            {
-                Assert.That(sizeof(CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO), Is.EqualTo(28));
-            }
+            Assert.That(sizeof(CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO), Is.EqualTo(48));
+        }
+        else
+        {
+            Assert.That(sizeof(CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO), Is.EqualTo(28));
         }
     }
 }

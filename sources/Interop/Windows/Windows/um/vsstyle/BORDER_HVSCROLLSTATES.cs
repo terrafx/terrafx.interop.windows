@@ -3,13 +3,12 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum BORDER_HVSCROLLSTATES
 {
-    public enum BORDER_HVSCROLLSTATES
-    {
-        LBPSHV_NORMAL = 1,
-        LBPSHV_FOCUSED = 2,
-        LBPSHV_HOT = 3,
-        LBPSHV_DISABLED = 4,
-    }
+    LBPSHV_NORMAL = 1,
+    LBPSHV_FOCUSED = 2,
+    LBPSHV_HOT = 3,
+    LBPSHV_DISABLED = 4,
 }

@@ -5,17 +5,16 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D2D1_PROPERTY_BINDING
 {
-    public unsafe partial struct D2D1_PROPERTY_BINDING
-    {
-        [NativeTypeName("PCWSTR")]
-        public ushort* propertyName;
+    [NativeTypeName("PCWSTR")]
+    public ushort* propertyName;
 
-        [NativeTypeName("PD2D1_PROPERTY_SET_FUNCTION")]
-        public delegate* unmanaged<IUnknown*, byte*, uint, HRESULT> setFunction;
+    [NativeTypeName("PD2D1_PROPERTY_SET_FUNCTION")]
+    public delegate* unmanaged<IUnknown*, byte*, uint, HRESULT> setFunction;
 
-        [NativeTypeName("PD2D1_PROPERTY_GET_FUNCTION")]
-        public delegate* unmanaged<IUnknown*, byte*, uint, uint*, HRESULT> getFunction;
-    }
+    [NativeTypeName("PD2D1_PROPERTY_GET_FUNCTION")]
+    public delegate* unmanaged<IUnknown*, byte*, uint, uint*, HRESULT> getFunction;
 }

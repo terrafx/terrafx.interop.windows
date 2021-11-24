@@ -3,13 +3,12 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct TOGGLEKEYS
-    {
-        public uint cbSize;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
-    }
+public partial struct TOGGLEKEYS
+{
+    public uint cbSize;
+
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 }

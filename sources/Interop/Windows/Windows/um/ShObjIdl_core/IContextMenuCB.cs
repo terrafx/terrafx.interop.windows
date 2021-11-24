@@ -7,64 +7,63 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3409E930-5A39-11D1-83FA-00A0C90DC849")]
+[NativeTypeName("struct IContextMenuCB : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IContextMenuCB : IContextMenuCB.Interface
 {
-    [Guid("3409E930-5A39-11D1-83FA-00A0C90DC849")]
-    [NativeTypeName("struct IContextMenuCB : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IContextMenuCB : IContextMenuCB.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IContextMenuCB*, Guid*, void**, int>)(lpVtbl[0]))((IContextMenuCB*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IContextMenuCB*, Guid*, void**, int>)(lpVtbl[0]))((IContextMenuCB*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IContextMenuCB*, uint>)(lpVtbl[1]))((IContextMenuCB*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IContextMenuCB*, uint>)(lpVtbl[1]))((IContextMenuCB*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IContextMenuCB*, uint>)(lpVtbl[2]))((IContextMenuCB*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IContextMenuCB*, uint>)(lpVtbl[2]))((IContextMenuCB*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT CallBack(IShellFolder* psf, HWND hwndOwner, IDataObject* pdtobj, uint uMsg, WPARAM wParam, LPARAM lParam)
+    {
+        return ((delegate* unmanaged<IContextMenuCB*, IShellFolder*, HWND, IDataObject*, uint, WPARAM, LPARAM, int>)(lpVtbl[3]))((IContextMenuCB*)Unsafe.AsPointer(ref this), psf, hwndOwner, pdtobj, uMsg, wParam, lParam);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT CallBack(IShellFolder* psf, HWND hwndOwner, IDataObject* pdtobj, uint uMsg, WPARAM wParam, LPARAM lParam)
-        {
-            return ((delegate* unmanaged<IContextMenuCB*, IShellFolder*, HWND, IDataObject*, uint, WPARAM, LPARAM, int>)(lpVtbl[3]))((IContextMenuCB*)Unsafe.AsPointer(ref this), psf, hwndOwner, pdtobj, uMsg, wParam, lParam);
-        }
+        HRESULT CallBack(IShellFolder* psf, HWND hwndOwner, IDataObject* pdtobj, uint uMsg, WPARAM wParam, LPARAM lParam);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT CallBack(IShellFolder* psf, HWND hwndOwner, IDataObject* pdtobj, uint uMsg, WPARAM wParam, LPARAM lParam);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IContextMenuCB*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IContextMenuCB*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IContextMenuCB*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IContextMenuCB*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IContextMenuCB*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IContextMenuCB*, uint> Release;
-
-            [NativeTypeName("HRESULT (IShellFolder *, HWND, IDataObject *, UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
-            public delegate* unmanaged<IContextMenuCB*, IShellFolder*, HWND, IDataObject*, uint, WPARAM, LPARAM, int> CallBack;
-        }
+        [NativeTypeName("HRESULT (IShellFolder *, HWND, IDataObject *, UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
+        public delegate* unmanaged<IContextMenuCB*, IShellFolder*, HWND, IDataObject*, uint, WPARAM, LPARAM, int> CallBack;
     }
 }

@@ -5,21 +5,20 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct EXP_SZ_LINK
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct EXP_SZ_LINK
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint dwSignature;
+    [NativeTypeName("DWORD")]
+    public uint dwSignature;
 
-        [NativeTypeName("CHAR [260]")]
-        public fixed sbyte szTarget[260];
+    [NativeTypeName("CHAR [260]")]
+    public fixed sbyte szTarget[260];
 
-        [NativeTypeName("WCHAR [260]")]
-        public fixed ushort swzTarget[260];
-    }
+    [NativeTypeName("WCHAR [260]")]
+    public fixed ushort swzTarget[260];
 }

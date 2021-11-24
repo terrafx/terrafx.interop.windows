@@ -3,11 +3,10 @@
 // Ported from um/objidlbase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum GLOBALOPT_RPCTP_VALUES
 {
-    public enum GLOBALOPT_RPCTP_VALUES
-    {
-        COMGLB_RPC_THREADPOOL_SETTING_DEFAULT_POOL = 0,
-        COMGLB_RPC_THREADPOOL_SETTING_PRIVATE_POOL = 1,
-    }
+    COMGLB_RPC_THREADPOOL_SETTING_DEFAULT_POOL = 0,
+    COMGLB_RPC_THREADPOOL_SETTING_PRIVATE_POOL = 1,
 }

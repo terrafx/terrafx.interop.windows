@@ -6,105 +6,104 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DISPLAYCONFIG_PATH_SOURCE_INFO
 {
-    public partial struct DISPLAYCONFIG_PATH_SOURCE_INFO
+    public LUID adapterId;
+
+    [NativeTypeName("UINT32")]
+    public uint id;
+
+    [NativeTypeName("DISPLAYCONFIG_PATH_SOURCE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wingdi.h:2950:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    [NativeTypeName("UINT32")]
+    public uint statusFlags;
+
+    public ref uint modeInfoIdx
     {
-        public LUID adapterId;
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.modeInfoIdx, 1));
+        }
+    }
 
+    public uint cloneGroupId
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.cloneGroupId;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.Anonymous.cloneGroupId = value;
+        }
+    }
+
+    public uint sourceModeInfoIdx
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.sourceModeInfoIdx;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.Anonymous.sourceModeInfoIdx = value;
+        }
+    }
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
         [NativeTypeName("UINT32")]
-        public uint id;
+        public uint modeInfoIdx;
 
-        [NativeTypeName("DISPLAYCONFIG_PATH_SOURCE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wingdi.h:2950:5)")]
-        public _Anonymous_e__Union Anonymous;
+        [FieldOffset(0)]
+        [NativeTypeName("DISPLAYCONFIG_PATH_SOURCE_INFO::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wingdi.h:2953:9)")]
+        public _Anonymous_e__Struct Anonymous;
 
-        [NativeTypeName("UINT32")]
-        public uint statusFlags;
-
-        public ref uint modeInfoIdx
+        public partial struct _Anonymous_e__Struct
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            public uint _bitfield;
+
+            [NativeTypeName("UINT32 : 16")]
+            public uint cloneGroupId
             {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.modeInfoIdx, 1));
-            }
-        }
-
-        public uint cloneGroupId
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.cloneGroupId;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.cloneGroupId = value;
-            }
-        }
-
-        public uint sourceModeInfoIdx
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.sourceModeInfoIdx;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.sourceModeInfoIdx = value;
-            }
-        }
-
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("UINT32")]
-            public uint modeInfoIdx;
-
-            [FieldOffset(0)]
-            [NativeTypeName("DISPLAYCONFIG_PATH_SOURCE_INFO::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wingdi.h:2953:9)")]
-            public _Anonymous_e__Struct Anonymous;
-
-            public partial struct _Anonymous_e__Struct
-            {
-                public uint _bitfield;
-
-                [NativeTypeName("UINT32 : 16")]
-                public uint cloneGroupId
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return _bitfield & 0xFFFFu;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~0xFFFFu) | (value & 0xFFFFu);
-                    }
+                    return _bitfield & 0xFFFFu;
                 }
 
-                [NativeTypeName("UINT32 : 16")]
-                public uint sourceModeInfoIdx
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 16) & 0xFFFFu;
-                    }
+                    _bitfield = (_bitfield & ~0xFFFFu) | (value & 0xFFFFu);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0xFFFFu << 16)) | ((value & 0xFFFFu) << 16);
-                    }
+            [NativeTypeName("UINT32 : 16")]
+            public uint sourceModeInfoIdx
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 16) & 0xFFFFu;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0xFFFFu << 16)) | ((value & 0xFFFFu) << 16);
                 }
             }
         }

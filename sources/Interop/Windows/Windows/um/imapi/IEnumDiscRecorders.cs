@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("9B1921E1-54AC-11D3-9144-00104BA11C5E")]
+[NativeTypeName("struct IEnumDiscRecorders : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IEnumDiscRecorders : IEnumDiscRecorders.Interface
 {
-    [Guid("9B1921E1-54AC-11D3-9144-00104BA11C5E")]
-    [NativeTypeName("struct IEnumDiscRecorders : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumDiscRecorders : IEnumDiscRecorders.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IEnumDiscRecorders*, Guid*, void**, int>)(lpVtbl[0]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IEnumDiscRecorders*, Guid*, void**, int>)(lpVtbl[0]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IEnumDiscRecorders*, uint>)(lpVtbl[1]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IEnumDiscRecorders*, uint>)(lpVtbl[1]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IEnumDiscRecorders*, uint>)(lpVtbl[2]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IEnumDiscRecorders*, uint>)(lpVtbl[2]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Next([NativeTypeName("ULONG")] uint cRecorders, IDiscRecorder** ppRecorder, [NativeTypeName("ULONG *")] uint* pcFetched)
+    {
+        return ((delegate* unmanaged<IEnumDiscRecorders*, uint, IDiscRecorder**, uint*, int>)(lpVtbl[3]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this), cRecorders, ppRecorder, pcFetched);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Skip([NativeTypeName("ULONG")] uint cRecorders)
+    {
+        return ((delegate* unmanaged<IEnumDiscRecorders*, uint, int>)(lpVtbl[4]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this), cRecorders);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Reset()
+    {
+        return ((delegate* unmanaged<IEnumDiscRecorders*, int>)(lpVtbl[5]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Clone(IEnumDiscRecorders** ppEnum)
+    {
+        return ((delegate* unmanaged<IEnumDiscRecorders*, IEnumDiscRecorders**, int>)(lpVtbl[6]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this), ppEnum);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Next([NativeTypeName("ULONG")] uint cRecorders, IDiscRecorder** ppRecorder, [NativeTypeName("ULONG *")] uint* pcFetched)
-        {
-            return ((delegate* unmanaged<IEnumDiscRecorders*, uint, IDiscRecorder**, uint*, int>)(lpVtbl[3]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this), cRecorders, ppRecorder, pcFetched);
-        }
+        HRESULT Next([NativeTypeName("ULONG")] uint cRecorders, IDiscRecorder** ppRecorder, [NativeTypeName("ULONG *")] uint* pcFetched);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Skip([NativeTypeName("ULONG")] uint cRecorders)
-        {
-            return ((delegate* unmanaged<IEnumDiscRecorders*, uint, int>)(lpVtbl[4]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this), cRecorders);
-        }
+        HRESULT Skip([NativeTypeName("ULONG")] uint cRecorders);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Reset()
-        {
-            return ((delegate* unmanaged<IEnumDiscRecorders*, int>)(lpVtbl[5]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Reset();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Clone(IEnumDiscRecorders** ppEnum)
-        {
-            return ((delegate* unmanaged<IEnumDiscRecorders*, IEnumDiscRecorders**, int>)(lpVtbl[6]))((IEnumDiscRecorders*)Unsafe.AsPointer(ref this), ppEnum);
-        }
+        HRESULT Clone(IEnumDiscRecorders** ppEnum);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Next([NativeTypeName("ULONG")] uint cRecorders, IDiscRecorder** ppRecorder, [NativeTypeName("ULONG *")] uint* pcFetched);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumDiscRecorders*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT Skip([NativeTypeName("ULONG")] uint cRecorders);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumDiscRecorders*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT Reset();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumDiscRecorders*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT Clone(IEnumDiscRecorders** ppEnum);
-        }
+        [NativeTypeName("HRESULT (ULONG, IDiscRecorder **, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumDiscRecorders*, uint, IDiscRecorder**, uint*, int> Next;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumDiscRecorders*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumDiscRecorders*, uint, int> Skip;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumDiscRecorders*, uint> AddRef;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumDiscRecorders*, int> Reset;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumDiscRecorders*, uint> Release;
-
-            [NativeTypeName("HRESULT (ULONG, IDiscRecorder **, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumDiscRecorders*, uint, IDiscRecorder**, uint*, int> Next;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumDiscRecorders*, uint, int> Skip;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumDiscRecorders*, int> Reset;
-
-            [NativeTypeName("HRESULT (IEnumDiscRecorders **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumDiscRecorders*, IEnumDiscRecorders**, int> Clone;
-        }
+        [NativeTypeName("HRESULT (IEnumDiscRecorders **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumDiscRecorders*, IEnumDiscRecorders**, int> Clone;
     }
 }

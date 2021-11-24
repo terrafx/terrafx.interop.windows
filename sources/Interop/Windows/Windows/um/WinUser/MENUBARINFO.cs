@@ -5,67 +5,66 @@
 
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MENUBARINFO
 {
-    public partial struct MENUBARINFO
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
+
+    public RECT rcBar;
+
+    public HMENU hMenu;
+
+    public HWND hwndMenu;
+
+    public BOOL _bitfield;
+
+    [NativeTypeName("BOOL : 1")]
+    public BOOL fBarFocused
     {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
-
-        public RECT rcBar;
-
-        public HMENU hMenu;
-
-        public HWND hwndMenu;
-
-        public BOOL _bitfield;
-
-        [NativeTypeName("BOOL : 1")]
-        public BOOL fBarFocused
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (BOOL)(_bitfield & 0x1);
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~0x1) | ((BOOL)(value) & 0x1);
-            }
+            return (BOOL)(_bitfield & 0x1);
         }
 
-        [NativeTypeName("BOOL : 1")]
-        public BOOL fFocused
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (BOOL)((_bitfield >> 1) & 0x1);
-            }
+            _bitfield = (_bitfield & ~0x1) | ((BOOL)(value) & 0x1);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0x1 << 1)) | (((BOOL)(value) & 0x1) << 1);
-            }
+    [NativeTypeName("BOOL : 1")]
+    public BOOL fFocused
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (BOOL)((_bitfield >> 1) & 0x1);
         }
 
-        [NativeTypeName("BOOL : 30")]
-        public BOOL fUnused
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return (BOOL)((_bitfield >> 2) & 0x3FFFFFFF);
-            }
+            _bitfield = (_bitfield & ~(0x1 << 1)) | (((BOOL)(value) & 0x1) << 1);
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                _bitfield = (_bitfield & ~(0x3FFFFFFF << 2)) | (((BOOL)(value) & 0x3FFFFFFF) << 2);
-            }
+    [NativeTypeName("BOOL : 30")]
+    public BOOL fUnused
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return (BOOL)((_bitfield >> 2) & 0x3FFFFFFF);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            _bitfield = (_bitfield & ~(0x3FFFFFFF << 2)) | (((BOOL)(value) & 0x3FFFFFFF) << 2);
         }
     }
 }

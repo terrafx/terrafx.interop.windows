@@ -3,16 +3,15 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_TILED_RESOURCE_COORDINATE
 {
-    public partial struct D3D12_TILED_RESOURCE_COORDINATE
-    {
-        public uint X;
+    public uint X;
 
-        public uint Y;
+    public uint Y;
 
-        public uint Z;
+    public uint Z;
 
-        public uint Subresource;
-    }
+    public uint Subresource;
 }

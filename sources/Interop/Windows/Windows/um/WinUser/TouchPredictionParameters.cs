@@ -3,16 +3,15 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TOUCHPREDICTIONPARAMETERS
 {
-    public partial struct TOUCHPREDICTIONPARAMETERS
-    {
-        public uint cbSize;
+    public uint cbSize;
 
-        public uint dwLatency;
+    public uint dwLatency;
 
-        public uint dwSampleTime;
+    public uint dwSampleTime;
 
-        public uint bUseHWTimeStamp;
-    }
+    public uint bUseHWTimeStamp;
 }

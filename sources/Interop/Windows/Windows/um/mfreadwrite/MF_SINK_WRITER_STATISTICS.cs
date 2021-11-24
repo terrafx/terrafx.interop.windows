@@ -3,56 +3,55 @@
 // Ported from um/mfreadwrite.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MF_SINK_WRITER_STATISTICS
 {
-    public partial struct MF_SINK_WRITER_STATISTICS
-    {
-        [NativeTypeName("DWORD")]
-        public uint cb;
+    [NativeTypeName("DWORD")]
+    public uint cb;
 
-        [NativeTypeName("LONGLONG")]
-        public long llLastTimestampReceived;
+    [NativeTypeName("LONGLONG")]
+    public long llLastTimestampReceived;
 
-        [NativeTypeName("LONGLONG")]
-        public long llLastTimestampEncoded;
+    [NativeTypeName("LONGLONG")]
+    public long llLastTimestampEncoded;
 
-        [NativeTypeName("LONGLONG")]
-        public long llLastTimestampProcessed;
+    [NativeTypeName("LONGLONG")]
+    public long llLastTimestampProcessed;
 
-        [NativeTypeName("LONGLONG")]
-        public long llLastStreamTickReceived;
+    [NativeTypeName("LONGLONG")]
+    public long llLastStreamTickReceived;
 
-        [NativeTypeName("LONGLONG")]
-        public long llLastSinkSampleRequest;
+    [NativeTypeName("LONGLONG")]
+    public long llLastSinkSampleRequest;
 
-        [NativeTypeName("QWORD")]
-        public ulong qwNumSamplesReceived;
+    [NativeTypeName("QWORD")]
+    public ulong qwNumSamplesReceived;
 
-        [NativeTypeName("QWORD")]
-        public ulong qwNumSamplesEncoded;
+    [NativeTypeName("QWORD")]
+    public ulong qwNumSamplesEncoded;
 
-        [NativeTypeName("QWORD")]
-        public ulong qwNumSamplesProcessed;
+    [NativeTypeName("QWORD")]
+    public ulong qwNumSamplesProcessed;
 
-        [NativeTypeName("QWORD")]
-        public ulong qwNumStreamTicksReceived;
+    [NativeTypeName("QWORD")]
+    public ulong qwNumStreamTicksReceived;
 
-        [NativeTypeName("DWORD")]
-        public uint dwByteCountQueued;
+    [NativeTypeName("DWORD")]
+    public uint dwByteCountQueued;
 
-        [NativeTypeName("QWORD")]
-        public ulong qwByteCountProcessed;
+    [NativeTypeName("QWORD")]
+    public ulong qwByteCountProcessed;
 
-        [NativeTypeName("DWORD")]
-        public uint dwNumOutstandingSinkSampleRequests;
+    [NativeTypeName("DWORD")]
+    public uint dwNumOutstandingSinkSampleRequests;
 
-        [NativeTypeName("DWORD")]
-        public uint dwAverageSampleRateReceived;
+    [NativeTypeName("DWORD")]
+    public uint dwAverageSampleRateReceived;
 
-        [NativeTypeName("DWORD")]
-        public uint dwAverageSampleRateEncoded;
+    [NativeTypeName("DWORD")]
+    public uint dwAverageSampleRateEncoded;
 
-        [NativeTypeName("DWORD")]
-        public uint dwAverageSampleRateProcessed;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwAverageSampleRateProcessed;
 }

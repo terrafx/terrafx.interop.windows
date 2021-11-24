@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="STREAMS_QUERY_ID_OUTPUT_BUFFER" /> struct.</summary>
+public static unsafe partial class STREAMS_QUERY_ID_OUTPUT_BUFFERTests
 {
-    /// <summary>Provides validation of the <see cref="STREAMS_QUERY_ID_OUTPUT_BUFFER" /> struct.</summary>
-    public static unsafe partial class STREAMS_QUERY_ID_OUTPUT_BUFFERTests
+    /// <summary>Validates that the <see cref="STREAMS_QUERY_ID_OUTPUT_BUFFER" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="STREAMS_QUERY_ID_OUTPUT_BUFFER" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<STREAMS_QUERY_ID_OUTPUT_BUFFER>(), Is.EqualTo(sizeof(STREAMS_QUERY_ID_OUTPUT_BUFFER)));
-        }
+        Assert.That(Marshal.SizeOf<STREAMS_QUERY_ID_OUTPUT_BUFFER>(), Is.EqualTo(sizeof(STREAMS_QUERY_ID_OUTPUT_BUFFER)));
+    }
 
-        /// <summary>Validates that the <see cref="STREAMS_QUERY_ID_OUTPUT_BUFFER" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(STREAMS_QUERY_ID_OUTPUT_BUFFER).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="STREAMS_QUERY_ID_OUTPUT_BUFFER" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(STREAMS_QUERY_ID_OUTPUT_BUFFER).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="STREAMS_QUERY_ID_OUTPUT_BUFFER" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(STREAMS_QUERY_ID_OUTPUT_BUFFER), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="STREAMS_QUERY_ID_OUTPUT_BUFFER" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(STREAMS_QUERY_ID_OUTPUT_BUFFER), Is.EqualTo(4));
     }
 }

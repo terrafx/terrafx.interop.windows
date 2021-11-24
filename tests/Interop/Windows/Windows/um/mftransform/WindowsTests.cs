@@ -7,16 +7,15 @@ using NUnit.Framework;
 using System;
 using static TerraFX.Interop.Windows.Windows;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="Windows" /> class.</summary>
+public static unsafe partial class WindowsTests
 {
-    /// <summary>Provides validation of the <see cref="Windows" /> class.</summary>
-    public static unsafe partial class WindowsTests
+    /// <summary>Validates that the value of the <see cref="MEDeviceStreamCreated" /> property is correct.</summary>
+    [Test]
+    public static void MEDeviceStreamCreatedTest()
     {
-        /// <summary>Validates that the value of the <see cref="MEDeviceStreamCreated" /> property is correct.</summary>
-        [Test]
-        public static void MEDeviceStreamCreatedTest()
-        {
-            Assert.That(MEDeviceStreamCreated, Is.EqualTo(new Guid(0x0252a1cf, 0x3540, 0x43b4, 0x91, 0x64, 0xd7, 0x2e, 0xb4, 0x05, 0xfa, 0x40)));
-        }
+        Assert.That(MEDeviceStreamCreated, Is.EqualTo(new Guid(0x0252a1cf, 0x3540, 0x43b4, 0x91, 0x64, 0xd7, 0x2e, 0xb4, 0x05, 0xfa, 0x40)));
     }
 }

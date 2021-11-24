@@ -3,19 +3,18 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SPPHRASEREPLACEMENT
 {
-    public unsafe partial struct SPPHRASEREPLACEMENT
-    {
-        public byte bDisplayAttributes;
+    public byte bDisplayAttributes;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pszReplacementText;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pszReplacementText;
 
-        [NativeTypeName("ULONG")]
-        public uint ulFirstElement;
+    [NativeTypeName("ULONG")]
+    public uint ulFirstElement;
 
-        [NativeTypeName("ULONG")]
-        public uint ulCountOfElements;
-    }
+    [NativeTypeName("ULONG")]
+    public uint ulCountOfElements;
 }

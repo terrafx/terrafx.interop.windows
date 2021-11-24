@@ -3,12 +3,11 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum HEADERITEMRIGHTSTATES
 {
-    public enum HEADERITEMRIGHTSTATES
-    {
-        HIRS_NORMAL = 1,
-        HIRS_HOT = 2,
-        HIRS_PRESSED = 3,
-    }
+    HIRS_NORMAL = 1,
+    HIRS_HOT = 2,
+    HIRS_PRESSED = 3,
 }

@@ -3,12 +3,11 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum eAVEncVideoSourceScanType
 {
-    public enum eAVEncVideoSourceScanType
-    {
-        eAVEncVideoSourceScan_Automatic = 0,
-        eAVEncVideoSourceScan_Interlaced = 1,
-        eAVEncVideoSourceScan_Progressive = 2,
-    }
+    eAVEncVideoSourceScan_Automatic = 0,
+    eAVEncVideoSourceScan_Interlaced = 1,
+    eAVEncVideoSourceScan_Progressive = 2,
 }

@@ -5,15 +5,14 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum PROPERTYUI_FORMAT_FLAGS
 {
-    [Flags]
-    public enum PROPERTYUI_FORMAT_FLAGS
-    {
-        PUIFFDF_DEFAULT = 0,
-        PUIFFDF_RIGHTTOLEFT = 0x1,
-        PUIFFDF_SHORTFORMAT = 0x2,
-        PUIFFDF_NOTIME = 0x4,
-        PUIFFDF_FRIENDLYDATE = 0x8,
-    }
+    PUIFFDF_DEFAULT = 0,
+    PUIFFDF_RIGHTTOLEFT = 0x1,
+    PUIFFDF_SHORTFORMAT = 0x2,
+    PUIFFDF_NOTIME = 0x4,
+    PUIFFDF_FRIENDLYDATE = 0x8,
 }

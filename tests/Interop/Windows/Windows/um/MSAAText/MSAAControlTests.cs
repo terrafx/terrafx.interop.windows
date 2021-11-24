@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MSAAControl" /> struct.</summary>
+public static unsafe partial class MSAAControlTests
 {
-    /// <summary>Provides validation of the <see cref="MSAAControl" /> struct.</summary>
-    public static unsafe partial class MSAAControlTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="MSAAControl" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="MSAAControl" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(MSAAControl).GUID, Is.EqualTo(IID_MSAAControl));
-        }
+        Assert.That(typeof(MSAAControl).GUID, Is.EqualTo(IID_MSAAControl));
+    }
 
-        /// <summary>Validates that the <see cref="MSAAControl" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MSAAControl>(), Is.EqualTo(sizeof(MSAAControl)));
-        }
+    /// <summary>Validates that the <see cref="MSAAControl" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<MSAAControl>(), Is.EqualTo(sizeof(MSAAControl)));
+    }
 
-        /// <summary>Validates that the <see cref="MSAAControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MSAAControl).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MSAAControl" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MSAAControl).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MSAAControl" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MSAAControl), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="MSAAControl" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MSAAControl), Is.EqualTo(1));
     }
 }

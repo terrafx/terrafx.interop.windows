@@ -3,18 +3,17 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct NMCHAR
 {
-    public partial struct NMCHAR
-    {
-        public NMHDR hdr;
+    public NMHDR hdr;
 
-        public uint ch;
+    public uint ch;
 
-        [NativeTypeName("DWORD")]
-        public uint dwItemPrev;
+    [NativeTypeName("DWORD")]
+    public uint dwItemPrev;
 
-        [NativeTypeName("DWORD")]
-        public uint dwItemNext;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwItemNext;
 }

@@ -3,12 +3,11 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum ELEMENTNAMESPACE_FLAGS
 {
-    public enum ELEMENTNAMESPACE_FLAGS
-    {
-        ELEMENTNAMESPACEFLAGS_ALLOWANYTAG = 0x1,
-        ELEMENTNAMESPACEFLAGS_QUERYFORUNKNOWNTAGS = 0x2,
-        ELEMENTNAMESPACE_FLAGS_Max = 2147483647,
-    }
+    ELEMENTNAMESPACEFLAGS_ALLOWANYTAG = 0x1,
+    ELEMENTNAMESPACEFLAGS_QUERYFORUNKNOWNTAGS = 0x2,
+    ELEMENTNAMESPACE_FLAGS_Max = 2147483647,
 }

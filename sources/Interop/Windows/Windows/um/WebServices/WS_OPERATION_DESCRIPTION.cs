@@ -5,30 +5,29 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_OPERATION_DESCRIPTION
 {
-    public unsafe partial struct WS_OPERATION_DESCRIPTION
-    {
-        [NativeTypeName("ULONG")]
-        public uint versionInfo;
+    [NativeTypeName("ULONG")]
+    public uint versionInfo;
 
-        public WS_MESSAGE_DESCRIPTION* inputMessageDescription;
+    public WS_MESSAGE_DESCRIPTION* inputMessageDescription;
 
-        public WS_MESSAGE_DESCRIPTION* outputMessageDescription;
+    public WS_MESSAGE_DESCRIPTION* outputMessageDescription;
 
-        [NativeTypeName("ULONG")]
-        public uint inputMessageOptions;
+    [NativeTypeName("ULONG")]
+    public uint inputMessageOptions;
 
-        [NativeTypeName("ULONG")]
-        public uint outputMessageOptions;
+    [NativeTypeName("ULONG")]
+    public uint outputMessageOptions;
 
-        public ushort parameterCount;
+    public ushort parameterCount;
 
-        public WS_PARAMETER_DESCRIPTION* parameterDescription;
+    public WS_PARAMETER_DESCRIPTION* parameterDescription;
 
-        [NativeTypeName("WS_SERVICE_STUB_CALLBACK")]
-        public delegate* unmanaged<IntPtr, void*, void*, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> stubCallback;
+    [NativeTypeName("WS_SERVICE_STUB_CALLBACK")]
+    public delegate* unmanaged<IntPtr, void*, void*, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> stubCallback;
 
-        public WS_OPERATION_STYLE style;
-    }
+    public WS_OPERATION_STYLE style;
 }

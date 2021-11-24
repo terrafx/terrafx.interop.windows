@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DEVICE_DATA_SET_LB_PROVISIONING_STATE" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class DEVICE_DATA_SET_LB_PROVISIONING_STATETests
 {
-    /// <summary>Provides validation of the <see cref="DEVICE_DATA_SET_LB_PROVISIONING_STATE" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class DEVICE_DATA_SET_LB_PROVISIONING_STATETests
+    /// <summary>Validates that the <see cref="DEVICE_DATA_SET_LB_PROVISIONING_STATE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DEVICE_DATA_SET_LB_PROVISIONING_STATE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DEVICE_DATA_SET_LB_PROVISIONING_STATE>(), Is.EqualTo(sizeof(DEVICE_DATA_SET_LB_PROVISIONING_STATE)));
-        }
+        Assert.That(Marshal.SizeOf<DEVICE_DATA_SET_LB_PROVISIONING_STATE>(), Is.EqualTo(sizeof(DEVICE_DATA_SET_LB_PROVISIONING_STATE)));
+    }
 
-        /// <summary>Validates that the <see cref="DEVICE_DATA_SET_LB_PROVISIONING_STATE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DEVICE_DATA_SET_LB_PROVISIONING_STATE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DEVICE_DATA_SET_LB_PROVISIONING_STATE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DEVICE_DATA_SET_LB_PROVISIONING_STATE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DEVICE_DATA_SET_LB_PROVISIONING_STATE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DEVICE_DATA_SET_LB_PROVISIONING_STATE), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="DEVICE_DATA_SET_LB_PROVISIONING_STATE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DEVICE_DATA_SET_LB_PROVISIONING_STATE), Is.EqualTo(32));
     }
 }

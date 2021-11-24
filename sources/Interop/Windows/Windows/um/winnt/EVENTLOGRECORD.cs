@@ -3,56 +3,55 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct EVENTLOGRECORD
 {
-    public partial struct EVENTLOGRECORD
-    {
-        [NativeTypeName("DWORD")]
-        public uint Length;
+    [NativeTypeName("DWORD")]
+    public uint Length;
 
-        [NativeTypeName("DWORD")]
-        public uint Reserved;
+    [NativeTypeName("DWORD")]
+    public uint Reserved;
 
-        [NativeTypeName("DWORD")]
-        public uint RecordNumber;
+    [NativeTypeName("DWORD")]
+    public uint RecordNumber;
 
-        [NativeTypeName("DWORD")]
-        public uint TimeGenerated;
+    [NativeTypeName("DWORD")]
+    public uint TimeGenerated;
 
-        [NativeTypeName("DWORD")]
-        public uint TimeWritten;
+    [NativeTypeName("DWORD")]
+    public uint TimeWritten;
 
-        [NativeTypeName("DWORD")]
-        public uint EventID;
+    [NativeTypeName("DWORD")]
+    public uint EventID;
 
-        [NativeTypeName("WORD")]
-        public ushort EventType;
+    [NativeTypeName("WORD")]
+    public ushort EventType;
 
-        [NativeTypeName("WORD")]
-        public ushort NumStrings;
+    [NativeTypeName("WORD")]
+    public ushort NumStrings;
 
-        [NativeTypeName("WORD")]
-        public ushort EventCategory;
+    [NativeTypeName("WORD")]
+    public ushort EventCategory;
 
-        [NativeTypeName("WORD")]
-        public ushort ReservedFlags;
+    [NativeTypeName("WORD")]
+    public ushort ReservedFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint ClosingRecordNumber;
+    [NativeTypeName("DWORD")]
+    public uint ClosingRecordNumber;
 
-        [NativeTypeName("DWORD")]
-        public uint StringOffset;
+    [NativeTypeName("DWORD")]
+    public uint StringOffset;
 
-        [NativeTypeName("DWORD")]
-        public uint UserSidLength;
+    [NativeTypeName("DWORD")]
+    public uint UserSidLength;
 
-        [NativeTypeName("DWORD")]
-        public uint UserSidOffset;
+    [NativeTypeName("DWORD")]
+    public uint UserSidOffset;
 
-        [NativeTypeName("DWORD")]
-        public uint DataLength;
+    [NativeTypeName("DWORD")]
+    public uint DataLength;
 
-        [NativeTypeName("DWORD")]
-        public uint DataOffset;
-    }
+    [NativeTypeName("DWORD")]
+    public uint DataOffset;
 }

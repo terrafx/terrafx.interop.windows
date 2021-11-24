@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IVersionInfo" /> struct.</summary>
+public static unsafe partial class IVersionInfoTests
 {
-    /// <summary>Provides validation of the <see cref="IVersionInfo" /> struct.</summary>
-    public static unsafe partial class IVersionInfoTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IVersionInfo" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IVersionInfo" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IVersionInfo).GUID, Is.EqualTo(IID_IVersionInfo));
-        }
+        Assert.That(typeof(IVersionInfo).GUID, Is.EqualTo(IID_IVersionInfo));
+    }
 
-        /// <summary>Validates that the <see cref="IVersionInfo" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IVersionInfo>(), Is.EqualTo(sizeof(IVersionInfo)));
-        }
+    /// <summary>Validates that the <see cref="IVersionInfo" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IVersionInfo>(), Is.EqualTo(sizeof(IVersionInfo)));
+    }
 
-        /// <summary>Validates that the <see cref="IVersionInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IVersionInfo).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IVersionInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IVersionInfo).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IVersionInfo" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IVersionInfo" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IVersionInfo), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IVersionInfo), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IVersionInfo), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IVersionInfo), Is.EqualTo(4));
         }
     }
 }

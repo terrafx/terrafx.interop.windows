@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SVGPathSeg" /> struct.</summary>
+public static unsafe partial class SVGPathSegTests
 {
-    /// <summary>Provides validation of the <see cref="SVGPathSeg" /> struct.</summary>
-    public static unsafe partial class SVGPathSegTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGPathSeg" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGPathSeg" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SVGPathSeg).GUID, Is.EqualTo(IID_SVGPathSeg));
-        }
+        Assert.That(typeof(SVGPathSeg).GUID, Is.EqualTo(IID_SVGPathSeg));
+    }
 
-        /// <summary>Validates that the <see cref="SVGPathSeg" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SVGPathSeg>(), Is.EqualTo(sizeof(SVGPathSeg)));
-        }
+    /// <summary>Validates that the <see cref="SVGPathSeg" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SVGPathSeg>(), Is.EqualTo(sizeof(SVGPathSeg)));
+    }
 
-        /// <summary>Validates that the <see cref="SVGPathSeg" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SVGPathSeg).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SVGPathSeg" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SVGPathSeg).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SVGPathSeg" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SVGPathSeg), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SVGPathSeg" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SVGPathSeg), Is.EqualTo(1));
     }
 }

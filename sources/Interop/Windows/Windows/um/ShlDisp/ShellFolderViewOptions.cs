@@ -3,16 +3,15 @@
 // Ported from um/ShlDisp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum ShellFolderViewOptions
 {
-    public enum ShellFolderViewOptions
-    {
-        SFVVO_SHOWALLOBJECTS = 0x1,
-        SFVVO_SHOWEXTENSIONS = 0x2,
-        SFVVO_SHOWCOMPCOLOR = 0x8,
-        SFVVO_SHOWSYSFILES = 0x20,
-        SFVVO_WIN95CLASSIC = 0x40,
-        SFVVO_DOUBLECLICKINWEBVIEW = 0x80,
-        SFVVO_DESKTOPHTML = 0x200,
-    }
+    SFVVO_SHOWALLOBJECTS = 0x1,
+    SFVVO_SHOWEXTENSIONS = 0x2,
+    SFVVO_SHOWCOMPCOLOR = 0x8,
+    SFVVO_SHOWSYSFILES = 0x20,
+    SFVVO_WIN95CLASSIC = 0x40,
+    SFVVO_DOUBLECLICKINWEBVIEW = 0x80,
+    SFVVO_DESKTOPHTML = 0x200,
 }

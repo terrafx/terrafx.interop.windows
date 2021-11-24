@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IOleInPlaceObjectWindowless" /> struct.</summary>
+public static unsafe partial class IOleInPlaceObjectWindowlessTests
 {
-    /// <summary>Provides validation of the <see cref="IOleInPlaceObjectWindowless" /> struct.</summary>
-    public static unsafe partial class IOleInPlaceObjectWindowlessTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IOleInPlaceObjectWindowless" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IOleInPlaceObjectWindowless" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IOleInPlaceObjectWindowless).GUID, Is.EqualTo(IID_IOleInPlaceObjectWindowless));
-        }
+        Assert.That(typeof(IOleInPlaceObjectWindowless).GUID, Is.EqualTo(IID_IOleInPlaceObjectWindowless));
+    }
 
-        /// <summary>Validates that the <see cref="IOleInPlaceObjectWindowless" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IOleInPlaceObjectWindowless>(), Is.EqualTo(sizeof(IOleInPlaceObjectWindowless)));
-        }
+    /// <summary>Validates that the <see cref="IOleInPlaceObjectWindowless" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IOleInPlaceObjectWindowless>(), Is.EqualTo(sizeof(IOleInPlaceObjectWindowless)));
+    }
 
-        /// <summary>Validates that the <see cref="IOleInPlaceObjectWindowless" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IOleInPlaceObjectWindowless).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IOleInPlaceObjectWindowless" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IOleInPlaceObjectWindowless).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IOleInPlaceObjectWindowless" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IOleInPlaceObjectWindowless" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IOleInPlaceObjectWindowless), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IOleInPlaceObjectWindowless), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IOleInPlaceObjectWindowless), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IOleInPlaceObjectWindowless), Is.EqualTo(4));
         }
     }
 }

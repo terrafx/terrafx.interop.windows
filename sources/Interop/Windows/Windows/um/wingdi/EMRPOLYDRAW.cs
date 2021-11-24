@@ -7,38 +7,37 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct EMRPOLYDRAW
 {
-    public unsafe partial struct EMRPOLYDRAW
+    public EMR emr;
+
+    public RECTL rclBounds;
+
+    [NativeTypeName("DWORD")]
+    public uint cptl;
+
+    [NativeTypeName("POINTL [1]")]
+    public _aptl_e__FixedBuffer aptl;
+
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte abTypes[1];
+
+    public partial struct _aptl_e__FixedBuffer
     {
-        public EMR emr;
+        public POINTL e0;
 
-        public RECTL rclBounds;
-
-        [NativeTypeName("DWORD")]
-        public uint cptl;
-
-        [NativeTypeName("POINTL [1]")]
-        public _aptl_e__FixedBuffer aptl;
-
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte abTypes[1];
-
-        public partial struct _aptl_e__FixedBuffer
+        public ref POINTL this[int index]
         {
-            public POINTL e0;
-
-            public ref POINTL this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<POINTL> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<POINTL> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

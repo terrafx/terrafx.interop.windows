@@ -7,117 +7,116 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3051080B-98B5-11CF-BB82-00AA00BDCE0B")]
+[NativeTypeName("struct IHTMLTimeRanges2 : IDispatch")]
+[NativeInheritance("IDispatch")]
+public unsafe partial struct IHTMLTimeRanges2 : IHTMLTimeRanges2.Interface
 {
-    [Guid("3051080B-98B5-11CF-BB82-00AA00BDCE0B")]
-    [NativeTypeName("struct IHTMLTimeRanges2 : IDispatch")]
-    [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLTimeRanges2 : IHTMLTimeRanges2.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IHTMLTimeRanges2*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLTimeRanges2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IHTMLTimeRanges2*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLTimeRanges2*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IHTMLTimeRanges2*, uint>)(lpVtbl[1]))((IHTMLTimeRanges2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IHTMLTimeRanges2*, uint>)(lpVtbl[1]))((IHTMLTimeRanges2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IHTMLTimeRanges2*, uint>)(lpVtbl[2]))((IHTMLTimeRanges2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IHTMLTimeRanges2*, uint>)(lpVtbl[2]))((IHTMLTimeRanges2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetTypeInfoCount(uint* pctinfo)
+    {
+        return ((delegate* unmanaged<IHTMLTimeRanges2*, uint*, int>)(lpVtbl[3]))((IHTMLTimeRanges2*)Unsafe.AsPointer(ref this), pctinfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetTypeInfoCount(uint* pctinfo)
-        {
-            return ((delegate* unmanaged<IHTMLTimeRanges2*, uint*, int>)(lpVtbl[3]))((IHTMLTimeRanges2*)Unsafe.AsPointer(ref this), pctinfo);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+    {
+        return ((delegate* unmanaged<IHTMLTimeRanges2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLTimeRanges2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
-        {
-            return ((delegate* unmanaged<IHTMLTimeRanges2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLTimeRanges2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    {
+        return ((delegate* unmanaged<IHTMLTimeRanges2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLTimeRanges2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
-        {
-            return ((delegate* unmanaged<IHTMLTimeRanges2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLTimeRanges2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
+    {
+        return ((delegate* unmanaged<IHTMLTimeRanges2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLTimeRanges2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
-        {
-            return ((delegate* unmanaged<IHTMLTimeRanges2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLTimeRanges2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT startDouble([NativeTypeName("long")] int index, double* startTime)
+    {
+        return ((delegate* unmanaged<IHTMLTimeRanges2*, int, double*, int>)(lpVtbl[7]))((IHTMLTimeRanges2*)Unsafe.AsPointer(ref this), index, startTime);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT endDouble([NativeTypeName("long")] int index, double* endTime)
+    {
+        return ((delegate* unmanaged<IHTMLTimeRanges2*, int, double*, int>)(lpVtbl[8]))((IHTMLTimeRanges2*)Unsafe.AsPointer(ref this), index, endTime);
+    }
+
+    public interface Interface : IDispatch.Interface
+    {
         [VtblIndex(7)]
-        public HRESULT startDouble([NativeTypeName("long")] int index, double* startTime)
-        {
-            return ((delegate* unmanaged<IHTMLTimeRanges2*, int, double*, int>)(lpVtbl[7]))((IHTMLTimeRanges2*)Unsafe.AsPointer(ref this), index, startTime);
-        }
+        HRESULT startDouble([NativeTypeName("long")] int index, double* startTime);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT endDouble([NativeTypeName("long")] int index, double* endTime)
-        {
-            return ((delegate* unmanaged<IHTMLTimeRanges2*, int, double*, int>)(lpVtbl[8]))((IHTMLTimeRanges2*)Unsafe.AsPointer(ref this), index, endTime);
-        }
+        HRESULT endDouble([NativeTypeName("long")] int index, double* endTime);
+    }
 
-        public interface Interface : IDispatch.Interface
-        {
-            [VtblIndex(7)]
-            HRESULT startDouble([NativeTypeName("long")] int index, double* startTime);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTimeRanges2*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(8)]
-            HRESULT endDouble([NativeTypeName("long")] int index, double* endTime);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTimeRanges2*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTimeRanges2*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTimeRanges2*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTimeRanges2*, uint> AddRef;
+        [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTimeRanges2*, uint*, int> GetTypeInfoCount;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTimeRanges2*, uint> Release;
+        [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTimeRanges2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
-            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTimeRanges2*, uint*, int> GetTypeInfoCount;
+        [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTimeRanges2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
-            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTimeRanges2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTimeRanges2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
-            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTimeRanges2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        [NativeTypeName("HRESULT (long, double *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTimeRanges2*, int, double*, int> startDouble;
 
-            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTimeRanges2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
-
-            [NativeTypeName("HRESULT (long, double *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTimeRanges2*, int, double*, int> startDouble;
-
-            [NativeTypeName("HRESULT (long, double *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLTimeRanges2*, int, double*, int> endDouble;
-        }
+        [NativeTypeName("HRESULT (long, double *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLTimeRanges2*, int, double*, int> endDouble;
     }
 }

@@ -3,13 +3,12 @@
 // Ported from um/RestartManager.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum RM_FILTER_TRIGGER
 {
-    public enum RM_FILTER_TRIGGER
-    {
-        RmFilterTriggerInvalid = 0,
-        RmFilterTriggerFile,
-        RmFilterTriggerProcess,
-        RmFilterTriggerService,
-    }
+    RmFilterTriggerInvalid = 0,
+    RmFilterTriggerFile,
+    RmFilterTriggerProcess,
+    RmFilterTriggerService,
 }

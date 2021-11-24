@@ -3,17 +3,16 @@
 // Ported from shared/hidclass.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct HID_XFER_PACKET
 {
-    public unsafe partial struct HID_XFER_PACKET
-    {
-        [NativeTypeName("PUCHAR")]
-        public byte* reportBuffer;
+    [NativeTypeName("PUCHAR")]
+    public byte* reportBuffer;
 
-        [NativeTypeName("ULONG")]
-        public uint reportBufferLen;
+    [NativeTypeName("ULONG")]
+    public uint reportBufferLen;
 
-        [NativeTypeName("UCHAR")]
-        public byte reportId;
-    }
+    [NativeTypeName("UCHAR")]
+    public byte reportId;
 }

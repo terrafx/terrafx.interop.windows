@@ -6,128 +6,127 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[NativeTypeName("struct IQualProp : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IQualProp : IQualProp.Interface
 {
-    [NativeTypeName("struct IQualProp : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IQualProp : IQualProp.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IQualProp*, Guid*, void**, int>)(lpVtbl[0]))((IQualProp*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IQualProp*, Guid*, void**, int>)(lpVtbl[0]))((IQualProp*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IQualProp*, uint>)(lpVtbl[1]))((IQualProp*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IQualProp*, uint>)(lpVtbl[1]))((IQualProp*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IQualProp*, uint>)(lpVtbl[2]))((IQualProp*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IQualProp*, uint>)(lpVtbl[2]))((IQualProp*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT get_FramesDroppedInRenderer(int* pcFrames)
+    {
+        return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[3]))((IQualProp*)Unsafe.AsPointer(ref this), pcFrames);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT get_FramesDrawn(int* pcFramesDrawn)
+    {
+        return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[4]))((IQualProp*)Unsafe.AsPointer(ref this), pcFramesDrawn);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT get_AvgFrameRate(int* piAvgFrameRate)
+    {
+        return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[5]))((IQualProp*)Unsafe.AsPointer(ref this), piAvgFrameRate);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT get_Jitter(int* iJitter)
+    {
+        return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[6]))((IQualProp*)Unsafe.AsPointer(ref this), iJitter);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT get_AvgSyncOffset(int* piAvg)
+    {
+        return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[7]))((IQualProp*)Unsafe.AsPointer(ref this), piAvg);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT get_DevSyncOffset(int* piDev)
+    {
+        return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[8]))((IQualProp*)Unsafe.AsPointer(ref this), piDev);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT get_FramesDroppedInRenderer(int* pcFrames)
-        {
-            return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[3]))((IQualProp*)Unsafe.AsPointer(ref this), pcFrames);
-        }
+        HRESULT get_FramesDroppedInRenderer(int* pcFrames);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT get_FramesDrawn(int* pcFramesDrawn)
-        {
-            return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[4]))((IQualProp*)Unsafe.AsPointer(ref this), pcFramesDrawn);
-        }
+        HRESULT get_FramesDrawn(int* pcFramesDrawn);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT get_AvgFrameRate(int* piAvgFrameRate)
-        {
-            return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[5]))((IQualProp*)Unsafe.AsPointer(ref this), piAvgFrameRate);
-        }
+        HRESULT get_AvgFrameRate(int* piAvgFrameRate);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT get_Jitter(int* iJitter)
-        {
-            return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[6]))((IQualProp*)Unsafe.AsPointer(ref this), iJitter);
-        }
+        HRESULT get_Jitter(int* iJitter);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT get_AvgSyncOffset(int* piAvg)
-        {
-            return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[7]))((IQualProp*)Unsafe.AsPointer(ref this), piAvg);
-        }
+        HRESULT get_AvgSyncOffset(int* piAvg);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT get_DevSyncOffset(int* piDev)
-        {
-            return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[8]))((IQualProp*)Unsafe.AsPointer(ref this), piDev);
-        }
+        HRESULT get_DevSyncOffset(int* piDev);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT get_FramesDroppedInRenderer(int* pcFrames);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IQualProp*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT get_FramesDrawn(int* pcFramesDrawn);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IQualProp*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT get_AvgFrameRate(int* piAvgFrameRate);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IQualProp*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT get_Jitter(int* iJitter);
+        [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IQualProp*, int*, int> get_FramesDroppedInRenderer;
 
-            [VtblIndex(7)]
-            HRESULT get_AvgSyncOffset(int* piAvg);
+        [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IQualProp*, int*, int> get_FramesDrawn;
 
-            [VtblIndex(8)]
-            HRESULT get_DevSyncOffset(int* piDev);
-        }
+        [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IQualProp*, int*, int> get_AvgFrameRate;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IQualProp*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IQualProp*, int*, int> get_Jitter;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IQualProp*, uint> AddRef;
+        [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IQualProp*, int*, int> get_AvgSyncOffset;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IQualProp*, uint> Release;
-
-            [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IQualProp*, int*, int> get_FramesDroppedInRenderer;
-
-            [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IQualProp*, int*, int> get_FramesDrawn;
-
-            [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IQualProp*, int*, int> get_AvgFrameRate;
-
-            [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IQualProp*, int*, int> get_Jitter;
-
-            [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IQualProp*, int*, int> get_AvgSyncOffset;
-
-            [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IQualProp*, int*, int> get_DevSyncOffset;
-        }
+        [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IQualProp*, int*, int> get_DevSyncOffset;
     }
 }

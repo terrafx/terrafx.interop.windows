@@ -5,17 +5,16 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public static partial class D3D12
 {
-    public static partial class D3D12
-    {
-        [NativeTypeName("#define D3D12_ERROR_ADAPTER_NOT_FOUND _HRESULT_TYPEDEF_(0x887E0001L)")]
-        public const int D3D12_ERROR_ADAPTER_NOT_FOUND = unchecked((int)(0x887E0001));
+    [NativeTypeName("#define D3D12_ERROR_ADAPTER_NOT_FOUND _HRESULT_TYPEDEF_(0x887E0001L)")]
+    public const int D3D12_ERROR_ADAPTER_NOT_FOUND = unchecked((int)(0x887E0001));
 
-        [NativeTypeName("#define D3D12_ERROR_DRIVER_VERSION_MISMATCH _HRESULT_TYPEDEF_(0x887E0002L)")]
-        public const int D3D12_ERROR_DRIVER_VERSION_MISMATCH = unchecked((int)(0x887E0002));
+    [NativeTypeName("#define D3D12_ERROR_DRIVER_VERSION_MISMATCH _HRESULT_TYPEDEF_(0x887E0002L)")]
+    public const int D3D12_ERROR_DRIVER_VERSION_MISMATCH = unchecked((int)(0x887E0002));
 
-        [NativeTypeName("#define D3D12_ERROR_INVALID_REDIST _HRESULT_TYPEDEF_(0x887E0003L)")]
-        public const int D3D12_ERROR_INVALID_REDIST = unchecked((int)(0x887E0003));
-    }
+    [NativeTypeName("#define D3D12_ERROR_INVALID_REDIST _HRESULT_TYPEDEF_(0x887E0003L)")]
+    public const int D3D12_ERROR_INVALID_REDIST = unchecked((int)(0x887E0003));
 }

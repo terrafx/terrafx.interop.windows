@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DXGI_JPEG_DC_HUFFMAN_TABLE" /> struct.</summary>
+public static unsafe partial class DXGI_JPEG_DC_HUFFMAN_TABLETests
 {
-    /// <summary>Provides validation of the <see cref="DXGI_JPEG_DC_HUFFMAN_TABLE" /> struct.</summary>
-    public static unsafe partial class DXGI_JPEG_DC_HUFFMAN_TABLETests
+    /// <summary>Validates that the <see cref="DXGI_JPEG_DC_HUFFMAN_TABLE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DXGI_JPEG_DC_HUFFMAN_TABLE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DXGI_JPEG_DC_HUFFMAN_TABLE>(), Is.EqualTo(sizeof(DXGI_JPEG_DC_HUFFMAN_TABLE)));
-        }
+        Assert.That(Marshal.SizeOf<DXGI_JPEG_DC_HUFFMAN_TABLE>(), Is.EqualTo(sizeof(DXGI_JPEG_DC_HUFFMAN_TABLE)));
+    }
 
-        /// <summary>Validates that the <see cref="DXGI_JPEG_DC_HUFFMAN_TABLE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DXGI_JPEG_DC_HUFFMAN_TABLE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DXGI_JPEG_DC_HUFFMAN_TABLE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DXGI_JPEG_DC_HUFFMAN_TABLE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DXGI_JPEG_DC_HUFFMAN_TABLE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DXGI_JPEG_DC_HUFFMAN_TABLE), Is.EqualTo(24));
-        }
+    /// <summary>Validates that the <see cref="DXGI_JPEG_DC_HUFFMAN_TABLE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DXGI_JPEG_DC_HUFFMAN_TABLE), Is.EqualTo(24));
     }
 }

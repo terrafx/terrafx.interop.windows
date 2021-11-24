@@ -3,17 +3,16 @@
 // Ported from um/ShlObj.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class IDC
 {
-    public static partial class IDC
-    {
-        [NativeTypeName("#define IDC_OFFLINE_HAND 103")]
-        public const int IDC_OFFLINE_HAND = 103;
+    [NativeTypeName("#define IDC_OFFLINE_HAND 103")]
+    public const int IDC_OFFLINE_HAND = 103;
 
-        [NativeTypeName("#define IDC_PANTOOL_HAND_OPEN 104")]
-        public const int IDC_PANTOOL_HAND_OPEN = 104;
+    [NativeTypeName("#define IDC_PANTOOL_HAND_OPEN 104")]
+    public const int IDC_PANTOOL_HAND_OPEN = 104;
 
-        [NativeTypeName("#define IDC_PANTOOL_HAND_CLOSED 105")]
-        public const int IDC_PANTOOL_HAND_CLOSED = 105;
-    }
+    [NativeTypeName("#define IDC_PANTOOL_HAND_CLOSED 105")]
+    public const int IDC_PANTOOL_HAND_CLOSED = 105;
 }

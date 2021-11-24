@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("8A47AB5A-4798-4C93-B5A5-554F9A3B9F50")]
+public partial struct CODECAPI_AVEncChromaEncodeMode
 {
-    [Guid("8A47AB5A-4798-4C93-B5A5-554F9A3B9F50")]
-    public partial struct CODECAPI_AVEncChromaEncodeMode
-    {
-    }
 }

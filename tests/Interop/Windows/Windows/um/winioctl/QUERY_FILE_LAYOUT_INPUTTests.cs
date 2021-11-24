@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="QUERY_FILE_LAYOUT_INPUT" /> struct.</summary>
+public static unsafe partial class QUERY_FILE_LAYOUT_INPUTTests
 {
-    /// <summary>Provides validation of the <see cref="QUERY_FILE_LAYOUT_INPUT" /> struct.</summary>
-    public static unsafe partial class QUERY_FILE_LAYOUT_INPUTTests
+    /// <summary>Validates that the <see cref="QUERY_FILE_LAYOUT_INPUT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="QUERY_FILE_LAYOUT_INPUT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<QUERY_FILE_LAYOUT_INPUT>(), Is.EqualTo(sizeof(QUERY_FILE_LAYOUT_INPUT)));
-        }
+        Assert.That(Marshal.SizeOf<QUERY_FILE_LAYOUT_INPUT>(), Is.EqualTo(sizeof(QUERY_FILE_LAYOUT_INPUT)));
+    }
 
-        /// <summary>Validates that the <see cref="QUERY_FILE_LAYOUT_INPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(QUERY_FILE_LAYOUT_INPUT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="QUERY_FILE_LAYOUT_INPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(QUERY_FILE_LAYOUT_INPUT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="QUERY_FILE_LAYOUT_INPUT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(QUERY_FILE_LAYOUT_INPUT), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="QUERY_FILE_LAYOUT_INPUT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(QUERY_FILE_LAYOUT_INPUT), Is.EqualTo(32));
     }
 }

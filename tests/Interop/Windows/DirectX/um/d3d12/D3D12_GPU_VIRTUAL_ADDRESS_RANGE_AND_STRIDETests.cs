@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE" /> struct.</summary>
+public static unsafe partial class D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDETests
 {
-    /// <summary>Provides validation of the <see cref="D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE" /> struct.</summary>
-    public static unsafe partial class D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDETests
+    /// <summary>Validates that the <see cref="D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE>(), Is.EqualTo(sizeof(D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE)));
-        }
+        Assert.That(Marshal.SizeOf<D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE>(), Is.EqualTo(sizeof(D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE)));
+    }
 
-        /// <summary>Validates that the <see cref="D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE), Is.EqualTo(24));
-        }
+    /// <summary>Validates that the <see cref="D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(D3D12_GPU_VIRTUAL_ADDRESS_RANGE_AND_STRIDE), Is.EqualTo(24));
     }
 }

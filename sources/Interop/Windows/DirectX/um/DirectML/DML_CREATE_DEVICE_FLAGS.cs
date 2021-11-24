@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum DML_CREATE_DEVICE_FLAGS
 {
-    [Flags]
-    public enum DML_CREATE_DEVICE_FLAGS
-    {
-        DML_CREATE_DEVICE_FLAG_NONE = 0,
-        DML_CREATE_DEVICE_FLAG_DEBUG = 0x1,
-    }
+    DML_CREATE_DEVICE_FLAG_NONE = 0,
+    DML_CREATE_DEVICE_FLAG_DEBUG = 0x1,
 }

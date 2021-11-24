@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ID3D12VideoEncodeCommandList" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.19041.0")]
+public static unsafe partial class ID3D12VideoEncodeCommandListTests
 {
-    /// <summary>Provides validation of the <see cref="ID3D12VideoEncodeCommandList" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public static unsafe partial class ID3D12VideoEncodeCommandListTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ID3D12VideoEncodeCommandList" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ID3D12VideoEncodeCommandList" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ID3D12VideoEncodeCommandList).GUID, Is.EqualTo(IID_ID3D12VideoEncodeCommandList));
-        }
+        Assert.That(typeof(ID3D12VideoEncodeCommandList).GUID, Is.EqualTo(IID_ID3D12VideoEncodeCommandList));
+    }
 
-        /// <summary>Validates that the <see cref="ID3D12VideoEncodeCommandList" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ID3D12VideoEncodeCommandList>(), Is.EqualTo(sizeof(ID3D12VideoEncodeCommandList)));
-        }
+    /// <summary>Validates that the <see cref="ID3D12VideoEncodeCommandList" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ID3D12VideoEncodeCommandList>(), Is.EqualTo(sizeof(ID3D12VideoEncodeCommandList)));
+    }
 
-        /// <summary>Validates that the <see cref="ID3D12VideoEncodeCommandList" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ID3D12VideoEncodeCommandList).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ID3D12VideoEncodeCommandList" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ID3D12VideoEncodeCommandList).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ID3D12VideoEncodeCommandList" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ID3D12VideoEncodeCommandList" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ID3D12VideoEncodeCommandList), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ID3D12VideoEncodeCommandList), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ID3D12VideoEncodeCommandList), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ID3D12VideoEncodeCommandList), Is.EqualTo(4));
         }
     }
 }

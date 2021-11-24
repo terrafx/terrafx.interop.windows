@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISynchronizeMutex" /> struct.</summary>
+public static unsafe partial class ISynchronizeMutexTests
 {
-    /// <summary>Provides validation of the <see cref="ISynchronizeMutex" /> struct.</summary>
-    public static unsafe partial class ISynchronizeMutexTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISynchronizeMutex" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISynchronizeMutex" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISynchronizeMutex).GUID, Is.EqualTo(IID_ISynchronizeMutex));
-        }
+        Assert.That(typeof(ISynchronizeMutex).GUID, Is.EqualTo(IID_ISynchronizeMutex));
+    }
 
-        /// <summary>Validates that the <see cref="ISynchronizeMutex" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISynchronizeMutex>(), Is.EqualTo(sizeof(ISynchronizeMutex)));
-        }
+    /// <summary>Validates that the <see cref="ISynchronizeMutex" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISynchronizeMutex>(), Is.EqualTo(sizeof(ISynchronizeMutex)));
+    }
 
-        /// <summary>Validates that the <see cref="ISynchronizeMutex" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISynchronizeMutex).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISynchronizeMutex" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISynchronizeMutex).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISynchronizeMutex" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISynchronizeMutex" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISynchronizeMutex), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISynchronizeMutex), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISynchronizeMutex), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISynchronizeMutex), Is.EqualTo(4));
         }
     }
 }

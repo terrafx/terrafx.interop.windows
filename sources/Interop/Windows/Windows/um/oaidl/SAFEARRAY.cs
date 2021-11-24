@@ -7,41 +7,40 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SAFEARRAY
 {
-    public unsafe partial struct SAFEARRAY
+    public ushort cDims;
+
+    public ushort fFeatures;
+
+    [NativeTypeName("ULONG")]
+    public uint cbElements;
+
+    [NativeTypeName("ULONG")]
+    public uint cLocks;
+
+    [NativeTypeName("PVOID")]
+    public void* pvData;
+
+    [NativeTypeName("SAFEARRAYBOUND [1]")]
+    public _rgsabound_e__FixedBuffer rgsabound;
+
+    public partial struct _rgsabound_e__FixedBuffer
     {
-        public ushort cDims;
+        public SAFEARRAYBOUND e0;
 
-        public ushort fFeatures;
-
-        [NativeTypeName("ULONG")]
-        public uint cbElements;
-
-        [NativeTypeName("ULONG")]
-        public uint cLocks;
-
-        [NativeTypeName("PVOID")]
-        public void* pvData;
-
-        [NativeTypeName("SAFEARRAYBOUND [1]")]
-        public _rgsabound_e__FixedBuffer rgsabound;
-
-        public partial struct _rgsabound_e__FixedBuffer
+        public ref SAFEARRAYBOUND this[int index]
         {
-            public SAFEARRAYBOUND e0;
-
-            public ref SAFEARRAYBOUND this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<SAFEARRAYBOUND> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<SAFEARRAYBOUND> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

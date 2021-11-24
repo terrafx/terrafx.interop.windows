@@ -5,19 +5,18 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct DXGI_OUTPUT_DESC
 {
-    public unsafe partial struct DXGI_OUTPUT_DESC
-    {
-        [NativeTypeName("WCHAR [32]")]
-        public fixed ushort DeviceName[32];
+    [NativeTypeName("WCHAR [32]")]
+    public fixed ushort DeviceName[32];
 
-        public RECT DesktopCoordinates;
+    public RECT DesktopCoordinates;
 
-        public BOOL AttachedToDesktop;
+    public BOOL AttachedToDesktop;
 
-        public DXGI_MODE_ROTATION Rotation;
+    public DXGI_MODE_ROTATION Rotation;
 
-        public HMONITOR Monitor;
-    }
+    public HMONITOR Monitor;
 }

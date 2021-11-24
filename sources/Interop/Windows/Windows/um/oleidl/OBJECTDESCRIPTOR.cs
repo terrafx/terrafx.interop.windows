@@ -5,31 +5,30 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct OBJECTDESCRIPTOR
 {
-    public partial struct OBJECTDESCRIPTOR
-    {
-        [NativeTypeName("ULONG")]
-        public uint cbSize;
+    [NativeTypeName("ULONG")]
+    public uint cbSize;
 
-        [NativeTypeName("CLSID")]
-        public Guid clsid;
+    [NativeTypeName("CLSID")]
+    public Guid clsid;
 
-        [NativeTypeName("DWORD")]
-        public uint dwDrawAspect;
+    [NativeTypeName("DWORD")]
+    public uint dwDrawAspect;
 
-        [NativeTypeName("SIZEL")]
-        public SIZE sizel;
+    [NativeTypeName("SIZEL")]
+    public SIZE sizel;
 
-        public POINTL pointl;
+    public POINTL pointl;
 
-        [NativeTypeName("DWORD")]
-        public uint dwStatus;
+    [NativeTypeName("DWORD")]
+    public uint dwStatus;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFullUserTypeName;
+    [NativeTypeName("DWORD")]
+    public uint dwFullUserTypeName;
 
-        [NativeTypeName("DWORD")]
-        public uint dwSrcOfCopy;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwSrcOfCopy;
 }

@@ -6,43 +6,42 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TVINSERTSTRUCTA
 {
-    public partial struct TVINSERTSTRUCTA
+    public HTREEITEM hParent;
+
+    public HTREEITEM hInsertAfter;
+
+    [NativeTypeName("tagTVINSERTSTRUCTA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/CommCtrl.h:5001:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public ref TVITEMEXA itemex
     {
-        public HTREEITEM hParent;
-
-        public HTREEITEM hInsertAfter;
-
-        [NativeTypeName("tagTVINSERTSTRUCTA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/CommCtrl.h:5001:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public ref TVITEMEXA itemex
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.itemex, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.itemex, 1));
         }
+    }
 
-        public ref TVITEMA item
+    public ref TVITEMA item
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.item, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.item, 1));
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            public TVITEMEXA itemex;
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        public TVITEMEXA itemex;
 
-            [FieldOffset(0)]
-            public TVITEMA item;
-        }
+        [FieldOffset(0)]
+        public TVITEMA item;
     }
 }

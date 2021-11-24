@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MULTIKEYHELPW" /> struct.</summary>
+public static unsafe partial class MULTIKEYHELPWTests
 {
-    /// <summary>Provides validation of the <see cref="MULTIKEYHELPW" /> struct.</summary>
-    public static unsafe partial class MULTIKEYHELPWTests
+    /// <summary>Validates that the <see cref="MULTIKEYHELPW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MULTIKEYHELPW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MULTIKEYHELPW>(), Is.EqualTo(sizeof(MULTIKEYHELPW)));
-        }
+        Assert.That(Marshal.SizeOf<MULTIKEYHELPW>(), Is.EqualTo(sizeof(MULTIKEYHELPW)));
+    }
 
-        /// <summary>Validates that the <see cref="MULTIKEYHELPW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MULTIKEYHELPW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MULTIKEYHELPW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MULTIKEYHELPW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MULTIKEYHELPW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MULTIKEYHELPW), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="MULTIKEYHELPW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MULTIKEYHELPW), Is.EqualTo(8));
     }
 }

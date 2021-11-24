@@ -5,106 +5,105 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public unsafe partial struct DRAGINFOW
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct DRAGINFOW
+    public static uint SizeOf
     {
-        public static uint SizeOf
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return (uint)(sizeof(DRAGINFO32W));
-                }
-                else
-                {
-                    return (uint)(sizeof(DRAGINFO64W));
-                }
+                return (uint)(sizeof(DRAGINFO32W));
+            }
+            else
+            {
+                return (uint)(sizeof(DRAGINFO64W));
             }
         }
+    }
 
-        [FieldOffset(0)]
-        public DRAGINFO32W _value32;
+    [FieldOffset(0)]
+    public DRAGINFO32W _value32;
 
-        [FieldOffset(0)]
-        public DRAGINFO64W _value64;
+    [FieldOffset(0)]
+    public DRAGINFO64W _value64;
 
-        public ref uint uSize
+    public ref uint uSize
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.uSize, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.uSize, 1));
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.uSize, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.uSize, 1));
             }
         }
+    }
 
-        public ref POINT pt
+    public ref POINT pt
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.pt, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.pt, 1));
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.pt, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.pt, 1));
             }
         }
+    }
 
-        public ref BOOL fNC
+    public ref BOOL fNC
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.fNC, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.fNC, 1));
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.fNC, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.fNC, 1));
             }
         }
+    }
 
-        [NativeTypeName("PZZWSTR")]
-        public ref ushort* lpFileList
+    [NativeTypeName("PZZWSTR")]
+    public ref ushort* lpFileList
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).lpFileList;
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).lpFileList;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).lpFileList;
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).lpFileList;
             }
         }
+    }
 
-        [NativeTypeName("DWORD")]
-        public ref uint grfKeyState
+    [NativeTypeName("DWORD")]
+    public ref uint grfKeyState
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.grfKeyState, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.grfKeyState, 1));
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.grfKeyState, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.grfKeyState, 1));
             }
         }
     }

@@ -5,31 +5,30 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct IMAGE_THUNK_DATA32
 {
-    public partial struct IMAGE_THUNK_DATA32
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19477:5)")]
+    public _u1_e__Union u1;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _u1_e__Union
     {
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19477:5)")]
-        public _u1_e__Union u1;
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint ForwarderString;
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _u1_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint ForwarderString;
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint Function;
 
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint Function;
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint Ordinal;
 
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint Ordinal;
-
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint AddressOfData;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint AddressOfData;
     }
 }

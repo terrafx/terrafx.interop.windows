@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CONTAINER_VOLUME_STATE" /> struct.</summary>
+public static unsafe partial class CONTAINER_VOLUME_STATETests
 {
-    /// <summary>Provides validation of the <see cref="CONTAINER_VOLUME_STATE" /> struct.</summary>
-    public static unsafe partial class CONTAINER_VOLUME_STATETests
+    /// <summary>Validates that the <see cref="CONTAINER_VOLUME_STATE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CONTAINER_VOLUME_STATE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CONTAINER_VOLUME_STATE>(), Is.EqualTo(sizeof(CONTAINER_VOLUME_STATE)));
-        }
+        Assert.That(Marshal.SizeOf<CONTAINER_VOLUME_STATE>(), Is.EqualTo(sizeof(CONTAINER_VOLUME_STATE)));
+    }
 
-        /// <summary>Validates that the <see cref="CONTAINER_VOLUME_STATE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CONTAINER_VOLUME_STATE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CONTAINER_VOLUME_STATE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CONTAINER_VOLUME_STATE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CONTAINER_VOLUME_STATE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CONTAINER_VOLUME_STATE), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="CONTAINER_VOLUME_STATE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CONTAINER_VOLUME_STATE), Is.EqualTo(4));
     }
 }

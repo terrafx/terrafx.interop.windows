@@ -5,17 +5,16 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D12_META_COMMAND_DESC
 {
-    public unsafe partial struct D3D12_META_COMMAND_DESC
-    {
-        public Guid Id;
+    public Guid Id;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* Name;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* Name;
 
-        public D3D12_GRAPHICS_STATES InitializationDirtyState;
+    public D3D12_GRAPHICS_STATES InitializationDirtyState;
 
-        public D3D12_GRAPHICS_STATES ExecutionDirtyState;
-    }
+    public D3D12_GRAPHICS_STATES ExecutionDirtyState;
 }

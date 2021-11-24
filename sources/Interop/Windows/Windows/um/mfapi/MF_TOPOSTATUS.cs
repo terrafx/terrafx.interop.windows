@@ -3,15 +3,14 @@
 // Ported from um/mfapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MF_TOPOSTATUS
 {
-    public enum MF_TOPOSTATUS
-    {
-        MF_TOPOSTATUS_INVALID = 0,
-        MF_TOPOSTATUS_READY = 100,
-        MF_TOPOSTATUS_STARTED_SOURCE = 200,
-        MF_TOPOSTATUS_DYNAMIC_CHANGED = 210,
-        MF_TOPOSTATUS_SINK_SWITCHED = 300,
-        MF_TOPOSTATUS_ENDED = 400,
-    }
+    MF_TOPOSTATUS_INVALID = 0,
+    MF_TOPOSTATUS_READY = 100,
+    MF_TOPOSTATUS_STARTED_SOURCE = 200,
+    MF_TOPOSTATUS_DYNAMIC_CHANGED = 210,
+    MF_TOPOSTATUS_SINK_SWITCHED = 300,
+    MF_TOPOSTATUS_ENDED = 400,
 }

@@ -3,26 +3,25 @@
 // Ported from um/schannel.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SecPkgContext_KeyingMaterial_Inproc
 {
-    public unsafe partial struct SecPkgContext_KeyingMaterial_Inproc
-    {
-        [NativeTypeName("WORD")]
-        public ushort cbLabel;
+    [NativeTypeName("WORD")]
+    public ushort cbLabel;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* pszLabel;
+    [NativeTypeName("LPSTR")]
+    public sbyte* pszLabel;
 
-        [NativeTypeName("WORD")]
-        public ushort cbContextValue;
+    [NativeTypeName("WORD")]
+    public ushort cbContextValue;
 
-        [NativeTypeName("PBYTE")]
-        public byte* pbContextValue;
+    [NativeTypeName("PBYTE")]
+    public byte* pbContextValue;
 
-        [NativeTypeName("DWORD")]
-        public uint cbKeyingMaterial;
+    [NativeTypeName("DWORD")]
+    public uint cbKeyingMaterial;
 
-        [NativeTypeName("PBYTE")]
-        public byte* pbKeyingMaterial;
-    }
+    [NativeTypeName("PBYTE")]
+    public byte* pbKeyingMaterial;
 }

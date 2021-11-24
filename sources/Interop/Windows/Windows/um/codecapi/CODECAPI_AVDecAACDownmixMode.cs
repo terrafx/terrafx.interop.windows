@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("01274475-F6BB-4017-B084-81A763C942D4")]
+public partial struct CODECAPI_AVDecAACDownmixMode
 {
-    [Guid("01274475-F6BB-4017-B084-81A763C942D4")]
-    public partial struct CODECAPI_AVDecAACDownmixMode
-    {
-    }
 }

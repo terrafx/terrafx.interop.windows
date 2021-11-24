@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public partial struct PSS_AUXILIARY_PAGES_INFORMATION
 {
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct PSS_AUXILIARY_PAGES_INFORMATION
-    {
-        [NativeTypeName("DWORD")]
-        public uint AuxPagesCaptured;
-    }
+    [NativeTypeName("DWORD")]
+    public uint AuxPagesCaptured;
 }

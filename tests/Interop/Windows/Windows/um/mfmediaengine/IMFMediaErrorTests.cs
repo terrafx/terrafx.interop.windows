@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFMediaError" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class IMFMediaErrorTests
 {
-    /// <summary>Provides validation of the <see cref="IMFMediaError" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class IMFMediaErrorTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFMediaError" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFMediaError" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFMediaError).GUID, Is.EqualTo(IID_IMFMediaError));
-        }
+        Assert.That(typeof(IMFMediaError).GUID, Is.EqualTo(IID_IMFMediaError));
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaError" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFMediaError>(), Is.EqualTo(sizeof(IMFMediaError)));
-        }
+    /// <summary>Validates that the <see cref="IMFMediaError" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFMediaError>(), Is.EqualTo(sizeof(IMFMediaError)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaError" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFMediaError).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFMediaError" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFMediaError).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaError" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFMediaError" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFMediaError), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFMediaError), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFMediaError), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFMediaError), Is.EqualTo(4));
         }
     }
 }

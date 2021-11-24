@@ -3,11 +3,10 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum _AMRESCTL_RESERVEFLAGS
 {
-    public enum _AMRESCTL_RESERVEFLAGS
-    {
-        AMRESCTL_RESERVEFLAGS_RESERVE = 0,
-        AMRESCTL_RESERVEFLAGS_UNRESERVE = 0x1,
-    }
+    AMRESCTL_RESERVEFLAGS_RESERVE = 0,
+    AMRESCTL_RESERVEFLAGS_UNRESERVE = 0x1,
 }

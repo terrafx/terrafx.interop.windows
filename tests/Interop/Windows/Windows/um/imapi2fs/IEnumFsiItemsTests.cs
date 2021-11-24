@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IEnumFsiItems" /> struct.</summary>
+public static unsafe partial class IEnumFsiItemsTests
 {
-    /// <summary>Provides validation of the <see cref="IEnumFsiItems" /> struct.</summary>
-    public static unsafe partial class IEnumFsiItemsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEnumFsiItems" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEnumFsiItems" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IEnumFsiItems).GUID, Is.EqualTo(IID_IEnumFsiItems));
-        }
+        Assert.That(typeof(IEnumFsiItems).GUID, Is.EqualTo(IID_IEnumFsiItems));
+    }
 
-        /// <summary>Validates that the <see cref="IEnumFsiItems" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IEnumFsiItems>(), Is.EqualTo(sizeof(IEnumFsiItems)));
-        }
+    /// <summary>Validates that the <see cref="IEnumFsiItems" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IEnumFsiItems>(), Is.EqualTo(sizeof(IEnumFsiItems)));
+    }
 
-        /// <summary>Validates that the <see cref="IEnumFsiItems" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IEnumFsiItems).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IEnumFsiItems" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IEnumFsiItems).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IEnumFsiItems" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IEnumFsiItems" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IEnumFsiItems), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IEnumFsiItems), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IEnumFsiItems), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IEnumFsiItems), Is.EqualTo(4));
         }
     }
 }

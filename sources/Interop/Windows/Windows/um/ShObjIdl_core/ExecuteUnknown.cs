@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("E44E9428-BDBC-4987-A099-40DC8FD255E7")]
+public partial struct ExecuteUnknown
 {
-    [Guid("E44E9428-BDBC-4987-A099-40DC8FD255E7")]
-    public partial struct ExecuteUnknown
-    {
-    }
 }

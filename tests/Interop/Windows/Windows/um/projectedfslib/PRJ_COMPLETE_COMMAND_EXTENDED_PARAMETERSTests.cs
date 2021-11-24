@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.17763.0")]
+public static unsafe partial class PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERSTests
 {
-    /// <summary>Provides validation of the <see cref="PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0.17763.0")]
-    public static unsafe partial class PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERSTests
+    /// <summary>Validates that the <see cref="PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS>(), Is.EqualTo(sizeof(PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS)));
-        }
+        Assert.That(Marshal.SizeOf<PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS>(), Is.EqualTo(sizeof(PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS)));
+    }
 
-        /// <summary>Validates that the <see cref="PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS), Is.EqualTo(8));
         }
     }
 }

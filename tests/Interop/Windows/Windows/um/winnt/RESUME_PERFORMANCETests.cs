@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="RESUME_PERFORMANCE" /> struct.</summary>
+public static unsafe partial class RESUME_PERFORMANCETests
 {
-    /// <summary>Provides validation of the <see cref="RESUME_PERFORMANCE" /> struct.</summary>
-    public static unsafe partial class RESUME_PERFORMANCETests
+    /// <summary>Validates that the <see cref="RESUME_PERFORMANCE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="RESUME_PERFORMANCE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<RESUME_PERFORMANCE>(), Is.EqualTo(sizeof(RESUME_PERFORMANCE)));
-        }
+        Assert.That(Marshal.SizeOf<RESUME_PERFORMANCE>(), Is.EqualTo(sizeof(RESUME_PERFORMANCE)));
+    }
 
-        /// <summary>Validates that the <see cref="RESUME_PERFORMANCE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(RESUME_PERFORMANCE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="RESUME_PERFORMANCE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(RESUME_PERFORMANCE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="RESUME_PERFORMANCE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(RESUME_PERFORMANCE), Is.EqualTo(24));
-        }
+    /// <summary>Validates that the <see cref="RESUME_PERFORMANCE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(RESUME_PERFORMANCE), Is.EqualTo(24));
     }
 }

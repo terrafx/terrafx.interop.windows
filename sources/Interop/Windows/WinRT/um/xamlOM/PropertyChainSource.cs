@@ -5,21 +5,20 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct PropertyChainSource
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct PropertyChainSource
-    {
-        public InstanceHandle Handle;
+    public InstanceHandle Handle;
 
-        [NativeTypeName("BSTR")]
-        public ushort* TargetType;
+    [NativeTypeName("BSTR")]
+    public ushort* TargetType;
 
-        [NativeTypeName("BSTR")]
-        public ushort* Name;
+    [NativeTypeName("BSTR")]
+    public ushort* Name;
 
-        public BaseValueSource Source;
+    public BaseValueSource Source;
 
-        public SourceInfo SrcInfo;
-    }
+    public SourceInfo SrcInfo;
 }

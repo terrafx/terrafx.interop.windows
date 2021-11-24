@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XAUDIO2_EFFECT_CHAIN" /> struct.</summary>
+public static unsafe partial class XAUDIO2_EFFECT_CHAINTests
 {
-    /// <summary>Provides validation of the <see cref="XAUDIO2_EFFECT_CHAIN" /> struct.</summary>
-    public static unsafe partial class XAUDIO2_EFFECT_CHAINTests
+    /// <summary>Validates that the <see cref="XAUDIO2_EFFECT_CHAIN" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XAUDIO2_EFFECT_CHAIN" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XAUDIO2_EFFECT_CHAIN>(), Is.EqualTo(sizeof(XAUDIO2_EFFECT_CHAIN)));
-        }
+        Assert.That(Marshal.SizeOf<XAUDIO2_EFFECT_CHAIN>(), Is.EqualTo(sizeof(XAUDIO2_EFFECT_CHAIN)));
+    }
 
-        /// <summary>Validates that the <see cref="XAUDIO2_EFFECT_CHAIN" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XAUDIO2_EFFECT_CHAIN).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XAUDIO2_EFFECT_CHAIN" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XAUDIO2_EFFECT_CHAIN).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XAUDIO2_EFFECT_CHAIN" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XAUDIO2_EFFECT_CHAIN" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XAUDIO2_EFFECT_CHAIN), Is.EqualTo(12));
-            }
-            else
-            {
-                Assert.That(sizeof(XAUDIO2_EFFECT_CHAIN), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(XAUDIO2_EFFECT_CHAIN), Is.EqualTo(12));
+        }
+        else
+        {
+            Assert.That(sizeof(XAUDIO2_EFFECT_CHAIN), Is.EqualTo(8));
         }
     }
 }

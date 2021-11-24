@@ -3,14 +3,13 @@
 // Ported from shared/Iprtrmib.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct MIB_OPAQUE_QUERY
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwVarId;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD [1]")]
-        public fixed uint rgdwVarIndex[1];
-    }
+public unsafe partial struct MIB_OPAQUE_QUERY
+{
+    [NativeTypeName("DWORD")]
+    public uint dwVarId;
+
+    [NativeTypeName("DWORD [1]")]
+    public fixed uint rgdwVarIndex[1];
 }

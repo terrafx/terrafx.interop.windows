@@ -5,19 +5,18 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS
-    {
-        public uint PastFrames;
+    public uint PastFrames;
 
-        public uint FutureFrames;
+    public uint FutureFrames;
 
-        public uint ProcessorCaps;
+    public uint ProcessorCaps;
 
-        public uint ITelecineCaps;
+    public uint ITelecineCaps;
 
-        public uint CustomRateCount;
-    }
+    public uint CustomRateCount;
 }

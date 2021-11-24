@@ -7,13 +7,12 @@ using static TerraFX.Interop.DirectX.D2D1_EXTEND_MODE;
 using static TerraFX.Interop.DirectX.D2D1_INTERPOLATION_MODE;
 using static TerraFX.Interop.DirectX.DirectX;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D1_IMAGE_BRUSH_PROPERTIES
 {
-    public partial struct D2D1_IMAGE_BRUSH_PROPERTIES
+    public D2D1_IMAGE_BRUSH_PROPERTIES([NativeTypeName("D2D1_RECT_F")] D2D_RECT_F sourceRectangle, D2D1_EXTEND_MODE extendModeX = D2D1_EXTEND_MODE_CLAMP, D2D1_EXTEND_MODE extendModeY = D2D1_EXTEND_MODE_CLAMP, D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR)
     {
-        public D2D1_IMAGE_BRUSH_PROPERTIES([NativeTypeName("D2D1_RECT_F")] D2D_RECT_F sourceRectangle, D2D1_EXTEND_MODE extendModeX = D2D1_EXTEND_MODE_CLAMP, D2D1_EXTEND_MODE extendModeY = D2D1_EXTEND_MODE_CLAMP, D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR)
-        {
-            this = ImageBrushProperties(sourceRectangle, extendModeX, extendModeY, interpolationMode);
-        }
+        this = ImageBrushProperties(sourceRectangle, extendModeX, extendModeY, interpolationMode);
     }
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IHTMLIPrintCollection" /> struct.</summary>
+public static unsafe partial class IHTMLIPrintCollectionTests
 {
-    /// <summary>Provides validation of the <see cref="IHTMLIPrintCollection" /> struct.</summary>
-    public static unsafe partial class IHTMLIPrintCollectionTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLIPrintCollection" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLIPrintCollection" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IHTMLIPrintCollection).GUID, Is.EqualTo(IID_IHTMLIPrintCollection));
-        }
+        Assert.That(typeof(IHTMLIPrintCollection).GUID, Is.EqualTo(IID_IHTMLIPrintCollection));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLIPrintCollection" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IHTMLIPrintCollection>(), Is.EqualTo(sizeof(IHTMLIPrintCollection)));
-        }
+    /// <summary>Validates that the <see cref="IHTMLIPrintCollection" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IHTMLIPrintCollection>(), Is.EqualTo(sizeof(IHTMLIPrintCollection)));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLIPrintCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IHTMLIPrintCollection).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IHTMLIPrintCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IHTMLIPrintCollection).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLIPrintCollection" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IHTMLIPrintCollection" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IHTMLIPrintCollection), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IHTMLIPrintCollection), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IHTMLIPrintCollection), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IHTMLIPrintCollection), Is.EqualTo(4));
         }
     }
 }

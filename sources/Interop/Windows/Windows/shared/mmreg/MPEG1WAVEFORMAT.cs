@@ -5,35 +5,34 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct MPEG1WAVEFORMAT
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct MPEG1WAVEFORMAT
-    {
-        public WAVEFORMATEX wfx;
+    public WAVEFORMATEX wfx;
 
-        [NativeTypeName("WORD")]
-        public ushort fwHeadLayer;
+    [NativeTypeName("WORD")]
+    public ushort fwHeadLayer;
 
-        [NativeTypeName("DWORD")]
-        public uint dwHeadBitrate;
+    [NativeTypeName("DWORD")]
+    public uint dwHeadBitrate;
 
-        [NativeTypeName("WORD")]
-        public ushort fwHeadMode;
+    [NativeTypeName("WORD")]
+    public ushort fwHeadMode;
 
-        [NativeTypeName("WORD")]
-        public ushort fwHeadModeExt;
+    [NativeTypeName("WORD")]
+    public ushort fwHeadModeExt;
 
-        [NativeTypeName("WORD")]
-        public ushort wHeadEmphasis;
+    [NativeTypeName("WORD")]
+    public ushort wHeadEmphasis;
 
-        [NativeTypeName("WORD")]
-        public ushort fwHeadFlags;
+    [NativeTypeName("WORD")]
+    public ushort fwHeadFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint dwPTSLow;
+    [NativeTypeName("DWORD")]
+    public uint dwPTSLow;
 
-        [NativeTypeName("DWORD")]
-        public uint dwPTSHigh;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwPTSHigh;
 }

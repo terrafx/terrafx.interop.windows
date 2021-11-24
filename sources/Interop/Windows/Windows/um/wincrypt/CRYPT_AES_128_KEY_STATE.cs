@@ -3,23 +3,22 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CRYPT_AES_128_KEY_STATE
 {
-    public unsafe partial struct CRYPT_AES_128_KEY_STATE
-    {
-        [NativeTypeName("unsigned char [16]")]
-        public fixed byte Key[16];
+    [NativeTypeName("unsigned char [16]")]
+    public fixed byte Key[16];
 
-        [NativeTypeName("unsigned char [16]")]
-        public fixed byte IV[16];
+    [NativeTypeName("unsigned char [16]")]
+    public fixed byte IV[16];
 
-        [NativeTypeName("unsigned char [11][16]")]
-        public fixed byte EncryptionState[11 * 16];
+    [NativeTypeName("unsigned char [11][16]")]
+    public fixed byte EncryptionState[11 * 16];
 
-        [NativeTypeName("unsigned char [11][16]")]
-        public fixed byte DecryptionState[11 * 16];
+    [NativeTypeName("unsigned char [11][16]")]
+    public fixed byte DecryptionState[11 * 16];
 
-        [NativeTypeName("unsigned char [16]")]
-        public fixed byte Feedback[16];
-    }
+    [NativeTypeName("unsigned char [16]")]
+    public fixed byte Feedback[16];
 }

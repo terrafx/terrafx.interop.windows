@@ -3,12 +3,11 @@
 // Ported from shared/dxgi1_5.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum DXGI_HDR_METADATA_TYPE
 {
-    public enum DXGI_HDR_METADATA_TYPE
-    {
-        DXGI_HDR_METADATA_TYPE_NONE = 0,
-        DXGI_HDR_METADATA_TYPE_HDR10 = 1,
-        DXGI_HDR_METADATA_TYPE_HDR10PLUS = 2,
-    }
+    DXGI_HDR_METADATA_TYPE_NONE = 0,
+    DXGI_HDR_METADATA_TYPE_HDR10 = 1,
+    DXGI_HDR_METADATA_TYPE_HDR10PLUS = 2,
 }

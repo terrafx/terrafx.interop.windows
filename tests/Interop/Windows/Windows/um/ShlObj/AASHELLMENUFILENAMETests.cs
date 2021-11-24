@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AASHELLMENUFILENAME" /> struct.</summary>
+public static unsafe partial class AASHELLMENUFILENAMETests
 {
-    /// <summary>Provides validation of the <see cref="AASHELLMENUFILENAME" /> struct.</summary>
-    public static unsafe partial class AASHELLMENUFILENAMETests
+    /// <summary>Validates that the <see cref="AASHELLMENUFILENAME" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="AASHELLMENUFILENAME" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<AASHELLMENUFILENAME>(), Is.EqualTo(sizeof(AASHELLMENUFILENAME)));
-        }
+        Assert.That(Marshal.SizeOf<AASHELLMENUFILENAME>(), Is.EqualTo(sizeof(AASHELLMENUFILENAME)));
+    }
 
-        /// <summary>Validates that the <see cref="AASHELLMENUFILENAME" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(AASHELLMENUFILENAME).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="AASHELLMENUFILENAME" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(AASHELLMENUFILENAME).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="AASHELLMENUFILENAME" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(AASHELLMENUFILENAME), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="AASHELLMENUFILENAME" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(AASHELLMENUFILENAME), Is.EqualTo(16));
     }
 }

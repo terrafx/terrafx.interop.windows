@@ -5,18 +5,17 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SP_DEVINFO_LIST_DETAIL_DATA64_A
 {
-    public unsafe partial struct SP_DEVINFO_LIST_DETAIL_DATA64_A
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public Guid ClassGuid;
+    public Guid ClassGuid;
 
-        public HANDLE RemoteMachineHandle;
+    public HANDLE RemoteMachineHandle;
 
-        [NativeTypeName("CHAR [263]")]
-        public fixed sbyte RemoteMachineName[263];
-    }
+    [NativeTypeName("CHAR [263]")]
+    public fixed sbyte RemoteMachineName[263];
 }

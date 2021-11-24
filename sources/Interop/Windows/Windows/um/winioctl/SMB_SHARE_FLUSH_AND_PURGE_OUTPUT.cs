@@ -3,11 +3,10 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SMB_SHARE_FLUSH_AND_PURGE_OUTPUT
 {
-    public partial struct SMB_SHARE_FLUSH_AND_PURGE_OUTPUT
-    {
-        [NativeTypeName("DWORD")]
-        public uint cEntriesPurged;
-    }
+    [NativeTypeName("DWORD")]
+    public uint cEntriesPurged;
 }

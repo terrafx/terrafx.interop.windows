@@ -5,26 +5,25 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct IMAGE_LINENUMBER
 {
-    public partial struct IMAGE_LINENUMBER
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19349:5)")]
+    public _Type_e__Union Type;
+
+    [NativeTypeName("WORD")]
+    public ushort Linenumber;
+
+    [StructLayout(LayoutKind.Explicit, Pack = 2)]
+    public partial struct _Type_e__Union
     {
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19349:5)")]
-        public _Type_e__Union Type;
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint SymbolTableIndex;
 
-        [NativeTypeName("WORD")]
-        public ushort Linenumber;
-
-        [StructLayout(LayoutKind.Explicit, Pack = 2)]
-        public partial struct _Type_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint SymbolTableIndex;
-
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint VirtualAddress;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint VirtualAddress;
     }
 }

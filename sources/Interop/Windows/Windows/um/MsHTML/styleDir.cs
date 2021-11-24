@@ -3,14 +3,13 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum styleDir
 {
-    public enum styleDir
-    {
-        styleDirNotSet = 0,
-        styleDirLeftToRight = 1,
-        styleDirRightToLeft = 2,
-        styleDirInherit = 3,
-        styleDir_Max = 2147483647,
-    }
+    styleDirNotSet = 0,
+    styleDirLeftToRight = 1,
+    styleDirRightToLeft = 2,
+    styleDirInherit = 3,
+    styleDir_Max = 2147483647,
 }

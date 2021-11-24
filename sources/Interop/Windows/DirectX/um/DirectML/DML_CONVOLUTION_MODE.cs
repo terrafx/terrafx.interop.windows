@@ -3,11 +3,10 @@
 // Ported from um/DirectML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum DML_CONVOLUTION_MODE
 {
-    public enum DML_CONVOLUTION_MODE
-    {
-        DML_CONVOLUTION_MODE_CONVOLUTION,
-        DML_CONVOLUTION_MODE_CROSS_CORRELATION,
-    }
+    DML_CONVOLUTION_MODE_CONVOLUTION,
+    DML_CONVOLUTION_MODE_CROSS_CORRELATION,
 }

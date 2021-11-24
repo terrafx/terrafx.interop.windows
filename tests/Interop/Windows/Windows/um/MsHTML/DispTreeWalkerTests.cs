@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DispTreeWalker" /> struct.</summary>
+public static unsafe partial class DispTreeWalkerTests
 {
-    /// <summary>Provides validation of the <see cref="DispTreeWalker" /> struct.</summary>
-    public static unsafe partial class DispTreeWalkerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispTreeWalker" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispTreeWalker" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DispTreeWalker).GUID, Is.EqualTo(IID_DispTreeWalker));
-        }
+        Assert.That(typeof(DispTreeWalker).GUID, Is.EqualTo(IID_DispTreeWalker));
+    }
 
-        /// <summary>Validates that the <see cref="DispTreeWalker" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DispTreeWalker>(), Is.EqualTo(sizeof(DispTreeWalker)));
-        }
+    /// <summary>Validates that the <see cref="DispTreeWalker" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DispTreeWalker>(), Is.EqualTo(sizeof(DispTreeWalker)));
+    }
 
-        /// <summary>Validates that the <see cref="DispTreeWalker" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DispTreeWalker).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DispTreeWalker" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DispTreeWalker).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DispTreeWalker" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DispTreeWalker" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DispTreeWalker), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(DispTreeWalker), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(DispTreeWalker), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(DispTreeWalker), Is.EqualTo(4));
         }
     }
 }

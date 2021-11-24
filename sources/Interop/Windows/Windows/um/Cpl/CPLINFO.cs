@@ -5,18 +5,17 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct CPLINFO
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct CPLINFO
-    {
-        public int idIcon;
+    public int idIcon;
 
-        public int idName;
+    public int idName;
 
-        public int idInfo;
+    public int idInfo;
 
-        [NativeTypeName("LONG_PTR")]
-        public nint lData;
-    }
+    [NativeTypeName("LONG_PTR")]
+    public nint lData;
 }

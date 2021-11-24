@@ -5,36 +5,35 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 4)]
+public partial struct NON_PAGED_DEBUG_INFO
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 4)]
-    public partial struct NON_PAGED_DEBUG_INFO
-    {
-        [NativeTypeName("WORD")]
-        public ushort Signature;
+    [NativeTypeName("WORD")]
+    public ushort Signature;
 
-        [NativeTypeName("WORD")]
-        public ushort Flags;
+    [NativeTypeName("WORD")]
+    public ushort Flags;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("WORD")]
-        public ushort Machine;
+    [NativeTypeName("WORD")]
+    public ushort Machine;
 
-        [NativeTypeName("WORD")]
-        public ushort Characteristics;
+    [NativeTypeName("WORD")]
+    public ushort Characteristics;
 
-        [NativeTypeName("DWORD")]
-        public uint TimeDateStamp;
+    [NativeTypeName("DWORD")]
+    public uint TimeDateStamp;
 
-        [NativeTypeName("DWORD")]
-        public uint CheckSum;
+    [NativeTypeName("DWORD")]
+    public uint CheckSum;
 
-        [NativeTypeName("DWORD")]
-        public uint SizeOfImage;
+    [NativeTypeName("DWORD")]
+    public uint SizeOfImage;
 
-        [NativeTypeName("ULONGLONG")]
-        public ulong ImageBase;
-    }
+    [NativeTypeName("ULONGLONG")]
+    public ulong ImageBase;
 }

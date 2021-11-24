@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public enum DCOMPOSITION_COMPOSITE_MODE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum DCOMPOSITION_COMPOSITE_MODE
-    {
-        DCOMPOSITION_COMPOSITE_MODE_SOURCE_OVER = 0,
-        DCOMPOSITION_COMPOSITE_MODE_DESTINATION_INVERT = 1,
-        DCOMPOSITION_COMPOSITE_MODE_MIN_BLEND = 2,
-        DCOMPOSITION_COMPOSITE_MODE_INHERIT = unchecked((int)(0xffffffff)),
-    }
+    DCOMPOSITION_COMPOSITE_MODE_SOURCE_OVER = 0,
+    DCOMPOSITION_COMPOSITE_MODE_DESTINATION_INVERT = 1,
+    DCOMPOSITION_COMPOSITE_MODE_MIN_BLEND = 2,
+    DCOMPOSITION_COMPOSITE_MODE_INHERIT = unchecked((int)(0xffffffff)),
 }

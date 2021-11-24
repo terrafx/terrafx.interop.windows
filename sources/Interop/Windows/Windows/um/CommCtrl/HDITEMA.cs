@@ -3,33 +3,32 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct HDITEMA
 {
-    public unsafe partial struct HDITEMA
-    {
-        public uint mask;
+    public uint mask;
 
-        public int cxy;
+    public int cxy;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* pszText;
+    [NativeTypeName("LPSTR")]
+    public sbyte* pszText;
 
-        public HBITMAP hbm;
+    public HBITMAP hbm;
 
-        public int cchTextMax;
+    public int cchTextMax;
 
-        public int fmt;
+    public int fmt;
 
-        public LPARAM lParam;
+    public LPARAM lParam;
 
-        public int iImage;
+    public int iImage;
 
-        public int iOrder;
+    public int iOrder;
 
-        public uint type;
+    public uint type;
 
-        public void* pvFilter;
+    public void* pvFilter;
 
-        public uint state;
-    }
+    public uint state;
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="userHPALETTE" /> struct.</summary>
+public static unsafe partial class userHPALETTETests
 {
-    /// <summary>Provides validation of the <see cref="userHPALETTE" /> struct.</summary>
-    public static unsafe partial class userHPALETTETests
+    /// <summary>Validates that the <see cref="userHPALETTE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="userHPALETTE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<userHPALETTE>(), Is.EqualTo(sizeof(userHPALETTE)));
-        }
+        Assert.That(Marshal.SizeOf<userHPALETTE>(), Is.EqualTo(sizeof(userHPALETTE)));
+    }
 
-        /// <summary>Validates that the <see cref="userHPALETTE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(userHPALETTE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="userHPALETTE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(userHPALETTE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="userHPALETTE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(userHPALETTE), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="userHPALETTE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(userHPALETTE), Is.EqualTo(16));
     }
 }

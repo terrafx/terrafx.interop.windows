@@ -5,15 +5,14 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_XML_WRITER_STREAM_OUTPUT
 {
-    public unsafe partial struct WS_XML_WRITER_STREAM_OUTPUT
-    {
-        public WS_XML_WRITER_OUTPUT output;
+    public WS_XML_WRITER_OUTPUT output;
 
-        [NativeTypeName("WS_WRITE_CALLBACK")]
-        public delegate* unmanaged<void*, WS_BYTES*, uint, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> writeCallback;
+    [NativeTypeName("WS_WRITE_CALLBACK")]
+    public delegate* unmanaged<void*, WS_BYTES*, uint, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> writeCallback;
 
-        public void* writeCallbackState;
-    }
+    public void* writeCallbackState;
 }

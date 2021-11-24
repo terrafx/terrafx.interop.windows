@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum CWMO_FLAGS
 {
-    [Flags]
-    public enum CWMO_FLAGS
-    {
-        CWMO_DEFAULT = 0,
-        CWMO_DISPATCH_CALLS = 1,
-        CWMO_DISPATCH_WINDOW_MESSAGES = 2,
-    }
+    CWMO_DEFAULT = 0,
+    CWMO_DISPATCH_CALLS = 1,
+    CWMO_DISPATCH_WINDOW_MESSAGES = 2,
 }

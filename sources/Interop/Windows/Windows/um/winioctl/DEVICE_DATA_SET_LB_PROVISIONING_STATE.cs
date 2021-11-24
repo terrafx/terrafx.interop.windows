@@ -5,30 +5,29 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct DEVICE_DATA_SET_LB_PROVISIONING_STATE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct DEVICE_DATA_SET_LB_PROVISIONING_STATE
-    {
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong SlabSizeInBytes;
+    [NativeTypeName("DWORDLONG")]
+    public ulong SlabSizeInBytes;
 
-        [NativeTypeName("DWORD")]
-        public uint SlabOffsetDeltaInBytes;
+    [NativeTypeName("DWORD")]
+    public uint SlabOffsetDeltaInBytes;
 
-        [NativeTypeName("DWORD")]
-        public uint SlabAllocationBitMapBitCount;
+    [NativeTypeName("DWORD")]
+    public uint SlabAllocationBitMapBitCount;
 
-        [NativeTypeName("DWORD")]
-        public uint SlabAllocationBitMapLength;
+    [NativeTypeName("DWORD")]
+    public uint SlabAllocationBitMapLength;
 
-        [NativeTypeName("DWORD [1]")]
-        public fixed uint SlabAllocationBitMap[1];
-    }
+    [NativeTypeName("DWORD [1]")]
+    public fixed uint SlabAllocationBitMap[1];
 }

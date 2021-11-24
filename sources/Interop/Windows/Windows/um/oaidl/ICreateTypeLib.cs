@@ -7,181 +7,180 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("00020406-0000-0000-C000-000000000046")]
+[NativeTypeName("struct ICreateTypeLib : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ICreateTypeLib : ICreateTypeLib.Interface
 {
-    [Guid("00020406-0000-0000-C000-000000000046")]
-    [NativeTypeName("struct ICreateTypeLib : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ICreateTypeLib : ICreateTypeLib.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ICreateTypeLib*, Guid*, void**, int>)(lpVtbl[0]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ICreateTypeLib*, Guid*, void**, int>)(lpVtbl[0]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ICreateTypeLib*, uint>)(lpVtbl[1]))((ICreateTypeLib*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ICreateTypeLib*, uint>)(lpVtbl[1]))((ICreateTypeLib*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ICreateTypeLib*, uint>)(lpVtbl[2]))((ICreateTypeLib*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ICreateTypeLib*, uint>)(lpVtbl[2]))((ICreateTypeLib*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT CreateTypeInfo([NativeTypeName("LPOLESTR")] ushort* szName, TYPEKIND tkind, ICreateTypeInfo** ppCTInfo)
+    {
+        return ((delegate* unmanaged<ICreateTypeLib*, ushort*, TYPEKIND, ICreateTypeInfo**, int>)(lpVtbl[3]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), szName, tkind, ppCTInfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT SetName([NativeTypeName("LPOLESTR")] ushort* szName)
+    {
+        return ((delegate* unmanaged<ICreateTypeLib*, ushort*, int>)(lpVtbl[4]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), szName);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT SetVersion([NativeTypeName("WORD")] ushort wMajorVerNum, [NativeTypeName("WORD")] ushort wMinorVerNum)
+    {
+        return ((delegate* unmanaged<ICreateTypeLib*, ushort, ushort, int>)(lpVtbl[5]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), wMajorVerNum, wMinorVerNum);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT SetGuid([NativeTypeName("const GUID &")] Guid* guid)
+    {
+        return ((delegate* unmanaged<ICreateTypeLib*, Guid*, int>)(lpVtbl[6]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), guid);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT SetDocString([NativeTypeName("LPOLESTR")] ushort* szDoc)
+    {
+        return ((delegate* unmanaged<ICreateTypeLib*, ushort*, int>)(lpVtbl[7]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), szDoc);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT SetHelpFileName([NativeTypeName("LPOLESTR")] ushort* szHelpFileName)
+    {
+        return ((delegate* unmanaged<ICreateTypeLib*, ushort*, int>)(lpVtbl[8]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), szHelpFileName);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT SetHelpContext([NativeTypeName("DWORD")] uint dwHelpContext)
+    {
+        return ((delegate* unmanaged<ICreateTypeLib*, uint, int>)(lpVtbl[9]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), dwHelpContext);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT SetLcid([NativeTypeName("LCID")] uint lcid)
+    {
+        return ((delegate* unmanaged<ICreateTypeLib*, uint, int>)(lpVtbl[10]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), lcid);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT SetLibFlags(uint uLibFlags)
+    {
+        return ((delegate* unmanaged<ICreateTypeLib*, uint, int>)(lpVtbl[11]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), uLibFlags);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT SaveAllChanges()
+    {
+        return ((delegate* unmanaged<ICreateTypeLib*, int>)(lpVtbl[12]))((ICreateTypeLib*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT CreateTypeInfo([NativeTypeName("LPOLESTR")] ushort* szName, TYPEKIND tkind, ICreateTypeInfo** ppCTInfo)
-        {
-            return ((delegate* unmanaged<ICreateTypeLib*, ushort*, TYPEKIND, ICreateTypeInfo**, int>)(lpVtbl[3]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), szName, tkind, ppCTInfo);
-        }
+        HRESULT CreateTypeInfo([NativeTypeName("LPOLESTR")] ushort* szName, TYPEKIND tkind, ICreateTypeInfo** ppCTInfo);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetName([NativeTypeName("LPOLESTR")] ushort* szName)
-        {
-            return ((delegate* unmanaged<ICreateTypeLib*, ushort*, int>)(lpVtbl[4]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), szName);
-        }
+        HRESULT SetName([NativeTypeName("LPOLESTR")] ushort* szName);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetVersion([NativeTypeName("WORD")] ushort wMajorVerNum, [NativeTypeName("WORD")] ushort wMinorVerNum)
-        {
-            return ((delegate* unmanaged<ICreateTypeLib*, ushort, ushort, int>)(lpVtbl[5]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), wMajorVerNum, wMinorVerNum);
-        }
+        HRESULT SetVersion([NativeTypeName("WORD")] ushort wMajorVerNum, [NativeTypeName("WORD")] ushort wMinorVerNum);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT SetGuid([NativeTypeName("const GUID &")] Guid* guid)
-        {
-            return ((delegate* unmanaged<ICreateTypeLib*, Guid*, int>)(lpVtbl[6]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), guid);
-        }
+        HRESULT SetGuid([NativeTypeName("const GUID &")] Guid* guid);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT SetDocString([NativeTypeName("LPOLESTR")] ushort* szDoc)
-        {
-            return ((delegate* unmanaged<ICreateTypeLib*, ushort*, int>)(lpVtbl[7]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), szDoc);
-        }
+        HRESULT SetDocString([NativeTypeName("LPOLESTR")] ushort* szDoc);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT SetHelpFileName([NativeTypeName("LPOLESTR")] ushort* szHelpFileName)
-        {
-            return ((delegate* unmanaged<ICreateTypeLib*, ushort*, int>)(lpVtbl[8]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), szHelpFileName);
-        }
+        HRESULT SetHelpFileName([NativeTypeName("LPOLESTR")] ushort* szHelpFileName);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT SetHelpContext([NativeTypeName("DWORD")] uint dwHelpContext)
-        {
-            return ((delegate* unmanaged<ICreateTypeLib*, uint, int>)(lpVtbl[9]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), dwHelpContext);
-        }
+        HRESULT SetHelpContext([NativeTypeName("DWORD")] uint dwHelpContext);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT SetLcid([NativeTypeName("LCID")] uint lcid)
-        {
-            return ((delegate* unmanaged<ICreateTypeLib*, uint, int>)(lpVtbl[10]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), lcid);
-        }
+        HRESULT SetLcid([NativeTypeName("LCID")] uint lcid);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT SetLibFlags(uint uLibFlags)
-        {
-            return ((delegate* unmanaged<ICreateTypeLib*, uint, int>)(lpVtbl[11]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), uLibFlags);
-        }
+        HRESULT SetLibFlags(uint uLibFlags);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT SaveAllChanges()
-        {
-            return ((delegate* unmanaged<ICreateTypeLib*, int>)(lpVtbl[12]))((ICreateTypeLib*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT SaveAllChanges();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT CreateTypeInfo([NativeTypeName("LPOLESTR")] ushort* szName, TYPEKIND tkind, ICreateTypeInfo** ppCTInfo);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICreateTypeLib*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT SetName([NativeTypeName("LPOLESTR")] ushort* szName);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ICreateTypeLib*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT SetVersion([NativeTypeName("WORD")] ushort wMajorVerNum, [NativeTypeName("WORD")] ushort wMinorVerNum);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ICreateTypeLib*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT SetGuid([NativeTypeName("const GUID &")] Guid* guid);
+        [NativeTypeName("HRESULT (LPOLESTR, TYPEKIND, ICreateTypeInfo **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICreateTypeLib*, ushort*, TYPEKIND, ICreateTypeInfo**, int> CreateTypeInfo;
 
-            [VtblIndex(7)]
-            HRESULT SetDocString([NativeTypeName("LPOLESTR")] ushort* szDoc);
+        [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICreateTypeLib*, ushort*, int> SetName;
 
-            [VtblIndex(8)]
-            HRESULT SetHelpFileName([NativeTypeName("LPOLESTR")] ushort* szHelpFileName);
+        [NativeTypeName("HRESULT (WORD, WORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICreateTypeLib*, ushort, ushort, int> SetVersion;
 
-            [VtblIndex(9)]
-            HRESULT SetHelpContext([NativeTypeName("DWORD")] uint dwHelpContext);
+        [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICreateTypeLib*, Guid*, int> SetGuid;
 
-            [VtblIndex(10)]
-            HRESULT SetLcid([NativeTypeName("LCID")] uint lcid);
+        [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICreateTypeLib*, ushort*, int> SetDocString;
 
-            [VtblIndex(11)]
-            HRESULT SetLibFlags(uint uLibFlags);
+        [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICreateTypeLib*, ushort*, int> SetHelpFileName;
 
-            [VtblIndex(12)]
-            HRESULT SaveAllChanges();
-        }
+        [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICreateTypeLib*, uint, int> SetHelpContext;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICreateTypeLib*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (LCID) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICreateTypeLib*, uint, int> SetLcid;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ICreateTypeLib*, uint> AddRef;
+        [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
+        public delegate* unmanaged<ICreateTypeLib*, uint, int> SetLibFlags;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ICreateTypeLib*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPOLESTR, TYPEKIND, ICreateTypeInfo **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICreateTypeLib*, ushort*, TYPEKIND, ICreateTypeInfo**, int> CreateTypeInfo;
-
-            [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICreateTypeLib*, ushort*, int> SetName;
-
-            [NativeTypeName("HRESULT (WORD, WORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICreateTypeLib*, ushort, ushort, int> SetVersion;
-
-            [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICreateTypeLib*, Guid*, int> SetGuid;
-
-            [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICreateTypeLib*, ushort*, int> SetDocString;
-
-            [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICreateTypeLib*, ushort*, int> SetHelpFileName;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICreateTypeLib*, uint, int> SetHelpContext;
-
-            [NativeTypeName("HRESULT (LCID) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICreateTypeLib*, uint, int> SetLcid;
-
-            [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-            public delegate* unmanaged<ICreateTypeLib*, uint, int> SetLibFlags;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<ICreateTypeLib*, int> SaveAllChanges;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<ICreateTypeLib*, int> SaveAllChanges;
     }
 }

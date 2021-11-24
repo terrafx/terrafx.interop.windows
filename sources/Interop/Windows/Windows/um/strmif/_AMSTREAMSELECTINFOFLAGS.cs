@@ -3,11 +3,10 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum _AMSTREAMSELECTINFOFLAGS
 {
-    public enum _AMSTREAMSELECTINFOFLAGS
-    {
-        AMSTREAMSELECTINFO_ENABLED = 0x1,
-        AMSTREAMSELECTINFO_EXCLUSIVE = 0x2,
-    }
+    AMSTREAMSELECTINFO_ENABLED = 0x1,
+    AMSTREAMSELECTINFO_EXCLUSIVE = 0x2,
 }

@@ -5,22 +5,21 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SCM_PD_PASSTHROUGH_INPUT
 {
-    public unsafe partial struct SCM_PD_PASSTHROUGH_INPUT
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        public Guid ProtocolGuid;
+    public Guid ProtocolGuid;
 
-        [NativeTypeName("DWORD")]
-        public uint DataSize;
+    [NativeTypeName("DWORD")]
+    public uint DataSize;
 
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte Data[1];
-    }
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte Data[1];
 }

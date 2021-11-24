@@ -3,17 +3,16 @@
 // Ported from um/ddraw.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public static partial class DDWAITVB
 {
-    public static partial class DDWAITVB
-    {
-        [NativeTypeName("#define DDWAITVB_BLOCKBEGIN 0x00000001l")]
-        public const int DDWAITVB_BLOCKBEGIN = 0x00000001;
+    [NativeTypeName("#define DDWAITVB_BLOCKBEGIN 0x00000001l")]
+    public const int DDWAITVB_BLOCKBEGIN = 0x00000001;
 
-        [NativeTypeName("#define DDWAITVB_BLOCKBEGINEVENT 0x00000002l")]
-        public const int DDWAITVB_BLOCKBEGINEVENT = 0x00000002;
+    [NativeTypeName("#define DDWAITVB_BLOCKBEGINEVENT 0x00000002l")]
+    public const int DDWAITVB_BLOCKBEGINEVENT = 0x00000002;
 
-        [NativeTypeName("#define DDWAITVB_BLOCKEND 0x00000004l")]
-        public const int DDWAITVB_BLOCKEND = 0x00000004;
-    }
+    [NativeTypeName("#define DDWAITVB_BLOCKEND 0x00000004l")]
+    public const int DDWAITVB_BLOCKEND = 0x00000004;
 }

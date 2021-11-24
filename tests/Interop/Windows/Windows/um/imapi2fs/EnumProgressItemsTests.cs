@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="EnumProgressItems" /> struct.</summary>
+public static unsafe partial class EnumProgressItemsTests
 {
-    /// <summary>Provides validation of the <see cref="EnumProgressItems" /> struct.</summary>
-    public static unsafe partial class EnumProgressItemsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="EnumProgressItems" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="EnumProgressItems" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(EnumProgressItems).GUID, Is.EqualTo(CLSID_EnumProgressItems));
-        }
+        Assert.That(typeof(EnumProgressItems).GUID, Is.EqualTo(CLSID_EnumProgressItems));
+    }
 
-        /// <summary>Validates that the <see cref="EnumProgressItems" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<EnumProgressItems>(), Is.EqualTo(sizeof(EnumProgressItems)));
-        }
+    /// <summary>Validates that the <see cref="EnumProgressItems" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<EnumProgressItems>(), Is.EqualTo(sizeof(EnumProgressItems)));
+    }
 
-        /// <summary>Validates that the <see cref="EnumProgressItems" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(EnumProgressItems).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="EnumProgressItems" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(EnumProgressItems).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="EnumProgressItems" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(EnumProgressItems), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="EnumProgressItems" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(EnumProgressItems), Is.EqualTo(1));
     }
 }

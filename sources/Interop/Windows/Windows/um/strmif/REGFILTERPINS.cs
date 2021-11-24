@@ -5,30 +5,29 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct REGFILTERPINS
 {
-    public unsafe partial struct REGFILTERPINS
-    {
-        [NativeTypeName("LPWSTR")]
-        public ushort* strName;
+    [NativeTypeName("LPWSTR")]
+    public ushort* strName;
 
-        public BOOL bRendered;
+    public BOOL bRendered;
 
-        public BOOL bOutput;
+    public BOOL bOutput;
 
-        public BOOL bZero;
+    public BOOL bZero;
 
-        public BOOL bMany;
+    public BOOL bMany;
 
-        [NativeTypeName("const CLSID *")]
-        public Guid* clsConnectsToFilter;
+    [NativeTypeName("const CLSID *")]
+    public Guid* clsConnectsToFilter;
 
-        [NativeTypeName("const WCHAR *")]
-        public ushort* strConnectsToPin;
+    [NativeTypeName("const WCHAR *")]
+    public ushort* strConnectsToPin;
 
-        public uint nMediaTypes;
+    public uint nMediaTypes;
 
-        [NativeTypeName("const REGPINTYPES *")]
-        public REGPINTYPES* lpMediaType;
-    }
+    [NativeTypeName("const REGPINTYPES *")]
+    public REGPINTYPES* lpMediaType;
 }

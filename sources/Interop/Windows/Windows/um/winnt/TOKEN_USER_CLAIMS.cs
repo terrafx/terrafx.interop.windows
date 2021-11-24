@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct TOKEN_USER_CLAIMS
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct TOKEN_USER_CLAIMS
-    {
-        [NativeTypeName("PCLAIMS_BLOB")]
-        public void* UserClaims;
-    }
+    [NativeTypeName("PCLAIMS_BLOB")]
+    public void* UserClaims;
 }

@@ -7,81 +7,80 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+[StructLayout(LayoutKind.Explicit)]
+public partial struct STORAGE_SPEC_VERSION
 {
-    [SupportedOSPlatform("windows10.0")]
-    [StructLayout(LayoutKind.Explicit)]
-    public partial struct STORAGE_SPEC_VERSION
+    [FieldOffset(0)]
+    [NativeTypeName("_STORAGE_SPEC_VERSION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2503:5)")]
+    public _Anonymous_e__Struct Anonymous;
+
+    [FieldOffset(0)]
+    [NativeTypeName("DWORD")]
+    public uint AsUlong;
+
+    public ref _Anonymous_e__Struct._MinorVersion_e__Union MinorVersion
     {
-        [FieldOffset(0)]
-        [NativeTypeName("_STORAGE_SPEC_VERSION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2503:5)")]
-        public _Anonymous_e__Struct Anonymous;
-
-        [FieldOffset(0)]
-        [NativeTypeName("DWORD")]
-        public uint AsUlong;
-
-        public ref _Anonymous_e__Struct._MinorVersion_e__Union MinorVersion
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.MinorVersion, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.MinorVersion, 1));
         }
+    }
 
-        public ref ushort MajorVersion
+    public ref ushort MajorVersion
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.MajorVersion, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.MajorVersion, 1));
         }
+    }
 
-        public partial struct _Anonymous_e__Struct
+    public partial struct _Anonymous_e__Struct
+    {
+        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2504:9)")]
+        public _MinorVersion_e__Union MinorVersion;
+
+        [NativeTypeName("WORD")]
+        public ushort MajorVersion;
+
+        [StructLayout(LayoutKind.Explicit)]
+        public partial struct _MinorVersion_e__Union
         {
-            [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2504:9)")]
-            public _MinorVersion_e__Union MinorVersion;
+            [FieldOffset(0)]
+            [NativeTypeName("_STORAGE_SPEC_VERSION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2505:13)")]
+            public _Anonymous_e__Struct Anonymous;
 
+            [FieldOffset(0)]
             [NativeTypeName("WORD")]
-            public ushort MajorVersion;
+            public ushort AsUshort;
 
-            [StructLayout(LayoutKind.Explicit)]
-            public partial struct _MinorVersion_e__Union
+            public ref byte SubMinor
             {
-                [FieldOffset(0)]
-                [NativeTypeName("_STORAGE_SPEC_VERSION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2505:13)")]
-                public _Anonymous_e__Struct Anonymous;
-
-                [FieldOffset(0)]
-                [NativeTypeName("WORD")]
-                public ushort AsUshort;
-
-                public ref byte SubMinor
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.SubMinor, 1));
-                    }
+                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.SubMinor, 1));
                 }
+            }
 
-                public ref byte Minor
+            public ref byte Minor
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Minor, 1));
-                    }
+                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Minor, 1));
                 }
+            }
 
-                public partial struct _Anonymous_e__Struct
-                {
-                    public byte SubMinor;
+            public partial struct _Anonymous_e__Struct
+            {
+                public byte SubMinor;
 
-                    public byte Minor;
-                }
+                public byte Minor;
             }
         }
     }

@@ -5,12 +5,11 @@
 
 using static TerraFX.Interop.Windows.STREAM_SEEK;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechStreamSeekPositionType
 {
-    public enum SpeechStreamSeekPositionType
-    {
-        SSSPTRelativeToStart = STREAM_SEEK_SET,
-        SSSPTRelativeToCurrentPosition = STREAM_SEEK_CUR,
-        SSSPTRelativeToEnd = STREAM_SEEK_END,
-    }
+    SSSPTRelativeToStart = STREAM_SEEK_SET,
+    SSSPTRelativeToCurrentPosition = STREAM_SEEK_CUR,
+    SSSPTRelativeToEnd = STREAM_SEEK_END,
 }

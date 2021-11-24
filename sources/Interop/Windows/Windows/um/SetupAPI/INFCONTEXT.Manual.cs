@@ -5,91 +5,90 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public unsafe partial struct INFCONTEXT
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct INFCONTEXT
+    public static uint SizeOf
     {
-        public static uint SizeOf
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return (uint)(sizeof(INFCONTEXT32));
-                }
-                else
-                {
-                    return (uint)(sizeof(INFCONTEXT64));
-                }
+                return (uint)(sizeof(INFCONTEXT32));
+            }
+            else
+            {
+                return (uint)(sizeof(INFCONTEXT64));
             }
         }
+    }
 
-        [FieldOffset(0)]
-        public INFCONTEXT32 _value32;
+    [FieldOffset(0)]
+    public INFCONTEXT32 _value32;
 
-        [FieldOffset(0)]
-        public INFCONTEXT64 _value64;
+    [FieldOffset(0)]
+    public INFCONTEXT64 _value64;
 
-        [NativeTypeName("PVOID")]
-        public ref void* Inf
+    [NativeTypeName("PVOID")]
+    public ref void* Inf
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).Inf;
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).Inf;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).Inf;
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).Inf;
             }
         }
+    }
 
-        [NativeTypeName("PVOID")]
-        public ref void* CurrentInf
+    [NativeTypeName("PVOID")]
+    public ref void* CurrentInf
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).CurrentInf;
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).CurrentInf;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).CurrentInf;
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).CurrentInf;
             }
         }
+    }
 
-        public ref uint Section
+    public ref uint Section
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.Section, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.Section, 1));
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.Section, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.Section, 1));
             }
         }
+    }
 
-        public ref uint Line
+    public ref uint Line
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.Line, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.Line, 1));
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.Line, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.Line, 1));
             }
         }
     }

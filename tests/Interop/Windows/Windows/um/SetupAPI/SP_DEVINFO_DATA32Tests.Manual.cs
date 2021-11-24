@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SP_DEVINFO_DATA32" /> struct.</summary>
+public static unsafe partial class SP_DEVINFO_DATA32Tests
 {
-    /// <summary>Provides validation of the <see cref="SP_DEVINFO_DATA32" /> struct.</summary>
-    public static unsafe partial class SP_DEVINFO_DATA32Tests
+    /// <summary>Validates that the <see cref="SP_DEVINFO_DATA32" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SP_DEVINFO_DATA32" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SP_DEVINFO_DATA32>(), Is.EqualTo(sizeof(SP_DEVINFO_DATA32)));
-        }
+        Assert.That(Marshal.SizeOf<SP_DEVINFO_DATA32>(), Is.EqualTo(sizeof(SP_DEVINFO_DATA32)));
+    }
 
-        /// <summary>Validates that the <see cref="SP_DEVINFO_DATA32" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SP_DEVINFO_DATA32).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SP_DEVINFO_DATA32" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SP_DEVINFO_DATA32).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SP_DEVINFO_DATA32" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SP_DEVINFO_DATA32" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SP_DEVINFO_DATA32), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(SP_DEVINFO_DATA32), Is.EqualTo(28));
-            }
+            Assert.That(sizeof(SP_DEVINFO_DATA32), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(SP_DEVINFO_DATA32), Is.EqualTo(28));
         }
     }
 }

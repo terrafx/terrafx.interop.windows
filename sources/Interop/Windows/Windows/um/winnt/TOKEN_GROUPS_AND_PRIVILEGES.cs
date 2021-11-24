@@ -3,37 +3,36 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct TOKEN_GROUPS_AND_PRIVILEGES
 {
-    public unsafe partial struct TOKEN_GROUPS_AND_PRIVILEGES
-    {
-        [NativeTypeName("DWORD")]
-        public uint SidCount;
+    [NativeTypeName("DWORD")]
+    public uint SidCount;
 
-        [NativeTypeName("DWORD")]
-        public uint SidLength;
+    [NativeTypeName("DWORD")]
+    public uint SidLength;
 
-        [NativeTypeName("PSID_AND_ATTRIBUTES")]
-        public SID_AND_ATTRIBUTES* Sids;
+    [NativeTypeName("PSID_AND_ATTRIBUTES")]
+    public SID_AND_ATTRIBUTES* Sids;
 
-        [NativeTypeName("DWORD")]
-        public uint RestrictedSidCount;
+    [NativeTypeName("DWORD")]
+    public uint RestrictedSidCount;
 
-        [NativeTypeName("DWORD")]
-        public uint RestrictedSidLength;
+    [NativeTypeName("DWORD")]
+    public uint RestrictedSidLength;
 
-        [NativeTypeName("PSID_AND_ATTRIBUTES")]
-        public SID_AND_ATTRIBUTES* RestrictedSids;
+    [NativeTypeName("PSID_AND_ATTRIBUTES")]
+    public SID_AND_ATTRIBUTES* RestrictedSids;
 
-        [NativeTypeName("DWORD")]
-        public uint PrivilegeCount;
+    [NativeTypeName("DWORD")]
+    public uint PrivilegeCount;
 
-        [NativeTypeName("DWORD")]
-        public uint PrivilegeLength;
+    [NativeTypeName("DWORD")]
+    public uint PrivilegeLength;
 
-        [NativeTypeName("PLUID_AND_ATTRIBUTES")]
-        public LUID_AND_ATTRIBUTES* Privileges;
+    [NativeTypeName("PLUID_AND_ATTRIBUTES")]
+    public LUID_AND_ATTRIBUTES* Privileges;
 
-        public LUID AuthenticationId;
-    }
+    public LUID AuthenticationId;
 }

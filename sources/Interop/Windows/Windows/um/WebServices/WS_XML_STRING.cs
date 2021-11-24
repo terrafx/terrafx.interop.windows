@@ -3,18 +3,17 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_XML_STRING
 {
-    public unsafe partial struct WS_XML_STRING
-    {
-        [NativeTypeName("ULONG")]
-        public uint length;
+    [NativeTypeName("ULONG")]
+    public uint length;
 
-        public byte* bytes;
+    public byte* bytes;
 
-        public WS_XML_DICTIONARY* dictionary;
+    public WS_XML_DICTIONARY* dictionary;
 
-        [NativeTypeName("ULONG")]
-        public uint id;
-    }
+    [NativeTypeName("ULONG")]
+    public uint id;
 }

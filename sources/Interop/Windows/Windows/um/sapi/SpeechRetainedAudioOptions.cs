@@ -5,11 +5,10 @@
 
 using static TerraFX.Interop.Windows.SPAUDIOOPTIONS;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechRetainedAudioOptions
 {
-    public enum SpeechRetainedAudioOptions
-    {
-        SRAONone = SPAO_NONE,
-        SRAORetainAudio = SPAO_RETAIN_AUDIO,
-    }
+    SRAONone = SPAO_NONE,
+    SRAORetainAudio = SPAO_RETAIN_AUDIO,
 }

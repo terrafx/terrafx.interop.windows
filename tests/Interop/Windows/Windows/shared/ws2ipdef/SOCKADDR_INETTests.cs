@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SOCKADDR_INET" /> struct.</summary>
+public static unsafe partial class SOCKADDR_INETTests
 {
-    /// <summary>Provides validation of the <see cref="SOCKADDR_INET" /> struct.</summary>
-    public static unsafe partial class SOCKADDR_INETTests
+    /// <summary>Validates that the <see cref="SOCKADDR_INET" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SOCKADDR_INET" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SOCKADDR_INET>(), Is.EqualTo(sizeof(SOCKADDR_INET)));
-        }
+        Assert.That(Marshal.SizeOf<SOCKADDR_INET>(), Is.EqualTo(sizeof(SOCKADDR_INET)));
+    }
 
-        /// <summary>Validates that the <see cref="SOCKADDR_INET" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutExplicitTest()
-        {
-            Assert.That(typeof(SOCKADDR_INET).IsExplicitLayout, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SOCKADDR_INET" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutExplicitTest()
+    {
+        Assert.That(typeof(SOCKADDR_INET).IsExplicitLayout, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SOCKADDR_INET" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SOCKADDR_INET), Is.EqualTo(28));
-        }
+    /// <summary>Validates that the <see cref="SOCKADDR_INET" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SOCKADDR_INET), Is.EqualTo(28));
     }
 }

@@ -8,90 +8,89 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Guid("3FEBD6DD-4973-4787-8194-E45F9E28923E")]
+[NativeTypeName("struct ID3D12DebugDevice : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ID3D12DebugDevice : ID3D12DebugDevice.Interface
 {
-    [Guid("3FEBD6DD-4973-4787-8194-E45F9E28923E")]
-    [NativeTypeName("struct ID3D12DebugDevice : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D12DebugDevice : ID3D12DebugDevice.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ID3D12DebugDevice*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12DebugDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ID3D12DebugDevice*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12DebugDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ID3D12DebugDevice*, uint>)(lpVtbl[1]))((ID3D12DebugDevice*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ID3D12DebugDevice*, uint>)(lpVtbl[1]))((ID3D12DebugDevice*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ID3D12DebugDevice*, uint>)(lpVtbl[2]))((ID3D12DebugDevice*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ID3D12DebugDevice*, uint>)(lpVtbl[2]))((ID3D12DebugDevice*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT SetFeatureMask(D3D12_DEBUG_FEATURE Mask)
+    {
+        return ((delegate* unmanaged<ID3D12DebugDevice*, D3D12_DEBUG_FEATURE, int>)(lpVtbl[3]))((ID3D12DebugDevice*)Unsafe.AsPointer(ref this), Mask);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public D3D12_DEBUG_FEATURE GetFeatureMask()
+    {
+        return ((delegate* unmanaged<ID3D12DebugDevice*, D3D12_DEBUG_FEATURE>)(lpVtbl[4]))((ID3D12DebugDevice*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT ReportLiveDeviceObjects(D3D12_RLDO_FLAGS Flags)
+    {
+        return ((delegate* unmanaged<ID3D12DebugDevice*, D3D12_RLDO_FLAGS, int>)(lpVtbl[5]))((ID3D12DebugDevice*)Unsafe.AsPointer(ref this), Flags);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT SetFeatureMask(D3D12_DEBUG_FEATURE Mask)
-        {
-            return ((delegate* unmanaged<ID3D12DebugDevice*, D3D12_DEBUG_FEATURE, int>)(lpVtbl[3]))((ID3D12DebugDevice*)Unsafe.AsPointer(ref this), Mask);
-        }
+        HRESULT SetFeatureMask(D3D12_DEBUG_FEATURE Mask);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public D3D12_DEBUG_FEATURE GetFeatureMask()
-        {
-            return ((delegate* unmanaged<ID3D12DebugDevice*, D3D12_DEBUG_FEATURE>)(lpVtbl[4]))((ID3D12DebugDevice*)Unsafe.AsPointer(ref this));
-        }
+        D3D12_DEBUG_FEATURE GetFeatureMask();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT ReportLiveDeviceObjects(D3D12_RLDO_FLAGS Flags)
-        {
-            return ((delegate* unmanaged<ID3D12DebugDevice*, D3D12_RLDO_FLAGS, int>)(lpVtbl[5]))((ID3D12DebugDevice*)Unsafe.AsPointer(ref this), Flags);
-        }
+        HRESULT ReportLiveDeviceObjects(D3D12_RLDO_FLAGS Flags);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT SetFeatureMask(D3D12_DEBUG_FEATURE Mask);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12DebugDevice*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            D3D12_DEBUG_FEATURE GetFeatureMask();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12DebugDevice*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT ReportLiveDeviceObjects(D3D12_RLDO_FLAGS Flags);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12DebugDevice*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12DebugDevice*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (D3D12_DEBUG_FEATURE) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12DebugDevice*, D3D12_DEBUG_FEATURE, int> SetFeatureMask;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12DebugDevice*, uint> AddRef;
+        [NativeTypeName("D3D12_DEBUG_FEATURE () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12DebugDevice*, D3D12_DEBUG_FEATURE> GetFeatureMask;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12DebugDevice*, uint> Release;
-
-            [NativeTypeName("HRESULT (D3D12_DEBUG_FEATURE) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12DebugDevice*, D3D12_DEBUG_FEATURE, int> SetFeatureMask;
-
-            [NativeTypeName("D3D12_DEBUG_FEATURE () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12DebugDevice*, D3D12_DEBUG_FEATURE> GetFeatureMask;
-
-            [NativeTypeName("HRESULT (D3D12_RLDO_FLAGS) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12DebugDevice*, D3D12_RLDO_FLAGS, int> ReportLiveDeviceObjects;
-        }
+        [NativeTypeName("HRESULT (D3D12_RLDO_FLAGS) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12DebugDevice*, D3D12_RLDO_FLAGS, int> ReportLiveDeviceObjects;
     }
 }

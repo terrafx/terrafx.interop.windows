@@ -3,11 +3,10 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WS_SECURE_CONVERSATION_VERSION
 {
-    public enum WS_SECURE_CONVERSATION_VERSION
-    {
-        WS_SECURE_CONVERSATION_VERSION_FEBRUARY_2005 = 0x1,
-        WS_SECURE_CONVERSATION_VERSION_1_3 = 0x2,
-    }
+    WS_SECURE_CONVERSATION_VERSION_FEBRUARY_2005 = 0x1,
+    WS_SECURE_CONVERSATION_VERSION_1_3 = 0x2,
 }

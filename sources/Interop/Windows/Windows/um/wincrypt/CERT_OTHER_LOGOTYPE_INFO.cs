@@ -3,13 +3,12 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct CERT_OTHER_LOGOTYPE_INFO
-    {
-        [NativeTypeName("LPSTR")]
-        public sbyte* pszObjId;
+namespace TerraFX.Interop.Windows;
 
-        public CERT_LOGOTYPE_INFO LogotypeInfo;
-    }
+public unsafe partial struct CERT_OTHER_LOGOTYPE_INFO
+{
+    [NativeTypeName("LPSTR")]
+    public sbyte* pszObjId;
+
+    public CERT_LOGOTYPE_INFO LogotypeInfo;
 }

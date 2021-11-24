@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="D2D1_SIMPLE_COLOR_PROFILE" /> struct.</summary>
+public static unsafe partial class D2D1_SIMPLE_COLOR_PROFILETests
 {
-    /// <summary>Provides validation of the <see cref="D2D1_SIMPLE_COLOR_PROFILE" /> struct.</summary>
-    public static unsafe partial class D2D1_SIMPLE_COLOR_PROFILETests
+    /// <summary>Validates that the <see cref="D2D1_SIMPLE_COLOR_PROFILE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="D2D1_SIMPLE_COLOR_PROFILE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<D2D1_SIMPLE_COLOR_PROFILE>(), Is.EqualTo(sizeof(D2D1_SIMPLE_COLOR_PROFILE)));
-        }
+        Assert.That(Marshal.SizeOf<D2D1_SIMPLE_COLOR_PROFILE>(), Is.EqualTo(sizeof(D2D1_SIMPLE_COLOR_PROFILE)));
+    }
 
-        /// <summary>Validates that the <see cref="D2D1_SIMPLE_COLOR_PROFILE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(D2D1_SIMPLE_COLOR_PROFILE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="D2D1_SIMPLE_COLOR_PROFILE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(D2D1_SIMPLE_COLOR_PROFILE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="D2D1_SIMPLE_COLOR_PROFILE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(D2D1_SIMPLE_COLOR_PROFILE), Is.EqualTo(36));
-        }
+    /// <summary>Validates that the <see cref="D2D1_SIMPLE_COLOR_PROFILE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(D2D1_SIMPLE_COLOR_PROFILE), Is.EqualTo(36));
     }
 }

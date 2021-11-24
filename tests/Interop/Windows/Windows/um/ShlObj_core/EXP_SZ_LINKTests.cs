@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="EXP_SZ_LINK" /> struct.</summary>
+public static unsafe partial class EXP_SZ_LINKTests
 {
-    /// <summary>Provides validation of the <see cref="EXP_SZ_LINK" /> struct.</summary>
-    public static unsafe partial class EXP_SZ_LINKTests
+    /// <summary>Validates that the <see cref="EXP_SZ_LINK" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="EXP_SZ_LINK" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<EXP_SZ_LINK>(), Is.EqualTo(sizeof(EXP_SZ_LINK)));
-        }
+        Assert.That(Marshal.SizeOf<EXP_SZ_LINK>(), Is.EqualTo(sizeof(EXP_SZ_LINK)));
+    }
 
-        /// <summary>Validates that the <see cref="EXP_SZ_LINK" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(EXP_SZ_LINK).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="EXP_SZ_LINK" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(EXP_SZ_LINK).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="EXP_SZ_LINK" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(EXP_SZ_LINK), Is.EqualTo(788));
-        }
+    /// <summary>Validates that the <see cref="EXP_SZ_LINK" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(EXP_SZ_LINK), Is.EqualTo(788));
     }
 }

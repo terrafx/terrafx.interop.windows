@@ -5,12 +5,11 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct MIXERCONTROLDETAILS_BOOLEAN
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct MIXERCONTROLDETAILS_BOOLEAN
-    {
-        [NativeTypeName("LONG")]
-        public int fValue;
-    }
+    [NativeTypeName("LONG")]
+    public int fValue;
 }

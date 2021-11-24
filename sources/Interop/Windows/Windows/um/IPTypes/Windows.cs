@@ -3,17 +3,16 @@
 // Ported from um/IPTypes.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class Windows
 {
-    public static partial class Windows
-    {
-        [NativeTypeName("#define BROADCAST_NODETYPE 1")]
-        public const int BROADCAST_NODETYPE = 1;
+    [NativeTypeName("#define BROADCAST_NODETYPE 1")]
+    public const int BROADCAST_NODETYPE = 1;
 
-        [NativeTypeName("#define MIXED_NODETYPE 4")]
-        public const int MIXED_NODETYPE = 4;
+    [NativeTypeName("#define MIXED_NODETYPE 4")]
+    public const int MIXED_NODETYPE = 4;
 
-        [NativeTypeName("#define HYBRID_NODETYPE 8")]
-        public const int HYBRID_NODETYPE = 8;
-    }
+    [NativeTypeName("#define HYBRID_NODETYPE 8")]
+    public const int HYBRID_NODETYPE = 8;
 }

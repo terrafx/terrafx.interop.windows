@@ -3,41 +3,40 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct DISPATCHER_CONTEXT_OTHER
 {
-    public unsafe partial struct DISPATCHER_CONTEXT_OTHER
-    {
-        [NativeTypeName("DWORD64")]
-        public ulong ControlPc;
+    [NativeTypeName("DWORD64")]
+    public ulong ControlPc;
 
-        [NativeTypeName("DWORD64")]
-        public ulong ImageBase;
+    [NativeTypeName("DWORD64")]
+    public ulong ImageBase;
 
-        [NativeTypeName("PRUNTIME_FUNCTION")]
-        public void* FunctionEntry;
+    [NativeTypeName("PRUNTIME_FUNCTION")]
+    public void* FunctionEntry;
 
-        [NativeTypeName("DWORD64")]
-        public ulong EstablisherFrame;
+    [NativeTypeName("DWORD64")]
+    public ulong EstablisherFrame;
 
-        [NativeTypeName("DWORD64")]
-        public ulong TargetIp;
+    [NativeTypeName("DWORD64")]
+    public ulong TargetIp;
 
-        [NativeTypeName("PCONTEXT")]
-        public void* ContextRecord;
+    [NativeTypeName("PCONTEXT")]
+    public void* ContextRecord;
 
-        [NativeTypeName("PEXCEPTION_ROUTINE")]
-        public delegate* unmanaged<EXCEPTION_RECORD*, void*, void*, void*, int> LanguageHandler;
+    [NativeTypeName("PEXCEPTION_ROUTINE")]
+    public delegate* unmanaged<EXCEPTION_RECORD*, void*, void*, void*, int> LanguageHandler;
 
-        [NativeTypeName("PVOID")]
-        public void* HandlerData;
+    [NativeTypeName("PVOID")]
+    public void* HandlerData;
 
-        [NativeTypeName("struct _UNWIND_HISTORY_TABLE *")]
-        public UNWIND_HISTORY_TABLE* HistoryTable;
+    [NativeTypeName("struct _UNWIND_HISTORY_TABLE *")]
+    public UNWIND_HISTORY_TABLE* HistoryTable;
 
-        [NativeTypeName("DWORD")]
-        public uint ScopeIndex;
+    [NativeTypeName("DWORD")]
+    public uint ScopeIndex;
 
-        [NativeTypeName("DWORD")]
-        public uint Fill0;
-    }
+    [NativeTypeName("DWORD")]
+    public uint Fill0;
 }

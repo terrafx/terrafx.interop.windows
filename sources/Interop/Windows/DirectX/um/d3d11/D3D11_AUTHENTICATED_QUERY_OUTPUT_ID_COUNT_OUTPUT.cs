@@ -6,17 +6,16 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_OUTPUT
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_AUTHENTICATED_QUERY_OUTPUT_ID_COUNT_OUTPUT
-    {
-        public D3D11_AUTHENTICATED_QUERY_OUTPUT Output;
+    public D3D11_AUTHENTICATED_QUERY_OUTPUT Output;
 
-        public HANDLE DeviceHandle;
+    public HANDLE DeviceHandle;
 
-        public HANDLE CryptoSessionHandle;
+    public HANDLE CryptoSessionHandle;
 
-        public uint OutputIDCount;
-    }
+    public uint OutputIDCount;
 }

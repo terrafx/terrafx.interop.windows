@@ -7,64 +7,63 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("BDDACB60-7657-47AE-8445-D23E1ACF82AE")]
+[NativeTypeName("struct IExplorerCommandState : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IExplorerCommandState : IExplorerCommandState.Interface
 {
-    [Guid("BDDACB60-7657-47AE-8445-D23E1ACF82AE")]
-    [NativeTypeName("struct IExplorerCommandState : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IExplorerCommandState : IExplorerCommandState.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IExplorerCommandState*, Guid*, void**, int>)(lpVtbl[0]))((IExplorerCommandState*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IExplorerCommandState*, Guid*, void**, int>)(lpVtbl[0]))((IExplorerCommandState*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IExplorerCommandState*, uint>)(lpVtbl[1]))((IExplorerCommandState*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IExplorerCommandState*, uint>)(lpVtbl[1]))((IExplorerCommandState*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IExplorerCommandState*, uint>)(lpVtbl[2]))((IExplorerCommandState*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IExplorerCommandState*, uint>)(lpVtbl[2]))((IExplorerCommandState*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetState(IShellItemArray* psiItemArray, BOOL fOkToBeSlow, [NativeTypeName("EXPCMDSTATE *")] uint* pCmdState)
+    {
+        return ((delegate* unmanaged<IExplorerCommandState*, IShellItemArray*, BOOL, uint*, int>)(lpVtbl[3]))((IExplorerCommandState*)Unsafe.AsPointer(ref this), psiItemArray, fOkToBeSlow, pCmdState);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetState(IShellItemArray* psiItemArray, BOOL fOkToBeSlow, [NativeTypeName("EXPCMDSTATE *")] uint* pCmdState)
-        {
-            return ((delegate* unmanaged<IExplorerCommandState*, IShellItemArray*, BOOL, uint*, int>)(lpVtbl[3]))((IExplorerCommandState*)Unsafe.AsPointer(ref this), psiItemArray, fOkToBeSlow, pCmdState);
-        }
+        HRESULT GetState(IShellItemArray* psiItemArray, BOOL fOkToBeSlow, [NativeTypeName("EXPCMDSTATE *")] uint* pCmdState);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetState(IShellItemArray* psiItemArray, BOOL fOkToBeSlow, [NativeTypeName("EXPCMDSTATE *")] uint* pCmdState);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IExplorerCommandState*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IExplorerCommandState*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IExplorerCommandState*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IExplorerCommandState*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IExplorerCommandState*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IExplorerCommandState*, uint> Release;
-
-            [NativeTypeName("HRESULT (IShellItemArray *, BOOL, EXPCMDSTATE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IExplorerCommandState*, IShellItemArray*, BOOL, uint*, int> GetState;
-        }
+        [NativeTypeName("HRESULT (IShellItemArray *, BOOL, EXPCMDSTATE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IExplorerCommandState*, IShellItemArray*, BOOL, uint*, int> GetState;
     }
 }

@@ -3,14 +3,13 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum COMMANDLINKGLYPHSTATES
 {
-    public enum COMMANDLINKGLYPHSTATES
-    {
-        CMDLGS_NORMAL = 1,
-        CMDLGS_HOT = 2,
-        CMDLGS_PRESSED = 3,
-        CMDLGS_DISABLED = 4,
-        CMDLGS_DEFAULTED = 5,
-    }
+    CMDLGS_NORMAL = 1,
+    CMDLGS_HOT = 2,
+    CMDLGS_PRESSED = 3,
+    CMDLGS_DISABLED = 4,
+    CMDLGS_DEFAULTED = 5,
 }

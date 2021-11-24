@@ -7,19 +7,18 @@ using System;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_AUTHENTICATED_QUERY_OUTPUT
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_AUTHENTICATED_QUERY_OUTPUT
-    {
-        public D3D11_OMAC omac;
+    public D3D11_OMAC omac;
 
-        public Guid QueryType;
+    public Guid QueryType;
 
-        public HANDLE hChannel;
+    public HANDLE hChannel;
 
-        public uint SequenceNumber;
+    public uint SequenceNumber;
 
-        public HRESULT ReturnCode;
-    }
+    public HRESULT ReturnCode;
 }

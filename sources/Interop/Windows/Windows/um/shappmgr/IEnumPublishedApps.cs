@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("0B124F8C-91F0-11D1-B8B5-006008059382")]
+[NativeTypeName("struct IEnumPublishedApps : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IEnumPublishedApps : IEnumPublishedApps.Interface
 {
-    [Guid("0B124F8C-91F0-11D1-B8B5-006008059382")]
-    [NativeTypeName("struct IEnumPublishedApps : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumPublishedApps : IEnumPublishedApps.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IEnumPublishedApps*, Guid*, void**, int>)(lpVtbl[0]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IEnumPublishedApps*, Guid*, void**, int>)(lpVtbl[0]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IEnumPublishedApps*, uint>)(lpVtbl[1]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IEnumPublishedApps*, uint>)(lpVtbl[1]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IEnumPublishedApps*, uint>)(lpVtbl[2]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IEnumPublishedApps*, uint>)(lpVtbl[2]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Next(IPublishedApp** pia)
+    {
+        return ((delegate* unmanaged<IEnumPublishedApps*, IPublishedApp**, int>)(lpVtbl[3]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this), pia);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Reset()
+    {
+        return ((delegate* unmanaged<IEnumPublishedApps*, int>)(lpVtbl[4]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Next(IPublishedApp** pia)
-        {
-            return ((delegate* unmanaged<IEnumPublishedApps*, IPublishedApp**, int>)(lpVtbl[3]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this), pia);
-        }
+        HRESULT Next(IPublishedApp** pia);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Reset()
-        {
-            return ((delegate* unmanaged<IEnumPublishedApps*, int>)(lpVtbl[4]))((IEnumPublishedApps*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Reset();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Next(IPublishedApp** pia);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumPublishedApps*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT Reset();
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumPublishedApps*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumPublishedApps*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumPublishedApps*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumPublishedApps*, uint> AddRef;
+        [NativeTypeName("HRESULT (IPublishedApp **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumPublishedApps*, IPublishedApp**, int> Next;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumPublishedApps*, uint> Release;
-
-            [NativeTypeName("HRESULT (IPublishedApp **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumPublishedApps*, IPublishedApp**, int> Next;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumPublishedApps*, int> Reset;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumPublishedApps*, int> Reset;
     }
 }

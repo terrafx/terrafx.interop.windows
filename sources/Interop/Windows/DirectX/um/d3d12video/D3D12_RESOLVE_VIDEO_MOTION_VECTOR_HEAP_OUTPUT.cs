@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
-{
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public unsafe partial struct D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT
-    {
-        public ID3D12Resource* pMotionVectorTexture2D;
+namespace TerraFX.Interop.DirectX;
 
-        public D3D12_RESOURCE_COORDINATE MotionVectorCoordinate;
-    }
+[SupportedOSPlatform("windows10.0.19041.0")]
+public unsafe partial struct D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT
+{
+    public ID3D12Resource* pMotionVectorTexture2D;
+
+    public D3D12_RESOURCE_COORDINATE MotionVectorCoordinate;
 }

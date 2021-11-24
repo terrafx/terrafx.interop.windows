@@ -3,19 +3,18 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct Quality
 {
-    public partial struct Quality
-    {
-        public QualityMessageType Type;
+    public QualityMessageType Type;
 
-        [NativeTypeName("long")]
-        public int Proportion;
+    [NativeTypeName("long")]
+    public int Proportion;
 
-        [NativeTypeName("REFERENCE_TIME")]
-        public long Late;
+    [NativeTypeName("REFERENCE_TIME")]
+    public long Late;
 
-        [NativeTypeName("REFERENCE_TIME")]
-        public long TimeStamp;
-    }
+    [NativeTypeName("REFERENCE_TIME")]
+    public long TimeStamp;
 }

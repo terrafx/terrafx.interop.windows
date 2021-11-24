@@ -6,46 +6,45 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CERT_BIOMETRIC_DATA
 {
-    public unsafe partial struct CERT_BIOMETRIC_DATA
+    [NativeTypeName("DWORD")]
+    public uint dwTypeOfBiometricDataChoice;
+
+    [NativeTypeName("_CERT_BIOMETRIC_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:5553:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public CERT_HASHED_URL HashedUrl;
+
+    public ref uint dwPredefined
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwPredefined, 1));
+        }
+    }
+
+    public ref sbyte* pszObjId
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pszObjId;
+        }
+    }
+
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
         [NativeTypeName("DWORD")]
-        public uint dwTypeOfBiometricDataChoice;
+        public uint dwPredefined;
 
-        [NativeTypeName("_CERT_BIOMETRIC_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:5553:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public CERT_HASHED_URL HashedUrl;
-
-        public ref uint dwPredefined
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.dwPredefined, 1));
-            }
-        }
-
-        public ref sbyte* pszObjId
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pszObjId;
-            }
-        }
-
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint dwPredefined;
-
-            [FieldOffset(0)]
-            [NativeTypeName("LPSTR")]
-            public sbyte* pszObjId;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("LPSTR")]
+        public sbyte* pszObjId;
     }
 }

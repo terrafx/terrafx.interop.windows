@@ -3,29 +3,28 @@
 // Ported from um/shellapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SHFILEOPSTRUCT64W
 {
-    public unsafe partial struct SHFILEOPSTRUCT64W
-    {
-        public HWND hwnd;
+    public HWND hwnd;
 
-        public uint wFunc;
+    public uint wFunc;
 
-        [NativeTypeName("PCZZWSTR")]
-        public ushort* pFrom;
+    [NativeTypeName("PCZZWSTR")]
+    public ushort* pFrom;
 
-        [NativeTypeName("PCZZWSTR")]
-        public ushort* pTo;
+    [NativeTypeName("PCZZWSTR")]
+    public ushort* pTo;
 
-        [NativeTypeName("FILEOP_FLAGS")]
-        public ushort fFlags;
+    [NativeTypeName("FILEOP_FLAGS")]
+    public ushort fFlags;
 
-        public BOOL fAnyOperationsAborted;
+    public BOOL fAnyOperationsAborted;
 
-        [NativeTypeName("LPVOID")]
-        public void* hNameMappings;
+    [NativeTypeName("LPVOID")]
+    public void* hNameMappings;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* lpszProgressTitle;
-    }
+    [NativeTypeName("PCWSTR")]
+    public ushort* lpszProgressTitle;
 }

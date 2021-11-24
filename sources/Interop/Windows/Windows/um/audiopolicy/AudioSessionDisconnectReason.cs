@@ -3,15 +3,14 @@
 // Ported from um/audiopolicy.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum AudioSessionDisconnectReason
 {
-    public enum AudioSessionDisconnectReason
-    {
-        DisconnectReasonDeviceRemoval = 0,
-        DisconnectReasonServerShutdown = (DisconnectReasonDeviceRemoval + 1),
-        DisconnectReasonFormatChanged = (DisconnectReasonServerShutdown + 1),
-        DisconnectReasonSessionLogoff = (DisconnectReasonFormatChanged + 1),
-        DisconnectReasonSessionDisconnected = (DisconnectReasonSessionLogoff + 1),
-        DisconnectReasonExclusiveModeOverride = (DisconnectReasonSessionDisconnected + 1),
-    }
+    DisconnectReasonDeviceRemoval = 0,
+    DisconnectReasonServerShutdown = (DisconnectReasonDeviceRemoval + 1),
+    DisconnectReasonFormatChanged = (DisconnectReasonServerShutdown + 1),
+    DisconnectReasonSessionLogoff = (DisconnectReasonFormatChanged + 1),
+    DisconnectReasonSessionDisconnected = (DisconnectReasonSessionLogoff + 1),
+    DisconnectReasonExclusiveModeOverride = (DisconnectReasonSessionDisconnected + 1),
 }

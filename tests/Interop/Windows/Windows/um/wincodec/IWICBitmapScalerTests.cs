@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IWICBitmapScaler" /> struct.</summary>
+public static unsafe partial class IWICBitmapScalerTests
 {
-    /// <summary>Provides validation of the <see cref="IWICBitmapScaler" /> struct.</summary>
-    public static unsafe partial class IWICBitmapScalerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICBitmapScaler" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICBitmapScaler" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IWICBitmapScaler).GUID, Is.EqualTo(IID_IWICBitmapScaler));
-        }
+        Assert.That(typeof(IWICBitmapScaler).GUID, Is.EqualTo(IID_IWICBitmapScaler));
+    }
 
-        /// <summary>Validates that the <see cref="IWICBitmapScaler" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IWICBitmapScaler>(), Is.EqualTo(sizeof(IWICBitmapScaler)));
-        }
+    /// <summary>Validates that the <see cref="IWICBitmapScaler" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IWICBitmapScaler>(), Is.EqualTo(sizeof(IWICBitmapScaler)));
+    }
 
-        /// <summary>Validates that the <see cref="IWICBitmapScaler" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IWICBitmapScaler).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IWICBitmapScaler" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IWICBitmapScaler).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IWICBitmapScaler" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IWICBitmapScaler" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IWICBitmapScaler), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IWICBitmapScaler), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IWICBitmapScaler), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IWICBitmapScaler), Is.EqualTo(4));
         }
     }
 }

@@ -7,351 +7,350 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("FECEAAA5-8405-11CF-8BA1-00AA00476DA6")]
+[NativeTypeName("struct IOmNavigator : IDispatch")]
+[NativeInheritance("IDispatch")]
+public unsafe partial struct IOmNavigator : IOmNavigator.Interface
 {
-    [Guid("FECEAAA5-8405-11CF-8BA1-00AA00476DA6")]
-    [NativeTypeName("struct IOmNavigator : IDispatch")]
-    [NativeInheritance("IDispatch")]
-    public unsafe partial struct IOmNavigator : IOmNavigator.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IOmNavigator*, Guid*, void**, int>)(lpVtbl[0]))((IOmNavigator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, Guid*, void**, int>)(lpVtbl[0]))((IOmNavigator*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IOmNavigator*, uint>)(lpVtbl[1]))((IOmNavigator*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IOmNavigator*, uint>)(lpVtbl[1]))((IOmNavigator*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IOmNavigator*, uint>)(lpVtbl[2]))((IOmNavigator*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IOmNavigator*, uint>)(lpVtbl[2]))((IOmNavigator*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetTypeInfoCount(uint* pctinfo)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, uint*, int>)(lpVtbl[3]))((IOmNavigator*)Unsafe.AsPointer(ref this), pctinfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetTypeInfoCount(uint* pctinfo)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, uint*, int>)(lpVtbl[3]))((IOmNavigator*)Unsafe.AsPointer(ref this), pctinfo);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IOmNavigator*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IOmNavigator*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IOmNavigator*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IOmNavigator*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IOmNavigator*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IOmNavigator*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT get_appCodeName([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[7]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT get_appName([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[8]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT get_appVersion([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[9]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT get_userAgent([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[10]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT javaEnabled([NativeTypeName("VARIANT_BOOL *")] short* enabled)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, short*, int>)(lpVtbl[11]))((IOmNavigator*)Unsafe.AsPointer(ref this), enabled);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT taintEnabled([NativeTypeName("VARIANT_BOOL *")] short* enabled)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, short*, int>)(lpVtbl[12]))((IOmNavigator*)Unsafe.AsPointer(ref this), enabled);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT get_mimeTypes(IHTMLMimeTypesCollection** p)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, IHTMLMimeTypesCollection**, int>)(lpVtbl[13]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT get_plugins(IHTMLPluginsCollection** p)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, IHTMLPluginsCollection**, int>)(lpVtbl[14]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT get_cookieEnabled([NativeTypeName("VARIANT_BOOL *")] short* p)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, short*, int>)(lpVtbl[15]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT get_opsProfile(IHTMLOpsProfile** p)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, IHTMLOpsProfile**, int>)(lpVtbl[16]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT toString([NativeTypeName("BSTR *")] ushort** @string)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[17]))((IOmNavigator*)Unsafe.AsPointer(ref this), @string);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT get_cpuClass([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[18]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT get_systemLanguage([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[19]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT get_browserLanguage([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[20]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(21)]
+    public HRESULT get_userLanguage([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[21]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(22)]
+    public HRESULT get_platform([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[22]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(23)]
+    public HRESULT get_appMinorVersion([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[23]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(24)]
+    public HRESULT get_connectionSpeed([NativeTypeName("long *")] int* p)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, int*, int>)(lpVtbl[24]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(25)]
+    public HRESULT get_onLine([NativeTypeName("VARIANT_BOOL *")] short* p)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, short*, int>)(lpVtbl[25]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(26)]
+    public HRESULT get_userProfile(IHTMLOpsProfile** p)
+    {
+        return ((delegate* unmanaged<IOmNavigator*, IHTMLOpsProfile**, int>)(lpVtbl[26]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
+    }
+
+    public interface Interface : IDispatch.Interface
+    {
         [VtblIndex(7)]
-        public HRESULT get_appCodeName([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[7]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_appCodeName([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT get_appName([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[8]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_appName([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT get_appVersion([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[9]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_appVersion([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT get_userAgent([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[10]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_userAgent([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT javaEnabled([NativeTypeName("VARIANT_BOOL *")] short* enabled)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, short*, int>)(lpVtbl[11]))((IOmNavigator*)Unsafe.AsPointer(ref this), enabled);
-        }
+        HRESULT javaEnabled([NativeTypeName("VARIANT_BOOL *")] short* enabled);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT taintEnabled([NativeTypeName("VARIANT_BOOL *")] short* enabled)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, short*, int>)(lpVtbl[12]))((IOmNavigator*)Unsafe.AsPointer(ref this), enabled);
-        }
+        HRESULT taintEnabled([NativeTypeName("VARIANT_BOOL *")] short* enabled);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT get_mimeTypes(IHTMLMimeTypesCollection** p)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, IHTMLMimeTypesCollection**, int>)(lpVtbl[13]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_mimeTypes(IHTMLMimeTypesCollection** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT get_plugins(IHTMLPluginsCollection** p)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, IHTMLPluginsCollection**, int>)(lpVtbl[14]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_plugins(IHTMLPluginsCollection** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT get_cookieEnabled([NativeTypeName("VARIANT_BOOL *")] short* p)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, short*, int>)(lpVtbl[15]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_cookieEnabled([NativeTypeName("VARIANT_BOOL *")] short* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT get_opsProfile(IHTMLOpsProfile** p)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, IHTMLOpsProfile**, int>)(lpVtbl[16]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_opsProfile(IHTMLOpsProfile** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT toString([NativeTypeName("BSTR *")] ushort** @string)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[17]))((IOmNavigator*)Unsafe.AsPointer(ref this), @string);
-        }
+        HRESULT toString([NativeTypeName("BSTR *")] ushort** @string);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT get_cpuClass([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[18]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_cpuClass([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT get_systemLanguage([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[19]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_systemLanguage([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT get_browserLanguage([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[20]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_browserLanguage([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT get_userLanguage([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[21]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_userLanguage([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        public HRESULT get_platform([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[22]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_platform([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public HRESULT get_appMinorVersion([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[23]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_appMinorVersion([NativeTypeName("BSTR *")] ushort** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT get_connectionSpeed([NativeTypeName("long *")] int* p)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, int*, int>)(lpVtbl[24]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_connectionSpeed([NativeTypeName("long *")] int* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public HRESULT get_onLine([NativeTypeName("VARIANT_BOOL *")] short* p)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, short*, int>)(lpVtbl[25]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onLine([NativeTypeName("VARIANT_BOOL *")] short* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        public HRESULT get_userProfile(IHTMLOpsProfile** p)
-        {
-            return ((delegate* unmanaged<IOmNavigator*, IHTMLOpsProfile**, int>)(lpVtbl[26]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_userProfile(IHTMLOpsProfile** p);
+    }
 
-        public interface Interface : IDispatch.Interface
-        {
-            [VtblIndex(7)]
-            HRESULT get_appCodeName([NativeTypeName("BSTR *")] ushort** p);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(8)]
-            HRESULT get_appName([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, uint> AddRef;
 
-            [VtblIndex(9)]
-            HRESULT get_appVersion([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, uint> Release;
 
-            [VtblIndex(10)]
-            HRESULT get_userAgent([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, uint*, int> GetTypeInfoCount;
 
-            [VtblIndex(11)]
-            HRESULT javaEnabled([NativeTypeName("VARIANT_BOOL *")] short* enabled);
+        [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
-            [VtblIndex(12)]
-            HRESULT taintEnabled([NativeTypeName("VARIANT_BOOL *")] short* enabled);
+        [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
-            [VtblIndex(13)]
-            HRESULT get_mimeTypes(IHTMLMimeTypesCollection** p);
+        [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
-            [VtblIndex(14)]
-            HRESULT get_plugins(IHTMLPluginsCollection** p);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, ushort**, int> get_appCodeName;
 
-            [VtblIndex(15)]
-            HRESULT get_cookieEnabled([NativeTypeName("VARIANT_BOOL *")] short* p);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, ushort**, int> get_appName;
 
-            [VtblIndex(16)]
-            HRESULT get_opsProfile(IHTMLOpsProfile** p);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, ushort**, int> get_appVersion;
 
-            [VtblIndex(17)]
-            HRESULT toString([NativeTypeName("BSTR *")] ushort** @string);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, ushort**, int> get_userAgent;
 
-            [VtblIndex(18)]
-            HRESULT get_cpuClass([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, short*, int> javaEnabled;
 
-            [VtblIndex(19)]
-            HRESULT get_systemLanguage([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, short*, int> taintEnabled;
 
-            [VtblIndex(20)]
-            HRESULT get_browserLanguage([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("HRESULT (IHTMLMimeTypesCollection **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, IHTMLMimeTypesCollection**, int> get_mimeTypes;
 
-            [VtblIndex(21)]
-            HRESULT get_userLanguage([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("HRESULT (IHTMLPluginsCollection **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, IHTMLPluginsCollection**, int> get_plugins;
 
-            [VtblIndex(22)]
-            HRESULT get_platform([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, short*, int> get_cookieEnabled;
 
-            [VtblIndex(23)]
-            HRESULT get_appMinorVersion([NativeTypeName("BSTR *")] ushort** p);
+        [NativeTypeName("HRESULT (IHTMLOpsProfile **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, IHTMLOpsProfile**, int> get_opsProfile;
 
-            [VtblIndex(24)]
-            HRESULT get_connectionSpeed([NativeTypeName("long *")] int* p);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, ushort**, int> toString;
 
-            [VtblIndex(25)]
-            HRESULT get_onLine([NativeTypeName("VARIANT_BOOL *")] short* p);
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, ushort**, int> get_cpuClass;
 
-            [VtblIndex(26)]
-            HRESULT get_userProfile(IHTMLOpsProfile** p);
-        }
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, ushort**, int> get_systemLanguage;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, ushort**, int> get_browserLanguage;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, uint> AddRef;
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, ushort**, int> get_userLanguage;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, uint> Release;
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, ushort**, int> get_platform;
 
-            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, uint*, int> GetTypeInfoCount;
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, ushort**, int> get_appMinorVersion;
 
-            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, int*, int> get_connectionSpeed;
 
-            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, short*, int> get_onLine;
 
-            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, ushort**, int> get_appCodeName;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, ushort**, int> get_appName;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, ushort**, int> get_appVersion;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, ushort**, int> get_userAgent;
-
-            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, short*, int> javaEnabled;
-
-            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, short*, int> taintEnabled;
-
-            [NativeTypeName("HRESULT (IHTMLMimeTypesCollection **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, IHTMLMimeTypesCollection**, int> get_mimeTypes;
-
-            [NativeTypeName("HRESULT (IHTMLPluginsCollection **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, IHTMLPluginsCollection**, int> get_plugins;
-
-            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, short*, int> get_cookieEnabled;
-
-            [NativeTypeName("HRESULT (IHTMLOpsProfile **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, IHTMLOpsProfile**, int> get_opsProfile;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, ushort**, int> toString;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, ushort**, int> get_cpuClass;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, ushort**, int> get_systemLanguage;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, ushort**, int> get_browserLanguage;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, ushort**, int> get_userLanguage;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, ushort**, int> get_platform;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, ushort**, int> get_appMinorVersion;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, int*, int> get_connectionSpeed;
-
-            [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, short*, int> get_onLine;
-
-            [NativeTypeName("HRESULT (IHTMLOpsProfile **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IOmNavigator*, IHTMLOpsProfile**, int> get_userProfile;
-        }
+        [NativeTypeName("HRESULT (IHTMLOpsProfile **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IOmNavigator*, IHTMLOpsProfile**, int> get_userProfile;
     }
 }

@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public enum STORAGE_PROTOCOL_ATA_DATA_TYPE
 {
-    [SupportedOSPlatform("windows10.0")]
-    public enum STORAGE_PROTOCOL_ATA_DATA_TYPE
-    {
-        AtaDataTypeUnknown = 0,
-        AtaDataTypeIdentify,
-        AtaDataTypeLogPage,
-    }
+    AtaDataTypeUnknown = 0,
+    AtaDataTypeIdentify,
+    AtaDataTypeLogPage,
 }

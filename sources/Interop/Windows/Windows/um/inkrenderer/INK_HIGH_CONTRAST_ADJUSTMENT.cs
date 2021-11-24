@@ -3,12 +3,11 @@
 // Ported from um/inkrenderer.h and um/inkrenderer_i.c in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum INK_HIGH_CONTRAST_ADJUSTMENT
 {
-    public enum INK_HIGH_CONTRAST_ADJUSTMENT
-    {
-        USE_SYSTEM_COLORS_WHEN_NECESSARY = 0,
-        USE_SYSTEM_COLORS = 1,
-        USE_ORIGINAL_COLORS = 2,
-    }
+    USE_SYSTEM_COLORS_WHEN_NECESSARY = 0,
+    USE_SYSTEM_COLORS = 1,
+    USE_ORIGINAL_COLORS = 2,
 }

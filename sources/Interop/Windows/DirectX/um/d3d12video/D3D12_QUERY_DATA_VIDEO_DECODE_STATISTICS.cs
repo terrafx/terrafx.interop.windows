@@ -3,18 +3,17 @@
 // Ported from um/d3d12video.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_QUERY_DATA_VIDEO_DECODE_STATISTICS
 {
-    public partial struct D3D12_QUERY_DATA_VIDEO_DECODE_STATISTICS
-    {
-        [NativeTypeName("UINT64")]
-        public ulong Status;
+    [NativeTypeName("UINT64")]
+    public ulong Status;
 
-        [NativeTypeName("UINT64")]
-        public ulong NumMacroblocksAffected;
+    [NativeTypeName("UINT64")]
+    public ulong NumMacroblocksAffected;
 
-        public DXGI_RATIONAL FrameRate;
+    public DXGI_RATIONAL FrameRate;
 
-        public uint BitRate;
-    }
+    public uint BitRate;
 }

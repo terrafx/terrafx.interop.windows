@@ -3,14 +3,13 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct NMLVSCROLL
 {
-    public partial struct NMLVSCROLL
-    {
-        public NMHDR hdr;
+    public NMHDR hdr;
 
-        public int dx;
+    public int dx;
 
-        public int dy;
-    }
+    public int dy;
 }

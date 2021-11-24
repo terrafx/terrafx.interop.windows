@@ -5,23 +5,22 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct DDBLTBATCH
 {
-    public unsafe partial struct DDBLTBATCH
-    {
-        [NativeTypeName("LPRECT")]
-        public RECT* lprDest;
+    [NativeTypeName("LPRECT")]
+    public RECT* lprDest;
 
-        [NativeTypeName("LPDIRECTDRAWSURFACE")]
-        public IDirectDrawSurface* lpDDSSrc;
+    [NativeTypeName("LPDIRECTDRAWSURFACE")]
+    public IDirectDrawSurface* lpDDSSrc;
 
-        [NativeTypeName("LPRECT")]
-        public RECT* lprSrc;
+    [NativeTypeName("LPRECT")]
+    public RECT* lprSrc;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        [NativeTypeName("LPDDBLTFX")]
-        public DDBLTFX* lpDDBltFx;
-    }
+    [NativeTypeName("LPDDBLTFX")]
+    public DDBLTFX* lpDDBltFx;
 }

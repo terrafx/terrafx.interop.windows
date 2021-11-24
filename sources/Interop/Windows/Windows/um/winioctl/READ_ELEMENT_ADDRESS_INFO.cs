@@ -7,31 +7,30 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct READ_ELEMENT_ADDRESS_INFO
 {
-    public partial struct READ_ELEMENT_ADDRESS_INFO
+    [NativeTypeName("DWORD")]
+    public uint NumberOfElements;
+
+    [NativeTypeName("CHANGER_ELEMENT_STATUS [1]")]
+    public _ElementStatus_e__FixedBuffer ElementStatus;
+
+    public partial struct _ElementStatus_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint NumberOfElements;
+        public CHANGER_ELEMENT_STATUS e0;
 
-        [NativeTypeName("CHANGER_ELEMENT_STATUS [1]")]
-        public _ElementStatus_e__FixedBuffer ElementStatus;
-
-        public partial struct _ElementStatus_e__FixedBuffer
+        public ref CHANGER_ELEMENT_STATUS this[int index]
         {
-            public CHANGER_ELEMENT_STATUS e0;
-
-            public ref CHANGER_ELEMENT_STATUS this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<CHANGER_ELEMENT_STATUS> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<CHANGER_ELEMENT_STATUS> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SPAUDIOSTATUS" /> struct.</summary>
+public static unsafe partial class SPAUDIOSTATUSTests
 {
-    /// <summary>Provides validation of the <see cref="SPAUDIOSTATUS" /> struct.</summary>
-    public static unsafe partial class SPAUDIOSTATUSTests
+    /// <summary>Validates that the <see cref="SPAUDIOSTATUS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SPAUDIOSTATUS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SPAUDIOSTATUS>(), Is.EqualTo(sizeof(SPAUDIOSTATUS)));
-        }
+        Assert.That(Marshal.SizeOf<SPAUDIOSTATUS>(), Is.EqualTo(sizeof(SPAUDIOSTATUS)));
+    }
 
-        /// <summary>Validates that the <see cref="SPAUDIOSTATUS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SPAUDIOSTATUS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SPAUDIOSTATUS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SPAUDIOSTATUS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SPAUDIOSTATUS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SPAUDIOSTATUS), Is.EqualTo(40));
-        }
+    /// <summary>Validates that the <see cref="SPAUDIOSTATUS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SPAUDIOSTATUS), Is.EqualTo(40));
     }
 }

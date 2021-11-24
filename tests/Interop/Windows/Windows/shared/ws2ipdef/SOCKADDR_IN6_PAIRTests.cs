@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SOCKADDR_IN6_PAIR" /> struct.</summary>
+public static unsafe partial class SOCKADDR_IN6_PAIRTests
 {
-    /// <summary>Provides validation of the <see cref="SOCKADDR_IN6_PAIR" /> struct.</summary>
-    public static unsafe partial class SOCKADDR_IN6_PAIRTests
+    /// <summary>Validates that the <see cref="SOCKADDR_IN6_PAIR" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SOCKADDR_IN6_PAIR" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SOCKADDR_IN6_PAIR>(), Is.EqualTo(sizeof(SOCKADDR_IN6_PAIR)));
-        }
+        Assert.That(Marshal.SizeOf<SOCKADDR_IN6_PAIR>(), Is.EqualTo(sizeof(SOCKADDR_IN6_PAIR)));
+    }
 
-        /// <summary>Validates that the <see cref="SOCKADDR_IN6_PAIR" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SOCKADDR_IN6_PAIR).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SOCKADDR_IN6_PAIR" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SOCKADDR_IN6_PAIR).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SOCKADDR_IN6_PAIR" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SOCKADDR_IN6_PAIR" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SOCKADDR_IN6_PAIR), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(SOCKADDR_IN6_PAIR), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(SOCKADDR_IN6_PAIR), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(SOCKADDR_IN6_PAIR), Is.EqualTo(8));
         }
     }
 }

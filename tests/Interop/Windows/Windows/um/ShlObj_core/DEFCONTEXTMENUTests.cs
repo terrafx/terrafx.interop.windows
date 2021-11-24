@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DEFCONTEXTMENU" /> struct.</summary>
+public static unsafe partial class DEFCONTEXTMENUTests
 {
-    /// <summary>Provides validation of the <see cref="DEFCONTEXTMENU" /> struct.</summary>
-    public static unsafe partial class DEFCONTEXTMENUTests
+    /// <summary>Validates that the <see cref="DEFCONTEXTMENU" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DEFCONTEXTMENU" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DEFCONTEXTMENU>(), Is.EqualTo(sizeof(DEFCONTEXTMENU)));
-        }
+        Assert.That(Marshal.SizeOf<DEFCONTEXTMENU>(), Is.EqualTo(sizeof(DEFCONTEXTMENU)));
+    }
 
-        /// <summary>Validates that the <see cref="DEFCONTEXTMENU" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DEFCONTEXTMENU).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DEFCONTEXTMENU" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DEFCONTEXTMENU).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DEFCONTEXTMENU" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DEFCONTEXTMENU" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DEFCONTEXTMENU), Is.EqualTo(72));
-            }
-            else
-            {
-                Assert.That(sizeof(DEFCONTEXTMENU), Is.EqualTo(36));
-            }
+            Assert.That(sizeof(DEFCONTEXTMENU), Is.EqualTo(72));
+        }
+        else
+        {
+            Assert.That(sizeof(DEFCONTEXTMENU), Is.EqualTo(36));
         }
     }
 }

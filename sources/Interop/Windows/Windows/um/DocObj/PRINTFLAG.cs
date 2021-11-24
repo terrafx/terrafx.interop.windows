@@ -3,16 +3,15 @@
 // Ported from um/DocObj.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum PRINTFLAG
 {
-    public enum PRINTFLAG
-    {
-        PRINTFLAG_MAYBOTHERUSER = 1,
-        PRINTFLAG_PROMPTUSER = 2,
-        PRINTFLAG_USERMAYCHANGEPRINTER = 4,
-        PRINTFLAG_RECOMPOSETODEVICE = 8,
-        PRINTFLAG_DONTACTUALLYPRINT = 16,
-        PRINTFLAG_FORCEPROPERTIES = 32,
-        PRINTFLAG_PRINTTOFILE = 64,
-    }
+    PRINTFLAG_MAYBOTHERUSER = 1,
+    PRINTFLAG_PROMPTUSER = 2,
+    PRINTFLAG_USERMAYCHANGEPRINTER = 4,
+    PRINTFLAG_RECOMPOSETODEVICE = 8,
+    PRINTFLAG_DONTACTUALLYPRINT = 16,
+    PRINTFLAG_FORCEPROPERTIES = 32,
+    PRINTFLAG_PRINTTOFILE = 64,
 }

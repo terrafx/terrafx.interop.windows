@@ -3,13 +3,12 @@
 // Ported from um/x3daudio.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public static unsafe partial class DirectX
 {
-    public static unsafe partial class DirectX
-    {
-        // public static ref readonly X3DAUDIO_DISTANCE_CURVE X3DAudioDefault_LinearCurve => new X3DAUDIO_DISTANCE_CURVE {
-        //    pPoints = &X3DAudioDefault_LinearCurvePoints[0],
-        //    PointsCount = 2,
-        // };
-    }
+    // public static ref readonly X3DAUDIO_DISTANCE_CURVE X3DAudioDefault_LinearCurve => new X3DAUDIO_DISTANCE_CURVE {
+    //    pPoints = &X3DAudioDefault_LinearCurvePoints[0],
+    //    PointsCount = 2,
+    // };
 }

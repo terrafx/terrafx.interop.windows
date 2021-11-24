@@ -3,11 +3,10 @@
 // Ported from um/urlmon.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class S
 {
-    public static partial class S
-    {
-        [NativeTypeName("#define S_ASYNCHRONOUS MK_S_ASYNCHRONOUS")]
-        public const int S_ASYNCHRONOUS = ((int)(0x000401E8));
-    }
+    [NativeTypeName("#define S_ASYNCHRONOUS MK_S_ASYNCHRONOUS")]
+    public const int S_ASYNCHRONOUS = ((int)(0x000401E8));
 }

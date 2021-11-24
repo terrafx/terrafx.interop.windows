@@ -3,16 +3,15 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct NMRBAUTOSIZE
 {
-    public partial struct NMRBAUTOSIZE
-    {
-        public NMHDR hdr;
+    public NMHDR hdr;
 
-        public BOOL fChanged;
+    public BOOL fChanged;
 
-        public RECT rcTarget;
+    public RECT rcTarget;
 
-        public RECT rcActual;
-    }
+    public RECT rcActual;
 }

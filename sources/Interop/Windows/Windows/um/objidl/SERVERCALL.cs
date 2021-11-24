@@ -3,12 +3,11 @@
 // Ported from um/objidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SERVERCALL
 {
-    public enum SERVERCALL
-    {
-        SERVERCALL_ISHANDLED = 0,
-        SERVERCALL_REJECTED = 1,
-        SERVERCALL_RETRYLATER = 2,
-    }
+    SERVERCALL_ISHANDLED = 0,
+    SERVERCALL_REJECTED = 1,
+    SERVERCALL_RETRYLATER = 2,
 }

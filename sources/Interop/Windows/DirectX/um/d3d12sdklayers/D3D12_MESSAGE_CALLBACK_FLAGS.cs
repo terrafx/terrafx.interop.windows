@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D3D12_MESSAGE_CALLBACK_FLAGS
 {
-    [Flags]
-    public enum D3D12_MESSAGE_CALLBACK_FLAGS
-    {
-        D3D12_MESSAGE_CALLBACK_FLAG_NONE = 0,
-        D3D12_MESSAGE_CALLBACK_IGNORE_FILTERS = 0x1,
-    }
+    D3D12_MESSAGE_CALLBACK_FLAG_NONE = 0,
+    D3D12_MESSAGE_CALLBACK_IGNORE_FILTERS = 0x1,
 }

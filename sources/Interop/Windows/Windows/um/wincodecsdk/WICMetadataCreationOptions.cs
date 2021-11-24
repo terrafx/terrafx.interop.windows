@@ -3,13 +3,12 @@
 // Ported from um/wincodecsdk.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WICMetadataCreationOptions
 {
-    public enum WICMetadataCreationOptions
-    {
-        WICMetadataCreationDefault = 0,
-        WICMetadataCreationAllowUnknown = WICMetadataCreationDefault,
-        WICMetadataCreationFailUnknown = 0x10000,
-        WICMetadataCreationMask = unchecked((int)(0xffff0000)),
-    }
+    WICMetadataCreationDefault = 0,
+    WICMetadataCreationAllowUnknown = WICMetadataCreationDefault,
+    WICMetadataCreationFailUnknown = 0x10000,
+    WICMetadataCreationMask = unchecked((int)(0xffff0000)),
 }

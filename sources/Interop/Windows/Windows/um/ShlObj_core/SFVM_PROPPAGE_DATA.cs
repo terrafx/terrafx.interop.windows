@@ -3,16 +3,15 @@
 // Ported from um/ShlObj_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SFVM_PROPPAGE_DATA
 {
-    public unsafe partial struct SFVM_PROPPAGE_DATA
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwReserved;
+    [NativeTypeName("DWORD")]
+    public uint dwReserved;
 
-        [NativeTypeName("LPFNADDPROPSHEETPAGE")]
-        public delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL> pfn;
+    [NativeTypeName("LPFNADDPROPSHEETPAGE")]
+    public delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL> pfn;
 
-        public LPARAM lParam;
-    }
+    public LPARAM lParam;
 }

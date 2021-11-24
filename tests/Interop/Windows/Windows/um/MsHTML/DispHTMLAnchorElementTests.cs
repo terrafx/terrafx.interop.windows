@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DispHTMLAnchorElement" /> struct.</summary>
+public static unsafe partial class DispHTMLAnchorElementTests
 {
-    /// <summary>Provides validation of the <see cref="DispHTMLAnchorElement" /> struct.</summary>
-    public static unsafe partial class DispHTMLAnchorElementTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispHTMLAnchorElement" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispHTMLAnchorElement" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DispHTMLAnchorElement).GUID, Is.EqualTo(IID_DispHTMLAnchorElement));
-        }
+        Assert.That(typeof(DispHTMLAnchorElement).GUID, Is.EqualTo(IID_DispHTMLAnchorElement));
+    }
 
-        /// <summary>Validates that the <see cref="DispHTMLAnchorElement" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DispHTMLAnchorElement>(), Is.EqualTo(sizeof(DispHTMLAnchorElement)));
-        }
+    /// <summary>Validates that the <see cref="DispHTMLAnchorElement" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DispHTMLAnchorElement>(), Is.EqualTo(sizeof(DispHTMLAnchorElement)));
+    }
 
-        /// <summary>Validates that the <see cref="DispHTMLAnchorElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DispHTMLAnchorElement).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DispHTMLAnchorElement" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DispHTMLAnchorElement).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DispHTMLAnchorElement" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DispHTMLAnchorElement" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DispHTMLAnchorElement), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(DispHTMLAnchorElement), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(DispHTMLAnchorElement), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(DispHTMLAnchorElement), Is.EqualTo(4));
         }
     }
 }

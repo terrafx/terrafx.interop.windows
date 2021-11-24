@@ -3,11 +3,10 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct TOKEN_AUDIT_POLICY
 {
-    public unsafe partial struct TOKEN_AUDIT_POLICY
-    {
-        [NativeTypeName("BYTE [30]")]
-        public fixed byte PerUserPolicy[30];
-    }
+    [NativeTypeName("BYTE [30]")]
+    public fixed byte PerUserPolicy[30];
 }

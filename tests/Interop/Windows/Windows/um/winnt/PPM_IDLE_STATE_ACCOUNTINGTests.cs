@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PPM_IDLE_STATE_ACCOUNTING" /> struct.</summary>
+public static unsafe partial class PPM_IDLE_STATE_ACCOUNTINGTests
 {
-    /// <summary>Provides validation of the <see cref="PPM_IDLE_STATE_ACCOUNTING" /> struct.</summary>
-    public static unsafe partial class PPM_IDLE_STATE_ACCOUNTINGTests
+    /// <summary>Validates that the <see cref="PPM_IDLE_STATE_ACCOUNTING" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PPM_IDLE_STATE_ACCOUNTING" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PPM_IDLE_STATE_ACCOUNTING>(), Is.EqualTo(sizeof(PPM_IDLE_STATE_ACCOUNTING)));
-        }
+        Assert.That(Marshal.SizeOf<PPM_IDLE_STATE_ACCOUNTING>(), Is.EqualTo(sizeof(PPM_IDLE_STATE_ACCOUNTING)));
+    }
 
-        /// <summary>Validates that the <see cref="PPM_IDLE_STATE_ACCOUNTING" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PPM_IDLE_STATE_ACCOUNTING).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PPM_IDLE_STATE_ACCOUNTING" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PPM_IDLE_STATE_ACCOUNTING).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PPM_IDLE_STATE_ACCOUNTING" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(PPM_IDLE_STATE_ACCOUNTING), Is.EqualTo(48));
-        }
+    /// <summary>Validates that the <see cref="PPM_IDLE_STATE_ACCOUNTING" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(PPM_IDLE_STATE_ACCOUNTING), Is.EqualTo(48));
     }
 }

@@ -5,16 +5,15 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct D3D11_KEY_EXCHANGE_HW_PROTECTION_INPUT_DATA
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct D3D11_KEY_EXCHANGE_HW_PROTECTION_INPUT_DATA
-    {
-        public uint PrivateDataSize;
+    public uint PrivateDataSize;
 
-        public uint HWProtectionDataSize;
+    public uint HWProtectionDataSize;
 
-        [NativeTypeName("BYTE [4]")]
-        public fixed byte pbInput[4];
-    }
+    [NativeTypeName("BYTE [4]")]
+    public fixed byte pbInput[4];
 }

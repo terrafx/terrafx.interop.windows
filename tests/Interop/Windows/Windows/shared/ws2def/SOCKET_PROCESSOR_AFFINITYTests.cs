@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SOCKET_PROCESSOR_AFFINITY" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class SOCKET_PROCESSOR_AFFINITYTests
 {
-    /// <summary>Provides validation of the <see cref="SOCKET_PROCESSOR_AFFINITY" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class SOCKET_PROCESSOR_AFFINITYTests
+    /// <summary>Validates that the <see cref="SOCKET_PROCESSOR_AFFINITY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SOCKET_PROCESSOR_AFFINITY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SOCKET_PROCESSOR_AFFINITY>(), Is.EqualTo(sizeof(SOCKET_PROCESSOR_AFFINITY)));
-        }
+        Assert.That(Marshal.SizeOf<SOCKET_PROCESSOR_AFFINITY>(), Is.EqualTo(sizeof(SOCKET_PROCESSOR_AFFINITY)));
+    }
 
-        /// <summary>Validates that the <see cref="SOCKET_PROCESSOR_AFFINITY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SOCKET_PROCESSOR_AFFINITY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SOCKET_PROCESSOR_AFFINITY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SOCKET_PROCESSOR_AFFINITY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SOCKET_PROCESSOR_AFFINITY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SOCKET_PROCESSOR_AFFINITY), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="SOCKET_PROCESSOR_AFFINITY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SOCKET_PROCESSOR_AFFINITY), Is.EqualTo(8));
     }
 }

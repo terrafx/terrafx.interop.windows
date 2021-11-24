@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CMC_ADD_EXTENSIONS_INFO" /> struct.</summary>
+public static unsafe partial class CMC_ADD_EXTENSIONS_INFOTests
 {
-    /// <summary>Provides validation of the <see cref="CMC_ADD_EXTENSIONS_INFO" /> struct.</summary>
-    public static unsafe partial class CMC_ADD_EXTENSIONS_INFOTests
+    /// <summary>Validates that the <see cref="CMC_ADD_EXTENSIONS_INFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CMC_ADD_EXTENSIONS_INFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CMC_ADD_EXTENSIONS_INFO>(), Is.EqualTo(sizeof(CMC_ADD_EXTENSIONS_INFO)));
-        }
+        Assert.That(Marshal.SizeOf<CMC_ADD_EXTENSIONS_INFO>(), Is.EqualTo(sizeof(CMC_ADD_EXTENSIONS_INFO)));
+    }
 
-        /// <summary>Validates that the <see cref="CMC_ADD_EXTENSIONS_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CMC_ADD_EXTENSIONS_INFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CMC_ADD_EXTENSIONS_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CMC_ADD_EXTENSIONS_INFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CMC_ADD_EXTENSIONS_INFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CMC_ADD_EXTENSIONS_INFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CMC_ADD_EXTENSIONS_INFO), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(CMC_ADD_EXTENSIONS_INFO), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(CMC_ADD_EXTENSIONS_INFO), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(CMC_ADD_EXTENSIONS_INFO), Is.EqualTo(20));
         }
     }
 }

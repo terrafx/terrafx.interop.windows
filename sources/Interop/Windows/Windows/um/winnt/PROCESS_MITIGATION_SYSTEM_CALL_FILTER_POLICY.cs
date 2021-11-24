@@ -6,97 +6,96 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICY
 {
-    public partial struct PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICY
+    [NativeTypeName("_PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:12847:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public ref uint Flags
     {
-        [NativeTypeName("_PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:12847:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public ref uint Flags
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+        }
+    }
+
+    public uint FilterId
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.FilterId;
         }
 
-        public uint FilterId
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.FilterId;
-            }
+            Anonymous.Anonymous.FilterId = value;
+        }
+    }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.FilterId = value;
-            }
+    public uint ReservedFlags
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.ReservedFlags;
         }
 
-        public uint ReservedFlags
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.ReservedFlags;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.ReservedFlags = value;
-            }
+            Anonymous.Anonymous.ReservedFlags = value;
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint Flags;
+
+        [FieldOffset(0)]
+        [NativeTypeName("_PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:12849:9)")]
+        public _Anonymous_e__Struct Anonymous;
+
+        public partial struct _Anonymous_e__Struct
         {
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint Flags;
+            public uint _bitfield;
 
-            [FieldOffset(0)]
-            [NativeTypeName("_PROCESS_MITIGATION_SYSTEM_CALL_FILTER_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:12849:9)")]
-            public _Anonymous_e__Struct Anonymous;
-
-            public partial struct _Anonymous_e__Struct
+            [NativeTypeName("DWORD : 4")]
+            public uint FilterId
             {
-                public uint _bitfield;
-
-                [NativeTypeName("DWORD : 4")]
-                public uint FilterId
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return _bitfield & 0xFu;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~0xFu) | (value & 0xFu);
-                    }
+                    return _bitfield & 0xFu;
                 }
 
-                [NativeTypeName("DWORD : 28")]
-                public uint ReservedFlags
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 4) & 0xFFFFFFFu;
-                    }
+                    _bitfield = (_bitfield & ~0xFu) | (value & 0xFu);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0xFFFFFFFu << 4)) | ((value & 0xFFFFFFFu) << 4);
-                    }
+            [NativeTypeName("DWORD : 28")]
+            public uint ReservedFlags
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 4) & 0xFFFFFFFu;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0xFFFFFFFu << 4)) | ((value & 0xFFFFFFFu) << 4);
                 }
             }
         }

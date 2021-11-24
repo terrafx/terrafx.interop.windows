@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLElementEvents" /> struct.</summary>
+public static unsafe partial class HTMLElementEventsTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLElementEvents" /> struct.</summary>
-    public static unsafe partial class HTMLElementEventsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLElementEvents" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLElementEvents" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLElementEvents).GUID, Is.EqualTo(IID_HTMLElementEvents));
-        }
+        Assert.That(typeof(HTMLElementEvents).GUID, Is.EqualTo(IID_HTMLElementEvents));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLElementEvents" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLElementEvents>(), Is.EqualTo(sizeof(HTMLElementEvents)));
-        }
+    /// <summary>Validates that the <see cref="HTMLElementEvents" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLElementEvents>(), Is.EqualTo(sizeof(HTMLElementEvents)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLElementEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLElementEvents).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLElementEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLElementEvents).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLElementEvents" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="HTMLElementEvents" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(HTMLElementEvents), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(HTMLElementEvents), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(HTMLElementEvents), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(HTMLElementEvents), Is.EqualTo(4));
         }
     }
 }

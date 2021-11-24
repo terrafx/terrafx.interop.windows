@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="STORAGE_RPMB_DATA_FRAME" /> struct.</summary>
+public static unsafe partial class STORAGE_RPMB_DATA_FRAMETests
 {
-    /// <summary>Provides validation of the <see cref="STORAGE_RPMB_DATA_FRAME" /> struct.</summary>
-    public static unsafe partial class STORAGE_RPMB_DATA_FRAMETests
+    /// <summary>Validates that the <see cref="STORAGE_RPMB_DATA_FRAME" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="STORAGE_RPMB_DATA_FRAME" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<STORAGE_RPMB_DATA_FRAME>(), Is.EqualTo(sizeof(STORAGE_RPMB_DATA_FRAME)));
-        }
+        Assert.That(Marshal.SizeOf<STORAGE_RPMB_DATA_FRAME>(), Is.EqualTo(sizeof(STORAGE_RPMB_DATA_FRAME)));
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_RPMB_DATA_FRAME" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(STORAGE_RPMB_DATA_FRAME).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="STORAGE_RPMB_DATA_FRAME" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(STORAGE_RPMB_DATA_FRAME).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_RPMB_DATA_FRAME" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(STORAGE_RPMB_DATA_FRAME), Is.EqualTo(512));
-        }
+    /// <summary>Validates that the <see cref="STORAGE_RPMB_DATA_FRAME" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(STORAGE_RPMB_DATA_FRAME), Is.EqualTo(512));
     }
 }

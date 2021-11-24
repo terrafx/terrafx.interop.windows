@@ -3,21 +3,20 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct NMREBAR
 {
-    public partial struct NMREBAR
-    {
-        public NMHDR hdr;
+    public NMHDR hdr;
 
-        [NativeTypeName("DWORD")]
-        public uint dwMask;
+    [NativeTypeName("DWORD")]
+    public uint dwMask;
 
-        public uint uBand;
+    public uint uBand;
 
-        public uint fStyle;
+    public uint fStyle;
 
-        public uint wID;
+    public uint wID;
 
-        public LPARAM lParam;
-    }
+    public LPARAM lParam;
 }

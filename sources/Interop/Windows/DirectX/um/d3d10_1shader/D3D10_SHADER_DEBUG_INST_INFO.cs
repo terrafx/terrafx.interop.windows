@@ -7,47 +7,46 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D10_SHADER_DEBUG_INST_INFO
 {
-    public partial struct D3D10_SHADER_DEBUG_INST_INFO
+    public uint Id;
+
+    public uint Opcode;
+
+    public uint uOutputs;
+
+    [NativeTypeName("D3D10_SHADER_DEBUG_OUTPUTREG_INFO [2]")]
+    public _pOutputs_e__FixedBuffer pOutputs;
+
+    public uint TokenId;
+
+    public uint NestingLevel;
+
+    public uint Scopes;
+
+    public uint ScopeInfo;
+
+    public uint AccessedVars;
+
+    public uint AccessedVarsInfo;
+
+    public partial struct _pOutputs_e__FixedBuffer
     {
-        public uint Id;
+        public D3D10_SHADER_DEBUG_OUTPUTREG_INFO e0;
+        public D3D10_SHADER_DEBUG_OUTPUTREG_INFO e1;
 
-        public uint Opcode;
-
-        public uint uOutputs;
-
-        [NativeTypeName("D3D10_SHADER_DEBUG_OUTPUTREG_INFO [2]")]
-        public _pOutputs_e__FixedBuffer pOutputs;
-
-        public uint TokenId;
-
-        public uint NestingLevel;
-
-        public uint Scopes;
-
-        public uint ScopeInfo;
-
-        public uint AccessedVars;
-
-        public uint AccessedVarsInfo;
-
-        public partial struct _pOutputs_e__FixedBuffer
+        public ref D3D10_SHADER_DEBUG_OUTPUTREG_INFO this[int index]
         {
-            public D3D10_SHADER_DEBUG_OUTPUTREG_INFO e0;
-            public D3D10_SHADER_DEBUG_OUTPUTREG_INFO e1;
-
-            public ref D3D10_SHADER_DEBUG_OUTPUTREG_INFO this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan()[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<D3D10_SHADER_DEBUG_OUTPUTREG_INFO> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
+            get
+            {
+                return ref AsSpan()[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<D3D10_SHADER_DEBUG_OUTPUTREG_INFO> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
     }
 }

@@ -3,17 +3,16 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DVD_SubpictureAttributes
 {
-    public partial struct DVD_SubpictureAttributes
-    {
-        public DVD_SUBPICTURE_TYPE Type;
+    public DVD_SUBPICTURE_TYPE Type;
 
-        public DVD_SUBPICTURE_CODING CodingMode;
+    public DVD_SUBPICTURE_CODING CodingMode;
 
-        [NativeTypeName("LCID")]
-        public uint Language;
+    [NativeTypeName("LCID")]
+    public uint Language;
 
-        public DVD_SUBPICTURE_LANG_EXT LanguageExtension;
-    }
+    public DVD_SUBPICTURE_LANG_EXT LanguageExtension;
 }

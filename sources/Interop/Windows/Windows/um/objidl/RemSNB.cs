@@ -3,17 +3,16 @@
 // Ported from um/objidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct RemSNB
 {
-    public unsafe partial struct RemSNB
-    {
-        [NativeTypeName("ULONG")]
-        public uint ulCntStr;
+    [NativeTypeName("ULONG")]
+    public uint ulCntStr;
 
-        [NativeTypeName("ULONG")]
-        public uint ulCntChar;
+    [NativeTypeName("ULONG")]
+    public uint ulCntChar;
 
-        [NativeTypeName("OLECHAR [1]")]
-        public fixed ushort rgString[1];
-    }
+    [NativeTypeName("OLECHAR [1]")]
+    public fixed ushort rgString[1];
 }

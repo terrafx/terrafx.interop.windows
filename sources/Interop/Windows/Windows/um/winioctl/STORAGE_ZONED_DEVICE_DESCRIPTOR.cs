@@ -7,78 +7,77 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct STORAGE_ZONED_DEVICE_DESCRIPTOR
 {
-    public partial struct STORAGE_ZONED_DEVICE_DESCRIPTOR
+    [NativeTypeName("DWORD")]
+    public uint Version;
+
+    [NativeTypeName("DWORD")]
+    public uint Size;
+
+    public STORAGE_ZONED_DEVICE_TYPES DeviceType;
+
+    [NativeTypeName("DWORD")]
+    public uint ZoneCount;
+
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2909:5)")]
+    public _ZoneAttributes_e__Union ZoneAttributes;
+
+    [NativeTypeName("DWORD")]
+    public uint ZoneGroupCount;
+
+    [NativeTypeName("STORAGE_ZONE_GROUP [1]")]
+    public _ZoneGroup_e__FixedBuffer ZoneGroup;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _ZoneAttributes_e__Union
     {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2910:9)")]
+        public _SequentialRequiredZone_e__Struct SequentialRequiredZone;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2920:9)")]
+        public _SequentialPreferredZone_e__Struct SequentialPreferredZone;
 
-        public STORAGE_ZONED_DEVICE_TYPES DeviceType;
-
-        [NativeTypeName("DWORD")]
-        public uint ZoneCount;
-
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2909:5)")]
-        public _ZoneAttributes_e__Union ZoneAttributes;
-
-        [NativeTypeName("DWORD")]
-        public uint ZoneGroupCount;
-
-        [NativeTypeName("STORAGE_ZONE_GROUP [1]")]
-        public _ZoneGroup_e__FixedBuffer ZoneGroup;
-
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _ZoneAttributes_e__Union
+        public unsafe partial struct _SequentialRequiredZone_e__Struct
         {
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2910:9)")]
-            public _SequentialRequiredZone_e__Struct SequentialRequiredZone;
+            [NativeTypeName("DWORD")]
+            public uint MaxOpenZoneCount;
 
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2920:9)")]
-            public _SequentialPreferredZone_e__Struct SequentialPreferredZone;
+            [NativeTypeName("BOOLEAN")]
+            public byte UnrestrictedRead;
 
-            public unsafe partial struct _SequentialRequiredZone_e__Struct
-            {
-                [NativeTypeName("DWORD")]
-                public uint MaxOpenZoneCount;
-
-                [NativeTypeName("BOOLEAN")]
-                public byte UnrestrictedRead;
-
-                [NativeTypeName("BYTE [3]")]
-                public fixed byte Reserved[3];
-            }
-
-            public partial struct _SequentialPreferredZone_e__Struct
-            {
-                [NativeTypeName("DWORD")]
-                public uint OptimalOpenZoneCount;
-
-                [NativeTypeName("DWORD")]
-                public uint Reserved;
-            }
+            [NativeTypeName("BYTE [3]")]
+            public fixed byte Reserved[3];
         }
 
-        public partial struct _ZoneGroup_e__FixedBuffer
+        public partial struct _SequentialPreferredZone_e__Struct
         {
-            public STORAGE_ZONE_GROUP e0;
+            [NativeTypeName("DWORD")]
+            public uint OptimalOpenZoneCount;
 
-            public ref STORAGE_ZONE_GROUP this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
+            [NativeTypeName("DWORD")]
+            public uint Reserved;
+        }
+    }
 
+    public partial struct _ZoneGroup_e__FixedBuffer
+    {
+        public STORAGE_ZONE_GROUP e0;
+
+        public ref STORAGE_ZONE_GROUP this[int index]
+        {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<STORAGE_ZONE_GROUP> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<STORAGE_ZONE_GROUP> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

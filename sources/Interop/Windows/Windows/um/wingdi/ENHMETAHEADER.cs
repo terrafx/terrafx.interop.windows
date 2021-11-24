@@ -3,63 +3,62 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct ENHMETAHEADER
 {
-    public partial struct ENHMETAHEADER
-    {
-        [NativeTypeName("DWORD")]
-        public uint iType;
+    [NativeTypeName("DWORD")]
+    public uint iType;
 
-        [NativeTypeName("DWORD")]
-        public uint nSize;
+    [NativeTypeName("DWORD")]
+    public uint nSize;
 
-        public RECTL rclBounds;
+    public RECTL rclBounds;
 
-        public RECTL rclFrame;
+    public RECTL rclFrame;
 
-        [NativeTypeName("DWORD")]
-        public uint dSignature;
+    [NativeTypeName("DWORD")]
+    public uint dSignature;
 
-        [NativeTypeName("DWORD")]
-        public uint nVersion;
+    [NativeTypeName("DWORD")]
+    public uint nVersion;
 
-        [NativeTypeName("DWORD")]
-        public uint nBytes;
+    [NativeTypeName("DWORD")]
+    public uint nBytes;
 
-        [NativeTypeName("DWORD")]
-        public uint nRecords;
+    [NativeTypeName("DWORD")]
+    public uint nRecords;
 
-        [NativeTypeName("WORD")]
-        public ushort nHandles;
+    [NativeTypeName("WORD")]
+    public ushort nHandles;
 
-        [NativeTypeName("WORD")]
-        public ushort sReserved;
+    [NativeTypeName("WORD")]
+    public ushort sReserved;
 
-        [NativeTypeName("DWORD")]
-        public uint nDescription;
+    [NativeTypeName("DWORD")]
+    public uint nDescription;
 
-        [NativeTypeName("DWORD")]
-        public uint offDescription;
+    [NativeTypeName("DWORD")]
+    public uint offDescription;
 
-        [NativeTypeName("DWORD")]
-        public uint nPalEntries;
+    [NativeTypeName("DWORD")]
+    public uint nPalEntries;
 
-        [NativeTypeName("SIZEL")]
-        public SIZE szlDevice;
+    [NativeTypeName("SIZEL")]
+    public SIZE szlDevice;
 
-        [NativeTypeName("SIZEL")]
-        public SIZE szlMillimeters;
+    [NativeTypeName("SIZEL")]
+    public SIZE szlMillimeters;
 
-        [NativeTypeName("DWORD")]
-        public uint cbPixelFormat;
+    [NativeTypeName("DWORD")]
+    public uint cbPixelFormat;
 
-        [NativeTypeName("DWORD")]
-        public uint offPixelFormat;
+    [NativeTypeName("DWORD")]
+    public uint offPixelFormat;
 
-        [NativeTypeName("DWORD")]
-        public uint bOpenGL;
+    [NativeTypeName("DWORD")]
+    public uint bOpenGL;
 
-        [NativeTypeName("SIZEL")]
-        public SIZE szlMicrometers;
-    }
+    [NativeTypeName("SIZEL")]
+    public SIZE szlMicrometers;
 }

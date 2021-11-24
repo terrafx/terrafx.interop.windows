@@ -3,32 +3,31 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TOKEN_STATISTICS
 {
-    public partial struct TOKEN_STATISTICS
-    {
-        public LUID TokenId;
+    public LUID TokenId;
 
-        public LUID AuthenticationId;
+    public LUID AuthenticationId;
 
-        public LARGE_INTEGER ExpirationTime;
+    public LARGE_INTEGER ExpirationTime;
 
-        public TOKEN_TYPE TokenType;
+    public TOKEN_TYPE TokenType;
 
-        public SECURITY_IMPERSONATION_LEVEL ImpersonationLevel;
+    public SECURITY_IMPERSONATION_LEVEL ImpersonationLevel;
 
-        [NativeTypeName("DWORD")]
-        public uint DynamicCharged;
+    [NativeTypeName("DWORD")]
+    public uint DynamicCharged;
 
-        [NativeTypeName("DWORD")]
-        public uint DynamicAvailable;
+    [NativeTypeName("DWORD")]
+    public uint DynamicAvailable;
 
-        [NativeTypeName("DWORD")]
-        public uint GroupCount;
+    [NativeTypeName("DWORD")]
+    public uint GroupCount;
 
-        [NativeTypeName("DWORD")]
-        public uint PrivilegeCount;
+    [NativeTypeName("DWORD")]
+    public uint PrivilegeCount;
 
-        public LUID ModifiedId;
-    }
+    public LUID ModifiedId;
 }

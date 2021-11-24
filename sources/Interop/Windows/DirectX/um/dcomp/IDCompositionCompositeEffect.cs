@@ -8,74 +8,73 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Guid("576616C0-A231-494D-A38D-00FD5EC4DB46")]
+[NativeTypeName("struct IDCompositionCompositeEffect : IDCompositionFilterEffect")]
+[NativeInheritance("IDCompositionFilterEffect")]
+public unsafe partial struct IDCompositionCompositeEffect : IDCompositionCompositeEffect.Interface
 {
-    [Guid("576616C0-A231-494D-A38D-00FD5EC4DB46")]
-    [NativeTypeName("struct IDCompositionCompositeEffect : IDCompositionFilterEffect")]
-    [NativeInheritance("IDCompositionFilterEffect")]
-    public unsafe partial struct IDCompositionCompositeEffect : IDCompositionCompositeEffect.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDCompositionCompositeEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionCompositeEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDCompositionCompositeEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionCompositeEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDCompositionCompositeEffect*, uint>)(lpVtbl[1]))((IDCompositionCompositeEffect*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDCompositionCompositeEffect*, uint>)(lpVtbl[1]))((IDCompositionCompositeEffect*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDCompositionCompositeEffect*, uint>)(lpVtbl[2]))((IDCompositionCompositeEffect*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDCompositionCompositeEffect*, uint>)(lpVtbl[2]))((IDCompositionCompositeEffect*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT SetInput(uint index, IUnknown* input, uint flags)
+    {
+        return ((delegate* unmanaged<IDCompositionCompositeEffect*, uint, IUnknown*, uint, int>)(lpVtbl[3]))((IDCompositionCompositeEffect*)Unsafe.AsPointer(ref this), index, input, flags);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT SetInput(uint index, IUnknown* input, uint flags)
-        {
-            return ((delegate* unmanaged<IDCompositionCompositeEffect*, uint, IUnknown*, uint, int>)(lpVtbl[3]))((IDCompositionCompositeEffect*)Unsafe.AsPointer(ref this), index, input, flags);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT SetMode(D2D1_COMPOSITE_MODE mode)
+    {
+        return ((delegate* unmanaged<IDCompositionCompositeEffect*, D2D1_COMPOSITE_MODE, int>)(lpVtbl[4]))((IDCompositionCompositeEffect*)Unsafe.AsPointer(ref this), mode);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IDCompositionFilterEffect.Interface
+    {
         [VtblIndex(4)]
-        public HRESULT SetMode(D2D1_COMPOSITE_MODE mode)
-        {
-            return ((delegate* unmanaged<IDCompositionCompositeEffect*, D2D1_COMPOSITE_MODE, int>)(lpVtbl[4]))((IDCompositionCompositeEffect*)Unsafe.AsPointer(ref this), mode);
-        }
+        HRESULT SetMode(D2D1_COMPOSITE_MODE mode);
+    }
 
-        public interface Interface : IDCompositionFilterEffect.Interface
-        {
-            [VtblIndex(4)]
-            HRESULT SetMode(D2D1_COMPOSITE_MODE mode);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionCompositeEffect*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionCompositeEffect*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionCompositeEffect*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionCompositeEffect*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionCompositeEffect*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionCompositeEffect*, uint> Release;
+        [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionCompositeEffect*, uint, IUnknown*, uint, int> SetInput;
 
-            [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionCompositeEffect*, uint, IUnknown*, uint, int> SetInput;
-
-            [NativeTypeName("HRESULT (D2D1_COMPOSITE_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDCompositionCompositeEffect*, D2D1_COMPOSITE_MODE, int> SetMode;
-        }
+        [NativeTypeName("HRESULT (D2D1_COMPOSITE_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDCompositionCompositeEffect*, D2D1_COMPOSITE_MODE, int> SetMode;
     }
 }

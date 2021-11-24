@@ -3,11 +3,10 @@
 // Ported from shared/dxgitype.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public static partial class DirectX
 {
-    public static partial class DirectX
-    {
-        [NativeTypeName("#define _FACDXGI 0x87a")]
-        public const int _FACDXGI = 0x87a;
-    }
+    [NativeTypeName("#define _FACDXGI 0x87a")]
+    public const int _FACDXGI = 0x87a;
 }

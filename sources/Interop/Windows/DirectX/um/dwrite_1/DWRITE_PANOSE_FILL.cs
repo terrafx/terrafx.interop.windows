@@ -3,17 +3,16 @@
 // Ported from um/dwrite_1.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum DWRITE_PANOSE_FILL
 {
-    public enum DWRITE_PANOSE_FILL
-    {
-        DWRITE_PANOSE_FILL_ANY = 0,
-        DWRITE_PANOSE_FILL_NO_FIT = 1,
-        DWRITE_PANOSE_FILL_STANDARD_SOLID_FILL = 2,
-        DWRITE_PANOSE_FILL_NO_FILL = 3,
-        DWRITE_PANOSE_FILL_PATTERNED_FILL = 4,
-        DWRITE_PANOSE_FILL_COMPLEX_FILL = 5,
-        DWRITE_PANOSE_FILL_SHAPED_FILL = 6,
-        DWRITE_PANOSE_FILL_DRAWN_DISTRESSED = 7,
-    }
+    DWRITE_PANOSE_FILL_ANY = 0,
+    DWRITE_PANOSE_FILL_NO_FIT = 1,
+    DWRITE_PANOSE_FILL_STANDARD_SOLID_FILL = 2,
+    DWRITE_PANOSE_FILL_NO_FILL = 3,
+    DWRITE_PANOSE_FILL_PATTERNED_FILL = 4,
+    DWRITE_PANOSE_FILL_COMPLEX_FILL = 5,
+    DWRITE_PANOSE_FILL_SHAPED_FILL = 6,
+    DWRITE_PANOSE_FILL_DRAWN_DISTRESSED = 7,
 }

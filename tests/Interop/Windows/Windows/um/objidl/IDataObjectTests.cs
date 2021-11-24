@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDataObject" /> struct.</summary>
+public static unsafe partial class IDataObjectTests
 {
-    /// <summary>Provides validation of the <see cref="IDataObject" /> struct.</summary>
-    public static unsafe partial class IDataObjectTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDataObject" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDataObject" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDataObject).GUID, Is.EqualTo(IID_IDataObject));
-        }
+        Assert.That(typeof(IDataObject).GUID, Is.EqualTo(IID_IDataObject));
+    }
 
-        /// <summary>Validates that the <see cref="IDataObject" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDataObject>(), Is.EqualTo(sizeof(IDataObject)));
-        }
+    /// <summary>Validates that the <see cref="IDataObject" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDataObject>(), Is.EqualTo(sizeof(IDataObject)));
+    }
 
-        /// <summary>Validates that the <see cref="IDataObject" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDataObject).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDataObject" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDataObject).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDataObject" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDataObject" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDataObject), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDataObject), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDataObject), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDataObject), Is.EqualTo(4));
         }
     }
 }

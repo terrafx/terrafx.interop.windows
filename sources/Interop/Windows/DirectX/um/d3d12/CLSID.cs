@@ -8,108 +8,107 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class CLSID
 {
-    public static partial class CLSID
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_D3D12Debug
     {
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid CLSID_D3D12Debug
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xEB, 0x2A, 0x35, 0xF2,
-                    0x84, 0xDD,
-                    0xFE, 0x49,
-                    0xB9,
-                    0x7B,
-                    0xA9,
-                    0xDC,
-                    0xFD,
-                    0xCC,
-                    0x1B,
-                    0x4F
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0xEB, 0x2A, 0x35, 0xF2,
+                0x84, 0xDD,
+                0xFE, 0x49,
+                0xB9,
+                0x7B,
+                0xA9,
+                0xDC,
+                0xFD,
+                0xCC,
+                0x1B,
+                0x4F
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid CLSID_D3D12Tools
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_D3D12Tools
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xB1, 0x16, 0x82, 0xE3,
-                    0x8C, 0x3C,
-                    0x33, 0x48,
-                    0xAA,
-                    0x09,
-                    0x0A,
-                    0x06,
-                    0xB6,
-                    0x5D,
-                    0x96,
-                    0xC8
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0xB1, 0x16, 0x82, 0xE3,
+                0x8C, 0x3C,
+                0x33, 0x48,
+                0xAA,
+                0x09,
+                0x0A,
+                0x06,
+                0xB6,
+                0x5D,
+                0x96,
+                0xC8
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid CLSID_D3D12DeviceRemovedExtendedData
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_D3D12DeviceRemovedExtendedData
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xC4, 0xBB, 0x75, 0x4A,
-                    0xF4, 0x9F,
-                    0xD8, 0x4A,
-                    0x9F,
-                    0x18,
-                    0xAB,
-                    0xAE,
-                    0x84,
-                    0xDC,
-                    0x5F,
-                    0xF2
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0xC4, 0xBB, 0x75, 0x4A,
+                0xF4, 0x9F,
+                0xD8, 0x4A,
+                0x9F,
+                0x18,
+                0xAB,
+                0xAE,
+                0x84,
+                0xDC,
+                0x5F,
+                0xF2
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid CLSID_D3D12SDKConfiguration
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_D3D12SDKConfiguration
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xCA, 0x6A, 0xDA, 0x7C,
-                    0x3E, 0xA0,
-                    0xC8, 0x49,
-                    0x94,
-                    0x58,
-                    0x03,
-                    0x34,
-                    0xD2,
-                    0x0E,
-                    0x07,
-                    0xCE
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0xCA, 0x6A, 0xDA, 0x7C,
+                0x3E, 0xA0,
+                0xC8, 0x49,
+                0x94,
+                0x58,
+                0x03,
+                0x34,
+                0xD2,
+                0x0E,
+                0x07,
+                0xCE
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

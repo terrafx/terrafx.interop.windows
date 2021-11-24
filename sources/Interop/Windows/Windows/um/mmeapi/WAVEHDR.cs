@@ -5,33 +5,32 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct WAVEHDR
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct WAVEHDR
-    {
-        [NativeTypeName("LPSTR")]
-        public sbyte* lpData;
+    [NativeTypeName("LPSTR")]
+    public sbyte* lpData;
 
-        [NativeTypeName("DWORD")]
-        public uint dwBufferLength;
+    [NativeTypeName("DWORD")]
+    public uint dwBufferLength;
 
-        [NativeTypeName("DWORD")]
-        public uint dwBytesRecorded;
+    [NativeTypeName("DWORD")]
+    public uint dwBytesRecorded;
 
-        [NativeTypeName("DWORD_PTR")]
-        public nuint dwUser;
+    [NativeTypeName("DWORD_PTR")]
+    public nuint dwUser;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint dwLoops;
+    [NativeTypeName("DWORD")]
+    public uint dwLoops;
 
-        [NativeTypeName("struct wavehdr_tag *")]
-        public WAVEHDR* lpNext;
+    [NativeTypeName("struct wavehdr_tag *")]
+    public WAVEHDR* lpNext;
 
-        [NativeTypeName("DWORD_PTR")]
-        public nuint reserved;
-    }
+    [NativeTypeName("DWORD_PTR")]
+    public nuint reserved;
 }

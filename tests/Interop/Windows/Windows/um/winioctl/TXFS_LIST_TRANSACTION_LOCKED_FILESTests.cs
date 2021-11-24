@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TXFS_LIST_TRANSACTION_LOCKED_FILES" /> struct.</summary>
+public static unsafe partial class TXFS_LIST_TRANSACTION_LOCKED_FILESTests
 {
-    /// <summary>Provides validation of the <see cref="TXFS_LIST_TRANSACTION_LOCKED_FILES" /> struct.</summary>
-    public static unsafe partial class TXFS_LIST_TRANSACTION_LOCKED_FILESTests
+    /// <summary>Validates that the <see cref="TXFS_LIST_TRANSACTION_LOCKED_FILES" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TXFS_LIST_TRANSACTION_LOCKED_FILES" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TXFS_LIST_TRANSACTION_LOCKED_FILES>(), Is.EqualTo(sizeof(TXFS_LIST_TRANSACTION_LOCKED_FILES)));
-        }
+        Assert.That(Marshal.SizeOf<TXFS_LIST_TRANSACTION_LOCKED_FILES>(), Is.EqualTo(sizeof(TXFS_LIST_TRANSACTION_LOCKED_FILES)));
+    }
 
-        /// <summary>Validates that the <see cref="TXFS_LIST_TRANSACTION_LOCKED_FILES" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TXFS_LIST_TRANSACTION_LOCKED_FILES).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TXFS_LIST_TRANSACTION_LOCKED_FILES" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TXFS_LIST_TRANSACTION_LOCKED_FILES).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TXFS_LIST_TRANSACTION_LOCKED_FILES" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TXFS_LIST_TRANSACTION_LOCKED_FILES), Is.EqualTo(40));
-        }
+    /// <summary>Validates that the <see cref="TXFS_LIST_TRANSACTION_LOCKED_FILES" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TXFS_LIST_TRANSACTION_LOCKED_FILES), Is.EqualTo(40));
     }
 }

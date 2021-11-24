@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IHTMLInputImage" /> struct.</summary>
+public static unsafe partial class IHTMLInputImageTests
 {
-    /// <summary>Provides validation of the <see cref="IHTMLInputImage" /> struct.</summary>
-    public static unsafe partial class IHTMLInputImageTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLInputImage" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLInputImage" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IHTMLInputImage).GUID, Is.EqualTo(IID_IHTMLInputImage));
-        }
+        Assert.That(typeof(IHTMLInputImage).GUID, Is.EqualTo(IID_IHTMLInputImage));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLInputImage" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IHTMLInputImage>(), Is.EqualTo(sizeof(IHTMLInputImage)));
-        }
+    /// <summary>Validates that the <see cref="IHTMLInputImage" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IHTMLInputImage>(), Is.EqualTo(sizeof(IHTMLInputImage)));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLInputImage" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IHTMLInputImage).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IHTMLInputImage" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IHTMLInputImage).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLInputImage" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IHTMLInputImage" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IHTMLInputImage), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IHTMLInputImage), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IHTMLInputImage), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IHTMLInputImage), Is.EqualTo(4));
         }
     }
 }

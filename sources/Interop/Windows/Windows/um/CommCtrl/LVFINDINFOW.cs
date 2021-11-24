@@ -3,19 +3,18 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct LVFINDINFOW
 {
-    public unsafe partial struct LVFINDINFOW
-    {
-        public uint flags;
+    public uint flags;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* psz;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* psz;
 
-        public LPARAM lParam;
+    public LPARAM lParam;
 
-        public POINT pt;
+    public POINT pt;
 
-        public uint vkDirection;
-    }
+    public uint vkDirection;
 }

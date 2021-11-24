@@ -6,42 +6,41 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct ADDRINFOEX2A
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct ADDRINFOEX2A
-    {
-        public int ai_flags;
+    public int ai_flags;
 
-        public int ai_family;
+    public int ai_family;
 
-        public int ai_socktype;
+    public int ai_socktype;
 
-        public int ai_protocol;
+    public int ai_protocol;
 
-        [NativeTypeName("size_t")]
-        public nuint ai_addrlen;
+    [NativeTypeName("size_t")]
+    public nuint ai_addrlen;
 
-        [NativeTypeName("char *")]
-        public sbyte* ai_canonname;
+    [NativeTypeName("char *")]
+    public sbyte* ai_canonname;
 
-        [NativeTypeName("struct sockaddr *")]
-        public SOCKADDR* ai_addr;
+    [NativeTypeName("struct sockaddr *")]
+    public SOCKADDR* ai_addr;
 
-        public void* ai_blob;
+    public void* ai_blob;
 
-        [NativeTypeName("size_t")]
-        public nuint ai_bloblen;
+    [NativeTypeName("size_t")]
+    public nuint ai_bloblen;
 
-        [NativeTypeName("LPGUID")]
-        public Guid* ai_provider;
+    [NativeTypeName("LPGUID")]
+    public Guid* ai_provider;
 
-        [NativeTypeName("struct addrinfoex2A *")]
-        public ADDRINFOEX2A* ai_next;
+    [NativeTypeName("struct addrinfoex2A *")]
+    public ADDRINFOEX2A* ai_next;
 
-        public int ai_version;
+    public int ai_version;
 
-        [NativeTypeName("char *")]
-        public sbyte* ai_fqdn;
-    }
+    [NativeTypeName("char *")]
+    public sbyte* ai_fqdn;
 }

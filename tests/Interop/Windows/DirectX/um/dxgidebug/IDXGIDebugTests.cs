@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDXGIDebug" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class IDXGIDebugTests
 {
-    /// <summary>Provides validation of the <see cref="IDXGIDebug" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class IDXGIDebugTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDXGIDebug" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDXGIDebug" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDXGIDebug).GUID, Is.EqualTo(IID_IDXGIDebug));
-        }
+        Assert.That(typeof(IDXGIDebug).GUID, Is.EqualTo(IID_IDXGIDebug));
+    }
 
-        /// <summary>Validates that the <see cref="IDXGIDebug" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDXGIDebug>(), Is.EqualTo(sizeof(IDXGIDebug)));
-        }
+    /// <summary>Validates that the <see cref="IDXGIDebug" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDXGIDebug>(), Is.EqualTo(sizeof(IDXGIDebug)));
+    }
 
-        /// <summary>Validates that the <see cref="IDXGIDebug" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDXGIDebug).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDXGIDebug" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDXGIDebug).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDXGIDebug" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDXGIDebug" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDXGIDebug), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDXGIDebug), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDXGIDebug), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDXGIDebug), Is.EqualTo(4));
         }
     }
 }

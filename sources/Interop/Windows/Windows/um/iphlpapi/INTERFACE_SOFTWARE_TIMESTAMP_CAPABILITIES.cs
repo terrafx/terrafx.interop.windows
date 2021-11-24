@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.22000.0")]
+public partial struct INTERFACE_SOFTWARE_TIMESTAMP_CAPABILITIES
 {
-    [SupportedOSPlatform("windows10.0.22000.0")]
-    public partial struct INTERFACE_SOFTWARE_TIMESTAMP_CAPABILITIES
-    {
-        [NativeTypeName("BOOLEAN")]
-        public byte AllReceive;
+    [NativeTypeName("BOOLEAN")]
+    public byte AllReceive;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte AllTransmit;
+    [NativeTypeName("BOOLEAN")]
+    public byte AllTransmit;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte TaggedTransmit;
-    }
+    [NativeTypeName("BOOLEAN")]
+    public byte TaggedTransmit;
 }

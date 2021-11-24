@@ -5,17 +5,16 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct AudioExtensionParams
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct AudioExtensionParams
-    {
-        public LPARAM AddPageParam;
+    public LPARAM AddPageParam;
 
-        public IMMDevice* pEndpoint;
+    public IMMDevice* pEndpoint;
 
-        public IMMDevice* pPnpInterface;
+    public IMMDevice* pPnpInterface;
 
-        public IMMDevice* pPnpDevnode;
-    }
+    public IMMDevice* pPnpDevnode;
 }

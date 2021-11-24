@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("4044E60C-7B01-4671-A97C-04E0210A07A5")]
+public partial struct InkD2DRenderer
 {
-    [Guid("4044E60C-7B01-4671-A97C-04E0210A07A5")]
-    public partial struct InkD2DRenderer
-    {
-    }
 }

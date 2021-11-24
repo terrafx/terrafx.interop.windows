@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NetworkPlaces" /> struct.</summary>
+public static unsafe partial class NetworkPlacesTests
 {
-    /// <summary>Provides validation of the <see cref="NetworkPlaces" /> struct.</summary>
-    public static unsafe partial class NetworkPlacesTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="NetworkPlaces" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="NetworkPlaces" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(NetworkPlaces).GUID, Is.EqualTo(IID_NetworkPlaces));
-        }
+        Assert.That(typeof(NetworkPlaces).GUID, Is.EqualTo(IID_NetworkPlaces));
+    }
 
-        /// <summary>Validates that the <see cref="NetworkPlaces" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NetworkPlaces>(), Is.EqualTo(sizeof(NetworkPlaces)));
-        }
+    /// <summary>Validates that the <see cref="NetworkPlaces" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<NetworkPlaces>(), Is.EqualTo(sizeof(NetworkPlaces)));
+    }
 
-        /// <summary>Validates that the <see cref="NetworkPlaces" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NetworkPlaces).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NetworkPlaces" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NetworkPlaces).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NetworkPlaces" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(NetworkPlaces), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="NetworkPlaces" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(NetworkPlaces), Is.EqualTo(1));
     }
 }

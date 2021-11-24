@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SVGTextElement" /> struct.</summary>
+public static unsafe partial class SVGTextElementTests
 {
-    /// <summary>Provides validation of the <see cref="SVGTextElement" /> struct.</summary>
-    public static unsafe partial class SVGTextElementTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGTextElement" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGTextElement" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SVGTextElement).GUID, Is.EqualTo(IID_SVGTextElement));
-        }
+        Assert.That(typeof(SVGTextElement).GUID, Is.EqualTo(IID_SVGTextElement));
+    }
 
-        /// <summary>Validates that the <see cref="SVGTextElement" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SVGTextElement>(), Is.EqualTo(sizeof(SVGTextElement)));
-        }
+    /// <summary>Validates that the <see cref="SVGTextElement" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SVGTextElement>(), Is.EqualTo(sizeof(SVGTextElement)));
+    }
 
-        /// <summary>Validates that the <see cref="SVGTextElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SVGTextElement).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SVGTextElement" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SVGTextElement).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SVGTextElement" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SVGTextElement), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SVGTextElement" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SVGTextElement), Is.EqualTo(1));
     }
 }

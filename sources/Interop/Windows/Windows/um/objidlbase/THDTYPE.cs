@@ -3,11 +3,10 @@
 // Ported from um/objidlbase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum THDTYPE
 {
-    public enum THDTYPE
-    {
-        THDTYPE_BLOCKMESSAGES = 0,
-        THDTYPE_PROCESSMESSAGES = 1,
-    }
+    THDTYPE_BLOCKMESSAGES = 0,
+    THDTYPE_PROCESSMESSAGES = 1,
 }

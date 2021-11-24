@@ -5,10 +5,9 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct AudioClient3ActivationParams
 {
-    public partial struct AudioClient3ActivationParams
-    {
-        public Guid tracingContextId;
-    }
+    public Guid tracingContextId;
 }

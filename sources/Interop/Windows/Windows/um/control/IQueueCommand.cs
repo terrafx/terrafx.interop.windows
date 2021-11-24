@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("56A868B7-0AD4-11CE-B03A-0020AF0BA770")]
+[NativeTypeName("struct IQueueCommand : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IQueueCommand : IQueueCommand.Interface
 {
-    [Guid("56A868B7-0AD4-11CE-B03A-0020AF0BA770")]
-    [NativeTypeName("struct IQueueCommand : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IQueueCommand : IQueueCommand.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IQueueCommand*, Guid*, void**, int>)(lpVtbl[0]))((IQueueCommand*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IQueueCommand*, Guid*, void**, int>)(lpVtbl[0]))((IQueueCommand*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IQueueCommand*, uint>)(lpVtbl[1]))((IQueueCommand*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IQueueCommand*, uint>)(lpVtbl[1]))((IQueueCommand*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IQueueCommand*, uint>)(lpVtbl[2]))((IQueueCommand*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IQueueCommand*, uint>)(lpVtbl[2]))((IQueueCommand*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT InvokeAtStreamTime(IDeferredCommand** pCmd, [NativeTypeName("REFTIME")] double time, Guid* iid, [NativeTypeName("long")] int dispidMethod, short wFlags, [NativeTypeName("long")] int cArgs, VARIANT* pDispParams, VARIANT* pvarResult, short* puArgErr)
+    {
+        return ((delegate* unmanaged<IQueueCommand*, IDeferredCommand**, double, Guid*, int, short, int, VARIANT*, VARIANT*, short*, int>)(lpVtbl[3]))((IQueueCommand*)Unsafe.AsPointer(ref this), pCmd, time, iid, dispidMethod, wFlags, cArgs, pDispParams, pvarResult, puArgErr);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT InvokeAtPresentationTime(IDeferredCommand** pCmd, [NativeTypeName("REFTIME")] double time, Guid* iid, [NativeTypeName("long")] int dispidMethod, short wFlags, [NativeTypeName("long")] int cArgs, VARIANT* pDispParams, VARIANT* pvarResult, short* puArgErr)
+    {
+        return ((delegate* unmanaged<IQueueCommand*, IDeferredCommand**, double, Guid*, int, short, int, VARIANT*, VARIANT*, short*, int>)(lpVtbl[4]))((IQueueCommand*)Unsafe.AsPointer(ref this), pCmd, time, iid, dispidMethod, wFlags, cArgs, pDispParams, pvarResult, puArgErr);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT InvokeAtStreamTime(IDeferredCommand** pCmd, [NativeTypeName("REFTIME")] double time, Guid* iid, [NativeTypeName("long")] int dispidMethod, short wFlags, [NativeTypeName("long")] int cArgs, VARIANT* pDispParams, VARIANT* pvarResult, short* puArgErr)
-        {
-            return ((delegate* unmanaged<IQueueCommand*, IDeferredCommand**, double, Guid*, int, short, int, VARIANT*, VARIANT*, short*, int>)(lpVtbl[3]))((IQueueCommand*)Unsafe.AsPointer(ref this), pCmd, time, iid, dispidMethod, wFlags, cArgs, pDispParams, pvarResult, puArgErr);
-        }
+        HRESULT InvokeAtStreamTime(IDeferredCommand** pCmd, [NativeTypeName("REFTIME")] double time, Guid* iid, [NativeTypeName("long")] int dispidMethod, short wFlags, [NativeTypeName("long")] int cArgs, VARIANT* pDispParams, VARIANT* pvarResult, short* puArgErr);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT InvokeAtPresentationTime(IDeferredCommand** pCmd, [NativeTypeName("REFTIME")] double time, Guid* iid, [NativeTypeName("long")] int dispidMethod, short wFlags, [NativeTypeName("long")] int cArgs, VARIANT* pDispParams, VARIANT* pvarResult, short* puArgErr)
-        {
-            return ((delegate* unmanaged<IQueueCommand*, IDeferredCommand**, double, Guid*, int, short, int, VARIANT*, VARIANT*, short*, int>)(lpVtbl[4]))((IQueueCommand*)Unsafe.AsPointer(ref this), pCmd, time, iid, dispidMethod, wFlags, cArgs, pDispParams, pvarResult, puArgErr);
-        }
+        HRESULT InvokeAtPresentationTime(IDeferredCommand** pCmd, [NativeTypeName("REFTIME")] double time, Guid* iid, [NativeTypeName("long")] int dispidMethod, short wFlags, [NativeTypeName("long")] int cArgs, VARIANT* pDispParams, VARIANT* pvarResult, short* puArgErr);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT InvokeAtStreamTime(IDeferredCommand** pCmd, [NativeTypeName("REFTIME")] double time, Guid* iid, [NativeTypeName("long")] int dispidMethod, short wFlags, [NativeTypeName("long")] int cArgs, VARIANT* pDispParams, VARIANT* pvarResult, short* puArgErr);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IQueueCommand*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT InvokeAtPresentationTime(IDeferredCommand** pCmd, [NativeTypeName("REFTIME")] double time, Guid* iid, [NativeTypeName("long")] int dispidMethod, short wFlags, [NativeTypeName("long")] int cArgs, VARIANT* pDispParams, VARIANT* pvarResult, short* puArgErr);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IQueueCommand*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IQueueCommand*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IQueueCommand*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IQueueCommand*, uint> AddRef;
+        [NativeTypeName("HRESULT (IDeferredCommand **, REFTIME, GUID *, long, short, long, VARIANT *, VARIANT *, short *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IQueueCommand*, IDeferredCommand**, double, Guid*, int, short, int, VARIANT*, VARIANT*, short*, int> InvokeAtStreamTime;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IQueueCommand*, uint> Release;
-
-            [NativeTypeName("HRESULT (IDeferredCommand **, REFTIME, GUID *, long, short, long, VARIANT *, VARIANT *, short *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IQueueCommand*, IDeferredCommand**, double, Guid*, int, short, int, VARIANT*, VARIANT*, short*, int> InvokeAtStreamTime;
-
-            [NativeTypeName("HRESULT (IDeferredCommand **, REFTIME, GUID *, long, short, long, VARIANT *, VARIANT *, short *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IQueueCommand*, IDeferredCommand**, double, Guid*, int, short, int, VARIANT*, VARIANT*, short*, int> InvokeAtPresentationTime;
-        }
+        [NativeTypeName("HRESULT (IDeferredCommand **, REFTIME, GUID *, long, short, long, VARIANT *, VARIANT *, short *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IQueueCommand*, IDeferredCommand**, double, Guid*, int, short, int, VARIANT*, VARIANT*, short*, int> InvokeAtPresentationTime;
     }
 }

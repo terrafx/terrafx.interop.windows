@@ -5,16 +5,15 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public enum MF_MEDIA_ENGINE_KEYERR
 {
-    [SupportedOSPlatform("windows8.1")]
-    public enum MF_MEDIA_ENGINE_KEYERR
-    {
-        MF_MEDIAENGINE_KEYERR_UNKNOWN = 1,
-        MF_MEDIAENGINE_KEYERR_CLIENT = 2,
-        MF_MEDIAENGINE_KEYERR_SERVICE = 3,
-        MF_MEDIAENGINE_KEYERR_OUTPUT = 4,
-        MF_MEDIAENGINE_KEYERR_HARDWARECHANGE = 5,
-        MF_MEDIAENGINE_KEYERR_DOMAIN = 6,
-    }
+    MF_MEDIAENGINE_KEYERR_UNKNOWN = 1,
+    MF_MEDIAENGINE_KEYERR_CLIENT = 2,
+    MF_MEDIAENGINE_KEYERR_SERVICE = 3,
+    MF_MEDIAENGINE_KEYERR_OUTPUT = 4,
+    MF_MEDIAENGINE_KEYERR_HARDWARECHANGE = 5,
+    MF_MEDIAENGINE_KEYERR_DOMAIN = 6,
 }

@@ -5,15 +5,14 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct SHELLDETAILS
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct SHELLDETAILS
-    {
-        public int fmt;
+    public int fmt;
 
-        public int cxChar;
+    public int cxChar;
 
-        public STRRET str;
-    }
+    public STRRET str;
 }

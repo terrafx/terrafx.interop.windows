@@ -7,11 +7,10 @@ using System;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+public static unsafe partial class WinRT
 {
-    public static unsafe partial class WinRT
-    {
-        [DllImport("rometadata", ExactSpelling = true)]
-        public static extern HRESULT MetaDataGetDispenser([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
-    }
+    [DllImport("rometadata", ExactSpelling = true)]
+    public static extern HRESULT MetaDataGetDispenser([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
 }

@@ -3,14 +3,13 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum TABITEMLEFTEDGESTATES
 {
-    public enum TABITEMLEFTEDGESTATES
-    {
-        TILES_NORMAL = 1,
-        TILES_HOT = 2,
-        TILES_SELECTED = 3,
-        TILES_DISABLED = 4,
-        TILES_FOCUSED = 5,
-    }
+    TILES_NORMAL = 1,
+    TILES_HOT = 2,
+    TILES_SELECTED = 3,
+    TILES_DISABLED = 4,
+    TILES_FOCUSED = 5,
 }

@@ -5,19 +5,18 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SCM_PD_DEVICE_HANDLE
 {
-    public partial struct SCM_PD_DEVICE_HANDLE
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        public Guid DeviceGuid;
+    public Guid DeviceGuid;
 
-        [NativeTypeName("DWORD")]
-        public uint DeviceHandle;
-    }
+    [NativeTypeName("DWORD")]
+    public uint DeviceHandle;
 }

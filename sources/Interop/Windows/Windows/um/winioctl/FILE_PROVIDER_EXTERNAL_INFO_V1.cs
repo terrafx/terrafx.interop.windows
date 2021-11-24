@@ -3,17 +3,16 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct FILE_PROVIDER_EXTERNAL_INFO_V1
 {
-    public partial struct FILE_PROVIDER_EXTERNAL_INFO_V1
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Algorithm;
+    [NativeTypeName("DWORD")]
+    public uint Algorithm;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
-    }
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 }

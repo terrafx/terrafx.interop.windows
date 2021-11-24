@@ -3,19 +3,18 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct EMRANGLEARC
 {
-    public partial struct EMRANGLEARC
-    {
-        public EMR emr;
+    public EMR emr;
 
-        public POINTL ptlCenter;
+    public POINTL ptlCenter;
 
-        [NativeTypeName("DWORD")]
-        public uint nRadius;
+    [NativeTypeName("DWORD")]
+    public uint nRadius;
 
-        public float eStartAngle;
+    public float eStartAngle;
 
-        public float eSweepAngle;
-    }
+    public float eSweepAngle;
 }

@@ -7,142 +7,141 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("7EBFDD80-AD18-11D3-A4C5-00C04F72D6B8")]
+[NativeTypeName("struct ITravelLogStg : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface
 {
-    [Guid("7EBFDD80-AD18-11D3-A4C5-00C04F72D6B8")]
-    [NativeTypeName("struct ITravelLogStg : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ITravelLogStg*, Guid*, void**, int>)(lpVtbl[0]))((ITravelLogStg*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ITravelLogStg*, Guid*, void**, int>)(lpVtbl[0]))((ITravelLogStg*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ITravelLogStg*, uint>)(lpVtbl[1]))((ITravelLogStg*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ITravelLogStg*, uint>)(lpVtbl[1]))((ITravelLogStg*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ITravelLogStg*, uint>)(lpVtbl[2]))((ITravelLogStg*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ITravelLogStg*, uint>)(lpVtbl[2]))((ITravelLogStg*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT CreateEntry([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCWSTR")] ushort* pszTitle, ITravelLogEntry* ptleRelativeTo, BOOL fPrepend, ITravelLogEntry** pptle)
+    {
+        return ((delegate* unmanaged<ITravelLogStg*, ushort*, ushort*, ITravelLogEntry*, BOOL, ITravelLogEntry**, int>)(lpVtbl[3]))((ITravelLogStg*)Unsafe.AsPointer(ref this), pszUrl, pszTitle, ptleRelativeTo, fPrepend, pptle);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT TravelTo(ITravelLogEntry* ptle)
+    {
+        return ((delegate* unmanaged<ITravelLogStg*, ITravelLogEntry*, int>)(lpVtbl[4]))((ITravelLogStg*)Unsafe.AsPointer(ref this), ptle);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT EnumEntries([NativeTypeName("TLENUMF")] uint flags, IEnumTravelLogEntry** ppenum)
+    {
+        return ((delegate* unmanaged<ITravelLogStg*, uint, IEnumTravelLogEntry**, int>)(lpVtbl[5]))((ITravelLogStg*)Unsafe.AsPointer(ref this), flags, ppenum);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT FindEntries([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("LPCWSTR")] ushort* pszUrl, IEnumTravelLogEntry** ppenum)
+    {
+        return ((delegate* unmanaged<ITravelLogStg*, uint, ushort*, IEnumTravelLogEntry**, int>)(lpVtbl[6]))((ITravelLogStg*)Unsafe.AsPointer(ref this), flags, pszUrl, ppenum);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT GetCount([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("DWORD *")] uint* pcEntries)
+    {
+        return ((delegate* unmanaged<ITravelLogStg*, uint, uint*, int>)(lpVtbl[7]))((ITravelLogStg*)Unsafe.AsPointer(ref this), flags, pcEntries);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT RemoveEntry(ITravelLogEntry* ptle)
+    {
+        return ((delegate* unmanaged<ITravelLogStg*, ITravelLogEntry*, int>)(lpVtbl[8]))((ITravelLogStg*)Unsafe.AsPointer(ref this), ptle);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT GetRelativeEntry(int iOffset, ITravelLogEntry** ptle)
+    {
+        return ((delegate* unmanaged<ITravelLogStg*, int, ITravelLogEntry**, int>)(lpVtbl[9]))((ITravelLogStg*)Unsafe.AsPointer(ref this), iOffset, ptle);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT CreateEntry([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCWSTR")] ushort* pszTitle, ITravelLogEntry* ptleRelativeTo, BOOL fPrepend, ITravelLogEntry** pptle)
-        {
-            return ((delegate* unmanaged<ITravelLogStg*, ushort*, ushort*, ITravelLogEntry*, BOOL, ITravelLogEntry**, int>)(lpVtbl[3]))((ITravelLogStg*)Unsafe.AsPointer(ref this), pszUrl, pszTitle, ptleRelativeTo, fPrepend, pptle);
-        }
+        HRESULT CreateEntry([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCWSTR")] ushort* pszTitle, ITravelLogEntry* ptleRelativeTo, BOOL fPrepend, ITravelLogEntry** pptle);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT TravelTo(ITravelLogEntry* ptle)
-        {
-            return ((delegate* unmanaged<ITravelLogStg*, ITravelLogEntry*, int>)(lpVtbl[4]))((ITravelLogStg*)Unsafe.AsPointer(ref this), ptle);
-        }
+        HRESULT TravelTo(ITravelLogEntry* ptle);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT EnumEntries([NativeTypeName("TLENUMF")] uint flags, IEnumTravelLogEntry** ppenum)
-        {
-            return ((delegate* unmanaged<ITravelLogStg*, uint, IEnumTravelLogEntry**, int>)(lpVtbl[5]))((ITravelLogStg*)Unsafe.AsPointer(ref this), flags, ppenum);
-        }
+        HRESULT EnumEntries([NativeTypeName("TLENUMF")] uint flags, IEnumTravelLogEntry** ppenum);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT FindEntries([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("LPCWSTR")] ushort* pszUrl, IEnumTravelLogEntry** ppenum)
-        {
-            return ((delegate* unmanaged<ITravelLogStg*, uint, ushort*, IEnumTravelLogEntry**, int>)(lpVtbl[6]))((ITravelLogStg*)Unsafe.AsPointer(ref this), flags, pszUrl, ppenum);
-        }
+        HRESULT FindEntries([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("LPCWSTR")] ushort* pszUrl, IEnumTravelLogEntry** ppenum);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetCount([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("DWORD *")] uint* pcEntries)
-        {
-            return ((delegate* unmanaged<ITravelLogStg*, uint, uint*, int>)(lpVtbl[7]))((ITravelLogStg*)Unsafe.AsPointer(ref this), flags, pcEntries);
-        }
+        HRESULT GetCount([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("DWORD *")] uint* pcEntries);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT RemoveEntry(ITravelLogEntry* ptle)
-        {
-            return ((delegate* unmanaged<ITravelLogStg*, ITravelLogEntry*, int>)(lpVtbl[8]))((ITravelLogStg*)Unsafe.AsPointer(ref this), ptle);
-        }
+        HRESULT RemoveEntry(ITravelLogEntry* ptle);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetRelativeEntry(int iOffset, ITravelLogEntry** ptle)
-        {
-            return ((delegate* unmanaged<ITravelLogStg*, int, ITravelLogEntry**, int>)(lpVtbl[9]))((ITravelLogStg*)Unsafe.AsPointer(ref this), iOffset, ptle);
-        }
+        HRESULT GetRelativeEntry(int iOffset, ITravelLogEntry** ptle);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT CreateEntry([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCWSTR")] ushort* pszTitle, ITravelLogEntry* ptleRelativeTo, BOOL fPrepend, ITravelLogEntry** pptle);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITravelLogStg*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT TravelTo(ITravelLogEntry* ptle);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITravelLogStg*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT EnumEntries([NativeTypeName("TLENUMF")] uint flags, IEnumTravelLogEntry** ppenum);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITravelLogStg*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT FindEntries([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("LPCWSTR")] ushort* pszUrl, IEnumTravelLogEntry** ppenum);
+        [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, ITravelLogEntry *, BOOL, ITravelLogEntry **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITravelLogStg*, ushort*, ushort*, ITravelLogEntry*, BOOL, ITravelLogEntry**, int> CreateEntry;
 
-            [VtblIndex(7)]
-            HRESULT GetCount([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("DWORD *")] uint* pcEntries);
+        [NativeTypeName("HRESULT (ITravelLogEntry *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITravelLogStg*, ITravelLogEntry*, int> TravelTo;
 
-            [VtblIndex(8)]
-            HRESULT RemoveEntry(ITravelLogEntry* ptle);
+        [NativeTypeName("HRESULT (TLENUMF, IEnumTravelLogEntry **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITravelLogStg*, uint, IEnumTravelLogEntry**, int> EnumEntries;
 
-            [VtblIndex(9)]
-            HRESULT GetRelativeEntry(int iOffset, ITravelLogEntry** ptle);
-        }
+        [NativeTypeName("HRESULT (TLENUMF, LPCWSTR, IEnumTravelLogEntry **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITravelLogStg*, uint, ushort*, IEnumTravelLogEntry**, int> FindEntries;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITravelLogStg*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (TLENUMF, DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITravelLogStg*, uint, uint*, int> GetCount;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITravelLogStg*, uint> AddRef;
+        [NativeTypeName("HRESULT (ITravelLogEntry *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITravelLogStg*, ITravelLogEntry*, int> RemoveEntry;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITravelLogStg*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, ITravelLogEntry *, BOOL, ITravelLogEntry **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITravelLogStg*, ushort*, ushort*, ITravelLogEntry*, BOOL, ITravelLogEntry**, int> CreateEntry;
-
-            [NativeTypeName("HRESULT (ITravelLogEntry *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITravelLogStg*, ITravelLogEntry*, int> TravelTo;
-
-            [NativeTypeName("HRESULT (TLENUMF, IEnumTravelLogEntry **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITravelLogStg*, uint, IEnumTravelLogEntry**, int> EnumEntries;
-
-            [NativeTypeName("HRESULT (TLENUMF, LPCWSTR, IEnumTravelLogEntry **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITravelLogStg*, uint, ushort*, IEnumTravelLogEntry**, int> FindEntries;
-
-            [NativeTypeName("HRESULT (TLENUMF, DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITravelLogStg*, uint, uint*, int> GetCount;
-
-            [NativeTypeName("HRESULT (ITravelLogEntry *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITravelLogStg*, ITravelLogEntry*, int> RemoveEntry;
-
-            [NativeTypeName("HRESULT (int, ITravelLogEntry **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITravelLogStg*, int, ITravelLogEntry**, int> GetRelativeEntry;
-        }
+        [NativeTypeName("HRESULT (int, ITravelLogEntry **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITravelLogStg*, int, ITravelLogEntry**, int> GetRelativeEntry;
     }
 }

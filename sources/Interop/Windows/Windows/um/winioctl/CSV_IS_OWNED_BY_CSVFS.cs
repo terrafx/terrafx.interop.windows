@@ -3,11 +3,10 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct CSV_IS_OWNED_BY_CSVFS
 {
-    public partial struct CSV_IS_OWNED_BY_CSVFS
-    {
-        [NativeTypeName("BOOLEAN")]
-        public byte OwnedByCSVFS;
-    }
+    [NativeTypeName("BOOLEAN")]
+    public byte OwnedByCSVFS;
 }

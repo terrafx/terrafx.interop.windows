@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PROCESSOR_IDLESTATE_POLICY" /> struct.</summary>
+public static unsafe partial class PROCESSOR_IDLESTATE_POLICYTests
 {
-    /// <summary>Provides validation of the <see cref="PROCESSOR_IDLESTATE_POLICY" /> struct.</summary>
-    public static unsafe partial class PROCESSOR_IDLESTATE_POLICYTests
+    /// <summary>Validates that the <see cref="PROCESSOR_IDLESTATE_POLICY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PROCESSOR_IDLESTATE_POLICY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PROCESSOR_IDLESTATE_POLICY>(), Is.EqualTo(sizeof(PROCESSOR_IDLESTATE_POLICY)));
-        }
+        Assert.That(Marshal.SizeOf<PROCESSOR_IDLESTATE_POLICY>(), Is.EqualTo(sizeof(PROCESSOR_IDLESTATE_POLICY)));
+    }
 
-        /// <summary>Validates that the <see cref="PROCESSOR_IDLESTATE_POLICY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PROCESSOR_IDLESTATE_POLICY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PROCESSOR_IDLESTATE_POLICY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PROCESSOR_IDLESTATE_POLICY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PROCESSOR_IDLESTATE_POLICY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(PROCESSOR_IDLESTATE_POLICY), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="PROCESSOR_IDLESTATE_POLICY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(PROCESSOR_IDLESTATE_POLICY), Is.EqualTo(32));
     }
 }

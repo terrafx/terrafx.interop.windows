@@ -6,168 +6,167 @@
 using static TerraFX.Interop.DirectX.D3D11_DSV_DIMENSION;
 using static TerraFX.Interop.DirectX.DXGI_FORMAT;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D11_DEPTH_STENCIL_VIEW_DESC
 {
-    public unsafe partial struct D3D11_DEPTH_STENCIL_VIEW_DESC
+    public D3D11_DEPTH_STENCIL_VIEW_DESC(D3D11_DSV_DIMENSION viewDimension, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, uint mipSlice = 0, uint firstArraySlice = 0, uint arraySize = unchecked((uint)-1), uint flags = 0)
     {
-        public D3D11_DEPTH_STENCIL_VIEW_DESC(D3D11_DSV_DIMENSION viewDimension, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, uint mipSlice = 0, uint firstArraySlice = 0, uint arraySize = unchecked((uint)-1), uint flags = 0)
+        Format = format;
+        ViewDimension = viewDimension;
+        Flags = flags;
+        Anonymous = default;
+
+        switch (viewDimension)
         {
-            Format = format;
-            ViewDimension = viewDimension;
-            Flags = flags;
-            Anonymous = default;
-
-            switch (viewDimension)
+            case D3D11_DSV_DIMENSION_TEXTURE1D:
             {
-                case D3D11_DSV_DIMENSION_TEXTURE1D:
-                {
-                    Anonymous.Texture1D.MipSlice = mipSlice;
-                    break;
-                }
+                Anonymous.Texture1D.MipSlice = mipSlice;
+                break;
+            }
 
-                case D3D11_DSV_DIMENSION_TEXTURE1DARRAY:
-                {
-                    Anonymous.Texture1DArray.MipSlice = mipSlice;
-                    Anonymous.Texture1DArray.FirstArraySlice = firstArraySlice;
-                    Anonymous.Texture1DArray.ArraySize = arraySize;
-                    break;
-                }
+            case D3D11_DSV_DIMENSION_TEXTURE1DARRAY:
+            {
+                Anonymous.Texture1DArray.MipSlice = mipSlice;
+                Anonymous.Texture1DArray.FirstArraySlice = firstArraySlice;
+                Anonymous.Texture1DArray.ArraySize = arraySize;
+                break;
+            }
 
-                case D3D11_DSV_DIMENSION_TEXTURE2D:
-                {
-                    Anonymous.Texture2D.MipSlice = mipSlice;
-                    break;
-                }
+            case D3D11_DSV_DIMENSION_TEXTURE2D:
+            {
+                Anonymous.Texture2D.MipSlice = mipSlice;
+                break;
+            }
 
-                case D3D11_DSV_DIMENSION_TEXTURE2DARRAY:
-                {
-                    Anonymous.Texture2DArray.MipSlice = mipSlice;
-                    Anonymous.Texture2DArray.FirstArraySlice = firstArraySlice;
-                    Anonymous.Texture2DArray.ArraySize = arraySize;
-                    break;
-                }
+            case D3D11_DSV_DIMENSION_TEXTURE2DARRAY:
+            {
+                Anonymous.Texture2DArray.MipSlice = mipSlice;
+                Anonymous.Texture2DArray.FirstArraySlice = firstArraySlice;
+                Anonymous.Texture2DArray.ArraySize = arraySize;
+                break;
+            }
 
-                case D3D11_DSV_DIMENSION_TEXTURE2DMS:
-                {
-                    break;
-                }
+            case D3D11_DSV_DIMENSION_TEXTURE2DMS:
+            {
+                break;
+            }
 
-                case D3D11_DSV_DIMENSION_TEXTURE2DMSARRAY:
-                {
-                    Anonymous.Texture2DMSArray.FirstArraySlice = firstArraySlice;
-                    Anonymous.Texture2DMSArray.ArraySize = arraySize;
-                    break;
-                }
+            case D3D11_DSV_DIMENSION_TEXTURE2DMSARRAY:
+            {
+                Anonymous.Texture2DMSArray.FirstArraySlice = firstArraySlice;
+                Anonymous.Texture2DMSArray.ArraySize = arraySize;
+                break;
+            }
 
-                default:
-                {
-                    break;
-                }
+            default:
+            {
+                break;
+            }
+        }
+    }
+
+    public D3D11_DEPTH_STENCIL_VIEW_DESC(ID3D11Texture1D* pTex1D, D3D11_DSV_DIMENSION viewDimension, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, uint mipSlice = 0, uint firstArraySlice = 0, uint arraySize = unchecked((uint)-1), uint flags = 0)
+    {
+        ViewDimension = viewDimension;
+        Flags = flags;
+
+        if ((DXGI_FORMAT_UNKNOWN == format) || ((unchecked((uint)-1) == arraySize) && (D3D11_DSV_DIMENSION_TEXTURE1DARRAY == viewDimension)))
+        {
+            D3D11_TEXTURE1D_DESC TexDesc;
+            pTex1D->GetDesc(&TexDesc);
+
+            if (DXGI_FORMAT_UNKNOWN == format)
+            {
+                format = TexDesc.Format;
+            }
+
+            if (unchecked((uint)-1 == arraySize))
+            {
+                arraySize = TexDesc.ArraySize - firstArraySlice;
             }
         }
 
-        public D3D11_DEPTH_STENCIL_VIEW_DESC(ID3D11Texture1D* pTex1D, D3D11_DSV_DIMENSION viewDimension, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, uint mipSlice = 0, uint firstArraySlice = 0, uint arraySize = unchecked((uint)-1), uint flags = 0)
+        Format = format;
+        Anonymous = default;
+
+        switch (viewDimension)
         {
-            ViewDimension = viewDimension;
-            Flags = flags;
-
-            if ((DXGI_FORMAT_UNKNOWN == format) || ((unchecked((uint)-1) == arraySize) && (D3D11_DSV_DIMENSION_TEXTURE1DARRAY == viewDimension)))
+            case D3D11_DSV_DIMENSION_TEXTURE1D:
             {
-                D3D11_TEXTURE1D_DESC TexDesc;
-                pTex1D->GetDesc(&TexDesc);
-
-                if (DXGI_FORMAT_UNKNOWN == format)
-                {
-                    format = TexDesc.Format;
-                }
-
-                if (unchecked((uint)-1 == arraySize))
-                {
-                    arraySize = TexDesc.ArraySize - firstArraySlice;
-                }
+                Anonymous.Texture1D.MipSlice = mipSlice;
+                break;
             }
 
-            Format = format;
-            Anonymous = default;
-
-            switch (viewDimension)
+            case D3D11_DSV_DIMENSION_TEXTURE1DARRAY:
             {
-                case D3D11_DSV_DIMENSION_TEXTURE1D:
-                {
-                    Anonymous.Texture1D.MipSlice = mipSlice;
-                    break;
-                }
+                Anonymous.Texture1DArray.MipSlice = mipSlice;
+                Anonymous.Texture1DArray.FirstArraySlice = firstArraySlice;
+                Anonymous.Texture1DArray.ArraySize = arraySize;
+                break;
+            }
 
-                case D3D11_DSV_DIMENSION_TEXTURE1DARRAY:
-                {
-                    Anonymous.Texture1DArray.MipSlice = mipSlice;
-                    Anonymous.Texture1DArray.FirstArraySlice = firstArraySlice;
-                    Anonymous.Texture1DArray.ArraySize = arraySize;
-                    break;
-                }
-
-                default:
-                {
-                    break;
-                }
+            default:
+            {
+                break;
             }
         }
-        public D3D11_DEPTH_STENCIL_VIEW_DESC(ID3D11Texture2D* pTex2D, D3D11_DSV_DIMENSION viewDimension, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, uint mipSlice = 0, uint firstArraySlice = 0, uint arraySize = unchecked((uint)-1), uint flags = 0)
+    }
+    public D3D11_DEPTH_STENCIL_VIEW_DESC(ID3D11Texture2D* pTex2D, D3D11_DSV_DIMENSION viewDimension, DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, uint mipSlice = 0, uint firstArraySlice = 0, uint arraySize = unchecked((uint)-1), uint flags = 0)
+    {
+        ViewDimension = viewDimension;
+        Flags = flags;
+
+        if ((DXGI_FORMAT_UNKNOWN == format) || ((unchecked((uint)-1) == arraySize) && ((D3D11_DSV_DIMENSION_TEXTURE2DARRAY == viewDimension) || (D3D11_DSV_DIMENSION_TEXTURE2DMSARRAY == viewDimension))))
         {
-            ViewDimension = viewDimension;
-            Flags = flags;
+            D3D11_TEXTURE2D_DESC TexDesc;
+            pTex2D->GetDesc(&TexDesc);
 
-            if ((DXGI_FORMAT_UNKNOWN == format) || ((unchecked((uint)-1) == arraySize) && ((D3D11_DSV_DIMENSION_TEXTURE2DARRAY == viewDimension) || (D3D11_DSV_DIMENSION_TEXTURE2DMSARRAY == viewDimension))))
+            if (DXGI_FORMAT_UNKNOWN == format)
             {
-                D3D11_TEXTURE2D_DESC TexDesc;
-                pTex2D->GetDesc(&TexDesc);
-
-                if (DXGI_FORMAT_UNKNOWN == format)
-                {
-                    format = TexDesc.Format;
-                }
-
-                if (unchecked((uint)-1 == arraySize))
-                {
-                    arraySize = TexDesc.ArraySize - firstArraySlice;
-                }
+                format = TexDesc.Format;
             }
 
-            Format = format;
-            Anonymous = default;
-
-            switch (viewDimension)
+            if (unchecked((uint)-1 == arraySize))
             {
-                case D3D11_DSV_DIMENSION_TEXTURE2D:
-                {
-                    Anonymous.Texture2D.MipSlice = mipSlice;
-                    break;
-                }
+                arraySize = TexDesc.ArraySize - firstArraySlice;
+            }
+        }
 
-                case D3D11_DSV_DIMENSION_TEXTURE2DARRAY:
-                {
-                    Anonymous.Texture2DArray.MipSlice = mipSlice;
-                    Anonymous.Texture2DArray.FirstArraySlice = firstArraySlice;
-                    Anonymous.Texture2DArray.ArraySize = arraySize;
-                    break;
-                }
+        Format = format;
+        Anonymous = default;
 
-                case D3D11_DSV_DIMENSION_TEXTURE2DMS:
-                {
-                    break;
-                }
+        switch (viewDimension)
+        {
+            case D3D11_DSV_DIMENSION_TEXTURE2D:
+            {
+                Anonymous.Texture2D.MipSlice = mipSlice;
+                break;
+            }
 
-                case D3D11_DSV_DIMENSION_TEXTURE2DMSARRAY:
-                {
-                    Anonymous.Texture2DMSArray.FirstArraySlice = firstArraySlice;
-                    Anonymous.Texture2DMSArray.ArraySize = arraySize;
-                    break;
-                }
+            case D3D11_DSV_DIMENSION_TEXTURE2DARRAY:
+            {
+                Anonymous.Texture2DArray.MipSlice = mipSlice;
+                Anonymous.Texture2DArray.FirstArraySlice = firstArraySlice;
+                Anonymous.Texture2DArray.ArraySize = arraySize;
+                break;
+            }
 
-                default:
-                {
-                    break;
-                }
+            case D3D11_DSV_DIMENSION_TEXTURE2DMS:
+            {
+                break;
+            }
+
+            case D3D11_DSV_DIMENSION_TEXTURE2DMSARRAY:
+            {
+                Anonymous.Texture2DMSArray.FirstArraySlice = firstArraySlice;
+                Anonymous.Texture2DMSArray.ArraySize = arraySize;
+                break;
+            }
+
+            default:
+            {
+                break;
             }
         }
     }

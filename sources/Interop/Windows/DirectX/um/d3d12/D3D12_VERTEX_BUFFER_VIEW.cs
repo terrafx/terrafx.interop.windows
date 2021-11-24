@@ -3,15 +3,14 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_VERTEX_BUFFER_VIEW
 {
-    public partial struct D3D12_VERTEX_BUFFER_VIEW
-    {
-        [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
-        public ulong BufferLocation;
+    [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
+    public ulong BufferLocation;
 
-        public uint SizeInBytes;
+    public uint SizeInBytes;
 
-        public uint StrideInBytes;
-    }
+    public uint StrideInBytes;
 }

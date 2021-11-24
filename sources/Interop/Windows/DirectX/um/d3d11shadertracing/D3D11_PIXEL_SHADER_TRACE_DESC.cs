@@ -5,19 +5,18 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_PIXEL_SHADER_TRACE_DESC
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_PIXEL_SHADER_TRACE_DESC
-    {
-        [NativeTypeName("UINT64")]
-        public ulong Invocation;
+    [NativeTypeName("UINT64")]
+    public ulong Invocation;
 
-        public int X;
+    public int X;
 
-        public int Y;
+    public int Y;
 
-        [NativeTypeName("UINT64")]
-        public ulong SampleMask;
-    }
+    [NativeTypeName("UINT64")]
+    public ulong SampleMask;
 }

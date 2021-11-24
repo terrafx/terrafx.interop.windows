@@ -7,16 +7,15 @@ using NUnit.Framework;
 using System;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CLSID" /> class.</summary>
+public static partial class CLSIDTests
 {
-    /// <summary>Provides validation of the <see cref="CLSID" /> class.</summary>
-    public static partial class CLSIDTests
+    /// <summary>Validates that the value of the <see cref="CLSID_FilgraphManager" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_FilgraphManagerTest()
     {
-        /// <summary>Validates that the value of the <see cref="CLSID_FilgraphManager" /> property is correct.</summary>
-        [Test]
-        public static void CLSID_FilgraphManagerTest()
-        {
-            Assert.That(CLSID_FilgraphManager, Is.EqualTo(new Guid(0xe436ebb3, 0x524f, 0x11ce, 0x9f, 0x53, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70)));
-        }
+        Assert.That(CLSID_FilgraphManager, Is.EqualTo(new Guid(0xe436ebb3, 0x524f, 0x11ce, 0x9f, 0x53, 0x00, 0x20, 0xaf, 0x0b, 0xa7, 0x70)));
     }
 }

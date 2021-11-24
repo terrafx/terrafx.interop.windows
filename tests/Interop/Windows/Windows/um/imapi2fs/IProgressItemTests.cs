@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IProgressItem" /> struct.</summary>
+public static unsafe partial class IProgressItemTests
 {
-    /// <summary>Provides validation of the <see cref="IProgressItem" /> struct.</summary>
-    public static unsafe partial class IProgressItemTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IProgressItem" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IProgressItem" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IProgressItem).GUID, Is.EqualTo(IID_IProgressItem));
-        }
+        Assert.That(typeof(IProgressItem).GUID, Is.EqualTo(IID_IProgressItem));
+    }
 
-        /// <summary>Validates that the <see cref="IProgressItem" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IProgressItem>(), Is.EqualTo(sizeof(IProgressItem)));
-        }
+    /// <summary>Validates that the <see cref="IProgressItem" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IProgressItem>(), Is.EqualTo(sizeof(IProgressItem)));
+    }
 
-        /// <summary>Validates that the <see cref="IProgressItem" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IProgressItem).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IProgressItem" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IProgressItem).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IProgressItem" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IProgressItem" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IProgressItem), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IProgressItem), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IProgressItem), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IProgressItem), Is.EqualTo(4));
         }
     }
 }

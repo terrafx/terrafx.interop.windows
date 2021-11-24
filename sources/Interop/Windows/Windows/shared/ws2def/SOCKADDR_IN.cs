@@ -3,18 +3,17 @@
 // Ported from shared/ws2def.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SOCKADDR_IN
 {
-    public unsafe partial struct SOCKADDR_IN
-    {
-        [NativeTypeName("ADDRESS_FAMILY")]
-        public ushort sin_family;
+    [NativeTypeName("ADDRESS_FAMILY")]
+    public ushort sin_family;
 
-        public ushort sin_port;
+    public ushort sin_port;
 
-        public IN_ADDR sin_addr;
+    public IN_ADDR sin_addr;
 
-        [NativeTypeName("CHAR [8]")]
-        public fixed sbyte sin_zero[8];
-    }
+    [NativeTypeName("CHAR [8]")]
+    public fixed sbyte sin_zero[8];
 }

@@ -3,12 +3,11 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum NSTCROOTSTYLE
 {
-    public enum NSTCROOTSTYLE
-    {
-        NSTCRS_VISIBLE = 0,
-        NSTCRS_HIDDEN = 0x1,
-        NSTCRS_EXPANDED = 0x2,
-    }
+    NSTCRS_VISIBLE = 0,
+    NSTCRS_HIDDEN = 0x1,
+    NSTCRS_EXPANDED = 0x2,
 }

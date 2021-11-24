@@ -3,14 +3,13 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum CRED_MARSHAL_TYPE
 {
-    public enum CRED_MARSHAL_TYPE
-    {
-        CertCredential = 1,
-        UsernameTargetCredential,
-        BinaryBlobCredential,
-        UsernameForPackedCredentials,
-        BinaryBlobForSystem,
-    }
+    CertCredential = 1,
+    UsernameTargetCredential,
+    BinaryBlobCredential,
+    UsernameForPackedCredentials,
+    BinaryBlobForSystem,
 }

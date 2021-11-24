@@ -3,29 +3,28 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct DEVICE_DATA_SET_LB_PROVISIONING_STATE_V2
 {
-    public unsafe partial struct DEVICE_DATA_SET_LB_PROVISIONING_STATE_V2
-    {
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong SlabSizeInBytes;
+    [NativeTypeName("DWORDLONG")]
+    public ulong SlabSizeInBytes;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong SlabOffsetDeltaInBytes;
+    [NativeTypeName("DWORDLONG")]
+    public ulong SlabOffsetDeltaInBytes;
 
-        [NativeTypeName("DWORD")]
-        public uint SlabAllocationBitMapBitCount;
+    [NativeTypeName("DWORD")]
+    public uint SlabAllocationBitMapBitCount;
 
-        [NativeTypeName("DWORD")]
-        public uint SlabAllocationBitMapLength;
+    [NativeTypeName("DWORD")]
+    public uint SlabAllocationBitMapLength;
 
-        [NativeTypeName("DWORD [1]")]
-        public fixed uint SlabAllocationBitMap[1];
-    }
+    [NativeTypeName("DWORD [1]")]
+    public fixed uint SlabAllocationBitMap[1];
 }

@@ -6,24 +6,23 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+public unsafe partial struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_SUPPORT
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public unsafe partial struct D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_SUPPORT
-    {
-        public uint NodeIndex;
+    public uint NodeIndex;
 
-        public Guid CommandId;
+    public Guid CommandId;
 
-        [NativeTypeName("const void *")]
-        public void* pInputData;
+    [NativeTypeName("const void *")]
+    public void* pInputData;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint InputDataSizeInBytes;
+    [NativeTypeName("SIZE_T")]
+    public nuint InputDataSizeInBytes;
 
-        public void* pOutputData;
+    public void* pOutputData;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint OutputDataSizeInBytes;
-    }
+    [NativeTypeName("SIZE_T")]
+    public nuint OutputDataSizeInBytes;
 }

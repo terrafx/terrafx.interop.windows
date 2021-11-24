@@ -5,26 +5,25 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SpatialAudioObjectRenderStreamActivationParams
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SpatialAudioObjectRenderStreamActivationParams
-    {
-        [NativeTypeName("const WAVEFORMATEX *")]
-        public WAVEFORMATEX* ObjectFormat;
+    [NativeTypeName("const WAVEFORMATEX *")]
+    public WAVEFORMATEX* ObjectFormat;
 
-        public AudioObjectType StaticObjectTypeMask;
+    public AudioObjectType StaticObjectTypeMask;
 
-        [NativeTypeName("UINT32")]
-        public uint MinDynamicObjectCount;
+    [NativeTypeName("UINT32")]
+    public uint MinDynamicObjectCount;
 
-        [NativeTypeName("UINT32")]
-        public uint MaxDynamicObjectCount;
+    [NativeTypeName("UINT32")]
+    public uint MaxDynamicObjectCount;
 
-        public AUDIO_STREAM_CATEGORY Category;
+    public AUDIO_STREAM_CATEGORY Category;
 
-        public HANDLE EventHandle;
+    public HANDLE EventHandle;
 
-        public ISpatialAudioObjectRenderStreamNotify* NotifyObject;
-    }
+    public ISpatialAudioObjectRenderStreamNotify* NotifyObject;
 }

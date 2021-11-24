@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISpeechWaveFormatEx" /> struct.</summary>
+public static unsafe partial class ISpeechWaveFormatExTests
 {
-    /// <summary>Provides validation of the <see cref="ISpeechWaveFormatEx" /> struct.</summary>
-    public static unsafe partial class ISpeechWaveFormatExTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpeechWaveFormatEx" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpeechWaveFormatEx" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISpeechWaveFormatEx).GUID, Is.EqualTo(IID_ISpeechWaveFormatEx));
-        }
+        Assert.That(typeof(ISpeechWaveFormatEx).GUID, Is.EqualTo(IID_ISpeechWaveFormatEx));
+    }
 
-        /// <summary>Validates that the <see cref="ISpeechWaveFormatEx" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISpeechWaveFormatEx>(), Is.EqualTo(sizeof(ISpeechWaveFormatEx)));
-        }
+    /// <summary>Validates that the <see cref="ISpeechWaveFormatEx" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISpeechWaveFormatEx>(), Is.EqualTo(sizeof(ISpeechWaveFormatEx)));
+    }
 
-        /// <summary>Validates that the <see cref="ISpeechWaveFormatEx" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISpeechWaveFormatEx).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISpeechWaveFormatEx" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISpeechWaveFormatEx).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISpeechWaveFormatEx" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISpeechWaveFormatEx" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISpeechWaveFormatEx), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISpeechWaveFormatEx), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISpeechWaveFormatEx), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISpeechWaveFormatEx), Is.EqualTo(4));
         }
     }
 }

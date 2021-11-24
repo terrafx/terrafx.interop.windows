@@ -8,77 +8,76 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Guid("7071E1F0-E84B-4B33-974F-12FA49DE65C5")]
+[NativeTypeName("struct ID3D12Tools : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ID3D12Tools : ID3D12Tools.Interface
 {
-    [Guid("7071E1F0-E84B-4B33-974F-12FA49DE65C5")]
-    [NativeTypeName("struct ID3D12Tools : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID3D12Tools : ID3D12Tools.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ID3D12Tools*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12Tools*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ID3D12Tools*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12Tools*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ID3D12Tools*, uint>)(lpVtbl[1]))((ID3D12Tools*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ID3D12Tools*, uint>)(lpVtbl[1]))((ID3D12Tools*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ID3D12Tools*, uint>)(lpVtbl[2]))((ID3D12Tools*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ID3D12Tools*, uint>)(lpVtbl[2]))((ID3D12Tools*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public void EnableShaderInstrumentation(BOOL bEnable)
+    {
+        ((delegate* unmanaged<ID3D12Tools*, BOOL, void>)(lpVtbl[3]))((ID3D12Tools*)Unsafe.AsPointer(ref this), bEnable);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public BOOL ShaderInstrumentationEnabled()
+    {
+        return ((delegate* unmanaged<ID3D12Tools*, int>)(lpVtbl[4]))((ID3D12Tools*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public void EnableShaderInstrumentation(BOOL bEnable)
-        {
-            ((delegate* unmanaged<ID3D12Tools*, BOOL, void>)(lpVtbl[3]))((ID3D12Tools*)Unsafe.AsPointer(ref this), bEnable);
-        }
+        void EnableShaderInstrumentation(BOOL bEnable);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public BOOL ShaderInstrumentationEnabled()
-        {
-            return ((delegate* unmanaged<ID3D12Tools*, int>)(lpVtbl[4]))((ID3D12Tools*)Unsafe.AsPointer(ref this));
-        }
+        BOOL ShaderInstrumentationEnabled();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            void EnableShaderInstrumentation(BOOL bEnable);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12Tools*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            BOOL ShaderInstrumentationEnabled();
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12Tools*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12Tools*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12Tools*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12Tools*, uint> AddRef;
+        [NativeTypeName("void (BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12Tools*, BOOL, void> EnableShaderInstrumentation;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12Tools*, uint> Release;
-
-            [NativeTypeName("void (BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12Tools*, BOOL, void> EnableShaderInstrumentation;
-
-            [NativeTypeName("BOOL () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D12Tools*, int> ShaderInstrumentationEnabled;
-        }
+        [NativeTypeName("BOOL () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D12Tools*, int> ShaderInstrumentationEnabled;
     }
 }

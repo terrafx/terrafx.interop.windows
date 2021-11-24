@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ADPCMWAVEFORMAT" /> struct.</summary>
+public static unsafe partial class ADPCMWAVEFORMATTests
 {
-    /// <summary>Provides validation of the <see cref="ADPCMWAVEFORMAT" /> struct.</summary>
-    public static unsafe partial class ADPCMWAVEFORMATTests
+    /// <summary>Validates that the <see cref="ADPCMWAVEFORMAT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="ADPCMWAVEFORMAT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ADPCMWAVEFORMAT>(), Is.EqualTo(sizeof(ADPCMWAVEFORMAT)));
-        }
+        Assert.That(Marshal.SizeOf<ADPCMWAVEFORMAT>(), Is.EqualTo(sizeof(ADPCMWAVEFORMAT)));
+    }
 
-        /// <summary>Validates that the <see cref="ADPCMWAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ADPCMWAVEFORMAT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ADPCMWAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ADPCMWAVEFORMAT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ADPCMWAVEFORMAT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(ADPCMWAVEFORMAT), Is.EqualTo(26));
-        }
+    /// <summary>Validates that the <see cref="ADPCMWAVEFORMAT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(ADPCMWAVEFORMAT), Is.EqualTo(26));
     }
 }

@@ -8,108 +8,107 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class IID
 {
-    public static partial class IID
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_IDXGIOutput5
     {
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid IID_IDXGIOutput5
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x24, 0x74, 0xA0, 0x80,
-                    0x52, 0xAB,
-                    0xEB, 0x42,
-                    0x83,
-                    0x3C,
-                    0x0C,
-                    0x42,
-                    0xFD,
-                    0x28,
-                    0x2D,
-                    0x98
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x24, 0x74, 0xA0, 0x80,
+                0x52, 0xAB,
+                0xEB, 0x42,
+                0x83,
+                0x3C,
+                0x0C,
+                0x42,
+                0xFD,
+                0x28,
+                0x2D,
+                0x98
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid IID_IDXGISwapChain4
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_IDXGISwapChain4
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x5A, 0x5D, 0x58, 0x3D,
-                    0x4A, 0xBD,
-                    0x9E, 0x48,
-                    0xB1,
-                    0xF4,
-                    0x3D,
-                    0xBC,
-                    0xB6,
-                    0x45,
-                    0x2F,
-                    0xFB
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x5A, 0x5D, 0x58, 0x3D,
+                0x4A, 0xBD,
+                0x9E, 0x48,
+                0xB1,
+                0xF4,
+                0x3D,
+                0xBC,
+                0xB6,
+                0x45,
+                0x2F,
+                0xFB
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid IID_IDXGIDevice4
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_IDXGIDevice4
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x5F, 0xF9, 0xB4, 0x95,
-                    0xDA, 0xD8,
-                    0xA4, 0x4C,
-                    0x9E,
-                    0xE6,
-                    0x3B,
-                    0x76,
-                    0xD5,
-                    0x96,
-                    0x8A,
-                    0x10
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x5F, 0xF9, 0xB4, 0x95,
+                0xDA, 0xD8,
+                0xA4, 0x4C,
+                0x9E,
+                0xE6,
+                0x3B,
+                0x76,
+                0xD5,
+                0x96,
+                0x8A,
+                0x10
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid IID_IDXGIFactory5
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_IDXGIFactory5
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0xF5, 0xE1, 0x32, 0x76,
-                    0x65, 0xEE,
-                    0xCA, 0x4D,
-                    0x87,
-                    0xFD,
-                    0x84,
-                    0xCD,
-                    0x75,
-                    0xF8,
-                    0x83,
-                    0x8D
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0xF5, 0xE1, 0x32, 0x76,
+                0x65, 0xEE,
+                0xCA, 0x4D,
+                0x87,
+                0xFD,
+                0x84,
+                0xCD,
+                0x75,
+                0xF8,
+                0x83,
+                0x8D
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

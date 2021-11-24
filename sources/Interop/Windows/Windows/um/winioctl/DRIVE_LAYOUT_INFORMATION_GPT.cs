@@ -5,17 +5,16 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DRIVE_LAYOUT_INFORMATION_GPT
 {
-    public partial struct DRIVE_LAYOUT_INFORMATION_GPT
-    {
-        public Guid DiskId;
+    public Guid DiskId;
 
-        public LARGE_INTEGER StartingUsableOffset;
+    public LARGE_INTEGER StartingUsableOffset;
 
-        public LARGE_INTEGER UsableLength;
+    public LARGE_INTEGER UsableLength;
 
-        [NativeTypeName("DWORD")]
-        public uint MaxPartitionCount;
-    }
+    [NativeTypeName("DWORD")]
+    public uint MaxPartitionCount;
 }

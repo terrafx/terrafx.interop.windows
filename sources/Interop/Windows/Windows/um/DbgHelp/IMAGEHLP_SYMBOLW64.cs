@@ -3,26 +3,25 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct IMAGEHLP_SYMBOLW64
 {
-    public unsafe partial struct IMAGEHLP_SYMBOLW64
-    {
-        [NativeTypeName("DWORD")]
-        public uint SizeOfStruct;
+    [NativeTypeName("DWORD")]
+    public uint SizeOfStruct;
 
-        [NativeTypeName("DWORD64")]
-        public ulong Address;
+    [NativeTypeName("DWORD64")]
+    public ulong Address;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        [NativeTypeName("DWORD")]
-        public uint MaxNameLength;
+    [NativeTypeName("DWORD")]
+    public uint MaxNameLength;
 
-        [NativeTypeName("WCHAR [1]")]
-        public fixed ushort Name[1];
-    }
+    [NativeTypeName("WCHAR [1]")]
+    public fixed ushort Name[1];
 }

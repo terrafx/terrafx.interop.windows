@@ -3,18 +3,17 @@
 // Ported from um/DirectML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct DML_SPLIT_OPERATOR_DESC
 {
-    public unsafe partial struct DML_SPLIT_OPERATOR_DESC
-    {
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* InputTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* InputTensor;
 
-        public uint OutputCount;
+    public uint OutputCount;
 
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* OutputTensors;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* OutputTensors;
 
-        public uint Axis;
-    }
+    public uint Axis;
 }

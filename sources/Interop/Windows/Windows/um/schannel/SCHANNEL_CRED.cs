@@ -6,50 +6,49 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public unsafe partial struct SCHANNEL_CRED
 {
-    [SupportedOSPlatform("windows8.1")]
-    public unsafe partial struct SCHANNEL_CRED
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwVersion;
+    [NativeTypeName("DWORD")]
+    public uint dwVersion;
 
-        [NativeTypeName("DWORD")]
-        public uint cCreds;
+    [NativeTypeName("DWORD")]
+    public uint cCreds;
 
-        [NativeTypeName("PCCERT_CONTEXT *")]
-        public CERT_CONTEXT** paCred;
+    [NativeTypeName("PCCERT_CONTEXT *")]
+    public CERT_CONTEXT** paCred;
 
-        public HCERTSTORE hRootStore;
+    public HCERTSTORE hRootStore;
 
-        [NativeTypeName("DWORD")]
-        public uint cMappers;
+    [NativeTypeName("DWORD")]
+    public uint cMappers;
 
-        [NativeTypeName("struct _HMAPPER **")]
-        public IntPtr* aphMappers;
+    [NativeTypeName("struct _HMAPPER **")]
+    public IntPtr* aphMappers;
 
-        [NativeTypeName("DWORD")]
-        public uint cSupportedAlgs;
+    [NativeTypeName("DWORD")]
+    public uint cSupportedAlgs;
 
-        [NativeTypeName("ALG_ID *")]
-        public uint* palgSupportedAlgs;
+    [NativeTypeName("ALG_ID *")]
+    public uint* palgSupportedAlgs;
 
-        [NativeTypeName("DWORD")]
-        public uint grbitEnabledProtocols;
+    [NativeTypeName("DWORD")]
+    public uint grbitEnabledProtocols;
 
-        [NativeTypeName("DWORD")]
-        public uint dwMinimumCipherStrength;
+    [NativeTypeName("DWORD")]
+    public uint dwMinimumCipherStrength;
 
-        [NativeTypeName("DWORD")]
-        public uint dwMaximumCipherStrength;
+    [NativeTypeName("DWORD")]
+    public uint dwMaximumCipherStrength;
 
-        [NativeTypeName("DWORD")]
-        public uint dwSessionLifespan;
+    [NativeTypeName("DWORD")]
+    public uint dwSessionLifespan;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint dwCredFormat;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwCredFormat;
 }

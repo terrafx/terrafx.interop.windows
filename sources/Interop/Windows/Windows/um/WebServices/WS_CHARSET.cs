@@ -3,13 +3,12 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WS_CHARSET
 {
-    public enum WS_CHARSET
-    {
-        WS_CHARSET_AUTO = 0,
-        WS_CHARSET_UTF8 = 1,
-        WS_CHARSET_UTF16LE = 2,
-        WS_CHARSET_UTF16BE = 3,
-    }
+    WS_CHARSET_AUTO = 0,
+    WS_CHARSET_UTF8 = 1,
+    WS_CHARSET_UTF16LE = 2,
+    WS_CHARSET_UTF16BE = 3,
 }

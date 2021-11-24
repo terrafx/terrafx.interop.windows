@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum XAPO_BUFFER_FLAGS
 {
-    [Flags]
-    public enum XAPO_BUFFER_FLAGS
-    {
-        XAPO_BUFFER_SILENT,
-        XAPO_BUFFER_VALID,
-    }
+    XAPO_BUFFER_SILENT,
+    XAPO_BUFFER_VALID,
 }

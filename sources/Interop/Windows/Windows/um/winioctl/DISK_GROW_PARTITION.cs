@@ -3,13 +3,12 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct DISK_GROW_PARTITION
-    {
-        [NativeTypeName("DWORD")]
-        public uint PartitionNumber;
+namespace TerraFX.Interop.Windows;
 
-        public LARGE_INTEGER BytesToGrow;
-    }
+public partial struct DISK_GROW_PARTITION
+{
+    [NativeTypeName("DWORD")]
+    public uint PartitionNumber;
+
+    public LARGE_INTEGER BytesToGrow;
 }

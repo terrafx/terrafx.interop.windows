@@ -5,27 +5,26 @@
 
 using static TerraFX.Interop.DirectX.D3D12;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D12_DESCRIPTOR_RANGE
 {
-    public unsafe partial struct D3D12_DESCRIPTOR_RANGE
+    public D3D12_DESCRIPTOR_RANGE(D3D12_DESCRIPTOR_RANGE_TYPE rangeType, uint numDescriptors, uint baseShaderRegister, uint registerSpace = 0, uint offsetInDescriptorsFromTableStart = D3D12_DESCRIPTOR_RANGE_OFFSET_APPEND)
     {
-        public D3D12_DESCRIPTOR_RANGE(D3D12_DESCRIPTOR_RANGE_TYPE rangeType, uint numDescriptors, uint baseShaderRegister, uint registerSpace = 0, uint offsetInDescriptorsFromTableStart = D3D12_DESCRIPTOR_RANGE_OFFSET_APPEND)
-        {
-            Init(out this, rangeType, numDescriptors, baseShaderRegister, registerSpace, offsetInDescriptorsFromTableStart);
-        }
+        Init(out this, rangeType, numDescriptors, baseShaderRegister, registerSpace, offsetInDescriptorsFromTableStart);
+    }
 
-        public void Init(D3D12_DESCRIPTOR_RANGE_TYPE rangeType, uint numDescriptors, uint baseShaderRegister, uint registerSpace = 0, uint offsetInDescriptorsFromTableStart = D3D12_DESCRIPTOR_RANGE_OFFSET_APPEND)
-        {
-            Init(out this, rangeType, numDescriptors, baseShaderRegister, registerSpace, offsetInDescriptorsFromTableStart);
-        }
+    public void Init(D3D12_DESCRIPTOR_RANGE_TYPE rangeType, uint numDescriptors, uint baseShaderRegister, uint registerSpace = 0, uint offsetInDescriptorsFromTableStart = D3D12_DESCRIPTOR_RANGE_OFFSET_APPEND)
+    {
+        Init(out this, rangeType, numDescriptors, baseShaderRegister, registerSpace, offsetInDescriptorsFromTableStart);
+    }
 
-        public static void Init([NativeTypeName("D3D12_DESCRIPTOR_RANGE &")] out D3D12_DESCRIPTOR_RANGE range, D3D12_DESCRIPTOR_RANGE_TYPE rangeType, uint numDescriptors, uint baseShaderRegister, uint registerSpace = 0, uint offsetInDescriptorsFromTableStart = D3D12_DESCRIPTOR_RANGE_OFFSET_APPEND)
-        {
-            range.RangeType = rangeType;
-            range.NumDescriptors = numDescriptors;
-            range.BaseShaderRegister = baseShaderRegister;
-            range.RegisterSpace = registerSpace;
-            range.OffsetInDescriptorsFromTableStart = offsetInDescriptorsFromTableStart;
-        }
+    public static void Init([NativeTypeName("D3D12_DESCRIPTOR_RANGE &")] out D3D12_DESCRIPTOR_RANGE range, D3D12_DESCRIPTOR_RANGE_TYPE rangeType, uint numDescriptors, uint baseShaderRegister, uint registerSpace = 0, uint offsetInDescriptorsFromTableStart = D3D12_DESCRIPTOR_RANGE_OFFSET_APPEND)
+    {
+        range.RangeType = rangeType;
+        range.NumDescriptors = numDescriptors;
+        range.BaseShaderRegister = baseShaderRegister;
+        range.RegisterSpace = registerSpace;
+        range.OffsetInDescriptorsFromTableStart = offsetInDescriptorsFromTableStart;
     }
 }

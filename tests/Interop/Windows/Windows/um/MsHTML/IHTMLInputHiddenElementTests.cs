@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IHTMLInputHiddenElement" /> struct.</summary>
+public static unsafe partial class IHTMLInputHiddenElementTests
 {
-    /// <summary>Provides validation of the <see cref="IHTMLInputHiddenElement" /> struct.</summary>
-    public static unsafe partial class IHTMLInputHiddenElementTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLInputHiddenElement" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLInputHiddenElement" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IHTMLInputHiddenElement).GUID, Is.EqualTo(IID_IHTMLInputHiddenElement));
-        }
+        Assert.That(typeof(IHTMLInputHiddenElement).GUID, Is.EqualTo(IID_IHTMLInputHiddenElement));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLInputHiddenElement" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IHTMLInputHiddenElement>(), Is.EqualTo(sizeof(IHTMLInputHiddenElement)));
-        }
+    /// <summary>Validates that the <see cref="IHTMLInputHiddenElement" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IHTMLInputHiddenElement>(), Is.EqualTo(sizeof(IHTMLInputHiddenElement)));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLInputHiddenElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IHTMLInputHiddenElement).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IHTMLInputHiddenElement" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IHTMLInputHiddenElement).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLInputHiddenElement" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IHTMLInputHiddenElement" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IHTMLInputHiddenElement), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IHTMLInputHiddenElement), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IHTMLInputHiddenElement), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IHTMLInputHiddenElement), Is.EqualTo(4));
         }
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TF_PERSISTENT_PROPERTY_HEADER_ACP" /> struct.</summary>
+public static unsafe partial class TF_PERSISTENT_PROPERTY_HEADER_ACPTests
 {
-    /// <summary>Provides validation of the <see cref="TF_PERSISTENT_PROPERTY_HEADER_ACP" /> struct.</summary>
-    public static unsafe partial class TF_PERSISTENT_PROPERTY_HEADER_ACPTests
+    /// <summary>Validates that the <see cref="TF_PERSISTENT_PROPERTY_HEADER_ACP" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TF_PERSISTENT_PROPERTY_HEADER_ACP" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TF_PERSISTENT_PROPERTY_HEADER_ACP>(), Is.EqualTo(sizeof(TF_PERSISTENT_PROPERTY_HEADER_ACP)));
-        }
+        Assert.That(Marshal.SizeOf<TF_PERSISTENT_PROPERTY_HEADER_ACP>(), Is.EqualTo(sizeof(TF_PERSISTENT_PROPERTY_HEADER_ACP)));
+    }
 
-        /// <summary>Validates that the <see cref="TF_PERSISTENT_PROPERTY_HEADER_ACP" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TF_PERSISTENT_PROPERTY_HEADER_ACP).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TF_PERSISTENT_PROPERTY_HEADER_ACP" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TF_PERSISTENT_PROPERTY_HEADER_ACP).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TF_PERSISTENT_PROPERTY_HEADER_ACP" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TF_PERSISTENT_PROPERTY_HEADER_ACP), Is.EqualTo(48));
-        }
+    /// <summary>Validates that the <see cref="TF_PERSISTENT_PROPERTY_HEADER_ACP" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TF_PERSISTENT_PROPERTY_HEADER_ACP), Is.EqualTo(48));
     }
 }

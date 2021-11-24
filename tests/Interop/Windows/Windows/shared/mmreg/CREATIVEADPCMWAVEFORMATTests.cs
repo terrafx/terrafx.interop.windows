@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CREATIVEADPCMWAVEFORMAT" /> struct.</summary>
+public static unsafe partial class CREATIVEADPCMWAVEFORMATTests
 {
-    /// <summary>Provides validation of the <see cref="CREATIVEADPCMWAVEFORMAT" /> struct.</summary>
-    public static unsafe partial class CREATIVEADPCMWAVEFORMATTests
+    /// <summary>Validates that the <see cref="CREATIVEADPCMWAVEFORMAT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CREATIVEADPCMWAVEFORMAT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CREATIVEADPCMWAVEFORMAT>(), Is.EqualTo(sizeof(CREATIVEADPCMWAVEFORMAT)));
-        }
+        Assert.That(Marshal.SizeOf<CREATIVEADPCMWAVEFORMAT>(), Is.EqualTo(sizeof(CREATIVEADPCMWAVEFORMAT)));
+    }
 
-        /// <summary>Validates that the <see cref="CREATIVEADPCMWAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CREATIVEADPCMWAVEFORMAT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CREATIVEADPCMWAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CREATIVEADPCMWAVEFORMAT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CREATIVEADPCMWAVEFORMAT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CREATIVEADPCMWAVEFORMAT), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="CREATIVEADPCMWAVEFORMAT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CREATIVEADPCMWAVEFORMAT), Is.EqualTo(20));
     }
 }

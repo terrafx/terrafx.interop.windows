@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HIDP_KEYBOARD_MODIFIER_STATE" /> struct.</summary>
+public static unsafe partial class HIDP_KEYBOARD_MODIFIER_STATETests
 {
-    /// <summary>Provides validation of the <see cref="HIDP_KEYBOARD_MODIFIER_STATE" /> struct.</summary>
-    public static unsafe partial class HIDP_KEYBOARD_MODIFIER_STATETests
+    /// <summary>Validates that the <see cref="HIDP_KEYBOARD_MODIFIER_STATE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="HIDP_KEYBOARD_MODIFIER_STATE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HIDP_KEYBOARD_MODIFIER_STATE>(), Is.EqualTo(sizeof(HIDP_KEYBOARD_MODIFIER_STATE)));
-        }
+        Assert.That(Marshal.SizeOf<HIDP_KEYBOARD_MODIFIER_STATE>(), Is.EqualTo(sizeof(HIDP_KEYBOARD_MODIFIER_STATE)));
+    }
 
-        /// <summary>Validates that the <see cref="HIDP_KEYBOARD_MODIFIER_STATE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HIDP_KEYBOARD_MODIFIER_STATE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HIDP_KEYBOARD_MODIFIER_STATE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HIDP_KEYBOARD_MODIFIER_STATE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HIDP_KEYBOARD_MODIFIER_STATE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HIDP_KEYBOARD_MODIFIER_STATE), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="HIDP_KEYBOARD_MODIFIER_STATE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HIDP_KEYBOARD_MODIFIER_STATE), Is.EqualTo(4));
     }
 }

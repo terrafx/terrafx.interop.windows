@@ -5,19 +5,18 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct DRIVERSTATUS
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct DRIVERSTATUS
-    {
-        public byte bDriverError;
+    public byte bDriverError;
 
-        public byte bIDEError;
+    public byte bIDEError;
 
-        [NativeTypeName("BYTE [2]")]
-        public fixed byte bReserved[2];
+    [NativeTypeName("BYTE [2]")]
+    public fixed byte bReserved[2];
 
-        [NativeTypeName("DWORD [2]")]
-        public fixed uint dwReserved[2];
-    }
+    [NativeTypeName("DWORD [2]")]
+    public fixed uint dwReserved[2];
 }

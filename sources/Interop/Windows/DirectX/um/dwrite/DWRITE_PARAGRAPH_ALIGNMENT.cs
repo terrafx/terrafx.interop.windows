@@ -3,12 +3,11 @@
 // Ported from um/dwrite.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum DWRITE_PARAGRAPH_ALIGNMENT
 {
-    public enum DWRITE_PARAGRAPH_ALIGNMENT
-    {
-        DWRITE_PARAGRAPH_ALIGNMENT_NEAR,
-        DWRITE_PARAGRAPH_ALIGNMENT_FAR,
-        DWRITE_PARAGRAPH_ALIGNMENT_CENTER,
-    }
+    DWRITE_PARAGRAPH_ALIGNMENT_NEAR,
+    DWRITE_PARAGRAPH_ALIGNMENT_FAR,
+    DWRITE_PARAGRAPH_ALIGNMENT_CENTER,
 }

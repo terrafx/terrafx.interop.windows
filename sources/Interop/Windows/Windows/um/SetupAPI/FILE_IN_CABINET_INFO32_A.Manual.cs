@@ -5,30 +5,29 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct FILE_IN_CABINET_INFO32_A
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct FILE_IN_CABINET_INFO32_A
-    {
-        [NativeTypeName("PCSTR")]
-        public sbyte* NameInCabinet;
+    [NativeTypeName("PCSTR")]
+    public sbyte* NameInCabinet;
 
-        [NativeTypeName("DWORD")]
-        public uint FileSize;
+    [NativeTypeName("DWORD")]
+    public uint FileSize;
 
-        [NativeTypeName("DWORD")]
-        public uint Win32Error;
+    [NativeTypeName("DWORD")]
+    public uint Win32Error;
 
-        [NativeTypeName("WORD")]
-        public ushort DosDate;
+    [NativeTypeName("WORD")]
+    public ushort DosDate;
 
-        [NativeTypeName("WORD")]
-        public ushort DosTime;
+    [NativeTypeName("WORD")]
+    public ushort DosTime;
 
-        [NativeTypeName("WORD")]
-        public ushort DosAttribs;
+    [NativeTypeName("WORD")]
+    public ushort DosAttribs;
 
-        [NativeTypeName("CHAR [260]")]
-        public fixed sbyte FullTargetName[260];
-    }
+    [NativeTypeName("CHAR [260]")]
+    public fixed sbyte FullTargetName[260];
 }

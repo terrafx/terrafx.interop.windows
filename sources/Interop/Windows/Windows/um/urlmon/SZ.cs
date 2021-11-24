@@ -3,14 +3,13 @@
 // Ported from um/urlmon.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class SZ
-    {
-        [NativeTypeName("#define SZ_URLCONTEXT OLESTR(\"URL Context\")")]
-        public const string SZ_URLCONTEXT = "URL Context";
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("#define SZ_ASYNC_CALLEE OLESTR(\"AsyncCallee\")")]
-        public const string SZ_ASYNC_CALLEE = "AsyncCallee";
-    }
+public static partial class SZ
+{
+    [NativeTypeName("#define SZ_URLCONTEXT OLESTR(\"URL Context\")")]
+    public const string SZ_URLCONTEXT = "URL Context";
+
+    [NativeTypeName("#define SZ_ASYNC_CALLEE OLESTR(\"AsyncCallee\")")]
+    public const string SZ_ASYNC_CALLEE = "AsyncCallee";
 }

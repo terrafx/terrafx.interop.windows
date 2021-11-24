@@ -7,33 +7,32 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct NCCALCSIZE_PARAMS
 {
-    public unsafe partial struct NCCALCSIZE_PARAMS
+    [NativeTypeName("RECT [3]")]
+    public _rgrc_e__FixedBuffer rgrc;
+
+    [NativeTypeName("PWINDOWPOS")]
+    public WINDOWPOS* lppos;
+
+    public partial struct _rgrc_e__FixedBuffer
     {
-        [NativeTypeName("RECT [3]")]
-        public _rgrc_e__FixedBuffer rgrc;
+        public RECT e0;
+        public RECT e1;
+        public RECT e2;
 
-        [NativeTypeName("PWINDOWPOS")]
-        public WINDOWPOS* lppos;
-
-        public partial struct _rgrc_e__FixedBuffer
+        public ref RECT this[int index]
         {
-            public RECT e0;
-            public RECT e1;
-            public RECT e2;
-
-            public ref RECT this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan()[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<RECT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
+            get
+            {
+                return ref AsSpan()[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<RECT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
     }
 }

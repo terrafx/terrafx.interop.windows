@@ -3,76 +3,75 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct OUTLINETEXTMETRICA
 {
-    public unsafe partial struct OUTLINETEXTMETRICA
-    {
-        public uint otmSize;
+    public uint otmSize;
 
-        public TEXTMETRICA otmTextMetrics;
+    public TEXTMETRICA otmTextMetrics;
 
-        public byte otmFiller;
+    public byte otmFiller;
 
-        public PANOSE otmPanoseNumber;
+    public PANOSE otmPanoseNumber;
 
-        public uint otmfsSelection;
+    public uint otmfsSelection;
 
-        public uint otmfsType;
+    public uint otmfsType;
 
-        public int otmsCharSlopeRise;
+    public int otmsCharSlopeRise;
 
-        public int otmsCharSlopeRun;
+    public int otmsCharSlopeRun;
 
-        public int otmItalicAngle;
+    public int otmItalicAngle;
 
-        public uint otmEMSquare;
+    public uint otmEMSquare;
 
-        public int otmAscent;
+    public int otmAscent;
 
-        public int otmDescent;
+    public int otmDescent;
 
-        public uint otmLineGap;
+    public uint otmLineGap;
 
-        public uint otmsCapEmHeight;
+    public uint otmsCapEmHeight;
 
-        public uint otmsXHeight;
+    public uint otmsXHeight;
 
-        public RECT otmrcFontBox;
+    public RECT otmrcFontBox;
 
-        public int otmMacAscent;
+    public int otmMacAscent;
 
-        public int otmMacDescent;
+    public int otmMacDescent;
 
-        public uint otmMacLineGap;
+    public uint otmMacLineGap;
 
-        public uint otmusMinimumPPEM;
+    public uint otmusMinimumPPEM;
 
-        public POINT otmptSubscriptSize;
+    public POINT otmptSubscriptSize;
 
-        public POINT otmptSubscriptOffset;
+    public POINT otmptSubscriptOffset;
 
-        public POINT otmptSuperscriptSize;
+    public POINT otmptSuperscriptSize;
 
-        public POINT otmptSuperscriptOffset;
+    public POINT otmptSuperscriptOffset;
 
-        public uint otmsStrikeoutSize;
+    public uint otmsStrikeoutSize;
 
-        public int otmsStrikeoutPosition;
+    public int otmsStrikeoutPosition;
 
-        public int otmsUnderscoreSize;
+    public int otmsUnderscoreSize;
 
-        public int otmsUnderscorePosition;
+    public int otmsUnderscorePosition;
 
-        [NativeTypeName("PSTR")]
-        public sbyte* otmpFamilyName;
+    [NativeTypeName("PSTR")]
+    public sbyte* otmpFamilyName;
 
-        [NativeTypeName("PSTR")]
-        public sbyte* otmpFaceName;
+    [NativeTypeName("PSTR")]
+    public sbyte* otmpFaceName;
 
-        [NativeTypeName("PSTR")]
-        public sbyte* otmpStyleName;
+    [NativeTypeName("PSTR")]
+    public sbyte* otmpStyleName;
 
-        [NativeTypeName("PSTR")]
-        public sbyte* otmpFullName;
-    }
+    [NativeTypeName("PSTR")]
+    public sbyte* otmpFullName;
 }

@@ -5,17 +5,16 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct FILE_SEGMENT_ELEMENT
-    {
-        [FieldOffset(0)]
-        [NativeTypeName("PVOID64")]
-        public void* Buffer;
+namespace TerraFX.Interop.Windows;
 
-        [FieldOffset(0)]
-        [NativeTypeName("ULONGLONG")]
-        public ulong Alignment;
-    }
+[StructLayout(LayoutKind.Explicit)]
+public unsafe partial struct FILE_SEGMENT_ELEMENT
+{
+    [FieldOffset(0)]
+    [NativeTypeName("PVOID64")]
+    public void* Buffer;
+
+    [FieldOffset(0)]
+    [NativeTypeName("ULONGLONG")]
+    public ulong Alignment;
 }

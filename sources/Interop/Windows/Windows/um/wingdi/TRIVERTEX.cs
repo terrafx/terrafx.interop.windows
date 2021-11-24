@@ -3,26 +3,25 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TRIVERTEX
 {
-    public partial struct TRIVERTEX
-    {
-        [NativeTypeName("LONG")]
-        public int x;
+    [NativeTypeName("LONG")]
+    public int x;
 
-        [NativeTypeName("LONG")]
-        public int y;
+    [NativeTypeName("LONG")]
+    public int y;
 
-        [NativeTypeName("COLOR16")]
-        public ushort Red;
+    [NativeTypeName("COLOR16")]
+    public ushort Red;
 
-        [NativeTypeName("COLOR16")]
-        public ushort Green;
+    [NativeTypeName("COLOR16")]
+    public ushort Green;
 
-        [NativeTypeName("COLOR16")]
-        public ushort Blue;
+    [NativeTypeName("COLOR16")]
+    public ushort Blue;
 
-        [NativeTypeName("COLOR16")]
-        public ushort Alpha;
-    }
+    [NativeTypeName("COLOR16")]
+    public ushort Alpha;
 }

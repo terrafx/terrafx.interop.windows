@@ -3,15 +3,14 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct COLORSCHEME
 {
-    public partial struct COLORSCHEME
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwSize;
+    [NativeTypeName("DWORD")]
+    public uint dwSize;
 
-        public COLORREF clrBtnHighlight;
+    public COLORREF clrBtnHighlight;
 
-        public COLORREF clrBtnShadow;
-    }
+    public COLORREF clrBtnShadow;
 }

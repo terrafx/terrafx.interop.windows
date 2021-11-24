@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DEVICE_LB_PROVISIONING_DESCRIPTOR" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class DEVICE_LB_PROVISIONING_DESCRIPTORTests
 {
-    /// <summary>Provides validation of the <see cref="DEVICE_LB_PROVISIONING_DESCRIPTOR" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class DEVICE_LB_PROVISIONING_DESCRIPTORTests
+    /// <summary>Validates that the <see cref="DEVICE_LB_PROVISIONING_DESCRIPTOR" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DEVICE_LB_PROVISIONING_DESCRIPTOR" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DEVICE_LB_PROVISIONING_DESCRIPTOR>(), Is.EqualTo(sizeof(DEVICE_LB_PROVISIONING_DESCRIPTOR)));
-        }
+        Assert.That(Marshal.SizeOf<DEVICE_LB_PROVISIONING_DESCRIPTOR>(), Is.EqualTo(sizeof(DEVICE_LB_PROVISIONING_DESCRIPTOR)));
+    }
 
-        /// <summary>Validates that the <see cref="DEVICE_LB_PROVISIONING_DESCRIPTOR" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DEVICE_LB_PROVISIONING_DESCRIPTOR).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DEVICE_LB_PROVISIONING_DESCRIPTOR" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DEVICE_LB_PROVISIONING_DESCRIPTOR).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DEVICE_LB_PROVISIONING_DESCRIPTOR" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DEVICE_LB_PROVISIONING_DESCRIPTOR), Is.EqualTo(40));
-        }
+    /// <summary>Validates that the <see cref="DEVICE_LB_PROVISIONING_DESCRIPTOR" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DEVICE_LB_PROVISIONING_DESCRIPTOR), Is.EqualTo(40));
     }
 }

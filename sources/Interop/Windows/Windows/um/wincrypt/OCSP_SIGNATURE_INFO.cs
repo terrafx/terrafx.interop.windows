@@ -3,18 +3,17 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct OCSP_SIGNATURE_INFO
 {
-    public unsafe partial struct OCSP_SIGNATURE_INFO
-    {
-        public CRYPT_ALGORITHM_IDENTIFIER SignatureAlgorithm;
+    public CRYPT_ALGORITHM_IDENTIFIER SignatureAlgorithm;
 
-        public CRYPT_BIT_BLOB Signature;
+    public CRYPT_BIT_BLOB Signature;
 
-        [NativeTypeName("DWORD")]
-        public uint cCertEncoded;
+    [NativeTypeName("DWORD")]
+    public uint cCertEncoded;
 
-        [NativeTypeName("PCERT_BLOB")]
-        public CRYPT_DATA_BLOB* rgCertEncoded;
-    }
+    [NativeTypeName("PCERT_BLOB")]
+    public CRYPT_DATA_BLOB* rgCertEncoded;
 }

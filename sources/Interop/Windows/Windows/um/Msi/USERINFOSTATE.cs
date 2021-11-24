@@ -3,14 +3,13 @@
 // Ported from um/Msi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum USERINFOSTATE
 {
-    public enum USERINFOSTATE
-    {
-        USERINFOSTATE_MOREDATA = -3,
-        USERINFOSTATE_INVALIDARG = -2,
-        USERINFOSTATE_UNKNOWN = -1,
-        USERINFOSTATE_ABSENT = 0,
-        USERINFOSTATE_PRESENT = 1,
-    }
+    USERINFOSTATE_MOREDATA = -3,
+    USERINFOSTATE_INVALIDARG = -2,
+    USERINFOSTATE_UNKNOWN = -1,
+    USERINFOSTATE_ABSENT = 0,
+    USERINFOSTATE_PRESENT = 1,
 }

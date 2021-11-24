@@ -8,12 +8,11 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+public static unsafe partial class WinRT
 {
-    public static unsafe partial class WinRT
-    {
-        [SupportedOSPlatform("windows10.0.15063.0")]
-        [DllImport("windows.ui.xaml.dll", ExactSpelling = true)]
-        public static extern HRESULT InitializeXamlDiagnosticsEx([NativeTypeName("LPCWSTR")] ushort* endPointName, [NativeTypeName("DWORD")] uint pid, [NativeTypeName("LPCWSTR")] ushort* wszDllXamlDiagnostics, [NativeTypeName("LPCWSTR")] ushort* wszTAPDllName, [NativeTypeName("CLSID")] Guid tapClsid, [NativeTypeName("LPCWSTR")] ushort* wszInitializationData);
-    }
+    [SupportedOSPlatform("windows10.0.15063.0")]
+    [DllImport("windows.ui.xaml.dll", ExactSpelling = true)]
+    public static extern HRESULT InitializeXamlDiagnosticsEx([NativeTypeName("LPCWSTR")] ushort* endPointName, [NativeTypeName("DWORD")] uint pid, [NativeTypeName("LPCWSTR")] ushort* wszDllXamlDiagnostics, [NativeTypeName("LPCWSTR")] ushort* wszTAPDllName, [NativeTypeName("CLSID")] Guid tapClsid, [NativeTypeName("LPCWSTR")] ushort* wszInitializationData);
 }

@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public enum MF_VIDEO_PROCESSOR_ALGORITHM_TYPE
 {
-    [SupportedOSPlatform("windows8.1")]
-    public enum MF_VIDEO_PROCESSOR_ALGORITHM_TYPE
-    {
-        MF_VIDEO_PROCESSOR_ALGORITHM_DEFAULT = 0,
-        MF_VIDEO_PROCESSOR_ALGORITHM_MRF_CRF_444 = 1,
-    }
+    MF_VIDEO_PROCESSOR_ALGORITHM_DEFAULT = 0,
+    MF_VIDEO_PROCESSOR_ALGORITHM_MRF_CRF_444 = 1,
 }

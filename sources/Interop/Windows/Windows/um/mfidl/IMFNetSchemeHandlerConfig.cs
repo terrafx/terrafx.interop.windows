@@ -7,90 +7,89 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("7BE19E73-C9BF-468A-AC5A-A5E8653BEC87")]
+[NativeTypeName("struct IMFNetSchemeHandlerConfig : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMFNetSchemeHandlerConfig : IMFNetSchemeHandlerConfig.Interface
 {
-    [Guid("7BE19E73-C9BF-468A-AC5A-A5E8653BEC87")]
-    [NativeTypeName("struct IMFNetSchemeHandlerConfig : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFNetSchemeHandlerConfig : IMFNetSchemeHandlerConfig.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMFNetSchemeHandlerConfig*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetSchemeHandlerConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMFNetSchemeHandlerConfig*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetSchemeHandlerConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMFNetSchemeHandlerConfig*, uint>)(lpVtbl[1]))((IMFNetSchemeHandlerConfig*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMFNetSchemeHandlerConfig*, uint>)(lpVtbl[1]))((IMFNetSchemeHandlerConfig*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMFNetSchemeHandlerConfig*, uint>)(lpVtbl[2]))((IMFNetSchemeHandlerConfig*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMFNetSchemeHandlerConfig*, uint>)(lpVtbl[2]))((IMFNetSchemeHandlerConfig*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetNumberOfSupportedProtocols([NativeTypeName("ULONG *")] uint* pcProtocols)
+    {
+        return ((delegate* unmanaged<IMFNetSchemeHandlerConfig*, uint*, int>)(lpVtbl[3]))((IMFNetSchemeHandlerConfig*)Unsafe.AsPointer(ref this), pcProtocols);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetSupportedProtocolType([NativeTypeName("ULONG")] uint nProtocolIndex, MFNETSOURCE_PROTOCOL_TYPE* pnProtocolType)
+    {
+        return ((delegate* unmanaged<IMFNetSchemeHandlerConfig*, uint, MFNETSOURCE_PROTOCOL_TYPE*, int>)(lpVtbl[4]))((IMFNetSchemeHandlerConfig*)Unsafe.AsPointer(ref this), nProtocolIndex, pnProtocolType);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT ResetProtocolRolloverSettings()
+    {
+        return ((delegate* unmanaged<IMFNetSchemeHandlerConfig*, int>)(lpVtbl[5]))((IMFNetSchemeHandlerConfig*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetNumberOfSupportedProtocols([NativeTypeName("ULONG *")] uint* pcProtocols)
-        {
-            return ((delegate* unmanaged<IMFNetSchemeHandlerConfig*, uint*, int>)(lpVtbl[3]))((IMFNetSchemeHandlerConfig*)Unsafe.AsPointer(ref this), pcProtocols);
-        }
+        HRESULT GetNumberOfSupportedProtocols([NativeTypeName("ULONG *")] uint* pcProtocols);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetSupportedProtocolType([NativeTypeName("ULONG")] uint nProtocolIndex, MFNETSOURCE_PROTOCOL_TYPE* pnProtocolType)
-        {
-            return ((delegate* unmanaged<IMFNetSchemeHandlerConfig*, uint, MFNETSOURCE_PROTOCOL_TYPE*, int>)(lpVtbl[4]))((IMFNetSchemeHandlerConfig*)Unsafe.AsPointer(ref this), nProtocolIndex, pnProtocolType);
-        }
+        HRESULT GetSupportedProtocolType([NativeTypeName("ULONG")] uint nProtocolIndex, MFNETSOURCE_PROTOCOL_TYPE* pnProtocolType);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT ResetProtocolRolloverSettings()
-        {
-            return ((delegate* unmanaged<IMFNetSchemeHandlerConfig*, int>)(lpVtbl[5]))((IMFNetSchemeHandlerConfig*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT ResetProtocolRolloverSettings();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetNumberOfSupportedProtocols([NativeTypeName("ULONG *")] uint* pcProtocols);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFNetSchemeHandlerConfig*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetSupportedProtocolType([NativeTypeName("ULONG")] uint nProtocolIndex, MFNETSOURCE_PROTOCOL_TYPE* pnProtocolType);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFNetSchemeHandlerConfig*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT ResetProtocolRolloverSettings();
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFNetSchemeHandlerConfig*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFNetSchemeHandlerConfig*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFNetSchemeHandlerConfig*, uint*, int> GetNumberOfSupportedProtocols;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFNetSchemeHandlerConfig*, uint> AddRef;
+        [NativeTypeName("HRESULT (ULONG, MFNETSOURCE_PROTOCOL_TYPE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFNetSchemeHandlerConfig*, uint, MFNETSOURCE_PROTOCOL_TYPE*, int> GetSupportedProtocolType;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFNetSchemeHandlerConfig*, uint> Release;
-
-            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFNetSchemeHandlerConfig*, uint*, int> GetNumberOfSupportedProtocols;
-
-            [NativeTypeName("HRESULT (ULONG, MFNETSOURCE_PROTOCOL_TYPE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFNetSchemeHandlerConfig*, uint, MFNETSOURCE_PROTOCOL_TYPE*, int> GetSupportedProtocolType;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFNetSchemeHandlerConfig*, int> ResetProtocolRolloverSettings;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFNetSchemeHandlerConfig*, int> ResetProtocolRolloverSettings;
     }
 }

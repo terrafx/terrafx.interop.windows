@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLCSSStyleDeclaration" /> struct.</summary>
+public static unsafe partial class HTMLCSSStyleDeclarationTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLCSSStyleDeclaration" /> struct.</summary>
-    public static unsafe partial class HTMLCSSStyleDeclarationTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLCSSStyleDeclaration" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLCSSStyleDeclaration" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLCSSStyleDeclaration).GUID, Is.EqualTo(IID_HTMLCSSStyleDeclaration));
-        }
+        Assert.That(typeof(HTMLCSSStyleDeclaration).GUID, Is.EqualTo(IID_HTMLCSSStyleDeclaration));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLCSSStyleDeclaration" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLCSSStyleDeclaration>(), Is.EqualTo(sizeof(HTMLCSSStyleDeclaration)));
-        }
+    /// <summary>Validates that the <see cref="HTMLCSSStyleDeclaration" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLCSSStyleDeclaration>(), Is.EqualTo(sizeof(HTMLCSSStyleDeclaration)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLCSSStyleDeclaration" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLCSSStyleDeclaration).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLCSSStyleDeclaration" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLCSSStyleDeclaration).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLCSSStyleDeclaration" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTMLCSSStyleDeclaration), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTMLCSSStyleDeclaration" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTMLCSSStyleDeclaration), Is.EqualTo(1));
     }
 }

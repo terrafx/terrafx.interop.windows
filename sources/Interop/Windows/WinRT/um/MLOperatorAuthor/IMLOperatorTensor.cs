@@ -8,144 +8,143 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[Guid("7FE41F41-F430-440E-AECE-54416DC8B9DB")]
+[NativeTypeName("struct IMLOperatorTensor : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface
 {
-    [Guid("7FE41F41-F430-440E-AECE-54416DC8B9DB")]
-    [NativeTypeName("struct IMLOperatorTensor : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMLOperatorTensor*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMLOperatorTensor*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMLOperatorTensor*, uint>)(lpVtbl[1]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMLOperatorTensor*, uint>)(lpVtbl[1]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMLOperatorTensor*, uint>)(lpVtbl[2]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMLOperatorTensor*, uint>)(lpVtbl[2]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    [return: NativeTypeName("uint32_t")]
+    public uint GetDimensionCount()
+    {
+        return ((delegate* unmanaged<IMLOperatorTensor*, uint>)(lpVtbl[3]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetShape([NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("uint32_t *")] uint* dimensions)
+    {
+        return ((delegate* unmanaged<IMLOperatorTensor*, uint, uint*, int>)(lpVtbl[4]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this), dimensionCount, dimensions);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public MLOperatorTensorDataType GetTensorDataType()
+    {
+        return ((delegate* unmanaged<IMLOperatorTensor*, MLOperatorTensorDataType>)(lpVtbl[5]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public bool IsCpuData()
+    {
+        return ((delegate* unmanaged<IMLOperatorTensor*, byte>)(lpVtbl[6]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this)) != 0;
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public bool IsDataInterface()
+    {
+        return ((delegate* unmanaged<IMLOperatorTensor*, byte>)(lpVtbl[7]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this)) != 0;
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public void* GetData()
+    {
+        return ((delegate* unmanaged<IMLOperatorTensor*, void*>)(lpVtbl[8]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public void GetDataInterface(IUnknown** dataInterface)
+    {
+        ((delegate* unmanaged<IMLOperatorTensor*, IUnknown**, void>)(lpVtbl[9]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this), dataInterface);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
         [return: NativeTypeName("uint32_t")]
-        public uint GetDimensionCount()
-        {
-            return ((delegate* unmanaged<IMLOperatorTensor*, uint>)(lpVtbl[3]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
-        }
+        uint GetDimensionCount();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetShape([NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("uint32_t *")] uint* dimensions)
-        {
-            return ((delegate* unmanaged<IMLOperatorTensor*, uint, uint*, int>)(lpVtbl[4]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this), dimensionCount, dimensions);
-        }
+        HRESULT GetShape([NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("uint32_t *")] uint* dimensions);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public MLOperatorTensorDataType GetTensorDataType()
-        {
-            return ((delegate* unmanaged<IMLOperatorTensor*, MLOperatorTensorDataType>)(lpVtbl[5]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
-        }
+        MLOperatorTensorDataType GetTensorDataType();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public bool IsCpuData()
-        {
-            return ((delegate* unmanaged<IMLOperatorTensor*, byte>)(lpVtbl[6]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this)) != 0;
-        }
+        bool IsCpuData();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public bool IsDataInterface()
-        {
-            return ((delegate* unmanaged<IMLOperatorTensor*, byte>)(lpVtbl[7]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this)) != 0;
-        }
+        bool IsDataInterface();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public void* GetData()
-        {
-            return ((delegate* unmanaged<IMLOperatorTensor*, void*>)(lpVtbl[8]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
-        }
+        void* GetData();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public void GetDataInterface(IUnknown** dataInterface)
-        {
-            ((delegate* unmanaged<IMLOperatorTensor*, IUnknown**, void>)(lpVtbl[9]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this), dataInterface);
-        }
+        void GetDataInterface(IUnknown** dataInterface);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            [return: NativeTypeName("uint32_t")]
-            uint GetDimensionCount();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMLOperatorTensor*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetShape([NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("uint32_t *")] uint* dimensions);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMLOperatorTensor*, uint> AddRef;
 
-            [VtblIndex(5)]
-            MLOperatorTensorDataType GetTensorDataType();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMLOperatorTensor*, uint> Release;
 
-            [VtblIndex(6)]
-            bool IsCpuData();
+        [NativeTypeName("uint32_t () const noexcept __attribute__((stdcall))")]
+        public delegate* unmanaged<IMLOperatorTensor*, uint> GetDimensionCount;
 
-            [VtblIndex(7)]
-            bool IsDataInterface();
+        [NativeTypeName("HRESULT (uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
+        public delegate* unmanaged<IMLOperatorTensor*, uint, uint*, int> GetShape;
 
-            [VtblIndex(8)]
-            void* GetData();
+        [NativeTypeName("MLOperatorTensorDataType () const noexcept __attribute__((stdcall))")]
+        public delegate* unmanaged<IMLOperatorTensor*, MLOperatorTensorDataType> GetTensorDataType;
 
-            [VtblIndex(9)]
-            void GetDataInterface(IUnknown** dataInterface);
-        }
+        [NativeTypeName("bool () const noexcept __attribute__((stdcall))")]
+        public delegate* unmanaged<IMLOperatorTensor*, byte> IsCpuData;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMLOperatorTensor*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("bool () const noexcept __attribute__((stdcall))")]
+        public delegate* unmanaged<IMLOperatorTensor*, byte> IsDataInterface;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMLOperatorTensor*, uint> AddRef;
+        [NativeTypeName("void *() noexcept __attribute__((stdcall))")]
+        public delegate* unmanaged<IMLOperatorTensor*, void*> GetData;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMLOperatorTensor*, uint> Release;
-
-            [NativeTypeName("uint32_t () const noexcept __attribute__((stdcall))")]
-            public delegate* unmanaged<IMLOperatorTensor*, uint> GetDimensionCount;
-
-            [NativeTypeName("HRESULT (uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
-            public delegate* unmanaged<IMLOperatorTensor*, uint, uint*, int> GetShape;
-
-            [NativeTypeName("MLOperatorTensorDataType () const noexcept __attribute__((stdcall))")]
-            public delegate* unmanaged<IMLOperatorTensor*, MLOperatorTensorDataType> GetTensorDataType;
-
-            [NativeTypeName("bool () const noexcept __attribute__((stdcall))")]
-            public delegate* unmanaged<IMLOperatorTensor*, byte> IsCpuData;
-
-            [NativeTypeName("bool () const noexcept __attribute__((stdcall))")]
-            public delegate* unmanaged<IMLOperatorTensor*, byte> IsDataInterface;
-
-            [NativeTypeName("void *() noexcept __attribute__((stdcall))")]
-            public delegate* unmanaged<IMLOperatorTensor*, void*> GetData;
-
-            [NativeTypeName("void (IUnknown **) noexcept __attribute__((stdcall))")]
-            public delegate* unmanaged<IMLOperatorTensor*, IUnknown**, void> GetDataInterface;
-        }
+        [NativeTypeName("void (IUnknown **) noexcept __attribute__((stdcall))")]
+        public delegate* unmanaged<IMLOperatorTensor*, IUnknown**, void> GetDataInterface;
     }
 }

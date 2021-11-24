@@ -3,12 +3,11 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SPCOMMITFLAGS
 {
-    public enum SPCOMMITFLAGS
-    {
-        SPCF_NONE = 0,
-        SPCF_ADD_TO_USER_LEXICON = (1 << 0),
-        SPCF_DEFINITE_CORRECTION = (1 << 1),
-    }
+    SPCF_NONE = 0,
+    SPCF_ADD_TO_USER_LEXICON = (1 << 0),
+    SPCF_DEFINITE_CORRECTION = (1 << 1),
 }

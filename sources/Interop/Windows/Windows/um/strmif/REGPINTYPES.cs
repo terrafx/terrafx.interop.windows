@@ -5,14 +5,13 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct REGPINTYPES
-    {
-        [NativeTypeName("const CLSID *")]
-        public Guid* clsMajorType;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("const CLSID *")]
-        public Guid* clsMinorType;
-    }
+public unsafe partial struct REGPINTYPES
+{
+    [NativeTypeName("const CLSID *")]
+    public Guid* clsMajorType;
+
+    [NativeTypeName("const CLSID *")]
+    public Guid* clsMinorType;
 }

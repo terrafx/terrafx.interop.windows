@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CODECAPI_AVEncDDDigitalDeemphasis" /> struct.</summary>
+public static unsafe partial class CODECAPI_AVEncDDDigitalDeemphasisTests
 {
-    /// <summary>Provides validation of the <see cref="CODECAPI_AVEncDDDigitalDeemphasis" /> struct.</summary>
-    public static unsafe partial class CODECAPI_AVEncDDDigitalDeemphasisTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncDDDigitalDeemphasis" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncDDDigitalDeemphasis" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncDDDigitalDeemphasis).GUID, Is.EqualTo(IID_CODECAPI_AVEncDDDigitalDeemphasis));
-        }
+        Assert.That(typeof(CODECAPI_AVEncDDDigitalDeemphasis).GUID, Is.EqualTo(IID_CODECAPI_AVEncDDDigitalDeemphasis));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncDDDigitalDeemphasis" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CODECAPI_AVEncDDDigitalDeemphasis>(), Is.EqualTo(sizeof(CODECAPI_AVEncDDDigitalDeemphasis)));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDDigitalDeemphasis" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CODECAPI_AVEncDDDigitalDeemphasis>(), Is.EqualTo(sizeof(CODECAPI_AVEncDDDigitalDeemphasis)));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncDDDigitalDeemphasis" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncDDDigitalDeemphasis).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDDigitalDeemphasis" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CODECAPI_AVEncDDDigitalDeemphasis).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncDDDigitalDeemphasis" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CODECAPI_AVEncDDDigitalDeemphasis), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDDigitalDeemphasis" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CODECAPI_AVEncDDDigitalDeemphasis), Is.EqualTo(1));
     }
 }

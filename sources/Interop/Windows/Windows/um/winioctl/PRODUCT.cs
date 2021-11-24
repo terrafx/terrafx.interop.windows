@@ -3,11 +3,10 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class PRODUCT
 {
-    public static partial class PRODUCT
-    {
-        [NativeTypeName("#define PRODUCT_ID_LENGTH 16")]
-        public const int PRODUCT_ID_LENGTH = 16;
-    }
+    [NativeTypeName("#define PRODUCT_ID_LENGTH 16")]
+    public const int PRODUCT_ID_LENGTH = 16;
 }

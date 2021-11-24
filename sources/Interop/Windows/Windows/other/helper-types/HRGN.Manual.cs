@@ -2,12 +2,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct HRGN : IEquatable<HRGN>
-    {
-        public static explicit operator HRGN(HGDIOBJ value) => new HRGN(value.Value);
+namespace TerraFX.Interop.Windows;
 
-        public static implicit operator HGDIOBJ(HRGN value) => new HGDIOBJ(value.Value);
-    }
+public unsafe partial struct HRGN : IEquatable<HRGN>
+{
+    public static explicit operator HRGN(HGDIOBJ value) => new HRGN(value.Value);
+
+    public static implicit operator HGDIOBJ(HRGN value) => new HGDIOBJ(value.Value);
 }

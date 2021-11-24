@@ -5,54 +5,53 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct DML_LSTM_OPERATOR_DESC
 {
-    public unsafe partial struct DML_LSTM_OPERATOR_DESC
-    {
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* InputTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* InputTensor;
 
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* WeightTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* WeightTensor;
 
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* RecurrenceTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* RecurrenceTensor;
 
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* BiasTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* BiasTensor;
 
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* HiddenInitTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* HiddenInitTensor;
 
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* CellMemInitTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* CellMemInitTensor;
 
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* SequenceLengthsTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* SequenceLengthsTensor;
 
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* PeepholeTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* PeepholeTensor;
 
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* OutputSequenceTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* OutputSequenceTensor;
 
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* OutputSingleTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* OutputSingleTensor;
 
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* OutputCellSingleTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* OutputCellSingleTensor;
 
-        public uint ActivationDescCount;
+    public uint ActivationDescCount;
 
-        [NativeTypeName("const DML_OPERATOR_DESC *")]
-        public DML_OPERATOR_DESC* ActivationDescs;
+    [NativeTypeName("const DML_OPERATOR_DESC *")]
+    public DML_OPERATOR_DESC* ActivationDescs;
 
-        public DML_RECURRENT_NETWORK_DIRECTION Direction;
+    public DML_RECURRENT_NETWORK_DIRECTION Direction;
 
-        public float ClipThreshold;
+    public float ClipThreshold;
 
-        public BOOL UseClipThreshold;
+    public BOOL UseClipThreshold;
 
-        public BOOL CoupleInputForget;
-    }
+    public BOOL CoupleInputForget;
 }

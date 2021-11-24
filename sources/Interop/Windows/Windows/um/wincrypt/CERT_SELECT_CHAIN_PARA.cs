@@ -3,21 +3,20 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CERT_SELECT_CHAIN_PARA
 {
-    public unsafe partial struct CERT_SELECT_CHAIN_PARA
-    {
-        public HCERTCHAINENGINE hChainEngine;
+    public HCERTCHAINENGINE hChainEngine;
 
-        [NativeTypeName("PFILETIME")]
-        public FILETIME* pTime;
+    [NativeTypeName("PFILETIME")]
+    public FILETIME* pTime;
 
-        public HCERTSTORE hAdditionalStore;
+    public HCERTSTORE hAdditionalStore;
 
-        [NativeTypeName("PCERT_CHAIN_PARA")]
-        public CERT_CHAIN_PARA* pChainPara;
+    [NativeTypeName("PCERT_CHAIN_PARA")]
+    public CERT_CHAIN_PARA* pChainPara;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 }

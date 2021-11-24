@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SP_DRVINFO_DATA32_V1_W" /> struct.</summary>
+public static unsafe partial class SP_DRVINFO_DATA32_V1_WTests
 {
-    /// <summary>Provides validation of the <see cref="SP_DRVINFO_DATA32_V1_W" /> struct.</summary>
-    public static unsafe partial class SP_DRVINFO_DATA32_V1_WTests
+    /// <summary>Validates that the <see cref="SP_DRVINFO_DATA32_V1_W" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SP_DRVINFO_DATA32_V1_W" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SP_DRVINFO_DATA32_V1_W>(), Is.EqualTo(sizeof(SP_DRVINFO_DATA32_V1_W)));
-        }
+        Assert.That(Marshal.SizeOf<SP_DRVINFO_DATA32_V1_W>(), Is.EqualTo(sizeof(SP_DRVINFO_DATA32_V1_W)));
+    }
 
-        /// <summary>Validates that the <see cref="SP_DRVINFO_DATA32_V1_W" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SP_DRVINFO_DATA32_V1_W).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SP_DRVINFO_DATA32_V1_W" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SP_DRVINFO_DATA32_V1_W).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SP_DRVINFO_DATA32_V1_W" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SP_DRVINFO_DATA32_V1_W" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SP_DRVINFO_DATA32_V1_W), Is.EqualTo(1552));
-            }
-            else
-            {
-                Assert.That(sizeof(SP_DRVINFO_DATA32_V1_W), Is.EqualTo(1548));
-            }
+            Assert.That(sizeof(SP_DRVINFO_DATA32_V1_W), Is.EqualTo(1552));
+        }
+        else
+        {
+            Assert.That(sizeof(SP_DRVINFO_DATA32_V1_W), Is.EqualTo(1548));
         }
     }
 }

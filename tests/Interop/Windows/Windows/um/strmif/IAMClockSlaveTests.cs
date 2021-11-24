@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAMClockSlave" /> struct.</summary>
+public static unsafe partial class IAMClockSlaveTests
 {
-    /// <summary>Provides validation of the <see cref="IAMClockSlave" /> struct.</summary>
-    public static unsafe partial class IAMClockSlaveTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMClockSlave" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMClockSlave" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAMClockSlave).GUID, Is.EqualTo(IID_IAMClockSlave));
-        }
+        Assert.That(typeof(IAMClockSlave).GUID, Is.EqualTo(IID_IAMClockSlave));
+    }
 
-        /// <summary>Validates that the <see cref="IAMClockSlave" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAMClockSlave>(), Is.EqualTo(sizeof(IAMClockSlave)));
-        }
+    /// <summary>Validates that the <see cref="IAMClockSlave" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAMClockSlave>(), Is.EqualTo(sizeof(IAMClockSlave)));
+    }
 
-        /// <summary>Validates that the <see cref="IAMClockSlave" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAMClockSlave).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAMClockSlave" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAMClockSlave).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAMClockSlave" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAMClockSlave" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAMClockSlave), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAMClockSlave), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAMClockSlave), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAMClockSlave), Is.EqualTo(4));
         }
     }
 }

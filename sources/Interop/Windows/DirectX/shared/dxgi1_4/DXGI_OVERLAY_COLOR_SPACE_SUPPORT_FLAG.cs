@@ -6,12 +6,11 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+[SupportedOSPlatform("windows10.0")]
+public enum DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG
 {
-    [Flags]
-    [SupportedOSPlatform("windows10.0")]
-    public enum DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG
-    {
-        DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG_PRESENT = 0x1,
-    }
+    DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG_PRESENT = 0x1,
 }

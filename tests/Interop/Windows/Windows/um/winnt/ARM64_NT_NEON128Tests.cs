@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ARM64_NT_NEON128" /> struct.</summary>
+public static unsafe partial class ARM64_NT_NEON128Tests
 {
-    /// <summary>Provides validation of the <see cref="ARM64_NT_NEON128" /> struct.</summary>
-    public static unsafe partial class ARM64_NT_NEON128Tests
+    /// <summary>Validates that the <see cref="ARM64_NT_NEON128" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="ARM64_NT_NEON128" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ARM64_NT_NEON128>(), Is.EqualTo(sizeof(ARM64_NT_NEON128)));
-        }
+        Assert.That(Marshal.SizeOf<ARM64_NT_NEON128>(), Is.EqualTo(sizeof(ARM64_NT_NEON128)));
+    }
 
-        /// <summary>Validates that the <see cref="ARM64_NT_NEON128" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutExplicitTest()
-        {
-            Assert.That(typeof(ARM64_NT_NEON128).IsExplicitLayout, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ARM64_NT_NEON128" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutExplicitTest()
+    {
+        Assert.That(typeof(ARM64_NT_NEON128).IsExplicitLayout, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ARM64_NT_NEON128" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(ARM64_NT_NEON128), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="ARM64_NT_NEON128" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(ARM64_NT_NEON128), Is.EqualTo(16));
     }
 }

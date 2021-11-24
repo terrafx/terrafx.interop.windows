@@ -3,14 +3,13 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct CERT_TRUST_STATUS
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwErrorStatus;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint dwInfoStatus;
-    }
+public partial struct CERT_TRUST_STATUS
+{
+    [NativeTypeName("DWORD")]
+    public uint dwErrorStatus;
+
+    [NativeTypeName("DWORD")]
+    public uint dwInfoStatus;
 }

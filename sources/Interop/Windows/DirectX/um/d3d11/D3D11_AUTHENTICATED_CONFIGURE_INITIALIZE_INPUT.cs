@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_AUTHENTICATED_CONFIGURE_INITIALIZE_INPUT
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_AUTHENTICATED_CONFIGURE_INITIALIZE_INPUT
-    {
-        public D3D11_AUTHENTICATED_CONFIGURE_INPUT Parameters;
+    public D3D11_AUTHENTICATED_CONFIGURE_INPUT Parameters;
 
-        public uint StartSequenceQuery;
+    public uint StartSequenceQuery;
 
-        public uint StartSequenceConfigure;
-    }
+    public uint StartSequenceConfigure;
 }

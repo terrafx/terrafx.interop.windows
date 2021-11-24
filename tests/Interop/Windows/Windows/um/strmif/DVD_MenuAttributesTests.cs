@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DVD_MenuAttributes" /> struct.</summary>
+public static unsafe partial class DVD_MenuAttributesTests
 {
-    /// <summary>Provides validation of the <see cref="DVD_MenuAttributes" /> struct.</summary>
-    public static unsafe partial class DVD_MenuAttributesTests
+    /// <summary>Validates that the <see cref="DVD_MenuAttributes" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DVD_MenuAttributes" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DVD_MenuAttributes>(), Is.EqualTo(sizeof(DVD_MenuAttributes)));
-        }
+        Assert.That(Marshal.SizeOf<DVD_MenuAttributes>(), Is.EqualTo(sizeof(DVD_MenuAttributes)));
+    }
 
-        /// <summary>Validates that the <see cref="DVD_MenuAttributes" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DVD_MenuAttributes).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DVD_MenuAttributes" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DVD_MenuAttributes).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DVD_MenuAttributes" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DVD_MenuAttributes), Is.EqualTo(148));
-        }
+    /// <summary>Validates that the <see cref="DVD_MenuAttributes" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DVD_MenuAttributes), Is.EqualTo(148));
     }
 }

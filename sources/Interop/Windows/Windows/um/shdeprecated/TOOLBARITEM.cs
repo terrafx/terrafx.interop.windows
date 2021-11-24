@@ -3,20 +3,19 @@
 // Ported from um/shdeprecated.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct TOOLBARITEM
 {
-    public unsafe partial struct TOOLBARITEM
-    {
-        public IDockingWindow* ptbar;
+    public IDockingWindow* ptbar;
 
-        [NativeTypeName("BORDERWIDTHS")]
-        public RECT rcBorderTool;
+    [NativeTypeName("BORDERWIDTHS")]
+    public RECT rcBorderTool;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pwszItem;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pwszItem;
 
-        public BOOL fShow;
+    public BOOL fShow;
 
-        public HMONITOR hMon;
-    }
+    public HMONITOR hMon;
 }

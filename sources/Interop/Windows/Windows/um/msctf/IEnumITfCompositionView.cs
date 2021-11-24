@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("5EFD22BA-7838-46CB-88E2-CADB14124F8F")]
+[NativeTypeName("struct IEnumITfCompositionView : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IEnumITfCompositionView : IEnumITfCompositionView.Interface
 {
-    [Guid("5EFD22BA-7838-46CB-88E2-CADB14124F8F")]
-    [NativeTypeName("struct IEnumITfCompositionView : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumITfCompositionView : IEnumITfCompositionView.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IEnumITfCompositionView*, Guid*, void**, int>)(lpVtbl[0]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IEnumITfCompositionView*, Guid*, void**, int>)(lpVtbl[0]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IEnumITfCompositionView*, uint>)(lpVtbl[1]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IEnumITfCompositionView*, uint>)(lpVtbl[1]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IEnumITfCompositionView*, uint>)(lpVtbl[2]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IEnumITfCompositionView*, uint>)(lpVtbl[2]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Clone(IEnumITfCompositionView** ppEnum)
+    {
+        return ((delegate* unmanaged<IEnumITfCompositionView*, IEnumITfCompositionView**, int>)(lpVtbl[3]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this), ppEnum);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfCompositionView** rgCompositionView, [NativeTypeName("ULONG *")] uint* pcFetched)
+    {
+        return ((delegate* unmanaged<IEnumITfCompositionView*, uint, ITfCompositionView**, uint*, int>)(lpVtbl[4]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this), ulCount, rgCompositionView, pcFetched);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Reset()
+    {
+        return ((delegate* unmanaged<IEnumITfCompositionView*, int>)(lpVtbl[5]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
+    {
+        return ((delegate* unmanaged<IEnumITfCompositionView*, uint, int>)(lpVtbl[6]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this), ulCount);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Clone(IEnumITfCompositionView** ppEnum)
-        {
-            return ((delegate* unmanaged<IEnumITfCompositionView*, IEnumITfCompositionView**, int>)(lpVtbl[3]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this), ppEnum);
-        }
+        HRESULT Clone(IEnumITfCompositionView** ppEnum);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfCompositionView** rgCompositionView, [NativeTypeName("ULONG *")] uint* pcFetched)
-        {
-            return ((delegate* unmanaged<IEnumITfCompositionView*, uint, ITfCompositionView**, uint*, int>)(lpVtbl[4]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this), ulCount, rgCompositionView, pcFetched);
-        }
+        HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfCompositionView** rgCompositionView, [NativeTypeName("ULONG *")] uint* pcFetched);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Reset()
-        {
-            return ((delegate* unmanaged<IEnumITfCompositionView*, int>)(lpVtbl[5]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Reset();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
-        {
-            return ((delegate* unmanaged<IEnumITfCompositionView*, uint, int>)(lpVtbl[6]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this), ulCount);
-        }
+        HRESULT Skip([NativeTypeName("ULONG")] uint ulCount);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Clone(IEnumITfCompositionView** ppEnum);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumITfCompositionView*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfCompositionView** rgCompositionView, [NativeTypeName("ULONG *")] uint* pcFetched);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumITfCompositionView*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT Reset();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumITfCompositionView*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT Skip([NativeTypeName("ULONG")] uint ulCount);
-        }
+        [NativeTypeName("HRESULT (IEnumITfCompositionView **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumITfCompositionView*, IEnumITfCompositionView**, int> Clone;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumITfCompositionView*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (ULONG, ITfCompositionView **, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumITfCompositionView*, uint, ITfCompositionView**, uint*, int> Next;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumITfCompositionView*, uint> AddRef;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumITfCompositionView*, int> Reset;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumITfCompositionView*, uint> Release;
-
-            [NativeTypeName("HRESULT (IEnumITfCompositionView **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumITfCompositionView*, IEnumITfCompositionView**, int> Clone;
-
-            [NativeTypeName("HRESULT (ULONG, ITfCompositionView **, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumITfCompositionView*, uint, ITfCompositionView**, uint*, int> Next;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumITfCompositionView*, int> Reset;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumITfCompositionView*, uint, int> Skip;
-        }
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumITfCompositionView*, uint, int> Skip;
     }
 }

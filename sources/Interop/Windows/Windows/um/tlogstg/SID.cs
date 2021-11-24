@@ -6,11 +6,10 @@
 using System;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SID
 {
-    public partial struct SID
-    {
-        [NativeTypeName("#define SID_STravelLogCursor IID_ITravelLogStg")]
-        public static ref readonly Guid SID_STravelLogCursor => ref IID_ITravelLogStg;
-    }
+    [NativeTypeName("#define SID_STravelLogCursor IID_ITravelLogStg")]
+    public static ref readonly Guid SID_STravelLogCursor => ref IID_ITravelLogStg;
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="D2D1_HWND_RENDER_TARGET_PROPERTIES" /> struct.</summary>
+public static unsafe partial class D2D1_HWND_RENDER_TARGET_PROPERTIESTests
 {
-    /// <summary>Provides validation of the <see cref="D2D1_HWND_RENDER_TARGET_PROPERTIES" /> struct.</summary>
-    public static unsafe partial class D2D1_HWND_RENDER_TARGET_PROPERTIESTests
+    /// <summary>Validates that the <see cref="D2D1_HWND_RENDER_TARGET_PROPERTIES" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="D2D1_HWND_RENDER_TARGET_PROPERTIES" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<D2D1_HWND_RENDER_TARGET_PROPERTIES>(), Is.EqualTo(sizeof(D2D1_HWND_RENDER_TARGET_PROPERTIES)));
-        }
+        Assert.That(Marshal.SizeOf<D2D1_HWND_RENDER_TARGET_PROPERTIES>(), Is.EqualTo(sizeof(D2D1_HWND_RENDER_TARGET_PROPERTIES)));
+    }
 
-        /// <summary>Validates that the <see cref="D2D1_HWND_RENDER_TARGET_PROPERTIES" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(D2D1_HWND_RENDER_TARGET_PROPERTIES).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="D2D1_HWND_RENDER_TARGET_PROPERTIES" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(D2D1_HWND_RENDER_TARGET_PROPERTIES).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="D2D1_HWND_RENDER_TARGET_PROPERTIES" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="D2D1_HWND_RENDER_TARGET_PROPERTIES" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(D2D1_HWND_RENDER_TARGET_PROPERTIES), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(D2D1_HWND_RENDER_TARGET_PROPERTIES), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(D2D1_HWND_RENDER_TARGET_PROPERTIES), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(D2D1_HWND_RENDER_TARGET_PROPERTIES), Is.EqualTo(16));
         }
     }
 }

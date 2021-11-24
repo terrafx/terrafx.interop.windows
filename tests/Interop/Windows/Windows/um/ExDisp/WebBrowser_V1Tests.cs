@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WebBrowser_V1" /> struct.</summary>
+public static unsafe partial class WebBrowser_V1Tests
 {
-    /// <summary>Provides validation of the <see cref="WebBrowser_V1" /> struct.</summary>
-    public static unsafe partial class WebBrowser_V1Tests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="WebBrowser_V1" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="WebBrowser_V1" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(WebBrowser_V1).GUID, Is.EqualTo(IID_WebBrowser_V1));
-        }
+        Assert.That(typeof(WebBrowser_V1).GUID, Is.EqualTo(IID_WebBrowser_V1));
+    }
 
-        /// <summary>Validates that the <see cref="WebBrowser_V1" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WebBrowser_V1>(), Is.EqualTo(sizeof(WebBrowser_V1)));
-        }
+    /// <summary>Validates that the <see cref="WebBrowser_V1" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<WebBrowser_V1>(), Is.EqualTo(sizeof(WebBrowser_V1)));
+    }
 
-        /// <summary>Validates that the <see cref="WebBrowser_V1" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WebBrowser_V1).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WebBrowser_V1" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WebBrowser_V1).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WebBrowser_V1" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(WebBrowser_V1), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="WebBrowser_V1" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(WebBrowser_V1), Is.EqualTo(1));
     }
 }

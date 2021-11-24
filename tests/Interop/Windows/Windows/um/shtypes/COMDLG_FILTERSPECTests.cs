@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="COMDLG_FILTERSPEC" /> struct.</summary>
+public static unsafe partial class COMDLG_FILTERSPECTests
 {
-    /// <summary>Provides validation of the <see cref="COMDLG_FILTERSPEC" /> struct.</summary>
-    public static unsafe partial class COMDLG_FILTERSPECTests
+    /// <summary>Validates that the <see cref="COMDLG_FILTERSPEC" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="COMDLG_FILTERSPEC" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<COMDLG_FILTERSPEC>(), Is.EqualTo(sizeof(COMDLG_FILTERSPEC)));
-        }
+        Assert.That(Marshal.SizeOf<COMDLG_FILTERSPEC>(), Is.EqualTo(sizeof(COMDLG_FILTERSPEC)));
+    }
 
-        /// <summary>Validates that the <see cref="COMDLG_FILTERSPEC" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(COMDLG_FILTERSPEC).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="COMDLG_FILTERSPEC" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(COMDLG_FILTERSPEC).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="COMDLG_FILTERSPEC" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="COMDLG_FILTERSPEC" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(COMDLG_FILTERSPEC), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(COMDLG_FILTERSPEC), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(COMDLG_FILTERSPEC), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(COMDLG_FILTERSPEC), Is.EqualTo(8));
         }
     }
 }

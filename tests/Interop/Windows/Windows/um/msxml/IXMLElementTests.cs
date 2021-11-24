@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IXMLElement" /> struct.</summary>
+public static unsafe partial class IXMLElementTests
 {
-    /// <summary>Provides validation of the <see cref="IXMLElement" /> struct.</summary>
-    public static unsafe partial class IXMLElementTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IXMLElement" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IXMLElement" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IXMLElement).GUID, Is.EqualTo(IID_IXMLElement));
-        }
+        Assert.That(typeof(IXMLElement).GUID, Is.EqualTo(IID_IXMLElement));
+    }
 
-        /// <summary>Validates that the <see cref="IXMLElement" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IXMLElement>(), Is.EqualTo(sizeof(IXMLElement)));
-        }
+    /// <summary>Validates that the <see cref="IXMLElement" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IXMLElement>(), Is.EqualTo(sizeof(IXMLElement)));
+    }
 
-        /// <summary>Validates that the <see cref="IXMLElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IXMLElement).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IXMLElement" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IXMLElement).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IXMLElement" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IXMLElement" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IXMLElement), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IXMLElement), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IXMLElement), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IXMLElement), Is.EqualTo(4));
         }
     }
 }

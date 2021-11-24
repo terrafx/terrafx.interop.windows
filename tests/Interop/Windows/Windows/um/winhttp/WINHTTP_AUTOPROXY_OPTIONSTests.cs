@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WINHTTP_AUTOPROXY_OPTIONS" /> struct.</summary>
+public static unsafe partial class WINHTTP_AUTOPROXY_OPTIONSTests
 {
-    /// <summary>Provides validation of the <see cref="WINHTTP_AUTOPROXY_OPTIONS" /> struct.</summary>
-    public static unsafe partial class WINHTTP_AUTOPROXY_OPTIONSTests
+    /// <summary>Validates that the <see cref="WINHTTP_AUTOPROXY_OPTIONS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WINHTTP_AUTOPROXY_OPTIONS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WINHTTP_AUTOPROXY_OPTIONS>(), Is.EqualTo(sizeof(WINHTTP_AUTOPROXY_OPTIONS)));
-        }
+        Assert.That(Marshal.SizeOf<WINHTTP_AUTOPROXY_OPTIONS>(), Is.EqualTo(sizeof(WINHTTP_AUTOPROXY_OPTIONS)));
+    }
 
-        /// <summary>Validates that the <see cref="WINHTTP_AUTOPROXY_OPTIONS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WINHTTP_AUTOPROXY_OPTIONS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WINHTTP_AUTOPROXY_OPTIONS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WINHTTP_AUTOPROXY_OPTIONS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WINHTTP_AUTOPROXY_OPTIONS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WINHTTP_AUTOPROXY_OPTIONS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WINHTTP_AUTOPROXY_OPTIONS), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(WINHTTP_AUTOPROXY_OPTIONS), Is.EqualTo(24));
-            }
+            Assert.That(sizeof(WINHTTP_AUTOPROXY_OPTIONS), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(WINHTTP_AUTOPROXY_OPTIONS), Is.EqualTo(24));
         }
     }
 }

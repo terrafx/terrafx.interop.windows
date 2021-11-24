@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("2659B475-EEB8-48B7-8F07-B378810F48CF")]
+[NativeTypeName("struct IShellItemFilter : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IShellItemFilter : IShellItemFilter.Interface
 {
-    [Guid("2659B475-EEB8-48B7-8F07-B378810F48CF")]
-    [NativeTypeName("struct IShellItemFilter : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IShellItemFilter : IShellItemFilter.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IShellItemFilter*, Guid*, void**, int>)(lpVtbl[0]))((IShellItemFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IShellItemFilter*, Guid*, void**, int>)(lpVtbl[0]))((IShellItemFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IShellItemFilter*, uint>)(lpVtbl[1]))((IShellItemFilter*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IShellItemFilter*, uint>)(lpVtbl[1]))((IShellItemFilter*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IShellItemFilter*, uint>)(lpVtbl[2]))((IShellItemFilter*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IShellItemFilter*, uint>)(lpVtbl[2]))((IShellItemFilter*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT IncludeItem(IShellItem* psi)
+    {
+        return ((delegate* unmanaged<IShellItemFilter*, IShellItem*, int>)(lpVtbl[3]))((IShellItemFilter*)Unsafe.AsPointer(ref this), psi);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetEnumFlagsForItem(IShellItem* psi, [NativeTypeName("SHCONTF *")] uint* pgrfFlags)
+    {
+        return ((delegate* unmanaged<IShellItemFilter*, IShellItem*, uint*, int>)(lpVtbl[4]))((IShellItemFilter*)Unsafe.AsPointer(ref this), psi, pgrfFlags);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT IncludeItem(IShellItem* psi)
-        {
-            return ((delegate* unmanaged<IShellItemFilter*, IShellItem*, int>)(lpVtbl[3]))((IShellItemFilter*)Unsafe.AsPointer(ref this), psi);
-        }
+        HRESULT IncludeItem(IShellItem* psi);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetEnumFlagsForItem(IShellItem* psi, [NativeTypeName("SHCONTF *")] uint* pgrfFlags)
-        {
-            return ((delegate* unmanaged<IShellItemFilter*, IShellItem*, uint*, int>)(lpVtbl[4]))((IShellItemFilter*)Unsafe.AsPointer(ref this), psi, pgrfFlags);
-        }
+        HRESULT GetEnumFlagsForItem(IShellItem* psi, [NativeTypeName("SHCONTF *")] uint* pgrfFlags);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT IncludeItem(IShellItem* psi);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellItemFilter*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetEnumFlagsForItem(IShellItem* psi, [NativeTypeName("SHCONTF *")] uint* pgrfFlags);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellItemFilter*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellItemFilter*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellItemFilter*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellItemFilter*, uint> AddRef;
+        [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellItemFilter*, IShellItem*, int> IncludeItem;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellItemFilter*, uint> Release;
-
-            [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellItemFilter*, IShellItem*, int> IncludeItem;
-
-            [NativeTypeName("HRESULT (IShellItem *, SHCONTF *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IShellItemFilter*, IShellItem*, uint*, int> GetEnumFlagsForItem;
-        }
+        [NativeTypeName("HRESULT (IShellItem *, SHCONTF *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IShellItemFilter*, IShellItem*, uint*, int> GetEnumFlagsForItem;
     }
 }

@@ -5,10 +5,9 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_FEATURE_DATA_EXISTING_HEAPS
 {
-    public partial struct D3D12_FEATURE_DATA_EXISTING_HEAPS
-    {
-        public BOOL Supported;
-    }
+    public BOOL Supported;
 }

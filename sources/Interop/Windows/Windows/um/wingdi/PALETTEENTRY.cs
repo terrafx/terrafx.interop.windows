@@ -3,16 +3,15 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct PALETTEENTRY
 {
-    public partial struct PALETTEENTRY
-    {
-        public byte peRed;
+    public byte peRed;
 
-        public byte peGreen;
+    public byte peGreen;
 
-        public byte peBlue;
+    public byte peBlue;
 
-        public byte peFlags;
-    }
+    public byte peFlags;
 }

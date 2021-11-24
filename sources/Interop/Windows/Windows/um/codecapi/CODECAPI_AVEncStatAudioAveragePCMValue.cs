@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("979272F8-D17F-4E32-BB73-4E731C68BA2D")]
+public partial struct CODECAPI_AVEncStatAudioAveragePCMValue
 {
-    [Guid("979272F8-D17F-4E32-BB73-4E731C68BA2D")]
-    public partial struct CODECAPI_AVEncStatAudioAveragePCMValue
-    {
-    }
 }

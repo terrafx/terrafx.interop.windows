@@ -3,18 +3,17 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct GLYPHMETRICSFLOAT
 {
-    public partial struct GLYPHMETRICSFLOAT
-    {
-        public float gmfBlackBoxX;
+    public float gmfBlackBoxX;
 
-        public float gmfBlackBoxY;
+    public float gmfBlackBoxY;
 
-        public POINTFLOAT gmfptGlyphOrigin;
+    public POINTFLOAT gmfptGlyphOrigin;
 
-        public float gmfCellIncX;
+    public float gmfCellIncX;
 
-        public float gmfCellIncY;
-    }
+    public float gmfCellIncY;
 }

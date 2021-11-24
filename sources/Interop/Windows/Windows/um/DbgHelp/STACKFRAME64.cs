@@ -3,33 +3,32 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct STACKFRAME64
 {
-    public unsafe partial struct STACKFRAME64
-    {
-        public ADDRESS64 AddrPC;
+    public ADDRESS64 AddrPC;
 
-        public ADDRESS64 AddrReturn;
+    public ADDRESS64 AddrReturn;
 
-        public ADDRESS64 AddrFrame;
+    public ADDRESS64 AddrFrame;
 
-        public ADDRESS64 AddrStack;
+    public ADDRESS64 AddrStack;
 
-        public ADDRESS64 AddrBStore;
+    public ADDRESS64 AddrBStore;
 
-        [NativeTypeName("PVOID")]
-        public void* FuncTableEntry;
+    [NativeTypeName("PVOID")]
+    public void* FuncTableEntry;
 
-        [NativeTypeName("DWORD64 [4]")]
-        public fixed ulong Params[4];
+    [NativeTypeName("DWORD64 [4]")]
+    public fixed ulong Params[4];
 
-        public BOOL Far;
+    public BOOL Far;
 
-        public BOOL Virtual;
+    public BOOL Virtual;
 
-        [NativeTypeName("DWORD64 [3]")]
-        public fixed ulong Reserved[3];
+    [NativeTypeName("DWORD64 [3]")]
+    public fixed ulong Reserved[3];
 
-        public KDHELP64 KdHelp;
-    }
+    public KDHELP64 KdHelp;
 }

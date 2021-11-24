@@ -5,16 +5,15 @@
 
 using static TerraFX.Interop.Windows.SPCFGRULEATTRIBUTES;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechRuleAttributes
 {
-    public enum SpeechRuleAttributes
-    {
-        SRATopLevel = SPRAF_TopLevel,
-        SRADefaultToActive = SPRAF_Active,
-        SRAExport = SPRAF_Export,
-        SRAImport = SPRAF_Import,
-        SRAInterpreter = SPRAF_Interpreter,
-        SRADynamic = SPRAF_Dynamic,
-        SRARoot = SPRAF_Root,
-    }
+    SRATopLevel = SPRAF_TopLevel,
+    SRADefaultToActive = SPRAF_Active,
+    SRAExport = SPRAF_Export,
+    SRAImport = SPRAF_Import,
+    SRAInterpreter = SPRAF_Interpreter,
+    SRADynamic = SPRAF_Dynamic,
+    SRARoot = SPRAF_Root,
 }

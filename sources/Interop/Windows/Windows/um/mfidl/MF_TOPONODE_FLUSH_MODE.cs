@@ -3,12 +3,11 @@
 // Ported from um/mfidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MF_TOPONODE_FLUSH_MODE
 {
-    public enum MF_TOPONODE_FLUSH_MODE
-    {
-        MF_TOPONODE_FLUSH_ALWAYS = 0,
-        MF_TOPONODE_FLUSH_SEEK = (MF_TOPONODE_FLUSH_ALWAYS + 1),
-        MF_TOPONODE_FLUSH_NEVER = (MF_TOPONODE_FLUSH_SEEK + 1),
-    }
+    MF_TOPONODE_FLUSH_ALWAYS = 0,
+    MF_TOPONODE_FLUSH_SEEK = (MF_TOPONODE_FLUSH_ALWAYS + 1),
+    MF_TOPONODE_FLUSH_NEVER = (MF_TOPONODE_FLUSH_SEEK + 1),
 }

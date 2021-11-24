@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SMCSHCHANGENOTIFYSTRUCT" /> struct.</summary>
+public static unsafe partial class SMCSHCHANGENOTIFYSTRUCTTests
 {
-    /// <summary>Provides validation of the <see cref="SMCSHCHANGENOTIFYSTRUCT" /> struct.</summary>
-    public static unsafe partial class SMCSHCHANGENOTIFYSTRUCTTests
+    /// <summary>Validates that the <see cref="SMCSHCHANGENOTIFYSTRUCT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SMCSHCHANGENOTIFYSTRUCT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SMCSHCHANGENOTIFYSTRUCT>(), Is.EqualTo(sizeof(SMCSHCHANGENOTIFYSTRUCT)));
-        }
+        Assert.That(Marshal.SizeOf<SMCSHCHANGENOTIFYSTRUCT>(), Is.EqualTo(sizeof(SMCSHCHANGENOTIFYSTRUCT)));
+    }
 
-        /// <summary>Validates that the <see cref="SMCSHCHANGENOTIFYSTRUCT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SMCSHCHANGENOTIFYSTRUCT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SMCSHCHANGENOTIFYSTRUCT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SMCSHCHANGENOTIFYSTRUCT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SMCSHCHANGENOTIFYSTRUCT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SMCSHCHANGENOTIFYSTRUCT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SMCSHCHANGENOTIFYSTRUCT), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(SMCSHCHANGENOTIFYSTRUCT), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(SMCSHCHANGENOTIFYSTRUCT), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(SMCSHCHANGENOTIFYSTRUCT), Is.EqualTo(12));
         }
     }
 }

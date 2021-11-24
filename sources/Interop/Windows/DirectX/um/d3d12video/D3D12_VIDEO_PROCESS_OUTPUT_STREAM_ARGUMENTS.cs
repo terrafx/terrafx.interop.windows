@@ -8,32 +8,31 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS
 {
-    public partial struct D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS
+    [NativeTypeName("D3D12_VIDEO_PROCESS_OUTPUT_STREAM [2]")]
+    public _OutputStream_e__FixedBuffer OutputStream;
+
+    [NativeTypeName("D3D12_RECT")]
+    public RECT TargetRectangle;
+
+    public partial struct _OutputStream_e__FixedBuffer
     {
-        [NativeTypeName("D3D12_VIDEO_PROCESS_OUTPUT_STREAM [2]")]
-        public _OutputStream_e__FixedBuffer OutputStream;
+        public D3D12_VIDEO_PROCESS_OUTPUT_STREAM e0;
+        public D3D12_VIDEO_PROCESS_OUTPUT_STREAM e1;
 
-        [NativeTypeName("D3D12_RECT")]
-        public RECT TargetRectangle;
-
-        public partial struct _OutputStream_e__FixedBuffer
+        public ref D3D12_VIDEO_PROCESS_OUTPUT_STREAM this[int index]
         {
-            public D3D12_VIDEO_PROCESS_OUTPUT_STREAM e0;
-            public D3D12_VIDEO_PROCESS_OUTPUT_STREAM e1;
-
-            public ref D3D12_VIDEO_PROCESS_OUTPUT_STREAM this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan()[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<D3D12_VIDEO_PROCESS_OUTPUT_STREAM> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
+            get
+            {
+                return ref AsSpan()[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<D3D12_VIDEO_PROCESS_OUTPUT_STREAM> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 2);
     }
 }

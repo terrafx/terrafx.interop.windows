@@ -5,35 +5,34 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CERT_CHAIN_CONTEXT
 {
-    public unsafe partial struct CERT_CHAIN_CONTEXT
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public CERT_TRUST_STATUS TrustStatus;
+    public CERT_TRUST_STATUS TrustStatus;
 
-        [NativeTypeName("DWORD")]
-        public uint cChain;
+    [NativeTypeName("DWORD")]
+    public uint cChain;
 
-        [NativeTypeName("PCERT_SIMPLE_CHAIN *")]
-        public CERT_SIMPLE_CHAIN** rgpChain;
+    [NativeTypeName("PCERT_SIMPLE_CHAIN *")]
+    public CERT_SIMPLE_CHAIN** rgpChain;
 
-        [NativeTypeName("DWORD")]
-        public uint cLowerQualityChainContext;
+    [NativeTypeName("DWORD")]
+    public uint cLowerQualityChainContext;
 
-        [NativeTypeName("PCCERT_CHAIN_CONTEXT *")]
-        public CERT_CHAIN_CONTEXT** rgpLowerQualityChainContext;
+    [NativeTypeName("PCCERT_CHAIN_CONTEXT *")]
+    public CERT_CHAIN_CONTEXT** rgpLowerQualityChainContext;
 
-        public BOOL fHasRevocationFreshnessTime;
+    public BOOL fHasRevocationFreshnessTime;
 
-        [NativeTypeName("DWORD")]
-        public uint dwRevocationFreshnessTime;
+    [NativeTypeName("DWORD")]
+    public uint dwRevocationFreshnessTime;
 
-        [NativeTypeName("DWORD")]
-        public uint dwCreateFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwCreateFlags;
 
-        public Guid ChainId;
-    }
+    public Guid ChainId;
 }

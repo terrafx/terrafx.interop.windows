@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("7CCDF9F4-E576-455A-8BC7-F6EC68D6F063")]
+public partial struct StorageProviderBanners
 {
-    [Guid("7CCDF9F4-E576-455A-8BC7-F6EC68D6F063")]
-    public partial struct StorageProviderBanners
-    {
-    }
 }

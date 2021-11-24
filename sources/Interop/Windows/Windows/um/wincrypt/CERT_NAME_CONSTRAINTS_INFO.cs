@@ -3,20 +3,19 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CERT_NAME_CONSTRAINTS_INFO
 {
-    public unsafe partial struct CERT_NAME_CONSTRAINTS_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cPermittedSubtree;
+    [NativeTypeName("DWORD")]
+    public uint cPermittedSubtree;
 
-        [NativeTypeName("PCERT_GENERAL_SUBTREE")]
-        public CERT_GENERAL_SUBTREE* rgPermittedSubtree;
+    [NativeTypeName("PCERT_GENERAL_SUBTREE")]
+    public CERT_GENERAL_SUBTREE* rgPermittedSubtree;
 
-        [NativeTypeName("DWORD")]
-        public uint cExcludedSubtree;
+    [NativeTypeName("DWORD")]
+    public uint cExcludedSubtree;
 
-        [NativeTypeName("PCERT_GENERAL_SUBTREE")]
-        public CERT_GENERAL_SUBTREE* rgExcludedSubtree;
-    }
+    [NativeTypeName("PCERT_GENERAL_SUBTREE")]
+    public CERT_GENERAL_SUBTREE* rgExcludedSubtree;
 }

@@ -5,22 +5,21 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct DWM_THUMBNAIL_PROPERTIES
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct DWM_THUMBNAIL_PROPERTIES
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        public RECT rcDestination;
+    public RECT rcDestination;
 
-        public RECT rcSource;
+    public RECT rcSource;
 
-        public byte opacity;
+    public byte opacity;
 
-        public BOOL fVisible;
+    public BOOL fVisible;
 
-        public BOOL fSourceClientAreaOnly;
-    }
+    public BOOL fSourceClientAreaOnly;
 }

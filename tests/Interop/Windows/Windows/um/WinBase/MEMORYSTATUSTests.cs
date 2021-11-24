@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MEMORYSTATUS" /> struct.</summary>
+public static unsafe partial class MEMORYSTATUSTests
 {
-    /// <summary>Provides validation of the <see cref="MEMORYSTATUS" /> struct.</summary>
-    public static unsafe partial class MEMORYSTATUSTests
+    /// <summary>Validates that the <see cref="MEMORYSTATUS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MEMORYSTATUS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MEMORYSTATUS>(), Is.EqualTo(sizeof(MEMORYSTATUS)));
-        }
+        Assert.That(Marshal.SizeOf<MEMORYSTATUS>(), Is.EqualTo(sizeof(MEMORYSTATUS)));
+    }
 
-        /// <summary>Validates that the <see cref="MEMORYSTATUS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MEMORYSTATUS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MEMORYSTATUS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MEMORYSTATUS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MEMORYSTATUS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="MEMORYSTATUS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(MEMORYSTATUS), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(MEMORYSTATUS), Is.EqualTo(32));
-            }
+            Assert.That(sizeof(MEMORYSTATUS), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(MEMORYSTATUS), Is.EqualTo(32));
         }
     }
 }

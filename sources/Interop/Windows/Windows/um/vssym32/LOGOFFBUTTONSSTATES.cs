@@ -3,12 +3,11 @@
 // Ported from um/vssym32.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum LOGOFFBUTTONSSTATES
 {
-    public enum LOGOFFBUTTONSSTATES
-    {
-        SPLS_NORMAL = 1,
-        SPLS_HOT = 2,
-        SPLS_PRESSED = 3,
-    }
+    SPLS_NORMAL = 1,
+    SPLS_HOT = 2,
+    SPLS_PRESSED = 3,
 }

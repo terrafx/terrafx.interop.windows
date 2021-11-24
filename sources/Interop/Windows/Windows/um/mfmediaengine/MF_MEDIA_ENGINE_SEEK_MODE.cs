@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum MF_MEDIA_ENGINE_SEEK_MODE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum MF_MEDIA_ENGINE_SEEK_MODE
-    {
-        MF_MEDIA_ENGINE_SEEK_MODE_NORMAL = 0,
-        MF_MEDIA_ENGINE_SEEK_MODE_APPROXIMATE = 1,
-    }
+    MF_MEDIA_ENGINE_SEEK_MODE_NORMAL = 0,
+    MF_MEDIA_ENGINE_SEEK_MODE_APPROXIMATE = 1,
 }

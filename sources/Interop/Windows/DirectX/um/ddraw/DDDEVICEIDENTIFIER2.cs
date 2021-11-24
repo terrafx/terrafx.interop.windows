@@ -6,33 +6,32 @@
 using System;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct DDDEVICEIDENTIFIER2
 {
-    public unsafe partial struct DDDEVICEIDENTIFIER2
-    {
-        [NativeTypeName("char [512]")]
-        public fixed sbyte szDriver[512];
+    [NativeTypeName("char [512]")]
+    public fixed sbyte szDriver[512];
 
-        [NativeTypeName("char [512]")]
-        public fixed sbyte szDescription[512];
+    [NativeTypeName("char [512]")]
+    public fixed sbyte szDescription[512];
 
-        public LARGE_INTEGER liDriverVersion;
+    public LARGE_INTEGER liDriverVersion;
 
-        [NativeTypeName("DWORD")]
-        public uint dwVendorId;
+    [NativeTypeName("DWORD")]
+    public uint dwVendorId;
 
-        [NativeTypeName("DWORD")]
-        public uint dwDeviceId;
+    [NativeTypeName("DWORD")]
+    public uint dwDeviceId;
 
-        [NativeTypeName("DWORD")]
-        public uint dwSubSysId;
+    [NativeTypeName("DWORD")]
+    public uint dwSubSysId;
 
-        [NativeTypeName("DWORD")]
-        public uint dwRevision;
+    [NativeTypeName("DWORD")]
+    public uint dwRevision;
 
-        public Guid guidDeviceIdentifier;
+    public Guid guidDeviceIdentifier;
 
-        [NativeTypeName("DWORD")]
-        public uint dwWHQLLevel;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwWHQLLevel;
 }

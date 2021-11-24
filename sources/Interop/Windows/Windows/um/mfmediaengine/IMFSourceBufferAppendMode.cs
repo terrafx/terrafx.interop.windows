@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("19666FB4-BABE-4C55-BC03-0A074DA37E2A")]
+[NativeTypeName("struct IMFSourceBufferAppendMode : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMFSourceBufferAppendMode : IMFSourceBufferAppendMode.Interface
 {
-    [Guid("19666FB4-BABE-4C55-BC03-0A074DA37E2A")]
-    [NativeTypeName("struct IMFSourceBufferAppendMode : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFSourceBufferAppendMode : IMFSourceBufferAppendMode.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMFSourceBufferAppendMode*, Guid*, void**, int>)(lpVtbl[0]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMFSourceBufferAppendMode*, Guid*, void**, int>)(lpVtbl[0]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMFSourceBufferAppendMode*, uint>)(lpVtbl[1]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMFSourceBufferAppendMode*, uint>)(lpVtbl[1]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMFSourceBufferAppendMode*, uint>)(lpVtbl[2]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMFSourceBufferAppendMode*, uint>)(lpVtbl[2]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public MF_MSE_APPEND_MODE GetAppendMode()
+    {
+        return ((delegate* unmanaged<IMFSourceBufferAppendMode*, MF_MSE_APPEND_MODE>)(lpVtbl[3]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT SetAppendMode(MF_MSE_APPEND_MODE mode)
+    {
+        return ((delegate* unmanaged<IMFSourceBufferAppendMode*, MF_MSE_APPEND_MODE, int>)(lpVtbl[4]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this), mode);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public MF_MSE_APPEND_MODE GetAppendMode()
-        {
-            return ((delegate* unmanaged<IMFSourceBufferAppendMode*, MF_MSE_APPEND_MODE>)(lpVtbl[3]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this));
-        }
+        MF_MSE_APPEND_MODE GetAppendMode();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetAppendMode(MF_MSE_APPEND_MODE mode)
-        {
-            return ((delegate* unmanaged<IMFSourceBufferAppendMode*, MF_MSE_APPEND_MODE, int>)(lpVtbl[4]))((IMFSourceBufferAppendMode*)Unsafe.AsPointer(ref this), mode);
-        }
+        HRESULT SetAppendMode(MF_MSE_APPEND_MODE mode);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            MF_MSE_APPEND_MODE GetAppendMode();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSourceBufferAppendMode*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT SetAppendMode(MF_MSE_APPEND_MODE mode);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSourceBufferAppendMode*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSourceBufferAppendMode*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSourceBufferAppendMode*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSourceBufferAppendMode*, uint> AddRef;
+        [NativeTypeName("MF_MSE_APPEND_MODE () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSourceBufferAppendMode*, MF_MSE_APPEND_MODE> GetAppendMode;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSourceBufferAppendMode*, uint> Release;
-
-            [NativeTypeName("MF_MSE_APPEND_MODE () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSourceBufferAppendMode*, MF_MSE_APPEND_MODE> GetAppendMode;
-
-            [NativeTypeName("HRESULT (MF_MSE_APPEND_MODE) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFSourceBufferAppendMode*, MF_MSE_APPEND_MODE, int> SetAppendMode;
-        }
+        [NativeTypeName("HRESULT (MF_MSE_APPEND_MODE) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFSourceBufferAppendMode*, MF_MSE_APPEND_MODE, int> SetAppendMode;
     }
 }

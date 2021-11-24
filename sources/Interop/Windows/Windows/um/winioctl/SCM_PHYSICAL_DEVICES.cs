@@ -7,37 +7,36 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SCM_PHYSICAL_DEVICES
 {
-    public partial struct SCM_PHYSICAL_DEVICES
+    [NativeTypeName("DWORD")]
+    public uint Version;
+
+    [NativeTypeName("DWORD")]
+    public uint Size;
+
+    [NativeTypeName("DWORD")]
+    public uint DeviceCount;
+
+    [NativeTypeName("SCM_PHYSICAL_DEVICE_INSTANCE [1]")]
+    public _Devices_e__FixedBuffer Devices;
+
+    public partial struct _Devices_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+        public SCM_PHYSICAL_DEVICE_INSTANCE e0;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
-
-        [NativeTypeName("DWORD")]
-        public uint DeviceCount;
-
-        [NativeTypeName("SCM_PHYSICAL_DEVICE_INSTANCE [1]")]
-        public _Devices_e__FixedBuffer Devices;
-
-        public partial struct _Devices_e__FixedBuffer
+        public ref SCM_PHYSICAL_DEVICE_INSTANCE this[int index]
         {
-            public SCM_PHYSICAL_DEVICE_INSTANCE e0;
-
-            public ref SCM_PHYSICAL_DEVICE_INSTANCE this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<SCM_PHYSICAL_DEVICE_INSTANCE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<SCM_PHYSICAL_DEVICE_INSTANCE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

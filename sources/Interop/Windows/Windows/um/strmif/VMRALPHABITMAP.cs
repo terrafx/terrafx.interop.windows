@@ -5,24 +5,23 @@
 
 using TerraFX.Interop.DirectX;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct VMRALPHABITMAP
 {
-    public unsafe partial struct VMRALPHABITMAP
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        public HDC hdc;
+    public HDC hdc;
 
-        [NativeTypeName("LPDIRECTDRAWSURFACE7")]
-        public IDirectDrawSurface7* pDDS;
+    [NativeTypeName("LPDIRECTDRAWSURFACE7")]
+    public IDirectDrawSurface7* pDDS;
 
-        public RECT rSrc;
+    public RECT rSrc;
 
-        public NORMALIZEDRECT rDest;
+    public NORMALIZEDRECT rDest;
 
-        public float fAlpha;
+    public float fAlpha;
 
-        public COLORREF clrSrcKey;
-    }
+    public COLORREF clrSrcKey;
 }

@@ -5,48 +5,47 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct USN_RECORD_V3
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct USN_RECORD_V3
-    {
-        [NativeTypeName("DWORD")]
-        public uint RecordLength;
+    [NativeTypeName("DWORD")]
+    public uint RecordLength;
 
-        [NativeTypeName("WORD")]
-        public ushort MajorVersion;
+    [NativeTypeName("WORD")]
+    public ushort MajorVersion;
 
-        [NativeTypeName("WORD")]
-        public ushort MinorVersion;
+    [NativeTypeName("WORD")]
+    public ushort MinorVersion;
 
-        public FILE_ID_128 FileReferenceNumber;
+    public FILE_ID_128 FileReferenceNumber;
 
-        public FILE_ID_128 ParentFileReferenceNumber;
+    public FILE_ID_128 ParentFileReferenceNumber;
 
-        [NativeTypeName("USN")]
-        public long Usn;
+    [NativeTypeName("USN")]
+    public long Usn;
 
-        public LARGE_INTEGER TimeStamp;
+    public LARGE_INTEGER TimeStamp;
 
-        [NativeTypeName("DWORD")]
-        public uint Reason;
+    [NativeTypeName("DWORD")]
+    public uint Reason;
 
-        [NativeTypeName("DWORD")]
-        public uint SourceInfo;
+    [NativeTypeName("DWORD")]
+    public uint SourceInfo;
 
-        [NativeTypeName("DWORD")]
-        public uint SecurityId;
+    [NativeTypeName("DWORD")]
+    public uint SecurityId;
 
-        [NativeTypeName("DWORD")]
-        public uint FileAttributes;
+    [NativeTypeName("DWORD")]
+    public uint FileAttributes;
 
-        [NativeTypeName("WORD")]
-        public ushort FileNameLength;
+    [NativeTypeName("WORD")]
+    public ushort FileNameLength;
 
-        [NativeTypeName("WORD")]
-        public ushort FileNameOffset;
+    [NativeTypeName("WORD")]
+    public ushort FileNameOffset;
 
-        [NativeTypeName("WCHAR [1]")]
-        public fixed ushort FileName[1];
-    }
+    [NativeTypeName("WCHAR [1]")]
+    public fixed ushort FileName[1];
 }

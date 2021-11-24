@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("DB639199-C809-4C89-BFCA-D0BBB9729D6E")]
+[NativeTypeName("struct IMFTimedTextStyle2 : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMFTimedTextStyle2 : IMFTimedTextStyle2.Interface
 {
-    [Guid("DB639199-C809-4C89-BFCA-D0BBB9729D6E")]
-    [NativeTypeName("struct IMFTimedTextStyle2 : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFTimedTextStyle2 : IMFTimedTextStyle2.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMFTimedTextStyle2*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMFTimedTextStyle2*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMFTimedTextStyle2*, uint>)(lpVtbl[1]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMFTimedTextStyle2*, uint>)(lpVtbl[1]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMFTimedTextStyle2*, uint>)(lpVtbl[2]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMFTimedTextStyle2*, uint>)(lpVtbl[2]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetRuby(IMFTimedTextRuby** ruby)
+    {
+        return ((delegate* unmanaged<IMFTimedTextStyle2*, IMFTimedTextRuby**, int>)(lpVtbl[3]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), ruby);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetBouten(IMFTimedTextBouten** bouten)
+    {
+        return ((delegate* unmanaged<IMFTimedTextStyle2*, IMFTimedTextBouten**, int>)(lpVtbl[4]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), bouten);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT IsTextCombined(BOOL* value)
+    {
+        return ((delegate* unmanaged<IMFTimedTextStyle2*, BOOL*, int>)(lpVtbl[5]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), value);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetFontAngleInDegrees(double* value)
+    {
+        return ((delegate* unmanaged<IMFTimedTextStyle2*, double*, int>)(lpVtbl[6]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), value);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetRuby(IMFTimedTextRuby** ruby)
-        {
-            return ((delegate* unmanaged<IMFTimedTextStyle2*, IMFTimedTextRuby**, int>)(lpVtbl[3]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), ruby);
-        }
+        HRESULT GetRuby(IMFTimedTextRuby** ruby);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetBouten(IMFTimedTextBouten** bouten)
-        {
-            return ((delegate* unmanaged<IMFTimedTextStyle2*, IMFTimedTextBouten**, int>)(lpVtbl[4]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), bouten);
-        }
+        HRESULT GetBouten(IMFTimedTextBouten** bouten);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT IsTextCombined(BOOL* value)
-        {
-            return ((delegate* unmanaged<IMFTimedTextStyle2*, BOOL*, int>)(lpVtbl[5]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), value);
-        }
+        HRESULT IsTextCombined(BOOL* value);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetFontAngleInDegrees(double* value)
-        {
-            return ((delegate* unmanaged<IMFTimedTextStyle2*, double*, int>)(lpVtbl[6]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), value);
-        }
+        HRESULT GetFontAngleInDegrees(double* value);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetRuby(IMFTimedTextRuby** ruby);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFTimedTextStyle2*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetBouten(IMFTimedTextBouten** bouten);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFTimedTextStyle2*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT IsTextCombined(BOOL* value);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFTimedTextStyle2*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT GetFontAngleInDegrees(double* value);
-        }
+        [NativeTypeName("HRESULT (IMFTimedTextRuby **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFTimedTextStyle2*, IMFTimedTextRuby**, int> GetRuby;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFTimedTextStyle2*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (IMFTimedTextBouten **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFTimedTextStyle2*, IMFTimedTextBouten**, int> GetBouten;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFTimedTextStyle2*, uint> AddRef;
+        [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFTimedTextStyle2*, BOOL*, int> IsTextCombined;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFTimedTextStyle2*, uint> Release;
-
-            [NativeTypeName("HRESULT (IMFTimedTextRuby **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFTimedTextStyle2*, IMFTimedTextRuby**, int> GetRuby;
-
-            [NativeTypeName("HRESULT (IMFTimedTextBouten **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFTimedTextStyle2*, IMFTimedTextBouten**, int> GetBouten;
-
-            [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFTimedTextStyle2*, BOOL*, int> IsTextCombined;
-
-            [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFTimedTextStyle2*, double*, int> GetFontAngleInDegrees;
-        }
+        [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFTimedTextStyle2*, double*, int> GetFontAngleInDegrees;
     }
 }

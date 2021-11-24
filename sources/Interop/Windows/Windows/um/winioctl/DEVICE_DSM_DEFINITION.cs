@@ -3,29 +3,28 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DEVICE_DSM_DEFINITION
 {
-    public partial struct DEVICE_DSM_DEFINITION
-    {
-        [NativeTypeName("DEVICE_DSM_ACTION")]
-        public uint Action;
+    [NativeTypeName("DEVICE_DSM_ACTION")]
+    public uint Action;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte SingleRange;
+    [NativeTypeName("BOOLEAN")]
+    public byte SingleRange;
 
-        [NativeTypeName("DWORD")]
-        public uint ParameterBlockAlignment;
+    [NativeTypeName("DWORD")]
+    public uint ParameterBlockAlignment;
 
-        [NativeTypeName("DWORD")]
-        public uint ParameterBlockLength;
+    [NativeTypeName("DWORD")]
+    public uint ParameterBlockLength;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte HasOutput;
+    [NativeTypeName("BOOLEAN")]
+    public byte HasOutput;
 
-        [NativeTypeName("DWORD")]
-        public uint OutputBlockAlignment;
+    [NativeTypeName("DWORD")]
+    public uint OutputBlockAlignment;
 
-        [NativeTypeName("DWORD")]
-        public uint OutputBlockLength;
-    }
+    [NativeTypeName("DWORD")]
+    public uint OutputBlockLength;
 }

@@ -5,10 +5,9 @@
 
 using static TerraFX.Interop.Windows.STATUS;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class EXCEPTION
 {
-    public static partial class EXCEPTION
-    {
-        public const uint EXCEPTION_POSSIBLE_DEADLOCK = unchecked((uint)(STATUS_POSSIBLE_DEADLOCK));
-    }
+    public const uint EXCEPTION_POSSIBLE_DEADLOCK = unchecked((uint)(STATUS_POSSIBLE_DEADLOCK));
 }

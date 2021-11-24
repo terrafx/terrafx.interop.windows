@@ -5,14 +5,13 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct X3DAUDIO_DISTANCE_CURVE
-    {
-        public X3DAUDIO_DISTANCE_CURVE_POINT* pPoints;
+namespace TerraFX.Interop.DirectX;
 
-        [NativeTypeName("UINT32")]
-        public uint PointCount;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct X3DAUDIO_DISTANCE_CURVE
+{
+    public X3DAUDIO_DISTANCE_CURVE_POINT* pPoints;
+
+    [NativeTypeName("UINT32")]
+    public uint PointCount;
 }

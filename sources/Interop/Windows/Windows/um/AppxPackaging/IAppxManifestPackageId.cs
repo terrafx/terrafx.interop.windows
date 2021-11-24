@@ -8,156 +8,155 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+[Guid("283CE2D7-7153-4A91-9649-7A0F7240945F")]
+[NativeTypeName("struct IAppxManifestPackageId : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IAppxManifestPackageId : IAppxManifestPackageId.Interface
 {
-    [SupportedOSPlatform("windows8.0")]
-    [Guid("283CE2D7-7153-4A91-9649-7A0F7240945F")]
-    [NativeTypeName("struct IAppxManifestPackageId : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAppxManifestPackageId : IAppxManifestPackageId.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IAppxManifestPackageId*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IAppxManifestPackageId*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IAppxManifestPackageId*, uint>)(lpVtbl[1]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IAppxManifestPackageId*, uint>)(lpVtbl[1]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IAppxManifestPackageId*, uint>)(lpVtbl[2]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IAppxManifestPackageId*, uint>)(lpVtbl[2]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
+    {
+        return ((delegate* unmanaged<IAppxManifestPackageId*, ushort**, int>)(lpVtbl[3]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), name);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetArchitecture(APPX_PACKAGE_ARCHITECTURE* architecture)
+    {
+        return ((delegate* unmanaged<IAppxManifestPackageId*, APPX_PACKAGE_ARCHITECTURE*, int>)(lpVtbl[4]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), architecture);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetPublisher([NativeTypeName("LPWSTR *")] ushort** publisher)
+    {
+        return ((delegate* unmanaged<IAppxManifestPackageId*, ushort**, int>)(lpVtbl[5]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), publisher);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetVersion([NativeTypeName("UINT64 *")] ulong* packageVersion)
+    {
+        return ((delegate* unmanaged<IAppxManifestPackageId*, ulong*, int>)(lpVtbl[6]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), packageVersion);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT GetResourceId([NativeTypeName("LPWSTR *")] ushort** resourceId)
+    {
+        return ((delegate* unmanaged<IAppxManifestPackageId*, ushort**, int>)(lpVtbl[7]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), resourceId);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT ComparePublisher([NativeTypeName("LPCWSTR")] ushort* other, BOOL* isSame)
+    {
+        return ((delegate* unmanaged<IAppxManifestPackageId*, ushort*, BOOL*, int>)(lpVtbl[8]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), other, isSame);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT GetPackageFullName([NativeTypeName("LPWSTR *")] ushort** packageFullName)
+    {
+        return ((delegate* unmanaged<IAppxManifestPackageId*, ushort**, int>)(lpVtbl[9]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), packageFullName);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT GetPackageFamilyName([NativeTypeName("LPWSTR *")] ushort** packageFamilyName)
+    {
+        return ((delegate* unmanaged<IAppxManifestPackageId*, ushort**, int>)(lpVtbl[10]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), packageFamilyName);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
-        {
-            return ((delegate* unmanaged<IAppxManifestPackageId*, ushort**, int>)(lpVtbl[3]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), name);
-        }
+        HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetArchitecture(APPX_PACKAGE_ARCHITECTURE* architecture)
-        {
-            return ((delegate* unmanaged<IAppxManifestPackageId*, APPX_PACKAGE_ARCHITECTURE*, int>)(lpVtbl[4]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), architecture);
-        }
+        HRESULT GetArchitecture(APPX_PACKAGE_ARCHITECTURE* architecture);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetPublisher([NativeTypeName("LPWSTR *")] ushort** publisher)
-        {
-            return ((delegate* unmanaged<IAppxManifestPackageId*, ushort**, int>)(lpVtbl[5]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), publisher);
-        }
+        HRESULT GetPublisher([NativeTypeName("LPWSTR *")] ushort** publisher);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetVersion([NativeTypeName("UINT64 *")] ulong* packageVersion)
-        {
-            return ((delegate* unmanaged<IAppxManifestPackageId*, ulong*, int>)(lpVtbl[6]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), packageVersion);
-        }
+        HRESULT GetVersion([NativeTypeName("UINT64 *")] ulong* packageVersion);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetResourceId([NativeTypeName("LPWSTR *")] ushort** resourceId)
-        {
-            return ((delegate* unmanaged<IAppxManifestPackageId*, ushort**, int>)(lpVtbl[7]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), resourceId);
-        }
+        HRESULT GetResourceId([NativeTypeName("LPWSTR *")] ushort** resourceId);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT ComparePublisher([NativeTypeName("LPCWSTR")] ushort* other, BOOL* isSame)
-        {
-            return ((delegate* unmanaged<IAppxManifestPackageId*, ushort*, BOOL*, int>)(lpVtbl[8]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), other, isSame);
-        }
+        HRESULT ComparePublisher([NativeTypeName("LPCWSTR")] ushort* other, BOOL* isSame);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetPackageFullName([NativeTypeName("LPWSTR *")] ushort** packageFullName)
-        {
-            return ((delegate* unmanaged<IAppxManifestPackageId*, ushort**, int>)(lpVtbl[9]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), packageFullName);
-        }
+        HRESULT GetPackageFullName([NativeTypeName("LPWSTR *")] ushort** packageFullName);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetPackageFamilyName([NativeTypeName("LPWSTR *")] ushort** packageFamilyName)
-        {
-            return ((delegate* unmanaged<IAppxManifestPackageId*, ushort**, int>)(lpVtbl[10]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), packageFamilyName);
-        }
+        HRESULT GetPackageFamilyName([NativeTypeName("LPWSTR *")] ushort** packageFamilyName);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestPackageId*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetArchitecture(APPX_PACKAGE_ARCHITECTURE* architecture);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestPackageId*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetPublisher([NativeTypeName("LPWSTR *")] ushort** publisher);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestPackageId*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT GetVersion([NativeTypeName("UINT64 *")] ulong* packageVersion);
+        [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestPackageId*, ushort**, int> GetName;
 
-            [VtblIndex(7)]
-            HRESULT GetResourceId([NativeTypeName("LPWSTR *")] ushort** resourceId);
+        [NativeTypeName("HRESULT (APPX_PACKAGE_ARCHITECTURE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestPackageId*, APPX_PACKAGE_ARCHITECTURE*, int> GetArchitecture;
 
-            [VtblIndex(8)]
-            HRESULT ComparePublisher([NativeTypeName("LPCWSTR")] ushort* other, BOOL* isSame);
+        [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestPackageId*, ushort**, int> GetPublisher;
 
-            [VtblIndex(9)]
-            HRESULT GetPackageFullName([NativeTypeName("LPWSTR *")] ushort** packageFullName);
+        [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestPackageId*, ulong*, int> GetVersion;
 
-            [VtblIndex(10)]
-            HRESULT GetPackageFamilyName([NativeTypeName("LPWSTR *")] ushort** packageFamilyName);
-        }
+        [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestPackageId*, ushort**, int> GetResourceId;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestPackageId*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (LPCWSTR, BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestPackageId*, ushort*, BOOL*, int> ComparePublisher;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestPackageId*, uint> AddRef;
+        [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestPackageId*, ushort**, int> GetPackageFullName;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestPackageId*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestPackageId*, ushort**, int> GetName;
-
-            [NativeTypeName("HRESULT (APPX_PACKAGE_ARCHITECTURE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestPackageId*, APPX_PACKAGE_ARCHITECTURE*, int> GetArchitecture;
-
-            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestPackageId*, ushort**, int> GetPublisher;
-
-            [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestPackageId*, ulong*, int> GetVersion;
-
-            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestPackageId*, ushort**, int> GetResourceId;
-
-            [NativeTypeName("HRESULT (LPCWSTR, BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestPackageId*, ushort*, BOOL*, int> ComparePublisher;
-
-            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestPackageId*, ushort**, int> GetPackageFullName;
-
-            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAppxManifestPackageId*, ushort**, int> GetPackageFamilyName;
-        }
+        [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAppxManifestPackageId*, ushort**, int> GetPackageFamilyName;
     }
 }

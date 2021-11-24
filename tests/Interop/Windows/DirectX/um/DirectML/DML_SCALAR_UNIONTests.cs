@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DML_SCALAR_UNION" /> struct.</summary>
+public static unsafe partial class DML_SCALAR_UNIONTests
 {
-    /// <summary>Provides validation of the <see cref="DML_SCALAR_UNION" /> struct.</summary>
-    public static unsafe partial class DML_SCALAR_UNIONTests
+    /// <summary>Validates that the <see cref="DML_SCALAR_UNION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DML_SCALAR_UNION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DML_SCALAR_UNION>(), Is.EqualTo(sizeof(DML_SCALAR_UNION)));
-        }
+        Assert.That(Marshal.SizeOf<DML_SCALAR_UNION>(), Is.EqualTo(sizeof(DML_SCALAR_UNION)));
+    }
 
-        /// <summary>Validates that the <see cref="DML_SCALAR_UNION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutExplicitTest()
-        {
-            Assert.That(typeof(DML_SCALAR_UNION).IsExplicitLayout, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DML_SCALAR_UNION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutExplicitTest()
+    {
+        Assert.That(typeof(DML_SCALAR_UNION).IsExplicitLayout, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DML_SCALAR_UNION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DML_SCALAR_UNION), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="DML_SCALAR_UNION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DML_SCALAR_UNION), Is.EqualTo(8));
     }
 }

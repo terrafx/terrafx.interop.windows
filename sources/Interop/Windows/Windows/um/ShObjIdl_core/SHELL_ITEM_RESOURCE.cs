@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct SHELL_ITEM_RESOURCE
-    {
-        public Guid guidType;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("WCHAR [260]")]
-        public fixed ushort szName[260];
-    }
+public unsafe partial struct SHELL_ITEM_RESOURCE
+{
+    public Guid guidType;
+
+    [NativeTypeName("WCHAR [260]")]
+    public fixed ushort szName[260];
 }

@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public enum STORAGE_DEVICE_POWER_CAP_UNITS
 {
-    [SupportedOSPlatform("windows10.0")]
-    public enum STORAGE_DEVICE_POWER_CAP_UNITS
-    {
-        StorageDevicePowerCapUnitsPercent,
-        StorageDevicePowerCapUnitsMilliwatts,
-    }
+    StorageDevicePowerCapUnitsPercent,
+    StorageDevicePowerCapUnitsMilliwatts,
 }

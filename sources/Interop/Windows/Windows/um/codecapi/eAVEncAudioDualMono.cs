@@ -3,12 +3,11 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum eAVEncAudioDualMono
 {
-    public enum eAVEncAudioDualMono
-    {
-        eAVEncAudioDualMono_SameAsInput = 0,
-        eAVEncAudioDualMono_Off = 1,
-        eAVEncAudioDualMono_On = 2,
-    }
+    eAVEncAudioDualMono_SameAsInput = 0,
+    eAVEncAudioDualMono_Off = 1,
+    eAVEncAudioDualMono_On = 2,
 }

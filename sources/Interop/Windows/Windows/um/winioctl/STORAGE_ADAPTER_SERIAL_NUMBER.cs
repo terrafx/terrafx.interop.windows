@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct STORAGE_ADAPTER_SERIAL_NUMBER
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct STORAGE_ADAPTER_SERIAL_NUMBER
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("WCHAR [128]")]
-        public fixed ushort SerialNumber[128];
-    }
+    [NativeTypeName("WCHAR [128]")]
+    public fixed ushort SerialNumber[128];
 }

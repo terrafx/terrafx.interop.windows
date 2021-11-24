@@ -3,14 +3,13 @@
 // Ported from um/SetupAPI.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct SP_CLASSINSTALL_HEADER64
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DI_FUNCTION")]
-        public uint InstallFunction;
-    }
+public partial struct SP_CLASSINSTALL_HEADER64
+{
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
+
+    [NativeTypeName("DI_FUNCTION")]
+    public uint InstallFunction;
 }

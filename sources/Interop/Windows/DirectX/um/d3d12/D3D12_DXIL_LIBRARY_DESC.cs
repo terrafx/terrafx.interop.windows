@@ -3,14 +3,13 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D12_DXIL_LIBRARY_DESC
 {
-    public unsafe partial struct D3D12_DXIL_LIBRARY_DESC
-    {
-        public D3D12_SHADER_BYTECODE DXILLibrary;
+    public D3D12_SHADER_BYTECODE DXILLibrary;
 
-        public uint NumExports;
+    public uint NumExports;
 
-        public D3D12_EXPORT_DESC* pExports;
-    }
+    public D3D12_EXPORT_DESC* pExports;
 }

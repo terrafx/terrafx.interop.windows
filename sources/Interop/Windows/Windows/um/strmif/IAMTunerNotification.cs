@@ -7,64 +7,63 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("211A8760-03AC-11D1-8D13-00AA00BD8339")]
+[NativeTypeName("struct IAMTunerNotification : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IAMTunerNotification : IAMTunerNotification.Interface
 {
-    [Guid("211A8760-03AC-11D1-8D13-00AA00BD8339")]
-    [NativeTypeName("struct IAMTunerNotification : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAMTunerNotification : IAMTunerNotification.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IAMTunerNotification*, Guid*, void**, int>)(lpVtbl[0]))((IAMTunerNotification*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IAMTunerNotification*, Guid*, void**, int>)(lpVtbl[0]))((IAMTunerNotification*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IAMTunerNotification*, uint>)(lpVtbl[1]))((IAMTunerNotification*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IAMTunerNotification*, uint>)(lpVtbl[1]))((IAMTunerNotification*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IAMTunerNotification*, uint>)(lpVtbl[2]))((IAMTunerNotification*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IAMTunerNotification*, uint>)(lpVtbl[2]))((IAMTunerNotification*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT OnEvent(AMTunerEventType Event)
+    {
+        return ((delegate* unmanaged<IAMTunerNotification*, AMTunerEventType, int>)(lpVtbl[3]))((IAMTunerNotification*)Unsafe.AsPointer(ref this), Event);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT OnEvent(AMTunerEventType Event)
-        {
-            return ((delegate* unmanaged<IAMTunerNotification*, AMTunerEventType, int>)(lpVtbl[3]))((IAMTunerNotification*)Unsafe.AsPointer(ref this), Event);
-        }
+        HRESULT OnEvent(AMTunerEventType Event);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT OnEvent(AMTunerEventType Event);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMTunerNotification*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMTunerNotification*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMTunerNotification*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMTunerNotification*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMTunerNotification*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMTunerNotification*, uint> Release;
-
-            [NativeTypeName("HRESULT (AMTunerEventType) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAMTunerNotification*, AMTunerEventType, int> OnEvent;
-        }
+        [NativeTypeName("HRESULT (AMTunerEventType) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAMTunerNotification*, AMTunerEventType, int> OnEvent;
     }
 }

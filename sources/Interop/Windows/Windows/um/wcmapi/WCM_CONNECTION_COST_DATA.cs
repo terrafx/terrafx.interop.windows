@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct WCM_CONNECTION_COST_DATA
-    {
-        [NativeTypeName("DWORD")]
-        public uint ConnectionCost;
+namespace TerraFX.Interop.Windows;
 
-        public WCM_CONNECTION_COST_SOURCE CostSource;
-    }
+[SupportedOSPlatform("windows8.0")]
+public partial struct WCM_CONNECTION_COST_DATA
+{
+    [NativeTypeName("DWORD")]
+    public uint ConnectionCost;
+
+    public WCM_CONNECTION_COST_SOURCE CostSource;
 }

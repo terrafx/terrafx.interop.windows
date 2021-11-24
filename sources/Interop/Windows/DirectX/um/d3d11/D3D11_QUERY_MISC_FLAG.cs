@@ -5,11 +5,10 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D3D11_QUERY_MISC_FLAG
 {
-    [Flags]
-    public enum D3D11_QUERY_MISC_FLAG
-    {
-        D3D11_QUERY_MISC_PREDICATEHINT = 0x1,
-    }
+    D3D11_QUERY_MISC_PREDICATEHINT = 0x1,
 }

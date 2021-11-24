@@ -6,13 +6,12 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
-{
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_AUTHENTICATED_CONFIGURE_ACCESSIBLE_ENCRYPTION_INPUT
-    {
-        public D3D11_AUTHENTICATED_CONFIGURE_INPUT Parameters;
+namespace TerraFX.Interop.DirectX;
 
-        public Guid EncryptionGuid;
-    }
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_AUTHENTICATED_CONFIGURE_ACCESSIBLE_ENCRYPTION_INPUT
+{
+    public D3D11_AUTHENTICATED_CONFIGURE_INPUT Parameters;
+
+    public Guid EncryptionGuid;
 }

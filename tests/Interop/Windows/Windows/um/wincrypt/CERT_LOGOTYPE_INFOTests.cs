@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CERT_LOGOTYPE_INFO" /> struct.</summary>
+public static unsafe partial class CERT_LOGOTYPE_INFOTests
 {
-    /// <summary>Provides validation of the <see cref="CERT_LOGOTYPE_INFO" /> struct.</summary>
-    public static unsafe partial class CERT_LOGOTYPE_INFOTests
+    /// <summary>Validates that the <see cref="CERT_LOGOTYPE_INFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CERT_LOGOTYPE_INFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CERT_LOGOTYPE_INFO>(), Is.EqualTo(sizeof(CERT_LOGOTYPE_INFO)));
-        }
+        Assert.That(Marshal.SizeOf<CERT_LOGOTYPE_INFO>(), Is.EqualTo(sizeof(CERT_LOGOTYPE_INFO)));
+    }
 
-        /// <summary>Validates that the <see cref="CERT_LOGOTYPE_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CERT_LOGOTYPE_INFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CERT_LOGOTYPE_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CERT_LOGOTYPE_INFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CERT_LOGOTYPE_INFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CERT_LOGOTYPE_INFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CERT_LOGOTYPE_INFO), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(CERT_LOGOTYPE_INFO), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(CERT_LOGOTYPE_INFO), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(CERT_LOGOTYPE_INFO), Is.EqualTo(8));
         }
     }
 }

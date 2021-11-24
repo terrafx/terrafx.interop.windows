@@ -3,13 +3,12 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum ADDRESS_MODE
 {
-    public enum ADDRESS_MODE
-    {
-        AddrMode1616,
-        AddrMode1632,
-        AddrModeReal,
-        AddrModeFlat,
-    }
+    AddrMode1616,
+    AddrMode1632,
+    AddrModeReal,
+    AddrModeFlat,
 }

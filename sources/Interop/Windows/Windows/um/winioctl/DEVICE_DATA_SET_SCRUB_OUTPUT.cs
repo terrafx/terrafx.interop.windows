@@ -3,17 +3,16 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DEVICE_DATA_SET_SCRUB_OUTPUT
 {
-    public partial struct DEVICE_DATA_SET_SCRUB_OUTPUT
-    {
-        [NativeTypeName("DWORDLONG")]
-        public ulong BytesProcessed;
+    [NativeTypeName("DWORDLONG")]
+    public ulong BytesProcessed;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong BytesRepaired;
+    [NativeTypeName("DWORDLONG")]
+    public ulong BytesRepaired;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong BytesFailed;
-    }
+    [NativeTypeName("DWORDLONG")]
+    public ulong BytesFailed;
 }

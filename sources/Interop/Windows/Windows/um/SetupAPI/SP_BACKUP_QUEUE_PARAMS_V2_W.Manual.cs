@@ -6,92 +6,91 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public unsafe partial struct SP_BACKUP_QUEUE_PARAMS_V2_W
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct SP_BACKUP_QUEUE_PARAMS_V2_W
+    public static uint SizeOf
     {
-        public static uint SizeOf
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return (uint)(sizeof(SP_BACKUP_QUEUE_PARAMS32_V2_W));
-                }
-                else
-                {
-                    return (uint)(sizeof(SP_BACKUP_QUEUE_PARAMS64_V2_W));
-                }
+                return (uint)(sizeof(SP_BACKUP_QUEUE_PARAMS32_V2_W));
+            }
+            else
+            {
+                return (uint)(sizeof(SP_BACKUP_QUEUE_PARAMS64_V2_W));
             }
         }
+    }
 
-        [FieldOffset(0)]
-        public SP_BACKUP_QUEUE_PARAMS32_V2_W _value32;
+    [FieldOffset(0)]
+    public SP_BACKUP_QUEUE_PARAMS32_V2_W _value32;
 
-        [FieldOffset(0)]
-        public SP_BACKUP_QUEUE_PARAMS64_V2_W _value64;
+    [FieldOffset(0)]
+    public SP_BACKUP_QUEUE_PARAMS64_V2_W _value64;
 
-        [NativeTypeName("DWORD")]
-        public ref uint cbSize
+    [NativeTypeName("DWORD")]
+    public ref uint cbSize
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cbSize, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cbSize, 1));
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cbSize, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cbSize, 1));
             }
         }
+    }
 
-        [NativeTypeName("WCHAR [260]")]
-        public Span<ushort> FullInfPath
+    [NativeTypeName("WCHAR [260]")]
+    public Span<ushort> FullInfPath
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return MemoryMarshal.CreateSpan(ref _value32.FullInfPath[0], 1);
-                }
-                else
-                {
-                    return MemoryMarshal.CreateSpan(ref _value64.FullInfPath[0], 1);
-                }
+                return MemoryMarshal.CreateSpan(ref _value32.FullInfPath[0], 1);
+            }
+            else
+            {
+                return MemoryMarshal.CreateSpan(ref _value64.FullInfPath[0], 1);
             }
         }
+    }
 
-        public ref int FilenameOffset
+    public ref int FilenameOffset
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.FilenameOffset, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.FilenameOffset, 1));
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.FilenameOffset, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.FilenameOffset, 1));
             }
         }
+    }
 
-        [NativeTypeName("WCHAR [260]")]
-        public Span<ushort> ReinstallInstance
+    [NativeTypeName("WCHAR [260]")]
+    public Span<ushort> ReinstallInstance
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return MemoryMarshal.CreateSpan(ref _value32.ReinstallInstance[0], 1);
-                }
-                else
-                {
-                    return MemoryMarshal.CreateSpan(ref _value64.ReinstallInstance[0], 1);
-                }
+                return MemoryMarshal.CreateSpan(ref _value32.ReinstallInstance[0], 1);
+            }
+            else
+            {
+                return MemoryMarshal.CreateSpan(ref _value64.ReinstallInstance[0], 1);
             }
         }
     }

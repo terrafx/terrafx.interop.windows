@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CODECAPI_AVEncVideoInputChromaResolution" /> struct.</summary>
+public static unsafe partial class CODECAPI_AVEncVideoInputChromaResolutionTests
 {
-    /// <summary>Provides validation of the <see cref="CODECAPI_AVEncVideoInputChromaResolution" /> struct.</summary>
-    public static unsafe partial class CODECAPI_AVEncVideoInputChromaResolutionTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncVideoInputChromaResolution" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncVideoInputChromaResolution" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncVideoInputChromaResolution).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoInputChromaResolution));
-        }
+        Assert.That(typeof(CODECAPI_AVEncVideoInputChromaResolution).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoInputChromaResolution));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoInputChromaResolution" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoInputChromaResolution>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoInputChromaResolution)));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoInputChromaResolution" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoInputChromaResolution>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoInputChromaResolution)));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoInputChromaResolution" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncVideoInputChromaResolution).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoInputChromaResolution" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CODECAPI_AVEncVideoInputChromaResolution).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoInputChromaResolution" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CODECAPI_AVEncVideoInputChromaResolution), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoInputChromaResolution" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CODECAPI_AVEncVideoInputChromaResolution), Is.EqualTo(1));
     }
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("EF411752-3736-4CB4-9C8C-8EF4CCB58EFE")]
+public partial struct SpObjectToken
 {
-    [Guid("EF411752-3736-4CB4-9C8C-8EF4CCB58EFE")]
-    public partial struct SpObjectToken
-    {
-    }
 }

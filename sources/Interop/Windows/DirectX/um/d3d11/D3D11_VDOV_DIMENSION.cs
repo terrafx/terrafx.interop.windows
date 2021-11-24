@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public enum D3D11_VDOV_DIMENSION
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum D3D11_VDOV_DIMENSION
-    {
-        D3D11_VDOV_DIMENSION_UNKNOWN = 0,
-        D3D11_VDOV_DIMENSION_TEXTURE2D = 1,
-    }
+    D3D11_VDOV_DIMENSION_UNKNOWN = 0,
+    D3D11_VDOV_DIMENSION_TEXTURE2D = 1,
 }

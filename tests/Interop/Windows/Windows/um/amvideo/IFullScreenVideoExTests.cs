@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IFullScreenVideoEx" /> struct.</summary>
+public static unsafe partial class IFullScreenVideoExTests
 {
-    /// <summary>Provides validation of the <see cref="IFullScreenVideoEx" /> struct.</summary>
-    public static unsafe partial class IFullScreenVideoExTests
+    /// <summary>Validates that the <see cref="IFullScreenVideoEx" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IFullScreenVideoEx" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IFullScreenVideoEx>(), Is.EqualTo(sizeof(IFullScreenVideoEx)));
-        }
+        Assert.That(Marshal.SizeOf<IFullScreenVideoEx>(), Is.EqualTo(sizeof(IFullScreenVideoEx)));
+    }
 
-        /// <summary>Validates that the <see cref="IFullScreenVideoEx" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IFullScreenVideoEx).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IFullScreenVideoEx" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IFullScreenVideoEx).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IFullScreenVideoEx" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IFullScreenVideoEx" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IFullScreenVideoEx), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IFullScreenVideoEx), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IFullScreenVideoEx), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IFullScreenVideoEx), Is.EqualTo(4));
         }
     }
 }

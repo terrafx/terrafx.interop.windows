@@ -6,20 +6,19 @@
 using System.Runtime.CompilerServices;
 using static TerraFX.Interop.Windows.FILE;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static unsafe partial class Windows
 {
-    public static unsafe partial class Windows
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static int HID_CTL_CODE(int id) => CTL_CODE(FILE_DEVICE_KEYBOARD, id, METHOD_NEITHER, FILE_ANY_ACCESS);
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static int HID_CTL_CODE(int id) => CTL_CODE(FILE_DEVICE_KEYBOARD, id, METHOD_NEITHER, FILE_ANY_ACCESS);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static int HID_BUFFER_CTL_CODE(int id) => CTL_CODE(FILE_DEVICE_KEYBOARD, id, METHOD_BUFFERED, FILE_ANY_ACCESS);
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static int HID_BUFFER_CTL_CODE(int id) => CTL_CODE(FILE_DEVICE_KEYBOARD, id, METHOD_BUFFERED, FILE_ANY_ACCESS);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static int HID_IN_CTL_CODE(int id) => CTL_CODE(FILE_DEVICE_KEYBOARD, id, METHOD_IN_DIRECT, FILE_ANY_ACCESS);
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static int HID_IN_CTL_CODE(int id) => CTL_CODE(FILE_DEVICE_KEYBOARD, id, METHOD_IN_DIRECT, FILE_ANY_ACCESS);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static int HID_OUT_CTL_CODE(int id) => CTL_CODE(FILE_DEVICE_KEYBOARD, id, METHOD_OUT_DIRECT, FILE_ANY_ACCESS);
-    }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static int HID_OUT_CTL_CODE(int id) => CTL_CODE(FILE_DEVICE_KEYBOARD, id, METHOD_OUT_DIRECT, FILE_ANY_ACCESS);
 }

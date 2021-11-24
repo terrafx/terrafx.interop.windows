@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MFTOPONODE_ATTRIBUTE_UPDATE" /> struct.</summary>
+public static unsafe partial class MFTOPONODE_ATTRIBUTE_UPDATETests
 {
-    /// <summary>Provides validation of the <see cref="MFTOPONODE_ATTRIBUTE_UPDATE" /> struct.</summary>
-    public static unsafe partial class MFTOPONODE_ATTRIBUTE_UPDATETests
+    /// <summary>Validates that the <see cref="MFTOPONODE_ATTRIBUTE_UPDATE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MFTOPONODE_ATTRIBUTE_UPDATE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MFTOPONODE_ATTRIBUTE_UPDATE>(), Is.EqualTo(sizeof(MFTOPONODE_ATTRIBUTE_UPDATE)));
-        }
+        Assert.That(Marshal.SizeOf<MFTOPONODE_ATTRIBUTE_UPDATE>(), Is.EqualTo(sizeof(MFTOPONODE_ATTRIBUTE_UPDATE)));
+    }
 
-        /// <summary>Validates that the <see cref="MFTOPONODE_ATTRIBUTE_UPDATE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MFTOPONODE_ATTRIBUTE_UPDATE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MFTOPONODE_ATTRIBUTE_UPDATE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MFTOPONODE_ATTRIBUTE_UPDATE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MFTOPONODE_ATTRIBUTE_UPDATE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MFTOPONODE_ATTRIBUTE_UPDATE), Is.EqualTo(40));
-        }
+    /// <summary>Validates that the <see cref="MFTOPONODE_ATTRIBUTE_UPDATE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MFTOPONODE_ATTRIBUTE_UPDATE), Is.EqualTo(40));
     }
 }

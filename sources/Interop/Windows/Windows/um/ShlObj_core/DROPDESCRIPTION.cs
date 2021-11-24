@@ -5,17 +5,16 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct DROPDESCRIPTION
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct DROPDESCRIPTION
-    {
-        public DROPIMAGETYPE type;
+    public DROPIMAGETYPE type;
 
-        [NativeTypeName("WCHAR [260]")]
-        public fixed ushort szMessage[260];
+    [NativeTypeName("WCHAR [260]")]
+    public fixed ushort szMessage[260];
 
-        [NativeTypeName("WCHAR [260]")]
-        public fixed ushort szInsert[260];
-    }
+    [NativeTypeName("WCHAR [260]")]
+    public fixed ushort szInsert[260];
 }

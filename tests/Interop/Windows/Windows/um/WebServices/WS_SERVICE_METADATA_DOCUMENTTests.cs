@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WS_SERVICE_METADATA_DOCUMENT" /> struct.</summary>
+public static unsafe partial class WS_SERVICE_METADATA_DOCUMENTTests
 {
-    /// <summary>Provides validation of the <see cref="WS_SERVICE_METADATA_DOCUMENT" /> struct.</summary>
-    public static unsafe partial class WS_SERVICE_METADATA_DOCUMENTTests
+    /// <summary>Validates that the <see cref="WS_SERVICE_METADATA_DOCUMENT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WS_SERVICE_METADATA_DOCUMENT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WS_SERVICE_METADATA_DOCUMENT>(), Is.EqualTo(sizeof(WS_SERVICE_METADATA_DOCUMENT)));
-        }
+        Assert.That(Marshal.SizeOf<WS_SERVICE_METADATA_DOCUMENT>(), Is.EqualTo(sizeof(WS_SERVICE_METADATA_DOCUMENT)));
+    }
 
-        /// <summary>Validates that the <see cref="WS_SERVICE_METADATA_DOCUMENT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WS_SERVICE_METADATA_DOCUMENT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WS_SERVICE_METADATA_DOCUMENT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WS_SERVICE_METADATA_DOCUMENT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WS_SERVICE_METADATA_DOCUMENT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WS_SERVICE_METADATA_DOCUMENT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WS_SERVICE_METADATA_DOCUMENT), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(WS_SERVICE_METADATA_DOCUMENT), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(WS_SERVICE_METADATA_DOCUMENT), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(WS_SERVICE_METADATA_DOCUMENT), Is.EqualTo(8));
         }
     }
 }

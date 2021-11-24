@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="STORAGE_PRIORITY_HINT_SUPPORT" /> struct.</summary>
+public static unsafe partial class STORAGE_PRIORITY_HINT_SUPPORTTests
 {
-    /// <summary>Provides validation of the <see cref="STORAGE_PRIORITY_HINT_SUPPORT" /> struct.</summary>
-    public static unsafe partial class STORAGE_PRIORITY_HINT_SUPPORTTests
+    /// <summary>Validates that the <see cref="STORAGE_PRIORITY_HINT_SUPPORT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="STORAGE_PRIORITY_HINT_SUPPORT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<STORAGE_PRIORITY_HINT_SUPPORT>(), Is.EqualTo(sizeof(STORAGE_PRIORITY_HINT_SUPPORT)));
-        }
+        Assert.That(Marshal.SizeOf<STORAGE_PRIORITY_HINT_SUPPORT>(), Is.EqualTo(sizeof(STORAGE_PRIORITY_HINT_SUPPORT)));
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_PRIORITY_HINT_SUPPORT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(STORAGE_PRIORITY_HINT_SUPPORT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="STORAGE_PRIORITY_HINT_SUPPORT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(STORAGE_PRIORITY_HINT_SUPPORT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_PRIORITY_HINT_SUPPORT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(STORAGE_PRIORITY_HINT_SUPPORT), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="STORAGE_PRIORITY_HINT_SUPPORT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(STORAGE_PRIORITY_HINT_SUPPORT), Is.EqualTo(4));
     }
 }

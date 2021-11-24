@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IConnectionPoint" /> struct.</summary>
+public static unsafe partial class IConnectionPointTests
 {
-    /// <summary>Provides validation of the <see cref="IConnectionPoint" /> struct.</summary>
-    public static unsafe partial class IConnectionPointTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IConnectionPoint" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IConnectionPoint" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IConnectionPoint).GUID, Is.EqualTo(IID_IConnectionPoint));
-        }
+        Assert.That(typeof(IConnectionPoint).GUID, Is.EqualTo(IID_IConnectionPoint));
+    }
 
-        /// <summary>Validates that the <see cref="IConnectionPoint" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IConnectionPoint>(), Is.EqualTo(sizeof(IConnectionPoint)));
-        }
+    /// <summary>Validates that the <see cref="IConnectionPoint" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IConnectionPoint>(), Is.EqualTo(sizeof(IConnectionPoint)));
+    }
 
-        /// <summary>Validates that the <see cref="IConnectionPoint" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IConnectionPoint).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IConnectionPoint" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IConnectionPoint).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IConnectionPoint" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IConnectionPoint" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IConnectionPoint), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IConnectionPoint), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IConnectionPoint), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IConnectionPoint), Is.EqualTo(4));
         }
     }
 }

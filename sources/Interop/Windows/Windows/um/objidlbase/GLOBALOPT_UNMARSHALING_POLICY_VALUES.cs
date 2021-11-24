@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum GLOBALOPT_UNMARSHALING_POLICY_VALUES
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum GLOBALOPT_UNMARSHALING_POLICY_VALUES
-    {
-        COMGLB_UNMARSHALING_POLICY_NORMAL = 0,
-        COMGLB_UNMARSHALING_POLICY_STRONG = 1,
-        COMGLB_UNMARSHALING_POLICY_HYBRID = 2,
-    }
+    COMGLB_UNMARSHALING_POLICY_NORMAL = 0,
+    COMGLB_UNMARSHALING_POLICY_STRONG = 1,
+    COMGLB_UNMARSHALING_POLICY_HYBRID = 2,
 }

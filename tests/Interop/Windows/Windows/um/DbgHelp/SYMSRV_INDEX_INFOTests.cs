@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SYMSRV_INDEX_INFO" /> struct.</summary>
+public static unsafe partial class SYMSRV_INDEX_INFOTests
 {
-    /// <summary>Provides validation of the <see cref="SYMSRV_INDEX_INFO" /> struct.</summary>
-    public static unsafe partial class SYMSRV_INDEX_INFOTests
+    /// <summary>Validates that the <see cref="SYMSRV_INDEX_INFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SYMSRV_INDEX_INFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SYMSRV_INDEX_INFO>(), Is.EqualTo(sizeof(SYMSRV_INDEX_INFO)));
-        }
+        Assert.That(Marshal.SizeOf<SYMSRV_INDEX_INFO>(), Is.EqualTo(sizeof(SYMSRV_INDEX_INFO)));
+    }
 
-        /// <summary>Validates that the <see cref="SYMSRV_INDEX_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SYMSRV_INDEX_INFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SYMSRV_INDEX_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SYMSRV_INDEX_INFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SYMSRV_INDEX_INFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SYMSRV_INDEX_INFO), Is.EqualTo(828));
-        }
+    /// <summary>Validates that the <see cref="SYMSRV_INDEX_INFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SYMSRV_INDEX_INFO), Is.EqualTo(828));
     }
 }

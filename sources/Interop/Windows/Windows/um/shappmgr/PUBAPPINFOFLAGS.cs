@@ -3,14 +3,13 @@
 // Ported from um/shappmgr.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum PUBAPPINFOFLAGS
 {
-    public enum PUBAPPINFOFLAGS
-    {
-        PAI_SOURCE = 0x1,
-        PAI_ASSIGNEDTIME = 0x2,
-        PAI_PUBLISHEDTIME = 0x4,
-        PAI_SCHEDULEDTIME = 0x8,
-        PAI_EXPIRETIME = 0x10,
-    }
+    PAI_SOURCE = 0x1,
+    PAI_ASSIGNEDTIME = 0x2,
+    PAI_PUBLISHEDTIME = 0x4,
+    PAI_SCHEDULEDTIME = 0x8,
+    PAI_EXPIRETIME = 0x10,
 }

@@ -3,15 +3,14 @@
 // Ported from um/wincodec.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WICComponentEnumerateOptions
 {
-    public enum WICComponentEnumerateOptions
-    {
-        WICComponentEnumerateDefault = 0,
-        WICComponentEnumerateRefresh = 0x1,
-        WICComponentEnumerateDisabled = unchecked((int)(0x80000000)),
-        WICComponentEnumerateUnsigned = 0x40000000,
-        WICComponentEnumerateBuiltInOnly = 0x20000000,
-        WICCOMPONENTENUMERATEOPTIONS_FORCE_DWORD = 0x7fffffff,
-    }
+    WICComponentEnumerateDefault = 0,
+    WICComponentEnumerateRefresh = 0x1,
+    WICComponentEnumerateDisabled = unchecked((int)(0x80000000)),
+    WICComponentEnumerateUnsigned = 0x40000000,
+    WICComponentEnumerateBuiltInOnly = 0x20000000,
+    WICCOMPONENTENUMERATEOPTIONS_FORCE_DWORD = 0x7fffffff,
 }

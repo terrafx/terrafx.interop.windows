@@ -5,22 +5,21 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static unsafe partial class Windows
 {
-    public static unsafe partial class Windows
-    {
-        [DllImport("twinapi.appcore.dll", ExactSpelling = true)]
-        [return: NativeTypeName("ULONG")]
-        public static extern uint RegisterAppStateChangeNotification([NativeTypeName("PAPPSTATE_CHANGE_ROUTINE")] delegate* unmanaged<byte, void*, void> Routine, [NativeTypeName("PVOID")] void* Context, PAPPSTATE_REGISTRATION* Registration);
+    [DllImport("twinapi.appcore.dll", ExactSpelling = true)]
+    [return: NativeTypeName("ULONG")]
+    public static extern uint RegisterAppStateChangeNotification([NativeTypeName("PAPPSTATE_CHANGE_ROUTINE")] delegate* unmanaged<byte, void*, void> Routine, [NativeTypeName("PVOID")] void* Context, PAPPSTATE_REGISTRATION* Registration);
 
-        [DllImport("twinapi.appcore.dll", ExactSpelling = true)]
-        public static extern void UnregisterAppStateChangeNotification(PAPPSTATE_REGISTRATION Registration);
+    [DllImport("twinapi.appcore.dll", ExactSpelling = true)]
+    public static extern void UnregisterAppStateChangeNotification(PAPPSTATE_REGISTRATION Registration);
 
-        [DllImport("twinapi.appcore.dll", ExactSpelling = true)]
-        [return: NativeTypeName("ULONG")]
-        public static extern uint RegisterAppConstrainedChangeNotification([NativeTypeName("PAPPCONSTRAIN_CHANGE_ROUTINE")] delegate* unmanaged<byte, void*, void> Routine, [NativeTypeName("PVOID")] void* Context, PAPPCONSTRAIN_REGISTRATION* Registration);
+    [DllImport("twinapi.appcore.dll", ExactSpelling = true)]
+    [return: NativeTypeName("ULONG")]
+    public static extern uint RegisterAppConstrainedChangeNotification([NativeTypeName("PAPPCONSTRAIN_CHANGE_ROUTINE")] delegate* unmanaged<byte, void*, void> Routine, [NativeTypeName("PVOID")] void* Context, PAPPCONSTRAIN_REGISTRATION* Registration);
 
-        [DllImport("twinapi.appcore.dll", ExactSpelling = true)]
-        public static extern void UnregisterAppConstrainedChangeNotification(PAPPCONSTRAIN_REGISTRATION Registration);
-    }
+    [DllImport("twinapi.appcore.dll", ExactSpelling = true)]
+    public static extern void UnregisterAppConstrainedChangeNotification(PAPPCONSTRAIN_REGISTRATION Registration);
 }

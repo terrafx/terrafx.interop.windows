@@ -5,15 +5,14 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SP_ENABLECLASS_PARAMS64
 {
-    public partial struct SP_ENABLECLASS_PARAMS64
-    {
-        public SP_CLASSINSTALL_HEADER64 ClassInstallHeader;
+    public SP_CLASSINSTALL_HEADER64 ClassInstallHeader;
 
-        public Guid ClassGuid;
+    public Guid ClassGuid;
 
-        [NativeTypeName("DWORD")]
-        public uint EnableMessage;
-    }
+    [NativeTypeName("DWORD")]
+    public uint EnableMessage;
 }

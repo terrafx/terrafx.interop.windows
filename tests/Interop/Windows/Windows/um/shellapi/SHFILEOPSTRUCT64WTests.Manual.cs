@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SHFILEOPSTRUCT64W" /> struct.</summary>
+public static unsafe partial class SHFILEOPSTRUCT64WTests
 {
-    /// <summary>Provides validation of the <see cref="SHFILEOPSTRUCT64W" /> struct.</summary>
-    public static unsafe partial class SHFILEOPSTRUCT64WTests
+    /// <summary>Validates that the <see cref="SHFILEOPSTRUCT64W" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SHFILEOPSTRUCT64W" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SHFILEOPSTRUCT64W>(), Is.EqualTo(sizeof(SHFILEOPSTRUCT64W)));
-        }
+        Assert.That(Marshal.SizeOf<SHFILEOPSTRUCT64W>(), Is.EqualTo(sizeof(SHFILEOPSTRUCT64W)));
+    }
 
-        /// <summary>Validates that the <see cref="SHFILEOPSTRUCT64W" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SHFILEOPSTRUCT64W).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SHFILEOPSTRUCT64W" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SHFILEOPSTRUCT64W).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SHFILEOPSTRUCT64W" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SHFILEOPSTRUCT64W" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SHFILEOPSTRUCT64W), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(SHFILEOPSTRUCT64W), Is.EqualTo(32));
-            }
+            Assert.That(sizeof(SHFILEOPSTRUCT64W), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(SHFILEOPSTRUCT64W), Is.EqualTo(32));
         }
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SCHANNEL_CLIENT_SIGNATURE" /> struct.</summary>
+public static unsafe partial class SCHANNEL_CLIENT_SIGNATURETests
 {
-    /// <summary>Provides validation of the <see cref="SCHANNEL_CLIENT_SIGNATURE" /> struct.</summary>
-    public static unsafe partial class SCHANNEL_CLIENT_SIGNATURETests
+    /// <summary>Validates that the <see cref="SCHANNEL_CLIENT_SIGNATURE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SCHANNEL_CLIENT_SIGNATURE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SCHANNEL_CLIENT_SIGNATURE>(), Is.EqualTo(sizeof(SCHANNEL_CLIENT_SIGNATURE)));
-        }
+        Assert.That(Marshal.SizeOf<SCHANNEL_CLIENT_SIGNATURE>(), Is.EqualTo(sizeof(SCHANNEL_CLIENT_SIGNATURE)));
+    }
 
-        /// <summary>Validates that the <see cref="SCHANNEL_CLIENT_SIGNATURE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SCHANNEL_CLIENT_SIGNATURE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SCHANNEL_CLIENT_SIGNATURE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SCHANNEL_CLIENT_SIGNATURE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SCHANNEL_CLIENT_SIGNATURE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SCHANNEL_CLIENT_SIGNATURE), Is.EqualTo(68));
-        }
+    /// <summary>Validates that the <see cref="SCHANNEL_CLIENT_SIGNATURE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SCHANNEL_CLIENT_SIGNATURE), Is.EqualTo(68));
     }
 }

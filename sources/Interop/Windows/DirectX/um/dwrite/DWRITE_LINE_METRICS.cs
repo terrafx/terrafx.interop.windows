@@ -5,23 +5,22 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DWRITE_LINE_METRICS
 {
-    public partial struct DWRITE_LINE_METRICS
-    {
-        [NativeTypeName("UINT32")]
-        public uint length;
+    [NativeTypeName("UINT32")]
+    public uint length;
 
-        [NativeTypeName("UINT32")]
-        public uint trailingWhitespaceLength;
+    [NativeTypeName("UINT32")]
+    public uint trailingWhitespaceLength;
 
-        [NativeTypeName("UINT32")]
-        public uint newlineLength;
+    [NativeTypeName("UINT32")]
+    public uint newlineLength;
 
-        public float height;
+    public float height;
 
-        public float baseline;
+    public float baseline;
 
-        public BOOL isTrimmed;
-    }
+    public BOOL isTrimmed;
 }

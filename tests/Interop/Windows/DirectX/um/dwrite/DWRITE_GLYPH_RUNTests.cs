@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DWRITE_GLYPH_RUN" /> struct.</summary>
+public static unsafe partial class DWRITE_GLYPH_RUNTests
 {
-    /// <summary>Provides validation of the <see cref="DWRITE_GLYPH_RUN" /> struct.</summary>
-    public static unsafe partial class DWRITE_GLYPH_RUNTests
+    /// <summary>Validates that the <see cref="DWRITE_GLYPH_RUN" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DWRITE_GLYPH_RUN" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DWRITE_GLYPH_RUN>(), Is.EqualTo(sizeof(DWRITE_GLYPH_RUN)));
-        }
+        Assert.That(Marshal.SizeOf<DWRITE_GLYPH_RUN>(), Is.EqualTo(sizeof(DWRITE_GLYPH_RUN)));
+    }
 
-        /// <summary>Validates that the <see cref="DWRITE_GLYPH_RUN" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DWRITE_GLYPH_RUN).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DWRITE_GLYPH_RUN" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DWRITE_GLYPH_RUN).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DWRITE_GLYPH_RUN" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DWRITE_GLYPH_RUN" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DWRITE_GLYPH_RUN), Is.EqualTo(48));
-            }
-            else
-            {
-                Assert.That(sizeof(DWRITE_GLYPH_RUN), Is.EqualTo(32));
-            }
+            Assert.That(sizeof(DWRITE_GLYPH_RUN), Is.EqualTo(48));
+        }
+        else
+        {
+            Assert.That(sizeof(DWRITE_GLYPH_RUN), Is.EqualTo(32));
         }
     }
 }

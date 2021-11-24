@@ -3,14 +3,13 @@
 // Ported from um/tpcshrd.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class MAX
-    {
-        [NativeTypeName("#define MAX_PACKET_PROPERTY_COUNT 32")]
-        public const int MAX_PACKET_PROPERTY_COUNT = 32;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("#define MAX_PACKET_BUTTON_COUNT 32")]
-        public const int MAX_PACKET_BUTTON_COUNT = 32;
-    }
+public static partial class MAX
+{
+    [NativeTypeName("#define MAX_PACKET_PROPERTY_COUNT 32")]
+    public const int MAX_PACKET_PROPERTY_COUNT = 32;
+
+    [NativeTypeName("#define MAX_PACKET_BUTTON_COUNT 32")]
+    public const int MAX_PACKET_BUTTON_COUNT = 32;
 }

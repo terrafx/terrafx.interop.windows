@@ -5,11 +5,10 @@
 
 using TerraFX.Interop.DirectX;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class FACILITY
 {
-    public static partial class FACILITY
-    {
-        [NativeTypeName("#define FACILITY_XAPO 0x897")]
-        public const int FACILITY_XAPO = 0x897;
-    }
+    [NativeTypeName("#define FACILITY_XAPO 0x897")]
+    public const int FACILITY_XAPO = 0x897;
 }

@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+public enum NL_NETWORK_CONNECTIVITY_COST_HINT
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public enum NL_NETWORK_CONNECTIVITY_COST_HINT
-    {
-        NetworkConnectivityCostHintUnknown = 0,
-        NetworkConnectivityCostHintUnrestricted,
-        NetworkConnectivityCostHintFixed,
-        NetworkConnectivityCostHintVariable,
-    }
+    NetworkConnectivityCostHintUnknown = 0,
+    NetworkConnectivityCostHintUnrestricted,
+    NetworkConnectivityCostHintFixed,
+    NetworkConnectivityCostHintVariable,
 }

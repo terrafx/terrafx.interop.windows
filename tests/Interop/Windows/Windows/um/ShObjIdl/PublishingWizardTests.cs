@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PublishingWizard" /> struct.</summary>
+public static unsafe partial class PublishingWizardTests
 {
-    /// <summary>Provides validation of the <see cref="PublishingWizard" /> struct.</summary>
-    public static unsafe partial class PublishingWizardTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="PublishingWizard" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="PublishingWizard" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(PublishingWizard).GUID, Is.EqualTo(IID_PublishingWizard));
-        }
+        Assert.That(typeof(PublishingWizard).GUID, Is.EqualTo(IID_PublishingWizard));
+    }
 
-        /// <summary>Validates that the <see cref="PublishingWizard" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PublishingWizard>(), Is.EqualTo(sizeof(PublishingWizard)));
-        }
+    /// <summary>Validates that the <see cref="PublishingWizard" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<PublishingWizard>(), Is.EqualTo(sizeof(PublishingWizard)));
+    }
 
-        /// <summary>Validates that the <see cref="PublishingWizard" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PublishingWizard).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PublishingWizard" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PublishingWizard).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PublishingWizard" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(PublishingWizard), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="PublishingWizard" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(PublishingWizard), Is.EqualTo(1));
     }
 }

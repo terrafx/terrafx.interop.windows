@@ -5,11 +5,10 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct INTERACTION_ARGUMENTS_CROSS_SLIDE
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct INTERACTION_ARGUMENTS_CROSS_SLIDE
-    {
-        public CROSS_SLIDE_FLAGS flags;
-    }
+    public CROSS_SLIDE_FLAGS flags;
 }

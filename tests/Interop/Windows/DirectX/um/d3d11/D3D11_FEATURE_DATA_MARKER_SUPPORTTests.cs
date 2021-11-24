@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="D3D11_FEATURE_DATA_MARKER_SUPPORT" /> struct.</summary>
+[SupportedOSPlatform("windows8.1")]
+public static unsafe partial class D3D11_FEATURE_DATA_MARKER_SUPPORTTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_FEATURE_DATA_MARKER_SUPPORT" /> struct.</summary>
-    [SupportedOSPlatform("windows8.1")]
-    public static unsafe partial class D3D11_FEATURE_DATA_MARKER_SUPPORTTests
+    /// <summary>Validates that the <see cref="D3D11_FEATURE_DATA_MARKER_SUPPORT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="D3D11_FEATURE_DATA_MARKER_SUPPORT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<D3D11_FEATURE_DATA_MARKER_SUPPORT>(), Is.EqualTo(sizeof(D3D11_FEATURE_DATA_MARKER_SUPPORT)));
-        }
+        Assert.That(Marshal.SizeOf<D3D11_FEATURE_DATA_MARKER_SUPPORT>(), Is.EqualTo(sizeof(D3D11_FEATURE_DATA_MARKER_SUPPORT)));
+    }
 
-        /// <summary>Validates that the <see cref="D3D11_FEATURE_DATA_MARKER_SUPPORT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(D3D11_FEATURE_DATA_MARKER_SUPPORT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="D3D11_FEATURE_DATA_MARKER_SUPPORT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(D3D11_FEATURE_DATA_MARKER_SUPPORT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="D3D11_FEATURE_DATA_MARKER_SUPPORT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(D3D11_FEATURE_DATA_MARKER_SUPPORT), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="D3D11_FEATURE_DATA_MARKER_SUPPORT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(D3D11_FEATURE_DATA_MARKER_SUPPORT), Is.EqualTo(4));
     }
 }

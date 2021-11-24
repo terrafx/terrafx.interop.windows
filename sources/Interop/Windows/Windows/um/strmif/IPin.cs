@@ -7,246 +7,245 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("56A86891-0AD4-11CE-B03A-0020AF0BA770")]
+[NativeTypeName("struct IPin : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IPin : IPin.Interface
 {
-    [Guid("56A86891-0AD4-11CE-B03A-0020AF0BA770")]
-    [NativeTypeName("struct IPin : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPin : IPin.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IPin*, Guid*, void**, int>)(lpVtbl[0]))((IPin*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IPin*, Guid*, void**, int>)(lpVtbl[0]))((IPin*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IPin*, uint>)(lpVtbl[1]))((IPin*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IPin*, uint>)(lpVtbl[1]))((IPin*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IPin*, uint>)(lpVtbl[2]))((IPin*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IPin*, uint>)(lpVtbl[2]))((IPin*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Connect(IPin* pReceivePin, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
+    {
+        return ((delegate* unmanaged<IPin*, IPin*, AM_MEDIA_TYPE*, int>)(lpVtbl[3]))((IPin*)Unsafe.AsPointer(ref this), pReceivePin, pmt);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT ReceiveConnection(IPin* pConnector, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
+    {
+        return ((delegate* unmanaged<IPin*, IPin*, AM_MEDIA_TYPE*, int>)(lpVtbl[4]))((IPin*)Unsafe.AsPointer(ref this), pConnector, pmt);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Disconnect()
+    {
+        return ((delegate* unmanaged<IPin*, int>)(lpVtbl[5]))((IPin*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT ConnectedTo(IPin** pPin)
+    {
+        return ((delegate* unmanaged<IPin*, IPin**, int>)(lpVtbl[6]))((IPin*)Unsafe.AsPointer(ref this), pPin);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT ConnectionMediaType(AM_MEDIA_TYPE* pmt)
+    {
+        return ((delegate* unmanaged<IPin*, AM_MEDIA_TYPE*, int>)(lpVtbl[7]))((IPin*)Unsafe.AsPointer(ref this), pmt);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT QueryPinInfo(PIN_INFO* pInfo)
+    {
+        return ((delegate* unmanaged<IPin*, PIN_INFO*, int>)(lpVtbl[8]))((IPin*)Unsafe.AsPointer(ref this), pInfo);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT QueryDirection(PIN_DIRECTION* pPinDir)
+    {
+        return ((delegate* unmanaged<IPin*, PIN_DIRECTION*, int>)(lpVtbl[9]))((IPin*)Unsafe.AsPointer(ref this), pPinDir);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT QueryId([NativeTypeName("LPWSTR *")] ushort** Id)
+    {
+        return ((delegate* unmanaged<IPin*, ushort**, int>)(lpVtbl[10]))((IPin*)Unsafe.AsPointer(ref this), Id);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT QueryAccept([NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
+    {
+        return ((delegate* unmanaged<IPin*, AM_MEDIA_TYPE*, int>)(lpVtbl[11]))((IPin*)Unsafe.AsPointer(ref this), pmt);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT EnumMediaTypes(IEnumMediaTypes** ppEnum)
+    {
+        return ((delegate* unmanaged<IPin*, IEnumMediaTypes**, int>)(lpVtbl[12]))((IPin*)Unsafe.AsPointer(ref this), ppEnum);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT QueryInternalConnections(IPin** apPin, [NativeTypeName("ULONG *")] uint* nPin)
+    {
+        return ((delegate* unmanaged<IPin*, IPin**, uint*, int>)(lpVtbl[13]))((IPin*)Unsafe.AsPointer(ref this), apPin, nPin);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT EndOfStream()
+    {
+        return ((delegate* unmanaged<IPin*, int>)(lpVtbl[14]))((IPin*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT BeginFlush()
+    {
+        return ((delegate* unmanaged<IPin*, int>)(lpVtbl[15]))((IPin*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT EndFlush()
+    {
+        return ((delegate* unmanaged<IPin*, int>)(lpVtbl[16]))((IPin*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT NewSegment([NativeTypeName("REFERENCE_TIME")] long tStart, [NativeTypeName("REFERENCE_TIME")] long tStop, double dRate)
+    {
+        return ((delegate* unmanaged<IPin*, long, long, double, int>)(lpVtbl[17]))((IPin*)Unsafe.AsPointer(ref this), tStart, tStop, dRate);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Connect(IPin* pReceivePin, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
-        {
-            return ((delegate* unmanaged<IPin*, IPin*, AM_MEDIA_TYPE*, int>)(lpVtbl[3]))((IPin*)Unsafe.AsPointer(ref this), pReceivePin, pmt);
-        }
+        HRESULT Connect(IPin* pReceivePin, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT ReceiveConnection(IPin* pConnector, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
-        {
-            return ((delegate* unmanaged<IPin*, IPin*, AM_MEDIA_TYPE*, int>)(lpVtbl[4]))((IPin*)Unsafe.AsPointer(ref this), pConnector, pmt);
-        }
+        HRESULT ReceiveConnection(IPin* pConnector, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Disconnect()
-        {
-            return ((delegate* unmanaged<IPin*, int>)(lpVtbl[5]))((IPin*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Disconnect();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT ConnectedTo(IPin** pPin)
-        {
-            return ((delegate* unmanaged<IPin*, IPin**, int>)(lpVtbl[6]))((IPin*)Unsafe.AsPointer(ref this), pPin);
-        }
+        HRESULT ConnectedTo(IPin** pPin);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT ConnectionMediaType(AM_MEDIA_TYPE* pmt)
-        {
-            return ((delegate* unmanaged<IPin*, AM_MEDIA_TYPE*, int>)(lpVtbl[7]))((IPin*)Unsafe.AsPointer(ref this), pmt);
-        }
+        HRESULT ConnectionMediaType(AM_MEDIA_TYPE* pmt);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT QueryPinInfo(PIN_INFO* pInfo)
-        {
-            return ((delegate* unmanaged<IPin*, PIN_INFO*, int>)(lpVtbl[8]))((IPin*)Unsafe.AsPointer(ref this), pInfo);
-        }
+        HRESULT QueryPinInfo(PIN_INFO* pInfo);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT QueryDirection(PIN_DIRECTION* pPinDir)
-        {
-            return ((delegate* unmanaged<IPin*, PIN_DIRECTION*, int>)(lpVtbl[9]))((IPin*)Unsafe.AsPointer(ref this), pPinDir);
-        }
+        HRESULT QueryDirection(PIN_DIRECTION* pPinDir);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT QueryId([NativeTypeName("LPWSTR *")] ushort** Id)
-        {
-            return ((delegate* unmanaged<IPin*, ushort**, int>)(lpVtbl[10]))((IPin*)Unsafe.AsPointer(ref this), Id);
-        }
+        HRESULT QueryId([NativeTypeName("LPWSTR *")] ushort** Id);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT QueryAccept([NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
-        {
-            return ((delegate* unmanaged<IPin*, AM_MEDIA_TYPE*, int>)(lpVtbl[11]))((IPin*)Unsafe.AsPointer(ref this), pmt);
-        }
+        HRESULT QueryAccept([NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT EnumMediaTypes(IEnumMediaTypes** ppEnum)
-        {
-            return ((delegate* unmanaged<IPin*, IEnumMediaTypes**, int>)(lpVtbl[12]))((IPin*)Unsafe.AsPointer(ref this), ppEnum);
-        }
+        HRESULT EnumMediaTypes(IEnumMediaTypes** ppEnum);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT QueryInternalConnections(IPin** apPin, [NativeTypeName("ULONG *")] uint* nPin)
-        {
-            return ((delegate* unmanaged<IPin*, IPin**, uint*, int>)(lpVtbl[13]))((IPin*)Unsafe.AsPointer(ref this), apPin, nPin);
-        }
+        HRESULT QueryInternalConnections(IPin** apPin, [NativeTypeName("ULONG *")] uint* nPin);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT EndOfStream()
-        {
-            return ((delegate* unmanaged<IPin*, int>)(lpVtbl[14]))((IPin*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT EndOfStream();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT BeginFlush()
-        {
-            return ((delegate* unmanaged<IPin*, int>)(lpVtbl[15]))((IPin*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT BeginFlush();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT EndFlush()
-        {
-            return ((delegate* unmanaged<IPin*, int>)(lpVtbl[16]))((IPin*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT EndFlush();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT NewSegment([NativeTypeName("REFERENCE_TIME")] long tStart, [NativeTypeName("REFERENCE_TIME")] long tStop, double dRate)
-        {
-            return ((delegate* unmanaged<IPin*, long, long, double, int>)(lpVtbl[17]))((IPin*)Unsafe.AsPointer(ref this), tStart, tStop, dRate);
-        }
+        HRESULT NewSegment([NativeTypeName("REFERENCE_TIME")] long tStart, [NativeTypeName("REFERENCE_TIME")] long tStop, double dRate);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Connect(IPin* pReceivePin, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPin*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT ReceiveConnection(IPin* pConnector, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPin*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT Disconnect();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPin*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT ConnectedTo(IPin** pPin);
+        [NativeTypeName("HRESULT (IPin *, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPin*, IPin*, AM_MEDIA_TYPE*, int> Connect;
 
-            [VtblIndex(7)]
-            HRESULT ConnectionMediaType(AM_MEDIA_TYPE* pmt);
+        [NativeTypeName("HRESULT (IPin *, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPin*, IPin*, AM_MEDIA_TYPE*, int> ReceiveConnection;
 
-            [VtblIndex(8)]
-            HRESULT QueryPinInfo(PIN_INFO* pInfo);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPin*, int> Disconnect;
 
-            [VtblIndex(9)]
-            HRESULT QueryDirection(PIN_DIRECTION* pPinDir);
+        [NativeTypeName("HRESULT (IPin **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPin*, IPin**, int> ConnectedTo;
 
-            [VtblIndex(10)]
-            HRESULT QueryId([NativeTypeName("LPWSTR *")] ushort** Id);
+        [NativeTypeName("HRESULT (AM_MEDIA_TYPE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPin*, AM_MEDIA_TYPE*, int> ConnectionMediaType;
 
-            [VtblIndex(11)]
-            HRESULT QueryAccept([NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt);
+        [NativeTypeName("HRESULT (PIN_INFO *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPin*, PIN_INFO*, int> QueryPinInfo;
 
-            [VtblIndex(12)]
-            HRESULT EnumMediaTypes(IEnumMediaTypes** ppEnum);
+        [NativeTypeName("HRESULT (PIN_DIRECTION *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPin*, PIN_DIRECTION*, int> QueryDirection;
 
-            [VtblIndex(13)]
-            HRESULT QueryInternalConnections(IPin** apPin, [NativeTypeName("ULONG *")] uint* nPin);
+        [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPin*, ushort**, int> QueryId;
 
-            [VtblIndex(14)]
-            HRESULT EndOfStream();
+        [NativeTypeName("HRESULT (const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPin*, AM_MEDIA_TYPE*, int> QueryAccept;
 
-            [VtblIndex(15)]
-            HRESULT BeginFlush();
+        [NativeTypeName("HRESULT (IEnumMediaTypes **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPin*, IEnumMediaTypes**, int> EnumMediaTypes;
 
-            [VtblIndex(16)]
-            HRESULT EndFlush();
+        [NativeTypeName("HRESULT (IPin **, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPin*, IPin**, uint*, int> QueryInternalConnections;
 
-            [VtblIndex(17)]
-            HRESULT NewSegment([NativeTypeName("REFERENCE_TIME")] long tStart, [NativeTypeName("REFERENCE_TIME")] long tStop, double dRate);
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPin*, int> EndOfStream;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPin*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPin*, int> BeginFlush;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPin*, uint> AddRef;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPin*, int> EndFlush;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPin*, uint> Release;
-
-            [NativeTypeName("HRESULT (IPin *, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPin*, IPin*, AM_MEDIA_TYPE*, int> Connect;
-
-            [NativeTypeName("HRESULT (IPin *, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPin*, IPin*, AM_MEDIA_TYPE*, int> ReceiveConnection;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPin*, int> Disconnect;
-
-            [NativeTypeName("HRESULT (IPin **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPin*, IPin**, int> ConnectedTo;
-
-            [NativeTypeName("HRESULT (AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPin*, AM_MEDIA_TYPE*, int> ConnectionMediaType;
-
-            [NativeTypeName("HRESULT (PIN_INFO *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPin*, PIN_INFO*, int> QueryPinInfo;
-
-            [NativeTypeName("HRESULT (PIN_DIRECTION *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPin*, PIN_DIRECTION*, int> QueryDirection;
-
-            [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPin*, ushort**, int> QueryId;
-
-            [NativeTypeName("HRESULT (const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPin*, AM_MEDIA_TYPE*, int> QueryAccept;
-
-            [NativeTypeName("HRESULT (IEnumMediaTypes **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPin*, IEnumMediaTypes**, int> EnumMediaTypes;
-
-            [NativeTypeName("HRESULT (IPin **, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPin*, IPin**, uint*, int> QueryInternalConnections;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPin*, int> EndOfStream;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPin*, int> BeginFlush;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPin*, int> EndFlush;
-
-            [NativeTypeName("HRESULT (REFERENCE_TIME, REFERENCE_TIME, double) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPin*, long, long, double, int> NewSegment;
-        }
+        [NativeTypeName("HRESULT (REFERENCE_TIME, REFERENCE_TIME, double) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPin*, long, long, double, int> NewSegment;
     }
 }

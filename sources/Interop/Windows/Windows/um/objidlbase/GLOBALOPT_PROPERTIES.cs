@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum GLOBALOPT_PROPERTIES
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum GLOBALOPT_PROPERTIES
-    {
-        COMGLB_EXCEPTION_HANDLING = 1,
-        COMGLB_APPID = 2,
-        COMGLB_RPC_THREADPOOL_SETTING = 3,
-        COMGLB_RO_SETTINGS = 4,
-        COMGLB_UNMARSHALING_POLICY = 5,
-        COMGLB_PROPERTIES_RESERVED1 = 6,
-        COMGLB_PROPERTIES_RESERVED2 = 7,
-        COMGLB_PROPERTIES_RESERVED3 = 8,
-    }
+    COMGLB_EXCEPTION_HANDLING = 1,
+    COMGLB_APPID = 2,
+    COMGLB_RPC_THREADPOOL_SETTING = 3,
+    COMGLB_RO_SETTINGS = 4,
+    COMGLB_UNMARSHALING_POLICY = 5,
+    COMGLB_PROPERTIES_RESERVED1 = 6,
+    COMGLB_PROPERTIES_RESERVED2 = 7,
+    COMGLB_PROPERTIES_RESERVED3 = 8,
 }

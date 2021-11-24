@@ -5,15 +5,14 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_XML_READER_STREAM_INPUT
 {
-    public unsafe partial struct WS_XML_READER_STREAM_INPUT
-    {
-        public WS_XML_READER_INPUT input;
+    public WS_XML_READER_INPUT input;
 
-        [NativeTypeName("WS_READ_CALLBACK")]
-        public delegate* unmanaged<void*, void*, uint, uint*, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> readCallback;
+    [NativeTypeName("WS_READ_CALLBACK")]
+    public delegate* unmanaged<void*, void*, uint, uint*, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> readCallback;
 
-        public void* readCallbackState;
-    }
+    public void* readCallbackState;
 }

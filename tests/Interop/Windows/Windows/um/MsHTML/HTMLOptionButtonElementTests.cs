@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLOptionButtonElement" /> struct.</summary>
+public static unsafe partial class HTMLOptionButtonElementTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLOptionButtonElement" /> struct.</summary>
-    public static unsafe partial class HTMLOptionButtonElementTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLOptionButtonElement" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLOptionButtonElement" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLOptionButtonElement).GUID, Is.EqualTo(IID_HTMLOptionButtonElement));
-        }
+        Assert.That(typeof(HTMLOptionButtonElement).GUID, Is.EqualTo(IID_HTMLOptionButtonElement));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLOptionButtonElement" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLOptionButtonElement>(), Is.EqualTo(sizeof(HTMLOptionButtonElement)));
-        }
+    /// <summary>Validates that the <see cref="HTMLOptionButtonElement" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLOptionButtonElement>(), Is.EqualTo(sizeof(HTMLOptionButtonElement)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLOptionButtonElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLOptionButtonElement).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLOptionButtonElement" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLOptionButtonElement).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLOptionButtonElement" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTMLOptionButtonElement), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTMLOptionButtonElement" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTMLOptionButtonElement), Is.EqualTo(1));
     }
 }

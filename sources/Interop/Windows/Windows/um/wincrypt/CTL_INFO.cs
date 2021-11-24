@@ -3,36 +3,35 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CTL_INFO
 {
-    public unsafe partial struct CTL_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwVersion;
+    [NativeTypeName("DWORD")]
+    public uint dwVersion;
 
-        public CTL_USAGE SubjectUsage;
+    public CTL_USAGE SubjectUsage;
 
-        public CRYPT_DATA_BLOB ListIdentifier;
+    public CRYPT_DATA_BLOB ListIdentifier;
 
-        [NativeTypeName("CRYPT_INTEGER_BLOB")]
-        public CRYPT_DATA_BLOB SequenceNumber;
+    [NativeTypeName("CRYPT_INTEGER_BLOB")]
+    public CRYPT_DATA_BLOB SequenceNumber;
 
-        public FILETIME ThisUpdate;
+    public FILETIME ThisUpdate;
 
-        public FILETIME NextUpdate;
+    public FILETIME NextUpdate;
 
-        public CRYPT_ALGORITHM_IDENTIFIER SubjectAlgorithm;
+    public CRYPT_ALGORITHM_IDENTIFIER SubjectAlgorithm;
 
-        [NativeTypeName("DWORD")]
-        public uint cCTLEntry;
+    [NativeTypeName("DWORD")]
+    public uint cCTLEntry;
 
-        [NativeTypeName("PCTL_ENTRY")]
-        public CTL_ENTRY* rgCTLEntry;
+    [NativeTypeName("PCTL_ENTRY")]
+    public CTL_ENTRY* rgCTLEntry;
 
-        [NativeTypeName("DWORD")]
-        public uint cExtension;
+    [NativeTypeName("DWORD")]
+    public uint cExtension;
 
-        [NativeTypeName("PCERT_EXTENSION")]
-        public CERT_EXTENSION* rgExtension;
-    }
+    [NativeTypeName("PCERT_EXTENSION")]
+    public CERT_EXTENSION* rgExtension;
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAppVisibilityEvents" /> struct.</summary>
+public static unsafe partial class IAppVisibilityEventsTests
 {
-    /// <summary>Provides validation of the <see cref="IAppVisibilityEvents" /> struct.</summary>
-    public static unsafe partial class IAppVisibilityEventsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppVisibilityEvents" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAppVisibilityEvents" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAppVisibilityEvents).GUID, Is.EqualTo(IID_IAppVisibilityEvents));
-        }
+        Assert.That(typeof(IAppVisibilityEvents).GUID, Is.EqualTo(IID_IAppVisibilityEvents));
+    }
 
-        /// <summary>Validates that the <see cref="IAppVisibilityEvents" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAppVisibilityEvents>(), Is.EqualTo(sizeof(IAppVisibilityEvents)));
-        }
+    /// <summary>Validates that the <see cref="IAppVisibilityEvents" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAppVisibilityEvents>(), Is.EqualTo(sizeof(IAppVisibilityEvents)));
+    }
 
-        /// <summary>Validates that the <see cref="IAppVisibilityEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAppVisibilityEvents).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAppVisibilityEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAppVisibilityEvents).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAppVisibilityEvents" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAppVisibilityEvents" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAppVisibilityEvents), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAppVisibilityEvents), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAppVisibilityEvents), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAppVisibilityEvents), Is.EqualTo(4));
         }
     }
 }

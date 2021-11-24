@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IObjMgr" /> struct.</summary>
+public static unsafe partial class IObjMgrTests
 {
-    /// <summary>Provides validation of the <see cref="IObjMgr" /> struct.</summary>
-    public static unsafe partial class IObjMgrTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IObjMgr" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IObjMgr" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IObjMgr).GUID, Is.EqualTo(IID_IObjMgr));
-        }
+        Assert.That(typeof(IObjMgr).GUID, Is.EqualTo(IID_IObjMgr));
+    }
 
-        /// <summary>Validates that the <see cref="IObjMgr" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IObjMgr>(), Is.EqualTo(sizeof(IObjMgr)));
-        }
+    /// <summary>Validates that the <see cref="IObjMgr" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IObjMgr>(), Is.EqualTo(sizeof(IObjMgr)));
+    }
 
-        /// <summary>Validates that the <see cref="IObjMgr" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IObjMgr).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IObjMgr" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IObjMgr).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IObjMgr" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IObjMgr" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IObjMgr), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IObjMgr), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IObjMgr), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IObjMgr), Is.EqualTo(4));
         }
     }
 }

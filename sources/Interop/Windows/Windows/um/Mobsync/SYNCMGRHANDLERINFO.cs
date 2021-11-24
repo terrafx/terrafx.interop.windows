@@ -3,19 +3,18 @@
 // Ported from um/Mobsync.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SYNCMGRHANDLERINFO
 {
-    public unsafe partial struct SYNCMGRHANDLERINFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public HICON hIcon;
+    public HICON hIcon;
 
-        [NativeTypeName("DWORD")]
-        public uint SyncMgrHandlerFlags;
+    [NativeTypeName("DWORD")]
+    public uint SyncMgrHandlerFlags;
 
-        [NativeTypeName("WCHAR [32]")]
-        public fixed ushort wszHandlerName[32];
-    }
+    [NativeTypeName("WCHAR [32]")]
+    public fixed ushort wszHandlerName[32];
 }

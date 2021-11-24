@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IEnumConnectionPoints" /> struct.</summary>
+public static unsafe partial class IEnumConnectionPointsTests
 {
-    /// <summary>Provides validation of the <see cref="IEnumConnectionPoints" /> struct.</summary>
-    public static unsafe partial class IEnumConnectionPointsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEnumConnectionPoints" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEnumConnectionPoints" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IEnumConnectionPoints).GUID, Is.EqualTo(IID_IEnumConnectionPoints));
-        }
+        Assert.That(typeof(IEnumConnectionPoints).GUID, Is.EqualTo(IID_IEnumConnectionPoints));
+    }
 
-        /// <summary>Validates that the <see cref="IEnumConnectionPoints" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IEnumConnectionPoints>(), Is.EqualTo(sizeof(IEnumConnectionPoints)));
-        }
+    /// <summary>Validates that the <see cref="IEnumConnectionPoints" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IEnumConnectionPoints>(), Is.EqualTo(sizeof(IEnumConnectionPoints)));
+    }
 
-        /// <summary>Validates that the <see cref="IEnumConnectionPoints" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IEnumConnectionPoints).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IEnumConnectionPoints" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IEnumConnectionPoints).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IEnumConnectionPoints" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IEnumConnectionPoints" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IEnumConnectionPoints), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IEnumConnectionPoints), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IEnumConnectionPoints), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IEnumConnectionPoints), Is.EqualTo(4));
         }
     }
 }

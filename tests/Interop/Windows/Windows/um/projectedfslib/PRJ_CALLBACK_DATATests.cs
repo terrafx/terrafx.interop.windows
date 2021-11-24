@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PRJ_CALLBACK_DATA" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.17763.0")]
+public static unsafe partial class PRJ_CALLBACK_DATATests
 {
-    /// <summary>Provides validation of the <see cref="PRJ_CALLBACK_DATA" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0.17763.0")]
-    public static unsafe partial class PRJ_CALLBACK_DATATests
+    /// <summary>Validates that the <see cref="PRJ_CALLBACK_DATA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PRJ_CALLBACK_DATA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PRJ_CALLBACK_DATA>(), Is.EqualTo(sizeof(PRJ_CALLBACK_DATA)));
-        }
+        Assert.That(Marshal.SizeOf<PRJ_CALLBACK_DATA>(), Is.EqualTo(sizeof(PRJ_CALLBACK_DATA)));
+    }
 
-        /// <summary>Validates that the <see cref="PRJ_CALLBACK_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PRJ_CALLBACK_DATA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PRJ_CALLBACK_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PRJ_CALLBACK_DATA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PRJ_CALLBACK_DATA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="PRJ_CALLBACK_DATA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(PRJ_CALLBACK_DATA), Is.EqualTo(96));
-            }
-            else
-            {
-                Assert.That(sizeof(PRJ_CALLBACK_DATA), Is.EqualTo(68));
-            }
+            Assert.That(sizeof(PRJ_CALLBACK_DATA), Is.EqualTo(96));
+        }
+        else
+        {
+            Assert.That(sizeof(PRJ_CALLBACK_DATA), Is.EqualTo(68));
         }
     }
 }

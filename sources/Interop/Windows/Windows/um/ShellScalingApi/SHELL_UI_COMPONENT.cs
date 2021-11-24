@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public enum SHELL_UI_COMPONENT
 {
-    [SupportedOSPlatform("windows8.1")]
-    public enum SHELL_UI_COMPONENT
-    {
-        SHELL_UI_COMPONENT_TASKBARS = 0,
-        SHELL_UI_COMPONENT_NOTIFICATIONAREA = 1,
-        SHELL_UI_COMPONENT_DESKBAND = 2,
-    }
+    SHELL_UI_COMPONENT_TASKBARS = 0,
+    SHELL_UI_COMPONENT_NOTIFICATIONAREA = 1,
+    SHELL_UI_COMPONENT_DESKBAND = 2,
 }

@@ -5,100 +5,99 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DEVICE_MEDIA_INFO
 {
-    public partial struct DEVICE_MEDIA_INFO
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:951:5)")]
+    public _DeviceSpecific_e__Union DeviceSpecific;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _DeviceSpecific_e__Union
     {
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:951:5)")]
-        public _DeviceSpecific_e__Union DeviceSpecific;
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:952:9)")]
+        public _DiskInfo_e__Struct DiskInfo;
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _DeviceSpecific_e__Union
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:962:9)")]
+        public _RemovableDiskInfo_e__Struct RemovableDiskInfo;
+
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:972:9)")]
+        public _TapeInfo_e__Struct TapeInfo;
+
+        public partial struct _DiskInfo_e__Struct
         {
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:952:9)")]
-            public _DiskInfo_e__Struct DiskInfo;
+            public LARGE_INTEGER Cylinders;
 
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:962:9)")]
-            public _RemovableDiskInfo_e__Struct RemovableDiskInfo;
+            public STORAGE_MEDIA_TYPE MediaType;
 
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:972:9)")]
-            public _TapeInfo_e__Struct TapeInfo;
+            [NativeTypeName("DWORD")]
+            public uint TracksPerCylinder;
 
-            public partial struct _DiskInfo_e__Struct
+            [NativeTypeName("DWORD")]
+            public uint SectorsPerTrack;
+
+            [NativeTypeName("DWORD")]
+            public uint BytesPerSector;
+
+            [NativeTypeName("DWORD")]
+            public uint NumberMediaSides;
+
+            [NativeTypeName("DWORD")]
+            public uint MediaCharacteristics;
+        }
+
+        public partial struct _RemovableDiskInfo_e__Struct
+        {
+            public LARGE_INTEGER Cylinders;
+
+            public STORAGE_MEDIA_TYPE MediaType;
+
+            [NativeTypeName("DWORD")]
+            public uint TracksPerCylinder;
+
+            [NativeTypeName("DWORD")]
+            public uint SectorsPerTrack;
+
+            [NativeTypeName("DWORD")]
+            public uint BytesPerSector;
+
+            [NativeTypeName("DWORD")]
+            public uint NumberMediaSides;
+
+            [NativeTypeName("DWORD")]
+            public uint MediaCharacteristics;
+        }
+
+        public partial struct _TapeInfo_e__Struct
+        {
+            public STORAGE_MEDIA_TYPE MediaType;
+
+            [NativeTypeName("DWORD")]
+            public uint MediaCharacteristics;
+
+            [NativeTypeName("DWORD")]
+            public uint CurrentBlockSize;
+
+            public STORAGE_BUS_TYPE BusType;
+
+            [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:982:13)")]
+            public _BusSpecificData_e__Union BusSpecificData;
+
+            [StructLayout(LayoutKind.Explicit)]
+            public partial struct _BusSpecificData_e__Union
             {
-                public LARGE_INTEGER Cylinders;
+                [FieldOffset(0)]
+                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:983:17)")]
+                public _ScsiInformation_e__Struct ScsiInformation;
 
-                public STORAGE_MEDIA_TYPE MediaType;
-
-                [NativeTypeName("DWORD")]
-                public uint TracksPerCylinder;
-
-                [NativeTypeName("DWORD")]
-                public uint SectorsPerTrack;
-
-                [NativeTypeName("DWORD")]
-                public uint BytesPerSector;
-
-                [NativeTypeName("DWORD")]
-                public uint NumberMediaSides;
-
-                [NativeTypeName("DWORD")]
-                public uint MediaCharacteristics;
-            }
-
-            public partial struct _RemovableDiskInfo_e__Struct
-            {
-                public LARGE_INTEGER Cylinders;
-
-                public STORAGE_MEDIA_TYPE MediaType;
-
-                [NativeTypeName("DWORD")]
-                public uint TracksPerCylinder;
-
-                [NativeTypeName("DWORD")]
-                public uint SectorsPerTrack;
-
-                [NativeTypeName("DWORD")]
-                public uint BytesPerSector;
-
-                [NativeTypeName("DWORD")]
-                public uint NumberMediaSides;
-
-                [NativeTypeName("DWORD")]
-                public uint MediaCharacteristics;
-            }
-
-            public partial struct _TapeInfo_e__Struct
-            {
-                public STORAGE_MEDIA_TYPE MediaType;
-
-                [NativeTypeName("DWORD")]
-                public uint MediaCharacteristics;
-
-                [NativeTypeName("DWORD")]
-                public uint CurrentBlockSize;
-
-                public STORAGE_BUS_TYPE BusType;
-
-                [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:982:13)")]
-                public _BusSpecificData_e__Union BusSpecificData;
-
-                [StructLayout(LayoutKind.Explicit)]
-                public partial struct _BusSpecificData_e__Union
+                public partial struct _ScsiInformation_e__Struct
                 {
-                    [FieldOffset(0)]
-                    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:983:17)")]
-                    public _ScsiInformation_e__Struct ScsiInformation;
+                    public byte MediumType;
 
-                    public partial struct _ScsiInformation_e__Struct
-                    {
-                        public byte MediumType;
-
-                        public byte DensityCode;
-                    }
+                    public byte DensityCode;
                 }
             }
         }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDirectDrawSurface2" /> struct.</summary>
+public static unsafe partial class IDirectDrawSurface2Tests
 {
-    /// <summary>Provides validation of the <see cref="IDirectDrawSurface2" /> struct.</summary>
-    public static unsafe partial class IDirectDrawSurface2Tests
+    /// <summary>Validates that the <see cref="IDirectDrawSurface2" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IDirectDrawSurface2" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDirectDrawSurface2>(), Is.EqualTo(sizeof(IDirectDrawSurface2)));
-        }
+        Assert.That(Marshal.SizeOf<IDirectDrawSurface2>(), Is.EqualTo(sizeof(IDirectDrawSurface2)));
+    }
 
-        /// <summary>Validates that the <see cref="IDirectDrawSurface2" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDirectDrawSurface2).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDirectDrawSurface2" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDirectDrawSurface2).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDirectDrawSurface2" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDirectDrawSurface2" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDirectDrawSurface2), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDirectDrawSurface2), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDirectDrawSurface2), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDirectDrawSurface2), Is.EqualTo(4));
         }
     }
 }

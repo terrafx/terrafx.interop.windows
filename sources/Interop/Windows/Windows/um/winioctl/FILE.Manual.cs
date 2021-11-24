@@ -7,37 +7,37 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static unsafe partial class FILE
 {
-    public static unsafe partial class FILE
+    [NativeTypeName("#define FILE_REGION_USAGE_HUGE_PAGE_ALIGNMENT 0x00000010")]
+    public static int FILE_REGION_USAGE_HUGE_PAGE_ALIGNMENT
     {
-        [NativeTypeName("#define FILE_REGION_USAGE_HUGE_PAGE_ALIGNMENT 0x00000010")]
-        public static int FILE_REGION_USAGE_HUGE_PAGE_ALIGNMENT
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return 0;
-                }
-                else
-                {
-                    return 0x00000010;
-                }
+                return 0;
+            }
+            else
+            {
+                return 0x00000010;
             }
         }
+    }
 
-        [NativeTypeName("#define FILE_REGION_USAGE_QUERY_ALIGNMENT (FILE_REGION_USAGE_LARGE_PAGE_ALIGNMENT   |\\\r\n                                                 FILE_REGION_USAGE_HUGE_PAGE_ALIGNMENT)")]
-        public static int FILE_REGION_USAGE_QUERY_ALIGNMENT = FILE_REGION_USAGE_LARGE_PAGE_ALIGNMENT | FILE_REGION_USAGE_HUGE_PAGE_ALIGNMENT;
+    [NativeTypeName("#define FILE_REGION_USAGE_QUERY_ALIGNMENT (FILE_REGION_USAGE_LARGE_PAGE_ALIGNMENT   |\\\r\n                                                 FILE_REGION_USAGE_HUGE_PAGE_ALIGNMENT)")]
+    public static int FILE_REGION_USAGE_QUERY_ALIGNMENT = FILE_REGION_USAGE_LARGE_PAGE_ALIGNMENT | FILE_REGION_USAGE_HUGE_PAGE_ALIGNMENT;
 
 
 
-        public static ref readonly Guid FILE_TYPE_NOTIFICATION_GUID_PAGE_FILE
+    public static ref readonly Guid FILE_TYPE_NOTIFICATION_GUID_PAGE_FILE
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0xA1, 0x64, 0x0A, 0x0D,
                     0xFC, 0x38,
                     0xB8, 0x4D,
@@ -51,16 +51,16 @@ namespace TerraFX.Interop.Windows
                     0x5C
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid FILE_TYPE_NOTIFICATION_GUID_HIBERNATION_FILE
+    public static ref readonly Guid FILE_TYPE_NOTIFICATION_GUID_HIBERNATION_FILE
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x64, 0x4D, 0x62, 0xB7,
                     0xA3, 0xB9,
                     0xF8, 0x4C,
@@ -74,16 +74,16 @@ namespace TerraFX.Interop.Windows
                     0xB7
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid FILE_TYPE_NOTIFICATION_GUID_CRASHDUMP_FILE
+    public static ref readonly Guid FILE_TYPE_NOTIFICATION_GUID_CRASHDUMP_FILE
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0xB7, 0x3E, 0x45, 0x9D,
                     0xA6, 0xD2,
                     0xBD, 0x4D,
@@ -97,8 +97,7 @@ namespace TerraFX.Interop.Windows
                     0xA9
                 };
 
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

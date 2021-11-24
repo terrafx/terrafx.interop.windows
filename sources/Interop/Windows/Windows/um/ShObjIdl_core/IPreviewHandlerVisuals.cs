@@ -7,90 +7,89 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("196BF9A5-B346-4EF0-AA1E-5DCDB76768B1")]
+[NativeTypeName("struct IPreviewHandlerVisuals : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IPreviewHandlerVisuals : IPreviewHandlerVisuals.Interface
 {
-    [Guid("196BF9A5-B346-4EF0-AA1E-5DCDB76768B1")]
-    [NativeTypeName("struct IPreviewHandlerVisuals : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IPreviewHandlerVisuals : IPreviewHandlerVisuals.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IPreviewHandlerVisuals*, Guid*, void**, int>)(lpVtbl[0]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IPreviewHandlerVisuals*, Guid*, void**, int>)(lpVtbl[0]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IPreviewHandlerVisuals*, uint>)(lpVtbl[1]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IPreviewHandlerVisuals*, uint>)(lpVtbl[1]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IPreviewHandlerVisuals*, uint>)(lpVtbl[2]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IPreviewHandlerVisuals*, uint>)(lpVtbl[2]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT SetBackgroundColor(COLORREF color)
+    {
+        return ((delegate* unmanaged<IPreviewHandlerVisuals*, COLORREF, int>)(lpVtbl[3]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this), color);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT SetFont([NativeTypeName("const LOGFONTW *")] LOGFONTW* plf)
+    {
+        return ((delegate* unmanaged<IPreviewHandlerVisuals*, LOGFONTW*, int>)(lpVtbl[4]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this), plf);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT SetTextColor(COLORREF color)
+    {
+        return ((delegate* unmanaged<IPreviewHandlerVisuals*, COLORREF, int>)(lpVtbl[5]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this), color);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT SetBackgroundColor(COLORREF color)
-        {
-            return ((delegate* unmanaged<IPreviewHandlerVisuals*, COLORREF, int>)(lpVtbl[3]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this), color);
-        }
+        HRESULT SetBackgroundColor(COLORREF color);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetFont([NativeTypeName("const LOGFONTW *")] LOGFONTW* plf)
-        {
-            return ((delegate* unmanaged<IPreviewHandlerVisuals*, LOGFONTW*, int>)(lpVtbl[4]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this), plf);
-        }
+        HRESULT SetFont([NativeTypeName("const LOGFONTW *")] LOGFONTW* plf);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetTextColor(COLORREF color)
-        {
-            return ((delegate* unmanaged<IPreviewHandlerVisuals*, COLORREF, int>)(lpVtbl[5]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this), color);
-        }
+        HRESULT SetTextColor(COLORREF color);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT SetBackgroundColor(COLORREF color);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPreviewHandlerVisuals*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT SetFont([NativeTypeName("const LOGFONTW *")] LOGFONTW* plf);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPreviewHandlerVisuals*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT SetTextColor(COLORREF color);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPreviewHandlerVisuals*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPreviewHandlerVisuals*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPreviewHandlerVisuals*, COLORREF, int> SetBackgroundColor;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPreviewHandlerVisuals*, uint> AddRef;
+        [NativeTypeName("HRESULT (const LOGFONTW *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPreviewHandlerVisuals*, LOGFONTW*, int> SetFont;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPreviewHandlerVisuals*, uint> Release;
-
-            [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPreviewHandlerVisuals*, COLORREF, int> SetBackgroundColor;
-
-            [NativeTypeName("HRESULT (const LOGFONTW *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPreviewHandlerVisuals*, LOGFONTW*, int> SetFont;
-
-            [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPreviewHandlerVisuals*, COLORREF, int> SetTextColor;
-        }
+        [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPreviewHandlerVisuals*, COLORREF, int> SetTextColor;
     }
 }

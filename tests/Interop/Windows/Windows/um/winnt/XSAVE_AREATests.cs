@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XSAVE_AREA" /> struct.</summary>
+public static unsafe partial class XSAVE_AREATests
 {
-    /// <summary>Provides validation of the <see cref="XSAVE_AREA" /> struct.</summary>
-    public static unsafe partial class XSAVE_AREATests
+    /// <summary>Validates that the <see cref="XSAVE_AREA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XSAVE_AREA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XSAVE_AREA>(), Is.EqualTo(sizeof(XSAVE_AREA)));
-        }
+        Assert.That(Marshal.SizeOf<XSAVE_AREA>(), Is.EqualTo(sizeof(XSAVE_AREA)));
+    }
 
-        /// <summary>Validates that the <see cref="XSAVE_AREA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XSAVE_AREA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XSAVE_AREA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XSAVE_AREA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XSAVE_AREA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(XSAVE_AREA), Is.EqualTo(576));
-        }
+    /// <summary>Validates that the <see cref="XSAVE_AREA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(XSAVE_AREA), Is.EqualTo(576));
     }
 }

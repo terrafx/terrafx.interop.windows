@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public enum WICPlanarOptions
 {
-    [SupportedOSPlatform("windows8.1")]
-    public enum WICPlanarOptions
-    {
-        WICPlanarOptionsDefault = 0,
-        WICPlanarOptionsPreserveSubsampling = 0x1,
-        WICPLANAROPTIONS_FORCE_DWORD = 0x7fffffff,
-    }
+    WICPlanarOptionsDefault = 0,
+    WICPlanarOptionsPreserveSubsampling = 0x1,
+    WICPLANAROPTIONS_FORCE_DWORD = 0x7fffffff,
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("AA70B610-E03F-450C-AD07-07314E639CE7")]
+public partial struct CODECAPI_AVEncVideoEncodeFrameTypeQP
 {
-    [Guid("AA70B610-E03F-450C-AD07-07314E639CE7")]
-    public partial struct CODECAPI_AVEncVideoEncodeFrameTypeQP
-    {
-    }
 }

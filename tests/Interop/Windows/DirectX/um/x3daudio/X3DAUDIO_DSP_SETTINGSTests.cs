@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="X3DAUDIO_DSP_SETTINGS" /> struct.</summary>
+public static unsafe partial class X3DAUDIO_DSP_SETTINGSTests
 {
-    /// <summary>Provides validation of the <see cref="X3DAUDIO_DSP_SETTINGS" /> struct.</summary>
-    public static unsafe partial class X3DAUDIO_DSP_SETTINGSTests
+    /// <summary>Validates that the <see cref="X3DAUDIO_DSP_SETTINGS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="X3DAUDIO_DSP_SETTINGS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<X3DAUDIO_DSP_SETTINGS>(), Is.EqualTo(sizeof(X3DAUDIO_DSP_SETTINGS)));
-        }
+        Assert.That(Marshal.SizeOf<X3DAUDIO_DSP_SETTINGS>(), Is.EqualTo(sizeof(X3DAUDIO_DSP_SETTINGS)));
+    }
 
-        /// <summary>Validates that the <see cref="X3DAUDIO_DSP_SETTINGS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(X3DAUDIO_DSP_SETTINGS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="X3DAUDIO_DSP_SETTINGS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(X3DAUDIO_DSP_SETTINGS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="X3DAUDIO_DSP_SETTINGS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="X3DAUDIO_DSP_SETTINGS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(X3DAUDIO_DSP_SETTINGS), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(X3DAUDIO_DSP_SETTINGS), Is.EqualTo(48));
-            }
+            Assert.That(sizeof(X3DAUDIO_DSP_SETTINGS), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(X3DAUDIO_DSP_SETTINGS), Is.EqualTo(48));
         }
     }
 }

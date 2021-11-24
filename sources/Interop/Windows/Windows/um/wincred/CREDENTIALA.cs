@@ -3,43 +3,42 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CREDENTIALA
 {
-    public unsafe partial struct CREDENTIALA
-    {
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        [NativeTypeName("DWORD")]
-        public uint Type;
+    [NativeTypeName("DWORD")]
+    public uint Type;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* TargetName;
+    [NativeTypeName("LPSTR")]
+    public sbyte* TargetName;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* Comment;
+    [NativeTypeName("LPSTR")]
+    public sbyte* Comment;
 
-        public FILETIME LastWritten;
+    public FILETIME LastWritten;
 
-        [NativeTypeName("DWORD")]
-        public uint CredentialBlobSize;
+    [NativeTypeName("DWORD")]
+    public uint CredentialBlobSize;
 
-        [NativeTypeName("LPBYTE")]
-        public byte* CredentialBlob;
+    [NativeTypeName("LPBYTE")]
+    public byte* CredentialBlob;
 
-        [NativeTypeName("DWORD")]
-        public uint Persist;
+    [NativeTypeName("DWORD")]
+    public uint Persist;
 
-        [NativeTypeName("DWORD")]
-        public uint AttributeCount;
+    [NativeTypeName("DWORD")]
+    public uint AttributeCount;
 
-        [NativeTypeName("PCREDENTIAL_ATTRIBUTEA")]
-        public CREDENTIAL_ATTRIBUTEA* Attributes;
+    [NativeTypeName("PCREDENTIAL_ATTRIBUTEA")]
+    public CREDENTIAL_ATTRIBUTEA* Attributes;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* TargetAlias;
+    [NativeTypeName("LPSTR")]
+    public sbyte* TargetAlias;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* UserName;
-    }
+    [NativeTypeName("LPSTR")]
+    public sbyte* UserName;
 }

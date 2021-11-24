@@ -5,24 +5,23 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct NMPGSCROLL
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct NMPGSCROLL
-    {
-        public NMHDR hdr;
+    public NMHDR hdr;
 
-        [NativeTypeName("WORD")]
-        public ushort fwKeys;
+    [NativeTypeName("WORD")]
+    public ushort fwKeys;
 
-        public RECT rcParent;
+    public RECT rcParent;
 
-        public int iDir;
+    public int iDir;
 
-        public int iXpos;
+    public int iXpos;
 
-        public int iYpos;
+    public int iYpos;
 
-        public int iScroll;
-    }
+    public int iScroll;
 }

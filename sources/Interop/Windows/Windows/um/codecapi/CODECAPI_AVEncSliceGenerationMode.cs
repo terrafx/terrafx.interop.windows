@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("8A6BC67F-9497-4286-B46B-02DB8D60EDBC")]
+public partial struct CODECAPI_AVEncSliceGenerationMode
 {
-    [Guid("8A6BC67F-9497-4286-B46B-02DB8D60EDBC")]
-    public partial struct CODECAPI_AVEncSliceGenerationMode
-    {
-    }
 }

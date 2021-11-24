@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TP_CALLBACK_ENVIRON_V3" /> struct.</summary>
+public static unsafe partial class TP_CALLBACK_ENVIRON_V3Tests
 {
-    /// <summary>Provides validation of the <see cref="TP_CALLBACK_ENVIRON_V3" /> struct.</summary>
-    public static unsafe partial class TP_CALLBACK_ENVIRON_V3Tests
+    /// <summary>Validates that the <see cref="TP_CALLBACK_ENVIRON_V3" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TP_CALLBACK_ENVIRON_V3" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TP_CALLBACK_ENVIRON_V3>(), Is.EqualTo(sizeof(TP_CALLBACK_ENVIRON_V3)));
-        }
+        Assert.That(Marshal.SizeOf<TP_CALLBACK_ENVIRON_V3>(), Is.EqualTo(sizeof(TP_CALLBACK_ENVIRON_V3)));
+    }
 
-        /// <summary>Validates that the <see cref="TP_CALLBACK_ENVIRON_V3" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TP_CALLBACK_ENVIRON_V3).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TP_CALLBACK_ENVIRON_V3" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TP_CALLBACK_ENVIRON_V3).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TP_CALLBACK_ENVIRON_V3" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="TP_CALLBACK_ENVIRON_V3" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(TP_CALLBACK_ENVIRON_V3), Is.EqualTo(72));
-            }
-            else
-            {
-                Assert.That(sizeof(TP_CALLBACK_ENVIRON_V3), Is.EqualTo(40));
-            }
+            Assert.That(sizeof(TP_CALLBACK_ENVIRON_V3), Is.EqualTo(72));
+        }
+        else
+        {
+            Assert.That(sizeof(TP_CALLBACK_ENVIRON_V3), Is.EqualTo(40));
         }
     }
 }

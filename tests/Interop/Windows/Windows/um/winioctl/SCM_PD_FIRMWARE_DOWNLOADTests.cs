@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SCM_PD_FIRMWARE_DOWNLOAD" /> struct.</summary>
+public static unsafe partial class SCM_PD_FIRMWARE_DOWNLOADTests
 {
-    /// <summary>Provides validation of the <see cref="SCM_PD_FIRMWARE_DOWNLOAD" /> struct.</summary>
-    public static unsafe partial class SCM_PD_FIRMWARE_DOWNLOADTests
+    /// <summary>Validates that the <see cref="SCM_PD_FIRMWARE_DOWNLOAD" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SCM_PD_FIRMWARE_DOWNLOAD" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SCM_PD_FIRMWARE_DOWNLOAD>(), Is.EqualTo(sizeof(SCM_PD_FIRMWARE_DOWNLOAD)));
-        }
+        Assert.That(Marshal.SizeOf<SCM_PD_FIRMWARE_DOWNLOAD>(), Is.EqualTo(sizeof(SCM_PD_FIRMWARE_DOWNLOAD)));
+    }
 
-        /// <summary>Validates that the <see cref="SCM_PD_FIRMWARE_DOWNLOAD" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SCM_PD_FIRMWARE_DOWNLOAD).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SCM_PD_FIRMWARE_DOWNLOAD" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SCM_PD_FIRMWARE_DOWNLOAD).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SCM_PD_FIRMWARE_DOWNLOAD" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SCM_PD_FIRMWARE_DOWNLOAD), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="SCM_PD_FIRMWARE_DOWNLOAD" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SCM_PD_FIRMWARE_DOWNLOAD), Is.EqualTo(32));
     }
 }

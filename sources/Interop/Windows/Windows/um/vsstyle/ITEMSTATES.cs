@@ -3,13 +3,12 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum ITEMSTATES
 {
-    public enum ITEMSTATES
-    {
-        LBPSI_HOT = 1,
-        LBPSI_HOTSELECTED = 2,
-        LBPSI_SELECTED = 3,
-        LBPSI_SELECTEDNOTFOCUS = 4,
-    }
+    LBPSI_HOT = 1,
+    LBPSI_HOTSELECTED = 2,
+    LBPSI_SELECTED = 3,
+    LBPSI_SELECTEDNOTFOCUS = 4,
 }

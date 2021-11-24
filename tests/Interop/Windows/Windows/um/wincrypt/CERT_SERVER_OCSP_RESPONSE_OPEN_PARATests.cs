@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CERT_SERVER_OCSP_RESPONSE_OPEN_PARA" /> struct.</summary>
+public static unsafe partial class CERT_SERVER_OCSP_RESPONSE_OPEN_PARATests
 {
-    /// <summary>Provides validation of the <see cref="CERT_SERVER_OCSP_RESPONSE_OPEN_PARA" /> struct.</summary>
-    public static unsafe partial class CERT_SERVER_OCSP_RESPONSE_OPEN_PARATests
+    /// <summary>Validates that the <see cref="CERT_SERVER_OCSP_RESPONSE_OPEN_PARA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CERT_SERVER_OCSP_RESPONSE_OPEN_PARA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CERT_SERVER_OCSP_RESPONSE_OPEN_PARA>(), Is.EqualTo(sizeof(CERT_SERVER_OCSP_RESPONSE_OPEN_PARA)));
-        }
+        Assert.That(Marshal.SizeOf<CERT_SERVER_OCSP_RESPONSE_OPEN_PARA>(), Is.EqualTo(sizeof(CERT_SERVER_OCSP_RESPONSE_OPEN_PARA)));
+    }
 
-        /// <summary>Validates that the <see cref="CERT_SERVER_OCSP_RESPONSE_OPEN_PARA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CERT_SERVER_OCSP_RESPONSE_OPEN_PARA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CERT_SERVER_OCSP_RESPONSE_OPEN_PARA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CERT_SERVER_OCSP_RESPONSE_OPEN_PARA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CERT_SERVER_OCSP_RESPONSE_OPEN_PARA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CERT_SERVER_OCSP_RESPONSE_OPEN_PARA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CERT_SERVER_OCSP_RESPONSE_OPEN_PARA), Is.EqualTo(40));
-            }
-            else
-            {
-                Assert.That(sizeof(CERT_SERVER_OCSP_RESPONSE_OPEN_PARA), Is.EqualTo(24));
-            }
+            Assert.That(sizeof(CERT_SERVER_OCSP_RESPONSE_OPEN_PARA), Is.EqualTo(40));
+        }
+        else
+        {
+            Assert.That(sizeof(CERT_SERVER_OCSP_RESPONSE_OPEN_PARA), Is.EqualTo(24));
         }
     }
 }

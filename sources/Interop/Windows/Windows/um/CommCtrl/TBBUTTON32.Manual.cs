@@ -3,25 +3,24 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct TBBUTTON32
 {
-    public unsafe partial struct TBBUTTON32
-    {
-        public int iBitmap;
+    public int iBitmap;
 
-        public int idCommand;
+    public int idCommand;
 
-        public byte fsState;
+    public byte fsState;
 
-        public byte fsStyle;
+    public byte fsStyle;
 
-        [NativeTypeName("BYTE [2]")]
-        public fixed byte bReserved[2];
+    [NativeTypeName("BYTE [2]")]
+    public fixed byte bReserved[2];
 
-        [NativeTypeName("DWORD_PTR")]
-        public nuint dwData;
+    [NativeTypeName("DWORD_PTR")]
+    public nuint dwData;
 
-        [NativeTypeName("INT_PTR")]
-        public nint iString;
-    }
+    [NativeTypeName("INT_PTR")]
+    public nint iString;
 }

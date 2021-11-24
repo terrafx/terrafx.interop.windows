@@ -7,101 +7,100 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SIP_SUBJECTINFO
 {
-    public unsafe partial struct SIP_SUBJECTINFO
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
+
+    public Guid* pgSubjectType;
+
+    public HANDLE hFile;
+
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pwsFileName;
+
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pwsDisplayName;
+
+    [NativeTypeName("DWORD")]
+    public uint dwReserved1;
+
+    [NativeTypeName("DWORD")]
+    public uint dwIntVersion;
+
+    public HCRYPTPROV hProv;
+
+    public CRYPT_ALGORITHM_IDENTIFIER DigestAlgorithm;
+
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
+
+    [NativeTypeName("DWORD")]
+    public uint dwEncodingType;
+
+    [NativeTypeName("DWORD")]
+    public uint dwReserved2;
+
+    [NativeTypeName("DWORD")]
+    public uint fdwCAPISettings;
+
+    [NativeTypeName("DWORD")]
+    public uint fdwSecuritySettings;
+
+    [NativeTypeName("DWORD")]
+    public uint dwIndex;
+
+    [NativeTypeName("DWORD")]
+    public uint dwUnionChoice;
+
+    [NativeTypeName("SIP_SUBJECTINFO_::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mssip.h:114:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    [NativeTypeName("LPVOID")]
+    public void* pClientData;
+
+    public ref MS_ADDINFO_FLAT* psFlat
     {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
-
-        public Guid* pgSubjectType;
-
-        public HANDLE hFile;
-
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pwsFileName;
-
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pwsDisplayName;
-
-        [NativeTypeName("DWORD")]
-        public uint dwReserved1;
-
-        [NativeTypeName("DWORD")]
-        public uint dwIntVersion;
-
-        public HCRYPTPROV hProv;
-
-        public CRYPT_ALGORITHM_IDENTIFIER DigestAlgorithm;
-
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
-
-        [NativeTypeName("DWORD")]
-        public uint dwEncodingType;
-
-        [NativeTypeName("DWORD")]
-        public uint dwReserved2;
-
-        [NativeTypeName("DWORD")]
-        public uint fdwCAPISettings;
-
-        [NativeTypeName("DWORD")]
-        public uint fdwSecuritySettings;
-
-        [NativeTypeName("DWORD")]
-        public uint dwIndex;
-
-        [NativeTypeName("DWORD")]
-        public uint dwUnionChoice;
-
-        [NativeTypeName("SIP_SUBJECTINFO_::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mssip.h:114:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        [NativeTypeName("LPVOID")]
-        public void* pClientData;
-
-        public ref MS_ADDINFO_FLAT* psFlat
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.psFlat;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.psFlat;
         }
+    }
 
-        public ref MS_ADDINFO_CATALOGMEMBER* psCatMember
+    public ref MS_ADDINFO_CATALOGMEMBER* psCatMember
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.psCatMember;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.psCatMember;
         }
+    }
 
-        public ref MS_ADDINFO_BLOB* psBlob
+    public ref MS_ADDINFO_BLOB* psBlob
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.psBlob;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.psBlob;
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("struct MS_ADDINFO_FLAT_ *")]
-            public MS_ADDINFO_FLAT* psFlat;
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("struct MS_ADDINFO_FLAT_ *")]
+        public MS_ADDINFO_FLAT* psFlat;
 
-            [FieldOffset(0)]
-            [NativeTypeName("struct MS_ADDINFO_CATALOGMEMBER_ *")]
-            public MS_ADDINFO_CATALOGMEMBER* psCatMember;
+        [FieldOffset(0)]
+        [NativeTypeName("struct MS_ADDINFO_CATALOGMEMBER_ *")]
+        public MS_ADDINFO_CATALOGMEMBER* psCatMember;
 
-            [FieldOffset(0)]
-            [NativeTypeName("struct MS_ADDINFO_BLOB_ *")]
-            public MS_ADDINFO_BLOB* psBlob;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("struct MS_ADDINFO_BLOB_ *")]
+        public MS_ADDINFO_BLOB* psBlob;
     }
 }

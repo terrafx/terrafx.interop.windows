@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMLOperatorShapeInferenceContext" /> struct.</summary>
+public static unsafe partial class IMLOperatorShapeInferenceContextTests
 {
-    /// <summary>Provides validation of the <see cref="IMLOperatorShapeInferenceContext" /> struct.</summary>
-    public static unsafe partial class IMLOperatorShapeInferenceContextTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMLOperatorShapeInferenceContext" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMLOperatorShapeInferenceContext" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMLOperatorShapeInferenceContext).GUID, Is.EqualTo(IID_IMLOperatorShapeInferenceContext));
-        }
+        Assert.That(typeof(IMLOperatorShapeInferenceContext).GUID, Is.EqualTo(IID_IMLOperatorShapeInferenceContext));
+    }
 
-        /// <summary>Validates that the <see cref="IMLOperatorShapeInferenceContext" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMLOperatorShapeInferenceContext>(), Is.EqualTo(sizeof(IMLOperatorShapeInferenceContext)));
-        }
+    /// <summary>Validates that the <see cref="IMLOperatorShapeInferenceContext" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMLOperatorShapeInferenceContext>(), Is.EqualTo(sizeof(IMLOperatorShapeInferenceContext)));
+    }
 
-        /// <summary>Validates that the <see cref="IMLOperatorShapeInferenceContext" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMLOperatorShapeInferenceContext).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMLOperatorShapeInferenceContext" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMLOperatorShapeInferenceContext).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMLOperatorShapeInferenceContext" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMLOperatorShapeInferenceContext" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMLOperatorShapeInferenceContext), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMLOperatorShapeInferenceContext), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMLOperatorShapeInferenceContext), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMLOperatorShapeInferenceContext), Is.EqualTo(4));
         }
     }
 }

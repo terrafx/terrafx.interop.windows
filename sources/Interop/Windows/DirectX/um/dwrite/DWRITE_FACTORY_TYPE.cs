@@ -3,11 +3,10 @@
 // Ported from um/dwrite.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum DWRITE_FACTORY_TYPE
 {
-    public enum DWRITE_FACTORY_TYPE
-    {
-        DWRITE_FACTORY_TYPE_SHARED,
-        DWRITE_FACTORY_TYPE_ISOLATED,
-    }
+    DWRITE_FACTORY_TYPE_SHARED,
+    DWRITE_FACTORY_TYPE_ISOLATED,
 }

@@ -7,298 +7,297 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("9169896C-AC8D-4E7D-94E5-67FA4DC2F2E8")]
+[NativeTypeName("struct IUIAnimationManager : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IUIAnimationManager : IUIAnimationManager.Interface
 {
-    [Guid("9169896C-AC8D-4E7D-94E5-67FA4DC2F2E8")]
-    [NativeTypeName("struct IUIAnimationManager : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUIAnimationManager : IUIAnimationManager.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IUIAnimationManager*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IUIAnimationManager*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IUIAnimationManager*, uint>)(lpVtbl[1]))((IUIAnimationManager*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IUIAnimationManager*, uint>)(lpVtbl[1]))((IUIAnimationManager*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IUIAnimationManager*, uint>)(lpVtbl[2]))((IUIAnimationManager*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IUIAnimationManager*, uint>)(lpVtbl[2]))((IUIAnimationManager*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT CreateAnimationVariable(double initialValue, IUIAnimationVariable** variable)
+    {
+        return ((delegate* unmanaged<IUIAnimationManager*, double, IUIAnimationVariable**, int>)(lpVtbl[3]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), initialValue, variable);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT ScheduleTransition(IUIAnimationVariable* variable, IUIAnimationTransition* transition, [NativeTypeName("UI_ANIMATION_SECONDS")] double timeNow)
+    {
+        return ((delegate* unmanaged<IUIAnimationManager*, IUIAnimationVariable*, IUIAnimationTransition*, double, int>)(lpVtbl[4]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), variable, transition, timeNow);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT CreateStoryboard(IUIAnimationStoryboard** storyboard)
+    {
+        return ((delegate* unmanaged<IUIAnimationManager*, IUIAnimationStoryboard**, int>)(lpVtbl[5]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), storyboard);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT FinishAllStoryboards([NativeTypeName("UI_ANIMATION_SECONDS")] double completionDeadline)
+    {
+        return ((delegate* unmanaged<IUIAnimationManager*, double, int>)(lpVtbl[6]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), completionDeadline);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT AbandonAllStoryboards()
+    {
+        return ((delegate* unmanaged<IUIAnimationManager*, int>)(lpVtbl[7]))((IUIAnimationManager*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT Update([NativeTypeName("UI_ANIMATION_SECONDS")] double timeNow, UI_ANIMATION_UPDATE_RESULT* updateResult = null)
+    {
+        return ((delegate* unmanaged<IUIAnimationManager*, double, UI_ANIMATION_UPDATE_RESULT*, int>)(lpVtbl[8]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), timeNow, updateResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT GetVariableFromTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id, IUIAnimationVariable** variable)
+    {
+        return ((delegate* unmanaged<IUIAnimationManager*, IUnknown*, uint, IUIAnimationVariable**, int>)(lpVtbl[9]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), @object, id, variable);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT GetStoryboardFromTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id, IUIAnimationStoryboard** storyboard)
+    {
+        return ((delegate* unmanaged<IUIAnimationManager*, IUnknown*, uint, IUIAnimationStoryboard**, int>)(lpVtbl[10]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), @object, id, storyboard);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT GetStatus(UI_ANIMATION_MANAGER_STATUS* status)
+    {
+        return ((delegate* unmanaged<IUIAnimationManager*, UI_ANIMATION_MANAGER_STATUS*, int>)(lpVtbl[11]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), status);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT SetAnimationMode(UI_ANIMATION_MODE mode)
+    {
+        return ((delegate* unmanaged<IUIAnimationManager*, UI_ANIMATION_MODE, int>)(lpVtbl[12]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), mode);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT Pause()
+    {
+        return ((delegate* unmanaged<IUIAnimationManager*, int>)(lpVtbl[13]))((IUIAnimationManager*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT Resume()
+    {
+        return ((delegate* unmanaged<IUIAnimationManager*, int>)(lpVtbl[14]))((IUIAnimationManager*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT SetManagerEventHandler(IUIAnimationManagerEventHandler* handler)
+    {
+        return ((delegate* unmanaged<IUIAnimationManager*, IUIAnimationManagerEventHandler*, int>)(lpVtbl[15]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), handler);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT SetCancelPriorityComparison(IUIAnimationPriorityComparison* comparison)
+    {
+        return ((delegate* unmanaged<IUIAnimationManager*, IUIAnimationPriorityComparison*, int>)(lpVtbl[16]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), comparison);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT SetTrimPriorityComparison(IUIAnimationPriorityComparison* comparison)
+    {
+        return ((delegate* unmanaged<IUIAnimationManager*, IUIAnimationPriorityComparison*, int>)(lpVtbl[17]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), comparison);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT SetCompressPriorityComparison(IUIAnimationPriorityComparison* comparison)
+    {
+        return ((delegate* unmanaged<IUIAnimationManager*, IUIAnimationPriorityComparison*, int>)(lpVtbl[18]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), comparison);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT SetConcludePriorityComparison(IUIAnimationPriorityComparison* comparison)
+    {
+        return ((delegate* unmanaged<IUIAnimationManager*, IUIAnimationPriorityComparison*, int>)(lpVtbl[19]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), comparison);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT SetDefaultLongestAcceptableDelay([NativeTypeName("UI_ANIMATION_SECONDS")] double delay)
+    {
+        return ((delegate* unmanaged<IUIAnimationManager*, double, int>)(lpVtbl[20]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), delay);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(21)]
+    public HRESULT Shutdown()
+    {
+        return ((delegate* unmanaged<IUIAnimationManager*, int>)(lpVtbl[21]))((IUIAnimationManager*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT CreateAnimationVariable(double initialValue, IUIAnimationVariable** variable)
-        {
-            return ((delegate* unmanaged<IUIAnimationManager*, double, IUIAnimationVariable**, int>)(lpVtbl[3]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), initialValue, variable);
-        }
+        HRESULT CreateAnimationVariable(double initialValue, IUIAnimationVariable** variable);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT ScheduleTransition(IUIAnimationVariable* variable, IUIAnimationTransition* transition, [NativeTypeName("UI_ANIMATION_SECONDS")] double timeNow)
-        {
-            return ((delegate* unmanaged<IUIAnimationManager*, IUIAnimationVariable*, IUIAnimationTransition*, double, int>)(lpVtbl[4]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), variable, transition, timeNow);
-        }
+        HRESULT ScheduleTransition(IUIAnimationVariable* variable, IUIAnimationTransition* transition, [NativeTypeName("UI_ANIMATION_SECONDS")] double timeNow);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT CreateStoryboard(IUIAnimationStoryboard** storyboard)
-        {
-            return ((delegate* unmanaged<IUIAnimationManager*, IUIAnimationStoryboard**, int>)(lpVtbl[5]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), storyboard);
-        }
+        HRESULT CreateStoryboard(IUIAnimationStoryboard** storyboard);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT FinishAllStoryboards([NativeTypeName("UI_ANIMATION_SECONDS")] double completionDeadline)
-        {
-            return ((delegate* unmanaged<IUIAnimationManager*, double, int>)(lpVtbl[6]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), completionDeadline);
-        }
+        HRESULT FinishAllStoryboards([NativeTypeName("UI_ANIMATION_SECONDS")] double completionDeadline);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT AbandonAllStoryboards()
-        {
-            return ((delegate* unmanaged<IUIAnimationManager*, int>)(lpVtbl[7]))((IUIAnimationManager*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT AbandonAllStoryboards();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT Update([NativeTypeName("UI_ANIMATION_SECONDS")] double timeNow, UI_ANIMATION_UPDATE_RESULT* updateResult = null)
-        {
-            return ((delegate* unmanaged<IUIAnimationManager*, double, UI_ANIMATION_UPDATE_RESULT*, int>)(lpVtbl[8]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), timeNow, updateResult);
-        }
+        HRESULT Update([NativeTypeName("UI_ANIMATION_SECONDS")] double timeNow, UI_ANIMATION_UPDATE_RESULT* updateResult = null);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetVariableFromTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id, IUIAnimationVariable** variable)
-        {
-            return ((delegate* unmanaged<IUIAnimationManager*, IUnknown*, uint, IUIAnimationVariable**, int>)(lpVtbl[9]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), @object, id, variable);
-        }
+        HRESULT GetVariableFromTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id, IUIAnimationVariable** variable);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetStoryboardFromTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id, IUIAnimationStoryboard** storyboard)
-        {
-            return ((delegate* unmanaged<IUIAnimationManager*, IUnknown*, uint, IUIAnimationStoryboard**, int>)(lpVtbl[10]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), @object, id, storyboard);
-        }
+        HRESULT GetStoryboardFromTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id, IUIAnimationStoryboard** storyboard);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT GetStatus(UI_ANIMATION_MANAGER_STATUS* status)
-        {
-            return ((delegate* unmanaged<IUIAnimationManager*, UI_ANIMATION_MANAGER_STATUS*, int>)(lpVtbl[11]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), status);
-        }
+        HRESULT GetStatus(UI_ANIMATION_MANAGER_STATUS* status);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT SetAnimationMode(UI_ANIMATION_MODE mode)
-        {
-            return ((delegate* unmanaged<IUIAnimationManager*, UI_ANIMATION_MODE, int>)(lpVtbl[12]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), mode);
-        }
+        HRESULT SetAnimationMode(UI_ANIMATION_MODE mode);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT Pause()
-        {
-            return ((delegate* unmanaged<IUIAnimationManager*, int>)(lpVtbl[13]))((IUIAnimationManager*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Pause();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT Resume()
-        {
-            return ((delegate* unmanaged<IUIAnimationManager*, int>)(lpVtbl[14]))((IUIAnimationManager*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Resume();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT SetManagerEventHandler(IUIAnimationManagerEventHandler* handler)
-        {
-            return ((delegate* unmanaged<IUIAnimationManager*, IUIAnimationManagerEventHandler*, int>)(lpVtbl[15]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), handler);
-        }
+        HRESULT SetManagerEventHandler(IUIAnimationManagerEventHandler* handler);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT SetCancelPriorityComparison(IUIAnimationPriorityComparison* comparison)
-        {
-            return ((delegate* unmanaged<IUIAnimationManager*, IUIAnimationPriorityComparison*, int>)(lpVtbl[16]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), comparison);
-        }
+        HRESULT SetCancelPriorityComparison(IUIAnimationPriorityComparison* comparison);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT SetTrimPriorityComparison(IUIAnimationPriorityComparison* comparison)
-        {
-            return ((delegate* unmanaged<IUIAnimationManager*, IUIAnimationPriorityComparison*, int>)(lpVtbl[17]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), comparison);
-        }
+        HRESULT SetTrimPriorityComparison(IUIAnimationPriorityComparison* comparison);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT SetCompressPriorityComparison(IUIAnimationPriorityComparison* comparison)
-        {
-            return ((delegate* unmanaged<IUIAnimationManager*, IUIAnimationPriorityComparison*, int>)(lpVtbl[18]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), comparison);
-        }
+        HRESULT SetCompressPriorityComparison(IUIAnimationPriorityComparison* comparison);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT SetConcludePriorityComparison(IUIAnimationPriorityComparison* comparison)
-        {
-            return ((delegate* unmanaged<IUIAnimationManager*, IUIAnimationPriorityComparison*, int>)(lpVtbl[19]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), comparison);
-        }
+        HRESULT SetConcludePriorityComparison(IUIAnimationPriorityComparison* comparison);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT SetDefaultLongestAcceptableDelay([NativeTypeName("UI_ANIMATION_SECONDS")] double delay)
-        {
-            return ((delegate* unmanaged<IUIAnimationManager*, double, int>)(lpVtbl[20]))((IUIAnimationManager*)Unsafe.AsPointer(ref this), delay);
-        }
+        HRESULT SetDefaultLongestAcceptableDelay([NativeTypeName("UI_ANIMATION_SECONDS")] double delay);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT Shutdown()
-        {
-            return ((delegate* unmanaged<IUIAnimationManager*, int>)(lpVtbl[21]))((IUIAnimationManager*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Shutdown();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT CreateAnimationVariable(double initialValue, IUIAnimationVariable** variable);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationManager*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT ScheduleTransition(IUIAnimationVariable* variable, IUIAnimationTransition* transition, [NativeTypeName("UI_ANIMATION_SECONDS")] double timeNow);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationManager*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT CreateStoryboard(IUIAnimationStoryboard** storyboard);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationManager*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT FinishAllStoryboards([NativeTypeName("UI_ANIMATION_SECONDS")] double completionDeadline);
+        [NativeTypeName("HRESULT (DOUBLE, IUIAnimationVariable **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationManager*, double, IUIAnimationVariable**, int> CreateAnimationVariable;
 
-            [VtblIndex(7)]
-            HRESULT AbandonAllStoryboards();
+        [NativeTypeName("HRESULT (IUIAnimationVariable *, IUIAnimationTransition *, UI_ANIMATION_SECONDS) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationManager*, IUIAnimationVariable*, IUIAnimationTransition*, double, int> ScheduleTransition;
 
-            [VtblIndex(8)]
-            HRESULT Update([NativeTypeName("UI_ANIMATION_SECONDS")] double timeNow, UI_ANIMATION_UPDATE_RESULT* updateResult = null);
+        [NativeTypeName("HRESULT (IUIAnimationStoryboard **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationManager*, IUIAnimationStoryboard**, int> CreateStoryboard;
 
-            [VtblIndex(9)]
-            HRESULT GetVariableFromTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id, IUIAnimationVariable** variable);
+        [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationManager*, double, int> FinishAllStoryboards;
 
-            [VtblIndex(10)]
-            HRESULT GetStoryboardFromTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id, IUIAnimationStoryboard** storyboard);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationManager*, int> AbandonAllStoryboards;
 
-            [VtblIndex(11)]
-            HRESULT GetStatus(UI_ANIMATION_MANAGER_STATUS* status);
+        [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, UI_ANIMATION_UPDATE_RESULT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationManager*, double, UI_ANIMATION_UPDATE_RESULT*, int> Update;
 
-            [VtblIndex(12)]
-            HRESULT SetAnimationMode(UI_ANIMATION_MODE mode);
+        [NativeTypeName("HRESULT (IUnknown *, UINT32, IUIAnimationVariable **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationManager*, IUnknown*, uint, IUIAnimationVariable**, int> GetVariableFromTag;
 
-            [VtblIndex(13)]
-            HRESULT Pause();
+        [NativeTypeName("HRESULT (IUnknown *, UINT32, IUIAnimationStoryboard **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationManager*, IUnknown*, uint, IUIAnimationStoryboard**, int> GetStoryboardFromTag;
 
-            [VtblIndex(14)]
-            HRESULT Resume();
+        [NativeTypeName("HRESULT (UI_ANIMATION_MANAGER_STATUS *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationManager*, UI_ANIMATION_MANAGER_STATUS*, int> GetStatus;
 
-            [VtblIndex(15)]
-            HRESULT SetManagerEventHandler(IUIAnimationManagerEventHandler* handler);
+        [NativeTypeName("HRESULT (UI_ANIMATION_MODE) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationManager*, UI_ANIMATION_MODE, int> SetAnimationMode;
 
-            [VtblIndex(16)]
-            HRESULT SetCancelPriorityComparison(IUIAnimationPriorityComparison* comparison);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationManager*, int> Pause;
 
-            [VtblIndex(17)]
-            HRESULT SetTrimPriorityComparison(IUIAnimationPriorityComparison* comparison);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationManager*, int> Resume;
 
-            [VtblIndex(18)]
-            HRESULT SetCompressPriorityComparison(IUIAnimationPriorityComparison* comparison);
+        [NativeTypeName("HRESULT (IUIAnimationManagerEventHandler *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationManager*, IUIAnimationManagerEventHandler*, int> SetManagerEventHandler;
 
-            [VtblIndex(19)]
-            HRESULT SetConcludePriorityComparison(IUIAnimationPriorityComparison* comparison);
+        [NativeTypeName("HRESULT (IUIAnimationPriorityComparison *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationManager*, IUIAnimationPriorityComparison*, int> SetCancelPriorityComparison;
 
-            [VtblIndex(20)]
-            HRESULT SetDefaultLongestAcceptableDelay([NativeTypeName("UI_ANIMATION_SECONDS")] double delay);
+        [NativeTypeName("HRESULT (IUIAnimationPriorityComparison *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationManager*, IUIAnimationPriorityComparison*, int> SetTrimPriorityComparison;
 
-            [VtblIndex(21)]
-            HRESULT Shutdown();
-        }
+        [NativeTypeName("HRESULT (IUIAnimationPriorityComparison *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationManager*, IUIAnimationPriorityComparison*, int> SetCompressPriorityComparison;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationManager*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (IUIAnimationPriorityComparison *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationManager*, IUIAnimationPriorityComparison*, int> SetConcludePriorityComparison;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationManager*, uint> AddRef;
+        [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationManager*, double, int> SetDefaultLongestAcceptableDelay;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationManager*, uint> Release;
-
-            [NativeTypeName("HRESULT (DOUBLE, IUIAnimationVariable **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationManager*, double, IUIAnimationVariable**, int> CreateAnimationVariable;
-
-            [NativeTypeName("HRESULT (IUIAnimationVariable *, IUIAnimationTransition *, UI_ANIMATION_SECONDS) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationManager*, IUIAnimationVariable*, IUIAnimationTransition*, double, int> ScheduleTransition;
-
-            [NativeTypeName("HRESULT (IUIAnimationStoryboard **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationManager*, IUIAnimationStoryboard**, int> CreateStoryboard;
-
-            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationManager*, double, int> FinishAllStoryboards;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationManager*, int> AbandonAllStoryboards;
-
-            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, UI_ANIMATION_UPDATE_RESULT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationManager*, double, UI_ANIMATION_UPDATE_RESULT*, int> Update;
-
-            [NativeTypeName("HRESULT (IUnknown *, UINT32, IUIAnimationVariable **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationManager*, IUnknown*, uint, IUIAnimationVariable**, int> GetVariableFromTag;
-
-            [NativeTypeName("HRESULT (IUnknown *, UINT32, IUIAnimationStoryboard **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationManager*, IUnknown*, uint, IUIAnimationStoryboard**, int> GetStoryboardFromTag;
-
-            [NativeTypeName("HRESULT (UI_ANIMATION_MANAGER_STATUS *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationManager*, UI_ANIMATION_MANAGER_STATUS*, int> GetStatus;
-
-            [NativeTypeName("HRESULT (UI_ANIMATION_MODE) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationManager*, UI_ANIMATION_MODE, int> SetAnimationMode;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationManager*, int> Pause;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationManager*, int> Resume;
-
-            [NativeTypeName("HRESULT (IUIAnimationManagerEventHandler *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationManager*, IUIAnimationManagerEventHandler*, int> SetManagerEventHandler;
-
-            [NativeTypeName("HRESULT (IUIAnimationPriorityComparison *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationManager*, IUIAnimationPriorityComparison*, int> SetCancelPriorityComparison;
-
-            [NativeTypeName("HRESULT (IUIAnimationPriorityComparison *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationManager*, IUIAnimationPriorityComparison*, int> SetTrimPriorityComparison;
-
-            [NativeTypeName("HRESULT (IUIAnimationPriorityComparison *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationManager*, IUIAnimationPriorityComparison*, int> SetCompressPriorityComparison;
-
-            [NativeTypeName("HRESULT (IUIAnimationPriorityComparison *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationManager*, IUIAnimationPriorityComparison*, int> SetConcludePriorityComparison;
-
-            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationManager*, double, int> SetDefaultLongestAcceptableDelay;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationManager*, int> Shutdown;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationManager*, int> Shutdown;
     }
 }

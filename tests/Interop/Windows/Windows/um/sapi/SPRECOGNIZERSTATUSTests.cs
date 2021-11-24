@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SPRECOGNIZERSTATUS" /> struct.</summary>
+public static unsafe partial class SPRECOGNIZERSTATUSTests
 {
-    /// <summary>Provides validation of the <see cref="SPRECOGNIZERSTATUS" /> struct.</summary>
-    public static unsafe partial class SPRECOGNIZERSTATUSTests
+    /// <summary>Validates that the <see cref="SPRECOGNIZERSTATUS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SPRECOGNIZERSTATUS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SPRECOGNIZERSTATUS>(), Is.EqualTo(sizeof(SPRECOGNIZERSTATUS)));
-        }
+        Assert.That(Marshal.SizeOf<SPRECOGNIZERSTATUS>(), Is.EqualTo(sizeof(SPRECOGNIZERSTATUS)));
+    }
 
-        /// <summary>Validates that the <see cref="SPRECOGNIZERSTATUS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SPRECOGNIZERSTATUS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SPRECOGNIZERSTATUS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SPRECOGNIZERSTATUS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SPRECOGNIZERSTATUS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SPRECOGNIZERSTATUS), Is.EqualTo(128));
-        }
+    /// <summary>Validates that the <see cref="SPRECOGNIZERSTATUS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SPRECOGNIZERSTATUS), Is.EqualTo(128));
     }
 }

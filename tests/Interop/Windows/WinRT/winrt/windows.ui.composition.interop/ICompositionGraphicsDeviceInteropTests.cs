@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ICompositionGraphicsDeviceInterop" /> struct.</summary>
+public static unsafe partial class ICompositionGraphicsDeviceInteropTests
 {
-    /// <summary>Provides validation of the <see cref="ICompositionGraphicsDeviceInterop" /> struct.</summary>
-    public static unsafe partial class ICompositionGraphicsDeviceInteropTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ICompositionGraphicsDeviceInterop" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ICompositionGraphicsDeviceInterop" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ICompositionGraphicsDeviceInterop).GUID, Is.EqualTo(IID_ICompositionGraphicsDeviceInterop));
-        }
+        Assert.That(typeof(ICompositionGraphicsDeviceInterop).GUID, Is.EqualTo(IID_ICompositionGraphicsDeviceInterop));
+    }
 
-        /// <summary>Validates that the <see cref="ICompositionGraphicsDeviceInterop" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ICompositionGraphicsDeviceInterop>(), Is.EqualTo(sizeof(ICompositionGraphicsDeviceInterop)));
-        }
+    /// <summary>Validates that the <see cref="ICompositionGraphicsDeviceInterop" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ICompositionGraphicsDeviceInterop>(), Is.EqualTo(sizeof(ICompositionGraphicsDeviceInterop)));
+    }
 
-        /// <summary>Validates that the <see cref="ICompositionGraphicsDeviceInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ICompositionGraphicsDeviceInterop).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ICompositionGraphicsDeviceInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ICompositionGraphicsDeviceInterop).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ICompositionGraphicsDeviceInterop" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ICompositionGraphicsDeviceInterop" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ICompositionGraphicsDeviceInterop), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ICompositionGraphicsDeviceInterop), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ICompositionGraphicsDeviceInterop), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ICompositionGraphicsDeviceInterop), Is.EqualTo(4));
         }
     }
 }

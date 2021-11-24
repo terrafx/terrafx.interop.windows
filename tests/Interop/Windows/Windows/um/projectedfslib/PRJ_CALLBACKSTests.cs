@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PRJ_CALLBACKS" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.17763.0")]
+public static unsafe partial class PRJ_CALLBACKSTests
 {
-    /// <summary>Provides validation of the <see cref="PRJ_CALLBACKS" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0.17763.0")]
-    public static unsafe partial class PRJ_CALLBACKSTests
+    /// <summary>Validates that the <see cref="PRJ_CALLBACKS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PRJ_CALLBACKS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PRJ_CALLBACKS>(), Is.EqualTo(sizeof(PRJ_CALLBACKS)));
-        }
+        Assert.That(Marshal.SizeOf<PRJ_CALLBACKS>(), Is.EqualTo(sizeof(PRJ_CALLBACKS)));
+    }
 
-        /// <summary>Validates that the <see cref="PRJ_CALLBACKS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PRJ_CALLBACKS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PRJ_CALLBACKS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PRJ_CALLBACKS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PRJ_CALLBACKS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="PRJ_CALLBACKS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(PRJ_CALLBACKS), Is.EqualTo(64));
-            }
-            else
-            {
-                Assert.That(sizeof(PRJ_CALLBACKS), Is.EqualTo(32));
-            }
+            Assert.That(sizeof(PRJ_CALLBACKS), Is.EqualTo(64));
+        }
+        else
+        {
+            Assert.That(sizeof(PRJ_CALLBACKS), Is.EqualTo(32));
         }
     }
 }

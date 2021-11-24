@@ -3,26 +3,25 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CMC_RESPONSE_INFO
 {
-    public unsafe partial struct CMC_RESPONSE_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cTaggedAttribute;
+    [NativeTypeName("DWORD")]
+    public uint cTaggedAttribute;
 
-        [NativeTypeName("PCMC_TAGGED_ATTRIBUTE")]
-        public CMC_TAGGED_ATTRIBUTE* rgTaggedAttribute;
+    [NativeTypeName("PCMC_TAGGED_ATTRIBUTE")]
+    public CMC_TAGGED_ATTRIBUTE* rgTaggedAttribute;
 
-        [NativeTypeName("DWORD")]
-        public uint cTaggedContentInfo;
+    [NativeTypeName("DWORD")]
+    public uint cTaggedContentInfo;
 
-        [NativeTypeName("PCMC_TAGGED_CONTENT_INFO")]
-        public CMC_TAGGED_CONTENT_INFO* rgTaggedContentInfo;
+    [NativeTypeName("PCMC_TAGGED_CONTENT_INFO")]
+    public CMC_TAGGED_CONTENT_INFO* rgTaggedContentInfo;
 
-        [NativeTypeName("DWORD")]
-        public uint cTaggedOtherMsg;
+    [NativeTypeName("DWORD")]
+    public uint cTaggedOtherMsg;
 
-        [NativeTypeName("PCMC_TAGGED_OTHER_MSG")]
-        public CMC_TAGGED_OTHER_MSG* rgTaggedOtherMsg;
-    }
+    [NativeTypeName("PCMC_TAGGED_OTHER_MSG")]
+    public CMC_TAGGED_OTHER_MSG* rgTaggedOtherMsg;
 }

@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFNetResourceFilter" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class IMFNetResourceFilterTests
 {
-    /// <summary>Provides validation of the <see cref="IMFNetResourceFilter" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class IMFNetResourceFilterTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFNetResourceFilter" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFNetResourceFilter" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFNetResourceFilter).GUID, Is.EqualTo(IID_IMFNetResourceFilter));
-        }
+        Assert.That(typeof(IMFNetResourceFilter).GUID, Is.EqualTo(IID_IMFNetResourceFilter));
+    }
 
-        /// <summary>Validates that the <see cref="IMFNetResourceFilter" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFNetResourceFilter>(), Is.EqualTo(sizeof(IMFNetResourceFilter)));
-        }
+    /// <summary>Validates that the <see cref="IMFNetResourceFilter" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFNetResourceFilter>(), Is.EqualTo(sizeof(IMFNetResourceFilter)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFNetResourceFilter" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFNetResourceFilter).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFNetResourceFilter" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFNetResourceFilter).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFNetResourceFilter" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFNetResourceFilter" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFNetResourceFilter), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFNetResourceFilter), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFNetResourceFilter), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFNetResourceFilter), Is.EqualTo(4));
         }
     }
 }

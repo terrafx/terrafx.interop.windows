@@ -7,139 +7,138 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("56A86899-0AD4-11CE-B03A-0020AF0BA770")]
+[NativeTypeName("struct IMediaFilter : IPersist")]
+[NativeInheritance("IPersist")]
+public unsafe partial struct IMediaFilter : IMediaFilter.Interface
 {
-    [Guid("56A86899-0AD4-11CE-B03A-0020AF0BA770")]
-    [NativeTypeName("struct IMediaFilter : IPersist")]
-    [NativeInheritance("IPersist")]
-    public unsafe partial struct IMediaFilter : IMediaFilter.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMediaFilter*, Guid*, void**, int>)(lpVtbl[0]))((IMediaFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMediaFilter*, Guid*, void**, int>)(lpVtbl[0]))((IMediaFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMediaFilter*, uint>)(lpVtbl[1]))((IMediaFilter*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMediaFilter*, uint>)(lpVtbl[1]))((IMediaFilter*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMediaFilter*, uint>)(lpVtbl[2]))((IMediaFilter*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMediaFilter*, uint>)(lpVtbl[2]))((IMediaFilter*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
+    {
+        return ((delegate* unmanaged<IMediaFilter*, Guid*, int>)(lpVtbl[3]))((IMediaFilter*)Unsafe.AsPointer(ref this), pClassID);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
-        {
-            return ((delegate* unmanaged<IMediaFilter*, Guid*, int>)(lpVtbl[3]))((IMediaFilter*)Unsafe.AsPointer(ref this), pClassID);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Stop()
+    {
+        return ((delegate* unmanaged<IMediaFilter*, int>)(lpVtbl[4]))((IMediaFilter*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Pause()
+    {
+        return ((delegate* unmanaged<IMediaFilter*, int>)(lpVtbl[5]))((IMediaFilter*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Run([NativeTypeName("REFERENCE_TIME")] long tStart)
+    {
+        return ((delegate* unmanaged<IMediaFilter*, long, int>)(lpVtbl[6]))((IMediaFilter*)Unsafe.AsPointer(ref this), tStart);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT GetState([NativeTypeName("DWORD")] uint dwMilliSecsTimeout, FILTER_STATE* State)
+    {
+        return ((delegate* unmanaged<IMediaFilter*, uint, FILTER_STATE*, int>)(lpVtbl[7]))((IMediaFilter*)Unsafe.AsPointer(ref this), dwMilliSecsTimeout, State);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT SetSyncSource(IReferenceClock* pClock)
+    {
+        return ((delegate* unmanaged<IMediaFilter*, IReferenceClock*, int>)(lpVtbl[8]))((IMediaFilter*)Unsafe.AsPointer(ref this), pClock);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT GetSyncSource(IReferenceClock** pClock)
+    {
+        return ((delegate* unmanaged<IMediaFilter*, IReferenceClock**, int>)(lpVtbl[9]))((IMediaFilter*)Unsafe.AsPointer(ref this), pClock);
+    }
+
+    public interface Interface : IPersist.Interface
+    {
         [VtblIndex(4)]
-        public HRESULT Stop()
-        {
-            return ((delegate* unmanaged<IMediaFilter*, int>)(lpVtbl[4]))((IMediaFilter*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Stop();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Pause()
-        {
-            return ((delegate* unmanaged<IMediaFilter*, int>)(lpVtbl[5]))((IMediaFilter*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Pause();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Run([NativeTypeName("REFERENCE_TIME")] long tStart)
-        {
-            return ((delegate* unmanaged<IMediaFilter*, long, int>)(lpVtbl[6]))((IMediaFilter*)Unsafe.AsPointer(ref this), tStart);
-        }
+        HRESULT Run([NativeTypeName("REFERENCE_TIME")] long tStart);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetState([NativeTypeName("DWORD")] uint dwMilliSecsTimeout, FILTER_STATE* State)
-        {
-            return ((delegate* unmanaged<IMediaFilter*, uint, FILTER_STATE*, int>)(lpVtbl[7]))((IMediaFilter*)Unsafe.AsPointer(ref this), dwMilliSecsTimeout, State);
-        }
+        HRESULT GetState([NativeTypeName("DWORD")] uint dwMilliSecsTimeout, FILTER_STATE* State);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT SetSyncSource(IReferenceClock* pClock)
-        {
-            return ((delegate* unmanaged<IMediaFilter*, IReferenceClock*, int>)(lpVtbl[8]))((IMediaFilter*)Unsafe.AsPointer(ref this), pClock);
-        }
+        HRESULT SetSyncSource(IReferenceClock* pClock);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT GetSyncSource(IReferenceClock** pClock)
-        {
-            return ((delegate* unmanaged<IMediaFilter*, IReferenceClock**, int>)(lpVtbl[9]))((IMediaFilter*)Unsafe.AsPointer(ref this), pClock);
-        }
+        HRESULT GetSyncSource(IReferenceClock** pClock);
+    }
 
-        public interface Interface : IPersist.Interface
-        {
-            [VtblIndex(4)]
-            HRESULT Stop();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMediaFilter*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(5)]
-            HRESULT Pause();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMediaFilter*, uint> AddRef;
 
-            [VtblIndex(6)]
-            HRESULT Run([NativeTypeName("REFERENCE_TIME")] long tStart);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMediaFilter*, uint> Release;
 
-            [VtblIndex(7)]
-            HRESULT GetState([NativeTypeName("DWORD")] uint dwMilliSecsTimeout, FILTER_STATE* State);
+        [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMediaFilter*, Guid*, int> GetClassID;
 
-            [VtblIndex(8)]
-            HRESULT SetSyncSource(IReferenceClock* pClock);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMediaFilter*, int> Stop;
 
-            [VtblIndex(9)]
-            HRESULT GetSyncSource(IReferenceClock** pClock);
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMediaFilter*, int> Pause;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMediaFilter*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (REFERENCE_TIME) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMediaFilter*, long, int> Run;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMediaFilter*, uint> AddRef;
+        [NativeTypeName("HRESULT (DWORD, FILTER_STATE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMediaFilter*, uint, FILTER_STATE*, int> GetState;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMediaFilter*, uint> Release;
+        [NativeTypeName("HRESULT (IReferenceClock *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMediaFilter*, IReferenceClock*, int> SetSyncSource;
 
-            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMediaFilter*, Guid*, int> GetClassID;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMediaFilter*, int> Stop;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMediaFilter*, int> Pause;
-
-            [NativeTypeName("HRESULT (REFERENCE_TIME) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMediaFilter*, long, int> Run;
-
-            [NativeTypeName("HRESULT (DWORD, FILTER_STATE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMediaFilter*, uint, FILTER_STATE*, int> GetState;
-
-            [NativeTypeName("HRESULT (IReferenceClock *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMediaFilter*, IReferenceClock*, int> SetSyncSource;
-
-            [NativeTypeName("HRESULT (IReferenceClock **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMediaFilter*, IReferenceClock**, int> GetSyncSource;
-        }
+        [NativeTypeName("HRESULT (IReferenceClock **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMediaFilter*, IReferenceClock**, int> GetSyncSource;
     }
 }

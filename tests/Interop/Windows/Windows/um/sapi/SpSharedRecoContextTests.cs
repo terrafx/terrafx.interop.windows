@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SpSharedRecoContext" /> struct.</summary>
+public static unsafe partial class SpSharedRecoContextTests
 {
-    /// <summary>Provides validation of the <see cref="SpSharedRecoContext" /> struct.</summary>
-    public static unsafe partial class SpSharedRecoContextTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpSharedRecoContext" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpSharedRecoContext" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SpSharedRecoContext).GUID, Is.EqualTo(CLSID_SpSharedRecoContext));
-        }
+        Assert.That(typeof(SpSharedRecoContext).GUID, Is.EqualTo(CLSID_SpSharedRecoContext));
+    }
 
-        /// <summary>Validates that the <see cref="SpSharedRecoContext" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SpSharedRecoContext>(), Is.EqualTo(sizeof(SpSharedRecoContext)));
-        }
+    /// <summary>Validates that the <see cref="SpSharedRecoContext" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SpSharedRecoContext>(), Is.EqualTo(sizeof(SpSharedRecoContext)));
+    }
 
-        /// <summary>Validates that the <see cref="SpSharedRecoContext" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SpSharedRecoContext).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SpSharedRecoContext" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SpSharedRecoContext).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SpSharedRecoContext" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SpSharedRecoContext), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SpSharedRecoContext" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SpSharedRecoContext), Is.EqualTo(1));
     }
 }

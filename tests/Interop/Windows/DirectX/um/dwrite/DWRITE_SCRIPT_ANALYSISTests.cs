@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DWRITE_SCRIPT_ANALYSIS" /> struct.</summary>
+public static unsafe partial class DWRITE_SCRIPT_ANALYSISTests
 {
-    /// <summary>Provides validation of the <see cref="DWRITE_SCRIPT_ANALYSIS" /> struct.</summary>
-    public static unsafe partial class DWRITE_SCRIPT_ANALYSISTests
+    /// <summary>Validates that the <see cref="DWRITE_SCRIPT_ANALYSIS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DWRITE_SCRIPT_ANALYSIS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DWRITE_SCRIPT_ANALYSIS>(), Is.EqualTo(sizeof(DWRITE_SCRIPT_ANALYSIS)));
-        }
+        Assert.That(Marshal.SizeOf<DWRITE_SCRIPT_ANALYSIS>(), Is.EqualTo(sizeof(DWRITE_SCRIPT_ANALYSIS)));
+    }
 
-        /// <summary>Validates that the <see cref="DWRITE_SCRIPT_ANALYSIS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DWRITE_SCRIPT_ANALYSIS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DWRITE_SCRIPT_ANALYSIS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DWRITE_SCRIPT_ANALYSIS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DWRITE_SCRIPT_ANALYSIS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DWRITE_SCRIPT_ANALYSIS), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="DWRITE_SCRIPT_ANALYSIS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DWRITE_SCRIPT_ANALYSIS), Is.EqualTo(8));
     }
 }

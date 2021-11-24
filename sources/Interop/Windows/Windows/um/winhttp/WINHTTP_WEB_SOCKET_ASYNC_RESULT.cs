@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct WINHTTP_WEB_SOCKET_ASYNC_RESULT
-    {
-        public WINHTTP_ASYNC_RESULT AsyncResult;
+namespace TerraFX.Interop.Windows;
 
-        public WINHTTP_WEB_SOCKET_OPERATION Operation;
-    }
+[SupportedOSPlatform("windows8.0")]
+public partial struct WINHTTP_WEB_SOCKET_ASYNC_RESULT
+{
+    public WINHTTP_ASYNC_RESULT AsyncResult;
+
+    public WINHTTP_WEB_SOCKET_OPERATION Operation;
 }

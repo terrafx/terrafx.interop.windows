@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DRAWTEXTPARAMS" /> struct.</summary>
+public static unsafe partial class DRAWTEXTPARAMSTests
 {
-    /// <summary>Provides validation of the <see cref="DRAWTEXTPARAMS" /> struct.</summary>
-    public static unsafe partial class DRAWTEXTPARAMSTests
+    /// <summary>Validates that the <see cref="DRAWTEXTPARAMS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DRAWTEXTPARAMS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DRAWTEXTPARAMS>(), Is.EqualTo(sizeof(DRAWTEXTPARAMS)));
-        }
+        Assert.That(Marshal.SizeOf<DRAWTEXTPARAMS>(), Is.EqualTo(sizeof(DRAWTEXTPARAMS)));
+    }
 
-        /// <summary>Validates that the <see cref="DRAWTEXTPARAMS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DRAWTEXTPARAMS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DRAWTEXTPARAMS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DRAWTEXTPARAMS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DRAWTEXTPARAMS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DRAWTEXTPARAMS), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="DRAWTEXTPARAMS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DRAWTEXTPARAMS), Is.EqualTo(20));
     }
 }

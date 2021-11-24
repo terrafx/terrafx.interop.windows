@@ -5,28 +5,27 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct STORAGE_DEVICE_NUMBER_EX
 {
-    public partial struct STORAGE_DEVICE_NUMBER_EX
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        [NativeTypeName("DWORD")]
-        public uint DeviceType;
+    [NativeTypeName("DWORD")]
+    public uint DeviceType;
 
-        [NativeTypeName("DWORD")]
-        public uint DeviceNumber;
+    [NativeTypeName("DWORD")]
+    public uint DeviceNumber;
 
-        public Guid DeviceGuid;
+    public Guid DeviceGuid;
 
-        [NativeTypeName("DWORD")]
-        public uint PartitionNumber;
-    }
+    [NativeTypeName("DWORD")]
+    public uint PartitionNumber;
 }

@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct VMRGUID
-    {
-        public Guid* pGUID;
+namespace TerraFX.Interop.Windows;
 
-        public Guid GUID;
-    }
+public unsafe partial struct VMRGUID
+{
+    public Guid* pGUID;
+
+    public Guid GUID;
 }

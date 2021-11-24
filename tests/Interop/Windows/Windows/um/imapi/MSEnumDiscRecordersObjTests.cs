@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MSEnumDiscRecordersObj" /> struct.</summary>
+public static unsafe partial class MSEnumDiscRecordersObjTests
 {
-    /// <summary>Provides validation of the <see cref="MSEnumDiscRecordersObj" /> struct.</summary>
-    public static unsafe partial class MSEnumDiscRecordersObjTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="MSEnumDiscRecordersObj" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="MSEnumDiscRecordersObj" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(MSEnumDiscRecordersObj).GUID, Is.EqualTo(CLSID_MSEnumDiscRecordersObj));
-        }
+        Assert.That(typeof(MSEnumDiscRecordersObj).GUID, Is.EqualTo(CLSID_MSEnumDiscRecordersObj));
+    }
 
-        /// <summary>Validates that the <see cref="MSEnumDiscRecordersObj" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MSEnumDiscRecordersObj>(), Is.EqualTo(sizeof(MSEnumDiscRecordersObj)));
-        }
+    /// <summary>Validates that the <see cref="MSEnumDiscRecordersObj" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<MSEnumDiscRecordersObj>(), Is.EqualTo(sizeof(MSEnumDiscRecordersObj)));
+    }
 
-        /// <summary>Validates that the <see cref="MSEnumDiscRecordersObj" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MSEnumDiscRecordersObj).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MSEnumDiscRecordersObj" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MSEnumDiscRecordersObj).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MSEnumDiscRecordersObj" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MSEnumDiscRecordersObj), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="MSEnumDiscRecordersObj" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MSEnumDiscRecordersObj), Is.EqualTo(1));
     }
 }

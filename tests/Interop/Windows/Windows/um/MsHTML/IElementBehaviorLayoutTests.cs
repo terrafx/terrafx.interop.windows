@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IElementBehaviorLayout" /> struct.</summary>
+public static unsafe partial class IElementBehaviorLayoutTests
 {
-    /// <summary>Provides validation of the <see cref="IElementBehaviorLayout" /> struct.</summary>
-    public static unsafe partial class IElementBehaviorLayoutTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IElementBehaviorLayout" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IElementBehaviorLayout" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IElementBehaviorLayout).GUID, Is.EqualTo(IID_IElementBehaviorLayout));
-        }
+        Assert.That(typeof(IElementBehaviorLayout).GUID, Is.EqualTo(IID_IElementBehaviorLayout));
+    }
 
-        /// <summary>Validates that the <see cref="IElementBehaviorLayout" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IElementBehaviorLayout>(), Is.EqualTo(sizeof(IElementBehaviorLayout)));
-        }
+    /// <summary>Validates that the <see cref="IElementBehaviorLayout" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IElementBehaviorLayout>(), Is.EqualTo(sizeof(IElementBehaviorLayout)));
+    }
 
-        /// <summary>Validates that the <see cref="IElementBehaviorLayout" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IElementBehaviorLayout).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IElementBehaviorLayout" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IElementBehaviorLayout).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IElementBehaviorLayout" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IElementBehaviorLayout" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IElementBehaviorLayout), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IElementBehaviorLayout), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IElementBehaviorLayout), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IElementBehaviorLayout), Is.EqualTo(4));
         }
     }
 }

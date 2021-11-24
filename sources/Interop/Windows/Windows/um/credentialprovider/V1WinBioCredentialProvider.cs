@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("AC3AC249-E820-4343-A65B-377AC634DC09")]
+public partial struct V1WinBioCredentialProvider
 {
-    [Guid("AC3AC249-E820-4343-A65B-377AC634DC09")]
-    public partial struct V1WinBioCredentialProvider
-    {
-    }
 }

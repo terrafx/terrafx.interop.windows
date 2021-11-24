@@ -6,17 +6,16 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.DirectX;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public partial struct WICDdsFormatInfo
 {
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct WICDdsFormatInfo
-    {
-        public DXGI_FORMAT DxgiFormat;
+    public DXGI_FORMAT DxgiFormat;
 
-        public uint BytesPerBlock;
+    public uint BytesPerBlock;
 
-        public uint BlockWidth;
+    public uint BlockWidth;
 
-        public uint BlockHeight;
-    }
+    public uint BlockHeight;
 }

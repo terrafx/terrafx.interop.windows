@@ -3,15 +3,14 @@
 // Ported from shared/dxgitype.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DXGI_RGB
 {
-    public partial struct DXGI_RGB
+    public DXGI_RGB(float red, float green, float blue)
     {
-        public DXGI_RGB(float red, float green, float blue)
-        {
-            Red = red;
-            Green = green;
-            Blue = blue;
-        }
+        Red = red;
+        Green = green;
+        Blue = blue;
     }
 }

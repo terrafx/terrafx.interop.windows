@@ -9,45 +9,44 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IVisualTreeService" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
+public static unsafe partial class IVisualTreeServiceTests
 {
-    /// <summary>Provides validation of the <see cref="IVisualTreeService" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0")]
-    public static unsafe partial class IVisualTreeServiceTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IVisualTreeService" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IVisualTreeService" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IVisualTreeService).GUID, Is.EqualTo(IID_IVisualTreeService));
-        }
+        Assert.That(typeof(IVisualTreeService).GUID, Is.EqualTo(IID_IVisualTreeService));
+    }
 
-        /// <summary>Validates that the <see cref="IVisualTreeService" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IVisualTreeService>(), Is.EqualTo(sizeof(IVisualTreeService)));
-        }
+    /// <summary>Validates that the <see cref="IVisualTreeService" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IVisualTreeService>(), Is.EqualTo(sizeof(IVisualTreeService)));
+    }
 
-        /// <summary>Validates that the <see cref="IVisualTreeService" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IVisualTreeService).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IVisualTreeService" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IVisualTreeService).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IVisualTreeService" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IVisualTreeService" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IVisualTreeService), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IVisualTreeService), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IVisualTreeService), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IVisualTreeService), Is.EqualTo(4));
         }
     }
 }

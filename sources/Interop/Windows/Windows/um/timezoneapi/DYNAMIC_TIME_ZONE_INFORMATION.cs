@@ -3,33 +3,32 @@
 // Ported from um/timezoneapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct DYNAMIC_TIME_ZONE_INFORMATION
 {
-    public unsafe partial struct DYNAMIC_TIME_ZONE_INFORMATION
-    {
-        [NativeTypeName("LONG")]
-        public int Bias;
+    [NativeTypeName("LONG")]
+    public int Bias;
 
-        [NativeTypeName("WCHAR [32]")]
-        public fixed ushort StandardName[32];
+    [NativeTypeName("WCHAR [32]")]
+    public fixed ushort StandardName[32];
 
-        public SYSTEMTIME StandardDate;
+    public SYSTEMTIME StandardDate;
 
-        [NativeTypeName("LONG")]
-        public int StandardBias;
+    [NativeTypeName("LONG")]
+    public int StandardBias;
 
-        [NativeTypeName("WCHAR [32]")]
-        public fixed ushort DaylightName[32];
+    [NativeTypeName("WCHAR [32]")]
+    public fixed ushort DaylightName[32];
 
-        public SYSTEMTIME DaylightDate;
+    public SYSTEMTIME DaylightDate;
 
-        [NativeTypeName("LONG")]
-        public int DaylightBias;
+    [NativeTypeName("LONG")]
+    public int DaylightBias;
 
-        [NativeTypeName("WCHAR [128]")]
-        public fixed ushort TimeZoneKeyName[128];
+    [NativeTypeName("WCHAR [128]")]
+    public fixed ushort TimeZoneKeyName[128];
 
-        [NativeTypeName("BOOLEAN")]
-        public byte DynamicDaylightTimeDisabled;
-    }
+    [NativeTypeName("BOOLEAN")]
+    public byte DynamicDaylightTimeDisabled;
 }

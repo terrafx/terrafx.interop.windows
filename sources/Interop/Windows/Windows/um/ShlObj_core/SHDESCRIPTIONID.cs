@@ -5,14 +5,13 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct SHDESCRIPTIONID
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwDescriptionId;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("CLSID")]
-        public Guid clsid;
-    }
+public partial struct SHDESCRIPTIONID
+{
+    [NativeTypeName("DWORD")]
+    public uint dwDescriptionId;
+
+    [NativeTypeName("CLSID")]
+    public Guid clsid;
 }

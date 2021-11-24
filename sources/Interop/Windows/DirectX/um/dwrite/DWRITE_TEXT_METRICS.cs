@@ -3,28 +3,27 @@
 // Ported from um/dwrite.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DWRITE_TEXT_METRICS
 {
-    public partial struct DWRITE_TEXT_METRICS
-    {
-        public float left;
+    public float left;
 
-        public float top;
+    public float top;
 
-        public float width;
+    public float width;
 
-        public float widthIncludingTrailingWhitespace;
+    public float widthIncludingTrailingWhitespace;
 
-        public float height;
+    public float height;
 
-        public float layoutWidth;
+    public float layoutWidth;
 
-        public float layoutHeight;
+    public float layoutHeight;
 
-        [NativeTypeName("UINT32")]
-        public uint maxBidiReorderingDepth;
+    [NativeTypeName("UINT32")]
+    public uint maxBidiReorderingDepth;
 
-        [NativeTypeName("UINT32")]
-        public uint lineCount;
-    }
+    [NativeTypeName("UINT32")]
+    public uint lineCount;
 }

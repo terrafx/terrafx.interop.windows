@@ -3,13 +3,12 @@
 // Ported from um/dvdmedia.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct AM_AC3_ALTERNATE_AUDIO
-    {
-        public BOOL fStereo;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("ULONG")]
-        public uint DualMode;
-    }
+public partial struct AM_AC3_ALTERNATE_AUDIO
+{
+    public BOOL fStereo;
+
+    [NativeTypeName("ULONG")]
+    public uint DualMode;
 }

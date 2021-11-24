@@ -3,17 +3,16 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum DVD_PARENTAL_LEVEL
 {
-    public enum DVD_PARENTAL_LEVEL
-    {
-        DVD_PARENTAL_LEVEL_8 = 0x8000,
-        DVD_PARENTAL_LEVEL_7 = 0x4000,
-        DVD_PARENTAL_LEVEL_6 = 0x2000,
-        DVD_PARENTAL_LEVEL_5 = 0x1000,
-        DVD_PARENTAL_LEVEL_4 = 0x800,
-        DVD_PARENTAL_LEVEL_3 = 0x400,
-        DVD_PARENTAL_LEVEL_2 = 0x200,
-        DVD_PARENTAL_LEVEL_1 = 0x100,
-    }
+    DVD_PARENTAL_LEVEL_8 = 0x8000,
+    DVD_PARENTAL_LEVEL_7 = 0x4000,
+    DVD_PARENTAL_LEVEL_6 = 0x2000,
+    DVD_PARENTAL_LEVEL_5 = 0x1000,
+    DVD_PARENTAL_LEVEL_4 = 0x800,
+    DVD_PARENTAL_LEVEL_3 = 0x400,
+    DVD_PARENTAL_LEVEL_2 = 0x200,
+    DVD_PARENTAL_LEVEL_1 = 0x100,
 }

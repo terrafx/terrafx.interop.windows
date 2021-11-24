@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("AAC18C18-E186-46D2-825D-A1F8DC8E395A")]
+[NativeTypeName("struct IVPManager : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IVPManager : IVPManager.Interface
 {
-    [Guid("AAC18C18-E186-46D2-825D-A1F8DC8E395A")]
-    [NativeTypeName("struct IVPManager : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IVPManager : IVPManager.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IVPManager*, Guid*, void**, int>)(lpVtbl[0]))((IVPManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IVPManager*, Guid*, void**, int>)(lpVtbl[0]))((IVPManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IVPManager*, uint>)(lpVtbl[1]))((IVPManager*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IVPManager*, uint>)(lpVtbl[1]))((IVPManager*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IVPManager*, uint>)(lpVtbl[2]))((IVPManager*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IVPManager*, uint>)(lpVtbl[2]))((IVPManager*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT SetVideoPortIndex([NativeTypeName("DWORD")] uint dwVideoPortIndex)
+    {
+        return ((delegate* unmanaged<IVPManager*, uint, int>)(lpVtbl[3]))((IVPManager*)Unsafe.AsPointer(ref this), dwVideoPortIndex);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetVideoPortIndex([NativeTypeName("DWORD *")] uint* pdwVideoPortIndex)
+    {
+        return ((delegate* unmanaged<IVPManager*, uint*, int>)(lpVtbl[4]))((IVPManager*)Unsafe.AsPointer(ref this), pdwVideoPortIndex);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT SetVideoPortIndex([NativeTypeName("DWORD")] uint dwVideoPortIndex)
-        {
-            return ((delegate* unmanaged<IVPManager*, uint, int>)(lpVtbl[3]))((IVPManager*)Unsafe.AsPointer(ref this), dwVideoPortIndex);
-        }
+        HRESULT SetVideoPortIndex([NativeTypeName("DWORD")] uint dwVideoPortIndex);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetVideoPortIndex([NativeTypeName("DWORD *")] uint* pdwVideoPortIndex)
-        {
-            return ((delegate* unmanaged<IVPManager*, uint*, int>)(lpVtbl[4]))((IVPManager*)Unsafe.AsPointer(ref this), pdwVideoPortIndex);
-        }
+        HRESULT GetVideoPortIndex([NativeTypeName("DWORD *")] uint* pdwVideoPortIndex);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT SetVideoPortIndex([NativeTypeName("DWORD")] uint dwVideoPortIndex);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IVPManager*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetVideoPortIndex([NativeTypeName("DWORD *")] uint* pdwVideoPortIndex);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IVPManager*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IVPManager*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IVPManager*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IVPManager*, uint> AddRef;
+        [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IVPManager*, uint, int> SetVideoPortIndex;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IVPManager*, uint> Release;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IVPManager*, uint, int> SetVideoPortIndex;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IVPManager*, uint*, int> GetVideoPortIndex;
-        }
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IVPManager*, uint*, int> GetVideoPortIndex;
     }
 }

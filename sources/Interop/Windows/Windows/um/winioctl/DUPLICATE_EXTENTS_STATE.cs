@@ -3,12 +3,11 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum DUPLICATE_EXTENTS_STATE
 {
-    public enum DUPLICATE_EXTENTS_STATE
-    {
-        FileSnapStateInactive = 0,
-        FileSnapStateSource,
-        FileSnapStateTarget,
-    }
+    FileSnapStateInactive = 0,
+    FileSnapStateSource,
+    FileSnapStateTarget,
 }

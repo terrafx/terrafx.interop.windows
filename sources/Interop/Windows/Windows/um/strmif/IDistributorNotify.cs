@@ -7,116 +7,115 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("56A868AF-0AD4-11CE-B03A-0020AF0BA770")]
+[NativeTypeName("struct IDistributorNotify : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IDistributorNotify : IDistributorNotify.Interface
 {
-    [Guid("56A868AF-0AD4-11CE-B03A-0020AF0BA770")]
-    [NativeTypeName("struct IDistributorNotify : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDistributorNotify : IDistributorNotify.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDistributorNotify*, Guid*, void**, int>)(lpVtbl[0]))((IDistributorNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDistributorNotify*, Guid*, void**, int>)(lpVtbl[0]))((IDistributorNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDistributorNotify*, uint>)(lpVtbl[1]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDistributorNotify*, uint>)(lpVtbl[1]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDistributorNotify*, uint>)(lpVtbl[2]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDistributorNotify*, uint>)(lpVtbl[2]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Stop()
+    {
+        return ((delegate* unmanaged<IDistributorNotify*, int>)(lpVtbl[3]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Pause()
+    {
+        return ((delegate* unmanaged<IDistributorNotify*, int>)(lpVtbl[4]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Run([NativeTypeName("REFERENCE_TIME")] long tStart)
+    {
+        return ((delegate* unmanaged<IDistributorNotify*, long, int>)(lpVtbl[5]))((IDistributorNotify*)Unsafe.AsPointer(ref this), tStart);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT SetSyncSource(IReferenceClock* pClock)
+    {
+        return ((delegate* unmanaged<IDistributorNotify*, IReferenceClock*, int>)(lpVtbl[6]))((IDistributorNotify*)Unsafe.AsPointer(ref this), pClock);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT NotifyGraphChange()
+    {
+        return ((delegate* unmanaged<IDistributorNotify*, int>)(lpVtbl[7]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Stop()
-        {
-            return ((delegate* unmanaged<IDistributorNotify*, int>)(lpVtbl[3]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Stop();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Pause()
-        {
-            return ((delegate* unmanaged<IDistributorNotify*, int>)(lpVtbl[4]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Pause();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Run([NativeTypeName("REFERENCE_TIME")] long tStart)
-        {
-            return ((delegate* unmanaged<IDistributorNotify*, long, int>)(lpVtbl[5]))((IDistributorNotify*)Unsafe.AsPointer(ref this), tStart);
-        }
+        HRESULT Run([NativeTypeName("REFERENCE_TIME")] long tStart);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT SetSyncSource(IReferenceClock* pClock)
-        {
-            return ((delegate* unmanaged<IDistributorNotify*, IReferenceClock*, int>)(lpVtbl[6]))((IDistributorNotify*)Unsafe.AsPointer(ref this), pClock);
-        }
+        HRESULT SetSyncSource(IReferenceClock* pClock);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT NotifyGraphChange()
-        {
-            return ((delegate* unmanaged<IDistributorNotify*, int>)(lpVtbl[7]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT NotifyGraphChange();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Stop();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDistributorNotify*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT Pause();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDistributorNotify*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT Run([NativeTypeName("REFERENCE_TIME")] long tStart);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDistributorNotify*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT SetSyncSource(IReferenceClock* pClock);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDistributorNotify*, int> Stop;
 
-            [VtblIndex(7)]
-            HRESULT NotifyGraphChange();
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDistributorNotify*, int> Pause;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDistributorNotify*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (REFERENCE_TIME) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDistributorNotify*, long, int> Run;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDistributorNotify*, uint> AddRef;
+        [NativeTypeName("HRESULT (IReferenceClock *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDistributorNotify*, IReferenceClock*, int> SetSyncSource;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDistributorNotify*, uint> Release;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDistributorNotify*, int> Stop;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDistributorNotify*, int> Pause;
-
-            [NativeTypeName("HRESULT (REFERENCE_TIME) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDistributorNotify*, long, int> Run;
-
-            [NativeTypeName("HRESULT (IReferenceClock *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDistributorNotify*, IReferenceClock*, int> SetSyncSource;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDistributorNotify*, int> NotifyGraphChange;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDistributorNotify*, int> NotifyGraphChange;
     }
 }

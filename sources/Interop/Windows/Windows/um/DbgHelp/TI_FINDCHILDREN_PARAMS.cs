@@ -3,17 +3,16 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct TI_FINDCHILDREN_PARAMS
 {
-    public unsafe partial struct TI_FINDCHILDREN_PARAMS
-    {
-        [NativeTypeName("ULONG")]
-        public uint Count;
+    [NativeTypeName("ULONG")]
+    public uint Count;
 
-        [NativeTypeName("ULONG")]
-        public uint Start;
+    [NativeTypeName("ULONG")]
+    public uint Start;
 
-        [NativeTypeName("ULONG [1]")]
-        public fixed uint ChildId[1];
-    }
+    [NativeTypeName("ULONG [1]")]
+    public fixed uint ChildId[1];
 }

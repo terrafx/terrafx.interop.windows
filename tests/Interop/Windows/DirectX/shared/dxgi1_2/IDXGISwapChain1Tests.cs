@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDXGISwapChain1" /> struct.</summary>
+public static unsafe partial class IDXGISwapChain1Tests
 {
-    /// <summary>Provides validation of the <see cref="IDXGISwapChain1" /> struct.</summary>
-    public static unsafe partial class IDXGISwapChain1Tests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDXGISwapChain1" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDXGISwapChain1" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDXGISwapChain1).GUID, Is.EqualTo(IID_IDXGISwapChain1));
-        }
+        Assert.That(typeof(IDXGISwapChain1).GUID, Is.EqualTo(IID_IDXGISwapChain1));
+    }
 
-        /// <summary>Validates that the <see cref="IDXGISwapChain1" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDXGISwapChain1>(), Is.EqualTo(sizeof(IDXGISwapChain1)));
-        }
+    /// <summary>Validates that the <see cref="IDXGISwapChain1" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDXGISwapChain1>(), Is.EqualTo(sizeof(IDXGISwapChain1)));
+    }
 
-        /// <summary>Validates that the <see cref="IDXGISwapChain1" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDXGISwapChain1).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDXGISwapChain1" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDXGISwapChain1).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDXGISwapChain1" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDXGISwapChain1" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDXGISwapChain1), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDXGISwapChain1), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDXGISwapChain1), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDXGISwapChain1), Is.EqualTo(4));
         }
     }
 }

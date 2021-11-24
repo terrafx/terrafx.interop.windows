@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SVGPathSegClosePath" /> struct.</summary>
+public static unsafe partial class SVGPathSegClosePathTests
 {
-    /// <summary>Provides validation of the <see cref="SVGPathSegClosePath" /> struct.</summary>
-    public static unsafe partial class SVGPathSegClosePathTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGPathSegClosePath" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SVGPathSegClosePath" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SVGPathSegClosePath).GUID, Is.EqualTo(IID_SVGPathSegClosePath));
-        }
+        Assert.That(typeof(SVGPathSegClosePath).GUID, Is.EqualTo(IID_SVGPathSegClosePath));
+    }
 
-        /// <summary>Validates that the <see cref="SVGPathSegClosePath" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SVGPathSegClosePath>(), Is.EqualTo(sizeof(SVGPathSegClosePath)));
-        }
+    /// <summary>Validates that the <see cref="SVGPathSegClosePath" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SVGPathSegClosePath>(), Is.EqualTo(sizeof(SVGPathSegClosePath)));
+    }
 
-        /// <summary>Validates that the <see cref="SVGPathSegClosePath" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SVGPathSegClosePath).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SVGPathSegClosePath" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SVGPathSegClosePath).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SVGPathSegClosePath" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SVGPathSegClosePath), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SVGPathSegClosePath" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SVGPathSegClosePath), Is.EqualTo(1));
     }
 }

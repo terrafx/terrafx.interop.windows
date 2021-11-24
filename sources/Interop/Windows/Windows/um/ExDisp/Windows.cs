@@ -5,29 +5,28 @@
 
 using static TerraFX.Interop.Windows.BrowserNavConstants;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class Windows
 {
-    public static partial class Windows
-    {
-        [NativeTypeName("#define navUserInitiatedAction navReserved1")]
-        public const BrowserNavConstants navUserInitiatedAction = navReserved1;
+    [NativeTypeName("#define navUserInitiatedAction navReserved1")]
+    public const BrowserNavConstants navUserInitiatedAction = navReserved1;
 
-        [NativeTypeName("#define navDisableDownloadSave navReserved2")]
-        public const BrowserNavConstants navDisableDownloadSave = navReserved2;
+    [NativeTypeName("#define navDisableDownloadSave navReserved2")]
+    public const BrowserNavConstants navDisableDownloadSave = navReserved2;
 
-        [NativeTypeName("#define navServerRedirectedVtabSwitch navReserved3")]
-        public const BrowserNavConstants navServerRedirectedVtabSwitch = navReserved3;
+    [NativeTypeName("#define navServerRedirectedVtabSwitch navReserved3")]
+    public const BrowserNavConstants navServerRedirectedVtabSwitch = navReserved3;
 
-        [NativeTypeName("#define navVtabSwitchNotUserInitiatedAction navReserved4")]
-        public const BrowserNavConstants navVtabSwitchNotUserInitiatedAction = navReserved4;
+    [NativeTypeName("#define navVtabSwitchNotUserInitiatedAction navReserved4")]
+    public const BrowserNavConstants navVtabSwitchNotUserInitiatedAction = navReserved4;
 
-        [NativeTypeName("#define navCheckDontShowNeedIE navReserved5")]
-        public const BrowserNavConstants navCheckDontShowNeedIE = navReserved5;
+    [NativeTypeName("#define navCheckDontShowNeedIE navReserved5")]
+    public const BrowserNavConstants navCheckDontShowNeedIE = navReserved5;
 
-        [NativeTypeName("#define navCheckDontShowNeedHVSI navReserved6")]
-        public const BrowserNavConstants navCheckDontShowNeedHVSI = navReserved6;
+    [NativeTypeName("#define navCheckDontShowNeedHVSI navReserved6")]
+    public const BrowserNavConstants navCheckDontShowNeedHVSI = navReserved6;
 
-        [NativeTypeName("#define navCheckDontShowHVSINeedHost navReserved7")]
-        public const BrowserNavConstants navCheckDontShowHVSINeedHost = navReserved7;
-    }
+    [NativeTypeName("#define navCheckDontShowHVSINeedHost navReserved7")]
+    public const BrowserNavConstants navCheckDontShowHVSINeedHost = navReserved7;
 }

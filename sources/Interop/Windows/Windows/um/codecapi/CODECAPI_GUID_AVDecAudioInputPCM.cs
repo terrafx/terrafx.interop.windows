@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("F2421DA5-BBB4-4CD5-A996-933C6B5D1347")]
+public partial struct CODECAPI_GUID_AVDecAudioInputPCM
 {
-    [Guid("F2421DA5-BBB4-4CD5-A996-933C6B5D1347")]
-    public partial struct CODECAPI_GUID_AVDecAudioInputPCM
-    {
-    }
 }

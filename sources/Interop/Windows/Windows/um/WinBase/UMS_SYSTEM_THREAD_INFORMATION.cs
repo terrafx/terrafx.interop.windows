@@ -6,100 +6,99 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct UMS_SYSTEM_THREAD_INFORMATION
 {
-    public partial struct UMS_SYSTEM_THREAD_INFORMATION
+    [NativeTypeName("ULONG")]
+    public uint UmsVersion;
+
+    [NativeTypeName("_UMS_SYSTEM_THREAD_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinBase.h:1583:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public uint IsUmsSchedulerThread
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.IsUmsSchedulerThread;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.Anonymous.IsUmsSchedulerThread = value;
+        }
+    }
+
+    public uint IsUmsWorkerThread
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Anonymous.IsUmsWorkerThread;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.Anonymous.IsUmsWorkerThread = value;
+        }
+    }
+
+    public ref uint ThreadUmsFlags
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ThreadUmsFlags, 1));
+        }
+    }
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("_UMS_SYSTEM_THREAD_INFORMATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinBase.h:1584:9)")]
+        public _Anonymous_e__Struct Anonymous;
+
+        [FieldOffset(0)]
         [NativeTypeName("ULONG")]
-        public uint UmsVersion;
+        public uint ThreadUmsFlags;
 
-        [NativeTypeName("_UMS_SYSTEM_THREAD_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinBase.h:1583:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public uint IsUmsSchedulerThread
+        public partial struct _Anonymous_e__Struct
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            public uint _bitfield;
+
+            [NativeTypeName("ULONG : 1")]
+            public uint IsUmsSchedulerThread
             {
-                return Anonymous.Anonymous.IsUmsSchedulerThread;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.IsUmsSchedulerThread = value;
-            }
-        }
-
-        public uint IsUmsWorkerThread
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return Anonymous.Anonymous.IsUmsWorkerThread;
-            }
-
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set
-            {
-                Anonymous.Anonymous.IsUmsWorkerThread = value;
-            }
-        }
-
-        public ref uint ThreadUmsFlags
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ThreadUmsFlags, 1));
-            }
-        }
-
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("_UMS_SYSTEM_THREAD_INFORMATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinBase.h:1584:9)")]
-            public _Anonymous_e__Struct Anonymous;
-
-            [FieldOffset(0)]
-            [NativeTypeName("ULONG")]
-            public uint ThreadUmsFlags;
-
-            public partial struct _Anonymous_e__Struct
-            {
-                public uint _bitfield;
-
-                [NativeTypeName("ULONG : 1")]
-                public uint IsUmsSchedulerThread
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return _bitfield & 0x1u;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
-                    }
+                    return _bitfield & 0x1u;
                 }
 
-                [NativeTypeName("ULONG : 1")]
-                public uint IsUmsWorkerThread
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 1) & 0x1u;
-                    }
+                    _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
-                    }
+            [NativeTypeName("ULONG : 1")]
+            public uint IsUmsWorkerThread
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 1) & 0x1u;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
                 }
             }
         }

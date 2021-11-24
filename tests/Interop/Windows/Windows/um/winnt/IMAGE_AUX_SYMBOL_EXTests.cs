@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMAGE_AUX_SYMBOL_EX" /> struct.</summary>
+public static unsafe partial class IMAGE_AUX_SYMBOL_EXTests
 {
-    /// <summary>Provides validation of the <see cref="IMAGE_AUX_SYMBOL_EX" /> struct.</summary>
-    public static unsafe partial class IMAGE_AUX_SYMBOL_EXTests
+    /// <summary>Validates that the <see cref="IMAGE_AUX_SYMBOL_EX" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IMAGE_AUX_SYMBOL_EX" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMAGE_AUX_SYMBOL_EX>(), Is.EqualTo(sizeof(IMAGE_AUX_SYMBOL_EX)));
-        }
+        Assert.That(Marshal.SizeOf<IMAGE_AUX_SYMBOL_EX>(), Is.EqualTo(sizeof(IMAGE_AUX_SYMBOL_EX)));
+    }
 
-        /// <summary>Validates that the <see cref="IMAGE_AUX_SYMBOL_EX" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutExplicitTest()
-        {
-            Assert.That(typeof(IMAGE_AUX_SYMBOL_EX).IsExplicitLayout, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMAGE_AUX_SYMBOL_EX" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutExplicitTest()
+    {
+        Assert.That(typeof(IMAGE_AUX_SYMBOL_EX).IsExplicitLayout, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMAGE_AUX_SYMBOL_EX" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(IMAGE_AUX_SYMBOL_EX), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="IMAGE_AUX_SYMBOL_EX" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(IMAGE_AUX_SYMBOL_EX), Is.EqualTo(20));
     }
 }

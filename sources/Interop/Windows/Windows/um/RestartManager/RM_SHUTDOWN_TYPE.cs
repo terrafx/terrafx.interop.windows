@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum RM_SHUTDOWN_TYPE
 {
-    [Flags]
-    public enum RM_SHUTDOWN_TYPE
-    {
-        RmForceShutdown = 0x1,
-        RmShutdownOnlyRegistered = 0x10,
-    }
+    RmForceShutdown = 0x1,
+    RmShutdownOnlyRegistered = 0x10,
 }

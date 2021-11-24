@@ -6,11 +6,10 @@
 using System;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SID
 {
-    public partial struct SID
-    {
-        [NativeTypeName("#define SID_SProtectFocus IID_IProtectFocus")]
-        public static ref readonly Guid SID_SProtectFocus => ref IID_IProtectFocus;
-    }
+    [NativeTypeName("#define SID_SProtectFocus IID_IProtectFocus")]
+    public static ref readonly Guid SID_SProtectFocus => ref IID_IProtectFocus;
 }

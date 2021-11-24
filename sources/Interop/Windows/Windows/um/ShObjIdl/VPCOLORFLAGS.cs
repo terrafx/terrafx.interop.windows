@@ -5,15 +5,14 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum VPCOLORFLAGS
 {
-    [Flags]
-    public enum VPCOLORFLAGS
-    {
-        VPCF_TEXT = 1,
-        VPCF_BACKGROUND = 2,
-        VPCF_SORTCOLUMN = 3,
-        VPCF_SUBTEXT = 4,
-        VPCF_TEXTBACKGROUND = 5,
-    }
+    VPCF_TEXT = 1,
+    VPCF_BACKGROUND = 2,
+    VPCF_SORTCOLUMN = 3,
+    VPCF_SUBTEXT = 4,
+    VPCF_TEXTBACKGROUND = 5,
 }

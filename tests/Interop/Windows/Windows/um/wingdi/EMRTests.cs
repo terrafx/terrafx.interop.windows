@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="EMR" /> struct.</summary>
+public static unsafe partial class EMRTests
 {
-    /// <summary>Provides validation of the <see cref="EMR" /> struct.</summary>
-    public static unsafe partial class EMRTests
+    /// <summary>Validates that the <see cref="EMR" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="EMR" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<EMR>(), Is.EqualTo(sizeof(EMR)));
-        }
+        Assert.That(Marshal.SizeOf<EMR>(), Is.EqualTo(sizeof(EMR)));
+    }
 
-        /// <summary>Validates that the <see cref="EMR" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(EMR).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="EMR" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(EMR).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="EMR" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(EMR), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="EMR" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(EMR), Is.EqualTo(8));
     }
 }

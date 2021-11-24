@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TRANSACTION_BASIC_INFORMATION
 {
-    public partial struct TRANSACTION_BASIC_INFORMATION
-    {
-        public Guid TransactionId;
+    public Guid TransactionId;
 
-        [NativeTypeName("DWORD")]
-        public uint State;
+    [NativeTypeName("DWORD")]
+    public uint State;
 
-        [NativeTypeName("DWORD")]
-        public uint Outcome;
-    }
+    [NativeTypeName("DWORD")]
+    public uint Outcome;
 }

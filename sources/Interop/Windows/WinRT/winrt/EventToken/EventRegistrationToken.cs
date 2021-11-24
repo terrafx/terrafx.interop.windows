@@ -3,11 +3,10 @@
 // Ported from winrt/EventToken.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+public partial struct EventRegistrationToken
 {
-    public partial struct EventRegistrationToken
-    {
-        [NativeTypeName("long long")]
-        public long value;
-    }
+    [NativeTypeName("long long")]
+    public long value;
 }

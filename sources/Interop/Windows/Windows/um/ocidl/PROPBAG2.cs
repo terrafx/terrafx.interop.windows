@@ -5,26 +5,25 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct PROPBAG2
 {
-    public unsafe partial struct PROPBAG2
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwType;
+    [NativeTypeName("DWORD")]
+    public uint dwType;
 
-        [NativeTypeName("VARTYPE")]
-        public ushort vt;
+    [NativeTypeName("VARTYPE")]
+    public ushort vt;
 
-        [NativeTypeName("CLIPFORMAT")]
-        public ushort cfType;
+    [NativeTypeName("CLIPFORMAT")]
+    public ushort cfType;
 
-        [NativeTypeName("DWORD")]
-        public uint dwHint;
+    [NativeTypeName("DWORD")]
+    public uint dwHint;
 
-        [NativeTypeName("LPOLESTR")]
-        public ushort* pstrName;
+    [NativeTypeName("LPOLESTR")]
+    public ushort* pstrName;
 
-        [NativeTypeName("CLSID")]
-        public Guid clsid;
-    }
+    [NativeTypeName("CLSID")]
+    public Guid clsid;
 }

@@ -3,20 +3,19 @@
 // Ported from um/WinBase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct UMS_SCHEDULER_STARTUP_INFO
 {
-    public unsafe partial struct UMS_SCHEDULER_STARTUP_INFO
-    {
-        [NativeTypeName("ULONG")]
-        public uint UmsVersion;
+    [NativeTypeName("ULONG")]
+    public uint UmsVersion;
 
-        [NativeTypeName("PUMS_COMPLETION_LIST")]
-        public void* CompletionList;
+    [NativeTypeName("PUMS_COMPLETION_LIST")]
+    public void* CompletionList;
 
-        [NativeTypeName("PUMS_SCHEDULER_ENTRY_POINT")]
-        public delegate* unmanaged<UMS_SCHEDULER_REASON, nuint, void*, void> SchedulerProc;
+    [NativeTypeName("PUMS_SCHEDULER_ENTRY_POINT")]
+    public delegate* unmanaged<UMS_SCHEDULER_REASON, nuint, void*, void> SchedulerProc;
 
-        [NativeTypeName("PVOID")]
-        public void* SchedulerParam;
-    }
+    [NativeTypeName("PVOID")]
+    public void* SchedulerParam;
 }

@@ -5,14 +5,13 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SP_POWERMESSAGEWAKE_PARAMS32_W
-    {
-        public SP_CLASSINSTALL_HEADER32 ClassInstallHeader;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("WCHAR [512]")]
-        public fixed ushort PowerMessageWake[512];
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SP_POWERMESSAGEWAKE_PARAMS32_W
+{
+    public SP_CLASSINSTALL_HEADER32 ClassInstallHeader;
+
+    [NativeTypeName("WCHAR [512]")]
+    public fixed ushort PowerMessageWake[512];
 }

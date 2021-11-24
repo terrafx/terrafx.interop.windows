@@ -3,20 +3,19 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct WS_XML_QNAME_DESCRIPTION
 {
-    public partial struct WS_XML_QNAME_DESCRIPTION
-    {
-        [NativeTypeName("ULONG")]
-        public uint minLocalNameByteCount;
+    [NativeTypeName("ULONG")]
+    public uint minLocalNameByteCount;
 
-        [NativeTypeName("ULONG")]
-        public uint maxLocalNameByteCount;
+    [NativeTypeName("ULONG")]
+    public uint maxLocalNameByteCount;
 
-        [NativeTypeName("ULONG")]
-        public uint minNsByteCount;
+    [NativeTypeName("ULONG")]
+    public uint minNsByteCount;
 
-        [NativeTypeName("ULONG")]
-        public uint maxNsByteCount;
-    }
+    [NativeTypeName("ULONG")]
+    public uint maxNsByteCount;
 }

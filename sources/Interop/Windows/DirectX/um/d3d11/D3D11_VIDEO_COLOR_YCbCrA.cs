@@ -5,17 +5,16 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_VIDEO_COLOR_YCbCrA
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_VIDEO_COLOR_YCbCrA
-    {
-        public float Y;
+    public float Y;
 
-        public float Cb;
+    public float Cb;
 
-        public float Cr;
+    public float Cr;
 
-        public float A;
-    }
+    public float A;
 }

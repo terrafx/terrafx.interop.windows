@@ -3,17 +3,16 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct DESIGNVECTOR
 {
-    public unsafe partial struct DESIGNVECTOR
-    {
-        [NativeTypeName("DWORD")]
-        public uint dvReserved;
+    [NativeTypeName("DWORD")]
+    public uint dvReserved;
 
-        [NativeTypeName("DWORD")]
-        public uint dvNumAxes;
+    [NativeTypeName("DWORD")]
+    public uint dvNumAxes;
 
-        [NativeTypeName("LONG [16]")]
-        public fixed int dvValues[16];
-    }
+    [NativeTypeName("LONG [16]")]
+    public fixed int dvValues[16];
 }

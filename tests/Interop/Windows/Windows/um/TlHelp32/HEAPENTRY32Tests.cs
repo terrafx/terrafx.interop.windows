@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HEAPENTRY32" /> struct.</summary>
+public static unsafe partial class HEAPENTRY32Tests
 {
-    /// <summary>Provides validation of the <see cref="HEAPENTRY32" /> struct.</summary>
-    public static unsafe partial class HEAPENTRY32Tests
+    /// <summary>Validates that the <see cref="HEAPENTRY32" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="HEAPENTRY32" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HEAPENTRY32>(), Is.EqualTo(sizeof(HEAPENTRY32)));
-        }
+        Assert.That(Marshal.SizeOf<HEAPENTRY32>(), Is.EqualTo(sizeof(HEAPENTRY32)));
+    }
 
-        /// <summary>Validates that the <see cref="HEAPENTRY32" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HEAPENTRY32).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HEAPENTRY32" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HEAPENTRY32).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HEAPENTRY32" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="HEAPENTRY32" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(HEAPENTRY32), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(HEAPENTRY32), Is.EqualTo(36));
-            }
+            Assert.That(sizeof(HEAPENTRY32), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(HEAPENTRY32), Is.EqualTo(36));
         }
     }
 }

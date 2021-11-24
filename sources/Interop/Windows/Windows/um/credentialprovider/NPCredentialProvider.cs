@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3DD6BEC0-8193-4FFE-AE25-E08E39EA4063")]
+public partial struct NPCredentialProvider
 {
-    [Guid("3DD6BEC0-8193-4FFE-AE25-E08E39EA4063")]
-    public partial struct NPCredentialProvider
-    {
-    }
 }

@@ -3,22 +3,21 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct CURSORSHAPE
 {
-    public partial struct CURSORSHAPE
-    {
-        public int xHotSpot;
+    public int xHotSpot;
 
-        public int yHotSpot;
+    public int yHotSpot;
 
-        public int cx;
+    public int cx;
 
-        public int cy;
+    public int cy;
 
-        public int cbWidth;
+    public int cbWidth;
 
-        public byte Planes;
+    public byte Planes;
 
-        public byte BitsPixel;
-    }
+    public byte BitsPixel;
 }

@@ -8,65 +8,64 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+[Guid("CCDA0A9A-1B78-4632-BB96-97800662E26C")]
+[NativeTypeName("struct IInkHostWorkItem : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IInkHostWorkItem : IInkHostWorkItem.Interface
 {
-    [SupportedOSPlatform("windows10.0")]
-    [Guid("CCDA0A9A-1B78-4632-BB96-97800662E26C")]
-    [NativeTypeName("struct IInkHostWorkItem : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IInkHostWorkItem : IInkHostWorkItem.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IInkHostWorkItem*, Guid*, void**, int>)(lpVtbl[0]))((IInkHostWorkItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IInkHostWorkItem*, Guid*, void**, int>)(lpVtbl[0]))((IInkHostWorkItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IInkHostWorkItem*, uint>)(lpVtbl[1]))((IInkHostWorkItem*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IInkHostWorkItem*, uint>)(lpVtbl[1]))((IInkHostWorkItem*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IInkHostWorkItem*, uint>)(lpVtbl[2]))((IInkHostWorkItem*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IInkHostWorkItem*, uint>)(lpVtbl[2]))((IInkHostWorkItem*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Invoke()
+    {
+        return ((delegate* unmanaged<IInkHostWorkItem*, int>)(lpVtbl[3]))((IInkHostWorkItem*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Invoke()
-        {
-            return ((delegate* unmanaged<IInkHostWorkItem*, int>)(lpVtbl[3]))((IInkHostWorkItem*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Invoke();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Invoke();
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IInkHostWorkItem*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IInkHostWorkItem*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IInkHostWorkItem*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IInkHostWorkItem*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IInkHostWorkItem*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IInkHostWorkItem*, uint> Release;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IInkHostWorkItem*, int> Invoke;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IInkHostWorkItem*, int> Invoke;
     }
 }

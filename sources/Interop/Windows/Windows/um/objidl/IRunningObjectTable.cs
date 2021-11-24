@@ -7,142 +7,141 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("00000010-0000-0000-C000-000000000046")]
+[NativeTypeName("struct IRunningObjectTable : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
 {
-    [Guid("00000010-0000-0000-C000-000000000046")]
-    [NativeTypeName("struct IRunningObjectTable : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IRunningObjectTable*, Guid*, void**, int>)(lpVtbl[0]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IRunningObjectTable*, Guid*, void**, int>)(lpVtbl[0]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IRunningObjectTable*, uint>)(lpVtbl[1]))((IRunningObjectTable*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IRunningObjectTable*, uint>)(lpVtbl[1]))((IRunningObjectTable*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IRunningObjectTable*, uint>)(lpVtbl[2]))((IRunningObjectTable*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IRunningObjectTable*, uint>)(lpVtbl[2]))((IRunningObjectTable*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Register([NativeTypeName("DWORD")] uint grfFlags, IUnknown* punkObject, IMoniker* pmkObjectName, [NativeTypeName("DWORD *")] uint* pdwRegister)
+    {
+        return ((delegate* unmanaged<IRunningObjectTable*, uint, IUnknown*, IMoniker*, uint*, int>)(lpVtbl[3]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), grfFlags, punkObject, pmkObjectName, pdwRegister);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Revoke([NativeTypeName("DWORD")] uint dwRegister)
+    {
+        return ((delegate* unmanaged<IRunningObjectTable*, uint, int>)(lpVtbl[4]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), dwRegister);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT IsRunning(IMoniker* pmkObjectName)
+    {
+        return ((delegate* unmanaged<IRunningObjectTable*, IMoniker*, int>)(lpVtbl[5]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetObject(IMoniker* pmkObjectName, IUnknown** ppunkObject)
+    {
+        return ((delegate* unmanaged<IRunningObjectTable*, IMoniker*, IUnknown**, int>)(lpVtbl[6]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName, ppunkObject);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT NoteChangeTime([NativeTypeName("DWORD")] uint dwRegister, FILETIME* pfiletime)
+    {
+        return ((delegate* unmanaged<IRunningObjectTable*, uint, FILETIME*, int>)(lpVtbl[7]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), dwRegister, pfiletime);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT GetTimeOfLastChange(IMoniker* pmkObjectName, FILETIME* pfiletime)
+    {
+        return ((delegate* unmanaged<IRunningObjectTable*, IMoniker*, FILETIME*, int>)(lpVtbl[8]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName, pfiletime);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT EnumRunning(IEnumMoniker** ppenumMoniker)
+    {
+        return ((delegate* unmanaged<IRunningObjectTable*, IEnumMoniker**, int>)(lpVtbl[9]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), ppenumMoniker);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Register([NativeTypeName("DWORD")] uint grfFlags, IUnknown* punkObject, IMoniker* pmkObjectName, [NativeTypeName("DWORD *")] uint* pdwRegister)
-        {
-            return ((delegate* unmanaged<IRunningObjectTable*, uint, IUnknown*, IMoniker*, uint*, int>)(lpVtbl[3]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), grfFlags, punkObject, pmkObjectName, pdwRegister);
-        }
+        HRESULT Register([NativeTypeName("DWORD")] uint grfFlags, IUnknown* punkObject, IMoniker* pmkObjectName, [NativeTypeName("DWORD *")] uint* pdwRegister);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Revoke([NativeTypeName("DWORD")] uint dwRegister)
-        {
-            return ((delegate* unmanaged<IRunningObjectTable*, uint, int>)(lpVtbl[4]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), dwRegister);
-        }
+        HRESULT Revoke([NativeTypeName("DWORD")] uint dwRegister);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT IsRunning(IMoniker* pmkObjectName)
-        {
-            return ((delegate* unmanaged<IRunningObjectTable*, IMoniker*, int>)(lpVtbl[5]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName);
-        }
+        HRESULT IsRunning(IMoniker* pmkObjectName);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetObject(IMoniker* pmkObjectName, IUnknown** ppunkObject)
-        {
-            return ((delegate* unmanaged<IRunningObjectTable*, IMoniker*, IUnknown**, int>)(lpVtbl[6]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName, ppunkObject);
-        }
+        HRESULT GetObject(IMoniker* pmkObjectName, IUnknown** ppunkObject);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT NoteChangeTime([NativeTypeName("DWORD")] uint dwRegister, FILETIME* pfiletime)
-        {
-            return ((delegate* unmanaged<IRunningObjectTable*, uint, FILETIME*, int>)(lpVtbl[7]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), dwRegister, pfiletime);
-        }
+        HRESULT NoteChangeTime([NativeTypeName("DWORD")] uint dwRegister, FILETIME* pfiletime);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT GetTimeOfLastChange(IMoniker* pmkObjectName, FILETIME* pfiletime)
-        {
-            return ((delegate* unmanaged<IRunningObjectTable*, IMoniker*, FILETIME*, int>)(lpVtbl[8]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName, pfiletime);
-        }
+        HRESULT GetTimeOfLastChange(IMoniker* pmkObjectName, FILETIME* pfiletime);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT EnumRunning(IEnumMoniker** ppenumMoniker)
-        {
-            return ((delegate* unmanaged<IRunningObjectTable*, IEnumMoniker**, int>)(lpVtbl[9]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), ppenumMoniker);
-        }
+        HRESULT EnumRunning(IEnumMoniker** ppenumMoniker);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Register([NativeTypeName("DWORD")] uint grfFlags, IUnknown* punkObject, IMoniker* pmkObjectName, [NativeTypeName("DWORD *")] uint* pdwRegister);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRunningObjectTable*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT Revoke([NativeTypeName("DWORD")] uint dwRegister);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IRunningObjectTable*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT IsRunning(IMoniker* pmkObjectName);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IRunningObjectTable*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT GetObject(IMoniker* pmkObjectName, IUnknown** ppunkObject);
+        [NativeTypeName("HRESULT (DWORD, IUnknown *, IMoniker *, DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRunningObjectTable*, uint, IUnknown*, IMoniker*, uint*, int> Register;
 
-            [VtblIndex(7)]
-            HRESULT NoteChangeTime([NativeTypeName("DWORD")] uint dwRegister, FILETIME* pfiletime);
+        [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRunningObjectTable*, uint, int> Revoke;
 
-            [VtblIndex(8)]
-            HRESULT GetTimeOfLastChange(IMoniker* pmkObjectName, FILETIME* pfiletime);
+        [NativeTypeName("HRESULT (IMoniker *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRunningObjectTable*, IMoniker*, int> IsRunning;
 
-            [VtblIndex(9)]
-            HRESULT EnumRunning(IEnumMoniker** ppenumMoniker);
-        }
+        [NativeTypeName("HRESULT (IMoniker *, IUnknown **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRunningObjectTable*, IMoniker*, IUnknown**, int> GetObject;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRunningObjectTable*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (DWORD, FILETIME *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRunningObjectTable*, uint, FILETIME*, int> NoteChangeTime;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IRunningObjectTable*, uint> AddRef;
+        [NativeTypeName("HRESULT (IMoniker *, FILETIME *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRunningObjectTable*, IMoniker*, FILETIME*, int> GetTimeOfLastChange;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IRunningObjectTable*, uint> Release;
-
-            [NativeTypeName("HRESULT (DWORD, IUnknown *, IMoniker *, DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRunningObjectTable*, uint, IUnknown*, IMoniker*, uint*, int> Register;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRunningObjectTable*, uint, int> Revoke;
-
-            [NativeTypeName("HRESULT (IMoniker *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRunningObjectTable*, IMoniker*, int> IsRunning;
-
-            [NativeTypeName("HRESULT (IMoniker *, IUnknown **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRunningObjectTable*, IMoniker*, IUnknown**, int> GetObject;
-
-            [NativeTypeName("HRESULT (DWORD, FILETIME *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRunningObjectTable*, uint, FILETIME*, int> NoteChangeTime;
-
-            [NativeTypeName("HRESULT (IMoniker *, FILETIME *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRunningObjectTable*, IMoniker*, FILETIME*, int> GetTimeOfLastChange;
-
-            [NativeTypeName("HRESULT (IEnumMoniker **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRunningObjectTable*, IEnumMoniker**, int> EnumRunning;
-        }
+        [NativeTypeName("HRESULT (IEnumMoniker **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRunningObjectTable*, IEnumMoniker**, int> EnumRunning;
     }
 }

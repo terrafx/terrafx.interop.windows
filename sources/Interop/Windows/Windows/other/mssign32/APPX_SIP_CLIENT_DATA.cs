@@ -3,13 +3,12 @@
 // Ported from https://docs.microsoft.com/en-us/windows/win32/appxpkg/how-to-programmatically-sign-a-package
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct APPX_SIP_CLIENT_DATA
-    {
-        [NativeTypeName("PSIGNER_SIGN_EX2_PARAMS")]
-        public SIGNER_SIGN_EX2_PARAMS* pSignerParams;
+namespace TerraFX.Interop.Windows;
 
-        public IUnknown* pAppxSipState;
-    }
+public unsafe partial struct APPX_SIP_CLIENT_DATA
+{
+    [NativeTypeName("PSIGNER_SIGN_EX2_PARAMS")]
+    public SIGNER_SIGN_EX2_PARAMS* pSignerParams;
+
+    public IUnknown* pAppxSipState;
 }

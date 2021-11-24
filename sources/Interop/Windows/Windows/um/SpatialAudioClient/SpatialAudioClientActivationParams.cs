@@ -5,20 +5,19 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SpatialAudioClientActivationParams
 {
-    public partial struct SpatialAudioClientActivationParams
-    {
-        public Guid tracingContextId;
+    public Guid tracingContextId;
 
-        public Guid appId;
+    public Guid appId;
 
-        public int majorVersion;
+    public int majorVersion;
 
-        public int minorVersion1;
+    public int minorVersion1;
 
-        public int minorVersion2;
+    public int minorVersion2;
 
-        public int minorVersion3;
-    }
+    public int minorVersion3;
 }

@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLRichtextElement" /> struct.</summary>
+public static unsafe partial class HTMLRichtextElementTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLRichtextElement" /> struct.</summary>
-    public static unsafe partial class HTMLRichtextElementTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLRichtextElement" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLRichtextElement" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLRichtextElement).GUID, Is.EqualTo(IID_HTMLRichtextElement));
-        }
+        Assert.That(typeof(HTMLRichtextElement).GUID, Is.EqualTo(IID_HTMLRichtextElement));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLRichtextElement" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLRichtextElement>(), Is.EqualTo(sizeof(HTMLRichtextElement)));
-        }
+    /// <summary>Validates that the <see cref="HTMLRichtextElement" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLRichtextElement>(), Is.EqualTo(sizeof(HTMLRichtextElement)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLRichtextElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLRichtextElement).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLRichtextElement" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLRichtextElement).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLRichtextElement" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTMLRichtextElement), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTMLRichtextElement" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTMLRichtextElement), Is.EqualTo(1));
     }
 }

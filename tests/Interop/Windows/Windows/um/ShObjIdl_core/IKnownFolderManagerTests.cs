@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IKnownFolderManager" /> struct.</summary>
+public static unsafe partial class IKnownFolderManagerTests
 {
-    /// <summary>Provides validation of the <see cref="IKnownFolderManager" /> struct.</summary>
-    public static unsafe partial class IKnownFolderManagerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IKnownFolderManager" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IKnownFolderManager" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IKnownFolderManager).GUID, Is.EqualTo(IID_IKnownFolderManager));
-        }
+        Assert.That(typeof(IKnownFolderManager).GUID, Is.EqualTo(IID_IKnownFolderManager));
+    }
 
-        /// <summary>Validates that the <see cref="IKnownFolderManager" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IKnownFolderManager>(), Is.EqualTo(sizeof(IKnownFolderManager)));
-        }
+    /// <summary>Validates that the <see cref="IKnownFolderManager" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IKnownFolderManager>(), Is.EqualTo(sizeof(IKnownFolderManager)));
+    }
 
-        /// <summary>Validates that the <see cref="IKnownFolderManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IKnownFolderManager).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IKnownFolderManager" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IKnownFolderManager).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IKnownFolderManager" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IKnownFolderManager" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IKnownFolderManager), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IKnownFolderManager), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IKnownFolderManager), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IKnownFolderManager), Is.EqualTo(4));
         }
     }
 }

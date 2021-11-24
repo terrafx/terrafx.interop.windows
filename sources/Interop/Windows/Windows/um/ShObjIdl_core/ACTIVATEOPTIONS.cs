@@ -5,15 +5,14 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum ACTIVATEOPTIONS
 {
-    [Flags]
-    public enum ACTIVATEOPTIONS
-    {
-        AO_NONE = 0,
-        AO_DESIGNMODE = 0x1,
-        AO_NOERRORUI = 0x2,
-        AO_NOSPLASHSCREEN = 0x4,
-        AO_PRELAUNCH = 0x2000000,
-    }
+    AO_NONE = 0,
+    AO_DESIGNMODE = 0x1,
+    AO_NOERRORUI = 0x2,
+    AO_NOSPLASHSCREEN = 0x4,
+    AO_PRELAUNCH = 0x2000000,
 }

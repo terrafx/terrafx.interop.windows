@@ -6,49 +6,48 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct FILE_RENAME_INFO
 {
-    public unsafe partial struct FILE_RENAME_INFO
+    [NativeTypeName("_FILE_RENAME_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinBase.h:8878:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public HANDLE RootDirectory;
+
+    [NativeTypeName("DWORD")]
+    public uint FileNameLength;
+
+    [NativeTypeName("WCHAR [1]")]
+    public fixed ushort FileName[1];
+
+    public ref byte ReplaceIfExists
     {
-        [NativeTypeName("_FILE_RENAME_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinBase.h:8878:5)")]
-        public _Anonymous_e__Union Anonymous;
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ReplaceIfExists, 1));
+        }
+    }
 
-        public HANDLE RootDirectory;
+    public ref uint Flags
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
+        }
+    }
 
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("BOOLEAN")]
+        public byte ReplaceIfExists;
+
+        [FieldOffset(0)]
         [NativeTypeName("DWORD")]
-        public uint FileNameLength;
-
-        [NativeTypeName("WCHAR [1]")]
-        public fixed ushort FileName[1];
-
-        public ref byte ReplaceIfExists
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.ReplaceIfExists, 1));
-            }
-        }
-
-        public ref uint Flags
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.Flags, 1));
-            }
-        }
-
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("BOOLEAN")]
-            public byte ReplaceIfExists;
-
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint Flags;
-        }
+        public uint Flags;
     }
 }

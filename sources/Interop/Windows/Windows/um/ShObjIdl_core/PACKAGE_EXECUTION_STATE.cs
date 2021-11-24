@@ -5,15 +5,14 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum PACKAGE_EXECUTION_STATE
 {
-    [Flags]
-    public enum PACKAGE_EXECUTION_STATE
-    {
-        PES_UNKNOWN = 0,
-        PES_RUNNING = 1,
-        PES_SUSPENDING = 2,
-        PES_SUSPENDED = 3,
-        PES_TERMINATED = 4,
-    }
+    PES_UNKNOWN = 0,
+    PES_RUNNING = 1,
+    PES_SUSPENDING = 2,
+    PES_SUSPENDED = 3,
+    PES_TERMINATED = 4,
 }

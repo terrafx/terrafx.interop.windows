@@ -3,11 +3,10 @@
 // Ported from um/dwrite_1.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum DWRITE_TEXT_ANTIALIAS_MODE
 {
-    public enum DWRITE_TEXT_ANTIALIAS_MODE
-    {
-        DWRITE_TEXT_ANTIALIAS_MODE_CLEARTYPE,
-        DWRITE_TEXT_ANTIALIAS_MODE_GRAYSCALE,
-    }
+    DWRITE_TEXT_ANTIALIAS_MODE_CLEARTYPE,
+    DWRITE_TEXT_ANTIALIAS_MODE_GRAYSCALE,
 }

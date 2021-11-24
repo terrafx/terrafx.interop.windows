@@ -5,33 +5,32 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct DML_BATCH_NORMALIZATION_OPERATOR_DESC
 {
-    public unsafe partial struct DML_BATCH_NORMALIZATION_OPERATOR_DESC
-    {
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* InputTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* InputTensor;
 
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* MeanTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* MeanTensor;
 
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* VarianceTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* VarianceTensor;
 
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* ScaleTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* ScaleTensor;
 
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* BiasTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* BiasTensor;
 
-        [NativeTypeName("const DML_TENSOR_DESC *")]
-        public DML_TENSOR_DESC* OutputTensor;
+    [NativeTypeName("const DML_TENSOR_DESC *")]
+    public DML_TENSOR_DESC* OutputTensor;
 
-        public BOOL Spatial;
+    public BOOL Spatial;
 
-        public float Epsilon;
+    public float Epsilon;
 
-        [NativeTypeName("const DML_OPERATOR_DESC *")]
-        public DML_OPERATOR_DESC* FusedActivation;
-    }
+    [NativeTypeName("const DML_OPERATOR_DESC *")]
+    public DML_OPERATOR_DESC* FusedActivation;
 }

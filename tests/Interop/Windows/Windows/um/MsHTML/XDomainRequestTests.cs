@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XDomainRequest" /> struct.</summary>
+public static unsafe partial class XDomainRequestTests
 {
-    /// <summary>Provides validation of the <see cref="XDomainRequest" /> struct.</summary>
-    public static unsafe partial class XDomainRequestTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="XDomainRequest" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="XDomainRequest" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(XDomainRequest).GUID, Is.EqualTo(IID_XDomainRequest));
-        }
+        Assert.That(typeof(XDomainRequest).GUID, Is.EqualTo(IID_XDomainRequest));
+    }
 
-        /// <summary>Validates that the <see cref="XDomainRequest" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XDomainRequest>(), Is.EqualTo(sizeof(XDomainRequest)));
-        }
+    /// <summary>Validates that the <see cref="XDomainRequest" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<XDomainRequest>(), Is.EqualTo(sizeof(XDomainRequest)));
+    }
 
-        /// <summary>Validates that the <see cref="XDomainRequest" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XDomainRequest).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XDomainRequest" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XDomainRequest).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XDomainRequest" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(XDomainRequest), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="XDomainRequest" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(XDomainRequest), Is.EqualTo(1));
     }
 }

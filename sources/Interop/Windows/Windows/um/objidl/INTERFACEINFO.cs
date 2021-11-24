@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct INTERFACEINFO
 {
-    public unsafe partial struct INTERFACEINFO
-    {
-        public IUnknown* pUnk;
+    public IUnknown* pUnk;
 
-        [NativeTypeName("IID")]
-        public Guid iid;
+    [NativeTypeName("IID")]
+    public Guid iid;
 
-        [NativeTypeName("WORD")]
-        public ushort wMethod;
-    }
+    [NativeTypeName("WORD")]
+    public ushort wMethod;
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="OUTLINETEXTMETRICA" /> struct.</summary>
+public static unsafe partial class OUTLINETEXTMETRICATests
 {
-    /// <summary>Provides validation of the <see cref="OUTLINETEXTMETRICA" /> struct.</summary>
-    public static unsafe partial class OUTLINETEXTMETRICATests
+    /// <summary>Validates that the <see cref="OUTLINETEXTMETRICA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="OUTLINETEXTMETRICA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<OUTLINETEXTMETRICA>(), Is.EqualTo(sizeof(OUTLINETEXTMETRICA)));
-        }
+        Assert.That(Marshal.SizeOf<OUTLINETEXTMETRICA>(), Is.EqualTo(sizeof(OUTLINETEXTMETRICA)));
+    }
 
-        /// <summary>Validates that the <see cref="OUTLINETEXTMETRICA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(OUTLINETEXTMETRICA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="OUTLINETEXTMETRICA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(OUTLINETEXTMETRICA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="OUTLINETEXTMETRICA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="OUTLINETEXTMETRICA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(OUTLINETEXTMETRICA), Is.EqualTo(232));
-            }
-            else
-            {
-                Assert.That(sizeof(OUTLINETEXTMETRICA), Is.EqualTo(212));
-            }
+            Assert.That(sizeof(OUTLINETEXTMETRICA), Is.EqualTo(232));
+        }
+        else
+        {
+            Assert.That(sizeof(OUTLINETEXTMETRICA), Is.EqualTo(212));
         }
     }
 }

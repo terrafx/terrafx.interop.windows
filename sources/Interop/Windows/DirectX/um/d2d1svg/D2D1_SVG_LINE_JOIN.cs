@@ -5,13 +5,12 @@
 
 using static TerraFX.Interop.DirectX.D2D1_LINE_JOIN;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum D2D1_SVG_LINE_JOIN : uint
 {
-    public enum D2D1_SVG_LINE_JOIN : uint
-    {
-        D2D1_SVG_LINE_JOIN_BEVEL = D2D1_LINE_JOIN_BEVEL,
-        D2D1_SVG_LINE_JOIN_MITER = D2D1_LINE_JOIN_MITER_OR_BEVEL,
-        D2D1_SVG_LINE_JOIN_ROUND = D2D1_LINE_JOIN_ROUND,
-        D2D1_SVG_LINE_JOIN_FORCE_DWORD = 0xffffffff,
-    }
+    D2D1_SVG_LINE_JOIN_BEVEL = D2D1_LINE_JOIN_BEVEL,
+    D2D1_SVG_LINE_JOIN_MITER = D2D1_LINE_JOIN_MITER_OR_BEVEL,
+    D2D1_SVG_LINE_JOIN_ROUND = D2D1_LINE_JOIN_ROUND,
+    D2D1_SVG_LINE_JOIN_FORCE_DWORD = 0xffffffff,
 }

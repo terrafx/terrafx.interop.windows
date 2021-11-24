@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PUBAPPINFO" /> struct.</summary>
+public static unsafe partial class PUBAPPINFOTests
 {
-    /// <summary>Provides validation of the <see cref="PUBAPPINFO" /> struct.</summary>
-    public static unsafe partial class PUBAPPINFOTests
+    /// <summary>Validates that the <see cref="PUBAPPINFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PUBAPPINFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PUBAPPINFO>(), Is.EqualTo(sizeof(PUBAPPINFO)));
-        }
+        Assert.That(Marshal.SizeOf<PUBAPPINFO>(), Is.EqualTo(sizeof(PUBAPPINFO)));
+    }
 
-        /// <summary>Validates that the <see cref="PUBAPPINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PUBAPPINFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PUBAPPINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PUBAPPINFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PUBAPPINFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="PUBAPPINFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(PUBAPPINFO), Is.EqualTo(80));
-            }
-            else
-            {
-                Assert.That(sizeof(PUBAPPINFO), Is.EqualTo(76));
-            }
+            Assert.That(sizeof(PUBAPPINFO), Is.EqualTo(80));
+        }
+        else
+        {
+            Assert.That(sizeof(PUBAPPINFO), Is.EqualTo(76));
         }
     }
 }

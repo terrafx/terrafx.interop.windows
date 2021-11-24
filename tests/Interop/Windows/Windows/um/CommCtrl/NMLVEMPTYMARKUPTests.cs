@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NMLVEMPTYMARKUP" /> struct.</summary>
+public static unsafe partial class NMLVEMPTYMARKUPTests
 {
-    /// <summary>Provides validation of the <see cref="NMLVEMPTYMARKUP" /> struct.</summary>
-    public static unsafe partial class NMLVEMPTYMARKUPTests
+    /// <summary>Validates that the <see cref="NMLVEMPTYMARKUP" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NMLVEMPTYMARKUP" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NMLVEMPTYMARKUP>(), Is.EqualTo(sizeof(NMLVEMPTYMARKUP)));
-        }
+        Assert.That(Marshal.SizeOf<NMLVEMPTYMARKUP>(), Is.EqualTo(sizeof(NMLVEMPTYMARKUP)));
+    }
 
-        /// <summary>Validates that the <see cref="NMLVEMPTYMARKUP" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NMLVEMPTYMARKUP).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NMLVEMPTYMARKUP" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NMLVEMPTYMARKUP).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NMLVEMPTYMARKUP" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="NMLVEMPTYMARKUP" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(NMLVEMPTYMARKUP), Is.EqualTo(4200));
-            }
-            else
-            {
-                Assert.That(sizeof(NMLVEMPTYMARKUP), Is.EqualTo(4184));
-            }
+            Assert.That(sizeof(NMLVEMPTYMARKUP), Is.EqualTo(4200));
+        }
+        else
+        {
+            Assert.That(sizeof(NMLVEMPTYMARKUP), Is.EqualTo(4184));
         }
     }
 }

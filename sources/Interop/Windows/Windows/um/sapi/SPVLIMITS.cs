@@ -3,13 +3,12 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SPVLIMITS
 {
-    public enum SPVLIMITS
-    {
-        SPMIN_VOLUME = 0,
-        SPMAX_VOLUME = 100,
-        SPMIN_RATE = -10,
-        SPMAX_RATE = 10,
-    }
+    SPMIN_VOLUME = 0,
+    SPMAX_VOLUME = 100,
+    SPMIN_RATE = -10,
+    SPMAX_RATE = 10,
 }

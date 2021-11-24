@@ -3,46 +3,45 @@
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CRYPT_PROVIDER_CERT
 {
-    public unsafe partial struct CRYPT_PROVIDER_CERT
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbStruct;
+    [NativeTypeName("DWORD")]
+    public uint cbStruct;
 
-        [NativeTypeName("PCCERT_CONTEXT")]
-        public CERT_CONTEXT* pCert;
+    [NativeTypeName("PCCERT_CONTEXT")]
+    public CERT_CONTEXT* pCert;
 
-        public BOOL fCommercial;
+    public BOOL fCommercial;
 
-        public BOOL fTrustedRoot;
+    public BOOL fTrustedRoot;
 
-        public BOOL fSelfSigned;
+    public BOOL fSelfSigned;
 
-        public BOOL fTestCert;
+    public BOOL fTestCert;
 
-        [NativeTypeName("DWORD")]
-        public uint dwRevokedReason;
+    [NativeTypeName("DWORD")]
+    public uint dwRevokedReason;
 
-        [NativeTypeName("DWORD")]
-        public uint dwConfidence;
+    [NativeTypeName("DWORD")]
+    public uint dwConfidence;
 
-        [NativeTypeName("DWORD")]
-        public uint dwError;
+    [NativeTypeName("DWORD")]
+    public uint dwError;
 
-        public CTL_CONTEXT* pTrustListContext;
+    public CTL_CONTEXT* pTrustListContext;
 
-        public BOOL fTrustListSignerCert;
+    public BOOL fTrustListSignerCert;
 
-        [NativeTypeName("PCCTL_CONTEXT")]
-        public CTL_CONTEXT* pCtlContext;
+    [NativeTypeName("PCCTL_CONTEXT")]
+    public CTL_CONTEXT* pCtlContext;
 
-        [NativeTypeName("DWORD")]
-        public uint dwCtlError;
+    [NativeTypeName("DWORD")]
+    public uint dwCtlError;
 
-        public BOOL fIsCyclic;
+    public BOOL fIsCyclic;
 
-        [NativeTypeName("PCERT_CHAIN_ELEMENT")]
-        public CERT_CHAIN_ELEMENT* pChainElement;
-    }
+    [NativeTypeName("PCERT_CHAIN_ELEMENT")]
+    public CERT_CHAIN_ELEMENT* pChainElement;
 }

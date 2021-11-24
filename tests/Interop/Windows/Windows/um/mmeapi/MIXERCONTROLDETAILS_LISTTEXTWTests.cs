@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MIXERCONTROLDETAILS_LISTTEXTW" /> struct.</summary>
+public static unsafe partial class MIXERCONTROLDETAILS_LISTTEXTWTests
 {
-    /// <summary>Provides validation of the <see cref="MIXERCONTROLDETAILS_LISTTEXTW" /> struct.</summary>
-    public static unsafe partial class MIXERCONTROLDETAILS_LISTTEXTWTests
+    /// <summary>Validates that the <see cref="MIXERCONTROLDETAILS_LISTTEXTW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MIXERCONTROLDETAILS_LISTTEXTW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MIXERCONTROLDETAILS_LISTTEXTW>(), Is.EqualTo(sizeof(MIXERCONTROLDETAILS_LISTTEXTW)));
-        }
+        Assert.That(Marshal.SizeOf<MIXERCONTROLDETAILS_LISTTEXTW>(), Is.EqualTo(sizeof(MIXERCONTROLDETAILS_LISTTEXTW)));
+    }
 
-        /// <summary>Validates that the <see cref="MIXERCONTROLDETAILS_LISTTEXTW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MIXERCONTROLDETAILS_LISTTEXTW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MIXERCONTROLDETAILS_LISTTEXTW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MIXERCONTROLDETAILS_LISTTEXTW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MIXERCONTROLDETAILS_LISTTEXTW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MIXERCONTROLDETAILS_LISTTEXTW), Is.EqualTo(136));
-        }
+    /// <summary>Validates that the <see cref="MIXERCONTROLDETAILS_LISTTEXTW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MIXERCONTROLDETAILS_LISTTEXTW), Is.EqualTo(136));
     }
 }

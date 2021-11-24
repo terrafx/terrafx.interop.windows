@@ -3,15 +3,14 @@
 // Ported from um/d2d1effects_1.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum D2D1_YCBCR_CHROMA_SUBSAMPLING : uint
 {
-    public enum D2D1_YCBCR_CHROMA_SUBSAMPLING : uint
-    {
-        D2D1_YCBCR_CHROMA_SUBSAMPLING_AUTO = 0,
-        D2D1_YCBCR_CHROMA_SUBSAMPLING_420 = 1,
-        D2D1_YCBCR_CHROMA_SUBSAMPLING_422 = 2,
-        D2D1_YCBCR_CHROMA_SUBSAMPLING_444 = 3,
-        D2D1_YCBCR_CHROMA_SUBSAMPLING_440 = 4,
-        D2D1_YCBCR_CHROMA_SUBSAMPLING_FORCE_DWORD = 0xffffffff,
-    }
+    D2D1_YCBCR_CHROMA_SUBSAMPLING_AUTO = 0,
+    D2D1_YCBCR_CHROMA_SUBSAMPLING_420 = 1,
+    D2D1_YCBCR_CHROMA_SUBSAMPLING_422 = 2,
+    D2D1_YCBCR_CHROMA_SUBSAMPLING_444 = 3,
+    D2D1_YCBCR_CHROMA_SUBSAMPLING_440 = 4,
+    D2D1_YCBCR_CHROMA_SUBSAMPLING_FORCE_DWORD = 0xffffffff,
 }

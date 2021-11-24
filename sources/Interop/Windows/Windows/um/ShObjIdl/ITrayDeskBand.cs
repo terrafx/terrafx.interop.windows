@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("6D67E846-5B9C-4DB8-9CBC-DDE12F4254F1")]
+[NativeTypeName("struct ITrayDeskBand : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ITrayDeskBand : ITrayDeskBand.Interface
 {
-    [Guid("6D67E846-5B9C-4DB8-9CBC-DDE12F4254F1")]
-    [NativeTypeName("struct ITrayDeskBand : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ITrayDeskBand : ITrayDeskBand.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ITrayDeskBand*, Guid*, void**, int>)(lpVtbl[0]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ITrayDeskBand*, Guid*, void**, int>)(lpVtbl[0]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ITrayDeskBand*, uint>)(lpVtbl[1]))((ITrayDeskBand*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ITrayDeskBand*, uint>)(lpVtbl[1]))((ITrayDeskBand*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ITrayDeskBand*, uint>)(lpVtbl[2]))((ITrayDeskBand*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ITrayDeskBand*, uint>)(lpVtbl[2]))((ITrayDeskBand*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT ShowDeskBand([NativeTypeName("const IID &")] Guid* clsid)
+    {
+        return ((delegate* unmanaged<ITrayDeskBand*, Guid*, int>)(lpVtbl[3]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), clsid);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT HideDeskBand([NativeTypeName("const IID &")] Guid* clsid)
+    {
+        return ((delegate* unmanaged<ITrayDeskBand*, Guid*, int>)(lpVtbl[4]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), clsid);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT IsDeskBandShown([NativeTypeName("const IID &")] Guid* clsid)
+    {
+        return ((delegate* unmanaged<ITrayDeskBand*, Guid*, int>)(lpVtbl[5]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), clsid);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT DeskBandRegistrationChanged()
+    {
+        return ((delegate* unmanaged<ITrayDeskBand*, int>)(lpVtbl[6]))((ITrayDeskBand*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT ShowDeskBand([NativeTypeName("const IID &")] Guid* clsid)
-        {
-            return ((delegate* unmanaged<ITrayDeskBand*, Guid*, int>)(lpVtbl[3]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), clsid);
-        }
+        HRESULT ShowDeskBand([NativeTypeName("const IID &")] Guid* clsid);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT HideDeskBand([NativeTypeName("const IID &")] Guid* clsid)
-        {
-            return ((delegate* unmanaged<ITrayDeskBand*, Guid*, int>)(lpVtbl[4]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), clsid);
-        }
+        HRESULT HideDeskBand([NativeTypeName("const IID &")] Guid* clsid);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT IsDeskBandShown([NativeTypeName("const IID &")] Guid* clsid)
-        {
-            return ((delegate* unmanaged<ITrayDeskBand*, Guid*, int>)(lpVtbl[5]))((ITrayDeskBand*)Unsafe.AsPointer(ref this), clsid);
-        }
+        HRESULT IsDeskBandShown([NativeTypeName("const IID &")] Guid* clsid);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT DeskBandRegistrationChanged()
-        {
-            return ((delegate* unmanaged<ITrayDeskBand*, int>)(lpVtbl[6]))((ITrayDeskBand*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT DeskBandRegistrationChanged();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT ShowDeskBand([NativeTypeName("const IID &")] Guid* clsid);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITrayDeskBand*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT HideDeskBand([NativeTypeName("const IID &")] Guid* clsid);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITrayDeskBand*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT IsDeskBandShown([NativeTypeName("const IID &")] Guid* clsid);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITrayDeskBand*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT DeskBandRegistrationChanged();
-        }
+        [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITrayDeskBand*, Guid*, int> ShowDeskBand;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITrayDeskBand*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITrayDeskBand*, Guid*, int> HideDeskBand;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITrayDeskBand*, uint> AddRef;
+        [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
+        public delegate* unmanaged<ITrayDeskBand*, Guid*, int> IsDeskBandShown;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITrayDeskBand*, uint> Release;
-
-            [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITrayDeskBand*, Guid*, int> ShowDeskBand;
-
-            [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITrayDeskBand*, Guid*, int> HideDeskBand;
-
-            [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-            public delegate* unmanaged<ITrayDeskBand*, Guid*, int> IsDeskBandShown;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<ITrayDeskBand*, int> DeskBandRegistrationChanged;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<ITrayDeskBand*, int> DeskBandRegistrationChanged;
     }
 }

@@ -7,84 +7,83 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct PPM_WMI_PERF_STATES
 {
-    public partial struct PPM_WMI_PERF_STATES
+    [NativeTypeName("DWORD")]
+    public uint Count;
+
+    [NativeTypeName("DWORD")]
+    public uint MaxFrequency;
+
+    [NativeTypeName("DWORD")]
+    public uint CurrentState;
+
+    [NativeTypeName("DWORD")]
+    public uint MaxPerfState;
+
+    [NativeTypeName("DWORD")]
+    public uint MinPerfState;
+
+    [NativeTypeName("DWORD")]
+    public uint LowestPerfState;
+
+    [NativeTypeName("DWORD")]
+    public uint ThermalConstraint;
+
+    public byte BusyAdjThreshold;
+
+    public byte PolicyType;
+
+    public byte Type;
+
+    public byte Reserved;
+
+    [NativeTypeName("DWORD")]
+    public uint TimerInterval;
+
+    [NativeTypeName("DWORD64")]
+    public ulong TargetProcessors;
+
+    [NativeTypeName("DWORD")]
+    public uint PStateHandler;
+
+    [NativeTypeName("DWORD")]
+    public uint PStateContext;
+
+    [NativeTypeName("DWORD")]
+    public uint TStateHandler;
+
+    [NativeTypeName("DWORD")]
+    public uint TStateContext;
+
+    [NativeTypeName("DWORD")]
+    public uint FeedbackHandler;
+
+    [NativeTypeName("DWORD")]
+    public uint Reserved1;
+
+    [NativeTypeName("DWORD64")]
+    public ulong Reserved2;
+
+    [NativeTypeName("PPM_WMI_PERF_STATE [1]")]
+    public _State_e__FixedBuffer State;
+
+    public partial struct _State_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint Count;
+        public PPM_WMI_PERF_STATE e0;
 
-        [NativeTypeName("DWORD")]
-        public uint MaxFrequency;
-
-        [NativeTypeName("DWORD")]
-        public uint CurrentState;
-
-        [NativeTypeName("DWORD")]
-        public uint MaxPerfState;
-
-        [NativeTypeName("DWORD")]
-        public uint MinPerfState;
-
-        [NativeTypeName("DWORD")]
-        public uint LowestPerfState;
-
-        [NativeTypeName("DWORD")]
-        public uint ThermalConstraint;
-
-        public byte BusyAdjThreshold;
-
-        public byte PolicyType;
-
-        public byte Type;
-
-        public byte Reserved;
-
-        [NativeTypeName("DWORD")]
-        public uint TimerInterval;
-
-        [NativeTypeName("DWORD64")]
-        public ulong TargetProcessors;
-
-        [NativeTypeName("DWORD")]
-        public uint PStateHandler;
-
-        [NativeTypeName("DWORD")]
-        public uint PStateContext;
-
-        [NativeTypeName("DWORD")]
-        public uint TStateHandler;
-
-        [NativeTypeName("DWORD")]
-        public uint TStateContext;
-
-        [NativeTypeName("DWORD")]
-        public uint FeedbackHandler;
-
-        [NativeTypeName("DWORD")]
-        public uint Reserved1;
-
-        [NativeTypeName("DWORD64")]
-        public ulong Reserved2;
-
-        [NativeTypeName("PPM_WMI_PERF_STATE [1]")]
-        public _State_e__FixedBuffer State;
-
-        public partial struct _State_e__FixedBuffer
+        public ref PPM_WMI_PERF_STATE this[int index]
         {
-            public PPM_WMI_PERF_STATE e0;
-
-            public ref PPM_WMI_PERF_STATE this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<PPM_WMI_PERF_STATE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<PPM_WMI_PERF_STATE> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

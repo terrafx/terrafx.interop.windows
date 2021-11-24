@@ -6,55 +6,54 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CRYPT_KEY_SIGN_MESSAGE_PARA
 {
-    public unsafe partial struct CRYPT_KEY_SIGN_MESSAGE_PARA
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
+
+    [NativeTypeName("DWORD")]
+    public uint dwMsgAndCertEncodingType;
+
+    [NativeTypeName("_CRYPT_KEY_SIGN_MESSAGE_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:16157:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    [NativeTypeName("DWORD")]
+    public uint dwKeySpec;
+
+    public CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
+
+    public void* pvHashAuxInfo;
+
+    public CRYPT_ALGORITHM_IDENTIFIER PubKeyAlgorithm;
+
+    public ref HCRYPTPROV hCryptProv
     {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
-
-        [NativeTypeName("DWORD")]
-        public uint dwMsgAndCertEncodingType;
-
-        [NativeTypeName("_CRYPT_KEY_SIGN_MESSAGE_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:16157:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        [NativeTypeName("DWORD")]
-        public uint dwKeySpec;
-
-        public CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
-
-        public void* pvHashAuxInfo;
-
-        public CRYPT_ALGORITHM_IDENTIFIER PubKeyAlgorithm;
-
-        public ref HCRYPTPROV hCryptProv
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hCryptProv, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hCryptProv, 1));
         }
+    }
 
-        public ref nuint hNCryptKey
+    public ref nuint hNCryptKey
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hNCryptKey, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.hNCryptKey, 1));
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            public HCRYPTPROV hCryptProv;
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        public HCRYPTPROV hCryptProv;
 
-            [FieldOffset(0)]
-            [NativeTypeName("NCRYPT_KEY_HANDLE")]
-            public nuint hNCryptKey;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("NCRYPT_KEY_HANDLE")]
+        public nuint hNCryptKey;
     }
 }

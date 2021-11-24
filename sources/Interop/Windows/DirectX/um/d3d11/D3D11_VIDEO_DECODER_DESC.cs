@@ -6,17 +6,16 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_VIDEO_DECODER_DESC
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_VIDEO_DECODER_DESC
-    {
-        public Guid Guid;
+    public Guid Guid;
 
-        public uint SampleWidth;
+    public uint SampleWidth;
 
-        public uint SampleHeight;
+    public uint SampleHeight;
 
-        public DXGI_FORMAT OutputFormat;
-    }
+    public DXGI_FORMAT OutputFormat;
 }

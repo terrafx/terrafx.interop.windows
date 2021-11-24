@@ -5,13 +5,12 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct ADPCMCOEFSET
-    {
-        public short iCoef1;
+namespace TerraFX.Interop.Windows;
 
-        public short iCoef2;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct ADPCMCOEFSET
+{
+    public short iCoef1;
+
+    public short iCoef2;
 }

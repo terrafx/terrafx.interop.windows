@@ -8,308 +8,307 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class PIN
 {
-    public static partial class PIN
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid PIN_CATEGORY_CAPTURE
     {
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid PIN_CATEGORY_CAPTURE
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x81, 0x42, 0x6C, 0xFB,
-                    0x53, 0x03,
-                    0xD1, 0x11,
-                    0x90,
-                    0x5F,
-                    0x00,
-                    0x00,
-                    0xC0,
-                    0xCC,
-                    0x16,
-                    0xBA
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x81, 0x42, 0x6C, 0xFB,
+                0x53, 0x03,
+                0xD1, 0x11,
+                0x90,
+                0x5F,
+                0x00,
+                0x00,
+                0xC0,
+                0xCC,
+                0x16,
+                0xBA
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid PIN_CATEGORY_PREVIEW
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid PIN_CATEGORY_PREVIEW
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x82, 0x42, 0x6C, 0xFB,
-                    0x53, 0x03,
-                    0xD1, 0x11,
-                    0x90,
-                    0x5F,
-                    0x00,
-                    0x00,
-                    0xC0,
-                    0xCC,
-                    0x16,
-                    0xBA
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x82, 0x42, 0x6C, 0xFB,
+                0x53, 0x03,
+                0xD1, 0x11,
+                0x90,
+                0x5F,
+                0x00,
+                0x00,
+                0xC0,
+                0xCC,
+                0x16,
+                0xBA
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid PIN_CATEGORY_ANALOGVIDEOIN
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid PIN_CATEGORY_ANALOGVIDEOIN
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x83, 0x42, 0x6C, 0xFB,
-                    0x53, 0x03,
-                    0xD1, 0x11,
-                    0x90,
-                    0x5F,
-                    0x00,
-                    0x00,
-                    0xC0,
-                    0xCC,
-                    0x16,
-                    0xBA
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x83, 0x42, 0x6C, 0xFB,
+                0x53, 0x03,
+                0xD1, 0x11,
+                0x90,
+                0x5F,
+                0x00,
+                0x00,
+                0xC0,
+                0xCC,
+                0x16,
+                0xBA
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid PIN_CATEGORY_VBI
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid PIN_CATEGORY_VBI
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x84, 0x42, 0x6C, 0xFB,
-                    0x53, 0x03,
-                    0xD1, 0x11,
-                    0x90,
-                    0x5F,
-                    0x00,
-                    0x00,
-                    0xC0,
-                    0xCC,
-                    0x16,
-                    0xBA
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x84, 0x42, 0x6C, 0xFB,
+                0x53, 0x03,
+                0xD1, 0x11,
+                0x90,
+                0x5F,
+                0x00,
+                0x00,
+                0xC0,
+                0xCC,
+                0x16,
+                0xBA
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid PIN_CATEGORY_VIDEOPORT
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid PIN_CATEGORY_VIDEOPORT
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x85, 0x42, 0x6C, 0xFB,
-                    0x53, 0x03,
-                    0xD1, 0x11,
-                    0x90,
-                    0x5F,
-                    0x00,
-                    0x00,
-                    0xC0,
-                    0xCC,
-                    0x16,
-                    0xBA
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x85, 0x42, 0x6C, 0xFB,
+                0x53, 0x03,
+                0xD1, 0x11,
+                0x90,
+                0x5F,
+                0x00,
+                0x00,
+                0xC0,
+                0xCC,
+                0x16,
+                0xBA
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid PIN_CATEGORY_NABTS
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid PIN_CATEGORY_NABTS
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x86, 0x42, 0x6C, 0xFB,
-                    0x53, 0x03,
-                    0xD1, 0x11,
-                    0x90,
-                    0x5F,
-                    0x00,
-                    0x00,
-                    0xC0,
-                    0xCC,
-                    0x16,
-                    0xBA
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x86, 0x42, 0x6C, 0xFB,
+                0x53, 0x03,
+                0xD1, 0x11,
+                0x90,
+                0x5F,
+                0x00,
+                0x00,
+                0xC0,
+                0xCC,
+                0x16,
+                0xBA
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid PIN_CATEGORY_EDS
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid PIN_CATEGORY_EDS
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x87, 0x42, 0x6C, 0xFB,
-                    0x53, 0x03,
-                    0xD1, 0x11,
-                    0x90,
-                    0x5F,
-                    0x00,
-                    0x00,
-                    0xC0,
-                    0xCC,
-                    0x16,
-                    0xBA
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x87, 0x42, 0x6C, 0xFB,
+                0x53, 0x03,
+                0xD1, 0x11,
+                0x90,
+                0x5F,
+                0x00,
+                0x00,
+                0xC0,
+                0xCC,
+                0x16,
+                0xBA
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid PIN_CATEGORY_TELETEXT
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid PIN_CATEGORY_TELETEXT
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x88, 0x42, 0x6C, 0xFB,
-                    0x53, 0x03,
-                    0xD1, 0x11,
-                    0x90,
-                    0x5F,
-                    0x00,
-                    0x00,
-                    0xC0,
-                    0xCC,
-                    0x16,
-                    0xBA
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x88, 0x42, 0x6C, 0xFB,
+                0x53, 0x03,
+                0xD1, 0x11,
+                0x90,
+                0x5F,
+                0x00,
+                0x00,
+                0xC0,
+                0xCC,
+                0x16,
+                0xBA
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid PIN_CATEGORY_CC
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid PIN_CATEGORY_CC
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x89, 0x42, 0x6C, 0xFB,
-                    0x53, 0x03,
-                    0xD1, 0x11,
-                    0x90,
-                    0x5F,
-                    0x00,
-                    0x00,
-                    0xC0,
-                    0xCC,
-                    0x16,
-                    0xBA
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x89, 0x42, 0x6C, 0xFB,
+                0x53, 0x03,
+                0xD1, 0x11,
+                0x90,
+                0x5F,
+                0x00,
+                0x00,
+                0xC0,
+                0xCC,
+                0x16,
+                0xBA
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid PIN_CATEGORY_STILL
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid PIN_CATEGORY_STILL
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x8A, 0x42, 0x6C, 0xFB,
-                    0x53, 0x03,
-                    0xD1, 0x11,
-                    0x90,
-                    0x5F,
-                    0x00,
-                    0x00,
-                    0xC0,
-                    0xCC,
-                    0x16,
-                    0xBA
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x8A, 0x42, 0x6C, 0xFB,
+                0x53, 0x03,
+                0xD1, 0x11,
+                0x90,
+                0x5F,
+                0x00,
+                0x00,
+                0xC0,
+                0xCC,
+                0x16,
+                0xBA
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid PIN_CATEGORY_TIMECODE
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid PIN_CATEGORY_TIMECODE
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x8B, 0x42, 0x6C, 0xFB,
-                    0x53, 0x03,
-                    0xD1, 0x11,
-                    0x90,
-                    0x5F,
-                    0x00,
-                    0x00,
-                    0xC0,
-                    0xCC,
-                    0x16,
-                    0xBA
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x8B, 0x42, 0x6C, 0xFB,
+                0x53, 0x03,
+                0xD1, 0x11,
+                0x90,
+                0x5F,
+                0x00,
+                0x00,
+                0xC0,
+                0xCC,
+                0x16,
+                0xBA
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const GUID")]
-        public static ref readonly Guid PIN_CATEGORY_VIDEOPORT_VBI
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid PIN_CATEGORY_VIDEOPORT_VBI
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x8C, 0x42, 0x6C, 0xFB,
-                    0x53, 0x03,
-                    0xD1, 0x11,
-                    0x90,
-                    0x5F,
-                    0x00,
-                    0x00,
-                    0xC0,
-                    0xCC,
-                    0x16,
-                    0xBA
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x8C, 0x42, 0x6C, 0xFB,
+                0x53, 0x03,
+                0xD1, 0x11,
+                0x90,
+                0x5F,
+                0x00,
+                0x00,
+                0xC0,
+                0xCC,
+                0x16,
+                0xBA
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

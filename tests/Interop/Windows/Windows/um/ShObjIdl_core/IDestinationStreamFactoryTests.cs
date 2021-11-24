@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDestinationStreamFactory" /> struct.</summary>
+public static unsafe partial class IDestinationStreamFactoryTests
 {
-    /// <summary>Provides validation of the <see cref="IDestinationStreamFactory" /> struct.</summary>
-    public static unsafe partial class IDestinationStreamFactoryTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDestinationStreamFactory" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDestinationStreamFactory" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDestinationStreamFactory).GUID, Is.EqualTo(IID_IDestinationStreamFactory));
-        }
+        Assert.That(typeof(IDestinationStreamFactory).GUID, Is.EqualTo(IID_IDestinationStreamFactory));
+    }
 
-        /// <summary>Validates that the <see cref="IDestinationStreamFactory" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDestinationStreamFactory>(), Is.EqualTo(sizeof(IDestinationStreamFactory)));
-        }
+    /// <summary>Validates that the <see cref="IDestinationStreamFactory" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDestinationStreamFactory>(), Is.EqualTo(sizeof(IDestinationStreamFactory)));
+    }
 
-        /// <summary>Validates that the <see cref="IDestinationStreamFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDestinationStreamFactory).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDestinationStreamFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDestinationStreamFactory).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDestinationStreamFactory" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDestinationStreamFactory" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDestinationStreamFactory), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDestinationStreamFactory), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDestinationStreamFactory), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDestinationStreamFactory), Is.EqualTo(4));
         }
     }
 }

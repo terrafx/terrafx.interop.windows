@@ -5,13 +5,12 @@
 
 using static TerraFX.Interop.Windows.SPRULESTATE;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechRuleState
 {
-    public enum SpeechRuleState
-    {
-        SGDSInactive = SPRS_INACTIVE,
-        SGDSActive = SPRS_ACTIVE,
-        SGDSActiveWithAutoPause = SPRS_ACTIVE_WITH_AUTO_PAUSE,
-        SGDSActiveUserDelimited = SPRS_ACTIVE_USER_DELIMITED,
-    }
+    SGDSInactive = SPRS_INACTIVE,
+    SGDSActive = SPRS_ACTIVE,
+    SGDSActiveWithAutoPause = SPRS_ACTIVE_WITH_AUTO_PAUSE,
+    SGDSActiveUserDelimited = SPRS_ACTIVE_USER_DELIMITED,
 }

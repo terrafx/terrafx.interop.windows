@@ -3,23 +3,22 @@
 // Ported from um/d2d1effectauthor.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D2D1_RESOURCE_TEXTURE_PROPERTIES
 {
-    public unsafe partial struct D2D1_RESOURCE_TEXTURE_PROPERTIES
-    {
-        [NativeTypeName("const UINT32 *")]
-        public uint* extents;
+    [NativeTypeName("const UINT32 *")]
+    public uint* extents;
 
-        [NativeTypeName("UINT32")]
-        public uint dimensions;
+    [NativeTypeName("UINT32")]
+    public uint dimensions;
 
-        public D2D1_BUFFER_PRECISION bufferPrecision;
+    public D2D1_BUFFER_PRECISION bufferPrecision;
 
-        public D2D1_CHANNEL_DEPTH channelDepth;
+    public D2D1_CHANNEL_DEPTH channelDepth;
 
-        public D2D1_FILTER filter;
+    public D2D1_FILTER filter;
 
-        [NativeTypeName("const D2D1_EXTEND_MODE *")]
-        public D2D1_EXTEND_MODE* extendModes;
-    }
+    [NativeTypeName("const D2D1_EXTEND_MODE *")]
+    public D2D1_EXTEND_MODE* extendModes;
 }

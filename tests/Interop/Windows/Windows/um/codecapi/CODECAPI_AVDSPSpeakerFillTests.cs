@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CODECAPI_AVDSPSpeakerFill" /> struct.</summary>
+public static unsafe partial class CODECAPI_AVDSPSpeakerFillTests
 {
-    /// <summary>Provides validation of the <see cref="CODECAPI_AVDSPSpeakerFill" /> struct.</summary>
-    public static unsafe partial class CODECAPI_AVDSPSpeakerFillTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVDSPSpeakerFill" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVDSPSpeakerFill" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CODECAPI_AVDSPSpeakerFill).GUID, Is.EqualTo(IID_CODECAPI_AVDSPSpeakerFill));
-        }
+        Assert.That(typeof(CODECAPI_AVDSPSpeakerFill).GUID, Is.EqualTo(IID_CODECAPI_AVDSPSpeakerFill));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVDSPSpeakerFill" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CODECAPI_AVDSPSpeakerFill>(), Is.EqualTo(sizeof(CODECAPI_AVDSPSpeakerFill)));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVDSPSpeakerFill" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CODECAPI_AVDSPSpeakerFill>(), Is.EqualTo(sizeof(CODECAPI_AVDSPSpeakerFill)));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVDSPSpeakerFill" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CODECAPI_AVDSPSpeakerFill).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVDSPSpeakerFill" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CODECAPI_AVDSPSpeakerFill).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVDSPSpeakerFill" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CODECAPI_AVDSPSpeakerFill), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVDSPSpeakerFill" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CODECAPI_AVDSPSpeakerFill), Is.EqualTo(1));
     }
 }

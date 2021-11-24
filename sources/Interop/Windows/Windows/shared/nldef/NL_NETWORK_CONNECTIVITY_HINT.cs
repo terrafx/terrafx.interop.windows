@@ -5,22 +5,21 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+public partial struct NL_NETWORK_CONNECTIVITY_HINT
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public partial struct NL_NETWORK_CONNECTIVITY_HINT
-    {
-        public NL_NETWORK_CONNECTIVITY_LEVEL_HINT ConnectivityLevel;
+    public NL_NETWORK_CONNECTIVITY_LEVEL_HINT ConnectivityLevel;
 
-        public NL_NETWORK_CONNECTIVITY_COST_HINT ConnectivityCost;
+    public NL_NETWORK_CONNECTIVITY_COST_HINT ConnectivityCost;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte ApproachingDataLimit;
+    [NativeTypeName("BOOLEAN")]
+    public byte ApproachingDataLimit;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte OverDataLimit;
+    [NativeTypeName("BOOLEAN")]
+    public byte OverDataLimit;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte Roaming;
-    }
+    [NativeTypeName("BOOLEAN")]
+    public byte Roaming;
 }

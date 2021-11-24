@@ -8,12 +8,11 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public static unsafe partial class DirectX
 {
-    public static unsafe partial class DirectX
-    {
-        [SupportedOSPlatform("windows10.0.19041.0")]
-        [DllImport("dxcore", ExactSpelling = true)]
-        public static extern HRESULT DXCoreCreateAdapterFactory([NativeTypeName("const IID &")] Guid* riid, void** ppvFactory);
-    }
+    [SupportedOSPlatform("windows10.0.19041.0")]
+    [DllImport("dxcore", ExactSpelling = true)]
+    public static extern HRESULT DXCoreCreateAdapterFactory([NativeTypeName("const IID &")] Guid* riid, void** ppvFactory);
 }

@@ -7,129 +7,128 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3050F663-98B5-11CF-BB82-00AA00BDCE0B")]
+[NativeTypeName("struct IHTMLEditServices : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface
 {
-    [Guid("3050F663-98B5-11CF-BB82-00AA00BDCE0B")]
-    [NativeTypeName("struct IHTMLEditServices : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IHTMLEditServices*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IHTMLEditServices*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IHTMLEditServices*, uint>)(lpVtbl[1]))((IHTMLEditServices*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IHTMLEditServices*, uint>)(lpVtbl[1]))((IHTMLEditServices*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IHTMLEditServices*, uint>)(lpVtbl[2]))((IHTMLEditServices*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IHTMLEditServices*, uint>)(lpVtbl[2]))((IHTMLEditServices*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT AddDesigner(IHTMLEditDesigner* pIDesigner)
+    {
+        return ((delegate* unmanaged<IHTMLEditServices*, IHTMLEditDesigner*, int>)(lpVtbl[3]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIDesigner);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT RemoveDesigner(IHTMLEditDesigner* pIDesigner)
+    {
+        return ((delegate* unmanaged<IHTMLEditServices*, IHTMLEditDesigner*, int>)(lpVtbl[4]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIDesigner);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetSelectionServices(IMarkupContainer* pIContainer, ISelectionServices** ppSelSvc)
+    {
+        return ((delegate* unmanaged<IHTMLEditServices*, IMarkupContainer*, ISelectionServices**, int>)(lpVtbl[5]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIContainer, ppSelSvc);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT MoveToSelectionAnchor(IMarkupPointer* pIStartAnchor)
+    {
+        return ((delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, int>)(lpVtbl[6]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIStartAnchor);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT MoveToSelectionEnd(IMarkupPointer* pIEndAnchor)
+    {
+        return ((delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, int>)(lpVtbl[7]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIEndAnchor);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT SelectRange(IMarkupPointer* pStart, IMarkupPointer* pEnd, SELECTION_TYPE eType)
+    {
+        return ((delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, IMarkupPointer*, SELECTION_TYPE, int>)(lpVtbl[8]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pStart, pEnd, eType);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT AddDesigner(IHTMLEditDesigner* pIDesigner)
-        {
-            return ((delegate* unmanaged<IHTMLEditServices*, IHTMLEditDesigner*, int>)(lpVtbl[3]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIDesigner);
-        }
+        HRESULT AddDesigner(IHTMLEditDesigner* pIDesigner);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT RemoveDesigner(IHTMLEditDesigner* pIDesigner)
-        {
-            return ((delegate* unmanaged<IHTMLEditServices*, IHTMLEditDesigner*, int>)(lpVtbl[4]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIDesigner);
-        }
+        HRESULT RemoveDesigner(IHTMLEditDesigner* pIDesigner);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetSelectionServices(IMarkupContainer* pIContainer, ISelectionServices** ppSelSvc)
-        {
-            return ((delegate* unmanaged<IHTMLEditServices*, IMarkupContainer*, ISelectionServices**, int>)(lpVtbl[5]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIContainer, ppSelSvc);
-        }
+        HRESULT GetSelectionServices(IMarkupContainer* pIContainer, ISelectionServices** ppSelSvc);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT MoveToSelectionAnchor(IMarkupPointer* pIStartAnchor)
-        {
-            return ((delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, int>)(lpVtbl[6]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIStartAnchor);
-        }
+        HRESULT MoveToSelectionAnchor(IMarkupPointer* pIStartAnchor);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT MoveToSelectionEnd(IMarkupPointer* pIEndAnchor)
-        {
-            return ((delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, int>)(lpVtbl[7]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIEndAnchor);
-        }
+        HRESULT MoveToSelectionEnd(IMarkupPointer* pIEndAnchor);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT SelectRange(IMarkupPointer* pStart, IMarkupPointer* pEnd, SELECTION_TYPE eType)
-        {
-            return ((delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, IMarkupPointer*, SELECTION_TYPE, int>)(lpVtbl[8]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pStart, pEnd, eType);
-        }
+        HRESULT SelectRange(IMarkupPointer* pStart, IMarkupPointer* pEnd, SELECTION_TYPE eType);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT AddDesigner(IHTMLEditDesigner* pIDesigner);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLEditServices*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT RemoveDesigner(IHTMLEditDesigner* pIDesigner);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLEditServices*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetSelectionServices(IMarkupContainer* pIContainer, ISelectionServices** ppSelSvc);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLEditServices*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT MoveToSelectionAnchor(IMarkupPointer* pIStartAnchor);
+        [NativeTypeName("HRESULT (IHTMLEditDesigner *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLEditServices*, IHTMLEditDesigner*, int> AddDesigner;
 
-            [VtblIndex(7)]
-            HRESULT MoveToSelectionEnd(IMarkupPointer* pIEndAnchor);
+        [NativeTypeName("HRESULT (IHTMLEditDesigner *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLEditServices*, IHTMLEditDesigner*, int> RemoveDesigner;
 
-            [VtblIndex(8)]
-            HRESULT SelectRange(IMarkupPointer* pStart, IMarkupPointer* pEnd, SELECTION_TYPE eType);
-        }
+        [NativeTypeName("HRESULT (IMarkupContainer *, ISelectionServices **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLEditServices*, IMarkupContainer*, ISelectionServices**, int> GetSelectionServices;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLEditServices*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (IMarkupPointer *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, int> MoveToSelectionAnchor;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLEditServices*, uint> AddRef;
+        [NativeTypeName("HRESULT (IMarkupPointer *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, int> MoveToSelectionEnd;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLEditServices*, uint> Release;
-
-            [NativeTypeName("HRESULT (IHTMLEditDesigner *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLEditServices*, IHTMLEditDesigner*, int> AddDesigner;
-
-            [NativeTypeName("HRESULT (IHTMLEditDesigner *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLEditServices*, IHTMLEditDesigner*, int> RemoveDesigner;
-
-            [NativeTypeName("HRESULT (IMarkupContainer *, ISelectionServices **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLEditServices*, IMarkupContainer*, ISelectionServices**, int> GetSelectionServices;
-
-            [NativeTypeName("HRESULT (IMarkupPointer *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, int> MoveToSelectionAnchor;
-
-            [NativeTypeName("HRESULT (IMarkupPointer *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, int> MoveToSelectionEnd;
-
-            [NativeTypeName("HRESULT (IMarkupPointer *, IMarkupPointer *, SELECTION_TYPE) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, IMarkupPointer*, SELECTION_TYPE, int> SelectRange;
-        }
+        [NativeTypeName("HRESULT (IMarkupPointer *, IMarkupPointer *, SELECTION_TYPE) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, IMarkupPointer*, SELECTION_TYPE, int> SelectRange;
     }
 }

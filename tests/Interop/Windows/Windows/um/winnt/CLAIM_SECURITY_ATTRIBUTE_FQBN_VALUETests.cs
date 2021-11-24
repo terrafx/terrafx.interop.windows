@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUETests
 {
-    /// <summary>Provides validation of the <see cref="CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUETests
+    /// <summary>Validates that the <see cref="CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE>(), Is.EqualTo(sizeof(CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE)));
-        }
+        Assert.That(Marshal.SizeOf<CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE>(), Is.EqualTo(sizeof(CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE)));
+    }
 
-        /// <summary>Validates that the <see cref="CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE), Is.EqualTo(16));
     }
 }

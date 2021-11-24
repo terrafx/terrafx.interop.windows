@@ -5,45 +5,44 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.1")]
+public partial struct PSS_PERFORMANCE_COUNTERS
 {
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct PSS_PERFORMANCE_COUNTERS
-    {
-        [NativeTypeName("UINT64")]
-        public ulong TotalCycleCount;
+    [NativeTypeName("UINT64")]
+    public ulong TotalCycleCount;
 
-        [NativeTypeName("UINT64")]
-        public ulong TotalWallClockPeriod;
+    [NativeTypeName("UINT64")]
+    public ulong TotalWallClockPeriod;
 
-        [NativeTypeName("UINT64")]
-        public ulong VaCloneCycleCount;
+    [NativeTypeName("UINT64")]
+    public ulong VaCloneCycleCount;
 
-        [NativeTypeName("UINT64")]
-        public ulong VaCloneWallClockPeriod;
+    [NativeTypeName("UINT64")]
+    public ulong VaCloneWallClockPeriod;
 
-        [NativeTypeName("UINT64")]
-        public ulong VaSpaceCycleCount;
+    [NativeTypeName("UINT64")]
+    public ulong VaSpaceCycleCount;
 
-        [NativeTypeName("UINT64")]
-        public ulong VaSpaceWallClockPeriod;
+    [NativeTypeName("UINT64")]
+    public ulong VaSpaceWallClockPeriod;
 
-        [NativeTypeName("UINT64")]
-        public ulong AuxPagesCycleCount;
+    [NativeTypeName("UINT64")]
+    public ulong AuxPagesCycleCount;
 
-        [NativeTypeName("UINT64")]
-        public ulong AuxPagesWallClockPeriod;
+    [NativeTypeName("UINT64")]
+    public ulong AuxPagesWallClockPeriod;
 
-        [NativeTypeName("UINT64")]
-        public ulong HandlesCycleCount;
+    [NativeTypeName("UINT64")]
+    public ulong HandlesCycleCount;
 
-        [NativeTypeName("UINT64")]
-        public ulong HandlesWallClockPeriod;
+    [NativeTypeName("UINT64")]
+    public ulong HandlesWallClockPeriod;
 
-        [NativeTypeName("UINT64")]
-        public ulong ThreadsCycleCount;
+    [NativeTypeName("UINT64")]
+    public ulong ThreadsCycleCount;
 
-        [NativeTypeName("UINT64")]
-        public ulong ThreadsWallClockPeriod;
-    }
+    [NativeTypeName("UINT64")]
+    public ulong ThreadsWallClockPeriod;
 }

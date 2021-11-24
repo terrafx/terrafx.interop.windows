@@ -3,11 +3,10 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SPVFEATURE
 {
-    public enum SPVFEATURE
-    {
-        SPVFEATURE_STRESSED = (1 << 0),
-        SPVFEATURE_EMPHASIS = (1 << 1),
-    }
+    SPVFEATURE_STRESSED = (1 << 0),
+    SPVFEATURE_EMPHASIS = (1 << 1),
 }

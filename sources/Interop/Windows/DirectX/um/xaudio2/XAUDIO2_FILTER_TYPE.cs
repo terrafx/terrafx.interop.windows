@@ -3,15 +3,14 @@
 // Ported from um/xaudio2.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum XAUDIO2_FILTER_TYPE
 {
-    public enum XAUDIO2_FILTER_TYPE
-    {
-        LowPassFilter,
-        BandPassFilter,
-        HighPassFilter,
-        NotchFilter,
-        LowPassOnePoleFilter,
-        HighPassOnePoleFilter,
-    }
+    LowPassFilter,
+    BandPassFilter,
+    HighPassFilter,
+    NotchFilter,
+    LowPassOnePoleFilter,
+    HighPassOnePoleFilter,
 }

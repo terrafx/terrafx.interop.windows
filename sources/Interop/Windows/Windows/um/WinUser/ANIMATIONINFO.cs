@@ -3,12 +3,11 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct ANIMATIONINFO
-    {
-        public uint cbSize;
+namespace TerraFX.Interop.Windows;
 
-        public int iMinAnimate;
-    }
+public partial struct ANIMATIONINFO
+{
+    public uint cbSize;
+
+    public int iMinAnimate;
 }

@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct ENCLAVE_CREATE_INFO_SGX
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct ENCLAVE_CREATE_INFO_SGX
-    {
-        [NativeTypeName("BYTE [4096]")]
-        public fixed byte Secs[4096];
-    }
+    [NativeTypeName("BYTE [4096]")]
+    public fixed byte Secs[4096];
 }

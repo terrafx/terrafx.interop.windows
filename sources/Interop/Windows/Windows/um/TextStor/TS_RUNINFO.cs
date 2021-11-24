@@ -3,13 +3,12 @@
 // Ported from um/TextStor.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct TS_RUNINFO
-    {
-        [NativeTypeName("ULONG")]
-        public uint uCount;
+namespace TerraFX.Interop.Windows;
 
-        public TsRunType type;
-    }
+public partial struct TS_RUNINFO
+{
+    [NativeTypeName("ULONG")]
+    public uint uCount;
+
+    public TsRunType type;
 }

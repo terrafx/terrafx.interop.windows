@@ -3,14 +3,13 @@
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct SPC_STATEMENT_TYPE
-    {
-        [NativeTypeName("DWORD")]
-        public uint cKeyPurposeId;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("LPSTR *")]
-        public sbyte** rgpszKeyPurposeId;
-    }
+public unsafe partial struct SPC_STATEMENT_TYPE
+{
+    [NativeTypeName("DWORD")]
+    public uint cKeyPurposeId;
+
+    [NativeTypeName("LPSTR *")]
+    public sbyte** rgpszKeyPurposeId;
 }

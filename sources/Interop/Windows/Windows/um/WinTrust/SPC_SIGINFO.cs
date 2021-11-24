@@ -5,28 +5,27 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SPC_SIGINFO
 {
-    public partial struct SPC_SIGINFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwSipVersion;
+    [NativeTypeName("DWORD")]
+    public uint dwSipVersion;
 
-        public Guid gSIPGuid;
+    public Guid gSIPGuid;
 
-        [NativeTypeName("DWORD")]
-        public uint dwReserved1;
+    [NativeTypeName("DWORD")]
+    public uint dwReserved1;
 
-        [NativeTypeName("DWORD")]
-        public uint dwReserved2;
+    [NativeTypeName("DWORD")]
+    public uint dwReserved2;
 
-        [NativeTypeName("DWORD")]
-        public uint dwReserved3;
+    [NativeTypeName("DWORD")]
+    public uint dwReserved3;
 
-        [NativeTypeName("DWORD")]
-        public uint dwReserved4;
+    [NativeTypeName("DWORD")]
+    public uint dwReserved4;
 
-        [NativeTypeName("DWORD")]
-        public uint dwReserved5;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwReserved5;
 }

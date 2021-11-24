@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[SupportedOSPlatform("windows10.0.14393.0")]
+public enum VisualElementState
 {
-    [SupportedOSPlatform("windows10.0.14393.0")]
-    public enum VisualElementState
-    {
-        ErrorResolved = 0,
-        ErrorResourceNotFound = (ErrorResolved + 1),
-        ErrorInvalidResource = (ErrorResourceNotFound + 1),
-    }
+    ErrorResolved = 0,
+    ErrorResourceNotFound = (ErrorResolved + 1),
+    ErrorInvalidResource = (ErrorResourceNotFound + 1),
 }

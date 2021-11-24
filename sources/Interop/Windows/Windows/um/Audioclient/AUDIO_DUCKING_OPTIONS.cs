@@ -6,13 +6,12 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+[SupportedOSPlatform("windows10.0.19043.0")]
+public enum AUDIO_DUCKING_OPTIONS
 {
-    [Flags]
-    [SupportedOSPlatform("windows10.0.19043.0")]
-    public enum AUDIO_DUCKING_OPTIONS
-    {
-        AUDIO_DUCKING_OPTIONS_DEFAULT = 0,
-        AUDIO_DUCKING_OPTIONS_DO_NOT_DUCK_OTHER_STREAMS = 0x1,
-    }
+    AUDIO_DUCKING_OPTIONS_DEFAULT = 0,
+    AUDIO_DUCKING_OPTIONS_DO_NOT_DUCK_OTHER_STREAMS = 0x1,
 }

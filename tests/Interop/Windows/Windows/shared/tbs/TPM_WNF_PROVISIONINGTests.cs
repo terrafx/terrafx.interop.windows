@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TPM_WNF_PROVISIONING" /> struct.</summary>
+public static unsafe partial class TPM_WNF_PROVISIONINGTests
 {
-    /// <summary>Provides validation of the <see cref="TPM_WNF_PROVISIONING" /> struct.</summary>
-    public static unsafe partial class TPM_WNF_PROVISIONINGTests
+    /// <summary>Validates that the <see cref="TPM_WNF_PROVISIONING" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TPM_WNF_PROVISIONING" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TPM_WNF_PROVISIONING>(), Is.EqualTo(sizeof(TPM_WNF_PROVISIONING)));
-        }
+        Assert.That(Marshal.SizeOf<TPM_WNF_PROVISIONING>(), Is.EqualTo(sizeof(TPM_WNF_PROVISIONING)));
+    }
 
-        /// <summary>Validates that the <see cref="TPM_WNF_PROVISIONING" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TPM_WNF_PROVISIONING).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TPM_WNF_PROVISIONING" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TPM_WNF_PROVISIONING).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TPM_WNF_PROVISIONING" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TPM_WNF_PROVISIONING), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="TPM_WNF_PROVISIONING" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TPM_WNF_PROVISIONING), Is.EqualTo(32));
     }
 }

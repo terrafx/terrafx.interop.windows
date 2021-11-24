@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WGLSWAP" /> struct.</summary>
+public static unsafe partial class WGLSWAPTests
 {
-    /// <summary>Provides validation of the <see cref="WGLSWAP" /> struct.</summary>
-    public static unsafe partial class WGLSWAPTests
+    /// <summary>Validates that the <see cref="WGLSWAP" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WGLSWAP" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WGLSWAP>(), Is.EqualTo(sizeof(WGLSWAP)));
-        }
+        Assert.That(Marshal.SizeOf<WGLSWAP>(), Is.EqualTo(sizeof(WGLSWAP)));
+    }
 
-        /// <summary>Validates that the <see cref="WGLSWAP" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WGLSWAP).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WGLSWAP" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WGLSWAP).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WGLSWAP" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WGLSWAP" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WGLSWAP), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(WGLSWAP), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(WGLSWAP), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(WGLSWAP), Is.EqualTo(8));
         }
     }
 }

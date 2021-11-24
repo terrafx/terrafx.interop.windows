@@ -5,17 +5,16 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct XAUDIO2_VOICE_STATE
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct XAUDIO2_VOICE_STATE
-    {
-        public void* pCurrentBufferContext;
+    public void* pCurrentBufferContext;
 
-        [NativeTypeName("UINT32")]
-        public uint BuffersQueued;
+    [NativeTypeName("UINT32")]
+    public uint BuffersQueued;
 
-        [NativeTypeName("UINT64")]
-        public ulong SamplesPlayed;
-    }
+    [NativeTypeName("UINT64")]
+    public ulong SamplesPlayed;
 }

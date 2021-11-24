@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="FMTOWNS_SND_WAVEFORMAT" /> struct.</summary>
+public static unsafe partial class FMTOWNS_SND_WAVEFORMATTests
 {
-    /// <summary>Provides validation of the <see cref="FMTOWNS_SND_WAVEFORMAT" /> struct.</summary>
-    public static unsafe partial class FMTOWNS_SND_WAVEFORMATTests
+    /// <summary>Validates that the <see cref="FMTOWNS_SND_WAVEFORMAT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="FMTOWNS_SND_WAVEFORMAT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<FMTOWNS_SND_WAVEFORMAT>(), Is.EqualTo(sizeof(FMTOWNS_SND_WAVEFORMAT)));
-        }
+        Assert.That(Marshal.SizeOf<FMTOWNS_SND_WAVEFORMAT>(), Is.EqualTo(sizeof(FMTOWNS_SND_WAVEFORMAT)));
+    }
 
-        /// <summary>Validates that the <see cref="FMTOWNS_SND_WAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(FMTOWNS_SND_WAVEFORMAT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="FMTOWNS_SND_WAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(FMTOWNS_SND_WAVEFORMAT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="FMTOWNS_SND_WAVEFORMAT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(FMTOWNS_SND_WAVEFORMAT), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="FMTOWNS_SND_WAVEFORMAT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(FMTOWNS_SND_WAVEFORMAT), Is.EqualTo(20));
     }
 }

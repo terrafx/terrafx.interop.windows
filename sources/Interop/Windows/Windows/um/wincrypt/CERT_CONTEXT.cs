@@ -3,21 +3,20 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CERT_CONTEXT
 {
-    public unsafe partial struct CERT_CONTEXT
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwCertEncodingType;
+    [NativeTypeName("DWORD")]
+    public uint dwCertEncodingType;
 
-        public byte* pbCertEncoded;
+    public byte* pbCertEncoded;
 
-        [NativeTypeName("DWORD")]
-        public uint cbCertEncoded;
+    [NativeTypeName("DWORD")]
+    public uint cbCertEncoded;
 
-        [NativeTypeName("PCERT_INFO")]
-        public CERT_INFO* pCertInfo;
+    [NativeTypeName("PCERT_INFO")]
+    public CERT_INFO* pCertInfo;
 
-        public HCERTSTORE hCertStore;
-    }
+    public HCERTSTORE hCertStore;
 }

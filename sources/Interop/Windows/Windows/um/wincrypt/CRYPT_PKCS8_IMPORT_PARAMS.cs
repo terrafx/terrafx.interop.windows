@@ -3,23 +3,22 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CRYPT_PKCS8_IMPORT_PARAMS
 {
-    public unsafe partial struct CRYPT_PKCS8_IMPORT_PARAMS
-    {
-        [NativeTypeName("CRYPT_DIGEST_BLOB")]
-        public CRYPT_DATA_BLOB PrivateKey;
+    [NativeTypeName("CRYPT_DIGEST_BLOB")]
+    public CRYPT_DATA_BLOB PrivateKey;
 
-        [NativeTypeName("PCRYPT_RESOLVE_HCRYPTPROV_FUNC")]
-        public delegate* unmanaged<CRYPT_PRIVATE_KEY_INFO*, HCRYPTPROV*, void*, BOOL> pResolvehCryptProvFunc;
+    [NativeTypeName("PCRYPT_RESOLVE_HCRYPTPROV_FUNC")]
+    public delegate* unmanaged<CRYPT_PRIVATE_KEY_INFO*, HCRYPTPROV*, void*, BOOL> pResolvehCryptProvFunc;
 
-        [NativeTypeName("LPVOID")]
-        public void* pVoidResolveFunc;
+    [NativeTypeName("LPVOID")]
+    public void* pVoidResolveFunc;
 
-        [NativeTypeName("PCRYPT_DECRYPT_PRIVATE_KEY_FUNC")]
-        public delegate* unmanaged<CRYPT_ALGORITHM_IDENTIFIER, CRYPT_DATA_BLOB, byte*, uint*, void*, BOOL> pDecryptPrivateKeyFunc;
+    [NativeTypeName("PCRYPT_DECRYPT_PRIVATE_KEY_FUNC")]
+    public delegate* unmanaged<CRYPT_ALGORITHM_IDENTIFIER, CRYPT_DATA_BLOB, byte*, uint*, void*, BOOL> pDecryptPrivateKeyFunc;
 
-        [NativeTypeName("LPVOID")]
-        public void* pVoidDecryptFunc;
-    }
+    [NativeTypeName("LPVOID")]
+    public void* pVoidDecryptFunc;
 }

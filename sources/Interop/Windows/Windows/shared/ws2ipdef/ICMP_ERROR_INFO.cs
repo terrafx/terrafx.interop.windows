@@ -5,19 +5,18 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+public partial struct ICMP_ERROR_INFO
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public partial struct ICMP_ERROR_INFO
-    {
-        public SOCKADDR_INET srcaddress;
+    public SOCKADDR_INET srcaddress;
 
-        public IPPROTO protocol;
+    public IPPROTO protocol;
 
-        [NativeTypeName("UINT8")]
-        public byte type;
+    [NativeTypeName("UINT8")]
+    public byte type;
 
-        [NativeTypeName("UINT8")]
-        public byte code;
-    }
+    [NativeTypeName("UINT8")]
+    public byte code;
 }

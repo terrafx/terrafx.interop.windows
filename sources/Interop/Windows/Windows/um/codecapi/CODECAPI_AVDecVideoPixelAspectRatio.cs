@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("B0CF8245-F32D-41DF-B02C-87BD304D12AB")]
+public partial struct CODECAPI_AVDecVideoPixelAspectRatio
 {
-    [Guid("B0CF8245-F32D-41DF-B02C-87BD304D12AB")]
-    public partial struct CODECAPI_AVDecVideoPixelAspectRatio
-    {
-    }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DIGIADPCMWAVEFORMAT" /> struct.</summary>
+public static unsafe partial class DIGIADPCMWAVEFORMATTests
 {
-    /// <summary>Provides validation of the <see cref="DIGIADPCMWAVEFORMAT" /> struct.</summary>
-    public static unsafe partial class DIGIADPCMWAVEFORMATTests
+    /// <summary>Validates that the <see cref="DIGIADPCMWAVEFORMAT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DIGIADPCMWAVEFORMAT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DIGIADPCMWAVEFORMAT>(), Is.EqualTo(sizeof(DIGIADPCMWAVEFORMAT)));
-        }
+        Assert.That(Marshal.SizeOf<DIGIADPCMWAVEFORMAT>(), Is.EqualTo(sizeof(DIGIADPCMWAVEFORMAT)));
+    }
 
-        /// <summary>Validates that the <see cref="DIGIADPCMWAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DIGIADPCMWAVEFORMAT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DIGIADPCMWAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DIGIADPCMWAVEFORMAT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DIGIADPCMWAVEFORMAT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DIGIADPCMWAVEFORMAT), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="DIGIADPCMWAVEFORMAT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DIGIADPCMWAVEFORMAT), Is.EqualTo(20));
     }
 }

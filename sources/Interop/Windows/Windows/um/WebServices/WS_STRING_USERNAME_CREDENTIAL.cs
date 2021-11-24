@@ -3,14 +3,13 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct WS_STRING_USERNAME_CREDENTIAL
 {
-    public partial struct WS_STRING_USERNAME_CREDENTIAL
-    {
-        public WS_USERNAME_CREDENTIAL credential;
+    public WS_USERNAME_CREDENTIAL credential;
 
-        public WS_STRING username;
+    public WS_STRING username;
 
-        public WS_STRING password;
-    }
+    public WS_STRING password;
 }

@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLTableCaption" /> struct.</summary>
+public static unsafe partial class HTMLTableCaptionTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLTableCaption" /> struct.</summary>
-    public static unsafe partial class HTMLTableCaptionTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLTableCaption" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLTableCaption" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLTableCaption).GUID, Is.EqualTo(IID_HTMLTableCaption));
-        }
+        Assert.That(typeof(HTMLTableCaption).GUID, Is.EqualTo(IID_HTMLTableCaption));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLTableCaption" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLTableCaption>(), Is.EqualTo(sizeof(HTMLTableCaption)));
-        }
+    /// <summary>Validates that the <see cref="HTMLTableCaption" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLTableCaption>(), Is.EqualTo(sizeof(HTMLTableCaption)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLTableCaption" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLTableCaption).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLTableCaption" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLTableCaption).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLTableCaption" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTMLTableCaption), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTMLTableCaption" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTMLTableCaption), Is.EqualTo(1));
     }
 }

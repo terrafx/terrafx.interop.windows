@@ -7,98 +7,97 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct TP_CALLBACK_ENVIRON_V3
 {
-    public unsafe partial struct TP_CALLBACK_ENVIRON_V3
+    [NativeTypeName("TP_VERSION")]
+    public uint Version;
+
+    public PTP_POOL Pool;
+
+    public PTP_CLEANUP_GROUP CleanupGroup;
+
+    [NativeTypeName("PTP_CLEANUP_GROUP_CANCEL_CALLBACK")]
+    public delegate* unmanaged<void*, void*, void> CleanupGroupCancelCallback;
+
+    [NativeTypeName("PVOID")]
+    public void* RaceDll;
+
+    [NativeTypeName("struct _ACTIVATION_CONTEXT *")]
+    public IntPtr ActivationContext;
+
+    [NativeTypeName("PTP_SIMPLE_CALLBACK")]
+    public delegate* unmanaged<PTP_CALLBACK_INSTANCE, void*, void> FinalizationCallback;
+
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:24065:5)")]
+    public _u_e__Union u;
+
+    public TP_CALLBACK_PRIORITY CallbackPriority;
+
+    [NativeTypeName("DWORD")]
+    public uint Size;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _u_e__Union
     {
-        [NativeTypeName("TP_VERSION")]
-        public uint Version;
-
-        public PTP_POOL Pool;
-
-        public PTP_CLEANUP_GROUP CleanupGroup;
-
-        [NativeTypeName("PTP_CLEANUP_GROUP_CANCEL_CALLBACK")]
-        public delegate* unmanaged<void*, void*, void> CleanupGroupCancelCallback;
-
-        [NativeTypeName("PVOID")]
-        public void* RaceDll;
-
-        [NativeTypeName("struct _ACTIVATION_CONTEXT *")]
-        public IntPtr ActivationContext;
-
-        [NativeTypeName("PTP_SIMPLE_CALLBACK")]
-        public delegate* unmanaged<PTP_CALLBACK_INSTANCE, void*, void> FinalizationCallback;
-
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:24065:5)")]
-        public _u_e__Union u;
-
-        public TP_CALLBACK_PRIORITY CallbackPriority;
-
+        [FieldOffset(0)]
         [NativeTypeName("DWORD")]
-        public uint Size;
+        public uint Flags;
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _u_e__Union
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:24067:9)")]
+        public _s_e__Struct s;
+
+        public partial struct _s_e__Struct
         {
-            [FieldOffset(0)]
-            [NativeTypeName("DWORD")]
-            public uint Flags;
+            public uint _bitfield;
 
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:24067:9)")]
-            public _s_e__Struct s;
-
-            public partial struct _s_e__Struct
+            [NativeTypeName("DWORD : 1")]
+            public uint LongFunction
             {
-                public uint _bitfield;
-
-                [NativeTypeName("DWORD : 1")]
-                public uint LongFunction
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return _bitfield & 0x1u;
-                    }
-
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
-                    }
+                    return _bitfield & 0x1u;
                 }
 
-                [NativeTypeName("DWORD : 1")]
-                public uint Persistent
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 1) & 0x1u;
-                    }
+                    _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
-                    }
+            [NativeTypeName("DWORD : 1")]
+            public uint Persistent
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 1) & 0x1u;
                 }
 
-                [NativeTypeName("DWORD : 30")]
-                public uint Private
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
                 {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return (_bitfield >> 2) & 0x3FFFFFFFu;
-                    }
+                    _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
+                }
+            }
 
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    set
-                    {
-                        _bitfield = (_bitfield & ~(0x3FFFFFFFu << 2)) | ((value & 0x3FFFFFFFu) << 2);
-                    }
+            [NativeTypeName("DWORD : 30")]
+            public uint Private
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return (_bitfield >> 2) & 0x3FFFFFFFu;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0x3FFFFFFFu << 2)) | ((value & 0x3FFFFFFFu) << 2);
                 }
             }
         }

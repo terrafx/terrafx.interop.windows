@@ -3,39 +3,38 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct TVITEMEXA
 {
-    public unsafe partial struct TVITEMEXA
-    {
-        public uint mask;
+    public uint mask;
 
-        public HTREEITEM hItem;
+    public HTREEITEM hItem;
 
-        public uint state;
+    public uint state;
 
-        public uint stateMask;
+    public uint stateMask;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* pszText;
+    [NativeTypeName("LPSTR")]
+    public sbyte* pszText;
 
-        public int cchTextMax;
+    public int cchTextMax;
 
-        public int iImage;
+    public int iImage;
 
-        public int iSelectedImage;
+    public int iSelectedImage;
 
-        public int cChildren;
+    public int cChildren;
 
-        public LPARAM lParam;
+    public LPARAM lParam;
 
-        public int iIntegral;
+    public int iIntegral;
 
-        public uint uStateEx;
+    public uint uStateEx;
 
-        public HWND hwnd;
+    public HWND hwnd;
 
-        public int iExpandedImage;
+    public int iExpandedImage;
 
-        public int iReserved;
-    }
+    public int iReserved;
 }

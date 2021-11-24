@@ -7,43 +7,42 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Guid("1BF63C95-2650-405D-99C1-3636BD1DA0A1")]
+public unsafe partial struct ID3D10ShaderReflectionVariable : ID3D10ShaderReflectionVariable.Interface
 {
-    [Guid("1BF63C95-2650-405D-99C1-3636BD1DA0A1")]
-    public unsafe partial struct ID3D10ShaderReflectionVariable : ID3D10ShaderReflectionVariable.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT GetDesc(D3D10_SHADER_VARIABLE_DESC* pDesc)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ID3D10ShaderReflectionVariable*, D3D10_SHADER_VARIABLE_DESC*, int>)(lpVtbl[0]))((ID3D10ShaderReflectionVariable*)Unsafe.AsPointer(ref this), pDesc);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    public new ID3D10ShaderReflectionType* GetType()
+    {
+        return ((delegate* unmanaged<ID3D10ShaderReflectionVariable*, ID3D10ShaderReflectionType*>)(lpVtbl[1]))((ID3D10ShaderReflectionVariable*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface
+    {
         [VtblIndex(0)]
-        public HRESULT GetDesc(D3D10_SHADER_VARIABLE_DESC* pDesc)
-        {
-            return ((delegate* unmanaged<ID3D10ShaderReflectionVariable*, D3D10_SHADER_VARIABLE_DESC*, int>)(lpVtbl[0]))((ID3D10ShaderReflectionVariable*)Unsafe.AsPointer(ref this), pDesc);
-        }
+        HRESULT GetDesc(D3D10_SHADER_VARIABLE_DESC* pDesc);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(1)]
-        public new ID3D10ShaderReflectionType* GetType()
-        {
-            return ((delegate* unmanaged<ID3D10ShaderReflectionVariable*, ID3D10ShaderReflectionType*>)(lpVtbl[1]))((ID3D10ShaderReflectionVariable*)Unsafe.AsPointer(ref this));
-        }
+        ID3D10ShaderReflectionType* GetType();
+    }
 
-        public interface Interface
-        {
-            [VtblIndex(0)]
-            HRESULT GetDesc(D3D10_SHADER_VARIABLE_DESC* pDesc);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (D3D10_SHADER_VARIABLE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID3D10ShaderReflectionVariable*, D3D10_SHADER_VARIABLE_DESC*, int> GetDesc;
 
-            [VtblIndex(1)]
-            ID3D10ShaderReflectionType* GetType();
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (D3D10_SHADER_VARIABLE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID3D10ShaderReflectionVariable*, D3D10_SHADER_VARIABLE_DESC*, int> GetDesc;
-
-            [NativeTypeName("ID3D10ShaderReflectionType *() __attribute__((nothrow)) __attribute__((stdcall))")]
-            public new delegate* unmanaged<ID3D10ShaderReflectionVariable*, ID3D10ShaderReflectionType*> GetType;
-        }
+        [NativeTypeName("ID3D10ShaderReflectionType *() __attribute__((nothrow)) __attribute__((stdcall))")]
+        public new delegate* unmanaged<ID3D10ShaderReflectionVariable*, ID3D10ShaderReflectionType*> GetType;
     }
 }

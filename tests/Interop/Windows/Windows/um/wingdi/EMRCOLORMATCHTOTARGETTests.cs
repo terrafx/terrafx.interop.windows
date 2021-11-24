@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="EMRCOLORMATCHTOTARGET" /> struct.</summary>
+public static unsafe partial class EMRCOLORMATCHTOTARGETTests
 {
-    /// <summary>Provides validation of the <see cref="EMRCOLORMATCHTOTARGET" /> struct.</summary>
-    public static unsafe partial class EMRCOLORMATCHTOTARGETTests
+    /// <summary>Validates that the <see cref="EMRCOLORMATCHTOTARGET" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="EMRCOLORMATCHTOTARGET" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<EMRCOLORMATCHTOTARGET>(), Is.EqualTo(sizeof(EMRCOLORMATCHTOTARGET)));
-        }
+        Assert.That(Marshal.SizeOf<EMRCOLORMATCHTOTARGET>(), Is.EqualTo(sizeof(EMRCOLORMATCHTOTARGET)));
+    }
 
-        /// <summary>Validates that the <see cref="EMRCOLORMATCHTOTARGET" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(EMRCOLORMATCHTOTARGET).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="EMRCOLORMATCHTOTARGET" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(EMRCOLORMATCHTOTARGET).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="EMRCOLORMATCHTOTARGET" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(EMRCOLORMATCHTOTARGET), Is.EqualTo(28));
-        }
+    /// <summary>Validates that the <see cref="EMRCOLORMATCHTOTARGET" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(EMRCOLORMATCHTOTARGET), Is.EqualTo(28));
     }
 }

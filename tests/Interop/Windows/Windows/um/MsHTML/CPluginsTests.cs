@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CPlugins" /> struct.</summary>
+public static unsafe partial class CPluginsTests
 {
-    /// <summary>Provides validation of the <see cref="CPlugins" /> struct.</summary>
-    public static unsafe partial class CPluginsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CPlugins" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CPlugins" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CPlugins).GUID, Is.EqualTo(IID_CPlugins));
-        }
+        Assert.That(typeof(CPlugins).GUID, Is.EqualTo(IID_CPlugins));
+    }
 
-        /// <summary>Validates that the <see cref="CPlugins" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CPlugins>(), Is.EqualTo(sizeof(CPlugins)));
-        }
+    /// <summary>Validates that the <see cref="CPlugins" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CPlugins>(), Is.EqualTo(sizeof(CPlugins)));
+    }
 
-        /// <summary>Validates that the <see cref="CPlugins" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CPlugins).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CPlugins" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CPlugins).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CPlugins" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CPlugins), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CPlugins" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CPlugins), Is.EqualTo(1));
     }
 }

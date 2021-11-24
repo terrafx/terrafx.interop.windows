@@ -3,20 +3,19 @@
 // Ported from um/msctf.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TF_DISPLAYATTRIBUTE
 {
-    public partial struct TF_DISPLAYATTRIBUTE
-    {
-        public TF_DA_COLOR crText;
+    public TF_DA_COLOR crText;
 
-        public TF_DA_COLOR crBk;
+    public TF_DA_COLOR crBk;
 
-        public TF_DA_LINESTYLE lsStyle;
+    public TF_DA_LINESTYLE lsStyle;
 
-        public BOOL fBoldLine;
+    public BOOL fBoldLine;
 
-        public TF_DA_COLOR crLine;
+    public TF_DA_COLOR crLine;
 
-        public TF_DA_ATTR_INFO bAttr;
-    }
+    public TF_DA_ATTR_INFO bAttr;
 }

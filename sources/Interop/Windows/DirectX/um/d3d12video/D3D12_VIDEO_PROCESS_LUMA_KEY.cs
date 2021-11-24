@@ -5,14 +5,13 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_VIDEO_PROCESS_LUMA_KEY
 {
-    public partial struct D3D12_VIDEO_PROCESS_LUMA_KEY
-    {
-        public BOOL Enable;
+    public BOOL Enable;
 
-        public float Lower;
+    public float Lower;
 
-        public float Upper;
-    }
+    public float Upper;
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="FolderItemVerbs" /> struct.</summary>
+public static unsafe partial class FolderItemVerbsTests
 {
-    /// <summary>Provides validation of the <see cref="FolderItemVerbs" /> struct.</summary>
-    public static unsafe partial class FolderItemVerbsTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="FolderItemVerbs" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="FolderItemVerbs" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(FolderItemVerbs).GUID, Is.EqualTo(IID_FolderItemVerbs));
-        }
+        Assert.That(typeof(FolderItemVerbs).GUID, Is.EqualTo(IID_FolderItemVerbs));
+    }
 
-        /// <summary>Validates that the <see cref="FolderItemVerbs" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<FolderItemVerbs>(), Is.EqualTo(sizeof(FolderItemVerbs)));
-        }
+    /// <summary>Validates that the <see cref="FolderItemVerbs" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<FolderItemVerbs>(), Is.EqualTo(sizeof(FolderItemVerbs)));
+    }
 
-        /// <summary>Validates that the <see cref="FolderItemVerbs" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(FolderItemVerbs).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="FolderItemVerbs" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(FolderItemVerbs).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="FolderItemVerbs" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="FolderItemVerbs" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(FolderItemVerbs), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(FolderItemVerbs), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(FolderItemVerbs), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(FolderItemVerbs), Is.EqualTo(4));
         }
     }
 }

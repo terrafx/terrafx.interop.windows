@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AUDIOFILE_AF36WAVEFORMAT" /> struct.</summary>
+public static unsafe partial class AUDIOFILE_AF36WAVEFORMATTests
 {
-    /// <summary>Provides validation of the <see cref="AUDIOFILE_AF36WAVEFORMAT" /> struct.</summary>
-    public static unsafe partial class AUDIOFILE_AF36WAVEFORMATTests
+    /// <summary>Validates that the <see cref="AUDIOFILE_AF36WAVEFORMAT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="AUDIOFILE_AF36WAVEFORMAT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<AUDIOFILE_AF36WAVEFORMAT>(), Is.EqualTo(sizeof(AUDIOFILE_AF36WAVEFORMAT)));
-        }
+        Assert.That(Marshal.SizeOf<AUDIOFILE_AF36WAVEFORMAT>(), Is.EqualTo(sizeof(AUDIOFILE_AF36WAVEFORMAT)));
+    }
 
-        /// <summary>Validates that the <see cref="AUDIOFILE_AF36WAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(AUDIOFILE_AF36WAVEFORMAT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="AUDIOFILE_AF36WAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(AUDIOFILE_AF36WAVEFORMAT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="AUDIOFILE_AF36WAVEFORMAT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(AUDIOFILE_AF36WAVEFORMAT), Is.EqualTo(18));
-        }
+    /// <summary>Validates that the <see cref="AUDIOFILE_AF36WAVEFORMAT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(AUDIOFILE_AF36WAVEFORMAT), Is.EqualTo(18));
     }
 }

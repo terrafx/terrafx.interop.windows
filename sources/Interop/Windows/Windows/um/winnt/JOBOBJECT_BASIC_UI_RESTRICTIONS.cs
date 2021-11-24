@@ -3,11 +3,10 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct JOBOBJECT_BASIC_UI_RESTRICTIONS
 {
-    public partial struct JOBOBJECT_BASIC_UI_RESTRICTIONS
-    {
-        [NativeTypeName("DWORD")]
-        public uint UIRestrictionsClass;
-    }
+    [NativeTypeName("DWORD")]
+    public uint UIRestrictionsClass;
 }

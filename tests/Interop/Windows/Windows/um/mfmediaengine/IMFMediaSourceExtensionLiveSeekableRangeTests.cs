@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFMediaSourceExtensionLiveSeekableRange" /> struct.</summary>
+public static unsafe partial class IMFMediaSourceExtensionLiveSeekableRangeTests
 {
-    /// <summary>Provides validation of the <see cref="IMFMediaSourceExtensionLiveSeekableRange" /> struct.</summary>
-    public static unsafe partial class IMFMediaSourceExtensionLiveSeekableRangeTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFMediaSourceExtensionLiveSeekableRange" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFMediaSourceExtensionLiveSeekableRange" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFMediaSourceExtensionLiveSeekableRange).GUID, Is.EqualTo(IID_IMFMediaSourceExtensionLiveSeekableRange));
-        }
+        Assert.That(typeof(IMFMediaSourceExtensionLiveSeekableRange).GUID, Is.EqualTo(IID_IMFMediaSourceExtensionLiveSeekableRange));
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaSourceExtensionLiveSeekableRange" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFMediaSourceExtensionLiveSeekableRange>(), Is.EqualTo(sizeof(IMFMediaSourceExtensionLiveSeekableRange)));
-        }
+    /// <summary>Validates that the <see cref="IMFMediaSourceExtensionLiveSeekableRange" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFMediaSourceExtensionLiveSeekableRange>(), Is.EqualTo(sizeof(IMFMediaSourceExtensionLiveSeekableRange)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaSourceExtensionLiveSeekableRange" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFMediaSourceExtensionLiveSeekableRange).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFMediaSourceExtensionLiveSeekableRange" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFMediaSourceExtensionLiveSeekableRange).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFMediaSourceExtensionLiveSeekableRange" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFMediaSourceExtensionLiveSeekableRange" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFMediaSourceExtensionLiveSeekableRange), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFMediaSourceExtensionLiveSeekableRange), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFMediaSourceExtensionLiveSeekableRange), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFMediaSourceExtensionLiveSeekableRange), Is.EqualTo(4));
         }
     }
 }

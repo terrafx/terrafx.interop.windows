@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IDWriteInMemoryFontFileLoader" /> struct.</summary>
+public static unsafe partial class IDWriteInMemoryFontFileLoaderTests
 {
-    /// <summary>Provides validation of the <see cref="IDWriteInMemoryFontFileLoader" /> struct.</summary>
-    public static unsafe partial class IDWriteInMemoryFontFileLoaderTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteInMemoryFontFileLoader" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDWriteInMemoryFontFileLoader" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IDWriteInMemoryFontFileLoader).GUID, Is.EqualTo(IID_IDWriteInMemoryFontFileLoader));
-        }
+        Assert.That(typeof(IDWriteInMemoryFontFileLoader).GUID, Is.EqualTo(IID_IDWriteInMemoryFontFileLoader));
+    }
 
-        /// <summary>Validates that the <see cref="IDWriteInMemoryFontFileLoader" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IDWriteInMemoryFontFileLoader>(), Is.EqualTo(sizeof(IDWriteInMemoryFontFileLoader)));
-        }
+    /// <summary>Validates that the <see cref="IDWriteInMemoryFontFileLoader" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IDWriteInMemoryFontFileLoader>(), Is.EqualTo(sizeof(IDWriteInMemoryFontFileLoader)));
+    }
 
-        /// <summary>Validates that the <see cref="IDWriteInMemoryFontFileLoader" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IDWriteInMemoryFontFileLoader).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IDWriteInMemoryFontFileLoader" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IDWriteInMemoryFontFileLoader).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IDWriteInMemoryFontFileLoader" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IDWriteInMemoryFontFileLoader" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IDWriteInMemoryFontFileLoader), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IDWriteInMemoryFontFileLoader), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IDWriteInMemoryFontFileLoader), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IDWriteInMemoryFontFileLoader), Is.EqualTo(4));
         }
     }
 }

@@ -3,29 +3,28 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct DVINFO
 {
-    public unsafe partial struct DVINFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwDVAAuxSrc;
+    [NativeTypeName("DWORD")]
+    public uint dwDVAAuxSrc;
 
-        [NativeTypeName("DWORD")]
-        public uint dwDVAAuxCtl;
+    [NativeTypeName("DWORD")]
+    public uint dwDVAAuxCtl;
 
-        [NativeTypeName("DWORD")]
-        public uint dwDVAAuxSrc1;
+    [NativeTypeName("DWORD")]
+    public uint dwDVAAuxSrc1;
 
-        [NativeTypeName("DWORD")]
-        public uint dwDVAAuxCtl1;
+    [NativeTypeName("DWORD")]
+    public uint dwDVAAuxCtl1;
 
-        [NativeTypeName("DWORD")]
-        public uint dwDVVAuxSrc;
+    [NativeTypeName("DWORD")]
+    public uint dwDVVAuxSrc;
 
-        [NativeTypeName("DWORD")]
-        public uint dwDVVAuxCtl;
+    [NativeTypeName("DWORD")]
+    public uint dwDVVAuxCtl;
 
-        [NativeTypeName("DWORD [2]")]
-        public fixed uint dwDVReserved[2];
-    }
+    [NativeTypeName("DWORD [2]")]
+    public fixed uint dwDVReserved[2];
 }

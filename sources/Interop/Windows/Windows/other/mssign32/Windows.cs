@@ -5,17 +5,16 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static unsafe partial class Windows
 {
-    public static unsafe partial class Windows
-    {
-        [DllImport("mssign32", ExactSpelling = true)]
-        public static extern HRESULT SignerSignEx2([NativeTypeName("DWORD")] uint dwFlags, SIGNER_SUBJECT_INFO* pSubjectInfo, SIGNER_CERT* pSignerCert, SIGNER_SIGNATURE_INFO* pSignatureInfo, SIGNER_PROVIDER_INFO* pProviderInfo, [NativeTypeName("DWORD")] uint dwTimestampFlags, [NativeTypeName("PCSTR")] sbyte* pszTimestampAlgorithmOid, [NativeTypeName("PCWSTR")] ushort* pwszHttpTimeStamp, [NativeTypeName("PCRYPT_ATTRIBUTES")] CRYPT_ATTRIBUTES* psRequest, [NativeTypeName("PVOID")] void* pSipData, SIGNER_CONTEXT** ppSignerContext, [NativeTypeName("PCERT_STRONG_SIGN_PARA")] CERT_STRONG_SIGN_PARA* pCryptoPolicy, [NativeTypeName("PVOID")] void* pReserved);
+    [DllImport("mssign32", ExactSpelling = true)]
+    public static extern HRESULT SignerSignEx2([NativeTypeName("DWORD")] uint dwFlags, SIGNER_SUBJECT_INFO* pSubjectInfo, SIGNER_CERT* pSignerCert, SIGNER_SIGNATURE_INFO* pSignatureInfo, SIGNER_PROVIDER_INFO* pProviderInfo, [NativeTypeName("DWORD")] uint dwTimestampFlags, [NativeTypeName("PCSTR")] sbyte* pszTimestampAlgorithmOid, [NativeTypeName("PCWSTR")] ushort* pwszHttpTimeStamp, [NativeTypeName("PCRYPT_ATTRIBUTES")] CRYPT_ATTRIBUTES* psRequest, [NativeTypeName("PVOID")] void* pSipData, SIGNER_CONTEXT** ppSignerContext, [NativeTypeName("PCERT_STRONG_SIGN_PARA")] CERT_STRONG_SIGN_PARA* pCryptoPolicy, [NativeTypeName("PVOID")] void* pReserved);
 
-        [NativeTypeName("#define PVK_TYPE_FILE_NAME 0x01")]
-        public const int PVK_TYPE_FILE_NAME = 0x01;
+    [NativeTypeName("#define PVK_TYPE_FILE_NAME 0x01")]
+    public const int PVK_TYPE_FILE_NAME = 0x01;
 
-        [NativeTypeName("#define PVK_TYPE_KEYCONTAINER 0x02")]
-        public const int PVK_TYPE_KEYCONTAINER = 0x02;
-    }
+    [NativeTypeName("#define PVK_TYPE_KEYCONTAINER 0x02")]
+    public const int PVK_TYPE_KEYCONTAINER = 0x02;
 }

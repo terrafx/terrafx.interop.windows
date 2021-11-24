@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("19CAEBFF-B74D-4CFD-8C27-C2F9D97D5F52")]
+public partial struct CODECAPI_AVEncVideoTemporalLayerCount
 {
-    [Guid("19CAEBFF-B74D-4CFD-8C27-C2F9D97D5F52")]
-    public partial struct CODECAPI_AVEncVideoTemporalLayerCount
-    {
-    }
 }

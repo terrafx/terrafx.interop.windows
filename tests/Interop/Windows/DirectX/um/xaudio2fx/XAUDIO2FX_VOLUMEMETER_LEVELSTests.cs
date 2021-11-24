@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XAUDIO2FX_VOLUMEMETER_LEVELS" /> struct.</summary>
+public static unsafe partial class XAUDIO2FX_VOLUMEMETER_LEVELSTests
 {
-    /// <summary>Provides validation of the <see cref="XAUDIO2FX_VOLUMEMETER_LEVELS" /> struct.</summary>
-    public static unsafe partial class XAUDIO2FX_VOLUMEMETER_LEVELSTests
+    /// <summary>Validates that the <see cref="XAUDIO2FX_VOLUMEMETER_LEVELS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XAUDIO2FX_VOLUMEMETER_LEVELS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XAUDIO2FX_VOLUMEMETER_LEVELS>(), Is.EqualTo(sizeof(XAUDIO2FX_VOLUMEMETER_LEVELS)));
-        }
+        Assert.That(Marshal.SizeOf<XAUDIO2FX_VOLUMEMETER_LEVELS>(), Is.EqualTo(sizeof(XAUDIO2FX_VOLUMEMETER_LEVELS)));
+    }
 
-        /// <summary>Validates that the <see cref="XAUDIO2FX_VOLUMEMETER_LEVELS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XAUDIO2FX_VOLUMEMETER_LEVELS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XAUDIO2FX_VOLUMEMETER_LEVELS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XAUDIO2FX_VOLUMEMETER_LEVELS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XAUDIO2FX_VOLUMEMETER_LEVELS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XAUDIO2FX_VOLUMEMETER_LEVELS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XAUDIO2FX_VOLUMEMETER_LEVELS), Is.EqualTo(20));
-            }
-            else
-            {
-                Assert.That(sizeof(XAUDIO2FX_VOLUMEMETER_LEVELS), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(XAUDIO2FX_VOLUMEMETER_LEVELS), Is.EqualTo(20));
+        }
+        else
+        {
+            Assert.That(sizeof(XAUDIO2FX_VOLUMEMETER_LEVELS), Is.EqualTo(12));
         }
     }
 }

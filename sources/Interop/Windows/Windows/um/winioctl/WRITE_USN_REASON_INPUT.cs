@@ -3,14 +3,13 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct WRITE_USN_REASON_INPUT
-    {
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint UsnReasonToWrite;
-    }
+public partial struct WRITE_USN_REASON_INPUT
+{
+    [NativeTypeName("DWORD")]
+    public uint Flags;
+
+    [NativeTypeName("DWORD")]
+    public uint UsnReasonToWrite;
 }

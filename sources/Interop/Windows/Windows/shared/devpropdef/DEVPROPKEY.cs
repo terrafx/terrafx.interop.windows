@@ -5,14 +5,13 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct DEVPROPKEY
-    {
-        [NativeTypeName("DEVPROPGUID")]
-        public Guid fmtid;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DEVPROPID")]
-        public uint pid;
-    }
+public partial struct DEVPROPKEY
+{
+    [NativeTypeName("DEVPROPGUID")]
+    public Guid fmtid;
+
+    [NativeTypeName("DEVPROPID")]
+    public uint pid;
 }

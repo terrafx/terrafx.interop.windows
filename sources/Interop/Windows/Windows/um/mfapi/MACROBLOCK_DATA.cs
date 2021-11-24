@@ -3,20 +3,19 @@
 // Ported from um/mfapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MACROBLOCK_DATA
 {
-    public partial struct MACROBLOCK_DATA
-    {
-        [NativeTypeName("UINT32")]
-        public uint flags;
+    [NativeTypeName("UINT32")]
+    public uint flags;
 
-        [NativeTypeName("INT16")]
-        public short motionVectorX;
+    [NativeTypeName("INT16")]
+    public short motionVectorX;
 
-        [NativeTypeName("INT16")]
-        public short motionVectorY;
+    [NativeTypeName("INT16")]
+    public short motionVectorY;
 
-        [NativeTypeName("INT32")]
-        public int QPDelta;
-    }
+    [NativeTypeName("INT32")]
+    public int QPDelta;
 }

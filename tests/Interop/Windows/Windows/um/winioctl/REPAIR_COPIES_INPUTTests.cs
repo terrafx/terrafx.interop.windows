@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="REPAIR_COPIES_INPUT" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class REPAIR_COPIES_INPUTTests
 {
-    /// <summary>Provides validation of the <see cref="REPAIR_COPIES_INPUT" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class REPAIR_COPIES_INPUTTests
+    /// <summary>Validates that the <see cref="REPAIR_COPIES_INPUT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="REPAIR_COPIES_INPUT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<REPAIR_COPIES_INPUT>(), Is.EqualTo(sizeof(REPAIR_COPIES_INPUT)));
-        }
+        Assert.That(Marshal.SizeOf<REPAIR_COPIES_INPUT>(), Is.EqualTo(sizeof(REPAIR_COPIES_INPUT)));
+    }
 
-        /// <summary>Validates that the <see cref="REPAIR_COPIES_INPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(REPAIR_COPIES_INPUT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="REPAIR_COPIES_INPUT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(REPAIR_COPIES_INPUT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="REPAIR_COPIES_INPUT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(REPAIR_COPIES_INPUT), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="REPAIR_COPIES_INPUT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(REPAIR_COPIES_INPUT), Is.EqualTo(32));
     }
 }

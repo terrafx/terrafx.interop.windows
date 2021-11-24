@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum BINDINFOF
 {
-    [Flags]
-    public enum BINDINFOF
-    {
-        BINDINFOF_URLENCODESTGMEDDATA = 0x1,
-        BINDINFOF_URLENCODEDEXTRAINFO = 0x2,
-    }
+    BINDINFOF_URLENCODESTGMEDDATA = 0x1,
+    BINDINFOF_URLENCODEDEXTRAINFO = 0x2,
 }

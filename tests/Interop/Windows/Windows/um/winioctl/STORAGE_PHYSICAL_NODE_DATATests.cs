@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="STORAGE_PHYSICAL_NODE_DATA" /> struct.</summary>
+public static unsafe partial class STORAGE_PHYSICAL_NODE_DATATests
 {
-    /// <summary>Provides validation of the <see cref="STORAGE_PHYSICAL_NODE_DATA" /> struct.</summary>
-    public static unsafe partial class STORAGE_PHYSICAL_NODE_DATATests
+    /// <summary>Validates that the <see cref="STORAGE_PHYSICAL_NODE_DATA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="STORAGE_PHYSICAL_NODE_DATA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<STORAGE_PHYSICAL_NODE_DATA>(), Is.EqualTo(sizeof(STORAGE_PHYSICAL_NODE_DATA)));
-        }
+        Assert.That(Marshal.SizeOf<STORAGE_PHYSICAL_NODE_DATA>(), Is.EqualTo(sizeof(STORAGE_PHYSICAL_NODE_DATA)));
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_PHYSICAL_NODE_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(STORAGE_PHYSICAL_NODE_DATA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="STORAGE_PHYSICAL_NODE_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(STORAGE_PHYSICAL_NODE_DATA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="STORAGE_PHYSICAL_NODE_DATA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(STORAGE_PHYSICAL_NODE_DATA), Is.EqualTo(40));
-        }
+    /// <summary>Validates that the <see cref="STORAGE_PHYSICAL_NODE_DATA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(STORAGE_PHYSICAL_NODE_DATA), Is.EqualTo(40));
     }
 }

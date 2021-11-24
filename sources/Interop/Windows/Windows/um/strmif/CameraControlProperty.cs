@@ -3,16 +3,15 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum CameraControlProperty
 {
-    public enum CameraControlProperty
-    {
-        CameraControl_Pan = 0,
-        CameraControl_Tilt = (CameraControl_Pan + 1),
-        CameraControl_Roll = (CameraControl_Tilt + 1),
-        CameraControl_Zoom = (CameraControl_Roll + 1),
-        CameraControl_Exposure = (CameraControl_Zoom + 1),
-        CameraControl_Iris = (CameraControl_Exposure + 1),
-        CameraControl_Focus = (CameraControl_Iris + 1),
-    }
+    CameraControl_Pan = 0,
+    CameraControl_Tilt = (CameraControl_Pan + 1),
+    CameraControl_Roll = (CameraControl_Tilt + 1),
+    CameraControl_Zoom = (CameraControl_Roll + 1),
+    CameraControl_Exposure = (CameraControl_Zoom + 1),
+    CameraControl_Iris = (CameraControl_Exposure + 1),
+    CameraControl_Focus = (CameraControl_Iris + 1),
 }

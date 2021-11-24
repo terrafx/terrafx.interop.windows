@@ -5,19 +5,18 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public partial struct MFCameraIntrinsic_DistortionModel
 {
-    [SupportedOSPlatform("windows10.0")]
-    public partial struct MFCameraIntrinsic_DistortionModel
-    {
-        public float Radial_k1;
+    public float Radial_k1;
 
-        public float Radial_k2;
+    public float Radial_k2;
 
-        public float Radial_k3;
+    public float Radial_k3;
 
-        public float Tangential_p1;
+    public float Tangential_p1;
 
-        public float Tangential_p2;
-    }
+    public float Tangential_p2;
 }

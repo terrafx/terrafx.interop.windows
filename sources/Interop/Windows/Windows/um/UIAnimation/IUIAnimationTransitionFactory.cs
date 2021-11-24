@@ -7,64 +7,63 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("FCD91E03-3E3B-45AD-BBB1-6DFC8153743D")]
+[NativeTypeName("struct IUIAnimationTransitionFactory : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IUIAnimationTransitionFactory : IUIAnimationTransitionFactory.Interface
 {
-    [Guid("FCD91E03-3E3B-45AD-BBB1-6DFC8153743D")]
-    [NativeTypeName("struct IUIAnimationTransitionFactory : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUIAnimationTransitionFactory : IUIAnimationTransitionFactory.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IUIAnimationTransitionFactory*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTransitionFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IUIAnimationTransitionFactory*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTransitionFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IUIAnimationTransitionFactory*, uint>)(lpVtbl[1]))((IUIAnimationTransitionFactory*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IUIAnimationTransitionFactory*, uint>)(lpVtbl[1]))((IUIAnimationTransitionFactory*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IUIAnimationTransitionFactory*, uint>)(lpVtbl[2]))((IUIAnimationTransitionFactory*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IUIAnimationTransitionFactory*, uint>)(lpVtbl[2]))((IUIAnimationTransitionFactory*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT CreateTransition(IUIAnimationInterpolator* interpolator, IUIAnimationTransition** transition)
+    {
+        return ((delegate* unmanaged<IUIAnimationTransitionFactory*, IUIAnimationInterpolator*, IUIAnimationTransition**, int>)(lpVtbl[3]))((IUIAnimationTransitionFactory*)Unsafe.AsPointer(ref this), interpolator, transition);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT CreateTransition(IUIAnimationInterpolator* interpolator, IUIAnimationTransition** transition)
-        {
-            return ((delegate* unmanaged<IUIAnimationTransitionFactory*, IUIAnimationInterpolator*, IUIAnimationTransition**, int>)(lpVtbl[3]))((IUIAnimationTransitionFactory*)Unsafe.AsPointer(ref this), interpolator, transition);
-        }
+        HRESULT CreateTransition(IUIAnimationInterpolator* interpolator, IUIAnimationTransition** transition);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT CreateTransition(IUIAnimationInterpolator* interpolator, IUIAnimationTransition** transition);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationTransitionFactory*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationTransitionFactory*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationTransitionFactory*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationTransitionFactory*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationTransitionFactory*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationTransitionFactory*, uint> Release;
-
-            [NativeTypeName("HRESULT (IUIAnimationInterpolator *, IUIAnimationTransition **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationTransitionFactory*, IUIAnimationInterpolator*, IUIAnimationTransition**, int> CreateTransition;
-        }
+        [NativeTypeName("HRESULT (IUIAnimationInterpolator *, IUIAnimationTransition **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationTransitionFactory*, IUIAnimationInterpolator*, IUIAnimationTransition**, int> CreateTransition;
     }
 }

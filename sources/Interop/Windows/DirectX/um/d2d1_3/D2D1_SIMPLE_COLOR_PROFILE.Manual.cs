@@ -5,13 +5,12 @@
 
 using static TerraFX.Interop.DirectX.DirectX;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D1_SIMPLE_COLOR_PROFILE
 {
-    public partial struct D2D1_SIMPLE_COLOR_PROFILE
+    public D2D1_SIMPLE_COLOR_PROFILE([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F redPrimary, [NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F greenPrimary, [NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F bluePrimary, [NativeTypeName("const D2D1_GAMMA1")] D2D1_GAMMA1 gamma, [NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F whitePointXZ)
     {
-        public D2D1_SIMPLE_COLOR_PROFILE([NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F redPrimary, [NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F greenPrimary, [NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F bluePrimary, [NativeTypeName("const D2D1_GAMMA1")] D2D1_GAMMA1 gamma, [NativeTypeName("const D2D1_POINT_2F &")] in D2D_POINT_2F whitePointXZ)
-        {
-            this = SimpleColorProfile(redPrimary, greenPrimary, bluePrimary, gamma, whitePointXZ);
-        }
+        this = SimpleColorProfile(redPrimary, greenPrimary, bluePrimary, gamma, whitePointXZ);
     }
 }

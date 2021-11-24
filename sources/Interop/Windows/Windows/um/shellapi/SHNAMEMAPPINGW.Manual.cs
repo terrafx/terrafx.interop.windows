@@ -5,91 +5,90 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public unsafe partial struct SHNAMEMAPPINGW
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct SHNAMEMAPPINGW
+    public static uint SizeOf
     {
-        public static uint SizeOf
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return (uint)(sizeof(SHNAMEMAPPING32W));
-                }
-                else
-                {
-                    return (uint)(sizeof(SHNAMEMAPPING64W));
-                }
+                return (uint)(sizeof(SHNAMEMAPPING32W));
+            }
+            else
+            {
+                return (uint)(sizeof(SHNAMEMAPPING64W));
             }
         }
+    }
 
-        [FieldOffset(0)]
-        public SHNAMEMAPPING32W _value32;
+    [FieldOffset(0)]
+    public SHNAMEMAPPING32W _value32;
 
-        [FieldOffset(0)]
-        public SHNAMEMAPPING64W _value64;
+    [FieldOffset(0)]
+    public SHNAMEMAPPING64W _value64;
 
-        [NativeTypeName("LPWSTR")]
-        public ref ushort* pszOldPath
+    [NativeTypeName("LPWSTR")]
+    public ref ushort* pszOldPath
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).pszOldPath;
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).pszOldPath;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).pszOldPath;
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).pszOldPath;
             }
         }
+    }
 
-        [NativeTypeName("LPWSTR")]
-        public ref ushort* pszNewPath
+    [NativeTypeName("LPWSTR")]
+    public ref ushort* pszNewPath
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).pszNewPath;
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).pszNewPath;
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32, 1)).pszNewPath;
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64, 1)).pszNewPath;
             }
         }
+    }
 
-        public ref int cchOldPath
+    public ref int cchOldPath
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cchOldPath, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cchOldPath, 1));
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cchOldPath, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cchOldPath, 1));
             }
         }
+    }
 
-        public ref int cchNewPath
+    public ref int cchNewPath
+    {
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cchNewPath, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cchNewPath, 1));
-                }
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.cchNewPath, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.cchNewPath, 1));
             }
         }
     }

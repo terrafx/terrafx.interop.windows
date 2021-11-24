@@ -3,14 +3,13 @@
 // Ported from um/IPExport.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct ARP_SEND_REPLY
-    {
-        [NativeTypeName("IPAddr")]
-        public uint DestAddress;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("IPAddr")]
-        public uint SrcAddress;
-    }
+public partial struct ARP_SEND_REPLY
+{
+    [NativeTypeName("IPAddr")]
+    public uint DestAddress;
+
+    [NativeTypeName("IPAddr")]
+    public uint SrcAddress;
 }

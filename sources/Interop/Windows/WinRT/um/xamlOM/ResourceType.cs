@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[SupportedOSPlatform("windows10.0.14393.0")]
+public enum ResourceType
 {
-    [SupportedOSPlatform("windows10.0.14393.0")]
-    public enum ResourceType
-    {
-        ResourceTypeStatic = 0,
-        ResourceTypeTheme = (ResourceTypeStatic + 1),
-    }
+    ResourceTypeStatic = 0,
+    ResourceTypeTheme = (ResourceTypeStatic + 1),
 }

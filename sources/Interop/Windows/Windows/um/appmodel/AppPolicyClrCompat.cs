@@ -3,13 +3,12 @@
 // Ported from um/appmodel.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum AppPolicyClrCompat
 {
-    public enum AppPolicyClrCompat
-    {
-        AppPolicyClrCompat_Other = 0,
-        AppPolicyClrCompat_ClassicDesktop = 1,
-        AppPolicyClrCompat_Universal = 2,
-        AppPolicyClrCompat_PackagedDesktop = 3,
-    }
+    AppPolicyClrCompat_Other = 0,
+    AppPolicyClrCompat_ClassicDesktop = 1,
+    AppPolicyClrCompat_Universal = 2,
+    AppPolicyClrCompat_PackagedDesktop = 3,
 }

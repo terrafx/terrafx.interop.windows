@@ -3,11 +3,10 @@
 // Ported from um/MSChapp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CYPHER_BLOCK
 {
-    public unsafe partial struct CYPHER_BLOCK
-    {
-        [NativeTypeName("CHAR [8]")]
-        public fixed sbyte data[8];
-    }
+    [NativeTypeName("CHAR [8]")]
+    public fixed sbyte data[8];
 }

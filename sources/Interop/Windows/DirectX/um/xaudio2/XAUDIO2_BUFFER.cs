@@ -5,35 +5,34 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct XAUDIO2_BUFFER
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct XAUDIO2_BUFFER
-    {
-        [NativeTypeName("UINT32")]
-        public uint Flags;
+    [NativeTypeName("UINT32")]
+    public uint Flags;
 
-        [NativeTypeName("UINT32")]
-        public uint AudioBytes;
+    [NativeTypeName("UINT32")]
+    public uint AudioBytes;
 
-        [NativeTypeName("const BYTE *")]
-        public byte* pAudioData;
+    [NativeTypeName("const BYTE *")]
+    public byte* pAudioData;
 
-        [NativeTypeName("UINT32")]
-        public uint PlayBegin;
+    [NativeTypeName("UINT32")]
+    public uint PlayBegin;
 
-        [NativeTypeName("UINT32")]
-        public uint PlayLength;
+    [NativeTypeName("UINT32")]
+    public uint PlayLength;
 
-        [NativeTypeName("UINT32")]
-        public uint LoopBegin;
+    [NativeTypeName("UINT32")]
+    public uint LoopBegin;
 
-        [NativeTypeName("UINT32")]
-        public uint LoopLength;
+    [NativeTypeName("UINT32")]
+    public uint LoopLength;
 
-        [NativeTypeName("UINT32")]
-        public uint LoopCount;
+    [NativeTypeName("UINT32")]
+    public uint LoopCount;
 
-        public void* pContext;
-    }
+    public void* pContext;
 }

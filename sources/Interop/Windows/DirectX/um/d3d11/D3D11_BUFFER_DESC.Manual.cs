@@ -5,18 +5,17 @@
 
 using static TerraFX.Interop.DirectX.D3D11_USAGE;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D11_BUFFER_DESC
 {
-    public partial struct D3D11_BUFFER_DESC
+    public D3D11_BUFFER_DESC(uint byteWidth, uint bindFlags, D3D11_USAGE usage = D3D11_USAGE_DEFAULT, uint cpuaccessFlags = 0, uint miscFlags = 0, uint structureByteStride = 0)
     {
-        public D3D11_BUFFER_DESC(uint byteWidth, uint bindFlags, D3D11_USAGE usage = D3D11_USAGE_DEFAULT, uint cpuaccessFlags = 0, uint miscFlags = 0, uint structureByteStride = 0)
-        {
-            ByteWidth = byteWidth;
-            Usage = usage;
-            BindFlags = bindFlags;
-            CPUAccessFlags = cpuaccessFlags;
-            MiscFlags = miscFlags;
-            StructureByteStride = structureByteStride;
-        }
+        ByteWidth = byteWidth;
+        Usage = usage;
+        BindFlags = bindFlags;
+        CPUAccessFlags = cpuaccessFlags;
+        MiscFlags = miscFlags;
+        StructureByteStride = structureByteStride;
     }
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("597D4FB0-47FD-4AFF-89B9-C6CFAE8CF08E")]
+public partial struct ManipulationProcessor
 {
-    [Guid("597D4FB0-47FD-4AFF-89B9-C6CFAE8CF08E")]
-    public partial struct ManipulationProcessor
-    {
-    }
 }

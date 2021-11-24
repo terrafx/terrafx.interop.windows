@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("9D2BFE18-728D-48D2-B358-BC7E436C6674")]
+public partial struct CODECAPI_AVDecVideoMPEG2ErrorConcealment
 {
-    [Guid("9D2BFE18-728D-48D2-B358-BC7E436C6674")]
-    public partial struct CODECAPI_AVDecVideoMPEG2ErrorConcealment
-    {
-    }
 }

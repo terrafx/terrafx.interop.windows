@@ -7,247 +7,246 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("8BE47B07-57F6-11D2-9EEE-00C04F797396")]
+[NativeTypeName("struct ISpeechVoiceStatus : IDispatch")]
+[NativeInheritance("IDispatch")]
+public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface
 {
-    [Guid("8BE47B07-57F6-11D2-9EEE-00C04F797396")]
-    [NativeTypeName("struct ISpeechVoiceStatus : IDispatch")]
-    [NativeInheritance("IDispatch")]
-    public unsafe partial struct ISpeechVoiceStatus : ISpeechVoiceStatus.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ISpeechVoiceStatus*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ISpeechVoiceStatus*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ISpeechVoiceStatus*, uint>)(lpVtbl[1]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ISpeechVoiceStatus*, uint>)(lpVtbl[1]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ISpeechVoiceStatus*, uint>)(lpVtbl[2]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ISpeechVoiceStatus*, uint>)(lpVtbl[2]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetTypeInfoCount(uint* pctinfo)
+    {
+        return ((delegate* unmanaged<ISpeechVoiceStatus*, uint*, int>)(lpVtbl[3]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), pctinfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetTypeInfoCount(uint* pctinfo)
-        {
-            return ((delegate* unmanaged<ISpeechVoiceStatus*, uint*, int>)(lpVtbl[3]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), pctinfo);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+    {
+        return ((delegate* unmanaged<ISpeechVoiceStatus*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
-        {
-            return ((delegate* unmanaged<ISpeechVoiceStatus*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    {
+        return ((delegate* unmanaged<ISpeechVoiceStatus*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
-        {
-            return ((delegate* unmanaged<ISpeechVoiceStatus*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
+    {
+        return ((delegate* unmanaged<ISpeechVoiceStatus*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
-        {
-            return ((delegate* unmanaged<ISpeechVoiceStatus*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT get_CurrentStreamNumber([NativeTypeName("long *")] int* StreamNumber)
+    {
+        return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[7]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), StreamNumber);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT get_LastStreamNumberQueued([NativeTypeName("long *")] int* StreamNumber)
+    {
+        return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[8]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), StreamNumber);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT get_LastHResult([NativeTypeName("long *")] int* HResult)
+    {
+        return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[9]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), HResult);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT get_RunningState(SpeechRunState* State)
+    {
+        return ((delegate* unmanaged<ISpeechVoiceStatus*, SpeechRunState*, int>)(lpVtbl[10]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), State);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT get_InputWordPosition([NativeTypeName("long *")] int* Position)
+    {
+        return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[11]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), Position);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT get_InputWordLength([NativeTypeName("long *")] int* Length)
+    {
+        return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[12]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), Length);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT get_InputSentencePosition([NativeTypeName("long *")] int* Position)
+    {
+        return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[13]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), Position);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT get_InputSentenceLength([NativeTypeName("long *")] int* Length)
+    {
+        return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[14]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), Length);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT get_LastBookmark([NativeTypeName("BSTR *")] ushort** Bookmark)
+    {
+        return ((delegate* unmanaged<ISpeechVoiceStatus*, ushort**, int>)(lpVtbl[15]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), Bookmark);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT get_LastBookmarkId([NativeTypeName("long *")] int* BookmarkId)
+    {
+        return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[16]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), BookmarkId);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT get_PhonemeId(short* PhoneId)
+    {
+        return ((delegate* unmanaged<ISpeechVoiceStatus*, short*, int>)(lpVtbl[17]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), PhoneId);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT get_VisemeId(short* VisemeId)
+    {
+        return ((delegate* unmanaged<ISpeechVoiceStatus*, short*, int>)(lpVtbl[18]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), VisemeId);
+    }
+
+    public interface Interface : IDispatch.Interface
+    {
         [VtblIndex(7)]
-        public HRESULT get_CurrentStreamNumber([NativeTypeName("long *")] int* StreamNumber)
-        {
-            return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[7]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), StreamNumber);
-        }
+        HRESULT get_CurrentStreamNumber([NativeTypeName("long *")] int* StreamNumber);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT get_LastStreamNumberQueued([NativeTypeName("long *")] int* StreamNumber)
-        {
-            return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[8]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), StreamNumber);
-        }
+        HRESULT get_LastStreamNumberQueued([NativeTypeName("long *")] int* StreamNumber);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT get_LastHResult([NativeTypeName("long *")] int* HResult)
-        {
-            return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[9]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), HResult);
-        }
+        HRESULT get_LastHResult([NativeTypeName("long *")] int* HResult);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT get_RunningState(SpeechRunState* State)
-        {
-            return ((delegate* unmanaged<ISpeechVoiceStatus*, SpeechRunState*, int>)(lpVtbl[10]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), State);
-        }
+        HRESULT get_RunningState(SpeechRunState* State);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT get_InputWordPosition([NativeTypeName("long *")] int* Position)
-        {
-            return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[11]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), Position);
-        }
+        HRESULT get_InputWordPosition([NativeTypeName("long *")] int* Position);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT get_InputWordLength([NativeTypeName("long *")] int* Length)
-        {
-            return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[12]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), Length);
-        }
+        HRESULT get_InputWordLength([NativeTypeName("long *")] int* Length);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT get_InputSentencePosition([NativeTypeName("long *")] int* Position)
-        {
-            return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[13]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), Position);
-        }
+        HRESULT get_InputSentencePosition([NativeTypeName("long *")] int* Position);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT get_InputSentenceLength([NativeTypeName("long *")] int* Length)
-        {
-            return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[14]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), Length);
-        }
+        HRESULT get_InputSentenceLength([NativeTypeName("long *")] int* Length);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT get_LastBookmark([NativeTypeName("BSTR *")] ushort** Bookmark)
-        {
-            return ((delegate* unmanaged<ISpeechVoiceStatus*, ushort**, int>)(lpVtbl[15]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), Bookmark);
-        }
+        HRESULT get_LastBookmark([NativeTypeName("BSTR *")] ushort** Bookmark);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT get_LastBookmarkId([NativeTypeName("long *")] int* BookmarkId)
-        {
-            return ((delegate* unmanaged<ISpeechVoiceStatus*, int*, int>)(lpVtbl[16]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), BookmarkId);
-        }
+        HRESULT get_LastBookmarkId([NativeTypeName("long *")] int* BookmarkId);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT get_PhonemeId(short* PhoneId)
-        {
-            return ((delegate* unmanaged<ISpeechVoiceStatus*, short*, int>)(lpVtbl[17]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), PhoneId);
-        }
+        HRESULT get_PhonemeId(short* PhoneId);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT get_VisemeId(short* VisemeId)
-        {
-            return ((delegate* unmanaged<ISpeechVoiceStatus*, short*, int>)(lpVtbl[18]))((ISpeechVoiceStatus*)Unsafe.AsPointer(ref this), VisemeId);
-        }
+        HRESULT get_VisemeId(short* VisemeId);
+    }
 
-        public interface Interface : IDispatch.Interface
-        {
-            [VtblIndex(7)]
-            HRESULT get_CurrentStreamNumber([NativeTypeName("long *")] int* StreamNumber);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechVoiceStatus*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(8)]
-            HRESULT get_LastStreamNumberQueued([NativeTypeName("long *")] int* StreamNumber);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechVoiceStatus*, uint> AddRef;
 
-            [VtblIndex(9)]
-            HRESULT get_LastHResult([NativeTypeName("long *")] int* HResult);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechVoiceStatus*, uint> Release;
 
-            [VtblIndex(10)]
-            HRESULT get_RunningState(SpeechRunState* State);
+        [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechVoiceStatus*, uint*, int> GetTypeInfoCount;
 
-            [VtblIndex(11)]
-            HRESULT get_InputWordPosition([NativeTypeName("long *")] int* Position);
+        [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechVoiceStatus*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
-            [VtblIndex(12)]
-            HRESULT get_InputWordLength([NativeTypeName("long *")] int* Length);
+        [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechVoiceStatus*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
-            [VtblIndex(13)]
-            HRESULT get_InputSentencePosition([NativeTypeName("long *")] int* Position);
+        [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechVoiceStatus*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
-            [VtblIndex(14)]
-            HRESULT get_InputSentenceLength([NativeTypeName("long *")] int* Length);
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechVoiceStatus*, int*, int> get_CurrentStreamNumber;
 
-            [VtblIndex(15)]
-            HRESULT get_LastBookmark([NativeTypeName("BSTR *")] ushort** Bookmark);
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechVoiceStatus*, int*, int> get_LastStreamNumberQueued;
 
-            [VtblIndex(16)]
-            HRESULT get_LastBookmarkId([NativeTypeName("long *")] int* BookmarkId);
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechVoiceStatus*, int*, int> get_LastHResult;
 
-            [VtblIndex(17)]
-            HRESULT get_PhonemeId(short* PhoneId);
+        [NativeTypeName("HRESULT (SpeechRunState *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechVoiceStatus*, SpeechRunState*, int> get_RunningState;
 
-            [VtblIndex(18)]
-            HRESULT get_VisemeId(short* VisemeId);
-        }
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechVoiceStatus*, int*, int> get_InputWordPosition;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechVoiceStatus*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechVoiceStatus*, int*, int> get_InputWordLength;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechVoiceStatus*, uint> AddRef;
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechVoiceStatus*, int*, int> get_InputSentencePosition;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechVoiceStatus*, uint> Release;
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechVoiceStatus*, int*, int> get_InputSentenceLength;
 
-            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechVoiceStatus*, uint*, int> GetTypeInfoCount;
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechVoiceStatus*, ushort**, int> get_LastBookmark;
 
-            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechVoiceStatus*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechVoiceStatus*, int*, int> get_LastBookmarkId;
 
-            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechVoiceStatus*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        [NativeTypeName("HRESULT (short *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechVoiceStatus*, short*, int> get_PhonemeId;
 
-            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechVoiceStatus*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechVoiceStatus*, int*, int> get_CurrentStreamNumber;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechVoiceStatus*, int*, int> get_LastStreamNumberQueued;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechVoiceStatus*, int*, int> get_LastHResult;
-
-            [NativeTypeName("HRESULT (SpeechRunState *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechVoiceStatus*, SpeechRunState*, int> get_RunningState;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechVoiceStatus*, int*, int> get_InputWordPosition;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechVoiceStatus*, int*, int> get_InputWordLength;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechVoiceStatus*, int*, int> get_InputSentencePosition;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechVoiceStatus*, int*, int> get_InputSentenceLength;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechVoiceStatus*, ushort**, int> get_LastBookmark;
-
-            [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechVoiceStatus*, int*, int> get_LastBookmarkId;
-
-            [NativeTypeName("HRESULT (short *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechVoiceStatus*, short*, int> get_PhonemeId;
-
-            [NativeTypeName("HRESULT (short *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISpeechVoiceStatus*, short*, int> get_VisemeId;
-        }
+        [NativeTypeName("HRESULT (short *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISpeechVoiceStatus*, short*, int> get_VisemeId;
     }
 }

@@ -5,15 +5,14 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Explicit)]
-    public partial struct MFPaletteEntry
-    {
-        [FieldOffset(0)]
-        public MFARGB ARGB;
+namespace TerraFX.Interop.Windows;
 
-        [FieldOffset(0)]
-        public MFAYUVSample AYCbCr;
-    }
+[StructLayout(LayoutKind.Explicit)]
+public partial struct MFPaletteEntry
+{
+    [FieldOffset(0)]
+    public MFARGB ARGB;
+
+    [FieldOffset(0)]
+    public MFAYUVSample AYCbCr;
 }

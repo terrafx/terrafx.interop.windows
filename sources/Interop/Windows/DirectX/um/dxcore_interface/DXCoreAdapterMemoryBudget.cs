@@ -5,21 +5,20 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+public partial struct DXCoreAdapterMemoryBudget
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public partial struct DXCoreAdapterMemoryBudget
-    {
-        [NativeTypeName("uint64_t")]
-        public ulong budget;
+    [NativeTypeName("uint64_t")]
+    public ulong budget;
 
-        [NativeTypeName("uint64_t")]
-        public ulong currentUsage;
+    [NativeTypeName("uint64_t")]
+    public ulong currentUsage;
 
-        [NativeTypeName("uint64_t")]
-        public ulong availableForReservation;
+    [NativeTypeName("uint64_t")]
+    public ulong availableForReservation;
 
-        [NativeTypeName("uint64_t")]
-        public ulong currentReservation;
-    }
+    [NativeTypeName("uint64_t")]
+    public ulong currentReservation;
 }

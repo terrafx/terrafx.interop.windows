@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SpLexicon" /> struct.</summary>
+public static unsafe partial class SpLexiconTests
 {
-    /// <summary>Provides validation of the <see cref="SpLexicon" /> struct.</summary>
-    public static unsafe partial class SpLexiconTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpLexicon" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SpLexicon" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SpLexicon).GUID, Is.EqualTo(CLSID_SpLexicon));
-        }
+        Assert.That(typeof(SpLexicon).GUID, Is.EqualTo(CLSID_SpLexicon));
+    }
 
-        /// <summary>Validates that the <see cref="SpLexicon" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SpLexicon>(), Is.EqualTo(sizeof(SpLexicon)));
-        }
+    /// <summary>Validates that the <see cref="SpLexicon" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SpLexicon>(), Is.EqualTo(sizeof(SpLexicon)));
+    }
 
-        /// <summary>Validates that the <see cref="SpLexicon" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SpLexicon).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SpLexicon" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SpLexicon).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SpLexicon" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SpLexicon), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SpLexicon" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SpLexicon), Is.EqualTo(1));
     }
 }

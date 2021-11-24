@@ -3,36 +3,35 @@
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CRYPT_PROVIDER_SGNR
 {
-    public unsafe partial struct CRYPT_PROVIDER_SGNR
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbStruct;
+    [NativeTypeName("DWORD")]
+    public uint cbStruct;
 
-        public FILETIME sftVerifyAsOf;
+    public FILETIME sftVerifyAsOf;
 
-        [NativeTypeName("DWORD")]
-        public uint csCertChain;
+    [NativeTypeName("DWORD")]
+    public uint csCertChain;
 
-        [NativeTypeName("struct _CRYPT_PROVIDER_CERT *")]
-        public CRYPT_PROVIDER_CERT* pasCertChain;
+    [NativeTypeName("struct _CRYPT_PROVIDER_CERT *")]
+    public CRYPT_PROVIDER_CERT* pasCertChain;
 
-        [NativeTypeName("DWORD")]
-        public uint dwSignerType;
+    [NativeTypeName("DWORD")]
+    public uint dwSignerType;
 
-        public CMSG_SIGNER_INFO* psSigner;
+    public CMSG_SIGNER_INFO* psSigner;
 
-        [NativeTypeName("DWORD")]
-        public uint dwError;
+    [NativeTypeName("DWORD")]
+    public uint dwError;
 
-        [NativeTypeName("DWORD")]
-        public uint csCounterSigners;
+    [NativeTypeName("DWORD")]
+    public uint csCounterSigners;
 
-        [NativeTypeName("struct _CRYPT_PROVIDER_SGNR *")]
-        public CRYPT_PROVIDER_SGNR* pasCounterSigners;
+    [NativeTypeName("struct _CRYPT_PROVIDER_SGNR *")]
+    public CRYPT_PROVIDER_SGNR* pasCounterSigners;
 
-        [NativeTypeName("PCCERT_CHAIN_CONTEXT")]
-        public CERT_CHAIN_CONTEXT* pChainContext;
-    }
+    [NativeTypeName("PCCERT_CHAIN_CONTEXT")]
+    public CERT_CHAIN_CONTEXT* pChainContext;
 }

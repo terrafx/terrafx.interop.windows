@@ -3,19 +3,18 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct EVENTMSG
 {
-    public partial struct EVENTMSG
-    {
-        public uint message;
+    public uint message;
 
-        public uint paramL;
+    public uint paramL;
 
-        public uint paramH;
+    public uint paramH;
 
-        [NativeTypeName("DWORD")]
-        public uint time;
+    [NativeTypeName("DWORD")]
+    public uint time;
 
-        public HWND hwnd;
-    }
+    public HWND hwnd;
 }

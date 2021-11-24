@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IEnumSpObjectTokens" /> struct.</summary>
+public static unsafe partial class IEnumSpObjectTokensTests
 {
-    /// <summary>Provides validation of the <see cref="IEnumSpObjectTokens" /> struct.</summary>
-    public static unsafe partial class IEnumSpObjectTokensTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEnumSpObjectTokens" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEnumSpObjectTokens" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IEnumSpObjectTokens).GUID, Is.EqualTo(IID_IEnumSpObjectTokens));
-        }
+        Assert.That(typeof(IEnumSpObjectTokens).GUID, Is.EqualTo(IID_IEnumSpObjectTokens));
+    }
 
-        /// <summary>Validates that the <see cref="IEnumSpObjectTokens" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IEnumSpObjectTokens>(), Is.EqualTo(sizeof(IEnumSpObjectTokens)));
-        }
+    /// <summary>Validates that the <see cref="IEnumSpObjectTokens" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IEnumSpObjectTokens>(), Is.EqualTo(sizeof(IEnumSpObjectTokens)));
+    }
 
-        /// <summary>Validates that the <see cref="IEnumSpObjectTokens" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IEnumSpObjectTokens).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IEnumSpObjectTokens" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IEnumSpObjectTokens).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IEnumSpObjectTokens" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IEnumSpObjectTokens" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IEnumSpObjectTokens), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IEnumSpObjectTokens), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IEnumSpObjectTokens), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IEnumSpObjectTokens), Is.EqualTo(4));
         }
     }
 }

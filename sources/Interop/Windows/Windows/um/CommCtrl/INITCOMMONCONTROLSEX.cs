@@ -3,14 +3,13 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct INITCOMMONCONTROLSEX
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwSize;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint dwICC;
-    }
+public partial struct INITCOMMONCONTROLSEX
+{
+    [NativeTypeName("DWORD")]
+    public uint dwSize;
+
+    [NativeTypeName("DWORD")]
+    public uint dwICC;
 }

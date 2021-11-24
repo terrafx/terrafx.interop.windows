@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D3D12_VIDEO_PROCESS_SUPPORT_FLAGS
 {
-    [Flags]
-    public enum D3D12_VIDEO_PROCESS_SUPPORT_FLAGS
-    {
-        D3D12_VIDEO_PROCESS_SUPPORT_FLAG_NONE = 0,
-        D3D12_VIDEO_PROCESS_SUPPORT_FLAG_SUPPORTED = 0x1,
-    }
+    D3D12_VIDEO_PROCESS_SUPPORT_FLAG_NONE = 0,
+    D3D12_VIDEO_PROCESS_SUPPORT_FLAG_SUPPORTED = 0x1,
 }

@@ -3,22 +3,21 @@
 // Ported from shared/wtypes.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct QUERYCONTEXT
 {
-    public partial struct QUERYCONTEXT
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwContext;
+    [NativeTypeName("DWORD")]
+    public uint dwContext;
 
-        public CSPLATFORM Platform;
+    public CSPLATFORM Platform;
 
-        [NativeTypeName("LCID")]
-        public uint Locale;
+    [NativeTypeName("LCID")]
+    public uint Locale;
 
-        [NativeTypeName("DWORD")]
-        public uint dwVersionHi;
+    [NativeTypeName("DWORD")]
+    public uint dwVersionHi;
 
-        [NativeTypeName("DWORD")]
-        public uint dwVersionLo;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwVersionLo;
 }

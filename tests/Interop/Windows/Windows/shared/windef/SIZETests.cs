@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SIZE" /> struct.</summary>
+public static unsafe partial class SIZETests
 {
-    /// <summary>Provides validation of the <see cref="SIZE" /> struct.</summary>
-    public static unsafe partial class SIZETests
+    /// <summary>Validates that the <see cref="SIZE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SIZE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SIZE>(), Is.EqualTo(sizeof(SIZE)));
-        }
+        Assert.That(Marshal.SizeOf<SIZE>(), Is.EqualTo(sizeof(SIZE)));
+    }
 
-        /// <summary>Validates that the <see cref="SIZE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SIZE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SIZE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SIZE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SIZE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SIZE), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="SIZE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SIZE), Is.EqualTo(8));
     }
 }

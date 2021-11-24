@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("14010E02-BBBD-41F0-88E3-EDA371216584")]
+public partial struct SearchFolderItemFactory
 {
-    [Guid("14010E02-BBBD-41F0-88E3-EDA371216584")]
-    public partial struct SearchFolderItemFactory
-    {
-    }
 }

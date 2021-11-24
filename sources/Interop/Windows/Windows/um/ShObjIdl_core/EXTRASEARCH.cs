@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct EXTRASEARCH
 {
-    public unsafe partial struct EXTRASEARCH
-    {
-        public Guid guidSearch;
+    public Guid guidSearch;
 
-        [NativeTypeName("WCHAR [80]")]
-        public fixed ushort wszFriendlyName[80];
+    [NativeTypeName("WCHAR [80]")]
+    public fixed ushort wszFriendlyName[80];
 
-        [NativeTypeName("WCHAR [2084]")]
-        public fixed ushort wszUrl[2084];
-    }
+    [NativeTypeName("WCHAR [2084]")]
+    public fixed ushort wszUrl[2084];
 }

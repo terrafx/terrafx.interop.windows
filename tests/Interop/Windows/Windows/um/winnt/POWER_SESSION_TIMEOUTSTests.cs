@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="POWER_SESSION_TIMEOUTS" /> struct.</summary>
+public static unsafe partial class POWER_SESSION_TIMEOUTSTests
 {
-    /// <summary>Provides validation of the <see cref="POWER_SESSION_TIMEOUTS" /> struct.</summary>
-    public static unsafe partial class POWER_SESSION_TIMEOUTSTests
+    /// <summary>Validates that the <see cref="POWER_SESSION_TIMEOUTS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="POWER_SESSION_TIMEOUTS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<POWER_SESSION_TIMEOUTS>(), Is.EqualTo(sizeof(POWER_SESSION_TIMEOUTS)));
-        }
+        Assert.That(Marshal.SizeOf<POWER_SESSION_TIMEOUTS>(), Is.EqualTo(sizeof(POWER_SESSION_TIMEOUTS)));
+    }
 
-        /// <summary>Validates that the <see cref="POWER_SESSION_TIMEOUTS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(POWER_SESSION_TIMEOUTS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="POWER_SESSION_TIMEOUTS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(POWER_SESSION_TIMEOUTS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="POWER_SESSION_TIMEOUTS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(POWER_SESSION_TIMEOUTS), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="POWER_SESSION_TIMEOUTS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(POWER_SESSION_TIMEOUTS), Is.EqualTo(8));
     }
 }

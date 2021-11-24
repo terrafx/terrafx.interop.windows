@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DigitalWindowSetting" /> struct.</summary>
+public static unsafe partial class DigitalWindowSettingTests
 {
-    /// <summary>Provides validation of the <see cref="DigitalWindowSetting" /> struct.</summary>
-    public static unsafe partial class DigitalWindowSettingTests
+    /// <summary>Validates that the <see cref="DigitalWindowSetting" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DigitalWindowSetting" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DigitalWindowSetting>(), Is.EqualTo(sizeof(DigitalWindowSetting)));
-        }
+        Assert.That(Marshal.SizeOf<DigitalWindowSetting>(), Is.EqualTo(sizeof(DigitalWindowSetting)));
+    }
 
-        /// <summary>Validates that the <see cref="DigitalWindowSetting" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DigitalWindowSetting).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DigitalWindowSetting" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DigitalWindowSetting).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DigitalWindowSetting" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DigitalWindowSetting), Is.EqualTo(24));
-        }
+    /// <summary>Validates that the <see cref="DigitalWindowSetting" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DigitalWindowSetting), Is.EqualTo(24));
     }
 }

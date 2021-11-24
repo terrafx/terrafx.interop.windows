@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("92CA9DCD-5622-4BBA-A805-5E9F541BD8C9")]
+[NativeTypeName("struct IObjectArray : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IObjectArray : IObjectArray.Interface
 {
-    [Guid("92CA9DCD-5622-4BBA-A805-5E9F541BD8C9")]
-    [NativeTypeName("struct IObjectArray : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IObjectArray : IObjectArray.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IObjectArray*, Guid*, void**, int>)(lpVtbl[0]))((IObjectArray*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IObjectArray*, Guid*, void**, int>)(lpVtbl[0]))((IObjectArray*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IObjectArray*, uint>)(lpVtbl[1]))((IObjectArray*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IObjectArray*, uint>)(lpVtbl[1]))((IObjectArray*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IObjectArray*, uint>)(lpVtbl[2]))((IObjectArray*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IObjectArray*, uint>)(lpVtbl[2]))((IObjectArray*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetCount(uint* pcObjects)
+    {
+        return ((delegate* unmanaged<IObjectArray*, uint*, int>)(lpVtbl[3]))((IObjectArray*)Unsafe.AsPointer(ref this), pcObjects);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetAt(uint uiIndex, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
+    {
+        return ((delegate* unmanaged<IObjectArray*, uint, Guid*, void**, int>)(lpVtbl[4]))((IObjectArray*)Unsafe.AsPointer(ref this), uiIndex, riid, ppv);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetCount(uint* pcObjects)
-        {
-            return ((delegate* unmanaged<IObjectArray*, uint*, int>)(lpVtbl[3]))((IObjectArray*)Unsafe.AsPointer(ref this), pcObjects);
-        }
+        HRESULT GetCount(uint* pcObjects);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetAt(uint uiIndex, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
-        {
-            return ((delegate* unmanaged<IObjectArray*, uint, Guid*, void**, int>)(lpVtbl[4]))((IObjectArray*)Unsafe.AsPointer(ref this), uiIndex, riid, ppv);
-        }
+        HRESULT GetAt(uint uiIndex, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetCount(uint* pcObjects);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IObjectArray*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetAt(uint uiIndex, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IObjectArray*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IObjectArray*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IObjectArray*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IObjectArray*, uint> AddRef;
+        [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IObjectArray*, uint*, int> GetCount;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IObjectArray*, uint> Release;
-
-            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IObjectArray*, uint*, int> GetCount;
-
-            [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IObjectArray*, uint, Guid*, void**, int> GetAt;
-        }
+        [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IObjectArray*, uint, Guid*, void**, int> GetAt;
     }
 }

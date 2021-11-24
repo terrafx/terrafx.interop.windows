@@ -3,19 +3,18 @@
 // Ported from um/amvideo.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct MPEG1VIDEOINFO
 {
-    public unsafe partial struct MPEG1VIDEOINFO
-    {
-        public VIDEOINFOHEADER hdr;
+    public VIDEOINFOHEADER hdr;
 
-        [NativeTypeName("DWORD")]
-        public uint dwStartTimeCode;
+    [NativeTypeName("DWORD")]
+    public uint dwStartTimeCode;
 
-        [NativeTypeName("DWORD")]
-        public uint cbSequenceHeader;
+    [NativeTypeName("DWORD")]
+    public uint cbSequenceHeader;
 
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte bSequenceHeader[1];
-    }
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte bSequenceHeader[1];
 }

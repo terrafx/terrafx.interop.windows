@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AMD64_MXCSR_REG" /> struct.</summary>
+public static unsafe partial class AMD64_MXCSR_REGTests
 {
-    /// <summary>Provides validation of the <see cref="AMD64_MXCSR_REG" /> struct.</summary>
-    public static unsafe partial class AMD64_MXCSR_REGTests
+    /// <summary>Validates that the <see cref="AMD64_MXCSR_REG" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="AMD64_MXCSR_REG" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<AMD64_MXCSR_REG>(), Is.EqualTo(sizeof(AMD64_MXCSR_REG)));
-        }
+        Assert.That(Marshal.SizeOf<AMD64_MXCSR_REG>(), Is.EqualTo(sizeof(AMD64_MXCSR_REG)));
+    }
 
-        /// <summary>Validates that the <see cref="AMD64_MXCSR_REG" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutExplicitTest()
-        {
-            Assert.That(typeof(AMD64_MXCSR_REG).IsExplicitLayout, Is.True);
-        }
+    /// <summary>Validates that the <see cref="AMD64_MXCSR_REG" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutExplicitTest()
+    {
+        Assert.That(typeof(AMD64_MXCSR_REG).IsExplicitLayout, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="AMD64_MXCSR_REG" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(AMD64_MXCSR_REG), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="AMD64_MXCSR_REG" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(AMD64_MXCSR_REG), Is.EqualTo(4));
     }
 }

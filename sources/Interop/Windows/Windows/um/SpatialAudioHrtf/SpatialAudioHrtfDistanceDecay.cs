@@ -5,19 +5,18 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct SpatialAudioHrtfDistanceDecay
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct SpatialAudioHrtfDistanceDecay
-    {
-        public SpatialAudioHrtfDistanceDecayType Type;
+    public SpatialAudioHrtfDistanceDecayType Type;
 
-        public float MaxGain;
+    public float MaxGain;
 
-        public float MinGain;
+    public float MinGain;
 
-        public float UnityGainDistance;
+    public float UnityGainDistance;
 
-        public float CutoffDistance;
-    }
+    public float CutoffDistance;
 }

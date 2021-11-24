@@ -3,14 +3,13 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION
-    {
-        [NativeTypeName("DWORD")]
-        public uint ElementCount;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("COMPATIBILITY_CONTEXT_ELEMENT []")]
-        public COMPATIBILITY_CONTEXT_ELEMENT Elements;
-    }
+public partial struct ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION
+{
+    [NativeTypeName("DWORD")]
+    public uint ElementCount;
+
+    [NativeTypeName("COMPATIBILITY_CONTEXT_ELEMENT []")]
+    public COMPATIBILITY_CONTEXT_ELEMENT Elements;
 }

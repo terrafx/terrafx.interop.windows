@@ -5,21 +5,20 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct XAUDIO2_VOICE_DETAILS
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct XAUDIO2_VOICE_DETAILS
-    {
-        [NativeTypeName("UINT32")]
-        public uint CreationFlags;
+    [NativeTypeName("UINT32")]
+    public uint CreationFlags;
 
-        [NativeTypeName("UINT32")]
-        public uint ActiveFlags;
+    [NativeTypeName("UINT32")]
+    public uint ActiveFlags;
 
-        [NativeTypeName("UINT32")]
-        public uint InputChannels;
+    [NativeTypeName("UINT32")]
+    public uint InputChannels;
 
-        [NativeTypeName("UINT32")]
-        public uint InputSampleRate;
-    }
+    [NativeTypeName("UINT32")]
+    public uint InputSampleRate;
 }

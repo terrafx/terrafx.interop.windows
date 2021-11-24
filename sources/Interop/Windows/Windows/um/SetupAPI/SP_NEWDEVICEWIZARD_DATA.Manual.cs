@@ -7,109 +7,108 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public unsafe partial struct SP_NEWDEVICEWIZARD_DATA
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct SP_NEWDEVICEWIZARD_DATA
+    public static uint SizeOf
     {
-        public static uint SizeOf
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return (uint)(sizeof(SP_NEWDEVICEWIZARD_DATA32));
-                }
-                else
-                {
-                    return (uint)(sizeof(SP_NEWDEVICEWIZARD_DATA64));
-                }
+                return (uint)(sizeof(SP_NEWDEVICEWIZARD_DATA32));
+            }
+            else
+            {
+                return (uint)(sizeof(SP_NEWDEVICEWIZARD_DATA64));
             }
         }
-
-        [FieldOffset(0)]
-        public SP_NEWDEVICEWIZARD_DATA32 _value32;
-
-        [FieldOffset(0)]
-        public SP_NEWDEVICEWIZARD_DATA64 _value64;
-
-        public ref SP_CLASSINSTALL_HEADER ClassInstallHeader
-        {
-            get
-            {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Unsafe.As<SP_CLASSINSTALL_HEADER32, SP_CLASSINSTALL_HEADER>(ref _value32.ClassInstallHeader), 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Unsafe.As<SP_CLASSINSTALL_HEADER64, SP_CLASSINSTALL_HEADER>(ref _value64.ClassInstallHeader), 1));
-                }
-            }
-        }
-
-        [NativeTypeName("DWORD")]
-        public ref uint Flags
-        {
-            get
-            {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.Flags, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.Flags, 1));
-                }
-            }
-        }
-
-        [NativeTypeName("HPROPSHEETPAGE [20]")]
-        public Span<HPROPSHEETPAGE> DynamicPages
-        {
-            get
-            {
-                if (sizeof(nint) == 4)
-                {
-                    return _value32.DynamicPages.AsSpan();
-                }
-                else
-                {
-                    return _value64.DynamicPages.AsSpan();
-                }
-            }
-        }
-
-        [NativeTypeName("DWORD")]
-        public ref uint NumDynamicPages
-        {
-            get
-            {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.NumDynamicPages, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.NumDynamicPages, 1));
-                }
-            }
-        }
-
-        public ref HWND hwndWizardDlg
-        {
-            get
-            {
-                if (sizeof(nint) == 4)
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.hwndWizardDlg, 1));
-                }
-                else
-                {
-                    return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.hwndWizardDlg, 1));
-                }
-            }
-        }
-
     }
+
+    [FieldOffset(0)]
+    public SP_NEWDEVICEWIZARD_DATA32 _value32;
+
+    [FieldOffset(0)]
+    public SP_NEWDEVICEWIZARD_DATA64 _value64;
+
+    public ref SP_CLASSINSTALL_HEADER ClassInstallHeader
+    {
+        get
+        {
+            if (sizeof(nint) == 4)
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Unsafe.As<SP_CLASSINSTALL_HEADER32, SP_CLASSINSTALL_HEADER>(ref _value32.ClassInstallHeader), 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Unsafe.As<SP_CLASSINSTALL_HEADER64, SP_CLASSINSTALL_HEADER>(ref _value64.ClassInstallHeader), 1));
+            }
+        }
+    }
+
+    [NativeTypeName("DWORD")]
+    public ref uint Flags
+    {
+        get
+        {
+            if (sizeof(nint) == 4)
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.Flags, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.Flags, 1));
+            }
+        }
+    }
+
+    [NativeTypeName("HPROPSHEETPAGE [20]")]
+    public Span<HPROPSHEETPAGE> DynamicPages
+    {
+        get
+        {
+            if (sizeof(nint) == 4)
+            {
+                return _value32.DynamicPages.AsSpan();
+            }
+            else
+            {
+                return _value64.DynamicPages.AsSpan();
+            }
+        }
+    }
+
+    [NativeTypeName("DWORD")]
+    public ref uint NumDynamicPages
+    {
+        get
+        {
+            if (sizeof(nint) == 4)
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.NumDynamicPages, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.NumDynamicPages, 1));
+            }
+        }
+    }
+
+    public ref HWND hwndWizardDlg
+    {
+        get
+        {
+            if (sizeof(nint) == 4)
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value32.hwndWizardDlg, 1));
+            }
+            else
+            {
+                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref _value64.hwndWizardDlg, 1));
+            }
+        }
+    }
+
 }

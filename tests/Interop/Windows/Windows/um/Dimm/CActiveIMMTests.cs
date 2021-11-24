@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CActiveIMM" /> struct.</summary>
+public static unsafe partial class CActiveIMMTests
 {
-    /// <summary>Provides validation of the <see cref="CActiveIMM" /> struct.</summary>
-    public static unsafe partial class CActiveIMMTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CActiveIMM" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CActiveIMM" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CActiveIMM).GUID, Is.EqualTo(IID_CActiveIMM));
-        }
+        Assert.That(typeof(CActiveIMM).GUID, Is.EqualTo(IID_CActiveIMM));
+    }
 
-        /// <summary>Validates that the <see cref="CActiveIMM" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CActiveIMM>(), Is.EqualTo(sizeof(CActiveIMM)));
-        }
+    /// <summary>Validates that the <see cref="CActiveIMM" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CActiveIMM>(), Is.EqualTo(sizeof(CActiveIMM)));
+    }
 
-        /// <summary>Validates that the <see cref="CActiveIMM" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CActiveIMM).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CActiveIMM" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CActiveIMM).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CActiveIMM" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CActiveIMM), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CActiveIMM" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CActiveIMM), Is.EqualTo(1));
     }
 }

@@ -3,13 +3,12 @@
 // Ported from um/d2d1effects.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum D2D1_COLORMANAGEMENT_QUALITY : uint
 {
-    public enum D2D1_COLORMANAGEMENT_QUALITY : uint
-    {
-        D2D1_COLORMANAGEMENT_QUALITY_PROOF = 0,
-        D2D1_COLORMANAGEMENT_QUALITY_NORMAL = 1,
-        D2D1_COLORMANAGEMENT_QUALITY_BEST = 2,
-        D2D1_COLORMANAGEMENT_QUALITY_FORCE_DWORD = 0xffffffff,
-    }
+    D2D1_COLORMANAGEMENT_QUALITY_PROOF = 0,
+    D2D1_COLORMANAGEMENT_QUALITY_NORMAL = 1,
+    D2D1_COLORMANAGEMENT_QUALITY_BEST = 2,
+    D2D1_COLORMANAGEMENT_QUALITY_FORCE_DWORD = 0xffffffff,
 }

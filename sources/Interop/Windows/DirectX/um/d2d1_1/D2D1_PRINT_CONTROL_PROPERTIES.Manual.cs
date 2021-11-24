@@ -11,29 +11,28 @@ using static TerraFX.Interop.DirectX.D2D1_COLOR_SPACE;
 using static TerraFX.Interop.DirectX.D2D1_PRINT_FONT_SUBSET_MODE;
 using static TerraFX.Interop.DirectX.DirectX;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D1_PRINT_CONTROL_PROPERTIES
 {
-    public partial struct D2D1_PRINT_CONTROL_PROPERTIES
+    public static ref readonly D2D1_PRINT_CONTROL_PROPERTIES DEFAULT
     {
-        public static ref readonly D2D1_PRINT_CONTROL_PROPERTIES DEFAULT
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x00, 0x00, 0x00, 0x00,
                     0x00, 0x00, 0x16, 0x43,
                     0x01, 0x00, 0x00, 0x00
                 };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<D2D1_PRINT_CONTROL_PROPERTIES>());
-                return ref Unsafe.As<byte, D2D1_PRINT_CONTROL_PROPERTIES>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<D2D1_PRINT_CONTROL_PROPERTIES>());
+            return ref Unsafe.As<byte, D2D1_PRINT_CONTROL_PROPERTIES>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public D2D1_PRINT_CONTROL_PROPERTIES(D2D1_PRINT_FONT_SUBSET_MODE fontSubsetMode = D2D1_PRINT_FONT_SUBSET_MODE_DEFAULT, float rasterDpi = 150.0f, D2D1_COLOR_SPACE colorSpace = D2D1_COLOR_SPACE_SRGB)
-        {
-            this = PrintControlProperties(fontSubsetMode, rasterDpi, colorSpace);
-        }
+    public D2D1_PRINT_CONTROL_PROPERTIES(D2D1_PRINT_FONT_SUBSET_MODE fontSubsetMode = D2D1_PRINT_FONT_SUBSET_MODE_DEFAULT, float rasterDpi = 150.0f, D2D1_COLOR_SPACE colorSpace = D2D1_COLOR_SPACE_SRGB)
+    {
+        this = PrintControlProperties(fontSubsetMode, rasterDpi, colorSpace);
     }
 }

@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows10.0.17763.0")]
-    public unsafe partial struct PRJ_NOTIFICATION_MAPPING
-    {
-        public PRJ_NOTIFY_TYPES NotificationBitMask;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* NotificationRoot;
-    }
+[SupportedOSPlatform("windows10.0.17763.0")]
+public unsafe partial struct PRJ_NOTIFICATION_MAPPING
+{
+    public PRJ_NOTIFY_TYPES NotificationBitMask;
+
+    [NativeTypeName("PCWSTR")]
+    public ushort* NotificationRoot;
 }

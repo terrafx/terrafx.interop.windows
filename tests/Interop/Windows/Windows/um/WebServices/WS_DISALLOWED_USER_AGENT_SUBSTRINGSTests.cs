@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WS_DISALLOWED_USER_AGENT_SUBSTRINGS" /> struct.</summary>
+public static unsafe partial class WS_DISALLOWED_USER_AGENT_SUBSTRINGSTests
 {
-    /// <summary>Provides validation of the <see cref="WS_DISALLOWED_USER_AGENT_SUBSTRINGS" /> struct.</summary>
-    public static unsafe partial class WS_DISALLOWED_USER_AGENT_SUBSTRINGSTests
+    /// <summary>Validates that the <see cref="WS_DISALLOWED_USER_AGENT_SUBSTRINGS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WS_DISALLOWED_USER_AGENT_SUBSTRINGS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WS_DISALLOWED_USER_AGENT_SUBSTRINGS>(), Is.EqualTo(sizeof(WS_DISALLOWED_USER_AGENT_SUBSTRINGS)));
-        }
+        Assert.That(Marshal.SizeOf<WS_DISALLOWED_USER_AGENT_SUBSTRINGS>(), Is.EqualTo(sizeof(WS_DISALLOWED_USER_AGENT_SUBSTRINGS)));
+    }
 
-        /// <summary>Validates that the <see cref="WS_DISALLOWED_USER_AGENT_SUBSTRINGS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WS_DISALLOWED_USER_AGENT_SUBSTRINGS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WS_DISALLOWED_USER_AGENT_SUBSTRINGS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WS_DISALLOWED_USER_AGENT_SUBSTRINGS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WS_DISALLOWED_USER_AGENT_SUBSTRINGS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WS_DISALLOWED_USER_AGENT_SUBSTRINGS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WS_DISALLOWED_USER_AGENT_SUBSTRINGS), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(WS_DISALLOWED_USER_AGENT_SUBSTRINGS), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(WS_DISALLOWED_USER_AGENT_SUBSTRINGS), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(WS_DISALLOWED_USER_AGENT_SUBSTRINGS), Is.EqualTo(8));
         }
     }
 }

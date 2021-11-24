@@ -3,17 +3,16 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SPRULE
 {
-    public unsafe partial struct SPRULE
-    {
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pszRuleName;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pszRuleName;
 
-        [NativeTypeName("ULONG")]
-        public uint ulRuleId;
+    [NativeTypeName("ULONG")]
+    public uint ulRuleId;
 
-        [NativeTypeName("DWORD")]
-        public uint dwAttributes;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwAttributes;
 }

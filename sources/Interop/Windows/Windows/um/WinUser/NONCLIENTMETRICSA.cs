@@ -3,40 +3,39 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct NONCLIENTMETRICSA
 {
-    public partial struct NONCLIENTMETRICSA
-    {
-        public uint cbSize;
+    public uint cbSize;
 
-        public int iBorderWidth;
+    public int iBorderWidth;
 
-        public int iScrollWidth;
+    public int iScrollWidth;
 
-        public int iScrollHeight;
+    public int iScrollHeight;
 
-        public int iCaptionWidth;
+    public int iCaptionWidth;
 
-        public int iCaptionHeight;
+    public int iCaptionHeight;
 
-        public LOGFONTA lfCaptionFont;
+    public LOGFONTA lfCaptionFont;
 
-        public int iSmCaptionWidth;
+    public int iSmCaptionWidth;
 
-        public int iSmCaptionHeight;
+    public int iSmCaptionHeight;
 
-        public LOGFONTA lfSmCaptionFont;
+    public LOGFONTA lfSmCaptionFont;
 
-        public int iMenuWidth;
+    public int iMenuWidth;
 
-        public int iMenuHeight;
+    public int iMenuHeight;
 
-        public LOGFONTA lfMenuFont;
+    public LOGFONTA lfMenuFont;
 
-        public LOGFONTA lfStatusFont;
+    public LOGFONTA lfStatusFont;
 
-        public LOGFONTA lfMessageFont;
+    public LOGFONTA lfMessageFont;
 
-        public int iPaddedBorderWidth;
-    }
+    public int iPaddedBorderWidth;
 }

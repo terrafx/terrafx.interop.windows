@@ -5,20 +5,19 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_TILE_REGION_SIZE
 {
-    public partial struct D3D12_TILE_REGION_SIZE
-    {
-        public uint NumTiles;
+    public uint NumTiles;
 
-        public BOOL UseBox;
+    public BOOL UseBox;
 
-        public uint Width;
+    public uint Width;
 
-        [NativeTypeName("UINT16")]
-        public ushort Height;
+    [NativeTypeName("UINT16")]
+    public ushort Height;
 
-        [NativeTypeName("UINT16")]
-        public ushort Depth;
-    }
+    [NativeTypeName("UINT16")]
+    public ushort Depth;
 }

@@ -3,12 +3,11 @@
 // Ported from um/TextStor.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct TS_SELECTIONSTYLE
-    {
-        public TsActiveSelEnd ase;
+namespace TerraFX.Interop.Windows;
 
-        public BOOL fInterimChar;
-    }
+public partial struct TS_SELECTIONSTYLE
+{
+    public TsActiveSelEnd ase;
+
+    public BOOL fInterimChar;
 }

@@ -5,15 +5,14 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct STATEMGRSTATUS
-    {
-        [NativeTypeName("DWORD")]
-        public uint nStatus;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("INT64")]
-        public long llSequenceNumber;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct STATEMGRSTATUS
+{
+    [NativeTypeName("DWORD")]
+    public uint nStatus;
+
+    [NativeTypeName("INT64")]
+    public long llSequenceNumber;
 }

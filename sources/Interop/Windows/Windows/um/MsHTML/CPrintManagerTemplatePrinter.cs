@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("63619F54-9D71-4C23-A08D-50D7F18DB2E9")]
+public partial struct CPrintManagerTemplatePrinter
 {
-    [Guid("63619F54-9D71-4C23-A08D-50D7F18DB2E9")]
-    public partial struct CPrintManagerTemplatePrinter
-    {
-    }
 }

@@ -3,24 +3,23 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SPWORDPRONUNCIATION
 {
-    public unsafe partial struct SPWORDPRONUNCIATION
-    {
-        [NativeTypeName("struct SPWORDPRONUNCIATION *")]
-        public SPWORDPRONUNCIATION* pNextWordPronunciation;
+    [NativeTypeName("struct SPWORDPRONUNCIATION *")]
+    public SPWORDPRONUNCIATION* pNextWordPronunciation;
 
-        public SPLEXICONTYPE eLexiconType;
+    public SPLEXICONTYPE eLexiconType;
 
-        [NativeTypeName("WORD")]
-        public ushort LangID;
+    [NativeTypeName("WORD")]
+    public ushort LangID;
 
-        [NativeTypeName("WORD")]
-        public ushort wPronunciationFlags;
+    [NativeTypeName("WORD")]
+    public ushort wPronunciationFlags;
 
-        public SPPARTOFSPEECH ePartOfSpeech;
+    public SPPARTOFSPEECH ePartOfSpeech;
 
-        [NativeTypeName("SPPHONEID [1]")]
-        public fixed ushort szPronunciation[1];
-    }
+    [NativeTypeName("SPPHONEID [1]")]
+    public fixed ushort szPronunciation[1];
 }

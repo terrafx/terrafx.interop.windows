@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SYSTEM_POWER_LEVEL" /> struct.</summary>
+public static unsafe partial class SYSTEM_POWER_LEVELTests
 {
-    /// <summary>Provides validation of the <see cref="SYSTEM_POWER_LEVEL" /> struct.</summary>
-    public static unsafe partial class SYSTEM_POWER_LEVELTests
+    /// <summary>Validates that the <see cref="SYSTEM_POWER_LEVEL" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SYSTEM_POWER_LEVEL" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SYSTEM_POWER_LEVEL>(), Is.EqualTo(sizeof(SYSTEM_POWER_LEVEL)));
-        }
+        Assert.That(Marshal.SizeOf<SYSTEM_POWER_LEVEL>(), Is.EqualTo(sizeof(SYSTEM_POWER_LEVEL)));
+    }
 
-        /// <summary>Validates that the <see cref="SYSTEM_POWER_LEVEL" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SYSTEM_POWER_LEVEL).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SYSTEM_POWER_LEVEL" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SYSTEM_POWER_LEVEL).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SYSTEM_POWER_LEVEL" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SYSTEM_POWER_LEVEL), Is.EqualTo(24));
-        }
+    /// <summary>Validates that the <see cref="SYSTEM_POWER_LEVEL" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SYSTEM_POWER_LEVEL), Is.EqualTo(24));
     }
 }

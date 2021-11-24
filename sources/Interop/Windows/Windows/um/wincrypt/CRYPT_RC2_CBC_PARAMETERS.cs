@@ -3,16 +3,15 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CRYPT_RC2_CBC_PARAMETERS
 {
-    public unsafe partial struct CRYPT_RC2_CBC_PARAMETERS
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwVersion;
+    [NativeTypeName("DWORD")]
+    public uint dwVersion;
 
-        public BOOL fIV;
+    public BOOL fIV;
 
-        [NativeTypeName("BYTE [8]")]
-        public fixed byte rgbIV[8];
-    }
+    [NativeTypeName("BYTE [8]")]
+    public fixed byte rgbIV[8];
 }

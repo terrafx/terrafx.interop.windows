@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MF_FLOAT2" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
+public static unsafe partial class MF_FLOAT2Tests
 {
-    /// <summary>Provides validation of the <see cref="MF_FLOAT2" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0")]
-    public static unsafe partial class MF_FLOAT2Tests
+    /// <summary>Validates that the <see cref="MF_FLOAT2" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MF_FLOAT2" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MF_FLOAT2>(), Is.EqualTo(sizeof(MF_FLOAT2)));
-        }
+        Assert.That(Marshal.SizeOf<MF_FLOAT2>(), Is.EqualTo(sizeof(MF_FLOAT2)));
+    }
 
-        /// <summary>Validates that the <see cref="MF_FLOAT2" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MF_FLOAT2).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MF_FLOAT2" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MF_FLOAT2).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MF_FLOAT2" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MF_FLOAT2), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="MF_FLOAT2" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MF_FLOAT2), Is.EqualTo(8));
     }
 }

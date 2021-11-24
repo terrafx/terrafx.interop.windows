@@ -3,18 +3,17 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum DISPID_SpeechRecoResult
 {
-    public enum DISPID_SpeechRecoResult
-    {
-        DISPID_SRRRecoContext = 1,
-        DISPID_SRRTimes = (DISPID_SRRRecoContext + 1),
-        DISPID_SRRAudioFormat = (DISPID_SRRTimes + 1),
-        DISPID_SRRPhraseInfo = (DISPID_SRRAudioFormat + 1),
-        DISPID_SRRAlternates = (DISPID_SRRPhraseInfo + 1),
-        DISPID_SRRAudio = (DISPID_SRRAlternates + 1),
-        DISPID_SRRSpeakAudio = (DISPID_SRRAudio + 1),
-        DISPID_SRRSaveToMemory = (DISPID_SRRSpeakAudio + 1),
-        DISPID_SRRDiscardResultInfo = (DISPID_SRRSaveToMemory + 1),
-    }
+    DISPID_SRRRecoContext = 1,
+    DISPID_SRRTimes = (DISPID_SRRRecoContext + 1),
+    DISPID_SRRAudioFormat = (DISPID_SRRTimes + 1),
+    DISPID_SRRPhraseInfo = (DISPID_SRRAudioFormat + 1),
+    DISPID_SRRAlternates = (DISPID_SRRPhraseInfo + 1),
+    DISPID_SRRAudio = (DISPID_SRRAlternates + 1),
+    DISPID_SRRSpeakAudio = (DISPID_SRRAudio + 1),
+    DISPID_SRRSaveToMemory = (DISPID_SRRSpeakAudio + 1),
+    DISPID_SRRDiscardResultInfo = (DISPID_SRRSaveToMemory + 1),
 }

@@ -5,22 +5,21 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct NMOBJECTNOTIFY
 {
-    public unsafe partial struct NMOBJECTNOTIFY
-    {
-        public NMHDR hdr;
+    public NMHDR hdr;
 
-        public int iItem;
+    public int iItem;
 
-        [NativeTypeName("const IID *")]
-        public Guid* piid;
+    [NativeTypeName("const IID *")]
+    public Guid* piid;
 
-        public void* pObject;
+    public void* pObject;
 
-        public HRESULT hResult;
+    public HRESULT hResult;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 }

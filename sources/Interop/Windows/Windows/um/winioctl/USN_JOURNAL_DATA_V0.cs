@@ -3,29 +3,28 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct USN_JOURNAL_DATA_V0
 {
-    public partial struct USN_JOURNAL_DATA_V0
-    {
-        [NativeTypeName("DWORDLONG")]
-        public ulong UsnJournalID;
+    [NativeTypeName("DWORDLONG")]
+    public ulong UsnJournalID;
 
-        [NativeTypeName("USN")]
-        public long FirstUsn;
+    [NativeTypeName("USN")]
+    public long FirstUsn;
 
-        [NativeTypeName("USN")]
-        public long NextUsn;
+    [NativeTypeName("USN")]
+    public long NextUsn;
 
-        [NativeTypeName("USN")]
-        public long LowestValidUsn;
+    [NativeTypeName("USN")]
+    public long LowestValidUsn;
 
-        [NativeTypeName("USN")]
-        public long MaxUsn;
+    [NativeTypeName("USN")]
+    public long MaxUsn;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong MaximumSize;
+    [NativeTypeName("DWORDLONG")]
+    public ulong MaximumSize;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong AllocationDelta;
-    }
+    [NativeTypeName("DWORDLONG")]
+    public ulong AllocationDelta;
 }

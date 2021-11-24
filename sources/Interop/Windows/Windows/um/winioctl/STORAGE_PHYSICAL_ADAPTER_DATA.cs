@@ -5,39 +5,38 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct STORAGE_PHYSICAL_ADAPTER_DATA
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct STORAGE_PHYSICAL_ADAPTER_DATA
-    {
-        [NativeTypeName("DWORD")]
-        public uint AdapterId;
+    [NativeTypeName("DWORD")]
+    public uint AdapterId;
 
-        public STORAGE_COMPONENT_HEALTH_STATUS HealthStatus;
+    public STORAGE_COMPONENT_HEALTH_STATUS HealthStatus;
 
-        public STORAGE_PROTOCOL_TYPE CommandProtocol;
+    public STORAGE_PROTOCOL_TYPE CommandProtocol;
 
-        public STORAGE_SPEC_VERSION SpecVersion;
+    public STORAGE_SPEC_VERSION SpecVersion;
 
-        [NativeTypeName("BYTE [8]")]
-        public fixed byte Vendor[8];
+    [NativeTypeName("BYTE [8]")]
+    public fixed byte Vendor[8];
 
-        [NativeTypeName("BYTE [40]")]
-        public fixed byte Model[40];
+    [NativeTypeName("BYTE [40]")]
+    public fixed byte Model[40];
 
-        [NativeTypeName("BYTE [16]")]
-        public fixed byte FirmwareRevision[16];
+    [NativeTypeName("BYTE [16]")]
+    public fixed byte FirmwareRevision[16];
 
-        [NativeTypeName("BYTE [32]")]
-        public fixed byte PhysicalLocation[32];
+    [NativeTypeName("BYTE [32]")]
+    public fixed byte PhysicalLocation[32];
 
-        [NativeTypeName("BOOLEAN")]
-        public byte ExpanderConnected;
+    [NativeTypeName("BOOLEAN")]
+    public byte ExpanderConnected;
 
-        [NativeTypeName("BYTE [3]")]
-        public fixed byte Reserved0[3];
+    [NativeTypeName("BYTE [3]")]
+    public fixed byte Reserved0[3];
 
-        [NativeTypeName("DWORD [3]")]
-        public fixed uint Reserved1[3];
-    }
+    [NativeTypeName("DWORD [3]")]
+    public fixed uint Reserved1[3];
 }

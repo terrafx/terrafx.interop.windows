@@ -3,17 +3,16 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct PPM_IDLESTATE_EVENT
 {
-    public partial struct PPM_IDLESTATE_EVENT
-    {
-        [NativeTypeName("DWORD")]
-        public uint NewState;
+    [NativeTypeName("DWORD")]
+    public uint NewState;
 
-        [NativeTypeName("DWORD")]
-        public uint OldState;
+    [NativeTypeName("DWORD")]
+    public uint OldState;
 
-        [NativeTypeName("DWORD64")]
-        public ulong Processors;
-    }
+    [NativeTypeName("DWORD64")]
+    public ulong Processors;
 }

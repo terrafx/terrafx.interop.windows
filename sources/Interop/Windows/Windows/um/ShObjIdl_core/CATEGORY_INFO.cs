@@ -3,13 +3,12 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct CATEGORY_INFO
-    {
-        public CATEGORYINFO_FLAGS cif;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("WCHAR [260]")]
-        public fixed ushort wszName[260];
-    }
+public unsafe partial struct CATEGORY_INFO
+{
+    public CATEGORYINFO_FLAGS cif;
+
+    [NativeTypeName("WCHAR [260]")]
+    public fixed ushort wszName[260];
 }

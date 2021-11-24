@@ -3,23 +3,22 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class GWLP
 {
-    public static partial class GWLP
-    {
-        [NativeTypeName("#define GWLP_WNDPROC (-4)")]
-        public const int GWLP_WNDPROC = (-4);
+    [NativeTypeName("#define GWLP_WNDPROC (-4)")]
+    public const int GWLP_WNDPROC = (-4);
 
-        [NativeTypeName("#define GWLP_HINSTANCE (-6)")]
-        public const int GWLP_HINSTANCE = (-6);
+    [NativeTypeName("#define GWLP_HINSTANCE (-6)")]
+    public const int GWLP_HINSTANCE = (-6);
 
-        [NativeTypeName("#define GWLP_HWNDPARENT (-8)")]
-        public const int GWLP_HWNDPARENT = (-8);
+    [NativeTypeName("#define GWLP_HWNDPARENT (-8)")]
+    public const int GWLP_HWNDPARENT = (-8);
 
-        [NativeTypeName("#define GWLP_USERDATA (-21)")]
-        public const int GWLP_USERDATA = (-21);
+    [NativeTypeName("#define GWLP_USERDATA (-21)")]
+    public const int GWLP_USERDATA = (-21);
 
-        [NativeTypeName("#define GWLP_ID (-12)")]
-        public const int GWLP_ID = (-12);
-    }
+    [NativeTypeName("#define GWLP_ID (-12)")]
+    public const int GWLP_ID = (-12);
 }

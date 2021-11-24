@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("51FF1115-33AC-426C-A1B1-09321BDF96B4")]
+public partial struct CODECAPI_AVEncWMVKeyFrameBufferLevelMarker
 {
-    [Guid("51FF1115-33AC-426C-A1B1-09321BDF96B4")]
-    public partial struct CODECAPI_AVEncWMVKeyFrameBufferLevelMarker
-    {
-    }
 }

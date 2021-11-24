@@ -3,20 +3,19 @@
 // Ported from shared/Iprtrmib.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MIB_IPMCAST_BOUNDARY
 {
-    public partial struct MIB_IPMCAST_BOUNDARY
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwIfIndex;
+    [NativeTypeName("DWORD")]
+    public uint dwIfIndex;
 
-        [NativeTypeName("DWORD")]
-        public uint dwGroupAddress;
+    [NativeTypeName("DWORD")]
+    public uint dwGroupAddress;
 
-        [NativeTypeName("DWORD")]
-        public uint dwGroupMask;
+    [NativeTypeName("DWORD")]
+    public uint dwGroupMask;
 
-        [NativeTypeName("DWORD")]
-        public uint dwStatus;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwStatus;
 }

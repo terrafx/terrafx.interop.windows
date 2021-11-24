@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ITfQueryEmbedded" /> struct.</summary>
+public static unsafe partial class ITfQueryEmbeddedTests
 {
-    /// <summary>Provides validation of the <see cref="ITfQueryEmbedded" /> struct.</summary>
-    public static unsafe partial class ITfQueryEmbeddedTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfQueryEmbedded" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfQueryEmbedded" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ITfQueryEmbedded).GUID, Is.EqualTo(IID_ITfQueryEmbedded));
-        }
+        Assert.That(typeof(ITfQueryEmbedded).GUID, Is.EqualTo(IID_ITfQueryEmbedded));
+    }
 
-        /// <summary>Validates that the <see cref="ITfQueryEmbedded" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ITfQueryEmbedded>(), Is.EqualTo(sizeof(ITfQueryEmbedded)));
-        }
+    /// <summary>Validates that the <see cref="ITfQueryEmbedded" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ITfQueryEmbedded>(), Is.EqualTo(sizeof(ITfQueryEmbedded)));
+    }
 
-        /// <summary>Validates that the <see cref="ITfQueryEmbedded" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ITfQueryEmbedded).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ITfQueryEmbedded" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ITfQueryEmbedded).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ITfQueryEmbedded" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ITfQueryEmbedded" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ITfQueryEmbedded), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ITfQueryEmbedded), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ITfQueryEmbedded), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ITfQueryEmbedded), Is.EqualTo(4));
         }
     }
 }

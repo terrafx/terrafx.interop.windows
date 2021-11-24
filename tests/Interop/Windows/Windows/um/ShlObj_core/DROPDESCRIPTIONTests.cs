@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DROPDESCRIPTION" /> struct.</summary>
+public static unsafe partial class DROPDESCRIPTIONTests
 {
-    /// <summary>Provides validation of the <see cref="DROPDESCRIPTION" /> struct.</summary>
-    public static unsafe partial class DROPDESCRIPTIONTests
+    /// <summary>Validates that the <see cref="DROPDESCRIPTION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DROPDESCRIPTION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DROPDESCRIPTION>(), Is.EqualTo(sizeof(DROPDESCRIPTION)));
-        }
+        Assert.That(Marshal.SizeOf<DROPDESCRIPTION>(), Is.EqualTo(sizeof(DROPDESCRIPTION)));
+    }
 
-        /// <summary>Validates that the <see cref="DROPDESCRIPTION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DROPDESCRIPTION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DROPDESCRIPTION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DROPDESCRIPTION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DROPDESCRIPTION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DROPDESCRIPTION), Is.EqualTo(1044));
-        }
+    /// <summary>Validates that the <see cref="DROPDESCRIPTION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DROPDESCRIPTION), Is.EqualTo(1044));
     }
 }

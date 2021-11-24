@@ -5,21 +5,20 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public enum STORAGE_DEVICE_FORM_FACTOR
 {
-    [SupportedOSPlatform("windows10.0")]
-    public enum STORAGE_DEVICE_FORM_FACTOR
-    {
-        FormFactorUnknown = 0,
-        FormFactor3_5,
-        FormFactor2_5,
-        FormFactor1_8,
-        FormFactor1_8Less,
-        FormFactorEmbedded,
-        FormFactorMemoryCard,
-        FormFactormSata,
-        FormFactorM_2,
-        FormFactorPCIeBoard,
-        FormFactorDimm,
-    }
+    FormFactorUnknown = 0,
+    FormFactor3_5,
+    FormFactor2_5,
+    FormFactor1_8,
+    FormFactor1_8Less,
+    FormFactorEmbedded,
+    FormFactorMemoryCard,
+    FormFactormSata,
+    FormFactorM_2,
+    FormFactorPCIeBoard,
+    FormFactorDimm,
 }

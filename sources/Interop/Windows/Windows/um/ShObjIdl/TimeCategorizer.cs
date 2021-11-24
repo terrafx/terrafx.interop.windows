@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3BB4118F-DDFD-4D30-A348-9FB5D6BF1AFE")]
+public partial struct TimeCategorizer
 {
-    [Guid("3BB4118F-DDFD-4D30-A348-9FB5D6BF1AFE")]
-    public partial struct TimeCategorizer
-    {
-    }
 }

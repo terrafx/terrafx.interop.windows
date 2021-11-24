@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="FLAG_STGMEDIUM" /> struct.</summary>
+public static unsafe partial class FLAG_STGMEDIUMTests
 {
-    /// <summary>Provides validation of the <see cref="FLAG_STGMEDIUM" /> struct.</summary>
-    public static unsafe partial class FLAG_STGMEDIUMTests
+    /// <summary>Validates that the <see cref="FLAG_STGMEDIUM" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="FLAG_STGMEDIUM" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<FLAG_STGMEDIUM>(), Is.EqualTo(sizeof(FLAG_STGMEDIUM)));
-        }
+        Assert.That(Marshal.SizeOf<FLAG_STGMEDIUM>(), Is.EqualTo(sizeof(FLAG_STGMEDIUM)));
+    }
 
-        /// <summary>Validates that the <see cref="FLAG_STGMEDIUM" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(FLAG_STGMEDIUM).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="FLAG_STGMEDIUM" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(FLAG_STGMEDIUM).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="FLAG_STGMEDIUM" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="FLAG_STGMEDIUM" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(FLAG_STGMEDIUM), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(FLAG_STGMEDIUM), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(FLAG_STGMEDIUM), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(FLAG_STGMEDIUM), Is.EqualTo(20));
         }
     }
 }

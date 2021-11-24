@@ -7,32 +7,31 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MOVEREGION_INFO
 {
-    public partial struct MOVEREGION_INFO
+    public uint FrameNumber;
+
+    public uint NumMoveRegions;
+
+    [NativeTypeName("MOVE_RECT [1]")]
+    public _MoveRegions_e__FixedBuffer MoveRegions;
+
+    public partial struct _MoveRegions_e__FixedBuffer
     {
-        public uint FrameNumber;
+        public MOVE_RECT e0;
 
-        public uint NumMoveRegions;
-
-        [NativeTypeName("MOVE_RECT [1]")]
-        public _MoveRegions_e__FixedBuffer MoveRegions;
-
-        public partial struct _MoveRegions_e__FixedBuffer
+        public ref MOVE_RECT this[int index]
         {
-            public MOVE_RECT e0;
-
-            public ref MOVE_RECT this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<MOVE_RECT> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<MOVE_RECT> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

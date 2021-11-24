@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IP_UNIDIRECTIONAL_ADAPTER_ADDRESS" /> struct.</summary>
+public static unsafe partial class IP_UNIDIRECTIONAL_ADAPTER_ADDRESSTests
 {
-    /// <summary>Provides validation of the <see cref="IP_UNIDIRECTIONAL_ADAPTER_ADDRESS" /> struct.</summary>
-    public static unsafe partial class IP_UNIDIRECTIONAL_ADAPTER_ADDRESSTests
+    /// <summary>Validates that the <see cref="IP_UNIDIRECTIONAL_ADAPTER_ADDRESS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IP_UNIDIRECTIONAL_ADAPTER_ADDRESS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IP_UNIDIRECTIONAL_ADAPTER_ADDRESS>(), Is.EqualTo(sizeof(IP_UNIDIRECTIONAL_ADAPTER_ADDRESS)));
-        }
+        Assert.That(Marshal.SizeOf<IP_UNIDIRECTIONAL_ADAPTER_ADDRESS>(), Is.EqualTo(sizeof(IP_UNIDIRECTIONAL_ADAPTER_ADDRESS)));
+    }
 
-        /// <summary>Validates that the <see cref="IP_UNIDIRECTIONAL_ADAPTER_ADDRESS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IP_UNIDIRECTIONAL_ADAPTER_ADDRESS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IP_UNIDIRECTIONAL_ADAPTER_ADDRESS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IP_UNIDIRECTIONAL_ADAPTER_ADDRESS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IP_UNIDIRECTIONAL_ADAPTER_ADDRESS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(IP_UNIDIRECTIONAL_ADAPTER_ADDRESS), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="IP_UNIDIRECTIONAL_ADAPTER_ADDRESS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(IP_UNIDIRECTIONAL_ADAPTER_ADDRESS), Is.EqualTo(8));
     }
 }

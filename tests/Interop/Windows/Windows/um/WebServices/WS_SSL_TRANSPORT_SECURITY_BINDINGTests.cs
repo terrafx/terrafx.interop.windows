@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /> struct.</summary>
+public static unsafe partial class WS_SSL_TRANSPORT_SECURITY_BINDINGTests
 {
-    /// <summary>Provides validation of the <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /> struct.</summary>
-    public static unsafe partial class WS_SSL_TRANSPORT_SECURITY_BINDINGTests
+    /// <summary>Validates that the <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WS_SSL_TRANSPORT_SECURITY_BINDING>(), Is.EqualTo(sizeof(WS_SSL_TRANSPORT_SECURITY_BINDING)));
-        }
+        Assert.That(Marshal.SizeOf<WS_SSL_TRANSPORT_SECURITY_BINDING>(), Is.EqualTo(sizeof(WS_SSL_TRANSPORT_SECURITY_BINDING)));
+    }
 
-        /// <summary>Validates that the <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WS_SSL_TRANSPORT_SECURITY_BINDING).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WS_SSL_TRANSPORT_SECURITY_BINDING).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WS_SSL_TRANSPORT_SECURITY_BINDING), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(WS_SSL_TRANSPORT_SECURITY_BINDING), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(WS_SSL_TRANSPORT_SECURITY_BINDING), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(WS_SSL_TRANSPORT_SECURITY_BINDING), Is.EqualTo(16));
         }
     }
 }

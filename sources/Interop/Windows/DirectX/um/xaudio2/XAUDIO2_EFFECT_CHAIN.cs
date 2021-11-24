@@ -5,14 +5,13 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct XAUDIO2_EFFECT_CHAIN
-    {
-        [NativeTypeName("UINT32")]
-        public uint EffectCount;
+namespace TerraFX.Interop.DirectX;
 
-        public XAUDIO2_EFFECT_DESCRIPTOR* pEffectDescriptors;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct XAUDIO2_EFFECT_CHAIN
+{
+    [NativeTypeName("UINT32")]
+    public uint EffectCount;
+
+    public XAUDIO2_EFFECT_DESCRIPTOR* pEffectDescriptors;
 }

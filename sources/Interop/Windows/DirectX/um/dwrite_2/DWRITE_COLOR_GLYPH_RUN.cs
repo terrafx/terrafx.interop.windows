@@ -5,23 +5,22 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.1")]
+public unsafe partial struct DWRITE_COLOR_GLYPH_RUN
 {
-    [SupportedOSPlatform("windows8.1")]
-    public unsafe partial struct DWRITE_COLOR_GLYPH_RUN
-    {
-        public DWRITE_GLYPH_RUN glyphRun;
+    public DWRITE_GLYPH_RUN glyphRun;
 
-        public DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription;
+    public DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription;
 
-        public float baselineOriginX;
+    public float baselineOriginX;
 
-        public float baselineOriginY;
+    public float baselineOriginY;
 
-        [NativeTypeName("DWRITE_COLOR_F")]
-        public DXGI_RGBA runColor;
+    [NativeTypeName("DWRITE_COLOR_F")]
+    public DXGI_RGBA runColor;
 
-        [NativeTypeName("UINT16")]
-        public ushort paletteIndex;
-    }
+    [NativeTypeName("UINT16")]
+    public ushort paletteIndex;
 }

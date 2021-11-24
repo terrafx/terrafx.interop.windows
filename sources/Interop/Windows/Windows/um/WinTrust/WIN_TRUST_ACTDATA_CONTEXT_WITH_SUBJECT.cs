@@ -5,15 +5,14 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WIN_TRUST_ACTDATA_CONTEXT_WITH_SUBJECT
 {
-    public unsafe partial struct WIN_TRUST_ACTDATA_CONTEXT_WITH_SUBJECT
-    {
-        public HANDLE hClientToken;
+    public HANDLE hClientToken;
 
-        public Guid* SubjectType;
+    public Guid* SubjectType;
 
-        [NativeTypeName("WIN_TRUST_SUBJECT")]
-        public void* Subject;
-    }
+    [NativeTypeName("WIN_TRUST_SUBJECT")]
+    public void* Subject;
 }

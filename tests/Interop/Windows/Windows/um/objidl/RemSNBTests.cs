@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="RemSNB" /> struct.</summary>
+public static unsafe partial class RemSNBTests
 {
-    /// <summary>Provides validation of the <see cref="RemSNB" /> struct.</summary>
-    public static unsafe partial class RemSNBTests
+    /// <summary>Validates that the <see cref="RemSNB" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="RemSNB" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<RemSNB>(), Is.EqualTo(sizeof(RemSNB)));
-        }
+        Assert.That(Marshal.SizeOf<RemSNB>(), Is.EqualTo(sizeof(RemSNB)));
+    }
 
-        /// <summary>Validates that the <see cref="RemSNB" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(RemSNB).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="RemSNB" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(RemSNB).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="RemSNB" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(RemSNB), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="RemSNB" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(RemSNB), Is.EqualTo(12));
     }
 }

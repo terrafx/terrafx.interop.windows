@@ -3,45 +3,44 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SPVOICESTATUS
 {
-    public partial struct SPVOICESTATUS
-    {
-        [NativeTypeName("ULONG")]
-        public uint ulCurrentStream;
+    [NativeTypeName("ULONG")]
+    public uint ulCurrentStream;
 
-        [NativeTypeName("ULONG")]
-        public uint ulLastStreamQueued;
+    [NativeTypeName("ULONG")]
+    public uint ulLastStreamQueued;
 
-        public HRESULT hrLastResult;
+    public HRESULT hrLastResult;
 
-        [NativeTypeName("DWORD")]
-        public uint dwRunningState;
+    [NativeTypeName("DWORD")]
+    public uint dwRunningState;
 
-        [NativeTypeName("ULONG")]
-        public uint ulInputWordPos;
+    [NativeTypeName("ULONG")]
+    public uint ulInputWordPos;
 
-        [NativeTypeName("ULONG")]
-        public uint ulInputWordLen;
+    [NativeTypeName("ULONG")]
+    public uint ulInputWordLen;
 
-        [NativeTypeName("ULONG")]
-        public uint ulInputSentPos;
+    [NativeTypeName("ULONG")]
+    public uint ulInputSentPos;
 
-        [NativeTypeName("ULONG")]
-        public uint ulInputSentLen;
+    [NativeTypeName("ULONG")]
+    public uint ulInputSentLen;
 
-        [NativeTypeName("LONG")]
-        public int lBookmarkId;
+    [NativeTypeName("LONG")]
+    public int lBookmarkId;
 
-        [NativeTypeName("SPPHONEID")]
-        public ushort PhonemeId;
+    [NativeTypeName("SPPHONEID")]
+    public ushort PhonemeId;
 
-        public SPVISEMES VisemeId;
+    public SPVISEMES VisemeId;
 
-        [NativeTypeName("DWORD")]
-        public uint dwReserved1;
+    [NativeTypeName("DWORD")]
+    public uint dwReserved1;
 
-        [NativeTypeName("DWORD")]
-        public uint dwReserved2;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwReserved2;
 }

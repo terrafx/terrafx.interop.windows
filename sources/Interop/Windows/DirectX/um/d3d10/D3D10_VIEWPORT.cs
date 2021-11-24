@@ -3,20 +3,19 @@
 // Ported from um/d3d10.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D10_VIEWPORT
 {
-    public partial struct D3D10_VIEWPORT
-    {
-        public int TopLeftX;
+    public int TopLeftX;
 
-        public int TopLeftY;
+    public int TopLeftY;
 
-        public uint Width;
+    public uint Width;
 
-        public uint Height;
+    public uint Height;
 
-        public float MinDepth;
+    public float MinDepth;
 
-        public float MaxDepth;
-    }
+    public float MaxDepth;
 }

@@ -3,32 +3,31 @@
 // Ported from um/msxml.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct XML_ERROR
 {
-    public unsafe partial struct XML_ERROR
-    {
-        [NativeTypeName("unsigned int")]
-        public uint _nLine;
+    [NativeTypeName("unsigned int")]
+    public uint _nLine;
 
-        [NativeTypeName("BSTR")]
-        public ushort* _pchBuf;
+    [NativeTypeName("BSTR")]
+    public ushort* _pchBuf;
 
-        [NativeTypeName("unsigned int")]
-        public uint _cchBuf;
+    [NativeTypeName("unsigned int")]
+    public uint _cchBuf;
 
-        [NativeTypeName("unsigned int")]
-        public uint _ich;
+    [NativeTypeName("unsigned int")]
+    public uint _ich;
 
-        [NativeTypeName("BSTR")]
-        public ushort* _pszFound;
+    [NativeTypeName("BSTR")]
+    public ushort* _pszFound;
 
-        [NativeTypeName("BSTR")]
-        public ushort* _pszExpected;
+    [NativeTypeName("BSTR")]
+    public ushort* _pszExpected;
 
-        [NativeTypeName("DWORD")]
-        public uint _reserved1;
+    [NativeTypeName("DWORD")]
+    public uint _reserved1;
 
-        [NativeTypeName("DWORD")]
-        public uint _reserved2;
-    }
+    [NativeTypeName("DWORD")]
+    public uint _reserved2;
 }

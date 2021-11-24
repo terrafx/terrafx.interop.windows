@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct TRANSACTION_NOTIFICATION_RECOVERY_ARGUMENT
-    {
-        public Guid EnlistmentId;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("UOW")]
-        public Guid UOW;
-    }
+public partial struct TRANSACTION_NOTIFICATION_RECOVERY_ARGUMENT
+{
+    public Guid EnlistmentId;
+
+    [NativeTypeName("UOW")]
+    public Guid UOW;
 }

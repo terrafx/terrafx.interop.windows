@@ -5,15 +5,14 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum WS_SECURE_PROTOCOL
 {
-    [Flags]
-    public enum WS_SECURE_PROTOCOL
-    {
-        WS_SECURE_PROTOCOL_SSL2 = 0x1,
-        WS_SECURE_PROTOCOL_SSL3 = 0x2,
-        WS_SECURE_PROTOCOL_TLS1_0 = 0x4,
-        WS_SECURE_PROTOCOL_TLS1_1 = 0x8,
-        WS_SECURE_PROTOCOL_TLS1_2 = 0x10,
-    }
+    WS_SECURE_PROTOCOL_SSL2 = 0x1,
+    WS_SECURE_PROTOCOL_SSL3 = 0x2,
+    WS_SECURE_PROTOCOL_TLS1_0 = 0x4,
+    WS_SECURE_PROTOCOL_TLS1_1 = 0x8,
+    WS_SECURE_PROTOCOL_TLS1_2 = 0x10,
 }

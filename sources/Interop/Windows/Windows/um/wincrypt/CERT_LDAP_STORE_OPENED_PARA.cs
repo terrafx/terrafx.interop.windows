@@ -3,13 +3,12 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct CERT_LDAP_STORE_OPENED_PARA
-    {
-        public void* pvLdapSessionHandle;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pwszLdapUrl;
-    }
+public unsafe partial struct CERT_LDAP_STORE_OPENED_PARA
+{
+    public void* pvLdapSessionHandle;
+
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pwszLdapUrl;
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("862E2F0A-507B-47FF-AF47-01E2624298B7")]
+public partial struct CODECAPI_AVDecSoftwareDynamicFormatChange
 {
-    [Guid("862E2F0A-507B-47FF-AF47-01E2624298B7")]
-    public partial struct CODECAPI_AVDecSoftwareDynamicFormatChange
-    {
-    }
 }

@@ -5,53 +5,52 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.16299.0")]
+public partial struct MIB_TCPSTATS2
 {
-    [SupportedOSPlatform("windows10.0.16299.0")]
-    public partial struct MIB_TCPSTATS2
-    {
-        public TCP_RTO_ALGORITHM RtoAlgorithm;
+    public TCP_RTO_ALGORITHM RtoAlgorithm;
 
-        [NativeTypeName("DWORD")]
-        public uint dwRtoMin;
+    [NativeTypeName("DWORD")]
+    public uint dwRtoMin;
 
-        [NativeTypeName("DWORD")]
-        public uint dwRtoMax;
+    [NativeTypeName("DWORD")]
+    public uint dwRtoMax;
 
-        [NativeTypeName("DWORD")]
-        public uint dwMaxConn;
+    [NativeTypeName("DWORD")]
+    public uint dwMaxConn;
 
-        [NativeTypeName("DWORD")]
-        public uint dwActiveOpens;
+    [NativeTypeName("DWORD")]
+    public uint dwActiveOpens;
 
-        [NativeTypeName("DWORD")]
-        public uint dwPassiveOpens;
+    [NativeTypeName("DWORD")]
+    public uint dwPassiveOpens;
 
-        [NativeTypeName("DWORD")]
-        public uint dwAttemptFails;
+    [NativeTypeName("DWORD")]
+    public uint dwAttemptFails;
 
-        [NativeTypeName("DWORD")]
-        public uint dwEstabResets;
+    [NativeTypeName("DWORD")]
+    public uint dwEstabResets;
 
-        [NativeTypeName("DWORD")]
-        public uint dwCurrEstab;
+    [NativeTypeName("DWORD")]
+    public uint dwCurrEstab;
 
-        [NativeTypeName("DWORD64")]
-        public ulong dw64InSegs;
+    [NativeTypeName("DWORD64")]
+    public ulong dw64InSegs;
 
-        [NativeTypeName("DWORD64")]
-        public ulong dw64OutSegs;
+    [NativeTypeName("DWORD64")]
+    public ulong dw64OutSegs;
 
-        [NativeTypeName("DWORD")]
-        public uint dwRetransSegs;
+    [NativeTypeName("DWORD")]
+    public uint dwRetransSegs;
 
-        [NativeTypeName("DWORD")]
-        public uint dwInErrs;
+    [NativeTypeName("DWORD")]
+    public uint dwInErrs;
 
-        [NativeTypeName("DWORD")]
-        public uint dwOutRsts;
+    [NativeTypeName("DWORD")]
+    public uint dwOutRsts;
 
-        [NativeTypeName("DWORD")]
-        public uint dwNumConns;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwNumConns;
 }

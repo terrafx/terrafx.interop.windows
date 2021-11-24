@@ -5,14 +5,13 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct REGFILTER
-    {
-        [NativeTypeName("CLSID")]
-        public Guid Clsid;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* Name;
-    }
+public unsafe partial struct REGFILTER
+{
+    [NativeTypeName("CLSID")]
+    public Guid Clsid;
+
+    [NativeTypeName("LPWSTR")]
+    public ushort* Name;
 }

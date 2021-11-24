@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ITemplatePrinter2" /> struct.</summary>
+public static unsafe partial class ITemplatePrinter2Tests
 {
-    /// <summary>Provides validation of the <see cref="ITemplatePrinter2" /> struct.</summary>
-    public static unsafe partial class ITemplatePrinter2Tests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITemplatePrinter2" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITemplatePrinter2" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ITemplatePrinter2).GUID, Is.EqualTo(IID_ITemplatePrinter2));
-        }
+        Assert.That(typeof(ITemplatePrinter2).GUID, Is.EqualTo(IID_ITemplatePrinter2));
+    }
 
-        /// <summary>Validates that the <see cref="ITemplatePrinter2" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ITemplatePrinter2>(), Is.EqualTo(sizeof(ITemplatePrinter2)));
-        }
+    /// <summary>Validates that the <see cref="ITemplatePrinter2" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ITemplatePrinter2>(), Is.EqualTo(sizeof(ITemplatePrinter2)));
+    }
 
-        /// <summary>Validates that the <see cref="ITemplatePrinter2" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ITemplatePrinter2).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ITemplatePrinter2" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ITemplatePrinter2).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ITemplatePrinter2" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ITemplatePrinter2" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ITemplatePrinter2), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ITemplatePrinter2), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ITemplatePrinter2), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ITemplatePrinter2), Is.EqualTo(4));
         }
     }
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DOCINFOW" /> struct.</summary>
+public static unsafe partial class DOCINFOWTests
 {
-    /// <summary>Provides validation of the <see cref="DOCINFOW" /> struct.</summary>
-    public static unsafe partial class DOCINFOWTests
+    /// <summary>Validates that the <see cref="DOCINFOW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DOCINFOW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DOCINFOW>(), Is.EqualTo(sizeof(DOCINFOW)));
-        }
+        Assert.That(Marshal.SizeOf<DOCINFOW>(), Is.EqualTo(sizeof(DOCINFOW)));
+    }
 
-        /// <summary>Validates that the <see cref="DOCINFOW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DOCINFOW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DOCINFOW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DOCINFOW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DOCINFOW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DOCINFOW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DOCINFOW), Is.EqualTo(40));
-            }
-            else
-            {
-                Assert.That(sizeof(DOCINFOW), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(DOCINFOW), Is.EqualTo(40));
+        }
+        else
+        {
+            Assert.That(sizeof(DOCINFOW), Is.EqualTo(20));
         }
     }
 }

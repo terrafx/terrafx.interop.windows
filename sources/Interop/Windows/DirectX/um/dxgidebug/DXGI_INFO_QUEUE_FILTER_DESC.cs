@@ -5,22 +5,21 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct DXGI_INFO_QUEUE_FILTER_DESC
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct DXGI_INFO_QUEUE_FILTER_DESC
-    {
-        public uint NumCategories;
+    public uint NumCategories;
 
-        public DXGI_INFO_QUEUE_MESSAGE_CATEGORY* pCategoryList;
+    public DXGI_INFO_QUEUE_MESSAGE_CATEGORY* pCategoryList;
 
-        public uint NumSeverities;
+    public uint NumSeverities;
 
-        public DXGI_INFO_QUEUE_MESSAGE_SEVERITY* pSeverityList;
+    public DXGI_INFO_QUEUE_MESSAGE_SEVERITY* pSeverityList;
 
-        public uint NumIDs;
+    public uint NumIDs;
 
-        [NativeTypeName("DXGI_INFO_QUEUE_MESSAGE_ID *")]
-        public int* pIDList;
-    }
+    [NativeTypeName("DXGI_INFO_QUEUE_MESSAGE_ID *")]
+    public int* pIDList;
 }

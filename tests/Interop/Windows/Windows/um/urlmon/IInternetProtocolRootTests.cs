@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IInternetProtocolRoot" /> struct.</summary>
+public static unsafe partial class IInternetProtocolRootTests
 {
-    /// <summary>Provides validation of the <see cref="IInternetProtocolRoot" /> struct.</summary>
-    public static unsafe partial class IInternetProtocolRootTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInternetProtocolRoot" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInternetProtocolRoot" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IInternetProtocolRoot).GUID, Is.EqualTo(IID_IInternetProtocolRoot));
-        }
+        Assert.That(typeof(IInternetProtocolRoot).GUID, Is.EqualTo(IID_IInternetProtocolRoot));
+    }
 
-        /// <summary>Validates that the <see cref="IInternetProtocolRoot" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IInternetProtocolRoot>(), Is.EqualTo(sizeof(IInternetProtocolRoot)));
-        }
+    /// <summary>Validates that the <see cref="IInternetProtocolRoot" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IInternetProtocolRoot>(), Is.EqualTo(sizeof(IInternetProtocolRoot)));
+    }
 
-        /// <summary>Validates that the <see cref="IInternetProtocolRoot" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IInternetProtocolRoot).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IInternetProtocolRoot" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IInternetProtocolRoot).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IInternetProtocolRoot" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IInternetProtocolRoot" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IInternetProtocolRoot), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IInternetProtocolRoot), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IInternetProtocolRoot), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IInternetProtocolRoot), Is.EqualTo(4));
         }
     }
 }

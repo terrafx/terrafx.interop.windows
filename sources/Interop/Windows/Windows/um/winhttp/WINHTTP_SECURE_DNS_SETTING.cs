@@ -3,14 +3,13 @@
 // Ported from um/winhttp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WINHTTP_SECURE_DNS_SETTING
 {
-    public enum WINHTTP_SECURE_DNS_SETTING
-    {
-        WinHttpSecureDnsSettingDefault = 0,
-        WinHttpSecureDnsSettingForcePlaintext = 1,
-        WinHttpSecureDnsSettingRequireEncryption = 2,
-        WinHttpSecureDnsSettingTryEncryptionWithFallback = 3,
-        WinHttpSecureDnsSettingMax = 4,
-    }
+    WinHttpSecureDnsSettingDefault = 0,
+    WinHttpSecureDnsSettingForcePlaintext = 1,
+    WinHttpSecureDnsSettingRequireEncryption = 2,
+    WinHttpSecureDnsSettingTryEncryptionWithFallback = 3,
+    WinHttpSecureDnsSettingMax = 4,
 }

@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct MFT_REGISTER_TYPE_INFO
-    {
-        public Guid guidMajorType;
+namespace TerraFX.Interop.Windows;
 
-        public Guid guidSubtype;
-    }
+public partial struct MFT_REGISTER_TYPE_INFO
+{
+    public Guid guidMajorType;
+
+    public Guid guidSubtype;
 }

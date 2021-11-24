@@ -5,52 +5,51 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS : IEquatable<D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS>
 {
-    public unsafe partial struct D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS : IEquatable<D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS>
+    public static bool operator ==([NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS &")] in D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS a, [NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS &")] in D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS b)
     {
-        public static bool operator ==([NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS &")] in D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS a, [NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS &")] in D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS b)
+        if (a.pSrcResource != b.pSrcResource)
         {
-            if (a.pSrcResource != b.pSrcResource)
-            {
-                return false;
-            }
-
-            if (a.pDstResource != b.pDstResource)
-            {
-                return false;
-            }
-
-            if (a.SubresourceCount != b.SubresourceCount)
-            {
-                return false;
-            }
-
-            if (a.Format != b.Format)
-            {
-                return false;
-            }
-
-            if (a.ResolveMode != b.ResolveMode)
-            {
-                return false;
-            }
-
-            if (a.PreserveResolveSource != b.PreserveResolveSource)
-            {
-                return false;
-            }
-
-            return true;
+            return false;
         }
 
-        public static bool operator !=([NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS &")] in D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS a, [NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS &")] in D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS b)
-            => !(a == b);
+        if (a.pDstResource != b.pDstResource)
+        {
+            return false;
+        }
 
-        public override bool Equals(object? obj) => (obj is D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS other) && Equals(other);
+        if (a.SubresourceCount != b.SubresourceCount)
+        {
+            return false;
+        }
 
-        public bool Equals(D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS other) => this == other;
+        if (a.Format != b.Format)
+        {
+            return false;
+        }
 
-        public override int GetHashCode() => HashCode.Combine((nuint)pSrcResource, (nuint)pDstResource, SubresourceCount, (nuint)pSubresourceParameters, Format, ResolveMode, PreserveResolveSource);
+        if (a.ResolveMode != b.ResolveMode)
+        {
+            return false;
+        }
+
+        if (a.PreserveResolveSource != b.PreserveResolveSource)
+        {
+            return false;
+        }
+
+        return true;
     }
+
+    public static bool operator !=([NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS &")] in D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS a, [NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS &")] in D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS b)
+        => !(a == b);
+
+    public override bool Equals(object? obj) => (obj is D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS other) && Equals(other);
+
+    public bool Equals(D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS other) => this == other;
+
+    public override int GetHashCode() => HashCode.Combine((nuint)pSrcResource, (nuint)pDstResource, SubresourceCount, (nuint)pSubresourceParameters, Format, ResolveMode, PreserveResolveSource);
 }

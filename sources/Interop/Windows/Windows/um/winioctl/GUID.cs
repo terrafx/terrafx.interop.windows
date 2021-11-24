@@ -5,14 +5,13 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class GUID
-    {
-        [NativeTypeName("#define GUID_CLASS_COMPORT GUID_DEVINTERFACE_COMPORT")]
-        public static ref readonly Guid GUID_CLASS_COMPORT => ref GUID_DEVINTERFACE_COMPORT;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("#define GUID_SERENUM_BUS_ENUMERATOR GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR")]
-        public static ref readonly Guid GUID_SERENUM_BUS_ENUMERATOR => ref GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR;
-    }
+public static partial class GUID
+{
+    [NativeTypeName("#define GUID_CLASS_COMPORT GUID_DEVINTERFACE_COMPORT")]
+    public static ref readonly Guid GUID_CLASS_COMPORT => ref GUID_DEVINTERFACE_COMPORT;
+
+    [NativeTypeName("#define GUID_SERENUM_BUS_ENUMERATOR GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR")]
+    public static ref readonly Guid GUID_SERENUM_BUS_ENUMERATOR => ref GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR;
 }

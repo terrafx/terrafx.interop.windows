@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("27354127-7F64-5B0F-8F00-5D77AFBE261E")]
+public partial struct MsftStreamZero
 {
-    [Guid("27354127-7F64-5B0F-8F00-5D77AFBE261E")]
-    public partial struct MsftStreamZero
-    {
-    }
 }

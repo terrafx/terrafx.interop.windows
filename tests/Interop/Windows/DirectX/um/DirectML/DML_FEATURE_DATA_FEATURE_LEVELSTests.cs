@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DML_FEATURE_DATA_FEATURE_LEVELS" /> struct.</summary>
+public static unsafe partial class DML_FEATURE_DATA_FEATURE_LEVELSTests
 {
-    /// <summary>Provides validation of the <see cref="DML_FEATURE_DATA_FEATURE_LEVELS" /> struct.</summary>
-    public static unsafe partial class DML_FEATURE_DATA_FEATURE_LEVELSTests
+    /// <summary>Validates that the <see cref="DML_FEATURE_DATA_FEATURE_LEVELS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DML_FEATURE_DATA_FEATURE_LEVELS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DML_FEATURE_DATA_FEATURE_LEVELS>(), Is.EqualTo(sizeof(DML_FEATURE_DATA_FEATURE_LEVELS)));
-        }
+        Assert.That(Marshal.SizeOf<DML_FEATURE_DATA_FEATURE_LEVELS>(), Is.EqualTo(sizeof(DML_FEATURE_DATA_FEATURE_LEVELS)));
+    }
 
-        /// <summary>Validates that the <see cref="DML_FEATURE_DATA_FEATURE_LEVELS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DML_FEATURE_DATA_FEATURE_LEVELS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DML_FEATURE_DATA_FEATURE_LEVELS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DML_FEATURE_DATA_FEATURE_LEVELS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DML_FEATURE_DATA_FEATURE_LEVELS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DML_FEATURE_DATA_FEATURE_LEVELS), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="DML_FEATURE_DATA_FEATURE_LEVELS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DML_FEATURE_DATA_FEATURE_LEVELS), Is.EqualTo(4));
     }
 }

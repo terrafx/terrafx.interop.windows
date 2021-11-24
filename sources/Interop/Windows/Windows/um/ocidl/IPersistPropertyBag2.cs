@@ -7,113 +7,112 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("22F55881-280B-11D0-A8A9-00A0C90C2004")]
+[NativeTypeName("struct IPersistPropertyBag2 : IPersist")]
+[NativeInheritance("IPersist")]
+public unsafe partial struct IPersistPropertyBag2 : IPersistPropertyBag2.Interface
 {
-    [Guid("22F55881-280B-11D0-A8A9-00A0C90C2004")]
-    [NativeTypeName("struct IPersistPropertyBag2 : IPersist")]
-    [NativeInheritance("IPersist")]
-    public unsafe partial struct IPersistPropertyBag2 : IPersistPropertyBag2.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IPersistPropertyBag2*, Guid*, void**, int>)(lpVtbl[0]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IPersistPropertyBag2*, Guid*, void**, int>)(lpVtbl[0]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IPersistPropertyBag2*, uint>)(lpVtbl[1]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IPersistPropertyBag2*, uint>)(lpVtbl[1]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IPersistPropertyBag2*, uint>)(lpVtbl[2]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IPersistPropertyBag2*, uint>)(lpVtbl[2]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
+    {
+        return ((delegate* unmanaged<IPersistPropertyBag2*, Guid*, int>)(lpVtbl[3]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this), pClassID);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
-        {
-            return ((delegate* unmanaged<IPersistPropertyBag2*, Guid*, int>)(lpVtbl[3]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this), pClassID);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT InitNew()
+    {
+        return ((delegate* unmanaged<IPersistPropertyBag2*, int>)(lpVtbl[4]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Load(IPropertyBag2* pPropBag, IErrorLog* pErrLog)
+    {
+        return ((delegate* unmanaged<IPersistPropertyBag2*, IPropertyBag2*, IErrorLog*, int>)(lpVtbl[5]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this), pPropBag, pErrLog);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Save(IPropertyBag2* pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties)
+    {
+        return ((delegate* unmanaged<IPersistPropertyBag2*, IPropertyBag2*, BOOL, BOOL, int>)(lpVtbl[6]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this), pPropBag, fClearDirty, fSaveAllProperties);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT IsDirty()
+    {
+        return ((delegate* unmanaged<IPersistPropertyBag2*, int>)(lpVtbl[7]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IPersist.Interface
+    {
         [VtblIndex(4)]
-        public HRESULT InitNew()
-        {
-            return ((delegate* unmanaged<IPersistPropertyBag2*, int>)(lpVtbl[4]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT InitNew();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Load(IPropertyBag2* pPropBag, IErrorLog* pErrLog)
-        {
-            return ((delegate* unmanaged<IPersistPropertyBag2*, IPropertyBag2*, IErrorLog*, int>)(lpVtbl[5]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this), pPropBag, pErrLog);
-        }
+        HRESULT Load(IPropertyBag2* pPropBag, IErrorLog* pErrLog);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Save(IPropertyBag2* pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties)
-        {
-            return ((delegate* unmanaged<IPersistPropertyBag2*, IPropertyBag2*, BOOL, BOOL, int>)(lpVtbl[6]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this), pPropBag, fClearDirty, fSaveAllProperties);
-        }
+        HRESULT Save(IPropertyBag2* pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT IsDirty()
-        {
-            return ((delegate* unmanaged<IPersistPropertyBag2*, int>)(lpVtbl[7]))((IPersistPropertyBag2*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT IsDirty();
+    }
 
-        public interface Interface : IPersist.Interface
-        {
-            [VtblIndex(4)]
-            HRESULT InitNew();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistPropertyBag2*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(5)]
-            HRESULT Load(IPropertyBag2* pPropBag, IErrorLog* pErrLog);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistPropertyBag2*, uint> AddRef;
 
-            [VtblIndex(6)]
-            HRESULT Save(IPropertyBag2* pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistPropertyBag2*, uint> Release;
 
-            [VtblIndex(7)]
-            HRESULT IsDirty();
-        }
+        [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistPropertyBag2*, Guid*, int> GetClassID;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistPropertyBag2*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistPropertyBag2*, int> InitNew;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistPropertyBag2*, uint> AddRef;
+        [NativeTypeName("HRESULT (IPropertyBag2 *, IErrorLog *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistPropertyBag2*, IPropertyBag2*, IErrorLog*, int> Load;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistPropertyBag2*, uint> Release;
+        [NativeTypeName("HRESULT (IPropertyBag2 *, BOOL, BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistPropertyBag2*, IPropertyBag2*, BOOL, BOOL, int> Save;
 
-            [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistPropertyBag2*, Guid*, int> GetClassID;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistPropertyBag2*, int> InitNew;
-
-            [NativeTypeName("HRESULT (IPropertyBag2 *, IErrorLog *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistPropertyBag2*, IPropertyBag2*, IErrorLog*, int> Load;
-
-            [NativeTypeName("HRESULT (IPropertyBag2 *, BOOL, BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistPropertyBag2*, IPropertyBag2*, BOOL, BOOL, int> Save;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IPersistPropertyBag2*, int> IsDirty;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IPersistPropertyBag2*, int> IsDirty;
     }
 }

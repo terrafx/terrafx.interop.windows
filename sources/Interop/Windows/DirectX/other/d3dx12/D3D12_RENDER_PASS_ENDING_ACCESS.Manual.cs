@@ -6,44 +6,43 @@
 using System;
 using static TerraFX.Interop.DirectX.D3D12_RENDER_PASS_ENDING_ACCESS_TYPE;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_RENDER_PASS_ENDING_ACCESS : IEquatable<D3D12_RENDER_PASS_ENDING_ACCESS>
 {
-    public partial struct D3D12_RENDER_PASS_ENDING_ACCESS : IEquatable<D3D12_RENDER_PASS_ENDING_ACCESS>
+    public static bool operator ==([NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS &")] in D3D12_RENDER_PASS_ENDING_ACCESS a, [NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS &")] in D3D12_RENDER_PASS_ENDING_ACCESS b)
     {
-        public static bool operator ==([NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS &")] in D3D12_RENDER_PASS_ENDING_ACCESS a, [NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS &")] in D3D12_RENDER_PASS_ENDING_ACCESS b)
+        if (a.Type != b.Type)
         {
-            if (a.Type != b.Type)
-            {
-                return false;
-            }
-
-            if (a.Type == D3D12_RENDER_PASS_ENDING_ACCESS_TYPE_RESOLVE && !(a.Anonymous.Resolve == b.Anonymous.Resolve))
-            {
-                return false;
-            }
-
-            return true;
+            return false;
         }
 
-        public static bool operator !=([NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS &")] in D3D12_RENDER_PASS_ENDING_ACCESS a, [NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS &")] in D3D12_RENDER_PASS_ENDING_ACCESS b)
-            => !(a == b);
-
-        public override bool Equals(object? obj) => (obj is D3D12_RENDER_PASS_ENDING_ACCESS other) && Equals(other);
-
-        public bool Equals(D3D12_RENDER_PASS_ENDING_ACCESS other) => this == other;
-
-        public override int GetHashCode()
+        if (a.Type == D3D12_RENDER_PASS_ENDING_ACCESS_TYPE_RESOLVE && !(a.Anonymous.Resolve == b.Anonymous.Resolve))
         {
-            var hashCode = new HashCode();
-            {
-                hashCode.Add(Type);
-
-                if (Type == D3D12_RENDER_PASS_ENDING_ACCESS_TYPE_RESOLVE)
-                {
-                    hashCode.Add(Anonymous.Resolve);
-                }
-            }
-            return hashCode.ToHashCode();
+            return false;
         }
+
+        return true;
+    }
+
+    public static bool operator !=([NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS &")] in D3D12_RENDER_PASS_ENDING_ACCESS a, [NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS &")] in D3D12_RENDER_PASS_ENDING_ACCESS b)
+        => !(a == b);
+
+    public override bool Equals(object? obj) => (obj is D3D12_RENDER_PASS_ENDING_ACCESS other) && Equals(other);
+
+    public bool Equals(D3D12_RENDER_PASS_ENDING_ACCESS other) => this == other;
+
+    public override int GetHashCode()
+    {
+        var hashCode = new HashCode();
+        {
+            hashCode.Add(Type);
+
+            if (Type == D3D12_RENDER_PASS_ENDING_ACCESS_TYPE_RESOLVE)
+            {
+                hashCode.Add(Anonymous.Resolve);
+            }
+        }
+        return hashCode.ToHashCode();
     }
 }

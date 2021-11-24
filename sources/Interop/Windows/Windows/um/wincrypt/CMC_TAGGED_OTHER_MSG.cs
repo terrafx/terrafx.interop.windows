@@ -3,17 +3,16 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CMC_TAGGED_OTHER_MSG
 {
-    public unsafe partial struct CMC_TAGGED_OTHER_MSG
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwBodyPartID;
+    [NativeTypeName("DWORD")]
+    public uint dwBodyPartID;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* pszObjId;
+    [NativeTypeName("LPSTR")]
+    public sbyte* pszObjId;
 
-        [NativeTypeName("CRYPT_OBJID_BLOB")]
-        public CRYPT_DATA_BLOB Value;
-    }
+    [NativeTypeName("CRYPT_OBJID_BLOB")]
+    public CRYPT_DATA_BLOB Value;
 }

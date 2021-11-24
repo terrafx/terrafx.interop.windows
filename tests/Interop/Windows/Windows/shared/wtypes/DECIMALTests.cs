@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DECIMAL" /> struct.</summary>
+public static unsafe partial class DECIMALTests
 {
-    /// <summary>Provides validation of the <see cref="DECIMAL" /> struct.</summary>
-    public static unsafe partial class DECIMALTests
+    /// <summary>Validates that the <see cref="DECIMAL" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DECIMAL" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DECIMAL>(), Is.EqualTo(sizeof(DECIMAL)));
-        }
+        Assert.That(Marshal.SizeOf<DECIMAL>(), Is.EqualTo(sizeof(DECIMAL)));
+    }
 
-        /// <summary>Validates that the <see cref="DECIMAL" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DECIMAL).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DECIMAL" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DECIMAL).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DECIMAL" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DECIMAL), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="DECIMAL" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DECIMAL), Is.EqualTo(16));
     }
 }

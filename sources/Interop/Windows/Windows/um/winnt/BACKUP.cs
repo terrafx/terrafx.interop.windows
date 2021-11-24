@@ -3,11 +3,10 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class BACKUP
 {
-    public static partial class BACKUP
-    {
-        [NativeTypeName("#define BACKUP_SECURITY_INFORMATION (0x00010000L)")]
-        public const int BACKUP_SECURITY_INFORMATION = (0x00010000);
-    }
+    [NativeTypeName("#define BACKUP_SECURITY_INFORMATION (0x00010000L)")]
+    public const int BACKUP_SECURITY_INFORMATION = (0x00010000);
 }

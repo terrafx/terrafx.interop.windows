@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("ACB5DE96-7B93-4C2F-8825-B0295FA93BF4")]
+public partial struct CODECAPI_AVEncMPVFrameFieldMode
 {
-    [Guid("ACB5DE96-7B93-4C2F-8825-B0295FA93BF4")]
-    public partial struct CODECAPI_AVEncMPVFrameFieldMode
-    {
-    }
 }

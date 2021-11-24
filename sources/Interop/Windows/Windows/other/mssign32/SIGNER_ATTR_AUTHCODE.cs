@@ -3,21 +3,20 @@
 // Ported from https://docs.microsoft.com/en-us/windows/win32/appxpkg/how-to-programmatically-sign-a-package
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SIGNER_ATTR_AUTHCODE
 {
-    public unsafe partial struct SIGNER_ATTR_AUTHCODE
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public BOOL fCommercial;
+    public BOOL fCommercial;
 
-        public BOOL fIndividual;
+    public BOOL fIndividual;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pwszName;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pwszName;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pwszInfo;
-    }
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pwszInfo;
 }

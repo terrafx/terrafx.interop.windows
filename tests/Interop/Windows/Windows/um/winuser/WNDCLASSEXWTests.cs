@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WNDCLASSEXW" /> struct.</summary>
+public static unsafe partial class WNDCLASSEXWTests
 {
-    /// <summary>Provides validation of the <see cref="WNDCLASSEXW" /> struct.</summary>
-    public static unsafe partial class WNDCLASSEXWTests
+    /// <summary>Validates that the <see cref="WNDCLASSEXW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WNDCLASSEXW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WNDCLASSEXW>(), Is.EqualTo(sizeof(WNDCLASSEXW)));
-        }
+        Assert.That(Marshal.SizeOf<WNDCLASSEXW>(), Is.EqualTo(sizeof(WNDCLASSEXW)));
+    }
 
-        /// <summary>Validates that the <see cref="WNDCLASSEXW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WNDCLASSEXW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WNDCLASSEXW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WNDCLASSEXW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WNDCLASSEXW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="WNDCLASSEXW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(WNDCLASSEXW), Is.EqualTo(80));
-            }
-            else
-            {
-                Assert.That(sizeof(WNDCLASSEXW), Is.EqualTo(48));
-            }
+            Assert.That(sizeof(WNDCLASSEXW), Is.EqualTo(80));
+        }
+        else
+        {
+            Assert.That(sizeof(WNDCLASSEXW), Is.EqualTo(48));
         }
     }
 }

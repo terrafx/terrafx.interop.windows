@@ -5,19 +5,18 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MFVIDEOFORMAT
 {
-    public partial struct MFVIDEOFORMAT
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwSize;
+    [NativeTypeName("DWORD")]
+    public uint dwSize;
 
-        public MFVideoInfo videoInfo;
+    public MFVideoInfo videoInfo;
 
-        public Guid guidFormat;
+    public Guid guidFormat;
 
-        public MFVideoCompressedInfo compressedInfo;
+    public MFVideoCompressedInfo compressedInfo;
 
-        public MFVideoSurfaceInfo surfaceInfo;
-    }
+    public MFVideoSurfaceInfo surfaceInfo;
 }

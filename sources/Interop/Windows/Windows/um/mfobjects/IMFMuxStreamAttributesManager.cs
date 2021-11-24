@@ -8,78 +8,77 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.15063.0")]
+[Guid("CE8BD576-E440-43B3-BE34-1E53F565F7E8")]
+[NativeTypeName("struct IMFMuxStreamAttributesManager : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMFMuxStreamAttributesManager : IMFMuxStreamAttributesManager.Interface
 {
-    [SupportedOSPlatform("windows10.0.15063.0")]
-    [Guid("CE8BD576-E440-43B3-BE34-1E53F565F7E8")]
-    [NativeTypeName("struct IMFMuxStreamAttributesManager : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMuxStreamAttributesManager : IMFMuxStreamAttributesManager.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMFMuxStreamAttributesManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFMuxStreamAttributesManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMFMuxStreamAttributesManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFMuxStreamAttributesManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMFMuxStreamAttributesManager*, uint>)(lpVtbl[1]))((IMFMuxStreamAttributesManager*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMFMuxStreamAttributesManager*, uint>)(lpVtbl[1]))((IMFMuxStreamAttributesManager*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMFMuxStreamAttributesManager*, uint>)(lpVtbl[2]))((IMFMuxStreamAttributesManager*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMFMuxStreamAttributesManager*, uint>)(lpVtbl[2]))((IMFMuxStreamAttributesManager*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetStreamCount([NativeTypeName("DWORD *")] uint* pdwMuxStreamCount)
+    {
+        return ((delegate* unmanaged<IMFMuxStreamAttributesManager*, uint*, int>)(lpVtbl[3]))((IMFMuxStreamAttributesManager*)Unsafe.AsPointer(ref this), pdwMuxStreamCount);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetAttributes([NativeTypeName("DWORD")] uint dwMuxStreamIndex, IMFAttributes** ppStreamAttributes)
+    {
+        return ((delegate* unmanaged<IMFMuxStreamAttributesManager*, uint, IMFAttributes**, int>)(lpVtbl[4]))((IMFMuxStreamAttributesManager*)Unsafe.AsPointer(ref this), dwMuxStreamIndex, ppStreamAttributes);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetStreamCount([NativeTypeName("DWORD *")] uint* pdwMuxStreamCount)
-        {
-            return ((delegate* unmanaged<IMFMuxStreamAttributesManager*, uint*, int>)(lpVtbl[3]))((IMFMuxStreamAttributesManager*)Unsafe.AsPointer(ref this), pdwMuxStreamCount);
-        }
+        HRESULT GetStreamCount([NativeTypeName("DWORD *")] uint* pdwMuxStreamCount);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetAttributes([NativeTypeName("DWORD")] uint dwMuxStreamIndex, IMFAttributes** ppStreamAttributes)
-        {
-            return ((delegate* unmanaged<IMFMuxStreamAttributesManager*, uint, IMFAttributes**, int>)(lpVtbl[4]))((IMFMuxStreamAttributesManager*)Unsafe.AsPointer(ref this), dwMuxStreamIndex, ppStreamAttributes);
-        }
+        HRESULT GetAttributes([NativeTypeName("DWORD")] uint dwMuxStreamIndex, IMFAttributes** ppStreamAttributes);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetStreamCount([NativeTypeName("DWORD *")] uint* pdwMuxStreamCount);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMuxStreamAttributesManager*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetAttributes([NativeTypeName("DWORD")] uint dwMuxStreamIndex, IMFAttributes** ppStreamAttributes);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMuxStreamAttributesManager*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMuxStreamAttributesManager*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMuxStreamAttributesManager*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMuxStreamAttributesManager*, uint> AddRef;
+        [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMuxStreamAttributesManager*, uint*, int> GetStreamCount;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMuxStreamAttributesManager*, uint> Release;
-
-            [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMuxStreamAttributesManager*, uint*, int> GetStreamCount;
-
-            [NativeTypeName("HRESULT (DWORD, IMFAttributes **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMuxStreamAttributesManager*, uint, IMFAttributes**, int> GetAttributes;
-        }
+        [NativeTypeName("HRESULT (DWORD, IMFAttributes **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMuxStreamAttributesManager*, uint, IMFAttributes**, int> GetAttributes;
     }
 }

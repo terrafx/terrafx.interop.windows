@@ -3,12 +3,11 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum STORAGE_ASSOCIATION_TYPE
 {
-    public enum STORAGE_ASSOCIATION_TYPE
-    {
-        StorageIdAssocDevice = 0,
-        StorageIdAssocPort = 1,
-        StorageIdAssocTarget = 2,
-    }
+    StorageIdAssocDevice = 0,
+    StorageIdAssocPort = 1,
+    StorageIdAssocTarget = 2,
 }

@@ -3,14 +3,13 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum svgSpreadMethod
 {
-    public enum svgSpreadMethod
-    {
-        SVG_SPREADMETHOD_UNKNOWN = 0,
-        SVG_SPREADMETHOD_PAD = 1,
-        SVG_SPREADMETHOD_REFLECT = 2,
-        SVG_SPREADMETHOD_REPEAT = 3,
-        svgSpreadMethod_Max = 2147483647,
-    }
+    SVG_SPREADMETHOD_UNKNOWN = 0,
+    SVG_SPREADMETHOD_PAD = 1,
+    SVG_SPREADMETHOD_REFLECT = 2,
+    SVG_SPREADMETHOD_REPEAT = 3,
+    svgSpreadMethod_Max = 2147483647,
 }

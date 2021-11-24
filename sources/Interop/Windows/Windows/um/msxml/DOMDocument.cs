@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("2933BF90-7B36-11D2-B20E-00C04F983E60")]
+public partial struct DOMDocument
 {
-    [Guid("2933BF90-7B36-11D2-B20E-00C04F983E60")]
-    public partial struct DOMDocument
-    {
-    }
 }

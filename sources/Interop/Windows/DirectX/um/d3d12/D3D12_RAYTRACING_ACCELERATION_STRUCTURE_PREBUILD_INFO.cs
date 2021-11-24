@@ -3,17 +3,16 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_RAYTRACING_ACCELERATION_STRUCTURE_PREBUILD_INFO
 {
-    public partial struct D3D12_RAYTRACING_ACCELERATION_STRUCTURE_PREBUILD_INFO
-    {
-        [NativeTypeName("UINT64")]
-        public ulong ResultDataMaxSizeInBytes;
+    [NativeTypeName("UINT64")]
+    public ulong ResultDataMaxSizeInBytes;
 
-        [NativeTypeName("UINT64")]
-        public ulong ScratchDataSizeInBytes;
+    [NativeTypeName("UINT64")]
+    public ulong ScratchDataSizeInBytes;
 
-        [NativeTypeName("UINT64")]
-        public ulong UpdateScratchDataSizeInBytes;
-    }
+    [NativeTypeName("UINT64")]
+    public ulong UpdateScratchDataSizeInBytes;
 }

@@ -3,20 +3,19 @@
 // Ported from um/objidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct BIND_OPTS
 {
-    public partial struct BIND_OPTS
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbStruct;
+    [NativeTypeName("DWORD")]
+    public uint cbStruct;
 
-        [NativeTypeName("DWORD")]
-        public uint grfFlags;
+    [NativeTypeName("DWORD")]
+    public uint grfFlags;
 
-        [NativeTypeName("DWORD")]
-        public uint grfMode;
+    [NativeTypeName("DWORD")]
+    public uint grfMode;
 
-        [NativeTypeName("DWORD")]
-        public uint dwTickCountDeadline;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwTickCountDeadline;
 }

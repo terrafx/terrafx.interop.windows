@@ -3,12 +3,11 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct FILE_ZERO_DATA_INFORMATION
-    {
-        public LARGE_INTEGER FileOffset;
+namespace TerraFX.Interop.Windows;
 
-        public LARGE_INTEGER BeyondFinalZero;
-    }
+public partial struct FILE_ZERO_DATA_INFORMATION
+{
+    public LARGE_INTEGER FileOffset;
+
+    public LARGE_INTEGER BeyondFinalZero;
 }

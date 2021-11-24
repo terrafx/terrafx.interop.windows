@@ -3,13 +3,12 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct WOW64_DESCRIPTOR_TABLE_ENTRY
-    {
-        [NativeTypeName("DWORD")]
-        public uint Selector;
+namespace TerraFX.Interop.Windows;
 
-        public WOW64_LDT_ENTRY Descriptor;
-    }
+public partial struct WOW64_DESCRIPTOR_TABLE_ENTRY
+{
+    [NativeTypeName("DWORD")]
+    public uint Selector;
+
+    public WOW64_LDT_ENTRY Descriptor;
 }

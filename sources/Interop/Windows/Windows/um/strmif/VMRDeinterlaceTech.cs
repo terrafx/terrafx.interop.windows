@@ -3,17 +3,16 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum VMRDeinterlaceTech
 {
-    public enum VMRDeinterlaceTech
-    {
-        DeinterlaceTech_Unknown = 0,
-        DeinterlaceTech_BOBLineReplicate = 0x1,
-        DeinterlaceTech_BOBVerticalStretch = 0x2,
-        DeinterlaceTech_MedianFiltering = 0x4,
-        DeinterlaceTech_EdgeFiltering = 0x10,
-        DeinterlaceTech_FieldAdaptive = 0x20,
-        DeinterlaceTech_PixelAdaptive = 0x40,
-        DeinterlaceTech_MotionVectorSteered = 0x80,
-    }
+    DeinterlaceTech_Unknown = 0,
+    DeinterlaceTech_BOBLineReplicate = 0x1,
+    DeinterlaceTech_BOBVerticalStretch = 0x2,
+    DeinterlaceTech_MedianFiltering = 0x4,
+    DeinterlaceTech_EdgeFiltering = 0x10,
+    DeinterlaceTech_FieldAdaptive = 0x20,
+    DeinterlaceTech_PixelAdaptive = 0x40,
+    DeinterlaceTech_MotionVectorSteered = 0x80,
 }

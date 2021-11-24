@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MF_QUATERNION" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
+public static unsafe partial class MF_QUATERNIONTests
 {
-    /// <summary>Provides validation of the <see cref="MF_QUATERNION" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0")]
-    public static unsafe partial class MF_QUATERNIONTests
+    /// <summary>Validates that the <see cref="MF_QUATERNION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MF_QUATERNION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MF_QUATERNION>(), Is.EqualTo(sizeof(MF_QUATERNION)));
-        }
+        Assert.That(Marshal.SizeOf<MF_QUATERNION>(), Is.EqualTo(sizeof(MF_QUATERNION)));
+    }
 
-        /// <summary>Validates that the <see cref="MF_QUATERNION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MF_QUATERNION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MF_QUATERNION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MF_QUATERNION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MF_QUATERNION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MF_QUATERNION), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="MF_QUATERNION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MF_QUATERNION), Is.EqualTo(16));
     }
 }

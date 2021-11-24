@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PSS_AUXILIARY_PAGE_ENTRY" /> struct.</summary>
+[SupportedOSPlatform("windows8.1")]
+public static unsafe partial class PSS_AUXILIARY_PAGE_ENTRYTests
 {
-    /// <summary>Provides validation of the <see cref="PSS_AUXILIARY_PAGE_ENTRY" /> struct.</summary>
-    [SupportedOSPlatform("windows8.1")]
-    public static unsafe partial class PSS_AUXILIARY_PAGE_ENTRYTests
+    /// <summary>Validates that the <see cref="PSS_AUXILIARY_PAGE_ENTRY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PSS_AUXILIARY_PAGE_ENTRY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PSS_AUXILIARY_PAGE_ENTRY>(), Is.EqualTo(sizeof(PSS_AUXILIARY_PAGE_ENTRY)));
-        }
+        Assert.That(Marshal.SizeOf<PSS_AUXILIARY_PAGE_ENTRY>(), Is.EqualTo(sizeof(PSS_AUXILIARY_PAGE_ENTRY)));
+    }
 
-        /// <summary>Validates that the <see cref="PSS_AUXILIARY_PAGE_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PSS_AUXILIARY_PAGE_ENTRY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PSS_AUXILIARY_PAGE_ENTRY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PSS_AUXILIARY_PAGE_ENTRY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PSS_AUXILIARY_PAGE_ENTRY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="PSS_AUXILIARY_PAGE_ENTRY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(PSS_AUXILIARY_PAGE_ENTRY), Is.EqualTo(80));
-            }
-            else
-            {
-                Assert.That(sizeof(PSS_AUXILIARY_PAGE_ENTRY), Is.EqualTo(52));
-            }
+            Assert.That(sizeof(PSS_AUXILIARY_PAGE_ENTRY), Is.EqualTo(80));
+        }
+        else
+        {
+            Assert.That(sizeof(PSS_AUXILIARY_PAGE_ENTRY), Is.EqualTo(52));
         }
     }
 }

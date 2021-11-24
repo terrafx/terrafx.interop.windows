@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HARDWARE_COUNTER_DATA" /> struct.</summary>
+public static unsafe partial class HARDWARE_COUNTER_DATATests
 {
-    /// <summary>Provides validation of the <see cref="HARDWARE_COUNTER_DATA" /> struct.</summary>
-    public static unsafe partial class HARDWARE_COUNTER_DATATests
+    /// <summary>Validates that the <see cref="HARDWARE_COUNTER_DATA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="HARDWARE_COUNTER_DATA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HARDWARE_COUNTER_DATA>(), Is.EqualTo(sizeof(HARDWARE_COUNTER_DATA)));
-        }
+        Assert.That(Marshal.SizeOf<HARDWARE_COUNTER_DATA>(), Is.EqualTo(sizeof(HARDWARE_COUNTER_DATA)));
+    }
 
-        /// <summary>Validates that the <see cref="HARDWARE_COUNTER_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HARDWARE_COUNTER_DATA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HARDWARE_COUNTER_DATA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HARDWARE_COUNTER_DATA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HARDWARE_COUNTER_DATA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HARDWARE_COUNTER_DATA), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="HARDWARE_COUNTER_DATA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HARDWARE_COUNTER_DATA), Is.EqualTo(16));
     }
 }

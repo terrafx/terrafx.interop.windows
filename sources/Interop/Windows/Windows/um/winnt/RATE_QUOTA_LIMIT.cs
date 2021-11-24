@@ -6,83 +6,82 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Explicit)]
+public partial struct RATE_QUOTA_LIMIT
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public partial struct RATE_QUOTA_LIMIT
+    [FieldOffset(0)]
+    [NativeTypeName("DWORD")]
+    public uint RateData;
+
+    [FieldOffset(0)]
+    [NativeTypeName("_RATE_QUOTA_LIMIT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:12659:5)")]
+    public _Anonymous_e__Struct Anonymous;
+
+    public uint RatePercent
     {
-        [FieldOffset(0)]
-        [NativeTypeName("DWORD")]
-        public uint RateData;
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.RatePercent;
+        }
 
-        [FieldOffset(0)]
-        [NativeTypeName("_RATE_QUOTA_LIMIT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:12659:5)")]
-        public _Anonymous_e__Struct Anonymous;
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.RatePercent = value;
+        }
+    }
 
+    public uint Reserved0
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous.Reserved0;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.Reserved0 = value;
+        }
+    }
+
+    public partial struct _Anonymous_e__Struct
+    {
+        public uint _bitfield;
+
+        [NativeTypeName("DWORD : 7")]
         public uint RatePercent
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return Anonymous.RatePercent;
+                return _bitfield & 0x7Fu;
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
-                Anonymous.RatePercent = value;
+                _bitfield = (_bitfield & ~0x7Fu) | (value & 0x7Fu);
             }
         }
 
+        [NativeTypeName("DWORD : 25")]
         public uint Reserved0
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return Anonymous.Reserved0;
+                return (_bitfield >> 7) & 0x1FFFFFFu;
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
-                Anonymous.Reserved0 = value;
-            }
-        }
-
-        public partial struct _Anonymous_e__Struct
-        {
-            public uint _bitfield;
-
-            [NativeTypeName("DWORD : 7")]
-            public uint RatePercent
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return _bitfield & 0x7Fu;
-                }
-
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                set
-                {
-                    _bitfield = (_bitfield & ~0x7Fu) | (value & 0x7Fu);
-                }
-            }
-
-            [NativeTypeName("DWORD : 25")]
-            public uint Reserved0
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return (_bitfield >> 7) & 0x1FFFFFFu;
-                }
-
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                set
-                {
-                    _bitfield = (_bitfield & ~(0x1FFFFFFu << 7)) | ((value & 0x1FFFFFFu) << 7);
-                }
+                _bitfield = (_bitfield & ~(0x1FFFFFFu << 7)) | ((value & 0x1FFFFFFu) << 7);
             }
         }
     }

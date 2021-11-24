@@ -3,14 +3,13 @@
 // Ported from shared/dxgi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
-{
-    public unsafe partial struct DXGI_DISPLAY_COLOR_SPACE
-    {
-        [NativeTypeName("FLOAT [8][2]")]
-        public fixed float PrimaryCoordinates[8 * 2];
+namespace TerraFX.Interop.DirectX;
 
-        [NativeTypeName("FLOAT [16][2]")]
-        public fixed float WhitePoints[16 * 2];
-    }
+public unsafe partial struct DXGI_DISPLAY_COLOR_SPACE
+{
+    [NativeTypeName("FLOAT [8][2]")]
+    public fixed float PrimaryCoordinates[8 * 2];
+
+    [NativeTypeName("FLOAT [16][2]")]
+    public fixed float WhitePoints[16 * 2];
 }

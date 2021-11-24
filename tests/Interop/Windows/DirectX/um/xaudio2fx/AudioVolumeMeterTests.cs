@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AudioVolumeMeter" /> struct.</summary>
+public static unsafe partial class AudioVolumeMeterTests
 {
-    /// <summary>Provides validation of the <see cref="AudioVolumeMeter" /> struct.</summary>
-    public static unsafe partial class AudioVolumeMeterTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="AudioVolumeMeter" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="AudioVolumeMeter" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(AudioVolumeMeter).GUID, Is.EqualTo(CLSID_AudioVolumeMeter));
-        }
+        Assert.That(typeof(AudioVolumeMeter).GUID, Is.EqualTo(CLSID_AudioVolumeMeter));
+    }
 
-        /// <summary>Validates that the <see cref="AudioVolumeMeter" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<AudioVolumeMeter>(), Is.EqualTo(sizeof(AudioVolumeMeter)));
-        }
+    /// <summary>Validates that the <see cref="AudioVolumeMeter" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<AudioVolumeMeter>(), Is.EqualTo(sizeof(AudioVolumeMeter)));
+    }
 
-        /// <summary>Validates that the <see cref="AudioVolumeMeter" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(AudioVolumeMeter).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="AudioVolumeMeter" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(AudioVolumeMeter).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="AudioVolumeMeter" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(AudioVolumeMeter), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="AudioVolumeMeter" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(AudioVolumeMeter), Is.EqualTo(1));
     }
 }

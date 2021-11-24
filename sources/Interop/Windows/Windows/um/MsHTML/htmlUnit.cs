@@ -3,14 +3,13 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum htmlUnit
 {
-    public enum htmlUnit
-    {
-        htmlUnitCharacter = 1,
-        htmlUnitWord = 2,
-        htmlUnitSentence = 3,
-        htmlUnitTextEdit = 6,
-        htmlUnit_Max = 2147483647,
-    }
+    htmlUnitCharacter = 1,
+    htmlUnitWord = 2,
+    htmlUnitSentence = 3,
+    htmlUnitTextEdit = 6,
+    htmlUnit_Max = 2147483647,
 }

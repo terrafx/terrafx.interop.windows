@@ -3,17 +3,16 @@
 // Ported from um/dxcapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the University of Illinois Open Source License.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public static partial class DxcVersionInfoFlags
 {
-    public static partial class DxcVersionInfoFlags
-    {
-        [NativeTypeName("const UINT32")]
-        public const uint DxcVersionInfoFlags_None = 0;
+    [NativeTypeName("const UINT32")]
+    public const uint DxcVersionInfoFlags_None = 0;
 
-        [NativeTypeName("const UINT32")]
-        public const uint DxcVersionInfoFlags_Debug = 1;
+    [NativeTypeName("const UINT32")]
+    public const uint DxcVersionInfoFlags_Debug = 1;
 
-        [NativeTypeName("const UINT32")]
-        public const uint DxcVersionInfoFlags_Internal = 2;
-    }
+    [NativeTypeName("const UINT32")]
+    public const uint DxcVersionInfoFlags_Internal = 2;
 }

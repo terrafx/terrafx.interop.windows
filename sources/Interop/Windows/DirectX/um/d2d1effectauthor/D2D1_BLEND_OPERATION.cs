@@ -3,15 +3,14 @@
 // Ported from um/d2d1effectauthor.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum D2D1_BLEND_OPERATION : uint
 {
-    public enum D2D1_BLEND_OPERATION : uint
-    {
-        D2D1_BLEND_OPERATION_ADD = 1,
-        D2D1_BLEND_OPERATION_SUBTRACT = 2,
-        D2D1_BLEND_OPERATION_REV_SUBTRACT = 3,
-        D2D1_BLEND_OPERATION_MIN = 4,
-        D2D1_BLEND_OPERATION_MAX = 5,
-        D2D1_BLEND_OPERATION_FORCE_DWORD = 0xffffffff,
-    }
+    D2D1_BLEND_OPERATION_ADD = 1,
+    D2D1_BLEND_OPERATION_SUBTRACT = 2,
+    D2D1_BLEND_OPERATION_REV_SUBTRACT = 3,
+    D2D1_BLEND_OPERATION_MIN = 4,
+    D2D1_BLEND_OPERATION_MAX = 5,
+    D2D1_BLEND_OPERATION_FORCE_DWORD = 0xffffffff,
 }

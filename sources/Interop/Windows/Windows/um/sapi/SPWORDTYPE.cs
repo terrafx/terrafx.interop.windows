@@ -3,11 +3,10 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SPWORDTYPE
 {
-    public enum SPWORDTYPE
-    {
-        eWORDTYPE_ADDED = (1 << 0),
-        eWORDTYPE_DELETED = (1 << 1),
-    }
+    eWORDTYPE_ADDED = (1 << 0),
+    eWORDTYPE_DELETED = (1 << 1),
 }

@@ -3,12 +3,11 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum eAVEncH263PictureType
 {
-    public enum eAVEncH263PictureType
-    {
-        eAVEncH263PictureType_I = 0,
-        eAVEncH263PictureType_P,
-        eAVEncH263PictureType_B,
-    }
+    eAVEncH263PictureType_I = 0,
+    eAVEncH263PictureType_P,
+    eAVEncH263PictureType_B,
 }

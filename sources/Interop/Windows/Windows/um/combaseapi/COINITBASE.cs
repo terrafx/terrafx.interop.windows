@@ -5,11 +5,10 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum COINITBASE
 {
-    [Flags]
-    public enum COINITBASE
-    {
-        COINITBASE_MULTITHREADED = 0x0,
-    }
+    COINITBASE_MULTITHREADED = 0x0,
 }

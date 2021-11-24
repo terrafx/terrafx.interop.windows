@@ -5,14 +5,13 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct QITAB
-    {
-        [NativeTypeName("const IID *")]
-        public Guid* piid;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint dwOffset;
-    }
+public unsafe partial struct QITAB
+{
+    [NativeTypeName("const IID *")]
+    public Guid* piid;
+
+    [NativeTypeName("DWORD")]
+    public uint dwOffset;
 }

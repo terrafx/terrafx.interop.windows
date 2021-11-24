@@ -3,22 +3,21 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_POLICY_CONSTRAINTS
 {
-    public unsafe partial struct WS_POLICY_CONSTRAINTS
-    {
-        public WS_CHANNEL_BINDING channelBinding;
+    public WS_CHANNEL_BINDING channelBinding;
 
-        public WS_CHANNEL_PROPERTY_CONSTRAINT* channelPropertyConstraints;
+    public WS_CHANNEL_PROPERTY_CONSTRAINT* channelPropertyConstraints;
 
-        [NativeTypeName("ULONG")]
-        public uint channelPropertyConstraintCount;
+    [NativeTypeName("ULONG")]
+    public uint channelPropertyConstraintCount;
 
-        public WS_SECURITY_CONSTRAINTS* securityConstraints;
+    public WS_SECURITY_CONSTRAINTS* securityConstraints;
 
-        public WS_POLICY_EXTENSION** policyExtensions;
+    public WS_POLICY_EXTENSION** policyExtensions;
 
-        [NativeTypeName("ULONG")]
-        public uint policyExtensionCount;
-    }
+    [NativeTypeName("ULONG")]
+    public uint policyExtensionCount;
 }

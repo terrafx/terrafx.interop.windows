@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE
-    {
-        [NativeTypeName("PVOID")]
-        public void* pValue;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint ValueLength;
-    }
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE
+{
+    [NativeTypeName("PVOID")]
+    public void* pValue;
+
+    [NativeTypeName("DWORD")]
+    public uint ValueLength;
 }

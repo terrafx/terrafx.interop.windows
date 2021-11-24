@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("062584A6-F830-4BDC-A4D2-0A10AB062B1D")]
+public partial struct InkDesktopHost
 {
-    [Guid("062584A6-F830-4BDC-A4D2-0A10AB062B1D")]
-    public partial struct InkDesktopHost
-    {
-    }
 }

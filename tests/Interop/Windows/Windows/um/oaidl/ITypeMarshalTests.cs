@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ITypeMarshal" /> struct.</summary>
+public static unsafe partial class ITypeMarshalTests
 {
-    /// <summary>Provides validation of the <see cref="ITypeMarshal" /> struct.</summary>
-    public static unsafe partial class ITypeMarshalTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITypeMarshal" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITypeMarshal" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ITypeMarshal).GUID, Is.EqualTo(IID_ITypeMarshal));
-        }
+        Assert.That(typeof(ITypeMarshal).GUID, Is.EqualTo(IID_ITypeMarshal));
+    }
 
-        /// <summary>Validates that the <see cref="ITypeMarshal" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ITypeMarshal>(), Is.EqualTo(sizeof(ITypeMarshal)));
-        }
+    /// <summary>Validates that the <see cref="ITypeMarshal" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ITypeMarshal>(), Is.EqualTo(sizeof(ITypeMarshal)));
+    }
 
-        /// <summary>Validates that the <see cref="ITypeMarshal" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ITypeMarshal).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ITypeMarshal" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ITypeMarshal).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ITypeMarshal" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ITypeMarshal" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ITypeMarshal), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ITypeMarshal), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ITypeMarshal), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ITypeMarshal), Is.EqualTo(4));
         }
     }
 }

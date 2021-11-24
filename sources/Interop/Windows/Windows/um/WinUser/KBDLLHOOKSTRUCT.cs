@@ -3,23 +3,22 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct KBDLLHOOKSTRUCT
 {
-    public partial struct KBDLLHOOKSTRUCT
-    {
-        [NativeTypeName("DWORD")]
-        public uint vkCode;
+    [NativeTypeName("DWORD")]
+    public uint vkCode;
 
-        [NativeTypeName("DWORD")]
-        public uint scanCode;
+    [NativeTypeName("DWORD")]
+    public uint scanCode;
 
-        [NativeTypeName("DWORD")]
-        public uint flags;
+    [NativeTypeName("DWORD")]
+    public uint flags;
 
-        [NativeTypeName("DWORD")]
-        public uint time;
+    [NativeTypeName("DWORD")]
+    public uint time;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint dwExtraInfo;
-    }
+    [NativeTypeName("ULONG_PTR")]
+    public nuint dwExtraInfo;
 }

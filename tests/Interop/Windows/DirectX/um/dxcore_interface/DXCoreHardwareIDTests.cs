@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DXCoreHardwareID" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.19041.0")]
+public static unsafe partial class DXCoreHardwareIDTests
 {
-    /// <summary>Provides validation of the <see cref="DXCoreHardwareID" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public static unsafe partial class DXCoreHardwareIDTests
+    /// <summary>Validates that the <see cref="DXCoreHardwareID" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DXCoreHardwareID" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DXCoreHardwareID>(), Is.EqualTo(sizeof(DXCoreHardwareID)));
-        }
+        Assert.That(Marshal.SizeOf<DXCoreHardwareID>(), Is.EqualTo(sizeof(DXCoreHardwareID)));
+    }
 
-        /// <summary>Validates that the <see cref="DXCoreHardwareID" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DXCoreHardwareID).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DXCoreHardwareID" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DXCoreHardwareID).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DXCoreHardwareID" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DXCoreHardwareID), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="DXCoreHardwareID" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DXCoreHardwareID), Is.EqualTo(16));
     }
 }

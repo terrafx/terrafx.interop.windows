@@ -5,15 +5,14 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D1_HWND_RENDER_TARGET_PROPERTIES
 {
-    public partial struct D2D1_HWND_RENDER_TARGET_PROPERTIES
-    {
-        public HWND hwnd;
+    public HWND hwnd;
 
-        [NativeTypeName("D2D1_SIZE_U")]
-        public D2D_SIZE_U pixelSize;
+    [NativeTypeName("D2D1_SIZE_U")]
+    public D2D_SIZE_U pixelSize;
 
-        public D2D1_PRESENT_OPTIONS presentOptions;
-    }
+    public D2D1_PRESENT_OPTIONS presentOptions;
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ICONMETRICSW" /> struct.</summary>
+public static unsafe partial class ICONMETRICSWTests
 {
-    /// <summary>Provides validation of the <see cref="ICONMETRICSW" /> struct.</summary>
-    public static unsafe partial class ICONMETRICSWTests
+    /// <summary>Validates that the <see cref="ICONMETRICSW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="ICONMETRICSW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ICONMETRICSW>(), Is.EqualTo(sizeof(ICONMETRICSW)));
-        }
+        Assert.That(Marshal.SizeOf<ICONMETRICSW>(), Is.EqualTo(sizeof(ICONMETRICSW)));
+    }
 
-        /// <summary>Validates that the <see cref="ICONMETRICSW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ICONMETRICSW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ICONMETRICSW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ICONMETRICSW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ICONMETRICSW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(ICONMETRICSW), Is.EqualTo(108));
-        }
+    /// <summary>Validates that the <see cref="ICONMETRICSW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(ICONMETRICSW), Is.EqualTo(108));
     }
 }

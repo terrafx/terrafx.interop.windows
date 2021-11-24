@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NMTVCUSTOMDRAW" /> struct.</summary>
+public static unsafe partial class NMTVCUSTOMDRAWTests
 {
-    /// <summary>Provides validation of the <see cref="NMTVCUSTOMDRAW" /> struct.</summary>
-    public static unsafe partial class NMTVCUSTOMDRAWTests
+    /// <summary>Validates that the <see cref="NMTVCUSTOMDRAW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NMTVCUSTOMDRAW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NMTVCUSTOMDRAW>(), Is.EqualTo(sizeof(NMTVCUSTOMDRAW)));
-        }
+        Assert.That(Marshal.SizeOf<NMTVCUSTOMDRAW>(), Is.EqualTo(sizeof(NMTVCUSTOMDRAW)));
+    }
 
-        /// <summary>Validates that the <see cref="NMTVCUSTOMDRAW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NMTVCUSTOMDRAW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NMTVCUSTOMDRAW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NMTVCUSTOMDRAW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NMTVCUSTOMDRAW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="NMTVCUSTOMDRAW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(NMTVCUSTOMDRAW), Is.EqualTo(96));
-            }
-            else
-            {
-                Assert.That(sizeof(NMTVCUSTOMDRAW), Is.EqualTo(60));
-            }
+            Assert.That(sizeof(NMTVCUSTOMDRAW), Is.EqualTo(96));
+        }
+        else
+        {
+            Assert.That(sizeof(NMTVCUSTOMDRAW), Is.EqualTo(60));
         }
     }
 }

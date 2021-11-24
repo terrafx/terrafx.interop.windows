@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("CE23534B-56D8-4978-86A2-7EE570640468")]
+public partial struct XblIdpAuthManager
 {
-    [Guid("CE23534B-56D8-4978-86A2-7EE570640468")]
-    public partial struct XblIdpAuthManager
-    {
-    }
 }

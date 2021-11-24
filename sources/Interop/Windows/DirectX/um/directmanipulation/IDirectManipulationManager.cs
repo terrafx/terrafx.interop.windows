@@ -9,143 +9,142 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+[Guid("FBF5D3B4-70C7-4163-9322-5A6F660D6FBC")]
+[NativeTypeName("struct IDirectManipulationManager : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IDirectManipulationManager : IDirectManipulationManager.Interface
 {
-    [SupportedOSPlatform("windows8.0")]
-    [Guid("FBF5D3B4-70C7-4163-9322-5A6F660D6FBC")]
-    [NativeTypeName("struct IDirectManipulationManager : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirectManipulationManager : IDirectManipulationManager.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDirectManipulationManager*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDirectManipulationManager*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDirectManipulationManager*, uint>)(lpVtbl[1]))((IDirectManipulationManager*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDirectManipulationManager*, uint>)(lpVtbl[1]))((IDirectManipulationManager*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDirectManipulationManager*, uint>)(lpVtbl[2]))((IDirectManipulationManager*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDirectManipulationManager*, uint>)(lpVtbl[2]))((IDirectManipulationManager*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Activate(HWND window)
+    {
+        return ((delegate* unmanaged<IDirectManipulationManager*, HWND, int>)(lpVtbl[3]))((IDirectManipulationManager*)Unsafe.AsPointer(ref this), window);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Deactivate(HWND window)
+    {
+        return ((delegate* unmanaged<IDirectManipulationManager*, HWND, int>)(lpVtbl[4]))((IDirectManipulationManager*)Unsafe.AsPointer(ref this), window);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT RegisterHitTestTarget(HWND window, HWND hitTestWindow, DIRECTMANIPULATION_HITTEST_TYPE type)
+    {
+        return ((delegate* unmanaged<IDirectManipulationManager*, HWND, HWND, DIRECTMANIPULATION_HITTEST_TYPE, int>)(lpVtbl[5]))((IDirectManipulationManager*)Unsafe.AsPointer(ref this), window, hitTestWindow, type);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT ProcessInput([NativeTypeName("const MSG *")] MSG* message, BOOL* handled)
+    {
+        return ((delegate* unmanaged<IDirectManipulationManager*, MSG*, BOOL*, int>)(lpVtbl[6]))((IDirectManipulationManager*)Unsafe.AsPointer(ref this), message, handled);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT GetUpdateManager([NativeTypeName("const IID &")] Guid* riid, void** @object)
+    {
+        return ((delegate* unmanaged<IDirectManipulationManager*, Guid*, void**, int>)(lpVtbl[7]))((IDirectManipulationManager*)Unsafe.AsPointer(ref this), riid, @object);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT CreateViewport(IDirectManipulationFrameInfoProvider* frameInfo, HWND window, [NativeTypeName("const IID &")] Guid* riid, void** @object)
+    {
+        return ((delegate* unmanaged<IDirectManipulationManager*, IDirectManipulationFrameInfoProvider*, HWND, Guid*, void**, int>)(lpVtbl[8]))((IDirectManipulationManager*)Unsafe.AsPointer(ref this), frameInfo, window, riid, @object);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT CreateContent(IDirectManipulationFrameInfoProvider* frameInfo, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, void** @object)
+    {
+        return ((delegate* unmanaged<IDirectManipulationManager*, IDirectManipulationFrameInfoProvider*, Guid*, Guid*, void**, int>)(lpVtbl[9]))((IDirectManipulationManager*)Unsafe.AsPointer(ref this), frameInfo, clsid, riid, @object);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Activate(HWND window)
-        {
-            return ((delegate* unmanaged<IDirectManipulationManager*, HWND, int>)(lpVtbl[3]))((IDirectManipulationManager*)Unsafe.AsPointer(ref this), window);
-        }
+        HRESULT Activate(HWND window);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Deactivate(HWND window)
-        {
-            return ((delegate* unmanaged<IDirectManipulationManager*, HWND, int>)(lpVtbl[4]))((IDirectManipulationManager*)Unsafe.AsPointer(ref this), window);
-        }
+        HRESULT Deactivate(HWND window);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT RegisterHitTestTarget(HWND window, HWND hitTestWindow, DIRECTMANIPULATION_HITTEST_TYPE type)
-        {
-            return ((delegate* unmanaged<IDirectManipulationManager*, HWND, HWND, DIRECTMANIPULATION_HITTEST_TYPE, int>)(lpVtbl[5]))((IDirectManipulationManager*)Unsafe.AsPointer(ref this), window, hitTestWindow, type);
-        }
+        HRESULT RegisterHitTestTarget(HWND window, HWND hitTestWindow, DIRECTMANIPULATION_HITTEST_TYPE type);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT ProcessInput([NativeTypeName("const MSG *")] MSG* message, BOOL* handled)
-        {
-            return ((delegate* unmanaged<IDirectManipulationManager*, MSG*, BOOL*, int>)(lpVtbl[6]))((IDirectManipulationManager*)Unsafe.AsPointer(ref this), message, handled);
-        }
+        HRESULT ProcessInput([NativeTypeName("const MSG *")] MSG* message, BOOL* handled);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetUpdateManager([NativeTypeName("const IID &")] Guid* riid, void** @object)
-        {
-            return ((delegate* unmanaged<IDirectManipulationManager*, Guid*, void**, int>)(lpVtbl[7]))((IDirectManipulationManager*)Unsafe.AsPointer(ref this), riid, @object);
-        }
+        HRESULT GetUpdateManager([NativeTypeName("const IID &")] Guid* riid, void** @object);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT CreateViewport(IDirectManipulationFrameInfoProvider* frameInfo, HWND window, [NativeTypeName("const IID &")] Guid* riid, void** @object)
-        {
-            return ((delegate* unmanaged<IDirectManipulationManager*, IDirectManipulationFrameInfoProvider*, HWND, Guid*, void**, int>)(lpVtbl[8]))((IDirectManipulationManager*)Unsafe.AsPointer(ref this), frameInfo, window, riid, @object);
-        }
+        HRESULT CreateViewport(IDirectManipulationFrameInfoProvider* frameInfo, HWND window, [NativeTypeName("const IID &")] Guid* riid, void** @object);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT CreateContent(IDirectManipulationFrameInfoProvider* frameInfo, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, void** @object)
-        {
-            return ((delegate* unmanaged<IDirectManipulationManager*, IDirectManipulationFrameInfoProvider*, Guid*, Guid*, void**, int>)(lpVtbl[9]))((IDirectManipulationManager*)Unsafe.AsPointer(ref this), frameInfo, clsid, riid, @object);
-        }
+        HRESULT CreateContent(IDirectManipulationFrameInfoProvider* frameInfo, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, void** @object);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Activate(HWND window);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectManipulationManager*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT Deactivate(HWND window);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectManipulationManager*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT RegisterHitTestTarget(HWND window, HWND hitTestWindow, DIRECTMANIPULATION_HITTEST_TYPE type);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectManipulationManager*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT ProcessInput([NativeTypeName("const MSG *")] MSG* message, BOOL* handled);
+        [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectManipulationManager*, HWND, int> Activate;
 
-            [VtblIndex(7)]
-            HRESULT GetUpdateManager([NativeTypeName("const IID &")] Guid* riid, void** @object);
+        [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectManipulationManager*, HWND, int> Deactivate;
 
-            [VtblIndex(8)]
-            HRESULT CreateViewport(IDirectManipulationFrameInfoProvider* frameInfo, HWND window, [NativeTypeName("const IID &")] Guid* riid, void** @object);
+        [NativeTypeName("HRESULT (HWND, HWND, DIRECTMANIPULATION_HITTEST_TYPE) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectManipulationManager*, HWND, HWND, DIRECTMANIPULATION_HITTEST_TYPE, int> RegisterHitTestTarget;
 
-            [VtblIndex(9)]
-            HRESULT CreateContent(IDirectManipulationFrameInfoProvider* frameInfo, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, void** @object);
-        }
+        [NativeTypeName("HRESULT (const MSG *, BOOL *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectManipulationManager*, MSG*, BOOL*, int> ProcessInput;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectManipulationManager*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectManipulationManager*, Guid*, void**, int> GetUpdateManager;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectManipulationManager*, uint> AddRef;
+        [NativeTypeName("HRESULT (IDirectManipulationFrameInfoProvider *, HWND, const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectManipulationManager*, IDirectManipulationFrameInfoProvider*, HWND, Guid*, void**, int> CreateViewport;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectManipulationManager*, uint> Release;
-
-            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectManipulationManager*, HWND, int> Activate;
-
-            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectManipulationManager*, HWND, int> Deactivate;
-
-            [NativeTypeName("HRESULT (HWND, HWND, DIRECTMANIPULATION_HITTEST_TYPE) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectManipulationManager*, HWND, HWND, DIRECTMANIPULATION_HITTEST_TYPE, int> RegisterHitTestTarget;
-
-            [NativeTypeName("HRESULT (const MSG *, BOOL *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectManipulationManager*, MSG*, BOOL*, int> ProcessInput;
-
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectManipulationManager*, Guid*, void**, int> GetUpdateManager;
-
-            [NativeTypeName("HRESULT (IDirectManipulationFrameInfoProvider *, HWND, const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectManipulationManager*, IDirectManipulationFrameInfoProvider*, HWND, Guid*, void**, int> CreateViewport;
-
-            [NativeTypeName("HRESULT (IDirectManipulationFrameInfoProvider *, const IID &, const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectManipulationManager*, IDirectManipulationFrameInfoProvider*, Guid*, Guid*, void**, int> CreateContent;
-        }
+        [NativeTypeName("HRESULT (IDirectManipulationFrameInfoProvider *, const IID &, const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectManipulationManager*, IDirectManipulationFrameInfoProvider*, Guid*, Guid*, void**, int> CreateContent;
     }
 }

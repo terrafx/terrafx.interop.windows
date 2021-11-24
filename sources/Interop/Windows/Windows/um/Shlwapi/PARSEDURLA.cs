@@ -3,23 +3,22 @@
 // Ported from um/Shlwapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct PARSEDURLA
 {
-    public unsafe partial struct PARSEDURLA
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* pszProtocol;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* pszProtocol;
 
-        public uint cchProtocol;
+    public uint cchProtocol;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* pszSuffix;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* pszSuffix;
 
-        public uint cchSuffix;
+    public uint cchSuffix;
 
-        public uint nScheme;
-    }
+    public uint nScheme;
 }

@@ -7,94 +7,93 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("00000025-0000-0000-C000-000000000046")]
+[NativeTypeName("struct ISynchronizeMutex : ISynchronize")]
+[NativeInheritance("ISynchronize")]
+public unsafe partial struct ISynchronizeMutex : ISynchronizeMutex.Interface
 {
-    [Guid("00000025-0000-0000-C000-000000000046")]
-    [NativeTypeName("struct ISynchronizeMutex : ISynchronize")]
-    [NativeInheritance("ISynchronize")]
-    public unsafe partial struct ISynchronizeMutex : ISynchronizeMutex.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ISynchronizeMutex*, Guid*, void**, int>)(lpVtbl[0]))((ISynchronizeMutex*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ISynchronizeMutex*, Guid*, void**, int>)(lpVtbl[0]))((ISynchronizeMutex*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ISynchronizeMutex*, uint>)(lpVtbl[1]))((ISynchronizeMutex*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ISynchronizeMutex*, uint>)(lpVtbl[1]))((ISynchronizeMutex*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ISynchronizeMutex*, uint>)(lpVtbl[2]))((ISynchronizeMutex*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ISynchronizeMutex*, uint>)(lpVtbl[2]))((ISynchronizeMutex*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Wait([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwMilliseconds)
+    {
+        return ((delegate* unmanaged<ISynchronizeMutex*, uint, uint, int>)(lpVtbl[3]))((ISynchronizeMutex*)Unsafe.AsPointer(ref this), dwFlags, dwMilliseconds);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT Wait([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwMilliseconds)
-        {
-            return ((delegate* unmanaged<ISynchronizeMutex*, uint, uint, int>)(lpVtbl[3]))((ISynchronizeMutex*)Unsafe.AsPointer(ref this), dwFlags, dwMilliseconds);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Signal()
+    {
+        return ((delegate* unmanaged<ISynchronizeMutex*, int>)(lpVtbl[4]))((ISynchronizeMutex*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT Signal()
-        {
-            return ((delegate* unmanaged<ISynchronizeMutex*, int>)(lpVtbl[4]))((ISynchronizeMutex*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Reset()
+    {
+        return ((delegate* unmanaged<ISynchronizeMutex*, int>)(lpVtbl[5]))((ISynchronizeMutex*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT Reset()
-        {
-            return ((delegate* unmanaged<ISynchronizeMutex*, int>)(lpVtbl[5]))((ISynchronizeMutex*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT ReleaseMutex()
+    {
+        return ((delegate* unmanaged<ISynchronizeMutex*, int>)(lpVtbl[6]))((ISynchronizeMutex*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : ISynchronize.Interface
+    {
         [VtblIndex(6)]
-        public HRESULT ReleaseMutex()
-        {
-            return ((delegate* unmanaged<ISynchronizeMutex*, int>)(lpVtbl[6]))((ISynchronizeMutex*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT ReleaseMutex();
+    }
 
-        public interface Interface : ISynchronize.Interface
-        {
-            [VtblIndex(6)]
-            HRESULT ReleaseMutex();
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISynchronizeMutex*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISynchronizeMutex*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISynchronizeMutex*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISynchronizeMutex*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISynchronizeMutex*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISynchronizeMutex*, uint> Release;
+        [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISynchronizeMutex*, uint, uint, int> Wait;
 
-            [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISynchronizeMutex*, uint, uint, int> Wait;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISynchronizeMutex*, int> Signal;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISynchronizeMutex*, int> Signal;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISynchronizeMutex*, int> Reset;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISynchronizeMutex*, int> Reset;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISynchronizeMutex*, int> ReleaseMutex;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISynchronizeMutex*, int> ReleaseMutex;
     }
 }

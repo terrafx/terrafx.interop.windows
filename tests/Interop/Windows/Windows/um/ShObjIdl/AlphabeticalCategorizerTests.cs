@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AlphabeticalCategorizer" /> struct.</summary>
+public static unsafe partial class AlphabeticalCategorizerTests
 {
-    /// <summary>Provides validation of the <see cref="AlphabeticalCategorizer" /> struct.</summary>
-    public static unsafe partial class AlphabeticalCategorizerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="AlphabeticalCategorizer" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="AlphabeticalCategorizer" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(AlphabeticalCategorizer).GUID, Is.EqualTo(IID_AlphabeticalCategorizer));
-        }
+        Assert.That(typeof(AlphabeticalCategorizer).GUID, Is.EqualTo(IID_AlphabeticalCategorizer));
+    }
 
-        /// <summary>Validates that the <see cref="AlphabeticalCategorizer" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<AlphabeticalCategorizer>(), Is.EqualTo(sizeof(AlphabeticalCategorizer)));
-        }
+    /// <summary>Validates that the <see cref="AlphabeticalCategorizer" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<AlphabeticalCategorizer>(), Is.EqualTo(sizeof(AlphabeticalCategorizer)));
+    }
 
-        /// <summary>Validates that the <see cref="AlphabeticalCategorizer" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(AlphabeticalCategorizer).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="AlphabeticalCategorizer" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(AlphabeticalCategorizer).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="AlphabeticalCategorizer" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(AlphabeticalCategorizer), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="AlphabeticalCategorizer" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(AlphabeticalCategorizer), Is.EqualTo(1));
     }
 }

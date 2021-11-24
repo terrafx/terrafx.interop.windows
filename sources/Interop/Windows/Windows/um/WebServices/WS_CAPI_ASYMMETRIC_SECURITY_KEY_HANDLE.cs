@@ -3,15 +3,14 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct WS_CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE
 {
-    public partial struct WS_CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE
-    {
-        public WS_SECURITY_KEY_HANDLE keyHandle;
+    public WS_SECURITY_KEY_HANDLE keyHandle;
 
-        public HCRYPTPROV provider;
+    public HCRYPTPROV provider;
 
-        [NativeTypeName("ULONG")]
-        public uint keySpec;
-    }
+    [NativeTypeName("ULONG")]
+    public uint keySpec;
 }

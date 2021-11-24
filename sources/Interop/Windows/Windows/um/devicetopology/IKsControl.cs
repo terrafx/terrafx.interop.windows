@@ -7,90 +7,89 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("28F54685-06FD-11D2-B27A-00A0C9223196")]
+[NativeTypeName("struct IKsControl : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IKsControl : IKsControl.Interface
 {
-    [Guid("28F54685-06FD-11D2-B27A-00A0C9223196")]
-    [NativeTypeName("struct IKsControl : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IKsControl : IKsControl.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IKsControl*, Guid*, void**, int>)(lpVtbl[0]))((IKsControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IKsControl*, Guid*, void**, int>)(lpVtbl[0]))((IKsControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IKsControl*, uint>)(lpVtbl[1]))((IKsControl*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IKsControl*, uint>)(lpVtbl[1]))((IKsControl*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IKsControl*, uint>)(lpVtbl[2]))((IKsControl*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IKsControl*, uint>)(lpVtbl[2]))((IKsControl*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT KsProperty([NativeTypeName("PKSPROPERTY")] KSIDENTIFIER* Property, [NativeTypeName("ULONG")] uint PropertyLength, void* PropertyData, [NativeTypeName("ULONG")] uint DataLength, [NativeTypeName("ULONG *")] uint* BytesReturned)
+    {
+        return ((delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int>)(lpVtbl[3]))((IKsControl*)Unsafe.AsPointer(ref this), Property, PropertyLength, PropertyData, DataLength, BytesReturned);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT KsMethod([NativeTypeName("PKSMETHOD")] KSIDENTIFIER* Method, [NativeTypeName("ULONG")] uint MethodLength, void* MethodData, [NativeTypeName("ULONG")] uint DataLength, [NativeTypeName("ULONG *")] uint* BytesReturned)
+    {
+        return ((delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int>)(lpVtbl[4]))((IKsControl*)Unsafe.AsPointer(ref this), Method, MethodLength, MethodData, DataLength, BytesReturned);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT KsEvent([NativeTypeName("PKSEVENT")] KSIDENTIFIER* Event, [NativeTypeName("ULONG")] uint EventLength, void* EventData, [NativeTypeName("ULONG")] uint DataLength, [NativeTypeName("ULONG *")] uint* BytesReturned)
+    {
+        return ((delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int>)(lpVtbl[5]))((IKsControl*)Unsafe.AsPointer(ref this), Event, EventLength, EventData, DataLength, BytesReturned);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT KsProperty([NativeTypeName("PKSPROPERTY")] KSIDENTIFIER* Property, [NativeTypeName("ULONG")] uint PropertyLength, void* PropertyData, [NativeTypeName("ULONG")] uint DataLength, [NativeTypeName("ULONG *")] uint* BytesReturned)
-        {
-            return ((delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int>)(lpVtbl[3]))((IKsControl*)Unsafe.AsPointer(ref this), Property, PropertyLength, PropertyData, DataLength, BytesReturned);
-        }
+        HRESULT KsProperty([NativeTypeName("PKSPROPERTY")] KSIDENTIFIER* Property, [NativeTypeName("ULONG")] uint PropertyLength, void* PropertyData, [NativeTypeName("ULONG")] uint DataLength, [NativeTypeName("ULONG *")] uint* BytesReturned);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT KsMethod([NativeTypeName("PKSMETHOD")] KSIDENTIFIER* Method, [NativeTypeName("ULONG")] uint MethodLength, void* MethodData, [NativeTypeName("ULONG")] uint DataLength, [NativeTypeName("ULONG *")] uint* BytesReturned)
-        {
-            return ((delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int>)(lpVtbl[4]))((IKsControl*)Unsafe.AsPointer(ref this), Method, MethodLength, MethodData, DataLength, BytesReturned);
-        }
+        HRESULT KsMethod([NativeTypeName("PKSMETHOD")] KSIDENTIFIER* Method, [NativeTypeName("ULONG")] uint MethodLength, void* MethodData, [NativeTypeName("ULONG")] uint DataLength, [NativeTypeName("ULONG *")] uint* BytesReturned);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT KsEvent([NativeTypeName("PKSEVENT")] KSIDENTIFIER* Event, [NativeTypeName("ULONG")] uint EventLength, void* EventData, [NativeTypeName("ULONG")] uint DataLength, [NativeTypeName("ULONG *")] uint* BytesReturned)
-        {
-            return ((delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int>)(lpVtbl[5]))((IKsControl*)Unsafe.AsPointer(ref this), Event, EventLength, EventData, DataLength, BytesReturned);
-        }
+        HRESULT KsEvent([NativeTypeName("PKSEVENT")] KSIDENTIFIER* Event, [NativeTypeName("ULONG")] uint EventLength, void* EventData, [NativeTypeName("ULONG")] uint DataLength, [NativeTypeName("ULONG *")] uint* BytesReturned);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT KsProperty([NativeTypeName("PKSPROPERTY")] KSIDENTIFIER* Property, [NativeTypeName("ULONG")] uint PropertyLength, void* PropertyData, [NativeTypeName("ULONG")] uint DataLength, [NativeTypeName("ULONG *")] uint* BytesReturned);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IKsControl*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT KsMethod([NativeTypeName("PKSMETHOD")] KSIDENTIFIER* Method, [NativeTypeName("ULONG")] uint MethodLength, void* MethodData, [NativeTypeName("ULONG")] uint DataLength, [NativeTypeName("ULONG *")] uint* BytesReturned);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IKsControl*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT KsEvent([NativeTypeName("PKSEVENT")] KSIDENTIFIER* Event, [NativeTypeName("ULONG")] uint EventLength, void* EventData, [NativeTypeName("ULONG")] uint DataLength, [NativeTypeName("ULONG *")] uint* BytesReturned);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IKsControl*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IKsControl*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (PKSPROPERTY, ULONG, void *, ULONG, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int> KsProperty;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IKsControl*, uint> AddRef;
+        [NativeTypeName("HRESULT (PKSMETHOD, ULONG, void *, ULONG, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int> KsMethod;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IKsControl*, uint> Release;
-
-            [NativeTypeName("HRESULT (PKSPROPERTY, ULONG, void *, ULONG, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int> KsProperty;
-
-            [NativeTypeName("HRESULT (PKSMETHOD, ULONG, void *, ULONG, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int> KsMethod;
-
-            [NativeTypeName("HRESULT (PKSEVENT, ULONG, void *, ULONG, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int> KsEvent;
-        }
+        [NativeTypeName("HRESULT (PKSEVENT, ULONG, void *, ULONG, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int> KsEvent;
     }
 }

@@ -3,13 +3,12 @@
 // Ported from um/DirectML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
-{
-    public unsafe partial struct DML_BUFFER_ARRAY_BINDING
-    {
-        public uint BindingCount;
+namespace TerraFX.Interop.DirectX;
 
-        [NativeTypeName("const DML_BUFFER_BINDING *")]
-        public DML_BUFFER_BINDING* Bindings;
-    }
+public unsafe partial struct DML_BUFFER_ARRAY_BINDING
+{
+    public uint BindingCount;
+
+    [NativeTypeName("const DML_BUFFER_BINDING *")]
+    public DML_BUFFER_BINDING* Bindings;
 }

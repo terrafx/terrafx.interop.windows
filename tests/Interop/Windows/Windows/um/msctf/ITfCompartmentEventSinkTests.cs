@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ITfCompartmentEventSink" /> struct.</summary>
+public static unsafe partial class ITfCompartmentEventSinkTests
 {
-    /// <summary>Provides validation of the <see cref="ITfCompartmentEventSink" /> struct.</summary>
-    public static unsafe partial class ITfCompartmentEventSinkTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfCompartmentEventSink" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfCompartmentEventSink" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ITfCompartmentEventSink).GUID, Is.EqualTo(IID_ITfCompartmentEventSink));
-        }
+        Assert.That(typeof(ITfCompartmentEventSink).GUID, Is.EqualTo(IID_ITfCompartmentEventSink));
+    }
 
-        /// <summary>Validates that the <see cref="ITfCompartmentEventSink" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ITfCompartmentEventSink>(), Is.EqualTo(sizeof(ITfCompartmentEventSink)));
-        }
+    /// <summary>Validates that the <see cref="ITfCompartmentEventSink" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ITfCompartmentEventSink>(), Is.EqualTo(sizeof(ITfCompartmentEventSink)));
+    }
 
-        /// <summary>Validates that the <see cref="ITfCompartmentEventSink" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ITfCompartmentEventSink).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ITfCompartmentEventSink" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ITfCompartmentEventSink).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ITfCompartmentEventSink" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ITfCompartmentEventSink" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ITfCompartmentEventSink), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ITfCompartmentEventSink), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ITfCompartmentEventSink), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ITfCompartmentEventSink), Is.EqualTo(4));
         }
     }
 }

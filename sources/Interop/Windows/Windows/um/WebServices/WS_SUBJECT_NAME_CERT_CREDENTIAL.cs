@@ -3,17 +3,16 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct WS_SUBJECT_NAME_CERT_CREDENTIAL
 {
-    public partial struct WS_SUBJECT_NAME_CERT_CREDENTIAL
-    {
-        public WS_CERT_CREDENTIAL credential;
+    public WS_CERT_CREDENTIAL credential;
 
-        [NativeTypeName("ULONG")]
-        public uint storeLocation;
+    [NativeTypeName("ULONG")]
+    public uint storeLocation;
 
-        public WS_STRING storeName;
+    public WS_STRING storeName;
 
-        public WS_STRING subjectName;
-    }
+    public WS_STRING subjectName;
 }

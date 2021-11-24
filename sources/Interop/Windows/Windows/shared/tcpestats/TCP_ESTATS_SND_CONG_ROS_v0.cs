@@ -3,11 +3,10 @@
 // Ported from shared/tcpestats.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TCP_ESTATS_SND_CONG_ROS_v0
 {
-    public partial struct TCP_ESTATS_SND_CONG_ROS_v0
-    {
-        [NativeTypeName("ULONG")]
-        public uint LimCwnd;
-    }
+    [NativeTypeName("ULONG")]
+    public uint LimCwnd;
 }

@@ -3,18 +3,17 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SPCFGRULEATTRIBUTES
 {
-    public enum SPCFGRULEATTRIBUTES
-    {
-        SPRAF_TopLevel = (1 << 0),
-        SPRAF_Active = (1 << 1),
-        SPRAF_Export = (1 << 2),
-        SPRAF_Import = (1 << 3),
-        SPRAF_Interpreter = (1 << 4),
-        SPRAF_Dynamic = (1 << 5),
-        SPRAF_Root = (1 << 6),
-        SPRAF_AutoPause = (1 << 16),
-        SPRAF_UserDelimited = (1 << 17),
-    }
+    SPRAF_TopLevel = (1 << 0),
+    SPRAF_Active = (1 << 1),
+    SPRAF_Export = (1 << 2),
+    SPRAF_Import = (1 << 3),
+    SPRAF_Interpreter = (1 << 4),
+    SPRAF_Dynamic = (1 << 5),
+    SPRAF_Root = (1 << 6),
+    SPRAF_AutoPause = (1 << 16),
+    SPRAF_UserDelimited = (1 << 17),
 }

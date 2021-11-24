@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IEnumHLITEM" /> struct.</summary>
+public static unsafe partial class IEnumHLITEMTests
 {
-    /// <summary>Provides validation of the <see cref="IEnumHLITEM" /> struct.</summary>
-    public static unsafe partial class IEnumHLITEMTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEnumHLITEM" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IEnumHLITEM" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IEnumHLITEM).GUID, Is.EqualTo(IID_IEnumHLITEM));
-        }
+        Assert.That(typeof(IEnumHLITEM).GUID, Is.EqualTo(IID_IEnumHLITEM));
+    }
 
-        /// <summary>Validates that the <see cref="IEnumHLITEM" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IEnumHLITEM>(), Is.EqualTo(sizeof(IEnumHLITEM)));
-        }
+    /// <summary>Validates that the <see cref="IEnumHLITEM" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IEnumHLITEM>(), Is.EqualTo(sizeof(IEnumHLITEM)));
+    }
 
-        /// <summary>Validates that the <see cref="IEnumHLITEM" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IEnumHLITEM).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IEnumHLITEM" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IEnumHLITEM).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IEnumHLITEM" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IEnumHLITEM" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IEnumHLITEM), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IEnumHLITEM), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IEnumHLITEM), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IEnumHLITEM), Is.EqualTo(4));
         }
     }
 }

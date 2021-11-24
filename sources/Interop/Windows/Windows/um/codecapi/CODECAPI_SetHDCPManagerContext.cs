@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("6D2D1FC8-3DC9-47EB-A1A2-471C80CD60D0")]
+public partial struct CODECAPI_SetHDCPManagerContext
 {
-    [Guid("6D2D1FC8-3DC9-47EB-A1A2-471C80CD60D0")]
-    public partial struct CODECAPI_SetHDCPManagerContext
-    {
-    }
 }

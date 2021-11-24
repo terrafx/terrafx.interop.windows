@@ -3,12 +3,11 @@
 // Ported from um/DirectML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum DML_BINDING_TYPE
 {
-    public enum DML_BINDING_TYPE
-    {
-        DML_BINDING_TYPE_NONE,
-        DML_BINDING_TYPE_BUFFER,
-        DML_BINDING_TYPE_BUFFER_ARRAY,
-    }
+    DML_BINDING_TYPE_NONE,
+    DML_BINDING_TYPE_BUFFER,
+    DML_BINDING_TYPE_BUFFER_ARRAY,
 }

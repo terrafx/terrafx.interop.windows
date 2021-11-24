@@ -3,32 +3,31 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CMINVOKECOMMANDINFO
 {
-    public unsafe partial struct CMINVOKECOMMANDINFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint fMask;
+    [NativeTypeName("DWORD")]
+    public uint fMask;
 
-        public HWND hwnd;
+    public HWND hwnd;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* lpVerb;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* lpVerb;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* lpParameters;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* lpParameters;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* lpDirectory;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* lpDirectory;
 
-        public int nShow;
+    public int nShow;
 
-        [NativeTypeName("DWORD")]
-        public uint dwHotKey;
+    [NativeTypeName("DWORD")]
+    public uint dwHotKey;
 
-        public HANDLE hIcon;
-    }
+    public HANDLE hIcon;
 }

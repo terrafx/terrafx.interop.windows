@@ -8,558 +8,557 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class MFCONNECTOR
 {
-    public static partial class MFCONNECTOR
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MFCONNECTOR_SPDIF
     {
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid MFCONNECTOR_SPDIF
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x12, 0xA7, 0x94, 0x0B,
-                    0x3E, 0xAD,
-                    0xEE, 0x4C,
-                    0x83,
-                    0xCE,
-                    0xCE,
-                    0x32,
-                    0xE3,
-                    0xDB,
-                    0x65,
-                    0x22
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x12, 0xA7, 0x94, 0x0B,
+                0x3E, 0xAD,
+                0xEE, 0x4C,
+                0x83,
+                0xCE,
+                0xCE,
+                0x32,
+                0xE3,
+                0xDB,
+                0x65,
+                0x22
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid MFCONNECTOR_UNKNOWN
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MFCONNECTOR_UNKNOWN
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x5C, 0xEF, 0x3A, 0xAC,
-                    0x43, 0xCE,
-                    0xD9, 0x11,
-                    0x92,
-                    0xDB,
-                    0x00,
-                    0x0B,
-                    0xDB,
-                    0x28,
-                    0xFF,
-                    0x98
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x5C, 0xEF, 0x3A, 0xAC,
+                0x43, 0xCE,
+                0xD9, 0x11,
+                0x92,
+                0xDB,
+                0x00,
+                0x0B,
+                0xDB,
+                0x28,
+                0xFF,
+                0x98
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid MFCONNECTOR_PCI
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MFCONNECTOR_PCI
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x5D, 0xEF, 0x3A, 0xAC,
-                    0x43, 0xCE,
-                    0xD9, 0x11,
-                    0x92,
-                    0xDB,
-                    0x00,
-                    0x0B,
-                    0xDB,
-                    0x28,
-                    0xFF,
-                    0x98
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x5D, 0xEF, 0x3A, 0xAC,
+                0x43, 0xCE,
+                0xD9, 0x11,
+                0x92,
+                0xDB,
+                0x00,
+                0x0B,
+                0xDB,
+                0x28,
+                0xFF,
+                0x98
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid MFCONNECTOR_PCIX
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MFCONNECTOR_PCIX
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x5E, 0xEF, 0x3A, 0xAC,
-                    0x43, 0xCE,
-                    0xD9, 0x11,
-                    0x92,
-                    0xDB,
-                    0x00,
-                    0x0B,
-                    0xDB,
-                    0x28,
-                    0xFF,
-                    0x98
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x5E, 0xEF, 0x3A, 0xAC,
+                0x43, 0xCE,
+                0xD9, 0x11,
+                0x92,
+                0xDB,
+                0x00,
+                0x0B,
+                0xDB,
+                0x28,
+                0xFF,
+                0x98
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid MFCONNECTOR_PCI_Express
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MFCONNECTOR_PCI_Express
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x5F, 0xEF, 0x3A, 0xAC,
-                    0x43, 0xCE,
-                    0xD9, 0x11,
-                    0x92,
-                    0xDB,
-                    0x00,
-                    0x0B,
-                    0xDB,
-                    0x28,
-                    0xFF,
-                    0x98
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x5F, 0xEF, 0x3A, 0xAC,
+                0x43, 0xCE,
+                0xD9, 0x11,
+                0x92,
+                0xDB,
+                0x00,
+                0x0B,
+                0xDB,
+                0x28,
+                0xFF,
+                0x98
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid MFCONNECTOR_AGP
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MFCONNECTOR_AGP
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x60, 0xEF, 0x3A, 0xAC,
-                    0x43, 0xCE,
-                    0xD9, 0x11,
-                    0x92,
-                    0xDB,
-                    0x00,
-                    0x0B,
-                    0xDB,
-                    0x28,
-                    0xFF,
-                    0x98
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x60, 0xEF, 0x3A, 0xAC,
+                0x43, 0xCE,
+                0xD9, 0x11,
+                0x92,
+                0xDB,
+                0x00,
+                0x0B,
+                0xDB,
+                0x28,
+                0xFF,
+                0x98
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid MFCONNECTOR_VGA
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MFCONNECTOR_VGA
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x68, 0x59, 0xCD, 0x57,
-                    0x47, 0xCE,
-                    0xD9, 0x11,
-                    0x92,
-                    0xDB,
-                    0x00,
-                    0x0B,
-                    0xDB,
-                    0x28,
-                    0xFF,
-                    0x98
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x68, 0x59, 0xCD, 0x57,
+                0x47, 0xCE,
+                0xD9, 0x11,
+                0x92,
+                0xDB,
+                0x00,
+                0x0B,
+                0xDB,
+                0x28,
+                0xFF,
+                0x98
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid MFCONNECTOR_SVIDEO
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MFCONNECTOR_SVIDEO
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x69, 0x59, 0xCD, 0x57,
-                    0x47, 0xCE,
-                    0xD9, 0x11,
-                    0x92,
-                    0xDB,
-                    0x00,
-                    0x0B,
-                    0xDB,
-                    0x28,
-                    0xFF,
-                    0x98
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x69, 0x59, 0xCD, 0x57,
+                0x47, 0xCE,
+                0xD9, 0x11,
+                0x92,
+                0xDB,
+                0x00,
+                0x0B,
+                0xDB,
+                0x28,
+                0xFF,
+                0x98
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid MFCONNECTOR_COMPOSITE
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MFCONNECTOR_COMPOSITE
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x6A, 0x59, 0xCD, 0x57,
-                    0x47, 0xCE,
-                    0xD9, 0x11,
-                    0x92,
-                    0xDB,
-                    0x00,
-                    0x0B,
-                    0xDB,
-                    0x28,
-                    0xFF,
-                    0x98
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x6A, 0x59, 0xCD, 0x57,
+                0x47, 0xCE,
+                0xD9, 0x11,
+                0x92,
+                0xDB,
+                0x00,
+                0x0B,
+                0xDB,
+                0x28,
+                0xFF,
+                0x98
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid MFCONNECTOR_COMPONENT
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MFCONNECTOR_COMPONENT
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x6B, 0x59, 0xCD, 0x57,
-                    0x47, 0xCE,
-                    0xD9, 0x11,
-                    0x92,
-                    0xDB,
-                    0x00,
-                    0x0B,
-                    0xDB,
-                    0x28,
-                    0xFF,
-                    0x98
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x6B, 0x59, 0xCD, 0x57,
+                0x47, 0xCE,
+                0xD9, 0x11,
+                0x92,
+                0xDB,
+                0x00,
+                0x0B,
+                0xDB,
+                0x28,
+                0xFF,
+                0x98
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid MFCONNECTOR_DVI
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MFCONNECTOR_DVI
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x6C, 0x59, 0xCD, 0x57,
-                    0x47, 0xCE,
-                    0xD9, 0x11,
-                    0x92,
-                    0xDB,
-                    0x00,
-                    0x0B,
-                    0xDB,
-                    0x28,
-                    0xFF,
-                    0x98
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x6C, 0x59, 0xCD, 0x57,
+                0x47, 0xCE,
+                0xD9, 0x11,
+                0x92,
+                0xDB,
+                0x00,
+                0x0B,
+                0xDB,
+                0x28,
+                0xFF,
+                0x98
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid MFCONNECTOR_HDMI
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MFCONNECTOR_HDMI
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x6D, 0x59, 0xCD, 0x57,
-                    0x47, 0xCE,
-                    0xD9, 0x11,
-                    0x92,
-                    0xDB,
-                    0x00,
-                    0x0B,
-                    0xDB,
-                    0x28,
-                    0xFF,
-                    0x98
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x6D, 0x59, 0xCD, 0x57,
+                0x47, 0xCE,
+                0xD9, 0x11,
+                0x92,
+                0xDB,
+                0x00,
+                0x0B,
+                0xDB,
+                0x28,
+                0xFF,
+                0x98
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid MFCONNECTOR_LVDS
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MFCONNECTOR_LVDS
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x6E, 0x59, 0xCD, 0x57,
-                    0x47, 0xCE,
-                    0xD9, 0x11,
-                    0x92,
-                    0xDB,
-                    0x00,
-                    0x0B,
-                    0xDB,
-                    0x28,
-                    0xFF,
-                    0x98
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x6E, 0x59, 0xCD, 0x57,
+                0x47, 0xCE,
+                0xD9, 0x11,
+                0x92,
+                0xDB,
+                0x00,
+                0x0B,
+                0xDB,
+                0x28,
+                0xFF,
+                0x98
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid MFCONNECTOR_D_JPN
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MFCONNECTOR_D_JPN
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x70, 0x59, 0xCD, 0x57,
-                    0x47, 0xCE,
-                    0xD9, 0x11,
-                    0x92,
-                    0xDB,
-                    0x00,
-                    0x0B,
-                    0xDB,
-                    0x28,
-                    0xFF,
-                    0x98
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x70, 0x59, 0xCD, 0x57,
+                0x47, 0xCE,
+                0xD9, 0x11,
+                0x92,
+                0xDB,
+                0x00,
+                0x0B,
+                0xDB,
+                0x28,
+                0xFF,
+                0x98
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid MFCONNECTOR_SDI
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MFCONNECTOR_SDI
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x71, 0x59, 0xCD, 0x57,
-                    0x47, 0xCE,
-                    0xD9, 0x11,
-                    0x92,
-                    0xDB,
-                    0x00,
-                    0x0B,
-                    0xDB,
-                    0x28,
-                    0xFF,
-                    0x98
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x71, 0x59, 0xCD, 0x57,
+                0x47, 0xCE,
+                0xD9, 0x11,
+                0x92,
+                0xDB,
+                0x00,
+                0x0B,
+                0xDB,
+                0x28,
+                0xFF,
+                0x98
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid MFCONNECTOR_DISPLAYPORT_EXTERNAL
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MFCONNECTOR_DISPLAYPORT_EXTERNAL
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x72, 0x59, 0xCD, 0x57,
-                    0x47, 0xCE,
-                    0xD9, 0x11,
-                    0x92,
-                    0xDB,
-                    0x00,
-                    0x0B,
-                    0xDB,
-                    0x28,
-                    0xFF,
-                    0x98
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x72, 0x59, 0xCD, 0x57,
+                0x47, 0xCE,
+                0xD9, 0x11,
+                0x92,
+                0xDB,
+                0x00,
+                0x0B,
+                0xDB,
+                0x28,
+                0xFF,
+                0x98
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid MFCONNECTOR_DISPLAYPORT_EMBEDDED
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MFCONNECTOR_DISPLAYPORT_EMBEDDED
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x73, 0x59, 0xCD, 0x57,
-                    0x47, 0xCE,
-                    0xD9, 0x11,
-                    0x92,
-                    0xDB,
-                    0x00,
-                    0x0B,
-                    0xDB,
-                    0x28,
-                    0xFF,
-                    0x98
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x73, 0x59, 0xCD, 0x57,
+                0x47, 0xCE,
+                0xD9, 0x11,
+                0x92,
+                0xDB,
+                0x00,
+                0x0B,
+                0xDB,
+                0x28,
+                0xFF,
+                0x98
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid MFCONNECTOR_UDI_EXTERNAL
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MFCONNECTOR_UDI_EXTERNAL
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x74, 0x59, 0xCD, 0x57,
-                    0x47, 0xCE,
-                    0xD9, 0x11,
-                    0x92,
-                    0xDB,
-                    0x00,
-                    0x0B,
-                    0xDB,
-                    0x28,
-                    0xFF,
-                    0x98
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x74, 0x59, 0xCD, 0x57,
+                0x47, 0xCE,
+                0xD9, 0x11,
+                0x92,
+                0xDB,
+                0x00,
+                0x0B,
+                0xDB,
+                0x28,
+                0xFF,
+                0x98
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid MFCONNECTOR_UDI_EMBEDDED
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MFCONNECTOR_UDI_EMBEDDED
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x75, 0x59, 0xCD, 0x57,
-                    0x47, 0xCE,
-                    0xD9, 0x11,
-                    0x92,
-                    0xDB,
-                    0x00,
-                    0x0B,
-                    0xDB,
-                    0x28,
-                    0xFF,
-                    0x98
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x75, 0x59, 0xCD, 0x57,
+                0x47, 0xCE,
+                0xD9, 0x11,
+                0x92,
+                0xDB,
+                0x00,
+                0x0B,
+                0xDB,
+                0x28,
+                0xFF,
+                0x98
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid MFCONNECTOR_MIRACAST
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MFCONNECTOR_MIRACAST
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x77, 0x59, 0xCD, 0x57,
-                    0x47, 0xCE,
-                    0xD9, 0x11,
-                    0x92,
-                    0xDB,
-                    0x00,
-                    0x0B,
-                    0xDB,
-                    0x28,
-                    0xFF,
-                    0x98
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x77, 0x59, 0xCD, 0x57,
+                0x47, 0xCE,
+                0xD9, 0x11,
+                0x92,
+                0xDB,
+                0x00,
+                0x0B,
+                0xDB,
+                0x28,
+                0xFF,
+                0x98
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid MFCONNECTOR_TRANSPORT_AGNOSTIC_DIGITAL_MODE_A
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MFCONNECTOR_TRANSPORT_AGNOSTIC_DIGITAL_MODE_A
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x78, 0x59, 0xCD, 0x57,
-                    0x47, 0xCE,
-                    0xD9, 0x11,
-                    0x92,
-                    0xDB,
-                    0x00,
-                    0x0B,
-                    0xDB,
-                    0x28,
-                    0xFF,
-                    0x98
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x78, 0x59, 0xCD, 0x57,
+                0x47, 0xCE,
+                0xD9, 0x11,
+                0x92,
+                0xDB,
+                0x00,
+                0x0B,
+                0xDB,
+                0x28,
+                0xFF,
+                0x98
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        [NativeTypeName("const IID")]
-        public static ref readonly Guid MFCONNECTOR_TRANSPORT_AGNOSTIC_DIGITAL_MODE_B
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MFCONNECTOR_TRANSPORT_AGNOSTIC_DIGITAL_MODE_B
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x79, 0x59, 0xCD, 0x57,
-                    0x47, 0xCE,
-                    0xD9, 0x11,
-                    0x92,
-                    0xDB,
-                    0x00,
-                    0x0B,
-                    0xDB,
-                    0x28,
-                    0xFF,
-                    0x98
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x79, 0x59, 0xCD, 0x57,
+                0x47, 0xCE,
+                0xD9, 0x11,
+                0x92,
+                0xDB,
+                0x00,
+                0x0B,
+                0xDB,
+                0x28,
+                0xFF,
+                0x98
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

@@ -3,17 +3,16 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class CS
 {
-    public static partial class CS
-    {
-        [NativeTypeName("#define CS_ENABLE 0x00000001L")]
-        public const int CS_ENABLE = 0x00000001;
+    [NativeTypeName("#define CS_ENABLE 0x00000001L")]
+    public const int CS_ENABLE = 0x00000001;
 
-        [NativeTypeName("#define CS_DISABLE 0x00000002L")]
-        public const int CS_DISABLE = 0x00000002;
+    [NativeTypeName("#define CS_DISABLE 0x00000002L")]
+    public const int CS_DISABLE = 0x00000002;
 
-        [NativeTypeName("#define CS_DELETE_TRANSFORM 0x00000003L")]
-        public const int CS_DELETE_TRANSFORM = 0x00000003;
-    }
+    [NativeTypeName("#define CS_DELETE_TRANSFORM 0x00000003L")]
+    public const int CS_DELETE_TRANSFORM = 0x00000003;
 }

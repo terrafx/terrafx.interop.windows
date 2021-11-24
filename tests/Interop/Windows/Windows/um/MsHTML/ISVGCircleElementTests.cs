@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISVGCircleElement" /> struct.</summary>
+public static unsafe partial class ISVGCircleElementTests
 {
-    /// <summary>Provides validation of the <see cref="ISVGCircleElement" /> struct.</summary>
-    public static unsafe partial class ISVGCircleElementTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISVGCircleElement" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISVGCircleElement" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISVGCircleElement).GUID, Is.EqualTo(IID_ISVGCircleElement));
-        }
+        Assert.That(typeof(ISVGCircleElement).GUID, Is.EqualTo(IID_ISVGCircleElement));
+    }
 
-        /// <summary>Validates that the <see cref="ISVGCircleElement" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISVGCircleElement>(), Is.EqualTo(sizeof(ISVGCircleElement)));
-        }
+    /// <summary>Validates that the <see cref="ISVGCircleElement" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISVGCircleElement>(), Is.EqualTo(sizeof(ISVGCircleElement)));
+    }
 
-        /// <summary>Validates that the <see cref="ISVGCircleElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISVGCircleElement).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISVGCircleElement" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISVGCircleElement).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISVGCircleElement" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISVGCircleElement" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISVGCircleElement), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISVGCircleElement), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISVGCircleElement), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISVGCircleElement), Is.EqualTo(4));
         }
     }
 }

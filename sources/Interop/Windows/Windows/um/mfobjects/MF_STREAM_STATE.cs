@@ -3,12 +3,11 @@
 // Ported from um/mfobjects.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MF_STREAM_STATE
 {
-    public enum MF_STREAM_STATE
-    {
-        MF_STREAM_STATE_STOPPED = 0,
-        MF_STREAM_STATE_PAUSED = (MF_STREAM_STATE_STOPPED + 1),
-        MF_STREAM_STATE_RUNNING = (MF_STREAM_STATE_PAUSED + 1),
-    }
+    MF_STREAM_STATE_STOPPED = 0,
+    MF_STREAM_STATE_PAUSED = (MF_STREAM_STATE_STOPPED + 1),
+    MF_STREAM_STATE_RUNNING = (MF_STREAM_STATE_PAUSED + 1),
 }

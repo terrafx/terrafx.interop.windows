@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("CEEE3B62-8F56-4056-869B-EF16917E3EFC")]
+public partial struct MsftIsoImageManager
 {
-    [Guid("CEEE3B62-8F56-4056-869B-EF16917E3EFC")]
-    public partial struct MsftIsoImageManager
-    {
-    }
 }

@@ -3,12 +3,11 @@
 // Ported from um/dcommon.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
-{
-    public partial struct D2D_POINT_2F
-    {
-        public float x;
+namespace TerraFX.Interop.DirectX;
 
-        public float y;
-    }
+public partial struct D2D_POINT_2F
+{
+    public float x;
+
+    public float y;
 }

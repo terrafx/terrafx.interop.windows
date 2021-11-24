@@ -3,14 +3,13 @@
 // Ported from um/schannel.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct SecPkgContext_IssuerListInfoEx
-    {
-        [NativeTypeName("PCERT_NAME_BLOB")]
-        public CRYPT_DATA_BLOB* aIssuers;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint cIssuers;
-    }
+public unsafe partial struct SecPkgContext_IssuerListInfoEx
+{
+    [NativeTypeName("PCERT_NAME_BLOB")]
+    public CRYPT_DATA_BLOB* aIssuers;
+
+    [NativeTypeName("DWORD")]
+    public uint cIssuers;
 }

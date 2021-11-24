@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ShellImageDataFactory" /> struct.</summary>
+public static unsafe partial class ShellImageDataFactoryTests
 {
-    /// <summary>Provides validation of the <see cref="ShellImageDataFactory" /> struct.</summary>
-    public static unsafe partial class ShellImageDataFactoryTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ShellImageDataFactory" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ShellImageDataFactory" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ShellImageDataFactory).GUID, Is.EqualTo(IID_ShellImageDataFactory));
-        }
+        Assert.That(typeof(ShellImageDataFactory).GUID, Is.EqualTo(IID_ShellImageDataFactory));
+    }
 
-        /// <summary>Validates that the <see cref="ShellImageDataFactory" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ShellImageDataFactory>(), Is.EqualTo(sizeof(ShellImageDataFactory)));
-        }
+    /// <summary>Validates that the <see cref="ShellImageDataFactory" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ShellImageDataFactory>(), Is.EqualTo(sizeof(ShellImageDataFactory)));
+    }
 
-        /// <summary>Validates that the <see cref="ShellImageDataFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ShellImageDataFactory).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ShellImageDataFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ShellImageDataFactory).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ShellImageDataFactory" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(ShellImageDataFactory), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="ShellImageDataFactory" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(ShellImageDataFactory), Is.EqualTo(1));
     }
 }

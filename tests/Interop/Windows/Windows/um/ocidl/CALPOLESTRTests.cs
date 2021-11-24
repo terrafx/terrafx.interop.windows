@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CALPOLESTR" /> struct.</summary>
+public static unsafe partial class CALPOLESTRTests
 {
-    /// <summary>Provides validation of the <see cref="CALPOLESTR" /> struct.</summary>
-    public static unsafe partial class CALPOLESTRTests
+    /// <summary>Validates that the <see cref="CALPOLESTR" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CALPOLESTR" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CALPOLESTR>(), Is.EqualTo(sizeof(CALPOLESTR)));
-        }
+        Assert.That(Marshal.SizeOf<CALPOLESTR>(), Is.EqualTo(sizeof(CALPOLESTR)));
+    }
 
-        /// <summary>Validates that the <see cref="CALPOLESTR" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CALPOLESTR).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CALPOLESTR" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CALPOLESTR).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CALPOLESTR" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CALPOLESTR" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CALPOLESTR), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(CALPOLESTR), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(CALPOLESTR), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(CALPOLESTR), Is.EqualTo(8));
         }
     }
 }

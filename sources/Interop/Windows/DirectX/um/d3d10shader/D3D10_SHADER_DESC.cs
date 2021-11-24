@@ -3,66 +3,65 @@
 // Ported from um/d3d10shader.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D10_SHADER_DESC
 {
-    public unsafe partial struct D3D10_SHADER_DESC
-    {
-        public uint Version;
+    public uint Version;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* Creator;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* Creator;
 
-        public uint Flags;
+    public uint Flags;
 
-        public uint ConstantBuffers;
+    public uint ConstantBuffers;
 
-        public uint BoundResources;
+    public uint BoundResources;
 
-        public uint InputParameters;
+    public uint InputParameters;
 
-        public uint OutputParameters;
+    public uint OutputParameters;
 
-        public uint InstructionCount;
+    public uint InstructionCount;
 
-        public uint TempRegisterCount;
+    public uint TempRegisterCount;
 
-        public uint TempArrayCount;
+    public uint TempArrayCount;
 
-        public uint DefCount;
+    public uint DefCount;
 
-        public uint DclCount;
+    public uint DclCount;
 
-        public uint TextureNormalInstructions;
+    public uint TextureNormalInstructions;
 
-        public uint TextureLoadInstructions;
+    public uint TextureLoadInstructions;
 
-        public uint TextureCompInstructions;
+    public uint TextureCompInstructions;
 
-        public uint TextureBiasInstructions;
+    public uint TextureBiasInstructions;
 
-        public uint TextureGradientInstructions;
+    public uint TextureGradientInstructions;
 
-        public uint FloatInstructionCount;
+    public uint FloatInstructionCount;
 
-        public uint IntInstructionCount;
+    public uint IntInstructionCount;
 
-        public uint UintInstructionCount;
+    public uint UintInstructionCount;
 
-        public uint StaticFlowControlCount;
+    public uint StaticFlowControlCount;
 
-        public uint DynamicFlowControlCount;
+    public uint DynamicFlowControlCount;
 
-        public uint MacroInstructionCount;
+    public uint MacroInstructionCount;
 
-        public uint ArrayInstructionCount;
+    public uint ArrayInstructionCount;
 
-        public uint CutInstructionCount;
+    public uint CutInstructionCount;
 
-        public uint EmitInstructionCount;
+    public uint EmitInstructionCount;
 
-        [NativeTypeName("D3D10_PRIMITIVE_TOPOLOGY")]
-        public D3D_PRIMITIVE_TOPOLOGY GSOutputTopology;
+    [NativeTypeName("D3D10_PRIMITIVE_TOPOLOGY")]
+    public D3D_PRIMITIVE_TOPOLOGY GSOutputTopology;
 
-        public uint GSMaxOutputVertexCount;
-    }
+    public uint GSMaxOutputVertexCount;
 }

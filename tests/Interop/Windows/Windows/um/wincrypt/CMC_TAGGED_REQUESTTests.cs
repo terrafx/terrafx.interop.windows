@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CMC_TAGGED_REQUEST" /> struct.</summary>
+public static unsafe partial class CMC_TAGGED_REQUESTTests
 {
-    /// <summary>Provides validation of the <see cref="CMC_TAGGED_REQUEST" /> struct.</summary>
-    public static unsafe partial class CMC_TAGGED_REQUESTTests
+    /// <summary>Validates that the <see cref="CMC_TAGGED_REQUEST" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CMC_TAGGED_REQUEST" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CMC_TAGGED_REQUEST>(), Is.EqualTo(sizeof(CMC_TAGGED_REQUEST)));
-        }
+        Assert.That(Marshal.SizeOf<CMC_TAGGED_REQUEST>(), Is.EqualTo(sizeof(CMC_TAGGED_REQUEST)));
+    }
 
-        /// <summary>Validates that the <see cref="CMC_TAGGED_REQUEST" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CMC_TAGGED_REQUEST).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CMC_TAGGED_REQUEST" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CMC_TAGGED_REQUEST).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CMC_TAGGED_REQUEST" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CMC_TAGGED_REQUEST" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CMC_TAGGED_REQUEST), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(CMC_TAGGED_REQUEST), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(CMC_TAGGED_REQUEST), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(CMC_TAGGED_REQUEST), Is.EqualTo(8));
         }
     }
 }

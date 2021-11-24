@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("DB2F3ACF-2F86-11D1-8E04-00C04FB9989A")]
+[NativeTypeName("struct AsyncIPipeDouble : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct AsyncIPipeDouble : AsyncIPipeDouble.Interface
 {
-    [Guid("DB2F3ACF-2F86-11D1-8E04-00C04FB9989A")]
-    [NativeTypeName("struct AsyncIPipeDouble : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct AsyncIPipeDouble : AsyncIPipeDouble.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<AsyncIPipeDouble*, Guid*, void**, int>)(lpVtbl[0]))((AsyncIPipeDouble*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<AsyncIPipeDouble*, Guid*, void**, int>)(lpVtbl[0]))((AsyncIPipeDouble*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<AsyncIPipeDouble*, uint>)(lpVtbl[1]))((AsyncIPipeDouble*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<AsyncIPipeDouble*, uint>)(lpVtbl[1]))((AsyncIPipeDouble*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<AsyncIPipeDouble*, uint>)(lpVtbl[2]))((AsyncIPipeDouble*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<AsyncIPipeDouble*, uint>)(lpVtbl[2]))((AsyncIPipeDouble*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Begin_Pull([NativeTypeName("ULONG")] uint cRequest)
+    {
+        return ((delegate* unmanaged<AsyncIPipeDouble*, uint, int>)(lpVtbl[3]))((AsyncIPipeDouble*)Unsafe.AsPointer(ref this), cRequest);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Finish_Pull(double* buf, [NativeTypeName("ULONG *")] uint* pcReturned)
+    {
+        return ((delegate* unmanaged<AsyncIPipeDouble*, double*, uint*, int>)(lpVtbl[4]))((AsyncIPipeDouble*)Unsafe.AsPointer(ref this), buf, pcReturned);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Begin_Push(double* buf, [NativeTypeName("ULONG")] uint cSent)
+    {
+        return ((delegate* unmanaged<AsyncIPipeDouble*, double*, uint, int>)(lpVtbl[5]))((AsyncIPipeDouble*)Unsafe.AsPointer(ref this), buf, cSent);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Finish_Push()
+    {
+        return ((delegate* unmanaged<AsyncIPipeDouble*, int>)(lpVtbl[6]))((AsyncIPipeDouble*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Begin_Pull([NativeTypeName("ULONG")] uint cRequest)
-        {
-            return ((delegate* unmanaged<AsyncIPipeDouble*, uint, int>)(lpVtbl[3]))((AsyncIPipeDouble*)Unsafe.AsPointer(ref this), cRequest);
-        }
+        HRESULT Begin_Pull([NativeTypeName("ULONG")] uint cRequest);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Finish_Pull(double* buf, [NativeTypeName("ULONG *")] uint* pcReturned)
-        {
-            return ((delegate* unmanaged<AsyncIPipeDouble*, double*, uint*, int>)(lpVtbl[4]))((AsyncIPipeDouble*)Unsafe.AsPointer(ref this), buf, pcReturned);
-        }
+        HRESULT Finish_Pull(double* buf, [NativeTypeName("ULONG *")] uint* pcReturned);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Begin_Push(double* buf, [NativeTypeName("ULONG")] uint cSent)
-        {
-            return ((delegate* unmanaged<AsyncIPipeDouble*, double*, uint, int>)(lpVtbl[5]))((AsyncIPipeDouble*)Unsafe.AsPointer(ref this), buf, cSent);
-        }
+        HRESULT Begin_Push(double* buf, [NativeTypeName("ULONG")] uint cSent);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Finish_Push()
-        {
-            return ((delegate* unmanaged<AsyncIPipeDouble*, int>)(lpVtbl[6]))((AsyncIPipeDouble*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Finish_Push();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Begin_Pull([NativeTypeName("ULONG")] uint cRequest);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<AsyncIPipeDouble*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT Finish_Pull(double* buf, [NativeTypeName("ULONG *")] uint* pcReturned);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<AsyncIPipeDouble*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT Begin_Push(double* buf, [NativeTypeName("ULONG")] uint cSent);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<AsyncIPipeDouble*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT Finish_Push();
-        }
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<AsyncIPipeDouble*, uint, int> Begin_Pull;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<AsyncIPipeDouble*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (DOUBLE *, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<AsyncIPipeDouble*, double*, uint*, int> Finish_Pull;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<AsyncIPipeDouble*, uint> AddRef;
+        [NativeTypeName("HRESULT (DOUBLE *, ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<AsyncIPipeDouble*, double*, uint, int> Begin_Push;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<AsyncIPipeDouble*, uint> Release;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<AsyncIPipeDouble*, uint, int> Begin_Pull;
-
-            [NativeTypeName("HRESULT (DOUBLE *, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<AsyncIPipeDouble*, double*, uint*, int> Finish_Pull;
-
-            [NativeTypeName("HRESULT (DOUBLE *, ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<AsyncIPipeDouble*, double*, uint, int> Begin_Push;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<AsyncIPipeDouble*, int> Finish_Push;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<AsyncIPipeDouble*, int> Finish_Push;
     }
 }

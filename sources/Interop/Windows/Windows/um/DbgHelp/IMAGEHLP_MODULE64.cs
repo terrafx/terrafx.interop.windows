@@ -5,74 +5,73 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct IMAGEHLP_MODULE64
 {
-    public unsafe partial struct IMAGEHLP_MODULE64
-    {
-        [NativeTypeName("DWORD")]
-        public uint SizeOfStruct;
+    [NativeTypeName("DWORD")]
+    public uint SizeOfStruct;
 
-        [NativeTypeName("DWORD64")]
-        public ulong BaseOfImage;
+    [NativeTypeName("DWORD64")]
+    public ulong BaseOfImage;
 
-        [NativeTypeName("DWORD")]
-        public uint ImageSize;
+    [NativeTypeName("DWORD")]
+    public uint ImageSize;
 
-        [NativeTypeName("DWORD")]
-        public uint TimeDateStamp;
+    [NativeTypeName("DWORD")]
+    public uint TimeDateStamp;
 
-        [NativeTypeName("DWORD")]
-        public uint CheckSum;
+    [NativeTypeName("DWORD")]
+    public uint CheckSum;
 
-        [NativeTypeName("DWORD")]
-        public uint NumSyms;
+    [NativeTypeName("DWORD")]
+    public uint NumSyms;
 
-        public SYM_TYPE SymType;
+    public SYM_TYPE SymType;
 
-        [NativeTypeName("CHAR [32]")]
-        public fixed sbyte ModuleName[32];
+    [NativeTypeName("CHAR [32]")]
+    public fixed sbyte ModuleName[32];
 
-        [NativeTypeName("CHAR [256]")]
-        public fixed sbyte ImageName[256];
+    [NativeTypeName("CHAR [256]")]
+    public fixed sbyte ImageName[256];
 
-        [NativeTypeName("CHAR [256]")]
-        public fixed sbyte LoadedImageName[256];
+    [NativeTypeName("CHAR [256]")]
+    public fixed sbyte LoadedImageName[256];
 
-        [NativeTypeName("CHAR [256]")]
-        public fixed sbyte LoadedPdbName[256];
+    [NativeTypeName("CHAR [256]")]
+    public fixed sbyte LoadedPdbName[256];
 
-        [NativeTypeName("DWORD")]
-        public uint CVSig;
+    [NativeTypeName("DWORD")]
+    public uint CVSig;
 
-        [NativeTypeName("CHAR [780]")]
-        public fixed sbyte CVData[780];
+    [NativeTypeName("CHAR [780]")]
+    public fixed sbyte CVData[780];
 
-        [NativeTypeName("DWORD")]
-        public uint PdbSig;
+    [NativeTypeName("DWORD")]
+    public uint PdbSig;
 
-        public Guid PdbSig70;
+    public Guid PdbSig70;
 
-        [NativeTypeName("DWORD")]
-        public uint PdbAge;
+    [NativeTypeName("DWORD")]
+    public uint PdbAge;
 
-        public BOOL PdbUnmatched;
+    public BOOL PdbUnmatched;
 
-        public BOOL DbgUnmatched;
+    public BOOL DbgUnmatched;
 
-        public BOOL LineNumbers;
+    public BOOL LineNumbers;
 
-        public BOOL GlobalSymbols;
+    public BOOL GlobalSymbols;
 
-        public BOOL TypeInfo;
+    public BOOL TypeInfo;
 
-        public BOOL SourceIndexed;
+    public BOOL SourceIndexed;
 
-        public BOOL Publics;
+    public BOOL Publics;
 
-        [NativeTypeName("DWORD")]
-        public uint MachineType;
+    [NativeTypeName("DWORD")]
+    public uint MachineType;
 
-        [NativeTypeName("DWORD")]
-        public uint Reserved;
-    }
+    [NativeTypeName("DWORD")]
+    public uint Reserved;
 }

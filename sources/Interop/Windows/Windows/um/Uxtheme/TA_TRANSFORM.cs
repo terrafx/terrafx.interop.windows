@@ -3,21 +3,20 @@
 // Ported from um/Uxtheme.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TA_TRANSFORM
 {
-    public partial struct TA_TRANSFORM
-    {
-        public TA_TRANSFORM_TYPE eTransformType;
+    public TA_TRANSFORM_TYPE eTransformType;
 
-        [NativeTypeName("DWORD")]
-        public uint dwTimingFunctionId;
+    [NativeTypeName("DWORD")]
+    public uint dwTimingFunctionId;
 
-        [NativeTypeName("DWORD")]
-        public uint dwStartTime;
+    [NativeTypeName("DWORD")]
+    public uint dwStartTime;
 
-        [NativeTypeName("DWORD")]
-        public uint dwDurationTime;
+    [NativeTypeName("DWORD")]
+    public uint dwDurationTime;
 
-        public TA_TRANSFORM_FLAG eFlags;
-    }
+    public TA_TRANSFORM_FLAG eFlags;
 }

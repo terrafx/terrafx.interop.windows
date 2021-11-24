@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("971D2723-1ACB-42E7-855C-520A4B70A5F2")]
+public partial struct CODECAPI_AVAudioSampleRate
 {
-    [Guid("971D2723-1ACB-42E7-855C-520A4B70A5F2")]
-    public partial struct CODECAPI_AVAudioSampleRate
-    {
-    }
 }

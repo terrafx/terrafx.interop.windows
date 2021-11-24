@@ -6,57 +6,56 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CMSG_RECIPIENT_ENCODE_INFO
 {
-    public unsafe partial struct CMSG_RECIPIENT_ENCODE_INFO
+    [NativeTypeName("DWORD")]
+    public uint dwRecipientChoice;
+
+    [NativeTypeName("_CMSG_RECIPIENT_ENCODE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:7013:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public ref CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO* pKeyTrans
     {
-        [NativeTypeName("DWORD")]
-        public uint dwRecipientChoice;
-
-        [NativeTypeName("_CMSG_RECIPIENT_ENCODE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:7013:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public ref CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO* pKeyTrans
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pKeyTrans;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pKeyTrans;
         }
+    }
 
-        public ref CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO* pKeyAgree
+    public ref CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO* pKeyAgree
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pKeyAgree;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pKeyAgree;
         }
+    }
 
-        public ref CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO* pMailList
+    public ref CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO* pMailList
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pMailList;
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous.pMailList;
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("PCMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO")]
-            public CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO* pKeyTrans;
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("PCMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO")]
+        public CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO* pKeyTrans;
 
-            [FieldOffset(0)]
-            [NativeTypeName("PCMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO")]
-            public CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO* pKeyAgree;
+        [FieldOffset(0)]
+        [NativeTypeName("PCMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO")]
+        public CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO* pKeyAgree;
 
-            [FieldOffset(0)]
-            [NativeTypeName("PCMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO")]
-            public CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO* pMailList;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("PCMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO")]
+        public CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO* pMailList;
     }
 }

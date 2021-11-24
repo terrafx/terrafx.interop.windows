@@ -3,30 +3,29 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum STORAGE_OPERATIONAL_STATUS_REASON
 {
-    public enum STORAGE_OPERATIONAL_STATUS_REASON
-    {
-        DiskOpReasonUnknown = 0,
-        DiskOpReasonScsiSenseCode,
-        DiskOpReasonMedia,
-        DiskOpReasonIo,
-        DiskOpReasonThresholdExceeded,
-        DiskOpReasonLostData,
-        DiskOpReasonEnergySource,
-        DiskOpReasonConfiguration,
-        DiskOpReasonDeviceController,
-        DiskOpReasonMediaController,
-        DiskOpReasonComponent,
-        DiskOpReasonNVDIMM_N,
-        DiskOpReasonBackgroundOperation,
-        DiskOpReasonInvalidFirmware,
-        DiskOpReasonHealthCheck,
-        DiskOpReasonLostDataPersistence,
-        DiskOpReasonDisabledByPlatform,
-        DiskOpReasonLostWritePersistence,
-        DiskOpReasonDataPersistenceLossImminent,
-        DiskOpReasonWritePersistenceLossImminent,
-        DiskOpReasonMax,
-    }
+    DiskOpReasonUnknown = 0,
+    DiskOpReasonScsiSenseCode,
+    DiskOpReasonMedia,
+    DiskOpReasonIo,
+    DiskOpReasonThresholdExceeded,
+    DiskOpReasonLostData,
+    DiskOpReasonEnergySource,
+    DiskOpReasonConfiguration,
+    DiskOpReasonDeviceController,
+    DiskOpReasonMediaController,
+    DiskOpReasonComponent,
+    DiskOpReasonNVDIMM_N,
+    DiskOpReasonBackgroundOperation,
+    DiskOpReasonInvalidFirmware,
+    DiskOpReasonHealthCheck,
+    DiskOpReasonLostDataPersistence,
+    DiskOpReasonDisabledByPlatform,
+    DiskOpReasonLostWritePersistence,
+    DiskOpReasonDataPersistenceLossImminent,
+    DiskOpReasonWritePersistenceLossImminent,
+    DiskOpReasonMax,
 }

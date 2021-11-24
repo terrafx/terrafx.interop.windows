@@ -5,23 +5,22 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct D3D11_VIDEO_DECODER_EXTENSION
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct D3D11_VIDEO_DECODER_EXTENSION
-    {
-        public uint Function;
+    public uint Function;
 
-        public void* pPrivateInputData;
+    public void* pPrivateInputData;
 
-        public uint PrivateInputDataSize;
+    public uint PrivateInputDataSize;
 
-        public void* pPrivateOutputData;
+    public void* pPrivateOutputData;
 
-        public uint PrivateOutputDataSize;
+    public uint PrivateOutputDataSize;
 
-        public uint ResourceCount;
+    public uint ResourceCount;
 
-        public ID3D11Resource** ppResourceList;
-    }
+    public ID3D11Resource** ppResourceList;
 }

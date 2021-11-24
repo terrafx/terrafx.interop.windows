@@ -3,25 +3,24 @@
 // Ported from um/tlogstg.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WINDOWDATA
 {
-    public unsafe partial struct WINDOWDATA
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwWindowID;
+    [NativeTypeName("DWORD")]
+    public uint dwWindowID;
 
-        public uint uiCP;
+    public uint uiCP;
 
-        [NativeTypeName("LPITEMIDLIST")]
-        public ITEMIDLIST* pidl;
+    [NativeTypeName("LPITEMIDLIST")]
+    public ITEMIDLIST* pidl;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* lpszUrl;
+    [NativeTypeName("LPWSTR")]
+    public ushort* lpszUrl;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* lpszUrlLocation;
+    [NativeTypeName("LPWSTR")]
+    public ushort* lpszUrlLocation;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* lpszTitle;
-    }
+    [NativeTypeName("LPWSTR")]
+    public ushort* lpszTitle;
 }

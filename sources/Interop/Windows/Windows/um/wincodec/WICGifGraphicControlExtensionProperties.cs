@@ -3,15 +3,14 @@
 // Ported from um/wincodec.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WICGifGraphicControlExtensionProperties : uint
 {
-    public enum WICGifGraphicControlExtensionProperties : uint
-    {
-        WICGifGraphicControlExtensionDisposal = 0x1,
-        WICGifGraphicControlExtensionUserInputFlag = 0x2,
-        WICGifGraphicControlExtensionTransparencyFlag = 0x3,
-        WICGifGraphicControlExtensionDelay = 0x4,
-        WICGifGraphicControlExtensionTransparentColorIndex = 0x5,
-        WICGifGraphicControlExtensionProperties_FORCE_DWORD = 0x7fffffff,
-    }
+    WICGifGraphicControlExtensionDisposal = 0x1,
+    WICGifGraphicControlExtensionUserInputFlag = 0x2,
+    WICGifGraphicControlExtensionTransparencyFlag = 0x3,
+    WICGifGraphicControlExtensionDelay = 0x4,
+    WICGifGraphicControlExtensionTransparentColorIndex = 0x5,
+    WICGifGraphicControlExtensionProperties_FORCE_DWORD = 0x7fffffff,
 }

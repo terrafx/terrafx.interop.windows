@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SPSHORTCUTPAIRLIST" /> struct.</summary>
+public static unsafe partial class SPSHORTCUTPAIRLISTTests
 {
-    /// <summary>Provides validation of the <see cref="SPSHORTCUTPAIRLIST" /> struct.</summary>
-    public static unsafe partial class SPSHORTCUTPAIRLISTTests
+    /// <summary>Validates that the <see cref="SPSHORTCUTPAIRLIST" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SPSHORTCUTPAIRLIST" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SPSHORTCUTPAIRLIST>(), Is.EqualTo(sizeof(SPSHORTCUTPAIRLIST)));
-        }
+        Assert.That(Marshal.SizeOf<SPSHORTCUTPAIRLIST>(), Is.EqualTo(sizeof(SPSHORTCUTPAIRLIST)));
+    }
 
-        /// <summary>Validates that the <see cref="SPSHORTCUTPAIRLIST" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SPSHORTCUTPAIRLIST).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SPSHORTCUTPAIRLIST" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SPSHORTCUTPAIRLIST).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SPSHORTCUTPAIRLIST" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SPSHORTCUTPAIRLIST" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SPSHORTCUTPAIRLIST), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(SPSHORTCUTPAIRLIST), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(SPSHORTCUTPAIRLIST), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(SPSHORTCUTPAIRLIST), Is.EqualTo(12));
         }
     }
 }

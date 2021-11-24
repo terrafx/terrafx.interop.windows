@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DispDOMTextEvent" /> struct.</summary>
+public static unsafe partial class DispDOMTextEventTests
 {
-    /// <summary>Provides validation of the <see cref="DispDOMTextEvent" /> struct.</summary>
-    public static unsafe partial class DispDOMTextEventTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispDOMTextEvent" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispDOMTextEvent" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DispDOMTextEvent).GUID, Is.EqualTo(IID_DispDOMTextEvent));
-        }
+        Assert.That(typeof(DispDOMTextEvent).GUID, Is.EqualTo(IID_DispDOMTextEvent));
+    }
 
-        /// <summary>Validates that the <see cref="DispDOMTextEvent" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DispDOMTextEvent>(), Is.EqualTo(sizeof(DispDOMTextEvent)));
-        }
+    /// <summary>Validates that the <see cref="DispDOMTextEvent" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DispDOMTextEvent>(), Is.EqualTo(sizeof(DispDOMTextEvent)));
+    }
 
-        /// <summary>Validates that the <see cref="DispDOMTextEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DispDOMTextEvent).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DispDOMTextEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DispDOMTextEvent).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DispDOMTextEvent" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DispDOMTextEvent" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DispDOMTextEvent), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(DispDOMTextEvent), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(DispDOMTextEvent), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(DispDOMTextEvent), Is.EqualTo(4));
         }
     }
 }

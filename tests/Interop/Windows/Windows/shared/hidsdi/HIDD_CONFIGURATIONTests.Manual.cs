@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HIDD_CONFIGURATION" /> struct.</summary>
+public static unsafe partial class HIDD_CONFIGURATIONTests
 {
-    /// <summary>Provides validation of the <see cref="HIDD_CONFIGURATION" /> struct.</summary>
-    public static unsafe partial class HIDD_CONFIGURATIONTests
+    /// <summary>Validates that the <see cref="HIDD_CONFIGURATION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="HIDD_CONFIGURATION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HIDD_CONFIGURATION>(), Is.EqualTo(sizeof(HIDD_CONFIGURATION)));
-        }
+        Assert.That(Marshal.SizeOf<HIDD_CONFIGURATION>(), Is.EqualTo(sizeof(HIDD_CONFIGURATION)));
+    }
 
-        /// <summary>Validates that the <see cref="HIDD_CONFIGURATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HIDD_CONFIGURATION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HIDD_CONFIGURATION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HIDD_CONFIGURATION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HIDD_CONFIGURATION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="HIDD_CONFIGURATION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(HIDD_CONFIGURATION), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(HIDD_CONFIGURATION), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(HIDD_CONFIGURATION), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(HIDD_CONFIGURATION), Is.EqualTo(12));
         }
     }
 }

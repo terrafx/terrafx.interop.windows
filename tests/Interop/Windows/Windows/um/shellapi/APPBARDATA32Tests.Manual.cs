@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="APPBARDATA32" /> struct.</summary>
+public static unsafe partial class APPBARDATA32Tests
 {
-    /// <summary>Provides validation of the <see cref="APPBARDATA32" /> struct.</summary>
-    public static unsafe partial class APPBARDATA32Tests
+    /// <summary>Validates that the <see cref="APPBARDATA32" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="APPBARDATA32" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<APPBARDATA32>(), Is.EqualTo(sizeof(APPBARDATA32)));
-        }
+        Assert.That(Marshal.SizeOf<APPBARDATA32>(), Is.EqualTo(sizeof(APPBARDATA32)));
+    }
 
-        /// <summary>Validates that the <see cref="APPBARDATA32" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(APPBARDATA32).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="APPBARDATA32" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(APPBARDATA32).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="APPBARDATA32" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="APPBARDATA32" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(APPBARDATA32), Is.EqualTo(44));
-            }
-            else
-            {
-                Assert.That(sizeof(APPBARDATA32), Is.EqualTo(36));
-            }
+            Assert.That(sizeof(APPBARDATA32), Is.EqualTo(44));
+        }
+        else
+        {
+            Assert.That(sizeof(APPBARDATA32), Is.EqualTo(36));
         }
     }
 }

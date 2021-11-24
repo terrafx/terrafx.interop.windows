@@ -3,20 +3,19 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct NMREBARCHEVRON
 {
-    public partial struct NMREBARCHEVRON
-    {
-        public NMHDR hdr;
+    public NMHDR hdr;
 
-        public uint uBand;
+    public uint uBand;
 
-        public uint wID;
+    public uint wID;
 
-        public LPARAM lParam;
+    public LPARAM lParam;
 
-        public RECT rc;
+    public RECT rc;
 
-        public LPARAM lParamNM;
-    }
+    public LPARAM lParamNM;
 }

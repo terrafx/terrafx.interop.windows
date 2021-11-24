@@ -5,12 +5,11 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
-{
-    public partial struct D3D12_VIDEO_PROCESS_ALPHA_BLENDING
-    {
-        public BOOL Enable;
+namespace TerraFX.Interop.DirectX;
 
-        public float Alpha;
-    }
+public partial struct D3D12_VIDEO_PROCESS_ALPHA_BLENDING
+{
+    public BOOL Enable;
+
+    public float Alpha;
 }

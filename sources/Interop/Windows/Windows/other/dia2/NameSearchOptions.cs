@@ -3,20 +3,19 @@
 // Ported from dia2.h in the Debug Interface Access SDK
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum NameSearchOptions
 {
-    public enum NameSearchOptions
-    {
-        nsNone = 0,
-        nsfCaseSensitive = 0x1,
-        nsfCaseInsensitive = 0x2,
-        nsfFNameExt = 0x4,
-        nsfRegularExpression = 0x8,
-        nsfUndecoratedName = 0x10,
-        nsCaseSensitive = nsfCaseSensitive,
-        nsCaseInsensitive = nsfCaseInsensitive,
-        nsFNameExt = (nsfCaseInsensitive | nsfFNameExt),
-        nsRegularExpression = (nsfRegularExpression | nsfCaseSensitive),
-        nsCaseInRegularExpression = (nsfRegularExpression | nsfCaseInsensitive),
-    }
+    nsNone = 0,
+    nsfCaseSensitive = 0x1,
+    nsfCaseInsensitive = 0x2,
+    nsfFNameExt = 0x4,
+    nsfRegularExpression = 0x8,
+    nsfUndecoratedName = 0x10,
+    nsCaseSensitive = nsfCaseSensitive,
+    nsCaseInsensitive = nsfCaseInsensitive,
+    nsFNameExt = (nsfCaseInsensitive | nsfFNameExt),
+    nsRegularExpression = (nsfRegularExpression | nsfCaseSensitive),
+    nsCaseInRegularExpression = (nsfRegularExpression | nsfCaseInsensitive),
 }

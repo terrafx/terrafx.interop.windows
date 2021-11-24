@@ -5,36 +5,35 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D11_FEATURE_DATA_D3D11_OPTIONS
 {
-    public partial struct D3D11_FEATURE_DATA_D3D11_OPTIONS
-    {
-        public BOOL OutputMergerLogicOp;
+    public BOOL OutputMergerLogicOp;
 
-        public BOOL UAVOnlyRenderingForcedSampleCount;
+    public BOOL UAVOnlyRenderingForcedSampleCount;
 
-        public BOOL DiscardAPIsSeenByDriver;
+    public BOOL DiscardAPIsSeenByDriver;
 
-        public BOOL FlagsForUpdateAndCopySeenByDriver;
+    public BOOL FlagsForUpdateAndCopySeenByDriver;
 
-        public BOOL ClearView;
+    public BOOL ClearView;
 
-        public BOOL CopyWithOverlap;
+    public BOOL CopyWithOverlap;
 
-        public BOOL ConstantBufferPartialUpdate;
+    public BOOL ConstantBufferPartialUpdate;
 
-        public BOOL ConstantBufferOffsetting;
+    public BOOL ConstantBufferOffsetting;
 
-        public BOOL MapNoOverwriteOnDynamicConstantBuffer;
+    public BOOL MapNoOverwriteOnDynamicConstantBuffer;
 
-        public BOOL MapNoOverwriteOnDynamicBufferSRV;
+    public BOOL MapNoOverwriteOnDynamicBufferSRV;
 
-        public BOOL MultisampleRTVWithForcedSampleCountOne;
+    public BOOL MultisampleRTVWithForcedSampleCountOne;
 
-        public BOOL SAD4ShaderInstructions;
+    public BOOL SAD4ShaderInstructions;
 
-        public BOOL ExtendedDoublesShaderInstructions;
+    public BOOL ExtendedDoublesShaderInstructions;
 
-        public BOOL ExtendedResourceSharing;
-    }
+    public BOOL ExtendedResourceSharing;
 }

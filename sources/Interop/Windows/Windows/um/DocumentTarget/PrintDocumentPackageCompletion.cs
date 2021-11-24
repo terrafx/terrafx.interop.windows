@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum PrintDocumentPackageCompletion
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum PrintDocumentPackageCompletion
-    {
-        PrintDocumentPackageCompletion_InProgress = 0,
-        PrintDocumentPackageCompletion_Completed = (PrintDocumentPackageCompletion_InProgress + 1),
-        PrintDocumentPackageCompletion_Canceled = (PrintDocumentPackageCompletion_Completed + 1),
-        PrintDocumentPackageCompletion_Failed = (PrintDocumentPackageCompletion_Canceled + 1),
-    }
+    PrintDocumentPackageCompletion_InProgress = 0,
+    PrintDocumentPackageCompletion_Completed = (PrintDocumentPackageCompletion_InProgress + 1),
+    PrintDocumentPackageCompletion_Canceled = (PrintDocumentPackageCompletion_Completed + 1),
+    PrintDocumentPackageCompletion_Failed = (PrintDocumentPackageCompletion_Canceled + 1),
 }

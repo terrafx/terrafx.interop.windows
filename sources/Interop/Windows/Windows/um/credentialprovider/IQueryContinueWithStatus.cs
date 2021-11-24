@@ -7,74 +7,73 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("9090BE5B-502B-41FB-BCCC-0049A6C7254B")]
+[NativeTypeName("struct IQueryContinueWithStatus : IQueryContinue")]
+[NativeInheritance("IQueryContinue")]
+public unsafe partial struct IQueryContinueWithStatus : IQueryContinueWithStatus.Interface
 {
-    [Guid("9090BE5B-502B-41FB-BCCC-0049A6C7254B")]
-    [NativeTypeName("struct IQueryContinueWithStatus : IQueryContinue")]
-    [NativeInheritance("IQueryContinue")]
-    public unsafe partial struct IQueryContinueWithStatus : IQueryContinueWithStatus.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IQueryContinueWithStatus*, Guid*, void**, int>)(lpVtbl[0]))((IQueryContinueWithStatus*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IQueryContinueWithStatus*, Guid*, void**, int>)(lpVtbl[0]))((IQueryContinueWithStatus*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IQueryContinueWithStatus*, uint>)(lpVtbl[1]))((IQueryContinueWithStatus*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IQueryContinueWithStatus*, uint>)(lpVtbl[1]))((IQueryContinueWithStatus*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IQueryContinueWithStatus*, uint>)(lpVtbl[2]))((IQueryContinueWithStatus*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IQueryContinueWithStatus*, uint>)(lpVtbl[2]))((IQueryContinueWithStatus*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT QueryContinue()
+    {
+        return ((delegate* unmanaged<IQueryContinueWithStatus*, int>)(lpVtbl[3]))((IQueryContinueWithStatus*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT QueryContinue()
-        {
-            return ((delegate* unmanaged<IQueryContinueWithStatus*, int>)(lpVtbl[3]))((IQueryContinueWithStatus*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT SetStatusMessage([NativeTypeName("LPCWSTR")] ushort* psz)
+    {
+        return ((delegate* unmanaged<IQueryContinueWithStatus*, ushort*, int>)(lpVtbl[4]))((IQueryContinueWithStatus*)Unsafe.AsPointer(ref this), psz);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IQueryContinue.Interface
+    {
         [VtblIndex(4)]
-        public HRESULT SetStatusMessage([NativeTypeName("LPCWSTR")] ushort* psz)
-        {
-            return ((delegate* unmanaged<IQueryContinueWithStatus*, ushort*, int>)(lpVtbl[4]))((IQueryContinueWithStatus*)Unsafe.AsPointer(ref this), psz);
-        }
+        HRESULT SetStatusMessage([NativeTypeName("LPCWSTR")] ushort* psz);
+    }
 
-        public interface Interface : IQueryContinue.Interface
-        {
-            [VtblIndex(4)]
-            HRESULT SetStatusMessage([NativeTypeName("LPCWSTR")] ushort* psz);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IQueryContinueWithStatus*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IQueryContinueWithStatus*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IQueryContinueWithStatus*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IQueryContinueWithStatus*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IQueryContinueWithStatus*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IQueryContinueWithStatus*, uint> Release;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IQueryContinueWithStatus*, int> QueryContinue;
 
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IQueryContinueWithStatus*, int> QueryContinue;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IQueryContinueWithStatus*, ushort*, int> SetStatusMessage;
-        }
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IQueryContinueWithStatus*, ushort*, int> SetStatusMessage;
     }
 }

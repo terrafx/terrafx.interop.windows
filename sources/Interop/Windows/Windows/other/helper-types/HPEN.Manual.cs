@@ -2,12 +2,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct HPEN : IEquatable<HPEN>
-    {
-        public static explicit operator HPEN(HGDIOBJ value) => new HPEN(value.Value);
+namespace TerraFX.Interop.Windows;
 
-        public static implicit operator HGDIOBJ(HPEN value) => new HGDIOBJ(value.Value);
-    }
+public unsafe partial struct HPEN : IEquatable<HPEN>
+{
+    public static explicit operator HPEN(HGDIOBJ value) => new HPEN(value.Value);
+
+    public static implicit operator HGDIOBJ(HPEN value) => new HGDIOBJ(value.Value);
 }

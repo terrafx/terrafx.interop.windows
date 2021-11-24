@@ -3,11 +3,10 @@
 // Ported from um/mfmediaengine.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MF_MSE_APPEND_MODE
 {
-    public enum MF_MSE_APPEND_MODE
-    {
-        MF_MSE_APPEND_MODE_SEGMENTS = 0,
-        MF_MSE_APPEND_MODE_SEQUENCE = 1,
-    }
+    MF_MSE_APPEND_MODE_SEGMENTS = 0,
+    MF_MSE_APPEND_MODE_SEQUENCE = 1,
 }

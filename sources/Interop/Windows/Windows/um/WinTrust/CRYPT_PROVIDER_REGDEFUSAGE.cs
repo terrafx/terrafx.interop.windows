@@ -5,22 +5,21 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CRYPT_PROVIDER_REGDEFUSAGE
 {
-    public unsafe partial struct CRYPT_PROVIDER_REGDEFUSAGE
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbStruct;
+    [NativeTypeName("DWORD")]
+    public uint cbStruct;
 
-        public Guid* pgActionID;
+    public Guid* pgActionID;
 
-        [NativeTypeName("WCHAR *")]
-        public ushort* pwszDllName;
+    [NativeTypeName("WCHAR *")]
+    public ushort* pwszDllName;
 
-        [NativeTypeName("char *")]
-        public sbyte* pwszLoadCallbackDataFunctionName;
+    [NativeTypeName("char *")]
+    public sbyte* pwszLoadCallbackDataFunctionName;
 
-        [NativeTypeName("char *")]
-        public sbyte* pwszFreeCallbackDataFunctionName;
-    }
+    [NativeTypeName("char *")]
+    public sbyte* pwszFreeCallbackDataFunctionName;
 }

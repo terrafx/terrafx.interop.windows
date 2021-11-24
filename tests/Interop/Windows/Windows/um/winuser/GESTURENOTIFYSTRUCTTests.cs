@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="GESTURENOTIFYSTRUCT" /> struct.</summary>
+public static unsafe partial class GESTURENOTIFYSTRUCTTests
 {
-    /// <summary>Provides validation of the <see cref="GESTURENOTIFYSTRUCT" /> struct.</summary>
-    public static unsafe partial class GESTURENOTIFYSTRUCTTests
+    /// <summary>Validates that the <see cref="GESTURENOTIFYSTRUCT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="GESTURENOTIFYSTRUCT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<GESTURENOTIFYSTRUCT>(), Is.EqualTo(sizeof(GESTURENOTIFYSTRUCT)));
-        }
+        Assert.That(Marshal.SizeOf<GESTURENOTIFYSTRUCT>(), Is.EqualTo(sizeof(GESTURENOTIFYSTRUCT)));
+    }
 
-        /// <summary>Validates that the <see cref="GESTURENOTIFYSTRUCT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(GESTURENOTIFYSTRUCT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="GESTURENOTIFYSTRUCT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(GESTURENOTIFYSTRUCT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="GESTURENOTIFYSTRUCT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="GESTURENOTIFYSTRUCT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(GESTURENOTIFYSTRUCT), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(GESTURENOTIFYSTRUCT), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(GESTURENOTIFYSTRUCT), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(GESTURENOTIFYSTRUCT), Is.EqualTo(20));
         }
     }
 }

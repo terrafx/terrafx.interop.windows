@@ -5,24 +5,23 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct MIDIINCAPSA
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct MIDIINCAPSA
-    {
-        [NativeTypeName("WORD")]
-        public ushort wMid;
+    [NativeTypeName("WORD")]
+    public ushort wMid;
 
-        [NativeTypeName("WORD")]
-        public ushort wPid;
+    [NativeTypeName("WORD")]
+    public ushort wPid;
 
-        [NativeTypeName("MMVERSION")]
-        public uint vDriverVersion;
+    [NativeTypeName("MMVERSION")]
+    public uint vDriverVersion;
 
-        [NativeTypeName("CHAR [32]")]
-        public fixed sbyte szPname[32];
+    [NativeTypeName("CHAR [32]")]
+    public fixed sbyte szPname[32];
 
-        [NativeTypeName("DWORD")]
-        public uint dwSupport;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwSupport;
 }

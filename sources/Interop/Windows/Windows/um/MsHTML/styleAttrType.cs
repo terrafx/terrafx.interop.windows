@@ -3,37 +3,36 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum styleAttrType
 {
-    public enum styleAttrType
-    {
-        styleAttrTypeString = 0,
-        styleAttrTypeColor = 1,
-        styleAttrTypeUrl = 2,
-        styleAttrTypeInteger = 3,
-        styleAttrTypeNumber = 4,
-        styleAttrTypeLength = 5,
-        styleAttrTypePx = 6,
-        styleAttrTypeEm = 7,
-        styleAttrTypeEx = 8,
-        styleAttrTypeIn = 9,
-        styleAttrTypeCm = 10,
-        styleAttrTypeMm = 11,
-        styleAttrTypePt = 12,
-        styleAttrTypePc = 13,
-        styleAttrTypeRem = 14,
-        styleAttrTypeCh = 15,
-        styleAttrTypeVh = 16,
-        styleAttrTypeVw = 17,
-        styleAttrTypeVmin = 18,
-        styleAttrTypePercentage = 19,
-        styleAttrTypeAngle = 20,
-        styleAttrTypeDeg = 21,
-        styleAttrTypeRad = 22,
-        styleAttrTypeGrad = 23,
-        styleAttrTypeTime = 24,
-        styleAttrTypeS = 25,
-        styleAttrTypeMs = 26,
-        styleAttrType_Max = 2147483647,
-    }
+    styleAttrTypeString = 0,
+    styleAttrTypeColor = 1,
+    styleAttrTypeUrl = 2,
+    styleAttrTypeInteger = 3,
+    styleAttrTypeNumber = 4,
+    styleAttrTypeLength = 5,
+    styleAttrTypePx = 6,
+    styleAttrTypeEm = 7,
+    styleAttrTypeEx = 8,
+    styleAttrTypeIn = 9,
+    styleAttrTypeCm = 10,
+    styleAttrTypeMm = 11,
+    styleAttrTypePt = 12,
+    styleAttrTypePc = 13,
+    styleAttrTypeRem = 14,
+    styleAttrTypeCh = 15,
+    styleAttrTypeVh = 16,
+    styleAttrTypeVw = 17,
+    styleAttrTypeVmin = 18,
+    styleAttrTypePercentage = 19,
+    styleAttrTypeAngle = 20,
+    styleAttrTypeDeg = 21,
+    styleAttrTypeRad = 22,
+    styleAttrTypeGrad = 23,
+    styleAttrTypeTime = 24,
+    styleAttrTypeS = 25,
+    styleAttrTypeMs = 26,
+    styleAttrType_Max = 2147483647,
 }

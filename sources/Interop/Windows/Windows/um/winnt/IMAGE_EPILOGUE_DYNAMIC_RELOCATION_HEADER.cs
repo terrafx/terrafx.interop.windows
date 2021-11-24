@@ -5,19 +5,18 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct IMAGE_EPILOGUE_DYNAMIC_RELOCATION_HEADER
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct IMAGE_EPILOGUE_DYNAMIC_RELOCATION_HEADER
-    {
-        [NativeTypeName("DWORD")]
-        public uint EpilogueCount;
+    [NativeTypeName("DWORD")]
+    public uint EpilogueCount;
 
-        public byte EpilogueByteCount;
+    public byte EpilogueByteCount;
 
-        public byte BranchDescriptorElementSize;
+    public byte BranchDescriptorElementSize;
 
-        [NativeTypeName("WORD")]
-        public ushort BranchDescriptorCount;
-    }
+    [NativeTypeName("WORD")]
+    public ushort BranchDescriptorCount;
 }

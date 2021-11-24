@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="RemHGLOBAL" /> struct.</summary>
+public static unsafe partial class RemHGLOBALTests
 {
-    /// <summary>Provides validation of the <see cref="RemHGLOBAL" /> struct.</summary>
-    public static unsafe partial class RemHGLOBALTests
+    /// <summary>Validates that the <see cref="RemHGLOBAL" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="RemHGLOBAL" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<RemHGLOBAL>(), Is.EqualTo(sizeof(RemHGLOBAL)));
-        }
+        Assert.That(Marshal.SizeOf<RemHGLOBAL>(), Is.EqualTo(sizeof(RemHGLOBAL)));
+    }
 
-        /// <summary>Validates that the <see cref="RemHGLOBAL" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(RemHGLOBAL).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="RemHGLOBAL" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(RemHGLOBAL).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="RemHGLOBAL" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(RemHGLOBAL), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="RemHGLOBAL" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(RemHGLOBAL), Is.EqualTo(12));
     }
 }

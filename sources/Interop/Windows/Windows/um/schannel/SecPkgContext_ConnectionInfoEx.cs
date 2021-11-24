@@ -3,32 +3,31 @@
 // Ported from um/schannel.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SecPkgContext_ConnectionInfoEx
 {
-    public unsafe partial struct SecPkgContext_ConnectionInfoEx
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwVersion;
+    [NativeTypeName("DWORD")]
+    public uint dwVersion;
 
-        [NativeTypeName("DWORD")]
-        public uint dwProtocol;
+    [NativeTypeName("DWORD")]
+    public uint dwProtocol;
 
-        [NativeTypeName("WCHAR [64]")]
-        public fixed ushort szCipher[64];
+    [NativeTypeName("WCHAR [64]")]
+    public fixed ushort szCipher[64];
 
-        [NativeTypeName("DWORD")]
-        public uint dwCipherStrength;
+    [NativeTypeName("DWORD")]
+    public uint dwCipherStrength;
 
-        [NativeTypeName("WCHAR [64]")]
-        public fixed ushort szHash[64];
+    [NativeTypeName("WCHAR [64]")]
+    public fixed ushort szHash[64];
 
-        [NativeTypeName("DWORD")]
-        public uint dwHashStrength;
+    [NativeTypeName("DWORD")]
+    public uint dwHashStrength;
 
-        [NativeTypeName("WCHAR [64]")]
-        public fixed ushort szExchange[64];
+    [NativeTypeName("WCHAR [64]")]
+    public fixed ushort szExchange[64];
 
-        [NativeTypeName("DWORD")]
-        public uint dwExchStrength;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwExchStrength;
 }

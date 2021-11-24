@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="METAHEADER" /> struct.</summary>
+public static unsafe partial class METAHEADERTests
 {
-    /// <summary>Provides validation of the <see cref="METAHEADER" /> struct.</summary>
-    public static unsafe partial class METAHEADERTests
+    /// <summary>Validates that the <see cref="METAHEADER" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="METAHEADER" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<METAHEADER>(), Is.EqualTo(sizeof(METAHEADER)));
-        }
+        Assert.That(Marshal.SizeOf<METAHEADER>(), Is.EqualTo(sizeof(METAHEADER)));
+    }
 
-        /// <summary>Validates that the <see cref="METAHEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(METAHEADER).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="METAHEADER" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(METAHEADER).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="METAHEADER" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(METAHEADER), Is.EqualTo(18));
-        }
+    /// <summary>Validates that the <see cref="METAHEADER" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(METAHEADER), Is.EqualTo(18));
     }
 }

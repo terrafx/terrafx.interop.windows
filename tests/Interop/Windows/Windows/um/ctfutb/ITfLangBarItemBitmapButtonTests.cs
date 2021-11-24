@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ITfLangBarItemBitmapButton" /> struct.</summary>
+public static unsafe partial class ITfLangBarItemBitmapButtonTests
 {
-    /// <summary>Provides validation of the <see cref="ITfLangBarItemBitmapButton" /> struct.</summary>
-    public static unsafe partial class ITfLangBarItemBitmapButtonTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfLangBarItemBitmapButton" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfLangBarItemBitmapButton" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ITfLangBarItemBitmapButton).GUID, Is.EqualTo(IID_ITfLangBarItemBitmapButton));
-        }
+        Assert.That(typeof(ITfLangBarItemBitmapButton).GUID, Is.EqualTo(IID_ITfLangBarItemBitmapButton));
+    }
 
-        /// <summary>Validates that the <see cref="ITfLangBarItemBitmapButton" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ITfLangBarItemBitmapButton>(), Is.EqualTo(sizeof(ITfLangBarItemBitmapButton)));
-        }
+    /// <summary>Validates that the <see cref="ITfLangBarItemBitmapButton" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ITfLangBarItemBitmapButton>(), Is.EqualTo(sizeof(ITfLangBarItemBitmapButton)));
+    }
 
-        /// <summary>Validates that the <see cref="ITfLangBarItemBitmapButton" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ITfLangBarItemBitmapButton).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ITfLangBarItemBitmapButton" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ITfLangBarItemBitmapButton).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ITfLangBarItemBitmapButton" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ITfLangBarItemBitmapButton" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ITfLangBarItemBitmapButton), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ITfLangBarItemBitmapButton), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ITfLangBarItemBitmapButton), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ITfLangBarItemBitmapButton), Is.EqualTo(4));
         }
     }
 }

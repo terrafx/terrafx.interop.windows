@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("9A653086-174F-11D2-B5F9-00104B703EFD")]
+public partial struct WbemClassObject
 {
-    [Guid("9A653086-174F-11D2-B5F9-00104B703EFD")]
-    public partial struct WbemClassObject
-    {
-    }
 }

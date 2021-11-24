@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NTFS_STATISTICS" /> struct.</summary>
+public static unsafe partial class NTFS_STATISTICSTests
 {
-    /// <summary>Provides validation of the <see cref="NTFS_STATISTICS" /> struct.</summary>
-    public static unsafe partial class NTFS_STATISTICSTests
+    /// <summary>Validates that the <see cref="NTFS_STATISTICS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NTFS_STATISTICS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NTFS_STATISTICS>(), Is.EqualTo(sizeof(NTFS_STATISTICS)));
-        }
+        Assert.That(Marshal.SizeOf<NTFS_STATISTICS>(), Is.EqualTo(sizeof(NTFS_STATISTICS)));
+    }
 
-        /// <summary>Validates that the <see cref="NTFS_STATISTICS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NTFS_STATISTICS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NTFS_STATISTICS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NTFS_STATISTICS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NTFS_STATISTICS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(NTFS_STATISTICS), Is.EqualTo(216));
-        }
+    /// <summary>Validates that the <see cref="NTFS_STATISTICS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(NTFS_STATISTICS), Is.EqualTo(216));
     }
 }

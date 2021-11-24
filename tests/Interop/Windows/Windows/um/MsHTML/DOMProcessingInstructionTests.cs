@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DOMProcessingInstruction" /> struct.</summary>
+public static unsafe partial class DOMProcessingInstructionTests
 {
-    /// <summary>Provides validation of the <see cref="DOMProcessingInstruction" /> struct.</summary>
-    public static unsafe partial class DOMProcessingInstructionTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DOMProcessingInstruction" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DOMProcessingInstruction" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DOMProcessingInstruction).GUID, Is.EqualTo(IID_DOMProcessingInstruction));
-        }
+        Assert.That(typeof(DOMProcessingInstruction).GUID, Is.EqualTo(IID_DOMProcessingInstruction));
+    }
 
-        /// <summary>Validates that the <see cref="DOMProcessingInstruction" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DOMProcessingInstruction>(), Is.EqualTo(sizeof(DOMProcessingInstruction)));
-        }
+    /// <summary>Validates that the <see cref="DOMProcessingInstruction" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DOMProcessingInstruction>(), Is.EqualTo(sizeof(DOMProcessingInstruction)));
+    }
 
-        /// <summary>Validates that the <see cref="DOMProcessingInstruction" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DOMProcessingInstruction).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DOMProcessingInstruction" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DOMProcessingInstruction).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DOMProcessingInstruction" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DOMProcessingInstruction), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="DOMProcessingInstruction" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DOMProcessingInstruction), Is.EqualTo(1));
     }
 }

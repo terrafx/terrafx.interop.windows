@@ -3,38 +3,37 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CREDENTIAL_TARGET_INFORMATIONA
 {
-    public unsafe partial struct CREDENTIAL_TARGET_INFORMATIONA
-    {
-        [NativeTypeName("LPSTR")]
-        public sbyte* TargetName;
+    [NativeTypeName("LPSTR")]
+    public sbyte* TargetName;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* NetbiosServerName;
+    [NativeTypeName("LPSTR")]
+    public sbyte* NetbiosServerName;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* DnsServerName;
+    [NativeTypeName("LPSTR")]
+    public sbyte* DnsServerName;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* NetbiosDomainName;
+    [NativeTypeName("LPSTR")]
+    public sbyte* NetbiosDomainName;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* DnsDomainName;
+    [NativeTypeName("LPSTR")]
+    public sbyte* DnsDomainName;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* DnsTreeName;
+    [NativeTypeName("LPSTR")]
+    public sbyte* DnsTreeName;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* PackageName;
+    [NativeTypeName("LPSTR")]
+    public sbyte* PackageName;
 
-        [NativeTypeName("ULONG")]
-        public uint Flags;
+    [NativeTypeName("ULONG")]
+    public uint Flags;
 
-        [NativeTypeName("DWORD")]
-        public uint CredTypeCount;
+    [NativeTypeName("DWORD")]
+    public uint CredTypeCount;
 
-        [NativeTypeName("LPDWORD")]
-        public uint* CredTypes;
-    }
+    [NativeTypeName("LPDWORD")]
+    public uint* CredTypes;
 }

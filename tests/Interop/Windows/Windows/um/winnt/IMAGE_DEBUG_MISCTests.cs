@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMAGE_DEBUG_MISC" /> struct.</summary>
+public static unsafe partial class IMAGE_DEBUG_MISCTests
 {
-    /// <summary>Provides validation of the <see cref="IMAGE_DEBUG_MISC" /> struct.</summary>
-    public static unsafe partial class IMAGE_DEBUG_MISCTests
+    /// <summary>Validates that the <see cref="IMAGE_DEBUG_MISC" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IMAGE_DEBUG_MISC" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMAGE_DEBUG_MISC>(), Is.EqualTo(sizeof(IMAGE_DEBUG_MISC)));
-        }
+        Assert.That(Marshal.SizeOf<IMAGE_DEBUG_MISC>(), Is.EqualTo(sizeof(IMAGE_DEBUG_MISC)));
+    }
 
-        /// <summary>Validates that the <see cref="IMAGE_DEBUG_MISC" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMAGE_DEBUG_MISC).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMAGE_DEBUG_MISC" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMAGE_DEBUG_MISC).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMAGE_DEBUG_MISC" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(IMAGE_DEBUG_MISC), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="IMAGE_DEBUG_MISC" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(IMAGE_DEBUG_MISC), Is.EqualTo(16));
     }
 }

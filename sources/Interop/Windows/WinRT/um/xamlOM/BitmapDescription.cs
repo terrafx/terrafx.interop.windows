@@ -6,19 +6,18 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.DirectX;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[SupportedOSPlatform("windows10.0.14393.0")]
+public partial struct BitmapDescription
 {
-    [SupportedOSPlatform("windows10.0.14393.0")]
-    public partial struct BitmapDescription
-    {
-        [NativeTypeName("unsigned int")]
-        public uint Width;
+    [NativeTypeName("unsigned int")]
+    public uint Width;
 
-        [NativeTypeName("unsigned int")]
-        public uint Height;
+    [NativeTypeName("unsigned int")]
+    public uint Height;
 
-        public DXGI_FORMAT Format;
+    public DXGI_FORMAT Format;
 
-        public DXGI_ALPHA_MODE AlphaMode;
-    }
+    public DXGI_ALPHA_MODE AlphaMode;
 }

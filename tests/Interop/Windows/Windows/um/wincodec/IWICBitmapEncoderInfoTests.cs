@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IWICBitmapEncoderInfo" /> struct.</summary>
+public static unsafe partial class IWICBitmapEncoderInfoTests
 {
-    /// <summary>Provides validation of the <see cref="IWICBitmapEncoderInfo" /> struct.</summary>
-    public static unsafe partial class IWICBitmapEncoderInfoTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICBitmapEncoderInfo" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IWICBitmapEncoderInfo" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IWICBitmapEncoderInfo).GUID, Is.EqualTo(IID_IWICBitmapEncoderInfo));
-        }
+        Assert.That(typeof(IWICBitmapEncoderInfo).GUID, Is.EqualTo(IID_IWICBitmapEncoderInfo));
+    }
 
-        /// <summary>Validates that the <see cref="IWICBitmapEncoderInfo" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IWICBitmapEncoderInfo>(), Is.EqualTo(sizeof(IWICBitmapEncoderInfo)));
-        }
+    /// <summary>Validates that the <see cref="IWICBitmapEncoderInfo" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IWICBitmapEncoderInfo>(), Is.EqualTo(sizeof(IWICBitmapEncoderInfo)));
+    }
 
-        /// <summary>Validates that the <see cref="IWICBitmapEncoderInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IWICBitmapEncoderInfo).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IWICBitmapEncoderInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IWICBitmapEncoderInfo).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IWICBitmapEncoderInfo" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IWICBitmapEncoderInfo" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IWICBitmapEncoderInfo), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IWICBitmapEncoderInfo), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IWICBitmapEncoderInfo), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IWICBitmapEncoderInfo), Is.EqualTo(4));
         }
     }
 }

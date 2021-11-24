@@ -3,14 +3,13 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum LISTBOXPARTS
 {
-    public enum LISTBOXPARTS
-    {
-        LBCP_BORDER_HSCROLL = 1,
-        LBCP_BORDER_HVSCROLL = 2,
-        LBCP_BORDER_NOSCROLL = 3,
-        LBCP_BORDER_VSCROLL = 4,
-        LBCP_ITEM = 5,
-    }
+    LBCP_BORDER_HSCROLL = 1,
+    LBCP_BORDER_HVSCROLL = 2,
+    LBCP_BORDER_NOSCROLL = 3,
+    LBCP_BORDER_VSCROLL = 4,
+    LBCP_ITEM = 5,
 }

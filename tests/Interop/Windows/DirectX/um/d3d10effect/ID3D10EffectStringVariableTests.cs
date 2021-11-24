@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ID3D10EffectStringVariable" /> struct.</summary>
+public static unsafe partial class ID3D10EffectStringVariableTests
 {
-    /// <summary>Provides validation of the <see cref="ID3D10EffectStringVariable" /> struct.</summary>
-    public static unsafe partial class ID3D10EffectStringVariableTests
+    /// <summary>Validates that the <see cref="ID3D10EffectStringVariable" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="ID3D10EffectStringVariable" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ID3D10EffectStringVariable>(), Is.EqualTo(sizeof(ID3D10EffectStringVariable)));
-        }
+        Assert.That(Marshal.SizeOf<ID3D10EffectStringVariable>(), Is.EqualTo(sizeof(ID3D10EffectStringVariable)));
+    }
 
-        /// <summary>Validates that the <see cref="ID3D10EffectStringVariable" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ID3D10EffectStringVariable).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ID3D10EffectStringVariable" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ID3D10EffectStringVariable).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ID3D10EffectStringVariable" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ID3D10EffectStringVariable" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ID3D10EffectStringVariable), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ID3D10EffectStringVariable), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ID3D10EffectStringVariable), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ID3D10EffectStringVariable), Is.EqualTo(4));
         }
     }
 }

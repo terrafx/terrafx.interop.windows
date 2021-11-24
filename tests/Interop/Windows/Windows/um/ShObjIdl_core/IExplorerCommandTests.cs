@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IExplorerCommand" /> struct.</summary>
+public static unsafe partial class IExplorerCommandTests
 {
-    /// <summary>Provides validation of the <see cref="IExplorerCommand" /> struct.</summary>
-    public static unsafe partial class IExplorerCommandTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IExplorerCommand" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IExplorerCommand" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IExplorerCommand).GUID, Is.EqualTo(IID_IExplorerCommand));
-        }
+        Assert.That(typeof(IExplorerCommand).GUID, Is.EqualTo(IID_IExplorerCommand));
+    }
 
-        /// <summary>Validates that the <see cref="IExplorerCommand" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IExplorerCommand>(), Is.EqualTo(sizeof(IExplorerCommand)));
-        }
+    /// <summary>Validates that the <see cref="IExplorerCommand" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IExplorerCommand>(), Is.EqualTo(sizeof(IExplorerCommand)));
+    }
 
-        /// <summary>Validates that the <see cref="IExplorerCommand" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IExplorerCommand).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IExplorerCommand" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IExplorerCommand).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IExplorerCommand" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IExplorerCommand" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IExplorerCommand), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IExplorerCommand), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IExplorerCommand), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IExplorerCommand), Is.EqualTo(4));
         }
     }
 }

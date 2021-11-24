@@ -3,11 +3,10 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum D3D12_PREDICATION_OP
 {
-    public enum D3D12_PREDICATION_OP
-    {
-        D3D12_PREDICATION_OP_EQUAL_ZERO = 0,
-        D3D12_PREDICATION_OP_NOT_EQUAL_ZERO = 1,
-    }
+    D3D12_PREDICATION_OP_EQUAL_ZERO = 0,
+    D3D12_PREDICATION_OP_NOT_EQUAL_ZERO = 1,
 }

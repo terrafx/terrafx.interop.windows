@@ -3,13 +3,12 @@
 // Ported from um/dwmapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum DWMFLIP3DWINDOWPOLICY
 {
-    public enum DWMFLIP3DWINDOWPOLICY
-    {
-        DWMFLIP3D_DEFAULT,
-        DWMFLIP3D_EXCLUDEBELOW,
-        DWMFLIP3D_EXCLUDEABOVE,
-        DWMFLIP3D_LAST,
-    }
+    DWMFLIP3D_DEFAULT,
+    DWMFLIP3D_EXCLUDEBELOW,
+    DWMFLIP3D_EXCLUDEABOVE,
+    DWMFLIP3D_LAST,
 }

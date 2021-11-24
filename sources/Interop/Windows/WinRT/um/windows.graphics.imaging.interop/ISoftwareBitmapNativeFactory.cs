@@ -8,107 +8,106 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[Guid("C3C181EC-2914-4791-AF02-02D224A10B43")]
+[NativeTypeName("struct ISoftwareBitmapNativeFactory : IInspectable")]
+[NativeInheritance("IInspectable")]
+public unsafe partial struct ISoftwareBitmapNativeFactory : ISoftwareBitmapNativeFactory.Interface
 {
-    [Guid("C3C181EC-2914-4791-AF02-02D224A10B43")]
-    [NativeTypeName("struct ISoftwareBitmapNativeFactory : IInspectable")]
-    [NativeInheritance("IInspectable")]
-    public unsafe partial struct ISoftwareBitmapNativeFactory : ISoftwareBitmapNativeFactory.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, Guid*, void**, int>)(lpVtbl[0]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, Guid*, void**, int>)(lpVtbl[0]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, uint>)(lpVtbl[1]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, uint>)(lpVtbl[1]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, uint>)(lpVtbl[2]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, uint>)(lpVtbl[2]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+    {
+        return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, uint*, Guid**, int>)(lpVtbl[3]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this), iidCount, iids);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
-        {
-            return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, uint*, Guid**, int>)(lpVtbl[3]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this), iidCount, iids);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetRuntimeClassName(HSTRING* className)
+    {
+        return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, HSTRING*, int>)(lpVtbl[4]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this), className);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT GetRuntimeClassName(HSTRING* className)
-        {
-            return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, HSTRING*, int>)(lpVtbl[4]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this), className);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetTrustLevel(TrustLevel* trustLevel)
+    {
+        return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, TrustLevel*, int>)(lpVtbl[5]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this), trustLevel);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT GetTrustLevel(TrustLevel* trustLevel)
-        {
-            return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, TrustLevel*, int>)(lpVtbl[5]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this), trustLevel);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT CreateFromWICBitmap(IWICBitmap* data, BOOL forceReadOnly, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
+    {
+        return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, IWICBitmap*, BOOL, Guid*, void**, int>)(lpVtbl[6]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this), data, forceReadOnly, riid, ppv);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT CreateFromMF2DBuffer2(IMF2DBuffer2* data, [NativeTypeName("const GUID &")] Guid* subtype, [NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height, BOOL forceReadOnly, [NativeTypeName("const MFVideoArea *")] MFVideoArea* minDisplayAperture, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
+    {
+        return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, IMF2DBuffer2*, Guid*, uint, uint, BOOL, MFVideoArea*, Guid*, void**, int>)(lpVtbl[7]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this), data, subtype, width, height, forceReadOnly, minDisplayAperture, riid, ppv);
+    }
+
+    public interface Interface : IInspectable.Interface
+    {
         [VtblIndex(6)]
-        public HRESULT CreateFromWICBitmap(IWICBitmap* data, BOOL forceReadOnly, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
-        {
-            return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, IWICBitmap*, BOOL, Guid*, void**, int>)(lpVtbl[6]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this), data, forceReadOnly, riid, ppv);
-        }
+        HRESULT CreateFromWICBitmap(IWICBitmap* data, BOOL forceReadOnly, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT CreateFromMF2DBuffer2(IMF2DBuffer2* data, [NativeTypeName("const GUID &")] Guid* subtype, [NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height, BOOL forceReadOnly, [NativeTypeName("const MFVideoArea *")] MFVideoArea* minDisplayAperture, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
-        {
-            return ((delegate* unmanaged<ISoftwareBitmapNativeFactory*, IMF2DBuffer2*, Guid*, uint, uint, BOOL, MFVideoArea*, Guid*, void**, int>)(lpVtbl[7]))((ISoftwareBitmapNativeFactory*)Unsafe.AsPointer(ref this), data, subtype, width, height, forceReadOnly, minDisplayAperture, riid, ppv);
-        }
+        HRESULT CreateFromMF2DBuffer2(IMF2DBuffer2* data, [NativeTypeName("const GUID &")] Guid* subtype, [NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height, BOOL forceReadOnly, [NativeTypeName("const MFVideoArea *")] MFVideoArea* minDisplayAperture, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
+    }
 
-        public interface Interface : IInspectable.Interface
-        {
-            [VtblIndex(6)]
-            HRESULT CreateFromWICBitmap(IWICBitmap* data, BOOL forceReadOnly, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISoftwareBitmapNativeFactory*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(7)]
-            HRESULT CreateFromMF2DBuffer2(IMF2DBuffer2* data, [NativeTypeName("const GUID &")] Guid* subtype, [NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height, BOOL forceReadOnly, [NativeTypeName("const MFVideoArea *")] MFVideoArea* minDisplayAperture, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISoftwareBitmapNativeFactory*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISoftwareBitmapNativeFactory*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISoftwareBitmapNativeFactory*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISoftwareBitmapNativeFactory*, uint> AddRef;
+        [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISoftwareBitmapNativeFactory*, uint*, Guid**, int> GetIids;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISoftwareBitmapNativeFactory*, uint> Release;
+        [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISoftwareBitmapNativeFactory*, HSTRING*, int> GetRuntimeClassName;
 
-            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISoftwareBitmapNativeFactory*, uint*, Guid**, int> GetIids;
+        [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISoftwareBitmapNativeFactory*, TrustLevel*, int> GetTrustLevel;
 
-            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISoftwareBitmapNativeFactory*, HSTRING*, int> GetRuntimeClassName;
+        [NativeTypeName("HRESULT (IWICBitmap *, BOOL, const IID &, LPVOID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISoftwareBitmapNativeFactory*, IWICBitmap*, BOOL, Guid*, void**, int> CreateFromWICBitmap;
 
-            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISoftwareBitmapNativeFactory*, TrustLevel*, int> GetTrustLevel;
-
-            [NativeTypeName("HRESULT (IWICBitmap *, BOOL, const IID &, LPVOID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISoftwareBitmapNativeFactory*, IWICBitmap*, BOOL, Guid*, void**, int> CreateFromWICBitmap;
-
-            [NativeTypeName("HRESULT (IMF2DBuffer2 *, const GUID &, UINT32, UINT32, BOOL, const MFVideoArea *, const IID &, LPVOID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISoftwareBitmapNativeFactory*, IMF2DBuffer2*, Guid*, uint, uint, BOOL, MFVideoArea*, Guid*, void**, int> CreateFromMF2DBuffer2;
-        }
+        [NativeTypeName("HRESULT (IMF2DBuffer2 *, const GUID &, UINT32, UINT32, BOOL, const MFVideoArea *, const IID &, LPVOID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISoftwareBitmapNativeFactory*, IMF2DBuffer2*, Guid*, uint, uint, BOOL, MFVideoArea*, Guid*, void**, int> CreateFromMF2DBuffer2;
     }
 }

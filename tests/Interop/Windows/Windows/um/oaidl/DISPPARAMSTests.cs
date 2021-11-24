@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DISPPARAMS" /> struct.</summary>
+public static unsafe partial class DISPPARAMSTests
 {
-    /// <summary>Provides validation of the <see cref="DISPPARAMS" /> struct.</summary>
-    public static unsafe partial class DISPPARAMSTests
+    /// <summary>Validates that the <see cref="DISPPARAMS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DISPPARAMS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DISPPARAMS>(), Is.EqualTo(sizeof(DISPPARAMS)));
-        }
+        Assert.That(Marshal.SizeOf<DISPPARAMS>(), Is.EqualTo(sizeof(DISPPARAMS)));
+    }
 
-        /// <summary>Validates that the <see cref="DISPPARAMS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DISPPARAMS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DISPPARAMS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DISPPARAMS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DISPPARAMS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DISPPARAMS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DISPPARAMS), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(DISPPARAMS), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(DISPPARAMS), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(DISPPARAMS), Is.EqualTo(16));
         }
     }
 }

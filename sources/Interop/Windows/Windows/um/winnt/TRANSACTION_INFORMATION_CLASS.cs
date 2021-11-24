@@ -3,15 +3,14 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum TRANSACTION_INFORMATION_CLASS
 {
-    public enum TRANSACTION_INFORMATION_CLASS
-    {
-        TransactionBasicInformation,
-        TransactionPropertiesInformation,
-        TransactionEnlistmentInformation,
-        TransactionSuperiorEnlistmentInformation,
-        TransactionBindInformation,
-        TransactionDTCPrivateInformation,
-    }
+    TransactionBasicInformation,
+    TransactionPropertiesInformation,
+    TransactionEnlistmentInformation,
+    TransactionSuperiorEnlistmentInformation,
+    TransactionBindInformation,
+    TransactionDTCPrivateInformation,
 }

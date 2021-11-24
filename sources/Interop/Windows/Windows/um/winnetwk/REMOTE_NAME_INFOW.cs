@@ -3,17 +3,16 @@
 // Ported from um/winnetwk.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct REMOTE_NAME_INFOW
 {
-    public unsafe partial struct REMOTE_NAME_INFOW
-    {
-        [NativeTypeName("LPWSTR")]
-        public ushort* lpUniversalName;
+    [NativeTypeName("LPWSTR")]
+    public ushort* lpUniversalName;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* lpConnectionName;
+    [NativeTypeName("LPWSTR")]
+    public ushort* lpConnectionName;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* lpRemainingPath;
-    }
+    [NativeTypeName("LPWSTR")]
+    public ushort* lpRemainingPath;
 }

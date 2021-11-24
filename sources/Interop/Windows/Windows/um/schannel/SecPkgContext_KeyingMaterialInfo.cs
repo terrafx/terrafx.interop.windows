@@ -5,24 +5,23 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct SecPkgContext_KeyingMaterialInfo
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct SecPkgContext_KeyingMaterialInfo
-    {
-        [NativeTypeName("WORD")]
-        public ushort cbLabel;
+    [NativeTypeName("WORD")]
+    public ushort cbLabel;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* pszLabel;
+    [NativeTypeName("LPSTR")]
+    public sbyte* pszLabel;
 
-        [NativeTypeName("WORD")]
-        public ushort cbContextValue;
+    [NativeTypeName("WORD")]
+    public ushort cbContextValue;
 
-        [NativeTypeName("PBYTE")]
-        public byte* pbContextValue;
+    [NativeTypeName("PBYTE")]
+    public byte* pbContextValue;
 
-        [NativeTypeName("DWORD")]
-        public uint cbKeyingMaterial;
-    }
+    [NativeTypeName("DWORD")]
+    public uint cbKeyingMaterial;
 }

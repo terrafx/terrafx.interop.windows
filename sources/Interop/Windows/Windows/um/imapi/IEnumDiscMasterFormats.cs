@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("DDF445E1-54BA-11D3-9144-00104BA11C5E")]
+[NativeTypeName("struct IEnumDiscMasterFormats : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IEnumDiscMasterFormats : IEnumDiscMasterFormats.Interface
 {
-    [Guid("DDF445E1-54BA-11D3-9144-00104BA11C5E")]
-    [NativeTypeName("struct IEnumDiscMasterFormats : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IEnumDiscMasterFormats : IEnumDiscMasterFormats.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IEnumDiscMasterFormats*, Guid*, void**, int>)(lpVtbl[0]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IEnumDiscMasterFormats*, Guid*, void**, int>)(lpVtbl[0]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IEnumDiscMasterFormats*, uint>)(lpVtbl[1]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IEnumDiscMasterFormats*, uint>)(lpVtbl[1]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IEnumDiscMasterFormats*, uint>)(lpVtbl[2]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IEnumDiscMasterFormats*, uint>)(lpVtbl[2]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Next([NativeTypeName("ULONG")] uint cFormats, [NativeTypeName("LPIID")] Guid* lpiidFormatID, [NativeTypeName("ULONG *")] uint* pcFetched)
+    {
+        return ((delegate* unmanaged<IEnumDiscMasterFormats*, uint, Guid*, uint*, int>)(lpVtbl[3]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this), cFormats, lpiidFormatID, pcFetched);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Skip([NativeTypeName("ULONG")] uint cFormats)
+    {
+        return ((delegate* unmanaged<IEnumDiscMasterFormats*, uint, int>)(lpVtbl[4]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this), cFormats);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT Reset()
+    {
+        return ((delegate* unmanaged<IEnumDiscMasterFormats*, int>)(lpVtbl[5]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Clone(IEnumDiscMasterFormats** ppEnum)
+    {
+        return ((delegate* unmanaged<IEnumDiscMasterFormats*, IEnumDiscMasterFormats**, int>)(lpVtbl[6]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this), ppEnum);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Next([NativeTypeName("ULONG")] uint cFormats, [NativeTypeName("LPIID")] Guid* lpiidFormatID, [NativeTypeName("ULONG *")] uint* pcFetched)
-        {
-            return ((delegate* unmanaged<IEnumDiscMasterFormats*, uint, Guid*, uint*, int>)(lpVtbl[3]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this), cFormats, lpiidFormatID, pcFetched);
-        }
+        HRESULT Next([NativeTypeName("ULONG")] uint cFormats, [NativeTypeName("LPIID")] Guid* lpiidFormatID, [NativeTypeName("ULONG *")] uint* pcFetched);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Skip([NativeTypeName("ULONG")] uint cFormats)
-        {
-            return ((delegate* unmanaged<IEnumDiscMasterFormats*, uint, int>)(lpVtbl[4]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this), cFormats);
-        }
+        HRESULT Skip([NativeTypeName("ULONG")] uint cFormats);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT Reset()
-        {
-            return ((delegate* unmanaged<IEnumDiscMasterFormats*, int>)(lpVtbl[5]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Reset();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Clone(IEnumDiscMasterFormats** ppEnum)
-        {
-            return ((delegate* unmanaged<IEnumDiscMasterFormats*, IEnumDiscMasterFormats**, int>)(lpVtbl[6]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this), ppEnum);
-        }
+        HRESULT Clone(IEnumDiscMasterFormats** ppEnum);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Next([NativeTypeName("ULONG")] uint cFormats, [NativeTypeName("LPIID")] Guid* lpiidFormatID, [NativeTypeName("ULONG *")] uint* pcFetched);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumDiscMasterFormats*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT Skip([NativeTypeName("ULONG")] uint cFormats);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumDiscMasterFormats*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT Reset();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumDiscMasterFormats*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT Clone(IEnumDiscMasterFormats** ppEnum);
-        }
+        [NativeTypeName("HRESULT (ULONG, LPIID, ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumDiscMasterFormats*, uint, Guid*, uint*, int> Next;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumDiscMasterFormats*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumDiscMasterFormats*, uint, int> Skip;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumDiscMasterFormats*, uint> AddRef;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumDiscMasterFormats*, int> Reset;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumDiscMasterFormats*, uint> Release;
-
-            [NativeTypeName("HRESULT (ULONG, LPIID, ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumDiscMasterFormats*, uint, Guid*, uint*, int> Next;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumDiscMasterFormats*, uint, int> Skip;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumDiscMasterFormats*, int> Reset;
-
-            [NativeTypeName("HRESULT (IEnumDiscMasterFormats **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IEnumDiscMasterFormats*, IEnumDiscMasterFormats**, int> Clone;
-        }
+        [NativeTypeName("HRESULT (IEnumDiscMasterFormats **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IEnumDiscMasterFormats*, IEnumDiscMasterFormats**, int> Clone;
     }
 }

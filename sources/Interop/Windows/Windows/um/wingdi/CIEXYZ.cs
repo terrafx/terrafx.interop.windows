@@ -3,17 +3,16 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct CIEXYZ
 {
-    public partial struct CIEXYZ
-    {
-        [NativeTypeName("FXPT2DOT30")]
-        public int ciexyzX;
+    [NativeTypeName("FXPT2DOT30")]
+    public int ciexyzX;
 
-        [NativeTypeName("FXPT2DOT30")]
-        public int ciexyzY;
+    [NativeTypeName("FXPT2DOT30")]
+    public int ciexyzY;
 
-        [NativeTypeName("FXPT2DOT30")]
-        public int ciexyzZ;
-    }
+    [NativeTypeName("FXPT2DOT30")]
+    public int ciexyzZ;
 }

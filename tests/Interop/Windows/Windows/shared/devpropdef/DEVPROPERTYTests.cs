@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DEVPROPERTY" /> struct.</summary>
+public static unsafe partial class DEVPROPERTYTests
 {
-    /// <summary>Provides validation of the <see cref="DEVPROPERTY" /> struct.</summary>
-    public static unsafe partial class DEVPROPERTYTests
+    /// <summary>Validates that the <see cref="DEVPROPERTY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DEVPROPERTY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DEVPROPERTY>(), Is.EqualTo(sizeof(DEVPROPERTY)));
-        }
+        Assert.That(Marshal.SizeOf<DEVPROPERTY>(), Is.EqualTo(sizeof(DEVPROPERTY)));
+    }
 
-        /// <summary>Validates that the <see cref="DEVPROPERTY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DEVPROPERTY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DEVPROPERTY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DEVPROPERTY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DEVPROPERTY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DEVPROPERTY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DEVPROPERTY), Is.EqualTo(48));
-            }
-            else
-            {
-                Assert.That(sizeof(DEVPROPERTY), Is.EqualTo(40));
-            }
+            Assert.That(sizeof(DEVPROPERTY), Is.EqualTo(48));
+        }
+        else
+        {
+            Assert.That(sizeof(DEVPROPERTY), Is.EqualTo(40));
         }
     }
 }

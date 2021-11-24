@@ -7,31 +7,30 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MESSAGE_RESOURCE_DATA
 {
-    public partial struct MESSAGE_RESOURCE_DATA
+    [NativeTypeName("DWORD")]
+    public uint NumberOfBlocks;
+
+    [NativeTypeName("MESSAGE_RESOURCE_BLOCK [1]")]
+    public _Blocks_e__FixedBuffer Blocks;
+
+    public partial struct _Blocks_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint NumberOfBlocks;
+        public MESSAGE_RESOURCE_BLOCK e0;
 
-        [NativeTypeName("MESSAGE_RESOURCE_BLOCK [1]")]
-        public _Blocks_e__FixedBuffer Blocks;
-
-        public partial struct _Blocks_e__FixedBuffer
+        public ref MESSAGE_RESOURCE_BLOCK this[int index]
         {
-            public MESSAGE_RESOURCE_BLOCK e0;
-
-            public ref MESSAGE_RESOURCE_BLOCK this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<MESSAGE_RESOURCE_BLOCK> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<MESSAGE_RESOURCE_BLOCK> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

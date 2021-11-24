@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="G721_ADPCMWAVEFORMAT" /> struct.</summary>
+public static unsafe partial class G721_ADPCMWAVEFORMATTests
 {
-    /// <summary>Provides validation of the <see cref="G721_ADPCMWAVEFORMAT" /> struct.</summary>
-    public static unsafe partial class G721_ADPCMWAVEFORMATTests
+    /// <summary>Validates that the <see cref="G721_ADPCMWAVEFORMAT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="G721_ADPCMWAVEFORMAT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<G721_ADPCMWAVEFORMAT>(), Is.EqualTo(sizeof(G721_ADPCMWAVEFORMAT)));
-        }
+        Assert.That(Marshal.SizeOf<G721_ADPCMWAVEFORMAT>(), Is.EqualTo(sizeof(G721_ADPCMWAVEFORMAT)));
+    }
 
-        /// <summary>Validates that the <see cref="G721_ADPCMWAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(G721_ADPCMWAVEFORMAT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="G721_ADPCMWAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(G721_ADPCMWAVEFORMAT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="G721_ADPCMWAVEFORMAT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(G721_ADPCMWAVEFORMAT), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="G721_ADPCMWAVEFORMAT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(G721_ADPCMWAVEFORMAT), Is.EqualTo(20));
     }
 }

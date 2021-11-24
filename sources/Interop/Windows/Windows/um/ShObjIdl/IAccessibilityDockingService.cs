@@ -8,91 +8,90 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+[Guid("8849DC22-CEDF-4C95-998D-051419DD3F76")]
+[NativeTypeName("struct IAccessibilityDockingService : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IAccessibilityDockingService : IAccessibilityDockingService.Interface
 {
-    [SupportedOSPlatform("windows8.0")]
-    [Guid("8849DC22-CEDF-4C95-998D-051419DD3F76")]
-    [NativeTypeName("struct IAccessibilityDockingService : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAccessibilityDockingService : IAccessibilityDockingService.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IAccessibilityDockingService*, Guid*, void**, int>)(lpVtbl[0]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IAccessibilityDockingService*, Guid*, void**, int>)(lpVtbl[0]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IAccessibilityDockingService*, uint>)(lpVtbl[1]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IAccessibilityDockingService*, uint>)(lpVtbl[1]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IAccessibilityDockingService*, uint>)(lpVtbl[2]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IAccessibilityDockingService*, uint>)(lpVtbl[2]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetAvailableSize(HMONITOR hMonitor, uint* pcxFixed, uint* pcyMax)
+    {
+        return ((delegate* unmanaged<IAccessibilityDockingService*, HMONITOR, uint*, uint*, int>)(lpVtbl[3]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this), hMonitor, pcxFixed, pcyMax);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT DockWindow(HWND hwnd, HMONITOR hMonitor, uint cyRequested, IAccessibilityDockingServiceCallback* pCallback)
+    {
+        return ((delegate* unmanaged<IAccessibilityDockingService*, HWND, HMONITOR, uint, IAccessibilityDockingServiceCallback*, int>)(lpVtbl[4]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this), hwnd, hMonitor, cyRequested, pCallback);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT UndockWindow(HWND hwnd)
+    {
+        return ((delegate* unmanaged<IAccessibilityDockingService*, HWND, int>)(lpVtbl[5]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this), hwnd);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetAvailableSize(HMONITOR hMonitor, uint* pcxFixed, uint* pcyMax)
-        {
-            return ((delegate* unmanaged<IAccessibilityDockingService*, HMONITOR, uint*, uint*, int>)(lpVtbl[3]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this), hMonitor, pcxFixed, pcyMax);
-        }
+        HRESULT GetAvailableSize(HMONITOR hMonitor, uint* pcxFixed, uint* pcyMax);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT DockWindow(HWND hwnd, HMONITOR hMonitor, uint cyRequested, IAccessibilityDockingServiceCallback* pCallback)
-        {
-            return ((delegate* unmanaged<IAccessibilityDockingService*, HWND, HMONITOR, uint, IAccessibilityDockingServiceCallback*, int>)(lpVtbl[4]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this), hwnd, hMonitor, cyRequested, pCallback);
-        }
+        HRESULT DockWindow(HWND hwnd, HMONITOR hMonitor, uint cyRequested, IAccessibilityDockingServiceCallback* pCallback);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT UndockWindow(HWND hwnd)
-        {
-            return ((delegate* unmanaged<IAccessibilityDockingService*, HWND, int>)(lpVtbl[5]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this), hwnd);
-        }
+        HRESULT UndockWindow(HWND hwnd);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetAvailableSize(HMONITOR hMonitor, uint* pcxFixed, uint* pcyMax);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAccessibilityDockingService*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT DockWindow(HWND hwnd, HMONITOR hMonitor, uint cyRequested, IAccessibilityDockingServiceCallback* pCallback);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAccessibilityDockingService*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT UndockWindow(HWND hwnd);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAccessibilityDockingService*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAccessibilityDockingService*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (HMONITOR, UINT *, UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAccessibilityDockingService*, HMONITOR, uint*, uint*, int> GetAvailableSize;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAccessibilityDockingService*, uint> AddRef;
+        [NativeTypeName("HRESULT (HWND, HMONITOR, UINT, IAccessibilityDockingServiceCallback *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAccessibilityDockingService*, HWND, HMONITOR, uint, IAccessibilityDockingServiceCallback*, int> DockWindow;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAccessibilityDockingService*, uint> Release;
-
-            [NativeTypeName("HRESULT (HMONITOR, UINT *, UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAccessibilityDockingService*, HMONITOR, uint*, uint*, int> GetAvailableSize;
-
-            [NativeTypeName("HRESULT (HWND, HMONITOR, UINT, IAccessibilityDockingServiceCallback *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAccessibilityDockingService*, HWND, HMONITOR, uint, IAccessibilityDockingServiceCallback*, int> DockWindow;
-
-            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAccessibilityDockingService*, HWND, int> UndockWindow;
-        }
+        [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAccessibilityDockingService*, HWND, int> UndockWindow;
     }
 }

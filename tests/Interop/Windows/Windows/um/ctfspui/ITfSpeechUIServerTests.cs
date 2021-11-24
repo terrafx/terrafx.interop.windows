@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ITfSpeechUIServer" /> struct.</summary>
+public static unsafe partial class ITfSpeechUIServerTests
 {
-    /// <summary>Provides validation of the <see cref="ITfSpeechUIServer" /> struct.</summary>
-    public static unsafe partial class ITfSpeechUIServerTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfSpeechUIServer" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfSpeechUIServer" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ITfSpeechUIServer).GUID, Is.EqualTo(IID_ITfSpeechUIServer));
-        }
+        Assert.That(typeof(ITfSpeechUIServer).GUID, Is.EqualTo(IID_ITfSpeechUIServer));
+    }
 
-        /// <summary>Validates that the <see cref="ITfSpeechUIServer" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ITfSpeechUIServer>(), Is.EqualTo(sizeof(ITfSpeechUIServer)));
-        }
+    /// <summary>Validates that the <see cref="ITfSpeechUIServer" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ITfSpeechUIServer>(), Is.EqualTo(sizeof(ITfSpeechUIServer)));
+    }
 
-        /// <summary>Validates that the <see cref="ITfSpeechUIServer" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ITfSpeechUIServer).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ITfSpeechUIServer" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ITfSpeechUIServer).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ITfSpeechUIServer" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ITfSpeechUIServer" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ITfSpeechUIServer), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ITfSpeechUIServer), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ITfSpeechUIServer), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ITfSpeechUIServer), Is.EqualTo(4));
         }
     }
 }

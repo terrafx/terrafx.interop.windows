@@ -3,14 +3,13 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct CERT_CREDENTIAL_INFO
-    {
-        [NativeTypeName("ULONG")]
-        public uint cbSize;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("UCHAR [20]")]
-        public fixed byte rgbHashOfCert[20];
-    }
+public unsafe partial struct CERT_CREDENTIAL_INFO
+{
+    [NativeTypeName("ULONG")]
+    public uint cbSize;
+
+    [NativeTypeName("UCHAR [20]")]
+    public fixed byte rgbHashOfCert[20];
 }

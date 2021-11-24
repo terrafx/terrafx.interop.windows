@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("1202DB60-1DAC-42C5-AED5-1ABDD432248E")]
+public partial struct SyncMgrClient
 {
-    [Guid("1202DB60-1DAC-42C5-AED5-1ABDD432248E")]
-    public partial struct SyncMgrClient
-    {
-    }
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DispHTMLNavigator" /> struct.</summary>
+public static unsafe partial class DispHTMLNavigatorTests
 {
-    /// <summary>Provides validation of the <see cref="DispHTMLNavigator" /> struct.</summary>
-    public static unsafe partial class DispHTMLNavigatorTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispHTMLNavigator" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispHTMLNavigator" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DispHTMLNavigator).GUID, Is.EqualTo(IID_DispHTMLNavigator));
-        }
+        Assert.That(typeof(DispHTMLNavigator).GUID, Is.EqualTo(IID_DispHTMLNavigator));
+    }
 
-        /// <summary>Validates that the <see cref="DispHTMLNavigator" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DispHTMLNavigator>(), Is.EqualTo(sizeof(DispHTMLNavigator)));
-        }
+    /// <summary>Validates that the <see cref="DispHTMLNavigator" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DispHTMLNavigator>(), Is.EqualTo(sizeof(DispHTMLNavigator)));
+    }
 
-        /// <summary>Validates that the <see cref="DispHTMLNavigator" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DispHTMLNavigator).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DispHTMLNavigator" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DispHTMLNavigator).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DispHTMLNavigator" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DispHTMLNavigator" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DispHTMLNavigator), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(DispHTMLNavigator), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(DispHTMLNavigator), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(DispHTMLNavigator), Is.EqualTo(4));
         }
     }
 }

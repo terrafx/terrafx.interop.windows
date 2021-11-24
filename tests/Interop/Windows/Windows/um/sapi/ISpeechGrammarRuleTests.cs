@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISpeechGrammarRule" /> struct.</summary>
+public static unsafe partial class ISpeechGrammarRuleTests
 {
-    /// <summary>Provides validation of the <see cref="ISpeechGrammarRule" /> struct.</summary>
-    public static unsafe partial class ISpeechGrammarRuleTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpeechGrammarRule" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpeechGrammarRule" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISpeechGrammarRule).GUID, Is.EqualTo(IID_ISpeechGrammarRule));
-        }
+        Assert.That(typeof(ISpeechGrammarRule).GUID, Is.EqualTo(IID_ISpeechGrammarRule));
+    }
 
-        /// <summary>Validates that the <see cref="ISpeechGrammarRule" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISpeechGrammarRule>(), Is.EqualTo(sizeof(ISpeechGrammarRule)));
-        }
+    /// <summary>Validates that the <see cref="ISpeechGrammarRule" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISpeechGrammarRule>(), Is.EqualTo(sizeof(ISpeechGrammarRule)));
+    }
 
-        /// <summary>Validates that the <see cref="ISpeechGrammarRule" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISpeechGrammarRule).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISpeechGrammarRule" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISpeechGrammarRule).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISpeechGrammarRule" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISpeechGrammarRule" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISpeechGrammarRule), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISpeechGrammarRule), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISpeechGrammarRule), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISpeechGrammarRule), Is.EqualTo(4));
         }
     }
 }

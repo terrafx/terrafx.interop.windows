@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TAPE_WRITE_MARKS" /> struct.</summary>
+public static unsafe partial class TAPE_WRITE_MARKSTests
 {
-    /// <summary>Provides validation of the <see cref="TAPE_WRITE_MARKS" /> struct.</summary>
-    public static unsafe partial class TAPE_WRITE_MARKSTests
+    /// <summary>Validates that the <see cref="TAPE_WRITE_MARKS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TAPE_WRITE_MARKS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TAPE_WRITE_MARKS>(), Is.EqualTo(sizeof(TAPE_WRITE_MARKS)));
-        }
+        Assert.That(Marshal.SizeOf<TAPE_WRITE_MARKS>(), Is.EqualTo(sizeof(TAPE_WRITE_MARKS)));
+    }
 
-        /// <summary>Validates that the <see cref="TAPE_WRITE_MARKS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TAPE_WRITE_MARKS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TAPE_WRITE_MARKS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TAPE_WRITE_MARKS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TAPE_WRITE_MARKS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TAPE_WRITE_MARKS), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="TAPE_WRITE_MARKS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TAPE_WRITE_MARKS), Is.EqualTo(12));
     }
 }

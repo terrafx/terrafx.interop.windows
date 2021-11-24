@@ -3,45 +3,44 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct IMAGE_ROM_OPTIONAL_HEADER
 {
-    public unsafe partial struct IMAGE_ROM_OPTIONAL_HEADER
-    {
-        [NativeTypeName("WORD")]
-        public ushort Magic;
+    [NativeTypeName("WORD")]
+    public ushort Magic;
 
-        public byte MajorLinkerVersion;
+    public byte MajorLinkerVersion;
 
-        public byte MinorLinkerVersion;
+    public byte MinorLinkerVersion;
 
-        [NativeTypeName("DWORD")]
-        public uint SizeOfCode;
+    [NativeTypeName("DWORD")]
+    public uint SizeOfCode;
 
-        [NativeTypeName("DWORD")]
-        public uint SizeOfInitializedData;
+    [NativeTypeName("DWORD")]
+    public uint SizeOfInitializedData;
 
-        [NativeTypeName("DWORD")]
-        public uint SizeOfUninitializedData;
+    [NativeTypeName("DWORD")]
+    public uint SizeOfUninitializedData;
 
-        [NativeTypeName("DWORD")]
-        public uint AddressOfEntryPoint;
+    [NativeTypeName("DWORD")]
+    public uint AddressOfEntryPoint;
 
-        [NativeTypeName("DWORD")]
-        public uint BaseOfCode;
+    [NativeTypeName("DWORD")]
+    public uint BaseOfCode;
 
-        [NativeTypeName("DWORD")]
-        public uint BaseOfData;
+    [NativeTypeName("DWORD")]
+    public uint BaseOfData;
 
-        [NativeTypeName("DWORD")]
-        public uint BaseOfBss;
+    [NativeTypeName("DWORD")]
+    public uint BaseOfBss;
 
-        [NativeTypeName("DWORD")]
-        public uint GprMask;
+    [NativeTypeName("DWORD")]
+    public uint GprMask;
 
-        [NativeTypeName("DWORD [4]")]
-        public fixed uint CprMask[4];
+    [NativeTypeName("DWORD [4]")]
+    public fixed uint CprMask[4];
 
-        [NativeTypeName("DWORD")]
-        public uint GpValue;
-    }
+    [NativeTypeName("DWORD")]
+    public uint GpValue;
 }

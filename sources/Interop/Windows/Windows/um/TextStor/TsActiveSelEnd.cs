@@ -3,12 +3,11 @@
 // Ported from um/TextStor.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum TsActiveSelEnd
 {
-    public enum TsActiveSelEnd
-    {
-        TS_AE_NONE = 0,
-        TS_AE_START = 1,
-        TS_AE_END = 2,
-    }
+    TS_AE_NONE = 0,
+    TS_AE_START = 1,
+    TS_AE_END = 2,
 }

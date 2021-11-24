@@ -3,14 +3,13 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct CERT_PAIR
-    {
-        [NativeTypeName("CERT_BLOB")]
-        public CRYPT_DATA_BLOB Forward;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("CERT_BLOB")]
-        public CRYPT_DATA_BLOB Reverse;
-    }
+public partial struct CERT_PAIR
+{
+    [NativeTypeName("CERT_BLOB")]
+    public CRYPT_DATA_BLOB Forward;
+
+    [NativeTypeName("CERT_BLOB")]
+    public CRYPT_DATA_BLOB Reverse;
 }

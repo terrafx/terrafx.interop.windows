@@ -7,338 +7,337 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3050F80C-98B5-11CF-BB82-00AA00BDCE0B")]
+[NativeTypeName("struct IHTMLDocument5 : IDispatch")]
+[NativeInheritance("IDispatch")]
+public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
 {
-    [Guid("3050F80C-98B5-11CF-BB82-00AA00BDCE0B")]
-    [NativeTypeName("struct IHTMLDocument5 : IDispatch")]
-    [NativeInheritance("IDispatch")]
-    public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IHTMLDocument5*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, uint>)(lpVtbl[1]))((IHTMLDocument5*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, uint>)(lpVtbl[1]))((IHTMLDocument5*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, uint>)(lpVtbl[2]))((IHTMLDocument5*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, uint>)(lpVtbl[2]))((IHTMLDocument5*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetTypeInfoCount(uint* pctinfo)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, uint*, int>)(lpVtbl[3]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), pctinfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetTypeInfoCount(uint* pctinfo)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, uint*, int>)(lpVtbl[3]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), pctinfo);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(6)]
-        public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT put_onmousewheel(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, VARIANT, int>)(lpVtbl[7]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), v);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT get_onmousewheel(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, VARIANT*, int>)(lpVtbl[8]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT get_doctype(IHTMLDOMNode** p)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, IHTMLDOMNode**, int>)(lpVtbl[9]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT get_implementation(IHTMLDOMImplementation** p)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, IHTMLDOMImplementation**, int>)(lpVtbl[10]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT createAttribute([NativeTypeName("BSTR")] ushort* bstrattrName, IHTMLDOMAttribute** ppattribute)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, ushort*, IHTMLDOMAttribute**, int>)(lpVtbl[11]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), bstrattrName, ppattribute);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT createComment([NativeTypeName("BSTR")] ushort* bstrdata, IHTMLDOMNode** ppRetNode)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, ushort*, IHTMLDOMNode**, int>)(lpVtbl[12]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), bstrdata, ppRetNode);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT put_onfocusin(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, VARIANT, int>)(lpVtbl[13]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT get_onfocusin(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, VARIANT*, int>)(lpVtbl[14]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT put_onfocusout(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, VARIANT, int>)(lpVtbl[15]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT get_onfocusout(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, VARIANT*, int>)(lpVtbl[16]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT put_onactivate(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, VARIANT, int>)(lpVtbl[17]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT get_onactivate(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, VARIANT*, int>)(lpVtbl[18]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT put_ondeactivate(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, VARIANT, int>)(lpVtbl[19]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT get_ondeactivate(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, VARIANT*, int>)(lpVtbl[20]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(21)]
+    public HRESULT put_onbeforeactivate(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, VARIANT, int>)(lpVtbl[21]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(22)]
+    public HRESULT get_onbeforeactivate(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, VARIANT*, int>)(lpVtbl[22]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(23)]
+    public HRESULT put_onbeforedeactivate(VARIANT v)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, VARIANT, int>)(lpVtbl[23]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), v);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(24)]
+    public HRESULT get_onbeforedeactivate(VARIANT* p)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, VARIANT*, int>)(lpVtbl[24]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(25)]
+    public HRESULT get_compatMode([NativeTypeName("BSTR *")] ushort** p)
+    {
+        return ((delegate* unmanaged<IHTMLDocument5*, ushort**, int>)(lpVtbl[25]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
+    }
+
+    public interface Interface : IDispatch.Interface
+    {
         [VtblIndex(7)]
-        public HRESULT put_onmousewheel(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, VARIANT, int>)(lpVtbl[7]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onmousewheel(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT get_onmousewheel(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, VARIANT*, int>)(lpVtbl[8]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onmousewheel(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT get_doctype(IHTMLDOMNode** p)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, IHTMLDOMNode**, int>)(lpVtbl[9]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_doctype(IHTMLDOMNode** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT get_implementation(IHTMLDOMImplementation** p)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, IHTMLDOMImplementation**, int>)(lpVtbl[10]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_implementation(IHTMLDOMImplementation** p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT createAttribute([NativeTypeName("BSTR")] ushort* bstrattrName, IHTMLDOMAttribute** ppattribute)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, ushort*, IHTMLDOMAttribute**, int>)(lpVtbl[11]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), bstrattrName, ppattribute);
-        }
+        HRESULT createAttribute([NativeTypeName("BSTR")] ushort* bstrattrName, IHTMLDOMAttribute** ppattribute);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT createComment([NativeTypeName("BSTR")] ushort* bstrdata, IHTMLDOMNode** ppRetNode)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, ushort*, IHTMLDOMNode**, int>)(lpVtbl[12]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), bstrdata, ppRetNode);
-        }
+        HRESULT createComment([NativeTypeName("BSTR")] ushort* bstrdata, IHTMLDOMNode** ppRetNode);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT put_onfocusin(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, VARIANT, int>)(lpVtbl[13]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onfocusin(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT get_onfocusin(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, VARIANT*, int>)(lpVtbl[14]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onfocusin(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT put_onfocusout(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, VARIANT, int>)(lpVtbl[15]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onfocusout(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT get_onfocusout(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, VARIANT*, int>)(lpVtbl[16]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onfocusout(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT put_onactivate(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, VARIANT, int>)(lpVtbl[17]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onactivate(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT get_onactivate(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, VARIANT*, int>)(lpVtbl[18]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onactivate(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT put_ondeactivate(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, VARIANT, int>)(lpVtbl[19]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_ondeactivate(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT get_ondeactivate(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, VARIANT*, int>)(lpVtbl[20]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_ondeactivate(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT put_onbeforeactivate(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, VARIANT, int>)(lpVtbl[21]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onbeforeactivate(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        public HRESULT get_onbeforeactivate(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, VARIANT*, int>)(lpVtbl[22]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onbeforeactivate(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public HRESULT put_onbeforedeactivate(VARIANT v)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, VARIANT, int>)(lpVtbl[23]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), v);
-        }
+        HRESULT put_onbeforedeactivate(VARIANT v);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT get_onbeforedeactivate(VARIANT* p)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, VARIANT*, int>)(lpVtbl[24]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_onbeforedeactivate(VARIANT* p);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public HRESULT get_compatMode([NativeTypeName("BSTR *")] ushort** p)
-        {
-            return ((delegate* unmanaged<IHTMLDocument5*, ushort**, int>)(lpVtbl[25]))((IHTMLDocument5*)Unsafe.AsPointer(ref this), p);
-        }
+        HRESULT get_compatMode([NativeTypeName("BSTR *")] ushort** p);
+    }
 
-        public interface Interface : IDispatch.Interface
-        {
-            [VtblIndex(7)]
-            HRESULT put_onmousewheel(VARIANT v);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(8)]
-            HRESULT get_onmousewheel(VARIANT* p);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, uint> AddRef;
 
-            [VtblIndex(9)]
-            HRESULT get_doctype(IHTMLDOMNode** p);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, uint> Release;
 
-            [VtblIndex(10)]
-            HRESULT get_implementation(IHTMLDOMImplementation** p);
+        [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, uint*, int> GetTypeInfoCount;
 
-            [VtblIndex(11)]
-            HRESULT createAttribute([NativeTypeName("BSTR")] ushort* bstrattrName, IHTMLDOMAttribute** ppattribute);
+        [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
-            [VtblIndex(12)]
-            HRESULT createComment([NativeTypeName("BSTR")] ushort* bstrdata, IHTMLDOMNode** ppRetNode);
+        [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
-            [VtblIndex(13)]
-            HRESULT put_onfocusin(VARIANT v);
+        [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
-            [VtblIndex(14)]
-            HRESULT get_onfocusin(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, VARIANT, int> put_onmousewheel;
 
-            [VtblIndex(15)]
-            HRESULT put_onfocusout(VARIANT v);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, VARIANT*, int> get_onmousewheel;
 
-            [VtblIndex(16)]
-            HRESULT get_onfocusout(VARIANT* p);
+        [NativeTypeName("HRESULT (IHTMLDOMNode **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, IHTMLDOMNode**, int> get_doctype;
 
-            [VtblIndex(17)]
-            HRESULT put_onactivate(VARIANT v);
+        [NativeTypeName("HRESULT (IHTMLDOMImplementation **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, IHTMLDOMImplementation**, int> get_implementation;
 
-            [VtblIndex(18)]
-            HRESULT get_onactivate(VARIANT* p);
+        [NativeTypeName("HRESULT (BSTR, IHTMLDOMAttribute **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, ushort*, IHTMLDOMAttribute**, int> createAttribute;
 
-            [VtblIndex(19)]
-            HRESULT put_ondeactivate(VARIANT v);
+        [NativeTypeName("HRESULT (BSTR, IHTMLDOMNode **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, ushort*, IHTMLDOMNode**, int> createComment;
 
-            [VtblIndex(20)]
-            HRESULT get_ondeactivate(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, VARIANT, int> put_onfocusin;
 
-            [VtblIndex(21)]
-            HRESULT put_onbeforeactivate(VARIANT v);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, VARIANT*, int> get_onfocusin;
 
-            [VtblIndex(22)]
-            HRESULT get_onbeforeactivate(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, VARIANT, int> put_onfocusout;
 
-            [VtblIndex(23)]
-            HRESULT put_onbeforedeactivate(VARIANT v);
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, VARIANT*, int> get_onfocusout;
 
-            [VtblIndex(24)]
-            HRESULT get_onbeforedeactivate(VARIANT* p);
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, VARIANT, int> put_onactivate;
 
-            [VtblIndex(25)]
-            HRESULT get_compatMode([NativeTypeName("BSTR *")] ushort** p);
-        }
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, VARIANT*, int> get_onactivate;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, VARIANT, int> put_ondeactivate;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, uint> AddRef;
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, VARIANT*, int> get_ondeactivate;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, uint> Release;
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, VARIANT, int> put_onbeforeactivate;
 
-            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, uint*, int> GetTypeInfoCount;
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, VARIANT*, int> get_onbeforeactivate;
 
-            [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, VARIANT, int> put_onbeforedeactivate;
 
-            [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, VARIANT*, int> get_onbeforedeactivate;
 
-            [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, VARIANT, int> put_onmousewheel;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, VARIANT*, int> get_onmousewheel;
-
-            [NativeTypeName("HRESULT (IHTMLDOMNode **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, IHTMLDOMNode**, int> get_doctype;
-
-            [NativeTypeName("HRESULT (IHTMLDOMImplementation **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, IHTMLDOMImplementation**, int> get_implementation;
-
-            [NativeTypeName("HRESULT (BSTR, IHTMLDOMAttribute **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, ushort*, IHTMLDOMAttribute**, int> createAttribute;
-
-            [NativeTypeName("HRESULT (BSTR, IHTMLDOMNode **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, ushort*, IHTMLDOMNode**, int> createComment;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, VARIANT, int> put_onfocusin;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, VARIANT*, int> get_onfocusin;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, VARIANT, int> put_onfocusout;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, VARIANT*, int> get_onfocusout;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, VARIANT, int> put_onactivate;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, VARIANT*, int> get_onactivate;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, VARIANT, int> put_ondeactivate;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, VARIANT*, int> get_ondeactivate;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, VARIANT, int> put_onbeforeactivate;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, VARIANT*, int> get_onbeforeactivate;
-
-            [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, VARIANT, int> put_onbeforedeactivate;
-
-            [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, VARIANT*, int> get_onbeforedeactivate;
-
-            [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IHTMLDocument5*, ushort**, int> get_compatMode;
-        }
+        [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IHTMLDocument5*, ushort**, int> get_compatMode;
     }
 }

@@ -7,168 +7,167 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("EA76AFF8-EA22-4A23-A0EF-A6A966703518")]
+[NativeTypeName("struct IUIAnimationInterpolator2 : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IUIAnimationInterpolator2 : IUIAnimationInterpolator2.Interface
 {
-    [Guid("EA76AFF8-EA22-4A23-A0EF-A6A966703518")]
-    [NativeTypeName("struct IUIAnimationInterpolator2 : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IUIAnimationInterpolator2 : IUIAnimationInterpolator2.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IUIAnimationInterpolator2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IUIAnimationInterpolator2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IUIAnimationInterpolator2*, uint>)(lpVtbl[1]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IUIAnimationInterpolator2*, uint>)(lpVtbl[1]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IUIAnimationInterpolator2*, uint>)(lpVtbl[2]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IUIAnimationInterpolator2*, uint>)(lpVtbl[2]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetDimension(uint* dimension)
+    {
+        return ((delegate* unmanaged<IUIAnimationInterpolator2*, uint*, int>)(lpVtbl[3]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this), dimension);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT SetInitialValueAndVelocity(double* initialValue, double* initialVelocity, uint cDimension)
+    {
+        return ((delegate* unmanaged<IUIAnimationInterpolator2*, double*, double*, uint, int>)(lpVtbl[4]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this), initialValue, initialVelocity, cDimension);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT SetDuration([NativeTypeName("UI_ANIMATION_SECONDS")] double duration)
+    {
+        return ((delegate* unmanaged<IUIAnimationInterpolator2*, double, int>)(lpVtbl[5]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this), duration);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetDuration([NativeTypeName("UI_ANIMATION_SECONDS *")] double* duration)
+    {
+        return ((delegate* unmanaged<IUIAnimationInterpolator2*, double*, int>)(lpVtbl[6]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this), duration);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT GetFinalValue(double* value, uint cDimension)
+    {
+        return ((delegate* unmanaged<IUIAnimationInterpolator2*, double*, uint, int>)(lpVtbl[7]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this), value, cDimension);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT InterpolateValue([NativeTypeName("UI_ANIMATION_SECONDS")] double offset, double* value, uint cDimension)
+    {
+        return ((delegate* unmanaged<IUIAnimationInterpolator2*, double, double*, uint, int>)(lpVtbl[8]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this), offset, value, cDimension);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT InterpolateVelocity([NativeTypeName("UI_ANIMATION_SECONDS")] double offset, double* velocity, uint cDimension)
+    {
+        return ((delegate* unmanaged<IUIAnimationInterpolator2*, double, double*, uint, int>)(lpVtbl[9]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this), offset, velocity, cDimension);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT GetPrimitiveInterpolation(IUIAnimationPrimitiveInterpolation* interpolation, uint cDimension)
+    {
+        return ((delegate* unmanaged<IUIAnimationInterpolator2*, IUIAnimationPrimitiveInterpolation*, uint, int>)(lpVtbl[10]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this), interpolation, cDimension);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT GetDependencies(UI_ANIMATION_DEPENDENCIES* initialValueDependencies, UI_ANIMATION_DEPENDENCIES* initialVelocityDependencies, UI_ANIMATION_DEPENDENCIES* durationDependencies)
+    {
+        return ((delegate* unmanaged<IUIAnimationInterpolator2*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, int>)(lpVtbl[11]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this), initialValueDependencies, initialVelocityDependencies, durationDependencies);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetDimension(uint* dimension)
-        {
-            return ((delegate* unmanaged<IUIAnimationInterpolator2*, uint*, int>)(lpVtbl[3]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this), dimension);
-        }
+        HRESULT GetDimension(uint* dimension);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetInitialValueAndVelocity(double* initialValue, double* initialVelocity, uint cDimension)
-        {
-            return ((delegate* unmanaged<IUIAnimationInterpolator2*, double*, double*, uint, int>)(lpVtbl[4]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this), initialValue, initialVelocity, cDimension);
-        }
+        HRESULT SetInitialValueAndVelocity(double* initialValue, double* initialVelocity, uint cDimension);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetDuration([NativeTypeName("UI_ANIMATION_SECONDS")] double duration)
-        {
-            return ((delegate* unmanaged<IUIAnimationInterpolator2*, double, int>)(lpVtbl[5]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this), duration);
-        }
+        HRESULT SetDuration([NativeTypeName("UI_ANIMATION_SECONDS")] double duration);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT GetDuration([NativeTypeName("UI_ANIMATION_SECONDS *")] double* duration)
-        {
-            return ((delegate* unmanaged<IUIAnimationInterpolator2*, double*, int>)(lpVtbl[6]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this), duration);
-        }
+        HRESULT GetDuration([NativeTypeName("UI_ANIMATION_SECONDS *")] double* duration);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GetFinalValue(double* value, uint cDimension)
-        {
-            return ((delegate* unmanaged<IUIAnimationInterpolator2*, double*, uint, int>)(lpVtbl[7]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this), value, cDimension);
-        }
+        HRESULT GetFinalValue(double* value, uint cDimension);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT InterpolateValue([NativeTypeName("UI_ANIMATION_SECONDS")] double offset, double* value, uint cDimension)
-        {
-            return ((delegate* unmanaged<IUIAnimationInterpolator2*, double, double*, uint, int>)(lpVtbl[8]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this), offset, value, cDimension);
-        }
+        HRESULT InterpolateValue([NativeTypeName("UI_ANIMATION_SECONDS")] double offset, double* value, uint cDimension);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT InterpolateVelocity([NativeTypeName("UI_ANIMATION_SECONDS")] double offset, double* velocity, uint cDimension)
-        {
-            return ((delegate* unmanaged<IUIAnimationInterpolator2*, double, double*, uint, int>)(lpVtbl[9]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this), offset, velocity, cDimension);
-        }
+        HRESULT InterpolateVelocity([NativeTypeName("UI_ANIMATION_SECONDS")] double offset, double* velocity, uint cDimension);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT GetPrimitiveInterpolation(IUIAnimationPrimitiveInterpolation* interpolation, uint cDimension)
-        {
-            return ((delegate* unmanaged<IUIAnimationInterpolator2*, IUIAnimationPrimitiveInterpolation*, uint, int>)(lpVtbl[10]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this), interpolation, cDimension);
-        }
+        HRESULT GetPrimitiveInterpolation(IUIAnimationPrimitiveInterpolation* interpolation, uint cDimension);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT GetDependencies(UI_ANIMATION_DEPENDENCIES* initialValueDependencies, UI_ANIMATION_DEPENDENCIES* initialVelocityDependencies, UI_ANIMATION_DEPENDENCIES* durationDependencies)
-        {
-            return ((delegate* unmanaged<IUIAnimationInterpolator2*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, int>)(lpVtbl[11]))((IUIAnimationInterpolator2*)Unsafe.AsPointer(ref this), initialValueDependencies, initialVelocityDependencies, durationDependencies);
-        }
+        HRESULT GetDependencies(UI_ANIMATION_DEPENDENCIES* initialValueDependencies, UI_ANIMATION_DEPENDENCIES* initialVelocityDependencies, UI_ANIMATION_DEPENDENCIES* durationDependencies);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetDimension(uint* dimension);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationInterpolator2*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT SetInitialValueAndVelocity(double* initialValue, double* initialVelocity, uint cDimension);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationInterpolator2*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT SetDuration([NativeTypeName("UI_ANIMATION_SECONDS")] double duration);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationInterpolator2*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT GetDuration([NativeTypeName("UI_ANIMATION_SECONDS *")] double* duration);
+        [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationInterpolator2*, uint*, int> GetDimension;
 
-            [VtblIndex(7)]
-            HRESULT GetFinalValue(double* value, uint cDimension);
+        [NativeTypeName("HRESULT (DOUBLE *, DOUBLE *, UINT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationInterpolator2*, double*, double*, uint, int> SetInitialValueAndVelocity;
 
-            [VtblIndex(8)]
-            HRESULT InterpolateValue([NativeTypeName("UI_ANIMATION_SECONDS")] double offset, double* value, uint cDimension);
+        [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationInterpolator2*, double, int> SetDuration;
 
-            [VtblIndex(9)]
-            HRESULT InterpolateVelocity([NativeTypeName("UI_ANIMATION_SECONDS")] double offset, double* velocity, uint cDimension);
+        [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationInterpolator2*, double*, int> GetDuration;
 
-            [VtblIndex(10)]
-            HRESULT GetPrimitiveInterpolation(IUIAnimationPrimitiveInterpolation* interpolation, uint cDimension);
+        [NativeTypeName("HRESULT (DOUBLE *, UINT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationInterpolator2*, double*, uint, int> GetFinalValue;
 
-            [VtblIndex(11)]
-            HRESULT GetDependencies(UI_ANIMATION_DEPENDENCIES* initialValueDependencies, UI_ANIMATION_DEPENDENCIES* initialVelocityDependencies, UI_ANIMATION_DEPENDENCIES* durationDependencies);
-        }
+        [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE *, UINT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationInterpolator2*, double, double*, uint, int> InterpolateValue;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationInterpolator2*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE *, UINT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationInterpolator2*, double, double*, uint, int> InterpolateVelocity;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationInterpolator2*, uint> AddRef;
+        [NativeTypeName("HRESULT (IUIAnimationPrimitiveInterpolation *, UINT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationInterpolator2*, IUIAnimationPrimitiveInterpolation*, uint, int> GetPrimitiveInterpolation;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationInterpolator2*, uint> Release;
-
-            [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationInterpolator2*, uint*, int> GetDimension;
-
-            [NativeTypeName("HRESULT (DOUBLE *, DOUBLE *, UINT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationInterpolator2*, double*, double*, uint, int> SetInitialValueAndVelocity;
-
-            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationInterpolator2*, double, int> SetDuration;
-
-            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationInterpolator2*, double*, int> GetDuration;
-
-            [NativeTypeName("HRESULT (DOUBLE *, UINT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationInterpolator2*, double*, uint, int> GetFinalValue;
-
-            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE *, UINT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationInterpolator2*, double, double*, uint, int> InterpolateValue;
-
-            [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE *, UINT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationInterpolator2*, double, double*, uint, int> InterpolateVelocity;
-
-            [NativeTypeName("HRESULT (IUIAnimationPrimitiveInterpolation *, UINT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationInterpolator2*, IUIAnimationPrimitiveInterpolation*, uint, int> GetPrimitiveInterpolation;
-
-            [NativeTypeName("HRESULT (UI_ANIMATION_DEPENDENCIES *, UI_ANIMATION_DEPENDENCIES *, UI_ANIMATION_DEPENDENCIES *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUIAnimationInterpolator2*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, int> GetDependencies;
-        }
+        [NativeTypeName("HRESULT (UI_ANIMATION_DEPENDENCIES *, UI_ANIMATION_DEPENDENCIES *, UI_ANIMATION_DEPENDENCIES *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUIAnimationInterpolator2*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, int> GetDependencies;
     }
 }

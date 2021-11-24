@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="FILEPATHS_SIGNERINFO64_W" /> struct.</summary>
+public static unsafe partial class FILEPATHS_SIGNERINFO64_WTests
 {
-    /// <summary>Provides validation of the <see cref="FILEPATHS_SIGNERINFO64_W" /> struct.</summary>
-    public static unsafe partial class FILEPATHS_SIGNERINFO64_WTests
+    /// <summary>Validates that the <see cref="FILEPATHS_SIGNERINFO64_W" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="FILEPATHS_SIGNERINFO64_W" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<FILEPATHS_SIGNERINFO64_W>(), Is.EqualTo(sizeof(FILEPATHS_SIGNERINFO64_W)));
-        }
+        Assert.That(Marshal.SizeOf<FILEPATHS_SIGNERINFO64_W>(), Is.EqualTo(sizeof(FILEPATHS_SIGNERINFO64_W)));
+    }
 
-        /// <summary>Validates that the <see cref="FILEPATHS_SIGNERINFO64_W" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(FILEPATHS_SIGNERINFO64_W).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="FILEPATHS_SIGNERINFO64_W" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(FILEPATHS_SIGNERINFO64_W).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="FILEPATHS_SIGNERINFO64_W" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="FILEPATHS_SIGNERINFO64_W" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(FILEPATHS_SIGNERINFO64_W), Is.EqualTo(48));
-            }
-            else
-            {
-                Assert.That(sizeof(FILEPATHS_SIGNERINFO64_W), Is.EqualTo(28));
-            }
+            Assert.That(sizeof(FILEPATHS_SIGNERINFO64_W), Is.EqualTo(48));
+        }
+        else
+        {
+            Assert.That(sizeof(FILEPATHS_SIGNERINFO64_W), Is.EqualTo(28));
         }
     }
 }

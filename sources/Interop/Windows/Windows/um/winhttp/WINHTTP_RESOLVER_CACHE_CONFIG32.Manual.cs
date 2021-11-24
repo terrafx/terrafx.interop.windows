@@ -5,26 +5,25 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 4)]
+public partial struct WINHTTP_RESOLVER_CACHE_CONFIG32
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 4)]
-    public partial struct WINHTTP_RESOLVER_CACHE_CONFIG32
-    {
-        [NativeTypeName("ULONG")]
-        public uint ulMaxResolverCacheEntries;
+    [NativeTypeName("ULONG")]
+    public uint ulMaxResolverCacheEntries;
 
-        [NativeTypeName("ULONG")]
-        public uint ulMaxCacheEntryAge;
+    [NativeTypeName("ULONG")]
+    public uint ulMaxCacheEntryAge;
 
-        [NativeTypeName("ULONG")]
-        public uint ulMinCacheEntryTtl;
+    [NativeTypeName("ULONG")]
+    public uint ulMinCacheEntryTtl;
 
-        public WINHTTP_SECURE_DNS_SETTING SecureDnsSetting;
+    public WINHTTP_SECURE_DNS_SETTING SecureDnsSetting;
 
-        [NativeTypeName("ULONGLONG")]
-        public ulong ullConnResolutionWaitTime;
+    [NativeTypeName("ULONGLONG")]
+    public ulong ullConnResolutionWaitTime;
 
-        [NativeTypeName("ULONGLONG")]
-        public ulong ullFlags;
-    }
+    [NativeTypeName("ULONGLONG")]
+    public ulong ullFlags;
 }

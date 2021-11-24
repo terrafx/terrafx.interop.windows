@@ -8,376 +8,375 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Guid("54D7898A-A061-40A7-BEC7-E465BCBA2C4F")]
+[NativeTypeName("struct ID2D1CommandSink : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ID2D1CommandSink : ID2D1CommandSink.Interface
 {
-    [Guid("54D7898A-A061-40A7-BEC7-E465BCBA2C4F")]
-    [NativeTypeName("struct ID2D1CommandSink : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ID2D1CommandSink : ID2D1CommandSink.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ID2D1CommandSink*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, uint>)(lpVtbl[1]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, uint>)(lpVtbl[1]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, uint>)(lpVtbl[2]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, uint>)(lpVtbl[2]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT BeginDraw()
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, int>)(lpVtbl[3]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT EndDraw()
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, int>)(lpVtbl[4]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT SetAntialiasMode(D2D1_ANTIALIAS_MODE antialiasMode)
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, D2D1_ANTIALIAS_MODE, int>)(lpVtbl[5]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), antialiasMode);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT SetTags([NativeTypeName("D2D1_TAG")] ulong tag1, [NativeTypeName("D2D1_TAG")] ulong tag2)
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, ulong, ulong, int>)(lpVtbl[6]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), tag1, tag2);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode)
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, D2D1_TEXT_ANTIALIAS_MODE, int>)(lpVtbl[7]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), textAntialiasMode);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT SetTextRenderingParams(IDWriteRenderingParams* textRenderingParams)
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, IDWriteRenderingParams*, int>)(lpVtbl[8]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), textRenderingParams);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT SetTransform([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, D2D_MATRIX_3X2_F*, int>)(lpVtbl[9]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), transform);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT SetPrimitiveBlend(D2D1_PRIMITIVE_BLEND primitiveBlend)
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, D2D1_PRIMITIVE_BLEND, int>)(lpVtbl[10]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), primitiveBlend);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT SetUnitMode(D2D1_UNIT_MODE unitMode)
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, D2D1_UNIT_MODE, int>)(lpVtbl[11]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), unitMode);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT Clear([NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color)
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, DXGI_RGBA*, int>)(lpVtbl[12]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), color);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT DrawGlyphRun([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin, [NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, [NativeTypeName("const DWRITE_GLYPH_RUN_DESCRIPTION *")] DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, ID2D1Brush* foregroundBrush, DWRITE_MEASURING_MODE measuringMode)
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, D2D_POINT_2F, DWRITE_GLYPH_RUN*, DWRITE_GLYPH_RUN_DESCRIPTION*, ID2D1Brush*, DWRITE_MEASURING_MODE, int>)(lpVtbl[13]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), baselineOrigin, glyphRun, glyphRunDescription, foregroundBrush, measuringMode);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT DrawLine([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point0, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point1, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, D2D_POINT_2F, D2D_POINT_2F, ID2D1Brush*, float, ID2D1StrokeStyle*, int>)(lpVtbl[14]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), point0, point1, brush, strokeWidth, strokeStyle);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT DrawGeometry(ID2D1Geometry* geometry, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, ID2D1Geometry*, ID2D1Brush*, float, ID2D1StrokeStyle*, int>)(lpVtbl[15]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), geometry, brush, strokeWidth, strokeStyle);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT DrawRectangle([NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, D2D_RECT_F*, ID2D1Brush*, float, ID2D1StrokeStyle*, int>)(lpVtbl[16]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), rect, brush, strokeWidth, strokeStyle);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT DrawBitmap(ID2D1Bitmap* bitmap, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle, float opacity, D2D1_INTERPOLATION_MODE interpolationMode, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle, [NativeTypeName("const D2D1_MATRIX_4X4_F *")] D2D_MATRIX_4X4_F* perspectiveTransform)
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, ID2D1Bitmap*, D2D_RECT_F*, float, D2D1_INTERPOLATION_MODE, D2D_RECT_F*, D2D_MATRIX_4X4_F*, int>)(lpVtbl[17]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), bitmap, destinationRectangle, opacity, interpolationMode, sourceRectangle, perspectiveTransform);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT DrawImage(ID2D1Image* image, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* targetOffset, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode, D2D1_COMPOSITE_MODE compositeMode)
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, ID2D1Image*, D2D_POINT_2F*, D2D_RECT_F*, D2D1_INTERPOLATION_MODE, D2D1_COMPOSITE_MODE, int>)(lpVtbl[18]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), image, targetOffset, imageRectangle, interpolationMode, compositeMode);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT DrawGdiMetafile(ID2D1GdiMetafile* gdiMetafile, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* targetOffset)
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, ID2D1GdiMetafile*, D2D_POINT_2F*, int>)(lpVtbl[19]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), gdiMetafile, targetOffset);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT FillMesh(ID2D1Mesh* mesh, ID2D1Brush* brush)
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, ID2D1Mesh*, ID2D1Brush*, int>)(lpVtbl[20]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), mesh, brush);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(21)]
+    public HRESULT FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle)
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, ID2D1Bitmap*, ID2D1Brush*, D2D_RECT_F*, D2D_RECT_F*, int>)(lpVtbl[21]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), opacityMask, brush, destinationRectangle, sourceRectangle);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(22)]
+    public HRESULT FillGeometry(ID2D1Geometry* geometry, ID2D1Brush* brush, ID2D1Brush* opacityBrush)
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, ID2D1Geometry*, ID2D1Brush*, ID2D1Brush*, int>)(lpVtbl[22]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), geometry, brush, opacityBrush);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(23)]
+    public HRESULT FillRectangle([NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* rect, ID2D1Brush* brush)
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, D2D_RECT_F*, ID2D1Brush*, int>)(lpVtbl[23]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), rect, brush);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(24)]
+    public HRESULT PushAxisAlignedClip([NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* clipRect, D2D1_ANTIALIAS_MODE antialiasMode)
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, D2D_RECT_F*, D2D1_ANTIALIAS_MODE, int>)(lpVtbl[24]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), clipRect, antialiasMode);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(25)]
+    public HRESULT PushLayer([NativeTypeName("const D2D1_LAYER_PARAMETERS1 *")] D2D1_LAYER_PARAMETERS1* layerParameters1, ID2D1Layer* layer)
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, D2D1_LAYER_PARAMETERS1*, ID2D1Layer*, int>)(lpVtbl[25]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), layerParameters1, layer);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(26)]
+    public HRESULT PopAxisAlignedClip()
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, int>)(lpVtbl[26]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(27)]
+    public HRESULT PopLayer()
+    {
+        return ((delegate* unmanaged<ID2D1CommandSink*, int>)(lpVtbl[27]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT BeginDraw()
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, int>)(lpVtbl[3]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT BeginDraw();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT EndDraw()
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, int>)(lpVtbl[4]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT EndDraw();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetAntialiasMode(D2D1_ANTIALIAS_MODE antialiasMode)
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, D2D1_ANTIALIAS_MODE, int>)(lpVtbl[5]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), antialiasMode);
-        }
+        HRESULT SetAntialiasMode(D2D1_ANTIALIAS_MODE antialiasMode);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT SetTags([NativeTypeName("D2D1_TAG")] ulong tag1, [NativeTypeName("D2D1_TAG")] ulong tag2)
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, ulong, ulong, int>)(lpVtbl[6]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), tag1, tag2);
-        }
+        HRESULT SetTags([NativeTypeName("D2D1_TAG")] ulong tag1, [NativeTypeName("D2D1_TAG")] ulong tag2);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode)
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, D2D1_TEXT_ANTIALIAS_MODE, int>)(lpVtbl[7]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), textAntialiasMode);
-        }
+        HRESULT SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT SetTextRenderingParams(IDWriteRenderingParams* textRenderingParams)
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, IDWriteRenderingParams*, int>)(lpVtbl[8]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), textRenderingParams);
-        }
+        HRESULT SetTextRenderingParams(IDWriteRenderingParams* textRenderingParams);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT SetTransform([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, D2D_MATRIX_3X2_F*, int>)(lpVtbl[9]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), transform);
-        }
+        HRESULT SetTransform([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT SetPrimitiveBlend(D2D1_PRIMITIVE_BLEND primitiveBlend)
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, D2D1_PRIMITIVE_BLEND, int>)(lpVtbl[10]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), primitiveBlend);
-        }
+        HRESULT SetPrimitiveBlend(D2D1_PRIMITIVE_BLEND primitiveBlend);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT SetUnitMode(D2D1_UNIT_MODE unitMode)
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, D2D1_UNIT_MODE, int>)(lpVtbl[11]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), unitMode);
-        }
+        HRESULT SetUnitMode(D2D1_UNIT_MODE unitMode);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT Clear([NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color)
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, DXGI_RGBA*, int>)(lpVtbl[12]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), color);
-        }
+        HRESULT Clear([NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT DrawGlyphRun([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin, [NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, [NativeTypeName("const DWRITE_GLYPH_RUN_DESCRIPTION *")] DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, ID2D1Brush* foregroundBrush, DWRITE_MEASURING_MODE measuringMode)
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, D2D_POINT_2F, DWRITE_GLYPH_RUN*, DWRITE_GLYPH_RUN_DESCRIPTION*, ID2D1Brush*, DWRITE_MEASURING_MODE, int>)(lpVtbl[13]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), baselineOrigin, glyphRun, glyphRunDescription, foregroundBrush, measuringMode);
-        }
+        HRESULT DrawGlyphRun([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin, [NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, [NativeTypeName("const DWRITE_GLYPH_RUN_DESCRIPTION *")] DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, ID2D1Brush* foregroundBrush, DWRITE_MEASURING_MODE measuringMode);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT DrawLine([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point0, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point1, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, D2D_POINT_2F, D2D_POINT_2F, ID2D1Brush*, float, ID2D1StrokeStyle*, int>)(lpVtbl[14]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), point0, point1, brush, strokeWidth, strokeStyle);
-        }
+        HRESULT DrawLine([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point0, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point1, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT DrawGeometry(ID2D1Geometry* geometry, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, ID2D1Geometry*, ID2D1Brush*, float, ID2D1StrokeStyle*, int>)(lpVtbl[15]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), geometry, brush, strokeWidth, strokeStyle);
-        }
+        HRESULT DrawGeometry(ID2D1Geometry* geometry, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT DrawRectangle([NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, D2D_RECT_F*, ID2D1Brush*, float, ID2D1StrokeStyle*, int>)(lpVtbl[16]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), rect, brush, strokeWidth, strokeStyle);
-        }
+        HRESULT DrawRectangle([NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT DrawBitmap(ID2D1Bitmap* bitmap, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle, float opacity, D2D1_INTERPOLATION_MODE interpolationMode, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle, [NativeTypeName("const D2D1_MATRIX_4X4_F *")] D2D_MATRIX_4X4_F* perspectiveTransform)
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, ID2D1Bitmap*, D2D_RECT_F*, float, D2D1_INTERPOLATION_MODE, D2D_RECT_F*, D2D_MATRIX_4X4_F*, int>)(lpVtbl[17]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), bitmap, destinationRectangle, opacity, interpolationMode, sourceRectangle, perspectiveTransform);
-        }
+        HRESULT DrawBitmap(ID2D1Bitmap* bitmap, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle, float opacity, D2D1_INTERPOLATION_MODE interpolationMode, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle, [NativeTypeName("const D2D1_MATRIX_4X4_F *")] D2D_MATRIX_4X4_F* perspectiveTransform);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT DrawImage(ID2D1Image* image, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* targetOffset, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode, D2D1_COMPOSITE_MODE compositeMode)
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, ID2D1Image*, D2D_POINT_2F*, D2D_RECT_F*, D2D1_INTERPOLATION_MODE, D2D1_COMPOSITE_MODE, int>)(lpVtbl[18]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), image, targetOffset, imageRectangle, interpolationMode, compositeMode);
-        }
+        HRESULT DrawImage(ID2D1Image* image, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* targetOffset, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode, D2D1_COMPOSITE_MODE compositeMode);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT DrawGdiMetafile(ID2D1GdiMetafile* gdiMetafile, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* targetOffset)
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, ID2D1GdiMetafile*, D2D_POINT_2F*, int>)(lpVtbl[19]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), gdiMetafile, targetOffset);
-        }
+        HRESULT DrawGdiMetafile(ID2D1GdiMetafile* gdiMetafile, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* targetOffset);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT FillMesh(ID2D1Mesh* mesh, ID2D1Brush* brush)
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, ID2D1Mesh*, ID2D1Brush*, int>)(lpVtbl[20]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), mesh, brush);
-        }
+        HRESULT FillMesh(ID2D1Mesh* mesh, ID2D1Brush* brush);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle)
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, ID2D1Bitmap*, ID2D1Brush*, D2D_RECT_F*, D2D_RECT_F*, int>)(lpVtbl[21]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), opacityMask, brush, destinationRectangle, sourceRectangle);
-        }
+        HRESULT FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        public HRESULT FillGeometry(ID2D1Geometry* geometry, ID2D1Brush* brush, ID2D1Brush* opacityBrush)
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, ID2D1Geometry*, ID2D1Brush*, ID2D1Brush*, int>)(lpVtbl[22]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), geometry, brush, opacityBrush);
-        }
+        HRESULT FillGeometry(ID2D1Geometry* geometry, ID2D1Brush* brush, ID2D1Brush* opacityBrush);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public HRESULT FillRectangle([NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* rect, ID2D1Brush* brush)
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, D2D_RECT_F*, ID2D1Brush*, int>)(lpVtbl[23]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), rect, brush);
-        }
+        HRESULT FillRectangle([NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* rect, ID2D1Brush* brush);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT PushAxisAlignedClip([NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* clipRect, D2D1_ANTIALIAS_MODE antialiasMode)
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, D2D_RECT_F*, D2D1_ANTIALIAS_MODE, int>)(lpVtbl[24]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), clipRect, antialiasMode);
-        }
+        HRESULT PushAxisAlignedClip([NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* clipRect, D2D1_ANTIALIAS_MODE antialiasMode);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public HRESULT PushLayer([NativeTypeName("const D2D1_LAYER_PARAMETERS1 *")] D2D1_LAYER_PARAMETERS1* layerParameters1, ID2D1Layer* layer)
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, D2D1_LAYER_PARAMETERS1*, ID2D1Layer*, int>)(lpVtbl[25]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this), layerParameters1, layer);
-        }
+        HRESULT PushLayer([NativeTypeName("const D2D1_LAYER_PARAMETERS1 *")] D2D1_LAYER_PARAMETERS1* layerParameters1, ID2D1Layer* layer);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        public HRESULT PopAxisAlignedClip()
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, int>)(lpVtbl[26]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT PopAxisAlignedClip();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        public HRESULT PopLayer()
-        {
-            return ((delegate* unmanaged<ID2D1CommandSink*, int>)(lpVtbl[27]))((ID2D1CommandSink*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT PopLayer();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT BeginDraw();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT EndDraw();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT SetAntialiasMode(D2D1_ANTIALIAS_MODE antialiasMode);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT SetTags([NativeTypeName("D2D1_TAG")] ulong tag1, [NativeTypeName("D2D1_TAG")] ulong tag2);
+        [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, int> BeginDraw;
 
-            [VtblIndex(7)]
-            HRESULT SetTextAntialiasMode(D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode);
+        [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, int> EndDraw;
 
-            [VtblIndex(8)]
-            HRESULT SetTextRenderingParams(IDWriteRenderingParams* textRenderingParams);
+        [NativeTypeName("HRESULT (D2D1_ANTIALIAS_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, D2D1_ANTIALIAS_MODE, int> SetAntialiasMode;
 
-            [VtblIndex(9)]
-            HRESULT SetTransform([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform);
+        [NativeTypeName("HRESULT (D2D1_TAG, D2D1_TAG) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, ulong, ulong, int> SetTags;
 
-            [VtblIndex(10)]
-            HRESULT SetPrimitiveBlend(D2D1_PRIMITIVE_BLEND primitiveBlend);
+        [NativeTypeName("HRESULT (D2D1_TEXT_ANTIALIAS_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, D2D1_TEXT_ANTIALIAS_MODE, int> SetTextAntialiasMode;
 
-            [VtblIndex(11)]
-            HRESULT SetUnitMode(D2D1_UNIT_MODE unitMode);
+        [NativeTypeName("HRESULT (IDWriteRenderingParams *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, IDWriteRenderingParams*, int> SetTextRenderingParams;
 
-            [VtblIndex(12)]
-            HRESULT Clear([NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color);
+        [NativeTypeName("HRESULT (const D2D1_MATRIX_3X2_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, D2D_MATRIX_3X2_F*, int> SetTransform;
 
-            [VtblIndex(13)]
-            HRESULT DrawGlyphRun([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F baselineOrigin, [NativeTypeName("const DWRITE_GLYPH_RUN *")] DWRITE_GLYPH_RUN* glyphRun, [NativeTypeName("const DWRITE_GLYPH_RUN_DESCRIPTION *")] DWRITE_GLYPH_RUN_DESCRIPTION* glyphRunDescription, ID2D1Brush* foregroundBrush, DWRITE_MEASURING_MODE measuringMode);
+        [NativeTypeName("HRESULT (D2D1_PRIMITIVE_BLEND) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, D2D1_PRIMITIVE_BLEND, int> SetPrimitiveBlend;
 
-            [VtblIndex(14)]
-            HRESULT DrawLine([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point0, [NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F point1, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle);
+        [NativeTypeName("HRESULT (D2D1_UNIT_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, D2D1_UNIT_MODE, int> SetUnitMode;
 
-            [VtblIndex(15)]
-            HRESULT DrawGeometry(ID2D1Geometry* geometry, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle);
+        [NativeTypeName("HRESULT (const D2D1_COLOR_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, DXGI_RGBA*, int> Clear;
 
-            [VtblIndex(16)]
-            HRESULT DrawRectangle([NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle);
+        [NativeTypeName("HRESULT (D2D1_POINT_2F, const DWRITE_GLYPH_RUN *, const DWRITE_GLYPH_RUN_DESCRIPTION *, ID2D1Brush *, DWRITE_MEASURING_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, D2D_POINT_2F, DWRITE_GLYPH_RUN*, DWRITE_GLYPH_RUN_DESCRIPTION*, ID2D1Brush*, DWRITE_MEASURING_MODE, int> DrawGlyphRun;
 
-            [VtblIndex(17)]
-            HRESULT DrawBitmap(ID2D1Bitmap* bitmap, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle, float opacity, D2D1_INTERPOLATION_MODE interpolationMode, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle, [NativeTypeName("const D2D1_MATRIX_4X4_F *")] D2D_MATRIX_4X4_F* perspectiveTransform);
+        [NativeTypeName("HRESULT (D2D1_POINT_2F, D2D1_POINT_2F, ID2D1Brush *, FLOAT, ID2D1StrokeStyle *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, D2D_POINT_2F, D2D_POINT_2F, ID2D1Brush*, float, ID2D1StrokeStyle*, int> DrawLine;
 
-            [VtblIndex(18)]
-            HRESULT DrawImage(ID2D1Image* image, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* targetOffset, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* imageRectangle, D2D1_INTERPOLATION_MODE interpolationMode, D2D1_COMPOSITE_MODE compositeMode);
+        [NativeTypeName("HRESULT (ID2D1Geometry *, ID2D1Brush *, FLOAT, ID2D1StrokeStyle *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, ID2D1Geometry*, ID2D1Brush*, float, ID2D1StrokeStyle*, int> DrawGeometry;
 
-            [VtblIndex(19)]
-            HRESULT DrawGdiMetafile(ID2D1GdiMetafile* gdiMetafile, [NativeTypeName("const D2D1_POINT_2F *")] D2D_POINT_2F* targetOffset);
+        [NativeTypeName("HRESULT (const D2D1_RECT_F *, ID2D1Brush *, FLOAT, ID2D1StrokeStyle *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, D2D_RECT_F*, ID2D1Brush*, float, ID2D1StrokeStyle*, int> DrawRectangle;
 
-            [VtblIndex(20)]
-            HRESULT FillMesh(ID2D1Mesh* mesh, ID2D1Brush* brush);
+        [NativeTypeName("HRESULT (ID2D1Bitmap *, const D2D1_RECT_F *, FLOAT, D2D1_INTERPOLATION_MODE, const D2D1_RECT_F *, const D2D1_MATRIX_4X4_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, ID2D1Bitmap*, D2D_RECT_F*, float, D2D1_INTERPOLATION_MODE, D2D_RECT_F*, D2D_MATRIX_4X4_F*, int> DrawBitmap;
 
-            [VtblIndex(21)]
-            HRESULT FillOpacityMask(ID2D1Bitmap* opacityMask, ID2D1Brush* brush, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* destinationRectangle, [NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle);
+        [NativeTypeName("HRESULT (ID2D1Image *, const D2D1_POINT_2F *, const D2D1_RECT_F *, D2D1_INTERPOLATION_MODE, D2D1_COMPOSITE_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, ID2D1Image*, D2D_POINT_2F*, D2D_RECT_F*, D2D1_INTERPOLATION_MODE, D2D1_COMPOSITE_MODE, int> DrawImage;
 
-            [VtblIndex(22)]
-            HRESULT FillGeometry(ID2D1Geometry* geometry, ID2D1Brush* brush, ID2D1Brush* opacityBrush);
+        [NativeTypeName("HRESULT (ID2D1GdiMetafile *, const D2D1_POINT_2F *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, ID2D1GdiMetafile*, D2D_POINT_2F*, int> DrawGdiMetafile;
 
-            [VtblIndex(23)]
-            HRESULT FillRectangle([NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* rect, ID2D1Brush* brush);
+        [NativeTypeName("HRESULT (ID2D1Mesh *, ID2D1Brush *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, ID2D1Mesh*, ID2D1Brush*, int> FillMesh;
 
-            [VtblIndex(24)]
-            HRESULT PushAxisAlignedClip([NativeTypeName("const D2D1_RECT_F *")] D2D_RECT_F* clipRect, D2D1_ANTIALIAS_MODE antialiasMode);
+        [NativeTypeName("HRESULT (ID2D1Bitmap *, ID2D1Brush *, const D2D1_RECT_F *, const D2D1_RECT_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, ID2D1Bitmap*, ID2D1Brush*, D2D_RECT_F*, D2D_RECT_F*, int> FillOpacityMask;
 
-            [VtblIndex(25)]
-            HRESULT PushLayer([NativeTypeName("const D2D1_LAYER_PARAMETERS1 *")] D2D1_LAYER_PARAMETERS1* layerParameters1, ID2D1Layer* layer);
+        [NativeTypeName("HRESULT (ID2D1Geometry *, ID2D1Brush *, ID2D1Brush *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, ID2D1Geometry*, ID2D1Brush*, ID2D1Brush*, int> FillGeometry;
 
-            [VtblIndex(26)]
-            HRESULT PopAxisAlignedClip();
+        [NativeTypeName("HRESULT (const D2D1_RECT_F *, ID2D1Brush *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, D2D_RECT_F*, ID2D1Brush*, int> FillRectangle;
 
-            [VtblIndex(27)]
-            HRESULT PopLayer();
-        }
+        [NativeTypeName("HRESULT (const D2D1_RECT_F *, D2D1_ANTIALIAS_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, D2D_RECT_F*, D2D1_ANTIALIAS_MODE, int> PushAxisAlignedClip;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (const D2D1_LAYER_PARAMETERS1 *, ID2D1Layer *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, D2D1_LAYER_PARAMETERS1*, ID2D1Layer*, int> PushLayer;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, uint> AddRef;
+        [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, int> PopAxisAlignedClip;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, uint> Release;
-
-            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, int> BeginDraw;
-
-            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, int> EndDraw;
-
-            [NativeTypeName("HRESULT (D2D1_ANTIALIAS_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, D2D1_ANTIALIAS_MODE, int> SetAntialiasMode;
-
-            [NativeTypeName("HRESULT (D2D1_TAG, D2D1_TAG) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, ulong, ulong, int> SetTags;
-
-            [NativeTypeName("HRESULT (D2D1_TEXT_ANTIALIAS_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, D2D1_TEXT_ANTIALIAS_MODE, int> SetTextAntialiasMode;
-
-            [NativeTypeName("HRESULT (IDWriteRenderingParams *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, IDWriteRenderingParams*, int> SetTextRenderingParams;
-
-            [NativeTypeName("HRESULT (const D2D1_MATRIX_3X2_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, D2D_MATRIX_3X2_F*, int> SetTransform;
-
-            [NativeTypeName("HRESULT (D2D1_PRIMITIVE_BLEND) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, D2D1_PRIMITIVE_BLEND, int> SetPrimitiveBlend;
-
-            [NativeTypeName("HRESULT (D2D1_UNIT_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, D2D1_UNIT_MODE, int> SetUnitMode;
-
-            [NativeTypeName("HRESULT (const D2D1_COLOR_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, DXGI_RGBA*, int> Clear;
-
-            [NativeTypeName("HRESULT (D2D1_POINT_2F, const DWRITE_GLYPH_RUN *, const DWRITE_GLYPH_RUN_DESCRIPTION *, ID2D1Brush *, DWRITE_MEASURING_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, D2D_POINT_2F, DWRITE_GLYPH_RUN*, DWRITE_GLYPH_RUN_DESCRIPTION*, ID2D1Brush*, DWRITE_MEASURING_MODE, int> DrawGlyphRun;
-
-            [NativeTypeName("HRESULT (D2D1_POINT_2F, D2D1_POINT_2F, ID2D1Brush *, FLOAT, ID2D1StrokeStyle *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, D2D_POINT_2F, D2D_POINT_2F, ID2D1Brush*, float, ID2D1StrokeStyle*, int> DrawLine;
-
-            [NativeTypeName("HRESULT (ID2D1Geometry *, ID2D1Brush *, FLOAT, ID2D1StrokeStyle *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, ID2D1Geometry*, ID2D1Brush*, float, ID2D1StrokeStyle*, int> DrawGeometry;
-
-            [NativeTypeName("HRESULT (const D2D1_RECT_F *, ID2D1Brush *, FLOAT, ID2D1StrokeStyle *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, D2D_RECT_F*, ID2D1Brush*, float, ID2D1StrokeStyle*, int> DrawRectangle;
-
-            [NativeTypeName("HRESULT (ID2D1Bitmap *, const D2D1_RECT_F *, FLOAT, D2D1_INTERPOLATION_MODE, const D2D1_RECT_F *, const D2D1_MATRIX_4X4_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, ID2D1Bitmap*, D2D_RECT_F*, float, D2D1_INTERPOLATION_MODE, D2D_RECT_F*, D2D_MATRIX_4X4_F*, int> DrawBitmap;
-
-            [NativeTypeName("HRESULT (ID2D1Image *, const D2D1_POINT_2F *, const D2D1_RECT_F *, D2D1_INTERPOLATION_MODE, D2D1_COMPOSITE_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, ID2D1Image*, D2D_POINT_2F*, D2D_RECT_F*, D2D1_INTERPOLATION_MODE, D2D1_COMPOSITE_MODE, int> DrawImage;
-
-            [NativeTypeName("HRESULT (ID2D1GdiMetafile *, const D2D1_POINT_2F *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, ID2D1GdiMetafile*, D2D_POINT_2F*, int> DrawGdiMetafile;
-
-            [NativeTypeName("HRESULT (ID2D1Mesh *, ID2D1Brush *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, ID2D1Mesh*, ID2D1Brush*, int> FillMesh;
-
-            [NativeTypeName("HRESULT (ID2D1Bitmap *, ID2D1Brush *, const D2D1_RECT_F *, const D2D1_RECT_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, ID2D1Bitmap*, ID2D1Brush*, D2D_RECT_F*, D2D_RECT_F*, int> FillOpacityMask;
-
-            [NativeTypeName("HRESULT (ID2D1Geometry *, ID2D1Brush *, ID2D1Brush *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, ID2D1Geometry*, ID2D1Brush*, ID2D1Brush*, int> FillGeometry;
-
-            [NativeTypeName("HRESULT (const D2D1_RECT_F *, ID2D1Brush *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, D2D_RECT_F*, ID2D1Brush*, int> FillRectangle;
-
-            [NativeTypeName("HRESULT (const D2D1_RECT_F *, D2D1_ANTIALIAS_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, D2D_RECT_F*, D2D1_ANTIALIAS_MODE, int> PushAxisAlignedClip;
-
-            [NativeTypeName("HRESULT (const D2D1_LAYER_PARAMETERS1 *, ID2D1Layer *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, D2D1_LAYER_PARAMETERS1*, ID2D1Layer*, int> PushLayer;
-
-            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, int> PopAxisAlignedClip;
-
-            [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<ID2D1CommandSink*, int> PopLayer;
-        }
+        [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<ID2D1CommandSink*, int> PopLayer;
     }
 }

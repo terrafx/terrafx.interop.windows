@@ -6,13 +6,12 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
-{
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public partial struct D3D12_VIDEO_EXTENSION_COMMAND_DESC
-    {
-        public uint NodeMask;
+namespace TerraFX.Interop.DirectX;
 
-        public Guid CommandId;
-    }
+[SupportedOSPlatform("windows10.0.19041.0")]
+public partial struct D3D12_VIDEO_EXTENSION_COMMAND_DESC
+{
+    public uint NodeMask;
+
+    public Guid CommandId;
 }

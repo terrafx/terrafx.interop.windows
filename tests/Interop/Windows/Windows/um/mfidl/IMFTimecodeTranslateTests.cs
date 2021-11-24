@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFTimecodeTranslate" /> struct.</summary>
+public static unsafe partial class IMFTimecodeTranslateTests
 {
-    /// <summary>Provides validation of the <see cref="IMFTimecodeTranslate" /> struct.</summary>
-    public static unsafe partial class IMFTimecodeTranslateTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFTimecodeTranslate" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFTimecodeTranslate" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFTimecodeTranslate).GUID, Is.EqualTo(IID_IMFTimecodeTranslate));
-        }
+        Assert.That(typeof(IMFTimecodeTranslate).GUID, Is.EqualTo(IID_IMFTimecodeTranslate));
+    }
 
-        /// <summary>Validates that the <see cref="IMFTimecodeTranslate" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFTimecodeTranslate>(), Is.EqualTo(sizeof(IMFTimecodeTranslate)));
-        }
+    /// <summary>Validates that the <see cref="IMFTimecodeTranslate" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFTimecodeTranslate>(), Is.EqualTo(sizeof(IMFTimecodeTranslate)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFTimecodeTranslate" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFTimecodeTranslate).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFTimecodeTranslate" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFTimecodeTranslate).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFTimecodeTranslate" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFTimecodeTranslate" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFTimecodeTranslate), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFTimecodeTranslate), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFTimecodeTranslate), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFTimecodeTranslate), Is.EqualTo(4));
         }
     }
 }

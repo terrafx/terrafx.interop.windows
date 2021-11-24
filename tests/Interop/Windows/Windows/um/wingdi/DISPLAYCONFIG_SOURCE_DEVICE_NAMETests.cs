@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DISPLAYCONFIG_SOURCE_DEVICE_NAME" /> struct.</summary>
+public static unsafe partial class DISPLAYCONFIG_SOURCE_DEVICE_NAMETests
 {
-    /// <summary>Provides validation of the <see cref="DISPLAYCONFIG_SOURCE_DEVICE_NAME" /> struct.</summary>
-    public static unsafe partial class DISPLAYCONFIG_SOURCE_DEVICE_NAMETests
+    /// <summary>Validates that the <see cref="DISPLAYCONFIG_SOURCE_DEVICE_NAME" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DISPLAYCONFIG_SOURCE_DEVICE_NAME" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DISPLAYCONFIG_SOURCE_DEVICE_NAME>(), Is.EqualTo(sizeof(DISPLAYCONFIG_SOURCE_DEVICE_NAME)));
-        }
+        Assert.That(Marshal.SizeOf<DISPLAYCONFIG_SOURCE_DEVICE_NAME>(), Is.EqualTo(sizeof(DISPLAYCONFIG_SOURCE_DEVICE_NAME)));
+    }
 
-        /// <summary>Validates that the <see cref="DISPLAYCONFIG_SOURCE_DEVICE_NAME" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DISPLAYCONFIG_SOURCE_DEVICE_NAME).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DISPLAYCONFIG_SOURCE_DEVICE_NAME" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DISPLAYCONFIG_SOURCE_DEVICE_NAME).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DISPLAYCONFIG_SOURCE_DEVICE_NAME" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DISPLAYCONFIG_SOURCE_DEVICE_NAME), Is.EqualTo(84));
-        }
+    /// <summary>Validates that the <see cref="DISPLAYCONFIG_SOURCE_DEVICE_NAME" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DISPLAYCONFIG_SOURCE_DEVICE_NAME), Is.EqualTo(84));
     }
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MDINEXTMENU" /> struct.</summary>
+public static unsafe partial class MDINEXTMENUTests
 {
-    /// <summary>Provides validation of the <see cref="MDINEXTMENU" /> struct.</summary>
-    public static unsafe partial class MDINEXTMENUTests
+    /// <summary>Validates that the <see cref="MDINEXTMENU" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MDINEXTMENU" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MDINEXTMENU>(), Is.EqualTo(sizeof(MDINEXTMENU)));
-        }
+        Assert.That(Marshal.SizeOf<MDINEXTMENU>(), Is.EqualTo(sizeof(MDINEXTMENU)));
+    }
 
-        /// <summary>Validates that the <see cref="MDINEXTMENU" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MDINEXTMENU).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MDINEXTMENU" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MDINEXTMENU).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MDINEXTMENU" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="MDINEXTMENU" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(MDINEXTMENU), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(MDINEXTMENU), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(MDINEXTMENU), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(MDINEXTMENU), Is.EqualTo(12));
         }
     }
 }

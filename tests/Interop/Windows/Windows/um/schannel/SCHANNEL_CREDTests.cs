@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SCHANNEL_CRED" /> struct.</summary>
+[SupportedOSPlatform("windows8.1")]
+public static unsafe partial class SCHANNEL_CREDTests
 {
-    /// <summary>Provides validation of the <see cref="SCHANNEL_CRED" /> struct.</summary>
-    [SupportedOSPlatform("windows8.1")]
-    public static unsafe partial class SCHANNEL_CREDTests
+    /// <summary>Validates that the <see cref="SCHANNEL_CRED" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SCHANNEL_CRED" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SCHANNEL_CRED>(), Is.EqualTo(sizeof(SCHANNEL_CRED)));
-        }
+        Assert.That(Marshal.SizeOf<SCHANNEL_CRED>(), Is.EqualTo(sizeof(SCHANNEL_CRED)));
+    }
 
-        /// <summary>Validates that the <see cref="SCHANNEL_CRED" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SCHANNEL_CRED).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SCHANNEL_CRED" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SCHANNEL_CRED).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SCHANNEL_CRED" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SCHANNEL_CRED" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SCHANNEL_CRED), Is.EqualTo(80));
-            }
-            else
-            {
-                Assert.That(sizeof(SCHANNEL_CRED), Is.EqualTo(56));
-            }
+            Assert.That(sizeof(SCHANNEL_CRED), Is.EqualTo(80));
+        }
+        else
+        {
+            Assert.That(sizeof(SCHANNEL_CRED), Is.EqualTo(56));
         }
     }
 }

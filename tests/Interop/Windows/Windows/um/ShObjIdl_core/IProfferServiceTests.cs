@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IProfferService" /> struct.</summary>
+public static unsafe partial class IProfferServiceTests
 {
-    /// <summary>Provides validation of the <see cref="IProfferService" /> struct.</summary>
-    public static unsafe partial class IProfferServiceTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IProfferService" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IProfferService" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IProfferService).GUID, Is.EqualTo(IID_IProfferService));
-        }
+        Assert.That(typeof(IProfferService).GUID, Is.EqualTo(IID_IProfferService));
+    }
 
-        /// <summary>Validates that the <see cref="IProfferService" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IProfferService>(), Is.EqualTo(sizeof(IProfferService)));
-        }
+    /// <summary>Validates that the <see cref="IProfferService" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IProfferService>(), Is.EqualTo(sizeof(IProfferService)));
+    }
 
-        /// <summary>Validates that the <see cref="IProfferService" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IProfferService).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IProfferService" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IProfferService).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IProfferService" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IProfferService" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IProfferService), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IProfferService), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IProfferService), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IProfferService), Is.EqualTo(4));
         }
     }
 }

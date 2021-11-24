@@ -3,14 +3,13 @@
 // Ported from um/Uxtheme.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum PROPERTYORIGIN
 {
-    public enum PROPERTYORIGIN
-    {
-        PO_STATE,
-        PO_PART,
-        PO_CLASS,
-        PO_GLOBAL,
-        PO_NOTFOUND,
-    }
+    PO_STATE,
+    PO_PART,
+    PO_CLASS,
+    PO_GLOBAL,
+    PO_NOTFOUND,
 }

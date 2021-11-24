@@ -6,17 +6,16 @@
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct D3D11_AUTHENTICATED_CONFIGURE_CRYPTO_SESSION_INPUT
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct D3D11_AUTHENTICATED_CONFIGURE_CRYPTO_SESSION_INPUT
-    {
-        public D3D11_AUTHENTICATED_CONFIGURE_INPUT Parameters;
+    public D3D11_AUTHENTICATED_CONFIGURE_INPUT Parameters;
 
-        public HANDLE DecoderHandle;
+    public HANDLE DecoderHandle;
 
-        public HANDLE CryptoSessionHandle;
+    public HANDLE CryptoSessionHandle;
 
-        public HANDLE DeviceHandle;
-    }
+    public HANDLE DeviceHandle;
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CBT_CREATEWNDW" /> struct.</summary>
+public static unsafe partial class CBT_CREATEWNDWTests
 {
-    /// <summary>Provides validation of the <see cref="CBT_CREATEWNDW" /> struct.</summary>
-    public static unsafe partial class CBT_CREATEWNDWTests
+    /// <summary>Validates that the <see cref="CBT_CREATEWNDW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CBT_CREATEWNDW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CBT_CREATEWNDW>(), Is.EqualTo(sizeof(CBT_CREATEWNDW)));
-        }
+        Assert.That(Marshal.SizeOf<CBT_CREATEWNDW>(), Is.EqualTo(sizeof(CBT_CREATEWNDW)));
+    }
 
-        /// <summary>Validates that the <see cref="CBT_CREATEWNDW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CBT_CREATEWNDW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CBT_CREATEWNDW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CBT_CREATEWNDW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CBT_CREATEWNDW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CBT_CREATEWNDW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CBT_CREATEWNDW), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(CBT_CREATEWNDW), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(CBT_CREATEWNDW), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(CBT_CREATEWNDW), Is.EqualTo(8));
         }
     }
 }

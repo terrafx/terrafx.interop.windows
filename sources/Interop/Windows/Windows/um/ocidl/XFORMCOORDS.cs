@@ -3,14 +3,13 @@
 // Ported from um/ocidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum XFORMCOORDS
 {
-    public enum XFORMCOORDS
-    {
-        XFORMCOORDS_POSITION = 0x1,
-        XFORMCOORDS_SIZE = 0x2,
-        XFORMCOORDS_HIMETRICTOCONTAINER = 0x4,
-        XFORMCOORDS_CONTAINERTOHIMETRIC = 0x8,
-        XFORMCOORDS_EVENTCOMPAT = 0x10,
-    }
+    XFORMCOORDS_POSITION = 0x1,
+    XFORMCOORDS_SIZE = 0x2,
+    XFORMCOORDS_HIMETRICTOCONTAINER = 0x4,
+    XFORMCOORDS_CONTAINERTOHIMETRIC = 0x8,
+    XFORMCOORDS_EVENTCOMPAT = 0x10,
 }

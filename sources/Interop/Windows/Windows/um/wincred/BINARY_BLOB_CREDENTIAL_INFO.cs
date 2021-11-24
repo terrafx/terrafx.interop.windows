@@ -3,14 +3,13 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct BINARY_BLOB_CREDENTIAL_INFO
-    {
-        [NativeTypeName("ULONG")]
-        public uint cbBlob;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("LPBYTE")]
-        public byte* pbBlob;
-    }
+public unsafe partial struct BINARY_BLOB_CREDENTIAL_INFO
+{
+    [NativeTypeName("ULONG")]
+    public uint cbBlob;
+
+    [NativeTypeName("LPBYTE")]
+    public byte* pbBlob;
 }

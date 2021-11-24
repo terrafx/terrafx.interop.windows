@@ -3,15 +3,14 @@
 // Ported from um/propsys.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum PROPDESC_CONDITION_TYPE
 {
-    public enum PROPDESC_CONDITION_TYPE
-    {
-        PDCOT_NONE = 0,
-        PDCOT_STRING = 1,
-        PDCOT_SIZE = 2,
-        PDCOT_DATETIME = 3,
-        PDCOT_BOOLEAN = 4,
-        PDCOT_NUMBER = 5,
-    }
+    PDCOT_NONE = 0,
+    PDCOT_STRING = 1,
+    PDCOT_SIZE = 2,
+    PDCOT_DATETIME = 3,
+    PDCOT_BOOLEAN = 4,
+    PDCOT_NUMBER = 5,
 }

@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("37E412F9-016E-44C2-81FF-DB3ADD774266")]
+[NativeTypeName("struct ISyncMgrEventStore : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ISyncMgrEventStore : ISyncMgrEventStore.Interface
 {
-    [Guid("37E412F9-016E-44C2-81FF-DB3ADD774266")]
-    [NativeTypeName("struct ISyncMgrEventStore : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ISyncMgrEventStore : ISyncMgrEventStore.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ISyncMgrEventStore*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ISyncMgrEventStore*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ISyncMgrEventStore*, uint>)(lpVtbl[1]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ISyncMgrEventStore*, uint>)(lpVtbl[1]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ISyncMgrEventStore*, uint>)(lpVtbl[2]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ISyncMgrEventStore*, uint>)(lpVtbl[2]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetEventEnumerator(IEnumSyncMgrEvents** ppenum)
+    {
+        return ((delegate* unmanaged<ISyncMgrEventStore*, IEnumSyncMgrEvents**, int>)(lpVtbl[3]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), ppenum);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetEventCount([NativeTypeName("ULONG *")] uint* pcEvents)
+    {
+        return ((delegate* unmanaged<ISyncMgrEventStore*, uint*, int>)(lpVtbl[4]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), pcEvents);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetEvent([NativeTypeName("const GUID &")] Guid* rguidEventID, ISyncMgrEvent** ppEvent)
+    {
+        return ((delegate* unmanaged<ISyncMgrEventStore*, Guid*, ISyncMgrEvent**, int>)(lpVtbl[5]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), rguidEventID, ppEvent);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT RemoveEvent(Guid* pguidEventIDs, [NativeTypeName("ULONG")] uint cEvents)
+    {
+        return ((delegate* unmanaged<ISyncMgrEventStore*, Guid*, uint, int>)(lpVtbl[6]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), pguidEventIDs, cEvents);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT GetEventEnumerator(IEnumSyncMgrEvents** ppenum)
-        {
-            return ((delegate* unmanaged<ISyncMgrEventStore*, IEnumSyncMgrEvents**, int>)(lpVtbl[3]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), ppenum);
-        }
+        HRESULT GetEventEnumerator(IEnumSyncMgrEvents** ppenum);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetEventCount([NativeTypeName("ULONG *")] uint* pcEvents)
-        {
-            return ((delegate* unmanaged<ISyncMgrEventStore*, uint*, int>)(lpVtbl[4]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), pcEvents);
-        }
+        HRESULT GetEventCount([NativeTypeName("ULONG *")] uint* pcEvents);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetEvent([NativeTypeName("const GUID &")] Guid* rguidEventID, ISyncMgrEvent** ppEvent)
-        {
-            return ((delegate* unmanaged<ISyncMgrEventStore*, Guid*, ISyncMgrEvent**, int>)(lpVtbl[5]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), rguidEventID, ppEvent);
-        }
+        HRESULT GetEvent([NativeTypeName("const GUID &")] Guid* rguidEventID, ISyncMgrEvent** ppEvent);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT RemoveEvent(Guid* pguidEventIDs, [NativeTypeName("ULONG")] uint cEvents)
-        {
-            return ((delegate* unmanaged<ISyncMgrEventStore*, Guid*, uint, int>)(lpVtbl[6]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), pguidEventIDs, cEvents);
-        }
+        HRESULT RemoveEvent(Guid* pguidEventIDs, [NativeTypeName("ULONG")] uint cEvents);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT GetEventEnumerator(IEnumSyncMgrEvents** ppenum);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISyncMgrEventStore*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetEventCount([NativeTypeName("ULONG *")] uint* pcEvents);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISyncMgrEventStore*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetEvent([NativeTypeName("const GUID &")] Guid* rguidEventID, ISyncMgrEvent** ppEvent);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ISyncMgrEventStore*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT RemoveEvent(Guid* pguidEventIDs, [NativeTypeName("ULONG")] uint cEvents);
-        }
+        [NativeTypeName("HRESULT (IEnumSyncMgrEvents **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISyncMgrEventStore*, IEnumSyncMgrEvents**, int> GetEventEnumerator;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISyncMgrEventStore*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISyncMgrEventStore*, uint*, int> GetEventCount;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISyncMgrEventStore*, uint> AddRef;
+        [NativeTypeName("HRESULT (const GUID &, ISyncMgrEvent **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISyncMgrEventStore*, Guid*, ISyncMgrEvent**, int> GetEvent;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ISyncMgrEventStore*, uint> Release;
-
-            [NativeTypeName("HRESULT (IEnumSyncMgrEvents **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISyncMgrEventStore*, IEnumSyncMgrEvents**, int> GetEventEnumerator;
-
-            [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISyncMgrEventStore*, uint*, int> GetEventCount;
-
-            [NativeTypeName("HRESULT (const GUID &, ISyncMgrEvent **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISyncMgrEventStore*, Guid*, ISyncMgrEvent**, int> GetEvent;
-
-            [NativeTypeName("HRESULT (GUID *, ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<ISyncMgrEventStore*, Guid*, uint, int> RemoveEvent;
-        }
+        [NativeTypeName("HRESULT (GUID *, ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<ISyncMgrEventStore*, Guid*, uint, int> RemoveEvent;
     }
 }

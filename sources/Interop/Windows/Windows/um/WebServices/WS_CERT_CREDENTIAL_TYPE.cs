@@ -3,12 +3,11 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum WS_CERT_CREDENTIAL_TYPE
 {
-    public enum WS_CERT_CREDENTIAL_TYPE
-    {
-        WS_SUBJECT_NAME_CERT_CREDENTIAL_TYPE = 1,
-        WS_THUMBPRINT_CERT_CREDENTIAL_TYPE = 2,
-        WS_CUSTOM_CERT_CREDENTIAL_TYPE = 3,
-    }
+    WS_SUBJECT_NAME_CERT_CREDENTIAL_TYPE = 1,
+    WS_THUMBPRINT_CERT_CREDENTIAL_TYPE = 2,
+    WS_CUSTOM_CERT_CREDENTIAL_TYPE = 3,
 }

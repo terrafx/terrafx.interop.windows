@@ -5,21 +5,20 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct DELEGATEITEMID
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct DELEGATEITEMID
-    {
-        [NativeTypeName("WORD")]
-        public ushort cbSize;
+    [NativeTypeName("WORD")]
+    public ushort cbSize;
 
-        [NativeTypeName("WORD")]
-        public ushort wOuter;
+    [NativeTypeName("WORD")]
+    public ushort wOuter;
 
-        [NativeTypeName("WORD")]
-        public ushort cbInner;
+    [NativeTypeName("WORD")]
+    public ushort cbInner;
 
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte rgb[1];
-    }
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte rgb[1];
 }

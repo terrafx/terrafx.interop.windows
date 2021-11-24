@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="POWER_SESSION_WINLOGON" /> struct.</summary>
+public static unsafe partial class POWER_SESSION_WINLOGONTests
 {
-    /// <summary>Provides validation of the <see cref="POWER_SESSION_WINLOGON" /> struct.</summary>
-    public static unsafe partial class POWER_SESSION_WINLOGONTests
+    /// <summary>Validates that the <see cref="POWER_SESSION_WINLOGON" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="POWER_SESSION_WINLOGON" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<POWER_SESSION_WINLOGON>(), Is.EqualTo(sizeof(POWER_SESSION_WINLOGON)));
-        }
+        Assert.That(Marshal.SizeOf<POWER_SESSION_WINLOGON>(), Is.EqualTo(sizeof(POWER_SESSION_WINLOGON)));
+    }
 
-        /// <summary>Validates that the <see cref="POWER_SESSION_WINLOGON" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(POWER_SESSION_WINLOGON).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="POWER_SESSION_WINLOGON" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(POWER_SESSION_WINLOGON).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="POWER_SESSION_WINLOGON" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(POWER_SESSION_WINLOGON), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="POWER_SESSION_WINLOGON" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(POWER_SESSION_WINLOGON), Is.EqualTo(8));
     }
 }

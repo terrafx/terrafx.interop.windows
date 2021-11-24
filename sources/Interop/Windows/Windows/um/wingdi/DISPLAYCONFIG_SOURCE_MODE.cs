@@ -3,18 +3,17 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct DISPLAYCONFIG_SOURCE_MODE
 {
-    public partial struct DISPLAYCONFIG_SOURCE_MODE
-    {
-        [NativeTypeName("UINT32")]
-        public uint width;
+    [NativeTypeName("UINT32")]
+    public uint width;
 
-        [NativeTypeName("UINT32")]
-        public uint height;
+    [NativeTypeName("UINT32")]
+    public uint height;
 
-        public DISPLAYCONFIG_PIXELFORMAT pixelFormat;
+    public DISPLAYCONFIG_PIXELFORMAT pixelFormat;
 
-        public POINTL position;
-    }
+    public POINTL position;
 }

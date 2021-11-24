@@ -5,22 +5,21 @@
 
 using System.Runtime.Intrinsics.X86;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static unsafe partial class SYSTEM
 {
-    public static unsafe partial class SYSTEM
+    public static int SYSTEM_CACHE_ALIGNMENT_SIZE
     {
-        public static int SYSTEM_CACHE_ALIGNMENT_SIZE
+        get
         {
-            get
+            if (X86Base.IsSupported)
             {
-                if (X86Base.IsSupported)
-                {
-                    return 64;
-                }
-                else
-                {
-                    return 128;
-                }
+                return 64;
+            }
+            else
+            {
+                return 128;
             }
         }
     }

@@ -3,12 +3,11 @@
 // Ported from shared/ifdef.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct NET_IF_ALIAS_LH
-    {
-        public ushort ifAliasLength;
+namespace TerraFX.Interop.Windows;
 
-        public ushort ifAliasOffset;
-    }
+public partial struct NET_IF_ALIAS_LH
+{
+    public ushort ifAliasLength;
+
+    public ushort ifAliasOffset;
 }

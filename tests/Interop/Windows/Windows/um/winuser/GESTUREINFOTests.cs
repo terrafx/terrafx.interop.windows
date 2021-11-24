@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="GESTUREINFO" /> struct.</summary>
+public static unsafe partial class GESTUREINFOTests
 {
-    /// <summary>Provides validation of the <see cref="GESTUREINFO" /> struct.</summary>
-    public static unsafe partial class GESTUREINFOTests
+    /// <summary>Validates that the <see cref="GESTUREINFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="GESTUREINFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<GESTUREINFO>(), Is.EqualTo(sizeof(GESTUREINFO)));
-        }
+        Assert.That(Marshal.SizeOf<GESTUREINFO>(), Is.EqualTo(sizeof(GESTUREINFO)));
+    }
 
-        /// <summary>Validates that the <see cref="GESTUREINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(GESTUREINFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="GESTUREINFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(GESTUREINFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="GESTUREINFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="GESTUREINFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(GESTUREINFO), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(GESTUREINFO), Is.EqualTo(48));
-            }
+            Assert.That(sizeof(GESTUREINFO), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(GESTUREINFO), Is.EqualTo(48));
         }
     }
 }

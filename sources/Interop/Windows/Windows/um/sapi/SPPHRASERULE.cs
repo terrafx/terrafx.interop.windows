@@ -3,31 +3,30 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SPPHRASERULE
 {
-    public unsafe partial struct SPPHRASERULE
-    {
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pszName;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pszName;
 
-        [NativeTypeName("ULONG")]
-        public uint ulId;
+    [NativeTypeName("ULONG")]
+    public uint ulId;
 
-        [NativeTypeName("ULONG")]
-        public uint ulFirstElement;
+    [NativeTypeName("ULONG")]
+    public uint ulFirstElement;
 
-        [NativeTypeName("ULONG")]
-        public uint ulCountOfElements;
+    [NativeTypeName("ULONG")]
+    public uint ulCountOfElements;
 
-        [NativeTypeName("const SPPHRASERULE *")]
-        public SPPHRASERULE* pNextSibling;
+    [NativeTypeName("const SPPHRASERULE *")]
+    public SPPHRASERULE* pNextSibling;
 
-        [NativeTypeName("const SPPHRASERULE *")]
-        public SPPHRASERULE* pFirstChild;
+    [NativeTypeName("const SPPHRASERULE *")]
+    public SPPHRASERULE* pFirstChild;
 
-        public float SREngineConfidence;
+    public float SREngineConfidence;
 
-        [NativeTypeName("signed char")]
-        public sbyte Confidence;
-    }
+    [NativeTypeName("signed char")]
+    public sbyte Confidence;
 }

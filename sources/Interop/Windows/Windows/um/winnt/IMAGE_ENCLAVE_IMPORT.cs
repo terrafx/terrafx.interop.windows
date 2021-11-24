@@ -5,30 +5,29 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.16299.0")]
+public unsafe partial struct IMAGE_ENCLAVE_IMPORT
 {
-    [SupportedOSPlatform("windows10.0.16299.0")]
-    public unsafe partial struct IMAGE_ENCLAVE_IMPORT
-    {
-        [NativeTypeName("DWORD")]
-        public uint MatchType;
+    [NativeTypeName("DWORD")]
+    public uint MatchType;
 
-        [NativeTypeName("DWORD")]
-        public uint MinimumSecurityVersion;
+    [NativeTypeName("DWORD")]
+    public uint MinimumSecurityVersion;
 
-        [NativeTypeName("BYTE [32]")]
-        public fixed byte UniqueOrAuthorID[32];
+    [NativeTypeName("BYTE [32]")]
+    public fixed byte UniqueOrAuthorID[32];
 
-        [NativeTypeName("BYTE [16]")]
-        public fixed byte FamilyID[16];
+    [NativeTypeName("BYTE [16]")]
+    public fixed byte FamilyID[16];
 
-        [NativeTypeName("BYTE [16]")]
-        public fixed byte ImageID[16];
+    [NativeTypeName("BYTE [16]")]
+    public fixed byte ImageID[16];
 
-        [NativeTypeName("DWORD")]
-        public uint ImportName;
+    [NativeTypeName("DWORD")]
+    public uint ImportName;
 
-        [NativeTypeName("DWORD")]
-        public uint Reserved;
-    }
+    [NativeTypeName("DWORD")]
+    public uint Reserved;
 }

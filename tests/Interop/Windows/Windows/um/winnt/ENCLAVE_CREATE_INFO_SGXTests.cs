@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ENCLAVE_CREATE_INFO_SGX" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
+public static unsafe partial class ENCLAVE_CREATE_INFO_SGXTests
 {
-    /// <summary>Provides validation of the <see cref="ENCLAVE_CREATE_INFO_SGX" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0")]
-    public static unsafe partial class ENCLAVE_CREATE_INFO_SGXTests
+    /// <summary>Validates that the <see cref="ENCLAVE_CREATE_INFO_SGX" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="ENCLAVE_CREATE_INFO_SGX" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ENCLAVE_CREATE_INFO_SGX>(), Is.EqualTo(sizeof(ENCLAVE_CREATE_INFO_SGX)));
-        }
+        Assert.That(Marshal.SizeOf<ENCLAVE_CREATE_INFO_SGX>(), Is.EqualTo(sizeof(ENCLAVE_CREATE_INFO_SGX)));
+    }
 
-        /// <summary>Validates that the <see cref="ENCLAVE_CREATE_INFO_SGX" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ENCLAVE_CREATE_INFO_SGX).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ENCLAVE_CREATE_INFO_SGX" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ENCLAVE_CREATE_INFO_SGX).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ENCLAVE_CREATE_INFO_SGX" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(ENCLAVE_CREATE_INFO_SGX), Is.EqualTo(4096));
-        }
+    /// <summary>Validates that the <see cref="ENCLAVE_CREATE_INFO_SGX" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(ENCLAVE_CREATE_INFO_SGX), Is.EqualTo(4096));
     }
 }

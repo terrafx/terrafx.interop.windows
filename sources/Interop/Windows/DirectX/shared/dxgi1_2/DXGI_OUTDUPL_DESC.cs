@@ -5,14 +5,13 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DXGI_OUTDUPL_DESC
 {
-    public partial struct DXGI_OUTDUPL_DESC
-    {
-        public DXGI_MODE_DESC ModeDesc;
+    public DXGI_MODE_DESC ModeDesc;
 
-        public DXGI_MODE_ROTATION Rotation;
+    public DXGI_MODE_ROTATION Rotation;
 
-        public BOOL DesktopImageInSystemMemory;
-    }
+    public BOOL DesktopImageInSystemMemory;
 }

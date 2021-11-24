@@ -5,20 +5,19 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct ADPCMWAVEFORMAT
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct ADPCMWAVEFORMAT
-    {
-        public WAVEFORMATEX wfx;
+    public WAVEFORMATEX wfx;
 
-        [NativeTypeName("WORD")]
-        public ushort wSamplesPerBlock;
+    [NativeTypeName("WORD")]
+    public ushort wSamplesPerBlock;
 
-        [NativeTypeName("WORD")]
-        public ushort wNumCoef;
+    [NativeTypeName("WORD")]
+    public ushort wNumCoef;
 
-        [NativeTypeName("ADPCMCOEFSET []")]
-        public ADPCMCOEFSET aCoef;
-    }
+    [NativeTypeName("ADPCMCOEFSET []")]
+    public ADPCMCOEFSET aCoef;
 }

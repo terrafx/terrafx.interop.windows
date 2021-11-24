@@ -6,107 +6,106 @@
 using System.Runtime.CompilerServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct IXAudio2VoiceCallback : IXAudio2VoiceCallback.Interface
 {
-    public unsafe partial struct IXAudio2VoiceCallback : IXAudio2VoiceCallback.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public void OnVoiceProcessingPassStart([NativeTypeName("UINT32")] uint BytesRequired)
     {
-        public void** lpVtbl;
+        ((delegate* unmanaged<IXAudio2VoiceCallback*, uint, void>)(lpVtbl[0]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), BytesRequired);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    public void OnVoiceProcessingPassEnd()
+    {
+        ((delegate* unmanaged<IXAudio2VoiceCallback*, void>)(lpVtbl[1]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    public void OnStreamEnd()
+    {
+        ((delegate* unmanaged<IXAudio2VoiceCallback*, void>)(lpVtbl[2]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public void OnBufferStart(void* pBufferContext)
+    {
+        ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, void>)(lpVtbl[3]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public void OnBufferEnd(void* pBufferContext)
+    {
+        ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, void>)(lpVtbl[4]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public void OnLoopEnd(void* pBufferContext)
+    {
+        ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, void>)(lpVtbl[5]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public void OnVoiceError(void* pBufferContext, HRESULT Error)
+    {
+        ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, HRESULT, void>)(lpVtbl[6]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext, Error);
+    }
+
+    public interface Interface
+    {
         [VtblIndex(0)]
-        public void OnVoiceProcessingPassStart([NativeTypeName("UINT32")] uint BytesRequired)
-        {
-            ((delegate* unmanaged<IXAudio2VoiceCallback*, uint, void>)(lpVtbl[0]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), BytesRequired);
-        }
+        void OnVoiceProcessingPassStart([NativeTypeName("UINT32")] uint BytesRequired);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(1)]
-        public void OnVoiceProcessingPassEnd()
-        {
-            ((delegate* unmanaged<IXAudio2VoiceCallback*, void>)(lpVtbl[1]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this));
-        }
+        void OnVoiceProcessingPassEnd();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(2)]
-        public void OnStreamEnd()
-        {
-            ((delegate* unmanaged<IXAudio2VoiceCallback*, void>)(lpVtbl[2]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this));
-        }
+        void OnStreamEnd();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(3)]
-        public void OnBufferStart(void* pBufferContext)
-        {
-            ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, void>)(lpVtbl[3]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext);
-        }
+        void OnBufferStart(void* pBufferContext);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public void OnBufferEnd(void* pBufferContext)
-        {
-            ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, void>)(lpVtbl[4]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext);
-        }
+        void OnBufferEnd(void* pBufferContext);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public void OnLoopEnd(void* pBufferContext)
-        {
-            ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, void>)(lpVtbl[5]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext);
-        }
+        void OnLoopEnd(void* pBufferContext);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public void OnVoiceError(void* pBufferContext, HRESULT Error)
-        {
-            ((delegate* unmanaged<IXAudio2VoiceCallback*, void*, HRESULT, void>)(lpVtbl[6]))((IXAudio2VoiceCallback*)Unsafe.AsPointer(ref this), pBufferContext, Error);
-        }
+        void OnVoiceError(void* pBufferContext, HRESULT Error);
+    }
 
-        public interface Interface
-        {
-            [VtblIndex(0)]
-            void OnVoiceProcessingPassStart([NativeTypeName("UINT32")] uint BytesRequired);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("void (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2VoiceCallback*, uint, void> OnVoiceProcessingPassStart;
 
-            [VtblIndex(1)]
-            void OnVoiceProcessingPassEnd();
+        [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2VoiceCallback*, void> OnVoiceProcessingPassEnd;
 
-            [VtblIndex(2)]
-            void OnStreamEnd();
+        [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2VoiceCallback*, void> OnStreamEnd;
 
-            [VtblIndex(3)]
-            void OnBufferStart(void* pBufferContext);
+        [NativeTypeName("void (void *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2VoiceCallback*, void*, void> OnBufferStart;
 
-            [VtblIndex(4)]
-            void OnBufferEnd(void* pBufferContext);
+        [NativeTypeName("void (void *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2VoiceCallback*, void*, void> OnBufferEnd;
 
-            [VtblIndex(5)]
-            void OnLoopEnd(void* pBufferContext);
+        [NativeTypeName("void (void *) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2VoiceCallback*, void*, void> OnLoopEnd;
 
-            [VtblIndex(6)]
-            void OnVoiceError(void* pBufferContext, HRESULT Error);
-        }
-
-        public partial struct Vtbl
-        {
-            [NativeTypeName("void (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2VoiceCallback*, uint, void> OnVoiceProcessingPassStart;
-
-            [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2VoiceCallback*, void> OnVoiceProcessingPassEnd;
-
-            [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2VoiceCallback*, void> OnStreamEnd;
-
-            [NativeTypeName("void (void *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2VoiceCallback*, void*, void> OnBufferStart;
-
-            [NativeTypeName("void (void *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2VoiceCallback*, void*, void> OnBufferEnd;
-
-            [NativeTypeName("void (void *) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2VoiceCallback*, void*, void> OnLoopEnd;
-
-            [NativeTypeName("void (void *, HRESULT) __attribute__((nothrow)) __attribute__((stdcall))")]
-            public delegate* unmanaged<IXAudio2VoiceCallback*, void*, HRESULT, void> OnVoiceError;
-        }
+        [NativeTypeName("void (void *, HRESULT) __attribute__((nothrow)) __attribute__((stdcall))")]
+        public delegate* unmanaged<IXAudio2VoiceCallback*, void*, HRESULT, void> OnVoiceError;
     }
 }

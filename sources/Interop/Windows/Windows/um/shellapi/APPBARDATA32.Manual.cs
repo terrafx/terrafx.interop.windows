@@ -5,22 +5,21 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct APPBARDATA32
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct APPBARDATA32
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public HWND hWnd;
+    public HWND hWnd;
 
-        public uint uCallbackMessage;
+    public uint uCallbackMessage;
 
-        public uint uEdge;
+    public uint uEdge;
 
-        public RECT rc;
+    public RECT rc;
 
-        public LPARAM lParam;
-    }
+    public LPARAM lParam;
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DRAWPATRECT" /> struct.</summary>
+public static unsafe partial class DRAWPATRECTTests
 {
-    /// <summary>Provides validation of the <see cref="DRAWPATRECT" /> struct.</summary>
-    public static unsafe partial class DRAWPATRECTTests
+    /// <summary>Validates that the <see cref="DRAWPATRECT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DRAWPATRECT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DRAWPATRECT>(), Is.EqualTo(sizeof(DRAWPATRECT)));
-        }
+        Assert.That(Marshal.SizeOf<DRAWPATRECT>(), Is.EqualTo(sizeof(DRAWPATRECT)));
+    }
 
-        /// <summary>Validates that the <see cref="DRAWPATRECT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DRAWPATRECT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DRAWPATRECT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DRAWPATRECT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DRAWPATRECT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DRAWPATRECT), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="DRAWPATRECT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DRAWPATRECT), Is.EqualTo(20));
     }
 }

@@ -6,15 +6,14 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+[SupportedOSPlatform("windows10.0")]
+public enum D2D1_IMAGE_SOURCE_LOADING_OPTIONS : uint
 {
-    [Flags]
-    [SupportedOSPlatform("windows10.0")]
-    public enum D2D1_IMAGE_SOURCE_LOADING_OPTIONS : uint
-    {
-        D2D1_IMAGE_SOURCE_LOADING_OPTIONS_NONE = 0,
-        D2D1_IMAGE_SOURCE_LOADING_OPTIONS_RELEASE_SOURCE = 1,
-        D2D1_IMAGE_SOURCE_LOADING_OPTIONS_CACHE_ON_DEMAND = 2,
-        D2D1_IMAGE_SOURCE_LOADING_OPTIONS_FORCE_DWORD = 0xffffffff,
-    }
+    D2D1_IMAGE_SOURCE_LOADING_OPTIONS_NONE = 0,
+    D2D1_IMAGE_SOURCE_LOADING_OPTIONS_RELEASE_SOURCE = 1,
+    D2D1_IMAGE_SOURCE_LOADING_OPTIONS_CACHE_ON_DEMAND = 2,
+    D2D1_IMAGE_SOURCE_LOADING_OPTIONS_FORCE_DWORD = 0xffffffff,
 }

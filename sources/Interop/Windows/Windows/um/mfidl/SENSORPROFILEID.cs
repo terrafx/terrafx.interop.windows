@@ -6,17 +6,16 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.16299.0")]
+public partial struct SENSORPROFILEID
 {
-    [SupportedOSPlatform("windows10.0.16299.0")]
-    public partial struct SENSORPROFILEID
-    {
-        public Guid Type;
+    public Guid Type;
 
-        [NativeTypeName("UINT32")]
-        public uint Index;
+    [NativeTypeName("UINT32")]
+    public uint Index;
 
-        [NativeTypeName("UINT32")]
-        public uint Unused;
-    }
+    [NativeTypeName("UINT32")]
+    public uint Unused;
 }

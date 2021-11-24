@@ -3,14 +3,13 @@
 // Ported from shared/windef.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct POINT
-    {
-        [NativeTypeName("LONG")]
-        public int x;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("LONG")]
-        public int y;
-    }
+public partial struct POINT
+{
+    [NativeTypeName("LONG")]
+    public int x;
+
+    [NativeTypeName("LONG")]
+    public int y;
 }

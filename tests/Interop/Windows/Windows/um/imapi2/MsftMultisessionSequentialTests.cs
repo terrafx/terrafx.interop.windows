@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MsftMultisessionSequential" /> struct.</summary>
+public static unsafe partial class MsftMultisessionSequentialTests
 {
-    /// <summary>Provides validation of the <see cref="MsftMultisessionSequential" /> struct.</summary>
-    public static unsafe partial class MsftMultisessionSequentialTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="MsftMultisessionSequential" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="MsftMultisessionSequential" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(MsftMultisessionSequential).GUID, Is.EqualTo(CLSID_MsftMultisessionSequential));
-        }
+        Assert.That(typeof(MsftMultisessionSequential).GUID, Is.EqualTo(CLSID_MsftMultisessionSequential));
+    }
 
-        /// <summary>Validates that the <see cref="MsftMultisessionSequential" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MsftMultisessionSequential>(), Is.EqualTo(sizeof(MsftMultisessionSequential)));
-        }
+    /// <summary>Validates that the <see cref="MsftMultisessionSequential" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<MsftMultisessionSequential>(), Is.EqualTo(sizeof(MsftMultisessionSequential)));
+    }
 
-        /// <summary>Validates that the <see cref="MsftMultisessionSequential" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MsftMultisessionSequential).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MsftMultisessionSequential" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MsftMultisessionSequential).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MsftMultisessionSequential" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MsftMultisessionSequential), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="MsftMultisessionSequential" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MsftMultisessionSequential), Is.EqualTo(1));
     }
 }

@@ -3,14 +3,13 @@
 // Ported from um/MLOperatorAuthor.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.WinRT
-{
-    public unsafe partial struct MLOperatorSetId
-    {
-        [NativeTypeName("const char *")]
-        public sbyte* domain;
+namespace TerraFX.Interop.WinRT;
 
-        [NativeTypeName("int32_t")]
-        public int version;
-    }
+public unsafe partial struct MLOperatorSetId
+{
+    [NativeTypeName("const char *")]
+    public sbyte* domain;
+
+    [NativeTypeName("int32_t")]
+    public int version;
 }

@@ -5,39 +5,38 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct DEVICE_POWER_DESCRIPTOR
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct DEVICE_POWER_DESCRIPTOR
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte DeviceAttentionSupported;
+    [NativeTypeName("BOOLEAN")]
+    public byte DeviceAttentionSupported;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte AsynchronousNotificationSupported;
+    [NativeTypeName("BOOLEAN")]
+    public byte AsynchronousNotificationSupported;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte IdlePowerManagementEnabled;
+    [NativeTypeName("BOOLEAN")]
+    public byte IdlePowerManagementEnabled;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte D3ColdEnabled;
+    [NativeTypeName("BOOLEAN")]
+    public byte D3ColdEnabled;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte D3ColdSupported;
+    [NativeTypeName("BOOLEAN")]
+    public byte D3ColdSupported;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte NoVerifyDuringIdlePower;
+    [NativeTypeName("BOOLEAN")]
+    public byte NoVerifyDuringIdlePower;
 
-        [NativeTypeName("BYTE [2]")]
-        public fixed byte Reserved[2];
+    [NativeTypeName("BYTE [2]")]
+    public fixed byte Reserved[2];
 
-        [NativeTypeName("DWORD")]
-        public uint IdleTimeoutInMS;
-    }
+    [NativeTypeName("DWORD")]
+    public uint IdleTimeoutInMS;
 }

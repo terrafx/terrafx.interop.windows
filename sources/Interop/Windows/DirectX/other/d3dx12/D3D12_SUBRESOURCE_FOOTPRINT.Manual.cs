@@ -5,26 +5,25 @@
 
 using static TerraFX.Interop.DirectX.D3D12_RESOURCE_DIMENSION;
 
-namespace TerraFX.Interop.DirectX
-{
-    public unsafe partial struct D3D12_SUBRESOURCE_FOOTPRINT
-    {
-        public D3D12_SUBRESOURCE_FOOTPRINT(DXGI_FORMAT format, uint width, uint height, uint depth, uint rowPitch)
-        {
-            Format = format;
-            Width = width;
-            Height = height;
-            Depth = depth;
-            RowPitch = rowPitch;
-        }
+namespace TerraFX.Interop.DirectX;
 
-        public D3D12_SUBRESOURCE_FOOTPRINT([NativeTypeName("const D3D12_RESOURCE_DESC &")] in D3D12_RESOURCE_DESC resDesc, uint rowPitch)
-        {
-            Format = resDesc.Format;
-            Width = (uint)resDesc.Width;
-            Height = resDesc.Height;
-            Depth = (resDesc.Dimension == D3D12_RESOURCE_DIMENSION_TEXTURE3D ? resDesc.DepthOrArraySize : 1u);
-            RowPitch = rowPitch;
-        }
+public unsafe partial struct D3D12_SUBRESOURCE_FOOTPRINT
+{
+    public D3D12_SUBRESOURCE_FOOTPRINT(DXGI_FORMAT format, uint width, uint height, uint depth, uint rowPitch)
+    {
+        Format = format;
+        Width = width;
+        Height = height;
+        Depth = depth;
+        RowPitch = rowPitch;
+    }
+
+    public D3D12_SUBRESOURCE_FOOTPRINT([NativeTypeName("const D3D12_RESOURCE_DESC &")] in D3D12_RESOURCE_DESC resDesc, uint rowPitch)
+    {
+        Format = resDesc.Format;
+        Width = (uint)resDesc.Width;
+        Height = resDesc.Height;
+        Depth = (resDesc.Dimension == D3D12_RESOURCE_DIMENSION_TEXTURE3D ? resDesc.DepthOrArraySize : 1u);
+        RowPitch = rowPitch;
     }
 }

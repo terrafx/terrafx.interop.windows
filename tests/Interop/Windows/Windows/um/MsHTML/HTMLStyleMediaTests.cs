@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLStyleMedia" /> struct.</summary>
+public static unsafe partial class HTMLStyleMediaTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLStyleMedia" /> struct.</summary>
-    public static unsafe partial class HTMLStyleMediaTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLStyleMedia" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLStyleMedia" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLStyleMedia).GUID, Is.EqualTo(IID_HTMLStyleMedia));
-        }
+        Assert.That(typeof(HTMLStyleMedia).GUID, Is.EqualTo(IID_HTMLStyleMedia));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLStyleMedia" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLStyleMedia>(), Is.EqualTo(sizeof(HTMLStyleMedia)));
-        }
+    /// <summary>Validates that the <see cref="HTMLStyleMedia" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLStyleMedia>(), Is.EqualTo(sizeof(HTMLStyleMedia)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLStyleMedia" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLStyleMedia).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLStyleMedia" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLStyleMedia).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLStyleMedia" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTMLStyleMedia), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTMLStyleMedia" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTMLStyleMedia), Is.EqualTo(1));
     }
 }

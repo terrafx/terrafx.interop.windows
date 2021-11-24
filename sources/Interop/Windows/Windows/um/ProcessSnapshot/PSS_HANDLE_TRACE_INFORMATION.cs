@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.1")]
-    public partial struct PSS_HANDLE_TRACE_INFORMATION
-    {
-        public HANDLE SectionHandle;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
-    }
+[SupportedOSPlatform("windows8.1")]
+public partial struct PSS_HANDLE_TRACE_INFORMATION
+{
+    public HANDLE SectionHandle;
+
+    [NativeTypeName("DWORD")]
+    public uint Size;
 }

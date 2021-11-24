@@ -5,15 +5,14 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SP_DEVICE_INTERFACE_DETAIL_DATA32_A
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("CHAR [1]")]
-        public fixed sbyte DevicePath[1];
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SP_DEVICE_INTERFACE_DETAIL_DATA32_A
+{
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
+
+    [NativeTypeName("CHAR [1]")]
+    public fixed sbyte DevicePath[1];
 }

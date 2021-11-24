@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IUIAnimationVariable" /> struct.</summary>
+public static unsafe partial class IUIAnimationVariableTests
 {
-    /// <summary>Provides validation of the <see cref="IUIAnimationVariable" /> struct.</summary>
-    public static unsafe partial class IUIAnimationVariableTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IUIAnimationVariable" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IUIAnimationVariable" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IUIAnimationVariable).GUID, Is.EqualTo(IID_IUIAnimationVariable));
-        }
+        Assert.That(typeof(IUIAnimationVariable).GUID, Is.EqualTo(IID_IUIAnimationVariable));
+    }
 
-        /// <summary>Validates that the <see cref="IUIAnimationVariable" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IUIAnimationVariable>(), Is.EqualTo(sizeof(IUIAnimationVariable)));
-        }
+    /// <summary>Validates that the <see cref="IUIAnimationVariable" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IUIAnimationVariable>(), Is.EqualTo(sizeof(IUIAnimationVariable)));
+    }
 
-        /// <summary>Validates that the <see cref="IUIAnimationVariable" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IUIAnimationVariable).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IUIAnimationVariable" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IUIAnimationVariable).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IUIAnimationVariable" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IUIAnimationVariable" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IUIAnimationVariable), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IUIAnimationVariable), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IUIAnimationVariable), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IUIAnimationVariable), Is.EqualTo(4));
         }
     }
 }

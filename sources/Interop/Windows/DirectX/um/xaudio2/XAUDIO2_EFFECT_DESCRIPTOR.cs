@@ -6,16 +6,15 @@
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct XAUDIO2_EFFECT_DESCRIPTOR
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct XAUDIO2_EFFECT_DESCRIPTOR
-    {
-        public IUnknown* pEffect;
+    public IUnknown* pEffect;
 
-        public BOOL InitialState;
+    public BOOL InitialState;
 
-        [NativeTypeName("UINT32")]
-        public uint OutputChannels;
-    }
+    [NativeTypeName("UINT32")]
+    public uint OutputChannels;
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SP_BACKUP_QUEUE_PARAMS64_V1_A" /> struct.</summary>
+public static unsafe partial class SP_BACKUP_QUEUE_PARAMS64_V1_ATests
 {
-    /// <summary>Provides validation of the <see cref="SP_BACKUP_QUEUE_PARAMS64_V1_A" /> struct.</summary>
-    public static unsafe partial class SP_BACKUP_QUEUE_PARAMS64_V1_ATests
+    /// <summary>Validates that the <see cref="SP_BACKUP_QUEUE_PARAMS64_V1_A" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SP_BACKUP_QUEUE_PARAMS64_V1_A" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SP_BACKUP_QUEUE_PARAMS64_V1_A>(), Is.EqualTo(sizeof(SP_BACKUP_QUEUE_PARAMS64_V1_A)));
-        }
+        Assert.That(Marshal.SizeOf<SP_BACKUP_QUEUE_PARAMS64_V1_A>(), Is.EqualTo(sizeof(SP_BACKUP_QUEUE_PARAMS64_V1_A)));
+    }
 
-        /// <summary>Validates that the <see cref="SP_BACKUP_QUEUE_PARAMS64_V1_A" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SP_BACKUP_QUEUE_PARAMS64_V1_A).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SP_BACKUP_QUEUE_PARAMS64_V1_A" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SP_BACKUP_QUEUE_PARAMS64_V1_A).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SP_BACKUP_QUEUE_PARAMS64_V1_A" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SP_BACKUP_QUEUE_PARAMS64_V1_A), Is.EqualTo(268));
-        }
+    /// <summary>Validates that the <see cref="SP_BACKUP_QUEUE_PARAMS64_V1_A" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SP_BACKUP_QUEUE_PARAMS64_V1_A), Is.EqualTo(268));
     }
 }

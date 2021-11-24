@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="FXEcho" /> struct.</summary>
+public static unsafe partial class FXEchoTests
 {
-    /// <summary>Provides validation of the <see cref="FXEcho" /> struct.</summary>
-    public static unsafe partial class FXEchoTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="FXEcho" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="FXEcho" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(FXEcho).GUID, Is.EqualTo(CLSID_FXEcho));
-        }
+        Assert.That(typeof(FXEcho).GUID, Is.EqualTo(CLSID_FXEcho));
+    }
 
-        /// <summary>Validates that the <see cref="FXEcho" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<FXEcho>(), Is.EqualTo(sizeof(FXEcho)));
-        }
+    /// <summary>Validates that the <see cref="FXEcho" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<FXEcho>(), Is.EqualTo(sizeof(FXEcho)));
+    }
 
-        /// <summary>Validates that the <see cref="FXEcho" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(FXEcho).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="FXEcho" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(FXEcho).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="FXEcho" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(FXEcho), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="FXEcho" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(FXEcho), Is.EqualTo(1));
     }
 }

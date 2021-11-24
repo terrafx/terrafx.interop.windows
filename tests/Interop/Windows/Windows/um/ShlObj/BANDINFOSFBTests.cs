@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="BANDINFOSFB" /> struct.</summary>
+public static unsafe partial class BANDINFOSFBTests
 {
-    /// <summary>Provides validation of the <see cref="BANDINFOSFB" /> struct.</summary>
-    public static unsafe partial class BANDINFOSFBTests
+    /// <summary>Validates that the <see cref="BANDINFOSFB" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="BANDINFOSFB" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<BANDINFOSFB>(), Is.EqualTo(sizeof(BANDINFOSFB)));
-        }
+        Assert.That(Marshal.SizeOf<BANDINFOSFB>(), Is.EqualTo(sizeof(BANDINFOSFB)));
+    }
 
-        /// <summary>Validates that the <see cref="BANDINFOSFB" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(BANDINFOSFB).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="BANDINFOSFB" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(BANDINFOSFB).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="BANDINFOSFB" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="BANDINFOSFB" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(BANDINFOSFB), Is.EqualTo(48));
-            }
-            else
-            {
-                Assert.That(sizeof(BANDINFOSFB), Is.EqualTo(36));
-            }
+            Assert.That(sizeof(BANDINFOSFB), Is.EqualTo(48));
+        }
+        else
+        {
+            Assert.That(sizeof(BANDINFOSFB), Is.EqualTo(36));
         }
     }
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("8BF9A910-A8FF-457F-999F-A5CA10B4A885")]
+public partial struct V1SmartcardCredentialProvider
 {
-    [Guid("8BF9A910-A8FF-457F-999F-A5CA10B4A885")]
-    public partial struct V1SmartcardCredentialProvider
-    {
-    }
 }

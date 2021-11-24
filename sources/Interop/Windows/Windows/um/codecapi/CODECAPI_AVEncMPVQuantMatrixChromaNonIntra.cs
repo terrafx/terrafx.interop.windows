@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("1415B6B1-362A-4338-BA9A-1EF58703C05B")]
+public partial struct CODECAPI_AVEncMPVQuantMatrixChromaNonIntra
 {
-    [Guid("1415B6B1-362A-4338-BA9A-1EF58703C05B")]
-    public partial struct CODECAPI_AVEncMPVQuantMatrixChromaNonIntra
-    {
-    }
 }

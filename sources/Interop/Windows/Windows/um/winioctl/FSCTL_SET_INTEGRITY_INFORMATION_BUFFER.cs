@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct FSCTL_SET_INTEGRITY_INFORMATION_BUFFER
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct FSCTL_SET_INTEGRITY_INFORMATION_BUFFER
-    {
-        [NativeTypeName("WORD")]
-        public ushort ChecksumAlgorithm;
+    [NativeTypeName("WORD")]
+    public ushort ChecksumAlgorithm;
 
-        [NativeTypeName("WORD")]
-        public ushort Reserved;
+    [NativeTypeName("WORD")]
+    public ushort Reserved;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
-    }
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 }

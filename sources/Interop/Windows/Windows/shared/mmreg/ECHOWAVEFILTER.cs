@@ -5,17 +5,16 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct ECHOWAVEFILTER
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct ECHOWAVEFILTER
-    {
-        public WAVEFILTER wfltr;
+    public WAVEFILTER wfltr;
 
-        [NativeTypeName("DWORD")]
-        public uint dwVolume;
+    [NativeTypeName("DWORD")]
+    public uint dwVolume;
 
-        [NativeTypeName("DWORD")]
-        public uint dwDelay;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwDelay;
 }

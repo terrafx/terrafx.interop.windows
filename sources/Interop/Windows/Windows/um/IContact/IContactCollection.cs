@@ -7,90 +7,89 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("B6AFA338-D779-11D9-8BDE-F66BAD1E3F3A")]
+[NativeTypeName("struct IContactCollection : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IContactCollection : IContactCollection.Interface
 {
-    [Guid("B6AFA338-D779-11D9-8BDE-F66BAD1E3F3A")]
-    [NativeTypeName("struct IContactCollection : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IContactCollection : IContactCollection.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IContactCollection*, Guid*, void**, int>)(lpVtbl[0]))((IContactCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IContactCollection*, Guid*, void**, int>)(lpVtbl[0]))((IContactCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IContactCollection*, uint>)(lpVtbl[1]))((IContactCollection*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IContactCollection*, uint>)(lpVtbl[1]))((IContactCollection*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IContactCollection*, uint>)(lpVtbl[2]))((IContactCollection*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IContactCollection*, uint>)(lpVtbl[2]))((IContactCollection*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Reset()
+    {
+        return ((delegate* unmanaged<IContactCollection*, int>)(lpVtbl[3]))((IContactCollection*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT Next()
+    {
+        return ((delegate* unmanaged<IContactCollection*, int>)(lpVtbl[4]))((IContactCollection*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetCurrent(IContact** ppContact)
+    {
+        return ((delegate* unmanaged<IContactCollection*, IContact**, int>)(lpVtbl[5]))((IContactCollection*)Unsafe.AsPointer(ref this), ppContact);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT Reset()
-        {
-            return ((delegate* unmanaged<IContactCollection*, int>)(lpVtbl[3]))((IContactCollection*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Reset();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT Next()
-        {
-            return ((delegate* unmanaged<IContactCollection*, int>)(lpVtbl[4]))((IContactCollection*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Next();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetCurrent(IContact** ppContact)
-        {
-            return ((delegate* unmanaged<IContactCollection*, IContact**, int>)(lpVtbl[5]))((IContactCollection*)Unsafe.AsPointer(ref this), ppContact);
-        }
+        HRESULT GetCurrent(IContact** ppContact);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT Reset();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IContactCollection*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT Next();
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IContactCollection*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetCurrent(IContact** ppContact);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IContactCollection*, uint> Release;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IContactCollection*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IContactCollection*, int> Reset;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IContactCollection*, uint> AddRef;
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IContactCollection*, int> Next;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IContactCollection*, uint> Release;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IContactCollection*, int> Reset;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IContactCollection*, int> Next;
-
-            [NativeTypeName("HRESULT (IContact **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IContactCollection*, IContact**, int> GetCurrent;
-        }
+        [NativeTypeName("HRESULT (IContact **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IContactCollection*, IContact**, int> GetCurrent;
     }
 }

@@ -7,31 +7,30 @@ using NUnit.Framework;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="D3D11_AES_CTR_IV" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class D3D11_AES_CTR_IVTests
 {
-    /// <summary>Provides validation of the <see cref="D3D11_AES_CTR_IV" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class D3D11_AES_CTR_IVTests
+    /// <summary>Validates that the <see cref="D3D11_AES_CTR_IV" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="D3D11_AES_CTR_IV" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<D3D11_AES_CTR_IV>(), Is.EqualTo(sizeof(D3D11_AES_CTR_IV)));
-        }
+        Assert.That(Marshal.SizeOf<D3D11_AES_CTR_IV>(), Is.EqualTo(sizeof(D3D11_AES_CTR_IV)));
+    }
 
-        /// <summary>Validates that the <see cref="D3D11_AES_CTR_IV" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(D3D11_AES_CTR_IV).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="D3D11_AES_CTR_IV" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(D3D11_AES_CTR_IV).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="D3D11_AES_CTR_IV" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(D3D11_AES_CTR_IV), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="D3D11_AES_CTR_IV" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(D3D11_AES_CTR_IV), Is.EqualTo(16));
     }
 }

@@ -7,64 +7,63 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("0D12C4C8-A3D9-4E24-94C1-0E20C5A956C4")]
+[NativeTypeName("struct ILaunchUIContextProvider : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ILaunchUIContextProvider : ILaunchUIContextProvider.Interface
 {
-    [Guid("0D12C4C8-A3D9-4E24-94C1-0E20C5A956C4")]
-    [NativeTypeName("struct ILaunchUIContextProvider : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct ILaunchUIContextProvider : ILaunchUIContextProvider.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<ILaunchUIContextProvider*, Guid*, void**, int>)(lpVtbl[0]))((ILaunchUIContextProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<ILaunchUIContextProvider*, Guid*, void**, int>)(lpVtbl[0]))((ILaunchUIContextProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<ILaunchUIContextProvider*, uint>)(lpVtbl[1]))((ILaunchUIContextProvider*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<ILaunchUIContextProvider*, uint>)(lpVtbl[1]))((ILaunchUIContextProvider*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<ILaunchUIContextProvider*, uint>)(lpVtbl[2]))((ILaunchUIContextProvider*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<ILaunchUIContextProvider*, uint>)(lpVtbl[2]))((ILaunchUIContextProvider*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT UpdateContext(ILaunchUIContext* context)
+    {
+        return ((delegate* unmanaged<ILaunchUIContextProvider*, ILaunchUIContext*, int>)(lpVtbl[3]))((ILaunchUIContextProvider*)Unsafe.AsPointer(ref this), context);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT UpdateContext(ILaunchUIContext* context)
-        {
-            return ((delegate* unmanaged<ILaunchUIContextProvider*, ILaunchUIContext*, int>)(lpVtbl[3]))((ILaunchUIContextProvider*)Unsafe.AsPointer(ref this), context);
-        }
+        HRESULT UpdateContext(ILaunchUIContext* context);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT UpdateContext(ILaunchUIContext* context);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<ILaunchUIContextProvider*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<ILaunchUIContextProvider*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ILaunchUIContextProvider*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ILaunchUIContextProvider*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<ILaunchUIContextProvider*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<ILaunchUIContextProvider*, uint> Release;
-
-            [NativeTypeName("HRESULT (ILaunchUIContext *) __attribute__((stdcall))")]
-            public delegate* unmanaged<ILaunchUIContextProvider*, ILaunchUIContext*, int> UpdateContext;
-        }
+        [NativeTypeName("HRESULT (ILaunchUIContext *) __attribute__((stdcall))")]
+        public delegate* unmanaged<ILaunchUIContextProvider*, ILaunchUIContext*, int> UpdateContext;
     }
 }

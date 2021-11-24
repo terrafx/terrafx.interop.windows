@@ -3,12 +3,11 @@
 // Ported from um/d2d1effects_2.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE : uint
 {
-    public enum D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE : uint
-    {
-        D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE_HUE_SATURATION_VALUE = 0,
-        D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE_HUE_SATURATION_LIGHTNESS = 1,
-        D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE_FORCE_DWORD = 0xffffffff,
-    }
+    D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE_HUE_SATURATION_VALUE = 0,
+    D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE_HUE_SATURATION_LIGHTNESS = 1,
+    D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE_FORCE_DWORD = 0xffffffff,
 }

@@ -3,14 +3,13 @@
 // Ported from um/oaidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct CUSTDATA
-    {
-        [NativeTypeName("DWORD")]
-        public uint cCustData;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("LPCUSTDATAITEM")]
-        public CUSTDATAITEM* prgCustData;
-    }
+public unsafe partial struct CUSTDATA
+{
+    [NativeTypeName("DWORD")]
+    public uint cCustData;
+
+    [NativeTypeName("LPCUSTDATAITEM")]
+    public CUSTDATAITEM* prgCustData;
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TS_SELECTION_ANCHOR" /> struct.</summary>
+public static unsafe partial class TS_SELECTION_ANCHORTests
 {
-    /// <summary>Provides validation of the <see cref="TS_SELECTION_ANCHOR" /> struct.</summary>
-    public static unsafe partial class TS_SELECTION_ANCHORTests
+    /// <summary>Validates that the <see cref="TS_SELECTION_ANCHOR" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TS_SELECTION_ANCHOR" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TS_SELECTION_ANCHOR>(), Is.EqualTo(sizeof(TS_SELECTION_ANCHOR)));
-        }
+        Assert.That(Marshal.SizeOf<TS_SELECTION_ANCHOR>(), Is.EqualTo(sizeof(TS_SELECTION_ANCHOR)));
+    }
 
-        /// <summary>Validates that the <see cref="TS_SELECTION_ANCHOR" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TS_SELECTION_ANCHOR).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TS_SELECTION_ANCHOR" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TS_SELECTION_ANCHOR).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TS_SELECTION_ANCHOR" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="TS_SELECTION_ANCHOR" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(TS_SELECTION_ANCHOR), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(TS_SELECTION_ANCHOR), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(TS_SELECTION_ANCHOR), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(TS_SELECTION_ANCHOR), Is.EqualTo(16));
         }
     }
 }

@@ -3,20 +3,19 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct NMTVITEMCHANGE
 {
-    public partial struct NMTVITEMCHANGE
-    {
-        public NMHDR hdr;
+    public NMHDR hdr;
 
-        public uint uChanged;
+    public uint uChanged;
 
-        public HTREEITEM hItem;
+    public HTREEITEM hItem;
 
-        public uint uStateNew;
+    public uint uStateNew;
 
-        public uint uStateOld;
+    public uint uStateOld;
 
-        public LPARAM lParam;
-    }
+    public LPARAM lParam;
 }

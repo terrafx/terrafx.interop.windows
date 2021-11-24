@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum PROPERTYUI_FLAGS
 {
-    [Flags]
-    public enum PROPERTYUI_FLAGS
-    {
-        PUIF_DEFAULT = 0,
-        PUIF_RIGHTALIGN = 0x1,
-        PUIF_NOLABELININFOTIP = 0x2,
-    }
+    PUIF_DEFAULT = 0,
+    PUIF_RIGHTALIGN = 0x1,
+    PUIF_NOLABELININFOTIP = 0x2,
 }

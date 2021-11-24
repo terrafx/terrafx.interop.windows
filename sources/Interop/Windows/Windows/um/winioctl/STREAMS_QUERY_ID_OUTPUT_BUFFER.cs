@@ -3,11 +3,10 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct STREAMS_QUERY_ID_OUTPUT_BUFFER
 {
-    public partial struct STREAMS_QUERY_ID_OUTPUT_BUFFER
-    {
-        [NativeTypeName("DWORD")]
-        public uint StreamId;
-    }
+    [NativeTypeName("DWORD")]
+    public uint StreamId;
 }

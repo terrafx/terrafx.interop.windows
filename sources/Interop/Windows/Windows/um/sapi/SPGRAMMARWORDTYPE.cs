@@ -3,13 +3,12 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SPGRAMMARWORDTYPE
 {
-    public enum SPGRAMMARWORDTYPE
-    {
-        SPWT_DISPLAY = 0,
-        SPWT_LEXICAL = (SPWT_DISPLAY + 1),
-        SPWT_PRONUNCIATION = (SPWT_LEXICAL + 1),
-        SPWT_LEXICAL_NO_SPECIAL_CHARS = (SPWT_PRONUNCIATION + 1),
-    }
+    SPWT_DISPLAY = 0,
+    SPWT_LEXICAL = (SPWT_DISPLAY + 1),
+    SPWT_PRONUNCIATION = (SPWT_LEXICAL + 1),
+    SPWT_LEXICAL_NO_SPECIAL_CHARS = (SPWT_PRONUNCIATION + 1),
 }

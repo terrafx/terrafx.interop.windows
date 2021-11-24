@@ -3,13 +3,12 @@
 // Ported from um/vsstyle.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum DROPDOWNBUTTONLEFTSTATES
 {
-    public enum DROPDOWNBUTTONLEFTSTATES
-    {
-        CBXSL_NORMAL = 1,
-        CBXSL_HOT = 2,
-        CBXSL_PRESSED = 3,
-        CBXSL_DISABLED = 4,
-    }
+    CBXSL_NORMAL = 1,
+    CBXSL_HOT = 2,
+    CBXSL_PRESSED = 3,
+    CBXSL_DISABLED = 4,
 }

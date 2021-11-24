@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DRIVER_VER_MAJORMINOR" /> struct.</summary>
+public static unsafe partial class DRIVER_VER_MAJORMINORTests
 {
-    /// <summary>Provides validation of the <see cref="DRIVER_VER_MAJORMINOR" /> struct.</summary>
-    public static unsafe partial class DRIVER_VER_MAJORMINORTests
+    /// <summary>Validates that the <see cref="DRIVER_VER_MAJORMINOR" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DRIVER_VER_MAJORMINOR" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DRIVER_VER_MAJORMINOR>(), Is.EqualTo(sizeof(DRIVER_VER_MAJORMINOR)));
-        }
+        Assert.That(Marshal.SizeOf<DRIVER_VER_MAJORMINOR>(), Is.EqualTo(sizeof(DRIVER_VER_MAJORMINOR)));
+    }
 
-        /// <summary>Validates that the <see cref="DRIVER_VER_MAJORMINOR" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DRIVER_VER_MAJORMINOR).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DRIVER_VER_MAJORMINOR" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DRIVER_VER_MAJORMINOR).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DRIVER_VER_MAJORMINOR" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DRIVER_VER_MAJORMINOR), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="DRIVER_VER_MAJORMINOR" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DRIVER_VER_MAJORMINOR), Is.EqualTo(8));
     }
 }

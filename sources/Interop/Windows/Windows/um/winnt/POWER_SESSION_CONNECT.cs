@@ -3,14 +3,13 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct POWER_SESSION_CONNECT
-    {
-        [NativeTypeName("BOOLEAN")]
-        public byte Connected;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte Console;
-    }
+public partial struct POWER_SESSION_CONNECT
+{
+    [NativeTypeName("BOOLEAN")]
+    public byte Connected;
+
+    [NativeTypeName("BOOLEAN")]
+    public byte Console;
 }

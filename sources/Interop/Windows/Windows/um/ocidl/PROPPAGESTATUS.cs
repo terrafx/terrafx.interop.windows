@@ -3,12 +3,11 @@
 // Ported from um/ocidl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum PROPPAGESTATUS
 {
-    public enum PROPPAGESTATUS
-    {
-        PROPPAGESTATUS_DIRTY = 0x1,
-        PROPPAGESTATUS_VALIDATE = 0x2,
-        PROPPAGESTATUS_CLEAN = 0x4,
-    }
+    PROPPAGESTATUS_DIRTY = 0x1,
+    PROPPAGESTATUS_VALIDATE = 0x2,
+    PROPPAGESTATUS_CLEAN = 0x4,
 }

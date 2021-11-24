@@ -8,41 +8,40 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public partial struct STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR
 {
-    [SupportedOSPlatform("windows10.0")]
-    public partial struct STORAGE_PHYSICAL_TOPOLOGY_DESCRIPTOR
+    [NativeTypeName("DWORD")]
+    public uint Version;
+
+    [NativeTypeName("DWORD")]
+    public uint Size;
+
+    [NativeTypeName("DWORD")]
+    public uint NodeCount;
+
+    [NativeTypeName("DWORD")]
+    public uint Reserved;
+
+    [NativeTypeName("STORAGE_PHYSICAL_NODE_DATA [1]")]
+    public _Node_e__FixedBuffer Node;
+
+    public partial struct _Node_e__FixedBuffer
     {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+        public STORAGE_PHYSICAL_NODE_DATA e0;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
-
-        [NativeTypeName("DWORD")]
-        public uint NodeCount;
-
-        [NativeTypeName("DWORD")]
-        public uint Reserved;
-
-        [NativeTypeName("STORAGE_PHYSICAL_NODE_DATA [1]")]
-        public _Node_e__FixedBuffer Node;
-
-        public partial struct _Node_e__FixedBuffer
+        public ref STORAGE_PHYSICAL_NODE_DATA this[int index]
         {
-            public STORAGE_PHYSICAL_NODE_DATA e0;
-
-            public ref STORAGE_PHYSICAL_NODE_DATA this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<STORAGE_PHYSICAL_NODE_DATA> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<STORAGE_PHYSICAL_NODE_DATA> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

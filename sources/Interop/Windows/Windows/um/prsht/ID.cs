@@ -3,14 +3,13 @@
 // Ported from um/prsht.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class ID
-    {
-        [NativeTypeName("#define ID_PSRESTARTWINDOWS 0x2")]
-        public const int ID_PSRESTARTWINDOWS = 0x2;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("#define ID_PSREBOOTSYSTEM (ID_PSRESTARTWINDOWS | 0x1)")]
-        public const int ID_PSREBOOTSYSTEM = (0x2 | 0x1);
-    }
+public static partial class ID
+{
+    [NativeTypeName("#define ID_PSRESTARTWINDOWS 0x2")]
+    public const int ID_PSRESTARTWINDOWS = 0x2;
+
+    [NativeTypeName("#define ID_PSREBOOTSYSTEM (ID_PSRESTARTWINDOWS | 0x1)")]
+    public const int ID_PSREBOOTSYSTEM = (0x2 | 0x1);
 }

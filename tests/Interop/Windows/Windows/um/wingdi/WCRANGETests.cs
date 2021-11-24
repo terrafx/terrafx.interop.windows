@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WCRANGE" /> struct.</summary>
+public static unsafe partial class WCRANGETests
 {
-    /// <summary>Provides validation of the <see cref="WCRANGE" /> struct.</summary>
-    public static unsafe partial class WCRANGETests
+    /// <summary>Validates that the <see cref="WCRANGE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WCRANGE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WCRANGE>(), Is.EqualTo(sizeof(WCRANGE)));
-        }
+        Assert.That(Marshal.SizeOf<WCRANGE>(), Is.EqualTo(sizeof(WCRANGE)));
+    }
 
-        /// <summary>Validates that the <see cref="WCRANGE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WCRANGE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WCRANGE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WCRANGE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WCRANGE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(WCRANGE), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="WCRANGE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(WCRANGE), Is.EqualTo(4));
     }
 }

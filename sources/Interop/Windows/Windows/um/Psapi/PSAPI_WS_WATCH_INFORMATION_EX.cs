@@ -3,16 +3,15 @@
 // Ported from um/Psapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct PSAPI_WS_WATCH_INFORMATION_EX
 {
-    public partial struct PSAPI_WS_WATCH_INFORMATION_EX
-    {
-        public PSAPI_WS_WATCH_INFORMATION BasicInfo;
+    public PSAPI_WS_WATCH_INFORMATION BasicInfo;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint FaultingThreadId;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint FaultingThreadId;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint Flags;
-    }
+    [NativeTypeName("ULONG_PTR")]
+    public nuint Flags;
 }

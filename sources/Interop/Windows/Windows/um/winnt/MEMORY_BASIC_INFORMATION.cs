@@ -3,32 +3,31 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct MEMORY_BASIC_INFORMATION
 {
-    public unsafe partial struct MEMORY_BASIC_INFORMATION
-    {
-        [NativeTypeName("PVOID")]
-        public void* BaseAddress;
+    [NativeTypeName("PVOID")]
+    public void* BaseAddress;
 
-        [NativeTypeName("PVOID")]
-        public void* AllocationBase;
+    [NativeTypeName("PVOID")]
+    public void* AllocationBase;
 
-        [NativeTypeName("DWORD")]
-        public uint AllocationProtect;
+    [NativeTypeName("DWORD")]
+    public uint AllocationProtect;
 
-        [NativeTypeName("WORD")]
-        public ushort PartitionId;
+    [NativeTypeName("WORD")]
+    public ushort PartitionId;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint RegionSize;
+    [NativeTypeName("SIZE_T")]
+    public nuint RegionSize;
 
-        [NativeTypeName("DWORD")]
-        public uint State;
+    [NativeTypeName("DWORD")]
+    public uint State;
 
-        [NativeTypeName("DWORD")]
-        public uint Protect;
+    [NativeTypeName("DWORD")]
+    public uint Protect;
 
-        [NativeTypeName("DWORD")]
-        public uint Type;
-    }
+    [NativeTypeName("DWORD")]
+    public uint Type;
 }

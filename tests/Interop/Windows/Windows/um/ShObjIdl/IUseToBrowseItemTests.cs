@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IUseToBrowseItem" /> struct.</summary>
+public static unsafe partial class IUseToBrowseItemTests
 {
-    /// <summary>Provides validation of the <see cref="IUseToBrowseItem" /> struct.</summary>
-    public static unsafe partial class IUseToBrowseItemTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IUseToBrowseItem" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IUseToBrowseItem" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IUseToBrowseItem).GUID, Is.EqualTo(IID_IUseToBrowseItem));
-        }
+        Assert.That(typeof(IUseToBrowseItem).GUID, Is.EqualTo(IID_IUseToBrowseItem));
+    }
 
-        /// <summary>Validates that the <see cref="IUseToBrowseItem" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IUseToBrowseItem>(), Is.EqualTo(sizeof(IUseToBrowseItem)));
-        }
+    /// <summary>Validates that the <see cref="IUseToBrowseItem" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IUseToBrowseItem>(), Is.EqualTo(sizeof(IUseToBrowseItem)));
+    }
 
-        /// <summary>Validates that the <see cref="IUseToBrowseItem" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IUseToBrowseItem).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IUseToBrowseItem" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IUseToBrowseItem).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IUseToBrowseItem" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IUseToBrowseItem" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IUseToBrowseItem), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IUseToBrowseItem), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IUseToBrowseItem), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IUseToBrowseItem), Is.EqualTo(4));
         }
     }
 }

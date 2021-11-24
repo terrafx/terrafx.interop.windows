@@ -3,14 +3,13 @@
 // Ported from um/d3d12video.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS
 {
-    public unsafe partial struct D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS
-    {
-        public ID3D12Resource* pOutputTexture2D;
+    public ID3D12Resource* pOutputTexture2D;
 
-        public uint OutputSubresource;
+    public uint OutputSubresource;
 
-        public D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS ConversionArguments;
-    }
+    public D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS ConversionArguments;
 }

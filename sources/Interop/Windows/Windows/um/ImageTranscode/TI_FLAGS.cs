@@ -3,11 +3,10 @@
 // Ported from um/ImageTranscode.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum TI_FLAGS
 {
-    public enum TI_FLAGS
-    {
-        TI_BITMAP = 1,
-        TI_JPEG = 2,
-    }
+    TI_BITMAP = 1,
+    TI_JPEG = 2,
 }

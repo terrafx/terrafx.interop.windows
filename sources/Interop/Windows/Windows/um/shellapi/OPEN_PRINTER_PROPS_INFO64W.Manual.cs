@@ -3,21 +3,20 @@
 // Ported from um/shellapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct OPEN_PRINTER_PROPS_INFO64W
 {
-    public unsafe partial struct OPEN_PRINTER_PROPS_INFO64W
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwSize;
+    [NativeTypeName("DWORD")]
+    public uint dwSize;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pszSheetName;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pszSheetName;
 
-        public uint uSheetIndex;
+    public uint uSheetIndex;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 
-        public BOOL bModal;
-    }
+    public BOOL bModal;
 }

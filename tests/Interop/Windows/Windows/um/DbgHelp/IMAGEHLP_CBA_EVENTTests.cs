@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMAGEHLP_CBA_EVENT" /> struct.</summary>
+public static unsafe partial class IMAGEHLP_CBA_EVENTTests
 {
-    /// <summary>Provides validation of the <see cref="IMAGEHLP_CBA_EVENT" /> struct.</summary>
-    public static unsafe partial class IMAGEHLP_CBA_EVENTTests
+    /// <summary>Validates that the <see cref="IMAGEHLP_CBA_EVENT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IMAGEHLP_CBA_EVENT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMAGEHLP_CBA_EVENT>(), Is.EqualTo(sizeof(IMAGEHLP_CBA_EVENT)));
-        }
+        Assert.That(Marshal.SizeOf<IMAGEHLP_CBA_EVENT>(), Is.EqualTo(sizeof(IMAGEHLP_CBA_EVENT)));
+    }
 
-        /// <summary>Validates that the <see cref="IMAGEHLP_CBA_EVENT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMAGEHLP_CBA_EVENT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMAGEHLP_CBA_EVENT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMAGEHLP_CBA_EVENT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMAGEHLP_CBA_EVENT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMAGEHLP_CBA_EVENT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMAGEHLP_CBA_EVENT), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(IMAGEHLP_CBA_EVENT), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(IMAGEHLP_CBA_EVENT), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(IMAGEHLP_CBA_EVENT), Is.EqualTo(16));
         }
     }
 }

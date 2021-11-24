@@ -3,12 +3,11 @@
 // Ported from um/DispatcherQueue.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum DISPATCHERQUEUE_THREAD_APARTMENTTYPE
 {
-    public enum DISPATCHERQUEUE_THREAD_APARTMENTTYPE
-    {
-        DQTAT_COM_NONE = 0,
-        DQTAT_COM_ASTA = 1,
-        DQTAT_COM_STA = 2,
-    }
+    DQTAT_COM_NONE = 0,
+    DQTAT_COM_ASTA = 1,
+    DQTAT_COM_STA = 2,
 }

@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct TOUCH_HIT_TESTING_PROXIMITY_EVALUATION
-    {
-        [NativeTypeName("UINT16")]
-        public ushort score;
+namespace TerraFX.Interop.Windows;
 
-        public POINT adjustedPoint;
-    }
+[SupportedOSPlatform("windows8.0")]
+public partial struct TOUCH_HIT_TESTING_PROXIMITY_EVALUATION
+{
+    [NativeTypeName("UINT16")]
+    public ushort score;
+
+    public POINT adjustedPoint;
 }

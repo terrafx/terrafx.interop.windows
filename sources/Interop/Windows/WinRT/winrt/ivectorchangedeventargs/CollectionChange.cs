@@ -3,13 +3,12 @@
 // Ported from winrt/ivectorchangedeventargs.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+public enum CollectionChange
 {
-    public enum CollectionChange
-    {
-        CollectionChange_Reset,
-        CollectionChange_ItemInserted,
-        CollectionChange_ItemRemoved,
-        CollectionChange_ItemChanged,
-    }
+    CollectionChange_Reset,
+    CollectionChange_ItemInserted,
+    CollectionChange_ItemRemoved,
+    CollectionChange_ItemChanged,
 }

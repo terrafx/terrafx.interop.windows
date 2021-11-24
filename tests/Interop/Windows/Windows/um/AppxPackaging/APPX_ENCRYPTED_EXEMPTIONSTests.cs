@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="APPX_ENCRYPTED_EXEMPTIONS" /> struct.</summary>
+[SupportedOSPlatform("windows10.0")]
+public static unsafe partial class APPX_ENCRYPTED_EXEMPTIONSTests
 {
-    /// <summary>Provides validation of the <see cref="APPX_ENCRYPTED_EXEMPTIONS" /> struct.</summary>
-    [SupportedOSPlatform("windows10.0")]
-    public static unsafe partial class APPX_ENCRYPTED_EXEMPTIONSTests
+    /// <summary>Validates that the <see cref="APPX_ENCRYPTED_EXEMPTIONS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="APPX_ENCRYPTED_EXEMPTIONS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<APPX_ENCRYPTED_EXEMPTIONS>(), Is.EqualTo(sizeof(APPX_ENCRYPTED_EXEMPTIONS)));
-        }
+        Assert.That(Marshal.SizeOf<APPX_ENCRYPTED_EXEMPTIONS>(), Is.EqualTo(sizeof(APPX_ENCRYPTED_EXEMPTIONS)));
+    }
 
-        /// <summary>Validates that the <see cref="APPX_ENCRYPTED_EXEMPTIONS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(APPX_ENCRYPTED_EXEMPTIONS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="APPX_ENCRYPTED_EXEMPTIONS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(APPX_ENCRYPTED_EXEMPTIONS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="APPX_ENCRYPTED_EXEMPTIONS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="APPX_ENCRYPTED_EXEMPTIONS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(APPX_ENCRYPTED_EXEMPTIONS), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(APPX_ENCRYPTED_EXEMPTIONS), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(APPX_ENCRYPTED_EXEMPTIONS), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(APPX_ENCRYPTED_EXEMPTIONS), Is.EqualTo(8));
         }
     }
 }

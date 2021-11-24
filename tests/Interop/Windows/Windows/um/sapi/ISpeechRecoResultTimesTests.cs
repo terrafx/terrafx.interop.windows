@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISpeechRecoResultTimes" /> struct.</summary>
+public static unsafe partial class ISpeechRecoResultTimesTests
 {
-    /// <summary>Provides validation of the <see cref="ISpeechRecoResultTimes" /> struct.</summary>
-    public static unsafe partial class ISpeechRecoResultTimesTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpeechRecoResultTimes" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpeechRecoResultTimes" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISpeechRecoResultTimes).GUID, Is.EqualTo(IID_ISpeechRecoResultTimes));
-        }
+        Assert.That(typeof(ISpeechRecoResultTimes).GUID, Is.EqualTo(IID_ISpeechRecoResultTimes));
+    }
 
-        /// <summary>Validates that the <see cref="ISpeechRecoResultTimes" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISpeechRecoResultTimes>(), Is.EqualTo(sizeof(ISpeechRecoResultTimes)));
-        }
+    /// <summary>Validates that the <see cref="ISpeechRecoResultTimes" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISpeechRecoResultTimes>(), Is.EqualTo(sizeof(ISpeechRecoResultTimes)));
+    }
 
-        /// <summary>Validates that the <see cref="ISpeechRecoResultTimes" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISpeechRecoResultTimes).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISpeechRecoResultTimes" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISpeechRecoResultTimes).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISpeechRecoResultTimes" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISpeechRecoResultTimes" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISpeechRecoResultTimes), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISpeechRecoResultTimes), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISpeechRecoResultTimes), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISpeechRecoResultTimes), Is.EqualTo(4));
         }
     }
 }

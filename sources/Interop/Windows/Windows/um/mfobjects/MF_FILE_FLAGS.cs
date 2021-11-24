@@ -3,12 +3,11 @@
 // Ported from um/mfobjects.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum MF_FILE_FLAGS
 {
-    public enum MF_FILE_FLAGS
-    {
-        MF_FILEFLAGS_NONE = 0,
-        MF_FILEFLAGS_NOBUFFERING = 0x1,
-        MF_FILEFLAGS_ALLOW_WRITE_SHARING = 0x2,
-    }
+    MF_FILEFLAGS_NONE = 0,
+    MF_FILEFLAGS_NOBUFFERING = 0x1,
+    MF_FILEFLAGS_ALLOW_WRITE_SHARING = 0x2,
 }

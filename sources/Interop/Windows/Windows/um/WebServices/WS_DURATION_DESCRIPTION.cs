@@ -5,15 +5,14 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_DURATION_DESCRIPTION
 {
-    public unsafe partial struct WS_DURATION_DESCRIPTION
-    {
-        public WS_DURATION minValue;
+    public WS_DURATION minValue;
 
-        public WS_DURATION maxValue;
+    public WS_DURATION maxValue;
 
-        [NativeTypeName("WS_DURATION_COMPARISON_CALLBACK")]
-        public delegate* unmanaged<WS_DURATION*, WS_DURATION*, int*, IntPtr, HRESULT> comparer;
-    }
+    [NativeTypeName("WS_DURATION_COMPARISON_CALLBACK")]
+    public delegate* unmanaged<WS_DURATION*, WS_DURATION*, int*, IntPtr, HRESULT> comparer;
 }

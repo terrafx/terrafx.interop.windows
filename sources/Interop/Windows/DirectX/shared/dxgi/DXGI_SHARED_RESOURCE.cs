@@ -5,10 +5,9 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DXGI_SHARED_RESOURCE
 {
-    public partial struct DXGI_SHARED_RESOURCE
-    {
-        public HANDLE Handle;
-    }
+    public HANDLE Handle;
 }

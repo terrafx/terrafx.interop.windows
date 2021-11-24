@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="EXCEPTION_DEBUG_INFO" /> struct.</summary>
+public static unsafe partial class EXCEPTION_DEBUG_INFOTests
 {
-    /// <summary>Provides validation of the <see cref="EXCEPTION_DEBUG_INFO" /> struct.</summary>
-    public static unsafe partial class EXCEPTION_DEBUG_INFOTests
+    /// <summary>Validates that the <see cref="EXCEPTION_DEBUG_INFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="EXCEPTION_DEBUG_INFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<EXCEPTION_DEBUG_INFO>(), Is.EqualTo(sizeof(EXCEPTION_DEBUG_INFO)));
-        }
+        Assert.That(Marshal.SizeOf<EXCEPTION_DEBUG_INFO>(), Is.EqualTo(sizeof(EXCEPTION_DEBUG_INFO)));
+    }
 
-        /// <summary>Validates that the <see cref="EXCEPTION_DEBUG_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(EXCEPTION_DEBUG_INFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="EXCEPTION_DEBUG_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(EXCEPTION_DEBUG_INFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="EXCEPTION_DEBUG_INFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="EXCEPTION_DEBUG_INFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(EXCEPTION_DEBUG_INFO), Is.EqualTo(160));
-            }
-            else
-            {
-                Assert.That(sizeof(EXCEPTION_DEBUG_INFO), Is.EqualTo(84));
-            }
+            Assert.That(sizeof(EXCEPTION_DEBUG_INFO), Is.EqualTo(160));
+        }
+        else
+        {
+            Assert.That(sizeof(EXCEPTION_DEBUG_INFO), Is.EqualTo(84));
         }
     }
 }

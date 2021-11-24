@@ -5,26 +5,25 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct RAWINPUT
 {
-    public partial struct RAWINPUT
+    public RAWINPUTHEADER header;
+
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinUser.h:15073:5)")]
+    public _data_e__Union data;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _data_e__Union
     {
-        public RAWINPUTHEADER header;
+        [FieldOffset(0)]
+        public RAWMOUSE mouse;
 
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinUser.h:15073:5)")]
-        public _data_e__Union data;
+        [FieldOffset(0)]
+        public RAWKEYBOARD keyboard;
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _data_e__Union
-        {
-            [FieldOffset(0)]
-            public RAWMOUSE mouse;
-
-            [FieldOffset(0)]
-            public RAWKEYBOARD keyboard;
-
-            [FieldOffset(0)]
-            public RAWHID hid;
-        }
+        [FieldOffset(0)]
+        public RAWHID hid;
     }
 }

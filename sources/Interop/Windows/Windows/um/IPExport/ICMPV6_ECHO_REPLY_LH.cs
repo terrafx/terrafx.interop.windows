@@ -3,16 +3,15 @@
 // Ported from um/IPExport.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct ICMPV6_ECHO_REPLY_LH
 {
-    public partial struct ICMPV6_ECHO_REPLY_LH
-    {
-        public IPV6_ADDRESS_EX Address;
+    public IPV6_ADDRESS_EX Address;
 
-        [NativeTypeName("ULONG")]
-        public uint Status;
+    [NativeTypeName("ULONG")]
+    public uint Status;
 
-        [NativeTypeName("unsigned int")]
-        public uint RoundTripTime;
-    }
+    [NativeTypeName("unsigned int")]
+    public uint RoundTripTime;
 }

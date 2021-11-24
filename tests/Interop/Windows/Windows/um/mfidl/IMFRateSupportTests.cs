@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFRateSupport" /> struct.</summary>
+public static unsafe partial class IMFRateSupportTests
 {
-    /// <summary>Provides validation of the <see cref="IMFRateSupport" /> struct.</summary>
-    public static unsafe partial class IMFRateSupportTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFRateSupport" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFRateSupport" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFRateSupport).GUID, Is.EqualTo(IID_IMFRateSupport));
-        }
+        Assert.That(typeof(IMFRateSupport).GUID, Is.EqualTo(IID_IMFRateSupport));
+    }
 
-        /// <summary>Validates that the <see cref="IMFRateSupport" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFRateSupport>(), Is.EqualTo(sizeof(IMFRateSupport)));
-        }
+    /// <summary>Validates that the <see cref="IMFRateSupport" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFRateSupport>(), Is.EqualTo(sizeof(IMFRateSupport)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFRateSupport" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFRateSupport).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFRateSupport" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFRateSupport).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFRateSupport" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFRateSupport" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFRateSupport), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFRateSupport), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFRateSupport), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFRateSupport), Is.EqualTo(4));
         }
     }
 }

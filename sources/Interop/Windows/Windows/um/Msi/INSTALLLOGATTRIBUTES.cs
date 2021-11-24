@@ -3,11 +3,10 @@
 // Ported from um/Msi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum INSTALLLOGATTRIBUTES
 {
-    public enum INSTALLLOGATTRIBUTES
-    {
-        INSTALLLOGATTRIBUTES_APPEND = (1 << 0),
-        INSTALLLOGATTRIBUTES_FLUSHEACHLINE = (1 << 1),
-    }
+    INSTALLLOGATTRIBUTES_APPEND = (1 << 0),
+    INSTALLLOGATTRIBUTES_FLUSHEACHLINE = (1 << 1),
 }

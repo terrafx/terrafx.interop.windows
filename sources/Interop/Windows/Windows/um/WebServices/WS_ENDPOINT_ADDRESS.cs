@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WS_ENDPOINT_ADDRESS
 {
-    public unsafe partial struct WS_ENDPOINT_ADDRESS
-    {
-        public WS_STRING url;
+    public WS_STRING url;
 
-        public IntPtr headers;
+    public IntPtr headers;
 
-        public IntPtr extensions;
+    public IntPtr extensions;
 
-        public WS_ENDPOINT_IDENTITY* identity;
-    }
+    public WS_ENDPOINT_IDENTITY* identity;
 }

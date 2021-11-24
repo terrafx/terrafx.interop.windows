@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ADDRESS" /> struct.</summary>
+public static unsafe partial class ADDRESSTests
 {
-    /// <summary>Provides validation of the <see cref="ADDRESS" /> struct.</summary>
-    public static unsafe partial class ADDRESSTests
+    /// <summary>Validates that the <see cref="ADDRESS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="ADDRESS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ADDRESS>(), Is.EqualTo(sizeof(ADDRESS)));
-        }
+        Assert.That(Marshal.SizeOf<ADDRESS>(), Is.EqualTo(sizeof(ADDRESS)));
+    }
 
-        /// <summary>Validates that the <see cref="ADDRESS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ADDRESS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ADDRESS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ADDRESS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ADDRESS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(ADDRESS), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="ADDRESS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(ADDRESS), Is.EqualTo(12));
     }
 }

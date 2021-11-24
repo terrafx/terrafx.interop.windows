@@ -6,134 +6,133 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct PROPSHEETPAGEW
 {
-    public unsafe partial struct PROPSHEETPAGEW
+    [NativeTypeName("DWORD")]
+    public uint dwSize;
+
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
+
+    public HINSTANCE hInstance;
+
+    [NativeTypeName("_PROPSHEETPAGEW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/prsht.h:271:5)")]
+    public _Anonymous1_e__Union Anonymous1;
+
+    [NativeTypeName("_PROPSHEETPAGEW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/prsht.h:271:5)")]
+    public _Anonymous2_e__Union Anonymous2;
+
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pszTitle;
+
+    [NativeTypeName("DLGPROC")]
+    public delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> pfnDlgProc;
+
+    public LPARAM lParam;
+
+    [NativeTypeName("LPFNPSPCALLBACKW")]
+    public delegate* unmanaged<HWND, uint, PROPSHEETPAGEW*, uint> pfnCallback;
+
+    public uint* pcRefParent;
+
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pszHeaderTitle;
+
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pszHeaderSubTitle;
+
+    public HANDLE hActCtx;
+
+    [NativeTypeName("_PROPSHEETPAGEW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/prsht.h:278:5)")]
+    public _Anonymous3_e__Union Anonymous3;
+
+    public ref ushort* pszTemplate
     {
-        [NativeTypeName("DWORD")]
-        public uint dwSize;
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous1.pszTemplate;
+        }
+    }
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
+    public ref DLGTEMPLATE* pResource
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous1.pResource;
+        }
+    }
 
-        public HINSTANCE hInstance;
+    public ref HICON hIcon
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous2.hIcon;
+        }
+    }
 
-        [NativeTypeName("_PROPSHEETPAGEW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/prsht.h:271:5)")]
-        public _Anonymous1_e__Union Anonymous1;
+    public ref ushort* pszIcon
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous2.pszIcon;
+        }
+    }
 
-        [NativeTypeName("_PROPSHEETPAGEW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/prsht.h:271:5)")]
-        public _Anonymous2_e__Union Anonymous2;
+    public ref HBITMAP hbmHeader
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous3.hbmHeader;
+        }
+    }
 
+    public ref ushort* pszbmHeader
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous3.pszbmHeader;
+        }
+    }
+
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous1_e__Union
+    {
+        [FieldOffset(0)]
         [NativeTypeName("LPCWSTR")]
-        public ushort* pszTitle;
+        public ushort* pszTemplate;
 
-        [NativeTypeName("DLGPROC")]
-        public delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> pfnDlgProc;
+        [FieldOffset(0)]
+        [NativeTypeName("PROPSHEETPAGE_RESOURCE")]
+        public DLGTEMPLATE* pResource;
+    }
 
-        public LPARAM lParam;
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous2_e__Union
+    {
+        [FieldOffset(0)]
+        public HICON hIcon;
 
-        [NativeTypeName("LPFNPSPCALLBACKW")]
-        public delegate* unmanaged<HWND, uint, PROPSHEETPAGEW*, uint> pfnCallback;
-
-        public uint* pcRefParent;
-
+        [FieldOffset(0)]
         [NativeTypeName("LPCWSTR")]
-        public ushort* pszHeaderTitle;
+        public ushort* pszIcon;
+    }
 
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _Anonymous3_e__Union
+    {
+        [FieldOffset(0)]
+        public HBITMAP hbmHeader;
+
+        [FieldOffset(0)]
         [NativeTypeName("LPCWSTR")]
-        public ushort* pszHeaderSubTitle;
-
-        public HANDLE hActCtx;
-
-        [NativeTypeName("_PROPSHEETPAGEW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/prsht.h:278:5)")]
-        public _Anonymous3_e__Union Anonymous3;
-
-        public ref ushort* pszTemplate
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous1.pszTemplate;
-            }
-        }
-
-        public ref DLGTEMPLATE* pResource
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous1.pResource;
-            }
-        }
-
-        public ref HICON hIcon
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous2.hIcon;
-            }
-        }
-
-        public ref ushort* pszIcon
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous2.pszIcon;
-            }
-        }
-
-        public ref HBITMAP hbmHeader
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous3.hbmHeader;
-            }
-        }
-
-        public ref ushort* pszbmHeader
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref this, 1)).Anonymous3.pszbmHeader;
-            }
-        }
-
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous1_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("LPCWSTR")]
-            public ushort* pszTemplate;
-
-            [FieldOffset(0)]
-            [NativeTypeName("PROPSHEETPAGE_RESOURCE")]
-            public DLGTEMPLATE* pResource;
-        }
-
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous2_e__Union
-        {
-            [FieldOffset(0)]
-            public HICON hIcon;
-
-            [FieldOffset(0)]
-            [NativeTypeName("LPCWSTR")]
-            public ushort* pszIcon;
-        }
-
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _Anonymous3_e__Union
-        {
-            [FieldOffset(0)]
-            public HBITMAP hbmHeader;
-
-            [FieldOffset(0)]
-            [NativeTypeName("LPCWSTR")]
-            public ushort* pszbmHeader;
-        }
+        public ushort* pszbmHeader;
     }
 }

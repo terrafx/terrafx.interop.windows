@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.WinRT.UnitTests
+namespace TerraFX.Interop.WinRT.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ICompositionCapabilitiesInteropFactory" /> struct.</summary>
+public static unsafe partial class ICompositionCapabilitiesInteropFactoryTests
 {
-    /// <summary>Provides validation of the <see cref="ICompositionCapabilitiesInteropFactory" /> struct.</summary>
-    public static unsafe partial class ICompositionCapabilitiesInteropFactoryTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ICompositionCapabilitiesInteropFactory" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ICompositionCapabilitiesInteropFactory" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ICompositionCapabilitiesInteropFactory).GUID, Is.EqualTo(IID_ICompositionCapabilitiesInteropFactory));
-        }
+        Assert.That(typeof(ICompositionCapabilitiesInteropFactory).GUID, Is.EqualTo(IID_ICompositionCapabilitiesInteropFactory));
+    }
 
-        /// <summary>Validates that the <see cref="ICompositionCapabilitiesInteropFactory" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ICompositionCapabilitiesInteropFactory>(), Is.EqualTo(sizeof(ICompositionCapabilitiesInteropFactory)));
-        }
+    /// <summary>Validates that the <see cref="ICompositionCapabilitiesInteropFactory" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ICompositionCapabilitiesInteropFactory>(), Is.EqualTo(sizeof(ICompositionCapabilitiesInteropFactory)));
+    }
 
-        /// <summary>Validates that the <see cref="ICompositionCapabilitiesInteropFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ICompositionCapabilitiesInteropFactory).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ICompositionCapabilitiesInteropFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ICompositionCapabilitiesInteropFactory).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ICompositionCapabilitiesInteropFactory" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ICompositionCapabilitiesInteropFactory" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ICompositionCapabilitiesInteropFactory), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ICompositionCapabilitiesInteropFactory), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ICompositionCapabilitiesInteropFactory), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ICompositionCapabilitiesInteropFactory), Is.EqualTo(4));
         }
     }
 }

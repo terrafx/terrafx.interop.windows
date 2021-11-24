@@ -3,14 +3,13 @@
 // Ported from shared/dxgitype.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public enum DXGI_MODE_ROTATION
 {
-    public enum DXGI_MODE_ROTATION
-    {
-        DXGI_MODE_ROTATION_UNSPECIFIED = 0,
-        DXGI_MODE_ROTATION_IDENTITY = 1,
-        DXGI_MODE_ROTATION_ROTATE90 = 2,
-        DXGI_MODE_ROTATION_ROTATE180 = 3,
-        DXGI_MODE_ROTATION_ROTATE270 = 4,
-    }
+    DXGI_MODE_ROTATION_UNSPECIFIED = 0,
+    DXGI_MODE_ROTATION_IDENTITY = 1,
+    DXGI_MODE_ROTATION_ROTATE90 = 2,
+    DXGI_MODE_ROTATION_ROTATE180 = 3,
+    DXGI_MODE_ROTATION_ROTATE270 = 4,
 }

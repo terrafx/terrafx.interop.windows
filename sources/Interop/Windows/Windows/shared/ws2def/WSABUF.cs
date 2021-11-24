@@ -3,14 +3,13 @@
 // Ported from shared/ws2def.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct WSABUF
-    {
-        [NativeTypeName("ULONG")]
-        public uint len;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("CHAR *")]
-        public sbyte* buf;
-    }
+public unsafe partial struct WSABUF
+{
+    [NativeTypeName("ULONG")]
+    public uint len;
+
+    [NativeTypeName("CHAR *")]
+    public sbyte* buf;
 }

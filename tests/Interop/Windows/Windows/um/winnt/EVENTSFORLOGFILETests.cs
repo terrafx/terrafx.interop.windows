@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="EVENTSFORLOGFILE" /> struct.</summary>
+public static unsafe partial class EVENTSFORLOGFILETests
 {
-    /// <summary>Provides validation of the <see cref="EVENTSFORLOGFILE" /> struct.</summary>
-    public static unsafe partial class EVENTSFORLOGFILETests
+    /// <summary>Validates that the <see cref="EVENTSFORLOGFILE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="EVENTSFORLOGFILE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<EVENTSFORLOGFILE>(), Is.EqualTo(sizeof(EVENTSFORLOGFILE)));
-        }
+        Assert.That(Marshal.SizeOf<EVENTSFORLOGFILE>(), Is.EqualTo(sizeof(EVENTSFORLOGFILE)));
+    }
 
-        /// <summary>Validates that the <see cref="EVENTSFORLOGFILE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(EVENTSFORLOGFILE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="EVENTSFORLOGFILE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(EVENTSFORLOGFILE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="EVENTSFORLOGFILE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(EVENTSFORLOGFILE), Is.EqualTo(576));
-        }
+    /// <summary>Validates that the <see cref="EVENTSFORLOGFILE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(EVENTSFORLOGFILE), Is.EqualTo(576));
     }
 }

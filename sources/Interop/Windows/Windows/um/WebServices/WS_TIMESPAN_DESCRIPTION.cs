@@ -3,12 +3,11 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct WS_TIMESPAN_DESCRIPTION
-    {
-        public WS_TIMESPAN minValue;
+namespace TerraFX.Interop.Windows;
 
-        public WS_TIMESPAN maxValue;
-    }
+public partial struct WS_TIMESPAN_DESCRIPTION
+{
+    public WS_TIMESPAN minValue;
+
+    public WS_TIMESPAN maxValue;
 }

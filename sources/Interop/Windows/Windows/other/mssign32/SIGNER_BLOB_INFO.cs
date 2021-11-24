@@ -5,21 +5,20 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SIGNER_BLOB_INFO
 {
-    public unsafe partial struct SIGNER_BLOB_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public Guid* pGuidSubject;
+    public Guid* pGuidSubject;
 
-        [NativeTypeName("DWORD")]
-        public uint cbBlob;
+    [NativeTypeName("DWORD")]
+    public uint cbBlob;
 
-        public byte* pbBlob;
+    public byte* pbBlob;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pwszDisplayName;
-    }
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pwszDisplayName;
 }

@@ -5,11 +5,10 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+public enum D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public enum D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION
-    {
-        D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION_QUARTER_PEL = 0,
-    }
+    D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION_QUARTER_PEL = 0,
 }

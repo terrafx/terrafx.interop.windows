@@ -3,32 +3,31 @@
 // Ported from um/DirectML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct DML_GRAPH_DESC
 {
-    public unsafe partial struct DML_GRAPH_DESC
-    {
-        public uint InputCount;
+    public uint InputCount;
 
-        public uint OutputCount;
+    public uint OutputCount;
 
-        public uint NodeCount;
+    public uint NodeCount;
 
-        [NativeTypeName("const DML_GRAPH_NODE_DESC *")]
-        public DML_GRAPH_NODE_DESC* Nodes;
+    [NativeTypeName("const DML_GRAPH_NODE_DESC *")]
+    public DML_GRAPH_NODE_DESC* Nodes;
 
-        public uint InputEdgeCount;
+    public uint InputEdgeCount;
 
-        [NativeTypeName("const DML_GRAPH_EDGE_DESC *")]
-        public DML_GRAPH_EDGE_DESC* InputEdges;
+    [NativeTypeName("const DML_GRAPH_EDGE_DESC *")]
+    public DML_GRAPH_EDGE_DESC* InputEdges;
 
-        public uint OutputEdgeCount;
+    public uint OutputEdgeCount;
 
-        [NativeTypeName("const DML_GRAPH_EDGE_DESC *")]
-        public DML_GRAPH_EDGE_DESC* OutputEdges;
+    [NativeTypeName("const DML_GRAPH_EDGE_DESC *")]
+    public DML_GRAPH_EDGE_DESC* OutputEdges;
 
-        public uint IntermediateEdgeCount;
+    public uint IntermediateEdgeCount;
 
-        [NativeTypeName("const DML_GRAPH_EDGE_DESC *")]
-        public DML_GRAPH_EDGE_DESC* IntermediateEdges;
-    }
+    [NativeTypeName("const DML_GRAPH_EDGE_DESC *")]
+    public DML_GRAPH_EDGE_DESC* IntermediateEdges;
 }

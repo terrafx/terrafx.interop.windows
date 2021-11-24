@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAudioInputSelector" /> struct.</summary>
+public static unsafe partial class IAudioInputSelectorTests
 {
-    /// <summary>Provides validation of the <see cref="IAudioInputSelector" /> struct.</summary>
-    public static unsafe partial class IAudioInputSelectorTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAudioInputSelector" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAudioInputSelector" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAudioInputSelector).GUID, Is.EqualTo(IID_IAudioInputSelector));
-        }
+        Assert.That(typeof(IAudioInputSelector).GUID, Is.EqualTo(IID_IAudioInputSelector));
+    }
 
-        /// <summary>Validates that the <see cref="IAudioInputSelector" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAudioInputSelector>(), Is.EqualTo(sizeof(IAudioInputSelector)));
-        }
+    /// <summary>Validates that the <see cref="IAudioInputSelector" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAudioInputSelector>(), Is.EqualTo(sizeof(IAudioInputSelector)));
+    }
 
-        /// <summary>Validates that the <see cref="IAudioInputSelector" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAudioInputSelector).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAudioInputSelector" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAudioInputSelector).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAudioInputSelector" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAudioInputSelector" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAudioInputSelector), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAudioInputSelector), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAudioInputSelector), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAudioInputSelector), Is.EqualTo(4));
         }
     }
 }

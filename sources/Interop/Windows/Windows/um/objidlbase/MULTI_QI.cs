@@ -5,15 +5,14 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct MULTI_QI
 {
-    public unsafe partial struct MULTI_QI
-    {
-        [NativeTypeName("const IID *")]
-        public Guid* pIID;
+    [NativeTypeName("const IID *")]
+    public Guid* pIID;
 
-        public IUnknown* pItf;
+    public IUnknown* pItf;
 
-        public HRESULT hr;
-    }
+    public HRESULT hr;
 }

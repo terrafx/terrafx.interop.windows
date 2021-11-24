@@ -10,29 +10,28 @@ using System.Runtime.InteropServices;
 using static TerraFX.Interop.DirectX.D2D1_ALPHA_MODE;
 using static TerraFX.Interop.DirectX.DXGI_FORMAT;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D1_PIXEL_FORMAT
 {
-    public partial struct D2D1_PIXEL_FORMAT
+    public static ref readonly D2D1_PIXEL_FORMAT DEFAULT
     {
-        public static ref readonly D2D1_PIXEL_FORMAT DEFAULT
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x00, 0x00, 0x00, 0x00,
                     0x00, 0x00, 0x00, 0x00
                 };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<D2D1_PIXEL_FORMAT>());
-                return ref Unsafe.As<byte, D2D1_PIXEL_FORMAT>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<D2D1_PIXEL_FORMAT>());
+            return ref Unsafe.As<byte, D2D1_PIXEL_FORMAT>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public D2D1_PIXEL_FORMAT(DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, D2D1_ALPHA_MODE alphaMode = D2D1_ALPHA_MODE_UNKNOWN)
-        {
-            this.format = format;
-            this.alphaMode = alphaMode;
-        }
+    public D2D1_PIXEL_FORMAT(DXGI_FORMAT format = DXGI_FORMAT_UNKNOWN, D2D1_ALPHA_MODE alphaMode = D2D1_ALPHA_MODE_UNKNOWN)
+    {
+        this.format = format;
+        this.alphaMode = alphaMode;
     }
 }

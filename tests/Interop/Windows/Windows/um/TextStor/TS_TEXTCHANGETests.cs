@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TS_TEXTCHANGE" /> struct.</summary>
+public static unsafe partial class TS_TEXTCHANGETests
 {
-    /// <summary>Provides validation of the <see cref="TS_TEXTCHANGE" /> struct.</summary>
-    public static unsafe partial class TS_TEXTCHANGETests
+    /// <summary>Validates that the <see cref="TS_TEXTCHANGE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TS_TEXTCHANGE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TS_TEXTCHANGE>(), Is.EqualTo(sizeof(TS_TEXTCHANGE)));
-        }
+        Assert.That(Marshal.SizeOf<TS_TEXTCHANGE>(), Is.EqualTo(sizeof(TS_TEXTCHANGE)));
+    }
 
-        /// <summary>Validates that the <see cref="TS_TEXTCHANGE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TS_TEXTCHANGE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TS_TEXTCHANGE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TS_TEXTCHANGE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TS_TEXTCHANGE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TS_TEXTCHANGE), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="TS_TEXTCHANGE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TS_TEXTCHANGE), Is.EqualTo(12));
     }
 }

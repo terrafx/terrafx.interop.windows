@@ -3,14 +3,13 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct NMKEY
 {
-    public partial struct NMKEY
-    {
-        public NMHDR hdr;
+    public NMHDR hdr;
 
-        public uint nVKey;
+    public uint nVKey;
 
-        public uint uFlags;
-    }
+    public uint uFlags;
 }

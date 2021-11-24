@@ -5,73 +5,72 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct FILE_REMOTE_PROTOCOL_INFO
 {
-    public partial struct FILE_REMOTE_PROTOCOL_INFO
+    public ushort StructureVersion;
+
+    public ushort StructureSize;
+
+    [NativeTypeName("ULONG")]
+    public uint Protocol;
+
+    public ushort ProtocolMajorVersion;
+
+    public ushort ProtocolMinorVersion;
+
+    public ushort ProtocolRevision;
+
+    public ushort Reserved;
+
+    [NativeTypeName("ULONG")]
+    public uint Flags;
+
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinBase.h:9102:5)")]
+    public _GenericReserved_e__Struct GenericReserved;
+
+    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinBase.h:9115:5)")]
+    public _ProtocolSpecific_e__Union ProtocolSpecific;
+
+    public unsafe partial struct _GenericReserved_e__Struct
     {
-        public ushort StructureVersion;
+        [NativeTypeName("ULONG [8]")]
+        public fixed uint Reserved[8];
+    }
 
-        public ushort StructureSize;
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _ProtocolSpecific_e__Union
+    {
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinBase.h:9117:9)")]
+        public _Smb2_e__Struct Smb2;
 
-        [NativeTypeName("ULONG")]
-        public uint Protocol;
+        [FieldOffset(0)]
+        [NativeTypeName("ULONG [16]")]
+        public fixed uint Reserved[16];
 
-        public ushort ProtocolMajorVersion;
-
-        public ushort ProtocolMinorVersion;
-
-        public ushort ProtocolRevision;
-
-        public ushort Reserved;
-
-        [NativeTypeName("ULONG")]
-        public uint Flags;
-
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinBase.h:9102:5)")]
-        public _GenericReserved_e__Struct GenericReserved;
-
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinBase.h:9115:5)")]
-        public _ProtocolSpecific_e__Union ProtocolSpecific;
-
-        public unsafe partial struct _GenericReserved_e__Struct
+        public partial struct _Smb2_e__Struct
         {
-            [NativeTypeName("ULONG [8]")]
-            public fixed uint Reserved[8];
-        }
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinBase.h:9119:13)")]
+            public _Server_e__Struct Server;
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _ProtocolSpecific_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinBase.h:9117:9)")]
-            public _Smb2_e__Struct Smb2;
+            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinBase.h:9123:13)")]
+            public _Share_e__Struct Share;
 
-            [FieldOffset(0)]
-            [NativeTypeName("ULONG [16]")]
-            public fixed uint Reserved[16];
-
-            public partial struct _Smb2_e__Struct
+            public partial struct _Server_e__Struct
             {
-                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinBase.h:9119:13)")]
-                public _Server_e__Struct Server;
+                [NativeTypeName("ULONG")]
+                public uint Capabilities;
+            }
 
-                [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinBase.h:9123:13)")]
-                public _Share_e__Struct Share;
+            public partial struct _Share_e__Struct
+            {
+                [NativeTypeName("ULONG")]
+                public uint Capabilities;
 
-                public partial struct _Server_e__Struct
-                {
-                    [NativeTypeName("ULONG")]
-                    public uint Capabilities;
-                }
-
-                public partial struct _Share_e__Struct
-                {
-                    [NativeTypeName("ULONG")]
-                    public uint Capabilities;
-
-                    [NativeTypeName("ULONG")]
-                    public uint CachingFlags;
-                }
+                [NativeTypeName("ULONG")]
+                public uint CachingFlags;
             }
         }
     }

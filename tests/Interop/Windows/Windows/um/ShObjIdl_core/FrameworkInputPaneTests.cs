@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="FrameworkInputPane" /> struct.</summary>
+public static unsafe partial class FrameworkInputPaneTests
 {
-    /// <summary>Provides validation of the <see cref="FrameworkInputPane" /> struct.</summary>
-    public static unsafe partial class FrameworkInputPaneTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="FrameworkInputPane" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="FrameworkInputPane" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(FrameworkInputPane).GUID, Is.EqualTo(IID_FrameworkInputPane));
-        }
+        Assert.That(typeof(FrameworkInputPane).GUID, Is.EqualTo(IID_FrameworkInputPane));
+    }
 
-        /// <summary>Validates that the <see cref="FrameworkInputPane" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<FrameworkInputPane>(), Is.EqualTo(sizeof(FrameworkInputPane)));
-        }
+    /// <summary>Validates that the <see cref="FrameworkInputPane" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<FrameworkInputPane>(), Is.EqualTo(sizeof(FrameworkInputPane)));
+    }
 
-        /// <summary>Validates that the <see cref="FrameworkInputPane" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(FrameworkInputPane).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="FrameworkInputPane" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(FrameworkInputPane).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="FrameworkInputPane" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(FrameworkInputPane), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="FrameworkInputPane" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(FrameworkInputPane), Is.EqualTo(1));
     }
 }

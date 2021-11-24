@@ -8,16 +8,16 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D11_SAMPLER_DESC
 {
-    public unsafe partial struct D3D11_SAMPLER_DESC
+    public static ref readonly D3D11_SAMPLER_DESC DEFAULT
     {
-        public static ref readonly D3D11_SAMPLER_DESC DEFAULT
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = new byte[] {
                     0x15, 0x00, 0x00, 0x00,
                     0x03, 0x00, 0x00, 0x00,
                     0x03, 0x00, 0x00, 0x00,
@@ -33,34 +33,33 @@ namespace TerraFX.Interop.DirectX
                     0xFF, 0xFF, 0x7F, 0x7F
                 };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<D3D11_SAMPLER_DESC>());
-                return ref Unsafe.As<byte, D3D11_SAMPLER_DESC>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<D3D11_SAMPLER_DESC>());
+            return ref Unsafe.As<byte, D3D11_SAMPLER_DESC>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public D3D11_SAMPLER_DESC(D3D11_FILTER filter, D3D11_TEXTURE_ADDRESS_MODE addressU, D3D11_TEXTURE_ADDRESS_MODE addressV, D3D11_TEXTURE_ADDRESS_MODE addressW, float mipLODBias, uint maxAnisotropy, D3D11_COMPARISON_FUNC comparisonFunc, [NativeTypeName("FLOAT [4]")] float* borderColor, float minLOD, float maxLOD)
+    public D3D11_SAMPLER_DESC(D3D11_FILTER filter, D3D11_TEXTURE_ADDRESS_MODE addressU, D3D11_TEXTURE_ADDRESS_MODE addressV, D3D11_TEXTURE_ADDRESS_MODE addressW, float mipLODBias, uint maxAnisotropy, D3D11_COMPARISON_FUNC comparisonFunc, [NativeTypeName("FLOAT [4]")] float* borderColor, float minLOD, float maxLOD)
+    {
+        Filter = filter;
+        AddressU = addressU;
+        AddressV = addressV;
+        AddressW = addressW;
+        MipLODBias = mipLODBias;
+        MaxAnisotropy = maxAnisotropy;
+        ComparisonFunc = comparisonFunc;
+
+        var defaultColor = stackalloc float[4] { 1.0f, 1.0f, 1.0f, 1.0f };
+
+        if (borderColor == null)
         {
-            Filter = filter;
-            AddressU = addressU;
-            AddressV = addressV;
-            AddressW = addressW;
-            MipLODBias = mipLODBias;
-            MaxAnisotropy = maxAnisotropy;
-            ComparisonFunc = comparisonFunc;
-
-            var defaultColor = stackalloc float[4] { 1.0f, 1.0f, 1.0f, 1.0f };
-
-            if (borderColor == null)
-            {
-                borderColor = defaultColor;
-            }
-
-            BorderColor[0] = borderColor[0];
-            BorderColor[1] = borderColor[1];
-            BorderColor[2] = borderColor[2];
-            BorderColor[3] = borderColor[3];
-            MinLOD = minLOD;
-            MaxLOD = maxLOD;
+            borderColor = defaultColor;
         }
+
+        BorderColor[0] = borderColor[0];
+        BorderColor[1] = borderColor[1];
+        BorderColor[2] = borderColor[2];
+        BorderColor[3] = borderColor[3];
+        MinLOD = minLOD;
+        MaxLOD = maxLOD;
     }
 }

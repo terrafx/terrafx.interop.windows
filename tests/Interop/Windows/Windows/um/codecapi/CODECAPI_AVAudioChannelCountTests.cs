@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CODECAPI_AVAudioChannelCount" /> struct.</summary>
+public static unsafe partial class CODECAPI_AVAudioChannelCountTests
 {
-    /// <summary>Provides validation of the <see cref="CODECAPI_AVAudioChannelCount" /> struct.</summary>
-    public static unsafe partial class CODECAPI_AVAudioChannelCountTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVAudioChannelCount" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVAudioChannelCount" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CODECAPI_AVAudioChannelCount).GUID, Is.EqualTo(IID_CODECAPI_AVAudioChannelCount));
-        }
+        Assert.That(typeof(CODECAPI_AVAudioChannelCount).GUID, Is.EqualTo(IID_CODECAPI_AVAudioChannelCount));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVAudioChannelCount" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CODECAPI_AVAudioChannelCount>(), Is.EqualTo(sizeof(CODECAPI_AVAudioChannelCount)));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVAudioChannelCount" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CODECAPI_AVAudioChannelCount>(), Is.EqualTo(sizeof(CODECAPI_AVAudioChannelCount)));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVAudioChannelCount" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CODECAPI_AVAudioChannelCount).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVAudioChannelCount" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CODECAPI_AVAudioChannelCount).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVAudioChannelCount" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CODECAPI_AVAudioChannelCount), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVAudioChannelCount" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CODECAPI_AVAudioChannelCount), Is.EqualTo(1));
     }
 }

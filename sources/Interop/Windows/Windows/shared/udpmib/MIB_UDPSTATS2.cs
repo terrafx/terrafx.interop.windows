@@ -5,24 +5,23 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.16299.0")]
+public partial struct MIB_UDPSTATS2
 {
-    [SupportedOSPlatform("windows10.0.16299.0")]
-    public partial struct MIB_UDPSTATS2
-    {
-        [NativeTypeName("DWORD64")]
-        public ulong dw64InDatagrams;
+    [NativeTypeName("DWORD64")]
+    public ulong dw64InDatagrams;
 
-        [NativeTypeName("DWORD")]
-        public uint dwNoPorts;
+    [NativeTypeName("DWORD")]
+    public uint dwNoPorts;
 
-        [NativeTypeName("DWORD")]
-        public uint dwInErrors;
+    [NativeTypeName("DWORD")]
+    public uint dwInErrors;
 
-        [NativeTypeName("DWORD64")]
-        public ulong dw64OutDatagrams;
+    [NativeTypeName("DWORD64")]
+    public ulong dw64OutDatagrams;
 
-        [NativeTypeName("DWORD")]
-        public uint dwNumAddrs;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwNumAddrs;
 }

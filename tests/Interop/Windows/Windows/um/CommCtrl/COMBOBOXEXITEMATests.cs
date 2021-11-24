@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="COMBOBOXEXITEMA" /> struct.</summary>
+public static unsafe partial class COMBOBOXEXITEMATests
 {
-    /// <summary>Provides validation of the <see cref="COMBOBOXEXITEMA" /> struct.</summary>
-    public static unsafe partial class COMBOBOXEXITEMATests
+    /// <summary>Validates that the <see cref="COMBOBOXEXITEMA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="COMBOBOXEXITEMA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<COMBOBOXEXITEMA>(), Is.EqualTo(sizeof(COMBOBOXEXITEMA)));
-        }
+        Assert.That(Marshal.SizeOf<COMBOBOXEXITEMA>(), Is.EqualTo(sizeof(COMBOBOXEXITEMA)));
+    }
 
-        /// <summary>Validates that the <see cref="COMBOBOXEXITEMA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(COMBOBOXEXITEMA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="COMBOBOXEXITEMA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(COMBOBOXEXITEMA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="COMBOBOXEXITEMA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="COMBOBOXEXITEMA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(COMBOBOXEXITEMA), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(COMBOBOXEXITEMA), Is.EqualTo(36));
-            }
+            Assert.That(sizeof(COMBOBOXEXITEMA), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(COMBOBOXEXITEMA), Is.EqualTo(36));
         }
     }
 }

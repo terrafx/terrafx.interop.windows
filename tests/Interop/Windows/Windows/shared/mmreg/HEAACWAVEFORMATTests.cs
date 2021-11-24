@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HEAACWAVEFORMAT" /> struct.</summary>
+public static unsafe partial class HEAACWAVEFORMATTests
 {
-    /// <summary>Provides validation of the <see cref="HEAACWAVEFORMAT" /> struct.</summary>
-    public static unsafe partial class HEAACWAVEFORMATTests
+    /// <summary>Validates that the <see cref="HEAACWAVEFORMAT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="HEAACWAVEFORMAT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HEAACWAVEFORMAT>(), Is.EqualTo(sizeof(HEAACWAVEFORMAT)));
-        }
+        Assert.That(Marshal.SizeOf<HEAACWAVEFORMAT>(), Is.EqualTo(sizeof(HEAACWAVEFORMAT)));
+    }
 
-        /// <summary>Validates that the <see cref="HEAACWAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HEAACWAVEFORMAT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HEAACWAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HEAACWAVEFORMAT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HEAACWAVEFORMAT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HEAACWAVEFORMAT), Is.EqualTo(31));
-        }
+    /// <summary>Validates that the <see cref="HEAACWAVEFORMAT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HEAACWAVEFORMAT), Is.EqualTo(31));
     }
 }

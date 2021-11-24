@@ -7,37 +7,36 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_RT_FORMAT_ARRAY
 {
-    public partial struct D3D12_RT_FORMAT_ARRAY
+    [NativeTypeName("DXGI_FORMAT [8]")]
+    public _RTFormats_e__FixedBuffer RTFormats;
+
+    public uint NumRenderTargets;
+
+    public partial struct _RTFormats_e__FixedBuffer
     {
-        [NativeTypeName("DXGI_FORMAT [8]")]
-        public _RTFormats_e__FixedBuffer RTFormats;
+        public DXGI_FORMAT e0;
+        public DXGI_FORMAT e1;
+        public DXGI_FORMAT e2;
+        public DXGI_FORMAT e3;
+        public DXGI_FORMAT e4;
+        public DXGI_FORMAT e5;
+        public DXGI_FORMAT e6;
+        public DXGI_FORMAT e7;
 
-        public uint NumRenderTargets;
-
-        public partial struct _RTFormats_e__FixedBuffer
+        public ref DXGI_FORMAT this[int index]
         {
-            public DXGI_FORMAT e0;
-            public DXGI_FORMAT e1;
-            public DXGI_FORMAT e2;
-            public DXGI_FORMAT e3;
-            public DXGI_FORMAT e4;
-            public DXGI_FORMAT e5;
-            public DXGI_FORMAT e6;
-            public DXGI_FORMAT e7;
-
-            public ref DXGI_FORMAT this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan()[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<DXGI_FORMAT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
+            get
+            {
+                return ref AsSpan()[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<DXGI_FORMAT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
     }
 }

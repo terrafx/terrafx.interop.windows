@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IHTMLMarqueeElement" /> struct.</summary>
+public static unsafe partial class IHTMLMarqueeElementTests
 {
-    /// <summary>Provides validation of the <see cref="IHTMLMarqueeElement" /> struct.</summary>
-    public static unsafe partial class IHTMLMarqueeElementTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLMarqueeElement" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IHTMLMarqueeElement" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IHTMLMarqueeElement).GUID, Is.EqualTo(IID_IHTMLMarqueeElement));
-        }
+        Assert.That(typeof(IHTMLMarqueeElement).GUID, Is.EqualTo(IID_IHTMLMarqueeElement));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLMarqueeElement" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IHTMLMarqueeElement>(), Is.EqualTo(sizeof(IHTMLMarqueeElement)));
-        }
+    /// <summary>Validates that the <see cref="IHTMLMarqueeElement" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IHTMLMarqueeElement>(), Is.EqualTo(sizeof(IHTMLMarqueeElement)));
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLMarqueeElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IHTMLMarqueeElement).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IHTMLMarqueeElement" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IHTMLMarqueeElement).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IHTMLMarqueeElement" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IHTMLMarqueeElement" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IHTMLMarqueeElement), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IHTMLMarqueeElement), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IHTMLMarqueeElement), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IHTMLMarqueeElement), Is.EqualTo(4));
         }
     }
 }

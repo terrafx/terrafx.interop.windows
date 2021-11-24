@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum COPYFILE2_MESSAGE_ACTION
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum COPYFILE2_MESSAGE_ACTION
-    {
-        COPYFILE2_PROGRESS_CONTINUE = 0,
-        COPYFILE2_PROGRESS_CANCEL,
-        COPYFILE2_PROGRESS_STOP,
-        COPYFILE2_PROGRESS_QUIET,
-        COPYFILE2_PROGRESS_PAUSE,
-    }
+    COPYFILE2_PROGRESS_CONTINUE = 0,
+    COPYFILE2_PROGRESS_CANCEL,
+    COPYFILE2_PROGRESS_STOP,
+    COPYFILE2_PROGRESS_QUIET,
+    COPYFILE2_PROGRESS_PAUSE,
 }

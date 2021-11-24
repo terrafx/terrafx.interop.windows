@@ -3,14 +3,13 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct OMAP
-    {
-        [NativeTypeName("ULONG")]
-        public uint rva;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("ULONG")]
-        public uint rvaTo;
-    }
+public partial struct OMAP
+{
+    [NativeTypeName("ULONG")]
+    public uint rva;
+
+    [NativeTypeName("ULONG")]
+    public uint rvaTo;
 }

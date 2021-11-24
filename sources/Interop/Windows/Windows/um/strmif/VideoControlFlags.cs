@@ -3,13 +3,12 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum VideoControlFlags
 {
-    public enum VideoControlFlags
-    {
-        VideoControlFlag_FlipHorizontal = 0x1,
-        VideoControlFlag_FlipVertical = 0x2,
-        VideoControlFlag_ExternalTriggerEnable = 0x4,
-        VideoControlFlag_Trigger = 0x8,
-    }
+    VideoControlFlag_FlipHorizontal = 0x1,
+    VideoControlFlag_FlipVertical = 0x2,
+    VideoControlFlag_ExternalTriggerEnable = 0x4,
+    VideoControlFlag_Trigger = 0x8,
 }

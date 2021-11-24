@@ -6,12 +6,11 @@
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.Windows.Windows;
 
-namespace TerraFX.Interop.DirectX
-{
-    public static partial class DirectX
-    {
-        public static HRESULT MAKE_DXGI_HRESULT(int code) => MAKE_HRESULT(1, _FACDXGI, code);
+namespace TerraFX.Interop.DirectX;
 
-        public static HRESULT MAKE_DXGI_STATUS(int code) => MAKE_HRESULT(0, _FACDXGI, code);
-    }
+public static partial class DirectX
+{
+    public static HRESULT MAKE_DXGI_HRESULT(int code) => MAKE_HRESULT(1, _FACDXGI, code);
+
+    public static HRESULT MAKE_DXGI_STATUS(int code) => MAKE_HRESULT(0, _FACDXGI, code);
 }

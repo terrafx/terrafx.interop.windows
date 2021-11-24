@@ -5,39 +5,38 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct CSV_QUERY_MDS_PATH_V2
 {
-    public partial struct CSV_QUERY_MDS_PATH_V2
-    {
-        [NativeTypeName("LONGLONG")]
-        public long Version;
+    [NativeTypeName("LONGLONG")]
+    public long Version;
 
-        [NativeTypeName("DWORD")]
-        public uint RequiredSize;
+    [NativeTypeName("DWORD")]
+    public uint RequiredSize;
 
-        [NativeTypeName("DWORD")]
-        public uint MdsNodeId;
+    [NativeTypeName("DWORD")]
+    public uint MdsNodeId;
 
-        [NativeTypeName("DWORD")]
-        public uint DsNodeId;
+    [NativeTypeName("DWORD")]
+    public uint DsNodeId;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        public CSVFS_DISK_CONNECTIVITY DiskConnectivity;
+    public CSVFS_DISK_CONNECTIVITY DiskConnectivity;
 
-        public Guid VolumeId;
+    public Guid VolumeId;
 
-        [NativeTypeName("DWORD")]
-        public uint IpAddressOffset;
+    [NativeTypeName("DWORD")]
+    public uint IpAddressOffset;
 
-        [NativeTypeName("DWORD")]
-        public uint IpAddressLength;
+    [NativeTypeName("DWORD")]
+    public uint IpAddressLength;
 
-        [NativeTypeName("DWORD")]
-        public uint PathOffset;
+    [NativeTypeName("DWORD")]
+    public uint PathOffset;
 
-        [NativeTypeName("DWORD")]
-        public uint PathLength;
-    }
+    [NativeTypeName("DWORD")]
+    public uint PathLength;
 }

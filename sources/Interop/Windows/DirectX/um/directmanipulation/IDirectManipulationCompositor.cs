@@ -9,104 +9,103 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows8.0")]
+[Guid("537A0825-0387-4EFA-B62F-71EB1F085A7E")]
+[NativeTypeName("struct IDirectManipulationCompositor : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IDirectManipulationCompositor : IDirectManipulationCompositor.Interface
 {
-    [SupportedOSPlatform("windows8.0")]
-    [Guid("537A0825-0387-4EFA-B62F-71EB1F085A7E")]
-    [NativeTypeName("struct IDirectManipulationCompositor : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDirectManipulationCompositor : IDirectManipulationCompositor.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDirectManipulationCompositor*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationCompositor*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDirectManipulationCompositor*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationCompositor*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDirectManipulationCompositor*, uint>)(lpVtbl[1]))((IDirectManipulationCompositor*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDirectManipulationCompositor*, uint>)(lpVtbl[1]))((IDirectManipulationCompositor*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDirectManipulationCompositor*, uint>)(lpVtbl[2]))((IDirectManipulationCompositor*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDirectManipulationCompositor*, uint>)(lpVtbl[2]))((IDirectManipulationCompositor*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT AddContent(IDirectManipulationContent* content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual)
+    {
+        return ((delegate* unmanaged<IDirectManipulationCompositor*, IDirectManipulationContent*, IUnknown*, IUnknown*, IUnknown*, int>)(lpVtbl[3]))((IDirectManipulationCompositor*)Unsafe.AsPointer(ref this), content, device, parentVisual, childVisual);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT RemoveContent(IDirectManipulationContent* content)
+    {
+        return ((delegate* unmanaged<IDirectManipulationCompositor*, IDirectManipulationContent*, int>)(lpVtbl[4]))((IDirectManipulationCompositor*)Unsafe.AsPointer(ref this), content);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT SetUpdateManager(IDirectManipulationUpdateManager* updateManager)
+    {
+        return ((delegate* unmanaged<IDirectManipulationCompositor*, IDirectManipulationUpdateManager*, int>)(lpVtbl[5]))((IDirectManipulationCompositor*)Unsafe.AsPointer(ref this), updateManager);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Flush()
+    {
+        return ((delegate* unmanaged<IDirectManipulationCompositor*, int>)(lpVtbl[6]))((IDirectManipulationCompositor*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT AddContent(IDirectManipulationContent* content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual)
-        {
-            return ((delegate* unmanaged<IDirectManipulationCompositor*, IDirectManipulationContent*, IUnknown*, IUnknown*, IUnknown*, int>)(lpVtbl[3]))((IDirectManipulationCompositor*)Unsafe.AsPointer(ref this), content, device, parentVisual, childVisual);
-        }
+        HRESULT AddContent(IDirectManipulationContent* content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT RemoveContent(IDirectManipulationContent* content)
-        {
-            return ((delegate* unmanaged<IDirectManipulationCompositor*, IDirectManipulationContent*, int>)(lpVtbl[4]))((IDirectManipulationCompositor*)Unsafe.AsPointer(ref this), content);
-        }
+        HRESULT RemoveContent(IDirectManipulationContent* content);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetUpdateManager(IDirectManipulationUpdateManager* updateManager)
-        {
-            return ((delegate* unmanaged<IDirectManipulationCompositor*, IDirectManipulationUpdateManager*, int>)(lpVtbl[5]))((IDirectManipulationCompositor*)Unsafe.AsPointer(ref this), updateManager);
-        }
+        HRESULT SetUpdateManager(IDirectManipulationUpdateManager* updateManager);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT Flush()
-        {
-            return ((delegate* unmanaged<IDirectManipulationCompositor*, int>)(lpVtbl[6]))((IDirectManipulationCompositor*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Flush();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT AddContent(IDirectManipulationContent* content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectManipulationCompositor*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT RemoveContent(IDirectManipulationContent* content);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectManipulationCompositor*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT SetUpdateManager(IDirectManipulationUpdateManager* updateManager);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectManipulationCompositor*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT Flush();
-        }
+        [NativeTypeName("HRESULT (IDirectManipulationContent *, IUnknown *, IUnknown *, IUnknown *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectManipulationCompositor*, IDirectManipulationContent*, IUnknown*, IUnknown*, IUnknown*, int> AddContent;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectManipulationCompositor*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (IDirectManipulationContent *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectManipulationCompositor*, IDirectManipulationContent*, int> RemoveContent;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectManipulationCompositor*, uint> AddRef;
+        [NativeTypeName("HRESULT (IDirectManipulationUpdateManager *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectManipulationCompositor*, IDirectManipulationUpdateManager*, int> SetUpdateManager;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectManipulationCompositor*, uint> Release;
-
-            [NativeTypeName("HRESULT (IDirectManipulationContent *, IUnknown *, IUnknown *, IUnknown *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectManipulationCompositor*, IDirectManipulationContent*, IUnknown*, IUnknown*, IUnknown*, int> AddContent;
-
-            [NativeTypeName("HRESULT (IDirectManipulationContent *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectManipulationCompositor*, IDirectManipulationContent*, int> RemoveContent;
-
-            [NativeTypeName("HRESULT (IDirectManipulationUpdateManager *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectManipulationCompositor*, IDirectManipulationUpdateManager*, int> SetUpdateManager;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDirectManipulationCompositor*, int> Flush;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDirectManipulationCompositor*, int> Flush;
     }
 }

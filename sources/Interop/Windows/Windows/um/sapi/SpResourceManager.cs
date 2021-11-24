@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("96749373-3391-11D2-9EE3-00C04F797396")]
+public partial struct SpResourceManager
 {
-    [Guid("96749373-3391-11D2-9EE3-00C04F797396")]
-    public partial struct SpResourceManager
-    {
-    }
 }

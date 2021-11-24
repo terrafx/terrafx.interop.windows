@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="READ_USN_JOURNAL_DATA_V1" /> struct.</summary>
+public static unsafe partial class READ_USN_JOURNAL_DATA_V1Tests
 {
-    /// <summary>Provides validation of the <see cref="READ_USN_JOURNAL_DATA_V1" /> struct.</summary>
-    public static unsafe partial class READ_USN_JOURNAL_DATA_V1Tests
+    /// <summary>Validates that the <see cref="READ_USN_JOURNAL_DATA_V1" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="READ_USN_JOURNAL_DATA_V1" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<READ_USN_JOURNAL_DATA_V1>(), Is.EqualTo(sizeof(READ_USN_JOURNAL_DATA_V1)));
-        }
+        Assert.That(Marshal.SizeOf<READ_USN_JOURNAL_DATA_V1>(), Is.EqualTo(sizeof(READ_USN_JOURNAL_DATA_V1)));
+    }
 
-        /// <summary>Validates that the <see cref="READ_USN_JOURNAL_DATA_V1" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(READ_USN_JOURNAL_DATA_V1).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="READ_USN_JOURNAL_DATA_V1" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(READ_USN_JOURNAL_DATA_V1).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="READ_USN_JOURNAL_DATA_V1" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(READ_USN_JOURNAL_DATA_V1), Is.EqualTo(48));
-        }
+    /// <summary>Validates that the <see cref="READ_USN_JOURNAL_DATA_V1" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(READ_USN_JOURNAL_DATA_V1), Is.EqualTo(48));
     }
 }

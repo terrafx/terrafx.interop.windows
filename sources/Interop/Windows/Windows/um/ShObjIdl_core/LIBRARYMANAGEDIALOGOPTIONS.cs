@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum LIBRARYMANAGEDIALOGOPTIONS
 {
-    [Flags]
-    public enum LIBRARYMANAGEDIALOGOPTIONS
-    {
-        LMD_DEFAULT = 0,
-        LMD_ALLOWUNINDEXABLENETWORKLOCATIONS = 0x1,
-    }
+    LMD_DEFAULT = 0,
+    LMD_ALLOWUNINDEXABLENETWORKLOCATIONS = 0x1,
 }

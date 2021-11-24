@@ -3,22 +3,21 @@
 // Ported from um/winuser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static unsafe partial class CONSOLE
 {
-    public static unsafe partial class CONSOLE
+    public static int CONSOLE_APPLICATION_16BIT
     {
-        public static int CONSOLE_APPLICATION_16BIT
+        get
         {
-            get
+            if (sizeof(nint) == 4)
             {
-                if (sizeof(nint) == 4)
-                {
-                    return 0x0001;
-                }
-                else
-                {
-                    return 0x0000;
-                }
+                return 0x0001;
+            }
+            else
+            {
+                return 0x0000;
             }
         }
     }

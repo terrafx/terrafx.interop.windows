@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("E55199D6-044C-4DAE-A488-531ED306235B")]
+public partial struct CODECAPI_GUID_AVEncCommonFormatDVD_DashVR
 {
-    [Guid("E55199D6-044C-4DAE-A488-531ED306235B")]
-    public partial struct CODECAPI_GUID_AVEncCommonFormatDVD_DashVR
-    {
-    }
 }

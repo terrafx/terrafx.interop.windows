@@ -5,14 +5,13 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct ASF_FLAT_PICTURE
-    {
-        public byte bPictureType;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint dwDataLen;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct ASF_FLAT_PICTURE
+{
+    public byte bPictureType;
+
+    [NativeTypeName("DWORD")]
+    public uint dwDataLen;
 }

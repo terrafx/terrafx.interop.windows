@@ -3,13 +3,12 @@
 // Ported from um/MsHTML.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum styleColumnFill
 {
-    public enum styleColumnFill
-    {
-        styleColumnFillAuto = 0,
-        styleColumnFillBalance = 1,
-        styleColumnFillNotSet = 2,
-        styleColumnFill_Max = 2147483647,
-    }
+    styleColumnFillAuto = 0,
+    styleColumnFillBalance = 1,
+    styleColumnFillNotSet = 2,
+    styleColumnFill_Max = 2147483647,
 }

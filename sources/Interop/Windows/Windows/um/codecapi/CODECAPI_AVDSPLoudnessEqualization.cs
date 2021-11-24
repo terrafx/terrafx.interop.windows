@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("8AFD1A15-1812-4CBF-9319-433A5B2A3B27")]
+public partial struct CODECAPI_AVDSPLoudnessEqualization
 {
-    [Guid("8AFD1A15-1812-4CBF-9319-433A5B2A3B27")]
-    public partial struct CODECAPI_AVDSPLoudnessEqualization
-    {
-    }
 }

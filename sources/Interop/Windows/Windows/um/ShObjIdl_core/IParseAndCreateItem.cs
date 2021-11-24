@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("67EFED0E-E827-4408-B493-78F3982B685C")]
+[NativeTypeName("struct IParseAndCreateItem : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IParseAndCreateItem : IParseAndCreateItem.Interface
 {
-    [Guid("67EFED0E-E827-4408-B493-78F3982B685C")]
-    [NativeTypeName("struct IParseAndCreateItem : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IParseAndCreateItem : IParseAndCreateItem.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IParseAndCreateItem*, Guid*, void**, int>)(lpVtbl[0]))((IParseAndCreateItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IParseAndCreateItem*, Guid*, void**, int>)(lpVtbl[0]))((IParseAndCreateItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IParseAndCreateItem*, uint>)(lpVtbl[1]))((IParseAndCreateItem*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IParseAndCreateItem*, uint>)(lpVtbl[1]))((IParseAndCreateItem*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IParseAndCreateItem*, uint>)(lpVtbl[2]))((IParseAndCreateItem*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IParseAndCreateItem*, uint>)(lpVtbl[2]))((IParseAndCreateItem*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT SetItem(IShellItem* psi)
+    {
+        return ((delegate* unmanaged<IParseAndCreateItem*, IShellItem*, int>)(lpVtbl[3]))((IParseAndCreateItem*)Unsafe.AsPointer(ref this), psi);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetItem([NativeTypeName("const IID &")] Guid* riid, void** ppv)
+    {
+        return ((delegate* unmanaged<IParseAndCreateItem*, Guid*, void**, int>)(lpVtbl[4]))((IParseAndCreateItem*)Unsafe.AsPointer(ref this), riid, ppv);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT SetItem(IShellItem* psi)
-        {
-            return ((delegate* unmanaged<IParseAndCreateItem*, IShellItem*, int>)(lpVtbl[3]))((IParseAndCreateItem*)Unsafe.AsPointer(ref this), psi);
-        }
+        HRESULT SetItem(IShellItem* psi);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetItem([NativeTypeName("const IID &")] Guid* riid, void** ppv)
-        {
-            return ((delegate* unmanaged<IParseAndCreateItem*, Guid*, void**, int>)(lpVtbl[4]))((IParseAndCreateItem*)Unsafe.AsPointer(ref this), riid, ppv);
-        }
+        HRESULT GetItem([NativeTypeName("const IID &")] Guid* riid, void** ppv);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT SetItem(IShellItem* psi);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IParseAndCreateItem*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetItem([NativeTypeName("const IID &")] Guid* riid, void** ppv);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IParseAndCreateItem*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IParseAndCreateItem*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IParseAndCreateItem*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IParseAndCreateItem*, uint> AddRef;
+        [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IParseAndCreateItem*, IShellItem*, int> SetItem;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IParseAndCreateItem*, uint> Release;
-
-            [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IParseAndCreateItem*, IShellItem*, int> SetItem;
-
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IParseAndCreateItem*, Guid*, void**, int> GetItem;
-        }
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IParseAndCreateItem*, Guid*, void**, int> GetItem;
     }
 }

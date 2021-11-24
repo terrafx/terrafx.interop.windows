@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("157232B6-F809-474E-9464-A7F93014A817")]
+public partial struct CODECAPI_AVEncMP12MuxEarliestPTS
 {
-    [Guid("157232B6-F809-474E-9464-A7F93014A817")]
-    public partial struct CODECAPI_AVEncMP12MuxEarliestPTS
-    {
-    }
 }

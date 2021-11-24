@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D3D10_CPU_ACCESS_FLAG
 {
-    [Flags]
-    public enum D3D10_CPU_ACCESS_FLAG
-    {
-        D3D10_CPU_ACCESS_WRITE = 0x10000,
-        D3D10_CPU_ACCESS_READ = 0x20000,
-    }
+    D3D10_CPU_ACCESS_WRITE = 0x10000,
+    D3D10_CPU_ACCESS_READ = 0x20000,
 }

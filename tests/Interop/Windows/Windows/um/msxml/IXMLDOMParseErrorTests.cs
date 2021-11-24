@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IXMLDOMParseError" /> struct.</summary>
+public static unsafe partial class IXMLDOMParseErrorTests
 {
-    /// <summary>Provides validation of the <see cref="IXMLDOMParseError" /> struct.</summary>
-    public static unsafe partial class IXMLDOMParseErrorTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IXMLDOMParseError" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IXMLDOMParseError" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IXMLDOMParseError).GUID, Is.EqualTo(IID_IXMLDOMParseError));
-        }
+        Assert.That(typeof(IXMLDOMParseError).GUID, Is.EqualTo(IID_IXMLDOMParseError));
+    }
 
-        /// <summary>Validates that the <see cref="IXMLDOMParseError" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IXMLDOMParseError>(), Is.EqualTo(sizeof(IXMLDOMParseError)));
-        }
+    /// <summary>Validates that the <see cref="IXMLDOMParseError" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IXMLDOMParseError>(), Is.EqualTo(sizeof(IXMLDOMParseError)));
+    }
 
-        /// <summary>Validates that the <see cref="IXMLDOMParseError" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IXMLDOMParseError).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IXMLDOMParseError" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IXMLDOMParseError).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IXMLDOMParseError" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IXMLDOMParseError" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IXMLDOMParseError), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IXMLDOMParseError), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IXMLDOMParseError), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IXMLDOMParseError), Is.EqualTo(4));
         }
     }
 }

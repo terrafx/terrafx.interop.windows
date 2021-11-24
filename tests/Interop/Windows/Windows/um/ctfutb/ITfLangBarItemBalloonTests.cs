@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ITfLangBarItemBalloon" /> struct.</summary>
+public static unsafe partial class ITfLangBarItemBalloonTests
 {
-    /// <summary>Provides validation of the <see cref="ITfLangBarItemBalloon" /> struct.</summary>
-    public static unsafe partial class ITfLangBarItemBalloonTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfLangBarItemBalloon" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ITfLangBarItemBalloon" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ITfLangBarItemBalloon).GUID, Is.EqualTo(IID_ITfLangBarItemBalloon));
-        }
+        Assert.That(typeof(ITfLangBarItemBalloon).GUID, Is.EqualTo(IID_ITfLangBarItemBalloon));
+    }
 
-        /// <summary>Validates that the <see cref="ITfLangBarItemBalloon" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ITfLangBarItemBalloon>(), Is.EqualTo(sizeof(ITfLangBarItemBalloon)));
-        }
+    /// <summary>Validates that the <see cref="ITfLangBarItemBalloon" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ITfLangBarItemBalloon>(), Is.EqualTo(sizeof(ITfLangBarItemBalloon)));
+    }
 
-        /// <summary>Validates that the <see cref="ITfLangBarItemBalloon" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ITfLangBarItemBalloon).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ITfLangBarItemBalloon" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ITfLangBarItemBalloon).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ITfLangBarItemBalloon" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ITfLangBarItemBalloon" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ITfLangBarItemBalloon), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ITfLangBarItemBalloon), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ITfLangBarItemBalloon), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ITfLangBarItemBalloon), Is.EqualTo(4));
         }
     }
 }

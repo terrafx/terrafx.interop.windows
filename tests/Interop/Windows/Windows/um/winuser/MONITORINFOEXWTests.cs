@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MONITORINFOEXW" /> struct.</summary>
+public static unsafe partial class MONITORINFOEXWTests
 {
-    /// <summary>Provides validation of the <see cref="MONITORINFOEXW" /> struct.</summary>
-    public static unsafe partial class MONITORINFOEXWTests
+    /// <summary>Validates that the <see cref="MONITORINFOEXW" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MONITORINFOEXW" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MONITORINFOEXW>(), Is.EqualTo(sizeof(MONITORINFOEXW)));
-        }
+        Assert.That(Marshal.SizeOf<MONITORINFOEXW>(), Is.EqualTo(sizeof(MONITORINFOEXW)));
+    }
 
-        /// <summary>Validates that the <see cref="MONITORINFOEXW" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MONITORINFOEXW).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MONITORINFOEXW" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MONITORINFOEXW).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MONITORINFOEXW" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MONITORINFOEXW), Is.EqualTo(104));
-        }
+    /// <summary>Validates that the <see cref="MONITORINFOEXW" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MONITORINFOEXW), Is.EqualTo(104));
     }
 }

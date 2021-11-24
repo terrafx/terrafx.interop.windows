@@ -3,21 +3,20 @@
 // Ported from shared/Iprtrmib.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct MIB_IFSTATUS
 {
-    public partial struct MIB_IFSTATUS
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwIfIndex;
+    [NativeTypeName("DWORD")]
+    public uint dwIfIndex;
 
-        [NativeTypeName("DWORD")]
-        public uint dwAdminStatus;
+    [NativeTypeName("DWORD")]
+    public uint dwAdminStatus;
 
-        [NativeTypeName("DWORD")]
-        public uint dwOperationalStatus;
+    [NativeTypeName("DWORD")]
+    public uint dwOperationalStatus;
 
-        public BOOL bMHbeatActive;
+    public BOOL bMHbeatActive;
 
-        public BOOL bMHbeatAlive;
-    }
+    public BOOL bMHbeatAlive;
 }

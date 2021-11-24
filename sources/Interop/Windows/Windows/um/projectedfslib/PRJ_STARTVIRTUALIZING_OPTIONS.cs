@@ -5,22 +5,21 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.17763.0")]
+public unsafe partial struct PRJ_STARTVIRTUALIZING_OPTIONS
 {
-    [SupportedOSPlatform("windows10.0.17763.0")]
-    public unsafe partial struct PRJ_STARTVIRTUALIZING_OPTIONS
-    {
-        public PRJ_STARTVIRTUALIZING_FLAGS Flags;
+    public PRJ_STARTVIRTUALIZING_FLAGS Flags;
 
-        [NativeTypeName("UINT32")]
-        public uint PoolThreadCount;
+    [NativeTypeName("UINT32")]
+    public uint PoolThreadCount;
 
-        [NativeTypeName("UINT32")]
-        public uint ConcurrentThreadCount;
+    [NativeTypeName("UINT32")]
+    public uint ConcurrentThreadCount;
 
-        public PRJ_NOTIFICATION_MAPPING* NotificationMappings;
+    public PRJ_NOTIFICATION_MAPPING* NotificationMappings;
 
-        [NativeTypeName("UINT32")]
-        public uint NotificationMappingsCount;
-    }
+    [NativeTypeName("UINT32")]
+    public uint NotificationMappingsCount;
 }

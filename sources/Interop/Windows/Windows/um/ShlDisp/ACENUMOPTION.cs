@@ -3,12 +3,11 @@
 // Ported from um/ShlDisp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum ACENUMOPTION
 {
-    public enum ACENUMOPTION
-    {
-        ACEO_NONE = 0,
-        ACEO_MOSTRECENTFIRST = 0x1,
-        ACEO_FIRSTUNUSED = 0x10000,
-    }
+    ACEO_NONE = 0,
+    ACEO_MOSTRECENTFIRST = 0x1,
+    ACEO_FIRSTUNUSED = 0x10000,
 }

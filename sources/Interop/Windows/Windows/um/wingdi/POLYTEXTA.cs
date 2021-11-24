@@ -3,23 +3,22 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct POLYTEXTA
 {
-    public unsafe partial struct POLYTEXTA
-    {
-        public int x;
+    public int x;
 
-        public int y;
+    public int y;
 
-        public uint n;
+    public uint n;
 
-        [NativeTypeName("LPCSTR")]
-        public sbyte* lpstr;
+    [NativeTypeName("LPCSTR")]
+    public sbyte* lpstr;
 
-        public uint uiFlags;
+    public uint uiFlags;
 
-        public RECT rcl;
+    public RECT rcl;
 
-        public int* pdx;
-    }
+    public int* pdx;
 }

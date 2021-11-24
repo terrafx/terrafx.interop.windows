@@ -3,14 +3,13 @@
 // Ported from shared/ktmtypes.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class TRANSACTIONMANAGER
-    {
-        [NativeTypeName("#define TRANSACTIONMANAGER_OBJECT_PATH L\"\\\\TransactionManager\\\\\"")]
-        public const string TRANSACTIONMANAGER_OBJECT_PATH = "\\TransactionManager\\";
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("#define TRANSACTIONMANAGER_OBJECT_NAME_LENGTH_IN_BYTES (sizeof(TRANSACTIONMANAGER_OBJECT_PATH)+(38*sizeof(WCHAR)))")]
-        public const uint TRANSACTIONMANAGER_OBJECT_NAME_LENGTH_IN_BYTES = (42 + (38 * 2));
-    }
+public static partial class TRANSACTIONMANAGER
+{
+    [NativeTypeName("#define TRANSACTIONMANAGER_OBJECT_PATH L\"\\\\TransactionManager\\\\\"")]
+    public const string TRANSACTIONMANAGER_OBJECT_PATH = "\\TransactionManager\\";
+
+    [NativeTypeName("#define TRANSACTIONMANAGER_OBJECT_NAME_LENGTH_IN_BYTES (sizeof(TRANSACTIONMANAGER_OBJECT_PATH)+(38*sizeof(WCHAR)))")]
+    public const uint TRANSACTIONMANAGER_OBJECT_NAME_LENGTH_IN_BYTES = (42 + (38 * 2));
 }

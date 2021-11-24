@@ -3,16 +3,15 @@
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CAT_NAMEVALUE
 {
-    public unsafe partial struct CAT_NAMEVALUE
-    {
-        [NativeTypeName("LPWSTR")]
-        public ushort* pwszTag;
+    [NativeTypeName("LPWSTR")]
+    public ushort* pwszTag;
 
-        [NativeTypeName("DWORD")]
-        public uint fdwFlags;
+    [NativeTypeName("DWORD")]
+    public uint fdwFlags;
 
-        public CRYPT_DATA_BLOB Value;
-    }
+    public CRYPT_DATA_BLOB Value;
 }

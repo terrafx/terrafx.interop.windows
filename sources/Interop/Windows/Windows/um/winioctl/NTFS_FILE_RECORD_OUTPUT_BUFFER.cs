@@ -3,16 +3,15 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct NTFS_FILE_RECORD_OUTPUT_BUFFER
 {
-    public unsafe partial struct NTFS_FILE_RECORD_OUTPUT_BUFFER
-    {
-        public LARGE_INTEGER FileReferenceNumber;
+    public LARGE_INTEGER FileReferenceNumber;
 
-        [NativeTypeName("DWORD")]
-        public uint FileRecordLength;
+    [NativeTypeName("DWORD")]
+    public uint FileRecordLength;
 
-        [NativeTypeName("BYTE [1]")]
-        public fixed byte FileRecordBuffer[1];
-    }
+    [NativeTypeName("BYTE [1]")]
+    public fixed byte FileRecordBuffer[1];
 }

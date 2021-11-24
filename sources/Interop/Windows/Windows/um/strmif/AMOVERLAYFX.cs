@@ -3,13 +3,12 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum AMOVERLAYFX
 {
-    public enum AMOVERLAYFX
-    {
-        AMOVERFX_NOFX = 0,
-        AMOVERFX_MIRRORLEFTRIGHT = 0x2,
-        AMOVERFX_MIRRORUPDOWN = 0x4,
-        AMOVERFX_DEINTERLACE = 0x8,
-    }
+    AMOVERFX_NOFX = 0,
+    AMOVERFX_MIRRORLEFTRIGHT = 0x2,
+    AMOVERFX_MIRRORUPDOWN = 0x4,
+    AMOVERFX_DEINTERLACE = 0x8,
 }

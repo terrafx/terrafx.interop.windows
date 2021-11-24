@@ -3,14 +3,13 @@
 // Ported from um/codecapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum eAVEncVideoChromaResolution
 {
-    public enum eAVEncVideoChromaResolution
-    {
-        eAVEncVideoChromaResolution_SameAsSource = 0,
-        eAVEncVideoChromaResolution_444 = 1,
-        eAVEncVideoChromaResolution_422 = 2,
-        eAVEncVideoChromaResolution_420 = 3,
-        eAVEncVideoChromaResolution_411 = 4,
-    }
+    eAVEncVideoChromaResolution_SameAsSource = 0,
+    eAVEncVideoChromaResolution_444 = 1,
+    eAVEncVideoChromaResolution_422 = 2,
+    eAVEncVideoChromaResolution_420 = 3,
+    eAVEncVideoChromaResolution_411 = 4,
 }

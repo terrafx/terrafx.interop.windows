@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("50EF4544-AC9F-4A8E-B21B-8A26180DB13F")]
+public partial struct LocalThumbnailCache
 {
-    [Guid("50EF4544-AC9F-4A8E-B21B-8A26180DB13F")]
-    public partial struct LocalThumbnailCache
-    {
-    }
 }

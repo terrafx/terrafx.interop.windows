@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MIXERCONTROLDETAILS_BOOLEAN" /> struct.</summary>
+public static unsafe partial class MIXERCONTROLDETAILS_BOOLEANTests
 {
-    /// <summary>Provides validation of the <see cref="MIXERCONTROLDETAILS_BOOLEAN" /> struct.</summary>
-    public static unsafe partial class MIXERCONTROLDETAILS_BOOLEANTests
+    /// <summary>Validates that the <see cref="MIXERCONTROLDETAILS_BOOLEAN" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MIXERCONTROLDETAILS_BOOLEAN" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MIXERCONTROLDETAILS_BOOLEAN>(), Is.EqualTo(sizeof(MIXERCONTROLDETAILS_BOOLEAN)));
-        }
+        Assert.That(Marshal.SizeOf<MIXERCONTROLDETAILS_BOOLEAN>(), Is.EqualTo(sizeof(MIXERCONTROLDETAILS_BOOLEAN)));
+    }
 
-        /// <summary>Validates that the <see cref="MIXERCONTROLDETAILS_BOOLEAN" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MIXERCONTROLDETAILS_BOOLEAN).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MIXERCONTROLDETAILS_BOOLEAN" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MIXERCONTROLDETAILS_BOOLEAN).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MIXERCONTROLDETAILS_BOOLEAN" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MIXERCONTROLDETAILS_BOOLEAN), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="MIXERCONTROLDETAILS_BOOLEAN" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MIXERCONTROLDETAILS_BOOLEAN), Is.EqualTo(4));
     }
 }

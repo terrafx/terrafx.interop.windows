@@ -7,36 +7,35 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct REASSIGN_BLOCKS_EX
 {
+    [NativeTypeName("WORD")]
+    public ushort Reserved;
+
+    [NativeTypeName("WORD")]
+    public ushort Count;
+
+    [NativeTypeName("LARGE_INTEGER [1]")]
+    public _BlockNumber_e__FixedBuffer BlockNumber;
+
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct REASSIGN_BLOCKS_EX
+    public partial struct _BlockNumber_e__FixedBuffer
     {
-        [NativeTypeName("WORD")]
-        public ushort Reserved;
+        public LARGE_INTEGER e0;
 
-        [NativeTypeName("WORD")]
-        public ushort Count;
-
-        [NativeTypeName("LARGE_INTEGER [1]")]
-        public _BlockNumber_e__FixedBuffer BlockNumber;
-
-        [StructLayout(LayoutKind.Sequential, Pack = 1)]
-        public partial struct _BlockNumber_e__FixedBuffer
+        public ref LARGE_INTEGER this[int index]
         {
-            public LARGE_INTEGER e0;
-
-            public ref LARGE_INTEGER this[int index]
-            {
-                [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
-                {
-                    return ref AsSpan(int.MaxValue)[index];
-                }
-            }
-
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public Span<LARGE_INTEGER> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            get
+            {
+                return ref AsSpan(int.MaxValue)[index];
+            }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Span<LARGE_INTEGER> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

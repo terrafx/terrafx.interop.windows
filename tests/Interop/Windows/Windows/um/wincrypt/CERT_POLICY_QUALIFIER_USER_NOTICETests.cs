@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CERT_POLICY_QUALIFIER_USER_NOTICE" /> struct.</summary>
+public static unsafe partial class CERT_POLICY_QUALIFIER_USER_NOTICETests
 {
-    /// <summary>Provides validation of the <see cref="CERT_POLICY_QUALIFIER_USER_NOTICE" /> struct.</summary>
-    public static unsafe partial class CERT_POLICY_QUALIFIER_USER_NOTICETests
+    /// <summary>Validates that the <see cref="CERT_POLICY_QUALIFIER_USER_NOTICE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CERT_POLICY_QUALIFIER_USER_NOTICE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CERT_POLICY_QUALIFIER_USER_NOTICE>(), Is.EqualTo(sizeof(CERT_POLICY_QUALIFIER_USER_NOTICE)));
-        }
+        Assert.That(Marshal.SizeOf<CERT_POLICY_QUALIFIER_USER_NOTICE>(), Is.EqualTo(sizeof(CERT_POLICY_QUALIFIER_USER_NOTICE)));
+    }
 
-        /// <summary>Validates that the <see cref="CERT_POLICY_QUALIFIER_USER_NOTICE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CERT_POLICY_QUALIFIER_USER_NOTICE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CERT_POLICY_QUALIFIER_USER_NOTICE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CERT_POLICY_QUALIFIER_USER_NOTICE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CERT_POLICY_QUALIFIER_USER_NOTICE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CERT_POLICY_QUALIFIER_USER_NOTICE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CERT_POLICY_QUALIFIER_USER_NOTICE), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(CERT_POLICY_QUALIFIER_USER_NOTICE), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(CERT_POLICY_QUALIFIER_USER_NOTICE), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(CERT_POLICY_QUALIFIER_USER_NOTICE), Is.EqualTo(8));
         }
     }
 }

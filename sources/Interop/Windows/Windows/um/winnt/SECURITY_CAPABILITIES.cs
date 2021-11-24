@@ -5,21 +5,20 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public unsafe partial struct SECURITY_CAPABILITIES
 {
-    [SupportedOSPlatform("windows8.0")]
-    public unsafe partial struct SECURITY_CAPABILITIES
-    {
-        [NativeTypeName("PSID")]
-        public void* AppContainerSid;
+    [NativeTypeName("PSID")]
+    public void* AppContainerSid;
 
-        [NativeTypeName("PSID_AND_ATTRIBUTES")]
-        public SID_AND_ATTRIBUTES* Capabilities;
+    [NativeTypeName("PSID_AND_ATTRIBUTES")]
+    public SID_AND_ATTRIBUTES* Capabilities;
 
-        [NativeTypeName("DWORD")]
-        public uint CapabilityCount;
+    [NativeTypeName("DWORD")]
+    public uint CapabilityCount;
 
-        [NativeTypeName("DWORD")]
-        public uint Reserved;
-    }
+    [NativeTypeName("DWORD")]
+    public uint Reserved;
 }

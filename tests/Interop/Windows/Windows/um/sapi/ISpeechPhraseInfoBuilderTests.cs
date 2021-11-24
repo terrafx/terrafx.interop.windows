@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ISpeechPhraseInfoBuilder" /> struct.</summary>
+public static unsafe partial class ISpeechPhraseInfoBuilderTests
 {
-    /// <summary>Provides validation of the <see cref="ISpeechPhraseInfoBuilder" /> struct.</summary>
-    public static unsafe partial class ISpeechPhraseInfoBuilderTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpeechPhraseInfoBuilder" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="ISpeechPhraseInfoBuilder" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(ISpeechPhraseInfoBuilder).GUID, Is.EqualTo(IID_ISpeechPhraseInfoBuilder));
-        }
+        Assert.That(typeof(ISpeechPhraseInfoBuilder).GUID, Is.EqualTo(IID_ISpeechPhraseInfoBuilder));
+    }
 
-        /// <summary>Validates that the <see cref="ISpeechPhraseInfoBuilder" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ISpeechPhraseInfoBuilder>(), Is.EqualTo(sizeof(ISpeechPhraseInfoBuilder)));
-        }
+    /// <summary>Validates that the <see cref="ISpeechPhraseInfoBuilder" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<ISpeechPhraseInfoBuilder>(), Is.EqualTo(sizeof(ISpeechPhraseInfoBuilder)));
+    }
 
-        /// <summary>Validates that the <see cref="ISpeechPhraseInfoBuilder" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ISpeechPhraseInfoBuilder).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ISpeechPhraseInfoBuilder" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ISpeechPhraseInfoBuilder).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ISpeechPhraseInfoBuilder" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="ISpeechPhraseInfoBuilder" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(ISpeechPhraseInfoBuilder), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(ISpeechPhraseInfoBuilder), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(ISpeechPhraseInfoBuilder), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(ISpeechPhraseInfoBuilder), Is.EqualTo(4));
         }
     }
 }

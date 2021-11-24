@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum D3D10_CLEAR_FLAG
 {
-    [Flags]
-    public enum D3D10_CLEAR_FLAG
-    {
-        D3D10_CLEAR_DEPTH = 0x1,
-        D3D10_CLEAR_STENCIL = 0x2,
-    }
+    D3D10_CLEAR_DEPTH = 0x1,
+    D3D10_CLEAR_STENCIL = 0x2,
 }

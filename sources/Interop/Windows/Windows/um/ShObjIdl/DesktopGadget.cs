@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("924CCC1B-6562-4C85-8657-D177925222B6")]
+public partial struct DesktopGadget
 {
-    [Guid("924CCC1B-6562-4C85-8657-D177925222B6")]
-    public partial struct DesktopGadget
-    {
-    }
 }

@@ -5,15 +5,14 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
-{
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct SHARDAPPIDINFOIDLIST
-    {
-        [NativeTypeName("LPCITEMIDLIST")]
-        public ITEMIDLIST* pidl;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("PCWSTR")]
-        public ushort* pszAppID;
-    }
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct SHARDAPPIDINFOIDLIST
+{
+    [NativeTypeName("LPCITEMIDLIST")]
+    public ITEMIDLIST* pidl;
+
+    [NativeTypeName("PCWSTR")]
+    public ushort* pszAppID;
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("5612BCA1-56DA-4582-8DA1-CA8090F92768")]
+public partial struct CODECAPI_AVDSPSpeakerFill
 {
-    [Guid("5612BCA1-56DA-4582-8DA1-CA8090F92768")]
-    public partial struct CODECAPI_AVDSPSpeakerFill
-    {
-    }
 }

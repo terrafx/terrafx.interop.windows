@@ -5,16 +5,15 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum SERVICE_NODE_TYPE
 {
-    [Flags]
-    public enum SERVICE_NODE_TYPE
-    {
-        DriverType = 0x00000001,
-        FileSystemType = 0x00000002,
-        Win32ServiceOwnProcess = 0x00000010,
-        Win32ServiceShareProcess = 0x00000020,
-        AdapterType = 0x00000004,
-        RecognizerType = 0x00000008,
-    }
+    DriverType = 0x00000001,
+    FileSystemType = 0x00000002,
+    Win32ServiceOwnProcess = 0x00000010,
+    Win32ServiceShareProcess = 0x00000020,
+    AdapterType = 0x00000004,
+    RecognizerType = 0x00000008,
 }

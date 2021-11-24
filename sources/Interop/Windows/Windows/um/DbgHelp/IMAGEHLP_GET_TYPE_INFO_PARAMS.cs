@@ -3,61 +3,60 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct IMAGEHLP_GET_TYPE_INFO_PARAMS
 {
-    public unsafe partial struct IMAGEHLP_GET_TYPE_INFO_PARAMS
-    {
-        [NativeTypeName("ULONG")]
-        public uint SizeOfStruct;
+    [NativeTypeName("ULONG")]
+    public uint SizeOfStruct;
 
-        [NativeTypeName("ULONG")]
-        public uint Flags;
+    [NativeTypeName("ULONG")]
+    public uint Flags;
 
-        [NativeTypeName("ULONG")]
-        public uint NumIds;
+    [NativeTypeName("ULONG")]
+    public uint NumIds;
 
-        [NativeTypeName("PULONG")]
-        public uint* TypeIds;
+    [NativeTypeName("PULONG")]
+    public uint* TypeIds;
 
-        [NativeTypeName("ULONG64")]
-        public ulong TagFilter;
+    [NativeTypeName("ULONG64")]
+    public ulong TagFilter;
 
-        [NativeTypeName("ULONG")]
-        public uint NumReqs;
+    [NativeTypeName("ULONG")]
+    public uint NumReqs;
 
-        public IMAGEHLP_SYMBOL_TYPE_INFO* ReqKinds;
+    public IMAGEHLP_SYMBOL_TYPE_INFO* ReqKinds;
 
-        [NativeTypeName("PULONG_PTR")]
-        public nuint* ReqOffsets;
+    [NativeTypeName("PULONG_PTR")]
+    public nuint* ReqOffsets;
 
-        [NativeTypeName("PULONG")]
-        public uint* ReqSizes;
+    [NativeTypeName("PULONG")]
+    public uint* ReqSizes;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint ReqStride;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint ReqStride;
 
-        [NativeTypeName("ULONG_PTR")]
-        public nuint BufferSize;
+    [NativeTypeName("ULONG_PTR")]
+    public nuint BufferSize;
 
-        [NativeTypeName("PVOID")]
-        public void* Buffer;
+    [NativeTypeName("PVOID")]
+    public void* Buffer;
 
-        [NativeTypeName("ULONG")]
-        public uint EntriesMatched;
+    [NativeTypeName("ULONG")]
+    public uint EntriesMatched;
 
-        [NativeTypeName("ULONG")]
-        public uint EntriesFilled;
+    [NativeTypeName("ULONG")]
+    public uint EntriesFilled;
 
-        [NativeTypeName("ULONG64")]
-        public ulong TagsFound;
+    [NativeTypeName("ULONG64")]
+    public ulong TagsFound;
 
-        [NativeTypeName("ULONG64")]
-        public ulong AllReqsValid;
+    [NativeTypeName("ULONG64")]
+    public ulong AllReqsValid;
 
-        [NativeTypeName("ULONG")]
-        public uint NumReqsValid;
+    [NativeTypeName("ULONG")]
+    public uint NumReqsValid;
 
-        [NativeTypeName("PULONG64")]
-        public ulong* ReqsValid;
-    }
+    [NativeTypeName("PULONG64")]
+    public ulong* ReqsValid;
 }

@@ -5,41 +5,40 @@
 
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct DXGI_OUTPUT_DESC1
 {
-    public unsafe partial struct DXGI_OUTPUT_DESC1
-    {
-        [NativeTypeName("WCHAR [32]")]
-        public fixed ushort DeviceName[32];
+    [NativeTypeName("WCHAR [32]")]
+    public fixed ushort DeviceName[32];
 
-        public RECT DesktopCoordinates;
+    public RECT DesktopCoordinates;
 
-        public BOOL AttachedToDesktop;
+    public BOOL AttachedToDesktop;
 
-        public DXGI_MODE_ROTATION Rotation;
+    public DXGI_MODE_ROTATION Rotation;
 
-        public HMONITOR Monitor;
+    public HMONITOR Monitor;
 
-        public uint BitsPerColor;
+    public uint BitsPerColor;
 
-        public DXGI_COLOR_SPACE_TYPE ColorSpace;
+    public DXGI_COLOR_SPACE_TYPE ColorSpace;
 
-        [NativeTypeName("FLOAT [2]")]
-        public fixed float RedPrimary[2];
+    [NativeTypeName("FLOAT [2]")]
+    public fixed float RedPrimary[2];
 
-        [NativeTypeName("FLOAT [2]")]
-        public fixed float GreenPrimary[2];
+    [NativeTypeName("FLOAT [2]")]
+    public fixed float GreenPrimary[2];
 
-        [NativeTypeName("FLOAT [2]")]
-        public fixed float BluePrimary[2];
+    [NativeTypeName("FLOAT [2]")]
+    public fixed float BluePrimary[2];
 
-        [NativeTypeName("FLOAT [2]")]
-        public fixed float WhitePoint[2];
+    [NativeTypeName("FLOAT [2]")]
+    public fixed float WhitePoint[2];
 
-        public float MinLuminance;
+    public float MinLuminance;
 
-        public float MaxLuminance;
+    public float MaxLuminance;
 
-        public float MaxFullFrameLuminance;
-    }
+    public float MaxFullFrameLuminance;
 }

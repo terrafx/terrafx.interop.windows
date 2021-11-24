@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="ENUMLOGFONTEXDVA" /> struct.</summary>
+public static unsafe partial class ENUMLOGFONTEXDVATests
 {
-    /// <summary>Provides validation of the <see cref="ENUMLOGFONTEXDVA" /> struct.</summary>
-    public static unsafe partial class ENUMLOGFONTEXDVATests
+    /// <summary>Validates that the <see cref="ENUMLOGFONTEXDVA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="ENUMLOGFONTEXDVA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<ENUMLOGFONTEXDVA>(), Is.EqualTo(sizeof(ENUMLOGFONTEXDVA)));
-        }
+        Assert.That(Marshal.SizeOf<ENUMLOGFONTEXDVA>(), Is.EqualTo(sizeof(ENUMLOGFONTEXDVA)));
+    }
 
-        /// <summary>Validates that the <see cref="ENUMLOGFONTEXDVA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(ENUMLOGFONTEXDVA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="ENUMLOGFONTEXDVA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(ENUMLOGFONTEXDVA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="ENUMLOGFONTEXDVA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(ENUMLOGFONTEXDVA), Is.EqualTo(260));
-        }
+    /// <summary>Validates that the <see cref="ENUMLOGFONTEXDVA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(ENUMLOGFONTEXDVA), Is.EqualTo(260));
     }
 }

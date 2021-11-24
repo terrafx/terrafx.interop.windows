@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="GROUP_AFFINITY" /> struct.</summary>
+public static unsafe partial class GROUP_AFFINITYTests
 {
-    /// <summary>Provides validation of the <see cref="GROUP_AFFINITY" /> struct.</summary>
-    public static unsafe partial class GROUP_AFFINITYTests
+    /// <summary>Validates that the <see cref="GROUP_AFFINITY" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="GROUP_AFFINITY" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<GROUP_AFFINITY>(), Is.EqualTo(sizeof(GROUP_AFFINITY)));
-        }
+        Assert.That(Marshal.SizeOf<GROUP_AFFINITY>(), Is.EqualTo(sizeof(GROUP_AFFINITY)));
+    }
 
-        /// <summary>Validates that the <see cref="GROUP_AFFINITY" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(GROUP_AFFINITY).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="GROUP_AFFINITY" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(GROUP_AFFINITY).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="GROUP_AFFINITY" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="GROUP_AFFINITY" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(GROUP_AFFINITY), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(GROUP_AFFINITY), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(GROUP_AFFINITY), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(GROUP_AFFINITY), Is.EqualTo(12));
         }
     }
 }

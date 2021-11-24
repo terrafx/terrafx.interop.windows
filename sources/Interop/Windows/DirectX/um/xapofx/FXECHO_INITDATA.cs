@@ -5,11 +5,10 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct FXECHO_INITDATA
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct FXECHO_INITDATA
-    {
-        public float MaxDelay;
-    }
+    public float MaxDelay;
 }

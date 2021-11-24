@@ -7,103 +7,102 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("361BBDC7-E6EE-4E13-BE58-58E2240C810F")]
+[NativeTypeName("struct IExplorerBrowserEvents : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IExplorerBrowserEvents : IExplorerBrowserEvents.Interface
 {
-    [Guid("361BBDC7-E6EE-4E13-BE58-58E2240C810F")]
-    [NativeTypeName("struct IExplorerBrowserEvents : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IExplorerBrowserEvents : IExplorerBrowserEvents.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IExplorerBrowserEvents*, Guid*, void**, int>)(lpVtbl[0]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IExplorerBrowserEvents*, Guid*, void**, int>)(lpVtbl[0]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IExplorerBrowserEvents*, uint>)(lpVtbl[1]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IExplorerBrowserEvents*, uint>)(lpVtbl[1]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IExplorerBrowserEvents*, uint>)(lpVtbl[2]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IExplorerBrowserEvents*, uint>)(lpVtbl[2]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT OnNavigationPending([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder)
+    {
+        return ((delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int>)(lpVtbl[3]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), pidlFolder);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT OnViewCreated(IShellView* psv)
+    {
+        return ((delegate* unmanaged<IExplorerBrowserEvents*, IShellView*, int>)(lpVtbl[4]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), psv);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT OnNavigationComplete([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder)
+    {
+        return ((delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int>)(lpVtbl[5]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), pidlFolder);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT OnNavigationFailed([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder)
+    {
+        return ((delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int>)(lpVtbl[6]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), pidlFolder);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT OnNavigationPending([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder)
-        {
-            return ((delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int>)(lpVtbl[3]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), pidlFolder);
-        }
+        HRESULT OnNavigationPending([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT OnViewCreated(IShellView* psv)
-        {
-            return ((delegate* unmanaged<IExplorerBrowserEvents*, IShellView*, int>)(lpVtbl[4]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), psv);
-        }
+        HRESULT OnViewCreated(IShellView* psv);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT OnNavigationComplete([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder)
-        {
-            return ((delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int>)(lpVtbl[5]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), pidlFolder);
-        }
+        HRESULT OnNavigationComplete([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT OnNavigationFailed([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder)
-        {
-            return ((delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int>)(lpVtbl[6]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), pidlFolder);
-        }
+        HRESULT OnNavigationFailed([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT OnNavigationPending([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IExplorerBrowserEvents*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT OnViewCreated(IShellView* psv);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IExplorerBrowserEvents*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT OnNavigationComplete([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IExplorerBrowserEvents*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT OnNavigationFailed([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder);
-        }
+        [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
+        public delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int> OnNavigationPending;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IExplorerBrowserEvents*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (IShellView *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IExplorerBrowserEvents*, IShellView*, int> OnViewCreated;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IExplorerBrowserEvents*, uint> AddRef;
+        [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
+        public delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int> OnNavigationComplete;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IExplorerBrowserEvents*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
-            public delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int> OnNavigationPending;
-
-            [NativeTypeName("HRESULT (IShellView *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IExplorerBrowserEvents*, IShellView*, int> OnViewCreated;
-
-            [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
-            public delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int> OnNavigationComplete;
-
-            [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
-            public delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int> OnNavigationFailed;
-        }
+        [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
+        public delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int> OnNavigationFailed;
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DXGI_QUERY_VIDEO_MEMORY_INFO" /> struct.</summary>
+public static unsafe partial class DXGI_QUERY_VIDEO_MEMORY_INFOTests
 {
-    /// <summary>Provides validation of the <see cref="DXGI_QUERY_VIDEO_MEMORY_INFO" /> struct.</summary>
-    public static unsafe partial class DXGI_QUERY_VIDEO_MEMORY_INFOTests
+    /// <summary>Validates that the <see cref="DXGI_QUERY_VIDEO_MEMORY_INFO" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="DXGI_QUERY_VIDEO_MEMORY_INFO" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DXGI_QUERY_VIDEO_MEMORY_INFO>(), Is.EqualTo(sizeof(DXGI_QUERY_VIDEO_MEMORY_INFO)));
-        }
+        Assert.That(Marshal.SizeOf<DXGI_QUERY_VIDEO_MEMORY_INFO>(), Is.EqualTo(sizeof(DXGI_QUERY_VIDEO_MEMORY_INFO)));
+    }
 
-        /// <summary>Validates that the <see cref="DXGI_QUERY_VIDEO_MEMORY_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DXGI_QUERY_VIDEO_MEMORY_INFO).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DXGI_QUERY_VIDEO_MEMORY_INFO" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DXGI_QUERY_VIDEO_MEMORY_INFO).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DXGI_QUERY_VIDEO_MEMORY_INFO" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(DXGI_QUERY_VIDEO_MEMORY_INFO), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="DXGI_QUERY_VIDEO_MEMORY_INFO" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(DXGI_QUERY_VIDEO_MEMORY_INFO), Is.EqualTo(32));
     }
 }

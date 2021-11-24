@@ -5,12 +5,11 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[Flags]
+public enum DML_TENSOR_FLAGS
 {
-    [Flags]
-    public enum DML_TENSOR_FLAGS
-    {
-        DML_TENSOR_FLAG_NONE = 0x0,
-        DML_TENSOR_FLAG_OWNED_BY_DML = 0x1,
-    }
+    DML_TENSOR_FLAG_NONE = 0x0,
+    DML_TENSOR_FLAG_OWNED_BY_DML = 0x1,
 }

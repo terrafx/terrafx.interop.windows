@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
-{
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct POINTER_DEVICE_CURSOR_INFO
-    {
-        [NativeTypeName("UINT32")]
-        public uint cursorId;
+namespace TerraFX.Interop.Windows;
 
-        public POINTER_DEVICE_CURSOR_TYPE cursor;
-    }
+[SupportedOSPlatform("windows8.0")]
+public partial struct POINTER_DEVICE_CURSOR_INFO
+{
+    [NativeTypeName("UINT32")]
+    public uint cursorId;
+
+    public POINTER_DEVICE_CURSOR_TYPE cursor;
 }

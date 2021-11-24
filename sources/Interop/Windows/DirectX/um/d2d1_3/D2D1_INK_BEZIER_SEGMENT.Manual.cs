@@ -5,13 +5,12 @@
 
 using static TerraFX.Interop.DirectX.DirectX;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D2D1_INK_BEZIER_SEGMENT
 {
-    public partial struct D2D1_INK_BEZIER_SEGMENT
+    public D2D1_INK_BEZIER_SEGMENT([NativeTypeName("const D2D1_INK_POINT &")] in D2D1_INK_POINT point1, [NativeTypeName("const D2D1_INK_POINT &")] in D2D1_INK_POINT point2, [NativeTypeName("const D2D1_INK_POINT &")] in D2D1_INK_POINT point3)
     {
-        public D2D1_INK_BEZIER_SEGMENT([NativeTypeName("const D2D1_INK_POINT &")] in D2D1_INK_POINT point1, [NativeTypeName("const D2D1_INK_POINT &")] in D2D1_INK_POINT point2, [NativeTypeName("const D2D1_INK_POINT &")] in D2D1_INK_POINT point3)
-        {
-            this = InkBezierSegment(point1, point2, point3);
-        }
+        this = InkBezierSegment(point1, point2, point3);
     }
 }

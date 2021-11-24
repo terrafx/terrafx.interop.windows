@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="LVGROUPMETRICS" /> struct.</summary>
+public static unsafe partial class LVGROUPMETRICSTests
 {
-    /// <summary>Provides validation of the <see cref="LVGROUPMETRICS" /> struct.</summary>
-    public static unsafe partial class LVGROUPMETRICSTests
+    /// <summary>Validates that the <see cref="LVGROUPMETRICS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="LVGROUPMETRICS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<LVGROUPMETRICS>(), Is.EqualTo(sizeof(LVGROUPMETRICS)));
-        }
+        Assert.That(Marshal.SizeOf<LVGROUPMETRICS>(), Is.EqualTo(sizeof(LVGROUPMETRICS)));
+    }
 
-        /// <summary>Validates that the <see cref="LVGROUPMETRICS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(LVGROUPMETRICS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="LVGROUPMETRICS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(LVGROUPMETRICS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="LVGROUPMETRICS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(LVGROUPMETRICS), Is.EqualTo(48));
-        }
+    /// <summary>Validates that the <see cref="LVGROUPMETRICS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(LVGROUPMETRICS), Is.EqualTo(48));
     }
 }

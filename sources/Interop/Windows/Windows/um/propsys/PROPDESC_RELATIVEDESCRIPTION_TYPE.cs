@@ -3,20 +3,19 @@
 // Ported from um/propsys.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum PROPDESC_RELATIVEDESCRIPTION_TYPE
 {
-    public enum PROPDESC_RELATIVEDESCRIPTION_TYPE
-    {
-        PDRDT_GENERAL = 0,
-        PDRDT_DATE = 1,
-        PDRDT_SIZE = 2,
-        PDRDT_COUNT = 3,
-        PDRDT_REVISION = 4,
-        PDRDT_LENGTH = 5,
-        PDRDT_DURATION = 6,
-        PDRDT_SPEED = 7,
-        PDRDT_RATE = 8,
-        PDRDT_RATING = 9,
-        PDRDT_PRIORITY = 10,
-    }
+    PDRDT_GENERAL = 0,
+    PDRDT_DATE = 1,
+    PDRDT_SIZE = 2,
+    PDRDT_COUNT = 3,
+    PDRDT_REVISION = 4,
+    PDRDT_LENGTH = 5,
+    PDRDT_DURATION = 6,
+    PDRDT_SPEED = 7,
+    PDRDT_RATE = 8,
+    PDRDT_RATING = 9,
+    PDRDT_PRIORITY = 10,
 }

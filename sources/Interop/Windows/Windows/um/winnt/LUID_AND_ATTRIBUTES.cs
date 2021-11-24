@@ -3,13 +3,12 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct LUID_AND_ATTRIBUTES
-    {
-        public LUID Luid;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint Attributes;
-    }
+public partial struct LUID_AND_ATTRIBUTES
+{
+    public LUID Luid;
+
+    [NativeTypeName("DWORD")]
+    public uint Attributes;
 }

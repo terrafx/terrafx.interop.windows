@@ -5,44 +5,43 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct ADDRINFOEX4
 {
-    public unsafe partial struct ADDRINFOEX4
-    {
-        public int ai_flags;
+    public int ai_flags;
 
-        public int ai_family;
+    public int ai_family;
 
-        public int ai_socktype;
+    public int ai_socktype;
 
-        public int ai_protocol;
+    public int ai_protocol;
 
-        [NativeTypeName("size_t")]
-        public nuint ai_addrlen;
+    [NativeTypeName("size_t")]
+    public nuint ai_addrlen;
 
-        [NativeTypeName("PWSTR")]
-        public ushort* ai_canonname;
+    [NativeTypeName("PWSTR")]
+    public ushort* ai_canonname;
 
-        [NativeTypeName("struct sockaddr *")]
-        public SOCKADDR* ai_addr;
+    [NativeTypeName("struct sockaddr *")]
+    public SOCKADDR* ai_addr;
 
-        public void* ai_blob;
+    public void* ai_blob;
 
-        [NativeTypeName("size_t")]
-        public nuint ai_bloblen;
+    [NativeTypeName("size_t")]
+    public nuint ai_bloblen;
 
-        public Guid* ai_provider;
+    public Guid* ai_provider;
 
-        [NativeTypeName("struct addrinfoex4 *")]
-        public ADDRINFOEX4* ai_next;
+    [NativeTypeName("struct addrinfoex4 *")]
+    public ADDRINFOEX4* ai_next;
 
-        public int ai_version;
+    public int ai_version;
 
-        [NativeTypeName("PWSTR")]
-        public ushort* ai_fqdn;
+    [NativeTypeName("PWSTR")]
+    public ushort* ai_fqdn;
 
-        public int ai_interfaceindex;
+    public int ai_interfaceindex;
 
-        public HANDLE ai_resolutionhandle;
-    }
+    public HANDLE ai_resolutionhandle;
 }

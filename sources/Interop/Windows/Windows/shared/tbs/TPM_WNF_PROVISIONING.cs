@@ -3,14 +3,13 @@
 // Ported from shared/tbs.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct TPM_WNF_PROVISIONING
-    {
-        [NativeTypeName("UINT32")]
-        public uint status;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("BYTE [28]")]
-        public fixed byte message[28];
-    }
+public unsafe partial struct TPM_WNF_PROVISIONING
+{
+    [NativeTypeName("UINT32")]
+    public uint status;
+
+    [NativeTypeName("BYTE [28]")]
+    public fixed byte message[28];
 }

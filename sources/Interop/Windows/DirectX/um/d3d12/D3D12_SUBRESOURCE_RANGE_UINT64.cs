@@ -3,12 +3,11 @@
 // Ported from um/d3d12.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
-{
-    public partial struct D3D12_SUBRESOURCE_RANGE_UINT64
-    {
-        public uint Subresource;
+namespace TerraFX.Interop.DirectX;
 
-        public D3D12_RANGE_UINT64 Range;
-    }
+public partial struct D3D12_SUBRESOURCE_RANGE_UINT64
+{
+    public uint Subresource;
+
+    public D3D12_RANGE_UINT64 Range;
 }

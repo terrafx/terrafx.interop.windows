@@ -6,17 +6,16 @@
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+public static unsafe partial class WinRT
 {
-    public static unsafe partial class WinRT
-    {
-        [DllImport("wsclient", ExactSpelling = true)]
-        public static extern HRESULT CheckDeveloperLicense(FILETIME* pExpiration);
+    [DllImport("wsclient", ExactSpelling = true)]
+    public static extern HRESULT CheckDeveloperLicense(FILETIME* pExpiration);
 
-        [DllImport("wsclient", ExactSpelling = true)]
-        public static extern HRESULT AcquireDeveloperLicense(HWND hwndParent, FILETIME* pExpiration);
+    [DllImport("wsclient", ExactSpelling = true)]
+    public static extern HRESULT AcquireDeveloperLicense(HWND hwndParent, FILETIME* pExpiration);
 
-        [DllImport("wsclient", ExactSpelling = true)]
-        public static extern HRESULT RemoveDeveloperLicense(HWND hwndParent);
-    }
+    [DllImport("wsclient", ExactSpelling = true)]
+    public static extern HRESULT RemoveDeveloperLicense(HWND hwndParent);
 }

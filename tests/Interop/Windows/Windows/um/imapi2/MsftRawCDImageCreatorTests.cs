@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.CLSID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MsftRawCDImageCreator" /> struct.</summary>
+public static unsafe partial class MsftRawCDImageCreatorTests
 {
-    /// <summary>Provides validation of the <see cref="MsftRawCDImageCreator" /> struct.</summary>
-    public static unsafe partial class MsftRawCDImageCreatorTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="MsftRawCDImageCreator" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="MsftRawCDImageCreator" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(MsftRawCDImageCreator).GUID, Is.EqualTo(CLSID_MsftRawCDImageCreator));
-        }
+        Assert.That(typeof(MsftRawCDImageCreator).GUID, Is.EqualTo(CLSID_MsftRawCDImageCreator));
+    }
 
-        /// <summary>Validates that the <see cref="MsftRawCDImageCreator" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MsftRawCDImageCreator>(), Is.EqualTo(sizeof(MsftRawCDImageCreator)));
-        }
+    /// <summary>Validates that the <see cref="MsftRawCDImageCreator" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<MsftRawCDImageCreator>(), Is.EqualTo(sizeof(MsftRawCDImageCreator)));
+    }
 
-        /// <summary>Validates that the <see cref="MsftRawCDImageCreator" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MsftRawCDImageCreator).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MsftRawCDImageCreator" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MsftRawCDImageCreator).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MsftRawCDImageCreator" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MsftRawCDImageCreator), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="MsftRawCDImageCreator" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MsftRawCDImageCreator), Is.EqualTo(1));
     }
 }

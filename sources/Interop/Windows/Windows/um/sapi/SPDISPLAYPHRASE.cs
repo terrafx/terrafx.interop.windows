@@ -3,13 +3,12 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct SPDISPLAYPHRASE
-    {
-        [NativeTypeName("ULONG")]
-        public uint ulNumTokens;
+namespace TerraFX.Interop.Windows;
 
-        public SPDISPLAYTOKEN* pTokens;
-    }
+public unsafe partial struct SPDISPLAYPHRASE
+{
+    [NativeTypeName("ULONG")]
+    public uint ulNumTokens;
+
+    public SPDISPLAYTOKEN* pTokens;
 }

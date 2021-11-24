@@ -7,64 +7,63 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("58A08519-24C8-4935-B482-3FD823333A4F")]
+[NativeTypeName("struct IRpcSyntaxNegotiate : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IRpcSyntaxNegotiate : IRpcSyntaxNegotiate.Interface
 {
-    [Guid("58A08519-24C8-4935-B482-3FD823333A4F")]
-    [NativeTypeName("struct IRpcSyntaxNegotiate : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IRpcSyntaxNegotiate : IRpcSyntaxNegotiate.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IRpcSyntaxNegotiate*, Guid*, void**, int>)(lpVtbl[0]))((IRpcSyntaxNegotiate*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IRpcSyntaxNegotiate*, Guid*, void**, int>)(lpVtbl[0]))((IRpcSyntaxNegotiate*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IRpcSyntaxNegotiate*, uint>)(lpVtbl[1]))((IRpcSyntaxNegotiate*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IRpcSyntaxNegotiate*, uint>)(lpVtbl[1]))((IRpcSyntaxNegotiate*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IRpcSyntaxNegotiate*, uint>)(lpVtbl[2]))((IRpcSyntaxNegotiate*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IRpcSyntaxNegotiate*, uint>)(lpVtbl[2]))((IRpcSyntaxNegotiate*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT NegotiateSyntax(RPCOLEMESSAGE* pMsg)
+    {
+        return ((delegate* unmanaged<IRpcSyntaxNegotiate*, RPCOLEMESSAGE*, int>)(lpVtbl[3]))((IRpcSyntaxNegotiate*)Unsafe.AsPointer(ref this), pMsg);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT NegotiateSyntax(RPCOLEMESSAGE* pMsg)
-        {
-            return ((delegate* unmanaged<IRpcSyntaxNegotiate*, RPCOLEMESSAGE*, int>)(lpVtbl[3]))((IRpcSyntaxNegotiate*)Unsafe.AsPointer(ref this), pMsg);
-        }
+        HRESULT NegotiateSyntax(RPCOLEMESSAGE* pMsg);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT NegotiateSyntax(RPCOLEMESSAGE* pMsg);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRpcSyntaxNegotiate*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRpcSyntaxNegotiate*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IRpcSyntaxNegotiate*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IRpcSyntaxNegotiate*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IRpcSyntaxNegotiate*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IRpcSyntaxNegotiate*, uint> Release;
-
-            [NativeTypeName("HRESULT (RPCOLEMESSAGE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IRpcSyntaxNegotiate*, RPCOLEMESSAGE*, int> NegotiateSyntax;
-        }
+        [NativeTypeName("HRESULT (RPCOLEMESSAGE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IRpcSyntaxNegotiate*, RPCOLEMESSAGE*, int> NegotiateSyntax;
     }
 }

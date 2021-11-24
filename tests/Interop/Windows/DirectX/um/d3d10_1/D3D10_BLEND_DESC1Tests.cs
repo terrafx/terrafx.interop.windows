@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX.UnitTests
+namespace TerraFX.Interop.DirectX.UnitTests;
+
+/// <summary>Provides validation of the <see cref="D3D10_BLEND_DESC1" /> struct.</summary>
+public static unsafe partial class D3D10_BLEND_DESC1Tests
 {
-    /// <summary>Provides validation of the <see cref="D3D10_BLEND_DESC1" /> struct.</summary>
-    public static unsafe partial class D3D10_BLEND_DESC1Tests
+    /// <summary>Validates that the <see cref="D3D10_BLEND_DESC1" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="D3D10_BLEND_DESC1" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<D3D10_BLEND_DESC1>(), Is.EqualTo(sizeof(D3D10_BLEND_DESC1)));
-        }
+        Assert.That(Marshal.SizeOf<D3D10_BLEND_DESC1>(), Is.EqualTo(sizeof(D3D10_BLEND_DESC1)));
+    }
 
-        /// <summary>Validates that the <see cref="D3D10_BLEND_DESC1" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(D3D10_BLEND_DESC1).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="D3D10_BLEND_DESC1" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(D3D10_BLEND_DESC1).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="D3D10_BLEND_DESC1" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(D3D10_BLEND_DESC1), Is.EqualTo(264));
-        }
+    /// <summary>Validates that the <see cref="D3D10_BLEND_DESC1" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(D3D10_BLEND_DESC1), Is.EqualTo(264));
     }
 }

@@ -5,21 +5,20 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SYNCMGRLOGERRORINFO
 {
-    public partial struct SYNCMGRLOGERRORINFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        [NativeTypeName("DWORD")]
-        public uint mask;
+    [NativeTypeName("DWORD")]
+    public uint mask;
 
-        [NativeTypeName("DWORD")]
-        public uint dwSyncMgrErrorFlags;
+    [NativeTypeName("DWORD")]
+    public uint dwSyncMgrErrorFlags;
 
-        public Guid ErrorID;
+    public Guid ErrorID;
 
-        public Guid ItemID;
-    }
+    public Guid ItemID;
 }

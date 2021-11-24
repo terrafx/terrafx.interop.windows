@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="WMAUDIO3WAVEFORMAT" /> struct.</summary>
+public static unsafe partial class WMAUDIO3WAVEFORMATTests
 {
-    /// <summary>Provides validation of the <see cref="WMAUDIO3WAVEFORMAT" /> struct.</summary>
-    public static unsafe partial class WMAUDIO3WAVEFORMATTests
+    /// <summary>Validates that the <see cref="WMAUDIO3WAVEFORMAT" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="WMAUDIO3WAVEFORMAT" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<WMAUDIO3WAVEFORMAT>(), Is.EqualTo(sizeof(WMAUDIO3WAVEFORMAT)));
-        }
+        Assert.That(Marshal.SizeOf<WMAUDIO3WAVEFORMAT>(), Is.EqualTo(sizeof(WMAUDIO3WAVEFORMAT)));
+    }
 
-        /// <summary>Validates that the <see cref="WMAUDIO3WAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(WMAUDIO3WAVEFORMAT).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="WMAUDIO3WAVEFORMAT" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(WMAUDIO3WAVEFORMAT).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="WMAUDIO3WAVEFORMAT" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(WMAUDIO3WAVEFORMAT), Is.EqualTo(36));
-        }
+    /// <summary>Validates that the <see cref="WMAUDIO3WAVEFORMAT" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(WMAUDIO3WAVEFORMAT), Is.EqualTo(36));
     }
 }

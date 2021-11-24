@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct DEVICE_DSM_CONVERSION_OUTPUT
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+namespace TerraFX.Interop.Windows;
 
-        public Guid Source;
-    }
+public partial struct DEVICE_DSM_CONVERSION_OUTPUT
+{
+    [NativeTypeName("DWORD")]
+    public uint Version;
+
+    public Guid Source;
 }

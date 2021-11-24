@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SHChangeNotifyEntry" /> struct.</summary>
+public static unsafe partial class SHChangeNotifyEntryTests
 {
-    /// <summary>Provides validation of the <see cref="SHChangeNotifyEntry" /> struct.</summary>
-    public static unsafe partial class SHChangeNotifyEntryTests
+    /// <summary>Validates that the <see cref="SHChangeNotifyEntry" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="SHChangeNotifyEntry" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SHChangeNotifyEntry>(), Is.EqualTo(sizeof(SHChangeNotifyEntry)));
-        }
+        Assert.That(Marshal.SizeOf<SHChangeNotifyEntry>(), Is.EqualTo(sizeof(SHChangeNotifyEntry)));
+    }
 
-        /// <summary>Validates that the <see cref="SHChangeNotifyEntry" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SHChangeNotifyEntry).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SHChangeNotifyEntry" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SHChangeNotifyEntry).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SHChangeNotifyEntry" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="SHChangeNotifyEntry" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(SHChangeNotifyEntry), Is.EqualTo(12));
-            }
-            else
-            {
-                Assert.That(sizeof(SHChangeNotifyEntry), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(SHChangeNotifyEntry), Is.EqualTo(12));
+        }
+        else
+        {
+            Assert.That(sizeof(SHChangeNotifyEntry), Is.EqualTo(8));
         }
     }
 }

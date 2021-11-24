@@ -3,14 +3,13 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct TXFS_LIST_TRANSACTIONS
-    {
-        [NativeTypeName("DWORDLONG")]
-        public ulong NumberOfTransactions;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong BufferSizeRequired;
-    }
+public partial struct TXFS_LIST_TRANSACTIONS
+{
+    [NativeTypeName("DWORDLONG")]
+    public ulong NumberOfTransactions;
+
+    [NativeTypeName("DWORDLONG")]
+    public ulong BufferSizeRequired;
 }

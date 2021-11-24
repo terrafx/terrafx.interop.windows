@@ -5,14 +5,13 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum MFVideoRotationFormat
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum MFVideoRotationFormat
-    {
-        MFVideoRotationFormat_0 = 0,
-        MFVideoRotationFormat_90 = 90,
-        MFVideoRotationFormat_180 = 180,
-        MFVideoRotationFormat_270 = 270,
-    }
+    MFVideoRotationFormat_0 = 0,
+    MFVideoRotationFormat_90 = 90,
+    MFVideoRotationFormat_180 = 180,
+    MFVideoRotationFormat_270 = 270,
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="AM_AC3_BIT_STREAM_MODE" /> struct.</summary>
+public static unsafe partial class AM_AC3_BIT_STREAM_MODETests
 {
-    /// <summary>Provides validation of the <see cref="AM_AC3_BIT_STREAM_MODE" /> struct.</summary>
-    public static unsafe partial class AM_AC3_BIT_STREAM_MODETests
+    /// <summary>Validates that the <see cref="AM_AC3_BIT_STREAM_MODE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="AM_AC3_BIT_STREAM_MODE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<AM_AC3_BIT_STREAM_MODE>(), Is.EqualTo(sizeof(AM_AC3_BIT_STREAM_MODE)));
-        }
+        Assert.That(Marshal.SizeOf<AM_AC3_BIT_STREAM_MODE>(), Is.EqualTo(sizeof(AM_AC3_BIT_STREAM_MODE)));
+    }
 
-        /// <summary>Validates that the <see cref="AM_AC3_BIT_STREAM_MODE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(AM_AC3_BIT_STREAM_MODE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="AM_AC3_BIT_STREAM_MODE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(AM_AC3_BIT_STREAM_MODE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="AM_AC3_BIT_STREAM_MODE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(AM_AC3_BIT_STREAM_MODE), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="AM_AC3_BIT_STREAM_MODE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(AM_AC3_BIT_STREAM_MODE), Is.EqualTo(4));
     }
 }

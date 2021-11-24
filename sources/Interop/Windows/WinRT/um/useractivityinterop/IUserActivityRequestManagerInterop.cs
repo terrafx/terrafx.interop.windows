@@ -8,94 +8,93 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[Guid("DD69F876-9699-4715-9095-E37EA30DFA1B")]
+[NativeTypeName("struct IUserActivityRequestManagerInterop : IInspectable")]
+[NativeInheritance("IInspectable")]
+public unsafe partial struct IUserActivityRequestManagerInterop : IUserActivityRequestManagerInterop.Interface
 {
-    [Guid("DD69F876-9699-4715-9095-E37EA30DFA1B")]
-    [NativeTypeName("struct IUserActivityRequestManagerInterop : IInspectable")]
-    [NativeInheritance("IInspectable")]
-    public unsafe partial struct IUserActivityRequestManagerInterop : IUserActivityRequestManagerInterop.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IUserActivityRequestManagerInterop*, Guid*, void**, int>)(lpVtbl[0]))((IUserActivityRequestManagerInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IUserActivityRequestManagerInterop*, Guid*, void**, int>)(lpVtbl[0]))((IUserActivityRequestManagerInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IUserActivityRequestManagerInterop*, uint>)(lpVtbl[1]))((IUserActivityRequestManagerInterop*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IUserActivityRequestManagerInterop*, uint>)(lpVtbl[1]))((IUserActivityRequestManagerInterop*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IUserActivityRequestManagerInterop*, uint>)(lpVtbl[2]))((IUserActivityRequestManagerInterop*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IUserActivityRequestManagerInterop*, uint>)(lpVtbl[2]))((IUserActivityRequestManagerInterop*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+    {
+        return ((delegate* unmanaged<IUserActivityRequestManagerInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IUserActivityRequestManagerInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(3)]
-        public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
-        {
-            return ((delegate* unmanaged<IUserActivityRequestManagerInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IUserActivityRequestManagerInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetRuntimeClassName(HSTRING* className)
+    {
+        return ((delegate* unmanaged<IUserActivityRequestManagerInterop*, HSTRING*, int>)(lpVtbl[4]))((IUserActivityRequestManagerInterop*)Unsafe.AsPointer(ref this), className);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(4)]
-        public HRESULT GetRuntimeClassName(HSTRING* className)
-        {
-            return ((delegate* unmanaged<IUserActivityRequestManagerInterop*, HSTRING*, int>)(lpVtbl[4]))((IUserActivityRequestManagerInterop*)Unsafe.AsPointer(ref this), className);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetTrustLevel(TrustLevel* trustLevel)
+    {
+        return ((delegate* unmanaged<IUserActivityRequestManagerInterop*, TrustLevel*, int>)(lpVtbl[5]))((IUserActivityRequestManagerInterop*)Unsafe.AsPointer(ref this), trustLevel);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(5)]
-        public HRESULT GetTrustLevel(TrustLevel* trustLevel)
-        {
-            return ((delegate* unmanaged<IUserActivityRequestManagerInterop*, TrustLevel*, int>)(lpVtbl[5]))((IUserActivityRequestManagerInterop*)Unsafe.AsPointer(ref this), trustLevel);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT GetForWindow(HWND window, [NativeTypeName("const IID &")] Guid* iid, void** value)
+    {
+        return ((delegate* unmanaged<IUserActivityRequestManagerInterop*, HWND, Guid*, void**, int>)(lpVtbl[6]))((IUserActivityRequestManagerInterop*)Unsafe.AsPointer(ref this), window, iid, value);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public interface Interface : IInspectable.Interface
+    {
         [VtblIndex(6)]
-        public HRESULT GetForWindow(HWND window, [NativeTypeName("const IID &")] Guid* iid, void** value)
-        {
-            return ((delegate* unmanaged<IUserActivityRequestManagerInterop*, HWND, Guid*, void**, int>)(lpVtbl[6]))((IUserActivityRequestManagerInterop*)Unsafe.AsPointer(ref this), window, iid, value);
-        }
+        HRESULT GetForWindow(HWND window, [NativeTypeName("const IID &")] Guid* iid, void** value);
+    }
 
-        public interface Interface : IInspectable.Interface
-        {
-            [VtblIndex(6)]
-            HRESULT GetForWindow(HWND window, [NativeTypeName("const IID &")] Guid* iid, void** value);
-        }
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUserActivityRequestManagerInterop*, Guid*, void**, int> QueryInterface;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUserActivityRequestManagerInterop*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IUserActivityRequestManagerInterop*, uint> AddRef;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IUserActivityRequestManagerInterop*, uint> AddRef;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IUserActivityRequestManagerInterop*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IUserActivityRequestManagerInterop*, uint> Release;
+        [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUserActivityRequestManagerInterop*, uint*, Guid**, int> GetIids;
 
-            [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUserActivityRequestManagerInterop*, uint*, Guid**, int> GetIids;
+        [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUserActivityRequestManagerInterop*, HSTRING*, int> GetRuntimeClassName;
 
-            [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUserActivityRequestManagerInterop*, HSTRING*, int> GetRuntimeClassName;
+        [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUserActivityRequestManagerInterop*, TrustLevel*, int> GetTrustLevel;
 
-            [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUserActivityRequestManagerInterop*, TrustLevel*, int> GetTrustLevel;
-
-            [NativeTypeName("HRESULT (HWND, const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IUserActivityRequestManagerInterop*, HWND, Guid*, void**, int> GetForWindow;
-        }
+        [NativeTypeName("HRESULT (HWND, const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IUserActivityRequestManagerInterop*, HWND, Guid*, void**, int> GetForWindow;
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="GET_MEDIA_TYPES" /> struct.</summary>
+public static unsafe partial class GET_MEDIA_TYPESTests
 {
-    /// <summary>Provides validation of the <see cref="GET_MEDIA_TYPES" /> struct.</summary>
-    public static unsafe partial class GET_MEDIA_TYPESTests
+    /// <summary>Validates that the <see cref="GET_MEDIA_TYPES" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="GET_MEDIA_TYPES" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<GET_MEDIA_TYPES>(), Is.EqualTo(sizeof(GET_MEDIA_TYPES)));
-        }
+        Assert.That(Marshal.SizeOf<GET_MEDIA_TYPES>(), Is.EqualTo(sizeof(GET_MEDIA_TYPES)));
+    }
 
-        /// <summary>Validates that the <see cref="GET_MEDIA_TYPES" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(GET_MEDIA_TYPES).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="GET_MEDIA_TYPES" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(GET_MEDIA_TYPES).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="GET_MEDIA_TYPES" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(GET_MEDIA_TYPES), Is.EqualTo(40));
-        }
+    /// <summary>Validates that the <see cref="GET_MEDIA_TYPES" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(GET_MEDIA_TYPES), Is.EqualTo(40));
     }
 }

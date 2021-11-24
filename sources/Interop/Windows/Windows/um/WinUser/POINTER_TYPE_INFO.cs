@@ -7,43 +7,42 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.17763.0")]
+public partial struct POINTER_TYPE_INFO
 {
-    [SupportedOSPlatform("windows10.0.17763.0")]
-    public partial struct POINTER_TYPE_INFO
+    [NativeTypeName("POINTER_INPUT_TYPE")]
+    public uint type;
+
+    [NativeTypeName("tagPOINTER_TYPE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinUser.h:6475:5)")]
+    public _Anonymous_e__Union Anonymous;
+
+    public ref POINTER_TOUCH_INFO touchInfo
     {
-        [NativeTypeName("POINTER_INPUT_TYPE")]
-        public uint type;
-
-        [NativeTypeName("tagPOINTER_TYPE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinUser.h:6475:5)")]
-        public _Anonymous_e__Union Anonymous;
-
-        public ref POINTER_TOUCH_INFO touchInfo
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.touchInfo, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.touchInfo, 1));
         }
+    }
 
-        public ref POINTER_PEN_INFO penInfo
+    public ref POINTER_PEN_INFO penInfo
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.penInfo, 1));
-            }
+            return ref MemoryMarshal.GetReference(MemoryMarshal.CreateSpan(ref Anonymous.penInfo, 1));
         }
+    }
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _Anonymous_e__Union
-        {
-            [FieldOffset(0)]
-            public POINTER_TOUCH_INFO touchInfo;
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        [FieldOffset(0)]
+        public POINTER_TOUCH_INFO touchInfo;
 
-            [FieldOffset(0)]
-            public POINTER_PEN_INFO penInfo;
-        }
+        [FieldOffset(0)]
+        public POINTER_PEN_INFO penInfo;
     }
 }

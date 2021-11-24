@@ -3,20 +3,19 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SCM_PHYSICAL_DEVICE_INSTANCE
 {
-    public unsafe partial struct SCM_PHYSICAL_DEVICE_INSTANCE
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        [NativeTypeName("DWORD")]
-        public uint NfitHandle;
+    [NativeTypeName("DWORD")]
+    public uint NfitHandle;
 
-        [NativeTypeName("WCHAR [256]")]
-        public fixed ushort SymbolicLink[256];
-    }
+    [NativeTypeName("WCHAR [256]")]
+    public fixed ushort SymbolicLink[256];
 }

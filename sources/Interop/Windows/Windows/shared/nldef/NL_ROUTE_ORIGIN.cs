@@ -3,14 +3,13 @@
 // Ported from shared/nldef.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum NL_ROUTE_ORIGIN
 {
-    public enum NL_ROUTE_ORIGIN
-    {
-        NlroManual,
-        NlroWellKnown,
-        NlroDHCP,
-        NlroRouterAdvertisement,
-        Nlro6to4,
-    }
+    NlroManual,
+    NlroWellKnown,
+    NlroDHCP,
+    NlroRouterAdvertisement,
+    Nlro6to4,
 }

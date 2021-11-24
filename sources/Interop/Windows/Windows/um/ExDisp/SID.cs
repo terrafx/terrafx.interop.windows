@@ -6,11 +6,10 @@
 using System;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct SID
 {
-    public partial struct SID
-    {
-        [NativeTypeName("#define SID_SkipHung IID_IEnumVARIANT")]
-        public static ref readonly Guid SID_SkipHung => ref IID_IEnumVARIANT;
-    }
+    [NativeTypeName("#define SID_SkipHung IID_IEnumVARIANT")]
+    public static ref readonly Guid SID_SkipHung => ref IID_IEnumVARIANT;
 }

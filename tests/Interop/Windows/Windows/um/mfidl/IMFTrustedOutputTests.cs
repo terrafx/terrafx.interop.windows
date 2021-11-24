@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMFTrustedOutput" /> struct.</summary>
+public static unsafe partial class IMFTrustedOutputTests
 {
-    /// <summary>Provides validation of the <see cref="IMFTrustedOutput" /> struct.</summary>
-    public static unsafe partial class IMFTrustedOutputTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFTrustedOutput" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFTrustedOutput" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IMFTrustedOutput).GUID, Is.EqualTo(IID_IMFTrustedOutput));
-        }
+        Assert.That(typeof(IMFTrustedOutput).GUID, Is.EqualTo(IID_IMFTrustedOutput));
+    }
 
-        /// <summary>Validates that the <see cref="IMFTrustedOutput" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMFTrustedOutput>(), Is.EqualTo(sizeof(IMFTrustedOutput)));
-        }
+    /// <summary>Validates that the <see cref="IMFTrustedOutput" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IMFTrustedOutput>(), Is.EqualTo(sizeof(IMFTrustedOutput)));
+    }
 
-        /// <summary>Validates that the <see cref="IMFTrustedOutput" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMFTrustedOutput).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMFTrustedOutput" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMFTrustedOutput).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMFTrustedOutput" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMFTrustedOutput" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMFTrustedOutput), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IMFTrustedOutput), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IMFTrustedOutput), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IMFTrustedOutput), Is.EqualTo(4));
         }
     }
 }

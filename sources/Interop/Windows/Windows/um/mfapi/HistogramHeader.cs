@@ -3,22 +3,21 @@
 // Ported from um/mfapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct HistogramHeader
 {
-    public partial struct HistogramHeader
-    {
-        [NativeTypeName("ULONG")]
-        public uint Size;
+    [NativeTypeName("ULONG")]
+    public uint Size;
 
-        [NativeTypeName("ULONG")]
-        public uint Bins;
+    [NativeTypeName("ULONG")]
+    public uint Bins;
 
-        [NativeTypeName("ULONG")]
-        public uint FourCC;
+    [NativeTypeName("ULONG")]
+    public uint FourCC;
 
-        [NativeTypeName("ULONG")]
-        public uint ChannelMasks;
+    [NativeTypeName("ULONG")]
+    public uint ChannelMasks;
 
-        public HistogramGrid Grid;
-    }
+    public HistogramGrid Grid;
 }

@@ -3,17 +3,16 @@
 // Ported from um/sapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum DISPID_SpeechGrammarRules
 {
-    public enum DISPID_SpeechGrammarRules
-    {
-        DISPID_SGRsCount = 1,
-        DISPID_SGRsDynamic = (DISPID_SGRsCount + 1),
-        DISPID_SGRsAdd = (DISPID_SGRsDynamic + 1),
-        DISPID_SGRsCommit = (DISPID_SGRsAdd + 1),
-        DISPID_SGRsCommitAndSave = (DISPID_SGRsCommit + 1),
-        DISPID_SGRsFindRule = (DISPID_SGRsCommitAndSave + 1),
-        DISPID_SGRsItem = (0),
-        DISPID_SGRs_NewEnum = (-4),
-    }
+    DISPID_SGRsCount = 1,
+    DISPID_SGRsDynamic = (DISPID_SGRsCount + 1),
+    DISPID_SGRsAdd = (DISPID_SGRsDynamic + 1),
+    DISPID_SGRsCommit = (DISPID_SGRsAdd + 1),
+    DISPID_SGRsCommitAndSave = (DISPID_SGRsCommit + 1),
+    DISPID_SGRsFindRule = (DISPID_SGRsCommitAndSave + 1),
+    DISPID_SGRsItem = (0),
+    DISPID_SGRs_NewEnum = (-4),
 }

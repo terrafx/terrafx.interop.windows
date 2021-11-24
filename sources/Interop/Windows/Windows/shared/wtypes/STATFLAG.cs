@@ -3,12 +3,11 @@
 // Ported from shared/wtypes.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum STATFLAG
 {
-    public enum STATFLAG
-    {
-        STATFLAG_DEFAULT = 0,
-        STATFLAG_NONAME = 1,
-        STATFLAG_NOOPEN = 2,
-    }
+    STATFLAG_DEFAULT = 0,
+    STATFLAG_NONAME = 1,
+    STATFLAG_NOOPEN = 2,
 }

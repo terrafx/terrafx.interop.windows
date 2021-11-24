@@ -7,77 +7,76 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("CB728B20-F786-11CE-92AD-00AA00A74CD0")]
+[NativeTypeName("struct IProfferService : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IProfferService : IProfferService.Interface
 {
-    [Guid("CB728B20-F786-11CE-92AD-00AA00A74CD0")]
-    [NativeTypeName("struct IProfferService : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IProfferService : IProfferService.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IProfferService*, Guid*, void**, int>)(lpVtbl[0]))((IProfferService*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IProfferService*, Guid*, void**, int>)(lpVtbl[0]))((IProfferService*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IProfferService*, uint>)(lpVtbl[1]))((IProfferService*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IProfferService*, uint>)(lpVtbl[1]))((IProfferService*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IProfferService*, uint>)(lpVtbl[2]))((IProfferService*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IProfferService*, uint>)(lpVtbl[2]))((IProfferService*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT ProfferService([NativeTypeName("const GUID &")] Guid* serviceId, IServiceProvider* serviceProvider, [NativeTypeName("DWORD *")] uint* cookie)
+    {
+        return ((delegate* unmanaged<IProfferService*, Guid*, IServiceProvider*, uint*, int>)(lpVtbl[3]))((IProfferService*)Unsafe.AsPointer(ref this), serviceId, serviceProvider, cookie);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT RevokeService([NativeTypeName("DWORD")] uint cookie)
+    {
+        return ((delegate* unmanaged<IProfferService*, uint, int>)(lpVtbl[4]))((IProfferService*)Unsafe.AsPointer(ref this), cookie);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT ProfferService([NativeTypeName("const GUID &")] Guid* serviceId, IServiceProvider* serviceProvider, [NativeTypeName("DWORD *")] uint* cookie)
-        {
-            return ((delegate* unmanaged<IProfferService*, Guid*, IServiceProvider*, uint*, int>)(lpVtbl[3]))((IProfferService*)Unsafe.AsPointer(ref this), serviceId, serviceProvider, cookie);
-        }
+        HRESULT ProfferService([NativeTypeName("const GUID &")] Guid* serviceId, IServiceProvider* serviceProvider, [NativeTypeName("DWORD *")] uint* cookie);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT RevokeService([NativeTypeName("DWORD")] uint cookie)
-        {
-            return ((delegate* unmanaged<IProfferService*, uint, int>)(lpVtbl[4]))((IProfferService*)Unsafe.AsPointer(ref this), cookie);
-        }
+        HRESULT RevokeService([NativeTypeName("DWORD")] uint cookie);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT ProfferService([NativeTypeName("const GUID &")] Guid* serviceId, IServiceProvider* serviceProvider, [NativeTypeName("DWORD *")] uint* cookie);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IProfferService*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT RevokeService([NativeTypeName("DWORD")] uint cookie);
-        }
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IProfferService*, uint> AddRef;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IProfferService*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IProfferService*, uint> Release;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IProfferService*, uint> AddRef;
+        [NativeTypeName("HRESULT (const GUID &, IServiceProvider *, DWORD *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IProfferService*, Guid*, IServiceProvider*, uint*, int> ProfferService;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IProfferService*, uint> Release;
-
-            [NativeTypeName("HRESULT (const GUID &, IServiceProvider *, DWORD *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IProfferService*, Guid*, IServiceProvider*, uint*, int> ProfferService;
-
-            [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IProfferService*, uint, int> RevokeService;
-        }
+        [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IProfferService*, uint, int> RevokeService;
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="VIDEOPARAMETERS" /> struct.</summary>
+public static unsafe partial class VIDEOPARAMETERSTests
 {
-    /// <summary>Provides validation of the <see cref="VIDEOPARAMETERS" /> struct.</summary>
-    public static unsafe partial class VIDEOPARAMETERSTests
+    /// <summary>Validates that the <see cref="VIDEOPARAMETERS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="VIDEOPARAMETERS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<VIDEOPARAMETERS>(), Is.EqualTo(sizeof(VIDEOPARAMETERS)));
-        }
+        Assert.That(Marshal.SizeOf<VIDEOPARAMETERS>(), Is.EqualTo(sizeof(VIDEOPARAMETERS)));
+    }
 
-        /// <summary>Validates that the <see cref="VIDEOPARAMETERS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(VIDEOPARAMETERS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="VIDEOPARAMETERS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(VIDEOPARAMETERS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="VIDEOPARAMETERS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(VIDEOPARAMETERS), Is.EqualTo(356));
-        }
+    /// <summary>Validates that the <see cref="VIDEOPARAMETERS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(VIDEOPARAMETERS), Is.EqualTo(356));
     }
 }

@@ -3,15 +3,14 @@
 // Ported from um/MsiDefs.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum msidbUpgradeAttributes
 {
-    public enum msidbUpgradeAttributes
-    {
-        msidbUpgradeAttributesMigrateFeatures = 0x00000001,
-        msidbUpgradeAttributesOnlyDetect = 0x00000002,
-        msidbUpgradeAttributesIgnoreRemoveFailure = 0x00000004,
-        msidbUpgradeAttributesVersionMinInclusive = 0x00000100,
-        msidbUpgradeAttributesVersionMaxInclusive = 0x00000200,
-        msidbUpgradeAttributesLanguagesExclusive = 0x00000400,
-    }
+    msidbUpgradeAttributesMigrateFeatures = 0x00000001,
+    msidbUpgradeAttributesOnlyDetect = 0x00000002,
+    msidbUpgradeAttributesIgnoreRemoveFailure = 0x00000004,
+    msidbUpgradeAttributesVersionMinInclusive = 0x00000100,
+    msidbUpgradeAttributesVersionMaxInclusive = 0x00000200,
+    msidbUpgradeAttributesLanguagesExclusive = 0x00000400,
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CRYPT_OBJID_TABLE" /> struct.</summary>
+public static unsafe partial class CRYPT_OBJID_TABLETests
 {
-    /// <summary>Provides validation of the <see cref="CRYPT_OBJID_TABLE" /> struct.</summary>
-    public static unsafe partial class CRYPT_OBJID_TABLETests
+    /// <summary>Validates that the <see cref="CRYPT_OBJID_TABLE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CRYPT_OBJID_TABLE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CRYPT_OBJID_TABLE>(), Is.EqualTo(sizeof(CRYPT_OBJID_TABLE)));
-        }
+        Assert.That(Marshal.SizeOf<CRYPT_OBJID_TABLE>(), Is.EqualTo(sizeof(CRYPT_OBJID_TABLE)));
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_OBJID_TABLE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CRYPT_OBJID_TABLE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CRYPT_OBJID_TABLE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CRYPT_OBJID_TABLE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CRYPT_OBJID_TABLE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CRYPT_OBJID_TABLE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CRYPT_OBJID_TABLE), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(CRYPT_OBJID_TABLE), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(CRYPT_OBJID_TABLE), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(CRYPT_OBJID_TABLE), Is.EqualTo(8));
         }
     }
 }

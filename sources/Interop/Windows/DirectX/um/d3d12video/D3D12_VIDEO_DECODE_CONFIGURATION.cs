@@ -5,14 +5,13 @@
 
 using System;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct D3D12_VIDEO_DECODE_CONFIGURATION
 {
-    public partial struct D3D12_VIDEO_DECODE_CONFIGURATION
-    {
-        public Guid DecodeProfile;
+    public Guid DecodeProfile;
 
-        public D3D12_BITSTREAM_ENCRYPTION_TYPE BitstreamEncryption;
+    public D3D12_BITSTREAM_ENCRYPTION_TYPE BitstreamEncryption;
 
-        public D3D12_VIDEO_FRAME_CODED_INTERLACE_TYPE InterlaceType;
-    }
+    public D3D12_VIDEO_FRAME_CODED_INTERLACE_TYPE InterlaceType;
 }

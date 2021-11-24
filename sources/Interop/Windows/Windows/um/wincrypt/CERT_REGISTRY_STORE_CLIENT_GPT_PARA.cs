@@ -3,13 +3,12 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct CERT_REGISTRY_STORE_CLIENT_GPT_PARA
-    {
-        public HKEY hKeyBase;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("LPWSTR")]
-        public ushort* pwszRegPath;
-    }
+public unsafe partial struct CERT_REGISTRY_STORE_CLIENT_GPT_PARA
+{
+    public HKEY hKeyBase;
+
+    [NativeTypeName("LPWSTR")]
+    public ushort* pwszRegPath;
 }

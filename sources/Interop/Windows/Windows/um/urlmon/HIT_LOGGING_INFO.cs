@@ -3,21 +3,20 @@
 // Ported from um/urlmon.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct HIT_LOGGING_INFO
 {
-    public unsafe partial struct HIT_LOGGING_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwStructSize;
+    [NativeTypeName("DWORD")]
+    public uint dwStructSize;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* lpszLoggedUrlName;
+    [NativeTypeName("LPSTR")]
+    public sbyte* lpszLoggedUrlName;
 
-        public SYSTEMTIME StartTime;
+    public SYSTEMTIME StartTime;
 
-        public SYSTEMTIME EndTime;
+    public SYSTEMTIME EndTime;
 
-        [NativeTypeName("LPSTR")]
-        public sbyte* lpszExtendedInfo;
-    }
+    [NativeTypeName("LPSTR")]
+    public sbyte* lpszExtendedInfo;
 }

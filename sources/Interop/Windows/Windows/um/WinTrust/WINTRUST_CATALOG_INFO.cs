@@ -3,35 +3,34 @@
 // Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct WINTRUST_CATALOG_INFO
 {
-    public unsafe partial struct WINTRUST_CATALOG_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbStruct;
+    [NativeTypeName("DWORD")]
+    public uint cbStruct;
 
-        [NativeTypeName("DWORD")]
-        public uint dwCatalogVersion;
+    [NativeTypeName("DWORD")]
+    public uint dwCatalogVersion;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pcwszCatalogFilePath;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pcwszCatalogFilePath;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pcwszMemberTag;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pcwszMemberTag;
 
-        [NativeTypeName("LPCWSTR")]
-        public ushort* pcwszMemberFilePath;
+    [NativeTypeName("LPCWSTR")]
+    public ushort* pcwszMemberFilePath;
 
-        public HANDLE hMemberFile;
+    public HANDLE hMemberFile;
 
-        public byte* pbCalculatedFileHash;
+    public byte* pbCalculatedFileHash;
 
-        [NativeTypeName("DWORD")]
-        public uint cbCalculatedFileHash;
+    [NativeTypeName("DWORD")]
+    public uint cbCalculatedFileHash;
 
-        [NativeTypeName("PCCTL_CONTEXT")]
-        public CTL_CONTEXT* pcCatalogContext;
+    [NativeTypeName("PCCTL_CONTEXT")]
+    public CTL_CONTEXT* pcCatalogContext;
 
-        public HCATADMIN hCatAdmin;
-    }
+    public HCATADMIN hCatAdmin;
 }

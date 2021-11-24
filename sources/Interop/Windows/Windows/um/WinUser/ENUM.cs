@@ -3,14 +3,13 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public static partial class ENUM
-    {
-        [NativeTypeName("#define ENUM_CURRENT_SETTINGS ((DWORD)-1)")]
-        public const uint ENUM_CURRENT_SETTINGS = unchecked((uint)(-1));
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("#define ENUM_REGISTRY_SETTINGS ((DWORD)-2)")]
-        public const uint ENUM_REGISTRY_SETTINGS = unchecked((uint)(-2));
-    }
+public static partial class ENUM
+{
+    [NativeTypeName("#define ENUM_CURRENT_SETTINGS ((DWORD)-1)")]
+    public const uint ENUM_CURRENT_SETTINGS = unchecked((uint)(-1));
+
+    [NativeTypeName("#define ENUM_REGISTRY_SETTINGS ((DWORD)-2)")]
+    public const uint ENUM_REGISTRY_SETTINGS = unchecked((uint)(-2));
 }

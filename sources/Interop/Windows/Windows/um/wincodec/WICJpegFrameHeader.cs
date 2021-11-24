@@ -3,27 +3,26 @@
 // Ported from um/wincodec.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct WICJpegFrameHeader
 {
-    public partial struct WICJpegFrameHeader
-    {
-        public uint Width;
+    public uint Width;
 
-        public uint Height;
+    public uint Height;
 
-        public WICJpegTransferMatrix TransferMatrix;
+    public WICJpegTransferMatrix TransferMatrix;
 
-        public WICJpegScanType ScanType;
+    public WICJpegScanType ScanType;
 
-        public uint cComponents;
+    public uint cComponents;
 
-        [NativeTypeName("DWORD")]
-        public uint ComponentIdentifiers;
+    [NativeTypeName("DWORD")]
+    public uint ComponentIdentifiers;
 
-        [NativeTypeName("DWORD")]
-        public uint SampleFactors;
+    [NativeTypeName("DWORD")]
+    public uint SampleFactors;
 
-        [NativeTypeName("DWORD")]
-        public uint QuantizationTableIndices;
-    }
+    [NativeTypeName("DWORD")]
+    public uint QuantizationTableIndices;
 }

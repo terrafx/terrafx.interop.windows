@@ -3,23 +3,22 @@
 // Ported from um/schannel.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct SSL_CREDENTIAL_CERTIFICATE
 {
-    public unsafe partial struct SSL_CREDENTIAL_CERTIFICATE
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbPrivateKey;
+    [NativeTypeName("DWORD")]
+    public uint cbPrivateKey;
 
-        [NativeTypeName("PBYTE")]
-        public byte* pPrivateKey;
+    [NativeTypeName("PBYTE")]
+    public byte* pPrivateKey;
 
-        [NativeTypeName("DWORD")]
-        public uint cbCertificate;
+    [NativeTypeName("DWORD")]
+    public uint cbCertificate;
 
-        [NativeTypeName("PBYTE")]
-        public byte* pCertificate;
+    [NativeTypeName("PBYTE")]
+    public byte* pCertificate;
 
-        [NativeTypeName("PSTR")]
-        public sbyte* pszPassword;
-    }
+    [NativeTypeName("PSTR")]
+    public sbyte* pszPassword;
 }

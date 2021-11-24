@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("B507CA24-2204-11DD-966A-001AA01BBC58")]
+public partial struct MsftMultisessionRandomWrite
 {
-    [Guid("B507CA24-2204-11DD-966A-001AA01BBC58")]
-    public partial struct MsftMultisessionRandomWrite
-    {
-    }
 }

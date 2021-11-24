@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLMSCSSKeyframesRule" /> struct.</summary>
+public static unsafe partial class HTMLMSCSSKeyframesRuleTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLMSCSSKeyframesRule" /> struct.</summary>
-    public static unsafe partial class HTMLMSCSSKeyframesRuleTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLMSCSSKeyframesRule" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLMSCSSKeyframesRule" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLMSCSSKeyframesRule).GUID, Is.EqualTo(IID_HTMLMSCSSKeyframesRule));
-        }
+        Assert.That(typeof(HTMLMSCSSKeyframesRule).GUID, Is.EqualTo(IID_HTMLMSCSSKeyframesRule));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLMSCSSKeyframesRule" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLMSCSSKeyframesRule>(), Is.EqualTo(sizeof(HTMLMSCSSKeyframesRule)));
-        }
+    /// <summary>Validates that the <see cref="HTMLMSCSSKeyframesRule" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLMSCSSKeyframesRule>(), Is.EqualTo(sizeof(HTMLMSCSSKeyframesRule)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLMSCSSKeyframesRule" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLMSCSSKeyframesRule).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLMSCSSKeyframesRule" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLMSCSSKeyframesRule).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLMSCSSKeyframesRule" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTMLMSCSSKeyframesRule), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTMLMSCSSKeyframesRule" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTMLMSCSSKeyframesRule), Is.EqualTo(1));
     }
 }

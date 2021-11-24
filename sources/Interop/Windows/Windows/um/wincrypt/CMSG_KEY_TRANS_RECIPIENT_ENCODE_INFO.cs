@@ -3,21 +3,20 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO
 {
-    public unsafe partial struct CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public CRYPT_ALGORITHM_IDENTIFIER KeyEncryptionAlgorithm;
+    public CRYPT_ALGORITHM_IDENTIFIER KeyEncryptionAlgorithm;
 
-        public void* pvKeyEncryptionAuxInfo;
+    public void* pvKeyEncryptionAuxInfo;
 
-        public HCRYPTPROV_LEGACY hCryptProv;
+    public HCRYPTPROV_LEGACY hCryptProv;
 
-        public CRYPT_BIT_BLOB RecipientPublicKey;
+    public CRYPT_BIT_BLOB RecipientPublicKey;
 
-        public CERT_ID RecipientId;
-    }
+    public CERT_ID RecipientId;
 }

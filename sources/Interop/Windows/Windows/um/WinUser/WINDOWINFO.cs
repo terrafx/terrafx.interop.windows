@@ -3,34 +3,33 @@
 // Ported from um/WinUser.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct WINDOWINFO
 {
-    public partial struct WINDOWINFO
-    {
-        [NativeTypeName("DWORD")]
-        public uint cbSize;
+    [NativeTypeName("DWORD")]
+    public uint cbSize;
 
-        public RECT rcWindow;
+    public RECT rcWindow;
 
-        public RECT rcClient;
+    public RECT rcClient;
 
-        [NativeTypeName("DWORD")]
-        public uint dwStyle;
+    [NativeTypeName("DWORD")]
+    public uint dwStyle;
 
-        [NativeTypeName("DWORD")]
-        public uint dwExStyle;
+    [NativeTypeName("DWORD")]
+    public uint dwExStyle;
 
-        [NativeTypeName("DWORD")]
-        public uint dwWindowStatus;
+    [NativeTypeName("DWORD")]
+    public uint dwWindowStatus;
 
-        public uint cxWindowBorders;
+    public uint cxWindowBorders;
 
-        public uint cyWindowBorders;
+    public uint cyWindowBorders;
 
-        [NativeTypeName("ATOM")]
-        public ushort atomWindowType;
+    [NativeTypeName("ATOM")]
+    public ushort atomWindowType;
 
-        [NativeTypeName("WORD")]
-        public ushort wCreatorVersion;
-    }
+    [NativeTypeName("WORD")]
+    public ushort wCreatorVersion;
 }

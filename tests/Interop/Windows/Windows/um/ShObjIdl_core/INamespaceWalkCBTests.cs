@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="INamespaceWalkCB" /> struct.</summary>
+public static unsafe partial class INamespaceWalkCBTests
 {
-    /// <summary>Provides validation of the <see cref="INamespaceWalkCB" /> struct.</summary>
-    public static unsafe partial class INamespaceWalkCBTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="INamespaceWalkCB" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="INamespaceWalkCB" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(INamespaceWalkCB).GUID, Is.EqualTo(IID_INamespaceWalkCB));
-        }
+        Assert.That(typeof(INamespaceWalkCB).GUID, Is.EqualTo(IID_INamespaceWalkCB));
+    }
 
-        /// <summary>Validates that the <see cref="INamespaceWalkCB" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<INamespaceWalkCB>(), Is.EqualTo(sizeof(INamespaceWalkCB)));
-        }
+    /// <summary>Validates that the <see cref="INamespaceWalkCB" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<INamespaceWalkCB>(), Is.EqualTo(sizeof(INamespaceWalkCB)));
+    }
 
-        /// <summary>Validates that the <see cref="INamespaceWalkCB" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(INamespaceWalkCB).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="INamespaceWalkCB" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(INamespaceWalkCB).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="INamespaceWalkCB" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="INamespaceWalkCB" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(INamespaceWalkCB), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(INamespaceWalkCB), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(INamespaceWalkCB), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(INamespaceWalkCB), Is.EqualTo(4));
         }
     }
 }

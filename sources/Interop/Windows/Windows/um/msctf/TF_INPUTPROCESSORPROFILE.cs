@@ -5,31 +5,30 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TF_INPUTPROCESSORPROFILE
 {
-    public partial struct TF_INPUTPROCESSORPROFILE
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwProfileType;
+    [NativeTypeName("DWORD")]
+    public uint dwProfileType;
 
-        [NativeTypeName("LANGID")]
-        public ushort langid;
+    [NativeTypeName("LANGID")]
+    public ushort langid;
 
-        [NativeTypeName("CLSID")]
-        public Guid clsid;
+    [NativeTypeName("CLSID")]
+    public Guid clsid;
 
-        public Guid guidProfile;
+    public Guid guidProfile;
 
-        public Guid catid;
+    public Guid catid;
 
-        public HKL hklSubstitute;
+    public HKL hklSubstitute;
 
-        [NativeTypeName("DWORD")]
-        public uint dwCaps;
+    [NativeTypeName("DWORD")]
+    public uint dwCaps;
 
-        public HKL hkl;
+    public HKL hkl;
 
-        [NativeTypeName("DWORD")]
-        public uint dwFlags;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwFlags;
 }

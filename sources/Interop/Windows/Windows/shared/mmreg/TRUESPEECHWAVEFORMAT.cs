@@ -5,20 +5,19 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct TRUESPEECHWAVEFORMAT
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct TRUESPEECHWAVEFORMAT
-    {
-        public WAVEFORMATEX wfx;
+    public WAVEFORMATEX wfx;
 
-        [NativeTypeName("WORD")]
-        public ushort wRevision;
+    [NativeTypeName("WORD")]
+    public ushort wRevision;
 
-        [NativeTypeName("WORD")]
-        public ushort nSamplesPerBlock;
+    [NativeTypeName("WORD")]
+    public ushort nSamplesPerBlock;
 
-        [NativeTypeName("BYTE [28]")]
-        public fixed byte abReserved[28];
-    }
+    [NativeTypeName("BYTE [28]")]
+    public fixed byte abReserved[28];
 }

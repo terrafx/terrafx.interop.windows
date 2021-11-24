@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CODECAPI_AVEncMPVQuantMatrixChromaNonIntra" /> struct.</summary>
+public static unsafe partial class CODECAPI_AVEncMPVQuantMatrixChromaNonIntraTests
 {
-    /// <summary>Provides validation of the <see cref="CODECAPI_AVEncMPVQuantMatrixChromaNonIntra" /> struct.</summary>
-    public static unsafe partial class CODECAPI_AVEncMPVQuantMatrixChromaNonIntraTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncMPVQuantMatrixChromaNonIntra" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="CODECAPI_AVEncMPVQuantMatrixChromaNonIntra" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncMPVQuantMatrixChromaNonIntra).GUID, Is.EqualTo(IID_CODECAPI_AVEncMPVQuantMatrixChromaNonIntra));
-        }
+        Assert.That(typeof(CODECAPI_AVEncMPVQuantMatrixChromaNonIntra).GUID, Is.EqualTo(IID_CODECAPI_AVEncMPVQuantMatrixChromaNonIntra));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVQuantMatrixChromaNonIntra" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CODECAPI_AVEncMPVQuantMatrixChromaNonIntra>(), Is.EqualTo(sizeof(CODECAPI_AVEncMPVQuantMatrixChromaNonIntra)));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVQuantMatrixChromaNonIntra" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<CODECAPI_AVEncMPVQuantMatrixChromaNonIntra>(), Is.EqualTo(sizeof(CODECAPI_AVEncMPVQuantMatrixChromaNonIntra)));
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVQuantMatrixChromaNonIntra" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CODECAPI_AVEncMPVQuantMatrixChromaNonIntra).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVQuantMatrixChromaNonIntra" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CODECAPI_AVEncMPVQuantMatrixChromaNonIntra).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVQuantMatrixChromaNonIntra" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(CODECAPI_AVEncMPVQuantMatrixChromaNonIntra), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVQuantMatrixChromaNonIntra" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(CODECAPI_AVEncMPVQuantMatrixChromaNonIntra), Is.EqualTo(1));
     }
 }

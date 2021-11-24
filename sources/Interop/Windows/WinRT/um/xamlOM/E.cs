@@ -5,11 +5,10 @@
 
 using TerraFX.Interop.WinRT;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class E
 {
-    public static partial class E
-    {
-        [NativeTypeName("#define E_UNKNOWNTYPE MAKE_HRESULT(SEVERITY_ERROR, FACILITY_XAML, 40L)")]
-        public const int E_UNKNOWNTYPE = unchecked((int)(((uint)(1) << 31) | ((uint)(43) << 16) | ((uint)(40))));
-    }
+    [NativeTypeName("#define E_UNKNOWNTYPE MAKE_HRESULT(SEVERITY_ERROR, FACILITY_XAML, 40L)")]
+    public const int E_UNKNOWNTYPE = unchecked((int)(((uint)(1) << 31) | ((uint)(43) << 16) | ((uint)(40))));
 }

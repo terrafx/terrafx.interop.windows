@@ -7,506 +7,505 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("A70EFE61-E2A3-11D0-A9BE-00AA0061BE93")]
+[NativeTypeName("struct IDvdControl : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IDvdControl : IDvdControl.Interface
 {
-    [Guid("A70EFE61-E2A3-11D0-A9BE-00AA0061BE93")]
-    [NativeTypeName("struct IDvdControl : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IDvdControl : IDvdControl.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IDvdControl*, Guid*, void**, int>)(lpVtbl[0]))((IDvdControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IDvdControl*, Guid*, void**, int>)(lpVtbl[0]))((IDvdControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IDvdControl*, uint>)(lpVtbl[1]))((IDvdControl*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IDvdControl*, uint>)(lpVtbl[1]))((IDvdControl*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IDvdControl*, uint>)(lpVtbl[2]))((IDvdControl*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IDvdControl*, uint>)(lpVtbl[2]))((IDvdControl*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT TitlePlay([NativeTypeName("ULONG")] uint ulTitle)
+    {
+        return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[3]))((IDvdControl*)Unsafe.AsPointer(ref this), ulTitle);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT ChapterPlay([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG")] uint ulChapter)
+    {
+        return ((delegate* unmanaged<IDvdControl*, uint, uint, int>)(lpVtbl[4]))((IDvdControl*)Unsafe.AsPointer(ref this), ulTitle, ulChapter);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT TimePlay([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG")] uint bcdTime)
+    {
+        return ((delegate* unmanaged<IDvdControl*, uint, uint, int>)(lpVtbl[5]))((IDvdControl*)Unsafe.AsPointer(ref this), ulTitle, bcdTime);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT StopForResume()
+    {
+        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[6]))((IDvdControl*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT GoUp()
+    {
+        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[7]))((IDvdControl*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT TimeSearch([NativeTypeName("ULONG")] uint bcdTime)
+    {
+        return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[8]))((IDvdControl*)Unsafe.AsPointer(ref this), bcdTime);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT ChapterSearch([NativeTypeName("ULONG")] uint ulChapter)
+    {
+        return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[9]))((IDvdControl*)Unsafe.AsPointer(ref this), ulChapter);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT PrevPGSearch()
+    {
+        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[10]))((IDvdControl*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT TopPGSearch()
+    {
+        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[11]))((IDvdControl*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT NextPGSearch()
+    {
+        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[12]))((IDvdControl*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT ForwardScan(double dwSpeed)
+    {
+        return ((delegate* unmanaged<IDvdControl*, double, int>)(lpVtbl[13]))((IDvdControl*)Unsafe.AsPointer(ref this), dwSpeed);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT BackwardScan(double dwSpeed)
+    {
+        return ((delegate* unmanaged<IDvdControl*, double, int>)(lpVtbl[14]))((IDvdControl*)Unsafe.AsPointer(ref this), dwSpeed);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(15)]
+    public HRESULT MenuCall(DVD_MENU_ID MenuID)
+    {
+        return ((delegate* unmanaged<IDvdControl*, DVD_MENU_ID, int>)(lpVtbl[15]))((IDvdControl*)Unsafe.AsPointer(ref this), MenuID);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(16)]
+    public HRESULT Resume()
+    {
+        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[16]))((IDvdControl*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(17)]
+    public HRESULT UpperButtonSelect()
+    {
+        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[17]))((IDvdControl*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(18)]
+    public HRESULT LowerButtonSelect()
+    {
+        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[18]))((IDvdControl*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(19)]
+    public HRESULT LeftButtonSelect()
+    {
+        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[19]))((IDvdControl*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(20)]
+    public HRESULT RightButtonSelect()
+    {
+        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[20]))((IDvdControl*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(21)]
+    public HRESULT ButtonActivate()
+    {
+        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[21]))((IDvdControl*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(22)]
+    public HRESULT ButtonSelectAndActivate([NativeTypeName("ULONG")] uint ulButton)
+    {
+        return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[22]))((IDvdControl*)Unsafe.AsPointer(ref this), ulButton);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(23)]
+    public HRESULT StillOff()
+    {
+        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[23]))((IDvdControl*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(24)]
+    public HRESULT PauseOn()
+    {
+        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[24]))((IDvdControl*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(25)]
+    public HRESULT PauseOff()
+    {
+        return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[25]))((IDvdControl*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(26)]
+    public HRESULT MenuLanguageSelect([NativeTypeName("LCID")] uint Language)
+    {
+        return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[26]))((IDvdControl*)Unsafe.AsPointer(ref this), Language);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(27)]
+    public HRESULT AudioStreamChange([NativeTypeName("ULONG")] uint ulAudio)
+    {
+        return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[27]))((IDvdControl*)Unsafe.AsPointer(ref this), ulAudio);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(28)]
+    public HRESULT SubpictureStreamChange([NativeTypeName("ULONG")] uint ulSubPicture, BOOL bDisplay)
+    {
+        return ((delegate* unmanaged<IDvdControl*, uint, BOOL, int>)(lpVtbl[28]))((IDvdControl*)Unsafe.AsPointer(ref this), ulSubPicture, bDisplay);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(29)]
+    public HRESULT AngleChange([NativeTypeName("ULONG")] uint ulAngle)
+    {
+        return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[29]))((IDvdControl*)Unsafe.AsPointer(ref this), ulAngle);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(30)]
+    public HRESULT ParentalLevelSelect([NativeTypeName("ULONG")] uint ulParentalLevel)
+    {
+        return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[30]))((IDvdControl*)Unsafe.AsPointer(ref this), ulParentalLevel);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(31)]
+    public HRESULT ParentalCountrySelect([NativeTypeName("WORD")] ushort wCountry)
+    {
+        return ((delegate* unmanaged<IDvdControl*, ushort, int>)(lpVtbl[31]))((IDvdControl*)Unsafe.AsPointer(ref this), wCountry);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(32)]
+    public HRESULT KaraokeAudioPresentationModeChange([NativeTypeName("ULONG")] uint ulMode)
+    {
+        return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[32]))((IDvdControl*)Unsafe.AsPointer(ref this), ulMode);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(33)]
+    public HRESULT VideoModePreferrence([NativeTypeName("ULONG")] uint ulPreferredDisplayMode)
+    {
+        return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[33]))((IDvdControl*)Unsafe.AsPointer(ref this), ulPreferredDisplayMode);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(34)]
+    public HRESULT SetRoot([NativeTypeName("LPCWSTR")] ushort* pszPath)
+    {
+        return ((delegate* unmanaged<IDvdControl*, ushort*, int>)(lpVtbl[34]))((IDvdControl*)Unsafe.AsPointer(ref this), pszPath);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(35)]
+    public HRESULT MouseActivate(POINT point)
+    {
+        return ((delegate* unmanaged<IDvdControl*, POINT, int>)(lpVtbl[35]))((IDvdControl*)Unsafe.AsPointer(ref this), point);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(36)]
+    public HRESULT MouseSelect(POINT point)
+    {
+        return ((delegate* unmanaged<IDvdControl*, POINT, int>)(lpVtbl[36]))((IDvdControl*)Unsafe.AsPointer(ref this), point);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(37)]
+    public HRESULT ChapterPlayAutoStop([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG")] uint ulChapter, [NativeTypeName("ULONG")] uint ulChaptersToPlay)
+    {
+        return ((delegate* unmanaged<IDvdControl*, uint, uint, uint, int>)(lpVtbl[37]))((IDvdControl*)Unsafe.AsPointer(ref this), ulTitle, ulChapter, ulChaptersToPlay);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT TitlePlay([NativeTypeName("ULONG")] uint ulTitle)
-        {
-            return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[3]))((IDvdControl*)Unsafe.AsPointer(ref this), ulTitle);
-        }
+        HRESULT TitlePlay([NativeTypeName("ULONG")] uint ulTitle);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT ChapterPlay([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG")] uint ulChapter)
-        {
-            return ((delegate* unmanaged<IDvdControl*, uint, uint, int>)(lpVtbl[4]))((IDvdControl*)Unsafe.AsPointer(ref this), ulTitle, ulChapter);
-        }
+        HRESULT ChapterPlay([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG")] uint ulChapter);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT TimePlay([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG")] uint bcdTime)
-        {
-            return ((delegate* unmanaged<IDvdControl*, uint, uint, int>)(lpVtbl[5]))((IDvdControl*)Unsafe.AsPointer(ref this), ulTitle, bcdTime);
-        }
+        HRESULT TimePlay([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG")] uint bcdTime);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT StopForResume()
-        {
-            return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[6]))((IDvdControl*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT StopForResume();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT GoUp()
-        {
-            return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[7]))((IDvdControl*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT GoUp();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT TimeSearch([NativeTypeName("ULONG")] uint bcdTime)
-        {
-            return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[8]))((IDvdControl*)Unsafe.AsPointer(ref this), bcdTime);
-        }
+        HRESULT TimeSearch([NativeTypeName("ULONG")] uint bcdTime);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT ChapterSearch([NativeTypeName("ULONG")] uint ulChapter)
-        {
-            return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[9]))((IDvdControl*)Unsafe.AsPointer(ref this), ulChapter);
-        }
+        HRESULT ChapterSearch([NativeTypeName("ULONG")] uint ulChapter);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT PrevPGSearch()
-        {
-            return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[10]))((IDvdControl*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT PrevPGSearch();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT TopPGSearch()
-        {
-            return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[11]))((IDvdControl*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT TopPGSearch();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT NextPGSearch()
-        {
-            return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[12]))((IDvdControl*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT NextPGSearch();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT ForwardScan(double dwSpeed)
-        {
-            return ((delegate* unmanaged<IDvdControl*, double, int>)(lpVtbl[13]))((IDvdControl*)Unsafe.AsPointer(ref this), dwSpeed);
-        }
+        HRESULT ForwardScan(double dwSpeed);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT BackwardScan(double dwSpeed)
-        {
-            return ((delegate* unmanaged<IDvdControl*, double, int>)(lpVtbl[14]))((IDvdControl*)Unsafe.AsPointer(ref this), dwSpeed);
-        }
+        HRESULT BackwardScan(double dwSpeed);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(15)]
-        public HRESULT MenuCall(DVD_MENU_ID MenuID)
-        {
-            return ((delegate* unmanaged<IDvdControl*, DVD_MENU_ID, int>)(lpVtbl[15]))((IDvdControl*)Unsafe.AsPointer(ref this), MenuID);
-        }
+        HRESULT MenuCall(DVD_MENU_ID MenuID);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(16)]
-        public HRESULT Resume()
-        {
-            return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[16]))((IDvdControl*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Resume();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(17)]
-        public HRESULT UpperButtonSelect()
-        {
-            return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[17]))((IDvdControl*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT UpperButtonSelect();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(18)]
-        public HRESULT LowerButtonSelect()
-        {
-            return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[18]))((IDvdControl*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT LowerButtonSelect();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(19)]
-        public HRESULT LeftButtonSelect()
-        {
-            return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[19]))((IDvdControl*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT LeftButtonSelect();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(20)]
-        public HRESULT RightButtonSelect()
-        {
-            return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[20]))((IDvdControl*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT RightButtonSelect();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(21)]
-        public HRESULT ButtonActivate()
-        {
-            return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[21]))((IDvdControl*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT ButtonActivate();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(22)]
-        public HRESULT ButtonSelectAndActivate([NativeTypeName("ULONG")] uint ulButton)
-        {
-            return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[22]))((IDvdControl*)Unsafe.AsPointer(ref this), ulButton);
-        }
+        HRESULT ButtonSelectAndActivate([NativeTypeName("ULONG")] uint ulButton);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(23)]
-        public HRESULT StillOff()
-        {
-            return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[23]))((IDvdControl*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT StillOff();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(24)]
-        public HRESULT PauseOn()
-        {
-            return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[24]))((IDvdControl*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT PauseOn();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(25)]
-        public HRESULT PauseOff()
-        {
-            return ((delegate* unmanaged<IDvdControl*, int>)(lpVtbl[25]))((IDvdControl*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT PauseOff();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(26)]
-        public HRESULT MenuLanguageSelect([NativeTypeName("LCID")] uint Language)
-        {
-            return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[26]))((IDvdControl*)Unsafe.AsPointer(ref this), Language);
-        }
+        HRESULT MenuLanguageSelect([NativeTypeName("LCID")] uint Language);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(27)]
-        public HRESULT AudioStreamChange([NativeTypeName("ULONG")] uint ulAudio)
-        {
-            return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[27]))((IDvdControl*)Unsafe.AsPointer(ref this), ulAudio);
-        }
+        HRESULT AudioStreamChange([NativeTypeName("ULONG")] uint ulAudio);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(28)]
-        public HRESULT SubpictureStreamChange([NativeTypeName("ULONG")] uint ulSubPicture, BOOL bDisplay)
-        {
-            return ((delegate* unmanaged<IDvdControl*, uint, BOOL, int>)(lpVtbl[28]))((IDvdControl*)Unsafe.AsPointer(ref this), ulSubPicture, bDisplay);
-        }
+        HRESULT SubpictureStreamChange([NativeTypeName("ULONG")] uint ulSubPicture, BOOL bDisplay);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(29)]
-        public HRESULT AngleChange([NativeTypeName("ULONG")] uint ulAngle)
-        {
-            return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[29]))((IDvdControl*)Unsafe.AsPointer(ref this), ulAngle);
-        }
+        HRESULT AngleChange([NativeTypeName("ULONG")] uint ulAngle);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(30)]
-        public HRESULT ParentalLevelSelect([NativeTypeName("ULONG")] uint ulParentalLevel)
-        {
-            return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[30]))((IDvdControl*)Unsafe.AsPointer(ref this), ulParentalLevel);
-        }
+        HRESULT ParentalLevelSelect([NativeTypeName("ULONG")] uint ulParentalLevel);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(31)]
-        public HRESULT ParentalCountrySelect([NativeTypeName("WORD")] ushort wCountry)
-        {
-            return ((delegate* unmanaged<IDvdControl*, ushort, int>)(lpVtbl[31]))((IDvdControl*)Unsafe.AsPointer(ref this), wCountry);
-        }
+        HRESULT ParentalCountrySelect([NativeTypeName("WORD")] ushort wCountry);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(32)]
-        public HRESULT KaraokeAudioPresentationModeChange([NativeTypeName("ULONG")] uint ulMode)
-        {
-            return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[32]))((IDvdControl*)Unsafe.AsPointer(ref this), ulMode);
-        }
+        HRESULT KaraokeAudioPresentationModeChange([NativeTypeName("ULONG")] uint ulMode);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(33)]
-        public HRESULT VideoModePreferrence([NativeTypeName("ULONG")] uint ulPreferredDisplayMode)
-        {
-            return ((delegate* unmanaged<IDvdControl*, uint, int>)(lpVtbl[33]))((IDvdControl*)Unsafe.AsPointer(ref this), ulPreferredDisplayMode);
-        }
+        HRESULT VideoModePreferrence([NativeTypeName("ULONG")] uint ulPreferredDisplayMode);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(34)]
-        public HRESULT SetRoot([NativeTypeName("LPCWSTR")] ushort* pszPath)
-        {
-            return ((delegate* unmanaged<IDvdControl*, ushort*, int>)(lpVtbl[34]))((IDvdControl*)Unsafe.AsPointer(ref this), pszPath);
-        }
+        HRESULT SetRoot([NativeTypeName("LPCWSTR")] ushort* pszPath);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(35)]
-        public HRESULT MouseActivate(POINT point)
-        {
-            return ((delegate* unmanaged<IDvdControl*, POINT, int>)(lpVtbl[35]))((IDvdControl*)Unsafe.AsPointer(ref this), point);
-        }
+        HRESULT MouseActivate(POINT point);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(36)]
-        public HRESULT MouseSelect(POINT point)
-        {
-            return ((delegate* unmanaged<IDvdControl*, POINT, int>)(lpVtbl[36]))((IDvdControl*)Unsafe.AsPointer(ref this), point);
-        }
+        HRESULT MouseSelect(POINT point);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(37)]
-        public HRESULT ChapterPlayAutoStop([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG")] uint ulChapter, [NativeTypeName("ULONG")] uint ulChaptersToPlay)
-        {
-            return ((delegate* unmanaged<IDvdControl*, uint, uint, uint, int>)(lpVtbl[37]))((IDvdControl*)Unsafe.AsPointer(ref this), ulTitle, ulChapter, ulChaptersToPlay);
-        }
+        HRESULT ChapterPlayAutoStop([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG")] uint ulChapter, [NativeTypeName("ULONG")] uint ulChaptersToPlay);
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT TitlePlay([NativeTypeName("ULONG")] uint ulTitle);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT ChapterPlay([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG")] uint ulChapter);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT TimePlay([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG")] uint bcdTime);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT StopForResume();
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, uint, int> TitlePlay;
 
-            [VtblIndex(7)]
-            HRESULT GoUp();
+        [NativeTypeName("HRESULT (ULONG, ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, uint, uint, int> ChapterPlay;
 
-            [VtblIndex(8)]
-            HRESULT TimeSearch([NativeTypeName("ULONG")] uint bcdTime);
+        [NativeTypeName("HRESULT (ULONG, ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, uint, uint, int> TimePlay;
 
-            [VtblIndex(9)]
-            HRESULT ChapterSearch([NativeTypeName("ULONG")] uint ulChapter);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, int> StopForResume;
 
-            [VtblIndex(10)]
-            HRESULT PrevPGSearch();
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, int> GoUp;
 
-            [VtblIndex(11)]
-            HRESULT TopPGSearch();
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, uint, int> TimeSearch;
 
-            [VtblIndex(12)]
-            HRESULT NextPGSearch();
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, uint, int> ChapterSearch;
 
-            [VtblIndex(13)]
-            HRESULT ForwardScan(double dwSpeed);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, int> PrevPGSearch;
 
-            [VtblIndex(14)]
-            HRESULT BackwardScan(double dwSpeed);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, int> TopPGSearch;
 
-            [VtblIndex(15)]
-            HRESULT MenuCall(DVD_MENU_ID MenuID);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, int> NextPGSearch;
 
-            [VtblIndex(16)]
-            HRESULT Resume();
+        [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, double, int> ForwardScan;
 
-            [VtblIndex(17)]
-            HRESULT UpperButtonSelect();
+        [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, double, int> BackwardScan;
 
-            [VtblIndex(18)]
-            HRESULT LowerButtonSelect();
+        [NativeTypeName("HRESULT (DVD_MENU_ID) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, DVD_MENU_ID, int> MenuCall;
 
-            [VtblIndex(19)]
-            HRESULT LeftButtonSelect();
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, int> Resume;
 
-            [VtblIndex(20)]
-            HRESULT RightButtonSelect();
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, int> UpperButtonSelect;
 
-            [VtblIndex(21)]
-            HRESULT ButtonActivate();
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, int> LowerButtonSelect;
 
-            [VtblIndex(22)]
-            HRESULT ButtonSelectAndActivate([NativeTypeName("ULONG")] uint ulButton);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, int> LeftButtonSelect;
 
-            [VtblIndex(23)]
-            HRESULT StillOff();
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, int> RightButtonSelect;
 
-            [VtblIndex(24)]
-            HRESULT PauseOn();
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, int> ButtonActivate;
 
-            [VtblIndex(25)]
-            HRESULT PauseOff();
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, uint, int> ButtonSelectAndActivate;
 
-            [VtblIndex(26)]
-            HRESULT MenuLanguageSelect([NativeTypeName("LCID")] uint Language);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, int> StillOff;
 
-            [VtblIndex(27)]
-            HRESULT AudioStreamChange([NativeTypeName("ULONG")] uint ulAudio);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, int> PauseOn;
 
-            [VtblIndex(28)]
-            HRESULT SubpictureStreamChange([NativeTypeName("ULONG")] uint ulSubPicture, BOOL bDisplay);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, int> PauseOff;
 
-            [VtblIndex(29)]
-            HRESULT AngleChange([NativeTypeName("ULONG")] uint ulAngle);
+        [NativeTypeName("HRESULT (LCID) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, uint, int> MenuLanguageSelect;
 
-            [VtblIndex(30)]
-            HRESULT ParentalLevelSelect([NativeTypeName("ULONG")] uint ulParentalLevel);
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, uint, int> AudioStreamChange;
 
-            [VtblIndex(31)]
-            HRESULT ParentalCountrySelect([NativeTypeName("WORD")] ushort wCountry);
+        [NativeTypeName("HRESULT (ULONG, BOOL) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, uint, BOOL, int> SubpictureStreamChange;
 
-            [VtblIndex(32)]
-            HRESULT KaraokeAudioPresentationModeChange([NativeTypeName("ULONG")] uint ulMode);
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, uint, int> AngleChange;
 
-            [VtblIndex(33)]
-            HRESULT VideoModePreferrence([NativeTypeName("ULONG")] uint ulPreferredDisplayMode);
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, uint, int> ParentalLevelSelect;
 
-            [VtblIndex(34)]
-            HRESULT SetRoot([NativeTypeName("LPCWSTR")] ushort* pszPath);
+        [NativeTypeName("HRESULT (WORD) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, ushort, int> ParentalCountrySelect;
 
-            [VtblIndex(35)]
-            HRESULT MouseActivate(POINT point);
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, uint, int> KaraokeAudioPresentationModeChange;
 
-            [VtblIndex(36)]
-            HRESULT MouseSelect(POINT point);
+        [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, uint, int> VideoModePreferrence;
 
-            [VtblIndex(37)]
-            HRESULT ChapterPlayAutoStop([NativeTypeName("ULONG")] uint ulTitle, [NativeTypeName("ULONG")] uint ulChapter, [NativeTypeName("ULONG")] uint ulChaptersToPlay);
-        }
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, ushort*, int> SetRoot;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (POINT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, POINT, int> MouseActivate;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, uint> AddRef;
+        [NativeTypeName("HRESULT (POINT) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, POINT, int> MouseSelect;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, uint> Release;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, uint, int> TitlePlay;
-
-            [NativeTypeName("HRESULT (ULONG, ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, uint, uint, int> ChapterPlay;
-
-            [NativeTypeName("HRESULT (ULONG, ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, uint, uint, int> TimePlay;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, int> StopForResume;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, int> GoUp;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, uint, int> TimeSearch;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, uint, int> ChapterSearch;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, int> PrevPGSearch;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, int> TopPGSearch;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, int> NextPGSearch;
-
-            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, double, int> ForwardScan;
-
-            [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, double, int> BackwardScan;
-
-            [NativeTypeName("HRESULT (DVD_MENU_ID) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, DVD_MENU_ID, int> MenuCall;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, int> Resume;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, int> UpperButtonSelect;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, int> LowerButtonSelect;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, int> LeftButtonSelect;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, int> RightButtonSelect;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, int> ButtonActivate;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, uint, int> ButtonSelectAndActivate;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, int> StillOff;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, int> PauseOn;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, int> PauseOff;
-
-            [NativeTypeName("HRESULT (LCID) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, uint, int> MenuLanguageSelect;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, uint, int> AudioStreamChange;
-
-            [NativeTypeName("HRESULT (ULONG, BOOL) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, uint, BOOL, int> SubpictureStreamChange;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, uint, int> AngleChange;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, uint, int> ParentalLevelSelect;
-
-            [NativeTypeName("HRESULT (WORD) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, ushort, int> ParentalCountrySelect;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, uint, int> KaraokeAudioPresentationModeChange;
-
-            [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, uint, int> VideoModePreferrence;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, ushort*, int> SetRoot;
-
-            [NativeTypeName("HRESULT (POINT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, POINT, int> MouseActivate;
-
-            [NativeTypeName("HRESULT (POINT) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, POINT, int> MouseSelect;
-
-            [NativeTypeName("HRESULT (ULONG, ULONG, ULONG) __attribute__((stdcall))")]
-            public delegate* unmanaged<IDvdControl*, uint, uint, uint, int> ChapterPlayAutoStop;
-        }
+        [NativeTypeName("HRESULT (ULONG, ULONG, ULONG) __attribute__((stdcall))")]
+        public delegate* unmanaged<IDvdControl*, uint, uint, uint, int> ChapterPlayAutoStop;
     }
 }

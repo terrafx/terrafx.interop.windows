@@ -6,15 +6,14 @@
 using System;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.WinRT
+namespace TerraFX.Interop.WinRT;
+
+[Flags]
+[SupportedOSPlatform("windows10.0")]
+public enum HANDLE_SHARING_OPTIONS
 {
-    [Flags]
-    [SupportedOSPlatform("windows10.0")]
-    public enum HANDLE_SHARING_OPTIONS
-    {
-        HSO_SHARE_NONE = 0,
-        HSO_SHARE_READ = 0x1,
-        HSO_SHARE_WRITE = 0x2,
-        HSO_SHARE_DELETE = 0x4,
-    }
+    HSO_SHARE_NONE = 0,
+    HSO_SHARE_READ = 0x1,
+    HSO_SHARE_WRITE = 0x2,
+    HSO_SHARE_DELETE = 0x4,
 }

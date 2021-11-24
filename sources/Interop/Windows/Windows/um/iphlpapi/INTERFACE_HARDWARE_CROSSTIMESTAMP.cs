@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.22000.0")]
+public partial struct INTERFACE_HARDWARE_CROSSTIMESTAMP
 {
-    [SupportedOSPlatform("windows10.0.22000.0")]
-    public partial struct INTERFACE_HARDWARE_CROSSTIMESTAMP
-    {
-        [NativeTypeName("ULONG64")]
-        public ulong SystemTimestamp1;
+    [NativeTypeName("ULONG64")]
+    public ulong SystemTimestamp1;
 
-        [NativeTypeName("ULONG64")]
-        public ulong HardwareClockTimestamp;
+    [NativeTypeName("ULONG64")]
+    public ulong HardwareClockTimestamp;
 
-        [NativeTypeName("ULONG64")]
-        public ulong SystemTimestamp2;
-    }
+    [NativeTypeName("ULONG64")]
+    public ulong SystemTimestamp2;
 }

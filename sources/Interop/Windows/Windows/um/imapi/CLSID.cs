@@ -8,77 +8,76 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public static partial class CLSID
 {
-    public static partial class CLSID
+    public static ref readonly Guid CLSID_MSDiscRecorderObj
     {
-        public static ref readonly Guid CLSID_MSDiscRecorderObj
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x61, 0xCA, 0x0C, 0x52,
-                    0xA5, 0x51,
-                    0xD3, 0x11,
-                    0x91,
-                    0x44,
-                    0x00,
-                    0x10,
-                    0x4B,
-                    0xA1,
-                    0x1C,
-                    0x5E
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x61, 0xCA, 0x0C, 0x52,
+                0xA5, 0x51,
+                0xD3, 0x11,
+                0x91,
+                0x44,
+                0x00,
+                0x10,
+                0x4B,
+                0xA1,
+                0x1C,
+                0x5E
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid CLSID_MSDiscMasterObj
+    public static ref readonly Guid CLSID_MSDiscMasterObj
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x63, 0xCA, 0x0C, 0x52,
-                    0xA5, 0x51,
-                    0xD3, 0x11,
-                    0x91,
-                    0x44,
-                    0x00,
-                    0x10,
-                    0x4B,
-                    0xA1,
-                    0x1C,
-                    0x5E
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x63, 0xCA, 0x0C, 0x52,
+                0xA5, 0x51,
+                0xD3, 0x11,
+                0x91,
+                0x44,
+                0x00,
+                0x10,
+                0x4B,
+                0xA1,
+                0x1C,
+                0x5E
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
 
-        public static ref readonly Guid CLSID_MSEnumDiscRecordersObj
+    public static ref readonly Guid CLSID_MSEnumDiscRecordersObj
+    {
+        get
         {
-            get
-            {
-                ReadOnlySpan<byte> data = new byte[] {
-                    0x7A, 0x56, 0x03, 0x8A,
-                    0xCB, 0x63,
-                    0xA8, 0x4B,
-                    0xBA,
-                    0xF6,
-                    0x52,
-                    0x11,
-                    0x98,
-                    0x16,
-                    0xD1,
-                    0xEF
-                };
+            ReadOnlySpan<byte> data = new byte[] {
+                0x7A, 0x56, 0x03, 0x8A,
+                0xCB, 0x63,
+                0xA8, 0x4B,
+                0xBA,
+                0xF6,
+                0x52,
+                0x11,
+                0x98,
+                0x16,
+                0xD1,
+                0xEF
+            };
 
-                Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-                return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-            }
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
 }

@@ -3,19 +3,18 @@
 // Ported from shared/nldef.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum IP_DAD_STATE
 {
-    public enum IP_DAD_STATE
-    {
-        NldsInvalid,
-        NldsTentative,
-        NldsDuplicate,
-        NldsDeprecated,
-        NldsPreferred,
-        IpDadStateInvalid = 0,
-        IpDadStateTentative,
-        IpDadStateDuplicate,
-        IpDadStateDeprecated,
-        IpDadStatePreferred,
-    }
+    NldsInvalid,
+    NldsTentative,
+    NldsDuplicate,
+    NldsDeprecated,
+    NldsPreferred,
+    IpDadStateInvalid = 0,
+    IpDadStateTentative,
+    IpDadStateDuplicate,
+    IpDadStateDeprecated,
+    IpDadStatePreferred,
 }

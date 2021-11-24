@@ -5,37 +5,36 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct STATSTG
 {
-    public unsafe partial struct STATSTG
-    {
-        [NativeTypeName("LPOLESTR")]
-        public ushort* pwcsName;
+    [NativeTypeName("LPOLESTR")]
+    public ushort* pwcsName;
 
-        [NativeTypeName("DWORD")]
-        public uint type;
+    [NativeTypeName("DWORD")]
+    public uint type;
 
-        public ULARGE_INTEGER cbSize;
+    public ULARGE_INTEGER cbSize;
 
-        public FILETIME mtime;
+    public FILETIME mtime;
 
-        public FILETIME ctime;
+    public FILETIME ctime;
 
-        public FILETIME atime;
+    public FILETIME atime;
 
-        [NativeTypeName("DWORD")]
-        public uint grfMode;
+    [NativeTypeName("DWORD")]
+    public uint grfMode;
 
-        [NativeTypeName("DWORD")]
-        public uint grfLocksSupported;
+    [NativeTypeName("DWORD")]
+    public uint grfLocksSupported;
 
-        [NativeTypeName("CLSID")]
-        public Guid clsid;
+    [NativeTypeName("CLSID")]
+    public Guid clsid;
 
-        [NativeTypeName("DWORD")]
-        public uint grfStateBits;
+    [NativeTypeName("DWORD")]
+    public uint grfStateBits;
 
-        [NativeTypeName("DWORD")]
-        public uint reserved;
-    }
+    [NativeTypeName("DWORD")]
+    public uint reserved;
 }

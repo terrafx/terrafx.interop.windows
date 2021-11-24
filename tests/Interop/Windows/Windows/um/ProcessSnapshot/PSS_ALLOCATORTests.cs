@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="PSS_ALLOCATOR" /> struct.</summary>
+[SupportedOSPlatform("windows8.1")]
+public static unsafe partial class PSS_ALLOCATORTests
 {
-    /// <summary>Provides validation of the <see cref="PSS_ALLOCATOR" /> struct.</summary>
-    [SupportedOSPlatform("windows8.1")]
-    public static unsafe partial class PSS_ALLOCATORTests
+    /// <summary>Validates that the <see cref="PSS_ALLOCATOR" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="PSS_ALLOCATOR" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<PSS_ALLOCATOR>(), Is.EqualTo(sizeof(PSS_ALLOCATOR)));
-        }
+        Assert.That(Marshal.SizeOf<PSS_ALLOCATOR>(), Is.EqualTo(sizeof(PSS_ALLOCATOR)));
+    }
 
-        /// <summary>Validates that the <see cref="PSS_ALLOCATOR" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(PSS_ALLOCATOR).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="PSS_ALLOCATOR" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(PSS_ALLOCATOR).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="PSS_ALLOCATOR" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="PSS_ALLOCATOR" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(PSS_ALLOCATOR), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(PSS_ALLOCATOR), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(PSS_ALLOCATOR), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(PSS_ALLOCATOR), Is.EqualTo(12));
         }
     }
 }

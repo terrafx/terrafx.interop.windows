@@ -5,18 +5,17 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public unsafe partial struct MIXERCONTROLDETAILS_LISTTEXTW
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct MIXERCONTROLDETAILS_LISTTEXTW
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwParam1;
+    [NativeTypeName("DWORD")]
+    public uint dwParam1;
 
-        [NativeTypeName("DWORD")]
-        public uint dwParam2;
+    [NativeTypeName("DWORD")]
+    public uint dwParam2;
 
-        [NativeTypeName("WCHAR [64]")]
-        public fixed ushort szName[64];
-    }
+    [NativeTypeName("WCHAR [64]")]
+    public fixed ushort szName[64];
 }

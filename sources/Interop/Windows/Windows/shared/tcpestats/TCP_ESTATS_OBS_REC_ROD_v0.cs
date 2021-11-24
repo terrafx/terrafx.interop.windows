@@ -3,20 +3,19 @@
 // Ported from shared/tcpestats.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TCP_ESTATS_OBS_REC_ROD_v0
 {
-    public partial struct TCP_ESTATS_OBS_REC_ROD_v0
-    {
-        [NativeTypeName("ULONG")]
-        public uint CurRwinRcvd;
+    [NativeTypeName("ULONG")]
+    public uint CurRwinRcvd;
 
-        [NativeTypeName("ULONG")]
-        public uint MaxRwinRcvd;
+    [NativeTypeName("ULONG")]
+    public uint MaxRwinRcvd;
 
-        [NativeTypeName("ULONG")]
-        public uint MinRwinRcvd;
+    [NativeTypeName("ULONG")]
+    public uint MinRwinRcvd;
 
-        [NativeTypeName("UCHAR")]
-        public byte WinScaleRcvd;
-    }
+    [NativeTypeName("UCHAR")]
+    public byte WinScaleRcvd;
 }

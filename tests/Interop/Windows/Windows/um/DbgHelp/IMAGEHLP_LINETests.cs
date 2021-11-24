@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMAGEHLP_LINE" /> struct.</summary>
+public static unsafe partial class IMAGEHLP_LINETests
 {
-    /// <summary>Provides validation of the <see cref="IMAGEHLP_LINE" /> struct.</summary>
-    public static unsafe partial class IMAGEHLP_LINETests
+    /// <summary>Validates that the <see cref="IMAGEHLP_LINE" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IMAGEHLP_LINE" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMAGEHLP_LINE>(), Is.EqualTo(sizeof(IMAGEHLP_LINE)));
-        }
+        Assert.That(Marshal.SizeOf<IMAGEHLP_LINE>(), Is.EqualTo(sizeof(IMAGEHLP_LINE)));
+    }
 
-        /// <summary>Validates that the <see cref="IMAGEHLP_LINE" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMAGEHLP_LINE).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMAGEHLP_LINE" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMAGEHLP_LINE).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMAGEHLP_LINE" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IMAGEHLP_LINE" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IMAGEHLP_LINE), Is.EqualTo(40));
-            }
-            else
-            {
-                Assert.That(sizeof(IMAGEHLP_LINE), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(IMAGEHLP_LINE), Is.EqualTo(40));
+        }
+        else
+        {
+            Assert.That(sizeof(IMAGEHLP_LINE), Is.EqualTo(20));
         }
     }
 }

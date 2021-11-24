@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("55D7B852-F6D1-42F2-AA75-8728A1B2D264")]
+public partial struct SizeCategorizer
 {
-    [Guid("55D7B852-F6D1-42F2-AA75-8728A1B2D264")]
-    public partial struct SizeCategorizer
-    {
-    }
 }

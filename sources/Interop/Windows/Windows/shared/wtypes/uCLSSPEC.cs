@@ -6,61 +6,60 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct uCLSSPEC
 {
-    public partial struct uCLSSPEC
+    [NativeTypeName("DWORD")]
+    public uint tyspec;
+
+    [NativeTypeName("union __MIDL___MIDL_itf_wtypes_0000_0001_0005")]
+    public _tagged_union_e__Union tagged_union;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _tagged_union_e__Union
     {
-        [NativeTypeName("DWORD")]
-        public uint tyspec;
+        [FieldOffset(0)]
+        [NativeTypeName("CLSID")]
+        public Guid clsid;
 
-        [NativeTypeName("union __MIDL___MIDL_itf_wtypes_0000_0001_0005")]
-        public _tagged_union_e__Union tagged_union;
+        [FieldOffset(0)]
+        [NativeTypeName("LPOLESTR")]
+        public ushort* pFileExt;
 
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _tagged_union_e__Union
+        [FieldOffset(0)]
+        [NativeTypeName("LPOLESTR")]
+        public ushort* pMimeType;
+
+        [FieldOffset(0)]
+        [NativeTypeName("LPOLESTR")]
+        public ushort* pProgId;
+
+        [FieldOffset(0)]
+        [NativeTypeName("LPOLESTR")]
+        public ushort* pFileName;
+
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/wtypes.h:938:24)")]
+        public _ByName_e__Struct ByName;
+
+        [FieldOffset(0)]
+        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/wtypes.h:943:24)")]
+        public _ByObjectId_e__Struct ByObjectId;
+
+        public unsafe partial struct _ByName_e__Struct
         {
-            [FieldOffset(0)]
-            [NativeTypeName("CLSID")]
-            public Guid clsid;
-
-            [FieldOffset(0)]
             [NativeTypeName("LPOLESTR")]
-            public ushort* pFileExt;
+            public ushort* pPackageName;
 
-            [FieldOffset(0)]
-            [NativeTypeName("LPOLESTR")]
-            public ushort* pMimeType;
+            public Guid PolicyId;
+        }
 
-            [FieldOffset(0)]
-            [NativeTypeName("LPOLESTR")]
-            public ushort* pProgId;
+        public partial struct _ByObjectId_e__Struct
+        {
+            public Guid ObjectId;
 
-            [FieldOffset(0)]
-            [NativeTypeName("LPOLESTR")]
-            public ushort* pFileName;
-
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/wtypes.h:938:24)")]
-            public _ByName_e__Struct ByName;
-
-            [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/wtypes.h:943:24)")]
-            public _ByObjectId_e__Struct ByObjectId;
-
-            public unsafe partial struct _ByName_e__Struct
-            {
-                [NativeTypeName("LPOLESTR")]
-                public ushort* pPackageName;
-
-                public Guid PolicyId;
-            }
-
-            public partial struct _ByObjectId_e__Struct
-            {
-                public Guid ObjectId;
-
-                public Guid PolicyId;
-            }
+            public Guid PolicyId;
         }
     }
 }

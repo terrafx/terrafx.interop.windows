@@ -5,17 +5,16 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Flags]
+public enum FOLDERVIEWOPTIONS
 {
-    [Flags]
-    public enum FOLDERVIEWOPTIONS
-    {
-        FVO_DEFAULT = 0,
-        FVO_VISTALAYOUT = 0x1,
-        FVO_CUSTOMPOSITION = 0x2,
-        FVO_CUSTOMORDERING = 0x4,
-        FVO_SUPPORTHYPERLINKS = 0x8,
-        FVO_NOANIMATIONS = 0x10,
-        FVO_NOSCROLLTIPS = 0x20,
-    }
+    FVO_DEFAULT = 0,
+    FVO_VISTALAYOUT = 0x1,
+    FVO_CUSTOMPOSITION = 0x2,
+    FVO_CUSTOMORDERING = 0x4,
+    FVO_SUPPORTHYPERLINKS = 0x8,
+    FVO_NOANIMATIONS = 0x10,
+    FVO_NOSCROLLTIPS = 0x20,
 }

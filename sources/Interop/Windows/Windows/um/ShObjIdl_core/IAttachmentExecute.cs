@@ -7,207 +7,206 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("73DB1241-1E85-4581-8E4F-A81E1D0F8C57")]
+[NativeTypeName("struct IAttachmentExecute : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IAttachmentExecute : IAttachmentExecute.Interface
 {
-    [Guid("73DB1241-1E85-4581-8E4F-A81E1D0F8C57")]
-    [NativeTypeName("struct IAttachmentExecute : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IAttachmentExecute : IAttachmentExecute.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IAttachmentExecute*, Guid*, void**, int>)(lpVtbl[0]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IAttachmentExecute*, Guid*, void**, int>)(lpVtbl[0]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IAttachmentExecute*, uint>)(lpVtbl[1]))((IAttachmentExecute*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IAttachmentExecute*, uint>)(lpVtbl[1]))((IAttachmentExecute*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IAttachmentExecute*, uint>)(lpVtbl[2]))((IAttachmentExecute*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IAttachmentExecute*, uint>)(lpVtbl[2]))((IAttachmentExecute*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT SetClientTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle)
+    {
+        return ((delegate* unmanaged<IAttachmentExecute*, ushort*, int>)(lpVtbl[3]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), pszTitle);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT SetClientGuid([NativeTypeName("const GUID &")] Guid* guid)
+    {
+        return ((delegate* unmanaged<IAttachmentExecute*, Guid*, int>)(lpVtbl[4]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), guid);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT SetLocalPath([NativeTypeName("LPCWSTR")] ushort* pszLocalPath)
+    {
+        return ((delegate* unmanaged<IAttachmentExecute*, ushort*, int>)(lpVtbl[5]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), pszLocalPath);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT SetFileName([NativeTypeName("LPCWSTR")] ushort* pszFileName)
+    {
+        return ((delegate* unmanaged<IAttachmentExecute*, ushort*, int>)(lpVtbl[6]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), pszFileName);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT SetSource([NativeTypeName("LPCWSTR")] ushort* pszSource)
+    {
+        return ((delegate* unmanaged<IAttachmentExecute*, ushort*, int>)(lpVtbl[7]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), pszSource);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT SetReferrer([NativeTypeName("LPCWSTR")] ushort* pszReferrer)
+    {
+        return ((delegate* unmanaged<IAttachmentExecute*, ushort*, int>)(lpVtbl[8]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), pszReferrer);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT CheckPolicy()
+    {
+        return ((delegate* unmanaged<IAttachmentExecute*, int>)(lpVtbl[9]))((IAttachmentExecute*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(10)]
+    public HRESULT Prompt(HWND hwnd, ATTACHMENT_PROMPT prompt, ATTACHMENT_ACTION* paction)
+    {
+        return ((delegate* unmanaged<IAttachmentExecute*, HWND, ATTACHMENT_PROMPT, ATTACHMENT_ACTION*, int>)(lpVtbl[10]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), hwnd, prompt, paction);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(11)]
+    public HRESULT Save()
+    {
+        return ((delegate* unmanaged<IAttachmentExecute*, int>)(lpVtbl[11]))((IAttachmentExecute*)Unsafe.AsPointer(ref this));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(12)]
+    public HRESULT Execute(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszVerb, HANDLE* phProcess)
+    {
+        return ((delegate* unmanaged<IAttachmentExecute*, HWND, ushort*, HANDLE*, int>)(lpVtbl[12]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), hwnd, pszVerb, phProcess);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(13)]
+    public HRESULT SaveWithUI(HWND hwnd)
+    {
+        return ((delegate* unmanaged<IAttachmentExecute*, HWND, int>)(lpVtbl[13]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), hwnd);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(14)]
+    public HRESULT ClearClientState()
+    {
+        return ((delegate* unmanaged<IAttachmentExecute*, int>)(lpVtbl[14]))((IAttachmentExecute*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
-        public HRESULT SetClientTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle)
-        {
-            return ((delegate* unmanaged<IAttachmentExecute*, ushort*, int>)(lpVtbl[3]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), pszTitle);
-        }
+        HRESULT SetClientTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT SetClientGuid([NativeTypeName("const GUID &")] Guid* guid)
-        {
-            return ((delegate* unmanaged<IAttachmentExecute*, Guid*, int>)(lpVtbl[4]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), guid);
-        }
+        HRESULT SetClientGuid([NativeTypeName("const GUID &")] Guid* guid);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT SetLocalPath([NativeTypeName("LPCWSTR")] ushort* pszLocalPath)
-        {
-            return ((delegate* unmanaged<IAttachmentExecute*, ushort*, int>)(lpVtbl[5]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), pszLocalPath);
-        }
+        HRESULT SetLocalPath([NativeTypeName("LPCWSTR")] ushort* pszLocalPath);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public HRESULT SetFileName([NativeTypeName("LPCWSTR")] ushort* pszFileName)
-        {
-            return ((delegate* unmanaged<IAttachmentExecute*, ushort*, int>)(lpVtbl[6]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), pszFileName);
-        }
+        HRESULT SetFileName([NativeTypeName("LPCWSTR")] ushort* pszFileName);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT SetSource([NativeTypeName("LPCWSTR")] ushort* pszSource)
-        {
-            return ((delegate* unmanaged<IAttachmentExecute*, ushort*, int>)(lpVtbl[7]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), pszSource);
-        }
+        HRESULT SetSource([NativeTypeName("LPCWSTR")] ushort* pszSource);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT SetReferrer([NativeTypeName("LPCWSTR")] ushort* pszReferrer)
-        {
-            return ((delegate* unmanaged<IAttachmentExecute*, ushort*, int>)(lpVtbl[8]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), pszReferrer);
-        }
+        HRESULT SetReferrer([NativeTypeName("LPCWSTR")] ushort* pszReferrer);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(9)]
-        public HRESULT CheckPolicy()
-        {
-            return ((delegate* unmanaged<IAttachmentExecute*, int>)(lpVtbl[9]))((IAttachmentExecute*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT CheckPolicy();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(10)]
-        public HRESULT Prompt(HWND hwnd, ATTACHMENT_PROMPT prompt, ATTACHMENT_ACTION* paction)
-        {
-            return ((delegate* unmanaged<IAttachmentExecute*, HWND, ATTACHMENT_PROMPT, ATTACHMENT_ACTION*, int>)(lpVtbl[10]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), hwnd, prompt, paction);
-        }
+        HRESULT Prompt(HWND hwnd, ATTACHMENT_PROMPT prompt, ATTACHMENT_ACTION* paction);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(11)]
-        public HRESULT Save()
-        {
-            return ((delegate* unmanaged<IAttachmentExecute*, int>)(lpVtbl[11]))((IAttachmentExecute*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Save();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(12)]
-        public HRESULT Execute(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszVerb, HANDLE* phProcess)
-        {
-            return ((delegate* unmanaged<IAttachmentExecute*, HWND, ushort*, HANDLE*, int>)(lpVtbl[12]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), hwnd, pszVerb, phProcess);
-        }
+        HRESULT Execute(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszVerb, HANDLE* phProcess);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(13)]
-        public HRESULT SaveWithUI(HWND hwnd)
-        {
-            return ((delegate* unmanaged<IAttachmentExecute*, HWND, int>)(lpVtbl[13]))((IAttachmentExecute*)Unsafe.AsPointer(ref this), hwnd);
-        }
+        HRESULT SaveWithUI(HWND hwnd);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(14)]
-        public HRESULT ClearClientState()
-        {
-            return ((delegate* unmanaged<IAttachmentExecute*, int>)(lpVtbl[14]))((IAttachmentExecute*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT ClearClientState();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            HRESULT SetClientTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle);
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAttachmentExecute*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT SetClientGuid([NativeTypeName("const GUID &")] Guid* guid);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAttachmentExecute*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT SetLocalPath([NativeTypeName("LPCWSTR")] ushort* pszLocalPath);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAttachmentExecute*, uint> Release;
 
-            [VtblIndex(6)]
-            HRESULT SetFileName([NativeTypeName("LPCWSTR")] ushort* pszFileName);
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAttachmentExecute*, ushort*, int> SetClientTitle;
 
-            [VtblIndex(7)]
-            HRESULT SetSource([NativeTypeName("LPCWSTR")] ushort* pszSource);
+        [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAttachmentExecute*, Guid*, int> SetClientGuid;
 
-            [VtblIndex(8)]
-            HRESULT SetReferrer([NativeTypeName("LPCWSTR")] ushort* pszReferrer);
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAttachmentExecute*, ushort*, int> SetLocalPath;
 
-            [VtblIndex(9)]
-            HRESULT CheckPolicy();
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAttachmentExecute*, ushort*, int> SetFileName;
 
-            [VtblIndex(10)]
-            HRESULT Prompt(HWND hwnd, ATTACHMENT_PROMPT prompt, ATTACHMENT_ACTION* paction);
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAttachmentExecute*, ushort*, int> SetSource;
 
-            [VtblIndex(11)]
-            HRESULT Save();
+        [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAttachmentExecute*, ushort*, int> SetReferrer;
 
-            [VtblIndex(12)]
-            HRESULT Execute(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszVerb, HANDLE* phProcess);
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAttachmentExecute*, int> CheckPolicy;
 
-            [VtblIndex(13)]
-            HRESULT SaveWithUI(HWND hwnd);
+        [NativeTypeName("HRESULT (HWND, ATTACHMENT_PROMPT, ATTACHMENT_ACTION *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAttachmentExecute*, HWND, ATTACHMENT_PROMPT, ATTACHMENT_ACTION*, int> Prompt;
 
-            [VtblIndex(14)]
-            HRESULT ClearClientState();
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAttachmentExecute*, int> Save;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAttachmentExecute*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("HRESULT (HWND, LPCWSTR, HANDLE *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAttachmentExecute*, HWND, ushort*, HANDLE*, int> Execute;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAttachmentExecute*, uint> AddRef;
+        [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
+        public delegate* unmanaged<IAttachmentExecute*, HWND, int> SaveWithUI;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAttachmentExecute*, uint> Release;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAttachmentExecute*, ushort*, int> SetClientTitle;
-
-            [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAttachmentExecute*, Guid*, int> SetClientGuid;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAttachmentExecute*, ushort*, int> SetLocalPath;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAttachmentExecute*, ushort*, int> SetFileName;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAttachmentExecute*, ushort*, int> SetSource;
-
-            [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAttachmentExecute*, ushort*, int> SetReferrer;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAttachmentExecute*, int> CheckPolicy;
-
-            [NativeTypeName("HRESULT (HWND, ATTACHMENT_PROMPT, ATTACHMENT_ACTION *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAttachmentExecute*, HWND, ATTACHMENT_PROMPT, ATTACHMENT_ACTION*, int> Prompt;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAttachmentExecute*, int> Save;
-
-            [NativeTypeName("HRESULT (HWND, LPCWSTR, HANDLE *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAttachmentExecute*, HWND, ushort*, HANDLE*, int> Execute;
-
-            [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-            public delegate* unmanaged<IAttachmentExecute*, HWND, int> SaveWithUI;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IAttachmentExecute*, int> ClearClientState;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IAttachmentExecute*, int> ClearClientState;
     }
 }

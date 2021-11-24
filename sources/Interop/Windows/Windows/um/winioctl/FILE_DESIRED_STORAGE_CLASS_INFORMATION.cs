@@ -3,13 +3,12 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct FILE_DESIRED_STORAGE_CLASS_INFORMATION
-    {
-        public FILE_STORAGE_TIER_CLASS Class;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
-    }
+public partial struct FILE_DESIRED_STORAGE_CLASS_INFORMATION
+{
+    public FILE_STORAGE_TIER_CLASS Class;
+
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 }

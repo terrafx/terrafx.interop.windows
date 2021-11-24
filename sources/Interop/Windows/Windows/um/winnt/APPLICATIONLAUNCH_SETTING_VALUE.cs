@@ -3,16 +3,15 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct APPLICATIONLAUNCH_SETTING_VALUE
 {
-    public partial struct APPLICATIONLAUNCH_SETTING_VALUE
-    {
-        public LARGE_INTEGER ActivationTime;
+    public LARGE_INTEGER ActivationTime;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        [NativeTypeName("DWORD")]
-        public uint ButtonInstanceID;
-    }
+    [NativeTypeName("DWORD")]
+    public uint ButtonInstanceID;
 }

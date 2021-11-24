@@ -3,13 +3,12 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct DISPLAYCONFIG_SDR_WHITE_LEVEL
-    {
-        public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("ULONG")]
-        public uint SDRWhiteLevel;
-    }
+public partial struct DISPLAYCONFIG_SDR_WHITE_LEVEL
+{
+    public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
+
+    [NativeTypeName("ULONG")]
+    public uint SDRWhiteLevel;
 }

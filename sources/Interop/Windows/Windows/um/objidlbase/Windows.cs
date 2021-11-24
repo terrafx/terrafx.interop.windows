@@ -3,14 +3,13 @@
 // Ported from um/objidlbase.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public static unsafe partial class Windows
-    {
-        [NativeTypeName("#define COLE_DEFAULT_PRINCIPAL ( ( OLECHAR * )( INT_PTR  )-1 )")]
-        public static ushort* COLE_DEFAULT_PRINCIPAL => unchecked((ushort*)((nint)(-1)));
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("#define COLE_DEFAULT_AUTHINFO ( ( void * )( INT_PTR  )-1 )")]
-        public static void* COLE_DEFAULT_AUTHINFO => unchecked((void*)((nint)(-1)));
-    }
+public static unsafe partial class Windows
+{
+    [NativeTypeName("#define COLE_DEFAULT_PRINCIPAL ( ( OLECHAR * )( INT_PTR  )-1 )")]
+    public static ushort* COLE_DEFAULT_PRINCIPAL => unchecked((ushort*)((nint)(-1)));
+
+    [NativeTypeName("#define COLE_DEFAULT_AUTHINFO ( ( void * )( INT_PTR  )-1 )")]
+    public static void* COLE_DEFAULT_AUTHINFO => unchecked((void*)((nint)(-1)));
 }

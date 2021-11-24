@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("3AD05575-8857-4850-9277-11B85BDB8E09")]
+public partial struct FileOperation
 {
-    [Guid("3AD05575-8857-4850-9277-11B85BDB8E09")]
-    public partial struct FileOperation
-    {
-    }
 }

@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("8D390AAC-DC5C-4200-B57F-814D04BABAB2")]
+public partial struct CODECAPI_AVEncMPVDefaultBPictureCount
 {
-    [Guid("8D390AAC-DC5C-4200-B57F-814D04BABAB2")]
-    public partial struct CODECAPI_AVEncMPVDefaultBPictureCount
-    {
-    }
 }

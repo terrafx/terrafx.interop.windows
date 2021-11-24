@@ -3,14 +3,13 @@
 // Ported from um/dvdmedia.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct AM_DVDCOPY_CHLGKEY
-    {
-        [NativeTypeName("BYTE [10]")]
-        public fixed byte ChlgKey[10];
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("BYTE [2]")]
-        public fixed byte Reserved[2];
-    }
+public unsafe partial struct AM_DVDCOPY_CHLGKEY
+{
+    [NativeTypeName("BYTE [10]")]
+    public fixed byte ChlgKey[10];
+
+    [NativeTypeName("BYTE [2]")]
+    public fixed byte Reserved[2];
 }

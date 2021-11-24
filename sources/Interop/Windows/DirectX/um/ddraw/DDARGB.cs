@@ -3,16 +3,15 @@
 // Ported from um/ddraw.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DDARGB
 {
-    public partial struct DDARGB
-    {
-        public byte blue;
+    public byte blue;
 
-        public byte green;
+    public byte green;
 
-        public byte red;
+    public byte red;
 
-        public byte alpha;
-    }
+    public byte alpha;
 }

@@ -5,24 +5,23 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe partial struct MFCONTENTPROTECTIONDEVICE_INPUT_DATA
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe partial struct MFCONTENTPROTECTIONDEVICE_INPUT_DATA
-    {
-        [NativeTypeName("DWORD")]
-        public uint HWProtectionFunctionID;
+    [NativeTypeName("DWORD")]
+    public uint HWProtectionFunctionID;
 
-        [NativeTypeName("DWORD")]
-        public uint PrivateDataByteCount;
+    [NativeTypeName("DWORD")]
+    public uint PrivateDataByteCount;
 
-        [NativeTypeName("DWORD")]
-        public uint HWProtectionDataByteCount;
+    [NativeTypeName("DWORD")]
+    public uint HWProtectionDataByteCount;
 
-        [NativeTypeName("DWORD")]
-        public uint Reserved;
+    [NativeTypeName("DWORD")]
+    public uint Reserved;
 
-        [NativeTypeName("BYTE [4]")]
-        public fixed byte InputData[4];
-    }
+    [NativeTypeName("BYTE [4]")]
+    public fixed byte InputData[4];
 }

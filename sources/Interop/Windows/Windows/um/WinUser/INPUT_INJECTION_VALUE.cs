@@ -5,18 +5,17 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows10.0.17763.0")]
+public partial struct INPUT_INJECTION_VALUE
 {
-    [SupportedOSPlatform("windows10.0.17763.0")]
-    public partial struct INPUT_INJECTION_VALUE
-    {
-        public ushort page;
+    public ushort page;
 
-        public ushort usage;
+    public ushort usage;
 
-        [NativeTypeName("INT32")]
-        public int value;
+    [NativeTypeName("INT32")]
+    public int value;
 
-        public ushort index;
-    }
+    public ushort index;
 }

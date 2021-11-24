@@ -5,15 +5,14 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct FXECHO_PARAMETERS
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct FXECHO_PARAMETERS
-    {
-        public float WetDryMix;
+    public float WetDryMix;
 
-        public float Feedback;
+    public float Feedback;
 
-        public float Delay;
-    }
+    public float Delay;
 }

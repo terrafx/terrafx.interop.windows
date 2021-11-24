@@ -3,20 +3,19 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct QUERY_BAD_RANGES_OUTPUT_RANGE
 {
-    public partial struct QUERY_BAD_RANGES_OUTPUT_RANGE
-    {
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        [NativeTypeName("DWORD")]
-        public uint Reserved;
+    [NativeTypeName("DWORD")]
+    public uint Reserved;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong StartOffset;
+    [NativeTypeName("DWORDLONG")]
+    public ulong StartOffset;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong LengthInBytes;
-    }
+    [NativeTypeName("DWORDLONG")]
+    public ulong LengthInBytes;
 }

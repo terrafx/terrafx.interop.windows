@@ -3,20 +3,19 @@
 // Ported from shared/dxgitype.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public partial struct DXGI_MODE_DESC
 {
-    public partial struct DXGI_MODE_DESC
-    {
-        public uint Width;
+    public uint Width;
 
-        public uint Height;
+    public uint Height;
 
-        public DXGI_RATIONAL RefreshRate;
+    public DXGI_RATIONAL RefreshRate;
 
-        public DXGI_FORMAT Format;
+    public DXGI_FORMAT Format;
 
-        public DXGI_MODE_SCANLINE_ORDER ScanlineOrdering;
+    public DXGI_MODE_SCANLINE_ORDER ScanlineOrdering;
 
-        public DXGI_MODE_SCALING Scaling;
-    }
+    public DXGI_MODE_SCALING Scaling;
 }

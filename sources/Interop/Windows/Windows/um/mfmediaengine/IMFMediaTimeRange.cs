@@ -8,132 +8,131 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+[Guid("DB71A2FC-078A-414E-9DF9-8C2531B0AA6C")]
+[NativeTypeName("struct IMFMediaTimeRange : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface
 {
-    [SupportedOSPlatform("windows8.0")]
-    [Guid("DB71A2FC-078A-414E-9DF9-8C2531B0AA6C")]
-    [NativeTypeName("struct IMFMediaTimeRange : IUnknown")]
-    [NativeInheritance("IUnknown")]
-    public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface
+    public void** lpVtbl;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        public void** lpVtbl;
+        return ((delegate* unmanaged<IMFMediaTimeRange*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(0)]
-        public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
-        {
-            return ((delegate* unmanaged<IMFMediaTimeRange*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), riid, ppvObject);
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged<IMFMediaTimeRange*, uint>)(lpVtbl[1]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(1)]
-        [return: NativeTypeName("ULONG")]
-        public uint AddRef()
-        {
-            return ((delegate* unmanaged<IMFMediaTimeRange*, uint>)(lpVtbl[1]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged<IMFMediaTimeRange*, uint>)(lpVtbl[2]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [VtblIndex(2)]
-        [return: NativeTypeName("ULONG")]
-        public uint Release()
-        {
-            return ((delegate* unmanaged<IMFMediaTimeRange*, uint>)(lpVtbl[2]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this));
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    [return: NativeTypeName("DWORD")]
+    public uint GetLength()
+    {
+        return ((delegate* unmanaged<IMFMediaTimeRange*, uint>)(lpVtbl[3]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this));
+    }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetStart([NativeTypeName("DWORD")] uint index, double* pStart)
+    {
+        return ((delegate* unmanaged<IMFMediaTimeRange*, uint, double*, int>)(lpVtbl[4]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), index, pStart);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetEnd([NativeTypeName("DWORD")] uint index, double* pEnd)
+    {
+        return ((delegate* unmanaged<IMFMediaTimeRange*, uint, double*, int>)(lpVtbl[5]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), index, pEnd);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public BOOL ContainsTime(double time)
+    {
+        return ((delegate* unmanaged<IMFMediaTimeRange*, double, int>)(lpVtbl[6]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), time);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT AddRange(double startTime, double endTime)
+    {
+        return ((delegate* unmanaged<IMFMediaTimeRange*, double, double, int>)(lpVtbl[7]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), startTime, endTime);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT Clear()
+    {
+        return ((delegate* unmanaged<IMFMediaTimeRange*, int>)(lpVtbl[8]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this));
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
         [VtblIndex(3)]
         [return: NativeTypeName("DWORD")]
-        public uint GetLength()
-        {
-            return ((delegate* unmanaged<IMFMediaTimeRange*, uint>)(lpVtbl[3]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this));
-        }
+        uint GetLength();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(4)]
-        public HRESULT GetStart([NativeTypeName("DWORD")] uint index, double* pStart)
-        {
-            return ((delegate* unmanaged<IMFMediaTimeRange*, uint, double*, int>)(lpVtbl[4]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), index, pStart);
-        }
+        HRESULT GetStart([NativeTypeName("DWORD")] uint index, double* pStart);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(5)]
-        public HRESULT GetEnd([NativeTypeName("DWORD")] uint index, double* pEnd)
-        {
-            return ((delegate* unmanaged<IMFMediaTimeRange*, uint, double*, int>)(lpVtbl[5]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), index, pEnd);
-        }
+        HRESULT GetEnd([NativeTypeName("DWORD")] uint index, double* pEnd);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(6)]
-        public BOOL ContainsTime(double time)
-        {
-            return ((delegate* unmanaged<IMFMediaTimeRange*, double, int>)(lpVtbl[6]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), time);
-        }
+        BOOL ContainsTime(double time);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(7)]
-        public HRESULT AddRange(double startTime, double endTime)
-        {
-            return ((delegate* unmanaged<IMFMediaTimeRange*, double, double, int>)(lpVtbl[7]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), startTime, endTime);
-        }
+        HRESULT AddRange(double startTime, double endTime);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [VtblIndex(8)]
-        public HRESULT Clear()
-        {
-            return ((delegate* unmanaged<IMFMediaTimeRange*, int>)(lpVtbl[8]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this));
-        }
+        HRESULT Clear();
+    }
 
-        public interface Interface : IUnknown.Interface
-        {
-            [VtblIndex(3)]
-            [return: NativeTypeName("DWORD")]
-            uint GetLength();
+    public partial struct Vtbl
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaTimeRange*, Guid*, void**, int> QueryInterface;
 
-            [VtblIndex(4)]
-            HRESULT GetStart([NativeTypeName("DWORD")] uint index, double* pStart);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaTimeRange*, uint> AddRef;
 
-            [VtblIndex(5)]
-            HRESULT GetEnd([NativeTypeName("DWORD")] uint index, double* pEnd);
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaTimeRange*, uint> Release;
 
-            [VtblIndex(6)]
-            BOOL ContainsTime(double time);
+        [NativeTypeName("DWORD () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaTimeRange*, uint> GetLength;
 
-            [VtblIndex(7)]
-            HRESULT AddRange(double startTime, double endTime);
+        [NativeTypeName("HRESULT (DWORD, double *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaTimeRange*, uint, double*, int> GetStart;
 
-            [VtblIndex(8)]
-            HRESULT Clear();
-        }
+        [NativeTypeName("HRESULT (DWORD, double *) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaTimeRange*, uint, double*, int> GetEnd;
 
-        public partial struct Vtbl
-        {
-            [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaTimeRange*, Guid*, void**, int> QueryInterface;
+        [NativeTypeName("BOOL (double) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaTimeRange*, double, int> ContainsTime;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaTimeRange*, uint> AddRef;
+        [NativeTypeName("HRESULT (double, double) __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaTimeRange*, double, double, int> AddRange;
 
-            [NativeTypeName("ULONG () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaTimeRange*, uint> Release;
-
-            [NativeTypeName("DWORD () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaTimeRange*, uint> GetLength;
-
-            [NativeTypeName("HRESULT (DWORD, double *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaTimeRange*, uint, double*, int> GetStart;
-
-            [NativeTypeName("HRESULT (DWORD, double *) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaTimeRange*, uint, double*, int> GetEnd;
-
-            [NativeTypeName("BOOL (double) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaTimeRange*, double, int> ContainsTime;
-
-            [NativeTypeName("HRESULT (double, double) __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaTimeRange*, double, double, int> AddRange;
-
-            [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-            public delegate* unmanaged<IMFMediaTimeRange*, int> Clear;
-        }
+        [NativeTypeName("HRESULT () __attribute__((stdcall))")]
+        public delegate* unmanaged<IMFMediaTimeRange*, int> Clear;
     }
 }

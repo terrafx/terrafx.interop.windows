@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="STATDATA" /> struct.</summary>
+public static unsafe partial class STATDATATests
 {
-    /// <summary>Provides validation of the <see cref="STATDATA" /> struct.</summary>
-    public static unsafe partial class STATDATATests
+    /// <summary>Validates that the <see cref="STATDATA" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="STATDATA" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<STATDATA>(), Is.EqualTo(sizeof(STATDATA)));
-        }
+        Assert.That(Marshal.SizeOf<STATDATA>(), Is.EqualTo(sizeof(STATDATA)));
+    }
 
-        /// <summary>Validates that the <see cref="STATDATA" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(STATDATA).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="STATDATA" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(STATDATA).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="STATDATA" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="STATDATA" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(STATDATA), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(STATDATA), Is.EqualTo(32));
-            }
+            Assert.That(sizeof(STATDATA), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(STATDATA), Is.EqualTo(32));
         }
     }
 }

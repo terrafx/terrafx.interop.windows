@@ -5,13 +5,12 @@
 
 using static TerraFX.Interop.Windows.SPRECOSTATE;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public enum SpeechRecognizerState
 {
-    public enum SpeechRecognizerState
-    {
-        SRSInactive = SPRST_INACTIVE,
-        SRSActive = SPRST_ACTIVE,
-        SRSActiveAlways = SPRST_ACTIVE_ALWAYS,
-        SRSInactiveWithPurge = SPRST_INACTIVE_WITH_PURGE,
-    }
+    SRSInactive = SPRST_INACTIVE,
+    SRSActive = SPRST_ACTIVE,
+    SRSActiveAlways = SPRST_ACTIVE_ALWAYS,
+    SRSInactiveWithPurge = SPRST_INACTIVE_WITH_PURGE,
 }

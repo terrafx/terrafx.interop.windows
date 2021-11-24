@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="NT_TIB64" /> struct.</summary>
+public static unsafe partial class NT_TIB64Tests
 {
-    /// <summary>Provides validation of the <see cref="NT_TIB64" /> struct.</summary>
-    public static unsafe partial class NT_TIB64Tests
+    /// <summary>Validates that the <see cref="NT_TIB64" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="NT_TIB64" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<NT_TIB64>(), Is.EqualTo(sizeof(NT_TIB64)));
-        }
+        Assert.That(Marshal.SizeOf<NT_TIB64>(), Is.EqualTo(sizeof(NT_TIB64)));
+    }
 
-        /// <summary>Validates that the <see cref="NT_TIB64" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(NT_TIB64).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="NT_TIB64" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(NT_TIB64).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="NT_TIB64" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(NT_TIB64), Is.EqualTo(56));
-        }
+    /// <summary>Validates that the <see cref="NT_TIB64" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(NT_TIB64), Is.EqualTo(56));
     }
 }

@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IAMCrossbar" /> struct.</summary>
+public static unsafe partial class IAMCrossbarTests
 {
-    /// <summary>Provides validation of the <see cref="IAMCrossbar" /> struct.</summary>
-    public static unsafe partial class IAMCrossbarTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMCrossbar" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IAMCrossbar" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(IAMCrossbar).GUID, Is.EqualTo(IID_IAMCrossbar));
-        }
+        Assert.That(typeof(IAMCrossbar).GUID, Is.EqualTo(IID_IAMCrossbar));
+    }
 
-        /// <summary>Validates that the <see cref="IAMCrossbar" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IAMCrossbar>(), Is.EqualTo(sizeof(IAMCrossbar)));
-        }
+    /// <summary>Validates that the <see cref="IAMCrossbar" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<IAMCrossbar>(), Is.EqualTo(sizeof(IAMCrossbar)));
+    }
 
-        /// <summary>Validates that the <see cref="IAMCrossbar" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IAMCrossbar).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IAMCrossbar" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IAMCrossbar).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IAMCrossbar" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="IAMCrossbar" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(IAMCrossbar), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(IAMCrossbar), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(IAMCrossbar), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(IAMCrossbar), Is.EqualTo(4));
         }
     }
 }

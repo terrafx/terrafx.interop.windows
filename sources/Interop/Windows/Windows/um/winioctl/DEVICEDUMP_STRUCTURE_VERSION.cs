@@ -5,18 +5,17 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+public partial struct DEVICEDUMP_STRUCTURE_VERSION
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public partial struct DEVICEDUMP_STRUCTURE_VERSION
-    {
-        [NativeTypeName("DWORD")]
-        public uint dwSignature;
+    [NativeTypeName("DWORD")]
+    public uint dwSignature;
 
-        [NativeTypeName("DWORD")]
-        public uint dwVersion;
+    [NativeTypeName("DWORD")]
+    public uint dwVersion;
 
-        [NativeTypeName("DWORD")]
-        public uint dwSize;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwSize;
 }

@@ -5,84 +5,83 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TXFS_QUERY_RM_INFORMATION
 {
-    public partial struct TXFS_QUERY_RM_INFORMATION
-    {
-        [NativeTypeName("DWORD")]
-        public uint BytesRequired;
+    [NativeTypeName("DWORD")]
+    public uint BytesRequired;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong TailLsn;
+    [NativeTypeName("DWORDLONG")]
+    public ulong TailLsn;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong CurrentLsn;
+    [NativeTypeName("DWORDLONG")]
+    public ulong CurrentLsn;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong ArchiveTailLsn;
+    [NativeTypeName("DWORDLONG")]
+    public ulong ArchiveTailLsn;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong LogContainerSize;
+    [NativeTypeName("DWORDLONG")]
+    public ulong LogContainerSize;
 
-        public LARGE_INTEGER HighestVirtualClock;
+    public LARGE_INTEGER HighestVirtualClock;
 
-        [NativeTypeName("DWORD")]
-        public uint LogContainerCount;
+    [NativeTypeName("DWORD")]
+    public uint LogContainerCount;
 
-        [NativeTypeName("DWORD")]
-        public uint LogContainerCountMax;
+    [NativeTypeName("DWORD")]
+    public uint LogContainerCountMax;
 
-        [NativeTypeName("DWORD")]
-        public uint LogContainerCountMin;
+    [NativeTypeName("DWORD")]
+    public uint LogContainerCountMin;
 
-        [NativeTypeName("DWORD")]
-        public uint LogGrowthIncrement;
+    [NativeTypeName("DWORD")]
+    public uint LogGrowthIncrement;
 
-        [NativeTypeName("DWORD")]
-        public uint LogAutoShrinkPercentage;
+    [NativeTypeName("DWORD")]
+    public uint LogAutoShrinkPercentage;
 
-        [NativeTypeName("DWORD")]
-        public uint Flags;
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 
-        [NativeTypeName("WORD")]
-        public ushort LoggingMode;
+    [NativeTypeName("WORD")]
+    public ushort LoggingMode;
 
-        [NativeTypeName("WORD")]
-        public ushort Reserved;
+    [NativeTypeName("WORD")]
+    public ushort Reserved;
 
-        [NativeTypeName("DWORD")]
-        public uint RmState;
+    [NativeTypeName("DWORD")]
+    public uint RmState;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong LogCapacity;
+    [NativeTypeName("DWORDLONG")]
+    public ulong LogCapacity;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong LogFree;
+    [NativeTypeName("DWORDLONG")]
+    public ulong LogFree;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong TopsSize;
+    [NativeTypeName("DWORDLONG")]
+    public ulong TopsSize;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong TopsUsed;
+    [NativeTypeName("DWORDLONG")]
+    public ulong TopsUsed;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong TransactionCount;
+    [NativeTypeName("DWORDLONG")]
+    public ulong TransactionCount;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong OnePCCount;
+    [NativeTypeName("DWORDLONG")]
+    public ulong OnePCCount;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong TwoPCCount;
+    [NativeTypeName("DWORDLONG")]
+    public ulong TwoPCCount;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong NumberLogFileFull;
+    [NativeTypeName("DWORDLONG")]
+    public ulong NumberLogFileFull;
 
-        [NativeTypeName("DWORDLONG")]
-        public ulong OldestTransactionAge;
+    [NativeTypeName("DWORDLONG")]
+    public ulong OldestTransactionAge;
 
-        public Guid RMName;
+    public Guid RMName;
 
-        [NativeTypeName("DWORD")]
-        public uint TmLogPathOffset;
-    }
+    [NativeTypeName("DWORD")]
+    public uint TmLogPathOffset;
 }

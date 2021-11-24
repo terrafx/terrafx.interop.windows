@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="MFVideoSurfaceInfo" /> struct.</summary>
+public static unsafe partial class MFVideoSurfaceInfoTests
 {
-    /// <summary>Provides validation of the <see cref="MFVideoSurfaceInfo" /> struct.</summary>
-    public static unsafe partial class MFVideoSurfaceInfoTests
+    /// <summary>Validates that the <see cref="MFVideoSurfaceInfo" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="MFVideoSurfaceInfo" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<MFVideoSurfaceInfo>(), Is.EqualTo(sizeof(MFVideoSurfaceInfo)));
-        }
+        Assert.That(Marshal.SizeOf<MFVideoSurfaceInfo>(), Is.EqualTo(sizeof(MFVideoSurfaceInfo)));
+    }
 
-        /// <summary>Validates that the <see cref="MFVideoSurfaceInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(MFVideoSurfaceInfo).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="MFVideoSurfaceInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(MFVideoSurfaceInfo).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="MFVideoSurfaceInfo" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(MFVideoSurfaceInfo), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="MFVideoSurfaceInfo" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(MFVideoSurfaceInfo), Is.EqualTo(12));
     }
 }

@@ -3,15 +3,14 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct JOBOBJECT_IO_ATTRIBUTION_INFORMATION
 {
-    public partial struct JOBOBJECT_IO_ATTRIBUTION_INFORMATION
-    {
-        [NativeTypeName("DWORD")]
-        public uint ControlFlags;
+    [NativeTypeName("DWORD")]
+    public uint ControlFlags;
 
-        public JOBOBJECT_IO_ATTRIBUTION_STATS ReadStats;
+    public JOBOBJECT_IO_ATTRIBUTION_STATS ReadStats;
 
-        public JOBOBJECT_IO_ATTRIBUTION_STATS WriteStats;
-    }
+    public JOBOBJECT_IO_ATTRIBUTION_STATS WriteStats;
 }

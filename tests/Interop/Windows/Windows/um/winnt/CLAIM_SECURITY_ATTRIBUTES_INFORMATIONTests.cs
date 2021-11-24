@@ -8,38 +8,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="CLAIM_SECURITY_ATTRIBUTES_INFORMATION" /> struct.</summary>
+[SupportedOSPlatform("windows8.0")]
+public static unsafe partial class CLAIM_SECURITY_ATTRIBUTES_INFORMATIONTests
 {
-    /// <summary>Provides validation of the <see cref="CLAIM_SECURITY_ATTRIBUTES_INFORMATION" /> struct.</summary>
-    [SupportedOSPlatform("windows8.0")]
-    public static unsafe partial class CLAIM_SECURITY_ATTRIBUTES_INFORMATIONTests
+    /// <summary>Validates that the <see cref="CLAIM_SECURITY_ATTRIBUTES_INFORMATION" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="CLAIM_SECURITY_ATTRIBUTES_INFORMATION" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<CLAIM_SECURITY_ATTRIBUTES_INFORMATION>(), Is.EqualTo(sizeof(CLAIM_SECURITY_ATTRIBUTES_INFORMATION)));
-        }
+        Assert.That(Marshal.SizeOf<CLAIM_SECURITY_ATTRIBUTES_INFORMATION>(), Is.EqualTo(sizeof(CLAIM_SECURITY_ATTRIBUTES_INFORMATION)));
+    }
 
-        /// <summary>Validates that the <see cref="CLAIM_SECURITY_ATTRIBUTES_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(CLAIM_SECURITY_ATTRIBUTES_INFORMATION).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="CLAIM_SECURITY_ATTRIBUTES_INFORMATION" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(CLAIM_SECURITY_ATTRIBUTES_INFORMATION).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="CLAIM_SECURITY_ATTRIBUTES_INFORMATION" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="CLAIM_SECURITY_ATTRIBUTES_INFORMATION" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(CLAIM_SECURITY_ATTRIBUTES_INFORMATION), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(CLAIM_SECURITY_ATTRIBUTES_INFORMATION), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(CLAIM_SECURITY_ATTRIBUTES_INFORMATION), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(CLAIM_SECURITY_ATTRIBUTES_INFORMATION), Is.EqualTo(12));
         }
     }
 }

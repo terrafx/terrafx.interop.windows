@@ -3,20 +3,19 @@
 // Ported from um/d3d12video.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+public unsafe partial struct D3D12_VIDEO_PROCESS_REFERENCE_SET
 {
-    public unsafe partial struct D3D12_VIDEO_PROCESS_REFERENCE_SET
-    {
-        public uint NumPastFrames;
+    public uint NumPastFrames;
 
-        public ID3D12Resource** ppPastFrames;
+    public ID3D12Resource** ppPastFrames;
 
-        public uint* pPastSubresources;
+    public uint* pPastSubresources;
 
-        public uint NumFutureFrames;
+    public uint NumFutureFrames;
 
-        public ID3D12Resource** ppFutureFrames;
+    public ID3D12Resource** ppFutureFrames;
 
-        public uint* pFutureSubresources;
-    }
+    public uint* pFutureSubresources;
 }

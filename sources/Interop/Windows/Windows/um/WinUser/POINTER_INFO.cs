@@ -5,50 +5,49 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public partial struct POINTER_INFO
 {
-    [SupportedOSPlatform("windows8.0")]
-    public partial struct POINTER_INFO
-    {
-        [NativeTypeName("POINTER_INPUT_TYPE")]
-        public uint pointerType;
+    [NativeTypeName("POINTER_INPUT_TYPE")]
+    public uint pointerType;
 
-        [NativeTypeName("UINT32")]
-        public uint pointerId;
+    [NativeTypeName("UINT32")]
+    public uint pointerId;
 
-        [NativeTypeName("UINT32")]
-        public uint frameId;
+    [NativeTypeName("UINT32")]
+    public uint frameId;
 
-        [NativeTypeName("POINTER_FLAGS")]
-        public uint pointerFlags;
+    [NativeTypeName("POINTER_FLAGS")]
+    public uint pointerFlags;
 
-        public HANDLE sourceDevice;
+    public HANDLE sourceDevice;
 
-        public HWND hwndTarget;
+    public HWND hwndTarget;
 
-        public POINT ptPixelLocation;
+    public POINT ptPixelLocation;
 
-        public POINT ptHimetricLocation;
+    public POINT ptHimetricLocation;
 
-        public POINT ptPixelLocationRaw;
+    public POINT ptPixelLocationRaw;
 
-        public POINT ptHimetricLocationRaw;
+    public POINT ptHimetricLocationRaw;
 
-        [NativeTypeName("DWORD")]
-        public uint dwTime;
+    [NativeTypeName("DWORD")]
+    public uint dwTime;
 
-        [NativeTypeName("UINT32")]
-        public uint historyCount;
+    [NativeTypeName("UINT32")]
+    public uint historyCount;
 
-        [NativeTypeName("INT32")]
-        public int InputData;
+    [NativeTypeName("INT32")]
+    public int InputData;
 
-        [NativeTypeName("DWORD")]
-        public uint dwKeyStates;
+    [NativeTypeName("DWORD")]
+    public uint dwKeyStates;
 
-        [NativeTypeName("UINT64")]
-        public ulong PerformanceCount;
+    [NativeTypeName("UINT64")]
+    public ulong PerformanceCount;
 
-        public POINTER_BUTTON_CHANGE_TYPE ButtonChangeType;
-    }
+    public POINTER_BUTTON_CHANGE_TYPE ButtonChangeType;
 }

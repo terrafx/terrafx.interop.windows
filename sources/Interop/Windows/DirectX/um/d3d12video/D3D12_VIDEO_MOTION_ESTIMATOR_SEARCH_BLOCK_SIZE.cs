@@ -5,12 +5,11 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+public enum D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    public enum D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE
-    {
-        D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE_8X8 = 0,
-        D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE_16X16 = 1,
-    }
+    D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE_8X8 = 0,
+    D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE_16X16 = 1,
 }

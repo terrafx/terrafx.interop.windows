@@ -3,50 +3,49 @@
 // Ported from um/Psapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct PERFORMANCE_INFORMATION
 {
-    public partial struct PERFORMANCE_INFORMATION
-    {
-        [NativeTypeName("DWORD")]
-        public uint cb;
+    [NativeTypeName("DWORD")]
+    public uint cb;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint CommitTotal;
+    [NativeTypeName("SIZE_T")]
+    public nuint CommitTotal;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint CommitLimit;
+    [NativeTypeName("SIZE_T")]
+    public nuint CommitLimit;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint CommitPeak;
+    [NativeTypeName("SIZE_T")]
+    public nuint CommitPeak;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint PhysicalTotal;
+    [NativeTypeName("SIZE_T")]
+    public nuint PhysicalTotal;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint PhysicalAvailable;
+    [NativeTypeName("SIZE_T")]
+    public nuint PhysicalAvailable;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint SystemCache;
+    [NativeTypeName("SIZE_T")]
+    public nuint SystemCache;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint KernelTotal;
+    [NativeTypeName("SIZE_T")]
+    public nuint KernelTotal;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint KernelPaged;
+    [NativeTypeName("SIZE_T")]
+    public nuint KernelPaged;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint KernelNonpaged;
+    [NativeTypeName("SIZE_T")]
+    public nuint KernelNonpaged;
 
-        [NativeTypeName("SIZE_T")]
-        public nuint PageSize;
+    [NativeTypeName("SIZE_T")]
+    public nuint PageSize;
 
-        [NativeTypeName("DWORD")]
-        public uint HandleCount;
+    [NativeTypeName("DWORD")]
+    public uint HandleCount;
 
-        [NativeTypeName("DWORD")]
-        public uint ProcessCount;
+    [NativeTypeName("DWORD")]
+    public uint ProcessCount;
 
-        [NativeTypeName("DWORD")]
-        public uint ThreadCount;
-    }
+    [NativeTypeName("DWORD")]
+    public uint ThreadCount;
 }

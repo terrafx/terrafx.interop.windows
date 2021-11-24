@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.DirectX
+namespace TerraFX.Interop.DirectX;
+
+[SupportedOSPlatform("windows10.0.19041.0")]
+[NativeTypeName("uint32_t")]
+public enum DXCoreNotificationType : uint
 {
-    [SupportedOSPlatform("windows10.0.19041.0")]
-    [NativeTypeName("uint32_t")]
-    public enum DXCoreNotificationType : uint
-    {
-        AdapterListStale = 0,
-        AdapterNoLongerValid = 1,
-        AdapterBudgetChange = 2,
-        AdapterHardwareContentProtectionTeardown = 3,
-    }
+    AdapterListStale = 0,
+    AdapterNoLongerValid = 1,
+    AdapterBudgetChange = 2,
+    AdapterHardwareContentProtectionTeardown = 3,
 }

@@ -3,31 +3,30 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct STORAGE_WRITE_CACHE_PROPERTY
 {
-    public partial struct STORAGE_WRITE_CACHE_PROPERTY
-    {
-        [NativeTypeName("DWORD")]
-        public uint Version;
+    [NativeTypeName("DWORD")]
+    public uint Version;
 
-        [NativeTypeName("DWORD")]
-        public uint Size;
+    [NativeTypeName("DWORD")]
+    public uint Size;
 
-        public WRITE_CACHE_TYPE WriteCacheType;
+    public WRITE_CACHE_TYPE WriteCacheType;
 
-        public WRITE_CACHE_ENABLE WriteCacheEnabled;
+    public WRITE_CACHE_ENABLE WriteCacheEnabled;
 
-        public WRITE_CACHE_CHANGE WriteCacheChangeable;
+    public WRITE_CACHE_CHANGE WriteCacheChangeable;
 
-        public WRITE_THROUGH WriteThroughSupported;
+    public WRITE_THROUGH WriteThroughSupported;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte FlushCacheSupported;
+    [NativeTypeName("BOOLEAN")]
+    public byte FlushCacheSupported;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte UserDefinedPowerProtection;
+    [NativeTypeName("BOOLEAN")]
+    public byte UserDefinedPowerProtection;
 
-        [NativeTypeName("BOOLEAN")]
-        public byte NVCacheEnabled;
-    }
+    [NativeTypeName("BOOLEAN")]
+    public byte NVCacheEnabled;
 }

@@ -10,86 +10,85 @@ using static TerraFX.Interop.DirectX.D3D12_COMMAND_LIST_TYPE;
 using static TerraFX.Samples.DirectX.DXSampleHelper;
 using static TerraFX.Interop.Windows.Windows;
 
-namespace TerraFX.Samples.DirectX.D3D12
+namespace TerraFX.Samples.DirectX.D3D12;
+
+[SupportedOSPlatform("windows10.0")]
+public unsafe class HelloBundles12 : HelloTriangle12
 {
-    [SupportedOSPlatform("windows10.0")]
-    public unsafe class HelloBundles12 : HelloTriangle12
+    // Pipeline objects
+    private ID3D12CommandAllocator* _bundleAllocator;
+    private ID3D12GraphicsCommandList* _bundle;
+
+    public HelloBundles12(string name) : base(name)
     {
-        // Pipeline objects
-        private ID3D12CommandAllocator* _bundleAllocator;
-        private ID3D12GraphicsCommandList* _bundle;
+    }
 
-        public HelloBundles12(string name) : base(name)
+    protected override void CreateAssets()
+    {
+        base.CreateAssets();
+
+        _bundleAllocator = CreateBundleAllocator();
+        _bundle = CreateBundle();
+
+        ID3D12GraphicsCommandList* CreateBundle()
         {
+            ID3D12GraphicsCommandList* bundle;
+            ThrowIfFailed(D3DDevice->CreateCommandList(nodeMask: 0, D3D12_COMMAND_LIST_TYPE_BUNDLE, _bundleAllocator, PipelineState, __uuidof<ID3D12GraphicsCommandList>(), (void**)&bundle));
+
+            bundle->SetGraphicsRootSignature(RootSignature);
+            bundle->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+
+            fixed (D3D12_VERTEX_BUFFER_VIEW* pVertexBufferView = &VertexBufferView)
+            {
+                bundle->IASetVertexBuffers(StartSlot: 0, 1, pVertexBufferView);
+            }
+
+            bundle->DrawInstanced(3, 1, 0, 0);
+            ThrowIfFailed(bundle->Close());
+
+            return bundle;
         }
 
-        protected override void CreateAssets()
+        ID3D12CommandAllocator* CreateBundleAllocator()
         {
-            base.CreateAssets();
-
-            _bundleAllocator = CreateBundleAllocator();
-            _bundle = CreateBundle();
-
-            ID3D12GraphicsCommandList* CreateBundle()
-            {
-                ID3D12GraphicsCommandList* bundle;
-                ThrowIfFailed(D3DDevice->CreateCommandList(nodeMask: 0, D3D12_COMMAND_LIST_TYPE_BUNDLE, _bundleAllocator, PipelineState, __uuidof<ID3D12GraphicsCommandList>(), (void**)&bundle));
-
-                bundle->SetGraphicsRootSignature(RootSignature);
-                bundle->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-
-                fixed (D3D12_VERTEX_BUFFER_VIEW* pVertexBufferView = &VertexBufferView)
-                {
-                    bundle->IASetVertexBuffers(StartSlot: 0, 1, pVertexBufferView);
-                }
-
-                bundle->DrawInstanced(3, 1, 0, 0);
-                ThrowIfFailed(bundle->Close());
-
-                return bundle;
-            }
-
-            ID3D12CommandAllocator* CreateBundleAllocator()
-            {
-                ID3D12CommandAllocator* bundleAllocator;
-                ThrowIfFailed(D3DDevice->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_BUNDLE, __uuidof<ID3D12CommandAllocator>(), (void**)&bundleAllocator));
-                return bundleAllocator;
-            }
+            ID3D12CommandAllocator* bundleAllocator;
+            ThrowIfFailed(D3DDevice->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_BUNDLE, __uuidof<ID3D12CommandAllocator>(), (void**)&bundleAllocator));
+            return bundleAllocator;
         }
+    }
 
-        protected override void DestroyAssets()
+    protected override void DestroyAssets()
+    {
+        DestroyBundle();
+        DestroyBundleAllocator();
+        base.DestroyAssets();
+
+        void DestroyBundle()
         {
-            DestroyBundle();
-            DestroyBundleAllocator();
-            base.DestroyAssets();
+            var bundle = _bundle;
 
-            void DestroyBundle()
+            if (bundle != null)
             {
-                var bundle = _bundle;
-
-                if (bundle != null)
-                {
-                    _bundle = null;
-                    _ = bundle->Release();
-                }
-            }
-
-            void DestroyBundleAllocator()
-            {
-                var bundleAllocator = _bundleAllocator;
-
-                if (bundleAllocator != null)
-                {
-                    _bundleAllocator = null;
-                    _ = bundleAllocator->Release();
-                }
+                _bundle = null;
+                _ = bundle->Release();
             }
         }
 
-        protected override void Draw()
+        void DestroyBundleAllocator()
         {
-            // Execute the commands stored in the bundle.
-            GraphicsCommandList->ExecuteBundle(_bundle);
+            var bundleAllocator = _bundleAllocator;
+
+            if (bundleAllocator != null)
+            {
+                _bundleAllocator = null;
+                _ = bundleAllocator->Release();
+            }
         }
+    }
+
+    protected override void Draw()
+    {
+        // Execute the commands stored in the bundle.
+        GraphicsCommandList->ExecuteBundle(_bundle);
     }
 }

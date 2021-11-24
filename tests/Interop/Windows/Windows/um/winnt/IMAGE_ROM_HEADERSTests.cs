@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="IMAGE_ROM_HEADERS" /> struct.</summary>
+public static unsafe partial class IMAGE_ROM_HEADERSTests
 {
-    /// <summary>Provides validation of the <see cref="IMAGE_ROM_HEADERS" /> struct.</summary>
-    public static unsafe partial class IMAGE_ROM_HEADERSTests
+    /// <summary>Validates that the <see cref="IMAGE_ROM_HEADERS" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="IMAGE_ROM_HEADERS" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<IMAGE_ROM_HEADERS>(), Is.EqualTo(sizeof(IMAGE_ROM_HEADERS)));
-        }
+        Assert.That(Marshal.SizeOf<IMAGE_ROM_HEADERS>(), Is.EqualTo(sizeof(IMAGE_ROM_HEADERS)));
+    }
 
-        /// <summary>Validates that the <see cref="IMAGE_ROM_HEADERS" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(IMAGE_ROM_HEADERS).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="IMAGE_ROM_HEADERS" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(IMAGE_ROM_HEADERS).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="IMAGE_ROM_HEADERS" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(IMAGE_ROM_HEADERS), Is.EqualTo(76));
-        }
+    /// <summary>Validates that the <see cref="IMAGE_ROM_HEADERS" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(IMAGE_ROM_HEADERS), Is.EqualTo(76));
     }
 }

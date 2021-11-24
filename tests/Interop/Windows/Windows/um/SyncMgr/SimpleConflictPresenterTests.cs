@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="SimpleConflictPresenter" /> struct.</summary>
+public static unsafe partial class SimpleConflictPresenterTests
 {
-    /// <summary>Provides validation of the <see cref="SimpleConflictPresenter" /> struct.</summary>
-    public static unsafe partial class SimpleConflictPresenterTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SimpleConflictPresenter" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="SimpleConflictPresenter" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(SimpleConflictPresenter).GUID, Is.EqualTo(IID_SimpleConflictPresenter));
-        }
+        Assert.That(typeof(SimpleConflictPresenter).GUID, Is.EqualTo(IID_SimpleConflictPresenter));
+    }
 
-        /// <summary>Validates that the <see cref="SimpleConflictPresenter" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<SimpleConflictPresenter>(), Is.EqualTo(sizeof(SimpleConflictPresenter)));
-        }
+    /// <summary>Validates that the <see cref="SimpleConflictPresenter" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<SimpleConflictPresenter>(), Is.EqualTo(sizeof(SimpleConflictPresenter)));
+    }
 
-        /// <summary>Validates that the <see cref="SimpleConflictPresenter" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(SimpleConflictPresenter).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="SimpleConflictPresenter" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(SimpleConflictPresenter).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="SimpleConflictPresenter" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(SimpleConflictPresenter), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="SimpleConflictPresenter" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(SimpleConflictPresenter), Is.EqualTo(1));
     }
 }

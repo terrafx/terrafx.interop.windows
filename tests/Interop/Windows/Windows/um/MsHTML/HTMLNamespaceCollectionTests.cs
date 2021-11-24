@@ -8,37 +8,36 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="HTMLNamespaceCollection" /> struct.</summary>
+public static unsafe partial class HTMLNamespaceCollectionTests
 {
-    /// <summary>Provides validation of the <see cref="HTMLNamespaceCollection" /> struct.</summary>
-    public static unsafe partial class HTMLNamespaceCollectionTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLNamespaceCollection" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="HTMLNamespaceCollection" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(HTMLNamespaceCollection).GUID, Is.EqualTo(IID_HTMLNamespaceCollection));
-        }
+        Assert.That(typeof(HTMLNamespaceCollection).GUID, Is.EqualTo(IID_HTMLNamespaceCollection));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLNamespaceCollection" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<HTMLNamespaceCollection>(), Is.EqualTo(sizeof(HTMLNamespaceCollection)));
-        }
+    /// <summary>Validates that the <see cref="HTMLNamespaceCollection" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<HTMLNamespaceCollection>(), Is.EqualTo(sizeof(HTMLNamespaceCollection)));
+    }
 
-        /// <summary>Validates that the <see cref="HTMLNamespaceCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(HTMLNamespaceCollection).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="HTMLNamespaceCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(HTMLNamespaceCollection).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="HTMLNamespaceCollection" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(HTMLNamespaceCollection), Is.EqualTo(1));
-        }
+    /// <summary>Validates that the <see cref="HTMLNamespaceCollection" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(HTMLNamespaceCollection), Is.EqualTo(1));
     }
 }

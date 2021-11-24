@@ -5,18 +5,17 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public unsafe partial struct PARTITION_INFORMATION_GPT
 {
-    public unsafe partial struct PARTITION_INFORMATION_GPT
-    {
-        public Guid PartitionType;
+    public Guid PartitionType;
 
-        public Guid PartitionId;
+    public Guid PartitionId;
 
-        [NativeTypeName("DWORD64")]
-        public ulong Attributes;
+    [NativeTypeName("DWORD64")]
+    public ulong Attributes;
 
-        [NativeTypeName("WCHAR [36]")]
-        public fixed ushort Name[36];
-    }
+    [NativeTypeName("WCHAR [36]")]
+    public fixed ushort Name[36];
 }

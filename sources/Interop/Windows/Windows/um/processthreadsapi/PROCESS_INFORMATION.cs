@@ -3,18 +3,17 @@
 // Ported from um/processthreadsapi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct PROCESS_INFORMATION
 {
-    public partial struct PROCESS_INFORMATION
-    {
-        public HANDLE hProcess;
+    public HANDLE hProcess;
 
-        public HANDLE hThread;
+    public HANDLE hThread;
 
-        [NativeTypeName("DWORD")]
-        public uint dwProcessId;
+    [NativeTypeName("DWORD")]
+    public uint dwProcessId;
 
-        [NativeTypeName("DWORD")]
-        public uint dwThreadId;
-    }
+    [NativeTypeName("DWORD")]
+    public uint dwThreadId;
 }

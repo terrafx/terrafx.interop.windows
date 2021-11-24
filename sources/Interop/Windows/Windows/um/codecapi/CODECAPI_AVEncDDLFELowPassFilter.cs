@@ -5,10 +5,9 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[Guid("D3B80F6F-9D15-45E5-91BE-019C3FAB1F01")]
+public partial struct CODECAPI_AVEncDDLFELowPassFilter
 {
-    [Guid("D3B80F6F-9D15-45E5-91BE-019C3FAB1F01")]
-    public partial struct CODECAPI_AVEncDDLFELowPassFilter
-    {
-    }
 }

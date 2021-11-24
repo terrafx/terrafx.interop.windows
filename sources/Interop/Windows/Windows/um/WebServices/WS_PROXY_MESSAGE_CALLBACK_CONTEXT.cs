@@ -5,13 +5,12 @@
 
 using System;
 
-namespace TerraFX.Interop.Windows
-{
-    public unsafe partial struct WS_PROXY_MESSAGE_CALLBACK_CONTEXT
-    {
-        [NativeTypeName("WS_PROXY_MESSAGE_CALLBACK")]
-        public delegate* unmanaged<IntPtr, IntPtr, void*, IntPtr, HRESULT> callback;
+namespace TerraFX.Interop.Windows;
 
-        public void* state;
-    }
+public unsafe partial struct WS_PROXY_MESSAGE_CALLBACK_CONTEXT
+{
+    [NativeTypeName("WS_PROXY_MESSAGE_CALLBACK")]
+    public delegate* unmanaged<IntPtr, IntPtr, void*, IntPtr, HRESULT> callback;
+
+    public void* state;
 }

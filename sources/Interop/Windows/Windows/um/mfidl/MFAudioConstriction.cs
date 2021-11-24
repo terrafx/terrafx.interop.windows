@@ -5,15 +5,14 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum MFAudioConstriction
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum MFAudioConstriction
-    {
-        MFaudioConstrictionOff = 0,
-        MFaudioConstriction48_16 = (MFaudioConstrictionOff + 1),
-        MFaudioConstriction44_16 = (MFaudioConstriction48_16 + 1),
-        MFaudioConstriction14_14 = (MFaudioConstriction44_16 + 1),
-        MFaudioConstrictionMute = (MFaudioConstriction14_14 + 1),
-    }
+    MFaudioConstrictionOff = 0,
+    MFaudioConstriction48_16 = (MFaudioConstrictionOff + 1),
+    MFaudioConstriction44_16 = (MFaudioConstriction48_16 + 1),
+    MFaudioConstriction14_14 = (MFaudioConstriction44_16 + 1),
+    MFaudioConstrictionMute = (MFaudioConstriction14_14 + 1),
 }

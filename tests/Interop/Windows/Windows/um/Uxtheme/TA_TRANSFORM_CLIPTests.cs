@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="TA_TRANSFORM_CLIP" /> struct.</summary>
+public static unsafe partial class TA_TRANSFORM_CLIPTests
 {
-    /// <summary>Provides validation of the <see cref="TA_TRANSFORM_CLIP" /> struct.</summary>
-    public static unsafe partial class TA_TRANSFORM_CLIPTests
+    /// <summary>Validates that the <see cref="TA_TRANSFORM_CLIP" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="TA_TRANSFORM_CLIP" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<TA_TRANSFORM_CLIP>(), Is.EqualTo(sizeof(TA_TRANSFORM_CLIP)));
-        }
+        Assert.That(Marshal.SizeOf<TA_TRANSFORM_CLIP>(), Is.EqualTo(sizeof(TA_TRANSFORM_CLIP)));
+    }
 
-        /// <summary>Validates that the <see cref="TA_TRANSFORM_CLIP" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(TA_TRANSFORM_CLIP).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="TA_TRANSFORM_CLIP" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(TA_TRANSFORM_CLIP).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="TA_TRANSFORM_CLIP" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(TA_TRANSFORM_CLIP), Is.EqualTo(52));
-        }
+    /// <summary>Validates that the <see cref="TA_TRANSFORM_CLIP" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(TA_TRANSFORM_CLIP), Is.EqualTo(52));
     }
 }

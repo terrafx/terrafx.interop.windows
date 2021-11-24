@@ -5,13 +5,12 @@
 
 using System.Runtime.Versioning;
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+[SupportedOSPlatform("windows8.0")]
+public enum MF_MEDIA_ENGINE_CANPLAY
 {
-    [SupportedOSPlatform("windows8.0")]
-    public enum MF_MEDIA_ENGINE_CANPLAY
-    {
-        MF_MEDIA_ENGINE_CANPLAY_NOT_SUPPORTED = 0,
-        MF_MEDIA_ENGINE_CANPLAY_MAYBE = 1,
-        MF_MEDIA_ENGINE_CANPLAY_PROBABLY = 2,
-    }
+    MF_MEDIA_ENGINE_CANPLAY_NOT_SUPPORTED = 0,
+    MF_MEDIA_ENGINE_CANPLAY_MAYBE = 1,
+    MF_MEDIA_ENGINE_CANPLAY_PROBABLY = 2,
 }

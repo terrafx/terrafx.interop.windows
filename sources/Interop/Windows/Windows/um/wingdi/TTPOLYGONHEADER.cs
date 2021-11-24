@@ -3,16 +3,15 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
+namespace TerraFX.Interop.Windows;
+
+public partial struct TTPOLYGONHEADER
 {
-    public partial struct TTPOLYGONHEADER
-    {
-        [NativeTypeName("DWORD")]
-        public uint cb;
+    [NativeTypeName("DWORD")]
+    public uint cb;
 
-        [NativeTypeName("DWORD")]
-        public uint dwType;
+    [NativeTypeName("DWORD")]
+    public uint dwType;
 
-        public POINTFX pfxStart;
-    }
+    public POINTFX pfxStart;
 }

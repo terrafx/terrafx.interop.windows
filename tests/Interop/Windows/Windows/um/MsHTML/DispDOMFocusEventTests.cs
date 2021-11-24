@@ -8,44 +8,43 @@ using System;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.IID;
 
-namespace TerraFX.Interop.Windows.UnitTests
+namespace TerraFX.Interop.Windows.UnitTests;
+
+/// <summary>Provides validation of the <see cref="DispDOMFocusEvent" /> struct.</summary>
+public static unsafe partial class DispDOMFocusEventTests
 {
-    /// <summary>Provides validation of the <see cref="DispDOMFocusEvent" /> struct.</summary>
-    public static unsafe partial class DispDOMFocusEventTests
+    /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispDOMFocusEvent" /> struct is correct.</summary>
+    [Test]
+    public static void GuidOfTest()
     {
-        /// <summary>Validates that the <see cref="Guid" /> of the <see cref="DispDOMFocusEvent" /> struct is correct.</summary>
-        [Test]
-        public static void GuidOfTest()
-        {
-            Assert.That(typeof(DispDOMFocusEvent).GUID, Is.EqualTo(IID_DispDOMFocusEvent));
-        }
+        Assert.That(typeof(DispDOMFocusEvent).GUID, Is.EqualTo(IID_DispDOMFocusEvent));
+    }
 
-        /// <summary>Validates that the <see cref="DispDOMFocusEvent" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<DispDOMFocusEvent>(), Is.EqualTo(sizeof(DispDOMFocusEvent)));
-        }
+    /// <summary>Validates that the <see cref="DispDOMFocusEvent" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
+    {
+        Assert.That(Marshal.SizeOf<DispDOMFocusEvent>(), Is.EqualTo(sizeof(DispDOMFocusEvent)));
+    }
 
-        /// <summary>Validates that the <see cref="DispDOMFocusEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(DispDOMFocusEvent).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="DispDOMFocusEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(DispDOMFocusEvent).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="DispDOMFocusEvent" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="DispDOMFocusEvent" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(DispDOMFocusEvent), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(DispDOMFocusEvent), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(DispDOMFocusEvent), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(DispDOMFocusEvent), Is.EqualTo(4));
         }
     }
 }

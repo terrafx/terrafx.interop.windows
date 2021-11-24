@@ -3,14 +3,13 @@
 // Ported from shared/ipmib.h in the Windows SDK for Windows 10.0.20348.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-namespace TerraFX.Interop.Windows
-{
-    public partial struct MIB_ICMP_EX_XPSP1
-    {
-        [NativeTypeName("MIBICMPSTATS_EX")]
-        public MIBICMPSTATS_EX_XPSP1 icmpInStats;
+namespace TerraFX.Interop.Windows;
 
-        [NativeTypeName("MIBICMPSTATS_EX")]
-        public MIBICMPSTATS_EX_XPSP1 icmpOutStats;
-    }
+public partial struct MIB_ICMP_EX_XPSP1
+{
+    [NativeTypeName("MIBICMPSTATS_EX")]
+    public MIBICMPSTATS_EX_XPSP1 icmpInStats;
+
+    [NativeTypeName("MIBICMPSTATS_EX")]
+    public MIBICMPSTATS_EX_XPSP1 icmpOutStats;
 }
