@@ -92,30 +92,31 @@ public unsafe partial struct ISyncMgrConflict : ISyncMgrConflict.Interface
         HRESULT GetResolutionHandler([NativeTypeName("const IID &")] Guid* riid, void** ppvResolutionHandler);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflict*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflict*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflict*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflict*, PROPERTYKEY*, PROPVARIANT*, int> GetProperty;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, PROPVARIANT*, int> GetProperty;
 
         [NativeTypeName("HRESULT (SYNCMGR_CONFLICT_ID_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflict*, SYNCMGR_CONFLICT_ID_INFO*, int> GetConflictIdInfo;
+        public delegate* unmanaged<TSelf*, SYNCMGR_CONFLICT_ID_INFO*, int> GetConflictIdInfo;
 
         [NativeTypeName("HRESULT (ISyncMgrConflictItems **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflict*, ISyncMgrConflictItems**, int> GetItemsArray;
+        public delegate* unmanaged<TSelf*, ISyncMgrConflictItems**, int> GetItemsArray;
 
         [NativeTypeName("HRESULT (ISyncMgrConflictResolveInfo *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflict*, ISyncMgrConflictResolveInfo*, int> Resolve;
+        public delegate* unmanaged<TSelf*, ISyncMgrConflictResolveInfo*, int> Resolve;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflict*, Guid*, void**, int> GetResolutionHandler;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetResolutionHandler;
     }
 }

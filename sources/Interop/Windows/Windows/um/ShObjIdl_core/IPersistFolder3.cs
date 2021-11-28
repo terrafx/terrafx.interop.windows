@@ -83,30 +83,31 @@ public unsafe partial struct IPersistFolder3 : IPersistFolder3.Interface
         HRESULT GetFolderTargetInfo(PERSIST_FOLDER_TARGET_INFO* ppfti);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistFolder3*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistFolder3*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistFolder3*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistFolder3*, Guid*, int> GetClassID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetClassID;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistFolder3*, ITEMIDLIST*, int> Initialize;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, int> Initialize;
 
         [NativeTypeName("HRESULT (LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistFolder3*, ITEMIDLIST**, int> GetCurFolder;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST**, int> GetCurFolder;
 
         [NativeTypeName("HRESULT (IBindCtx *, LPCITEMIDLIST, const PERSIST_FOLDER_TARGET_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistFolder3*, IBindCtx*, ITEMIDLIST*, PERSIST_FOLDER_TARGET_INFO*, int> InitializeEx;
+        public delegate* unmanaged<TSelf*, IBindCtx*, ITEMIDLIST*, PERSIST_FOLDER_TARGET_INFO*, int> InitializeEx;
 
         [NativeTypeName("HRESULT (PERSIST_FOLDER_TARGET_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistFolder3*, PERSIST_FOLDER_TARGET_INFO*, int> GetFolderTargetInfo;
+        public delegate* unmanaged<TSelf*, PERSIST_FOLDER_TARGET_INFO*, int> GetFolderTargetInfo;
     }
 }

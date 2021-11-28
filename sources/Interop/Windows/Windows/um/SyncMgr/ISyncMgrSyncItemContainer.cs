@@ -72,24 +72,25 @@ public unsafe partial struct ISyncMgrSyncItemContainer : ISyncMgrSyncItemContain
         HRESULT GetSyncItemCount([NativeTypeName("ULONG *")] uint* pcItems);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncItemContainer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncItemContainer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncItemContainer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, ISyncMgrSyncItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncItemContainer*, ushort*, ISyncMgrSyncItem**, int> GetSyncItem;
+        public delegate* unmanaged<TSelf*, ushort*, ISyncMgrSyncItem**, int> GetSyncItem;
 
         [NativeTypeName("HRESULT (IEnumSyncMgrSyncItems **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncItemContainer*, IEnumSyncMgrSyncItems**, int> GetSyncItemEnumerator;
+        public delegate* unmanaged<TSelf*, IEnumSyncMgrSyncItems**, int> GetSyncItemEnumerator;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncItemContainer*, uint*, int> GetSyncItemCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetSyncItemCount;
     }
 }

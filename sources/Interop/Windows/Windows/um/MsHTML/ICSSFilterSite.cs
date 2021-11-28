@@ -62,21 +62,22 @@ public unsafe partial struct ICSSFilterSite : ICSSFilterSite.Interface
         HRESULT FireOnFilterChangeEvent();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICSSFilterSite*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICSSFilterSite*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICSSFilterSite*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICSSFilterSite*, IHTMLElement**, int> GetElement;
+        public delegate* unmanaged<TSelf*, IHTMLElement**, int> GetElement;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICSSFilterSite*, int> FireOnFilterChangeEvent;
+        public delegate* unmanaged<TSelf*, int> FireOnFilterChangeEvent;
     }
 }

@@ -102,39 +102,40 @@ public unsafe partial struct ID3D11Texture3D : ID3D11Texture3D.Interface
         void GetDesc(D3D11_TEXTURE3D_DESC* pDesc);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Texture3D*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Texture3D*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Texture3D*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Texture3D*, ID3D11Device**, void> GetDevice;
+        public delegate* unmanaged<TSelf*, ID3D11Device**, void> GetDevice;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Texture3D*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Texture3D*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Texture3D*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("void (D3D11_RESOURCE_DIMENSION *) __attribute__((stdcall))")]
-        public new delegate* unmanaged<ID3D11Texture3D*, D3D11_RESOURCE_DIMENSION*, void> GetType;
+        public new delegate* unmanaged<TSelf*, D3D11_RESOURCE_DIMENSION*, void> GetType;
 
         [NativeTypeName("void (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Texture3D*, uint, void> SetEvictionPriority;
+        public delegate* unmanaged<TSelf*, uint, void> SetEvictionPriority;
 
         [NativeTypeName("UINT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Texture3D*, uint> GetEvictionPriority;
+        public delegate* unmanaged<TSelf*, uint> GetEvictionPriority;
 
         [NativeTypeName("void (D3D11_TEXTURE3D_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Texture3D*, D3D11_TEXTURE3D_DESC*, void> GetDesc;
+        public delegate* unmanaged<TSelf*, D3D11_TEXTURE3D_DESC*, void> GetDesc;
     }
 }

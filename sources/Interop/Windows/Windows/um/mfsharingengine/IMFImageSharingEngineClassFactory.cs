@@ -54,18 +54,19 @@ public unsafe partial struct IMFImageSharingEngineClassFactory : IMFImageSharing
         HRESULT CreateInstanceFromUDN([NativeTypeName("BSTR")] ushort* pUniqueDeviceName, IMFImageSharingEngine** ppEngine);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFImageSharingEngineClassFactory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFImageSharingEngineClassFactory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFImageSharingEngineClassFactory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, IMFImageSharingEngine **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFImageSharingEngineClassFactory*, ushort*, IMFImageSharingEngine**, int> CreateInstanceFromUDN;
+        public delegate* unmanaged<TSelf*, ushort*, IMFImageSharingEngine**, int> CreateInstanceFromUDN;
     }
 }

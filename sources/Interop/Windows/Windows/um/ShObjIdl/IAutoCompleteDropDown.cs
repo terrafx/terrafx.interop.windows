@@ -62,21 +62,22 @@ public unsafe partial struct IAutoCompleteDropDown : IAutoCompleteDropDown.Inter
         HRESULT ResetEnumerator();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAutoCompleteDropDown*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAutoCompleteDropDown*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAutoCompleteDropDown*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAutoCompleteDropDown*, uint*, ushort**, int> GetDropDownStatus;
+        public delegate* unmanaged<TSelf*, uint*, ushort**, int> GetDropDownStatus;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAutoCompleteDropDown*, int> ResetEnumerator;
+        public delegate* unmanaged<TSelf*, int> ResetEnumerator;
     }
 }

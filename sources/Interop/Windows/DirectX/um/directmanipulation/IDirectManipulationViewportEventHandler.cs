@@ -75,24 +75,25 @@ public unsafe partial struct IDirectManipulationViewportEventHandler : IDirectMa
         HRESULT OnContentUpdated(IDirectManipulationViewport* viewport, IDirectManipulationContent* content);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewportEventHandler*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewportEventHandler*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewportEventHandler*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDirectManipulationViewport *, DIRECTMANIPULATION_STATUS, DIRECTMANIPULATION_STATUS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewportEventHandler*, IDirectManipulationViewport*, DIRECTMANIPULATION_STATUS, DIRECTMANIPULATION_STATUS, int> OnViewportStatusChanged;
+        public delegate* unmanaged<TSelf*, IDirectManipulationViewport*, DIRECTMANIPULATION_STATUS, DIRECTMANIPULATION_STATUS, int> OnViewportStatusChanged;
 
         [NativeTypeName("HRESULT (IDirectManipulationViewport *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewportEventHandler*, IDirectManipulationViewport*, int> OnViewportUpdated;
+        public delegate* unmanaged<TSelf*, IDirectManipulationViewport*, int> OnViewportUpdated;
 
         [NativeTypeName("HRESULT (IDirectManipulationViewport *, IDirectManipulationContent *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewportEventHandler*, IDirectManipulationViewport*, IDirectManipulationContent*, int> OnContentUpdated;
+        public delegate* unmanaged<TSelf*, IDirectManipulationViewport*, IDirectManipulationContent*, int> OnContentUpdated;
     }
 }

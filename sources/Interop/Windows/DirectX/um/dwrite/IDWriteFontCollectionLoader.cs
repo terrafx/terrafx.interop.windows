@@ -53,18 +53,19 @@ public unsafe partial struct IDWriteFontCollectionLoader : IDWriteFontCollection
         HRESULT CreateEnumeratorFromKey(IDWriteFactory* factory, [NativeTypeName("const void *")] void* collectionKey, [NativeTypeName("UINT32")] uint collectionKeySize, IDWriteFontFileEnumerator** fontFileEnumerator);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontCollectionLoader*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontCollectionLoader*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontCollectionLoader*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDWriteFactory *, const void *, UINT32, IDWriteFontFileEnumerator **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontCollectionLoader*, IDWriteFactory*, void*, uint, IDWriteFontFileEnumerator**, int> CreateEnumeratorFromKey;
+        public delegate* unmanaged<TSelf*, IDWriteFactory*, void*, uint, IDWriteFontFileEnumerator**, int> CreateEnumeratorFromKey;
     }
 }

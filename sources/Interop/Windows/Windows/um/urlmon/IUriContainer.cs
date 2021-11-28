@@ -52,18 +52,19 @@ public unsafe partial struct IUriContainer : IUriContainer.Interface
         HRESULT GetIUri(IUri** ppIUri);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUriContainer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUriContainer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUriContainer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUri **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUriContainer*, IUri**, int> GetIUri;
+        public delegate* unmanaged<TSelf*, IUri**, int> GetIUri;
     }
 }

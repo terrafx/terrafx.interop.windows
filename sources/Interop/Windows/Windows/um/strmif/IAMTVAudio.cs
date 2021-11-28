@@ -102,33 +102,34 @@ public unsafe partial struct IAMTVAudio : IAMTVAudio.Interface
         HRESULT UnRegisterNotificationCallBack(IAMTunerNotification* pNotify);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVAudio*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVAudio*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVAudio*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVAudio*, int*, int> GetHardwareSupportedTVAudioModes;
+        public delegate* unmanaged<TSelf*, int*, int> GetHardwareSupportedTVAudioModes;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVAudio*, int*, int> GetAvailableTVAudioModes;
+        public delegate* unmanaged<TSelf*, int*, int> GetAvailableTVAudioModes;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVAudio*, int*, int> get_TVAudioMode;
+        public delegate* unmanaged<TSelf*, int*, int> get_TVAudioMode;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVAudio*, int, int> put_TVAudioMode;
+        public delegate* unmanaged<TSelf*, int, int> put_TVAudioMode;
 
         [NativeTypeName("HRESULT (IAMTunerNotification *, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVAudio*, IAMTunerNotification*, int, int> RegisterNotificationCallBack;
+        public delegate* unmanaged<TSelf*, IAMTunerNotification*, int, int> RegisterNotificationCallBack;
 
         [NativeTypeName("HRESULT (IAMTunerNotification *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVAudio*, IAMTunerNotification*, int> UnRegisterNotificationCallBack;
+        public delegate* unmanaged<TSelf*, IAMTunerNotification*, int> UnRegisterNotificationCallBack;
     }
 }

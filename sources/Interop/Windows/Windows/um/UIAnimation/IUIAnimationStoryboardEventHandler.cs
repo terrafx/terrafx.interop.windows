@@ -62,21 +62,22 @@ public unsafe partial struct IUIAnimationStoryboardEventHandler : IUIAnimationSt
         HRESULT OnStoryboardUpdated(IUIAnimationStoryboard* storyboard);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboardEventHandler*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboardEventHandler*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboardEventHandler*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUIAnimationStoryboard *, UI_ANIMATION_STORYBOARD_STATUS, UI_ANIMATION_STORYBOARD_STATUS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboardEventHandler*, IUIAnimationStoryboard*, UI_ANIMATION_STORYBOARD_STATUS, UI_ANIMATION_STORYBOARD_STATUS, int> OnStoryboardStatusChanged;
+        public delegate* unmanaged<TSelf*, IUIAnimationStoryboard*, UI_ANIMATION_STORYBOARD_STATUS, UI_ANIMATION_STORYBOARD_STATUS, int> OnStoryboardStatusChanged;
 
         [NativeTypeName("HRESULT (IUIAnimationStoryboard *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboardEventHandler*, IUIAnimationStoryboard*, int> OnStoryboardUpdated;
+        public delegate* unmanaged<TSelf*, IUIAnimationStoryboard*, int> OnStoryboardUpdated;
     }
 }

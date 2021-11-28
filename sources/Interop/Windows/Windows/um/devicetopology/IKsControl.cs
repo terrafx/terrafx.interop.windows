@@ -72,24 +72,25 @@ public unsafe partial struct IKsControl : IKsControl.Interface
         HRESULT KsEvent([NativeTypeName("PKSEVENT")] KSIDENTIFIER* Event, [NativeTypeName("ULONG")] uint EventLength, void* EventData, [NativeTypeName("ULONG")] uint DataLength, [NativeTypeName("ULONG *")] uint* BytesReturned);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PKSPROPERTY, ULONG, void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int> KsProperty;
+        public delegate* unmanaged<TSelf*, KSIDENTIFIER*, uint, void*, uint, uint*, int> KsProperty;
 
         [NativeTypeName("HRESULT (PKSMETHOD, ULONG, void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int> KsMethod;
+        public delegate* unmanaged<TSelf*, KSIDENTIFIER*, uint, void*, uint, uint*, int> KsMethod;
 
         [NativeTypeName("HRESULT (PKSEVENT, ULONG, void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int> KsEvent;
+        public delegate* unmanaged<TSelf*, KSIDENTIFIER*, uint, void*, uint, uint*, int> KsEvent;
     }
 }

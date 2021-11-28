@@ -217,87 +217,88 @@ public unsafe partial struct ID3D12VideoEncodeCommandList1 : ID3D12VideoEncodeCo
         void ExecuteExtensionCommand(ID3D12VideoExtensionCommand* pExtensionCommand, [NativeTypeName("const void *")] void* pExecutionParameters, [NativeTypeName("SIZE_T")] nuint ExecutionParametersSizeInBytes);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, ushort*, int> SetName;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetName;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, Guid*, void**, int> GetDevice;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDevice;
 
         [NativeTypeName("D3D12_COMMAND_LIST_TYPE () __attribute__((stdcall))")]
-        public new delegate* unmanaged[SuppressGCTransition]<ID3D12VideoEncodeCommandList1*, D3D12_COMMAND_LIST_TYPE> GetType;
+        public new delegate* unmanaged[SuppressGCTransition]<TSelf*, D3D12_COMMAND_LIST_TYPE> GetType;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, int> Close;
+        public delegate* unmanaged<TSelf*, int> Close;
 
         [NativeTypeName("HRESULT (ID3D12CommandAllocator *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, ID3D12CommandAllocator*, int> Reset;
+        public delegate* unmanaged<TSelf*, ID3D12CommandAllocator*, int> Reset;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, void> ClearState;
+        public delegate* unmanaged<TSelf*, void> ClearState;
 
         [NativeTypeName("void (UINT, const D3D12_RESOURCE_BARRIER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, uint, D3D12_RESOURCE_BARRIER*, void> ResourceBarrier;
+        public delegate* unmanaged<TSelf*, uint, D3D12_RESOURCE_BARRIER*, void> ResourceBarrier;
 
         [NativeTypeName("void (ID3D12Resource *, const D3D12_DISCARD_REGION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, ID3D12Resource*, D3D12_DISCARD_REGION*, void> DiscardResource;
+        public delegate* unmanaged<TSelf*, ID3D12Resource*, D3D12_DISCARD_REGION*, void> DiscardResource;
 
         [NativeTypeName("void (ID3D12QueryHeap *, D3D12_QUERY_TYPE, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, void> BeginQuery;
+        public delegate* unmanaged<TSelf*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, void> BeginQuery;
 
         [NativeTypeName("void (ID3D12QueryHeap *, D3D12_QUERY_TYPE, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, void> EndQuery;
+        public delegate* unmanaged<TSelf*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, void> EndQuery;
 
         [NativeTypeName("void (ID3D12QueryHeap *, D3D12_QUERY_TYPE, UINT, UINT, ID3D12Resource *, UINT64) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, uint, ID3D12Resource*, ulong, void> ResolveQueryData;
+        public delegate* unmanaged<TSelf*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, uint, ID3D12Resource*, ulong, void> ResolveQueryData;
 
         [NativeTypeName("void (ID3D12Resource *, UINT64, D3D12_PREDICATION_OP) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, ID3D12Resource*, ulong, D3D12_PREDICATION_OP, void> SetPredication;
+        public delegate* unmanaged<TSelf*, ID3D12Resource*, ulong, D3D12_PREDICATION_OP, void> SetPredication;
 
         [NativeTypeName("void (UINT, const void *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, uint, void*, uint, void> SetMarker;
+        public delegate* unmanaged<TSelf*, uint, void*, uint, void> SetMarker;
 
         [NativeTypeName("void (UINT, const void *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, uint, void*, uint, void> BeginEvent;
+        public delegate* unmanaged<TSelf*, uint, void*, uint, void> BeginEvent;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, void> EndEvent;
+        public delegate* unmanaged<TSelf*, void> EndEvent;
 
         [NativeTypeName("void (ID3D12VideoMotionEstimator *, const D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT *, const D3D12_VIDEO_MOTION_ESTIMATOR_INPUT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, ID3D12VideoMotionEstimator*, D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT*, D3D12_VIDEO_MOTION_ESTIMATOR_INPUT*, void> EstimateMotion;
+        public delegate* unmanaged<TSelf*, ID3D12VideoMotionEstimator*, D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT*, D3D12_VIDEO_MOTION_ESTIMATOR_INPUT*, void> EstimateMotion;
 
         [NativeTypeName("void (const D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT *, const D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT*, D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT*, void> ResolveMotionVectorHeap;
+        public delegate* unmanaged<TSelf*, D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_OUTPUT*, D3D12_RESOLVE_VIDEO_MOTION_VECTOR_HEAP_INPUT*, void> ResolveMotionVectorHeap;
 
         [NativeTypeName("void (UINT, const D3D12_WRITEBUFFERIMMEDIATE_PARAMETER *, const D3D12_WRITEBUFFERIMMEDIATE_MODE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, uint, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER*, D3D12_WRITEBUFFERIMMEDIATE_MODE*, void> WriteBufferImmediate;
+        public delegate* unmanaged<TSelf*, uint, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER*, D3D12_WRITEBUFFERIMMEDIATE_MODE*, void> WriteBufferImmediate;
 
         [NativeTypeName("void (ID3D12ProtectedResourceSession *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, ID3D12ProtectedResourceSession*, void> SetProtectedResourceSession;
+        public delegate* unmanaged<TSelf*, ID3D12ProtectedResourceSession*, void> SetProtectedResourceSession;
 
         [NativeTypeName("void (ID3D12VideoExtensionCommand *, const void *, SIZE_T) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, ID3D12VideoExtensionCommand*, void*, nuint, void> InitializeExtensionCommand;
+        public delegate* unmanaged<TSelf*, ID3D12VideoExtensionCommand*, void*, nuint, void> InitializeExtensionCommand;
 
         [NativeTypeName("void (ID3D12VideoExtensionCommand *, const void *, SIZE_T) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12VideoEncodeCommandList1*, ID3D12VideoExtensionCommand*, void*, nuint, void> ExecuteExtensionCommand;
+        public delegate* unmanaged<TSelf*, ID3D12VideoExtensionCommand*, void*, nuint, void> ExecuteExtensionCommand;
     }
 }

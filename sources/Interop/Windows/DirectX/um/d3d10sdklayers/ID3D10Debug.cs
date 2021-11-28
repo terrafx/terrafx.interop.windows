@@ -113,36 +113,37 @@ public unsafe partial struct ID3D10Debug : ID3D10Debug.Interface
         HRESULT Validate();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10Debug*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10Debug*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10Debug*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10Debug*, uint, int> SetFeatureMask;
+        public delegate* unmanaged<TSelf*, uint, int> SetFeatureMask;
 
         [NativeTypeName("UINT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10Debug*, uint> GetFeatureMask;
+        public delegate* unmanaged<TSelf*, uint> GetFeatureMask;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10Debug*, uint, int> SetPresentPerRenderOpDelay;
+        public delegate* unmanaged<TSelf*, uint, int> SetPresentPerRenderOpDelay;
 
         [NativeTypeName("UINT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10Debug*, uint> GetPresentPerRenderOpDelay;
+        public delegate* unmanaged<TSelf*, uint> GetPresentPerRenderOpDelay;
 
         [NativeTypeName("HRESULT (IDXGISwapChain *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10Debug*, IDXGISwapChain*, int> SetSwapChain;
+        public delegate* unmanaged<TSelf*, IDXGISwapChain*, int> SetSwapChain;
 
         [NativeTypeName("HRESULT (IDXGISwapChain **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10Debug*, IDXGISwapChain**, int> GetSwapChain;
+        public delegate* unmanaged<TSelf*, IDXGISwapChain**, int> GetSwapChain;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10Debug*, int> Validate;
+        public delegate* unmanaged<TSelf*, int> Validate;
     }
 }

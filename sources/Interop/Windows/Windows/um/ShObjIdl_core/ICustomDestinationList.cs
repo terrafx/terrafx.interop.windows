@@ -132,42 +132,43 @@ public unsafe partial struct ICustomDestinationList : ICustomDestinationList.Int
         HRESULT AbortList();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICustomDestinationList*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICustomDestinationList*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICustomDestinationList*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICustomDestinationList*, ushort*, int> SetAppID;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetAppID;
 
         [NativeTypeName("HRESULT (UINT *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICustomDestinationList*, uint*, Guid*, void**, int> BeginList;
+        public delegate* unmanaged<TSelf*, uint*, Guid*, void**, int> BeginList;
 
         [NativeTypeName("HRESULT (LPCWSTR, IObjectArray *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICustomDestinationList*, ushort*, IObjectArray*, int> AppendCategory;
+        public delegate* unmanaged<TSelf*, ushort*, IObjectArray*, int> AppendCategory;
 
         [NativeTypeName("HRESULT (KNOWNDESTCATEGORY) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICustomDestinationList*, KNOWNDESTCATEGORY, int> AppendKnownCategory;
+        public delegate* unmanaged<TSelf*, KNOWNDESTCATEGORY, int> AppendKnownCategory;
 
         [NativeTypeName("HRESULT (IObjectArray *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICustomDestinationList*, IObjectArray*, int> AddUserTasks;
+        public delegate* unmanaged<TSelf*, IObjectArray*, int> AddUserTasks;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICustomDestinationList*, int> CommitList;
+        public delegate* unmanaged<TSelf*, int> CommitList;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICustomDestinationList*, Guid*, void**, int> GetRemovedDestinations;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetRemovedDestinations;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICustomDestinationList*, ushort*, int> DeleteList;
+        public delegate* unmanaged<TSelf*, ushort*, int> DeleteList;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICustomDestinationList*, int> AbortList;
+        public delegate* unmanaged<TSelf*, int> AbortList;
     }
 }

@@ -190,63 +190,64 @@ public unsafe partial struct ISVGPathSegCurvetoCubicAbs : ISVGPathSegCurvetoCubi
         HRESULT get_y2(float* p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPathSegCurvetoCubicAbs*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPathSegCurvetoCubicAbs*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPathSegCurvetoCubicAbs*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPathSegCurvetoCubicAbs*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPathSegCurvetoCubicAbs*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPathSegCurvetoCubicAbs*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPathSegCurvetoCubicAbs*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPathSegCurvetoCubicAbs*, float, int> put_x;
+        public delegate* unmanaged<TSelf*, float, int> put_x;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPathSegCurvetoCubicAbs*, float*, int> get_x;
+        public delegate* unmanaged<TSelf*, float*, int> get_x;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPathSegCurvetoCubicAbs*, float, int> put_y;
+        public delegate* unmanaged<TSelf*, float, int> put_y;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPathSegCurvetoCubicAbs*, float*, int> get_y;
+        public delegate* unmanaged<TSelf*, float*, int> get_y;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPathSegCurvetoCubicAbs*, float, int> put_x1;
+        public delegate* unmanaged<TSelf*, float, int> put_x1;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPathSegCurvetoCubicAbs*, float*, int> get_x1;
+        public delegate* unmanaged<TSelf*, float*, int> get_x1;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPathSegCurvetoCubicAbs*, float, int> put_y1;
+        public delegate* unmanaged<TSelf*, float, int> put_y1;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPathSegCurvetoCubicAbs*, float*, int> get_y1;
+        public delegate* unmanaged<TSelf*, float*, int> get_y1;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPathSegCurvetoCubicAbs*, float, int> put_x2;
+        public delegate* unmanaged<TSelf*, float, int> put_x2;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPathSegCurvetoCubicAbs*, float*, int> get_x2;
+        public delegate* unmanaged<TSelf*, float*, int> get_x2;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPathSegCurvetoCubicAbs*, float, int> put_y2;
+        public delegate* unmanaged<TSelf*, float, int> put_y2;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPathSegCurvetoCubicAbs*, float*, int> get_y2;
+        public delegate* unmanaged<TSelf*, float*, int> get_y2;
     }
 }

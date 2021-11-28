@@ -114,39 +114,40 @@ public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface
         HRESULT Close();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncInfo*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncInfo*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncInfo*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (unsigned int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncInfo*, uint*, int> get_Id;
+        public delegate* unmanaged<TSelf*, uint*, int> get_Id;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::AsyncStatus *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncInfo*, AsyncStatus*, int> get_Status;
+        public delegate* unmanaged<TSelf*, AsyncStatus*, int> get_Status;
 
         [NativeTypeName("HRESULT (HRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncInfo*, HRESULT*, int> get_ErrorCode;
+        public delegate* unmanaged<TSelf*, HRESULT*, int> get_ErrorCode;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncInfo*, int> Cancel;
+        public delegate* unmanaged<TSelf*, int> Cancel;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncInfo*, int> Close;
+        public delegate* unmanaged<TSelf*, int> Close;
     }
 }

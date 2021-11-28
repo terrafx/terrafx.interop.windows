@@ -52,18 +52,19 @@ public unsafe partial struct IAMLatency : IAMLatency.Interface
         HRESULT GetLatency([NativeTypeName("REFERENCE_TIME *")] long* prtLatency);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMLatency*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMLatency*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMLatency*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMLatency*, long*, int> GetLatency;
+        public delegate* unmanaged<TSelf*, long*, int> GetLatency;
     }
 }

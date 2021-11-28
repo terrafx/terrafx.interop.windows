@@ -112,36 +112,37 @@ public unsafe partial struct IMFContentEnabler : IMFContentEnabler.Interface
         HRESULT Cancel();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentEnabler*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentEnabler*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentEnabler*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentEnabler*, Guid*, int> GetEnableType;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetEnableType;
 
         [NativeTypeName("HRESULT (LPWSTR *, DWORD *, MF_URL_TRUST_STATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentEnabler*, ushort**, uint*, MF_URL_TRUST_STATUS*, int> GetEnableURL;
+        public delegate* unmanaged<TSelf*, ushort**, uint*, MF_URL_TRUST_STATUS*, int> GetEnableURL;
 
         [NativeTypeName("HRESULT (BYTE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentEnabler*, byte**, uint*, int> GetEnableData;
+        public delegate* unmanaged<TSelf*, byte**, uint*, int> GetEnableData;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentEnabler*, BOOL*, int> IsAutomaticSupported;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsAutomaticSupported;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentEnabler*, int> AutomaticEnable;
+        public delegate* unmanaged<TSelf*, int> AutomaticEnable;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentEnabler*, int> MonitorEnable;
+        public delegate* unmanaged<TSelf*, int> MonitorEnable;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentEnabler*, int> Cancel;
+        public delegate* unmanaged<TSelf*, int> Cancel;
     }
 }

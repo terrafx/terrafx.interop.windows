@@ -114,36 +114,37 @@ public unsafe partial struct IMFTimedTextCueList : IMFTimedTextCueList.Interface
         HRESULT RemoveCue(IMFTimedTextCue* cue);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCueList*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCueList*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCueList*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("DWORD () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCueList*, uint> GetLength;
+        public delegate* unmanaged<TSelf*, uint> GetLength;
 
         [NativeTypeName("HRESULT (DWORD, IMFTimedTextCue **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCueList*, uint, IMFTimedTextCue**, int> GetCueByIndex;
+        public delegate* unmanaged<TSelf*, uint, IMFTimedTextCue**, int> GetCueByIndex;
 
         [NativeTypeName("HRESULT (DWORD, IMFTimedTextCue **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCueList*, uint, IMFTimedTextCue**, int> GetCueById;
+        public delegate* unmanaged<TSelf*, uint, IMFTimedTextCue**, int> GetCueById;
 
         [NativeTypeName("HRESULT (LPCWSTR, IMFTimedTextCue **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCueList*, ushort*, IMFTimedTextCue**, int> GetCueByOriginalId;
+        public delegate* unmanaged<TSelf*, ushort*, IMFTimedTextCue**, int> GetCueByOriginalId;
 
         [NativeTypeName("HRESULT (double, double, LPCWSTR, IMFTimedTextCue **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCueList*, double, double, ushort*, IMFTimedTextCue**, int> AddTextCue;
+        public delegate* unmanaged<TSelf*, double, double, ushort*, IMFTimedTextCue**, int> AddTextCue;
 
         [NativeTypeName("HRESULT (double, double, const BYTE *, DWORD, IMFTimedTextCue **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCueList*, double, double, byte*, uint, IMFTimedTextCue**, int> AddDataCue;
+        public delegate* unmanaged<TSelf*, double, double, byte*, uint, IMFTimedTextCue**, int> AddDataCue;
 
         [NativeTypeName("HRESULT (IMFTimedTextCue *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCueList*, IMFTimedTextCue*, int> RemoveCue;
+        public delegate* unmanaged<TSelf*, IMFTimedTextCue*, int> RemoveCue;
     }
 }

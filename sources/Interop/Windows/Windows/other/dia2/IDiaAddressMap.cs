@@ -122,39 +122,40 @@ public unsafe partial struct IDiaAddressMap : IDiaAddressMap.Interface
         HRESULT set_addressMap([NativeTypeName("DWORD")] uint cData, [NativeTypeName("struct DiaAddressMapEntry *")] DiaAddressMapEntry* pData, BOOL imageToSymbols);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaAddressMap*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaAddressMap*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaAddressMap*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaAddressMap*, BOOL*, int> get_addressMapEnabled;
+        public delegate* unmanaged<TSelf*, BOOL*, int> get_addressMapEnabled;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaAddressMap*, BOOL, int> put_addressMapEnabled;
+        public delegate* unmanaged<TSelf*, BOOL, int> put_addressMapEnabled;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaAddressMap*, BOOL*, int> get_relativeVirtualAddressEnabled;
+        public delegate* unmanaged<TSelf*, BOOL*, int> get_relativeVirtualAddressEnabled;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaAddressMap*, BOOL, int> put_relativeVirtualAddressEnabled;
+        public delegate* unmanaged<TSelf*, BOOL, int> put_relativeVirtualAddressEnabled;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaAddressMap*, uint*, int> get_imageAlign;
+        public delegate* unmanaged<TSelf*, uint*, int> get_imageAlign;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaAddressMap*, uint, int> put_imageAlign;
+        public delegate* unmanaged<TSelf*, uint, int> put_imageAlign;
 
         [NativeTypeName("HRESULT (DWORD, BYTE *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaAddressMap*, uint, byte*, BOOL, int> set_imageHeaders;
+        public delegate* unmanaged<TSelf*, uint, byte*, BOOL, int> set_imageHeaders;
 
         [NativeTypeName("HRESULT (DWORD, struct DiaAddressMapEntry *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaAddressMap*, uint, DiaAddressMapEntry*, BOOL, int> set_addressMap;
+        public delegate* unmanaged<TSelf*, uint, DiaAddressMapEntry*, BOOL, int> set_addressMap;
     }
 }

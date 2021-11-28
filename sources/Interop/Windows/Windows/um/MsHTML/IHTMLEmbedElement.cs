@@ -210,69 +210,70 @@ public unsafe partial struct IHTMLEmbedElement : IHTMLEmbedElement.Interface
         HRESULT get_height(VARIANT* p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEmbedElement*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEmbedElement*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEmbedElement*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEmbedElement*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEmbedElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEmbedElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEmbedElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEmbedElement*, ushort*, int> put_hidden;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_hidden;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEmbedElement*, ushort**, int> get_hidden;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_hidden;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEmbedElement*, ushort**, int> get_palette;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_palette;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEmbedElement*, ushort**, int> get_pluginspage;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_pluginspage;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEmbedElement*, ushort*, int> put_src;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_src;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEmbedElement*, ushort**, int> get_src;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_src;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEmbedElement*, ushort*, int> put_units;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_units;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEmbedElement*, ushort**, int> get_units;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_units;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEmbedElement*, ushort*, int> put_name;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_name;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEmbedElement*, ushort**, int> get_name;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_name;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEmbedElement*, VARIANT, int> put_width;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_width;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEmbedElement*, VARIANT*, int> get_width;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_width;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEmbedElement*, VARIANT, int> put_height;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_height;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEmbedElement*, VARIANT*, int> get_height;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_height;
     }
 }

@@ -126,48 +126,49 @@ public unsafe partial struct IDXGIResource1 : IDXGIResource1.Interface
         HRESULT CreateSharedHandle([NativeTypeName("const SECURITY_ATTRIBUTES *")] SECURITY_ATTRIBUTES* pAttributes, [NativeTypeName("DWORD")] uint dwAccess, [NativeTypeName("LPCWSTR")] ushort* lpName, HANDLE* pHandle);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIResource1*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIResource1*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIResource1*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIResource1*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIResource1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIResource1*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIResource1*, Guid*, void**, int> GetParent;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetParent;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIResource1*, Guid*, void**, int> GetDevice;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDevice;
 
         [NativeTypeName("HRESULT (HANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIResource1*, HANDLE*, int> GetSharedHandle;
+        public delegate* unmanaged<TSelf*, HANDLE*, int> GetSharedHandle;
 
         [NativeTypeName("HRESULT (DXGI_USAGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIResource1*, uint*, int> GetUsage;
+        public delegate* unmanaged<TSelf*, uint*, int> GetUsage;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIResource1*, uint, int> SetEvictionPriority;
+        public delegate* unmanaged<TSelf*, uint, int> SetEvictionPriority;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIResource1*, uint*, int> GetEvictionPriority;
+        public delegate* unmanaged<TSelf*, uint*, int> GetEvictionPriority;
 
         [NativeTypeName("HRESULT (UINT, IDXGISurface2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIResource1*, uint, IDXGISurface2**, int> CreateSubresourceSurface;
+        public delegate* unmanaged<TSelf*, uint, IDXGISurface2**, int> CreateSubresourceSurface;
 
         [NativeTypeName("HRESULT (const SECURITY_ATTRIBUTES *, DWORD, LPCWSTR, HANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIResource1*, SECURITY_ATTRIBUTES*, uint, ushort*, HANDLE*, int> CreateSharedHandle;
+        public delegate* unmanaged<TSelf*, SECURITY_ATTRIBUTES*, uint, ushort*, HANDLE*, int> CreateSharedHandle;
     }
 }

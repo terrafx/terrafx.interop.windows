@@ -52,18 +52,19 @@ public unsafe partial struct IElementNamespaceTable : IElementNamespaceTable.Int
         HRESULT AddNamespace([NativeTypeName("BSTR")] ushort* bstrNamespace, [NativeTypeName("BSTR")] ushort* bstrUrn, [NativeTypeName("LONG")] int lFlags, VARIANT* pvarFactory);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementNamespaceTable*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementNamespaceTable*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementNamespaceTable*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, LONG, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementNamespaceTable*, ushort*, ushort*, int, VARIANT*, int> AddNamespace;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int, VARIANT*, int> AddNamespace;
     }
 }

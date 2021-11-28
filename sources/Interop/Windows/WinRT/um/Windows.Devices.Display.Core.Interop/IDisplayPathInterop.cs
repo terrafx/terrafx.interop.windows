@@ -63,21 +63,22 @@ public unsafe partial struct IDisplayPathInterop : IDisplayPathInterop.Interface
         HRESULT GetSourceId(uint* pSourceId);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPathInterop*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPathInterop*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPathInterop*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPathInterop*, HANDLE*, int> CreateSourcePresentationHandle;
+        public delegate* unmanaged<TSelf*, HANDLE*, int> CreateSourcePresentationHandle;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPathInterop*, uint*, int> GetSourceId;
+        public delegate* unmanaged<TSelf*, uint*, int> GetSourceId;
     }
 }

@@ -132,42 +132,43 @@ public unsafe partial struct IWbemContext : IWbemContext.Interface
         HRESULT DeleteAll();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemContext*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemContext*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemContext*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IWbemContext **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemContext*, IWbemContext**, int> Clone;
+        public delegate* unmanaged<TSelf*, IWbemContext**, int> Clone;
 
         [NativeTypeName("HRESULT (long, SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemContext*, int, SAFEARRAY**, int> GetNames;
+        public delegate* unmanaged<TSelf*, int, SAFEARRAY**, int> GetNames;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemContext*, int, int> BeginEnumeration;
+        public delegate* unmanaged<TSelf*, int, int> BeginEnumeration;
 
         [NativeTypeName("HRESULT (long, BSTR *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemContext*, int, ushort**, VARIANT*, int> Next;
+        public delegate* unmanaged<TSelf*, int, ushort**, VARIANT*, int> Next;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemContext*, int> EndEnumeration;
+        public delegate* unmanaged<TSelf*, int> EndEnumeration;
 
         [NativeTypeName("HRESULT (LPCWSTR, long, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemContext*, ushort*, int, VARIANT*, int> SetValue;
+        public delegate* unmanaged<TSelf*, ushort*, int, VARIANT*, int> SetValue;
 
         [NativeTypeName("HRESULT (LPCWSTR, long, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemContext*, ushort*, int, VARIANT*, int> GetValue;
+        public delegate* unmanaged<TSelf*, ushort*, int, VARIANT*, int> GetValue;
 
         [NativeTypeName("HRESULT (LPCWSTR, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemContext*, ushort*, int, int> DeleteValue;
+        public delegate* unmanaged<TSelf*, ushort*, int, int> DeleteValue;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemContext*, int> DeleteAll;
+        public delegate* unmanaged<TSelf*, int> DeleteAll;
     }
 }

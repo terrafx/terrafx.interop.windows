@@ -106,33 +106,34 @@ public unsafe partial struct IMFMediaEngineSrcElements : IMFMediaEngineSrcElemen
         HRESULT RemoveAllElements();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineSrcElements*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineSrcElements*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineSrcElements*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("DWORD () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineSrcElements*, uint> GetLength;
+        public delegate* unmanaged<TSelf*, uint> GetLength;
 
         [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineSrcElements*, uint, ushort**, int> GetURL;
+        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetURL;
 
         [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
-        public new delegate* unmanaged<IMFMediaEngineSrcElements*, uint, ushort**, int> GetType;
+        public new delegate* unmanaged<TSelf*, uint, ushort**, int> GetType;
 
         [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineSrcElements*, uint, ushort**, int> GetMedia;
+        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetMedia;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineSrcElements*, ushort*, ushort*, ushort*, int> AddElement;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, int> AddElement;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineSrcElements*, int> RemoveAllElements;
+        public delegate* unmanaged<TSelf*, int> RemoveAllElements;
     }
 }

@@ -62,21 +62,22 @@ public unsafe partial struct ITfLMLattice : ITfLMLattice.Interface
         HRESULT EnumLatticeElements([NativeTypeName("DWORD")] uint dwFrameStart, [NativeTypeName("const GUID &")] Guid* rguidType, IEnumTfLatticeElements** ppEnum);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLMLattice*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLMLattice*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLMLattice*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLMLattice*, Guid*, BOOL*, int> QueryType;
+        public delegate* unmanaged<TSelf*, Guid*, BOOL*, int> QueryType;
 
         [NativeTypeName("HRESULT (DWORD, const GUID &, IEnumTfLatticeElements **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLMLattice*, uint, Guid*, IEnumTfLatticeElements**, int> EnumLatticeElements;
+        public delegate* unmanaged<TSelf*, uint, Guid*, IEnumTfLatticeElements**, int> EnumLatticeElements;
     }
 }

@@ -86,30 +86,31 @@ public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherT
         HRESULT IsRegisteredForContentPrefetch([NativeTypeName("LPCWSTR")] ushort* packageFullName, [NativeTypeName("boolean *")] byte* isRegistered);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContentPrefetcherTaskTrigger*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContentPrefetcherTaskTrigger*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContentPrefetcherTaskTrigger*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContentPrefetcherTaskTrigger*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContentPrefetcherTaskTrigger*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContentPrefetcherTaskTrigger*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContentPrefetcherTaskTrigger*, ushort*, int> TriggerContentPrefetcherTask;
+        public delegate* unmanaged<TSelf*, ushort*, int> TriggerContentPrefetcherTask;
 
         [NativeTypeName("HRESULT (LPCWSTR, boolean *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContentPrefetcherTaskTrigger*, ushort*, byte*, int> IsRegisteredForContentPrefetch;
+        public delegate* unmanaged<TSelf*, ushort*, byte*, int> IsRegisteredForContentPrefetch;
     }
 }

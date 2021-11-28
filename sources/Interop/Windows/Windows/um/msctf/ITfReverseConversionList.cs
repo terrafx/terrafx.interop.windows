@@ -62,21 +62,22 @@ public unsafe partial struct ITfReverseConversionList : ITfReverseConversionList
         HRESULT GetString(uint uIndex, [NativeTypeName("BSTR *")] ushort** pbstr);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfReverseConversionList*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfReverseConversionList*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfReverseConversionList*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfReverseConversionList*, uint*, int> GetLength;
+        public delegate* unmanaged<TSelf*, uint*, int> GetLength;
 
         [NativeTypeName("HRESULT (UINT, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfReverseConversionList*, uint, ushort**, int> GetString;
+        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetString;
     }
 }

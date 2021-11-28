@@ -84,27 +84,28 @@ public unsafe partial struct ISpatialAudioMetadataWriter : ISpatialAudioMetadata
         HRESULT Close();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioMetadataWriter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioMetadataWriter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioMetadataWriter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ISpatialAudioMetadataItems *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioMetadataWriter*, ISpatialAudioMetadataItems*, int> Open;
+        public delegate* unmanaged<TSelf*, ISpatialAudioMetadataItems*, int> Open;
 
         [NativeTypeName("HRESULT (UINT16) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioMetadataWriter*, ushort, int> WriteNextItem;
+        public delegate* unmanaged<TSelf*, ushort, int> WriteNextItem;
 
         [NativeTypeName("HRESULT (BYTE, const void *, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioMetadataWriter*, byte, void*, uint, int> WriteNextItemCommand;
+        public delegate* unmanaged<TSelf*, byte, void*, uint, int> WriteNextItemCommand;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioMetadataWriter*, int> Close;
+        public delegate* unmanaged<TSelf*, int> Close;
     }
 }

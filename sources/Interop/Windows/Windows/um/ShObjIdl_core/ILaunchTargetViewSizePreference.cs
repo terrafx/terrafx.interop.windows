@@ -52,18 +52,19 @@ public unsafe partial struct ILaunchTargetViewSizePreference : ILaunchTargetView
         HRESULT GetTargetViewSizePreference(APPLICATION_VIEW_SIZE_PREFERENCE* targetSizeOnLaunch);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILaunchTargetViewSizePreference*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ILaunchTargetViewSizePreference*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ILaunchTargetViewSizePreference*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (APPLICATION_VIEW_SIZE_PREFERENCE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILaunchTargetViewSizePreference*, APPLICATION_VIEW_SIZE_PREFERENCE*, int> GetTargetViewSizePreference;
+        public delegate* unmanaged<TSelf*, APPLICATION_VIEW_SIZE_PREFERENCE*, int> GetTargetViewSizePreference;
     }
 }

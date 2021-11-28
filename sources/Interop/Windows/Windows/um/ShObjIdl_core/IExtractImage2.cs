@@ -66,24 +66,25 @@ public unsafe partial struct IExtractImage2 : IExtractImage2.Interface
         HRESULT GetDateStamp(FILETIME* pDateStamp);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExtractImage2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExtractImage2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExtractImage2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR, DWORD, DWORD *, const SIZE *, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExtractImage2*, ushort*, uint, uint*, SIZE*, uint, uint*, int> GetLocation;
+        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, SIZE*, uint, uint*, int> GetLocation;
 
         [NativeTypeName("HRESULT (HBITMAP *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExtractImage2*, HBITMAP*, int> Extract;
+        public delegate* unmanaged<TSelf*, HBITMAP*, int> Extract;
 
         [NativeTypeName("HRESULT (FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExtractImage2*, FILETIME*, int> GetDateStamp;
+        public delegate* unmanaged<TSelf*, FILETIME*, int> GetDateStamp;
     }
 }

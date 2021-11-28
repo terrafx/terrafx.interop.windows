@@ -52,18 +52,19 @@ public unsafe partial struct IComputerInfoChangeNotify : IComputerInfoChangeNoti
         HRESULT ComputerInfoChanged();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IComputerInfoChangeNotify*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IComputerInfoChangeNotify*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IComputerInfoChangeNotify*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IComputerInfoChangeNotify*, int> ComputerInfoChanged;
+        public delegate* unmanaged<TSelf*, int> ComputerInfoChanged;
     }
 }

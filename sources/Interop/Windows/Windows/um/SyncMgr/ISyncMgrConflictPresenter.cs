@@ -52,18 +52,19 @@ public unsafe partial struct ISyncMgrConflictPresenter : ISyncMgrConflictPresent
         HRESULT PresentConflict(ISyncMgrConflict* pConflict, ISyncMgrConflictResolveInfo* pResolveInfo);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflictPresenter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflictPresenter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflictPresenter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ISyncMgrConflict *, ISyncMgrConflictResolveInfo *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflictPresenter*, ISyncMgrConflict*, ISyncMgrConflictResolveInfo*, int> PresentConflict;
+        public delegate* unmanaged<TSelf*, ISyncMgrConflict*, ISyncMgrConflictResolveInfo*, int> PresentConflict;
     }
 }

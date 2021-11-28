@@ -72,24 +72,25 @@ public unsafe partial struct ISyncMgrRegister : ISyncMgrRegister.Interface
         HRESULT GetHandlerRegistrationInfo([NativeTypeName("const IID &")] Guid* clsidHandler, [NativeTypeName("LPDWORD")] uint* pdwSyncMgrRegisterFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrRegister*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrRegister*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrRegister*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrRegister*, Guid*, ushort*, uint, int> RegisterSyncMgrHandler;
+        public delegate* unmanaged<TSelf*, Guid*, ushort*, uint, int> RegisterSyncMgrHandler;
 
         [NativeTypeName("HRESULT (const IID &, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrRegister*, Guid*, uint, int> UnregisterSyncMgrHandler;
+        public delegate* unmanaged<TSelf*, Guid*, uint, int> UnregisterSyncMgrHandler;
 
         [NativeTypeName("HRESULT (const IID &, LPDWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrRegister*, Guid*, uint*, int> GetHandlerRegistrationInfo;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, int> GetHandlerRegistrationInfo;
     }
 }

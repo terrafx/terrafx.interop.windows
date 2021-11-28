@@ -85,27 +85,28 @@ public unsafe partial struct IBitmapData : IBitmapData.Interface
         HRESULT GetSourceBitmapDescription(BitmapDescription* pBitmapDescription);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBitmapData*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBitmapData*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBitmapData*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (unsigned int, unsigned int, byte *, unsigned int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBitmapData*, uint, uint, byte*, uint*, int> CopyBytesTo;
+        public delegate* unmanaged<TSelf*, uint, uint, byte*, uint*, int> CopyBytesTo;
 
         [NativeTypeName("HRESULT (unsigned int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBitmapData*, uint*, int> GetStride;
+        public delegate* unmanaged<TSelf*, uint*, int> GetStride;
 
         [NativeTypeName("HRESULT (BitmapDescription *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBitmapData*, BitmapDescription*, int> GetBitmapDescription;
+        public delegate* unmanaged<TSelf*, BitmapDescription*, int> GetBitmapDescription;
 
         [NativeTypeName("HRESULT (BitmapDescription *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBitmapData*, BitmapDescription*, int> GetSourceBitmapDescription;
+        public delegate* unmanaged<TSelf*, BitmapDescription*, int> GetSourceBitmapDescription;
     }
 }

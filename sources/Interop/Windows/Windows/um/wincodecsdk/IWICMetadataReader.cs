@@ -102,33 +102,34 @@ public unsafe partial struct IWICMetadataReader : IWICMetadataReader.Interface
         HRESULT GetEnumerator(IWICEnumMetadataItem** ppIEnumMetadata);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReader*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReader*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReader*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReader*, Guid*, int> GetMetadataFormat;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetMetadataFormat;
 
         [NativeTypeName("HRESULT (IWICMetadataHandlerInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReader*, IWICMetadataHandlerInfo**, int> GetMetadataHandlerInfo;
+        public delegate* unmanaged<TSelf*, IWICMetadataHandlerInfo**, int> GetMetadataHandlerInfo;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReader*, uint*, int> GetCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (UINT, PROPVARIANT *, PROPVARIANT *, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReader*, uint, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int> GetValueByIndex;
+        public delegate* unmanaged<TSelf*, uint, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int> GetValueByIndex;
 
         [NativeTypeName("HRESULT (const PROPVARIANT *, const PROPVARIANT *, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReader*, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int> GetValue;
+        public delegate* unmanaged<TSelf*, PROPVARIANT*, PROPVARIANT*, PROPVARIANT*, int> GetValue;
 
         [NativeTypeName("HRESULT (IWICEnumMetadataItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReader*, IWICEnumMetadataItem**, int> GetEnumerator;
+        public delegate* unmanaged<TSelf*, IWICEnumMetadataItem**, int> GetEnumerator;
     }
 }

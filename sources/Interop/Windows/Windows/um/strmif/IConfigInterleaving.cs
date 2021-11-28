@@ -82,27 +82,28 @@ public unsafe partial struct IConfigInterleaving : IConfigInterleaving.Interface
         HRESULT get_Interleaving([NativeTypeName("REFERENCE_TIME *")] long* prtInterleave, [NativeTypeName("REFERENCE_TIME *")] long* prtPreroll);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConfigInterleaving*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IConfigInterleaving*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IConfigInterleaving*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (InterleavingMode) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConfigInterleaving*, InterleavingMode, int> put_Mode;
+        public delegate* unmanaged<TSelf*, InterleavingMode, int> put_Mode;
 
         [NativeTypeName("HRESULT (InterleavingMode *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConfigInterleaving*, InterleavingMode*, int> get_Mode;
+        public delegate* unmanaged<TSelf*, InterleavingMode*, int> get_Mode;
 
         [NativeTypeName("HRESULT (const REFERENCE_TIME *, const REFERENCE_TIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConfigInterleaving*, long*, long*, int> put_Interleaving;
+        public delegate* unmanaged<TSelf*, long*, long*, int> put_Interleaving;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME *, REFERENCE_TIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConfigInterleaving*, long*, long*, int> get_Interleaving;
+        public delegate* unmanaged<TSelf*, long*, long*, int> get_Interleaving;
     }
 }

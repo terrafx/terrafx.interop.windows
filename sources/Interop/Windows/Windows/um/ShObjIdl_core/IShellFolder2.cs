@@ -182,66 +182,67 @@ public unsafe partial struct IShellFolder2 : IShellFolder2.Interface
         HRESULT MapColumnToSCID(uint iColumn, [NativeTypeName("SHCOLUMNID *")] PROPERTYKEY* pscid);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, IBindCtx *, LPWSTR, ULONG *, LPITEMIDLIST *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder2*, HWND, IBindCtx*, ushort*, uint*, ITEMIDLIST**, uint*, int> ParseDisplayName;
+        public delegate* unmanaged<TSelf*, HWND, IBindCtx*, ushort*, uint*, ITEMIDLIST**, uint*, int> ParseDisplayName;
 
         [NativeTypeName("HRESULT (HWND, SHCONTF, IEnumIDList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder2*, HWND, uint, IEnumIDList**, int> EnumObjects;
+        public delegate* unmanaged<TSelf*, HWND, uint, IEnumIDList**, int> EnumObjects;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, IBindCtx *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder2*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int> BindToObject;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int> BindToObject;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, IBindCtx *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder2*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int> BindToStorage;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int> BindToStorage;
 
         [NativeTypeName("HRESULT (LPARAM, LPCITEMIDLIST, LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder2*, LPARAM, ITEMIDLIST*, ITEMIDLIST*, int> CompareIDs;
+        public delegate* unmanaged<TSelf*, LPARAM, ITEMIDLIST*, ITEMIDLIST*, int> CompareIDs;
 
         [NativeTypeName("HRESULT (HWND, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder2*, HWND, Guid*, void**, int> CreateViewObject;
+        public delegate* unmanaged<TSelf*, HWND, Guid*, void**, int> CreateViewObject;
 
         [NativeTypeName("HRESULT (UINT, LPCITEMIDLIST *, SFGAOF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder2*, uint, ITEMIDLIST**, uint*, int> GetAttributesOf;
+        public delegate* unmanaged<TSelf*, uint, ITEMIDLIST**, uint*, int> GetAttributesOf;
 
         [NativeTypeName("HRESULT (HWND, UINT, LPCITEMIDLIST *, const IID &, UINT *, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder2*, HWND, uint, ITEMIDLIST**, Guid*, uint*, void**, int> GetUIObjectOf;
+        public delegate* unmanaged<TSelf*, HWND, uint, ITEMIDLIST**, Guid*, uint*, void**, int> GetUIObjectOf;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, SHGDNF, STRRET *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder2*, ITEMIDLIST*, uint, STRRET*, int> GetDisplayNameOf;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, uint, STRRET*, int> GetDisplayNameOf;
 
         [NativeTypeName("HRESULT (HWND, LPCITEMIDLIST, LPCWSTR, SHGDNF, LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder2*, HWND, ITEMIDLIST*, ushort*, uint, ITEMIDLIST**, int> SetNameOf;
+        public delegate* unmanaged<TSelf*, HWND, ITEMIDLIST*, ushort*, uint, ITEMIDLIST**, int> SetNameOf;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder2*, Guid*, int> GetDefaultSearchGUID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetDefaultSearchGUID;
 
         [NativeTypeName("HRESULT (IEnumExtraSearch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder2*, IEnumExtraSearch**, int> EnumSearches;
+        public delegate* unmanaged<TSelf*, IEnumExtraSearch**, int> EnumSearches;
 
         [NativeTypeName("HRESULT (DWORD, ULONG *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder2*, uint, uint*, uint*, int> GetDefaultColumn;
+        public delegate* unmanaged<TSelf*, uint, uint*, uint*, int> GetDefaultColumn;
 
         [NativeTypeName("HRESULT (UINT, SHCOLSTATEF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder2*, uint, uint*, int> GetDefaultColumnState;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> GetDefaultColumnState;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, const SHCOLUMNID *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder2*, ITEMIDLIST*, PROPERTYKEY*, VARIANT*, int> GetDetailsEx;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, PROPERTYKEY*, VARIANT*, int> GetDetailsEx;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, UINT, SHELLDETAILS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder2*, ITEMIDLIST*, uint, SHELLDETAILS*, int> GetDetailsOf;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, uint, SHELLDETAILS*, int> GetDetailsOf;
 
         [NativeTypeName("HRESULT (UINT, SHCOLUMNID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder2*, uint, PROPERTYKEY*, int> MapColumnToSCID;
+        public delegate* unmanaged<TSelf*, uint, PROPERTYKEY*, int> MapColumnToSCID;
     }
 }

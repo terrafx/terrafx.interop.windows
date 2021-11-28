@@ -59,21 +59,22 @@ public unsafe partial struct IURLSearchHook2 : IURLSearchHook2.Interface
         HRESULT TranslateWithSearchContext([NativeTypeName("PWSTR")] ushort* pwszSearchURL, [NativeTypeName("DWORD")] uint cchBufferSize, ISearchContext* pSearchContext);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IURLSearchHook2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IURLSearchHook2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IURLSearchHook2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IURLSearchHook2*, ushort*, uint, int> Translate;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> Translate;
 
         [NativeTypeName("HRESULT (PWSTR, DWORD, ISearchContext *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IURLSearchHook2*, ushort*, uint, ISearchContext*, int> TranslateWithSearchContext;
+        public delegate* unmanaged<TSelf*, ushort*, uint, ISearchContext*, int> TranslateWithSearchContext;
     }
 }

@@ -64,21 +64,22 @@ public unsafe partial struct IAppxEncryptedPackageWriter : IAppxEncryptedPackage
         HRESULT Close();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptedPackageWriter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptedPackageWriter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptedPackageWriter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, APPX_COMPRESSION_OPTION, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptedPackageWriter*, ushort*, APPX_COMPRESSION_OPTION, IStream*, int> AddPayloadFileEncrypted;
+        public delegate* unmanaged<TSelf*, ushort*, APPX_COMPRESSION_OPTION, IStream*, int> AddPayloadFileEncrypted;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptedPackageWriter*, int> Close;
+        public delegate* unmanaged<TSelf*, int> Close;
     }
 }

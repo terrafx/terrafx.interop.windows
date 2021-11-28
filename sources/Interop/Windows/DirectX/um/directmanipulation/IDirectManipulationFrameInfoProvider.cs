@@ -55,18 +55,19 @@ public unsafe partial struct IDirectManipulationFrameInfoProvider : IDirectManip
         HRESULT GetNextFrameInfo([NativeTypeName("ULONGLONG *")] ulong* time, [NativeTypeName("ULONGLONG *")] ulong* processTime, [NativeTypeName("ULONGLONG *")] ulong* compositionTime);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationFrameInfoProvider*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationFrameInfoProvider*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationFrameInfoProvider*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONGLONG *, ULONGLONG *, ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationFrameInfoProvider*, ulong*, ulong*, ulong*, int> GetNextFrameInfo;
+        public delegate* unmanaged<TSelf*, ulong*, ulong*, ulong*, int> GetNextFrameInfo;
     }
 }

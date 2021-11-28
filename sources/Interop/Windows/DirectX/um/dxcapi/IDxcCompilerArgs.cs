@@ -97,30 +97,31 @@ public unsafe partial struct IDxcCompilerArgs : IDxcCompilerArgs.Interface
         HRESULT AddDefines([NativeTypeName("const DxcDefine *")] DxcDefine* pDefines, [NativeTypeName("UINT32")] uint defineCount);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcCompilerArgs*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcCompilerArgs*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcCompilerArgs*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("LPCWSTR *() __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcCompilerArgs*, ushort**> GetArguments;
+        public delegate* unmanaged<TSelf*, ushort**> GetArguments;
 
         [NativeTypeName("UINT32 () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcCompilerArgs*, uint> GetCount;
+        public delegate* unmanaged<TSelf*, uint> GetCount;
 
         [NativeTypeName("HRESULT (LPCWSTR *, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcCompilerArgs*, ushort**, uint, int> AddArguments;
+        public delegate* unmanaged<TSelf*, ushort**, uint, int> AddArguments;
 
         [NativeTypeName("HRESULT (LPCSTR *, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcCompilerArgs*, sbyte**, uint, int> AddArgumentsUTF8;
+        public delegate* unmanaged<TSelf*, sbyte**, uint, int> AddArgumentsUTF8;
 
         [NativeTypeName("HRESULT (const DxcDefine *, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcCompilerArgs*, DxcDefine*, uint, int> AddDefines;
+        public delegate* unmanaged<TSelf*, DxcDefine*, uint, int> AddDefines;
     }
 }

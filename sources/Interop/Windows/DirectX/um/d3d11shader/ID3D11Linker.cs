@@ -73,24 +73,25 @@ public unsafe partial struct ID3D11Linker : ID3D11Linker.Interface
         HRESULT AddClipPlaneFromCBuffer(uint uCBufferSlot, uint uCBufferEntry);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Linker*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Linker*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Linker*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (struct ID3D11ModuleInstance *, LPCSTR, LPCSTR, UINT, ID3DBlob **, ID3DBlob **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, sbyte*, sbyte*, uint, ID3DBlob**, ID3DBlob**, int> Link;
+        public delegate* unmanaged<TSelf*, ID3D11ModuleInstance*, sbyte*, sbyte*, uint, ID3DBlob**, ID3DBlob**, int> Link;
 
         [NativeTypeName("HRESULT (struct ID3D11ModuleInstance *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Linker*, ID3D11ModuleInstance*, int> UseLibrary;
+        public delegate* unmanaged<TSelf*, ID3D11ModuleInstance*, int> UseLibrary;
 
         [NativeTypeName("HRESULT (UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Linker*, uint, uint, int> AddClipPlaneFromCBuffer;
+        public delegate* unmanaged<TSelf*, uint, uint, int> AddClipPlaneFromCBuffer;
     }
 }

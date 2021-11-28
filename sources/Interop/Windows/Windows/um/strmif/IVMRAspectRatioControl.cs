@@ -62,21 +62,22 @@ public unsafe partial struct IVMRAspectRatioControl : IVMRAspectRatioControl.Int
         HRESULT SetAspectRatioMode([NativeTypeName("DWORD")] uint dwARMode);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRAspectRatioControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRAspectRatioControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRAspectRatioControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPDWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRAspectRatioControl*, uint*, int> GetAspectRatioMode;
+        public delegate* unmanaged<TSelf*, uint*, int> GetAspectRatioMode;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRAspectRatioControl*, uint, int> SetAspectRatioMode;
+        public delegate* unmanaged<TSelf*, uint, int> SetAspectRatioMode;
     }
 }

@@ -52,18 +52,19 @@ public unsafe partial struct IGetCapabilitiesKey : IGetCapabilitiesKey.Interface
         HRESULT GetCapabilitiesKey(HKEY* pHKey);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGetCapabilitiesKey*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IGetCapabilitiesKey*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IGetCapabilitiesKey*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGetCapabilitiesKey*, HKEY*, int> GetCapabilitiesKey;
+        public delegate* unmanaged<TSelf*, HKEY*, int> GetCapabilitiesKey;
     }
 }

@@ -96,36 +96,37 @@ public unsafe partial struct IMFPluginControl2 : IMFPluginControl2.Interface
         HRESULT SetPolicy(MF_PLUGIN_CONTROL_POLICY policy);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPluginControl2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPluginControl2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPluginControl2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR, CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPluginControl2*, uint, ushort*, Guid*, int> GetPreferredClsid;
+        public delegate* unmanaged<TSelf*, uint, ushort*, Guid*, int> GetPreferredClsid;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, LPWSTR *, CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPluginControl2*, uint, uint, ushort**, Guid*, int> GetPreferredClsidByIndex;
+        public delegate* unmanaged<TSelf*, uint, uint, ushort**, Guid*, int> GetPreferredClsidByIndex;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR, const CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPluginControl2*, uint, ushort*, Guid*, int> SetPreferredClsid;
+        public delegate* unmanaged<TSelf*, uint, ushort*, Guid*, int> SetPreferredClsid;
 
         [NativeTypeName("HRESULT (DWORD, const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPluginControl2*, uint, Guid*, int> IsDisabled;
+        public delegate* unmanaged<TSelf*, uint, Guid*, int> IsDisabled;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPluginControl2*, uint, uint, Guid*, int> GetDisabledByIndex;
+        public delegate* unmanaged<TSelf*, uint, uint, Guid*, int> GetDisabledByIndex;
 
         [NativeTypeName("HRESULT (DWORD, const IID &, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPluginControl2*, uint, Guid*, BOOL, int> SetDisabled;
+        public delegate* unmanaged<TSelf*, uint, Guid*, BOOL, int> SetDisabled;
 
         [NativeTypeName("HRESULT (MF_PLUGIN_CONTROL_POLICY) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPluginControl2*, MF_PLUGIN_CONTROL_POLICY, int> SetPolicy;
+        public delegate* unmanaged<TSelf*, MF_PLUGIN_CONTROL_POLICY, int> SetPolicy;
     }
 }

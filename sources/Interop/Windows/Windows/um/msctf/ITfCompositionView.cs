@@ -62,21 +62,22 @@ public unsafe partial struct ITfCompositionView : ITfCompositionView.Interface
         HRESULT GetRange(ITfRange** ppRange);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCompositionView*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCompositionView*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCompositionView*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCompositionView*, Guid*, int> GetOwnerClsid;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetOwnerClsid;
 
         [NativeTypeName("HRESULT (ITfRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCompositionView*, ITfRange**, int> GetRange;
+        public delegate* unmanaged<TSelf*, ITfRange**, int> GetRange;
     }
 }

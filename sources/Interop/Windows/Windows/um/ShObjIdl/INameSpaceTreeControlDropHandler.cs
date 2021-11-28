@@ -102,33 +102,34 @@ public unsafe partial struct INameSpaceTreeControlDropHandler : INameSpaceTreeCo
         HRESULT OnDragLeave(IShellItem* psiOver);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlDropHandler*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlDropHandler*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlDropHandler*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItemArray *, BOOL, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlDropHandler*, IShellItem*, IShellItemArray*, BOOL, uint, uint*, int> OnDragEnter;
+        public delegate* unmanaged<TSelf*, IShellItem*, IShellItemArray*, BOOL, uint, uint*, int> OnDragEnter;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItemArray *, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlDropHandler*, IShellItem*, IShellItemArray*, uint, uint*, int> OnDragOver;
+        public delegate* unmanaged<TSelf*, IShellItem*, IShellItemArray*, uint, uint*, int> OnDragOver;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItemArray *, int, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlDropHandler*, IShellItem*, IShellItemArray*, int, int, int> OnDragPosition;
+        public delegate* unmanaged<TSelf*, IShellItem*, IShellItemArray*, int, int, int> OnDragPosition;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItemArray *, int, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlDropHandler*, IShellItem*, IShellItemArray*, int, uint, uint*, int> OnDrop;
+        public delegate* unmanaged<TSelf*, IShellItem*, IShellItemArray*, int, uint, uint*, int> OnDrop;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItemArray *, int, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlDropHandler*, IShellItem*, IShellItemArray*, int, int, int> OnDropPosition;
+        public delegate* unmanaged<TSelf*, IShellItem*, IShellItemArray*, int, int, int> OnDropPosition;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlDropHandler*, IShellItem*, int> OnDragLeave;
+        public delegate* unmanaged<TSelf*, IShellItem*, int> OnDragLeave;
     }
 }

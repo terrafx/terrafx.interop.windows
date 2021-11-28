@@ -122,39 +122,40 @@ public unsafe partial struct ICaptureGraphBuilder : ICaptureGraphBuilder.Interfa
         HRESULT CopyCaptureFile([NativeTypeName("LPOLESTR")] ushort* lpwstrOld, [NativeTypeName("LPOLESTR")] ushort* lpwstrNew, int fAllowEscAbort, IAMCopyCaptureFileProgress* pCallback);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IGraphBuilder *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder*, IGraphBuilder*, int> SetFiltergraph;
+        public delegate* unmanaged<TSelf*, IGraphBuilder*, int> SetFiltergraph;
 
         [NativeTypeName("HRESULT (IGraphBuilder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder*, IGraphBuilder**, int> GetFiltergraph;
+        public delegate* unmanaged<TSelf*, IGraphBuilder**, int> GetFiltergraph;
 
         [NativeTypeName("HRESULT (const GUID *, LPCOLESTR, IBaseFilter **, IFileSinkFilter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder*, Guid*, ushort*, IBaseFilter**, IFileSinkFilter**, int> SetOutputFileName;
+        public delegate* unmanaged<TSelf*, Guid*, ushort*, IBaseFilter**, IFileSinkFilter**, int> SetOutputFileName;
 
         [NativeTypeName("HRESULT (const GUID *, IBaseFilter *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder*, Guid*, IBaseFilter*, Guid*, void**, int> FindInterface;
+        public delegate* unmanaged<TSelf*, Guid*, IBaseFilter*, Guid*, void**, int> FindInterface;
 
         [NativeTypeName("HRESULT (const GUID *, IUnknown *, IBaseFilter *, IBaseFilter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder*, Guid*, IUnknown*, IBaseFilter*, IBaseFilter*, int> RenderStream;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, IBaseFilter*, IBaseFilter*, int> RenderStream;
 
         [NativeTypeName("HRESULT (const GUID *, IBaseFilter *, REFERENCE_TIME *, REFERENCE_TIME *, WORD, WORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder*, Guid*, IBaseFilter*, long*, long*, ushort, ushort, int> ControlStream;
+        public delegate* unmanaged<TSelf*, Guid*, IBaseFilter*, long*, long*, ushort, ushort, int> ControlStream;
 
         [NativeTypeName("HRESULT (LPCOLESTR, DWORDLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder*, ushort*, ulong, int> AllocCapFile;
+        public delegate* unmanaged<TSelf*, ushort*, ulong, int> AllocCapFile;
 
         [NativeTypeName("HRESULT (LPOLESTR, LPOLESTR, int, IAMCopyCaptureFileProgress *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder*, ushort*, ushort*, int, IAMCopyCaptureFileProgress*, int> CopyCaptureFile;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int, IAMCopyCaptureFileProgress*, int> CopyCaptureFile;
     }
 }

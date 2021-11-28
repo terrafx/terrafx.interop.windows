@@ -147,51 +147,52 @@ public unsafe partial struct ICondition : ICondition.Interface
         HRESULT Clone(ICondition** ppc);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICondition*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICondition*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICondition*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICondition*, Guid*, int> GetClassID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetClassID;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICondition*, int> IsDirty;
+        public delegate* unmanaged<TSelf*, int> IsDirty;
 
         [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICondition*, IStream*, int> Load;
+        public delegate* unmanaged<TSelf*, IStream*, int> Load;
 
         [NativeTypeName("HRESULT (IStream *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICondition*, IStream*, BOOL, int> Save;
+        public delegate* unmanaged<TSelf*, IStream*, BOOL, int> Save;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICondition*, ULARGE_INTEGER*, int> GetSizeMax;
+        public delegate* unmanaged<TSelf*, ULARGE_INTEGER*, int> GetSizeMax;
 
         [NativeTypeName("HRESULT (CONDITION_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICondition*, CONDITION_TYPE*, int> GetConditionType;
+        public delegate* unmanaged<TSelf*, CONDITION_TYPE*, int> GetConditionType;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICondition*, Guid*, void**, int> GetSubConditions;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetSubConditions;
 
         [NativeTypeName("HRESULT (LPWSTR *, CONDITION_OPERATION *, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICondition*, ushort**, CONDITION_OPERATION*, PROPVARIANT*, int> GetComparisonInfo;
+        public delegate* unmanaged<TSelf*, ushort**, CONDITION_OPERATION*, PROPVARIANT*, int> GetComparisonInfo;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICondition*, ushort**, int> GetValueType;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetValueType;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICondition*, ushort**, int> GetValueNormalization;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetValueNormalization;
 
         [NativeTypeName("HRESULT (IRichChunk **, IRichChunk **, IRichChunk **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICondition*, IRichChunk**, IRichChunk**, IRichChunk**, int> GetInputTerms;
+        public delegate* unmanaged<TSelf*, IRichChunk**, IRichChunk**, IRichChunk**, int> GetInputTerms;
 
         [NativeTypeName("HRESULT (ICondition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICondition*, ICondition**, int> Clone;
+        public delegate* unmanaged<TSelf*, ICondition**, int> Clone;
     }
 }

@@ -140,48 +140,49 @@ public unsafe partial struct IHTMLStorage : IHTMLStorage.Interface
         HRESULT clear();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLStorage*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLStorage*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLStorage*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLStorage*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLStorage*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLStorage*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLStorage*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLStorage*, int*, int> get_length;
+        public delegate* unmanaged<TSelf*, int*, int> get_length;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLStorage*, int*, int> get_remainingSpace;
+        public delegate* unmanaged<TSelf*, int*, int> get_remainingSpace;
 
         [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLStorage*, int, ushort**, int> key;
+        public delegate* unmanaged<TSelf*, int, ushort**, int> key;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLStorage*, ushort*, VARIANT*, int> getItem;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> getItem;
 
         [NativeTypeName("HRESULT (BSTR, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLStorage*, ushort*, ushort*, int> setItem;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> setItem;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLStorage*, ushort*, int> removeItem;
+        public delegate* unmanaged<TSelf*, ushort*, int> removeItem;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLStorage*, int> clear;
+        public delegate* unmanaged<TSelf*, int> clear;
     }
 }

@@ -150,48 +150,49 @@ public unsafe partial struct IDCompositionArithmeticCompositeEffect : IDComposit
         HRESULT SetCoefficient4(float Coefficient4);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, uint, IUnknown*, uint, int> SetInput;
+        public delegate* unmanaged<TSelf*, uint, IUnknown*, uint, int> SetInput;
 
         [NativeTypeName("HRESULT (const D2D1_VECTOR_4F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, D2D_VECTOR_4F*, int> SetCoefficients;
+        public delegate* unmanaged<TSelf*, D2D_VECTOR_4F*, int> SetCoefficients;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, BOOL, int> SetClampOutput;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetClampOutput;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, IDCompositionAnimation*, int> SetCoefficient1;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetCoefficient1;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, float, int> SetCoefficient11;
+        public delegate* unmanaged<TSelf*, float, int> SetCoefficient11;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, IDCompositionAnimation*, int> SetCoefficient2;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetCoefficient2;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, float, int> SetCoefficient21;
+        public delegate* unmanaged<TSelf*, float, int> SetCoefficient21;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, IDCompositionAnimation*, int> SetCoefficient3;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetCoefficient3;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, float, int> SetCoefficient31;
+        public delegate* unmanaged<TSelf*, float, int> SetCoefficient31;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, IDCompositionAnimation*, int> SetCoefficient4;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetCoefficient4;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionArithmeticCompositeEffect*, float, int> SetCoefficient41;
+        public delegate* unmanaged<TSelf*, float, int> SetCoefficient41;
     }
 }

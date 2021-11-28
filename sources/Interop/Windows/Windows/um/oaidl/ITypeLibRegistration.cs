@@ -122,39 +122,40 @@ public unsafe partial struct ITypeLibRegistration : ITypeLibRegistration.Interfa
         HRESULT GetHelpDir([NativeTypeName("BSTR *")] ushort** pHelpDir);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLibRegistration*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLibRegistration*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLibRegistration*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLibRegistration*, Guid*, int> GetGuid;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetGuid;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLibRegistration*, ushort**, int> GetVersion;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetVersion;
 
         [NativeTypeName("HRESULT (LCID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLibRegistration*, uint*, int> GetLcid;
+        public delegate* unmanaged<TSelf*, uint*, int> GetLcid;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLibRegistration*, ushort**, int> GetWin32Path;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetWin32Path;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLibRegistration*, ushort**, int> GetWin64Path;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetWin64Path;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLibRegistration*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLibRegistration*, uint*, int> GetFlags;
+        public delegate* unmanaged<TSelf*, uint*, int> GetFlags;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLibRegistration*, ushort**, int> GetHelpDir;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetHelpDir;
     }
 }

@@ -63,21 +63,22 @@ public unsafe partial struct IDXGIDisplayControl : IDXGIDisplayControl.Interface
         void SetStereoEnabled(BOOL enabled);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDisplayControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDisplayControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDisplayControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDisplayControl*, int> IsStereoEnabled;
+        public delegate* unmanaged<TSelf*, int> IsStereoEnabled;
 
         [NativeTypeName("void (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDisplayControl*, BOOL, void> SetStereoEnabled;
+        public delegate* unmanaged<TSelf*, BOOL, void> SetStereoEnabled;
     }
 }

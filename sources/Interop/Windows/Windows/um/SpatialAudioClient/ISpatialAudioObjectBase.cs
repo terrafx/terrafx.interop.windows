@@ -82,27 +82,28 @@ public unsafe partial struct ISpatialAudioObjectBase : ISpatialAudioObjectBase.I
         HRESULT GetAudioObjectType(AudioObjectType* audioObjectType);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectBase*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectBase*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectBase*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE **, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectBase*, byte**, uint*, int> GetBuffer;
+        public delegate* unmanaged<TSelf*, byte**, uint*, int> GetBuffer;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectBase*, uint, int> SetEndOfStream;
+        public delegate* unmanaged<TSelf*, uint, int> SetEndOfStream;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectBase*, BOOL*, int> IsActive;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsActive;
 
         [NativeTypeName("HRESULT (AudioObjectType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectBase*, AudioObjectType*, int> GetAudioObjectType;
+        public delegate* unmanaged<TSelf*, AudioObjectType*, int> GetAudioObjectType;
     }
 }

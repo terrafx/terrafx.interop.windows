@@ -72,24 +72,25 @@ public unsafe partial struct IHighlightRenderingServices : IHighlightRenderingSe
         HRESULT RemoveSegment(IHighlightSegment* pISegment);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHighlightRenderingServices*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHighlightRenderingServices*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHighlightRenderingServices*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDisplayPointer *, IDisplayPointer *, IHTMLRenderStyle *, IHighlightSegment **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHighlightRenderingServices*, IDisplayPointer*, IDisplayPointer*, IHTMLRenderStyle*, IHighlightSegment**, int> AddSegment;
+        public delegate* unmanaged<TSelf*, IDisplayPointer*, IDisplayPointer*, IHTMLRenderStyle*, IHighlightSegment**, int> AddSegment;
 
         [NativeTypeName("HRESULT (IHighlightSegment *, IDisplayPointer *, IDisplayPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHighlightRenderingServices*, IHighlightSegment*, IDisplayPointer*, IDisplayPointer*, int> MoveSegmentToPointers;
+        public delegate* unmanaged<TSelf*, IHighlightSegment*, IDisplayPointer*, IDisplayPointer*, int> MoveSegmentToPointers;
 
         [NativeTypeName("HRESULT (IHighlightSegment *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHighlightRenderingServices*, IHighlightSegment*, int> RemoveSegment;
+        public delegate* unmanaged<TSelf*, IHighlightSegment*, int> RemoveSegment;
     }
 }

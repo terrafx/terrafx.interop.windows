@@ -168,51 +168,52 @@ public unsafe partial struct IMallocSpy : IMallocSpy.Interface
         void PostHeapMinimize();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMallocSpy*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMallocSpy*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMallocSpy*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("SIZE_T (SIZE_T) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMallocSpy*, nuint, nuint> PreAlloc;
+        public delegate* unmanaged<TSelf*, nuint, nuint> PreAlloc;
 
         [NativeTypeName("void *(void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMallocSpy*, void*, void*> PostAlloc;
+        public delegate* unmanaged<TSelf*, void*, void*> PostAlloc;
 
         [NativeTypeName("void *(void *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMallocSpy*, void*, BOOL, void*> PreFree;
+        public delegate* unmanaged<TSelf*, void*, BOOL, void*> PreFree;
 
         [NativeTypeName("void (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMallocSpy*, BOOL, void> PostFree;
+        public delegate* unmanaged<TSelf*, BOOL, void> PostFree;
 
         [NativeTypeName("SIZE_T (void *, SIZE_T, void **, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMallocSpy*, void*, nuint, void**, BOOL, nuint> PreRealloc;
+        public delegate* unmanaged<TSelf*, void*, nuint, void**, BOOL, nuint> PreRealloc;
 
         [NativeTypeName("void *(void *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMallocSpy*, void*, BOOL, void*> PostRealloc;
+        public delegate* unmanaged<TSelf*, void*, BOOL, void*> PostRealloc;
 
         [NativeTypeName("void *(void *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMallocSpy*, void*, BOOL, void*> PreGetSize;
+        public delegate* unmanaged<TSelf*, void*, BOOL, void*> PreGetSize;
 
         [NativeTypeName("SIZE_T (SIZE_T, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMallocSpy*, nuint, BOOL, nuint> PostGetSize;
+        public delegate* unmanaged<TSelf*, nuint, BOOL, nuint> PostGetSize;
 
         [NativeTypeName("void *(void *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMallocSpy*, void*, BOOL, void*> PreDidAlloc;
+        public delegate* unmanaged<TSelf*, void*, BOOL, void*> PreDidAlloc;
 
         [NativeTypeName("int (void *, BOOL, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMallocSpy*, void*, BOOL, int, int> PostDidAlloc;
+        public delegate* unmanaged<TSelf*, void*, BOOL, int, int> PostDidAlloc;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMallocSpy*, void> PreHeapMinimize;
+        public delegate* unmanaged<TSelf*, void> PreHeapMinimize;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMallocSpy*, void> PostHeapMinimize;
+        public delegate* unmanaged<TSelf*, void> PostHeapMinimize;
     }
 }

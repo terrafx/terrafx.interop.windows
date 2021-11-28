@@ -63,21 +63,22 @@ public unsafe partial struct IDXGraphicsAnalysis : IDXGraphicsAnalysis.Interface
         void EndCapture();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGraphicsAnalysis*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGraphicsAnalysis*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGraphicsAnalysis*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGraphicsAnalysis*, void> BeginCapture;
+        public delegate* unmanaged<TSelf*, void> BeginCapture;
 
         [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGraphicsAnalysis*, void> EndCapture;
+        public delegate* unmanaged<TSelf*, void> EndCapture;
     }
 }

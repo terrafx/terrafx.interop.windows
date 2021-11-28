@@ -120,42 +120,43 @@ public unsafe partial struct IXMLDSOControl : IXMLDSOControl.Interface
         HRESULT get_readyState([NativeTypeName("long *")] int* state);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDSOControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDSOControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDSOControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDSOControl*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDSOControl*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDSOControl*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDSOControl*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IXMLDOMDocument **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDSOControl*, IXMLDOMDocument**, int> get_XMLDocument;
+        public delegate* unmanaged<TSelf*, IXMLDOMDocument**, int> get_XMLDocument;
 
         [NativeTypeName("HRESULT (IXMLDOMDocument *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDSOControl*, IXMLDOMDocument*, int> put_XMLDocument;
+        public delegate* unmanaged<TSelf*, IXMLDOMDocument*, int> put_XMLDocument;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDSOControl*, BOOL*, int> get_JavaDSOCompatible;
+        public delegate* unmanaged<TSelf*, BOOL*, int> get_JavaDSOCompatible;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDSOControl*, BOOL, int> put_JavaDSOCompatible;
+        public delegate* unmanaged<TSelf*, BOOL, int> put_JavaDSOCompatible;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDSOControl*, int*, int> get_readyState;
+        public delegate* unmanaged<TSelf*, int*, int> get_readyState;
     }
 }

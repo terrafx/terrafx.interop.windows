@@ -63,21 +63,22 @@ public unsafe partial struct ID2D1TessellationSink : ID2D1TessellationSink.Inter
         HRESULT Close();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1TessellationSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1TessellationSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1TessellationSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (const D2D1_TRIANGLE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1TessellationSink*, D2D1_TRIANGLE*, uint, void> AddTriangles;
+        public delegate* unmanaged<TSelf*, D2D1_TRIANGLE*, uint, void> AddTriangles;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1TessellationSink*, int> Close;
+        public delegate* unmanaged<TSelf*, int> Close;
     }
 }

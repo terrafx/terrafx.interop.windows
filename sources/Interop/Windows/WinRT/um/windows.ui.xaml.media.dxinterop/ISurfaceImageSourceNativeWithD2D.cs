@@ -95,30 +95,31 @@ public unsafe partial struct ISurfaceImageSourceNativeWithD2D : ISurfaceImageSou
         HRESULT ResumeDraw();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, IUnknown*, int> SetDevice;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> SetDevice;
 
         [NativeTypeName("HRESULT (const RECT &, const IID &, void **, POINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, RECT*, Guid*, void**, POINT*, int> BeginDraw;
+        public delegate* unmanaged<TSelf*, RECT*, Guid*, void**, POINT*, int> BeginDraw;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, int> EndDraw;
+        public delegate* unmanaged<TSelf*, int> EndDraw;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, int> SuspendDraw;
+        public delegate* unmanaged<TSelf*, int> SuspendDraw;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfaceImageSourceNativeWithD2D*, int> ResumeDraw;
+        public delegate* unmanaged<TSelf*, int> ResumeDraw;
     }
 }

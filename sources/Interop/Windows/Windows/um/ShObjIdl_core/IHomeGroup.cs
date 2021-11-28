@@ -62,21 +62,22 @@ public unsafe partial struct IHomeGroup : IHomeGroup.Interface
         HRESULT ShowSharingWizard(HWND owner, HOMEGROUPSHARINGCHOICES* sharingchoices);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHomeGroup*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHomeGroup*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHomeGroup*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHomeGroup*, BOOL*, int> IsMember;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsMember;
 
         [NativeTypeName("HRESULT (HWND, HOMEGROUPSHARINGCHOICES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHomeGroup*, HWND, HOMEGROUPSHARINGCHOICES*, int> ShowSharingWizard;
+        public delegate* unmanaged<TSelf*, HWND, HOMEGROUPSHARINGCHOICES*, int> ShowSharingWizard;
     }
 }

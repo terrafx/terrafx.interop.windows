@@ -89,27 +89,28 @@ public unsafe partial struct ID3D10EffectType : ID3D10EffectType.Interface
         sbyte* GetMemberSemantic(uint Index);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10EffectType*, int> IsValid;
+        public delegate* unmanaged<TSelf*, int> IsValid;
 
         [NativeTypeName("HRESULT (D3D10_EFFECT_TYPE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10EffectType*, D3D10_EFFECT_TYPE_DESC*, int> GetDesc;
+        public delegate* unmanaged<TSelf*, D3D10_EFFECT_TYPE_DESC*, int> GetDesc;
 
         [NativeTypeName("ID3D10EffectType *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10EffectType*, uint, ID3D10EffectType*> GetMemberTypeByIndex;
+        public delegate* unmanaged<TSelf*, uint, ID3D10EffectType*> GetMemberTypeByIndex;
 
         [NativeTypeName("ID3D10EffectType *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10EffectType*, sbyte*, ID3D10EffectType*> GetMemberTypeByName;
+        public delegate* unmanaged<TSelf*, sbyte*, ID3D10EffectType*> GetMemberTypeByName;
 
         [NativeTypeName("ID3D10EffectType *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10EffectType*, sbyte*, ID3D10EffectType*> GetMemberTypeBySemantic;
+        public delegate* unmanaged<TSelf*, sbyte*, ID3D10EffectType*> GetMemberTypeBySemantic;
 
         [NativeTypeName("LPCSTR (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10EffectType*, uint, sbyte*> GetMemberName;
+        public delegate* unmanaged<TSelf*, uint, sbyte*> GetMemberName;
 
         [NativeTypeName("LPCSTR (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10EffectType*, uint, sbyte*> GetMemberSemantic;
+        public delegate* unmanaged<TSelf*, uint, sbyte*> GetMemberSemantic;
     }
 }

@@ -52,18 +52,19 @@ public unsafe partial struct IAudioClockAdjustment : IAudioClockAdjustment.Inter
         HRESULT SetSampleRate(float flSampleRate);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioClockAdjustment*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioClockAdjustment*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioClockAdjustment*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioClockAdjustment*, float, int> SetSampleRate;
+        public delegate* unmanaged<TSelf*, float, int> SetSampleRate;
     }
 }

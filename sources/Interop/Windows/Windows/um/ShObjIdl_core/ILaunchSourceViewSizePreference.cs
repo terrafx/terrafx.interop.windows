@@ -62,21 +62,22 @@ public unsafe partial struct ILaunchSourceViewSizePreference : ILaunchSourceView
         HRESULT GetSourceViewSizePreference(APPLICATION_VIEW_SIZE_PREFERENCE* sourceSizeAfterLaunch);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILaunchSourceViewSizePreference*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ILaunchSourceViewSizePreference*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ILaunchSourceViewSizePreference*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILaunchSourceViewSizePreference*, HWND*, int> GetSourceViewToPosition;
+        public delegate* unmanaged<TSelf*, HWND*, int> GetSourceViewToPosition;
 
         [NativeTypeName("HRESULT (APPLICATION_VIEW_SIZE_PREFERENCE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILaunchSourceViewSizePreference*, APPLICATION_VIEW_SIZE_PREFERENCE*, int> GetSourceViewSizePreference;
+        public delegate* unmanaged<TSelf*, APPLICATION_VIEW_SIZE_PREFERENCE*, int> GetSourceViewSizePreference;
     }
 }

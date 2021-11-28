@@ -115,36 +115,37 @@ public unsafe partial struct IDirectManipulationManager : IDirectManipulationMan
         HRESULT CreateContent(IDirectManipulationFrameInfoProvider* frameInfo, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, void** @object);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationManager*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationManager*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationManager*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationManager*, HWND, int> Activate;
+        public delegate* unmanaged<TSelf*, HWND, int> Activate;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationManager*, HWND, int> Deactivate;
+        public delegate* unmanaged<TSelf*, HWND, int> Deactivate;
 
         [NativeTypeName("HRESULT (HWND, HWND, DIRECTMANIPULATION_HITTEST_TYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationManager*, HWND, HWND, DIRECTMANIPULATION_HITTEST_TYPE, int> RegisterHitTestTarget;
+        public delegate* unmanaged<TSelf*, HWND, HWND, DIRECTMANIPULATION_HITTEST_TYPE, int> RegisterHitTestTarget;
 
         [NativeTypeName("HRESULT (const MSG *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationManager*, MSG*, BOOL*, int> ProcessInput;
+        public delegate* unmanaged<TSelf*, MSG*, BOOL*, int> ProcessInput;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationManager*, Guid*, void**, int> GetUpdateManager;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetUpdateManager;
 
         [NativeTypeName("HRESULT (IDirectManipulationFrameInfoProvider *, HWND, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationManager*, IDirectManipulationFrameInfoProvider*, HWND, Guid*, void**, int> CreateViewport;
+        public delegate* unmanaged<TSelf*, IDirectManipulationFrameInfoProvider*, HWND, Guid*, void**, int> CreateViewport;
 
         [NativeTypeName("HRESULT (IDirectManipulationFrameInfoProvider *, const IID &, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationManager*, IDirectManipulationFrameInfoProvider*, Guid*, Guid*, void**, int> CreateContent;
+        public delegate* unmanaged<TSelf*, IDirectManipulationFrameInfoProvider*, Guid*, Guid*, void**, int> CreateContent;
     }
 }

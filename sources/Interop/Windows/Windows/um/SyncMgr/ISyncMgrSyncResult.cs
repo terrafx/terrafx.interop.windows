@@ -52,18 +52,19 @@ public unsafe partial struct ISyncMgrSyncResult : ISyncMgrSyncResult.Interface
         HRESULT Result(SYNCMGR_PROGRESS_STATUS nStatus, uint cError, uint cConflicts);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncResult*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncResult*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncResult*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SYNCMGR_PROGRESS_STATUS, UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncResult*, SYNCMGR_PROGRESS_STATUS, uint, uint, int> Result;
+        public delegate* unmanaged<TSelf*, SYNCMGR_PROGRESS_STATUS, uint, uint, int> Result;
     }
 }

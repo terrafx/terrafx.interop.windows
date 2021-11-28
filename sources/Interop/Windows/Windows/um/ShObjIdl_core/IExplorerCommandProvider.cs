@@ -62,21 +62,22 @@ public unsafe partial struct IExplorerCommandProvider : IExplorerCommandProvider
         HRESULT GetCommand([NativeTypeName("const GUID &")] Guid* rguidCommandId, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerCommandProvider*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerCommandProvider*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerCommandProvider*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerCommandProvider*, IUnknown*, Guid*, void**, int> GetCommands;
+        public delegate* unmanaged<TSelf*, IUnknown*, Guid*, void**, int> GetCommands;
 
         [NativeTypeName("HRESULT (const GUID &, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerCommandProvider*, Guid*, Guid*, void**, int> GetCommand;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, void**, int> GetCommand;
     }
 }

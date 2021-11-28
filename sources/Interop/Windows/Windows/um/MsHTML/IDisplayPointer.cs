@@ -232,72 +232,73 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface
         HRESULT QueryBreaks([NativeTypeName("DWORD *")] uint* pdwBreaks);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPointer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPointer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPointer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (POINT, COORD_SYSTEM, IHTMLElement *, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPointer*, POINT, COORD_SYSTEM, IHTMLElement*, uint, uint*, int> MoveToPoint;
+        public delegate* unmanaged<TSelf*, POINT, COORD_SYSTEM, IHTMLElement*, uint, uint*, int> MoveToPoint;
 
         [NativeTypeName("HRESULT (DISPLAY_MOVEUNIT, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPointer*, DISPLAY_MOVEUNIT, int, int> MoveUnit;
+        public delegate* unmanaged<TSelf*, DISPLAY_MOVEUNIT, int, int> MoveUnit;
 
         [NativeTypeName("HRESULT (IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPointer*, IMarkupPointer*, int> PositionMarkupPointer;
+        public delegate* unmanaged<TSelf*, IMarkupPointer*, int> PositionMarkupPointer;
 
         [NativeTypeName("HRESULT (IDisplayPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, int> MoveToPointer;
+        public delegate* unmanaged<TSelf*, IDisplayPointer*, int> MoveToPointer;
 
         [NativeTypeName("HRESULT (POINTER_GRAVITY) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPointer*, POINTER_GRAVITY, int> SetPointerGravity;
+        public delegate* unmanaged<TSelf*, POINTER_GRAVITY, int> SetPointerGravity;
 
         [NativeTypeName("HRESULT (POINTER_GRAVITY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPointer*, POINTER_GRAVITY*, int> GetPointerGravity;
+        public delegate* unmanaged<TSelf*, POINTER_GRAVITY*, int> GetPointerGravity;
 
         [NativeTypeName("HRESULT (DISPLAY_GRAVITY) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPointer*, DISPLAY_GRAVITY, int> SetDisplayGravity;
+        public delegate* unmanaged<TSelf*, DISPLAY_GRAVITY, int> SetDisplayGravity;
 
         [NativeTypeName("HRESULT (DISPLAY_GRAVITY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPointer*, DISPLAY_GRAVITY*, int> GetDisplayGravity;
+        public delegate* unmanaged<TSelf*, DISPLAY_GRAVITY*, int> GetDisplayGravity;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPointer*, BOOL*, int> IsPositioned;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsPositioned;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPointer*, int> Unposition;
+        public delegate* unmanaged<TSelf*, int> Unposition;
 
         [NativeTypeName("HRESULT (IDisplayPointer *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, BOOL*, int> IsEqualTo;
+        public delegate* unmanaged<TSelf*, IDisplayPointer*, BOOL*, int> IsEqualTo;
 
         [NativeTypeName("HRESULT (IDisplayPointer *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, BOOL*, int> IsLeftOf;
+        public delegate* unmanaged<TSelf*, IDisplayPointer*, BOOL*, int> IsLeftOf;
 
         [NativeTypeName("HRESULT (IDisplayPointer *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, BOOL*, int> IsRightOf;
+        public delegate* unmanaged<TSelf*, IDisplayPointer*, BOOL*, int> IsRightOf;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPointer*, BOOL*, int> IsAtBOL;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsAtBOL;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, IDisplayPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPointer*, IMarkupPointer*, IDisplayPointer*, int> MoveToMarkupPointer;
+        public delegate* unmanaged<TSelf*, IMarkupPointer*, IDisplayPointer*, int> MoveToMarkupPointer;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPointer*, int> ScrollIntoView;
+        public delegate* unmanaged<TSelf*, int> ScrollIntoView;
 
         [NativeTypeName("HRESULT (ILineInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPointer*, ILineInfo**, int> GetLineInfo;
+        public delegate* unmanaged<TSelf*, ILineInfo**, int> GetLineInfo;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPointer*, IHTMLElement**, int> GetFlowElement;
+        public delegate* unmanaged<TSelf*, IHTMLElement**, int> GetFlowElement;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayPointer*, uint*, int> QueryBreaks;
+        public delegate* unmanaged<TSelf*, uint*, int> QueryBreaks;
     }
 }

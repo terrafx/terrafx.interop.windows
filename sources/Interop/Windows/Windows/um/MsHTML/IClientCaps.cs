@@ -280,90 +280,91 @@ public unsafe partial struct IClientCaps : IClientCaps.Interface
         HRESULT clearComponentRequest();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, short*, int> get_javaEnabled;
+        public delegate* unmanaged<TSelf*, short*, int> get_javaEnabled;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, short*, int> get_cookieEnabled;
+        public delegate* unmanaged<TSelf*, short*, int> get_cookieEnabled;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, ushort**, int> get_cpuClass;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_cpuClass;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, ushort**, int> get_systemLanguage;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_systemLanguage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, ushort**, int> get_userLanguage;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_userLanguage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, ushort**, int> get_platform;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_platform;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, int*, int> get_connectionSpeed;
+        public delegate* unmanaged<TSelf*, int*, int> get_connectionSpeed;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, short*, int> get_onLine;
+        public delegate* unmanaged<TSelf*, short*, int> get_onLine;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, int*, int> get_colorDepth;
+        public delegate* unmanaged<TSelf*, int*, int> get_colorDepth;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, int*, int> get_bufferDepth;
+        public delegate* unmanaged<TSelf*, int*, int> get_bufferDepth;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, int*, int> get_width;
+        public delegate* unmanaged<TSelf*, int*, int> get_width;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, int*, int> get_height;
+        public delegate* unmanaged<TSelf*, int*, int> get_height;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, int*, int> get_availHeight;
+        public delegate* unmanaged<TSelf*, int*, int> get_availHeight;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, int*, int> get_availWidth;
+        public delegate* unmanaged<TSelf*, int*, int> get_availWidth;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, ushort**, int> get_connectionType;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_connectionType;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, ushort*, ushort*, ushort*, short*, int> isComponentInstalled;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, short*, int> isComponentInstalled;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, ushort*, ushort*, ushort**, int> getComponentVersion;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort**, int> getComponentVersion;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, ushort*, ushort*, int*, int> compareVersions;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int*, int> compareVersions;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, ushort*, ushort*, ushort*, int> addComponentRequest;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, int> addComponentRequest;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, short*, int> doComponentRequest;
+        public delegate* unmanaged<TSelf*, short*, int> doComponentRequest;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientCaps*, int> clearComponentRequest;
+        public delegate* unmanaged<TSelf*, int> clearComponentRequest;
     }
 }

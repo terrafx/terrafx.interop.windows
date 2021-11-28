@@ -140,48 +140,49 @@ public unsafe partial struct IHTMLAreasCollection : IHTMLAreasCollection.Interfa
         HRESULT remove([NativeTypeName("long")] int index = -1);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAreasCollection*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAreasCollection*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAreasCollection*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAreasCollection*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAreasCollection*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAreasCollection*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAreasCollection*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAreasCollection*, int, int> put_length;
+        public delegate* unmanaged<TSelf*, int, int> put_length;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAreasCollection*, int*, int> get_length;
+        public delegate* unmanaged<TSelf*, int*, int> get_length;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAreasCollection*, IUnknown**, int> get__newEnum;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> get__newEnum;
 
         [NativeTypeName("HRESULT (VARIANT, VARIANT, IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAreasCollection*, VARIANT, VARIANT, IDispatch**, int> item;
+        public delegate* unmanaged<TSelf*, VARIANT, VARIANT, IDispatch**, int> item;
 
         [NativeTypeName("HRESULT (VARIANT, IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAreasCollection*, VARIANT, IDispatch**, int> tags;
+        public delegate* unmanaged<TSelf*, VARIANT, IDispatch**, int> tags;
 
         [NativeTypeName("HRESULT (IHTMLElement *, VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAreasCollection*, IHTMLElement*, VARIANT, int> add;
+        public delegate* unmanaged<TSelf*, IHTMLElement*, VARIANT, int> add;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAreasCollection*, int, int> remove;
+        public delegate* unmanaged<TSelf*, int, int> remove;
     }
 }

@@ -62,21 +62,22 @@ public unsafe partial struct ICredentialProviderFilter : ICredentialProviderFilt
         HRESULT UpdateRemoteCredential([NativeTypeName("const CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION *")] CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION* pcpcsIn, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION* pcpcsOut);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderFilter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderFilter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderFilter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CREDENTIAL_PROVIDER_USAGE_SCENARIO, DWORD, GUID *, BOOL *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderFilter*, CREDENTIAL_PROVIDER_USAGE_SCENARIO, uint, Guid*, BOOL*, uint, int> Filter;
+        public delegate* unmanaged<TSelf*, CREDENTIAL_PROVIDER_USAGE_SCENARIO, uint, Guid*, BOOL*, uint, int> Filter;
 
         [NativeTypeName("HRESULT (const CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION *, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderFilter*, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION*, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION*, int> UpdateRemoteCredential;
+        public delegate* unmanaged<TSelf*, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION*, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION*, int> UpdateRemoteCredential;
     }
 }

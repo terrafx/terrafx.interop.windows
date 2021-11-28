@@ -74,24 +74,25 @@ public unsafe partial struct IAppxBundleManifestOptionalBundleInfo : IAppxBundle
         HRESULT GetPackageInfoItems(IAppxBundleManifestPackageInfoEnumerator** packageInfoItems);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleManifestOptionalBundleInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleManifestOptionalBundleInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleManifestOptionalBundleInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxManifestPackageId **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleManifestOptionalBundleInfo*, IAppxManifestPackageId**, int> GetPackageId;
+        public delegate* unmanaged<TSelf*, IAppxManifestPackageId**, int> GetPackageId;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleManifestOptionalBundleInfo*, ushort**, int> GetFileName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetFileName;
 
         [NativeTypeName("HRESULT (IAppxBundleManifestPackageInfoEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleManifestOptionalBundleInfo*, IAppxBundleManifestPackageInfoEnumerator**, int> GetPackageInfoItems;
+        public delegate* unmanaged<TSelf*, IAppxBundleManifestPackageInfoEnumerator**, int> GetPackageInfoItems;
     }
 }

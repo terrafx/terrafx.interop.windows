@@ -52,18 +52,19 @@ public unsafe partial struct IAppxManifestDriverDependency : IAppxManifestDriver
         HRESULT GetDriverConstraints(IAppxManifestDriverConstraintsEnumerator** driverConstraints);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestDriverDependency*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestDriverDependency*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestDriverDependency*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxManifestDriverConstraintsEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestDriverDependency*, IAppxManifestDriverConstraintsEnumerator**, int> GetDriverConstraints;
+        public delegate* unmanaged<TSelf*, IAppxManifestDriverConstraintsEnumerator**, int> GetDriverConstraints;
     }
 }

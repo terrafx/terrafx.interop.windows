@@ -62,21 +62,22 @@ public unsafe partial struct ID2D1GdiMetafileSink1 : ID2D1GdiMetafileSink1.Inter
         HRESULT ProcessRecord([NativeTypeName("DWORD")] uint recordType, [NativeTypeName("const void *")] void* recordData, [NativeTypeName("DWORD")] uint recordDataSize, [NativeTypeName("UINT32")] uint flags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GdiMetafileSink1*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GdiMetafileSink1*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GdiMetafileSink1*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, const void *, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GdiMetafileSink1*, uint, void*, uint, int> ProcessRecord;
+        public delegate* unmanaged<TSelf*, uint, void*, uint, int> ProcessRecord;
 
         [NativeTypeName("HRESULT (DWORD, const void *, DWORD, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GdiMetafileSink1*, uint, void*, uint, uint, int> ProcessRecord1;
+        public delegate* unmanaged<TSelf*, uint, void*, uint, uint, int> ProcessRecord1;
     }
 }

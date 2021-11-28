@@ -82,27 +82,28 @@ public unsafe partial struct IEnumFullIDList : IEnumFullIDList.Interface
         HRESULT Clone(IEnumFullIDList** ppenum);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumFullIDList*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumFullIDList*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumFullIDList*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, LPITEMIDLIST *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumFullIDList*, uint, ITEMIDLIST**, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, ITEMIDLIST**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumFullIDList*, uint, int> Skip;
+        public delegate* unmanaged<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumFullIDList*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IEnumFullIDList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumFullIDList*, IEnumFullIDList**, int> Clone;
+        public delegate* unmanaged<TSelf*, IEnumFullIDList**, int> Clone;
     }
 }

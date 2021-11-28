@@ -64,21 +64,22 @@ public unsafe partial struct IWICPlanarBitmapFrameEncode : IWICPlanarBitmapFrame
         HRESULT WriteSource(IWICBitmapSource** ppPlanes, uint cPlanes, WICRect* prcSource);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPlanarBitmapFrameEncode*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPlanarBitmapFrameEncode*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPlanarBitmapFrameEncode*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, WICBitmapPlane *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPlanarBitmapFrameEncode*, uint, WICBitmapPlane*, uint, int> WritePixels;
+        public delegate* unmanaged<TSelf*, uint, WICBitmapPlane*, uint, int> WritePixels;
 
         [NativeTypeName("HRESULT (IWICBitmapSource **, UINT, WICRect *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPlanarBitmapFrameEncode*, IWICBitmapSource**, uint, WICRect*, int> WriteSource;
+        public delegate* unmanaged<TSelf*, IWICBitmapSource**, uint, WICRect*, int> WriteSource;
     }
 }

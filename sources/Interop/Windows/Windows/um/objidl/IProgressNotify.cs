@@ -52,18 +52,19 @@ public unsafe partial struct IProgressNotify : IProgressNotify.Interface
         HRESULT OnProgress([NativeTypeName("DWORD")] uint dwProgressCurrent, [NativeTypeName("DWORD")] uint dwProgressMaximum, BOOL fAccurate, BOOL fOwner);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProgressNotify*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IProgressNotify*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IProgressNotify*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, BOOL, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProgressNotify*, uint, uint, BOOL, BOOL, int> OnProgress;
+        public delegate* unmanaged<TSelf*, uint, uint, BOOL, BOOL, int> OnProgress;
     }
 }

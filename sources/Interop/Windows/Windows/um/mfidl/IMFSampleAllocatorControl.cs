@@ -64,21 +64,22 @@ public unsafe partial struct IMFSampleAllocatorControl : IMFSampleAllocatorContr
         HRESULT GetAllocatorUsage([NativeTypeName("DWORD")] uint dwOutputStreamID, [NativeTypeName("DWORD *")] uint* pdwInputStreamID, MFSampleAllocatorUsage* peUsage);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSampleAllocatorControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSampleAllocatorControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSampleAllocatorControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSampleAllocatorControl*, uint, IUnknown*, int> SetDefaultAllocator;
+        public delegate* unmanaged<TSelf*, uint, IUnknown*, int> SetDefaultAllocator;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, MFSampleAllocatorUsage *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSampleAllocatorControl*, uint, uint*, MFSampleAllocatorUsage*, int> GetAllocatorUsage;
+        public delegate* unmanaged<TSelf*, uint, uint*, MFSampleAllocatorUsage*, int> GetAllocatorUsage;
     }
 }

@@ -92,30 +92,31 @@ public unsafe partial struct IVersionInfo : IVersionInfo.Interface
         HRESULT GetInstanceDescription([NativeTypeName("ULONG")] uint ulSub, [NativeTypeName("BSTR *")] ushort** pImplStr);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVersionInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVersionInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVersionInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVersionInfo*, uint, uint*, int> GetSubcomponentCount;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> GetSubcomponentCount;
 
         [NativeTypeName("HRESULT (ULONG, GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVersionInfo*, uint, Guid*, int> GetImplementationID;
+        public delegate* unmanaged<TSelf*, uint, Guid*, int> GetImplementationID;
 
         [NativeTypeName("HRESULT (ULONG, DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVersionInfo*, uint, uint*, uint*, int> GetBuildVersion;
+        public delegate* unmanaged<TSelf*, uint, uint*, uint*, int> GetBuildVersion;
 
         [NativeTypeName("HRESULT (ULONG, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVersionInfo*, uint, ushort**, int> GetComponentDescription;
+        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetComponentDescription;
 
         [NativeTypeName("HRESULT (ULONG, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVersionInfo*, uint, ushort**, int> GetInstanceDescription;
+        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetInstanceDescription;
     }
 }

@@ -52,18 +52,19 @@ public unsafe partial struct IAudioSessionNotification : IAudioSessionNotificati
         HRESULT OnSessionCreated(IAudioSessionControl* NewSession);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionNotification*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionNotification*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionNotification*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAudioSessionControl *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionNotification*, IAudioSessionControl*, int> OnSessionCreated;
+        public delegate* unmanaged<TSelf*, IAudioSessionControl*, int> OnSessionCreated;
     }
 }

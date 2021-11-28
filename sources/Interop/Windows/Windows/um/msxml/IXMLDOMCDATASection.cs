@@ -386,162 +386,163 @@ public unsafe partial struct IXMLDOMCDATASection : IXMLDOMCDATASection.Interface
     {
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, ushort**, int> get_nodeName;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_nodeName;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, VARIANT*, int> get_nodeValue;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_nodeValue;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, VARIANT, int> put_nodeValue;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_nodeValue;
 
         [NativeTypeName("HRESULT (DOMNodeType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, DOMNodeType*, int> get_nodeType;
+        public delegate* unmanaged<TSelf*, DOMNodeType*, int> get_nodeType;
 
         [NativeTypeName("HRESULT (IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, IXMLDOMNode**, int> get_parentNode;
+        public delegate* unmanaged<TSelf*, IXMLDOMNode**, int> get_parentNode;
 
         [NativeTypeName("HRESULT (IXMLDOMNodeList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, IXMLDOMNodeList**, int> get_childNodes;
+        public delegate* unmanaged<TSelf*, IXMLDOMNodeList**, int> get_childNodes;
 
         [NativeTypeName("HRESULT (IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, IXMLDOMNode**, int> get_firstChild;
+        public delegate* unmanaged<TSelf*, IXMLDOMNode**, int> get_firstChild;
 
         [NativeTypeName("HRESULT (IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, IXMLDOMNode**, int> get_lastChild;
+        public delegate* unmanaged<TSelf*, IXMLDOMNode**, int> get_lastChild;
 
         [NativeTypeName("HRESULT (IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, IXMLDOMNode**, int> get_previousSibling;
+        public delegate* unmanaged<TSelf*, IXMLDOMNode**, int> get_previousSibling;
 
         [NativeTypeName("HRESULT (IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, IXMLDOMNode**, int> get_nextSibling;
+        public delegate* unmanaged<TSelf*, IXMLDOMNode**, int> get_nextSibling;
 
         [NativeTypeName("HRESULT (IXMLDOMNamedNodeMap **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, IXMLDOMNamedNodeMap**, int> get_attributes;
+        public delegate* unmanaged<TSelf*, IXMLDOMNamedNodeMap**, int> get_attributes;
 
         [NativeTypeName("HRESULT (IXMLDOMNode *, VARIANT, IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, IXMLDOMNode*, VARIANT, IXMLDOMNode**, int> insertBefore;
+        public delegate* unmanaged<TSelf*, IXMLDOMNode*, VARIANT, IXMLDOMNode**, int> insertBefore;
 
         [NativeTypeName("HRESULT (IXMLDOMNode *, IXMLDOMNode *, IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, IXMLDOMNode*, IXMLDOMNode*, IXMLDOMNode**, int> replaceChild;
+        public delegate* unmanaged<TSelf*, IXMLDOMNode*, IXMLDOMNode*, IXMLDOMNode**, int> replaceChild;
 
         [NativeTypeName("HRESULT (IXMLDOMNode *, IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, IXMLDOMNode*, IXMLDOMNode**, int> removeChild;
+        public delegate* unmanaged<TSelf*, IXMLDOMNode*, IXMLDOMNode**, int> removeChild;
 
         [NativeTypeName("HRESULT (IXMLDOMNode *, IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, IXMLDOMNode*, IXMLDOMNode**, int> appendChild;
+        public delegate* unmanaged<TSelf*, IXMLDOMNode*, IXMLDOMNode**, int> appendChild;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, short*, int> hasChildNodes;
+        public delegate* unmanaged<TSelf*, short*, int> hasChildNodes;
 
         [NativeTypeName("HRESULT (IXMLDOMDocument **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, IXMLDOMDocument**, int> get_ownerDocument;
+        public delegate* unmanaged<TSelf*, IXMLDOMDocument**, int> get_ownerDocument;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL, IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, short, IXMLDOMNode**, int> cloneNode;
+        public delegate* unmanaged<TSelf*, short, IXMLDOMNode**, int> cloneNode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, ushort**, int> get_nodeTypeString;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_nodeTypeString;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, ushort**, int> get_text;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_text;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, ushort*, int> put_text;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_text;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, short*, int> get_specified;
+        public delegate* unmanaged<TSelf*, short*, int> get_specified;
 
         [NativeTypeName("HRESULT (IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, IXMLDOMNode**, int> get_definition;
+        public delegate* unmanaged<TSelf*, IXMLDOMNode**, int> get_definition;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, VARIANT*, int> get_nodeTypedValue;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_nodeTypedValue;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, VARIANT, int> put_nodeTypedValue;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_nodeTypedValue;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, VARIANT*, int> get_dataType;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_dataType;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, ushort*, int> put_dataType;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_dataType;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, ushort**, int> get_xml;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_xml;
 
         [NativeTypeName("HRESULT (IXMLDOMNode *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, IXMLDOMNode*, ushort**, int> transformNode;
+        public delegate* unmanaged<TSelf*, IXMLDOMNode*, ushort**, int> transformNode;
 
         [NativeTypeName("HRESULT (BSTR, IXMLDOMNodeList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, ushort*, IXMLDOMNodeList**, int> selectNodes;
+        public delegate* unmanaged<TSelf*, ushort*, IXMLDOMNodeList**, int> selectNodes;
 
         [NativeTypeName("HRESULT (BSTR, IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, ushort*, IXMLDOMNode**, int> selectSingleNode;
+        public delegate* unmanaged<TSelf*, ushort*, IXMLDOMNode**, int> selectSingleNode;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, short*, int> get_parsed;
+        public delegate* unmanaged<TSelf*, short*, int> get_parsed;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, ushort**, int> get_namespaceURI;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_namespaceURI;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, ushort**, int> get_prefix;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_prefix;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, ushort**, int> get_baseName;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_baseName;
 
         [NativeTypeName("HRESULT (IXMLDOMNode *, VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, IXMLDOMNode*, VARIANT, int> transformNodeToObject;
+        public delegate* unmanaged<TSelf*, IXMLDOMNode*, VARIANT, int> transformNodeToObject;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, ushort**, int> get_data;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_data;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, ushort*, int> put_data;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_data;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, int*, int> get_length;
+        public delegate* unmanaged<TSelf*, int*, int> get_length;
 
         [NativeTypeName("HRESULT (long, long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, int, int, ushort**, int> substringData;
+        public delegate* unmanaged<TSelf*, int, int, ushort**, int> substringData;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, ushort*, int> appendData;
+        public delegate* unmanaged<TSelf*, ushort*, int> appendData;
 
         [NativeTypeName("HRESULT (long, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, int, ushort*, int> insertData;
+        public delegate* unmanaged<TSelf*, int, ushort*, int> insertData;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, int, int, int> deleteData;
+        public delegate* unmanaged<TSelf*, int, int, int> deleteData;
 
         [NativeTypeName("HRESULT (long, long, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, int, int, ushort*, int> replaceData;
+        public delegate* unmanaged<TSelf*, int, int, ushort*, int> replaceData;
 
         [NativeTypeName("HRESULT (long, IXMLDOMText **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMCDATASection*, int, IXMLDOMText**, int> splitText;
+        public delegate* unmanaged<TSelf*, int, IXMLDOMText**, int> splitText;
     }
 }

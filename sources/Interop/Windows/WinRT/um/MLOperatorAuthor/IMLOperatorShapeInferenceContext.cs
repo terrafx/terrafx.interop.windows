@@ -155,51 +155,52 @@ public unsafe partial struct IMLOperatorShapeInferenceContext : IMLOperatorShape
         HRESULT SetOutputTensorShape([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("const uint32_t *")] uint* dimensions);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorShapeInferenceContext*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorShapeInferenceContext*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorShapeInferenceContext*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const char *, MLOperatorAttributeType, uint32_t *) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorShapeInferenceContext*, sbyte*, MLOperatorAttributeType, uint*, int> GetAttributeElementCount;
+        public delegate* unmanaged<TSelf*, sbyte*, MLOperatorAttributeType, uint*, int> GetAttributeElementCount;
 
         [NativeTypeName("HRESULT (const char *, MLOperatorAttributeType, uint32_t, size_t, void *) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorShapeInferenceContext*, sbyte*, MLOperatorAttributeType, uint, nuint, void*, int> GetAttribute;
+        public delegate* unmanaged<TSelf*, sbyte*, MLOperatorAttributeType, uint, nuint, void*, int> GetAttribute;
 
         [NativeTypeName("HRESULT (const char *, uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorShapeInferenceContext*, sbyte*, uint, uint*, int> GetStringAttributeElementLength;
+        public delegate* unmanaged<TSelf*, sbyte*, uint, uint*, int> GetStringAttributeElementLength;
 
         [NativeTypeName("HRESULT (const char *, uint32_t, uint32_t, char *) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorShapeInferenceContext*, sbyte*, uint, uint, sbyte*, int> GetStringAttributeElement;
+        public delegate* unmanaged<TSelf*, sbyte*, uint, uint, sbyte*, int> GetStringAttributeElement;
 
         [NativeTypeName("uint32_t () const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorShapeInferenceContext*, uint> GetInputCount;
+        public delegate* unmanaged<TSelf*, uint> GetInputCount;
 
         [NativeTypeName("uint32_t () const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorShapeInferenceContext*, uint> GetOutputCount;
+        public delegate* unmanaged<TSelf*, uint> GetOutputCount;
 
         [NativeTypeName("bool (uint32_t) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorShapeInferenceContext*, uint, byte> IsInputValid;
+        public delegate* unmanaged<TSelf*, uint, byte> IsInputValid;
 
         [NativeTypeName("bool (uint32_t) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorShapeInferenceContext*, uint, byte> IsOutputValid;
+        public delegate* unmanaged<TSelf*, uint, byte> IsOutputValid;
 
         [NativeTypeName("HRESULT (uint32_t, MLOperatorEdgeDescription *) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorShapeInferenceContext*, uint, MLOperatorEdgeDescription*, int> GetInputEdgeDescription;
+        public delegate* unmanaged<TSelf*, uint, MLOperatorEdgeDescription*, int> GetInputEdgeDescription;
 
         [NativeTypeName("HRESULT (uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorShapeInferenceContext*, uint, uint*, int> GetInputTensorDimensionCount;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> GetInputTensorDimensionCount;
 
         [NativeTypeName("HRESULT (uint32_t, uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorShapeInferenceContext*, uint, uint, uint*, int> GetInputTensorShape;
+        public delegate* unmanaged<TSelf*, uint, uint, uint*, int> GetInputTensorShape;
 
         [NativeTypeName("HRESULT (uint32_t, uint32_t, const uint32_t *) noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorShapeInferenceContext*, uint, uint, uint*, int> SetOutputTensorShape;
+        public delegate* unmanaged<TSelf*, uint, uint, uint*, int> SetOutputTensorShape;
     }
 }

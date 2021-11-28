@@ -134,42 +134,43 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface
         HRESULT GetSensorDeviceMode(MFSensorDeviceMode* peMode);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorDevice*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorDevice*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorDevice*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorDevice*, ulong*, int> GetDeviceId;
+        public delegate* unmanaged<TSelf*, ulong*, int> GetDeviceId;
 
         [NativeTypeName("HRESULT (MFSensorDeviceType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorDevice*, MFSensorDeviceType*, int> GetDeviceType;
+        public delegate* unmanaged<TSelf*, MFSensorDeviceType*, int> GetDeviceType;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorDevice*, ulong*, int> GetFlags;
+        public delegate* unmanaged<TSelf*, ulong*, int> GetFlags;
 
         [NativeTypeName("HRESULT (LPWSTR, LONG, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorDevice*, ushort*, int, int*, int> GetSymbolicLink;
+        public delegate* unmanaged<TSelf*, ushort*, int, int*, int> GetSymbolicLink;
 
         [NativeTypeName("HRESULT (IMFAttributes **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorDevice*, IMFAttributes**, int> GetDeviceAttributes;
+        public delegate* unmanaged<TSelf*, IMFAttributes**, int> GetDeviceAttributes;
 
         [NativeTypeName("HRESULT (MFSensorStreamType, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorDevice*, MFSensorStreamType, uint*, int> GetStreamAttributesCount;
+        public delegate* unmanaged<TSelf*, MFSensorStreamType, uint*, int> GetStreamAttributesCount;
 
         [NativeTypeName("HRESULT (MFSensorStreamType, DWORD, IMFAttributes **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorDevice*, MFSensorStreamType, uint, IMFAttributes**, int> GetStreamAttributes;
+        public delegate* unmanaged<TSelf*, MFSensorStreamType, uint, IMFAttributes**, int> GetStreamAttributes;
 
         [NativeTypeName("HRESULT (MFSensorDeviceMode) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorDevice*, MFSensorDeviceMode, int> SetSensorDeviceMode;
+        public delegate* unmanaged<TSelf*, MFSensorDeviceMode, int> SetSensorDeviceMode;
 
         [NativeTypeName("HRESULT (MFSensorDeviceMode *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorDevice*, MFSensorDeviceMode*, int> GetSensorDeviceMode;
+        public delegate* unmanaged<TSelf*, MFSensorDeviceMode*, int> GetSensorDeviceMode;
     }
 }

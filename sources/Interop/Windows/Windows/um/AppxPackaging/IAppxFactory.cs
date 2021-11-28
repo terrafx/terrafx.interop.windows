@@ -94,30 +94,31 @@ public unsafe partial struct IAppxFactory : IAppxFactory.Interface
         HRESULT CreateValidatedBlockMapReader(IStream* blockMapStream, [NativeTypeName("LPCWSTR")] ushort* signatureFileName, IAppxBlockMapReader** blockMapReader);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxFactory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxFactory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxFactory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IStream *, APPX_PACKAGE_SETTINGS *, IAppxPackageWriter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxFactory*, IStream*, APPX_PACKAGE_SETTINGS*, IAppxPackageWriter**, int> CreatePackageWriter;
+        public delegate* unmanaged<TSelf*, IStream*, APPX_PACKAGE_SETTINGS*, IAppxPackageWriter**, int> CreatePackageWriter;
 
         [NativeTypeName("HRESULT (IStream *, IAppxPackageReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxFactory*, IStream*, IAppxPackageReader**, int> CreatePackageReader;
+        public delegate* unmanaged<TSelf*, IStream*, IAppxPackageReader**, int> CreatePackageReader;
 
         [NativeTypeName("HRESULT (IStream *, IAppxManifestReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxFactory*, IStream*, IAppxManifestReader**, int> CreateManifestReader;
+        public delegate* unmanaged<TSelf*, IStream*, IAppxManifestReader**, int> CreateManifestReader;
 
         [NativeTypeName("HRESULT (IStream *, IAppxBlockMapReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxFactory*, IStream*, IAppxBlockMapReader**, int> CreateBlockMapReader;
+        public delegate* unmanaged<TSelf*, IStream*, IAppxBlockMapReader**, int> CreateBlockMapReader;
 
         [NativeTypeName("HRESULT (IStream *, LPCWSTR, IAppxBlockMapReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxFactory*, IStream*, ushort*, IAppxBlockMapReader**, int> CreateValidatedBlockMapReader;
+        public delegate* unmanaged<TSelf*, IStream*, ushort*, IAppxBlockMapReader**, int> CreateValidatedBlockMapReader;
     }
 }

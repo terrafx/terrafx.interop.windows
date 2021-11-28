@@ -300,96 +300,97 @@ public unsafe partial struct IHTMLPerformanceTiming : IHTMLPerformanceTiming.Int
         HRESULT toJSON(VARIANT* pVar);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int> get_navigationStart;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_navigationStart;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int> get_unloadEventStart;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_unloadEventStart;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int> get_unloadEventEnd;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_unloadEventEnd;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int> get_redirectStart;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_redirectStart;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int> get_redirectEnd;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_redirectEnd;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int> get_fetchStart;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_fetchStart;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int> get_domainLookupStart;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_domainLookupStart;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int> get_domainLookupEnd;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_domainLookupEnd;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int> get_connectStart;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_connectStart;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int> get_connectEnd;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_connectEnd;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int> get_requestStart;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_requestStart;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int> get_responseStart;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_responseStart;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int> get_responseEnd;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_responseEnd;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int> get_domLoading;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_domLoading;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int> get_domInteractive;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_domInteractive;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int> get_domContentLoadedEventStart;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_domContentLoadedEventStart;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int> get_domContentLoadedEventEnd;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_domContentLoadedEventEnd;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int> get_domComplete;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_domComplete;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int> get_loadEventStart;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_loadEventStart;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int> get_loadEventEnd;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_loadEventEnd;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, ulong*, int> get_msFirstPaint;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_msFirstPaint;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, ushort**, int> toString;
+        public delegate* unmanaged<TSelf*, ushort**, int> toString;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPerformanceTiming*, VARIANT*, int> toJSON;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> toJSON;
     }
 }

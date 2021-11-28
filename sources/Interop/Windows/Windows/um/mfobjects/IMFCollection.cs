@@ -102,33 +102,34 @@ public unsafe partial struct IMFCollection : IMFCollection.Interface
         HRESULT RemoveAllElements();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCollection*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCollection*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCollection*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCollection*, uint*, int> GetElementCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetElementCount;
 
         [NativeTypeName("HRESULT (DWORD, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCollection*, uint, IUnknown**, int> GetElement;
+        public delegate* unmanaged<TSelf*, uint, IUnknown**, int> GetElement;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCollection*, IUnknown*, int> AddElement;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> AddElement;
 
         [NativeTypeName("HRESULT (DWORD, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCollection*, uint, IUnknown**, int> RemoveElement;
+        public delegate* unmanaged<TSelf*, uint, IUnknown**, int> RemoveElement;
 
         [NativeTypeName("HRESULT (DWORD, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCollection*, uint, IUnknown*, int> InsertElementAt;
+        public delegate* unmanaged<TSelf*, uint, IUnknown*, int> InsertElementAt;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCollection*, int> RemoveAllElements;
+        public delegate* unmanaged<TSelf*, int> RemoveAllElements;
     }
 }

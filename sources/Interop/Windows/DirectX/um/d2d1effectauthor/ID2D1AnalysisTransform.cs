@@ -53,18 +53,19 @@ public unsafe partial struct ID2D1AnalysisTransform : ID2D1AnalysisTransform.Int
         HRESULT ProcessAnalysisResults([NativeTypeName("const BYTE *")] byte* analysisData, [NativeTypeName("UINT32")] uint analysisDataCount);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1AnalysisTransform*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1AnalysisTransform*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1AnalysisTransform*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const BYTE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1AnalysisTransform*, byte*, uint, int> ProcessAnalysisResults;
+        public delegate* unmanaged<TSelf*, byte*, uint, int> ProcessAnalysisResults;
     }
 }

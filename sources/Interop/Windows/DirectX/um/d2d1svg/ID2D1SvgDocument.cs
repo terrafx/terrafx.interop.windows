@@ -163,51 +163,52 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface
         HRESULT CreatePathData([NativeTypeName("const FLOAT *")] float* segmentData, [NativeTypeName("UINT32")] uint segmentDataCount, [NativeTypeName("const D2D1_SVG_PATH_COMMAND *")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, ID2D1SvgPathData** pathData);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgDocument*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgDocument*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgDocument*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgDocument*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("HRESULT (D2D1_SIZE_F) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgDocument*, D2D_SIZE_F, int> SetViewportSize;
+        public delegate* unmanaged<TSelf*, D2D_SIZE_F, int> SetViewportSize;
 
         [NativeTypeName("D2D1_SIZE_F () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1SvgDocument*, D2D_SIZE_F*, D2D_SIZE_F*> GetViewportSize;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D_SIZE_F*, D2D_SIZE_F*> GetViewportSize;
 
         [NativeTypeName("HRESULT (ID2D1SvgElement *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgDocument*, ID2D1SvgElement*, int> SetRoot;
+        public delegate* unmanaged<TSelf*, ID2D1SvgElement*, int> SetRoot;
 
         [NativeTypeName("void (ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgDocument*, ID2D1SvgElement**, void> GetRoot;
+        public delegate* unmanaged<TSelf*, ID2D1SvgElement**, void> GetRoot;
 
         [NativeTypeName("HRESULT (PCWSTR, ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgDocument*, ushort*, ID2D1SvgElement**, int> FindElementById;
+        public delegate* unmanaged<TSelf*, ushort*, ID2D1SvgElement**, int> FindElementById;
 
         [NativeTypeName("HRESULT (IStream *, ID2D1SvgElement *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgDocument*, IStream*, ID2D1SvgElement*, int> Serialize;
+        public delegate* unmanaged<TSelf*, IStream*, ID2D1SvgElement*, int> Serialize;
 
         [NativeTypeName("HRESULT (IStream *, ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgDocument*, IStream*, ID2D1SvgElement**, int> Deserialize;
+        public delegate* unmanaged<TSelf*, IStream*, ID2D1SvgElement**, int> Deserialize;
 
         [NativeTypeName("HRESULT (D2D1_SVG_PAINT_TYPE, const D2D1_COLOR_F *, PCWSTR, ID2D1SvgPaint **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgDocument*, D2D1_SVG_PAINT_TYPE, DXGI_RGBA*, ushort*, ID2D1SvgPaint**, int> CreatePaint;
+        public delegate* unmanaged<TSelf*, D2D1_SVG_PAINT_TYPE, DXGI_RGBA*, ushort*, ID2D1SvgPaint**, int> CreatePaint;
 
         [NativeTypeName("HRESULT (const D2D1_SVG_LENGTH *, UINT32, ID2D1SvgStrokeDashArray **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgDocument*, D2D1_SVG_LENGTH*, uint, ID2D1SvgStrokeDashArray**, int> CreateStrokeDashArray;
+        public delegate* unmanaged<TSelf*, D2D1_SVG_LENGTH*, uint, ID2D1SvgStrokeDashArray**, int> CreateStrokeDashArray;
 
         [NativeTypeName("HRESULT (const D2D1_POINT_2F *, UINT32, ID2D1SvgPointCollection **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgDocument*, D2D_POINT_2F*, uint, ID2D1SvgPointCollection**, int> CreatePointCollection;
+        public delegate* unmanaged<TSelf*, D2D_POINT_2F*, uint, ID2D1SvgPointCollection**, int> CreatePointCollection;
 
         [NativeTypeName("HRESULT (const FLOAT *, UINT32, const D2D1_SVG_PATH_COMMAND *, UINT32, ID2D1SvgPathData **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgDocument*, float*, uint, D2D1_SVG_PATH_COMMAND*, uint, ID2D1SvgPathData**, int> CreatePathData;
+        public delegate* unmanaged<TSelf*, float*, uint, D2D1_SVG_PATH_COMMAND*, uint, ID2D1SvgPathData**, int> CreatePathData;
     }
 }

@@ -84,27 +84,28 @@ public unsafe partial struct IMFSensorActivityReport : IMFSensorActivityReport.I
         HRESULT GetProcessActivity([NativeTypeName("ULONG")] uint Index, IMFSensorProcessActivity** ppProcessActivity);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorActivityReport*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorActivityReport*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorActivityReport*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorActivityReport*, ushort*, uint, uint*, int> GetFriendlyName;
+        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, int> GetFriendlyName;
 
         [NativeTypeName("HRESULT (LPWSTR, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorActivityReport*, ushort*, uint, uint*, int> GetSymbolicLink;
+        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, int> GetSymbolicLink;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorActivityReport*, uint*, int> GetProcessCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetProcessCount;
 
         [NativeTypeName("HRESULT (ULONG, IMFSensorProcessActivity **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorActivityReport*, uint, IMFSensorProcessActivity**, int> GetProcessActivity;
+        public delegate* unmanaged<TSelf*, uint, IMFSensorProcessActivity**, int> GetProcessActivity;
     }
 }

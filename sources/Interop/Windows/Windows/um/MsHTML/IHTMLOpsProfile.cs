@@ -160,54 +160,55 @@ public unsafe partial struct IHTMLOpsProfile : IHTMLOpsProfile.Interface
         HRESULT doWriteRequest([NativeTypeName("VARIANT_BOOL *")] short* success);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLOpsProfile*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLOpsProfile*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLOpsProfile*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLOpsProfile*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLOpsProfile*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLOpsProfile*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLOpsProfile*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLOpsProfile*, ushort*, VARIANT, short*, int> addRequest;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT, short*, int> addRequest;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLOpsProfile*, int> clearRequest;
+        public delegate* unmanaged<TSelf*, int> clearRequest;
 
         [NativeTypeName("HRESULT (VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLOpsProfile*, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, int> doRequest;
+        public delegate* unmanaged<TSelf*, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, int> doRequest;
 
         [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLOpsProfile*, ushort*, ushort**, int> getAttribute;
+        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> getAttribute;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLOpsProfile*, ushort*, ushort*, VARIANT, short*, int> setAttribute;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, VARIANT, short*, int> setAttribute;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLOpsProfile*, short*, int> commitChanges;
+        public delegate* unmanaged<TSelf*, short*, int> commitChanges;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLOpsProfile*, ushort*, VARIANT, short*, int> addReadRequest;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT, short*, int> addReadRequest;
 
         [NativeTypeName("HRESULT (VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLOpsProfile*, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, int> doReadRequest;
+        public delegate* unmanaged<TSelf*, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, int> doReadRequest;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLOpsProfile*, short*, int> doWriteRequest;
+        public delegate* unmanaged<TSelf*, short*, int> doWriteRequest;
     }
 }

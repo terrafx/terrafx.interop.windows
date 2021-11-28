@@ -82,27 +82,28 @@ public unsafe partial struct IFilterChain : IFilterChain.Interface
         HRESULT RemoveChain(IBaseFilter* pStartFilter, IBaseFilter* pEndFilter);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFilterChain*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFilterChain*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFilterChain*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IBaseFilter *, IBaseFilter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int> StartChain;
+        public delegate* unmanaged<TSelf*, IBaseFilter*, IBaseFilter*, int> StartChain;
 
         [NativeTypeName("HRESULT (IBaseFilter *, IBaseFilter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int> PauseChain;
+        public delegate* unmanaged<TSelf*, IBaseFilter*, IBaseFilter*, int> PauseChain;
 
         [NativeTypeName("HRESULT (IBaseFilter *, IBaseFilter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int> StopChain;
+        public delegate* unmanaged<TSelf*, IBaseFilter*, IBaseFilter*, int> StopChain;
 
         [NativeTypeName("HRESULT (IBaseFilter *, IBaseFilter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int> RemoveChain;
+        public delegate* unmanaged<TSelf*, IBaseFilter*, IBaseFilter*, int> RemoveChain;
     }
 }

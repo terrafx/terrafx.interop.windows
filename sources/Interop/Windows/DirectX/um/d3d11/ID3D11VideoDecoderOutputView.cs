@@ -90,33 +90,34 @@ public unsafe partial struct ID3D11VideoDecoderOutputView : ID3D11VideoDecoderOu
         void GetDesc(D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC* pDesc);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoDecoderOutputView*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoDecoderOutputView*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoDecoderOutputView*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoDecoderOutputView*, ID3D11Device**, void> GetDevice;
+        public delegate* unmanaged<TSelf*, ID3D11Device**, void> GetDevice;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoDecoderOutputView*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoDecoderOutputView*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoDecoderOutputView*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("void (ID3D11Resource **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoDecoderOutputView*, ID3D11Resource**, void> GetResource;
+        public delegate* unmanaged<TSelf*, ID3D11Resource**, void> GetResource;
 
         [NativeTypeName("void (D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoDecoderOutputView*, D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC*, void> GetDesc;
+        public delegate* unmanaged<TSelf*, D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC*, void> GetDesc;
     }
 }

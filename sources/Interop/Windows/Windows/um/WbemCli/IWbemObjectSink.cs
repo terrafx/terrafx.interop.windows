@@ -62,21 +62,22 @@ public unsafe partial struct IWbemObjectSink : IWbemObjectSink.Interface
         HRESULT SetStatus([NativeTypeName("long")] int lFlags, HRESULT hResult, [NativeTypeName("BSTR")] ushort* strParam, IWbemClassObject* pObjParam);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemObjectSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemObjectSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemObjectSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long, IWbemClassObject **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemObjectSink*, int, IWbemClassObject**, int> Indicate;
+        public delegate* unmanaged<TSelf*, int, IWbemClassObject**, int> Indicate;
 
         [NativeTypeName("HRESULT (long, HRESULT, BSTR, IWbemClassObject *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemObjectSink*, int, HRESULT, ushort*, IWbemClassObject*, int> SetStatus;
+        public delegate* unmanaged<TSelf*, int, HRESULT, ushort*, IWbemClassObject*, int> SetStatus;
     }
 }

@@ -52,18 +52,19 @@ public unsafe partial struct IMFLocalMFTRegistration : IMFLocalMFTRegistration.I
         HRESULT RegisterMFTs(MFT_REGISTRATION_INFO* pMFTs, [NativeTypeName("DWORD")] uint cMFTs);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFLocalMFTRegistration*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFLocalMFTRegistration*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFLocalMFTRegistration*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MFT_REGISTRATION_INFO *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFLocalMFTRegistration*, MFT_REGISTRATION_INFO*, uint, int> RegisterMFTs;
+        public delegate* unmanaged<TSelf*, MFT_REGISTRATION_INFO*, uint, int> RegisterMFTs;
     }
 }

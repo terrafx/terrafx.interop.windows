@@ -83,27 +83,28 @@ public unsafe partial struct IDWriteInlineObject : IDWriteInlineObject.Interface
         HRESULT GetBreakConditions(DWRITE_BREAK_CONDITION* breakConditionBefore, DWRITE_BREAK_CONDITION* breakConditionAfter);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteInlineObject*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteInlineObject*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteInlineObject*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (void *, IDWriteTextRenderer *, FLOAT, FLOAT, BOOL, BOOL, IUnknown *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteInlineObject*, void*, IDWriteTextRenderer*, float, float, BOOL, BOOL, IUnknown*, int> Draw;
+        public delegate* unmanaged<TSelf*, void*, IDWriteTextRenderer*, float, float, BOOL, BOOL, IUnknown*, int> Draw;
 
         [NativeTypeName("HRESULT (DWRITE_INLINE_OBJECT_METRICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteInlineObject*, DWRITE_INLINE_OBJECT_METRICS*, int> GetMetrics;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_INLINE_OBJECT_METRICS*, int> GetMetrics;
 
         [NativeTypeName("HRESULT (DWRITE_OVERHANG_METRICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteInlineObject*, DWRITE_OVERHANG_METRICS*, int> GetOverhangMetrics;
+        public delegate* unmanaged<TSelf*, DWRITE_OVERHANG_METRICS*, int> GetOverhangMetrics;
 
         [NativeTypeName("HRESULT (DWRITE_BREAK_CONDITION *, DWRITE_BREAK_CONDITION *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteInlineObject*, DWRITE_BREAK_CONDITION*, DWRITE_BREAK_CONDITION*, int> GetBreakConditions;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_BREAK_CONDITION*, DWRITE_BREAK_CONDITION*, int> GetBreakConditions;
     }
 }

@@ -159,60 +159,61 @@ public unsafe partial struct IStreamPseudoRandomBased : IStreamPseudoRandomBased
         HRESULT get_ExtendedSeed([NativeTypeName("ULONG **")] uint** values, [NativeTypeName("ULONG *")] uint* eCount);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamPseudoRandomBased*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamPseudoRandomBased*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamPseudoRandomBased*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamPseudoRandomBased*, void*, uint, uint*, int> Read;
+        public delegate* unmanaged<TSelf*, void*, uint, uint*, int> Read;
 
         [NativeTypeName("HRESULT (const void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamPseudoRandomBased*, void*, uint, uint*, int> Write;
+        public delegate* unmanaged<TSelf*, void*, uint, uint*, int> Write;
 
         [NativeTypeName("HRESULT (LARGE_INTEGER, DWORD, ULARGE_INTEGER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamPseudoRandomBased*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int> Seek;
+        public delegate* unmanaged<TSelf*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int> Seek;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamPseudoRandomBased*, ULARGE_INTEGER, int> SetSize;
+        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, int> SetSize;
 
         [NativeTypeName("HRESULT (IStream *, ULARGE_INTEGER, ULARGE_INTEGER *, ULARGE_INTEGER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamPseudoRandomBased*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int> CopyTo;
+        public delegate* unmanaged<TSelf*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int> CopyTo;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamPseudoRandomBased*, uint, int> Commit;
+        public delegate* unmanaged<TSelf*, uint, int> Commit;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamPseudoRandomBased*, int> Revert;
+        public delegate* unmanaged<TSelf*, int> Revert;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamPseudoRandomBased*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> LockRegion;
+        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> LockRegion;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamPseudoRandomBased*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> UnlockRegion;
+        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> UnlockRegion;
 
         [NativeTypeName("HRESULT (STATSTG *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamPseudoRandomBased*, STATSTG*, uint, int> Stat;
+        public delegate* unmanaged<TSelf*, STATSTG*, uint, int> Stat;
 
         [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamPseudoRandomBased*, IStream**, int> Clone;
+        public delegate* unmanaged<TSelf*, IStream**, int> Clone;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamPseudoRandomBased*, uint, int> put_Seed;
+        public delegate* unmanaged<TSelf*, uint, int> put_Seed;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamPseudoRandomBased*, uint*, int> get_Seed;
+        public delegate* unmanaged<TSelf*, uint*, int> get_Seed;
 
         [NativeTypeName("HRESULT (ULONG *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamPseudoRandomBased*, uint*, uint, int> put_ExtendedSeed;
+        public delegate* unmanaged<TSelf*, uint*, uint, int> put_ExtendedSeed;
 
         [NativeTypeName("HRESULT (ULONG **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamPseudoRandomBased*, uint**, uint*, int> get_ExtendedSeed;
+        public delegate* unmanaged<TSelf*, uint**, uint*, int> get_ExtendedSeed;
     }
 }

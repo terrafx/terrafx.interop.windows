@@ -62,21 +62,22 @@ public unsafe partial struct INamespaceWalk : INamespaceWalk.Interface
         HRESULT GetIDArrayResult(uint* pcItems, [NativeTypeName("LPITEMIDLIST **")] ITEMIDLIST*** prgpidl);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<INamespaceWalk*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INamespaceWalk*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INamespaceWalk*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, DWORD, int, INamespaceWalkCB *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INamespaceWalk*, IUnknown*, uint, int, INamespaceWalkCB*, int> Walk;
+        public delegate* unmanaged<TSelf*, IUnknown*, uint, int, INamespaceWalkCB*, int> Walk;
 
         [NativeTypeName("HRESULT (UINT *, LPITEMIDLIST **) __attribute__((stdcall))")]
-        public delegate* unmanaged<INamespaceWalk*, uint*, ITEMIDLIST***, int> GetIDArrayResult;
+        public delegate* unmanaged<TSelf*, uint*, ITEMIDLIST***, int> GetIDArrayResult;
     }
 }

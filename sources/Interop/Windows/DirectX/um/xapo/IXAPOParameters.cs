@@ -63,21 +63,22 @@ public unsafe partial struct IXAPOParameters : IXAPOParameters.Interface
         void GetParameters(void* pParameters, [NativeTypeName("UINT32")] uint ParameterByteSize);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAPOParameters*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAPOParameters*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAPOParameters*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (const void *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAPOParameters*, void*, uint, void> SetParameters;
+        public delegate* unmanaged<TSelf*, void*, uint, void> SetParameters;
 
         [NativeTypeName("void (void *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAPOParameters*, void*, uint, void> GetParameters;
+        public delegate* unmanaged<TSelf*, void*, uint, void> GetParameters;
     }
 }

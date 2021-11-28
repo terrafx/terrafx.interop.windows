@@ -81,30 +81,31 @@ public unsafe partial struct IDWriteFontSetBuilder1 : IDWriteFontSetBuilder1.Int
         HRESULT AddFontFile(IDWriteFontFile* fontFile);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSetBuilder1*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSetBuilder1*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSetBuilder1*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDWriteFontFaceReference *, const DWRITE_FONT_PROPERTY *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSetBuilder1*, IDWriteFontFaceReference*, DWRITE_FONT_PROPERTY*, uint, int> AddFontFaceReference;
+        public delegate* unmanaged<TSelf*, IDWriteFontFaceReference*, DWRITE_FONT_PROPERTY*, uint, int> AddFontFaceReference;
 
         [NativeTypeName("HRESULT (IDWriteFontFaceReference *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSetBuilder1*, IDWriteFontFaceReference*, int> AddFontFaceReference1;
+        public delegate* unmanaged<TSelf*, IDWriteFontFaceReference*, int> AddFontFaceReference1;
 
         [NativeTypeName("HRESULT (IDWriteFontSet *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSetBuilder1*, IDWriteFontSet*, int> AddFontSet;
+        public delegate* unmanaged<TSelf*, IDWriteFontSet*, int> AddFontSet;
 
         [NativeTypeName("HRESULT (IDWriteFontSet **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSetBuilder1*, IDWriteFontSet**, int> CreateFontSet;
+        public delegate* unmanaged<TSelf*, IDWriteFontSet**, int> CreateFontSet;
 
         [NativeTypeName("HRESULT (IDWriteFontFile *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSetBuilder1*, IDWriteFontFile*, int> AddFontFile;
+        public delegate* unmanaged<TSelf*, IDWriteFontFile*, int> AddFontFile;
     }
 }

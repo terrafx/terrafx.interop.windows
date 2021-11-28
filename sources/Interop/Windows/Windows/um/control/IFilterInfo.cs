@@ -150,51 +150,52 @@ public unsafe partial struct IFilterInfo : IFilterInfo.Interface
         HRESULT put_Filename([NativeTypeName("BSTR")] ushort* strFilename);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFilterInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFilterInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFilterInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFilterInfo*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFilterInfo*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFilterInfo*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFilterInfo*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFilterInfo*, ushort*, IDispatch**, int> FindPin;
+        public delegate* unmanaged<TSelf*, ushort*, IDispatch**, int> FindPin;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFilterInfo*, ushort**, int> get_Name;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_Name;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFilterInfo*, ushort**, int> get_VendorInfo;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_VendorInfo;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFilterInfo*, IUnknown**, int> get_Filter;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> get_Filter;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFilterInfo*, IDispatch**, int> get_Pins;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_Pins;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFilterInfo*, int*, int> get_IsFileSource;
+        public delegate* unmanaged<TSelf*, int*, int> get_IsFileSource;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFilterInfo*, ushort**, int> get_Filename;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_Filename;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFilterInfo*, ushort*, int> put_Filename;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_Filename;
     }
 }

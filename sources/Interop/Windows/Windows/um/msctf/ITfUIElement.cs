@@ -82,27 +82,28 @@ public unsafe partial struct ITfUIElement : ITfUIElement.Interface
         HRESULT IsShown(BOOL* pbShow);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfUIElement*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfUIElement*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfUIElement*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfUIElement*, ushort**, int> GetDescription;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDescription;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfUIElement*, Guid*, int> GetGUID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetGUID;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfUIElement*, BOOL, int> Show;
+        public delegate* unmanaged<TSelf*, BOOL, int> Show;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfUIElement*, BOOL*, int> IsShown;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsShown;
     }
 }

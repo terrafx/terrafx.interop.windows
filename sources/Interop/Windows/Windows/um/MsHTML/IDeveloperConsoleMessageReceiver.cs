@@ -82,27 +82,28 @@ public unsafe partial struct IDeveloperConsoleMessageReceiver : IDeveloperConsol
         HRESULT WriteWithUrlLineAndColumn([NativeTypeName("LPCWSTR")] ushort* source, DEV_CONSOLE_MESSAGE_LEVEL level, int messageId, [NativeTypeName("LPCWSTR")] ushort* messageText, [NativeTypeName("LPCWSTR")] ushort* fileUrl, [NativeTypeName("ULONG")] uint line, [NativeTypeName("ULONG")] uint column);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeveloperConsoleMessageReceiver*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeveloperConsoleMessageReceiver*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeveloperConsoleMessageReceiver*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, DEV_CONSOLE_MESSAGE_LEVEL, int, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeveloperConsoleMessageReceiver*, ushort*, DEV_CONSOLE_MESSAGE_LEVEL, int, ushort*, int> Write;
+        public delegate* unmanaged<TSelf*, ushort*, DEV_CONSOLE_MESSAGE_LEVEL, int, ushort*, int> Write;
 
         [NativeTypeName("HRESULT (LPCWSTR, DEV_CONSOLE_MESSAGE_LEVEL, int, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeveloperConsoleMessageReceiver*, ushort*, DEV_CONSOLE_MESSAGE_LEVEL, int, ushort*, ushort*, int> WriteWithUrl;
+        public delegate* unmanaged<TSelf*, ushort*, DEV_CONSOLE_MESSAGE_LEVEL, int, ushort*, ushort*, int> WriteWithUrl;
 
         [NativeTypeName("HRESULT (LPCWSTR, DEV_CONSOLE_MESSAGE_LEVEL, int, LPCWSTR, LPCWSTR, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeveloperConsoleMessageReceiver*, ushort*, DEV_CONSOLE_MESSAGE_LEVEL, int, ushort*, ushort*, uint, int> WriteWithUrlAndLine;
+        public delegate* unmanaged<TSelf*, ushort*, DEV_CONSOLE_MESSAGE_LEVEL, int, ushort*, ushort*, uint, int> WriteWithUrlAndLine;
 
         [NativeTypeName("HRESULT (LPCWSTR, DEV_CONSOLE_MESSAGE_LEVEL, int, LPCWSTR, LPCWSTR, ULONG, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeveloperConsoleMessageReceiver*, ushort*, DEV_CONSOLE_MESSAGE_LEVEL, int, ushort*, ushort*, uint, uint, int> WriteWithUrlLineAndColumn;
+        public delegate* unmanaged<TSelf*, ushort*, DEV_CONSOLE_MESSAGE_LEVEL, int, ushort*, ushort*, uint, uint, int> WriteWithUrlLineAndColumn;
     }
 }

@@ -55,18 +55,19 @@ public unsafe partial struct ILanguageExceptionTransform : ILanguageExceptionTra
         HRESULT GetTransformedRestrictedErrorInfo(IRestrictedErrorInfo** restrictedErrorInfo);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILanguageExceptionTransform*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ILanguageExceptionTransform*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ILanguageExceptionTransform*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IRestrictedErrorInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILanguageExceptionTransform*, IRestrictedErrorInfo**, int> GetTransformedRestrictedErrorInfo;
+        public delegate* unmanaged<TSelf*, IRestrictedErrorInfo**, int> GetTransformedRestrictedErrorInfo;
     }
 }

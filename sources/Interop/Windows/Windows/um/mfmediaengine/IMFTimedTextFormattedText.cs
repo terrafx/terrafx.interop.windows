@@ -76,24 +76,25 @@ public unsafe partial struct IMFTimedTextFormattedText : IMFTimedTextFormattedTe
         HRESULT GetSubformatting([NativeTypeName("DWORD")] uint index, [NativeTypeName("DWORD *")] uint* firstChar, [NativeTypeName("DWORD *")] uint* charLength, IMFTimedTextStyle** style);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextFormattedText*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextFormattedText*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextFormattedText*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextFormattedText*, ushort**, int> GetText;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetText;
 
         [NativeTypeName("DWORD () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextFormattedText*, uint> GetSubformattingCount;
+        public delegate* unmanaged<TSelf*, uint> GetSubformattingCount;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *, IMFTimedTextStyle **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextFormattedText*, uint, uint*, uint*, IMFTimedTextStyle**, int> GetSubformatting;
+        public delegate* unmanaged<TSelf*, uint, uint*, uint*, IMFTimedTextStyle**, int> GetSubformatting;
     }
 }

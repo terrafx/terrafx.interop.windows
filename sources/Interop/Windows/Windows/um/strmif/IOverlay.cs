@@ -142,45 +142,46 @@ public unsafe partial struct IOverlay : IOverlay.Interface
         HRESULT Unadvise();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlay*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlay*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlay*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *, PALETTEENTRY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlay*, uint*, PALETTEENTRY**, int> GetPalette;
+        public delegate* unmanaged<TSelf*, uint*, PALETTEENTRY**, int> GetPalette;
 
         [NativeTypeName("HRESULT (DWORD, PALETTEENTRY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlay*, uint, PALETTEENTRY*, int> SetPalette;
+        public delegate* unmanaged<TSelf*, uint, PALETTEENTRY*, int> SetPalette;
 
         [NativeTypeName("HRESULT (COLORKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlay*, COLORKEY*, int> GetDefaultColorKey;
+        public delegate* unmanaged<TSelf*, COLORKEY*, int> GetDefaultColorKey;
 
         [NativeTypeName("HRESULT (COLORKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlay*, COLORKEY*, int> GetColorKey;
+        public delegate* unmanaged<TSelf*, COLORKEY*, int> GetColorKey;
 
         [NativeTypeName("HRESULT (COLORKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlay*, COLORKEY*, int> SetColorKey;
+        public delegate* unmanaged<TSelf*, COLORKEY*, int> SetColorKey;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlay*, HWND*, int> GetWindowHandle;
+        public delegate* unmanaged<TSelf*, HWND*, int> GetWindowHandle;
 
         [NativeTypeName("HRESULT (RECT *, RECT *, RGNDATA **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlay*, RECT*, RECT*, RGNDATA**, int> GetClipList;
+        public delegate* unmanaged<TSelf*, RECT*, RECT*, RGNDATA**, int> GetClipList;
 
         [NativeTypeName("HRESULT (RECT *, RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlay*, RECT*, RECT*, int> GetVideoPosition;
+        public delegate* unmanaged<TSelf*, RECT*, RECT*, int> GetVideoPosition;
 
         [NativeTypeName("HRESULT (IOverlayNotify *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlay*, IOverlayNotify*, uint, int> Advise;
+        public delegate* unmanaged<TSelf*, IOverlayNotify*, uint, int> Advise;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlay*, int> Unadvise;
+        public delegate* unmanaged<TSelf*, int> Unadvise;
     }
 }

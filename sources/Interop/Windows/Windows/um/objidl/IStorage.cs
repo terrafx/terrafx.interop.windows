@@ -192,60 +192,61 @@ public unsafe partial struct IStorage : IStorage.Interface
         HRESULT Stat(STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorage*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorage*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorage*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const OLECHAR *, DWORD, DWORD, DWORD, IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorage*, ushort*, uint, uint, uint, IStream**, int> CreateStream;
+        public delegate* unmanaged<TSelf*, ushort*, uint, uint, uint, IStream**, int> CreateStream;
 
         [NativeTypeName("HRESULT (const OLECHAR *, void *, DWORD, DWORD, IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorage*, ushort*, void*, uint, uint, IStream**, int> OpenStream;
+        public delegate* unmanaged<TSelf*, ushort*, void*, uint, uint, IStream**, int> OpenStream;
 
         [NativeTypeName("HRESULT (const OLECHAR *, DWORD, DWORD, DWORD, IStorage **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorage*, ushort*, uint, uint, uint, IStorage**, int> CreateStorage;
+        public delegate* unmanaged<TSelf*, ushort*, uint, uint, uint, IStorage**, int> CreateStorage;
 
         [NativeTypeName("HRESULT (const OLECHAR *, IStorage *, DWORD, SNB, DWORD, IStorage **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorage*, ushort*, IStorage*, uint, ushort**, uint, IStorage**, int> OpenStorage;
+        public delegate* unmanaged<TSelf*, ushort*, IStorage*, uint, ushort**, uint, IStorage**, int> OpenStorage;
 
         [NativeTypeName("HRESULT (DWORD, const IID *, SNB, IStorage *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorage*, uint, Guid*, ushort**, IStorage*, int> CopyTo;
+        public delegate* unmanaged<TSelf*, uint, Guid*, ushort**, IStorage*, int> CopyTo;
 
         [NativeTypeName("HRESULT (const OLECHAR *, IStorage *, const OLECHAR *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorage*, ushort*, IStorage*, ushort*, uint, int> MoveElementTo;
+        public delegate* unmanaged<TSelf*, ushort*, IStorage*, ushort*, uint, int> MoveElementTo;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorage*, uint, int> Commit;
+        public delegate* unmanaged<TSelf*, uint, int> Commit;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorage*, int> Revert;
+        public delegate* unmanaged<TSelf*, int> Revert;
 
         [NativeTypeName("HRESULT (DWORD, void *, DWORD, IEnumSTATSTG **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorage*, uint, void*, uint, IEnumSTATSTG**, int> EnumElements;
+        public delegate* unmanaged<TSelf*, uint, void*, uint, IEnumSTATSTG**, int> EnumElements;
 
         [NativeTypeName("HRESULT (const OLECHAR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorage*, ushort*, int> DestroyElement;
+        public delegate* unmanaged<TSelf*, ushort*, int> DestroyElement;
 
         [NativeTypeName("HRESULT (const OLECHAR *, const OLECHAR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorage*, ushort*, ushort*, int> RenameElement;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> RenameElement;
 
         [NativeTypeName("HRESULT (const OLECHAR *, const FILETIME *, const FILETIME *, const FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorage*, ushort*, FILETIME*, FILETIME*, FILETIME*, int> SetElementTimes;
+        public delegate* unmanaged<TSelf*, ushort*, FILETIME*, FILETIME*, FILETIME*, int> SetElementTimes;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorage*, Guid*, int> SetClass;
+        public delegate* unmanaged<TSelf*, Guid*, int> SetClass;
 
         [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorage*, uint, uint, int> SetStateBits;
+        public delegate* unmanaged<TSelf*, uint, uint, int> SetStateBits;
 
         [NativeTypeName("HRESULT (STATSTG *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorage*, STATSTG*, uint, int> Stat;
+        public delegate* unmanaged<TSelf*, STATSTG*, uint, int> Stat;
     }
 }

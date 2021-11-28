@@ -122,39 +122,40 @@ public unsafe partial struct IRedbookDiscMaster : IRedbookDiscMaster.Interface
         HRESULT CloseAudioTrack();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRedbookDiscMaster*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRedbookDiscMaster*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRedbookDiscMaster*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRedbookDiscMaster*, int*, int> GetTotalAudioTracks;
+        public delegate* unmanaged<TSelf*, int*, int> GetTotalAudioTracks;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRedbookDiscMaster*, int*, int> GetTotalAudioBlocks;
+        public delegate* unmanaged<TSelf*, int*, int> GetTotalAudioBlocks;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRedbookDiscMaster*, int*, int> GetUsedAudioBlocks;
+        public delegate* unmanaged<TSelf*, int*, int> GetUsedAudioBlocks;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRedbookDiscMaster*, int*, int> GetAvailableAudioTrackBlocks;
+        public delegate* unmanaged<TSelf*, int*, int> GetAvailableAudioTrackBlocks;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRedbookDiscMaster*, int*, int> GetAudioBlockSize;
+        public delegate* unmanaged<TSelf*, int*, int> GetAudioBlockSize;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRedbookDiscMaster*, int, int> CreateAudioTrack;
+        public delegate* unmanaged<TSelf*, int, int> CreateAudioTrack;
 
         [NativeTypeName("HRESULT (byte *, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRedbookDiscMaster*, byte*, int, int> AddAudioTrackBlocks;
+        public delegate* unmanaged<TSelf*, byte*, int, int> AddAudioTrackBlocks;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRedbookDiscMaster*, int> CloseAudioTrack;
+        public delegate* unmanaged<TSelf*, int> CloseAudioTrack;
     }
 }

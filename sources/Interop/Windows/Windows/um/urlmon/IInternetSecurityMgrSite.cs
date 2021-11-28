@@ -62,21 +62,22 @@ public unsafe partial struct IInternetSecurityMgrSite : IInternetSecurityMgrSite
         HRESULT EnableModeless(BOOL fEnable);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetSecurityMgrSite*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetSecurityMgrSite*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetSecurityMgrSite*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetSecurityMgrSite*, HWND*, int> GetWindow;
+        public delegate* unmanaged<TSelf*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetSecurityMgrSite*, BOOL, int> EnableModeless;
+        public delegate* unmanaged<TSelf*, BOOL, int> EnableModeless;
     }
 }

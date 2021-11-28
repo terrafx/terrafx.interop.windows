@@ -52,18 +52,19 @@ public unsafe partial struct IMediaSample2Config : IMediaSample2Config.Interface
         HRESULT GetSurface(IUnknown** ppDirect3DSurface9);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2Config*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2Config*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2Config*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2Config*, IUnknown**, int> GetSurface;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> GetSurface;
     }
 }

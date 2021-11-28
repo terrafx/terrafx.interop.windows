@@ -90,33 +90,34 @@ public unsafe partial struct ISpatialAudioObject : ISpatialAudioObject.Interface
         HRESULT SetVolume(float volume);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObject*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObject*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObject*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE **, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObject*, byte**, uint*, int> GetBuffer;
+        public delegate* unmanaged<TSelf*, byte**, uint*, int> GetBuffer;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObject*, uint, int> SetEndOfStream;
+        public delegate* unmanaged<TSelf*, uint, int> SetEndOfStream;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObject*, BOOL*, int> IsActive;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsActive;
 
         [NativeTypeName("HRESULT (AudioObjectType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObject*, AudioObjectType*, int> GetAudioObjectType;
+        public delegate* unmanaged<TSelf*, AudioObjectType*, int> GetAudioObjectType;
 
         [NativeTypeName("HRESULT (float, float, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObject*, float, float, float, int> SetPosition;
+        public delegate* unmanaged<TSelf*, float, float, float, int> SetPosition;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObject*, float, int> SetVolume;
+        public delegate* unmanaged<TSelf*, float, int> SetVolume;
     }
 }

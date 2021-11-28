@@ -82,27 +82,28 @@ public unsafe partial struct IAudioAmbisonicsControl : IAudioAmbisonicsControl.I
         HRESULT SetRotation(float X, float Y, float Z, float W);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioAmbisonicsControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioAmbisonicsControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioAmbisonicsControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const AMBISONICS_PARAMS *, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioAmbisonicsControl*, AMBISONICS_PARAMS*, uint, int> SetData;
+        public delegate* unmanaged<TSelf*, AMBISONICS_PARAMS*, uint, int> SetData;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioAmbisonicsControl*, BOOL, int> SetHeadTracking;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetHeadTracking;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioAmbisonicsControl*, BOOL*, int> GetHeadTracking;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetHeadTracking;
 
         [NativeTypeName("HRESULT (float, float, float, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioAmbisonicsControl*, float, float, float, float, int> SetRotation;
+        public delegate* unmanaged<TSelf*, float, float, float, float, int> SetRotation;
     }
 }

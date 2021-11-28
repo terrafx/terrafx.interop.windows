@@ -168,60 +168,61 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface
         HRESULT ShouldOperationContinue();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphBuilder*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphBuilder*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphBuilder*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IBaseFilter *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphBuilder*, IBaseFilter*, ushort*, int> AddFilter;
+        public delegate* unmanaged<TSelf*, IBaseFilter*, ushort*, int> AddFilter;
 
         [NativeTypeName("HRESULT (IBaseFilter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphBuilder*, IBaseFilter*, int> RemoveFilter;
+        public delegate* unmanaged<TSelf*, IBaseFilter*, int> RemoveFilter;
 
         [NativeTypeName("HRESULT (IEnumFilters **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphBuilder*, IEnumFilters**, int> EnumFilters;
+        public delegate* unmanaged<TSelf*, IEnumFilters**, int> EnumFilters;
 
         [NativeTypeName("HRESULT (LPCWSTR, IBaseFilter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphBuilder*, ushort*, IBaseFilter**, int> FindFilterByName;
+        public delegate* unmanaged<TSelf*, ushort*, IBaseFilter**, int> FindFilterByName;
 
         [NativeTypeName("HRESULT (IPin *, IPin *, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphBuilder*, IPin*, IPin*, AM_MEDIA_TYPE*, int> ConnectDirect;
+        public delegate* unmanaged<TSelf*, IPin*, IPin*, AM_MEDIA_TYPE*, int> ConnectDirect;
 
         [NativeTypeName("HRESULT (IPin *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphBuilder*, IPin*, int> Reconnect;
+        public delegate* unmanaged<TSelf*, IPin*, int> Reconnect;
 
         [NativeTypeName("HRESULT (IPin *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphBuilder*, IPin*, int> Disconnect;
+        public delegate* unmanaged<TSelf*, IPin*, int> Disconnect;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphBuilder*, int> SetDefaultSyncSource;
+        public delegate* unmanaged<TSelf*, int> SetDefaultSyncSource;
 
         [NativeTypeName("HRESULT (IPin *, IPin *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphBuilder*, IPin*, IPin*, int> Connect;
+        public delegate* unmanaged<TSelf*, IPin*, IPin*, int> Connect;
 
         [NativeTypeName("HRESULT (IPin *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphBuilder*, IPin*, int> Render;
+        public delegate* unmanaged<TSelf*, IPin*, int> Render;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphBuilder*, ushort*, ushort*, int> RenderFile;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> RenderFile;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, IBaseFilter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphBuilder*, ushort*, ushort*, IBaseFilter**, int> AddSourceFilter;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, IBaseFilter**, int> AddSourceFilter;
 
         [NativeTypeName("HRESULT (DWORD_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphBuilder*, nuint, int> SetLogFile;
+        public delegate* unmanaged<TSelf*, nuint, int> SetLogFile;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphBuilder*, int> Abort;
+        public delegate* unmanaged<TSelf*, int> Abort;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphBuilder*, int> ShouldOperationContinue;
+        public delegate* unmanaged<TSelf*, int> ShouldOperationContinue;
     }
 }

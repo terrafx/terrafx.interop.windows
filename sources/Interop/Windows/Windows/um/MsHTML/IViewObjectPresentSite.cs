@@ -73,24 +73,25 @@ public unsafe partial struct IViewObjectPresentSite : IViewObjectPresentSite.Int
         HRESULT SetCompositionMode(VIEW_OBJECT_COMPOSITION_MODE mode);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IViewObjectPresentSite*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IViewObjectPresentSite*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IViewObjectPresentSite*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, UINT, UINT, UINT, DXGI_FORMAT, VIEW_OBJECT_ALPHA_MODE, ISurfacePresenter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IViewObjectPresentSite*, IUnknown*, uint, uint, uint, DXGI_FORMAT, VIEW_OBJECT_ALPHA_MODE, ISurfacePresenter**, int> CreateSurfacePresenter;
+        public delegate* unmanaged<TSelf*, IUnknown*, uint, uint, uint, DXGI_FORMAT, VIEW_OBJECT_ALPHA_MODE, ISurfacePresenter**, int> CreateSurfacePresenter;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IViewObjectPresentSite*, BOOL*, int> IsHardwareComposition;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsHardwareComposition;
 
         [NativeTypeName("HRESULT (VIEW_OBJECT_COMPOSITION_MODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IViewObjectPresentSite*, VIEW_OBJECT_COMPOSITION_MODE, int> SetCompositionMode;
+        public delegate* unmanaged<TSelf*, VIEW_OBJECT_COMPOSITION_MODE, int> SetCompositionMode;
     }
 }

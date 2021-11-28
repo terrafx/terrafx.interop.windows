@@ -252,78 +252,79 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         HRESULT put_MinimumScaleRotateRadius(float minRadius);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MANIPULATION_PROCESSOR_MANIPULATIONS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, MANIPULATION_PROCESSOR_MANIPULATIONS*, int> get_SupportedManipulations;
+        public delegate* unmanaged<TSelf*, MANIPULATION_PROCESSOR_MANIPULATIONS*, int> get_SupportedManipulations;
 
         [NativeTypeName("HRESULT (MANIPULATION_PROCESSOR_MANIPULATIONS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, MANIPULATION_PROCESSOR_MANIPULATIONS, int> put_SupportedManipulations;
+        public delegate* unmanaged<TSelf*, MANIPULATION_PROCESSOR_MANIPULATIONS, int> put_SupportedManipulations;
 
         [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, float*, int> get_PivotPointX;
+        public delegate* unmanaged<TSelf*, float*, int> get_PivotPointX;
 
         [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, float, int> put_PivotPointX;
+        public delegate* unmanaged<TSelf*, float, int> put_PivotPointX;
 
         [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, float*, int> get_PivotPointY;
+        public delegate* unmanaged<TSelf*, float*, int> get_PivotPointY;
 
         [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, float, int> put_PivotPointY;
+        public delegate* unmanaged<TSelf*, float, int> put_PivotPointY;
 
         [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, float*, int> get_PivotRadius;
+        public delegate* unmanaged<TSelf*, float*, int> get_PivotRadius;
 
         [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, float, int> put_PivotRadius;
+        public delegate* unmanaged<TSelf*, float, int> put_PivotRadius;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, int> CompleteManipulation;
+        public delegate* unmanaged<TSelf*, int> CompleteManipulation;
 
         [NativeTypeName("HRESULT (MANIPULATOR_ID, FLOAT, FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, uint, float, float, int> ProcessDown;
+        public delegate* unmanaged<TSelf*, uint, float, float, int> ProcessDown;
 
         [NativeTypeName("HRESULT (MANIPULATOR_ID, FLOAT, FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, uint, float, float, int> ProcessMove;
+        public delegate* unmanaged<TSelf*, uint, float, float, int> ProcessMove;
 
         [NativeTypeName("HRESULT (MANIPULATOR_ID, FLOAT, FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, uint, float, float, int> ProcessUp;
+        public delegate* unmanaged<TSelf*, uint, float, float, int> ProcessUp;
 
         [NativeTypeName("HRESULT (MANIPULATOR_ID, FLOAT, FLOAT, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, uint, float, float, uint, int> ProcessDownWithTime;
+        public delegate* unmanaged<TSelf*, uint, float, float, uint, int> ProcessDownWithTime;
 
         [NativeTypeName("HRESULT (MANIPULATOR_ID, FLOAT, FLOAT, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, uint, float, float, uint, int> ProcessMoveWithTime;
+        public delegate* unmanaged<TSelf*, uint, float, float, uint, int> ProcessMoveWithTime;
 
         [NativeTypeName("HRESULT (MANIPULATOR_ID, FLOAT, FLOAT, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, uint, float, float, uint, int> ProcessUpWithTime;
+        public delegate* unmanaged<TSelf*, uint, float, float, uint, int> ProcessUpWithTime;
 
         [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, float*, int> GetVelocityX;
+        public delegate* unmanaged<TSelf*, float*, int> GetVelocityX;
 
         [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, float*, int> GetVelocityY;
+        public delegate* unmanaged<TSelf*, float*, int> GetVelocityY;
 
         [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, float*, int> GetExpansionVelocity;
+        public delegate* unmanaged<TSelf*, float*, int> GetExpansionVelocity;
 
         [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, float*, int> GetAngularVelocity;
+        public delegate* unmanaged<TSelf*, float*, int> GetAngularVelocity;
 
         [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, float*, int> get_MinimumScaleRotateRadius;
+        public delegate* unmanaged<TSelf*, float*, int> get_MinimumScaleRotateRadius;
 
         [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IManipulationProcessor*, float, int> put_MinimumScaleRotateRadius;
+        public delegate* unmanaged<TSelf*, float, int> put_MinimumScaleRotateRadius;
     }
 }

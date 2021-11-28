@@ -83,27 +83,28 @@ public unsafe partial struct IVMRVideoStreamControl : IVMRVideoStreamControl.Int
         HRESULT GetStreamActiveState(BOOL* lpfActive);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRVideoStreamControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRVideoStreamControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRVideoStreamControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPDDCOLORKEY) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRVideoStreamControl*, DDCOLORKEY*, int> SetColorKey;
+        public delegate* unmanaged<TSelf*, DDCOLORKEY*, int> SetColorKey;
 
         [NativeTypeName("HRESULT (LPDDCOLORKEY) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRVideoStreamControl*, DDCOLORKEY*, int> GetColorKey;
+        public delegate* unmanaged<TSelf*, DDCOLORKEY*, int> GetColorKey;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRVideoStreamControl*, BOOL, int> SetStreamActiveState;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetStreamActiveState;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRVideoStreamControl*, BOOL*, int> GetStreamActiveState;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetStreamActiveState;
     }
 }

@@ -80,30 +80,31 @@ public unsafe partial struct IOverlayNotify2 : IOverlayNotify2.Interface
         HRESULT OnDisplayChange(HMONITOR hMonitor);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlayNotify2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlayNotify2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlayNotify2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, const PALETTEENTRY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlayNotify2*, uint, PALETTEENTRY*, int> OnPaletteChange;
+        public delegate* unmanaged<TSelf*, uint, PALETTEENTRY*, int> OnPaletteChange;
 
         [NativeTypeName("HRESULT (const RECT *, const RECT *, const RGNDATA *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlayNotify2*, RECT*, RECT*, RGNDATA*, int> OnClipChange;
+        public delegate* unmanaged<TSelf*, RECT*, RECT*, RGNDATA*, int> OnClipChange;
 
         [NativeTypeName("HRESULT (const COLORKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlayNotify2*, COLORKEY*, int> OnColorKeyChange;
+        public delegate* unmanaged<TSelf*, COLORKEY*, int> OnColorKeyChange;
 
         [NativeTypeName("HRESULT (const RECT *, const RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlayNotify2*, RECT*, RECT*, int> OnPositionChange;
+        public delegate* unmanaged<TSelf*, RECT*, RECT*, int> OnPositionChange;
 
         [NativeTypeName("HRESULT (HMONITOR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlayNotify2*, HMONITOR, int> OnDisplayChange;
+        public delegate* unmanaged<TSelf*, HMONITOR, int> OnDisplayChange;
     }
 }

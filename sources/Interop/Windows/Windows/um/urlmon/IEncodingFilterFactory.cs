@@ -62,21 +62,22 @@ public unsafe partial struct IEncodingFilterFactory : IEncodingFilterFactory.Int
         HRESULT GetDefaultFilter([NativeTypeName("LPCWSTR")] ushort* pwzCodeIn, [NativeTypeName("LPCWSTR")] ushort* pwzCodeOut, IDataFilter** ppDF);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEncodingFilterFactory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEncodingFilterFactory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEncodingFilterFactory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, DATAINFO, IDataFilter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEncodingFilterFactory*, ushort*, ushort*, DATAINFO, IDataFilter**, int> FindBestFilter;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, DATAINFO, IDataFilter**, int> FindBestFilter;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, IDataFilter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEncodingFilterFactory*, ushort*, ushort*, IDataFilter**, int> GetDefaultFilter;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, IDataFilter**, int> GetDefaultFilter;
     }
 }

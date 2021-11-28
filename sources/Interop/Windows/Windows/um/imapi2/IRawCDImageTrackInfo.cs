@@ -200,66 +200,67 @@ public unsafe partial struct IRawCDImageTrackInfo : IRawCDImageTrackInfo.Interfa
         HRESULT ClearTrackIndex([NativeTypeName("LONG")] int lbaOffset);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageTrackInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageTrackInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageTrackInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageTrackInfo*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageTrackInfo*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageTrackInfo*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageTrackInfo*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageTrackInfo*, int*, int> get_StartingLba;
+        public delegate* unmanaged<TSelf*, int*, int> get_StartingLba;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageTrackInfo*, int*, int> get_SectorCount;
+        public delegate* unmanaged<TSelf*, int*, int> get_SectorCount;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageTrackInfo*, int*, int> get_TrackNumber;
+        public delegate* unmanaged<TSelf*, int*, int> get_TrackNumber;
 
         [NativeTypeName("HRESULT (IMAPI_CD_SECTOR_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageTrackInfo*, IMAPI_CD_SECTOR_TYPE*, int> get_SectorType;
+        public delegate* unmanaged<TSelf*, IMAPI_CD_SECTOR_TYPE*, int> get_SectorType;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageTrackInfo*, ushort**, int> get_ISRC;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ISRC;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageTrackInfo*, ushort*, int> put_ISRC;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ISRC;
 
         [NativeTypeName("HRESULT (IMAPI_CD_TRACK_DIGITAL_COPY_SETTING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageTrackInfo*, IMAPI_CD_TRACK_DIGITAL_COPY_SETTING*, int> get_DigitalAudioCopySetting;
+        public delegate* unmanaged<TSelf*, IMAPI_CD_TRACK_DIGITAL_COPY_SETTING*, int> get_DigitalAudioCopySetting;
 
         [NativeTypeName("HRESULT (IMAPI_CD_TRACK_DIGITAL_COPY_SETTING) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageTrackInfo*, IMAPI_CD_TRACK_DIGITAL_COPY_SETTING, int> put_DigitalAudioCopySetting;
+        public delegate* unmanaged<TSelf*, IMAPI_CD_TRACK_DIGITAL_COPY_SETTING, int> put_DigitalAudioCopySetting;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageTrackInfo*, short*, int> get_AudioHasPreemphasis;
+        public delegate* unmanaged<TSelf*, short*, int> get_AudioHasPreemphasis;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageTrackInfo*, short, int> put_AudioHasPreemphasis;
+        public delegate* unmanaged<TSelf*, short, int> put_AudioHasPreemphasis;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageTrackInfo*, SAFEARRAY**, int> get_TrackIndexes;
+        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_TrackIndexes;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageTrackInfo*, int, int> AddTrackIndex;
+        public delegate* unmanaged<TSelf*, int, int> AddTrackIndex;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageTrackInfo*, int, int> ClearTrackIndex;
+        public delegate* unmanaged<TSelf*, int, int> ClearTrackIndex;
     }
 }

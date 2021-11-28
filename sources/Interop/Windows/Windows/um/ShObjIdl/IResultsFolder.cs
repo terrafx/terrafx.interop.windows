@@ -92,30 +92,31 @@ public unsafe partial struct IResultsFolder : IResultsFolder.Interface
         HRESULT RemoveAll();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IResultsFolder*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IResultsFolder*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IResultsFolder*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IResultsFolder*, IShellItem*, int> AddItem;
+        public delegate* unmanaged<TSelf*, IShellItem*, int> AddItem;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IResultsFolder*, ITEMIDLIST*, ITEMIDLIST**, int> AddIDList;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, ITEMIDLIST**, int> AddIDList;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IResultsFolder*, IShellItem*, int> RemoveItem;
+        public delegate* unmanaged<TSelf*, IShellItem*, int> RemoveItem;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<IResultsFolder*, ITEMIDLIST*, int> RemoveIDList;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, int> RemoveIDList;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IResultsFolder*, int> RemoveAll;
+        public delegate* unmanaged<TSelf*, int> RemoveAll;
     }
 }

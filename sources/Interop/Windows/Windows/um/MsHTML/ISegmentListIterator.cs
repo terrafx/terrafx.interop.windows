@@ -82,27 +82,28 @@ public unsafe partial struct ISegmentListIterator : ISegmentListIterator.Interfa
         HRESULT Advance();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISegmentListIterator*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISegmentListIterator*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISegmentListIterator*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ISegment **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISegmentListIterator*, ISegment**, int> Current;
+        public delegate* unmanaged<TSelf*, ISegment**, int> Current;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISegmentListIterator*, int> First;
+        public delegate* unmanaged<TSelf*, int> First;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISegmentListIterator*, int> IsDone;
+        public delegate* unmanaged<TSelf*, int> IsDone;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISegmentListIterator*, int> Advance;
+        public delegate* unmanaged<TSelf*, int> Advance;
     }
 }

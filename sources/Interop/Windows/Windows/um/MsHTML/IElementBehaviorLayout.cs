@@ -82,27 +82,28 @@ public unsafe partial struct IElementBehaviorLayout : IElementBehaviorLayout.Int
         HRESULT MapSize(SIZE* psizeIn, RECT* prcOut);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorLayout*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorLayout*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorLayout*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LONG, SIZE, POINT *, POINT *, SIZE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorLayout*, int, SIZE, POINT*, POINT*, SIZE*, int> GetSize;
+        public delegate* unmanaged<TSelf*, int, SIZE, POINT*, POINT*, SIZE*, int> GetSize;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorLayout*, int*, int> GetLayoutInfo;
+        public delegate* unmanaged<TSelf*, int*, int> GetLayoutInfo;
 
         [NativeTypeName("HRESULT (LONG, POINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorLayout*, int, POINT*, int> GetPosition;
+        public delegate* unmanaged<TSelf*, int, POINT*, int> GetPosition;
 
         [NativeTypeName("HRESULT (SIZE *, RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorLayout*, SIZE*, RECT*, int> MapSize;
+        public delegate* unmanaged<TSelf*, SIZE*, RECT*, int> MapSize;
     }
 }

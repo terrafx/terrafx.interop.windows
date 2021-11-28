@@ -236,84 +236,85 @@ public unsafe partial struct ISpAudio : ISpAudio.Interface
         HRESULT SetBufferNotifySize([NativeTypeName("ULONG")] uint cbSize);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, void*, uint, uint*, int> Read;
+        public delegate* unmanaged<TSelf*, void*, uint, uint*, int> Read;
 
         [NativeTypeName("HRESULT (const void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, void*, uint, uint*, int> Write;
+        public delegate* unmanaged<TSelf*, void*, uint, uint*, int> Write;
 
         [NativeTypeName("HRESULT (LARGE_INTEGER, DWORD, ULARGE_INTEGER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int> Seek;
+        public delegate* unmanaged<TSelf*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int> Seek;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, ULARGE_INTEGER, int> SetSize;
+        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, int> SetSize;
 
         [NativeTypeName("HRESULT (IStream *, ULARGE_INTEGER, ULARGE_INTEGER *, ULARGE_INTEGER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int> CopyTo;
+        public delegate* unmanaged<TSelf*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int> CopyTo;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, uint, int> Commit;
+        public delegate* unmanaged<TSelf*, uint, int> Commit;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, int> Revert;
+        public delegate* unmanaged<TSelf*, int> Revert;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> LockRegion;
+        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> LockRegion;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> UnlockRegion;
+        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> UnlockRegion;
 
         [NativeTypeName("HRESULT (STATSTG *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, STATSTG*, uint, int> Stat;
+        public delegate* unmanaged<TSelf*, STATSTG*, uint, int> Stat;
 
         [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, IStream**, int> Clone;
+        public delegate* unmanaged<TSelf*, IStream**, int> Clone;
 
         [NativeTypeName("HRESULT (GUID *, WAVEFORMATEX **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, Guid*, WAVEFORMATEX**, int> GetFormat;
+        public delegate* unmanaged<TSelf*, Guid*, WAVEFORMATEX**, int> GetFormat;
 
         [NativeTypeName("HRESULT (SPAUDIOSTATE, ULONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, SPAUDIOSTATE, ulong, int> SetState;
+        public delegate* unmanaged<TSelf*, SPAUDIOSTATE, ulong, int> SetState;
 
         [NativeTypeName("HRESULT (const GUID &, const WAVEFORMATEX *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, Guid*, WAVEFORMATEX*, int> SetFormat;
+        public delegate* unmanaged<TSelf*, Guid*, WAVEFORMATEX*, int> SetFormat;
 
         [NativeTypeName("HRESULT (SPAUDIOSTATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, SPAUDIOSTATUS*, int> GetStatus;
+        public delegate* unmanaged<TSelf*, SPAUDIOSTATUS*, int> GetStatus;
 
         [NativeTypeName("HRESULT (const SPAUDIOBUFFERINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, SPAUDIOBUFFERINFO*, int> SetBufferInfo;
+        public delegate* unmanaged<TSelf*, SPAUDIOBUFFERINFO*, int> SetBufferInfo;
 
         [NativeTypeName("HRESULT (SPAUDIOBUFFERINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, SPAUDIOBUFFERINFO*, int> GetBufferInfo;
+        public delegate* unmanaged<TSelf*, SPAUDIOBUFFERINFO*, int> GetBufferInfo;
 
         [NativeTypeName("HRESULT (GUID *, WAVEFORMATEX **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, Guid*, WAVEFORMATEX**, int> GetDefaultFormat;
+        public delegate* unmanaged<TSelf*, Guid*, WAVEFORMATEX**, int> GetDefaultFormat;
 
         [NativeTypeName("HANDLE () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, void*> EventHandle;
+        public delegate* unmanaged<TSelf*, void*> EventHandle;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, uint*, int> GetVolumeLevel;
+        public delegate* unmanaged<TSelf*, uint*, int> GetVolumeLevel;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, uint, int> SetVolumeLevel;
+        public delegate* unmanaged<TSelf*, uint, int> SetVolumeLevel;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, uint*, int> GetBufferNotifySize;
+        public delegate* unmanaged<TSelf*, uint*, int> GetBufferNotifySize;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpAudio*, uint, int> SetBufferNotifySize;
+        public delegate* unmanaged<TSelf*, uint, int> SetBufferNotifySize;
     }
 }

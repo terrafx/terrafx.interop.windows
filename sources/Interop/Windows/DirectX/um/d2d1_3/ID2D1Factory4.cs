@@ -255,96 +255,97 @@ public unsafe partial struct ID2D1Factory4 : ID2D1Factory4.Interface
         HRESULT CreateDevice(IDXGIDevice* dxgiDevice, ID2D1Device3** d2dDevice3);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, int> ReloadSystemMetrics;
+        public delegate* unmanaged<TSelf*, int> ReloadSystemMetrics;
 
         [NativeTypeName("void (FLOAT *, FLOAT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, float*, float*, void> GetDesktopDpi;
+        public delegate* unmanaged<TSelf*, float*, float*, void> GetDesktopDpi;
 
         [NativeTypeName("HRESULT (const D2D1_RECT_F *, ID2D1RectangleGeometry **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, D2D_RECT_F*, ID2D1RectangleGeometry**, int> CreateRectangleGeometry;
+        public delegate* unmanaged<TSelf*, D2D_RECT_F*, ID2D1RectangleGeometry**, int> CreateRectangleGeometry;
 
         [NativeTypeName("HRESULT (const D2D1_ROUNDED_RECT *, ID2D1RoundedRectangleGeometry **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, D2D1_ROUNDED_RECT*, ID2D1RoundedRectangleGeometry**, int> CreateRoundedRectangleGeometry;
+        public delegate* unmanaged<TSelf*, D2D1_ROUNDED_RECT*, ID2D1RoundedRectangleGeometry**, int> CreateRoundedRectangleGeometry;
 
         [NativeTypeName("HRESULT (const D2D1_ELLIPSE *, ID2D1EllipseGeometry **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, D2D1_ELLIPSE*, ID2D1EllipseGeometry**, int> CreateEllipseGeometry;
+        public delegate* unmanaged<TSelf*, D2D1_ELLIPSE*, ID2D1EllipseGeometry**, int> CreateEllipseGeometry;
 
         [NativeTypeName("HRESULT (D2D1_FILL_MODE, ID2D1Geometry **, UINT32, ID2D1GeometryGroup **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, D2D1_FILL_MODE, ID2D1Geometry**, uint, ID2D1GeometryGroup**, int> CreateGeometryGroup;
+        public delegate* unmanaged<TSelf*, D2D1_FILL_MODE, ID2D1Geometry**, uint, ID2D1GeometryGroup**, int> CreateGeometryGroup;
 
         [NativeTypeName("HRESULT (ID2D1Geometry *, const D2D1_MATRIX_3X2_F *, ID2D1TransformedGeometry **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, ID2D1Geometry*, D2D_MATRIX_3X2_F*, ID2D1TransformedGeometry**, int> CreateTransformedGeometry;
+        public delegate* unmanaged<TSelf*, ID2D1Geometry*, D2D_MATRIX_3X2_F*, ID2D1TransformedGeometry**, int> CreateTransformedGeometry;
 
         [NativeTypeName("HRESULT (ID2D1PathGeometry **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, ID2D1PathGeometry**, int> CreatePathGeometry;
+        public delegate* unmanaged<TSelf*, ID2D1PathGeometry**, int> CreatePathGeometry;
 
         [NativeTypeName("HRESULT (const D2D1_STROKE_STYLE_PROPERTIES *, const FLOAT *, UINT32, ID2D1StrokeStyle **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, D2D1_STROKE_STYLE_PROPERTIES*, float*, uint, ID2D1StrokeStyle**, int> CreateStrokeStyle;
+        public delegate* unmanaged<TSelf*, D2D1_STROKE_STYLE_PROPERTIES*, float*, uint, ID2D1StrokeStyle**, int> CreateStrokeStyle;
 
         [NativeTypeName("HRESULT (const D2D1_DRAWING_STATE_DESCRIPTION *, IDWriteRenderingParams *, ID2D1DrawingStateBlock **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, D2D1_DRAWING_STATE_DESCRIPTION*, IDWriteRenderingParams*, ID2D1DrawingStateBlock**, int> CreateDrawingStateBlock2;
+        public delegate* unmanaged<TSelf*, D2D1_DRAWING_STATE_DESCRIPTION*, IDWriteRenderingParams*, ID2D1DrawingStateBlock**, int> CreateDrawingStateBlock2;
 
         [NativeTypeName("HRESULT (IWICBitmap *, const D2D1_RENDER_TARGET_PROPERTIES *, ID2D1RenderTarget **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, IWICBitmap*, D2D1_RENDER_TARGET_PROPERTIES*, ID2D1RenderTarget**, int> CreateWicBitmapRenderTarget;
+        public delegate* unmanaged<TSelf*, IWICBitmap*, D2D1_RENDER_TARGET_PROPERTIES*, ID2D1RenderTarget**, int> CreateWicBitmapRenderTarget;
 
         [NativeTypeName("HRESULT (const D2D1_RENDER_TARGET_PROPERTIES *, const D2D1_HWND_RENDER_TARGET_PROPERTIES *, ID2D1HwndRenderTarget **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, D2D1_RENDER_TARGET_PROPERTIES*, D2D1_HWND_RENDER_TARGET_PROPERTIES*, ID2D1HwndRenderTarget**, int> CreateHwndRenderTarget;
+        public delegate* unmanaged<TSelf*, D2D1_RENDER_TARGET_PROPERTIES*, D2D1_HWND_RENDER_TARGET_PROPERTIES*, ID2D1HwndRenderTarget**, int> CreateHwndRenderTarget;
 
         [NativeTypeName("HRESULT (IDXGISurface *, const D2D1_RENDER_TARGET_PROPERTIES *, ID2D1RenderTarget **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, IDXGISurface*, D2D1_RENDER_TARGET_PROPERTIES*, ID2D1RenderTarget**, int> CreateDxgiSurfaceRenderTarget;
+        public delegate* unmanaged<TSelf*, IDXGISurface*, D2D1_RENDER_TARGET_PROPERTIES*, ID2D1RenderTarget**, int> CreateDxgiSurfaceRenderTarget;
 
         [NativeTypeName("HRESULT (const D2D1_RENDER_TARGET_PROPERTIES *, ID2D1DCRenderTarget **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, D2D1_RENDER_TARGET_PROPERTIES*, ID2D1DCRenderTarget**, int> CreateDCRenderTarget;
+        public delegate* unmanaged<TSelf*, D2D1_RENDER_TARGET_PROPERTIES*, ID2D1DCRenderTarget**, int> CreateDCRenderTarget;
 
         [NativeTypeName("HRESULT (IDXGIDevice *, ID2D1Device **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, IDXGIDevice*, ID2D1Device**, int> CreateDevice;
+        public delegate* unmanaged<TSelf*, IDXGIDevice*, ID2D1Device**, int> CreateDevice;
 
         [NativeTypeName("HRESULT (const D2D1_STROKE_STYLE_PROPERTIES1 *, const FLOAT *, UINT32, ID2D1StrokeStyle1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, D2D1_STROKE_STYLE_PROPERTIES1*, float*, uint, ID2D1StrokeStyle1**, int> CreateStrokeStyle1;
+        public delegate* unmanaged<TSelf*, D2D1_STROKE_STYLE_PROPERTIES1*, float*, uint, ID2D1StrokeStyle1**, int> CreateStrokeStyle1;
 
         [NativeTypeName("HRESULT (ID2D1PathGeometry1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, ID2D1PathGeometry1**, int> CreatePathGeometry1;
+        public delegate* unmanaged<TSelf*, ID2D1PathGeometry1**, int> CreatePathGeometry1;
 
         [NativeTypeName("HRESULT (const D2D1_DRAWING_STATE_DESCRIPTION1 *, IDWriteRenderingParams *, ID2D1DrawingStateBlock1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, D2D1_DRAWING_STATE_DESCRIPTION1*, IDWriteRenderingParams*, ID2D1DrawingStateBlock1**, int> CreateDrawingStateBlock5;
+        public delegate* unmanaged<TSelf*, D2D1_DRAWING_STATE_DESCRIPTION1*, IDWriteRenderingParams*, ID2D1DrawingStateBlock1**, int> CreateDrawingStateBlock5;
 
         [NativeTypeName("HRESULT (IStream *, ID2D1GdiMetafile **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, IStream*, ID2D1GdiMetafile**, int> CreateGdiMetafile;
+        public delegate* unmanaged<TSelf*, IStream*, ID2D1GdiMetafile**, int> CreateGdiMetafile;
 
         [NativeTypeName("HRESULT (const IID &, IStream *, const D2D1_PROPERTY_BINDING *, UINT32, const PD2D1_EFFECT_FACTORY) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, Guid*, IStream*, D2D1_PROPERTY_BINDING*, uint, delegate* unmanaged<IUnknown**, HRESULT>, int> RegisterEffectFromStream;
+        public delegate* unmanaged<TSelf*, Guid*, IStream*, D2D1_PROPERTY_BINDING*, uint, delegate* unmanaged<IUnknown**, HRESULT>, int> RegisterEffectFromStream;
 
         [NativeTypeName("HRESULT (const IID &, PCWSTR, const D2D1_PROPERTY_BINDING *, UINT32, const PD2D1_EFFECT_FACTORY) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, Guid*, ushort*, D2D1_PROPERTY_BINDING*, uint, delegate* unmanaged<IUnknown**, HRESULT>, int> RegisterEffectFromString;
+        public delegate* unmanaged<TSelf*, Guid*, ushort*, D2D1_PROPERTY_BINDING*, uint, delegate* unmanaged<IUnknown**, HRESULT>, int> RegisterEffectFromString;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, Guid*, int> UnregisterEffect;
+        public delegate* unmanaged<TSelf*, Guid*, int> UnregisterEffect;
 
         [NativeTypeName("HRESULT (CLSID *, UINT32, UINT32 *, UINT32 *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, Guid*, uint, uint*, uint*, int> GetRegisteredEffects;
+        public delegate* unmanaged<TSelf*, Guid*, uint, uint*, uint*, int> GetRegisteredEffects;
 
         [NativeTypeName("HRESULT (const IID &, ID2D1Properties **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, Guid*, ID2D1Properties**, int> GetEffectProperties;
+        public delegate* unmanaged<TSelf*, Guid*, ID2D1Properties**, int> GetEffectProperties;
 
         [NativeTypeName("HRESULT (IDXGIDevice *, ID2D1Device1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, IDXGIDevice*, ID2D1Device1**, int> CreateDevice1;
+        public delegate* unmanaged<TSelf*, IDXGIDevice*, ID2D1Device1**, int> CreateDevice1;
 
         [NativeTypeName("HRESULT (IDXGIDevice *, ID2D1Device2 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, IDXGIDevice*, ID2D1Device2**, int> CreateDevice2;
+        public delegate* unmanaged<TSelf*, IDXGIDevice*, ID2D1Device2**, int> CreateDevice2;
 
         [NativeTypeName("HRESULT (IDXGIDevice *, ID2D1Device3 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Factory4*, IDXGIDevice*, ID2D1Device3**, int> CreateDevice3;
+        public delegate* unmanaged<TSelf*, IDXGIDevice*, ID2D1Device3**, int> CreateDevice3;
     }
 }

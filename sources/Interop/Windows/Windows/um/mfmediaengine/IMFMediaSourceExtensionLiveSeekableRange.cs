@@ -62,21 +62,22 @@ public unsafe partial struct IMFMediaSourceExtensionLiveSeekableRange : IMFMedia
         HRESULT ClearLiveSeekableRange();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSourceExtensionLiveSeekableRange*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSourceExtensionLiveSeekableRange*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSourceExtensionLiveSeekableRange*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (double, double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSourceExtensionLiveSeekableRange*, double, double, int> SetLiveSeekableRange;
+        public delegate* unmanaged<TSelf*, double, double, int> SetLiveSeekableRange;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSourceExtensionLiveSeekableRange*, int> ClearLiveSeekableRange;
+        public delegate* unmanaged<TSelf*, int> ClearLiveSeekableRange;
     }
 }

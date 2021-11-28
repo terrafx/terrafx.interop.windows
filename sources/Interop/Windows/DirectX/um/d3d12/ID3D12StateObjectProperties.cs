@@ -87,27 +87,28 @@ public unsafe partial struct ID3D12StateObjectProperties : ID3D12StateObjectProp
         void SetPipelineStackSize([NativeTypeName("UINT64")] ulong PipelineStackSizeInBytes);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12StateObjectProperties*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12StateObjectProperties*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12StateObjectProperties*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void *(LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12StateObjectProperties*, ushort*, void*> GetShaderIdentifier;
+        public delegate* unmanaged<TSelf*, ushort*, void*> GetShaderIdentifier;
 
         [NativeTypeName("UINT64 (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12StateObjectProperties*, ushort*, ulong> GetShaderStackSize;
+        public delegate* unmanaged<TSelf*, ushort*, ulong> GetShaderStackSize;
 
         [NativeTypeName("UINT64 () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12StateObjectProperties*, ulong> GetPipelineStackSize;
+        public delegate* unmanaged<TSelf*, ulong> GetPipelineStackSize;
 
         [NativeTypeName("void (UINT64) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12StateObjectProperties*, ulong, void> SetPipelineStackSize;
+        public delegate* unmanaged<TSelf*, ulong, void> SetPipelineStackSize;
     }
 }

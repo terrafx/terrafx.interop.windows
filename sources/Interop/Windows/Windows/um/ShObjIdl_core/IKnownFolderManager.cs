@@ -142,45 +142,46 @@ public unsafe partial struct IKnownFolderManager : IKnownFolderManager.Interface
         HRESULT Redirect([NativeTypeName("const KNOWNFOLDERID &")] Guid* rfid, HWND hwnd, [NativeTypeName("KF_REDIRECT_FLAGS")] uint flags, [NativeTypeName("LPCWSTR")] ushort* pszTargetPath, uint cFolders, [NativeTypeName("const KNOWNFOLDERID *")] Guid* pExclusion, [NativeTypeName("LPWSTR *")] ushort** ppszError);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKnownFolderManager*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IKnownFolderManager*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IKnownFolderManager*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (int, KNOWNFOLDERID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKnownFolderManager*, int, Guid*, int> FolderIdFromCsidl;
+        public delegate* unmanaged<TSelf*, int, Guid*, int> FolderIdFromCsidl;
 
         [NativeTypeName("HRESULT (const KNOWNFOLDERID &, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKnownFolderManager*, Guid*, int*, int> FolderIdToCsidl;
+        public delegate* unmanaged<TSelf*, Guid*, int*, int> FolderIdToCsidl;
 
         [NativeTypeName("HRESULT (KNOWNFOLDERID **, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKnownFolderManager*, Guid**, uint*, int> GetFolderIds;
+        public delegate* unmanaged<TSelf*, Guid**, uint*, int> GetFolderIds;
 
         [NativeTypeName("HRESULT (const KNOWNFOLDERID &, IKnownFolder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKnownFolderManager*, Guid*, IKnownFolder**, int> GetFolder;
+        public delegate* unmanaged<TSelf*, Guid*, IKnownFolder**, int> GetFolder;
 
         [NativeTypeName("HRESULT (LPCWSTR, IKnownFolder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKnownFolderManager*, ushort*, IKnownFolder**, int> GetFolderByName;
+        public delegate* unmanaged<TSelf*, ushort*, IKnownFolder**, int> GetFolderByName;
 
         [NativeTypeName("HRESULT (const KNOWNFOLDERID &, const KNOWNFOLDER_DEFINITION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKnownFolderManager*, Guid*, KNOWNFOLDER_DEFINITION*, int> RegisterFolder;
+        public delegate* unmanaged<TSelf*, Guid*, KNOWNFOLDER_DEFINITION*, int> RegisterFolder;
 
         [NativeTypeName("HRESULT (const KNOWNFOLDERID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKnownFolderManager*, Guid*, int> UnregisterFolder;
+        public delegate* unmanaged<TSelf*, Guid*, int> UnregisterFolder;
 
         [NativeTypeName("HRESULT (LPCWSTR, FFFP_MODE, IKnownFolder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKnownFolderManager*, ushort*, FFFP_MODE, IKnownFolder**, int> FindFolderFromPath;
+        public delegate* unmanaged<TSelf*, ushort*, FFFP_MODE, IKnownFolder**, int> FindFolderFromPath;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, IKnownFolder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKnownFolderManager*, ITEMIDLIST*, IKnownFolder**, int> FindFolderFromIDList;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, IKnownFolder**, int> FindFolderFromIDList;
 
         [NativeTypeName("HRESULT (const KNOWNFOLDERID &, HWND, KF_REDIRECT_FLAGS, LPCWSTR, UINT, const KNOWNFOLDERID *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKnownFolderManager*, Guid*, HWND, uint, ushort*, uint, Guid*, ushort**, int> Redirect;
+        public delegate* unmanaged<TSelf*, Guid*, HWND, uint, ushort*, uint, Guid*, ushort**, int> Redirect;
     }
 }

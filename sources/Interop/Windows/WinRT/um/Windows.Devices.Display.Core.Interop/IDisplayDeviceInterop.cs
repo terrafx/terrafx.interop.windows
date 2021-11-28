@@ -63,21 +63,22 @@ public unsafe partial struct IDisplayDeviceInterop : IDisplayDeviceInterop.Inter
         HRESULT OpenSharedHandle(HANDLE NTHandle, [NativeTypeName("IID")] Guid riid, void** ppvObj);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayDeviceInterop*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayDeviceInterop*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayDeviceInterop*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IInspectable *, const SECURITY_ATTRIBUTES *, DWORD, HSTRING, HANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayDeviceInterop*, IInspectable*, SECURITY_ATTRIBUTES*, uint, HSTRING, HANDLE*, int> CreateSharedHandle;
+        public delegate* unmanaged<TSelf*, IInspectable*, SECURITY_ATTRIBUTES*, uint, HSTRING, HANDLE*, int> CreateSharedHandle;
 
         [NativeTypeName("HRESULT (HANDLE, IID, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayDeviceInterop*, HANDLE, Guid, void**, int> OpenSharedHandle;
+        public delegate* unmanaged<TSelf*, HANDLE, Guid, void**, int> OpenSharedHandle;
     }
 }

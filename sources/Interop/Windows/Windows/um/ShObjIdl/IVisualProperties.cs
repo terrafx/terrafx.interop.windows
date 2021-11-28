@@ -122,39 +122,40 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface
         HRESULT SetTheme([NativeTypeName("LPCWSTR")] ushort* pszSubAppName, [NativeTypeName("LPCWSTR")] ushort* pszSubIdList);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualProperties*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualProperties*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualProperties*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HBITMAP, VPWATERMARKFLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualProperties*, HBITMAP, VPWATERMARKFLAGS, int> SetWatermark;
+        public delegate* unmanaged<TSelf*, HBITMAP, VPWATERMARKFLAGS, int> SetWatermark;
 
         [NativeTypeName("HRESULT (VPCOLORFLAGS, COLORREF) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualProperties*, VPCOLORFLAGS, COLORREF, int> SetColor;
+        public delegate* unmanaged<TSelf*, VPCOLORFLAGS, COLORREF, int> SetColor;
 
         [NativeTypeName("HRESULT (VPCOLORFLAGS, COLORREF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualProperties*, VPCOLORFLAGS, COLORREF*, int> GetColor;
+        public delegate* unmanaged<TSelf*, VPCOLORFLAGS, COLORREF*, int> GetColor;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualProperties*, int, int> SetItemHeight;
+        public delegate* unmanaged<TSelf*, int, int> SetItemHeight;
 
         [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualProperties*, int*, int> GetItemHeight;
+        public delegate* unmanaged<TSelf*, int*, int> GetItemHeight;
 
         [NativeTypeName("HRESULT (const LOGFONTW *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualProperties*, LOGFONTW*, BOOL, int> SetFont;
+        public delegate* unmanaged<TSelf*, LOGFONTW*, BOOL, int> SetFont;
 
         [NativeTypeName("HRESULT (LOGFONTW *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualProperties*, LOGFONTW*, int> GetFont;
+        public delegate* unmanaged<TSelf*, LOGFONTW*, int> GetFont;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualProperties*, ushort*, ushort*, int> SetTheme;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> SetTheme;
     }
 }

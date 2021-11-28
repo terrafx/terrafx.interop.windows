@@ -101,36 +101,37 @@ public unsafe partial struct ID2D1ComputeInfo : ID2D1ComputeInfo.Interface
         HRESULT SetResourceTexture([NativeTypeName("UINT32")] uint textureIndex, ID2D1ResourceTexture* resourceTexture);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ComputeInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ComputeInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ComputeInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32, D2D1_INPUT_DESCRIPTION) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ComputeInfo*, uint, D2D1_INPUT_DESCRIPTION, int> SetInputDescription;
+        public delegate* unmanaged<TSelf*, uint, D2D1_INPUT_DESCRIPTION, int> SetInputDescription;
 
         [NativeTypeName("HRESULT (D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ComputeInfo*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int> SetOutputBuffer;
+        public delegate* unmanaged<TSelf*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int> SetOutputBuffer;
 
         [NativeTypeName("void (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ComputeInfo*, BOOL, void> SetCached;
+        public delegate* unmanaged<TSelf*, BOOL, void> SetCached;
 
         [NativeTypeName("void (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ComputeInfo*, uint, void> SetInstructionCountHint;
+        public delegate* unmanaged<TSelf*, uint, void> SetInstructionCountHint;
 
         [NativeTypeName("HRESULT (const BYTE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ComputeInfo*, byte*, uint, int> SetComputeShaderConstantBuffer;
+        public delegate* unmanaged<TSelf*, byte*, uint, int> SetComputeShaderConstantBuffer;
 
         [NativeTypeName("HRESULT (const GUID &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ComputeInfo*, Guid*, int> SetComputeShader;
+        public delegate* unmanaged<TSelf*, Guid*, int> SetComputeShader;
 
         [NativeTypeName("HRESULT (UINT32, ID2D1ResourceTexture *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ComputeInfo*, uint, ID2D1ResourceTexture*, int> SetResourceTexture;
+        public delegate* unmanaged<TSelf*, uint, ID2D1ResourceTexture*, int> SetResourceTexture;
     }
 }

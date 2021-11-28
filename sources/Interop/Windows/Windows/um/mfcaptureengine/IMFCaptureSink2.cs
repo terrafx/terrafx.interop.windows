@@ -89,33 +89,34 @@ public unsafe partial struct IMFCaptureSink2 : IMFCaptureSink2.Interface
         HRESULT SetOutputMediaType([NativeTypeName("DWORD")] uint dwStreamIndex, IMFMediaType* pMediaType, IMFAttributes* pEncodingAttributes);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSink2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSink2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSink2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSink2*, uint, IMFMediaType**, int> GetOutputMediaType;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaType**, int> GetOutputMediaType;
 
         [NativeTypeName("HRESULT (DWORD, const GUID &, const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSink2*, uint, Guid*, Guid*, IUnknown**, int> GetService;
+        public delegate* unmanaged<TSelf*, uint, Guid*, Guid*, IUnknown**, int> GetService;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType *, IMFAttributes *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSink2*, uint, IMFMediaType*, IMFAttributes*, uint*, int> AddStream;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaType*, IMFAttributes*, uint*, int> AddStream;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSink2*, int> Prepare;
+        public delegate* unmanaged<TSelf*, int> Prepare;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSink2*, int> RemoveAllStreams;
+        public delegate* unmanaged<TSelf*, int> RemoveAllStreams;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType *, IMFAttributes *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSink2*, uint, IMFMediaType*, IMFAttributes*, int> SetOutputMediaType;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaType*, IMFAttributes*, int> SetOutputMediaType;
     }
 }

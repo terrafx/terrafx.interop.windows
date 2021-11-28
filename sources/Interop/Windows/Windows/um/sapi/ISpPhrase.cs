@@ -82,27 +82,28 @@ public unsafe partial struct ISpPhrase : ISpPhrase.Interface
         HRESULT Discard([NativeTypeName("DWORD")] uint dwValueTypes);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhrase*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhrase*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhrase*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SPPHRASE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhrase*, SPPHRASE**, int> GetPhrase;
+        public delegate* unmanaged<TSelf*, SPPHRASE**, int> GetPhrase;
 
         [NativeTypeName("HRESULT (SPSERIALIZEDPHRASE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhrase*, SPSERIALIZEDPHRASE**, int> GetSerializedPhrase;
+        public delegate* unmanaged<TSelf*, SPSERIALIZEDPHRASE**, int> GetSerializedPhrase;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, BOOL, LPWSTR *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhrase*, uint, uint, BOOL, ushort**, byte*, int> GetText;
+        public delegate* unmanaged<TSelf*, uint, uint, BOOL, ushort**, byte*, int> GetText;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhrase*, uint, int> Discard;
+        public delegate* unmanaged<TSelf*, uint, int> Discard;
     }
 }

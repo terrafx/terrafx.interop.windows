@@ -82,27 +82,28 @@ public unsafe partial struct IMFSaveJob : IMFSaveJob.Interface
         HRESULT GetProgress([NativeTypeName("DWORD *")] uint* pdwPercentComplete);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSaveJob*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSaveJob*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSaveJob*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFByteStream *, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSaveJob*, IMFByteStream*, IMFAsyncCallback*, IUnknown*, int> BeginSave;
+        public delegate* unmanaged<TSelf*, IMFByteStream*, IMFAsyncCallback*, IUnknown*, int> BeginSave;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSaveJob*, IMFAsyncResult*, int> EndSave;
+        public delegate* unmanaged<TSelf*, IMFAsyncResult*, int> EndSave;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSaveJob*, int> CancelSave;
+        public delegate* unmanaged<TSelf*, int> CancelSave;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSaveJob*, uint*, int> GetProgress;
+        public delegate* unmanaged<TSelf*, uint*, int> GetProgress;
     }
 }

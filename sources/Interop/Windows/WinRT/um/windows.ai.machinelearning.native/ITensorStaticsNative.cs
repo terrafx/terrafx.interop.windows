@@ -54,18 +54,19 @@ public unsafe partial struct ITensorStaticsNative : ITensorStaticsNative.Interfa
         HRESULT CreateFromD3D12Resource(ID3D12Resource* value, [NativeTypeName("long long *")] long* shape, int shapeCount, IUnknown** result);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITensorStaticsNative*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITensorStaticsNative*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITensorStaticsNative*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ID3D12Resource *, long long *, int, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITensorStaticsNative*, ID3D12Resource*, long*, int, IUnknown**, int> CreateFromD3D12Resource;
+        public delegate* unmanaged<TSelf*, ID3D12Resource*, long*, int, IUnknown**, int> CreateFromD3D12Resource;
     }
 }

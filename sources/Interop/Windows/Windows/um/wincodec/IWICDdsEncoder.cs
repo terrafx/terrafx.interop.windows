@@ -74,24 +74,25 @@ public unsafe partial struct IWICDdsEncoder : IWICDdsEncoder.Interface
         HRESULT CreateNewFrame(IWICBitmapFrameEncode** ppIFrameEncode, uint* pArrayIndex, uint* pMipLevel, uint* pSliceIndex);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDdsEncoder*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDdsEncoder*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDdsEncoder*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (WICDdsParameters *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDdsEncoder*, WICDdsParameters*, int> SetParameters;
+        public delegate* unmanaged<TSelf*, WICDdsParameters*, int> SetParameters;
 
         [NativeTypeName("HRESULT (WICDdsParameters *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDdsEncoder*, WICDdsParameters*, int> GetParameters;
+        public delegate* unmanaged<TSelf*, WICDdsParameters*, int> GetParameters;
 
         [NativeTypeName("HRESULT (IWICBitmapFrameEncode **, UINT *, UINT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDdsEncoder*, IWICBitmapFrameEncode**, uint*, uint*, uint*, int> CreateNewFrame;
+        public delegate* unmanaged<TSelf*, IWICBitmapFrameEncode**, uint*, uint*, uint*, int> CreateNewFrame;
     }
 }

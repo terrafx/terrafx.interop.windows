@@ -142,45 +142,46 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface
         HRESULT SetNameOf(HWND hwnd, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("SHGDNF")] uint uFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, IBindCtx *, LPWSTR, ULONG *, LPITEMIDLIST *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder*, HWND, IBindCtx*, ushort*, uint*, ITEMIDLIST**, uint*, int> ParseDisplayName;
+        public delegate* unmanaged<TSelf*, HWND, IBindCtx*, ushort*, uint*, ITEMIDLIST**, uint*, int> ParseDisplayName;
 
         [NativeTypeName("HRESULT (HWND, SHCONTF, IEnumIDList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder*, HWND, uint, IEnumIDList**, int> EnumObjects;
+        public delegate* unmanaged<TSelf*, HWND, uint, IEnumIDList**, int> EnumObjects;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, IBindCtx *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int> BindToObject;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int> BindToObject;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, IBindCtx *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int> BindToStorage;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int> BindToStorage;
 
         [NativeTypeName("HRESULT (LPARAM, LPCITEMIDLIST, LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder*, LPARAM, ITEMIDLIST*, ITEMIDLIST*, int> CompareIDs;
+        public delegate* unmanaged<TSelf*, LPARAM, ITEMIDLIST*, ITEMIDLIST*, int> CompareIDs;
 
         [NativeTypeName("HRESULT (HWND, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder*, HWND, Guid*, void**, int> CreateViewObject;
+        public delegate* unmanaged<TSelf*, HWND, Guid*, void**, int> CreateViewObject;
 
         [NativeTypeName("HRESULT (UINT, LPCITEMIDLIST *, SFGAOF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder*, uint, ITEMIDLIST**, uint*, int> GetAttributesOf;
+        public delegate* unmanaged<TSelf*, uint, ITEMIDLIST**, uint*, int> GetAttributesOf;
 
         [NativeTypeName("HRESULT (HWND, UINT, LPCITEMIDLIST *, const IID &, UINT *, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder*, HWND, uint, ITEMIDLIST**, Guid*, uint*, void**, int> GetUIObjectOf;
+        public delegate* unmanaged<TSelf*, HWND, uint, ITEMIDLIST**, Guid*, uint*, void**, int> GetUIObjectOf;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, SHGDNF, STRRET *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder*, ITEMIDLIST*, uint, STRRET*, int> GetDisplayNameOf;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, uint, STRRET*, int> GetDisplayNameOf;
 
         [NativeTypeName("HRESULT (HWND, LPCITEMIDLIST, LPCWSTR, SHGDNF, LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolder*, HWND, ITEMIDLIST*, ushort*, uint, ITEMIDLIST**, int> SetNameOf;
+        public delegate* unmanaged<TSelf*, HWND, ITEMIDLIST*, ushort*, uint, ITEMIDLIST**, int> SetNameOf;
     }
 }

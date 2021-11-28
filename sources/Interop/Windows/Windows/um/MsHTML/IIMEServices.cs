@@ -52,18 +52,19 @@ public unsafe partial struct IIMEServices : IIMEServices.Interface
         HRESULT GetActiveIMM(IActiveIMMApp** ppActiveIMM);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IIMEServices*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IIMEServices*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IIMEServices*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IActiveIMMApp **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IIMEServices*, IActiveIMMApp**, int> GetActiveIMM;
+        public delegate* unmanaged<TSelf*, IActiveIMMApp**, int> GetActiveIMM;
     }
 }

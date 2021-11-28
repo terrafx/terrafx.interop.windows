@@ -182,57 +182,58 @@ public unsafe partial struct IHlink : IHlink.Interface
         HRESULT GetAdditionalParams([NativeTypeName("LPWSTR *")] ushort** ppwzAdditionalParams);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IHlinkSite *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlink*, IHlinkSite*, uint, int> SetHlinkSite;
+        public delegate* unmanaged<TSelf*, IHlinkSite*, uint, int> SetHlinkSite;
 
         [NativeTypeName("HRESULT (IHlinkSite **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlink*, IHlinkSite**, uint*, int> GetHlinkSite;
+        public delegate* unmanaged<TSelf*, IHlinkSite**, uint*, int> GetHlinkSite;
 
         [NativeTypeName("HRESULT (DWORD, IMoniker *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlink*, uint, IMoniker*, ushort*, int> SetMonikerReference;
+        public delegate* unmanaged<TSelf*, uint, IMoniker*, ushort*, int> SetMonikerReference;
 
         [NativeTypeName("HRESULT (DWORD, IMoniker **, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlink*, uint, IMoniker**, ushort**, int> GetMonikerReference;
+        public delegate* unmanaged<TSelf*, uint, IMoniker**, ushort**, int> GetMonikerReference;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlink*, uint, ushort*, ushort*, int> SetStringReference;
+        public delegate* unmanaged<TSelf*, uint, ushort*, ushort*, int> SetStringReference;
 
         [NativeTypeName("HRESULT (DWORD, LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlink*, uint, ushort**, ushort**, int> GetStringReference;
+        public delegate* unmanaged<TSelf*, uint, ushort**, ushort**, int> GetStringReference;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlink*, ushort*, int> SetFriendlyName;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetFriendlyName;
 
         [NativeTypeName("HRESULT (DWORD, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlink*, uint, ushort**, int> GetFriendlyName;
+        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetFriendlyName;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlink*, ushort*, int> SetTargetFrameName;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetTargetFrameName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlink*, ushort**, int> GetTargetFrameName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetTargetFrameName;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlink*, uint*, int> GetMiscStatus;
+        public delegate* unmanaged<TSelf*, uint*, int> GetMiscStatus;
 
         [NativeTypeName("HRESULT (DWORD, LPBC, IBindStatusCallback *, IHlinkBrowseContext *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlink*, uint, IBindCtx*, IBindStatusCallback*, IHlinkBrowseContext*, int> Navigate;
+        public delegate* unmanaged<TSelf*, uint, IBindCtx*, IBindStatusCallback*, IHlinkBrowseContext*, int> Navigate;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlink*, ushort*, int> SetAdditionalParams;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetAdditionalParams;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlink*, ushort**, int> GetAdditionalParams;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetAdditionalParams;
     }
 }

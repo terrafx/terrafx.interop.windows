@@ -130,45 +130,46 @@ public unsafe partial struct ISpeechRecognizerStatus : ISpeechRecognizerStatus.I
         HRESULT get_SupportedLanguages(VARIANT* SupportedLanguages);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecognizerStatus*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecognizerStatus*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecognizerStatus*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecognizerStatus*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecognizerStatus*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecognizerStatus*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecognizerStatus*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (ISpeechAudioStatus **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecognizerStatus*, ISpeechAudioStatus**, int> get_AudioStatus;
+        public delegate* unmanaged<TSelf*, ISpeechAudioStatus**, int> get_AudioStatus;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecognizerStatus*, VARIANT*, int> get_CurrentStreamPosition;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_CurrentStreamPosition;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecognizerStatus*, int*, int> get_CurrentStreamNumber;
+        public delegate* unmanaged<TSelf*, int*, int> get_CurrentStreamNumber;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecognizerStatus*, int*, int> get_NumberOfActiveRules;
+        public delegate* unmanaged<TSelf*, int*, int> get_NumberOfActiveRules;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecognizerStatus*, ushort**, int> get_ClsidEngine;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ClsidEngine;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecognizerStatus*, VARIANT*, int> get_SupportedLanguages;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_SupportedLanguages;
     }
 }

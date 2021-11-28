@@ -62,21 +62,22 @@ public unsafe partial struct IDocWrap : IDocWrap.Interface
         HRESULT GetWrappedDoc([NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDocWrap*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDocWrap*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDocWrap*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDocWrap*, Guid*, IUnknown*, int> SetDoc;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetDoc;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDocWrap*, Guid*, IUnknown**, int> GetWrappedDoc;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown**, int> GetWrappedDoc;
     }
 }

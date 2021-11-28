@@ -62,21 +62,22 @@ public unsafe partial struct IAudioSessionEnumerator : IAudioSessionEnumerator.I
         HRESULT GetSession(int SessionCount, IAudioSessionControl** Session);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionEnumerator*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionEnumerator*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionEnumerator*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionEnumerator*, int*, int> GetCount;
+        public delegate* unmanaged<TSelf*, int*, int> GetCount;
 
         [NativeTypeName("HRESULT (int, IAudioSessionControl **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionEnumerator*, int, IAudioSessionControl**, int> GetSession;
+        public delegate* unmanaged<TSelf*, int, IAudioSessionControl**, int> GetSession;
     }
 }

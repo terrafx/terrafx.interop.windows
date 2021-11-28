@@ -52,18 +52,19 @@ public unsafe partial struct IClonableWrapper : IClonableWrapper.Interface
         HRESULT CloneNewWrapper([NativeTypeName("const IID &")] Guid* riid, void** ppv);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClonableWrapper*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IClonableWrapper*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IClonableWrapper*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClonableWrapper*, Guid*, void**, int> CloneNewWrapper;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> CloneNewWrapper;
     }
 }

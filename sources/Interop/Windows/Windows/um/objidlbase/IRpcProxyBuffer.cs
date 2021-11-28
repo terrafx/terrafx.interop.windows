@@ -62,21 +62,22 @@ public unsafe partial struct IRpcProxyBuffer : IRpcProxyBuffer.Interface
         void Disconnect();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcProxyBuffer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcProxyBuffer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcProxyBuffer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IRpcChannelBuffer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcProxyBuffer*, IRpcChannelBuffer*, int> Connect;
+        public delegate* unmanaged<TSelf*, IRpcChannelBuffer*, int> Connect;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcProxyBuffer*, void> Disconnect;
+        public delegate* unmanaged<TSelf*, void> Disconnect;
     }
 }

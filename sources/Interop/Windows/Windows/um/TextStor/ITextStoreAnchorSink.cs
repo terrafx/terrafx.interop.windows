@@ -122,39 +122,40 @@ public unsafe partial struct ITextStoreAnchorSink : ITextStoreAnchorSink.Interfa
         HRESULT OnEndEditTransaction();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreAnchorSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreAnchorSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreAnchorSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IAnchor *, IAnchor *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreAnchorSink*, uint, IAnchor*, IAnchor*, int> OnTextChange;
+        public delegate* unmanaged<TSelf*, uint, IAnchor*, IAnchor*, int> OnTextChange;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreAnchorSink*, int> OnSelectionChange;
+        public delegate* unmanaged<TSelf*, int> OnSelectionChange;
 
         [NativeTypeName("HRESULT (TsLayoutCode, TsViewCookie) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreAnchorSink*, TsLayoutCode, uint, int> OnLayoutChange;
+        public delegate* unmanaged<TSelf*, TsLayoutCode, uint, int> OnLayoutChange;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreAnchorSink*, uint, int> OnStatusChange;
+        public delegate* unmanaged<TSelf*, uint, int> OnStatusChange;
 
         [NativeTypeName("HRESULT (IAnchor *, IAnchor *, ULONG, const TS_ATTRID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreAnchorSink*, IAnchor*, IAnchor*, uint, Guid*, int> OnAttrsChange;
+        public delegate* unmanaged<TSelf*, IAnchor*, IAnchor*, uint, Guid*, int> OnAttrsChange;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreAnchorSink*, uint, int> OnLockGranted;
+        public delegate* unmanaged<TSelf*, uint, int> OnLockGranted;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreAnchorSink*, int> OnStartEditTransaction;
+        public delegate* unmanaged<TSelf*, int> OnStartEditTransaction;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreAnchorSink*, int> OnEndEditTransaction;
+        public delegate* unmanaged<TSelf*, int> OnEndEditTransaction;
     }
 }

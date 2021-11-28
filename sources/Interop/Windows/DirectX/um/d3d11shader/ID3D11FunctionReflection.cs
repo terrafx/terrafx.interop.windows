@@ -87,27 +87,28 @@ public unsafe partial struct ID3D11FunctionReflection : ID3D11FunctionReflection
         ID3D11FunctionParameterReflection* GetFunctionParameter(int ParameterIndex);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (D3D11_FUNCTION_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11FunctionReflection*, D3D11_FUNCTION_DESC*, int> GetDesc;
+        public delegate* unmanaged<TSelf*, D3D11_FUNCTION_DESC*, int> GetDesc;
 
         [NativeTypeName("ID3D11ShaderReflectionConstantBuffer *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11FunctionReflection*, uint, ID3D11ShaderReflectionConstantBuffer*> GetConstantBufferByIndex;
+        public delegate* unmanaged<TSelf*, uint, ID3D11ShaderReflectionConstantBuffer*> GetConstantBufferByIndex;
 
         [NativeTypeName("ID3D11ShaderReflectionConstantBuffer *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11FunctionReflection*, sbyte*, ID3D11ShaderReflectionConstantBuffer*> GetConstantBufferByName;
+        public delegate* unmanaged<TSelf*, sbyte*, ID3D11ShaderReflectionConstantBuffer*> GetConstantBufferByName;
 
         [NativeTypeName("HRESULT (UINT, D3D11_SHADER_INPUT_BIND_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11FunctionReflection*, uint, D3D11_SHADER_INPUT_BIND_DESC*, int> GetResourceBindingDesc;
+        public delegate* unmanaged<TSelf*, uint, D3D11_SHADER_INPUT_BIND_DESC*, int> GetResourceBindingDesc;
 
         [NativeTypeName("ID3D11ShaderReflectionVariable *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11FunctionReflection*, sbyte*, ID3D11ShaderReflectionVariable*> GetVariableByName;
+        public delegate* unmanaged<TSelf*, sbyte*, ID3D11ShaderReflectionVariable*> GetVariableByName;
 
         [NativeTypeName("HRESULT (LPCSTR, D3D11_SHADER_INPUT_BIND_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11FunctionReflection*, sbyte*, D3D11_SHADER_INPUT_BIND_DESC*, int> GetResourceBindingDescByName;
+        public delegate* unmanaged<TSelf*, sbyte*, D3D11_SHADER_INPUT_BIND_DESC*, int> GetResourceBindingDescByName;
 
         [NativeTypeName("ID3D11FunctionParameterReflection *(INT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11FunctionReflection*, int, ID3D11FunctionParameterReflection*> GetFunctionParameter;
+        public delegate* unmanaged<TSelf*, int, ID3D11FunctionParameterReflection*> GetFunctionParameter;
     }
 }

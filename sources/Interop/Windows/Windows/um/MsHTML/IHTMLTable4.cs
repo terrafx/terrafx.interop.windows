@@ -160,54 +160,55 @@ public unsafe partial struct IHTMLTable4 : IHTMLTable4.Interface
         HRESULT createTBody(IHTMLTableSection** tbody);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTable4*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTable4*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTable4*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTable4*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTable4*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTable4*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTable4*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IHTMLTableSection *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTable4*, IHTMLTableSection*, int> putref_tHead;
+        public delegate* unmanaged<TSelf*, IHTMLTableSection*, int> putref_tHead;
 
         [NativeTypeName("HRESULT (IHTMLTableSection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTable4*, IHTMLTableSection**, int> get_tHead;
+        public delegate* unmanaged<TSelf*, IHTMLTableSection**, int> get_tHead;
 
         [NativeTypeName("HRESULT (IHTMLTableSection *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTable4*, IHTMLTableSection*, int> putref_tFoot;
+        public delegate* unmanaged<TSelf*, IHTMLTableSection*, int> putref_tFoot;
 
         [NativeTypeName("HRESULT (IHTMLTableSection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTable4*, IHTMLTableSection**, int> get_tFoot;
+        public delegate* unmanaged<TSelf*, IHTMLTableSection**, int> get_tFoot;
 
         [NativeTypeName("HRESULT (IHTMLTableCaption *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTable4*, IHTMLTableCaption*, int> putref_caption;
+        public delegate* unmanaged<TSelf*, IHTMLTableCaption*, int> putref_caption;
 
         [NativeTypeName("HRESULT (IHTMLTableCaption **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTable4*, IHTMLTableCaption**, int> get_caption;
+        public delegate* unmanaged<TSelf*, IHTMLTableCaption**, int> get_caption;
 
         [NativeTypeName("HRESULT (long, IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTable4*, int, IDispatch**, int> insertRow;
+        public delegate* unmanaged<TSelf*, int, IDispatch**, int> insertRow;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTable4*, int, int> deleteRow;
+        public delegate* unmanaged<TSelf*, int, int> deleteRow;
 
         [NativeTypeName("HRESULT (IHTMLTableSection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTable4*, IHTMLTableSection**, int> createTBody;
+        public delegate* unmanaged<TSelf*, IHTMLTableSection**, int> createTBody;
     }
 }

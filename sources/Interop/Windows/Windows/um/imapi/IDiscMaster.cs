@@ -162,51 +162,52 @@ public unsafe partial struct IDiscMaster : IDiscMaster.Interface
         HRESULT Close();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMaster*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMaster*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMaster*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMaster*, int> Open;
+        public delegate* unmanaged<TSelf*, int> Open;
 
         [NativeTypeName("HRESULT (IEnumDiscMasterFormats **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMaster*, IEnumDiscMasterFormats**, int> EnumDiscMasterFormats;
+        public delegate* unmanaged<TSelf*, IEnumDiscMasterFormats**, int> EnumDiscMasterFormats;
 
         [NativeTypeName("HRESULT (LPIID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMaster*, Guid*, int> GetActiveDiscMasterFormat;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetActiveDiscMasterFormat;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMaster*, Guid*, void**, int> SetActiveDiscMasterFormat;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> SetActiveDiscMasterFormat;
 
         [NativeTypeName("HRESULT (IEnumDiscRecorders **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMaster*, IEnumDiscRecorders**, int> EnumDiscRecorders;
+        public delegate* unmanaged<TSelf*, IEnumDiscRecorders**, int> EnumDiscRecorders;
 
         [NativeTypeName("HRESULT (IDiscRecorder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMaster*, IDiscRecorder**, int> GetActiveDiscRecorder;
+        public delegate* unmanaged<TSelf*, IDiscRecorder**, int> GetActiveDiscRecorder;
 
         [NativeTypeName("HRESULT (IDiscRecorder *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMaster*, IDiscRecorder*, int> SetActiveDiscRecorder;
+        public delegate* unmanaged<TSelf*, IDiscRecorder*, int> SetActiveDiscRecorder;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMaster*, int> ClearFormatContent;
+        public delegate* unmanaged<TSelf*, int> ClearFormatContent;
 
         [NativeTypeName("HRESULT (IDiscMasterProgressEvents *, UINT_PTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMaster*, IDiscMasterProgressEvents*, nuint*, int> ProgressAdvise;
+        public delegate* unmanaged<TSelf*, IDiscMasterProgressEvents*, nuint*, int> ProgressAdvise;
 
         [NativeTypeName("HRESULT (UINT_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMaster*, nuint, int> ProgressUnadvise;
+        public delegate* unmanaged<TSelf*, nuint, int> ProgressUnadvise;
 
         [NativeTypeName("HRESULT (boolean, boolean) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMaster*, byte, byte, int> RecordDisc;
+        public delegate* unmanaged<TSelf*, byte, byte, int> RecordDisc;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMaster*, int> Close;
+        public delegate* unmanaged<TSelf*, int> Close;
     }
 }

@@ -86,30 +86,31 @@ public unsafe partial struct IDockingWindow : IDockingWindow.Interface
         HRESULT ResizeBorderDW([NativeTypeName("LPCRECT")] RECT* prcBorder, IUnknown* punkToolbarSite, BOOL fReserved);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDockingWindow*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDockingWindow*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDockingWindow*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDockingWindow*, HWND*, int> GetWindow;
+        public delegate* unmanaged<TSelf*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDockingWindow*, BOOL, int> ContextSensitiveHelp;
+        public delegate* unmanaged<TSelf*, BOOL, int> ContextSensitiveHelp;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDockingWindow*, BOOL, int> ShowDW;
+        public delegate* unmanaged<TSelf*, BOOL, int> ShowDW;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDockingWindow*, uint, int> CloseDW;
+        public delegate* unmanaged<TSelf*, uint, int> CloseDW;
 
         [NativeTypeName("HRESULT (LPCRECT, IUnknown *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDockingWindow*, RECT*, IUnknown*, BOOL, int> ResizeBorderDW;
+        public delegate* unmanaged<TSelf*, RECT*, IUnknown*, BOOL, int> ResizeBorderDW;
     }
 }

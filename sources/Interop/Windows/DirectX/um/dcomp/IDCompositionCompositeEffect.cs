@@ -60,21 +60,22 @@ public unsafe partial struct IDCompositionCompositeEffect : IDCompositionComposi
         HRESULT SetMode(D2D1_COMPOSITE_MODE mode);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionCompositeEffect*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionCompositeEffect*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionCompositeEffect*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionCompositeEffect*, uint, IUnknown*, uint, int> SetInput;
+        public delegate* unmanaged<TSelf*, uint, IUnknown*, uint, int> SetInput;
 
         [NativeTypeName("HRESULT (D2D1_COMPOSITE_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionCompositeEffect*, D2D1_COMPOSITE_MODE, int> SetMode;
+        public delegate* unmanaged<TSelf*, D2D1_COMPOSITE_MODE, int> SetMode;
     }
 }

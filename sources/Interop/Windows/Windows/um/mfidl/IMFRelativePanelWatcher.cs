@@ -88,30 +88,31 @@ public unsafe partial struct IMFRelativePanelWatcher : IMFRelativePanelWatcher.I
         HRESULT GetReport(IMFRelativePanelReport** ppRelativePanelReport);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRelativePanelWatcher*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRelativePanelWatcher*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRelativePanelWatcher*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRelativePanelWatcher*, int> Shutdown;
+        public delegate* unmanaged<TSelf*, int> Shutdown;
 
         [NativeTypeName("HRESULT (MFSHUTDOWN_STATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRelativePanelWatcher*, MFSHUTDOWN_STATUS*, int> GetShutdownStatus;
+        public delegate* unmanaged<TSelf*, MFSHUTDOWN_STATUS*, int> GetShutdownStatus;
 
         [NativeTypeName("HRESULT (IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRelativePanelWatcher*, IMFAsyncCallback*, IUnknown*, int> BeginGetReport;
+        public delegate* unmanaged<TSelf*, IMFAsyncCallback*, IUnknown*, int> BeginGetReport;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *, IMFRelativePanelReport **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRelativePanelWatcher*, IMFAsyncResult*, IMFRelativePanelReport**, int> EndGetReport;
+        public delegate* unmanaged<TSelf*, IMFAsyncResult*, IMFRelativePanelReport**, int> EndGetReport;
 
         [NativeTypeName("HRESULT (IMFRelativePanelReport **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRelativePanelWatcher*, IMFRelativePanelReport**, int> GetReport;
+        public delegate* unmanaged<TSelf*, IMFRelativePanelReport**, int> GetReport;
     }
 }

@@ -82,27 +82,28 @@ public unsafe partial struct IAMCertifiedOutputProtection : IAMCertifiedOutputPr
         HRESULT ProtectionStatus([NativeTypeName("const AMCOPPStatusInput *")] AMCOPPStatusInput* pStatusInput, AMCOPPStatusOutput* pStatusOutput);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMCertifiedOutputProtection*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMCertifiedOutputProtection*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMCertifiedOutputProtection*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (GUID *, BYTE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMCertifiedOutputProtection*, Guid*, byte**, uint*, int> KeyExchange;
+        public delegate* unmanaged<TSelf*, Guid*, byte**, uint*, int> KeyExchange;
 
         [NativeTypeName("HRESULT (AMCOPPSignature *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMCertifiedOutputProtection*, AMCOPPSignature*, int> SessionSequenceStart;
+        public delegate* unmanaged<TSelf*, AMCOPPSignature*, int> SessionSequenceStart;
 
         [NativeTypeName("HRESULT (const AMCOPPCommand *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMCertifiedOutputProtection*, AMCOPPCommand*, int> ProtectionCommand;
+        public delegate* unmanaged<TSelf*, AMCOPPCommand*, int> ProtectionCommand;
 
         [NativeTypeName("HRESULT (const AMCOPPStatusInput *, AMCOPPStatusOutput *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMCertifiedOutputProtection*, AMCOPPStatusInput*, AMCOPPStatusOutput*, int> ProtectionStatus;
+        public delegate* unmanaged<TSelf*, AMCOPPStatusInput*, AMCOPPStatusOutput*, int> ProtectionStatus;
     }
 }

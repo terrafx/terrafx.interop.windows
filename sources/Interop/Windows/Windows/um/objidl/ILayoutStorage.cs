@@ -92,30 +92,31 @@ public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface
         HRESULT ReLayoutDocfileOnILockBytes(ILockBytes* pILockBytes);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILayoutStorage*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ILayoutStorage*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ILayoutStorage*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (StorageLayout *, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILayoutStorage*, StorageLayout*, uint, uint, int> LayoutScript;
+        public delegate* unmanaged<TSelf*, StorageLayout*, uint, uint, int> LayoutScript;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ILayoutStorage*, int> BeginMonitor;
+        public delegate* unmanaged<TSelf*, int> BeginMonitor;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ILayoutStorage*, int> EndMonitor;
+        public delegate* unmanaged<TSelf*, int> EndMonitor;
 
         [NativeTypeName("HRESULT (OLECHAR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILayoutStorage*, ushort*, int> ReLayoutDocfile;
+        public delegate* unmanaged<TSelf*, ushort*, int> ReLayoutDocfile;
 
         [NativeTypeName("HRESULT (ILockBytes *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILayoutStorage*, ILockBytes*, int> ReLayoutDocfileOnILockBytes;
+        public delegate* unmanaged<TSelf*, ILockBytes*, int> ReLayoutDocfileOnILockBytes;
     }
 }

@@ -73,24 +73,25 @@ public unsafe partial struct ID2D1EffectImpl : ID2D1EffectImpl.Interface
         HRESULT SetGraph(ID2D1TransformGraph* transformGraph);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1EffectImpl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1EffectImpl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1EffectImpl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ID2D1EffectContext *, ID2D1TransformGraph *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1EffectImpl*, ID2D1EffectContext*, ID2D1TransformGraph*, int> Initialize;
+        public delegate* unmanaged<TSelf*, ID2D1EffectContext*, ID2D1TransformGraph*, int> Initialize;
 
         [NativeTypeName("HRESULT (D2D1_CHANGE_TYPE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1EffectImpl*, D2D1_CHANGE_TYPE, int> PrepareForRender;
+        public delegate* unmanaged<TSelf*, D2D1_CHANGE_TYPE, int> PrepareForRender;
 
         [NativeTypeName("HRESULT (ID2D1TransformGraph *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1EffectImpl*, ID2D1TransformGraph*, int> SetGraph;
+        public delegate* unmanaged<TSelf*, ID2D1TransformGraph*, int> SetGraph;
     }
 }

@@ -96,33 +96,34 @@ public unsafe partial struct IOleInPlaceObject : IOleInPlaceObject.Interface
         HRESULT ReactivateAndUndo();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceObject*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceObject*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceObject*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceObject*, HWND*, int> GetWindow;
+        public delegate* unmanaged<TSelf*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceObject*, BOOL, int> ContextSensitiveHelp;
+        public delegate* unmanaged<TSelf*, BOOL, int> ContextSensitiveHelp;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceObject*, int> InPlaceDeactivate;
+        public delegate* unmanaged<TSelf*, int> InPlaceDeactivate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceObject*, int> UIDeactivate;
+        public delegate* unmanaged<TSelf*, int> UIDeactivate;
 
         [NativeTypeName("HRESULT (LPCRECT, LPCRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceObject*, RECT*, RECT*, int> SetObjectRects;
+        public delegate* unmanaged<TSelf*, RECT*, RECT*, int> SetObjectRects;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceObject*, int> ReactivateAndUndo;
+        public delegate* unmanaged<TSelf*, int> ReactivateAndUndo;
     }
 }

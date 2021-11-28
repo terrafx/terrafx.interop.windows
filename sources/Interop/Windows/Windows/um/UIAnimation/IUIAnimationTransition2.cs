@@ -112,36 +112,37 @@ public unsafe partial struct IUIAnimationTransition2 : IUIAnimationTransition2.I
         HRESULT GetDuration([NativeTypeName("UI_ANIMATION_SECONDS *")] double* duration);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransition2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransition2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransition2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransition2*, uint*, int> GetDimension;
+        public delegate* unmanaged<TSelf*, uint*, int> GetDimension;
 
         [NativeTypeName("HRESULT (DOUBLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransition2*, double, int> SetInitialValue;
+        public delegate* unmanaged<TSelf*, double, int> SetInitialValue;
 
         [NativeTypeName("HRESULT (const DOUBLE *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransition2*, double*, uint, int> SetInitialVectorValue;
+        public delegate* unmanaged<TSelf*, double*, uint, int> SetInitialVectorValue;
 
         [NativeTypeName("HRESULT (DOUBLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransition2*, double, int> SetInitialVelocity;
+        public delegate* unmanaged<TSelf*, double, int> SetInitialVelocity;
 
         [NativeTypeName("HRESULT (const DOUBLE *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransition2*, double*, uint, int> SetInitialVectorVelocity;
+        public delegate* unmanaged<TSelf*, double*, uint, int> SetInitialVectorVelocity;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransition2*, int> IsDurationKnown;
+        public delegate* unmanaged<TSelf*, int> IsDurationKnown;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransition2*, double*, int> GetDuration;
+        public delegate* unmanaged<TSelf*, double*, int> GetDuration;
     }
 }

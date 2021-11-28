@@ -55,18 +55,19 @@ public unsafe partial struct ID3D11RefTrackingOptions : ID3D11RefTrackingOptions
         HRESULT SetTrackingOptions(uint uOptions);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11RefTrackingOptions*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11RefTrackingOptions*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11RefTrackingOptions*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11RefTrackingOptions*, uint, int> SetTrackingOptions;
+        public delegate* unmanaged<TSelf*, uint, int> SetTrackingOptions;
     }
 }

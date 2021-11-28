@@ -82,27 +82,28 @@ public unsafe partial struct IPerPropertyBrowsing : IPerPropertyBrowsing.Interfa
         HRESULT GetPredefinedValue([NativeTypeName("DISPID")] int dispID, [NativeTypeName("DWORD")] uint dwCookie, VARIANT* pVarOut);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPerPropertyBrowsing*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPerPropertyBrowsing*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPerPropertyBrowsing*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DISPID, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPerPropertyBrowsing*, int, ushort**, int> GetDisplayString;
+        public delegate* unmanaged<TSelf*, int, ushort**, int> GetDisplayString;
 
         [NativeTypeName("HRESULT (DISPID, CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPerPropertyBrowsing*, int, Guid*, int> MapPropertyToPage;
+        public delegate* unmanaged<TSelf*, int, Guid*, int> MapPropertyToPage;
 
         [NativeTypeName("HRESULT (DISPID, CALPOLESTR *, CADWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPerPropertyBrowsing*, int, CALPOLESTR*, CADWORD*, int> GetPredefinedStrings;
+        public delegate* unmanaged<TSelf*, int, CALPOLESTR*, CADWORD*, int> GetPredefinedStrings;
 
         [NativeTypeName("HRESULT (DISPID, DWORD, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPerPropertyBrowsing*, int, uint, VARIANT*, int> GetPredefinedValue;
+        public delegate* unmanaged<TSelf*, int, uint, VARIANT*, int> GetPredefinedValue;
     }
 }

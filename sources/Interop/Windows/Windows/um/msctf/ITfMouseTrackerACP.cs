@@ -62,21 +62,22 @@ public unsafe partial struct ITfMouseTrackerACP : ITfMouseTrackerACP.Interface
         HRESULT UnadviseMouseSink([NativeTypeName("DWORD")] uint dwCookie);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfMouseTrackerACP*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfMouseTrackerACP*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfMouseTrackerACP*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITfRangeACP *, ITfMouseSink *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfMouseTrackerACP*, ITfRangeACP*, ITfMouseSink*, uint*, int> AdviseMouseSink;
+        public delegate* unmanaged<TSelf*, ITfRangeACP*, ITfMouseSink*, uint*, int> AdviseMouseSink;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfMouseTrackerACP*, uint, int> UnadviseMouseSink;
+        public delegate* unmanaged<TSelf*, uint, int> UnadviseMouseSink;
     }
 }

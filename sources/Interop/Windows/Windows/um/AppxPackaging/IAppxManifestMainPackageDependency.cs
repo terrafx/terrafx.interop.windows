@@ -74,24 +74,25 @@ public unsafe partial struct IAppxManifestMainPackageDependency : IAppxManifestM
         HRESULT GetPackageFamilyName([NativeTypeName("LPWSTR *")] ushort** packageFamilyName);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestMainPackageDependency*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestMainPackageDependency*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestMainPackageDependency*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestMainPackageDependency*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestMainPackageDependency*, ushort**, int> GetPublisher;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetPublisher;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestMainPackageDependency*, ushort**, int> GetPackageFamilyName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetPackageFamilyName;
     }
 }

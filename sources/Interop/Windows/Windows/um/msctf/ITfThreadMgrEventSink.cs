@@ -92,30 +92,31 @@ public unsafe partial struct ITfThreadMgrEventSink : ITfThreadMgrEventSink.Inter
         HRESULT OnPopContext(ITfContext* pic);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgrEventSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgrEventSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgrEventSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITfDocumentMgr *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgrEventSink*, ITfDocumentMgr*, int> OnInitDocumentMgr;
+        public delegate* unmanaged<TSelf*, ITfDocumentMgr*, int> OnInitDocumentMgr;
 
         [NativeTypeName("HRESULT (ITfDocumentMgr *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgrEventSink*, ITfDocumentMgr*, int> OnUninitDocumentMgr;
+        public delegate* unmanaged<TSelf*, ITfDocumentMgr*, int> OnUninitDocumentMgr;
 
         [NativeTypeName("HRESULT (ITfDocumentMgr *, ITfDocumentMgr *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgrEventSink*, ITfDocumentMgr*, ITfDocumentMgr*, int> OnSetFocus;
+        public delegate* unmanaged<TSelf*, ITfDocumentMgr*, ITfDocumentMgr*, int> OnSetFocus;
 
         [NativeTypeName("HRESULT (ITfContext *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgrEventSink*, ITfContext*, int> OnPushContext;
+        public delegate* unmanaged<TSelf*, ITfContext*, int> OnPushContext;
 
         [NativeTypeName("HRESULT (ITfContext *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgrEventSink*, ITfContext*, int> OnPopContext;
+        public delegate* unmanaged<TSelf*, ITfContext*, int> OnPopContext;
     }
 }

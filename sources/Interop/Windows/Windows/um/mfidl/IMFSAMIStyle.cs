@@ -82,27 +82,28 @@ public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface
         HRESULT GetSelectedStyle([NativeTypeName("LPWSTR *")] ushort** ppwszStyle);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSAMIStyle*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSAMIStyle*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSAMIStyle*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSAMIStyle*, uint*, int> GetStyleCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetStyleCount;
 
         [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSAMIStyle*, PROPVARIANT*, int> GetStyles;
+        public delegate* unmanaged<TSelf*, PROPVARIANT*, int> GetStyles;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSAMIStyle*, ushort*, int> SetSelectedStyle;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetSelectedStyle;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSAMIStyle*, ushort**, int> GetSelectedStyle;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetSelectedStyle;
     }
 }

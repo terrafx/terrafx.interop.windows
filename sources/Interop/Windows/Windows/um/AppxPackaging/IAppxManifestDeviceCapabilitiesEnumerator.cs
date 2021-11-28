@@ -74,24 +74,25 @@ public unsafe partial struct IAppxManifestDeviceCapabilitiesEnumerator : IAppxMa
         HRESULT MoveNext(BOOL* hasNext);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestDeviceCapabilitiesEnumerator*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestDeviceCapabilitiesEnumerator*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestDeviceCapabilitiesEnumerator*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestDeviceCapabilitiesEnumerator*, ushort**, int> GetCurrent;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetCurrent;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestDeviceCapabilitiesEnumerator*, BOOL*, int> GetHasCurrent;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetHasCurrent;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestDeviceCapabilitiesEnumerator*, BOOL*, int> MoveNext;
+        public delegate* unmanaged<TSelf*, BOOL*, int> MoveNext;
     }
 }

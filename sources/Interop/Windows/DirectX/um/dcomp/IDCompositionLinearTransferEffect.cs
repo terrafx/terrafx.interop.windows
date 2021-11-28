@@ -260,81 +260,82 @@ public unsafe partial struct IDCompositionLinearTransferEffect : IDCompositionLi
         HRESULT SetClampOutput(BOOL clampOutput);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, uint, IUnknown*, uint, int> SetInput;
+        public delegate* unmanaged<TSelf*, uint, IUnknown*, uint, int> SetInput;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetRedYIntercept;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetRedYIntercept;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetRedYIntercept1;
+        public delegate* unmanaged<TSelf*, float, int> SetRedYIntercept1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetRedSlope;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetRedSlope;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetRedSlope1;
+        public delegate* unmanaged<TSelf*, float, int> SetRedSlope1;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int> SetRedDisable;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetRedDisable;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetGreenYIntercept;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetGreenYIntercept;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetGreenYIntercept1;
+        public delegate* unmanaged<TSelf*, float, int> SetGreenYIntercept1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetGreenSlope;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetGreenSlope;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetGreenSlope1;
+        public delegate* unmanaged<TSelf*, float, int> SetGreenSlope1;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int> SetGreenDisable;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetGreenDisable;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetBlueYIntercept;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetBlueYIntercept;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetBlueYIntercept1;
+        public delegate* unmanaged<TSelf*, float, int> SetBlueYIntercept1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetBlueSlope;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetBlueSlope;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetBlueSlope1;
+        public delegate* unmanaged<TSelf*, float, int> SetBlueSlope1;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int> SetBlueDisable;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetBlueDisable;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetAlphaYIntercept;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetAlphaYIntercept;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetAlphaYIntercept1;
+        public delegate* unmanaged<TSelf*, float, int> SetAlphaYIntercept1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, IDCompositionAnimation*, int> SetAlphaSlope;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetAlphaSlope;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, float, int> SetAlphaSlope1;
+        public delegate* unmanaged<TSelf*, float, int> SetAlphaSlope1;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int> SetAlphaDisable;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetAlphaDisable;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionLinearTransferEffect*, BOOL, int> SetClampOutput;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetClampOutput;
     }
 }

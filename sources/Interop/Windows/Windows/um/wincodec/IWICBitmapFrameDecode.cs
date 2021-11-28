@@ -107,39 +107,40 @@ public unsafe partial struct IWICBitmapFrameDecode : IWICBitmapFrameDecode.Inter
         HRESULT GetThumbnail(IWICBitmapSource** ppIThumbnail);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapFrameDecode*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapFrameDecode*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapFrameDecode*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapFrameDecode*, uint*, uint*, int> GetSize;
+        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetSize;
 
         [NativeTypeName("HRESULT (WICPixelFormatGUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapFrameDecode*, Guid*, int> GetPixelFormat;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetPixelFormat;
 
         [NativeTypeName("HRESULT (double *, double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapFrameDecode*, double*, double*, int> GetResolution;
+        public delegate* unmanaged<TSelf*, double*, double*, int> GetResolution;
 
         [NativeTypeName("HRESULT (IWICPalette *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapFrameDecode*, IWICPalette*, int> CopyPalette;
+        public delegate* unmanaged<TSelf*, IWICPalette*, int> CopyPalette;
 
         [NativeTypeName("HRESULT (const WICRect *, UINT, UINT, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapFrameDecode*, WICRect*, uint, uint, byte*, int> CopyPixels;
+        public delegate* unmanaged<TSelf*, WICRect*, uint, uint, byte*, int> CopyPixels;
 
         [NativeTypeName("HRESULT (IWICMetadataQueryReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapFrameDecode*, IWICMetadataQueryReader**, int> GetMetadataQueryReader;
+        public delegate* unmanaged<TSelf*, IWICMetadataQueryReader**, int> GetMetadataQueryReader;
 
         [NativeTypeName("HRESULT (UINT, IWICColorContext **, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapFrameDecode*, uint, IWICColorContext**, uint*, int> GetColorContexts;
+        public delegate* unmanaged<TSelf*, uint, IWICColorContext**, uint*, int> GetColorContexts;
 
         [NativeTypeName("HRESULT (IWICBitmapSource **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapFrameDecode*, IWICBitmapSource**, int> GetThumbnail;
+        public delegate* unmanaged<TSelf*, IWICBitmapSource**, int> GetThumbnail;
     }
 }

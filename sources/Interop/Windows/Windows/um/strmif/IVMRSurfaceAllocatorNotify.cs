@@ -103,33 +103,34 @@ public unsafe partial struct IVMRSurfaceAllocatorNotify : IVMRSurfaceAllocatorNo
         HRESULT SetBorderColor(COLORREF clrBorder);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurfaceAllocatorNotify*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurfaceAllocatorNotify*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurfaceAllocatorNotify*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD_PTR, IVMRSurfaceAllocator *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurfaceAllocatorNotify*, nuint, IVMRSurfaceAllocator*, int> AdviseSurfaceAllocator;
+        public delegate* unmanaged<TSelf*, nuint, IVMRSurfaceAllocator*, int> AdviseSurfaceAllocator;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAW7, HMONITOR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurfaceAllocatorNotify*, IDirectDraw7*, HMONITOR, int> SetDDrawDevice;
+        public delegate* unmanaged<TSelf*, IDirectDraw7*, HMONITOR, int> SetDDrawDevice;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAW7, HMONITOR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurfaceAllocatorNotify*, IDirectDraw7*, HMONITOR, int> ChangeDDrawDevice;
+        public delegate* unmanaged<TSelf*, IDirectDraw7*, HMONITOR, int> ChangeDDrawDevice;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurfaceAllocatorNotify*, int> RestoreDDrawSurfaces;
+        public delegate* unmanaged<TSelf*, int> RestoreDDrawSurfaces;
 
         [NativeTypeName("HRESULT (LONG, LONG_PTR, LONG_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurfaceAllocatorNotify*, int, nint, nint, int> NotifyEvent;
+        public delegate* unmanaged<TSelf*, int, nint, nint, int> NotifyEvent;
 
         [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurfaceAllocatorNotify*, COLORREF, int> SetBorderColor;
+        public delegate* unmanaged<TSelf*, COLORREF, int> SetBorderColor;
     }
 }

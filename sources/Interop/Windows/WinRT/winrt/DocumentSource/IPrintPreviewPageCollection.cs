@@ -63,21 +63,22 @@ public unsafe partial struct IPrintPreviewPageCollection : IPrintPreviewPageColl
         HRESULT MakePage([NativeTypeName("UINT32")] uint desiredJobPage, float width, float height);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintPreviewPageCollection*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintPreviewPageCollection*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintPreviewPageCollection*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32, IInspectable *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintPreviewPageCollection*, uint, IInspectable*, int> Paginate;
+        public delegate* unmanaged<TSelf*, uint, IInspectable*, int> Paginate;
 
         [NativeTypeName("HRESULT (UINT32, FLOAT, FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintPreviewPageCollection*, uint, float, float, int> MakePage;
+        public delegate* unmanaged<TSelf*, uint, float, float, int> MakePage;
     }
 }

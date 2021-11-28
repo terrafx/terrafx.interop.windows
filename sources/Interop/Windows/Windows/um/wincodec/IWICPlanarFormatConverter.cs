@@ -99,36 +99,37 @@ public unsafe partial struct IWICPlanarFormatConverter : IWICPlanarFormatConvert
         HRESULT CanConvert([NativeTypeName("const WICPixelFormatGUID *")] Guid* pSrcPixelFormats, uint cSrcPlanes, [NativeTypeName("REFWICPixelFormatGUID")] Guid* dstPixelFormat, BOOL* pfCanConvert);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPlanarFormatConverter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPlanarFormatConverter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPlanarFormatConverter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPlanarFormatConverter*, uint*, uint*, int> GetSize;
+        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetSize;
 
         [NativeTypeName("HRESULT (WICPixelFormatGUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPlanarFormatConverter*, Guid*, int> GetPixelFormat;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetPixelFormat;
 
         [NativeTypeName("HRESULT (double *, double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPlanarFormatConverter*, double*, double*, int> GetResolution;
+        public delegate* unmanaged<TSelf*, double*, double*, int> GetResolution;
 
         [NativeTypeName("HRESULT (IWICPalette *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPlanarFormatConverter*, IWICPalette*, int> CopyPalette;
+        public delegate* unmanaged<TSelf*, IWICPalette*, int> CopyPalette;
 
         [NativeTypeName("HRESULT (const WICRect *, UINT, UINT, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPlanarFormatConverter*, WICRect*, uint, uint, byte*, int> CopyPixels;
+        public delegate* unmanaged<TSelf*, WICRect*, uint, uint, byte*, int> CopyPixels;
 
         [NativeTypeName("HRESULT (IWICBitmapSource **, UINT, REFWICPixelFormatGUID, WICBitmapDitherType, IWICPalette *, double, WICBitmapPaletteType) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPlanarFormatConverter*, IWICBitmapSource**, uint, Guid*, WICBitmapDitherType, IWICPalette*, double, WICBitmapPaletteType, int> Initialize;
+        public delegate* unmanaged<TSelf*, IWICBitmapSource**, uint, Guid*, WICBitmapDitherType, IWICPalette*, double, WICBitmapPaletteType, int> Initialize;
 
         [NativeTypeName("HRESULT (const WICPixelFormatGUID *, UINT, REFWICPixelFormatGUID, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPlanarFormatConverter*, Guid*, uint, Guid*, BOOL*, int> CanConvert;
+        public delegate* unmanaged<TSelf*, Guid*, uint, Guid*, BOOL*, int> CanConvert;
     }
 }

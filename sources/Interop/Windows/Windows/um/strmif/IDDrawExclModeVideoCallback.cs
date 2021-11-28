@@ -72,24 +72,25 @@ public unsafe partial struct IDDrawExclModeVideoCallback : IDDrawExclModeVideoCa
         HRESULT OnUpdateSize([NativeTypeName("DWORD")] uint dwWidth, [NativeTypeName("DWORD")] uint dwHeight, [NativeTypeName("DWORD")] uint dwARWidth, [NativeTypeName("DWORD")] uint dwARHeight);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDDrawExclModeVideoCallback*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDDrawExclModeVideoCallback*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDDrawExclModeVideoCallback*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL, DWORD, BOOL, const RECT *, const RECT *, BOOL, const RECT *, const RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDDrawExclModeVideoCallback*, BOOL, uint, BOOL, RECT*, RECT*, BOOL, RECT*, RECT*, int> OnUpdateOverlay;
+        public delegate* unmanaged<TSelf*, BOOL, uint, BOOL, RECT*, RECT*, BOOL, RECT*, RECT*, int> OnUpdateOverlay;
 
         [NativeTypeName("HRESULT (const COLORKEY *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDDrawExclModeVideoCallback*, COLORKEY*, uint, int> OnUpdateColorKey;
+        public delegate* unmanaged<TSelf*, COLORKEY*, uint, int> OnUpdateColorKey;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDDrawExclModeVideoCallback*, uint, uint, uint, uint, int> OnUpdateSize;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, uint, int> OnUpdateSize;
     }
 }

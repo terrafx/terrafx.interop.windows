@@ -124,48 +124,49 @@ public unsafe partial struct IDWriteFontCollection3 : IDWriteFontCollection3.Int
         HANDLE GetExpirationEvent();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontCollection3*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontCollection3*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontCollection3*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteFontCollection3*, uint> GetFontFamilyCount;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetFontFamilyCount;
 
         [NativeTypeName("HRESULT (UINT32, IDWriteFontFamily **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontCollection3*, uint, IDWriteFontFamily**, int> GetFontFamily;
+        public delegate* unmanaged<TSelf*, uint, IDWriteFontFamily**, int> GetFontFamily;
 
         [NativeTypeName("HRESULT (const WCHAR *, UINT32 *, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontCollection3*, ushort*, uint*, BOOL*, int> FindFamilyName;
+        public delegate* unmanaged<TSelf*, ushort*, uint*, BOOL*, int> FindFamilyName;
 
         [NativeTypeName("HRESULT (IDWriteFontFace *, IDWriteFont **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontCollection3*, IDWriteFontFace*, IDWriteFont**, int> GetFontFromFontFace;
+        public delegate* unmanaged<TSelf*, IDWriteFontFace*, IDWriteFont**, int> GetFontFromFontFace;
 
         [NativeTypeName("HRESULT (IDWriteFontSet **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontCollection3*, IDWriteFontSet**, int> GetFontSet;
+        public delegate* unmanaged<TSelf*, IDWriteFontSet**, int> GetFontSet;
 
         [NativeTypeName("HRESULT (UINT32, IDWriteFontFamily1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontCollection3*, uint, IDWriteFontFamily1**, int> GetFontFamily1;
+        public delegate* unmanaged<TSelf*, uint, IDWriteFontFamily1**, int> GetFontFamily1;
 
         [NativeTypeName("HRESULT (UINT32, IDWriteFontFamily2 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontCollection3*, uint, IDWriteFontFamily2**, int> GetFontFamily2;
+        public delegate* unmanaged<TSelf*, uint, IDWriteFontFamily2**, int> GetFontFamily2;
 
         [NativeTypeName("HRESULT (const WCHAR *, const DWRITE_FONT_AXIS_VALUE *, UINT32, IDWriteFontList2 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontCollection3*, ushort*, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontList2**, int> GetMatchingFonts;
+        public delegate* unmanaged<TSelf*, ushort*, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontList2**, int> GetMatchingFonts;
 
         [NativeTypeName("DWRITE_FONT_FAMILY_MODEL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteFontCollection3*, DWRITE_FONT_FAMILY_MODEL> GetFontFamilyModel;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_FONT_FAMILY_MODEL> GetFontFamilyModel;
 
         [NativeTypeName("HRESULT (IDWriteFontSet1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontCollection3*, IDWriteFontSet1**, int> GetFontSet1;
+        public delegate* unmanaged<TSelf*, IDWriteFontSet1**, int> GetFontSet1;
 
         [NativeTypeName("HANDLE () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontCollection3*, void*> GetExpirationEvent;
+        public delegate* unmanaged<TSelf*, void*> GetExpirationEvent;
     }
 }

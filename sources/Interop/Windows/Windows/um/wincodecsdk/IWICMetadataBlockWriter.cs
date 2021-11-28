@@ -120,42 +120,43 @@ public unsafe partial struct IWICMetadataBlockWriter : IWICMetadataBlockWriter.I
         HRESULT RemoveWriterByIndex(uint nIndex);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataBlockWriter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataBlockWriter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataBlockWriter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataBlockWriter*, Guid*, int> GetContainerFormat;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetContainerFormat;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataBlockWriter*, uint*, int> GetCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (UINT, IWICMetadataReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataBlockWriter*, uint, IWICMetadataReader**, int> GetReaderByIndex;
+        public delegate* unmanaged<TSelf*, uint, IWICMetadataReader**, int> GetReaderByIndex;
 
         [NativeTypeName("HRESULT (IEnumUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataBlockWriter*, IEnumUnknown**, int> GetEnumerator;
+        public delegate* unmanaged<TSelf*, IEnumUnknown**, int> GetEnumerator;
 
         [NativeTypeName("HRESULT (IWICMetadataBlockReader *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataBlockWriter*, IWICMetadataBlockReader*, int> InitializeFromBlockReader;
+        public delegate* unmanaged<TSelf*, IWICMetadataBlockReader*, int> InitializeFromBlockReader;
 
         [NativeTypeName("HRESULT (UINT, IWICMetadataWriter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataBlockWriter*, uint, IWICMetadataWriter**, int> GetWriterByIndex;
+        public delegate* unmanaged<TSelf*, uint, IWICMetadataWriter**, int> GetWriterByIndex;
 
         [NativeTypeName("HRESULT (IWICMetadataWriter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataBlockWriter*, IWICMetadataWriter*, int> AddWriter;
+        public delegate* unmanaged<TSelf*, IWICMetadataWriter*, int> AddWriter;
 
         [NativeTypeName("HRESULT (UINT, IWICMetadataWriter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataBlockWriter*, uint, IWICMetadataWriter*, int> SetWriterByIndex;
+        public delegate* unmanaged<TSelf*, uint, IWICMetadataWriter*, int> SetWriterByIndex;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataBlockWriter*, uint, int> RemoveWriterByIndex;
+        public delegate* unmanaged<TSelf*, uint, int> RemoveWriterByIndex;
     }
 }

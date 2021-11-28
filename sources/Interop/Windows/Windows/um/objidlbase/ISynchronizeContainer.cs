@@ -62,21 +62,22 @@ public unsafe partial struct ISynchronizeContainer : ISynchronizeContainer.Inter
         HRESULT WaitMultiple([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwTimeOut, ISynchronize** ppSync);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISynchronizeContainer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISynchronizeContainer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISynchronizeContainer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ISynchronize *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISynchronizeContainer*, ISynchronize*, int> AddSynchronize;
+        public delegate* unmanaged<TSelf*, ISynchronize*, int> AddSynchronize;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, ISynchronize **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISynchronizeContainer*, uint, uint, ISynchronize**, int> WaitMultiple;
+        public delegate* unmanaged<TSelf*, uint, uint, ISynchronize**, int> WaitMultiple;
     }
 }

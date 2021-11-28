@@ -105,33 +105,34 @@ public unsafe partial struct IDWriteLocalizedStrings : IDWriteLocalizedStrings.I
         HRESULT GetString([NativeTypeName("UINT32")] uint index, [NativeTypeName("WCHAR *")] ushort* stringBuffer, [NativeTypeName("UINT32")] uint size);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteLocalizedStrings*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteLocalizedStrings*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteLocalizedStrings*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteLocalizedStrings*, uint> GetCount;
+        public delegate* unmanaged<TSelf*, uint> GetCount;
 
         [NativeTypeName("HRESULT (const WCHAR *, UINT32 *, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteLocalizedStrings*, ushort*, uint*, BOOL*, int> FindLocaleName;
+        public delegate* unmanaged<TSelf*, ushort*, uint*, BOOL*, int> FindLocaleName;
 
         [NativeTypeName("HRESULT (UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteLocalizedStrings*, uint, uint*, int> GetLocaleNameLength;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> GetLocaleNameLength;
 
         [NativeTypeName("HRESULT (UINT32, WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteLocalizedStrings*, uint, ushort*, uint, int> GetLocaleName;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint, int> GetLocaleName;
 
         [NativeTypeName("HRESULT (UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteLocalizedStrings*, uint, uint*, int> GetStringLength;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> GetStringLength;
 
         [NativeTypeName("HRESULT (UINT32, WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteLocalizedStrings*, uint, ushort*, uint, int> GetString;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint, int> GetString;
     }
 }

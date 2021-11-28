@@ -54,18 +54,19 @@ public unsafe partial struct IMFMediaEngineOPMInfo : IMFMediaEngineOPMInfo.Inter
         HRESULT GetOPMInfo(MF_MEDIA_ENGINE_OPM_STATUS* pStatus, BOOL* pConstricted);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineOPMInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineOPMInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineOPMInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MF_MEDIA_ENGINE_OPM_STATUS *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineOPMInfo*, MF_MEDIA_ENGINE_OPM_STATUS*, BOOL*, int> GetOPMInfo;
+        public delegate* unmanaged<TSelf*, MF_MEDIA_ENGINE_OPM_STATUS*, BOOL*, int> GetOPMInfo;
     }
 }

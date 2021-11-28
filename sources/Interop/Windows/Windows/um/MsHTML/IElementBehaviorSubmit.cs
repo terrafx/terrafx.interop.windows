@@ -62,21 +62,22 @@ public unsafe partial struct IElementBehaviorSubmit : IElementBehaviorSubmit.Int
         HRESULT Reset();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSubmit*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSubmit*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSubmit*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IHTMLSubmitData *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSubmit*, IHTMLSubmitData*, int> GetSubmitInfo;
+        public delegate* unmanaged<TSelf*, IHTMLSubmitData*, int> GetSubmitInfo;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSubmit*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
     }
 }

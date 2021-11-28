@@ -62,21 +62,22 @@ public unsafe partial struct IElementBehaviorSite : IElementBehaviorSite.Interfa
         HRESULT RegisterNotification([NativeTypeName("LONG")] int lEvent);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSite*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSite*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSite*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSite*, IHTMLElement**, int> GetElement;
+        public delegate* unmanaged<TSelf*, IHTMLElement**, int> GetElement;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSite*, int, int> RegisterNotification;
+        public delegate* unmanaged<TSelf*, int, int> RegisterNotification;
     }
 }

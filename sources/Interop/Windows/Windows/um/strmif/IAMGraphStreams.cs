@@ -72,24 +72,25 @@ public unsafe partial struct IAMGraphStreams : IAMGraphStreams.Interface
         HRESULT SetMaxGraphLatency([NativeTypeName("REFERENCE_TIME")] long rtMaxGraphLatency);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMGraphStreams*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMGraphStreams*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMGraphStreams*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IPin *, const IID &, void **, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMGraphStreams*, IPin*, Guid*, void**, uint, int> FindUpstreamInterface;
+        public delegate* unmanaged<TSelf*, IPin*, Guid*, void**, uint, int> FindUpstreamInterface;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMGraphStreams*, BOOL, int> SyncUsingStreamOffset;
+        public delegate* unmanaged<TSelf*, BOOL, int> SyncUsingStreamOffset;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMGraphStreams*, long, int> SetMaxGraphLatency;
+        public delegate* unmanaged<TSelf*, long, int> SetMaxGraphLatency;
     }
 }

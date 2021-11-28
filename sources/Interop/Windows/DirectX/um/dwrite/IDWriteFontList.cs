@@ -75,24 +75,25 @@ public unsafe partial struct IDWriteFontList : IDWriteFontList.Interface
         HRESULT GetFont([NativeTypeName("UINT32")] uint index, IDWriteFont** font);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontList*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontList*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontList*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDWriteFontCollection **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontList*, IDWriteFontCollection**, int> GetFontCollection;
+        public delegate* unmanaged<TSelf*, IDWriteFontCollection**, int> GetFontCollection;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteFontList*, uint> GetFontCount;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetFontCount;
 
         [NativeTypeName("HRESULT (UINT32, IDWriteFont **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontList*, uint, IDWriteFont**, int> GetFont;
+        public delegate* unmanaged<TSelf*, uint, IDWriteFont**, int> GetFont;
     }
 }

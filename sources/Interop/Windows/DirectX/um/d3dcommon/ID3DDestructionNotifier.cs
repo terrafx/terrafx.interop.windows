@@ -60,21 +60,22 @@ public unsafe partial struct ID3DDestructionNotifier : ID3DDestructionNotifier.I
         HRESULT UnregisterDestructionCallback(uint callbackID);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3DDestructionNotifier*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3DDestructionNotifier*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3DDestructionNotifier*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PFN_DESTRUCTION_CALLBACK, void *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3DDestructionNotifier*, delegate* unmanaged<void*, void>, void*, uint*, int> RegisterDestructionCallback;
+        public delegate* unmanaged<TSelf*, delegate* unmanaged<void*, void>, void*, uint*, int> RegisterDestructionCallback;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3DDestructionNotifier*, uint, int> UnregisterDestructionCallback;
+        public delegate* unmanaged<TSelf*, uint, int> UnregisterDestructionCallback;
     }
 }

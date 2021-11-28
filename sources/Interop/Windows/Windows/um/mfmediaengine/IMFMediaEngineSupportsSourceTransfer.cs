@@ -74,24 +74,25 @@ public unsafe partial struct IMFMediaEngineSupportsSourceTransfer : IMFMediaEngi
         HRESULT AttachMediaSource(IMFByteStream* pByteStream, IMFMediaSource* pMediaSource, IMFMediaSourceExtension* pMSE);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, BOOL*, int> ShouldTransferSource;
+        public delegate* unmanaged<TSelf*, BOOL*, int> ShouldTransferSource;
 
         [NativeTypeName("HRESULT (IMFByteStream **, IMFMediaSource **, IMFMediaSourceExtension **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, IMFByteStream**, IMFMediaSource**, IMFMediaSourceExtension**, int> DetachMediaSource;
+        public delegate* unmanaged<TSelf*, IMFByteStream**, IMFMediaSource**, IMFMediaSourceExtension**, int> DetachMediaSource;
 
         [NativeTypeName("HRESULT (IMFByteStream *, IMFMediaSource *, IMFMediaSourceExtension *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, IMFByteStream*, IMFMediaSource*, IMFMediaSourceExtension*, int> AttachMediaSource;
+        public delegate* unmanaged<TSelf*, IMFByteStream*, IMFMediaSource*, IMFMediaSourceExtension*, int> AttachMediaSource;
     }
 }

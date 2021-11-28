@@ -52,18 +52,19 @@ public unsafe partial struct IShellExecuteHookW : IShellExecuteHookW.Interface
         HRESULT Execute([NativeTypeName("LPSHELLEXECUTEINFOW")] void* pei);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellExecuteHookW*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellExecuteHookW*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellExecuteHookW*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPSHELLEXECUTEINFOW) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellExecuteHookW*, void*, int> Execute;
+        public delegate* unmanaged<TSelf*, void*, int> Execute;
     }
 }

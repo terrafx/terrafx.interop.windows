@@ -62,21 +62,22 @@ public unsafe partial struct IBurnVerification : IBurnVerification.Interface
         HRESULT get_BurnVerificationLevel(IMAPI_BURN_VERIFICATION_LEVEL* value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBurnVerification*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBurnVerification*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBurnVerification*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMAPI_BURN_VERIFICATION_LEVEL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBurnVerification*, IMAPI_BURN_VERIFICATION_LEVEL, int> put_BurnVerificationLevel;
+        public delegate* unmanaged<TSelf*, IMAPI_BURN_VERIFICATION_LEVEL, int> put_BurnVerificationLevel;
 
         [NativeTypeName("HRESULT (IMAPI_BURN_VERIFICATION_LEVEL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBurnVerification*, IMAPI_BURN_VERIFICATION_LEVEL*, int> get_BurnVerificationLevel;
+        public delegate* unmanaged<TSelf*, IMAPI_BURN_VERIFICATION_LEVEL*, int> get_BurnVerificationLevel;
     }
 }

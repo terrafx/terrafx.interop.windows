@@ -104,33 +104,34 @@ public unsafe partial struct IMalloc : IMalloc.Interface
         void HeapMinimize();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMalloc*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMalloc*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMalloc*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void *(SIZE_T) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMalloc*, nuint, void*> Alloc;
+        public delegate* unmanaged<TSelf*, nuint, void*> Alloc;
 
         [NativeTypeName("void *(void *, SIZE_T) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMalloc*, void*, nuint, void*> Realloc;
+        public delegate* unmanaged<TSelf*, void*, nuint, void*> Realloc;
 
         [NativeTypeName("void (void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMalloc*, void*, void> Free;
+        public delegate* unmanaged<TSelf*, void*, void> Free;
 
         [NativeTypeName("SIZE_T (void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMalloc*, void*, nuint> GetSize;
+        public delegate* unmanaged<TSelf*, void*, nuint> GetSize;
 
         [NativeTypeName("int (void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMalloc*, void*, int> DidAlloc;
+        public delegate* unmanaged<TSelf*, void*, int> DidAlloc;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMalloc*, void> HeapMinimize;
+        public delegate* unmanaged<TSelf*, void> HeapMinimize;
     }
 }

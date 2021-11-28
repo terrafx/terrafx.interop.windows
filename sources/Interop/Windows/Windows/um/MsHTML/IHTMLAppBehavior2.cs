@@ -170,57 +170,58 @@ public unsafe partial struct IHTMLAppBehavior2 : IHTMLAppBehavior2.Interface
         HRESULT get_selection([NativeTypeName("BSTR *")] ushort** p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAppBehavior2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAppBehavior2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAppBehavior2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAppBehavior2*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAppBehavior2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAppBehavior2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAppBehavior2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAppBehavior2*, ushort*, int> put_contextMenu;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_contextMenu;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAppBehavior2*, ushort**, int> get_contextMenu;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_contextMenu;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAppBehavior2*, ushort*, int> put_innerBorder;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_innerBorder;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAppBehavior2*, ushort**, int> get_innerBorder;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_innerBorder;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAppBehavior2*, ushort*, int> put_scroll;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_scroll;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAppBehavior2*, ushort**, int> get_scroll;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_scroll;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAppBehavior2*, ushort*, int> put_scrollFlat;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_scrollFlat;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAppBehavior2*, ushort**, int> get_scrollFlat;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_scrollFlat;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAppBehavior2*, ushort*, int> put_selection;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_selection;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLAppBehavior2*, ushort**, int> get_selection;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_selection;
     }
 }

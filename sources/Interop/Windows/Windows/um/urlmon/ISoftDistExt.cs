@@ -82,27 +82,28 @@ public unsafe partial struct ISoftDistExt : ISoftDistExt.Interface
         HRESULT AsyncInstallDistributionUnit(IBindCtx* pbc, [NativeTypeName("LPVOID")] void* pvReserved, [NativeTypeName("DWORD")] uint flags, [NativeTypeName("LPCODEBASEHOLD")] CODEBASEHOLD* lpcbh);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISoftDistExt*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISoftDistExt*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISoftDistExt*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IXMLElement *, LPSOFTDISTINFO) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISoftDistExt*, ushort*, IXMLElement*, SOFTDISTINFO*, int> ProcessSoftDist;
+        public delegate* unmanaged<TSelf*, ushort*, IXMLElement*, SOFTDISTINFO*, int> ProcessSoftDist;
 
         [NativeTypeName("HRESULT (LPWSTR *, LPDWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISoftDistExt*, ushort**, uint*, int> GetFirstCodeBase;
+        public delegate* unmanaged<TSelf*, ushort**, uint*, int> GetFirstCodeBase;
 
         [NativeTypeName("HRESULT (LPWSTR *, LPDWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISoftDistExt*, ushort**, uint*, int> GetNextCodeBase;
+        public delegate* unmanaged<TSelf*, ushort**, uint*, int> GetNextCodeBase;
 
         [NativeTypeName("HRESULT (IBindCtx *, LPVOID, DWORD, LPCODEBASEHOLD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISoftDistExt*, IBindCtx*, void*, uint, CODEBASEHOLD*, int> AsyncInstallDistributionUnit;
+        public delegate* unmanaged<TSelf*, IBindCtx*, void*, uint, CODEBASEHOLD*, int> AsyncInstallDistributionUnit;
     }
 }

@@ -76,24 +76,25 @@ public unsafe partial struct ISurfaceImageSourceNative : ISurfaceImageSourceNati
         HRESULT EndDraw();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfaceImageSourceNative*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfaceImageSourceNative*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfaceImageSourceNative*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDXGIDevice *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfaceImageSourceNative*, IDXGIDevice*, int> SetDevice;
+        public delegate* unmanaged<TSelf*, IDXGIDevice*, int> SetDevice;
 
         [NativeTypeName("HRESULT (RECT, IDXGISurface **, POINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfaceImageSourceNative*, RECT, IDXGISurface**, POINT*, int> BeginDraw;
+        public delegate* unmanaged<TSelf*, RECT, IDXGISurface**, POINT*, int> BeginDraw;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfaceImageSourceNative*, int> EndDraw;
+        public delegate* unmanaged<TSelf*, int> EndDraw;
     }
 }

@@ -62,21 +62,22 @@ public unsafe partial struct IRpcHelper : IRpcHelper.Interface
         HRESULT GetIIDFromOBJREF(void* pObjRef, [NativeTypeName("IID **")] Guid** piid);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcHelper*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcHelper*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcHelper*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcHelper*, uint*, int> GetDCOMProtocolVersion;
+        public delegate* unmanaged<TSelf*, uint*, int> GetDCOMProtocolVersion;
 
         [NativeTypeName("HRESULT (void *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcHelper*, void*, Guid**, int> GetIIDFromOBJREF;
+        public delegate* unmanaged<TSelf*, void*, Guid**, int> GetIIDFromOBJREF;
     }
 }

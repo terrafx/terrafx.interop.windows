@@ -93,33 +93,34 @@ public unsafe partial struct IOleItemContainer : IOleItemContainer.Interface
         HRESULT IsRunning([NativeTypeName("LPOLESTR")] ushort* pszItem);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleItemContainer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleItemContainer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleItemContainer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IBindCtx *, LPOLESTR, ULONG *, IMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleItemContainer*, IBindCtx*, ushort*, uint*, IMoniker**, int> ParseDisplayName;
+        public delegate* unmanaged<TSelf*, IBindCtx*, ushort*, uint*, IMoniker**, int> ParseDisplayName;
 
         [NativeTypeName("HRESULT (DWORD, IEnumUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleItemContainer*, uint, IEnumUnknown**, int> EnumObjects;
+        public delegate* unmanaged<TSelf*, uint, IEnumUnknown**, int> EnumObjects;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleItemContainer*, BOOL, int> LockContainer;
+        public delegate* unmanaged<TSelf*, BOOL, int> LockContainer;
 
         [NativeTypeName("HRESULT (LPOLESTR, DWORD, IBindCtx *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleItemContainer*, ushort*, uint, IBindCtx*, Guid*, void**, int> GetObject;
+        public delegate* unmanaged<TSelf*, ushort*, uint, IBindCtx*, Guid*, void**, int> GetObject;
 
         [NativeTypeName("HRESULT (LPOLESTR, IBindCtx *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleItemContainer*, ushort*, IBindCtx*, Guid*, void**, int> GetObjectStorage;
+        public delegate* unmanaged<TSelf*, ushort*, IBindCtx*, Guid*, void**, int> GetObjectStorage;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleItemContainer*, ushort*, int> IsRunning;
+        public delegate* unmanaged<TSelf*, ushort*, int> IsRunning;
     }
 }

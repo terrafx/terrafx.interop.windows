@@ -81,27 +81,28 @@ public unsafe partial struct IDirectDrawPalette : IDirectDrawPalette.Interface
         HRESULT SetEntries([NativeTypeName("DWORD")] uint param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPPALETTEENTRY")] PALETTEENTRY* param3);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawPalette*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawPalette*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawPalette*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPDWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawPalette*, uint*, int> GetCaps;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCaps;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, LPPALETTEENTRY) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawPalette*, uint, uint, uint, PALETTEENTRY*, int> GetEntries;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, PALETTEENTRY*, int> GetEntries;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAW, DWORD, LPPALETTEENTRY) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawPalette*, IDirectDraw*, uint, PALETTEENTRY*, int> Initialize;
+        public delegate* unmanaged<TSelf*, IDirectDraw*, uint, PALETTEENTRY*, int> Initialize;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, LPPALETTEENTRY) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawPalette*, uint, uint, uint, PALETTEENTRY*, int> SetEntries;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, PALETTEENTRY*, int> SetEntries;
     }
 }

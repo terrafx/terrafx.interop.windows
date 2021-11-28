@@ -95,36 +95,37 @@ public unsafe partial struct CIE4ConnectionPoint : CIE4ConnectionPoint.Interface
         HRESULT DoInvokePIDLIE4([NativeTypeName("DISPID")] int dispid, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, BOOL fCanCancel);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<CIE4ConnectionPoint*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<CIE4ConnectionPoint*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<CIE4ConnectionPoint*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<CIE4ConnectionPoint*, Guid*, int> GetConnectionInterface;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetConnectionInterface;
 
         [NativeTypeName("HRESULT (IConnectionPointContainer **) __attribute__((stdcall))")]
-        public delegate* unmanaged<CIE4ConnectionPoint*, IConnectionPointContainer**, int> GetConnectionPointContainer;
+        public delegate* unmanaged<TSelf*, IConnectionPointContainer**, int> GetConnectionPointContainer;
 
         [NativeTypeName("HRESULT (IUnknown *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<CIE4ConnectionPoint*, IUnknown*, uint*, int> Advise;
+        public delegate* unmanaged<TSelf*, IUnknown*, uint*, int> Advise;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<CIE4ConnectionPoint*, uint, int> Unadvise;
+        public delegate* unmanaged<TSelf*, uint, int> Unadvise;
 
         [NativeTypeName("HRESULT (IEnumConnections **) __attribute__((stdcall))")]
-        public delegate* unmanaged<CIE4ConnectionPoint*, IEnumConnections**, int> EnumConnections;
+        public delegate* unmanaged<TSelf*, IEnumConnections**, int> EnumConnections;
 
         [NativeTypeName("HRESULT (BOOL *, void **, DISPID, DISPPARAMS *)")]
-        public delegate* unmanaged<CIE4ConnectionPoint*, BOOL*, void**, int, DISPPARAMS*, int> DoInvokeIE4;
+        public delegate* unmanaged<TSelf*, BOOL*, void**, int, DISPPARAMS*, int> DoInvokeIE4;
 
         [NativeTypeName("HRESULT (DISPID, LPCITEMIDLIST, BOOL)")]
-        public delegate* unmanaged<CIE4ConnectionPoint*, int, ITEMIDLIST*, BOOL, int> DoInvokePIDLIE4;
+        public delegate* unmanaged<TSelf*, int, ITEMIDLIST*, BOOL, int> DoInvokePIDLIE4;
     }
 }

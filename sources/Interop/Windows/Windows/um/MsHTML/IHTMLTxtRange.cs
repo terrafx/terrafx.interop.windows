@@ -370,117 +370,118 @@ public unsafe partial struct IHTMLTxtRange : IHTMLTxtRange.Interface
         HRESULT execCommandShowHelp([NativeTypeName("BSTR")] ushort* cmdID, [NativeTypeName("VARIANT_BOOL *")] short* pfRet);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, ushort**, int> get_htmlText;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_htmlText;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, ushort*, int> put_text;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_text;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, ushort**, int> get_text;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_text;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, IHTMLElement**, int> parentElement;
+        public delegate* unmanaged<TSelf*, IHTMLElement**, int> parentElement;
 
         [NativeTypeName("HRESULT (IHTMLTxtRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, IHTMLTxtRange**, int> duplicate;
+        public delegate* unmanaged<TSelf*, IHTMLTxtRange**, int> duplicate;
 
         [NativeTypeName("HRESULT (IHTMLTxtRange *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, IHTMLTxtRange*, short*, int> inRange;
+        public delegate* unmanaged<TSelf*, IHTMLTxtRange*, short*, int> inRange;
 
         [NativeTypeName("HRESULT (IHTMLTxtRange *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, IHTMLTxtRange*, short*, int> isEqual;
+        public delegate* unmanaged<TSelf*, IHTMLTxtRange*, short*, int> isEqual;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, short, int> scrollIntoView;
+        public delegate* unmanaged<TSelf*, short, int> scrollIntoView;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, short, int> collapse;
+        public delegate* unmanaged<TSelf*, short, int> collapse;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, ushort*, short*, int> expand;
+        public delegate* unmanaged<TSelf*, ushort*, short*, int> expand;
 
         [NativeTypeName("HRESULT (BSTR, long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, ushort*, int, int*, int> move;
+        public delegate* unmanaged<TSelf*, ushort*, int, int*, int> move;
 
         [NativeTypeName("HRESULT (BSTR, long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, ushort*, int, int*, int> moveStart;
+        public delegate* unmanaged<TSelf*, ushort*, int, int*, int> moveStart;
 
         [NativeTypeName("HRESULT (BSTR, long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, ushort*, int, int*, int> moveEnd;
+        public delegate* unmanaged<TSelf*, ushort*, int, int*, int> moveEnd;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, int> select;
+        public delegate* unmanaged<TSelf*, int> select;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, ushort*, int> pasteHTML;
+        public delegate* unmanaged<TSelf*, ushort*, int> pasteHTML;
 
         [NativeTypeName("HRESULT (IHTMLElement *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, IHTMLElement*, int> moveToElementText;
+        public delegate* unmanaged<TSelf*, IHTMLElement*, int> moveToElementText;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLTxtRange *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, ushort*, IHTMLTxtRange*, int> setEndPoint;
+        public delegate* unmanaged<TSelf*, ushort*, IHTMLTxtRange*, int> setEndPoint;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLTxtRange *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, ushort*, IHTMLTxtRange*, int*, int> compareEndPoints;
+        public delegate* unmanaged<TSelf*, ushort*, IHTMLTxtRange*, int*, int> compareEndPoints;
 
         [NativeTypeName("HRESULT (BSTR, long, long, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, ushort*, int, int, short*, int> findText;
+        public delegate* unmanaged<TSelf*, ushort*, int, int, short*, int> findText;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, int, int, int> moveToPoint;
+        public delegate* unmanaged<TSelf*, int, int, int> moveToPoint;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, ushort**, int> getBookmark;
+        public delegate* unmanaged<TSelf*, ushort**, int> getBookmark;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, ushort*, short*, int> moveToBookmark;
+        public delegate* unmanaged<TSelf*, ushort*, short*, int> moveToBookmark;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, ushort*, short*, int> queryCommandSupported;
+        public delegate* unmanaged<TSelf*, ushort*, short*, int> queryCommandSupported;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, ushort*, short*, int> queryCommandEnabled;
+        public delegate* unmanaged<TSelf*, ushort*, short*, int> queryCommandEnabled;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, ushort*, short*, int> queryCommandState;
+        public delegate* unmanaged<TSelf*, ushort*, short*, int> queryCommandState;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, ushort*, short*, int> queryCommandIndeterm;
+        public delegate* unmanaged<TSelf*, ushort*, short*, int> queryCommandIndeterm;
 
         [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, ushort*, ushort**, int> queryCommandText;
+        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> queryCommandText;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, ushort*, VARIANT*, int> queryCommandValue;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> queryCommandValue;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, ushort*, short, VARIANT, short*, int> execCommand;
+        public delegate* unmanaged<TSelf*, ushort*, short, VARIANT, short*, int> execCommand;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTxtRange*, ushort*, short*, int> execCommandShowHelp;
+        public delegate* unmanaged<TSelf*, ushort*, short*, int> execCommandShowHelp;
     }
 }

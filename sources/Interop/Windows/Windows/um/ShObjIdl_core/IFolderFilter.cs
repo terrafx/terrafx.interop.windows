@@ -62,21 +62,22 @@ public unsafe partial struct IFolderFilter : IFolderFilter.Interface
         HRESULT GetEnumFlags(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, HWND* phwnd, [NativeTypeName("DWORD *")] uint* pgrfFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderFilter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderFilter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderFilter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST, LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderFilter*, IShellFolder*, ITEMIDLIST*, ITEMIDLIST*, int> ShouldShow;
+        public delegate* unmanaged<TSelf*, IShellFolder*, ITEMIDLIST*, ITEMIDLIST*, int> ShouldShow;
 
         [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST, HWND *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderFilter*, IShellFolder*, ITEMIDLIST*, HWND*, uint*, int> GetEnumFlags;
+        public delegate* unmanaged<TSelf*, IShellFolder*, ITEMIDLIST*, HWND*, uint*, int> GetEnumFlags;
     }
 }

@@ -102,33 +102,34 @@ public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface
         HRESULT GetFrameRateList(IPin* pPin, [NativeTypeName("long")] int iIndex, SIZE Dimensions, [NativeTypeName("long *")] int* ListSize, [NativeTypeName("LONGLONG **")] long** FrameRates);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IPin *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoControl*, IPin*, int*, int> GetCaps;
+        public delegate* unmanaged<TSelf*, IPin*, int*, int> GetCaps;
 
         [NativeTypeName("HRESULT (IPin *, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoControl*, IPin*, int, int> SetMode;
+        public delegate* unmanaged<TSelf*, IPin*, int, int> SetMode;
 
         [NativeTypeName("HRESULT (IPin *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoControl*, IPin*, int*, int> GetMode;
+        public delegate* unmanaged<TSelf*, IPin*, int*, int> GetMode;
 
         [NativeTypeName("HRESULT (IPin *, LONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoControl*, IPin*, long*, int> GetCurrentActualFrameRate;
+        public delegate* unmanaged<TSelf*, IPin*, long*, int> GetCurrentActualFrameRate;
 
         [NativeTypeName("HRESULT (IPin *, long, SIZE, LONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoControl*, IPin*, int, SIZE, long*, int> GetMaxAvailableFrameRate;
+        public delegate* unmanaged<TSelf*, IPin*, int, SIZE, long*, int> GetMaxAvailableFrameRate;
 
         [NativeTypeName("HRESULT (IPin *, long, SIZE, long *, LONGLONG **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoControl*, IPin*, int, SIZE, int*, long**, int> GetFrameRateList;
+        public delegate* unmanaged<TSelf*, IPin*, int, SIZE, int*, long**, int> GetFrameRateList;
     }
 }

@@ -342,135 +342,136 @@ public unsafe partial struct IDWriteTextFormat3 : IDWriteTextFormat3.Interface
         HRESULT SetAutomaticFontAxes(DWRITE_AUTOMATIC_FONT_AXES automaticFontAxes);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWRITE_TEXT_ALIGNMENT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, DWRITE_TEXT_ALIGNMENT, int> SetTextAlignment;
+        public delegate* unmanaged<TSelf*, DWRITE_TEXT_ALIGNMENT, int> SetTextAlignment;
 
         [NativeTypeName("HRESULT (DWRITE_PARAGRAPH_ALIGNMENT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, DWRITE_PARAGRAPH_ALIGNMENT, int> SetParagraphAlignment;
+        public delegate* unmanaged<TSelf*, DWRITE_PARAGRAPH_ALIGNMENT, int> SetParagraphAlignment;
 
         [NativeTypeName("HRESULT (DWRITE_WORD_WRAPPING) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, DWRITE_WORD_WRAPPING, int> SetWordWrapping;
+        public delegate* unmanaged<TSelf*, DWRITE_WORD_WRAPPING, int> SetWordWrapping;
 
         [NativeTypeName("HRESULT (DWRITE_READING_DIRECTION) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, DWRITE_READING_DIRECTION, int> SetReadingDirection;
+        public delegate* unmanaged<TSelf*, DWRITE_READING_DIRECTION, int> SetReadingDirection;
 
         [NativeTypeName("HRESULT (DWRITE_FLOW_DIRECTION) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, DWRITE_FLOW_DIRECTION, int> SetFlowDirection;
+        public delegate* unmanaged<TSelf*, DWRITE_FLOW_DIRECTION, int> SetFlowDirection;
 
         [NativeTypeName("HRESULT (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, float, int> SetIncrementalTabStop;
+        public delegate* unmanaged<TSelf*, float, int> SetIncrementalTabStop;
 
         [NativeTypeName("HRESULT (const DWRITE_TRIMMING *, IDWriteInlineObject *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, DWRITE_TRIMMING*, IDWriteInlineObject*, int> SetTrimming;
+        public delegate* unmanaged<TSelf*, DWRITE_TRIMMING*, IDWriteInlineObject*, int> SetTrimming;
 
         [NativeTypeName("HRESULT (DWRITE_LINE_SPACING_METHOD, FLOAT, FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, DWRITE_LINE_SPACING_METHOD, float, float, int> SetLineSpacing;
+        public delegate* unmanaged<TSelf*, DWRITE_LINE_SPACING_METHOD, float, float, int> SetLineSpacing;
 
         [NativeTypeName("DWRITE_TEXT_ALIGNMENT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat3*, DWRITE_TEXT_ALIGNMENT> GetTextAlignment;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_TEXT_ALIGNMENT> GetTextAlignment;
 
         [NativeTypeName("DWRITE_PARAGRAPH_ALIGNMENT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat3*, DWRITE_PARAGRAPH_ALIGNMENT> GetParagraphAlignment;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_PARAGRAPH_ALIGNMENT> GetParagraphAlignment;
 
         [NativeTypeName("DWRITE_WORD_WRAPPING () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat3*, DWRITE_WORD_WRAPPING> GetWordWrapping;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_WORD_WRAPPING> GetWordWrapping;
 
         [NativeTypeName("DWRITE_READING_DIRECTION () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat3*, DWRITE_READING_DIRECTION> GetReadingDirection;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_READING_DIRECTION> GetReadingDirection;
 
         [NativeTypeName("DWRITE_FLOW_DIRECTION () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat3*, DWRITE_FLOW_DIRECTION> GetFlowDirection;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_FLOW_DIRECTION> GetFlowDirection;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat3*, float> GetIncrementalTabStop;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, float> GetIncrementalTabStop;
 
         [NativeTypeName("HRESULT (DWRITE_TRIMMING *, IDWriteInlineObject **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, DWRITE_TRIMMING*, IDWriteInlineObject**, int> GetTrimming;
+        public delegate* unmanaged<TSelf*, DWRITE_TRIMMING*, IDWriteInlineObject**, int> GetTrimming;
 
         [NativeTypeName("HRESULT (DWRITE_LINE_SPACING_METHOD *, FLOAT *, FLOAT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat3*, DWRITE_LINE_SPACING_METHOD*, float*, float*, int> GetLineSpacing;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_LINE_SPACING_METHOD*, float*, float*, int> GetLineSpacing;
 
         [NativeTypeName("HRESULT (IDWriteFontCollection **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, IDWriteFontCollection**, int> GetFontCollection;
+        public delegate* unmanaged<TSelf*, IDWriteFontCollection**, int> GetFontCollection;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, uint> GetFontFamilyNameLength;
+        public delegate* unmanaged<TSelf*, uint> GetFontFamilyNameLength;
 
         [NativeTypeName("HRESULT (WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, ushort*, uint, int> GetFontFamilyName;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> GetFontFamilyName;
 
         [NativeTypeName("DWRITE_FONT_WEIGHT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat3*, DWRITE_FONT_WEIGHT> GetFontWeight;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_FONT_WEIGHT> GetFontWeight;
 
         [NativeTypeName("DWRITE_FONT_STYLE () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat3*, DWRITE_FONT_STYLE> GetFontStyle;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_FONT_STYLE> GetFontStyle;
 
         [NativeTypeName("DWRITE_FONT_STRETCH () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat3*, DWRITE_FONT_STRETCH> GetFontStretch;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_FONT_STRETCH> GetFontStretch;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat3*, float> GetFontSize;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, float> GetFontSize;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, uint> GetLocaleNameLength;
+        public delegate* unmanaged<TSelf*, uint> GetLocaleNameLength;
 
         [NativeTypeName("HRESULT (WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, ushort*, uint, int> GetLocaleName;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> GetLocaleName;
 
         [NativeTypeName("HRESULT (DWRITE_VERTICAL_GLYPH_ORIENTATION) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, DWRITE_VERTICAL_GLYPH_ORIENTATION, int> SetVerticalGlyphOrientation;
+        public delegate* unmanaged<TSelf*, DWRITE_VERTICAL_GLYPH_ORIENTATION, int> SetVerticalGlyphOrientation;
 
         [NativeTypeName("DWRITE_VERTICAL_GLYPH_ORIENTATION () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat3*, DWRITE_VERTICAL_GLYPH_ORIENTATION> GetVerticalGlyphOrientation;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_VERTICAL_GLYPH_ORIENTATION> GetVerticalGlyphOrientation;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, BOOL, int> SetLastLineWrapping;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetLastLineWrapping;
 
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat3*, int> GetLastLineWrapping;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, int> GetLastLineWrapping;
 
         [NativeTypeName("HRESULT (DWRITE_OPTICAL_ALIGNMENT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, DWRITE_OPTICAL_ALIGNMENT, int> SetOpticalAlignment;
+        public delegate* unmanaged<TSelf*, DWRITE_OPTICAL_ALIGNMENT, int> SetOpticalAlignment;
 
         [NativeTypeName("DWRITE_OPTICAL_ALIGNMENT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat3*, DWRITE_OPTICAL_ALIGNMENT> GetOpticalAlignment;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_OPTICAL_ALIGNMENT> GetOpticalAlignment;
 
         [NativeTypeName("HRESULT (IDWriteFontFallback *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, IDWriteFontFallback*, int> SetFontFallback;
+        public delegate* unmanaged<TSelf*, IDWriteFontFallback*, int> SetFontFallback;
 
         [NativeTypeName("HRESULT (IDWriteFontFallback **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, IDWriteFontFallback**, int> GetFontFallback;
+        public delegate* unmanaged<TSelf*, IDWriteFontFallback**, int> GetFontFallback;
 
         [NativeTypeName("HRESULT (const DWRITE_LINE_SPACING *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, DWRITE_LINE_SPACING*, int> SetLineSpacing1;
+        public delegate* unmanaged<TSelf*, DWRITE_LINE_SPACING*, int> SetLineSpacing1;
 
         [NativeTypeName("HRESULT (DWRITE_LINE_SPACING *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat3*, DWRITE_LINE_SPACING*, int> GetLineSpacing1;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_LINE_SPACING*, int> GetLineSpacing1;
 
         [NativeTypeName("HRESULT (const DWRITE_FONT_AXIS_VALUE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, DWRITE_FONT_AXIS_VALUE*, uint, int> SetFontAxisValues;
+        public delegate* unmanaged<TSelf*, DWRITE_FONT_AXIS_VALUE*, uint, int> SetFontAxisValues;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat3*, uint> GetFontAxisValueCount;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetFontAxisValueCount;
 
         [NativeTypeName("HRESULT (DWRITE_FONT_AXIS_VALUE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, DWRITE_FONT_AXIS_VALUE*, uint, int> GetFontAxisValues;
+        public delegate* unmanaged<TSelf*, DWRITE_FONT_AXIS_VALUE*, uint, int> GetFontAxisValues;
 
         [NativeTypeName("DWRITE_AUTOMATIC_FONT_AXES () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextFormat3*, DWRITE_AUTOMATIC_FONT_AXES> GetAutomaticFontAxes;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_AUTOMATIC_FONT_AXES> GetAutomaticFontAxes;
 
         [NativeTypeName("HRESULT (DWRITE_AUTOMATIC_FONT_AXES) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextFormat3*, DWRITE_AUTOMATIC_FONT_AXES, int> SetAutomaticFontAxes;
+        public delegate* unmanaged<TSelf*, DWRITE_AUTOMATIC_FONT_AXES, int> SetAutomaticFontAxes;
     }
 }

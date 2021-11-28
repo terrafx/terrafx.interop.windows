@@ -74,24 +74,25 @@ public unsafe partial struct ID2D1GradientMesh : ID2D1GradientMesh.Interface
         HRESULT GetPatches([NativeTypeName("UINT32")] uint startIndex, D2D1_GRADIENT_MESH_PATCH* patches, [NativeTypeName("UINT32")] uint patchesCount);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GradientMesh*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GradientMesh*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GradientMesh*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GradientMesh*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1GradientMesh*, uint> GetPatchCount;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetPatchCount;
 
         [NativeTypeName("HRESULT (UINT32, D2D1_GRADIENT_MESH_PATCH *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GradientMesh*, uint, D2D1_GRADIENT_MESH_PATCH*, uint, int> GetPatches;
+        public delegate* unmanaged<TSelf*, uint, D2D1_GRADIENT_MESH_PATCH*, uint, int> GetPatches;
     }
 }

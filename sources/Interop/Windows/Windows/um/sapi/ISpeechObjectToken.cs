@@ -200,66 +200,67 @@ public unsafe partial struct ISpeechObjectToken : ISpeechObjectToken.Interface
         HRESULT MatchesAttributes([NativeTypeName("BSTR")] ushort* Attributes, [NativeTypeName("VARIANT_BOOL *")] short* Matches);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechObjectToken*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechObjectToken*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechObjectToken*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechObjectToken*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechObjectToken*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechObjectToken*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechObjectToken*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechObjectToken*, ushort**, int> get_Id;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_Id;
 
         [NativeTypeName("HRESULT (ISpeechDataKey **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechObjectToken*, ISpeechDataKey**, int> get_DataKey;
+        public delegate* unmanaged<TSelf*, ISpeechDataKey**, int> get_DataKey;
 
         [NativeTypeName("HRESULT (ISpeechObjectTokenCategory **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechObjectToken*, ISpeechObjectTokenCategory**, int> get_Category;
+        public delegate* unmanaged<TSelf*, ISpeechObjectTokenCategory**, int> get_Category;
 
         [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechObjectToken*, int, ushort**, int> GetDescription;
+        public delegate* unmanaged<TSelf*, int, ushort**, int> GetDescription;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechObjectToken*, ushort*, ushort*, short, int> SetId;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, short, int> SetId;
 
         [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechObjectToken*, ushort*, ushort**, int> GetAttribute;
+        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> GetAttribute;
 
         [NativeTypeName("HRESULT (IUnknown *, SpeechTokenContext, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechObjectToken*, IUnknown*, SpeechTokenContext, IUnknown**, int> CreateInstance;
+        public delegate* unmanaged<TSelf*, IUnknown*, SpeechTokenContext, IUnknown**, int> CreateInstance;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechObjectToken*, ushort*, int> Remove;
+        public delegate* unmanaged<TSelf*, ushort*, int> Remove;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, BSTR, SpeechTokenShellFolder, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechObjectToken*, ushort*, ushort*, ushort*, SpeechTokenShellFolder, ushort**, int> GetStorageFileName;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, SpeechTokenShellFolder, ushort**, int> GetStorageFileName;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechObjectToken*, ushort*, ushort*, short, int> RemoveStorageFileName;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, short, int> RemoveStorageFileName;
 
         [NativeTypeName("HRESULT (const BSTR, const VARIANT *, IUnknown *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechObjectToken*, ushort*, VARIANT*, IUnknown*, short*, int> IsUISupported;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, IUnknown*, short*, int> IsUISupported;
 
         [NativeTypeName("HRESULT (long, BSTR, const BSTR, const VARIANT *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechObjectToken*, int, ushort*, ushort*, VARIANT*, IUnknown*, int> DisplayUI;
+        public delegate* unmanaged<TSelf*, int, ushort*, ushort*, VARIANT*, IUnknown*, int> DisplayUI;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechObjectToken*, ushort*, short*, int> MatchesAttributes;
+        public delegate* unmanaged<TSelf*, ushort*, short*, int> MatchesAttributes;
     }
 }

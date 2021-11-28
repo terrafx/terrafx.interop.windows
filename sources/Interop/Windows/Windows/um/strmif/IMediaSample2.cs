@@ -176,69 +176,70 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
         HRESULT SetProperties([NativeTypeName("DWORD")] uint cbProperties, [NativeTypeName("const BYTE *")] byte* pbProperties);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2*, byte**, int> GetPointer;
+        public delegate* unmanaged<TSelf*, byte**, int> GetPointer;
 
         [NativeTypeName("long () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2*, int> GetSize;
+        public delegate* unmanaged<TSelf*, int> GetSize;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME *, REFERENCE_TIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2*, long*, long*, int> GetTime;
+        public delegate* unmanaged<TSelf*, long*, long*, int> GetTime;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME *, REFERENCE_TIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2*, long*, long*, int> SetTime;
+        public delegate* unmanaged<TSelf*, long*, long*, int> SetTime;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2*, int> IsSyncPoint;
+        public delegate* unmanaged<TSelf*, int> IsSyncPoint;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2*, BOOL, int> SetSyncPoint;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetSyncPoint;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2*, int> IsPreroll;
+        public delegate* unmanaged<TSelf*, int> IsPreroll;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2*, BOOL, int> SetPreroll;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetPreroll;
 
         [NativeTypeName("long () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2*, int> GetActualDataLength;
+        public delegate* unmanaged<TSelf*, int> GetActualDataLength;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2*, int, int> SetActualDataLength;
+        public delegate* unmanaged<TSelf*, int, int> SetActualDataLength;
 
         [NativeTypeName("HRESULT (AM_MEDIA_TYPE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2*, AM_MEDIA_TYPE**, int> GetMediaType;
+        public delegate* unmanaged<TSelf*, AM_MEDIA_TYPE**, int> GetMediaType;
 
         [NativeTypeName("HRESULT (AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2*, AM_MEDIA_TYPE*, int> SetMediaType;
+        public delegate* unmanaged<TSelf*, AM_MEDIA_TYPE*, int> SetMediaType;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2*, int> IsDiscontinuity;
+        public delegate* unmanaged<TSelf*, int> IsDiscontinuity;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2*, BOOL, int> SetDiscontinuity;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetDiscontinuity;
 
         [NativeTypeName("HRESULT (LONGLONG *, LONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2*, long*, long*, int> GetMediaTime;
+        public delegate* unmanaged<TSelf*, long*, long*, int> GetMediaTime;
 
         [NativeTypeName("HRESULT (LONGLONG *, LONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2*, long*, long*, int> SetMediaTime;
+        public delegate* unmanaged<TSelf*, long*, long*, int> SetMediaTime;
 
         [NativeTypeName("HRESULT (DWORD, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2*, uint, byte*, int> GetProperties;
+        public delegate* unmanaged<TSelf*, uint, byte*, int> GetProperties;
 
         [NativeTypeName("HRESULT (DWORD, const BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaSample2*, uint, byte*, int> SetProperties;
+        public delegate* unmanaged<TSelf*, uint, byte*, int> SetProperties;
     }
 }

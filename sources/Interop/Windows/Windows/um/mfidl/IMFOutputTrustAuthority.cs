@@ -62,21 +62,22 @@ public unsafe partial struct IMFOutputTrustAuthority : IMFOutputTrustAuthority.I
         HRESULT SetPolicy(IMFOutputPolicy** ppPolicy, [NativeTypeName("DWORD")] uint nPolicy, byte** ppbTicket, [NativeTypeName("DWORD *")] uint* pcbTicket);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFOutputTrustAuthority*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFOutputTrustAuthority*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFOutputTrustAuthority*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MFPOLICYMANAGER_ACTION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFOutputTrustAuthority*, MFPOLICYMANAGER_ACTION*, int> GetAction;
+        public delegate* unmanaged<TSelf*, MFPOLICYMANAGER_ACTION*, int> GetAction;
 
         [NativeTypeName("HRESULT (IMFOutputPolicy **, DWORD, BYTE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFOutputTrustAuthority*, IMFOutputPolicy**, uint, byte**, uint*, int> SetPolicy;
+        public delegate* unmanaged<TSelf*, IMFOutputPolicy**, uint, byte**, uint*, int> SetPolicy;
     }
 }

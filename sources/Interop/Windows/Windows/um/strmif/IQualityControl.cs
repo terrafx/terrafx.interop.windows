@@ -62,21 +62,22 @@ public unsafe partial struct IQualityControl : IQualityControl.Interface
         HRESULT SetSink(IQualityControl* piqc);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQualityControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IQualityControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IQualityControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IBaseFilter *, Quality) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQualityControl*, IBaseFilter*, Quality, int> Notify;
+        public delegate* unmanaged<TSelf*, IBaseFilter*, Quality, int> Notify;
 
         [NativeTypeName("HRESULT (IQualityControl *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQualityControl*, IQualityControl*, int> SetSink;
+        public delegate* unmanaged<TSelf*, IQualityControl*, int> SetSink;
     }
 }

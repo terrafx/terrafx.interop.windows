@@ -53,18 +53,19 @@ public unsafe partial struct IDMLDebugDevice : IDMLDebugDevice.Interface
         void SetMuteDebugOutput(BOOL mute);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDMLDebugDevice*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDMLDebugDevice*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDMLDebugDevice*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDMLDebugDevice*, BOOL, void> SetMuteDebugOutput;
+        public delegate* unmanaged<TSelf*, BOOL, void> SetMuteDebugOutput;
     }
 }

@@ -82,27 +82,28 @@ public unsafe partial struct IEnumConnectionPoints : IEnumConnectionPoints.Inter
         HRESULT Clone(IEnumConnectionPoints** ppEnum);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumConnectionPoints*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumConnectionPoints*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumConnectionPoints*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, LPCONNECTIONPOINT *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumConnectionPoints*, uint, IConnectionPoint**, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, IConnectionPoint**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumConnectionPoints*, uint, int> Skip;
+        public delegate* unmanaged<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumConnectionPoints*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IEnumConnectionPoints **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumConnectionPoints*, IEnumConnectionPoints**, int> Clone;
+        public delegate* unmanaged<TSelf*, IEnumConnectionPoints**, int> Clone;
     }
 }

@@ -52,18 +52,19 @@ public unsafe partial struct IAMDecoderCaps : IAMDecoderCaps.Interface
         HRESULT GetDecoderCaps([NativeTypeName("DWORD")] uint dwCapIndex, [NativeTypeName("DWORD *")] uint* lpdwCap);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDecoderCaps*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDecoderCaps*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDecoderCaps*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDecoderCaps*, uint, uint*, int> GetDecoderCaps;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> GetDecoderCaps;
     }
 }

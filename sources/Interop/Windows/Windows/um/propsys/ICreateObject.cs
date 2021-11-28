@@ -52,18 +52,19 @@ public unsafe partial struct ICreateObject : ICreateObject.Interface
         HRESULT CreateObject([NativeTypeName("const IID &")] Guid* clsid, IUnknown* pUnkOuter, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateObject*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateObject*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateObject*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateObject*, Guid*, IUnknown*, Guid*, void**, int> CreateObject;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, Guid*, void**, int> CreateObject;
     }
 }

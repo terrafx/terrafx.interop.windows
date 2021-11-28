@@ -82,27 +82,28 @@ public unsafe partial struct IDeviceSpecificProperty : IDeviceSpecificProperty.I
         HRESULT Get4BRange([NativeTypeName("LONG *")] int* plMin, [NativeTypeName("LONG *")] int* plMax, [NativeTypeName("LONG *")] int* plStepping);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeviceSpecificProperty*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeviceSpecificProperty*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeviceSpecificProperty*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (VARTYPE *) __attribute__((stdcall))")]
-        public new delegate* unmanaged<IDeviceSpecificProperty*, ushort*, int> GetType;
+        public new delegate* unmanaged<TSelf*, ushort*, int> GetType;
 
         [NativeTypeName("HRESULT (void *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeviceSpecificProperty*, void*, uint*, int> GetValue;
+        public delegate* unmanaged<TSelf*, void*, uint*, int> GetValue;
 
         [NativeTypeName("HRESULT (void *, DWORD, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeviceSpecificProperty*, void*, uint, Guid*, int> SetValue;
+        public delegate* unmanaged<TSelf*, void*, uint, Guid*, int> SetValue;
 
         [NativeTypeName("HRESULT (LONG *, LONG *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeviceSpecificProperty*, int*, int*, int*, int> Get4BRange;
+        public delegate* unmanaged<TSelf*, int*, int*, int*, int> Get4BRange;
     }
 }

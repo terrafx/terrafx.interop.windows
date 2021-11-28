@@ -92,30 +92,31 @@ public unsafe partial struct IScriptEventHandler : IScriptEventHandler.Interface
         HRESULT Cookie([NativeTypeName("ULONGLONG *")] ulong* pullCookie);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptEventHandler*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptEventHandler*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptEventHandler*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptEventHandler*, ushort**, int> FunctionName;
+        public delegate* unmanaged<TSelf*, ushort**, int> FunctionName;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptEventHandler*, IUnknown**, int> DebugDocumentContext;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> DebugDocumentContext;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptEventHandler*, IDispatch**, int> EventHandlerDispatch;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> EventHandlerDispatch;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptEventHandler*, BOOL*, int> UsesCapture;
+        public delegate* unmanaged<TSelf*, BOOL*, int> UsesCapture;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptEventHandler*, ulong*, int> Cookie;
+        public delegate* unmanaged<TSelf*, ulong*, int> Cookie;
     }
 }

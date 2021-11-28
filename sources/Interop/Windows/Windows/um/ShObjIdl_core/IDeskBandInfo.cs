@@ -52,18 +52,19 @@ public unsafe partial struct IDeskBandInfo : IDeskBandInfo.Interface
         HRESULT GetDefaultBandWidth([NativeTypeName("DWORD")] uint dwBandID, [NativeTypeName("DWORD")] uint dwViewMode, int* pnWidth);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeskBandInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeskBandInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeskBandInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeskBandInfo*, uint, uint, int*, int> GetDefaultBandWidth;
+        public delegate* unmanaged<TSelf*, uint, uint, int*, int> GetDefaultBandWidth;
     }
 }

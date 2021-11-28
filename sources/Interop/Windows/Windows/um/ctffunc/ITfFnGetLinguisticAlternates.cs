@@ -61,21 +61,22 @@ public unsafe partial struct ITfFnGetLinguisticAlternates : ITfFnGetLinguisticAl
         HRESULT GetAlternates(ITfRange* pRange, ITfCandidateList** ppCandidateList);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnGetLinguisticAlternates*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnGetLinguisticAlternates*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnGetLinguisticAlternates*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnGetLinguisticAlternates*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (ITfRange *, ITfCandidateList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnGetLinguisticAlternates*, ITfRange*, ITfCandidateList**, int> GetAlternates;
+        public delegate* unmanaged<TSelf*, ITfRange*, ITfCandidateList**, int> GetAlternates;
     }
 }

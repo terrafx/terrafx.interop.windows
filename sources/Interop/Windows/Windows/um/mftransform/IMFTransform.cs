@@ -272,84 +272,85 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         HRESULT ProcessOutput([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint cOutputBufferCount, MFT_OUTPUT_DATA_BUFFER* pOutputSamples, [NativeTypeName("DWORD *")] uint* pdwStatus);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *, DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, uint*, uint*, uint*, uint*, int> GetStreamLimits;
+        public delegate* unmanaged<TSelf*, uint*, uint*, uint*, uint*, int> GetStreamLimits;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, uint*, uint*, int> GetStreamCount;
+        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetStreamCount;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, uint, uint*, uint, uint*, int> GetStreamIDs;
+        public delegate* unmanaged<TSelf*, uint, uint*, uint, uint*, int> GetStreamIDs;
 
         [NativeTypeName("HRESULT (DWORD, MFT_INPUT_STREAM_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, uint, MFT_INPUT_STREAM_INFO*, int> GetInputStreamInfo;
+        public delegate* unmanaged<TSelf*, uint, MFT_INPUT_STREAM_INFO*, int> GetInputStreamInfo;
 
         [NativeTypeName("HRESULT (DWORD, MFT_OUTPUT_STREAM_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, uint, MFT_OUTPUT_STREAM_INFO*, int> GetOutputStreamInfo;
+        public delegate* unmanaged<TSelf*, uint, MFT_OUTPUT_STREAM_INFO*, int> GetOutputStreamInfo;
 
         [NativeTypeName("HRESULT (IMFAttributes **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, IMFAttributes**, int> GetAttributes;
+        public delegate* unmanaged<TSelf*, IMFAttributes**, int> GetAttributes;
 
         [NativeTypeName("HRESULT (DWORD, IMFAttributes **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, uint, IMFAttributes**, int> GetInputStreamAttributes;
+        public delegate* unmanaged<TSelf*, uint, IMFAttributes**, int> GetInputStreamAttributes;
 
         [NativeTypeName("HRESULT (DWORD, IMFAttributes **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, uint, IMFAttributes**, int> GetOutputStreamAttributes;
+        public delegate* unmanaged<TSelf*, uint, IMFAttributes**, int> GetOutputStreamAttributes;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, uint, int> DeleteInputStream;
+        public delegate* unmanaged<TSelf*, uint, int> DeleteInputStream;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, uint, uint*, int> AddInputStreams;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> AddInputStreams;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, uint, uint, IMFMediaType**, int> GetInputAvailableType;
+        public delegate* unmanaged<TSelf*, uint, uint, IMFMediaType**, int> GetInputAvailableType;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, uint, uint, IMFMediaType**, int> GetOutputAvailableType;
+        public delegate* unmanaged<TSelf*, uint, uint, IMFMediaType**, int> GetOutputAvailableType;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, uint, IMFMediaType*, uint, int> SetInputType;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaType*, uint, int> SetInputType;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, uint, IMFMediaType*, uint, int> SetOutputType;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaType*, uint, int> SetOutputType;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, uint, IMFMediaType**, int> GetInputCurrentType;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaType**, int> GetInputCurrentType;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, uint, IMFMediaType**, int> GetOutputCurrentType;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaType**, int> GetOutputCurrentType;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, uint, uint*, int> GetInputStatus;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> GetInputStatus;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, uint*, int> GetOutputStatus;
+        public delegate* unmanaged<TSelf*, uint*, int> GetOutputStatus;
 
         [NativeTypeName("HRESULT (LONGLONG, LONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, long, long, int> SetOutputBounds;
+        public delegate* unmanaged<TSelf*, long, long, int> SetOutputBounds;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaEvent *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, uint, IMFMediaEvent*, int> ProcessEvent;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaEvent*, int> ProcessEvent;
 
         [NativeTypeName("HRESULT (MFT_MESSAGE_TYPE, ULONG_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, MFT_MESSAGE_TYPE, nuint, int> ProcessMessage;
+        public delegate* unmanaged<TSelf*, MFT_MESSAGE_TYPE, nuint, int> ProcessMessage;
 
         [NativeTypeName("HRESULT (DWORD, IMFSample *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, uint, IMFSample*, uint, int> ProcessInput;
+        public delegate* unmanaged<TSelf*, uint, IMFSample*, uint, int> ProcessInput;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, MFT_OUTPUT_DATA_BUFFER *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTransform*, uint, uint, MFT_OUTPUT_DATA_BUFFER*, uint*, int> ProcessOutput;
+        public delegate* unmanaged<TSelf*, uint, uint, MFT_OUTPUT_DATA_BUFFER*, uint*, int> ProcessOutput;
     }
 }

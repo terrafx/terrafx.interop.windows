@@ -202,63 +202,64 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface
         HRESULT Enable(BOOL enable);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWallpaper*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWallpaper*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWallpaper*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWallpaper*, ushort*, ushort*, int> SetWallpaper;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> SetWallpaper;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWallpaper*, ushort*, ushort**, int> GetWallpaper;
+        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> GetWallpaper;
 
         [NativeTypeName("HRESULT (UINT, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWallpaper*, uint, ushort**, int> GetMonitorDevicePathAt;
+        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetMonitorDevicePathAt;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWallpaper*, uint*, int> GetMonitorDevicePathCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetMonitorDevicePathCount;
 
         [NativeTypeName("HRESULT (LPCWSTR, RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWallpaper*, ushort*, RECT*, int> GetMonitorRECT;
+        public delegate* unmanaged<TSelf*, ushort*, RECT*, int> GetMonitorRECT;
 
         [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWallpaper*, COLORREF, int> SetBackgroundColor;
+        public delegate* unmanaged<TSelf*, COLORREF, int> SetBackgroundColor;
 
         [NativeTypeName("HRESULT (COLORREF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWallpaper*, COLORREF*, int> GetBackgroundColor;
+        public delegate* unmanaged<TSelf*, COLORREF*, int> GetBackgroundColor;
 
         [NativeTypeName("HRESULT (DESKTOP_WALLPAPER_POSITION) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWallpaper*, DESKTOP_WALLPAPER_POSITION, int> SetPosition;
+        public delegate* unmanaged<TSelf*, DESKTOP_WALLPAPER_POSITION, int> SetPosition;
 
         [NativeTypeName("HRESULT (DESKTOP_WALLPAPER_POSITION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWallpaper*, DESKTOP_WALLPAPER_POSITION*, int> GetPosition;
+        public delegate* unmanaged<TSelf*, DESKTOP_WALLPAPER_POSITION*, int> GetPosition;
 
         [NativeTypeName("HRESULT (IShellItemArray *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWallpaper*, IShellItemArray*, int> SetSlideshow;
+        public delegate* unmanaged<TSelf*, IShellItemArray*, int> SetSlideshow;
 
         [NativeTypeName("HRESULT (IShellItemArray **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWallpaper*, IShellItemArray**, int> GetSlideshow;
+        public delegate* unmanaged<TSelf*, IShellItemArray**, int> GetSlideshow;
 
         [NativeTypeName("HRESULT (DESKTOP_SLIDESHOW_OPTIONS, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWallpaper*, DESKTOP_SLIDESHOW_OPTIONS, uint, int> SetSlideshowOptions;
+        public delegate* unmanaged<TSelf*, DESKTOP_SLIDESHOW_OPTIONS, uint, int> SetSlideshowOptions;
 
         [NativeTypeName("HRESULT (DESKTOP_SLIDESHOW_OPTIONS *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWallpaper*, DESKTOP_SLIDESHOW_OPTIONS*, uint*, int> GetSlideshowOptions;
+        public delegate* unmanaged<TSelf*, DESKTOP_SLIDESHOW_OPTIONS*, uint*, int> GetSlideshowOptions;
 
         [NativeTypeName("HRESULT (LPCWSTR, DESKTOP_SLIDESHOW_DIRECTION) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWallpaper*, ushort*, DESKTOP_SLIDESHOW_DIRECTION, int> AdvanceSlideshow;
+        public delegate* unmanaged<TSelf*, ushort*, DESKTOP_SLIDESHOW_DIRECTION, int> AdvanceSlideshow;
 
         [NativeTypeName("HRESULT (DESKTOP_SLIDESHOW_STATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWallpaper*, DESKTOP_SLIDESHOW_STATE*, int> GetStatus;
+        public delegate* unmanaged<TSelf*, DESKTOP_SLIDESHOW_STATE*, int> GetStatus;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWallpaper*, BOOL, int> Enable;
+        public delegate* unmanaged<TSelf*, BOOL, int> Enable;
     }
 }

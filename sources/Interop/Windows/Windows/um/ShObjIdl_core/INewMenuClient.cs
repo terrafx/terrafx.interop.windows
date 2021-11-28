@@ -62,21 +62,22 @@ public unsafe partial struct INewMenuClient : INewMenuClient.Interface
         HRESULT SelectAndEditItem([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlItem, [NativeTypeName("NMCSAEI_FLAGS")] int flags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<INewMenuClient*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INewMenuClient*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INewMenuClient*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (NMCII_FLAGS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INewMenuClient*, int*, int> IncludeItems;
+        public delegate* unmanaged<TSelf*, int*, int> IncludeItems;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, NMCSAEI_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<INewMenuClient*, ITEMIDLIST*, int, int> SelectAndEditItem;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, int, int> SelectAndEditItem;
     }
 }

@@ -220,72 +220,73 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         HRESULT send(VARIANT varBody);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXDomainRequest*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXDomainRequest*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXDomainRequest*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXDomainRequest*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXDomainRequest*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXDomainRequest*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXDomainRequest*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXDomainRequest*, ushort**, int> get_responseText;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_responseText;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXDomainRequest*, int, int> put_timeout;
+        public delegate* unmanaged<TSelf*, int, int> put_timeout;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXDomainRequest*, int*, int> get_timeout;
+        public delegate* unmanaged<TSelf*, int*, int> get_timeout;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXDomainRequest*, ushort**, int> get_contentType;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_contentType;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXDomainRequest*, VARIANT, int> put_onprogress;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onprogress;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXDomainRequest*, VARIANT*, int> get_onprogress;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onprogress;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXDomainRequest*, VARIANT, int> put_onerror;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onerror;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXDomainRequest*, VARIANT*, int> get_onerror;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onerror;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXDomainRequest*, VARIANT, int> put_ontimeout;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_ontimeout;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXDomainRequest*, VARIANT*, int> get_ontimeout;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_ontimeout;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXDomainRequest*, VARIANT, int> put_onload;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onload;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXDomainRequest*, VARIANT*, int> get_onload;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onload;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXDomainRequest*, int> abort;
+        public delegate* unmanaged<TSelf*, int> abort;
 
         [NativeTypeName("HRESULT (BSTR, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXDomainRequest*, ushort*, ushort*, int> open;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> open;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXDomainRequest*, VARIANT, int> send;
+        public delegate* unmanaged<TSelf*, VARIANT, int> send;
     }
 }

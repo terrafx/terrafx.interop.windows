@@ -54,18 +54,19 @@ public unsafe partial struct IMFSharingEngineClassFactory : IMFSharingEngineClas
         HRESULT CreateInstance([NativeTypeName("DWORD")] uint dwFlags, IMFAttributes* pAttr, IUnknown** ppEngine);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSharingEngineClassFactory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSharingEngineClassFactory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSharingEngineClassFactory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IMFAttributes *, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSharingEngineClassFactory*, uint, IMFAttributes*, IUnknown**, int> CreateInstance;
+        public delegate* unmanaged<TSelf*, uint, IMFAttributes*, IUnknown**, int> CreateInstance;
     }
 }

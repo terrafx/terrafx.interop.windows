@@ -150,51 +150,52 @@ public unsafe partial struct IHTMLRuleStyle5 : IHTMLRuleStyle5.Interface
         HRESULT get_maxWidth(VARIANT* p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRuleStyle5*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRuleStyle5*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRuleStyle5*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRuleStyle5*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRuleStyle5*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRuleStyle5*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRuleStyle5*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRuleStyle5*, ushort*, int> put_msInterpolationMode;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_msInterpolationMode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRuleStyle5*, ushort**, int> get_msInterpolationMode;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_msInterpolationMode;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRuleStyle5*, VARIANT, int> put_maxHeight;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_maxHeight;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRuleStyle5*, VARIANT*, int> get_maxHeight;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_maxHeight;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRuleStyle5*, VARIANT, int> put_minWidth;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_minWidth;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRuleStyle5*, VARIANT*, int> get_minWidth;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_minWidth;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRuleStyle5*, VARIANT, int> put_maxWidth;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_maxWidth;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRuleStyle5*, VARIANT*, int> get_maxWidth;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_maxWidth;
     }
 }

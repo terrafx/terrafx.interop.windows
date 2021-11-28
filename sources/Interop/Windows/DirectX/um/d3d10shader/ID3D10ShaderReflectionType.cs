@@ -59,18 +59,19 @@ public unsafe partial struct ID3D10ShaderReflectionType : ID3D10ShaderReflection
         sbyte* GetMemberTypeName(uint Index);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (D3D10_SHADER_TYPE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflectionType*, D3D10_SHADER_TYPE_DESC*, int> GetDesc;
+        public delegate* unmanaged<TSelf*, D3D10_SHADER_TYPE_DESC*, int> GetDesc;
 
         [NativeTypeName("ID3D10ShaderReflectionType *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflectionType*, uint, ID3D10ShaderReflectionType*> GetMemberTypeByIndex;
+        public delegate* unmanaged<TSelf*, uint, ID3D10ShaderReflectionType*> GetMemberTypeByIndex;
 
         [NativeTypeName("ID3D10ShaderReflectionType *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflectionType*, sbyte*, ID3D10ShaderReflectionType*> GetMemberTypeByName;
+        public delegate* unmanaged<TSelf*, sbyte*, ID3D10ShaderReflectionType*> GetMemberTypeByName;
 
         [NativeTypeName("LPCSTR (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflectionType*, uint, sbyte*> GetMemberTypeName;
+        public delegate* unmanaged<TSelf*, uint, sbyte*> GetMemberTypeName;
     }
 }

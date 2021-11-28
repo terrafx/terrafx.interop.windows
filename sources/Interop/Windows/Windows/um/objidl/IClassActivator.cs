@@ -52,18 +52,19 @@ public unsafe partial struct IClassActivator : IClassActivator.Interface
         HRESULT GetClassObject([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("DWORD")] uint dwClassContext, [NativeTypeName("LCID")] uint locale, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClassActivator*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IClassActivator*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IClassActivator*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, DWORD, LCID, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClassActivator*, Guid*, uint, uint, Guid*, void**, int> GetClassObject;
+        public delegate* unmanaged<TSelf*, Guid*, uint, uint, Guid*, void**, int> GetClassObject;
     }
 }

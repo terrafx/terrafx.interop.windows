@@ -82,27 +82,28 @@ public unsafe partial struct ITfCandidateList : ITfCandidateList.Interface
         HRESULT SetResult([NativeTypeName("ULONG")] uint nIndex, TfCandidateResult imcr);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCandidateList*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCandidateList*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCandidateList*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumTfCandidates **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCandidateList*, IEnumTfCandidates**, int> EnumCandidates;
+        public delegate* unmanaged<TSelf*, IEnumTfCandidates**, int> EnumCandidates;
 
         [NativeTypeName("HRESULT (ULONG, ITfCandidateString **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCandidateList*, uint, ITfCandidateString**, int> GetCandidate;
+        public delegate* unmanaged<TSelf*, uint, ITfCandidateString**, int> GetCandidate;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCandidateList*, uint*, int> GetCandidateNum;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCandidateNum;
 
         [NativeTypeName("HRESULT (ULONG, TfCandidateResult) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCandidateList*, uint, TfCandidateResult, int> SetResult;
+        public delegate* unmanaged<TSelf*, uint, TfCandidateResult, int> SetResult;
     }
 }

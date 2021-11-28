@@ -102,33 +102,34 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
         HRESULT get_version([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaInputAssemblyFile*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaInputAssemblyFile*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaInputAssemblyFile*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int> get_uniqueId;
+        public delegate* unmanaged<TSelf*, uint*, int> get_uniqueId;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int> get_index;
+        public delegate* unmanaged<TSelf*, uint*, int> get_index;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int> get_timestamp;
+        public delegate* unmanaged<TSelf*, uint*, int> get_timestamp;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaInputAssemblyFile*, BOOL*, int> get_pdbAvailableAtILMerge;
+        public delegate* unmanaged<TSelf*, BOOL*, int> get_pdbAvailableAtILMerge;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaInputAssemblyFile*, ushort**, int> get_fileName;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_fileName;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaInputAssemblyFile*, uint, uint*, byte*, int> get_version;
+        public delegate* unmanaged<TSelf*, uint, uint*, byte*, int> get_version;
     }
 }

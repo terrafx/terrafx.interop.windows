@@ -55,18 +55,19 @@ public unsafe partial struct ILanguageExceptionStackBackTrace : ILanguageExcepti
         HRESULT GetStackBackTrace([NativeTypeName("ULONG")] uint maxFramesToCapture, [NativeTypeName("UINT_PTR []")] nuint* stackBackTrace, [NativeTypeName("ULONG *")] uint* framesCaptured);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILanguageExceptionStackBackTrace*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ILanguageExceptionStackBackTrace*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ILanguageExceptionStackBackTrace*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, UINT_PTR *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILanguageExceptionStackBackTrace*, uint, nuint*, uint*, int> GetStackBackTrace;
+        public delegate* unmanaged<TSelf*, uint, nuint*, uint*, int> GetStackBackTrace;
     }
 }

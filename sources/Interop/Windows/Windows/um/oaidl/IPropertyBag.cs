@@ -62,21 +62,22 @@ public unsafe partial struct IPropertyBag : IPropertyBag.Interface
         HRESULT Write([NativeTypeName("LPCOLESTR")] ushort* pszPropName, VARIANT* pVar);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyBag*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyBag*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyBag*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCOLESTR, VARIANT *, IErrorLog *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyBag*, ushort*, VARIANT*, IErrorLog*, int> Read;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, IErrorLog*, int> Read;
 
         [NativeTypeName("HRESULT (LPCOLESTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyBag*, ushort*, VARIANT*, int> Write;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> Write;
     }
 }

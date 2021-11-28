@@ -52,18 +52,19 @@ public unsafe partial struct IShellChangeNotify : IShellChangeNotify.Interface
         HRESULT OnChange([NativeTypeName("LONG")] int lEvent, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl1, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl2);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellChangeNotify*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellChangeNotify*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellChangeNotify*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LONG, LPCITEMIDLIST, LPCITEMIDLIST) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellChangeNotify*, int, ITEMIDLIST*, ITEMIDLIST*, int> OnChange;
+        public delegate* unmanaged<TSelf*, int, ITEMIDLIST*, ITEMIDLIST*, int> OnChange;
     }
 }

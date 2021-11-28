@@ -66,21 +66,22 @@ public unsafe partial struct IProcessLock : IProcessLock.Interface
         uint ReleaseRefOnProcess();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProcessLock*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IProcessLock*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IProcessLock*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IProcessLock*, uint> AddRefOnProcess;
+        public delegate* unmanaged<TSelf*, uint> AddRefOnProcess;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IProcessLock*, uint> ReleaseRefOnProcess;
+        public delegate* unmanaged<TSelf*, uint> ReleaseRefOnProcess;
     }
 }

@@ -92,30 +92,31 @@ public unsafe partial struct IShellItem : IShellItem.Interface
         HRESULT Compare(IShellItem* psi, [NativeTypeName("SICHINTF")] uint hint, int* piOrder);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IBindCtx *, const GUID &, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem*, IBindCtx*, Guid*, Guid*, void**, int> BindToHandler;
+        public delegate* unmanaged<TSelf*, IBindCtx*, Guid*, Guid*, void**, int> BindToHandler;
 
         [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem*, IShellItem**, int> GetParent;
+        public delegate* unmanaged<TSelf*, IShellItem**, int> GetParent;
 
         [NativeTypeName("HRESULT (SIGDN, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem*, SIGDN, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, SIGDN, ushort**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (SFGAOF, SFGAOF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem*, uint, uint*, int> GetAttributes;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> GetAttributes;
 
         [NativeTypeName("HRESULT (IShellItem *, SICHINTF, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem*, IShellItem*, uint, int*, int> Compare;
+        public delegate* unmanaged<TSelf*, IShellItem*, uint, int*, int> Compare;
     }
 }

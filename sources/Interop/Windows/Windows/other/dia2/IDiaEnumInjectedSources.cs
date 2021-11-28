@@ -112,36 +112,37 @@ public unsafe partial struct IDiaEnumInjectedSources : IDiaEnumInjectedSources.I
         HRESULT Clone(IDiaEnumInjectedSources** ppenum);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumInjectedSources*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumInjectedSources*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumInjectedSources*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumInjectedSources*, IUnknown**, int> get__NewEnum;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> get__NewEnum;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumInjectedSources*, int*, int> get_Count;
+        public delegate* unmanaged<TSelf*, int*, int> get_Count;
 
         [NativeTypeName("HRESULT (DWORD, IDiaInjectedSource **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumInjectedSources*, uint, IDiaInjectedSource**, int> Item;
+        public delegate* unmanaged<TSelf*, uint, IDiaInjectedSource**, int> Item;
 
         [NativeTypeName("HRESULT (ULONG, IDiaInjectedSource **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumInjectedSources*, uint, IDiaInjectedSource**, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, IDiaInjectedSource**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumInjectedSources*, uint, int> Skip;
+        public delegate* unmanaged<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumInjectedSources*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IDiaEnumInjectedSources **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumInjectedSources*, IDiaEnumInjectedSources**, int> Clone;
+        public delegate* unmanaged<TSelf*, IDiaEnumInjectedSources**, int> Clone;
     }
 }

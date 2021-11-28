@@ -67,21 +67,22 @@ public unsafe partial struct ID3DBlob : ID3DBlob.Interface
         nuint GetBufferSize();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3DBlob*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3DBlob*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3DBlob*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("LPVOID () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3DBlob*, void*> GetBufferPointer;
+        public delegate* unmanaged<TSelf*, void*> GetBufferPointer;
 
         [NativeTypeName("SIZE_T () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3DBlob*, nuint> GetBufferSize;
+        public delegate* unmanaged<TSelf*, nuint> GetBufferSize;
     }
 }

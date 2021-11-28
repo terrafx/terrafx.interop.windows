@@ -65,21 +65,22 @@ public unsafe partial struct IRestrictedErrorInfo : IRestrictedErrorInfo.Interfa
         HRESULT GetReference([NativeTypeName("BSTR *")] ushort** reference);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRestrictedErrorInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRestrictedErrorInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRestrictedErrorInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *, HRESULT *, BSTR *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRestrictedErrorInfo*, ushort**, HRESULT*, ushort**, ushort**, int> GetErrorDetails;
+        public delegate* unmanaged<TSelf*, ushort**, HRESULT*, ushort**, ushort**, int> GetErrorDetails;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRestrictedErrorInfo*, ushort**, int> GetReference;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetReference;
     }
 }

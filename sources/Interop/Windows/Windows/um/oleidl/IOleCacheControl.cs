@@ -62,21 +62,22 @@ public unsafe partial struct IOleCacheControl : IOleCacheControl.Interface
         HRESULT OnStop();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleCacheControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleCacheControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleCacheControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPDATAOBJECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleCacheControl*, IDataObject*, int> OnRun;
+        public delegate* unmanaged<TSelf*, IDataObject*, int> OnRun;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleCacheControl*, int> OnStop;
+        public delegate* unmanaged<TSelf*, int> OnStop;
     }
 }

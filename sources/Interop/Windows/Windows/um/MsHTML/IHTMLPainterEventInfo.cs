@@ -82,27 +82,28 @@ public unsafe partial struct IHTMLPainterEventInfo : IHTMLPainterEventInfo.Inter
         HRESULT StringFromPartID([NativeTypeName("LONG")] int lPartID, [NativeTypeName("BSTR *")] ushort** pbstrPart);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPainterEventInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPainterEventInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPainterEventInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPainterEventInfo*, int*, int> GetEventInfoFlags;
+        public delegate* unmanaged<TSelf*, int*, int> GetEventInfoFlags;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPainterEventInfo*, IHTMLElement**, int> GetEventTarget;
+        public delegate* unmanaged<TSelf*, IHTMLElement**, int> GetEventTarget;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPainterEventInfo*, int, int> SetCursor;
+        public delegate* unmanaged<TSelf*, int, int> SetCursor;
 
         [NativeTypeName("HRESULT (LONG, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPainterEventInfo*, int, ushort**, int> StringFromPartID;
+        public delegate* unmanaged<TSelf*, int, ushort**, int> StringFromPartID;
     }
 }

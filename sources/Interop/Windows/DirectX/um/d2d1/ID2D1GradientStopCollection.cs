@@ -92,30 +92,31 @@ public unsafe partial struct ID2D1GradientStopCollection : ID2D1GradientStopColl
         D2D1_EXTEND_MODE GetExtendMode();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GradientStopCollection*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GradientStopCollection*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GradientStopCollection*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GradientStopCollection*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection*, uint> GetGradientStopCount;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetGradientStopCount;
 
         [NativeTypeName("void (D2D1_GRADIENT_STOP *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GradientStopCollection*, D2D1_GRADIENT_STOP*, uint, void> GetGradientStops;
+        public delegate* unmanaged<TSelf*, D2D1_GRADIENT_STOP*, uint, void> GetGradientStops;
 
         [NativeTypeName("D2D1_GAMMA () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection*, D2D1_GAMMA> GetColorInterpolationGamma;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_GAMMA> GetColorInterpolationGamma;
 
         [NativeTypeName("D2D1_EXTEND_MODE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1GradientStopCollection*, D2D1_EXTEND_MODE> GetExtendMode;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_EXTEND_MODE> GetExtendMode;
     }
 }

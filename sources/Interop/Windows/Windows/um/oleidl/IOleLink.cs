@@ -152,48 +152,49 @@ public unsafe partial struct IOleLink : IOleLink.Interface
         HRESULT Update(IBindCtx* pbc);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleLink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleLink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleLink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleLink*, uint, int> SetUpdateOptions;
+        public delegate* unmanaged<TSelf*, uint, int> SetUpdateOptions;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleLink*, uint*, int> GetUpdateOptions;
+        public delegate* unmanaged<TSelf*, uint*, int> GetUpdateOptions;
 
         [NativeTypeName("HRESULT (IMoniker *, const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleLink*, IMoniker*, Guid*, int> SetSourceMoniker;
+        public delegate* unmanaged<TSelf*, IMoniker*, Guid*, int> SetSourceMoniker;
 
         [NativeTypeName("HRESULT (IMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleLink*, IMoniker**, int> GetSourceMoniker;
+        public delegate* unmanaged<TSelf*, IMoniker**, int> GetSourceMoniker;
 
         [NativeTypeName("HRESULT (LPCOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleLink*, ushort*, int> SetSourceDisplayName;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetSourceDisplayName;
 
         [NativeTypeName("HRESULT (LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleLink*, ushort**, int> GetSourceDisplayName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetSourceDisplayName;
 
         [NativeTypeName("HRESULT (DWORD, IBindCtx *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleLink*, uint, IBindCtx*, int> BindToSource;
+        public delegate* unmanaged<TSelf*, uint, IBindCtx*, int> BindToSource;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleLink*, int> BindIfRunning;
+        public delegate* unmanaged<TSelf*, int> BindIfRunning;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleLink*, IUnknown**, int> GetBoundSource;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> GetBoundSource;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleLink*, int> UnbindSource;
+        public delegate* unmanaged<TSelf*, int> UnbindSource;
 
         [NativeTypeName("HRESULT (IBindCtx *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleLink*, IBindCtx*, int> Update;
+        public delegate* unmanaged<TSelf*, IBindCtx*, int> Update;
     }
 }

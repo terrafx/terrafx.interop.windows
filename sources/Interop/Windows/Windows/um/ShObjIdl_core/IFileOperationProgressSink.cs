@@ -202,63 +202,64 @@ public unsafe partial struct IFileOperationProgressSink : IFileOperationProgress
         HRESULT ResumeTimer();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileOperationProgressSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileOperationProgressSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileOperationProgressSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileOperationProgressSink*, int> StartOperations;
+        public delegate* unmanaged<TSelf*, int> StartOperations;
 
         [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileOperationProgressSink*, HRESULT, int> FinishOperations;
+        public delegate* unmanaged<TSelf*, HRESULT, int> FinishOperations;
 
         [NativeTypeName("HRESULT (DWORD, IShellItem *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, ushort*, int> PreRenameItem;
+        public delegate* unmanaged<TSelf*, uint, IShellItem*, ushort*, int> PreRenameItem;
 
         [NativeTypeName("HRESULT (DWORD, IShellItem *, LPCWSTR, HRESULT, IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, ushort*, HRESULT, IShellItem*, int> PostRenameItem;
+        public delegate* unmanaged<TSelf*, uint, IShellItem*, ushort*, HRESULT, IShellItem*, int> PostRenameItem;
 
         [NativeTypeName("HRESULT (DWORD, IShellItem *, IShellItem *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, IShellItem*, ushort*, int> PreMoveItem;
+        public delegate* unmanaged<TSelf*, uint, IShellItem*, IShellItem*, ushort*, int> PreMoveItem;
 
         [NativeTypeName("HRESULT (DWORD, IShellItem *, IShellItem *, LPCWSTR, HRESULT, IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, IShellItem*, ushort*, HRESULT, IShellItem*, int> PostMoveItem;
+        public delegate* unmanaged<TSelf*, uint, IShellItem*, IShellItem*, ushort*, HRESULT, IShellItem*, int> PostMoveItem;
 
         [NativeTypeName("HRESULT (DWORD, IShellItem *, IShellItem *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, IShellItem*, ushort*, int> PreCopyItem;
+        public delegate* unmanaged<TSelf*, uint, IShellItem*, IShellItem*, ushort*, int> PreCopyItem;
 
         [NativeTypeName("HRESULT (DWORD, IShellItem *, IShellItem *, LPCWSTR, HRESULT, IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, IShellItem*, ushort*, HRESULT, IShellItem*, int> PostCopyItem;
+        public delegate* unmanaged<TSelf*, uint, IShellItem*, IShellItem*, ushort*, HRESULT, IShellItem*, int> PostCopyItem;
 
         [NativeTypeName("HRESULT (DWORD, IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, int> PreDeleteItem;
+        public delegate* unmanaged<TSelf*, uint, IShellItem*, int> PreDeleteItem;
 
         [NativeTypeName("HRESULT (DWORD, IShellItem *, HRESULT, IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, HRESULT, IShellItem*, int> PostDeleteItem;
+        public delegate* unmanaged<TSelf*, uint, IShellItem*, HRESULT, IShellItem*, int> PostDeleteItem;
 
         [NativeTypeName("HRESULT (DWORD, IShellItem *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, ushort*, int> PreNewItem;
+        public delegate* unmanaged<TSelf*, uint, IShellItem*, ushort*, int> PreNewItem;
 
         [NativeTypeName("HRESULT (DWORD, IShellItem *, LPCWSTR, LPCWSTR, DWORD, HRESULT, IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileOperationProgressSink*, uint, IShellItem*, ushort*, ushort*, uint, HRESULT, IShellItem*, int> PostNewItem;
+        public delegate* unmanaged<TSelf*, uint, IShellItem*, ushort*, ushort*, uint, HRESULT, IShellItem*, int> PostNewItem;
 
         [NativeTypeName("HRESULT (UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileOperationProgressSink*, uint, uint, int> UpdateProgress;
+        public delegate* unmanaged<TSelf*, uint, uint, int> UpdateProgress;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileOperationProgressSink*, int> ResetTimer;
+        public delegate* unmanaged<TSelf*, int> ResetTimer;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileOperationProgressSink*, int> PauseTimer;
+        public delegate* unmanaged<TSelf*, int> PauseTimer;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileOperationProgressSink*, int> ResumeTimer;
+        public delegate* unmanaged<TSelf*, int> ResumeTimer;
     }
 }

@@ -90,33 +90,34 @@ public unsafe partial struct ISpPhraseAlt : ISpPhraseAlt.Interface
         HRESULT Commit();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhraseAlt*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhraseAlt*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhraseAlt*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SPPHRASE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhraseAlt*, SPPHRASE**, int> GetPhrase;
+        public delegate* unmanaged<TSelf*, SPPHRASE**, int> GetPhrase;
 
         [NativeTypeName("HRESULT (SPSERIALIZEDPHRASE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhraseAlt*, SPSERIALIZEDPHRASE**, int> GetSerializedPhrase;
+        public delegate* unmanaged<TSelf*, SPSERIALIZEDPHRASE**, int> GetSerializedPhrase;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, BOOL, LPWSTR *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhraseAlt*, uint, uint, BOOL, ushort**, byte*, int> GetText;
+        public delegate* unmanaged<TSelf*, uint, uint, BOOL, ushort**, byte*, int> GetText;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhraseAlt*, uint, int> Discard;
+        public delegate* unmanaged<TSelf*, uint, int> Discard;
 
         [NativeTypeName("HRESULT (ISpPhrase **, ULONG *, ULONG *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhraseAlt*, ISpPhrase**, uint*, uint*, uint*, int> GetAltInfo;
+        public delegate* unmanaged<TSelf*, ISpPhrase**, uint*, uint*, uint*, int> GetAltInfo;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhraseAlt*, int> Commit;
+        public delegate* unmanaged<TSelf*, int> Commit;
     }
 }

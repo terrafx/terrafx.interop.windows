@@ -122,39 +122,40 @@ public unsafe partial struct IAsyncReader : IAsyncReader.Interface
         HRESULT EndFlush();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncReader*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncReader*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncReader*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMemAllocator *, ALLOCATOR_PROPERTIES *, IMemAllocator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncReader*, IMemAllocator*, ALLOCATOR_PROPERTIES*, IMemAllocator**, int> RequestAllocator;
+        public delegate* unmanaged<TSelf*, IMemAllocator*, ALLOCATOR_PROPERTIES*, IMemAllocator**, int> RequestAllocator;
 
         [NativeTypeName("HRESULT (IMediaSample *, DWORD_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncReader*, IMediaSample*, nuint, int> Request;
+        public delegate* unmanaged<TSelf*, IMediaSample*, nuint, int> Request;
 
         [NativeTypeName("HRESULT (DWORD, IMediaSample **, DWORD_PTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncReader*, uint, IMediaSample**, nuint*, int> WaitForNext;
+        public delegate* unmanaged<TSelf*, uint, IMediaSample**, nuint*, int> WaitForNext;
 
         [NativeTypeName("HRESULT (IMediaSample *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncReader*, IMediaSample*, int> SyncReadAligned;
+        public delegate* unmanaged<TSelf*, IMediaSample*, int> SyncReadAligned;
 
         [NativeTypeName("HRESULT (LONGLONG, LONG, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncReader*, long, int, byte*, int> SyncRead;
+        public delegate* unmanaged<TSelf*, long, int, byte*, int> SyncRead;
 
         [NativeTypeName("HRESULT (LONGLONG *, LONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncReader*, long*, long*, int> Length;
+        public delegate* unmanaged<TSelf*, long*, long*, int> Length;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncReader*, int> BeginFlush;
+        public delegate* unmanaged<TSelf*, int> BeginFlush;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncReader*, int> EndFlush;
+        public delegate* unmanaged<TSelf*, int> EndFlush;
     }
 }

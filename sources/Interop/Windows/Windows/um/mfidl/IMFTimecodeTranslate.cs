@@ -82,27 +82,28 @@ public unsafe partial struct IMFTimecodeTranslate : IMFTimecodeTranslate.Interfa
         HRESULT EndConvertHNSToTimecode(IMFAsyncResult* pResult, PROPVARIANT* pPropVarTimecode);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimecodeTranslate*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimecodeTranslate*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimecodeTranslate*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const PROPVARIANT *, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimecodeTranslate*, PROPVARIANT*, IMFAsyncCallback*, IUnknown*, int> BeginConvertTimecodeToHNS;
+        public delegate* unmanaged<TSelf*, PROPVARIANT*, IMFAsyncCallback*, IUnknown*, int> BeginConvertTimecodeToHNS;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *, MFTIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimecodeTranslate*, IMFAsyncResult*, long*, int> EndConvertTimecodeToHNS;
+        public delegate* unmanaged<TSelf*, IMFAsyncResult*, long*, int> EndConvertTimecodeToHNS;
 
         [NativeTypeName("HRESULT (MFTIME, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimecodeTranslate*, long, IMFAsyncCallback*, IUnknown*, int> BeginConvertHNSToTimecode;
+        public delegate* unmanaged<TSelf*, long, IMFAsyncCallback*, IUnknown*, int> BeginConvertHNSToTimecode;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimecodeTranslate*, IMFAsyncResult*, PROPVARIANT*, int> EndConvertHNSToTimecode;
+        public delegate* unmanaged<TSelf*, IMFAsyncResult*, PROPVARIANT*, int> EndConvertHNSToTimecode;
     }
 }

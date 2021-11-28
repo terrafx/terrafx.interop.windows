@@ -62,21 +62,22 @@ public unsafe partial struct ISpTranscript : ISpTranscript.Interface
         HRESULT AppendTranscript([NativeTypeName("LPCWSTR")] ushort* pszTranscript);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpTranscript*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpTranscript*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpTranscript*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpTranscript*, ushort**, int> GetTranscript;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetTranscript;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpTranscript*, ushort*, int> AppendTranscript;
+        public delegate* unmanaged<TSelf*, ushort*, int> AppendTranscript;
     }
 }

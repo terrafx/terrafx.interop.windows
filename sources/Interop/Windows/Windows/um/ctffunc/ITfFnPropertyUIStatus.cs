@@ -69,24 +69,25 @@ public unsafe partial struct ITfFnPropertyUIStatus : ITfFnPropertyUIStatus.Inter
         HRESULT SetStatus([NativeTypeName("const GUID &")] Guid* refguidProp, [NativeTypeName("DWORD")] uint dw);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnPropertyUIStatus*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnPropertyUIStatus*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnPropertyUIStatus*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnPropertyUIStatus*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (const GUID &, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnPropertyUIStatus*, Guid*, uint*, int> GetStatus;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, int> GetStatus;
 
         [NativeTypeName("HRESULT (const GUID &, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnPropertyUIStatus*, Guid*, uint, int> SetStatus;
+        public delegate* unmanaged<TSelf*, Guid*, uint, int> SetStatus;
     }
 }

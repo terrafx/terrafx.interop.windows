@@ -250,81 +250,82 @@ public unsafe partial struct IHTMLControlElement : IHTMLControlElement.Interface
         HRESULT get_clientLeft([NativeTypeName("long *")] int* p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (short) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, short, int> put_tabIndex;
+        public delegate* unmanaged<TSelf*, short, int> put_tabIndex;
 
         [NativeTypeName("HRESULT (short *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, short*, int> get_tabIndex;
+        public delegate* unmanaged<TSelf*, short*, int> get_tabIndex;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, int> focus;
+        public delegate* unmanaged<TSelf*, int> focus;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, ushort*, int> put_accessKey;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_accessKey;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, ushort**, int> get_accessKey;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_accessKey;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, VARIANT, int> put_onblur;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onblur;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, VARIANT*, int> get_onblur;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onblur;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, VARIANT, int> put_onfocus;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onfocus;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, VARIANT*, int> get_onfocus;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onfocus;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, VARIANT, int> put_onresize;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onresize;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, VARIANT*, int> get_onresize;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onresize;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, int> blur;
+        public delegate* unmanaged<TSelf*, int> blur;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, IUnknown*, int> addFilter;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> addFilter;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, IUnknown*, int> removeFilter;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> removeFilter;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, int*, int> get_clientHeight;
+        public delegate* unmanaged<TSelf*, int*, int> get_clientHeight;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, int*, int> get_clientWidth;
+        public delegate* unmanaged<TSelf*, int*, int> get_clientWidth;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, int*, int> get_clientTop;
+        public delegate* unmanaged<TSelf*, int*, int> get_clientTop;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlElement*, int*, int> get_clientLeft;
+        public delegate* unmanaged<TSelf*, int*, int> get_clientLeft;
     }
 }

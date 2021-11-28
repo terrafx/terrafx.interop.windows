@@ -72,24 +72,25 @@ public unsafe partial struct IAudioCaptureClient : IAudioCaptureClient.Interface
         HRESULT GetNextPacketSize([NativeTypeName("UINT32 *")] uint* pNumFramesInNextPacket);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioCaptureClient*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioCaptureClient*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioCaptureClient*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE **, UINT32 *, DWORD *, UINT64 *, UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioCaptureClient*, byte**, uint*, uint*, ulong*, ulong*, int> GetBuffer;
+        public delegate* unmanaged<TSelf*, byte**, uint*, uint*, ulong*, ulong*, int> GetBuffer;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioCaptureClient*, uint, int> ReleaseBuffer;
+        public delegate* unmanaged<TSelf*, uint, int> ReleaseBuffer;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioCaptureClient*, uint*, int> GetNextPacketSize;
+        public delegate* unmanaged<TSelf*, uint*, int> GetNextPacketSize;
     }
 }

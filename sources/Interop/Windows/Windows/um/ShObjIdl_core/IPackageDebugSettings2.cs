@@ -157,63 +157,64 @@ public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Int
         HRESULT EnumerateApps([NativeTypeName("LPCWSTR")] ushort* packageFullName, [NativeTypeName("ULONG *")] uint* appCount, [NativeTypeName("LPWSTR **")] ushort*** appUserModelIds, [NativeTypeName("LPWSTR **")] ushort*** appDisplayNames);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPackageDebugSettings2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPackageDebugSettings2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPackageDebugSettings2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, PZZWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPackageDebugSettings2*, ushort*, ushort*, ushort*, int> EnableDebugging;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, int> EnableDebugging;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPackageDebugSettings2*, ushort*, int> DisableDebugging;
+        public delegate* unmanaged<TSelf*, ushort*, int> DisableDebugging;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPackageDebugSettings2*, ushort*, int> Suspend;
+        public delegate* unmanaged<TSelf*, ushort*, int> Suspend;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPackageDebugSettings2*, ushort*, int> Resume;
+        public delegate* unmanaged<TSelf*, ushort*, int> Resume;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPackageDebugSettings2*, ushort*, int> TerminateAllProcesses;
+        public delegate* unmanaged<TSelf*, ushort*, int> TerminateAllProcesses;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPackageDebugSettings2*, uint, int> SetTargetSessionId;
+        public delegate* unmanaged<TSelf*, uint, int> SetTargetSessionId;
 
         [NativeTypeName("HRESULT (LPCWSTR, ULONG *, LPCGUID *, LPCWSTR **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPackageDebugSettings2*, ushort*, uint*, Guid**, ushort***, int> EnumerateBackgroundTasks;
+        public delegate* unmanaged<TSelf*, ushort*, uint*, Guid**, ushort***, int> EnumerateBackgroundTasks;
 
         [NativeTypeName("HRESULT (LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPackageDebugSettings2*, Guid*, int> ActivateBackgroundTask;
+        public delegate* unmanaged<TSelf*, Guid*, int> ActivateBackgroundTask;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPackageDebugSettings2*, ushort*, int> StartServicing;
+        public delegate* unmanaged<TSelf*, ushort*, int> StartServicing;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPackageDebugSettings2*, ushort*, int> StopServicing;
+        public delegate* unmanaged<TSelf*, ushort*, int> StopServicing;
 
         [NativeTypeName("HRESULT (LPCWSTR, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPackageDebugSettings2*, ushort*, uint, int> StartSessionRedirection;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> StartSessionRedirection;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPackageDebugSettings2*, ushort*, int> StopSessionRedirection;
+        public delegate* unmanaged<TSelf*, ushort*, int> StopSessionRedirection;
 
         [NativeTypeName("HRESULT (LPCWSTR, PACKAGE_EXECUTION_STATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPackageDebugSettings2*, ushort*, PACKAGE_EXECUTION_STATE*, int> GetPackageExecutionState;
+        public delegate* unmanaged<TSelf*, ushort*, PACKAGE_EXECUTION_STATE*, int> GetPackageExecutionState;
 
         [NativeTypeName("HRESULT (LPCWSTR, IPackageExecutionStateChangeNotification *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPackageDebugSettings2*, ushort*, IPackageExecutionStateChangeNotification*, uint*, int> RegisterForPackageStateChanges;
+        public delegate* unmanaged<TSelf*, ushort*, IPackageExecutionStateChangeNotification*, uint*, int> RegisterForPackageStateChanges;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPackageDebugSettings2*, uint, int> UnregisterForPackageStateChanges;
+        public delegate* unmanaged<TSelf*, uint, int> UnregisterForPackageStateChanges;
 
         [NativeTypeName("HRESULT (LPCWSTR, ULONG *, LPWSTR **, LPWSTR **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPackageDebugSettings2*, ushort*, uint*, ushort***, ushort***, int> EnumerateApps;
+        public delegate* unmanaged<TSelf*, ushort*, uint*, ushort***, ushort***, int> EnumerateApps;
     }
 }

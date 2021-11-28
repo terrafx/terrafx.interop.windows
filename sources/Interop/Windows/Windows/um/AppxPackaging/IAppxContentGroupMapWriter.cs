@@ -74,24 +74,25 @@ public unsafe partial struct IAppxContentGroupMapWriter : IAppxContentGroupMapWr
         HRESULT Close();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxContentGroupMapWriter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxContentGroupMapWriter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxContentGroupMapWriter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxContentGroupMapWriter*, ushort*, int> AddAutomaticGroup;
+        public delegate* unmanaged<TSelf*, ushort*, int> AddAutomaticGroup;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxContentGroupMapWriter*, ushort*, int> AddAutomaticFile;
+        public delegate* unmanaged<TSelf*, ushort*, int> AddAutomaticFile;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxContentGroupMapWriter*, int> Close;
+        public delegate* unmanaged<TSelf*, int> Close;
     }
 }

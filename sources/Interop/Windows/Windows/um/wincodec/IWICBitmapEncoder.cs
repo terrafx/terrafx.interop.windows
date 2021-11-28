@@ -142,45 +142,46 @@ public unsafe partial struct IWICBitmapEncoder : IWICBitmapEncoder.Interface
         HRESULT GetMetadataQueryWriter(IWICMetadataQueryWriter** ppIMetadataQueryWriter);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapEncoder*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapEncoder*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapEncoder*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IStream *, WICBitmapEncoderCacheOption) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapEncoder*, IStream*, WICBitmapEncoderCacheOption, int> Initialize;
+        public delegate* unmanaged<TSelf*, IStream*, WICBitmapEncoderCacheOption, int> Initialize;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapEncoder*, Guid*, int> GetContainerFormat;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetContainerFormat;
 
         [NativeTypeName("HRESULT (IWICBitmapEncoderInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapEncoder*, IWICBitmapEncoderInfo**, int> GetEncoderInfo;
+        public delegate* unmanaged<TSelf*, IWICBitmapEncoderInfo**, int> GetEncoderInfo;
 
         [NativeTypeName("HRESULT (UINT, IWICColorContext **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapEncoder*, uint, IWICColorContext**, int> SetColorContexts;
+        public delegate* unmanaged<TSelf*, uint, IWICColorContext**, int> SetColorContexts;
 
         [NativeTypeName("HRESULT (IWICPalette *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapEncoder*, IWICPalette*, int> SetPalette;
+        public delegate* unmanaged<TSelf*, IWICPalette*, int> SetPalette;
 
         [NativeTypeName("HRESULT (IWICBitmapSource *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapEncoder*, IWICBitmapSource*, int> SetThumbnail;
+        public delegate* unmanaged<TSelf*, IWICBitmapSource*, int> SetThumbnail;
 
         [NativeTypeName("HRESULT (IWICBitmapSource *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapEncoder*, IWICBitmapSource*, int> SetPreview;
+        public delegate* unmanaged<TSelf*, IWICBitmapSource*, int> SetPreview;
 
         [NativeTypeName("HRESULT (IWICBitmapFrameEncode **, IPropertyBag2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapEncoder*, IWICBitmapFrameEncode**, IPropertyBag2**, int> CreateNewFrame;
+        public delegate* unmanaged<TSelf*, IWICBitmapFrameEncode**, IPropertyBag2**, int> CreateNewFrame;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapEncoder*, int> Commit;
+        public delegate* unmanaged<TSelf*, int> Commit;
 
         [NativeTypeName("HRESULT (IWICMetadataQueryWriter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapEncoder*, IWICMetadataQueryWriter**, int> GetMetadataQueryWriter;
+        public delegate* unmanaged<TSelf*, IWICMetadataQueryWriter**, int> GetMetadataQueryWriter;
     }
 }

@@ -63,21 +63,22 @@ public unsafe partial struct IDWriteFontFileEnumerator : IDWriteFontFileEnumerat
         HRESULT GetCurrentFontFile(IDWriteFontFile** fontFile);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFileEnumerator*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFileEnumerator*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFileEnumerator*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFileEnumerator*, BOOL*, int> MoveNext;
+        public delegate* unmanaged<TSelf*, BOOL*, int> MoveNext;
 
         [NativeTypeName("HRESULT (IDWriteFontFile **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFileEnumerator*, IDWriteFontFile**, int> GetCurrentFontFile;
+        public delegate* unmanaged<TSelf*, IDWriteFontFile**, int> GetCurrentFontFile;
     }
 }

@@ -55,18 +55,19 @@ public unsafe partial struct IPlayToSourceClassFactory : IPlayToSourceClassFacto
         HRESULT CreateInstance([NativeTypeName("DWORD")] uint dwFlags, IPlayToControl* pControl, IInspectable** ppSource);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPlayToSourceClassFactory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPlayToSourceClassFactory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPlayToSourceClassFactory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IPlayToControl *, IInspectable **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPlayToSourceClassFactory*, uint, IPlayToControl*, IInspectable**, int> CreateInstance;
+        public delegate* unmanaged<TSelf*, uint, IPlayToControl*, IInspectable**, int> CreateInstance;
     }
 }

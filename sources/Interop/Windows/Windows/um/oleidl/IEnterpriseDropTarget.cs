@@ -64,21 +64,22 @@ public unsafe partial struct IEnterpriseDropTarget : IEnterpriseDropTarget.Inter
         HRESULT IsEvaluatingEdpPolicy(BOOL* value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnterpriseDropTarget*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnterpriseDropTarget*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnterpriseDropTarget*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnterpriseDropTarget*, ushort*, int> SetDropSourceEnterpriseId;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetDropSourceEnterpriseId;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnterpriseDropTarget*, BOOL*, int> IsEvaluatingEdpPolicy;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsEvaluatingEdpPolicy;
     }
 }

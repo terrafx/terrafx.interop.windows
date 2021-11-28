@@ -62,21 +62,22 @@ public unsafe partial struct IQueueCommand : IQueueCommand.Interface
         HRESULT InvokeAtPresentationTime(IDeferredCommand** pCmd, [NativeTypeName("REFTIME")] double time, Guid* iid, [NativeTypeName("long")] int dispidMethod, short wFlags, [NativeTypeName("long")] int cArgs, VARIANT* pDispParams, VARIANT* pvarResult, short* puArgErr);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueueCommand*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueueCommand*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueueCommand*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDeferredCommand **, REFTIME, GUID *, long, short, long, VARIANT *, VARIANT *, short *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueueCommand*, IDeferredCommand**, double, Guid*, int, short, int, VARIANT*, VARIANT*, short*, int> InvokeAtStreamTime;
+        public delegate* unmanaged<TSelf*, IDeferredCommand**, double, Guid*, int, short, int, VARIANT*, VARIANT*, short*, int> InvokeAtStreamTime;
 
         [NativeTypeName("HRESULT (IDeferredCommand **, REFTIME, GUID *, long, short, long, VARIANT *, VARIANT *, short *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueueCommand*, IDeferredCommand**, double, Guid*, int, short, int, VARIANT*, VARIANT*, short*, int> InvokeAtPresentationTime;
+        public delegate* unmanaged<TSelf*, IDeferredCommand**, double, Guid*, int, short, int, VARIANT*, VARIANT*, short*, int> InvokeAtPresentationTime;
     }
 }

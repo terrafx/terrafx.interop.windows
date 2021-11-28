@@ -62,21 +62,22 @@ public unsafe partial struct IAudioLoudness : IAudioLoudness.Interface
         HRESULT SetEnabled(BOOL bEnable, [NativeTypeName("LPCGUID")] Guid* pguidEventContext);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioLoudness*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioLoudness*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioLoudness*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioLoudness*, BOOL*, int> GetEnabled;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetEnabled;
 
         [NativeTypeName("HRESULT (BOOL, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioLoudness*, BOOL, Guid*, int> SetEnabled;
+        public delegate* unmanaged<TSelf*, BOOL, Guid*, int> SetEnabled;
     }
 }

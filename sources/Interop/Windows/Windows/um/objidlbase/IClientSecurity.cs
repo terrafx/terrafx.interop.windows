@@ -72,24 +72,25 @@ public unsafe partial struct IClientSecurity : IClientSecurity.Interface
         HRESULT CopyProxy(IUnknown* pProxy, IUnknown** ppCopy);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientSecurity*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientSecurity*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientSecurity*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, DWORD *, DWORD *, OLECHAR **, DWORD *, DWORD *, void **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientSecurity*, IUnknown*, uint*, uint*, ushort**, uint*, uint*, void**, uint*, int> QueryBlanket;
+        public delegate* unmanaged<TSelf*, IUnknown*, uint*, uint*, ushort**, uint*, uint*, void**, uint*, int> QueryBlanket;
 
         [NativeTypeName("HRESULT (IUnknown *, DWORD, DWORD, OLECHAR *, DWORD, DWORD, void *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientSecurity*, IUnknown*, uint, uint, ushort*, uint, uint, void*, uint, int> SetBlanket;
+        public delegate* unmanaged<TSelf*, IUnknown*, uint, uint, ushort*, uint, uint, void*, uint, int> SetBlanket;
 
         [NativeTypeName("HRESULT (IUnknown *, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClientSecurity*, IUnknown*, IUnknown**, int> CopyProxy;
+        public delegate* unmanaged<TSelf*, IUnknown*, IUnknown**, int> CopyProxy;
     }
 }

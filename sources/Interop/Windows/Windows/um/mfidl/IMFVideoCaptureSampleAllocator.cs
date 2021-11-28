@@ -82,30 +82,31 @@ public unsafe partial struct IMFVideoCaptureSampleAllocator : IMFVideoCaptureSam
         HRESULT InitializeCaptureSampleAllocator([NativeTypeName("DWORD")] uint cbSampleSize, [NativeTypeName("DWORD")] uint cbCaptureMetadataSize, [NativeTypeName("DWORD")] uint cbAlignment, [NativeTypeName("DWORD")] uint cMinimumSamples, IMFAttributes* pAttributes, IMFMediaType* pMediaType);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFVideoCaptureSampleAllocator*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFVideoCaptureSampleAllocator*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFVideoCaptureSampleAllocator*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFVideoCaptureSampleAllocator*, IUnknown*, int> SetDirectXManager;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> SetDirectXManager;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFVideoCaptureSampleAllocator*, int> UninitializeSampleAllocator;
+        public delegate* unmanaged<TSelf*, int> UninitializeSampleAllocator;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFVideoCaptureSampleAllocator*, uint, IMFMediaType*, int> InitializeSampleAllocator;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaType*, int> InitializeSampleAllocator;
 
         [NativeTypeName("HRESULT (IMFSample **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFVideoCaptureSampleAllocator*, IMFSample**, int> AllocateSample;
+        public delegate* unmanaged<TSelf*, IMFSample**, int> AllocateSample;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, DWORD, IMFAttributes *, IMFMediaType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFVideoCaptureSampleAllocator*, uint, uint, uint, uint, IMFAttributes*, IMFMediaType*, int> InitializeCaptureSampleAllocator;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, uint, IMFAttributes*, IMFMediaType*, int> InitializeCaptureSampleAllocator;
     }
 }

@@ -312,96 +312,97 @@ public unsafe partial struct IFileDialogCustomize : IFileDialogCustomize.Interfa
         HRESULT SetControlItemText([NativeTypeName("DWORD")] uint dwIDCtl, [NativeTypeName("DWORD")] uint dwIDItem, [NativeTypeName("LPCWSTR")] ushort* pszLabel);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, int> EnableOpenDropDown;
+        public delegate* unmanaged<TSelf*, uint, int> EnableOpenDropDown;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, ushort*, int> AddMenu;
+        public delegate* unmanaged<TSelf*, uint, ushort*, int> AddMenu;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, ushort*, int> AddPushButton;
+        public delegate* unmanaged<TSelf*, uint, ushort*, int> AddPushButton;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, int> AddComboBox;
+        public delegate* unmanaged<TSelf*, uint, int> AddComboBox;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, int> AddRadioButtonList;
+        public delegate* unmanaged<TSelf*, uint, int> AddRadioButtonList;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, ushort*, BOOL, int> AddCheckButton;
+        public delegate* unmanaged<TSelf*, uint, ushort*, BOOL, int> AddCheckButton;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, ushort*, int> AddEditBox;
+        public delegate* unmanaged<TSelf*, uint, ushort*, int> AddEditBox;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, int> AddSeparator;
+        public delegate* unmanaged<TSelf*, uint, int> AddSeparator;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, ushort*, int> AddText;
+        public delegate* unmanaged<TSelf*, uint, ushort*, int> AddText;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, ushort*, int> SetControlLabel;
+        public delegate* unmanaged<TSelf*, uint, ushort*, int> SetControlLabel;
 
         [NativeTypeName("HRESULT (DWORD, CDCONTROLSTATEF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, CDCONTROLSTATEF*, int> GetControlState;
+        public delegate* unmanaged<TSelf*, uint, CDCONTROLSTATEF*, int> GetControlState;
 
         [NativeTypeName("HRESULT (DWORD, CDCONTROLSTATEF) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, CDCONTROLSTATEF, int> SetControlState;
+        public delegate* unmanaged<TSelf*, uint, CDCONTROLSTATEF, int> SetControlState;
 
         [NativeTypeName("HRESULT (DWORD, WCHAR **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, ushort**, int> GetEditBoxText;
+        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetEditBoxText;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, ushort*, int> SetEditBoxText;
+        public delegate* unmanaged<TSelf*, uint, ushort*, int> SetEditBoxText;
 
         [NativeTypeName("HRESULT (DWORD, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, BOOL*, int> GetCheckButtonState;
+        public delegate* unmanaged<TSelf*, uint, BOOL*, int> GetCheckButtonState;
 
         [NativeTypeName("HRESULT (DWORD, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, BOOL, int> SetCheckButtonState;
+        public delegate* unmanaged<TSelf*, uint, BOOL, int> SetCheckButtonState;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, uint, ushort*, int> AddControlItem;
+        public delegate* unmanaged<TSelf*, uint, uint, ushort*, int> AddControlItem;
 
         [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, uint, int> RemoveControlItem;
+        public delegate* unmanaged<TSelf*, uint, uint, int> RemoveControlItem;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, int> RemoveAllControlItems;
+        public delegate* unmanaged<TSelf*, uint, int> RemoveAllControlItems;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, CDCONTROLSTATEF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, uint, CDCONTROLSTATEF*, int> GetControlItemState;
+        public delegate* unmanaged<TSelf*, uint, uint, CDCONTROLSTATEF*, int> GetControlItemState;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, CDCONTROLSTATEF) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, uint, CDCONTROLSTATEF, int> SetControlItemState;
+        public delegate* unmanaged<TSelf*, uint, uint, CDCONTROLSTATEF, int> SetControlItemState;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, uint*, int> GetSelectedControlItem;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> GetSelectedControlItem;
 
         [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, uint, int> SetSelectedControlItem;
+        public delegate* unmanaged<TSelf*, uint, uint, int> SetSelectedControlItem;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, ushort*, int> StartVisualGroup;
+        public delegate* unmanaged<TSelf*, uint, ushort*, int> StartVisualGroup;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, int> EndVisualGroup;
+        public delegate* unmanaged<TSelf*, int> EndVisualGroup;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, int> MakeProminent;
+        public delegate* unmanaged<TSelf*, uint, int> MakeProminent;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogCustomize*, uint, uint, ushort*, int> SetControlItemText;
+        public delegate* unmanaged<TSelf*, uint, uint, ushort*, int> SetControlItemText;
     }
 }

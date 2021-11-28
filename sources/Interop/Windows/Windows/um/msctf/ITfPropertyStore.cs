@@ -132,42 +132,43 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface
         HRESULT Serialize(IStream* pStream, [NativeTypeName("ULONG *")] uint* pcb);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfPropertyStore*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfPropertyStore*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfPropertyStore*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public new delegate* unmanaged<ITfPropertyStore*, Guid*, int> GetType;
+        public new delegate* unmanaged<TSelf*, Guid*, int> GetType;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfPropertyStore*, uint*, int> GetDataType;
+        public delegate* unmanaged<TSelf*, uint*, int> GetDataType;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfPropertyStore*, VARIANT*, int> GetData;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> GetData;
 
         [NativeTypeName("HRESULT (DWORD, ITfRange *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfPropertyStore*, uint, ITfRange*, BOOL*, int> OnTextUpdated;
+        public delegate* unmanaged<TSelf*, uint, ITfRange*, BOOL*, int> OnTextUpdated;
 
         [NativeTypeName("HRESULT (ITfRange *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfPropertyStore*, ITfRange*, BOOL*, int> Shrink;
+        public delegate* unmanaged<TSelf*, ITfRange*, BOOL*, int> Shrink;
 
         [NativeTypeName("HRESULT (ITfRange *, ITfRange *, ITfPropertyStore **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfPropertyStore*, ITfRange*, ITfRange*, ITfPropertyStore**, int> Divide;
+        public delegate* unmanaged<TSelf*, ITfRange*, ITfRange*, ITfPropertyStore**, int> Divide;
 
         [NativeTypeName("HRESULT (ITfPropertyStore **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfPropertyStore*, ITfPropertyStore**, int> Clone;
+        public delegate* unmanaged<TSelf*, ITfPropertyStore**, int> Clone;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfPropertyStore*, Guid*, int> GetPropertyRangeCreator;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetPropertyRangeCreator;
 
         [NativeTypeName("HRESULT (IStream *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfPropertyStore*, IStream*, uint*, int> Serialize;
+        public delegate* unmanaged<TSelf*, IStream*, uint*, int> Serialize;
     }
 }

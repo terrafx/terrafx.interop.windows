@@ -139,54 +139,55 @@ public unsafe partial struct ISpXMLRecoResult : ISpXMLRecoResult.Interface
         HRESULT GetXMLErrorInfo(SPSEMANTICERRORINFO* pSemanticErrorInfo);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpXMLRecoResult*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpXMLRecoResult*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpXMLRecoResult*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SPPHRASE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpXMLRecoResult*, SPPHRASE**, int> GetPhrase;
+        public delegate* unmanaged<TSelf*, SPPHRASE**, int> GetPhrase;
 
         [NativeTypeName("HRESULT (SPSERIALIZEDPHRASE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpXMLRecoResult*, SPSERIALIZEDPHRASE**, int> GetSerializedPhrase;
+        public delegate* unmanaged<TSelf*, SPSERIALIZEDPHRASE**, int> GetSerializedPhrase;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, BOOL, LPWSTR *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpXMLRecoResult*, uint, uint, BOOL, ushort**, byte*, int> GetText;
+        public delegate* unmanaged<TSelf*, uint, uint, BOOL, ushort**, byte*, int> GetText;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpXMLRecoResult*, uint, int> Discard;
+        public delegate* unmanaged<TSelf*, uint, int> Discard;
 
         [NativeTypeName("HRESULT (SPRECORESULTTIMES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpXMLRecoResult*, SPRECORESULTTIMES*, int> GetResultTimes;
+        public delegate* unmanaged<TSelf*, SPRECORESULTTIMES*, int> GetResultTimes;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, ULONG, ISpPhraseAlt **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpXMLRecoResult*, uint, uint, uint, ISpPhraseAlt**, uint*, int> GetAlternates;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, ISpPhraseAlt**, uint*, int> GetAlternates;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, ISpStreamFormat **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpXMLRecoResult*, uint, uint, ISpStreamFormat**, int> GetAudio;
+        public delegate* unmanaged<TSelf*, uint, uint, ISpStreamFormat**, int> GetAudio;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, DWORD, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpXMLRecoResult*, uint, uint, uint, uint*, int> SpeakAudio;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, uint*, int> SpeakAudio;
 
         [NativeTypeName("HRESULT (SPSERIALIZEDRESULT **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpXMLRecoResult*, SPSERIALIZEDRESULT**, int> Serialize;
+        public delegate* unmanaged<TSelf*, SPSERIALIZEDRESULT**, int> Serialize;
 
         [NativeTypeName("HRESULT (const GUID *, const WAVEFORMATEX *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpXMLRecoResult*, Guid*, WAVEFORMATEX*, int> ScaleAudio;
+        public delegate* unmanaged<TSelf*, Guid*, WAVEFORMATEX*, int> ScaleAudio;
 
         [NativeTypeName("HRESULT (ISpRecoContext **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpXMLRecoResult*, ISpRecoContext**, int> GetRecoContext;
+        public delegate* unmanaged<TSelf*, ISpRecoContext**, int> GetRecoContext;
 
         [NativeTypeName("HRESULT (LPWSTR *, SPXMLRESULTOPTIONS) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpXMLRecoResult*, ushort**, SPXMLRESULTOPTIONS, int> GetXMLResult;
+        public delegate* unmanaged<TSelf*, ushort**, SPXMLRESULTOPTIONS, int> GetXMLResult;
 
         [NativeTypeName("HRESULT (SPSEMANTICERRORINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpXMLRecoResult*, SPSEMANTICERRORINFO*, int> GetXMLErrorInfo;
+        public delegate* unmanaged<TSelf*, SPSEMANTICERRORINFO*, int> GetXMLErrorInfo;
     }
 }

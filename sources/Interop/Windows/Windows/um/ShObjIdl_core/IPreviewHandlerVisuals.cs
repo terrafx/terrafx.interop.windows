@@ -72,24 +72,25 @@ public unsafe partial struct IPreviewHandlerVisuals : IPreviewHandlerVisuals.Int
         HRESULT SetTextColor(COLORREF color);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPreviewHandlerVisuals*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPreviewHandlerVisuals*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPreviewHandlerVisuals*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPreviewHandlerVisuals*, COLORREF, int> SetBackgroundColor;
+        public delegate* unmanaged<TSelf*, COLORREF, int> SetBackgroundColor;
 
         [NativeTypeName("HRESULT (const LOGFONTW *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPreviewHandlerVisuals*, LOGFONTW*, int> SetFont;
+        public delegate* unmanaged<TSelf*, LOGFONTW*, int> SetFont;
 
         [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPreviewHandlerVisuals*, COLORREF, int> SetTextColor;
+        public delegate* unmanaged<TSelf*, COLORREF, int> SetTextColor;
     }
 }

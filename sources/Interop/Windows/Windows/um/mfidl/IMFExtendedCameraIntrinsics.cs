@@ -102,33 +102,34 @@ public unsafe partial struct IMFExtendedCameraIntrinsics : IMFExtendedCameraIntr
         HRESULT AddIntrinsicModel(IMFExtendedCameraIntrinsicModel* pIntrinsicModel);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraIntrinsics*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraIntrinsics*, byte*, uint, int> InitializeFromBuffer;
+        public delegate* unmanaged<TSelf*, byte*, uint, int> InitializeFromBuffer;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint*, int> GetBufferSize;
+        public delegate* unmanaged<TSelf*, uint*, int> GetBufferSize;
 
         [NativeTypeName("HRESULT (BYTE *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraIntrinsics*, byte*, uint*, int> SerializeToBuffer;
+        public delegate* unmanaged<TSelf*, byte*, uint*, int> SerializeToBuffer;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint*, int> GetIntrinsicModelCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetIntrinsicModelCount;
 
         [NativeTypeName("HRESULT (DWORD, IMFExtendedCameraIntrinsicModel **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraIntrinsics*, uint, IMFExtendedCameraIntrinsicModel**, int> GetIntrinsicModelByIndex;
+        public delegate* unmanaged<TSelf*, uint, IMFExtendedCameraIntrinsicModel**, int> GetIntrinsicModelByIndex;
 
         [NativeTypeName("HRESULT (IMFExtendedCameraIntrinsicModel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraIntrinsics*, IMFExtendedCameraIntrinsicModel*, int> AddIntrinsicModel;
+        public delegate* unmanaged<TSelf*, IMFExtendedCameraIntrinsicModel*, int> AddIntrinsicModel;
     }
 }

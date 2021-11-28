@@ -62,21 +62,22 @@ public unsafe partial struct IPreviewHandlerFrame : IPreviewHandlerFrame.Interfa
         HRESULT TranslateAcceleratorW(MSG* pmsg);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPreviewHandlerFrame*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPreviewHandlerFrame*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPreviewHandlerFrame*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PREVIEWHANDLERFRAMEINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPreviewHandlerFrame*, PREVIEWHANDLERFRAMEINFO*, int> GetWindowContext;
+        public delegate* unmanaged<TSelf*, PREVIEWHANDLERFRAMEINFO*, int> GetWindowContext;
 
         [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPreviewHandlerFrame*, MSG*, int> TranslateAcceleratorW;
+        public delegate* unmanaged<TSelf*, MSG*, int> TranslateAcceleratorW;
     }
 }

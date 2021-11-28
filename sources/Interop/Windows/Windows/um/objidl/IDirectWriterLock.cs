@@ -72,24 +72,25 @@ public unsafe partial struct IDirectWriterLock : IDirectWriterLock.Interface
         HRESULT HaveWriteAccess();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectWriterLock*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectWriterLock*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectWriterLock*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectWriterLock*, uint, int> WaitForWriteAccess;
+        public delegate* unmanaged<TSelf*, uint, int> WaitForWriteAccess;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectWriterLock*, int> ReleaseWriteAccess;
+        public delegate* unmanaged<TSelf*, int> ReleaseWriteAccess;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectWriterLock*, int> HaveWriteAccess;
+        public delegate* unmanaged<TSelf*, int> HaveWriteAccess;
     }
 }

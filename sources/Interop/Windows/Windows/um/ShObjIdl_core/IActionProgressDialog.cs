@@ -62,21 +62,22 @@ public unsafe partial struct IActionProgressDialog : IActionProgressDialog.Inter
         HRESULT Stop();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IActionProgressDialog*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IActionProgressDialog*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IActionProgressDialog*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SPINITF, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IActionProgressDialog*, uint, ushort*, ushort*, int> Initialize;
+        public delegate* unmanaged<TSelf*, uint, ushort*, ushort*, int> Initialize;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IActionProgressDialog*, int> Stop;
+        public delegate* unmanaged<TSelf*, int> Stop;
     }
 }

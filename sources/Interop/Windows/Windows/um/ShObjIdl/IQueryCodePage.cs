@@ -62,21 +62,22 @@ public unsafe partial struct IQueryCodePage : IQueryCodePage.Interface
         HRESULT SetCodePage(uint uiCodePage);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueryCodePage*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueryCodePage*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueryCodePage*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueryCodePage*, uint*, int> GetCodePage;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCodePage;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueryCodePage*, uint, int> SetCodePage;
+        public delegate* unmanaged<TSelf*, uint, int> SetCodePage;
     }
 }

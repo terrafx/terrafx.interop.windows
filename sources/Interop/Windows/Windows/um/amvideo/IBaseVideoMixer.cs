@@ -110,36 +110,37 @@ public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface
         HRESULT SetClockPeriod(int bValue);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBaseVideoMixer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBaseVideoMixer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBaseVideoMixer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (int) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBaseVideoMixer*, int, int> SetLeadPin;
+        public delegate* unmanaged<TSelf*, int, int> SetLeadPin;
 
         [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBaseVideoMixer*, int*, int> GetLeadPin;
+        public delegate* unmanaged<TSelf*, int*, int> GetLeadPin;
 
         [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBaseVideoMixer*, int*, int> GetInputPinCount;
+        public delegate* unmanaged<TSelf*, int*, int> GetInputPinCount;
 
         [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBaseVideoMixer*, int*, int> IsUsingClock;
+        public delegate* unmanaged<TSelf*, int*, int> IsUsingClock;
 
         [NativeTypeName("HRESULT (int) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBaseVideoMixer*, int, int> SetUsingClock;
+        public delegate* unmanaged<TSelf*, int, int> SetUsingClock;
 
         [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBaseVideoMixer*, int*, int> GetClockPeriod;
+        public delegate* unmanaged<TSelf*, int*, int> GetClockPeriod;
 
         [NativeTypeName("HRESULT (int) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBaseVideoMixer*, int, int> SetClockPeriod;
+        public delegate* unmanaged<TSelf*, int, int> SetClockPeriod;
     }
 }

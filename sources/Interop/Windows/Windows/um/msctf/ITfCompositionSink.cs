@@ -52,18 +52,19 @@ public unsafe partial struct ITfCompositionSink : ITfCompositionSink.Interface
         HRESULT OnCompositionTerminated([NativeTypeName("TfEditCookie")] uint ecWrite, ITfComposition* pComposition);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCompositionSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCompositionSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCompositionSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfComposition *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCompositionSink*, uint, ITfComposition*, int> OnCompositionTerminated;
+        public delegate* unmanaged<TSelf*, uint, ITfComposition*, int> OnCompositionTerminated;
     }
 }

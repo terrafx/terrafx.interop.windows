@@ -52,18 +52,19 @@ public unsafe partial struct IUpdateIDList : IUpdateIDList.Interface
         HRESULT Update(IBindCtx* pbc, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlIn, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUpdateIDList*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUpdateIDList*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUpdateIDList*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IBindCtx *, LPCITEMIDLIST, LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUpdateIDList*, IBindCtx*, ITEMIDLIST*, ITEMIDLIST**, int> Update;
+        public delegate* unmanaged<TSelf*, IBindCtx*, ITEMIDLIST*, ITEMIDLIST**, int> Update;
     }
 }

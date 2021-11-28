@@ -73,27 +73,28 @@ public unsafe partial struct IContextMenu2 : IContextMenu2.Interface
         HRESULT HandleMenuMsg(uint uMsg, WPARAM wParam, LPARAM lParam);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenu2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenu2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenu2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HMENU, UINT, UINT, UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenu2*, HMENU, uint, uint, uint, uint, int> QueryContextMenu;
+        public delegate* unmanaged<TSelf*, HMENU, uint, uint, uint, uint, int> QueryContextMenu;
 
         [NativeTypeName("HRESULT (CMINVOKECOMMANDINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenu2*, CMINVOKECOMMANDINFO*, int> InvokeCommand;
+        public delegate* unmanaged<TSelf*, CMINVOKECOMMANDINFO*, int> InvokeCommand;
 
         [NativeTypeName("HRESULT (UINT_PTR, UINT, UINT *, CHAR *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenu2*, nuint, uint, uint*, sbyte*, uint, int> GetCommandString;
+        public delegate* unmanaged<TSelf*, nuint, uint, uint*, sbyte*, uint, int> GetCommandString;
 
         [NativeTypeName("HRESULT (UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenu2*, uint, WPARAM, LPARAM, int> HandleMenuMsg;
+        public delegate* unmanaged<TSelf*, uint, WPARAM, LPARAM, int> HandleMenuMsg;
     }
 }

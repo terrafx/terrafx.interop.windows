@@ -94,30 +94,31 @@ public unsafe partial struct IDataObjectAsyncCapability : IDataObjectAsyncCapabi
         HRESULT EndOperation(HRESULT hResult, IBindCtx* pbcReserved, [NativeTypeName("DWORD")] uint dwEffects);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObjectAsyncCapability*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObjectAsyncCapability*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObjectAsyncCapability*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObjectAsyncCapability*, BOOL, int> SetAsyncMode;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetAsyncMode;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObjectAsyncCapability*, BOOL*, int> GetAsyncMode;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetAsyncMode;
 
         [NativeTypeName("HRESULT (IBindCtx *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObjectAsyncCapability*, IBindCtx*, int> StartOperation;
+        public delegate* unmanaged<TSelf*, IBindCtx*, int> StartOperation;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObjectAsyncCapability*, BOOL*, int> InOperation;
+        public delegate* unmanaged<TSelf*, BOOL*, int> InOperation;
 
         [NativeTypeName("HRESULT (HRESULT, IBindCtx *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObjectAsyncCapability*, HRESULT, IBindCtx*, uint, int> EndOperation;
+        public delegate* unmanaged<TSelf*, HRESULT, IBindCtx*, uint, int> EndOperation;
     }
 }

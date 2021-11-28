@@ -74,24 +74,25 @@ public unsafe partial struct IPrintDocumentPackageTarget : IPrintDocumentPackage
         HRESULT Cancel();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintDocumentPackageTarget*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintDocumentPackageTarget*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintDocumentPackageTarget*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32 *, GUID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintDocumentPackageTarget*, uint*, Guid**, int> GetPackageTargetTypes;
+        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetPackageTargetTypes;
 
         [NativeTypeName("HRESULT (const GUID &, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintDocumentPackageTarget*, Guid*, Guid*, void**, int> GetPackageTarget;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, void**, int> GetPackageTarget;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintDocumentPackageTarget*, int> Cancel;
+        public delegate* unmanaged<TSelf*, int> Cancel;
     }
 }

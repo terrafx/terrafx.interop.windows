@@ -325,117 +325,118 @@ public unsafe partial struct ITypeInfo2 : ITypeInfo2.Interface
         HRESULT GetAllImplTypeCustData(uint index, CUSTDATA* pCustData);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TYPEATTR **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, TYPEATTR**, int> GetTypeAttr;
+        public delegate* unmanaged<TSelf*, TYPEATTR**, int> GetTypeAttr;
 
         [NativeTypeName("HRESULT (ITypeComp **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, ITypeComp**, int> GetTypeComp;
+        public delegate* unmanaged<TSelf*, ITypeComp**, int> GetTypeComp;
 
         [NativeTypeName("HRESULT (UINT, FUNCDESC **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, uint, FUNCDESC**, int> GetFuncDesc;
+        public delegate* unmanaged<TSelf*, uint, FUNCDESC**, int> GetFuncDesc;
 
         [NativeTypeName("HRESULT (UINT, VARDESC **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, uint, VARDESC**, int> GetVarDesc;
+        public delegate* unmanaged<TSelf*, uint, VARDESC**, int> GetVarDesc;
 
         [NativeTypeName("HRESULT (MEMBERID, BSTR *, UINT, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, int, ushort**, uint, uint*, int> GetNames;
+        public delegate* unmanaged<TSelf*, int, ushort**, uint, uint*, int> GetNames;
 
         [NativeTypeName("HRESULT (UINT, HREFTYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, uint, uint*, int> GetRefTypeOfImplType;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> GetRefTypeOfImplType;
 
         [NativeTypeName("HRESULT (UINT, INT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, uint, int*, int> GetImplTypeFlags;
+        public delegate* unmanaged<TSelf*, uint, int*, int> GetImplTypeFlags;
 
         [NativeTypeName("HRESULT (LPOLESTR *, UINT, MEMBERID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, ushort**, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, ushort**, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (PVOID, MEMBERID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, void*, int, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, void*, int, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (MEMBERID, BSTR *, BSTR *, DWORD *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, int, ushort**, ushort**, uint*, ushort**, int> GetDocumentation;
+        public delegate* unmanaged<TSelf*, int, ushort**, ushort**, uint*, ushort**, int> GetDocumentation;
 
         [NativeTypeName("HRESULT (MEMBERID, INVOKEKIND, BSTR *, BSTR *, WORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, int, INVOKEKIND, ushort**, ushort**, ushort*, int> GetDllEntry;
+        public delegate* unmanaged<TSelf*, int, INVOKEKIND, ushort**, ushort**, ushort*, int> GetDllEntry;
 
         [NativeTypeName("HRESULT (HREFTYPE, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, uint, ITypeInfo**, int> GetRefTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, ITypeInfo**, int> GetRefTypeInfo;
 
         [NativeTypeName("HRESULT (MEMBERID, INVOKEKIND, PVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, int, INVOKEKIND, void**, int> AddressOfMember;
+        public delegate* unmanaged<TSelf*, int, INVOKEKIND, void**, int> AddressOfMember;
 
         [NativeTypeName("HRESULT (IUnknown *, const IID &, PVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, IUnknown*, Guid*, void**, int> CreateInstance;
+        public delegate* unmanaged<TSelf*, IUnknown*, Guid*, void**, int> CreateInstance;
 
         [NativeTypeName("HRESULT (MEMBERID, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, int, ushort**, int> GetMops;
+        public delegate* unmanaged<TSelf*, int, ushort**, int> GetMops;
 
         [NativeTypeName("HRESULT (ITypeLib **, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, ITypeLib**, uint*, int> GetContainingTypeLib;
+        public delegate* unmanaged<TSelf*, ITypeLib**, uint*, int> GetContainingTypeLib;
 
         [NativeTypeName("void (TYPEATTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, TYPEATTR*, void> ReleaseTypeAttr;
+        public delegate* unmanaged<TSelf*, TYPEATTR*, void> ReleaseTypeAttr;
 
         [NativeTypeName("void (FUNCDESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, FUNCDESC*, void> ReleaseFuncDesc;
+        public delegate* unmanaged<TSelf*, FUNCDESC*, void> ReleaseFuncDesc;
 
         [NativeTypeName("void (VARDESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, VARDESC*, void> ReleaseVarDesc;
+        public delegate* unmanaged<TSelf*, VARDESC*, void> ReleaseVarDesc;
 
         [NativeTypeName("HRESULT (TYPEKIND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, TYPEKIND*, int> GetTypeKind;
+        public delegate* unmanaged<TSelf*, TYPEKIND*, int> GetTypeKind;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, uint*, int> GetTypeFlags;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeFlags;
 
         [NativeTypeName("HRESULT (MEMBERID, INVOKEKIND, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, int, INVOKEKIND, uint*, int> GetFuncIndexOfMemId;
+        public delegate* unmanaged<TSelf*, int, INVOKEKIND, uint*, int> GetFuncIndexOfMemId;
 
         [NativeTypeName("HRESULT (MEMBERID, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, int, uint*, int> GetVarIndexOfMemId;
+        public delegate* unmanaged<TSelf*, int, uint*, int> GetVarIndexOfMemId;
 
         [NativeTypeName("HRESULT (const GUID &, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, Guid*, VARIANT*, int> GetCustData;
+        public delegate* unmanaged<TSelf*, Guid*, VARIANT*, int> GetCustData;
 
         [NativeTypeName("HRESULT (UINT, const GUID &, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, uint, Guid*, VARIANT*, int> GetFuncCustData;
+        public delegate* unmanaged<TSelf*, uint, Guid*, VARIANT*, int> GetFuncCustData;
 
         [NativeTypeName("HRESULT (UINT, UINT, const GUID &, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, uint, uint, Guid*, VARIANT*, int> GetParamCustData;
+        public delegate* unmanaged<TSelf*, uint, uint, Guid*, VARIANT*, int> GetParamCustData;
 
         [NativeTypeName("HRESULT (UINT, const GUID &, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, uint, Guid*, VARIANT*, int> GetVarCustData;
+        public delegate* unmanaged<TSelf*, uint, Guid*, VARIANT*, int> GetVarCustData;
 
         [NativeTypeName("HRESULT (UINT, const GUID &, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, uint, Guid*, VARIANT*, int> GetImplTypeCustData;
+        public delegate* unmanaged<TSelf*, uint, Guid*, VARIANT*, int> GetImplTypeCustData;
 
         [NativeTypeName("HRESULT (MEMBERID, LCID, BSTR *, DWORD *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, int, uint, ushort**, uint*, ushort**, int> GetDocumentation2;
+        public delegate* unmanaged<TSelf*, int, uint, ushort**, uint*, ushort**, int> GetDocumentation2;
 
         [NativeTypeName("HRESULT (CUSTDATA *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, CUSTDATA*, int> GetAllCustData;
+        public delegate* unmanaged<TSelf*, CUSTDATA*, int> GetAllCustData;
 
         [NativeTypeName("HRESULT (UINT, CUSTDATA *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, uint, CUSTDATA*, int> GetAllFuncCustData;
+        public delegate* unmanaged<TSelf*, uint, CUSTDATA*, int> GetAllFuncCustData;
 
         [NativeTypeName("HRESULT (UINT, UINT, CUSTDATA *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, uint, uint, CUSTDATA*, int> GetAllParamCustData;
+        public delegate* unmanaged<TSelf*, uint, uint, CUSTDATA*, int> GetAllParamCustData;
 
         [NativeTypeName("HRESULT (UINT, CUSTDATA *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, uint, CUSTDATA*, int> GetAllVarCustData;
+        public delegate* unmanaged<TSelf*, uint, CUSTDATA*, int> GetAllVarCustData;
 
         [NativeTypeName("HRESULT (UINT, CUSTDATA *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeInfo2*, uint, CUSTDATA*, int> GetAllImplTypeCustData;
+        public delegate* unmanaged<TSelf*, uint, CUSTDATA*, int> GetAllImplTypeCustData;
     }
 }

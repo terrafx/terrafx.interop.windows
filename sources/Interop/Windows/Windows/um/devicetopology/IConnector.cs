@@ -122,39 +122,40 @@ public unsafe partial struct IConnector : IConnector.Interface
         HRESULT GetDeviceIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrDeviceId);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnector*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnector*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnector*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ConnectorType *) __attribute__((stdcall))")]
-        public new delegate* unmanaged<IConnector*, ConnectorType*, int> GetType;
+        public new delegate* unmanaged<TSelf*, ConnectorType*, int> GetType;
 
         [NativeTypeName("HRESULT (DataFlow *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnector*, DataFlow*, int> GetDataFlow;
+        public delegate* unmanaged<TSelf*, DataFlow*, int> GetDataFlow;
 
         [NativeTypeName("HRESULT (IConnector *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnector*, IConnector*, int> ConnectTo;
+        public delegate* unmanaged<TSelf*, IConnector*, int> ConnectTo;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnector*, int> Disconnect;
+        public delegate* unmanaged<TSelf*, int> Disconnect;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnector*, BOOL*, int> IsConnected;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsConnected;
 
         [NativeTypeName("HRESULT (IConnector **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnector*, IConnector**, int> GetConnectedTo;
+        public delegate* unmanaged<TSelf*, IConnector**, int> GetConnectedTo;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnector*, ushort**, int> GetConnectorIdConnectedTo;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetConnectorIdConnectedTo;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnector*, ushort**, int> GetDeviceIdConnectedTo;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDeviceIdConnectedTo;
     }
 }

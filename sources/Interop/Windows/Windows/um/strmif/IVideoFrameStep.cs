@@ -72,24 +72,25 @@ public unsafe partial struct IVideoFrameStep : IVideoFrameStep.Interface
         HRESULT CancelStep();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoFrameStep*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoFrameStep*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoFrameStep*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoFrameStep*, uint, IUnknown*, int> Step;
+        public delegate* unmanaged<TSelf*, uint, IUnknown*, int> Step;
 
         [NativeTypeName("HRESULT (long, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoFrameStep*, int, IUnknown*, int> CanStep;
+        public delegate* unmanaged<TSelf*, int, IUnknown*, int> CanStep;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoFrameStep*, int> CancelStep;
+        public delegate* unmanaged<TSelf*, int> CancelStep;
     }
 }

@@ -267,96 +267,97 @@ public unsafe partial struct IOleInPlaceSiteWindowless : IOleInPlaceSiteWindowle
         HRESULT OnDefWindowMessage(uint msg, WPARAM wParam, LPARAM lParam, LRESULT* plResult);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, HWND*, int> GetWindow;
+        public delegate* unmanaged<TSelf*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, BOOL, int> ContextSensitiveHelp;
+        public delegate* unmanaged<TSelf*, BOOL, int> ContextSensitiveHelp;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, int> CanInPlaceActivate;
+        public delegate* unmanaged<TSelf*, int> CanInPlaceActivate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, int> OnInPlaceActivate;
+        public delegate* unmanaged<TSelf*, int> OnInPlaceActivate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, int> OnUIActivate;
+        public delegate* unmanaged<TSelf*, int> OnUIActivate;
 
         [NativeTypeName("HRESULT (IOleInPlaceFrame **, IOleInPlaceUIWindow **, LPRECT, LPRECT, LPOLEINPLACEFRAMEINFO) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, IOleInPlaceFrame**, IOleInPlaceUIWindow**, RECT*, RECT*, OLEINPLACEFRAMEINFO*, int> GetWindowContext;
+        public delegate* unmanaged<TSelf*, IOleInPlaceFrame**, IOleInPlaceUIWindow**, RECT*, RECT*, OLEINPLACEFRAMEINFO*, int> GetWindowContext;
 
         [NativeTypeName("HRESULT (SIZE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, SIZE, int> Scroll;
+        public delegate* unmanaged<TSelf*, SIZE, int> Scroll;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, BOOL, int> OnUIDeactivate;
+        public delegate* unmanaged<TSelf*, BOOL, int> OnUIDeactivate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, int> OnInPlaceDeactivate;
+        public delegate* unmanaged<TSelf*, int> OnInPlaceDeactivate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, int> DiscardUndoState;
+        public delegate* unmanaged<TSelf*, int> DiscardUndoState;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, int> DeactivateAndUndo;
+        public delegate* unmanaged<TSelf*, int> DeactivateAndUndo;
 
         [NativeTypeName("HRESULT (LPCRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, RECT*, int> OnPosRectChange;
+        public delegate* unmanaged<TSelf*, RECT*, int> OnPosRectChange;
 
         [NativeTypeName("HRESULT (BOOL *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, BOOL*, uint, int> OnInPlaceActivateEx;
+        public delegate* unmanaged<TSelf*, BOOL*, uint, int> OnInPlaceActivateEx;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, BOOL, int> OnInPlaceDeactivateEx;
+        public delegate* unmanaged<TSelf*, BOOL, int> OnInPlaceDeactivateEx;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, int> RequestUIActivate;
+        public delegate* unmanaged<TSelf*, int> RequestUIActivate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, int> CanWindowlessActivate;
+        public delegate* unmanaged<TSelf*, int> CanWindowlessActivate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, int> GetCapture;
+        public delegate* unmanaged<TSelf*, int> GetCapture;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, BOOL, int> SetCapture;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetCapture;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, int> GetFocus;
+        public delegate* unmanaged<TSelf*, int> GetFocus;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, BOOL, int> SetFocus;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetFocus;
 
         [NativeTypeName("HRESULT (LPCRECT, DWORD, HDC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, RECT*, uint, HDC*, int> GetDC;
+        public delegate* unmanaged<TSelf*, RECT*, uint, HDC*, int> GetDC;
 
         [NativeTypeName("HRESULT (HDC) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, HDC, int> ReleaseDC;
+        public delegate* unmanaged<TSelf*, HDC, int> ReleaseDC;
 
         [NativeTypeName("HRESULT (LPCRECT, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, RECT*, BOOL, int> InvalidateRect;
+        public delegate* unmanaged<TSelf*, RECT*, BOOL, int> InvalidateRect;
 
         [NativeTypeName("HRESULT (HRGN, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, HRGN, BOOL, int> InvalidateRgn;
+        public delegate* unmanaged<TSelf*, HRGN, BOOL, int> InvalidateRgn;
 
         [NativeTypeName("HRESULT (INT, INT, LPCRECT, LPCRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, int, int, RECT*, RECT*, int> ScrollRect;
+        public delegate* unmanaged<TSelf*, int, int, RECT*, RECT*, int> ScrollRect;
 
         [NativeTypeName("HRESULT (LPRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, RECT*, int> AdjustRect;
+        public delegate* unmanaged<TSelf*, RECT*, int> AdjustRect;
 
         [NativeTypeName("HRESULT (UINT, WPARAM, LPARAM, LRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceSiteWindowless*, uint, WPARAM, LPARAM, LRESULT*, int> OnDefWindowMessage;
+        public delegate* unmanaged<TSelf*, uint, WPARAM, LPARAM, LRESULT*, int> OnDefWindowMessage;
     }
 }

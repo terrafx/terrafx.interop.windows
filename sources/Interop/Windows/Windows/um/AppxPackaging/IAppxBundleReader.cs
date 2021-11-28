@@ -94,30 +94,31 @@ public unsafe partial struct IAppxBundleReader : IAppxBundleReader.Interface
         HRESULT GetPayloadPackage([NativeTypeName("LPCWSTR")] ushort* fileName, IAppxFile** payloadPackage);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleReader*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleReader*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleReader*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (APPX_BUNDLE_FOOTPRINT_FILE_TYPE, IAppxFile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleReader*, APPX_BUNDLE_FOOTPRINT_FILE_TYPE, IAppxFile**, int> GetFootprintFile;
+        public delegate* unmanaged<TSelf*, APPX_BUNDLE_FOOTPRINT_FILE_TYPE, IAppxFile**, int> GetFootprintFile;
 
         [NativeTypeName("HRESULT (IAppxBlockMapReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleReader*, IAppxBlockMapReader**, int> GetBlockMap;
+        public delegate* unmanaged<TSelf*, IAppxBlockMapReader**, int> GetBlockMap;
 
         [NativeTypeName("HRESULT (IAppxBundleManifestReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleReader*, IAppxBundleManifestReader**, int> GetManifest;
+        public delegate* unmanaged<TSelf*, IAppxBundleManifestReader**, int> GetManifest;
 
         [NativeTypeName("HRESULT (IAppxFilesEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleReader*, IAppxFilesEnumerator**, int> GetPayloadPackages;
+        public delegate* unmanaged<TSelf*, IAppxFilesEnumerator**, int> GetPayloadPackages;
 
         [NativeTypeName("HRESULT (LPCWSTR, IAppxFile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleReader*, ushort*, IAppxFile**, int> GetPayloadPackage;
+        public delegate* unmanaged<TSelf*, ushort*, IAppxFile**, int> GetPayloadPackage;
     }
 }

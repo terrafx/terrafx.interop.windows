@@ -117,42 +117,43 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
         HRESULT SetValueAndState([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* ppropvar, PSC_STATE state);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStoreCache*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStoreCache*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStoreCache*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStoreCache*, uint*, int> GetCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (DWORD, PROPERTYKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStoreCache*, uint, PROPERTYKEY*, int> GetAt;
+        public delegate* unmanaged<TSelf*, uint, PROPERTYKEY*, int> GetAt;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PROPVARIANT*, int> GetValue;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, PROPVARIANT*, int> GetValue;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, const PROPVARIANT &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PROPVARIANT*, int> SetValue;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, PROPVARIANT*, int> SetValue;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStoreCache*, int> Commit;
+        public delegate* unmanaged<TSelf*, int> Commit;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, PSC_STATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PSC_STATE*, int> GetState;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, PSC_STATE*, int> GetState;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, PROPVARIANT *, PSC_STATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PROPVARIANT*, PSC_STATE*, int> GetValueAndState;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, PROPVARIANT*, PSC_STATE*, int> GetValueAndState;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, PSC_STATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PSC_STATE, int> SetState;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, PSC_STATE, int> SetState;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, const PROPVARIANT *, PSC_STATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PROPVARIANT*, PSC_STATE, int> SetValueAndState;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, PROPVARIANT*, PSC_STATE, int> SetValueAndState;
     }
 }

@@ -52,18 +52,19 @@ public unsafe partial struct IHTMLChangeLog : IHTMLChangeLog.Interface
         HRESULT GetNextChange(byte* pbBuffer, [NativeTypeName("long")] int nBufferSize, [NativeTypeName("long *")] int* pnRecordLength);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLChangeLog*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLChangeLog*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLChangeLog*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE *, long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLChangeLog*, byte*, int, int*, int> GetNextChange;
+        public delegate* unmanaged<TSelf*, byte*, int, int*, int> GetNextChange;
     }
 }

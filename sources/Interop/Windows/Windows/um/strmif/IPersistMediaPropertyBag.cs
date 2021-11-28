@@ -79,27 +79,28 @@ public unsafe partial struct IPersistMediaPropertyBag : IPersistMediaPropertyBag
         HRESULT Save(IMediaPropertyBag* pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMediaPropertyBag*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMediaPropertyBag*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMediaPropertyBag*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMediaPropertyBag*, Guid*, int> GetClassID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetClassID;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMediaPropertyBag*, int> InitNew;
+        public delegate* unmanaged<TSelf*, int> InitNew;
 
         [NativeTypeName("HRESULT (IMediaPropertyBag *, IErrorLog *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMediaPropertyBag*, IMediaPropertyBag*, IErrorLog*, int> Load;
+        public delegate* unmanaged<TSelf*, IMediaPropertyBag*, IErrorLog*, int> Load;
 
         [NativeTypeName("HRESULT (IMediaPropertyBag *, BOOL, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMediaPropertyBag*, IMediaPropertyBag*, BOOL, BOOL, int> Save;
+        public delegate* unmanaged<TSelf*, IMediaPropertyBag*, BOOL, BOOL, int> Save;
     }
 }

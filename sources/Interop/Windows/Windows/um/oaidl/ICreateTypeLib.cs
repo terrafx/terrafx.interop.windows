@@ -142,45 +142,46 @@ public unsafe partial struct ICreateTypeLib : ICreateTypeLib.Interface
         HRESULT SaveAllChanges();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateTypeLib*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateTypeLib*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateTypeLib*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPOLESTR, TYPEKIND, ICreateTypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateTypeLib*, ushort*, TYPEKIND, ICreateTypeInfo**, int> CreateTypeInfo;
+        public delegate* unmanaged<TSelf*, ushort*, TYPEKIND, ICreateTypeInfo**, int> CreateTypeInfo;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateTypeLib*, ushort*, int> SetName;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetName;
 
         [NativeTypeName("HRESULT (WORD, WORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateTypeLib*, ushort, ushort, int> SetVersion;
+        public delegate* unmanaged<TSelf*, ushort, ushort, int> SetVersion;
 
         [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateTypeLib*, Guid*, int> SetGuid;
+        public delegate* unmanaged<TSelf*, Guid*, int> SetGuid;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateTypeLib*, ushort*, int> SetDocString;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetDocString;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateTypeLib*, ushort*, int> SetHelpFileName;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetHelpFileName;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateTypeLib*, uint, int> SetHelpContext;
+        public delegate* unmanaged<TSelf*, uint, int> SetHelpContext;
 
         [NativeTypeName("HRESULT (LCID) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateTypeLib*, uint, int> SetLcid;
+        public delegate* unmanaged<TSelf*, uint, int> SetLcid;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateTypeLib*, uint, int> SetLibFlags;
+        public delegate* unmanaged<TSelf*, uint, int> SetLibFlags;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateTypeLib*, int> SaveAllChanges;
+        public delegate* unmanaged<TSelf*, int> SaveAllChanges;
     }
 }

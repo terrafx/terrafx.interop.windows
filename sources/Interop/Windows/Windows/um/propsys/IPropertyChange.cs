@@ -66,24 +66,25 @@ public unsafe partial struct IPropertyChange : IPropertyChange.Interface
         HRESULT ApplyToPropVariant([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvarIn, PROPVARIANT* ppropvarOut);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyChange*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyChange*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyChange*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyChange*, PROPERTYKEY*, int> SetPropertyKey;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, int> SetPropertyKey;
 
         [NativeTypeName("HRESULT (PROPERTYKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyChange*, PROPERTYKEY*, int> GetPropertyKey;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, int> GetPropertyKey;
 
         [NativeTypeName("HRESULT (const PROPVARIANT &, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyChange*, PROPVARIANT*, PROPVARIANT*, int> ApplyToPropVariant;
+        public delegate* unmanaged<TSelf*, PROPVARIANT*, PROPVARIANT*, int> ApplyToPropVariant;
     }
 }

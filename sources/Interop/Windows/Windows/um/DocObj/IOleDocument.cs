@@ -72,24 +72,25 @@ public unsafe partial struct IOleDocument : IOleDocument.Interface
         HRESULT EnumViews(IEnumOleDocumentViews** ppEnum, IOleDocumentView** ppView);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleDocument*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleDocument*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleDocument*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IOleInPlaceSite *, IStream *, DWORD, IOleDocumentView **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleDocument*, IOleInPlaceSite*, IStream*, uint, IOleDocumentView**, int> CreateView;
+        public delegate* unmanaged<TSelf*, IOleInPlaceSite*, IStream*, uint, IOleDocumentView**, int> CreateView;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleDocument*, uint*, int> GetDocMiscStatus;
+        public delegate* unmanaged<TSelf*, uint*, int> GetDocMiscStatus;
 
         [NativeTypeName("HRESULT (IEnumOleDocumentViews **, IOleDocumentView **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleDocument*, IEnumOleDocumentViews**, IOleDocumentView**, int> EnumViews;
+        public delegate* unmanaged<TSelf*, IEnumOleDocumentViews**, IOleDocumentView**, int> EnumViews;
     }
 }

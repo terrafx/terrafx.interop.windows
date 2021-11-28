@@ -159,60 +159,61 @@ public unsafe partial struct IWICStream : IWICStream.Interface
         HRESULT InitializeFromIStreamRegion(IStream* pIStream, ULARGE_INTEGER ulOffset, ULARGE_INTEGER ulMaxSize);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStream*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStream*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStream*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStream*, void*, uint, uint*, int> Read;
+        public delegate* unmanaged<TSelf*, void*, uint, uint*, int> Read;
 
         [NativeTypeName("HRESULT (const void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStream*, void*, uint, uint*, int> Write;
+        public delegate* unmanaged<TSelf*, void*, uint, uint*, int> Write;
 
         [NativeTypeName("HRESULT (LARGE_INTEGER, DWORD, ULARGE_INTEGER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStream*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int> Seek;
+        public delegate* unmanaged<TSelf*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int> Seek;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStream*, ULARGE_INTEGER, int> SetSize;
+        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, int> SetSize;
 
         [NativeTypeName("HRESULT (IStream *, ULARGE_INTEGER, ULARGE_INTEGER *, ULARGE_INTEGER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStream*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int> CopyTo;
+        public delegate* unmanaged<TSelf*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int> CopyTo;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStream*, uint, int> Commit;
+        public delegate* unmanaged<TSelf*, uint, int> Commit;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStream*, int> Revert;
+        public delegate* unmanaged<TSelf*, int> Revert;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStream*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> LockRegion;
+        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> LockRegion;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStream*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> UnlockRegion;
+        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> UnlockRegion;
 
         [NativeTypeName("HRESULT (STATSTG *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStream*, STATSTG*, uint, int> Stat;
+        public delegate* unmanaged<TSelf*, STATSTG*, uint, int> Stat;
 
         [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStream*, IStream**, int> Clone;
+        public delegate* unmanaged<TSelf*, IStream**, int> Clone;
 
         [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStream*, IStream*, int> InitializeFromIStream;
+        public delegate* unmanaged<TSelf*, IStream*, int> InitializeFromIStream;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStream*, ushort*, uint, int> InitializeFromFilename;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> InitializeFromFilename;
 
         [NativeTypeName("HRESULT (WICInProcPointer, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStream*, byte*, uint, int> InitializeFromMemory;
+        public delegate* unmanaged<TSelf*, byte*, uint, int> InitializeFromMemory;
 
         [NativeTypeName("HRESULT (IStream *, ULARGE_INTEGER, ULARGE_INTEGER) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStream*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER, int> InitializeFromIStreamRegion;
+        public delegate* unmanaged<TSelf*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER, int> InitializeFromIStreamRegion;
     }
 }

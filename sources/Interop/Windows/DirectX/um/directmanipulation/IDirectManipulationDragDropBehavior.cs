@@ -65,21 +65,22 @@ public unsafe partial struct IDirectManipulationDragDropBehavior : IDirectManipu
         HRESULT GetStatus(DIRECTMANIPULATION_DRAG_DROP_STATUS* status);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationDragDropBehavior*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationDragDropBehavior*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationDragDropBehavior*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationDragDropBehavior*, DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION, int> SetConfiguration;
+        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION, int> SetConfiguration;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_DRAG_DROP_STATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationDragDropBehavior*, DIRECTMANIPULATION_DRAG_DROP_STATUS*, int> GetStatus;
+        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_DRAG_DROP_STATUS*, int> GetStatus;
     }
 }

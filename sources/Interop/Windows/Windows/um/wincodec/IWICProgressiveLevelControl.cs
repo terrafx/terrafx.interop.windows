@@ -72,24 +72,25 @@ public unsafe partial struct IWICProgressiveLevelControl : IWICProgressiveLevelC
         HRESULT SetCurrentLevel(uint nLevel);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICProgressiveLevelControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICProgressiveLevelControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICProgressiveLevelControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICProgressiveLevelControl*, uint*, int> GetLevelCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetLevelCount;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICProgressiveLevelControl*, uint*, int> GetCurrentLevel;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCurrentLevel;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICProgressiveLevelControl*, uint, int> SetCurrentLevel;
+        public delegate* unmanaged<TSelf*, uint, int> SetCurrentLevel;
     }
 }

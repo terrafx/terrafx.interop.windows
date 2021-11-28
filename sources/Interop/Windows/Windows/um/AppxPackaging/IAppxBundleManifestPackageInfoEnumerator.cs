@@ -74,24 +74,25 @@ public unsafe partial struct IAppxBundleManifestPackageInfoEnumerator : IAppxBun
         HRESULT MoveNext(BOOL* hasNext);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleManifestPackageInfoEnumerator*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleManifestPackageInfoEnumerator*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleManifestPackageInfoEnumerator*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxBundleManifestPackageInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleManifestPackageInfoEnumerator*, IAppxBundleManifestPackageInfo**, int> GetCurrent;
+        public delegate* unmanaged<TSelf*, IAppxBundleManifestPackageInfo**, int> GetCurrent;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleManifestPackageInfoEnumerator*, BOOL*, int> GetHasCurrent;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetHasCurrent;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleManifestPackageInfoEnumerator*, BOOL*, int> MoveNext;
+        public delegate* unmanaged<TSelf*, BOOL*, int> MoveNext;
     }
 }

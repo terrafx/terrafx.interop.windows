@@ -59,21 +59,22 @@ public unsafe partial struct IProvideClassInfo2 : IProvideClassInfo2.Interface
         HRESULT GetGUID([NativeTypeName("DWORD")] uint dwGuidKind, Guid* pGUID);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProvideClassInfo2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IProvideClassInfo2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IProvideClassInfo2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProvideClassInfo2*, ITypeInfo**, int> GetClassInfo;
+        public delegate* unmanaged<TSelf*, ITypeInfo**, int> GetClassInfo;
 
         [NativeTypeName("HRESULT (DWORD, GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProvideClassInfo2*, uint, Guid*, int> GetGUID;
+        public delegate* unmanaged<TSelf*, uint, Guid*, int> GetGUID;
     }
 }

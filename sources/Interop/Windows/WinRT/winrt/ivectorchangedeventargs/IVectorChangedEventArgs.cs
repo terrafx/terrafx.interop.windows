@@ -84,30 +84,31 @@ public unsafe partial struct IVectorChangedEventArgs : IVectorChangedEventArgs.I
         HRESULT get_Index([NativeTypeName("unsigned int *")] uint* value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVectorChangedEventArgs*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVectorChangedEventArgs*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVectorChangedEventArgs*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVectorChangedEventArgs*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVectorChangedEventArgs*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVectorChangedEventArgs*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::CollectionChange *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVectorChangedEventArgs*, CollectionChange*, int> get_CollectionChange;
+        public delegate* unmanaged<TSelf*, CollectionChange*, int> get_CollectionChange;
 
         [NativeTypeName("HRESULT (unsigned int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVectorChangedEventArgs*, uint*, int> get_Index;
+        public delegate* unmanaged<TSelf*, uint*, int> get_Index;
     }
 }

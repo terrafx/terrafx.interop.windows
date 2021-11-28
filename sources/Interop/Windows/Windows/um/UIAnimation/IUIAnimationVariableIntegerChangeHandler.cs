@@ -52,18 +52,19 @@ public unsafe partial struct IUIAnimationVariableIntegerChangeHandler : IUIAnima
         HRESULT OnIntegerValueChanged(IUIAnimationStoryboard* storyboard, IUIAnimationVariable* variable, [NativeTypeName("INT32")] int newValue, [NativeTypeName("INT32")] int previousValue);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariableIntegerChangeHandler*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariableIntegerChangeHandler*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariableIntegerChangeHandler*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUIAnimationStoryboard *, IUIAnimationVariable *, INT32, INT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariableIntegerChangeHandler*, IUIAnimationStoryboard*, IUIAnimationVariable*, int, int, int> OnIntegerValueChanged;
+        public delegate* unmanaged<TSelf*, IUIAnimationStoryboard*, IUIAnimationVariable*, int, int, int> OnIntegerValueChanged;
     }
 }

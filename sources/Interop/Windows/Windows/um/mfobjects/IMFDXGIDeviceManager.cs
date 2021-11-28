@@ -114,36 +114,37 @@ public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interfa
         HRESULT UnlockDevice(HANDLE hDevice, BOOL fSaveState);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDXGIDeviceManager*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDXGIDeviceManager*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDXGIDeviceManager*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, int> CloseDeviceHandle;
+        public delegate* unmanaged<TSelf*, HANDLE, int> CloseDeviceHandle;
 
         [NativeTypeName("HRESULT (HANDLE, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, Guid*, void**, int> GetVideoService;
+        public delegate* unmanaged<TSelf*, HANDLE, Guid*, void**, int> GetVideoService;
 
         [NativeTypeName("HRESULT (HANDLE, const IID &, void **, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, Guid*, void**, BOOL, int> LockDevice;
+        public delegate* unmanaged<TSelf*, HANDLE, Guid*, void**, BOOL, int> LockDevice;
 
         [NativeTypeName("HRESULT (HANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE*, int> OpenDeviceHandle;
+        public delegate* unmanaged<TSelf*, HANDLE*, int> OpenDeviceHandle;
 
         [NativeTypeName("HRESULT (IUnknown *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDXGIDeviceManager*, IUnknown*, uint, int> ResetDevice;
+        public delegate* unmanaged<TSelf*, IUnknown*, uint, int> ResetDevice;
 
         [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, int> TestDevice;
+        public delegate* unmanaged<TSelf*, HANDLE, int> TestDevice;
 
         [NativeTypeName("HRESULT (HANDLE, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDXGIDeviceManager*, HANDLE, BOOL, int> UnlockDevice;
+        public delegate* unmanaged<TSelf*, HANDLE, BOOL, int> UnlockDevice;
     }
 }

@@ -63,21 +63,22 @@ public unsafe partial struct ISwapChainPanelNative2 : ISwapChainPanelNative2.Int
         HRESULT SetSwapChainHandle(HANDLE swapChainHandle);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISwapChainPanelNative2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISwapChainPanelNative2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISwapChainPanelNative2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDXGISwapChain *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISwapChainPanelNative2*, IDXGISwapChain*, int> SetSwapChain;
+        public delegate* unmanaged<TSelf*, IDXGISwapChain*, int> SetSwapChain;
 
         [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISwapChainPanelNative2*, HANDLE, int> SetSwapChainHandle;
+        public delegate* unmanaged<TSelf*, HANDLE, int> SetSwapChainHandle;
     }
 }

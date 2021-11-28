@@ -62,21 +62,22 @@ public unsafe partial struct IMFQualityAdviseLimits : IMFQualityAdviseLimits.Int
         HRESULT GetMinimumQualityLevel(MF_QUALITY_LEVEL* peQualityLevel);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFQualityAdviseLimits*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFQualityAdviseLimits*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFQualityAdviseLimits*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MF_QUALITY_DROP_MODE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFQualityAdviseLimits*, MF_QUALITY_DROP_MODE*, int> GetMaximumDropMode;
+        public delegate* unmanaged<TSelf*, MF_QUALITY_DROP_MODE*, int> GetMaximumDropMode;
 
         [NativeTypeName("HRESULT (MF_QUALITY_LEVEL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFQualityAdviseLimits*, MF_QUALITY_LEVEL*, int> GetMinimumQualityLevel;
+        public delegate* unmanaged<TSelf*, MF_QUALITY_LEVEL*, int> GetMinimumQualityLevel;
     }
 }

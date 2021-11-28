@@ -177,69 +177,70 @@ public unsafe partial struct IBPCSatelliteTuner : IBPCSatelliteTuner.Interface
         HRESULT IsTapingPermitted();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBPCSatelliteTuner*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBPCSatelliteTuner*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBPCSatelliteTuner*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long, long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBPCSatelliteTuner*, int, int, int, int> put_Channel;
+        public delegate* unmanaged<TSelf*, int, int, int, int> put_Channel;
 
         [NativeTypeName("HRESULT (long *, long *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBPCSatelliteTuner*, int*, int*, int*, int> get_Channel;
+        public delegate* unmanaged<TSelf*, int*, int*, int*, int> get_Channel;
 
         [NativeTypeName("HRESULT (long *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBPCSatelliteTuner*, int*, int*, int> ChannelMinMax;
+        public delegate* unmanaged<TSelf*, int*, int*, int> ChannelMinMax;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBPCSatelliteTuner*, int, int> put_CountryCode;
+        public delegate* unmanaged<TSelf*, int, int> put_CountryCode;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBPCSatelliteTuner*, int*, int> get_CountryCode;
+        public delegate* unmanaged<TSelf*, int*, int> get_CountryCode;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBPCSatelliteTuner*, int, int> put_TuningSpace;
+        public delegate* unmanaged<TSelf*, int, int> put_TuningSpace;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBPCSatelliteTuner*, int*, int> get_TuningSpace;
+        public delegate* unmanaged<TSelf*, int*, int> get_TuningSpace;
 
         [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBPCSatelliteTuner*, HANDLE, int> Logon;
+        public delegate* unmanaged<TSelf*, HANDLE, int> Logon;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBPCSatelliteTuner*, int> Logout;
+        public delegate* unmanaged<TSelf*, int> Logout;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBPCSatelliteTuner*, int*, int> SignalPresent;
+        public delegate* unmanaged<TSelf*, int*, int> SignalPresent;
 
         [NativeTypeName("HRESULT (AMTunerModeType) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBPCSatelliteTuner*, AMTunerModeType, int> put_Mode;
+        public delegate* unmanaged<TSelf*, AMTunerModeType, int> put_Mode;
 
         [NativeTypeName("HRESULT (AMTunerModeType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBPCSatelliteTuner*, AMTunerModeType*, int> get_Mode;
+        public delegate* unmanaged<TSelf*, AMTunerModeType*, int> get_Mode;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBPCSatelliteTuner*, int*, int> GetAvailableModes;
+        public delegate* unmanaged<TSelf*, int*, int> GetAvailableModes;
 
         [NativeTypeName("HRESULT (IAMTunerNotification *, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBPCSatelliteTuner*, IAMTunerNotification*, int, int> RegisterNotificationCallBack;
+        public delegate* unmanaged<TSelf*, IAMTunerNotification*, int, int> RegisterNotificationCallBack;
 
         [NativeTypeName("HRESULT (IAMTunerNotification *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBPCSatelliteTuner*, IAMTunerNotification*, int> UnRegisterNotificationCallBack;
+        public delegate* unmanaged<TSelf*, IAMTunerNotification*, int> UnRegisterNotificationCallBack;
 
         [NativeTypeName("HRESULT (long *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBPCSatelliteTuner*, int*, int*, int> get_DefaultSubChannelTypes;
+        public delegate* unmanaged<TSelf*, int*, int*, int> get_DefaultSubChannelTypes;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBPCSatelliteTuner*, int, int, int> put_DefaultSubChannelTypes;
+        public delegate* unmanaged<TSelf*, int, int, int> put_DefaultSubChannelTypes;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBPCSatelliteTuner*, int> IsTapingPermitted;
+        public delegate* unmanaged<TSelf*, int> IsTapingPermitted;
     }
 }

@@ -52,18 +52,19 @@ public unsafe partial struct IDocViewSite : IDocViewSite.Interface
         HRESULT OnSetTitle([NativeTypeName("VARIANTARG *")] VARIANT* pvTitle);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDocViewSite*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDocViewSite*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDocViewSite*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (VARIANTARG *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDocViewSite*, VARIANT*, int> OnSetTitle;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> OnSetTitle;
     }
 }

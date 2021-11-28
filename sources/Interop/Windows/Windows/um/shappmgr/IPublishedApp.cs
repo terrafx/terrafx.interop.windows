@@ -107,39 +107,40 @@ public unsafe partial struct IPublishedApp : IPublishedApp.Interface
         HRESULT Unschedule();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPublishedApp*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPublishedApp*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPublishedApp*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PAPPINFODATA) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPublishedApp*, APPINFODATA*, int> GetAppInfo;
+        public delegate* unmanaged<TSelf*, APPINFODATA*, int> GetAppInfo;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPublishedApp*, uint*, int> GetPossibleActions;
+        public delegate* unmanaged<TSelf*, uint*, int> GetPossibleActions;
 
         [NativeTypeName("HRESULT (PSLOWAPPINFO) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPublishedApp*, SLOWAPPINFO*, int> GetSlowAppInfo;
+        public delegate* unmanaged<TSelf*, SLOWAPPINFO*, int> GetSlowAppInfo;
 
         [NativeTypeName("HRESULT (PSLOWAPPINFO) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPublishedApp*, SLOWAPPINFO*, int> GetCachedSlowAppInfo;
+        public delegate* unmanaged<TSelf*, SLOWAPPINFO*, int> GetCachedSlowAppInfo;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPublishedApp*, int> IsInstalled;
+        public delegate* unmanaged<TSelf*, int> IsInstalled;
 
         [NativeTypeName("HRESULT (LPSYSTEMTIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPublishedApp*, SYSTEMTIME*, int> Install;
+        public delegate* unmanaged<TSelf*, SYSTEMTIME*, int> Install;
 
         [NativeTypeName("HRESULT (PPUBAPPINFO) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPublishedApp*, PUBAPPINFO*, int> GetPublishedAppInfo;
+        public delegate* unmanaged<TSelf*, PUBAPPINFO*, int> GetPublishedAppInfo;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPublishedApp*, int> Unschedule;
+        public delegate* unmanaged<TSelf*, int> Unschedule;
     }
 }

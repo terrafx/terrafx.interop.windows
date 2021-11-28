@@ -84,27 +84,28 @@ public unsafe partial struct IMFMediaError : IMFMediaError.Interface
         HRESULT SetExtendedErrorCode(HRESULT error);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaError*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaError*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaError*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("USHORT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaError*, ushort> GetErrorCode;
+        public delegate* unmanaged<TSelf*, ushort> GetErrorCode;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaError*, int> GetExtendedErrorCode;
+        public delegate* unmanaged<TSelf*, int> GetExtendedErrorCode;
 
         [NativeTypeName("HRESULT (MF_MEDIA_ENGINE_ERR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaError*, MF_MEDIA_ENGINE_ERR, int> SetErrorCode;
+        public delegate* unmanaged<TSelf*, MF_MEDIA_ENGINE_ERR, int> SetErrorCode;
 
         [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaError*, HRESULT, int> SetExtendedErrorCode;
+        public delegate* unmanaged<TSelf*, HRESULT, int> SetExtendedErrorCode;
     }
 }

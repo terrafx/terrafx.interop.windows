@@ -109,36 +109,37 @@ public unsafe partial struct IMediaFilter : IMediaFilter.Interface
         HRESULT GetSyncSource(IReferenceClock** pClock);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaFilter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaFilter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaFilter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaFilter*, Guid*, int> GetClassID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetClassID;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaFilter*, int> Stop;
+        public delegate* unmanaged<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaFilter*, int> Pause;
+        public delegate* unmanaged<TSelf*, int> Pause;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaFilter*, long, int> Run;
+        public delegate* unmanaged<TSelf*, long, int> Run;
 
         [NativeTypeName("HRESULT (DWORD, FILTER_STATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaFilter*, uint, FILTER_STATE*, int> GetState;
+        public delegate* unmanaged<TSelf*, uint, FILTER_STATE*, int> GetState;
 
         [NativeTypeName("HRESULT (IReferenceClock *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaFilter*, IReferenceClock*, int> SetSyncSource;
+        public delegate* unmanaged<TSelf*, IReferenceClock*, int> SetSyncSource;
 
         [NativeTypeName("HRESULT (IReferenceClock **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaFilter*, IReferenceClock**, int> GetSyncSource;
+        public delegate* unmanaged<TSelf*, IReferenceClock**, int> GetSyncSource;
     }
 }

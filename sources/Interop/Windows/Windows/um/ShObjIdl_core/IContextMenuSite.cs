@@ -52,18 +52,19 @@ public unsafe partial struct IContextMenuSite : IContextMenuSite.Interface
         HRESULT DoContextMenuPopup(IUnknown* punkContextMenu, uint fFlags, POINT pt);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenuSite*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenuSite*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenuSite*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, UINT, POINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenuSite*, IUnknown*, uint, POINT, int> DoContextMenuPopup;
+        public delegate* unmanaged<TSelf*, IUnknown*, uint, POINT, int> DoContextMenuPopup;
     }
 }

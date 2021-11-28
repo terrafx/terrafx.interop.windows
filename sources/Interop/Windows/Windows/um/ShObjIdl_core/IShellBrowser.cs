@@ -186,60 +186,61 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface
         HRESULT SetToolbarItems([NativeTypeName("LPTBBUTTONSB")] void* lpButtons, uint nButtons, uint uFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellBrowser*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellBrowser*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellBrowser*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellBrowser*, HWND*, int> GetWindow;
+        public delegate* unmanaged<TSelf*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellBrowser*, BOOL, int> ContextSensitiveHelp;
+        public delegate* unmanaged<TSelf*, BOOL, int> ContextSensitiveHelp;
 
         [NativeTypeName("HRESULT (HMENU, LPOLEMENUGROUPWIDTHS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellBrowser*, HMENU, OLEMENUGROUPWIDTHS*, int> InsertMenusSB;
+        public delegate* unmanaged<TSelf*, HMENU, OLEMENUGROUPWIDTHS*, int> InsertMenusSB;
 
         [NativeTypeName("HRESULT (HMENU, HOLEMENU, HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellBrowser*, HMENU, HGLOBAL, HWND, int> SetMenuSB;
+        public delegate* unmanaged<TSelf*, HMENU, HGLOBAL, HWND, int> SetMenuSB;
 
         [NativeTypeName("HRESULT (HMENU) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellBrowser*, HMENU, int> RemoveMenusSB;
+        public delegate* unmanaged<TSelf*, HMENU, int> RemoveMenusSB;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellBrowser*, ushort*, int> SetStatusTextSB;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetStatusTextSB;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellBrowser*, BOOL, int> EnableModelessSB;
+        public delegate* unmanaged<TSelf*, BOOL, int> EnableModelessSB;
 
         [NativeTypeName("HRESULT (MSG *, WORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellBrowser*, MSG*, ushort, int> TranslateAcceleratorSB;
+        public delegate* unmanaged<TSelf*, MSG*, ushort, int> TranslateAcceleratorSB;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellBrowser*, ITEMIDLIST*, uint, int> BrowseObject;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, uint, int> BrowseObject;
 
         [NativeTypeName("HRESULT (DWORD, IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellBrowser*, uint, IStream**, int> GetViewStateStream;
+        public delegate* unmanaged<TSelf*, uint, IStream**, int> GetViewStateStream;
 
         [NativeTypeName("HRESULT (UINT, HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellBrowser*, uint, HWND*, int> GetControlWindow;
+        public delegate* unmanaged<TSelf*, uint, HWND*, int> GetControlWindow;
 
         [NativeTypeName("HRESULT (UINT, UINT, WPARAM, LPARAM, LRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellBrowser*, uint, uint, WPARAM, LPARAM, LRESULT*, int> SendControlMsg;
+        public delegate* unmanaged<TSelf*, uint, uint, WPARAM, LPARAM, LRESULT*, int> SendControlMsg;
 
         [NativeTypeName("HRESULT (IShellView **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellBrowser*, IShellView**, int> QueryActiveShellView;
+        public delegate* unmanaged<TSelf*, IShellView**, int> QueryActiveShellView;
 
         [NativeTypeName("HRESULT (IShellView *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellBrowser*, IShellView*, int> OnViewWindowActive;
+        public delegate* unmanaged<TSelf*, IShellView*, int> OnViewWindowActive;
 
         [NativeTypeName("HRESULT (LPTBBUTTONSB, UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellBrowser*, void*, uint, uint, int> SetToolbarItems;
+        public delegate* unmanaged<TSelf*, void*, uint, uint, int> SetToolbarItems;
     }
 }

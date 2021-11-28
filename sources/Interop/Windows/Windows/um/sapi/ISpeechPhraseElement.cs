@@ -200,66 +200,67 @@ public unsafe partial struct ISpeechPhraseElement : ISpeechPhraseElement.Interfa
         HRESULT get_EngineConfidence(float* EngineConfidence);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechPhraseElement*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechPhraseElement*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechPhraseElement*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechPhraseElement*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechPhraseElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechPhraseElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechPhraseElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechPhraseElement*, int*, int> get_AudioTimeOffset;
+        public delegate* unmanaged<TSelf*, int*, int> get_AudioTimeOffset;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechPhraseElement*, int*, int> get_AudioSizeTime;
+        public delegate* unmanaged<TSelf*, int*, int> get_AudioSizeTime;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechPhraseElement*, int*, int> get_AudioStreamOffset;
+        public delegate* unmanaged<TSelf*, int*, int> get_AudioStreamOffset;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechPhraseElement*, int*, int> get_AudioSizeBytes;
+        public delegate* unmanaged<TSelf*, int*, int> get_AudioSizeBytes;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechPhraseElement*, int*, int> get_RetainedStreamOffset;
+        public delegate* unmanaged<TSelf*, int*, int> get_RetainedStreamOffset;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechPhraseElement*, int*, int> get_RetainedSizeBytes;
+        public delegate* unmanaged<TSelf*, int*, int> get_RetainedSizeBytes;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechPhraseElement*, ushort**, int> get_DisplayText;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_DisplayText;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechPhraseElement*, ushort**, int> get_LexicalForm;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_LexicalForm;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechPhraseElement*, VARIANT*, int> get_Pronunciation;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_Pronunciation;
 
         [NativeTypeName("HRESULT (SpeechDisplayAttributes *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechPhraseElement*, SpeechDisplayAttributes*, int> get_DisplayAttributes;
+        public delegate* unmanaged<TSelf*, SpeechDisplayAttributes*, int> get_DisplayAttributes;
 
         [NativeTypeName("HRESULT (SpeechEngineConfidence *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechPhraseElement*, SpeechEngineConfidence*, int> get_RequiredConfidence;
+        public delegate* unmanaged<TSelf*, SpeechEngineConfidence*, int> get_RequiredConfidence;
 
         [NativeTypeName("HRESULT (SpeechEngineConfidence *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechPhraseElement*, SpeechEngineConfidence*, int> get_ActualConfidence;
+        public delegate* unmanaged<TSelf*, SpeechEngineConfidence*, int> get_ActualConfidence;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechPhraseElement*, float*, int> get_EngineConfidence;
+        public delegate* unmanaged<TSelf*, float*, int> get_EngineConfidence;
     }
 }

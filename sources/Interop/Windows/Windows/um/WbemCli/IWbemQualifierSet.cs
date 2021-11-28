@@ -112,36 +112,37 @@ public unsafe partial struct IWbemQualifierSet : IWbemQualifierSet.Interface
         HRESULT EndEnumeration();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemQualifierSet*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemQualifierSet*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemQualifierSet*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, long, VARIANT *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemQualifierSet*, ushort*, int, VARIANT*, int*, int> Get;
+        public delegate* unmanaged<TSelf*, ushort*, int, VARIANT*, int*, int> Get;
 
         [NativeTypeName("HRESULT (LPCWSTR, VARIANT *, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemQualifierSet*, ushort*, VARIANT*, int, int> Put;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int, int> Put;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemQualifierSet*, ushort*, int> Delete;
+        public delegate* unmanaged<TSelf*, ushort*, int> Delete;
 
         [NativeTypeName("HRESULT (long, SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemQualifierSet*, int, SAFEARRAY**, int> GetNames;
+        public delegate* unmanaged<TSelf*, int, SAFEARRAY**, int> GetNames;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemQualifierSet*, int, int> BeginEnumeration;
+        public delegate* unmanaged<TSelf*, int, int> BeginEnumeration;
 
         [NativeTypeName("HRESULT (long, BSTR *, VARIANT *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemQualifierSet*, int, ushort**, VARIANT*, int*, int> Next;
+        public delegate* unmanaged<TSelf*, int, ushort**, VARIANT*, int*, int> Next;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemQualifierSet*, int> EndEnumeration;
+        public delegate* unmanaged<TSelf*, int> EndEnumeration;
     }
 }

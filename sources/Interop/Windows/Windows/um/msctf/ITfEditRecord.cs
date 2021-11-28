@@ -62,21 +62,22 @@ public unsafe partial struct ITfEditRecord : ITfEditRecord.Interface
         HRESULT GetTextAndPropertyUpdates([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const GUID **")] Guid** prgProperties, [NativeTypeName("ULONG")] uint cProperties, IEnumTfRanges** ppEnum);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfEditRecord*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfEditRecord*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfEditRecord*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfEditRecord*, BOOL*, int> GetSelectionStatus;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetSelectionStatus;
 
         [NativeTypeName("HRESULT (DWORD, const GUID **, ULONG, IEnumTfRanges **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfEditRecord*, uint, Guid**, uint, IEnumTfRanges**, int> GetTextAndPropertyUpdates;
+        public delegate* unmanaged<TSelf*, uint, Guid**, uint, IEnumTfRanges**, int> GetTextAndPropertyUpdates;
     }
 }

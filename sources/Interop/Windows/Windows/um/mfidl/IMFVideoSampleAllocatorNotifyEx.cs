@@ -61,21 +61,22 @@ public unsafe partial struct IMFVideoSampleAllocatorNotifyEx : IMFVideoSampleAll
         HRESULT NotifyPrune(IMFSample* __MIDL__IMFVideoSampleAllocatorNotifyEx0000);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFVideoSampleAllocatorNotifyEx*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFVideoSampleAllocatorNotifyEx*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFVideoSampleAllocatorNotifyEx*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFVideoSampleAllocatorNotifyEx*, int> NotifyRelease;
+        public delegate* unmanaged<TSelf*, int> NotifyRelease;
 
         [NativeTypeName("HRESULT (IMFSample *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFVideoSampleAllocatorNotifyEx*, IMFSample*, int> NotifyPrune;
+        public delegate* unmanaged<TSelf*, IMFSample*, int> NotifyPrune;
     }
 }

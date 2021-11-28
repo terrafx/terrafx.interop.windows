@@ -78,24 +78,25 @@ public unsafe partial struct IMessageFilter : IMessageFilter.Interface
         uint MessagePending(HTASK htaskCallee, [NativeTypeName("DWORD")] uint dwTickCount, [NativeTypeName("DWORD")] uint dwPendingType);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMessageFilter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMessageFilter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMessageFilter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("DWORD (DWORD, HTASK, DWORD, LPINTERFACEINFO) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMessageFilter*, uint, HTASK, uint, INTERFACEINFO*, uint> HandleInComingCall;
+        public delegate* unmanaged<TSelf*, uint, HTASK, uint, INTERFACEINFO*, uint> HandleInComingCall;
 
         [NativeTypeName("DWORD (HTASK, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMessageFilter*, HTASK, uint, uint, uint> RetryRejectedCall;
+        public delegate* unmanaged<TSelf*, HTASK, uint, uint, uint> RetryRejectedCall;
 
         [NativeTypeName("DWORD (HTASK, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMessageFilter*, HTASK, uint, uint, uint> MessagePending;
+        public delegate* unmanaged<TSelf*, HTASK, uint, uint, uint> MessagePending;
     }
 }

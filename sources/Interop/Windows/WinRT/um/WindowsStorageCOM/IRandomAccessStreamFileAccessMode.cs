@@ -55,18 +55,19 @@ public unsafe partial struct IRandomAccessStreamFileAccessMode : IRandomAccessSt
         HRESULT GetMode([NativeTypeName("DWORD *")] uint* fileAccessMode);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRandomAccessStreamFileAccessMode*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRandomAccessStreamFileAccessMode*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRandomAccessStreamFileAccessMode*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRandomAccessStreamFileAccessMode*, uint*, int> GetMode;
+        public delegate* unmanaged<TSelf*, uint*, int> GetMode;
     }
 }

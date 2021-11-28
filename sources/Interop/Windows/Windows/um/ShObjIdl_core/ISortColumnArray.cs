@@ -72,24 +72,25 @@ public unsafe partial struct ISortColumnArray : ISortColumnArray.Interface
         HRESULT GetSortType([NativeTypeName("enum SORT_ORDER_TYPE *")] SORT_ORDER_TYPE* type);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISortColumnArray*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISortColumnArray*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISortColumnArray*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISortColumnArray*, uint*, int> GetCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (UINT, SORTCOLUMN *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISortColumnArray*, uint, SORTCOLUMN*, int> GetAt;
+        public delegate* unmanaged<TSelf*, uint, SORTCOLUMN*, int> GetAt;
 
         [NativeTypeName("HRESULT (enum SORT_ORDER_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISortColumnArray*, SORT_ORDER_TYPE*, int> GetSortType;
+        public delegate* unmanaged<TSelf*, SORT_ORDER_TYPE*, int> GetSortType;
     }
 }

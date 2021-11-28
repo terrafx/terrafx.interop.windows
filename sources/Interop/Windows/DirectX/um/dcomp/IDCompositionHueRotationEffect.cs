@@ -70,24 +70,25 @@ public unsafe partial struct IDCompositionHueRotationEffect : IDCompositionHueRo
         HRESULT SetAngle(float amountDegrees);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionHueRotationEffect*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionHueRotationEffect*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionHueRotationEffect*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionHueRotationEffect*, uint, IUnknown*, uint, int> SetInput;
+        public delegate* unmanaged<TSelf*, uint, IUnknown*, uint, int> SetInput;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionHueRotationEffect*, IDCompositionAnimation*, int> SetAngle;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetAngle;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionHueRotationEffect*, float, int> SetAngle1;
+        public delegate* unmanaged<TSelf*, float, int> SetAngle1;
     }
 }

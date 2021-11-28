@@ -72,24 +72,25 @@ public unsafe partial struct IMFNetCredentialCache : IMFNetCredentialCache.Inter
         HRESULT SetUserOptions(IMFNetCredential* pCred, [NativeTypeName("DWORD")] uint dwOptionsFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCredentialCache*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCredentialCache*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCredentialCache*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, DWORD, IMFNetCredential **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCredentialCache*, ushort*, ushort*, uint, IMFNetCredential**, uint*, int> GetCredential;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, uint, IMFNetCredential**, uint*, int> GetCredential;
 
         [NativeTypeName("HRESULT (IMFNetCredential *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCredentialCache*, IMFNetCredential*, BOOL, int> SetGood;
+        public delegate* unmanaged<TSelf*, IMFNetCredential*, BOOL, int> SetGood;
 
         [NativeTypeName("HRESULT (IMFNetCredential *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCredentialCache*, IMFNetCredential*, uint, int> SetUserOptions;
+        public delegate* unmanaged<TSelf*, IMFNetCredential*, uint, int> SetUserOptions;
     }
 }

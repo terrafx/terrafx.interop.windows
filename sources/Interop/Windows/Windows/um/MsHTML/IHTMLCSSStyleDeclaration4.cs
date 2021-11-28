@@ -970,297 +970,298 @@ public unsafe partial struct IHTMLCSSStyleDeclaration4 : IHTMLCSSStyleDeclaratio
         HRESULT get_webkitAnimationFillMode([NativeTypeName("BSTR *")] ushort** p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitAppearance;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitAppearance;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitAppearance;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitAppearance;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitUserSelect;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitUserSelect;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitUserSelect;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitUserSelect;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitBoxAlign;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitBoxAlign;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitBoxAlign;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitBoxAlign;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT, int> put_webkitBoxOrdinalGroup;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_webkitBoxOrdinalGroup;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT*, int> get_webkitBoxOrdinalGroup;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_webkitBoxOrdinalGroup;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitBoxPack;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitBoxPack;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitBoxPack;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitBoxPack;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT, int> put_webkitBoxFlex;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_webkitBoxFlex;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT*, int> get_webkitBoxFlex;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_webkitBoxFlex;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitBoxOrient;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitBoxOrient;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitBoxOrient;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitBoxOrient;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitBoxDirection;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitBoxDirection;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitBoxDirection;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitBoxDirection;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitTransform;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitTransform;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitTransform;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitTransform;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitBackgroundSize;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitBackgroundSize;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitBackgroundSize;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitBackgroundSize;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitBackfaceVisibility;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitBackfaceVisibility;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitBackfaceVisibility;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitBackfaceVisibility;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitAnimation;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitAnimation;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitAnimation;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitAnimation;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitTransition;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitTransition;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitTransition;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitTransition;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitAnimationName;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitAnimationName;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitAnimationName;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitAnimationName;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitAnimationDuration;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitAnimationDuration;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitAnimationDuration;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitAnimationDuration;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitAnimationTimingFunction;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitAnimationTimingFunction;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitAnimationTimingFunction;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitAnimationTimingFunction;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitAnimationDelay;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitAnimationDelay;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitAnimationDelay;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitAnimationDelay;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitAnimationIterationCount;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitAnimationIterationCount;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitAnimationIterationCount;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitAnimationIterationCount;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitAnimationDirection;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitAnimationDirection;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitAnimationDirection;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitAnimationDirection;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitAnimationPlayState;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitAnimationPlayState;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitAnimationPlayState;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitAnimationPlayState;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitTransitionProperty;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitTransitionProperty;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitTransitionProperty;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitTransitionProperty;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitTransitionDuration;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitTransitionDuration;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitTransitionDuration;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitTransitionDuration;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitTransitionTimingFunction;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitTransitionTimingFunction;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitTransitionTimingFunction;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitTransitionTimingFunction;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitTransitionDelay;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitTransitionDelay;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitTransitionDelay;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitTransitionDelay;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitBackgroundAttachment;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitBackgroundAttachment;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitBackgroundAttachment;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitBackgroundAttachment;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT, int> put_webkitBackgroundColor;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_webkitBackgroundColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT*, int> get_webkitBackgroundColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_webkitBackgroundColor;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitBackgroundClip;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitBackgroundClip;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitBackgroundClip;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitBackgroundClip;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitBackgroundImage;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitBackgroundImage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitBackgroundImage;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitBackgroundImage;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitBackgroundRepeat;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitBackgroundRepeat;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitBackgroundRepeat;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitBackgroundRepeat;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitBackgroundOrigin;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitBackgroundOrigin;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitBackgroundOrigin;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitBackgroundOrigin;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitBackgroundPosition;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitBackgroundPosition;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitBackgroundPosition;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitBackgroundPosition;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT, int> put_webkitBackgroundPositionX;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_webkitBackgroundPositionX;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT*, int> get_webkitBackgroundPositionX;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_webkitBackgroundPositionX;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT, int> put_webkitBackgroundPositionY;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_webkitBackgroundPositionY;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT*, int> get_webkitBackgroundPositionY;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_webkitBackgroundPositionY;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitBackground;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitBackground;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitBackground;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitBackground;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitTransformOrigin;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitTransformOrigin;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitTransformOrigin;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitTransformOrigin;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT, int> put_msTextSizeAdjust;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_msTextSizeAdjust;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT*, int> get_msTextSizeAdjust;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_msTextSizeAdjust;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT, int> put_webkitTextSizeAdjust;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_webkitTextSizeAdjust;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, VARIANT*, int> get_webkitTextSizeAdjust;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_webkitTextSizeAdjust;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitBorderImage;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitBorderImage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitBorderImage;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitBorderImage;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitBorderImageSource;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitBorderImageSource;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitBorderImageSource;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitBorderImageSource;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitBorderImageSlice;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitBorderImageSlice;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitBorderImageSlice;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitBorderImageSlice;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitBorderImageWidth;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitBorderImageWidth;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitBorderImageWidth;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitBorderImageWidth;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitBorderImageOutset;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitBorderImageOutset;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitBorderImageOutset;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitBorderImageOutset;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitBorderImageRepeat;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitBorderImageRepeat;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitBorderImageRepeat;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitBorderImageRepeat;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitBoxSizing;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitBoxSizing;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitBoxSizing;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitBoxSizing;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort*, int> put_webkitAnimationFillMode;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_webkitAnimationFillMode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration4*, ushort**, int> get_webkitAnimationFillMode;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_webkitAnimationFillMode;
     }
 }

@@ -62,21 +62,22 @@ public unsafe partial struct IAudioSessionManager : IAudioSessionManager.Interfa
         HRESULT GetSimpleAudioVolume([NativeTypeName("LPCGUID")] Guid* AudioSessionGuid, [NativeTypeName("DWORD")] uint StreamFlags, ISimpleAudioVolume** AudioVolume);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionManager*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionManager*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionManager*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCGUID, DWORD, IAudioSessionControl **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionManager*, Guid*, uint, IAudioSessionControl**, int> GetAudioSessionControl;
+        public delegate* unmanaged<TSelf*, Guid*, uint, IAudioSessionControl**, int> GetAudioSessionControl;
 
         [NativeTypeName("HRESULT (LPCGUID, DWORD, ISimpleAudioVolume **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionManager*, Guid*, uint, ISimpleAudioVolume**, int> GetSimpleAudioVolume;
+        public delegate* unmanaged<TSelf*, Guid*, uint, ISimpleAudioVolume**, int> GetSimpleAudioVolume;
     }
 }

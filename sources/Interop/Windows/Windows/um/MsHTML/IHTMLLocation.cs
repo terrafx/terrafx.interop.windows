@@ -270,87 +270,88 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         HRESULT toString([NativeTypeName("BSTR *")] ushort** @string);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, ushort*, int> put_href;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_href;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, ushort**, int> get_href;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_href;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, ushort*, int> put_protocol;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_protocol;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, ushort**, int> get_protocol;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_protocol;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, ushort*, int> put_host;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_host;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, ushort**, int> get_host;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_host;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, ushort*, int> put_hostname;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_hostname;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, ushort**, int> get_hostname;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_hostname;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, ushort*, int> put_port;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_port;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, ushort**, int> get_port;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_port;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, ushort*, int> put_pathname;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_pathname;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, ushort**, int> get_pathname;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_pathname;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, ushort*, int> put_search;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_search;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, ushort**, int> get_search;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_search;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, ushort*, int> put_hash;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_hash;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, ushort**, int> get_hash;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_hash;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, short, int> reload;
+        public delegate* unmanaged<TSelf*, short, int> reload;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, ushort*, int> replace;
+        public delegate* unmanaged<TSelf*, ushort*, int> replace;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, ushort*, int> assign;
+        public delegate* unmanaged<TSelf*, ushort*, int> assign;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLLocation*, ushort**, int> toString;
+        public delegate* unmanaged<TSelf*, ushort**, int> toString;
     }
 }

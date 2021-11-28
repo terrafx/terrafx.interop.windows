@@ -52,18 +52,19 @@ public unsafe partial struct ITfRangeBackup : ITfRangeBackup.Interface
         HRESULT Restore([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfRangeBackup*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfRangeBackup*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfRangeBackup*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfRange *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfRangeBackup*, uint, ITfRange*, int> Restore;
+        public delegate* unmanaged<TSelf*, uint, ITfRange*, int> Restore;
     }
 }

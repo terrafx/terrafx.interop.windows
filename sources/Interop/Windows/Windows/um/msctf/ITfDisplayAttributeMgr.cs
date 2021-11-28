@@ -72,24 +72,25 @@ public unsafe partial struct ITfDisplayAttributeMgr : ITfDisplayAttributeMgr.Int
         HRESULT GetDisplayAttributeInfo([NativeTypeName("const GUID &")] Guid* guid, ITfDisplayAttributeInfo** ppInfo, [NativeTypeName("CLSID *")] Guid* pclsidOwner);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDisplayAttributeMgr*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDisplayAttributeMgr*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDisplayAttributeMgr*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDisplayAttributeMgr*, int> OnUpdateInfo;
+        public delegate* unmanaged<TSelf*, int> OnUpdateInfo;
 
         [NativeTypeName("HRESULT (IEnumTfDisplayAttributeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDisplayAttributeMgr*, IEnumTfDisplayAttributeInfo**, int> EnumDisplayAttributeInfo;
+        public delegate* unmanaged<TSelf*, IEnumTfDisplayAttributeInfo**, int> EnumDisplayAttributeInfo;
 
         [NativeTypeName("HRESULT (const GUID &, ITfDisplayAttributeInfo **, CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDisplayAttributeMgr*, Guid*, ITfDisplayAttributeInfo**, Guid*, int> GetDisplayAttributeInfo;
+        public delegate* unmanaged<TSelf*, Guid*, ITfDisplayAttributeInfo**, Guid*, int> GetDisplayAttributeInfo;
     }
 }

@@ -282,87 +282,88 @@ public unsafe partial struct IFont : IFont.Interface
         HRESULT SetHdc(HDC hDC);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, ushort**, int> get_Name;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_Name;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, ushort*, int> put_Name;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_Name;
 
         [NativeTypeName("HRESULT (CY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, CY*, int> get_Size;
+        public delegate* unmanaged<TSelf*, CY*, int> get_Size;
 
         [NativeTypeName("HRESULT (CY) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, CY, int> put_Size;
+        public delegate* unmanaged<TSelf*, CY, int> put_Size;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, BOOL*, int> get_Bold;
+        public delegate* unmanaged<TSelf*, BOOL*, int> get_Bold;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, BOOL, int> put_Bold;
+        public delegate* unmanaged<TSelf*, BOOL, int> put_Bold;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, BOOL*, int> get_Italic;
+        public delegate* unmanaged<TSelf*, BOOL*, int> get_Italic;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, BOOL, int> put_Italic;
+        public delegate* unmanaged<TSelf*, BOOL, int> put_Italic;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, BOOL*, int> get_Underline;
+        public delegate* unmanaged<TSelf*, BOOL*, int> get_Underline;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, BOOL, int> put_Underline;
+        public delegate* unmanaged<TSelf*, BOOL, int> put_Underline;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, BOOL*, int> get_Strikethrough;
+        public delegate* unmanaged<TSelf*, BOOL*, int> get_Strikethrough;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, BOOL, int> put_Strikethrough;
+        public delegate* unmanaged<TSelf*, BOOL, int> put_Strikethrough;
 
         [NativeTypeName("HRESULT (SHORT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, short*, int> get_Weight;
+        public delegate* unmanaged<TSelf*, short*, int> get_Weight;
 
         [NativeTypeName("HRESULT (SHORT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, short, int> put_Weight;
+        public delegate* unmanaged<TSelf*, short, int> put_Weight;
 
         [NativeTypeName("HRESULT (SHORT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, short*, int> get_Charset;
+        public delegate* unmanaged<TSelf*, short*, int> get_Charset;
 
         [NativeTypeName("HRESULT (SHORT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, short, int> put_Charset;
+        public delegate* unmanaged<TSelf*, short, int> put_Charset;
 
         [NativeTypeName("HRESULT (HFONT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, HFONT*, int> get_hFont;
+        public delegate* unmanaged<TSelf*, HFONT*, int> get_hFont;
 
         [NativeTypeName("HRESULT (IFont **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, IFont**, int> Clone;
+        public delegate* unmanaged<TSelf*, IFont**, int> Clone;
 
         [NativeTypeName("HRESULT (IFont *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, IFont*, int> IsEqual;
+        public delegate* unmanaged<TSelf*, IFont*, int> IsEqual;
 
         [NativeTypeName("HRESULT (LONG, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, int, int, int> SetRatio;
+        public delegate* unmanaged<TSelf*, int, int, int> SetRatio;
 
         [NativeTypeName("HRESULT (TEXTMETRICOLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, TEXTMETRICW*, int> QueryTextMetrics;
+        public delegate* unmanaged<TSelf*, TEXTMETRICW*, int> QueryTextMetrics;
 
         [NativeTypeName("HRESULT (HFONT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, HFONT, int> AddRefHfont;
+        public delegate* unmanaged<TSelf*, HFONT, int> AddRefHfont;
 
         [NativeTypeName("HRESULT (HFONT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, HFONT, int> ReleaseHfont;
+        public delegate* unmanaged<TSelf*, HFONT, int> ReleaseHfont;
 
         [NativeTypeName("HRESULT (HDC) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFont*, HDC, int> SetHdc;
+        public delegate* unmanaged<TSelf*, HDC, int> SetHdc;
     }
 }

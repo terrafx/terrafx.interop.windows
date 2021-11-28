@@ -52,18 +52,19 @@ public unsafe partial struct IMFStreamingSinkConfig : IMFStreamingSinkConfig.Int
         HRESULT StartStreaming(BOOL fSeekOffsetIsByteOffset, [NativeTypeName("QWORD")] ulong qwSeekOffset);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFStreamingSinkConfig*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFStreamingSinkConfig*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFStreamingSinkConfig*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL, QWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFStreamingSinkConfig*, BOOL, ulong, int> StartStreaming;
+        public delegate* unmanaged<TSelf*, BOOL, ulong, int> StartStreaming;
     }
 }

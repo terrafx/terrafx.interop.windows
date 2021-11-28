@@ -62,21 +62,22 @@ public unsafe partial struct IObjectWithFolderEnumMode : IObjectWithFolderEnumMo
         HRESULT GetMode(FOLDER_ENUM_MODE* pfeMode);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectWithFolderEnumMode*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectWithFolderEnumMode*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectWithFolderEnumMode*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (FOLDER_ENUM_MODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectWithFolderEnumMode*, FOLDER_ENUM_MODE, int> SetMode;
+        public delegate* unmanaged<TSelf*, FOLDER_ENUM_MODE, int> SetMode;
 
         [NativeTypeName("HRESULT (FOLDER_ENUM_MODE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectWithFolderEnumMode*, FOLDER_ENUM_MODE*, int> GetMode;
+        public delegate* unmanaged<TSelf*, FOLDER_ENUM_MODE*, int> GetMode;
     }
 }

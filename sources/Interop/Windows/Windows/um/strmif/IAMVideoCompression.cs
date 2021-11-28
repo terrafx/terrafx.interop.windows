@@ -152,48 +152,49 @@ public unsafe partial struct IAMVideoCompression : IAMVideoCompression.Interface
         HRESULT OverrideFrameSize([NativeTypeName("long")] int FrameNumber, [NativeTypeName("long")] int Size);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoCompression*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoCompression*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoCompression*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoCompression*, int, int> put_KeyFrameRate;
+        public delegate* unmanaged<TSelf*, int, int> put_KeyFrameRate;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoCompression*, int*, int> get_KeyFrameRate;
+        public delegate* unmanaged<TSelf*, int*, int> get_KeyFrameRate;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoCompression*, int, int> put_PFramesPerKeyFrame;
+        public delegate* unmanaged<TSelf*, int, int> put_PFramesPerKeyFrame;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoCompression*, int*, int> get_PFramesPerKeyFrame;
+        public delegate* unmanaged<TSelf*, int*, int> get_PFramesPerKeyFrame;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoCompression*, double, int> put_Quality;
+        public delegate* unmanaged<TSelf*, double, int> put_Quality;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoCompression*, double*, int> get_Quality;
+        public delegate* unmanaged<TSelf*, double*, int> get_Quality;
 
         [NativeTypeName("HRESULT (DWORDLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoCompression*, ulong, int> put_WindowSize;
+        public delegate* unmanaged<TSelf*, ulong, int> put_WindowSize;
 
         [NativeTypeName("HRESULT (DWORDLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoCompression*, ulong*, int> get_WindowSize;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_WindowSize;
 
         [NativeTypeName("HRESULT (LPWSTR, int *, LPWSTR, int *, long *, long *, double *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoCompression*, ushort*, int*, ushort*, int*, int*, int*, double*, int*, int> GetInfo;
+        public delegate* unmanaged<TSelf*, ushort*, int*, ushort*, int*, int*, int*, double*, int*, int> GetInfo;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoCompression*, int, int> OverrideKeyFrame;
+        public delegate* unmanaged<TSelf*, int, int> OverrideKeyFrame;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoCompression*, int, int, int> OverrideFrameSize;
+        public delegate* unmanaged<TSelf*, int, int, int> OverrideFrameSize;
     }
 }

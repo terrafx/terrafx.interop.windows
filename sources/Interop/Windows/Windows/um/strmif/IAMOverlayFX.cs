@@ -72,24 +72,25 @@ public unsafe partial struct IAMOverlayFX : IAMOverlayFX.Interface
         HRESULT GetOverlayFX([NativeTypeName("DWORD *")] uint* lpdwOverlayFX);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMOverlayFX*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMOverlayFX*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMOverlayFX*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMOverlayFX*, uint*, int> QueryOverlayFXCaps;
+        public delegate* unmanaged<TSelf*, uint*, int> QueryOverlayFXCaps;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMOverlayFX*, uint, int> SetOverlayFX;
+        public delegate* unmanaged<TSelf*, uint, int> SetOverlayFX;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMOverlayFX*, uint*, int> GetOverlayFX;
+        public delegate* unmanaged<TSelf*, uint*, int> GetOverlayFX;
     }
 }

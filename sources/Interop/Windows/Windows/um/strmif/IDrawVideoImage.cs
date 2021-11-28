@@ -72,24 +72,25 @@ public unsafe partial struct IDrawVideoImage : IDrawVideoImage.Interface
         HRESULT DrawVideoImageDraw(HDC hdc, [NativeTypeName("LPRECT")] RECT* lprcSrc, [NativeTypeName("LPRECT")] RECT* lprcDst);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDrawVideoImage*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDrawVideoImage*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDrawVideoImage*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDrawVideoImage*, int> DrawVideoImageBegin;
+        public delegate* unmanaged<TSelf*, int> DrawVideoImageBegin;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDrawVideoImage*, int> DrawVideoImageEnd;
+        public delegate* unmanaged<TSelf*, int> DrawVideoImageEnd;
 
         [NativeTypeName("HRESULT (HDC, LPRECT, LPRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDrawVideoImage*, HDC, RECT*, RECT*, int> DrawVideoImageDraw;
+        public delegate* unmanaged<TSelf*, HDC, RECT*, RECT*, int> DrawVideoImageDraw;
     }
 }

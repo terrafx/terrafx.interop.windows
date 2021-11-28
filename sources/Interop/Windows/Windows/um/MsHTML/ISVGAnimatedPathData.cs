@@ -150,51 +150,52 @@ public unsafe partial struct ISVGAnimatedPathData : ISVGAnimatedPathData.Interfa
         HRESULT get_animatedNormalizedPathSegList(ISVGPathSegList** p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGAnimatedPathData*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGAnimatedPathData*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGAnimatedPathData*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGAnimatedPathData*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGAnimatedPathData*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGAnimatedPathData*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGAnimatedPathData*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (ISVGPathSegList *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGAnimatedPathData*, ISVGPathSegList*, int> putref_pathSegList;
+        public delegate* unmanaged<TSelf*, ISVGPathSegList*, int> putref_pathSegList;
 
         [NativeTypeName("HRESULT (ISVGPathSegList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGAnimatedPathData*, ISVGPathSegList**, int> get_pathSegList;
+        public delegate* unmanaged<TSelf*, ISVGPathSegList**, int> get_pathSegList;
 
         [NativeTypeName("HRESULT (ISVGPathSegList *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGAnimatedPathData*, ISVGPathSegList*, int> putref_normalizedPathSegList;
+        public delegate* unmanaged<TSelf*, ISVGPathSegList*, int> putref_normalizedPathSegList;
 
         [NativeTypeName("HRESULT (ISVGPathSegList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGAnimatedPathData*, ISVGPathSegList**, int> get_normalizedPathSegList;
+        public delegate* unmanaged<TSelf*, ISVGPathSegList**, int> get_normalizedPathSegList;
 
         [NativeTypeName("HRESULT (ISVGPathSegList *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGAnimatedPathData*, ISVGPathSegList*, int> putref_animatedPathSegList;
+        public delegate* unmanaged<TSelf*, ISVGPathSegList*, int> putref_animatedPathSegList;
 
         [NativeTypeName("HRESULT (ISVGPathSegList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGAnimatedPathData*, ISVGPathSegList**, int> get_animatedPathSegList;
+        public delegate* unmanaged<TSelf*, ISVGPathSegList**, int> get_animatedPathSegList;
 
         [NativeTypeName("HRESULT (ISVGPathSegList *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGAnimatedPathData*, ISVGPathSegList*, int> putref_animatedNormalizedPathSegList;
+        public delegate* unmanaged<TSelf*, ISVGPathSegList*, int> putref_animatedNormalizedPathSegList;
 
         [NativeTypeName("HRESULT (ISVGPathSegList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGAnimatedPathData*, ISVGPathSegList**, int> get_animatedNormalizedPathSegList;
+        public delegate* unmanaged<TSelf*, ISVGPathSegList**, int> get_animatedNormalizedPathSegList;
     }
 }

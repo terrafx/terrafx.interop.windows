@@ -232,72 +232,73 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface
         HRESULT IsEqual(IHTMLComputedStyle* pComputedStyle, [NativeTypeName("VARIANT_BOOL *")] short* pfEqual);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLComputedStyle*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLComputedStyle*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLComputedStyle*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLComputedStyle*, short*, int> get_bold;
+        public delegate* unmanaged<TSelf*, short*, int> get_bold;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLComputedStyle*, short*, int> get_italic;
+        public delegate* unmanaged<TSelf*, short*, int> get_italic;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLComputedStyle*, short*, int> get_underline;
+        public delegate* unmanaged<TSelf*, short*, int> get_underline;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLComputedStyle*, short*, int> get_overline;
+        public delegate* unmanaged<TSelf*, short*, int> get_overline;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLComputedStyle*, short*, int> get_strikeOut;
+        public delegate* unmanaged<TSelf*, short*, int> get_strikeOut;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLComputedStyle*, short*, int> get_subScript;
+        public delegate* unmanaged<TSelf*, short*, int> get_subScript;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLComputedStyle*, short*, int> get_superScript;
+        public delegate* unmanaged<TSelf*, short*, int> get_superScript;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLComputedStyle*, short*, int> get_explicitFace;
+        public delegate* unmanaged<TSelf*, short*, int> get_explicitFace;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLComputedStyle*, int*, int> get_fontWeight;
+        public delegate* unmanaged<TSelf*, int*, int> get_fontWeight;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLComputedStyle*, int*, int> get_fontSize;
+        public delegate* unmanaged<TSelf*, int*, int> get_fontSize;
 
         [NativeTypeName("HRESULT (TCHAR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLComputedStyle*, ushort*, int> get_fontName;
+        public delegate* unmanaged<TSelf*, ushort*, int> get_fontName;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLComputedStyle*, short*, int> get_hasBgColor;
+        public delegate* unmanaged<TSelf*, short*, int> get_hasBgColor;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLComputedStyle*, uint*, int> get_textColor;
+        public delegate* unmanaged<TSelf*, uint*, int> get_textColor;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLComputedStyle*, uint*, int> get_backgroundColor;
+        public delegate* unmanaged<TSelf*, uint*, int> get_backgroundColor;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLComputedStyle*, short*, int> get_preFormatted;
+        public delegate* unmanaged<TSelf*, short*, int> get_preFormatted;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLComputedStyle*, short*, int> get_direction;
+        public delegate* unmanaged<TSelf*, short*, int> get_direction;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLComputedStyle*, short*, int> get_blockDirection;
+        public delegate* unmanaged<TSelf*, short*, int> get_blockDirection;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLComputedStyle*, short*, int> get_OL;
+        public delegate* unmanaged<TSelf*, short*, int> get_OL;
 
         [NativeTypeName("HRESULT (IHTMLComputedStyle *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLComputedStyle*, IHTMLComputedStyle*, short*, int> IsEqual;
+        public delegate* unmanaged<TSelf*, IHTMLComputedStyle*, short*, int> IsEqual;
     }
 }

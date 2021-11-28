@@ -96,33 +96,34 @@ public unsafe partial struct IObjectCollection : IObjectCollection.Interface
         HRESULT Clear();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectCollection*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectCollection*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectCollection*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectCollection*, uint*, int> GetCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectCollection*, uint, Guid*, void**, int> GetAt;
+        public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> GetAt;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectCollection*, IUnknown*, int> AddObject;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> AddObject;
 
         [NativeTypeName("HRESULT (IObjectArray *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectCollection*, IObjectArray*, int> AddFromArray;
+        public delegate* unmanaged<TSelf*, IObjectArray*, int> AddFromArray;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectCollection*, uint, int> RemoveObjectAt;
+        public delegate* unmanaged<TSelf*, uint, int> RemoveObjectAt;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectCollection*, int> Clear;
+        public delegate* unmanaged<TSelf*, int> Clear;
     }
 }

@@ -52,18 +52,19 @@ public unsafe partial struct IMarkupContainer : IMarkupContainer.Interface
         HRESULT OwningDoc(IHTMLDocument2** ppDoc);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupContainer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupContainer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupContainer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IHTMLDocument2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupContainer*, IHTMLDocument2**, int> OwningDoc;
+        public delegate* unmanaged<TSelf*, IHTMLDocument2**, int> OwningDoc;
     }
 }

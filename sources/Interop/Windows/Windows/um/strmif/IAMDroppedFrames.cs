@@ -82,27 +82,28 @@ public unsafe partial struct IAMDroppedFrames : IAMDroppedFrames.Interface
         HRESULT GetAverageFrameSize([NativeTypeName("long *")] int* plAverageSize);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDroppedFrames*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDroppedFrames*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDroppedFrames*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDroppedFrames*, int*, int> GetNumDropped;
+        public delegate* unmanaged<TSelf*, int*, int> GetNumDropped;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDroppedFrames*, int*, int> GetNumNotDropped;
+        public delegate* unmanaged<TSelf*, int*, int> GetNumNotDropped;
 
         [NativeTypeName("HRESULT (long, long *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDroppedFrames*, int, int*, int*, int> GetDroppedInfo;
+        public delegate* unmanaged<TSelf*, int, int*, int*, int> GetDroppedInfo;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDroppedFrames*, int*, int> GetAverageFrameSize;
+        public delegate* unmanaged<TSelf*, int*, int> GetAverageFrameSize;
     }
 }

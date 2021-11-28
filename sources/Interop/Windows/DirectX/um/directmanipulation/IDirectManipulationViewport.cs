@@ -325,99 +325,100 @@ public unsafe partial struct IDirectManipulationViewport : IDirectManipulationVi
         HRESULT Abandon();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, int> Enable;
+        public delegate* unmanaged<TSelf*, int> Enable;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, int> Disable;
+        public delegate* unmanaged<TSelf*, int> Disable;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, uint, int> SetContact;
+        public delegate* unmanaged<TSelf*, uint, int> SetContact;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, uint, int> ReleaseContact;
+        public delegate* unmanaged<TSelf*, uint, int> ReleaseContact;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, int> ReleaseAllContacts;
+        public delegate* unmanaged<TSelf*, int> ReleaseAllContacts;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_STATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, DIRECTMANIPULATION_STATUS*, int> GetStatus;
+        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_STATUS*, int> GetStatus;
 
         [NativeTypeName("HRESULT (const IID &, void **, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, Guid*, void**, uint*, int> GetTag;
+        public delegate* unmanaged<TSelf*, Guid*, void**, uint*, int> GetTag;
 
         [NativeTypeName("HRESULT (IUnknown *, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, IUnknown*, uint, int> SetTag;
+        public delegate* unmanaged<TSelf*, IUnknown*, uint, int> SetTag;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, RECT*, int> GetViewportRect;
+        public delegate* unmanaged<TSelf*, RECT*, int> GetViewportRect;
 
         [NativeTypeName("HRESULT (const RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, RECT*, int> SetViewportRect;
+        public delegate* unmanaged<TSelf*, RECT*, int> SetViewportRect;
 
         [NativeTypeName("HRESULT (const float, const float, const float, const float, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, float, float, float, float, BOOL, int> ZoomToRect;
+        public delegate* unmanaged<TSelf*, float, float, float, float, BOOL, int> ZoomToRect;
 
         [NativeTypeName("HRESULT (const float *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, float*, uint, int> SetViewportTransform;
+        public delegate* unmanaged<TSelf*, float*, uint, int> SetViewportTransform;
 
         [NativeTypeName("HRESULT (const float *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, float*, uint, int> SyncDisplayTransform;
+        public delegate* unmanaged<TSelf*, float*, uint, int> SyncDisplayTransform;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, Guid*, void**, int> GetPrimaryContent;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetPrimaryContent;
 
         [NativeTypeName("HRESULT (IDirectManipulationContent *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, IDirectManipulationContent*, int> AddContent;
+        public delegate* unmanaged<TSelf*, IDirectManipulationContent*, int> AddContent;
 
         [NativeTypeName("HRESULT (IDirectManipulationContent *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, IDirectManipulationContent*, int> RemoveContent;
+        public delegate* unmanaged<TSelf*, IDirectManipulationContent*, int> RemoveContent;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_VIEWPORT_OPTIONS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, DIRECTMANIPULATION_VIEWPORT_OPTIONS, int> SetViewportOptions;
+        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_VIEWPORT_OPTIONS, int> SetViewportOptions;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_CONFIGURATION) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, DIRECTMANIPULATION_CONFIGURATION, int> AddConfiguration;
+        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_CONFIGURATION, int> AddConfiguration;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_CONFIGURATION) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, DIRECTMANIPULATION_CONFIGURATION, int> RemoveConfiguration;
+        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_CONFIGURATION, int> RemoveConfiguration;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_CONFIGURATION) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, DIRECTMANIPULATION_CONFIGURATION, int> ActivateConfiguration;
+        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_CONFIGURATION, int> ActivateConfiguration;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_GESTURE_CONFIGURATION) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, DIRECTMANIPULATION_GESTURE_CONFIGURATION, int> SetManualGesture;
+        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_GESTURE_CONFIGURATION, int> SetManualGesture;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_MOTION_TYPES) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, DIRECTMANIPULATION_MOTION_TYPES, int> SetChaining;
+        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_MOTION_TYPES, int> SetChaining;
 
         [NativeTypeName("HRESULT (HWND, IDirectManipulationViewportEventHandler *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, HWND, IDirectManipulationViewportEventHandler*, uint*, int> AddEventHandler;
+        public delegate* unmanaged<TSelf*, HWND, IDirectManipulationViewportEventHandler*, uint*, int> AddEventHandler;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, uint, int> RemoveEventHandler;
+        public delegate* unmanaged<TSelf*, uint, int> RemoveEventHandler;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_INPUT_MODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, DIRECTMANIPULATION_INPUT_MODE, int> SetInputMode;
+        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_INPUT_MODE, int> SetInputMode;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_INPUT_MODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, DIRECTMANIPULATION_INPUT_MODE, int> SetUpdateMode;
+        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_INPUT_MODE, int> SetUpdateMode;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, int> Stop;
+        public delegate* unmanaged<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationViewport*, int> Abandon;
+        public delegate* unmanaged<TSelf*, int> Abandon;
     }
 }

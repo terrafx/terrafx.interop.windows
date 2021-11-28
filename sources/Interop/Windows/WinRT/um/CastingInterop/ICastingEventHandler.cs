@@ -63,21 +63,22 @@ public unsafe partial struct ICastingEventHandler : ICastingEventHandler.Interfa
         HRESULT OnError(CASTING_CONNECTION_ERROR_STATUS errorStatus, [NativeTypeName("LPCWSTR")] ushort* errorMessage);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICastingEventHandler*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICastingEventHandler*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICastingEventHandler*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CASTING_CONNECTION_STATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICastingEventHandler*, CASTING_CONNECTION_STATE, int> OnStateChanged;
+        public delegate* unmanaged<TSelf*, CASTING_CONNECTION_STATE, int> OnStateChanged;
 
         [NativeTypeName("HRESULT (CASTING_CONNECTION_ERROR_STATUS, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICastingEventHandler*, CASTING_CONNECTION_ERROR_STATUS, ushort*, int> OnError;
+        public delegate* unmanaged<TSelf*, CASTING_CONNECTION_ERROR_STATUS, ushort*, int> OnError;
     }
 }

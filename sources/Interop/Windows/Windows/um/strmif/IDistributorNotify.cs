@@ -92,30 +92,31 @@ public unsafe partial struct IDistributorNotify : IDistributorNotify.Interface
         HRESULT NotifyGraphChange();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDistributorNotify*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDistributorNotify*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDistributorNotify*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDistributorNotify*, int> Stop;
+        public delegate* unmanaged<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDistributorNotify*, int> Pause;
+        public delegate* unmanaged<TSelf*, int> Pause;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDistributorNotify*, long, int> Run;
+        public delegate* unmanaged<TSelf*, long, int> Run;
 
         [NativeTypeName("HRESULT (IReferenceClock *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDistributorNotify*, IReferenceClock*, int> SetSyncSource;
+        public delegate* unmanaged<TSelf*, IReferenceClock*, int> SetSyncSource;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDistributorNotify*, int> NotifyGraphChange;
+        public delegate* unmanaged<TSelf*, int> NotifyGraphChange;
     }
 }

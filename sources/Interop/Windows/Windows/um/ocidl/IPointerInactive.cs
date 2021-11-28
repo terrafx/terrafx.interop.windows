@@ -72,24 +72,25 @@ public unsafe partial struct IPointerInactive : IPointerInactive.Interface
         HRESULT OnInactiveSetCursor([NativeTypeName("LPCRECT")] RECT* pRectBounds, [NativeTypeName("LONG")] int x, [NativeTypeName("LONG")] int y, [NativeTypeName("DWORD")] uint dwMouseMsg, BOOL fSetAlways);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPointerInactive*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPointerInactive*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPointerInactive*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPointerInactive*, uint*, int> GetActivationPolicy;
+        public delegate* unmanaged<TSelf*, uint*, int> GetActivationPolicy;
 
         [NativeTypeName("HRESULT (LPCRECT, LONG, LONG, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPointerInactive*, RECT*, int, int, uint, int> OnInactiveMouseMove;
+        public delegate* unmanaged<TSelf*, RECT*, int, int, uint, int> OnInactiveMouseMove;
 
         [NativeTypeName("HRESULT (LPCRECT, LONG, LONG, DWORD, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPointerInactive*, RECT*, int, int, uint, BOOL, int> OnInactiveSetCursor;
+        public delegate* unmanaged<TSelf*, RECT*, int, int, uint, BOOL, int> OnInactiveSetCursor;
     }
 }

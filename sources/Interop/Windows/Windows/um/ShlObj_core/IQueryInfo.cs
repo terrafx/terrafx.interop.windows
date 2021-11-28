@@ -62,21 +62,22 @@ public unsafe partial struct IQueryInfo : IQueryInfo.Interface
         HRESULT GetInfoFlags([NativeTypeName("DWORD *")] uint* pdwFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueryInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueryInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueryInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, PWSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueryInfo*, uint, ushort**, int> GetInfoTip;
+        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetInfoTip;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueryInfo*, uint*, int> GetInfoFlags;
+        public delegate* unmanaged<TSelf*, uint*, int> GetInfoFlags;
     }
 }

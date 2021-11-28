@@ -65,21 +65,22 @@ public unsafe partial struct IDWriteColorGlyphRunEnumerator : IDWriteColorGlyphR
         HRESULT GetCurrentRun([NativeTypeName("const DWRITE_COLOR_GLYPH_RUN **")] DWRITE_COLOR_GLYPH_RUN** colorGlyphRun);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteColorGlyphRunEnumerator*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteColorGlyphRunEnumerator*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteColorGlyphRunEnumerator*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteColorGlyphRunEnumerator*, BOOL*, int> MoveNext;
+        public delegate* unmanaged<TSelf*, BOOL*, int> MoveNext;
 
         [NativeTypeName("HRESULT (const DWRITE_COLOR_GLYPH_RUN **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteColorGlyphRunEnumerator*, DWRITE_COLOR_GLYPH_RUN**, int> GetCurrentRun;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_COLOR_GLYPH_RUN**, int> GetCurrentRun;
     }
 }

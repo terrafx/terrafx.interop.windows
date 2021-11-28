@@ -210,69 +210,70 @@ public unsafe partial struct IXMLDocument : IXMLDocument.Interface
         HRESULT createElement(VARIANT vType, VARIANT var1, IXMLElement** ppElem);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDocument*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDocument*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDocument*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDocument*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDocument*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDocument*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDocument*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IXMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDocument*, IXMLElement**, int> get_root;
+        public delegate* unmanaged<TSelf*, IXMLElement**, int> get_root;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDocument*, ushort**, int> get_fileSize;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_fileSize;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDocument*, ushort**, int> get_fileModifiedDate;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_fileModifiedDate;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDocument*, ushort**, int> get_fileUpdatedDate;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_fileUpdatedDate;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDocument*, ushort**, int> get_URL;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_URL;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDocument*, ushort*, int> put_URL;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_URL;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDocument*, ushort**, int> get_mimeType;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_mimeType;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDocument*, int*, int> get_readyState;
+        public delegate* unmanaged<TSelf*, int*, int> get_readyState;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDocument*, ushort**, int> get_charset;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_charset;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDocument*, ushort*, int> put_charset;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_charset;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDocument*, ushort**, int> get_version;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_version;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDocument*, ushort**, int> get_doctype;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_doctype;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDocument*, ushort**, int> get_dtdURL;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_dtdURL;
 
         [NativeTypeName("HRESULT (VARIANT, VARIANT, IXMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDocument*, VARIANT, VARIANT, IXMLElement**, int> createElement;
+        public delegate* unmanaged<TSelf*, VARIANT, VARIANT, IXMLElement**, int> createElement;
     }
 }

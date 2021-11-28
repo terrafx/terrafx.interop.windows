@@ -102,33 +102,34 @@ public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface
         HRESULT Shutdown();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFQualityManager*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFQualityManager*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFQualityManager*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFTopology *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFQualityManager*, IMFTopology*, int> NotifyTopology;
+        public delegate* unmanaged<TSelf*, IMFTopology*, int> NotifyTopology;
 
         [NativeTypeName("HRESULT (IMFPresentationClock *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFQualityManager*, IMFPresentationClock*, int> NotifyPresentationClock;
+        public delegate* unmanaged<TSelf*, IMFPresentationClock*, int> NotifyPresentationClock;
 
         [NativeTypeName("HRESULT (IMFTopologyNode *, long, IMFSample *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFQualityManager*, IMFTopologyNode*, int, IMFSample*, int> NotifyProcessInput;
+        public delegate* unmanaged<TSelf*, IMFTopologyNode*, int, IMFSample*, int> NotifyProcessInput;
 
         [NativeTypeName("HRESULT (IMFTopologyNode *, long, IMFSample *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFQualityManager*, IMFTopologyNode*, int, IMFSample*, int> NotifyProcessOutput;
+        public delegate* unmanaged<TSelf*, IMFTopologyNode*, int, IMFSample*, int> NotifyProcessOutput;
 
         [NativeTypeName("HRESULT (IUnknown *, IMFMediaEvent *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFQualityManager*, IUnknown*, IMFMediaEvent*, int> NotifyQualityEvent;
+        public delegate* unmanaged<TSelf*, IUnknown*, IMFMediaEvent*, int> NotifyQualityEvent;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFQualityManager*, int> Shutdown;
+        public delegate* unmanaged<TSelf*, int> Shutdown;
     }
 }

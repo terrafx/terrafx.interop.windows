@@ -102,33 +102,34 @@ public unsafe partial struct ICatRegister : ICatRegister.Interface
         HRESULT UnRegisterClassReqCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATID []")] Guid* rgcatid);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICatRegister*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICatRegister*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICatRegister*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, CATEGORYINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICatRegister*, uint, CATEGORYINFO*, int> RegisterCategories;
+        public delegate* unmanaged<TSelf*, uint, CATEGORYINFO*, int> RegisterCategories;
 
         [NativeTypeName("HRESULT (ULONG, CATID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICatRegister*, uint, Guid*, int> UnRegisterCategories;
+        public delegate* unmanaged<TSelf*, uint, Guid*, int> UnRegisterCategories;
 
         [NativeTypeName("HRESULT (const IID &, ULONG, CATID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICatRegister*, Guid*, uint, Guid*, int> RegisterClassImplCategories;
+        public delegate* unmanaged<TSelf*, Guid*, uint, Guid*, int> RegisterClassImplCategories;
 
         [NativeTypeName("HRESULT (const IID &, ULONG, CATID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICatRegister*, Guid*, uint, Guid*, int> UnRegisterClassImplCategories;
+        public delegate* unmanaged<TSelf*, Guid*, uint, Guid*, int> UnRegisterClassImplCategories;
 
         [NativeTypeName("HRESULT (const IID &, ULONG, CATID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICatRegister*, Guid*, uint, Guid*, int> RegisterClassReqCategories;
+        public delegate* unmanaged<TSelf*, Guid*, uint, Guid*, int> RegisterClassReqCategories;
 
         [NativeTypeName("HRESULT (const IID &, ULONG, CATID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICatRegister*, Guid*, uint, Guid*, int> UnRegisterClassReqCategories;
+        public delegate* unmanaged<TSelf*, Guid*, uint, Guid*, int> UnRegisterClassReqCategories;
     }
 }

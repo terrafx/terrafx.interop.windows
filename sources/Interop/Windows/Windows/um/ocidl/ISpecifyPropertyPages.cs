@@ -52,18 +52,19 @@ public unsafe partial struct ISpecifyPropertyPages : ISpecifyPropertyPages.Inter
         HRESULT GetPages(CAUUID* pPages);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpecifyPropertyPages*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpecifyPropertyPages*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpecifyPropertyPages*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CAUUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpecifyPropertyPages*, CAUUID*, int> GetPages;
+        public delegate* unmanaged<TSelf*, CAUUID*, int> GetPages;
     }
 }

@@ -47,15 +47,16 @@ public unsafe partial struct ID3D11ShaderReflectionConstantBuffer : ID3D11Shader
         ID3D11ShaderReflectionVariable* GetVariableByName([NativeTypeName("LPCSTR")] sbyte* Name);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (D3D11_SHADER_BUFFER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11ShaderReflectionConstantBuffer*, D3D11_SHADER_BUFFER_DESC*, int> GetDesc;
+        public delegate* unmanaged<TSelf*, D3D11_SHADER_BUFFER_DESC*, int> GetDesc;
 
         [NativeTypeName("ID3D11ShaderReflectionVariable *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11ShaderReflectionConstantBuffer*, uint, ID3D11ShaderReflectionVariable*> GetVariableByIndex;
+        public delegate* unmanaged<TSelf*, uint, ID3D11ShaderReflectionVariable*> GetVariableByIndex;
 
         [NativeTypeName("ID3D11ShaderReflectionVariable *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11ShaderReflectionConstantBuffer*, sbyte*, ID3D11ShaderReflectionVariable*> GetVariableByName;
+        public delegate* unmanaged<TSelf*, sbyte*, ID3D11ShaderReflectionVariable*> GetVariableByName;
     }
 }

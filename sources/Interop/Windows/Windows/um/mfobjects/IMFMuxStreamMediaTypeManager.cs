@@ -104,33 +104,34 @@ public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTyp
         HRESULT GetStreamConfiguration([NativeTypeName("DWORD")] uint ulIndex, [NativeTypeName("ULONGLONG *")] ulong* pullStreamMask);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMuxStreamMediaTypeManager*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMuxStreamMediaTypeManager*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMuxStreamMediaTypeManager*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMuxStreamMediaTypeManager*, uint*, int> GetStreamCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetStreamCount;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMuxStreamMediaTypeManager*, uint, IMFMediaType**, int> GetMediaType;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaType**, int> GetMediaType;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMuxStreamMediaTypeManager*, uint*, int> GetStreamConfigurationCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetStreamConfigurationCount;
 
         [NativeTypeName("HRESULT (ULONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMuxStreamMediaTypeManager*, ulong, int> AddStreamConfiguration;
+        public delegate* unmanaged<TSelf*, ulong, int> AddStreamConfiguration;
 
         [NativeTypeName("HRESULT (ULONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMuxStreamMediaTypeManager*, ulong, int> RemoveStreamConfiguration;
+        public delegate* unmanaged<TSelf*, ulong, int> RemoveStreamConfiguration;
 
         [NativeTypeName("HRESULT (DWORD, ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMuxStreamMediaTypeManager*, uint, ulong*, int> GetStreamConfiguration;
+        public delegate* unmanaged<TSelf*, uint, ulong*, int> GetStreamConfiguration;
     }
 }

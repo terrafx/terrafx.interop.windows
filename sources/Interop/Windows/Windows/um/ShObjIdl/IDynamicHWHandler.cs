@@ -52,18 +52,19 @@ public unsafe partial struct IDynamicHWHandler : IDynamicHWHandler.Interface
         HRESULT GetDynamicInfo([NativeTypeName("LPCWSTR")] ushort* pszDeviceID, [NativeTypeName("DWORD")] uint dwContentType, [NativeTypeName("LPWSTR *")] ushort** ppszAction);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDynamicHWHandler*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDynamicHWHandler*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDynamicHWHandler*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDynamicHWHandler*, ushort*, uint, ushort**, int> GetDynamicInfo;
+        public delegate* unmanaged<TSelf*, ushort*, uint, ushort**, int> GetDynamicInfo;
     }
 }

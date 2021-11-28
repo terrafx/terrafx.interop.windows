@@ -52,18 +52,19 @@ public unsafe partial struct IMFRemoteAsyncCallback : IMFRemoteAsyncCallback.Int
         HRESULT Invoke(HRESULT hr, IUnknown* pRemoteResult);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRemoteAsyncCallback*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRemoteAsyncCallback*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRemoteAsyncCallback*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HRESULT, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRemoteAsyncCallback*, HRESULT, IUnknown*, int> Invoke;
+        public delegate* unmanaged<TSelf*, HRESULT, IUnknown*, int> Invoke;
     }
 }

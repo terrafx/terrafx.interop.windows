@@ -109,36 +109,37 @@ public unsafe partial struct IAMPushSource : IAMPushSource.Interface
         HRESULT SetMaxStreamOffset([NativeTypeName("REFERENCE_TIME")] long rtMaxOffset);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPushSource*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPushSource*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPushSource*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPushSource*, long*, int> GetLatency;
+        public delegate* unmanaged<TSelf*, long*, int> GetLatency;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPushSource*, uint*, int> GetPushSourceFlags;
+        public delegate* unmanaged<TSelf*, uint*, int> GetPushSourceFlags;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPushSource*, uint, int> SetPushSourceFlags;
+        public delegate* unmanaged<TSelf*, uint, int> SetPushSourceFlags;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPushSource*, long, int> SetStreamOffset;
+        public delegate* unmanaged<TSelf*, long, int> SetStreamOffset;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPushSource*, long*, int> GetStreamOffset;
+        public delegate* unmanaged<TSelf*, long*, int> GetStreamOffset;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPushSource*, long*, int> GetMaxStreamOffset;
+        public delegate* unmanaged<TSelf*, long*, int> GetMaxStreamOffset;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPushSource*, long, int> SetMaxStreamOffset;
+        public delegate* unmanaged<TSelf*, long, int> SetMaxStreamOffset;
     }
 }

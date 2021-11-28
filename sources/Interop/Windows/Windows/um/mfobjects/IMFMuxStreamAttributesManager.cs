@@ -64,21 +64,22 @@ public unsafe partial struct IMFMuxStreamAttributesManager : IMFMuxStreamAttribu
         HRESULT GetAttributes([NativeTypeName("DWORD")] uint dwMuxStreamIndex, IMFAttributes** ppStreamAttributes);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMuxStreamAttributesManager*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMuxStreamAttributesManager*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMuxStreamAttributesManager*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMuxStreamAttributesManager*, uint*, int> GetStreamCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetStreamCount;
 
         [NativeTypeName("HRESULT (DWORD, IMFAttributes **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMuxStreamAttributesManager*, uint, IMFAttributes**, int> GetAttributes;
+        public delegate* unmanaged<TSelf*, uint, IMFAttributes**, int> GetAttributes;
     }
 }

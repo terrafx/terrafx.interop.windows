@@ -75,24 +75,25 @@ public unsafe partial struct IDirectManipulationUpdateManager : IDirectManipulat
         HRESULT Update(IDirectManipulationFrameInfoProvider* frameInfo);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationUpdateManager*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationUpdateManager*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationUpdateManager*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HANDLE, IDirectManipulationUpdateHandler *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationUpdateManager*, HANDLE, IDirectManipulationUpdateHandler*, uint*, int> RegisterWaitHandleCallback;
+        public delegate* unmanaged<TSelf*, HANDLE, IDirectManipulationUpdateHandler*, uint*, int> RegisterWaitHandleCallback;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationUpdateManager*, uint, int> UnregisterWaitHandleCallback;
+        public delegate* unmanaged<TSelf*, uint, int> UnregisterWaitHandleCallback;
 
         [NativeTypeName("HRESULT (IDirectManipulationFrameInfoProvider *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationUpdateManager*, IDirectManipulationFrameInfoProvider*, int> Update;
+        public delegate* unmanaged<TSelf*, IDirectManipulationFrameInfoProvider*, int> Update;
     }
 }

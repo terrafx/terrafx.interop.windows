@@ -76,27 +76,28 @@ public unsafe partial struct IProvideMultipleClassInfo : IProvideMultipleClassIn
         HRESULT GetInfoOfIndex([NativeTypeName("ULONG")] uint iti, [NativeTypeName("DWORD")] uint dwFlags, ITypeInfo** pptiCoClass, [NativeTypeName("DWORD *")] uint* pdwTIFlags, [NativeTypeName("ULONG *")] uint* pcdispidReserved, [NativeTypeName("IID *")] Guid* piidPrimary, [NativeTypeName("IID *")] Guid* piidSource);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProvideMultipleClassInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IProvideMultipleClassInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IProvideMultipleClassInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProvideMultipleClassInfo*, ITypeInfo**, int> GetClassInfo;
+        public delegate* unmanaged<TSelf*, ITypeInfo**, int> GetClassInfo;
 
         [NativeTypeName("HRESULT (DWORD, GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProvideMultipleClassInfo*, uint, Guid*, int> GetGUID;
+        public delegate* unmanaged<TSelf*, uint, Guid*, int> GetGUID;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProvideMultipleClassInfo*, uint*, int> GetMultiTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetMultiTypeInfoCount;
 
         [NativeTypeName("HRESULT (ULONG, DWORD, ITypeInfo **, DWORD *, ULONG *, IID *, IID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProvideMultipleClassInfo*, uint, uint, ITypeInfo**, uint*, uint*, Guid*, Guid*, int> GetInfoOfIndex;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, uint*, uint*, Guid*, Guid*, int> GetInfoOfIndex;
     }
 }

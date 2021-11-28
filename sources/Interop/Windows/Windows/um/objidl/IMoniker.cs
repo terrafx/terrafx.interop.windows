@@ -227,75 +227,76 @@ public unsafe partial struct IMoniker : IMoniker.Interface
         HRESULT IsSystemMoniker([NativeTypeName("DWORD *")] uint* pdwMksys);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, Guid*, int> GetClassID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetClassID;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, int> IsDirty;
+        public delegate* unmanaged<TSelf*, int> IsDirty;
 
         [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, IStream*, int> Load;
+        public delegate* unmanaged<TSelf*, IStream*, int> Load;
 
         [NativeTypeName("HRESULT (IStream *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, IStream*, BOOL, int> Save;
+        public delegate* unmanaged<TSelf*, IStream*, BOOL, int> Save;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, ULARGE_INTEGER*, int> GetSizeMax;
+        public delegate* unmanaged<TSelf*, ULARGE_INTEGER*, int> GetSizeMax;
 
         [NativeTypeName("HRESULT (IBindCtx *, IMoniker *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, IBindCtx*, IMoniker*, Guid*, void**, int> BindToObject;
+        public delegate* unmanaged<TSelf*, IBindCtx*, IMoniker*, Guid*, void**, int> BindToObject;
 
         [NativeTypeName("HRESULT (IBindCtx *, IMoniker *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, IBindCtx*, IMoniker*, Guid*, void**, int> BindToStorage;
+        public delegate* unmanaged<TSelf*, IBindCtx*, IMoniker*, Guid*, void**, int> BindToStorage;
 
         [NativeTypeName("HRESULT (IBindCtx *, DWORD, IMoniker **, IMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, IBindCtx*, uint, IMoniker**, IMoniker**, int> Reduce;
+        public delegate* unmanaged<TSelf*, IBindCtx*, uint, IMoniker**, IMoniker**, int> Reduce;
 
         [NativeTypeName("HRESULT (IMoniker *, BOOL, IMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, IMoniker*, BOOL, IMoniker**, int> ComposeWith;
+        public delegate* unmanaged<TSelf*, IMoniker*, BOOL, IMoniker**, int> ComposeWith;
 
         [NativeTypeName("HRESULT (BOOL, IEnumMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, BOOL, IEnumMoniker**, int> Enum;
+        public delegate* unmanaged<TSelf*, BOOL, IEnumMoniker**, int> Enum;
 
         [NativeTypeName("HRESULT (IMoniker *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, IMoniker*, int> IsEqual;
+        public delegate* unmanaged<TSelf*, IMoniker*, int> IsEqual;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, uint*, int> Hash;
+        public delegate* unmanaged<TSelf*, uint*, int> Hash;
 
         [NativeTypeName("HRESULT (IBindCtx *, IMoniker *, IMoniker *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, IBindCtx*, IMoniker*, IMoniker*, int> IsRunning;
+        public delegate* unmanaged<TSelf*, IBindCtx*, IMoniker*, IMoniker*, int> IsRunning;
 
         [NativeTypeName("HRESULT (IBindCtx *, IMoniker *, FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, IBindCtx*, IMoniker*, FILETIME*, int> GetTimeOfLastChange;
+        public delegate* unmanaged<TSelf*, IBindCtx*, IMoniker*, FILETIME*, int> GetTimeOfLastChange;
 
         [NativeTypeName("HRESULT (IMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, IMoniker**, int> Inverse;
+        public delegate* unmanaged<TSelf*, IMoniker**, int> Inverse;
 
         [NativeTypeName("HRESULT (IMoniker *, IMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, IMoniker*, IMoniker**, int> CommonPrefixWith;
+        public delegate* unmanaged<TSelf*, IMoniker*, IMoniker**, int> CommonPrefixWith;
 
         [NativeTypeName("HRESULT (IMoniker *, IMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, IMoniker*, IMoniker**, int> RelativePathTo;
+        public delegate* unmanaged<TSelf*, IMoniker*, IMoniker**, int> RelativePathTo;
 
         [NativeTypeName("HRESULT (IBindCtx *, IMoniker *, LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, IBindCtx*, IMoniker*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, IBindCtx*, IMoniker*, ushort**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (IBindCtx *, IMoniker *, LPOLESTR, ULONG *, IMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, IBindCtx*, IMoniker*, ushort*, uint*, IMoniker**, int> ParseDisplayName;
+        public delegate* unmanaged<TSelf*, IBindCtx*, IMoniker*, ushort*, uint*, IMoniker**, int> ParseDisplayName;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMoniker*, uint*, int> IsSystemMoniker;
+        public delegate* unmanaged<TSelf*, uint*, int> IsSystemMoniker;
     }
 }

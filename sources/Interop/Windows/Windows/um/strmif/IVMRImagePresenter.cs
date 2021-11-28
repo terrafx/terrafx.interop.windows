@@ -72,24 +72,25 @@ public unsafe partial struct IVMRImagePresenter : IVMRImagePresenter.Interface
         HRESULT PresentImage([NativeTypeName("DWORD_PTR")] nuint dwUserID, VMRPRESENTATIONINFO* lpPresInfo);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRImagePresenter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRImagePresenter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRImagePresenter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRImagePresenter*, nuint, int> StartPresenting;
+        public delegate* unmanaged<TSelf*, nuint, int> StartPresenting;
 
         [NativeTypeName("HRESULT (DWORD_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRImagePresenter*, nuint, int> StopPresenting;
+        public delegate* unmanaged<TSelf*, nuint, int> StopPresenting;
 
         [NativeTypeName("HRESULT (DWORD_PTR, VMRPRESENTATIONINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRImagePresenter*, nuint, VMRPRESENTATIONINFO*, int> PresentImage;
+        public delegate* unmanaged<TSelf*, nuint, VMRPRESENTATIONINFO*, int> PresentImage;
     }
 }

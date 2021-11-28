@@ -128,48 +128,49 @@ public unsafe partial struct IMultisessionRandomWrite : IMultisessionRandomWrite
         HRESULT get_TotalSectorsOnMedia([NativeTypeName("LONG *")] int* value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionRandomWrite*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionRandomWrite*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionRandomWrite*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionRandomWrite*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionRandomWrite*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionRandomWrite*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionRandomWrite*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionRandomWrite*, short*, int> get_IsSupportedOnCurrentMediaState;
+        public delegate* unmanaged<TSelf*, short*, int> get_IsSupportedOnCurrentMediaState;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionRandomWrite*, short, int> put_InUse;
+        public delegate* unmanaged<TSelf*, short, int> put_InUse;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionRandomWrite*, short*, int> get_InUse;
+        public delegate* unmanaged<TSelf*, short*, int> get_InUse;
 
         [NativeTypeName("HRESULT (IDiscRecorder2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionRandomWrite*, IDiscRecorder2**, int> get_ImportRecorder;
+        public delegate* unmanaged<TSelf*, IDiscRecorder2**, int> get_ImportRecorder;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionRandomWrite*, int*, int> get_WriteUnitSize;
+        public delegate* unmanaged<TSelf*, int*, int> get_WriteUnitSize;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionRandomWrite*, int*, int> get_LastWrittenAddress;
+        public delegate* unmanaged<TSelf*, int*, int> get_LastWrittenAddress;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionRandomWrite*, int*, int> get_TotalSectorsOnMedia;
+        public delegate* unmanaged<TSelf*, int*, int> get_TotalSectorsOnMedia;
     }
 }

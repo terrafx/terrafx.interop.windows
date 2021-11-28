@@ -84,27 +84,28 @@ public unsafe partial struct ICredentialProviderUser : ICredentialProviderUser.I
         HRESULT GetValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PROPVARIANT* value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderUser*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderUser*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderUser*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderUser*, ushort**, int> GetSid;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetSid;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderUser*, Guid*, int> GetProviderID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetProviderID;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderUser*, PROPERTYKEY*, ushort**, int> GetStringValue;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, ushort**, int> GetStringValue;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderUser*, PROPERTYKEY*, PROPVARIANT*, int> GetValue;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, PROPVARIANT*, int> GetValue;
     }
 }

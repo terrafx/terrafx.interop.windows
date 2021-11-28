@@ -66,24 +66,25 @@ public unsafe partial struct IMediaPropertyBag : IMediaPropertyBag.Interface
         HRESULT EnumProperty([NativeTypeName("ULONG")] uint iProperty, VARIANT* pvarPropertyName, VARIANT* pvarPropertyValue);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPropertyBag*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPropertyBag*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPropertyBag*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCOLESTR, VARIANT *, IErrorLog *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPropertyBag*, ushort*, VARIANT*, IErrorLog*, int> Read;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, IErrorLog*, int> Read;
 
         [NativeTypeName("HRESULT (LPCOLESTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPropertyBag*, ushort*, VARIANT*, int> Write;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> Write;
 
         [NativeTypeName("HRESULT (ULONG, VARIANT *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPropertyBag*, uint, VARIANT*, VARIANT*, int> EnumProperty;
+        public delegate* unmanaged<TSelf*, uint, VARIANT*, VARIANT*, int> EnumProperty;
     }
 }

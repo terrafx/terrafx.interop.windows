@@ -62,21 +62,22 @@ public unsafe partial struct IAudioChannelConfig : IAudioChannelConfig.Interface
         HRESULT GetChannelConfig([NativeTypeName("DWORD *")] uint* pdwConfig);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioChannelConfig*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioChannelConfig*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioChannelConfig*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioChannelConfig*, uint, Guid*, int> SetChannelConfig;
+        public delegate* unmanaged<TSelf*, uint, Guid*, int> SetChannelConfig;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioChannelConfig*, uint*, int> GetChannelConfig;
+        public delegate* unmanaged<TSelf*, uint*, int> GetChannelConfig;
     }
 }

@@ -180,60 +180,61 @@ public unsafe partial struct IShellWindows : IShellWindows.Interface
         HRESULT ProcessAttachDetach([NativeTypeName("VARIANT_BOOL")] short fAttach);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellWindows*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellWindows*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellWindows*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellWindows*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellWindows*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellWindows*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellWindows*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellWindows*, int*, int> get_Count;
+        public delegate* unmanaged<TSelf*, int*, int> get_Count;
 
         [NativeTypeName("HRESULT (VARIANT, IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellWindows*, VARIANT, IDispatch**, int> Item;
+        public delegate* unmanaged<TSelf*, VARIANT, IDispatch**, int> Item;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellWindows*, IUnknown**, int> _NewEnum;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> _NewEnum;
 
         [NativeTypeName("HRESULT (IDispatch *, long, int, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellWindows*, IDispatch*, int, int, int*, int> Register;
+        public delegate* unmanaged<TSelf*, IDispatch*, int, int, int*, int> Register;
 
         [NativeTypeName("HRESULT (long, VARIANT *, VARIANT *, int, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellWindows*, int, VARIANT*, VARIANT*, int, int*, int> RegisterPending;
+        public delegate* unmanaged<TSelf*, int, VARIANT*, VARIANT*, int, int*, int> RegisterPending;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellWindows*, int, int> Revoke;
+        public delegate* unmanaged<TSelf*, int, int> Revoke;
 
         [NativeTypeName("HRESULT (long, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellWindows*, int, VARIANT*, int> OnNavigate;
+        public delegate* unmanaged<TSelf*, int, VARIANT*, int> OnNavigate;
 
         [NativeTypeName("HRESULT (long, VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellWindows*, int, short, int> OnActivated;
+        public delegate* unmanaged<TSelf*, int, short, int> OnActivated;
 
         [NativeTypeName("HRESULT (VARIANT *, VARIANT *, int, long *, int, IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellWindows*, VARIANT*, VARIANT*, int, int*, int, IDispatch**, int> FindWindowSW;
+        public delegate* unmanaged<TSelf*, VARIANT*, VARIANT*, int, int*, int, IDispatch**, int> FindWindowSW;
 
         [NativeTypeName("HRESULT (long, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellWindows*, int, IUnknown*, int> OnCreated;
+        public delegate* unmanaged<TSelf*, int, IUnknown*, int> OnCreated;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellWindows*, short, int> ProcessAttachDetach;
+        public delegate* unmanaged<TSelf*, short, int> ProcessAttachDetach;
     }
 }

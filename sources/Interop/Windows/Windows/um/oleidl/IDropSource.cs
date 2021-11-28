@@ -62,21 +62,22 @@ public unsafe partial struct IDropSource : IDropSource.Interface
         HRESULT GiveFeedback([NativeTypeName("DWORD")] uint dwEffect);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDropSource*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDropSource*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDropSource*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDropSource*, BOOL, uint, int> QueryContinueDrag;
+        public delegate* unmanaged<TSelf*, BOOL, uint, int> QueryContinueDrag;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDropSource*, uint, int> GiveFeedback;
+        public delegate* unmanaged<TSelf*, uint, int> GiveFeedback;
     }
 }

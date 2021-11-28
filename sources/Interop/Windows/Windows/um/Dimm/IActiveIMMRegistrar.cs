@@ -62,21 +62,22 @@ public unsafe partial struct IActiveIMMRegistrar : IActiveIMMRegistrar.Interface
         HRESULT UnregisterIME([NativeTypeName("const IID &")] Guid* rclsid);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IActiveIMMRegistrar*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IActiveIMMRegistrar*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IActiveIMMRegistrar*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, LANGID, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IActiveIMMRegistrar*, Guid*, ushort, ushort*, ushort*, int> RegisterIME;
+        public delegate* unmanaged<TSelf*, Guid*, ushort, ushort*, ushort*, int> RegisterIME;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IActiveIMMRegistrar*, Guid*, int> UnregisterIME;
+        public delegate* unmanaged<TSelf*, Guid*, int> UnregisterIME;
     }
 }

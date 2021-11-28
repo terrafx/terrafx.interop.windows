@@ -62,21 +62,22 @@ public unsafe partial struct ITfThreadFocusSink : ITfThreadFocusSink.Interface
         HRESULT OnKillThreadFocus();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadFocusSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadFocusSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadFocusSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadFocusSink*, int> OnSetThreadFocus;
+        public delegate* unmanaged<TSelf*, int> OnSetThreadFocus;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadFocusSink*, int> OnKillThreadFocus;
+        public delegate* unmanaged<TSelf*, int> OnKillThreadFocus;
     }
 }

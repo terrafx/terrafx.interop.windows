@@ -59,21 +59,22 @@ public unsafe partial struct IAuthenticateEx : IAuthenticateEx.Interface
         HRESULT AuthenticateEx(HWND* phwnd, [NativeTypeName("LPWSTR *")] ushort** pszUsername, [NativeTypeName("LPWSTR *")] ushort** pszPassword, AUTHENTICATEINFO* pauthinfo);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAuthenticateEx*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAuthenticateEx*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAuthenticateEx*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *, LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAuthenticateEx*, HWND*, ushort**, ushort**, int> Authenticate;
+        public delegate* unmanaged<TSelf*, HWND*, ushort**, ushort**, int> Authenticate;
 
         [NativeTypeName("HRESULT (HWND *, LPWSTR *, LPWSTR *, AUTHENTICATEINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAuthenticateEx*, HWND*, ushort**, ushort**, AUTHENTICATEINFO*, int> AuthenticateEx;
+        public delegate* unmanaged<TSelf*, HWND*, ushort**, ushort**, AUTHENTICATEINFO*, int> AuthenticateEx;
     }
 }

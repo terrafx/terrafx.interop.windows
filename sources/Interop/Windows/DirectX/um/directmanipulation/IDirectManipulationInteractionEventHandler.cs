@@ -55,18 +55,19 @@ public unsafe partial struct IDirectManipulationInteractionEventHandler : IDirec
         HRESULT OnInteraction(IDirectManipulationViewport2* viewport, DIRECTMANIPULATION_INTERACTION_TYPE interaction);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationInteractionEventHandler*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationInteractionEventHandler*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationInteractionEventHandler*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDirectManipulationViewport2 *, DIRECTMANIPULATION_INTERACTION_TYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationInteractionEventHandler*, IDirectManipulationViewport2*, DIRECTMANIPULATION_INTERACTION_TYPE, int> OnInteraction;
+        public delegate* unmanaged<TSelf*, IDirectManipulationViewport2*, DIRECTMANIPULATION_INTERACTION_TYPE, int> OnInteraction;
     }
 }

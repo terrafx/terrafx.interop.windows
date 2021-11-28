@@ -122,48 +122,49 @@ public unsafe partial struct IInternetProtocolEx : IInternetProtocolEx.Interface
         HRESULT StartEx(IUri* pUri, IInternetProtocolSink* pOIProtSink, IInternetBindInfo* pOIBindInfo, [NativeTypeName("DWORD")] uint grfPI, HANDLE_PTR dwReserved);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolEx*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolEx*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolEx*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IInternetProtocolSink *, IInternetBindInfo *, DWORD, HANDLE_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolEx*, ushort*, IInternetProtocolSink*, IInternetBindInfo*, uint, HANDLE_PTR, int> Start;
+        public delegate* unmanaged<TSelf*, ushort*, IInternetProtocolSink*, IInternetBindInfo*, uint, HANDLE_PTR, int> Start;
 
         [NativeTypeName("HRESULT (PROTOCOLDATA *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolEx*, PROTOCOLDATA*, int> Continue;
+        public delegate* unmanaged<TSelf*, PROTOCOLDATA*, int> Continue;
 
         [NativeTypeName("HRESULT (HRESULT, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolEx*, HRESULT, uint, int> Abort;
+        public delegate* unmanaged<TSelf*, HRESULT, uint, int> Abort;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolEx*, uint, int> Terminate;
+        public delegate* unmanaged<TSelf*, uint, int> Terminate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolEx*, int> Suspend;
+        public delegate* unmanaged<TSelf*, int> Suspend;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolEx*, int> Resume;
+        public delegate* unmanaged<TSelf*, int> Resume;
 
         [NativeTypeName("HRESULT (void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolEx*, void*, uint, uint*, int> Read;
+        public delegate* unmanaged<TSelf*, void*, uint, uint*, int> Read;
 
         [NativeTypeName("HRESULT (LARGE_INTEGER, DWORD, ULARGE_INTEGER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolEx*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int> Seek;
+        public delegate* unmanaged<TSelf*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int> Seek;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolEx*, uint, int> LockRequest;
+        public delegate* unmanaged<TSelf*, uint, int> LockRequest;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolEx*, int> UnlockRequest;
+        public delegate* unmanaged<TSelf*, int> UnlockRequest;
 
         [NativeTypeName("HRESULT (IUri *, IInternetProtocolSink *, IInternetBindInfo *, DWORD, HANDLE_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolEx*, IUri*, IInternetProtocolSink*, IInternetBindInfo*, uint, HANDLE_PTR, int> StartEx;
+        public delegate* unmanaged<TSelf*, IUri*, IInternetProtocolSink*, IInternetBindInfo*, uint, HANDLE_PTR, int> StartEx;
     }
 }

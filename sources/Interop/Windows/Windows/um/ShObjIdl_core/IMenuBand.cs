@@ -62,21 +62,22 @@ public unsafe partial struct IMenuBand : IMenuBand.Interface
         HRESULT TranslateMenuMessage(MSG* pmsg, LRESULT* plRet);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMenuBand*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMenuBand*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMenuBand*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMenuBand*, MSG*, int> IsMenuMessage;
+        public delegate* unmanaged<TSelf*, MSG*, int> IsMenuMessage;
 
         [NativeTypeName("HRESULT (MSG *, LRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMenuBand*, MSG*, LRESULT*, int> TranslateMenuMessage;
+        public delegate* unmanaged<TSelf*, MSG*, LRESULT*, int> TranslateMenuMessage;
     }
 }

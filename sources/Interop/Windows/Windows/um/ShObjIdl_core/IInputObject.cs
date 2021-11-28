@@ -72,24 +72,25 @@ public unsafe partial struct IInputObject : IInputObject.Interface
         HRESULT TranslateAcceleratorIO(MSG* pMsg);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInputObject*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInputObject*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInputObject*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL, MSG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInputObject*, BOOL, MSG*, int> UIActivateIO;
+        public delegate* unmanaged<TSelf*, BOOL, MSG*, int> UIActivateIO;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInputObject*, int> HasFocusIO;
+        public delegate* unmanaged<TSelf*, int> HasFocusIO;
 
         [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInputObject*, MSG*, int> TranslateAcceleratorIO;
+        public delegate* unmanaged<TSelf*, MSG*, int> TranslateAcceleratorIO;
     }
 }

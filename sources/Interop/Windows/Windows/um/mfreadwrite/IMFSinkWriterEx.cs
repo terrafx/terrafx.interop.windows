@@ -131,51 +131,52 @@ public unsafe partial struct IMFSinkWriterEx : IMFSinkWriterEx.Interface
         HRESULT GetTransformForStream([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwTransformIndex, Guid* pGuidCategory, IMFTransform** ppTransform);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSinkWriterEx*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSinkWriterEx*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSinkWriterEx*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFMediaType *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSinkWriterEx*, IMFMediaType*, uint*, int> AddStream;
+        public delegate* unmanaged<TSelf*, IMFMediaType*, uint*, int> AddStream;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType *, IMFAttributes *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSinkWriterEx*, uint, IMFMediaType*, IMFAttributes*, int> SetInputMediaType;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaType*, IMFAttributes*, int> SetInputMediaType;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSinkWriterEx*, int> BeginWriting;
+        public delegate* unmanaged<TSelf*, int> BeginWriting;
 
         [NativeTypeName("HRESULT (DWORD, IMFSample *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSinkWriterEx*, uint, IMFSample*, int> WriteSample;
+        public delegate* unmanaged<TSelf*, uint, IMFSample*, int> WriteSample;
 
         [NativeTypeName("HRESULT (DWORD, LONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSinkWriterEx*, uint, long, int> SendStreamTick;
+        public delegate* unmanaged<TSelf*, uint, long, int> SendStreamTick;
 
         [NativeTypeName("HRESULT (DWORD, LPVOID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSinkWriterEx*, uint, void*, int> PlaceMarker;
+        public delegate* unmanaged<TSelf*, uint, void*, int> PlaceMarker;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSinkWriterEx*, uint, int> NotifyEndOfSegment;
+        public delegate* unmanaged<TSelf*, uint, int> NotifyEndOfSegment;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSinkWriterEx*, uint, int> Flush;
+        public delegate* unmanaged<TSelf*, uint, int> Flush;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSinkWriterEx*, int> Finalize;
+        public delegate* unmanaged<TSelf*, int> Finalize;
 
         [NativeTypeName("HRESULT (DWORD, const GUID &, const IID &, LPVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSinkWriterEx*, uint, Guid*, Guid*, void**, int> GetServiceForStream;
+        public delegate* unmanaged<TSelf*, uint, Guid*, Guid*, void**, int> GetServiceForStream;
 
         [NativeTypeName("HRESULT (DWORD, MF_SINK_WRITER_STATISTICS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSinkWriterEx*, uint, MF_SINK_WRITER_STATISTICS*, int> GetStatistics;
+        public delegate* unmanaged<TSelf*, uint, MF_SINK_WRITER_STATISTICS*, int> GetStatistics;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, GUID *, IMFTransform **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSinkWriterEx*, uint, uint, Guid*, IMFTransform**, int> GetTransformForStream;
+        public delegate* unmanaged<TSelf*, uint, uint, Guid*, IMFTransform**, int> GetTransformForStream;
     }
 }

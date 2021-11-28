@@ -62,21 +62,22 @@ public unsafe partial struct IMFRateControl : IMFRateControl.Interface
         HRESULT GetRate(BOOL* pfThin, float* pflRate);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRateControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRateControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRateControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRateControl*, BOOL, float, int> SetRate;
+        public delegate* unmanaged<TSelf*, BOOL, float, int> SetRate;
 
         [NativeTypeName("HRESULT (BOOL *, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRateControl*, BOOL*, float*, int> GetRate;
+        public delegate* unmanaged<TSelf*, BOOL*, float*, int> GetRate;
     }
 }

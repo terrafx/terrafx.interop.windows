@@ -160,54 +160,55 @@ public unsafe partial struct IBootOptions : IBootOptions.Interface
         HRESULT AssignBootImage(IStream* newVal);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBootOptions*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBootOptions*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBootOptions*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBootOptions*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBootOptions*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBootOptions*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBootOptions*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBootOptions*, IStream**, int> get_BootImage;
+        public delegate* unmanaged<TSelf*, IStream**, int> get_BootImage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBootOptions*, ushort**, int> get_Manufacturer;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_Manufacturer;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBootOptions*, ushort*, int> put_Manufacturer;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_Manufacturer;
 
         [NativeTypeName("HRESULT (PlatformId *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBootOptions*, PlatformId*, int> get_PlatformId;
+        public delegate* unmanaged<TSelf*, PlatformId*, int> get_PlatformId;
 
         [NativeTypeName("HRESULT (PlatformId) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBootOptions*, PlatformId, int> put_PlatformId;
+        public delegate* unmanaged<TSelf*, PlatformId, int> put_PlatformId;
 
         [NativeTypeName("HRESULT (EmulationType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBootOptions*, EmulationType*, int> get_Emulation;
+        public delegate* unmanaged<TSelf*, EmulationType*, int> get_Emulation;
 
         [NativeTypeName("HRESULT (EmulationType) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBootOptions*, EmulationType, int> put_Emulation;
+        public delegate* unmanaged<TSelf*, EmulationType, int> put_Emulation;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBootOptions*, uint*, int> get_ImageSize;
+        public delegate* unmanaged<TSelf*, uint*, int> get_ImageSize;
 
         [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBootOptions*, IStream*, int> AssignBootImage;
+        public delegate* unmanaged<TSelf*, IStream*, int> AssignBootImage;
     }
 }

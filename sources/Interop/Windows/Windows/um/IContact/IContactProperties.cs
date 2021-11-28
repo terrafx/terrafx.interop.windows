@@ -172,54 +172,55 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface
         HRESULT GetPropertyCollection(IContactPropertyCollection** ppPropertyCollection, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* pszMultiValueName, [NativeTypeName("DWORD")] uint dwLabelCount, [NativeTypeName("LPCWSTR []")] ushort** ppszLabels, BOOL fAnyLabelMatches);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactProperties*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactProperties*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactProperties*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, LPWSTR, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactProperties*, ushort*, uint, ushort*, uint, uint*, int> GetString;
+        public delegate* unmanaged<TSelf*, ushort*, uint, ushort*, uint, uint*, int> GetString;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactProperties*, ushort*, uint, FILETIME*, int> GetDate;
+        public delegate* unmanaged<TSelf*, ushort*, uint, FILETIME*, int> GetDate;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, LPWSTR, DWORD, DWORD *, IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactProperties*, ushort*, uint, ushort*, uint, uint*, IStream**, int> GetBinary;
+        public delegate* unmanaged<TSelf*, ushort*, uint, ushort*, uint, uint*, IStream**, int> GetBinary;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, LPWSTR, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactProperties*, ushort*, uint, ushort*, uint, uint*, int> GetLabels;
+        public delegate* unmanaged<TSelf*, ushort*, uint, ushort*, uint, uint*, int> GetLabels;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactProperties*, ushort*, uint, ushort*, int> SetString;
+        public delegate* unmanaged<TSelf*, ushort*, uint, ushort*, int> SetString;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, FILETIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactProperties*, ushort*, uint, FILETIME, int> SetDate;
+        public delegate* unmanaged<TSelf*, ushort*, uint, FILETIME, int> SetDate;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, LPCWSTR, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactProperties*, ushort*, uint, ushort*, IStream*, int> SetBinary;
+        public delegate* unmanaged<TSelf*, ushort*, uint, ushort*, IStream*, int> SetBinary;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, DWORD, LPCWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactProperties*, ushort*, uint, uint, ushort**, int> SetLabels;
+        public delegate* unmanaged<TSelf*, ushort*, uint, uint, ushort**, int> SetLabels;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, BOOL, LPWSTR, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactProperties*, ushort*, uint, BOOL, ushort*, uint, uint*, int> CreateArrayNode;
+        public delegate* unmanaged<TSelf*, ushort*, uint, BOOL, ushort*, uint, uint*, int> CreateArrayNode;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactProperties*, ushort*, uint, int> DeleteProperty;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> DeleteProperty;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactProperties*, ushort*, uint, int> DeleteArrayNode;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> DeleteArrayNode;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactProperties*, ushort*, uint, int> DeleteLabels;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> DeleteLabels;
 
         [NativeTypeName("HRESULT (IContactPropertyCollection **, DWORD, LPCWSTR, DWORD, LPCWSTR *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactProperties*, IContactPropertyCollection**, uint, ushort*, uint, ushort**, BOOL, int> GetPropertyCollection;
+        public delegate* unmanaged<TSelf*, IContactPropertyCollection**, uint, ushort*, uint, ushort**, BOOL, int> GetPropertyCollection;
     }
 }

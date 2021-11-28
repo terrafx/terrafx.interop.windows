@@ -142,54 +142,55 @@ public unsafe partial struct IPrintManagerTemplatePrinter2 : IPrintManagerTempla
         HRESULT get_percentScale(float* p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintManagerTemplatePrinter2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintManagerTemplatePrinter2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintManagerTemplatePrinter2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintManagerTemplatePrinter2*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintManagerTemplatePrinter2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintManagerTemplatePrinter2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintManagerTemplatePrinter2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintManagerTemplatePrinter2*, int> startPrint;
+        public delegate* unmanaged<TSelf*, int> startPrint;
 
         [NativeTypeName("HRESULT (IDispatch *, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintManagerTemplatePrinter2*, IDispatch*, int, int> drawPreviewPage;
+        public delegate* unmanaged<TSelf*, IDispatch*, int, int> drawPreviewPage;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintManagerTemplatePrinter2*, int, int> setPageCount;
+        public delegate* unmanaged<TSelf*, int, int> setPageCount;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintManagerTemplatePrinter2*, int> invalidatePreview;
+        public delegate* unmanaged<TSelf*, int> invalidatePreview;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintManagerTemplatePrinter2*, ushort*, VARIANT*, int> getPrintTaskOptionValue;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> getPrintTaskOptionValue;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintManagerTemplatePrinter2*, int> endPrint;
+        public delegate* unmanaged<TSelf*, int> endPrint;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintManagerTemplatePrinter2*, short*, int> get_showHeaderFooter;
+        public delegate* unmanaged<TSelf*, short*, int> get_showHeaderFooter;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintManagerTemplatePrinter2*, short*, int> get_shrinkToFit;
+        public delegate* unmanaged<TSelf*, short*, int> get_shrinkToFit;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintManagerTemplatePrinter2*, float*, int> get_percentScale;
+        public delegate* unmanaged<TSelf*, float*, int> get_percentScale;
     }
 }

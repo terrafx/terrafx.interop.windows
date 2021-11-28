@@ -120,42 +120,43 @@ public unsafe partial struct ISVGZoomEvent : ISVGZoomEvent.Interface
         HRESULT get_newTranslate(ISVGPoint** p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGZoomEvent*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGZoomEvent*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGZoomEvent*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGZoomEvent*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGZoomEvent*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGZoomEvent*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGZoomEvent*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (ISVGRect **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGZoomEvent*, ISVGRect**, int> get_zoomRectScreen;
+        public delegate* unmanaged<TSelf*, ISVGRect**, int> get_zoomRectScreen;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGZoomEvent*, float*, int> get_previousScale;
+        public delegate* unmanaged<TSelf*, float*, int> get_previousScale;
 
         [NativeTypeName("HRESULT (ISVGPoint **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGZoomEvent*, ISVGPoint**, int> get_previousTranslate;
+        public delegate* unmanaged<TSelf*, ISVGPoint**, int> get_previousTranslate;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGZoomEvent*, float*, int> get_newScale;
+        public delegate* unmanaged<TSelf*, float*, int> get_newScale;
 
         [NativeTypeName("HRESULT (ISVGPoint **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGZoomEvent*, ISVGPoint**, int> get_newTranslate;
+        public delegate* unmanaged<TSelf*, ISVGPoint**, int> get_newTranslate;
     }
 }

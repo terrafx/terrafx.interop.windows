@@ -52,18 +52,19 @@ public unsafe partial struct IResolveShellLink : IResolveShellLink.Interface
         HRESULT ResolveShellLink(IUnknown* punkLink, HWND hwnd, [NativeTypeName("DWORD")] uint fFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IResolveShellLink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IResolveShellLink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IResolveShellLink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, HWND, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IResolveShellLink*, IUnknown*, HWND, uint, int> ResolveShellLink;
+        public delegate* unmanaged<TSelf*, IUnknown*, HWND, uint, int> ResolveShellLink;
     }
 }

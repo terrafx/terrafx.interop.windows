@@ -54,18 +54,19 @@ public unsafe partial struct IAppxPackageWriter2 : IAppxPackageWriter2.Interface
         HRESULT Close(IStream* manifest, IStream* contentGroupMap);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageWriter2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageWriter2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageWriter2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IStream *, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageWriter2*, IStream*, IStream*, int> Close;
+        public delegate* unmanaged<TSelf*, IStream*, IStream*, int> Close;
     }
 }

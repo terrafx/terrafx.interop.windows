@@ -143,57 +143,58 @@ public unsafe partial struct IMFMediaSource2 : IMFMediaSource2.Interface
         HRESULT SetMediaType([NativeTypeName("DWORD")] uint dwStreamID, IMFMediaType* pMediaType);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSource2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSource2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSource2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaEvent **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSource2*, uint, IMFMediaEvent**, int> GetEvent;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaEvent**, int> GetEvent;
 
         [NativeTypeName("HRESULT (IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSource2*, IMFAsyncCallback*, IUnknown*, int> BeginGetEvent;
+        public delegate* unmanaged<TSelf*, IMFAsyncCallback*, IUnknown*, int> BeginGetEvent;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *, IMFMediaEvent **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSource2*, IMFAsyncResult*, IMFMediaEvent**, int> EndGetEvent;
+        public delegate* unmanaged<TSelf*, IMFAsyncResult*, IMFMediaEvent**, int> EndGetEvent;
 
         [NativeTypeName("HRESULT (MediaEventType, const GUID &, HRESULT, const PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSource2*, uint, Guid*, HRESULT, PROPVARIANT*, int> QueueEvent;
+        public delegate* unmanaged<TSelf*, uint, Guid*, HRESULT, PROPVARIANT*, int> QueueEvent;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSource2*, uint*, int> GetCharacteristics;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCharacteristics;
 
         [NativeTypeName("HRESULT (IMFPresentationDescriptor **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSource2*, IMFPresentationDescriptor**, int> CreatePresentationDescriptor;
+        public delegate* unmanaged<TSelf*, IMFPresentationDescriptor**, int> CreatePresentationDescriptor;
 
         [NativeTypeName("HRESULT (IMFPresentationDescriptor *, const GUID *, const PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSource2*, IMFPresentationDescriptor*, Guid*, PROPVARIANT*, int> Start;
+        public delegate* unmanaged<TSelf*, IMFPresentationDescriptor*, Guid*, PROPVARIANT*, int> Start;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSource2*, int> Stop;
+        public delegate* unmanaged<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSource2*, int> Pause;
+        public delegate* unmanaged<TSelf*, int> Pause;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSource2*, int> Shutdown;
+        public delegate* unmanaged<TSelf*, int> Shutdown;
 
         [NativeTypeName("HRESULT (IMFAttributes **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSource2*, IMFAttributes**, int> GetSourceAttributes;
+        public delegate* unmanaged<TSelf*, IMFAttributes**, int> GetSourceAttributes;
 
         [NativeTypeName("HRESULT (DWORD, IMFAttributes **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSource2*, uint, IMFAttributes**, int> GetStreamAttributes;
+        public delegate* unmanaged<TSelf*, uint, IMFAttributes**, int> GetStreamAttributes;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSource2*, IUnknown*, int> SetD3DManager;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> SetD3DManager;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSource2*, uint, IMFMediaType*, int> SetMediaType;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaType*, int> SetMediaType;
     }
 }

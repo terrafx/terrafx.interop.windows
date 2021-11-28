@@ -72,24 +72,25 @@ public unsafe partial struct ISegmentList : ISegmentList.Interface
         HRESULT IsEmpty(BOOL* pfEmpty);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISegmentList*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISegmentList*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISegmentList*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ISegmentListIterator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISegmentList*, ISegmentListIterator**, int> CreateIterator;
+        public delegate* unmanaged<TSelf*, ISegmentListIterator**, int> CreateIterator;
 
         [NativeTypeName("HRESULT (SELECTION_TYPE *) __attribute__((stdcall))")]
-        public new delegate* unmanaged<ISegmentList*, SELECTION_TYPE*, int> GetType;
+        public new delegate* unmanaged<TSelf*, SELECTION_TYPE*, int> GetType;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISegmentList*, BOOL*, int> IsEmpty;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsEmpty;
     }
 }

@@ -77,27 +77,28 @@ public unsafe partial struct IHolographicQuadLayerUpdateParametersInterop : IHol
         HRESULT CommitDirect3D12Resource(ID3D12Resource* pColorResourceToCommit, ID3D12Fence* pColorResourceFence, [NativeTypeName("UINT64")] ulong colorResourceFenceSignalValue);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ID3D12Resource *, ID3D12Fence *, UINT64) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHolographicQuadLayerUpdateParametersInterop*, ID3D12Resource*, ID3D12Fence*, ulong, int> CommitDirect3D12Resource;
+        public delegate* unmanaged<TSelf*, ID3D12Resource*, ID3D12Fence*, ulong, int> CommitDirect3D12Resource;
     }
 }

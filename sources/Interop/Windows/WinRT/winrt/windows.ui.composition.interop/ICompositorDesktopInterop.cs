@@ -63,21 +63,22 @@ public unsafe partial struct ICompositorDesktopInterop : ICompositorDesktopInter
         HRESULT EnsureOnThread([NativeTypeName("DWORD")] uint threadId);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICompositorDesktopInterop*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICompositorDesktopInterop*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICompositorDesktopInterop*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, BOOL, ABI::Windows::UI::Composition::Desktop::IDesktopWindowTarget **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICompositorDesktopInterop*, HWND, BOOL, void**, int> CreateDesktopWindowTarget;
+        public delegate* unmanaged<TSelf*, HWND, BOOL, void**, int> CreateDesktopWindowTarget;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICompositorDesktopInterop*, uint, int> EnsureOnThread;
+        public delegate* unmanaged<TSelf*, uint, int> EnsureOnThread;
     }
 }

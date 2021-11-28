@@ -52,18 +52,19 @@ public unsafe partial struct IExplorerPaneVisibility : IExplorerPaneVisibility.I
         HRESULT GetPaneState([NativeTypeName("const EXPLORERPANE &")] Guid* ep, [NativeTypeName("EXPLORERPANESTATE *")] uint* peps);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerPaneVisibility*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerPaneVisibility*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerPaneVisibility*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const EXPLORERPANE &, EXPLORERPANESTATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerPaneVisibility*, Guid*, uint*, int> GetPaneState;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, int> GetPaneState;
     }
 }

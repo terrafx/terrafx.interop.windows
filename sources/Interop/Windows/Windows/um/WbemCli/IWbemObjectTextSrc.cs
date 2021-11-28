@@ -62,21 +62,22 @@ public unsafe partial struct IWbemObjectTextSrc : IWbemObjectTextSrc.Interface
         HRESULT CreateFromText([NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR")] ushort* strText, [NativeTypeName("ULONG")] uint uObjTextFormat, IWbemContext* pCtx, IWbemClassObject** pNewObj);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemObjectTextSrc*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemObjectTextSrc*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemObjectTextSrc*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long, IWbemClassObject *, ULONG, IWbemContext *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemObjectTextSrc*, int, IWbemClassObject*, uint, IWbemContext*, ushort**, int> GetText;
+        public delegate* unmanaged<TSelf*, int, IWbemClassObject*, uint, IWbemContext*, ushort**, int> GetText;
 
         [NativeTypeName("HRESULT (long, BSTR, ULONG, IWbemContext *, IWbemClassObject **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemObjectTextSrc*, int, ushort*, uint, IWbemContext*, IWbemClassObject**, int> CreateFromText;
+        public delegate* unmanaged<TSelf*, int, ushort*, uint, IWbemContext*, IWbemClassObject**, int> CreateFromText;
     }
 }

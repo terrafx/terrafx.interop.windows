@@ -162,51 +162,52 @@ public unsafe partial struct IPropertyStorage : IPropertyStorage.Interface
         HRESULT Stat(STATPROPSETSTG* pstatpsstg);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStorage*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStorage*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStorage*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, const PROPSPEC *, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStorage*, uint, PROPSPEC*, PROPVARIANT*, int> ReadMultiple;
+        public delegate* unmanaged<TSelf*, uint, PROPSPEC*, PROPVARIANT*, int> ReadMultiple;
 
         [NativeTypeName("HRESULT (ULONG, const PROPSPEC *, const PROPVARIANT *, PROPID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStorage*, uint, PROPSPEC*, PROPVARIANT*, uint, int> WriteMultiple;
+        public delegate* unmanaged<TSelf*, uint, PROPSPEC*, PROPVARIANT*, uint, int> WriteMultiple;
 
         [NativeTypeName("HRESULT (ULONG, const PROPSPEC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStorage*, uint, PROPSPEC*, int> DeleteMultiple;
+        public delegate* unmanaged<TSelf*, uint, PROPSPEC*, int> DeleteMultiple;
 
         [NativeTypeName("HRESULT (ULONG, const PROPID *, LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStorage*, uint, uint*, ushort**, int> ReadPropertyNames;
+        public delegate* unmanaged<TSelf*, uint, uint*, ushort**, int> ReadPropertyNames;
 
         [NativeTypeName("HRESULT (ULONG, const PROPID *, const LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStorage*, uint, uint*, ushort**, int> WritePropertyNames;
+        public delegate* unmanaged<TSelf*, uint, uint*, ushort**, int> WritePropertyNames;
 
         [NativeTypeName("HRESULT (ULONG, const PROPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStorage*, uint, uint*, int> DeletePropertyNames;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> DeletePropertyNames;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStorage*, uint, int> Commit;
+        public delegate* unmanaged<TSelf*, uint, int> Commit;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStorage*, int> Revert;
+        public delegate* unmanaged<TSelf*, int> Revert;
 
         [NativeTypeName("HRESULT (IEnumSTATPROPSTG **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStorage*, IEnumSTATPROPSTG**, int> Enum;
+        public delegate* unmanaged<TSelf*, IEnumSTATPROPSTG**, int> Enum;
 
         [NativeTypeName("HRESULT (const FILETIME *, const FILETIME *, const FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStorage*, FILETIME*, FILETIME*, FILETIME*, int> SetTimes;
+        public delegate* unmanaged<TSelf*, FILETIME*, FILETIME*, FILETIME*, int> SetTimes;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStorage*, Guid*, int> SetClass;
+        public delegate* unmanaged<TSelf*, Guid*, int> SetClass;
 
         [NativeTypeName("HRESULT (STATPROPSETSTG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyStorage*, STATPROPSETSTG*, int> Stat;
+        public delegate* unmanaged<TSelf*, STATPROPSETSTG*, int> Stat;
     }
 }

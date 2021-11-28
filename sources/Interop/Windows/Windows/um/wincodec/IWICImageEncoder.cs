@@ -75,24 +75,25 @@ public unsafe partial struct IWICImageEncoder : IWICImageEncoder.Interface
         HRESULT WriteThumbnail(ID2D1Image* pImage, IWICBitmapEncoder* pEncoder, [NativeTypeName("const WICImageParameters *")] WICImageParameters* pImageParameters);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICImageEncoder*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICImageEncoder*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICImageEncoder*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ID2D1Image *, IWICBitmapFrameEncode *, const WICImageParameters *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICImageEncoder*, ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int> WriteFrame;
+        public delegate* unmanaged<TSelf*, ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int> WriteFrame;
 
         [NativeTypeName("HRESULT (ID2D1Image *, IWICBitmapFrameEncode *, const WICImageParameters *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICImageEncoder*, ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int> WriteFrameThumbnail;
+        public delegate* unmanaged<TSelf*, ID2D1Image*, IWICBitmapFrameEncode*, WICImageParameters*, int> WriteFrameThumbnail;
 
         [NativeTypeName("HRESULT (ID2D1Image *, IWICBitmapEncoder *, const WICImageParameters *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICImageEncoder*, ID2D1Image*, IWICBitmapEncoder*, WICImageParameters*, int> WriteThumbnail;
+        public delegate* unmanaged<TSelf*, ID2D1Image*, IWICBitmapEncoder*, WICImageParameters*, int> WriteThumbnail;
     }
 }

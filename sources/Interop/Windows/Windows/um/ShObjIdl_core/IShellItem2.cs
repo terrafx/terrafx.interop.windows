@@ -207,69 +207,70 @@ public unsafe partial struct IShellItem2 : IShellItem2.Interface
         HRESULT GetBool([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, BOOL* pf);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IBindCtx *, const GUID &, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem2*, IBindCtx*, Guid*, Guid*, void**, int> BindToHandler;
+        public delegate* unmanaged<TSelf*, IBindCtx*, Guid*, Guid*, void**, int> BindToHandler;
 
         [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem2*, IShellItem**, int> GetParent;
+        public delegate* unmanaged<TSelf*, IShellItem**, int> GetParent;
 
         [NativeTypeName("HRESULT (SIGDN, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem2*, SIGDN, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, SIGDN, ushort**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (SFGAOF, SFGAOF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem2*, uint, uint*, int> GetAttributes;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> GetAttributes;
 
         [NativeTypeName("HRESULT (IShellItem *, SICHINTF, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem2*, IShellItem*, uint, int*, int> Compare;
+        public delegate* unmanaged<TSelf*, IShellItem*, uint, int*, int> Compare;
 
         [NativeTypeName("HRESULT (GETPROPERTYSTOREFLAGS, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem2*, GETPROPERTYSTOREFLAGS, Guid*, void**, int> GetPropertyStore;
+        public delegate* unmanaged<TSelf*, GETPROPERTYSTOREFLAGS, Guid*, void**, int> GetPropertyStore;
 
         [NativeTypeName("HRESULT (GETPROPERTYSTOREFLAGS, IUnknown *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem2*, GETPROPERTYSTOREFLAGS, IUnknown*, Guid*, void**, int> GetPropertyStoreWithCreateObject;
+        public delegate* unmanaged<TSelf*, GETPROPERTYSTOREFLAGS, IUnknown*, Guid*, void**, int> GetPropertyStoreWithCreateObject;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY *, UINT, GETPROPERTYSTOREFLAGS, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem2*, PROPERTYKEY*, uint, GETPROPERTYSTOREFLAGS, Guid*, void**, int> GetPropertyStoreForKeys;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, uint, GETPROPERTYSTOREFLAGS, Guid*, void**, int> GetPropertyStoreForKeys;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem2*, PROPERTYKEY*, Guid*, void**, int> GetPropertyDescriptionList;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, Guid*, void**, int> GetPropertyDescriptionList;
 
         [NativeTypeName("HRESULT (IBindCtx *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem2*, IBindCtx*, int> Update;
+        public delegate* unmanaged<TSelf*, IBindCtx*, int> Update;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem2*, PROPERTYKEY*, PROPVARIANT*, int> GetProperty;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, PROPVARIANT*, int> GetProperty;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem2*, PROPERTYKEY*, Guid*, int> GetCLSID;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, Guid*, int> GetCLSID;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem2*, PROPERTYKEY*, FILETIME*, int> GetFileTime;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, FILETIME*, int> GetFileTime;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem2*, PROPERTYKEY*, int*, int> GetInt32;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, int*, int> GetInt32;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem2*, PROPERTYKEY*, ushort**, int> GetString;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, ushort**, int> GetString;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem2*, PROPERTYKEY*, uint*, int> GetUInt32;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, uint*, int> GetUInt32;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem2*, PROPERTYKEY*, ulong*, int> GetUInt64;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, ulong*, int> GetUInt64;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItem2*, PROPERTYKEY*, BOOL*, int> GetBool;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, BOOL*, int> GetBool;
     }
 }

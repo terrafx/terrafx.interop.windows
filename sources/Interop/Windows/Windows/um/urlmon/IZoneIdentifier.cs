@@ -72,24 +72,25 @@ public unsafe partial struct IZoneIdentifier : IZoneIdentifier.Interface
         HRESULT Remove();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IZoneIdentifier*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IZoneIdentifier*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IZoneIdentifier*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IZoneIdentifier*, uint*, int> GetId;
+        public delegate* unmanaged<TSelf*, uint*, int> GetId;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IZoneIdentifier*, uint, int> SetId;
+        public delegate* unmanaged<TSelf*, uint, int> SetId;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IZoneIdentifier*, int> Remove;
+        public delegate* unmanaged<TSelf*, int> Remove;
     }
 }

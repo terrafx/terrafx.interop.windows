@@ -142,45 +142,46 @@ public unsafe partial struct ISyncMgrSyncCallback : ISyncMgrSyncCallback.Interfa
         HRESULT ReportManualSync();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncCallback*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncCallback*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncCallback*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, SYNCMGR_PROGRESS_STATUS, ULONG, ULONG, SYNCMGR_CANCEL_REQUEST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncCallback*, ushort*, ushort*, SYNCMGR_PROGRESS_STATUS, uint, uint, SYNCMGR_CANCEL_REQUEST*, int> ReportProgress;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, SYNCMGR_PROGRESS_STATUS, uint, uint, SYNCMGR_CANCEL_REQUEST*, int> ReportProgress;
 
         [NativeTypeName("HRESULT (LPCWSTR, SYNCMGR_CANCEL_REQUEST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncCallback*, ushort*, SYNCMGR_CANCEL_REQUEST*, int> SetHandlerProgressText;
+        public delegate* unmanaged<TSelf*, ushort*, SYNCMGR_CANCEL_REQUEST*, int> SetHandlerProgressText;
 
         [NativeTypeName("HRESULT (LPCWSTR, SYNCMGR_EVENT_LEVEL, SYNCMGR_EVENT_FLAGS, LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR, GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncCallback*, ushort*, SYNCMGR_EVENT_LEVEL, SYNCMGR_EVENT_FLAGS, ushort*, ushort*, ushort*, ushort*, ushort*, Guid*, int> ReportEventW;
+        public delegate* unmanaged<TSelf*, ushort*, SYNCMGR_EVENT_LEVEL, SYNCMGR_EVENT_FLAGS, ushort*, ushort*, ushort*, ushort*, ushort*, Guid*, int> ReportEventW;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncCallback*, ushort*, int> CanContinue;
+        public delegate* unmanaged<TSelf*, ushort*, int> CanContinue;
 
         [NativeTypeName("HRESULT (IEnumString **, IEnumUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncCallback*, IEnumString**, IEnumUnknown**, int> QueryForAdditionalItems;
+        public delegate* unmanaged<TSelf*, IEnumString**, IEnumUnknown**, int> QueryForAdditionalItems;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncCallback*, ushort*, int> AddItemToSession;
+        public delegate* unmanaged<TSelf*, ushort*, int> AddItemToSession;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncCallback*, IUnknown*, int> AddIUnknownToSession;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> AddIUnknownToSession;
 
         [NativeTypeName("HRESULT (ISyncMgrSyncItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncCallback*, ISyncMgrSyncItem*, int> ProposeItem;
+        public delegate* unmanaged<TSelf*, ISyncMgrSyncItem*, int> ProposeItem;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncCallback*, ushort*, int> CommitItem;
+        public delegate* unmanaged<TSelf*, ushort*, int> CommitItem;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncCallback*, int> ReportManualSync;
+        public delegate* unmanaged<TSelf*, int> ReportManualSync;
     }
 }

@@ -64,21 +64,22 @@ public unsafe partial struct IMFContentDecryptionModuleSessionCallbacks : IMFCon
         HRESULT KeyStatusChanged();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentDecryptionModuleSessionCallbacks*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentDecryptionModuleSessionCallbacks*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentDecryptionModuleSessionCallbacks*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MF_MEDIAKEYSESSION_MESSAGETYPE, const BYTE *, DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentDecryptionModuleSessionCallbacks*, MF_MEDIAKEYSESSION_MESSAGETYPE, byte*, uint, ushort*, int> KeyMessage;
+        public delegate* unmanaged<TSelf*, MF_MEDIAKEYSESSION_MESSAGETYPE, byte*, uint, ushort*, int> KeyMessage;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentDecryptionModuleSessionCallbacks*, int> KeyStatusChanged;
+        public delegate* unmanaged<TSelf*, int> KeyStatusChanged;
     }
 }

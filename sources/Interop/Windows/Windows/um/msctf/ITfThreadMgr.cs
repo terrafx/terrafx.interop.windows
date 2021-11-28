@@ -152,48 +152,49 @@ public unsafe partial struct ITfThreadMgr : ITfThreadMgr.Interface
         HRESULT GetGlobalCompartment(ITfCompartmentMgr** ppCompMgr);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfClientId *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr*, uint*, int> Activate;
+        public delegate* unmanaged<TSelf*, uint*, int> Activate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr*, int> Deactivate;
+        public delegate* unmanaged<TSelf*, int> Deactivate;
 
         [NativeTypeName("HRESULT (ITfDocumentMgr **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr*, ITfDocumentMgr**, int> CreateDocumentMgr;
+        public delegate* unmanaged<TSelf*, ITfDocumentMgr**, int> CreateDocumentMgr;
 
         [NativeTypeName("HRESULT (IEnumTfDocumentMgrs **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr*, IEnumTfDocumentMgrs**, int> EnumDocumentMgrs;
+        public delegate* unmanaged<TSelf*, IEnumTfDocumentMgrs**, int> EnumDocumentMgrs;
 
         [NativeTypeName("HRESULT (ITfDocumentMgr **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr*, ITfDocumentMgr**, int> GetFocus;
+        public delegate* unmanaged<TSelf*, ITfDocumentMgr**, int> GetFocus;
 
         [NativeTypeName("HRESULT (ITfDocumentMgr *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr*, ITfDocumentMgr*, int> SetFocus;
+        public delegate* unmanaged<TSelf*, ITfDocumentMgr*, int> SetFocus;
 
         [NativeTypeName("HRESULT (HWND, ITfDocumentMgr *, ITfDocumentMgr **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr*, HWND, ITfDocumentMgr*, ITfDocumentMgr**, int> AssociateFocus;
+        public delegate* unmanaged<TSelf*, HWND, ITfDocumentMgr*, ITfDocumentMgr**, int> AssociateFocus;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr*, BOOL*, int> IsThreadFocus;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsThreadFocus;
 
         [NativeTypeName("HRESULT (const IID &, ITfFunctionProvider **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr*, Guid*, ITfFunctionProvider**, int> GetFunctionProvider;
+        public delegate* unmanaged<TSelf*, Guid*, ITfFunctionProvider**, int> GetFunctionProvider;
 
         [NativeTypeName("HRESULT (IEnumTfFunctionProviders **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr*, IEnumTfFunctionProviders**, int> EnumFunctionProviders;
+        public delegate* unmanaged<TSelf*, IEnumTfFunctionProviders**, int> EnumFunctionProviders;
 
         [NativeTypeName("HRESULT (ITfCompartmentMgr **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr*, ITfCompartmentMgr**, int> GetGlobalCompartment;
+        public delegate* unmanaged<TSelf*, ITfCompartmentMgr**, int> GetGlobalCompartment;
     }
 }

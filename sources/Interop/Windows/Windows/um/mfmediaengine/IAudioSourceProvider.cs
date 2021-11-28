@@ -52,18 +52,19 @@ public unsafe partial struct IAudioSourceProvider : IAudioSourceProvider.Interfa
         HRESULT ProvideInput([NativeTypeName("DWORD")] uint dwSampleCount, [NativeTypeName("DWORD *")] uint* pdwChannelCount, float* pInterleavedAudioData);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSourceProvider*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSourceProvider*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSourceProvider*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSourceProvider*, uint, uint*, float*, int> ProvideInput;
+        public delegate* unmanaged<TSelf*, uint, uint*, float*, int> ProvideInput;
     }
 }

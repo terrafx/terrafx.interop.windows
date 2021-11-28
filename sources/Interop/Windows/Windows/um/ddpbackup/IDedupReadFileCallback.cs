@@ -72,24 +72,25 @@ public unsafe partial struct IDedupReadFileCallback : IDedupReadFileCallback.Int
         HRESULT PreviewContainerRead([NativeTypeName("BSTR")] ushort* FileFullPath, [NativeTypeName("ULONG")] uint NumberOfReads, DDP_FILE_EXTENT* ReadOffsets);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDedupReadFileCallback*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDedupReadFileCallback*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDedupReadFileCallback*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, long long, ULONG, BYTE *, ULONG *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDedupReadFileCallback*, ushort*, long, uint, byte*, uint*, uint, int> ReadBackupFile;
+        public delegate* unmanaged<TSelf*, ushort*, long, uint, byte*, uint*, uint, int> ReadBackupFile;
 
         [NativeTypeName("HRESULT (ULONG, BSTR *, ULONG *, DEDUP_CONTAINER_EXTENT **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDedupReadFileCallback*, uint, ushort**, uint*, DEDUP_CONTAINER_EXTENT**, int> OrderContainersRestore;
+        public delegate* unmanaged<TSelf*, uint, ushort**, uint*, DEDUP_CONTAINER_EXTENT**, int> OrderContainersRestore;
 
         [NativeTypeName("HRESULT (BSTR, ULONG, DDP_FILE_EXTENT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDedupReadFileCallback*, ushort*, uint, DDP_FILE_EXTENT*, int> PreviewContainerRead;
+        public delegate* unmanaged<TSelf*, ushort*, uint, DDP_FILE_EXTENT*, int> PreviewContainerRead;
     }
 }

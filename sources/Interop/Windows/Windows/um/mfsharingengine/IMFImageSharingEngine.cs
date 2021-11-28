@@ -74,24 +74,25 @@ public unsafe partial struct IMFImageSharingEngine : IMFImageSharingEngine.Inter
         HRESULT Shutdown();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFImageSharingEngine*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFImageSharingEngine*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFImageSharingEngine*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFImageSharingEngine*, IUnknown*, int> SetSource;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> SetSource;
 
         [NativeTypeName("HRESULT (DEVICE_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFImageSharingEngine*, DEVICE_INFO*, int> GetDevice;
+        public delegate* unmanaged<TSelf*, DEVICE_INFO*, int> GetDevice;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFImageSharingEngine*, int> Shutdown;
+        public delegate* unmanaged<TSelf*, int> Shutdown;
     }
 }

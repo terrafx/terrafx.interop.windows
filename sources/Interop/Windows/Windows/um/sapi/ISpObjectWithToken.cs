@@ -62,21 +62,22 @@ public unsafe partial struct ISpObjectWithToken : ISpObjectWithToken.Interface
         HRESULT GetObjectToken(ISpObjectToken** ppToken);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpObjectWithToken*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpObjectWithToken*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpObjectWithToken*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ISpObjectToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpObjectWithToken*, ISpObjectToken*, int> SetObjectToken;
+        public delegate* unmanaged<TSelf*, ISpObjectToken*, int> SetObjectToken;
 
         [NativeTypeName("HRESULT (ISpObjectToken **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpObjectWithToken*, ISpObjectToken**, int> GetObjectToken;
+        public delegate* unmanaged<TSelf*, ISpObjectToken**, int> GetObjectToken;
     }
 }

@@ -82,27 +82,28 @@ public unsafe partial struct IServerSecurity : IServerSecurity.Interface
         BOOL IsImpersonating();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IServerSecurity*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IServerSecurity*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IServerSecurity*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *, OLECHAR **, DWORD *, DWORD *, void **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IServerSecurity*, uint*, uint*, ushort**, uint*, uint*, void**, uint*, int> QueryBlanket;
+        public delegate* unmanaged<TSelf*, uint*, uint*, ushort**, uint*, uint*, void**, uint*, int> QueryBlanket;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IServerSecurity*, int> ImpersonateClient;
+        public delegate* unmanaged<TSelf*, int> ImpersonateClient;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IServerSecurity*, int> RevertToSelf;
+        public delegate* unmanaged<TSelf*, int> RevertToSelf;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<IServerSecurity*, int> IsImpersonating;
+        public delegate* unmanaged<TSelf*, int> IsImpersonating;
     }
 }

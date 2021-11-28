@@ -52,18 +52,19 @@ public unsafe partial struct ICreatingProcess : ICreatingProcess.Interface
         HRESULT OnCreating(ICreateProcessInputs* pcpi);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreatingProcess*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreatingProcess*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreatingProcess*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ICreateProcessInputs *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreatingProcess*, ICreateProcessInputs*, int> OnCreating;
+        public delegate* unmanaged<TSelf*, ICreateProcessInputs*, int> OnCreating;
     }
 }

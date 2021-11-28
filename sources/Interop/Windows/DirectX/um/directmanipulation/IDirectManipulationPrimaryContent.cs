@@ -135,42 +135,43 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
         HRESULT GetCenterPoint(float* centerX, float* centerY);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationPrimaryContent*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationPrimaryContent*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationPrimaryContent*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_MOTION_TYPES, float, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, float, float, int> SetSnapInterval;
+        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_MOTION_TYPES, float, float, int> SetSnapInterval;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_MOTION_TYPES, const float *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, float*, uint, int> SetSnapPoints;
+        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_MOTION_TYPES, float*, uint, int> SetSnapPoints;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_TYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_TYPE, int> SetSnapType;
+        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_TYPE, int> SetSnapType;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_COORDINATE, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_COORDINATE, float, int> SetSnapCoordinate;
+        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_COORDINATE, float, int> SetSnapCoordinate;
 
         [NativeTypeName("HRESULT (float, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationPrimaryContent*, float, float, int> SetZoomBoundaries;
+        public delegate* unmanaged<TSelf*, float, float, int> SetZoomBoundaries;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_HORIZONTALALIGNMENT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_HORIZONTALALIGNMENT, int> SetHorizontalAlignment;
+        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_HORIZONTALALIGNMENT, int> SetHorizontalAlignment;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_VERTICALALIGNMENT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_VERTICALALIGNMENT, int> SetVerticalAlignment;
+        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_VERTICALALIGNMENT, int> SetVerticalAlignment;
 
         [NativeTypeName("HRESULT (float *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationPrimaryContent*, float*, uint, int> GetInertiaEndTransform;
+        public delegate* unmanaged<TSelf*, float*, uint, int> GetInertiaEndTransform;
 
         [NativeTypeName("HRESULT (float *, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationPrimaryContent*, float*, float*, int> GetCenterPoint;
+        public delegate* unmanaged<TSelf*, float*, float*, int> GetCenterPoint;
     }
 }

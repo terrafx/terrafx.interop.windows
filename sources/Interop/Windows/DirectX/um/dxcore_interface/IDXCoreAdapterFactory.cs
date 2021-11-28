@@ -92,30 +92,31 @@ public unsafe partial struct IDXCoreAdapterFactory : IDXCoreAdapterFactory.Inter
         HRESULT UnregisterEventNotification([NativeTypeName("uint32_t")] uint eventCookie);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapterFactory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapterFactory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapterFactory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (uint32_t, const GUID *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapterFactory*, uint, Guid*, Guid*, void**, int> CreateAdapterList;
+        public delegate* unmanaged<TSelf*, uint, Guid*, Guid*, void**, int> CreateAdapterList;
 
         [NativeTypeName("HRESULT (const LUID &, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapterFactory*, LUID*, Guid*, void**, int> GetAdapterByLuid;
+        public delegate* unmanaged<TSelf*, LUID*, Guid*, void**, int> GetAdapterByLuid;
 
         [NativeTypeName("bool (DXCoreNotificationType) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDXCoreAdapterFactory*, DXCoreNotificationType, byte> IsNotificationTypeSupported;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DXCoreNotificationType, byte> IsNotificationTypeSupported;
 
         [NativeTypeName("HRESULT (IUnknown *, DXCoreNotificationType, PFN_DXCORE_NOTIFICATION_CALLBACK, void *, uint32_t *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapterFactory*, IUnknown*, DXCoreNotificationType, delegate* unmanaged<DXCoreNotificationType, IUnknown*, void*, void>, void*, uint*, int> RegisterEventNotification;
+        public delegate* unmanaged<TSelf*, IUnknown*, DXCoreNotificationType, delegate* unmanaged<DXCoreNotificationType, IUnknown*, void*, void>, void*, uint*, int> RegisterEventNotification;
 
         [NativeTypeName("HRESULT (uint32_t) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapterFactory*, uint, int> UnregisterEventNotification;
+        public delegate* unmanaged<TSelf*, uint, int> UnregisterEventNotification;
     }
 }

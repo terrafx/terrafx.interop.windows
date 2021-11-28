@@ -82,27 +82,28 @@ public unsafe partial struct IHTMLEditDesigner : IHTMLEditDesigner.Interface
         HRESULT PostEditorEventNotify([NativeTypeName("DISPID")] int inEvtDispId, IHTMLEventObj* pIEventObj);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditDesigner*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditDesigner*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditDesigner*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DISPID, IHTMLEventObj *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditDesigner*, int, IHTMLEventObj*, int> PreHandleEvent;
+        public delegate* unmanaged<TSelf*, int, IHTMLEventObj*, int> PreHandleEvent;
 
         [NativeTypeName("HRESULT (DISPID, IHTMLEventObj *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditDesigner*, int, IHTMLEventObj*, int> PostHandleEvent;
+        public delegate* unmanaged<TSelf*, int, IHTMLEventObj*, int> PostHandleEvent;
 
         [NativeTypeName("HRESULT (DISPID, IHTMLEventObj *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditDesigner*, int, IHTMLEventObj*, int> TranslateAcceleratorW;
+        public delegate* unmanaged<TSelf*, int, IHTMLEventObj*, int> TranslateAcceleratorW;
 
         [NativeTypeName("HRESULT (DISPID, IHTMLEventObj *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditDesigner*, int, IHTMLEventObj*, int> PostEditorEventNotify;
+        public delegate* unmanaged<TSelf*, int, IHTMLEventObj*, int> PostEditorEventNotify;
     }
 }

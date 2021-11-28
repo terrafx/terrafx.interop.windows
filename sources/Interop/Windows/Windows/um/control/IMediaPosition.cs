@@ -180,60 +180,61 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface
         HRESULT CanSeekBackward([NativeTypeName("LONG *")] int* pCanSeekBackward);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPosition*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPosition*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPosition*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPosition*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPosition*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPosition*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPosition*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (REFTIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPosition*, double*, int> get_Duration;
+        public delegate* unmanaged<TSelf*, double*, int> get_Duration;
 
         [NativeTypeName("HRESULT (REFTIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPosition*, double, int> put_CurrentPosition;
+        public delegate* unmanaged<TSelf*, double, int> put_CurrentPosition;
 
         [NativeTypeName("HRESULT (REFTIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPosition*, double*, int> get_CurrentPosition;
+        public delegate* unmanaged<TSelf*, double*, int> get_CurrentPosition;
 
         [NativeTypeName("HRESULT (REFTIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPosition*, double*, int> get_StopTime;
+        public delegate* unmanaged<TSelf*, double*, int> get_StopTime;
 
         [NativeTypeName("HRESULT (REFTIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPosition*, double, int> put_StopTime;
+        public delegate* unmanaged<TSelf*, double, int> put_StopTime;
 
         [NativeTypeName("HRESULT (REFTIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPosition*, double*, int> get_PrerollTime;
+        public delegate* unmanaged<TSelf*, double*, int> get_PrerollTime;
 
         [NativeTypeName("HRESULT (REFTIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPosition*, double, int> put_PrerollTime;
+        public delegate* unmanaged<TSelf*, double, int> put_PrerollTime;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPosition*, double, int> put_Rate;
+        public delegate* unmanaged<TSelf*, double, int> put_Rate;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPosition*, double*, int> get_Rate;
+        public delegate* unmanaged<TSelf*, double*, int> get_Rate;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPosition*, int*, int> CanSeekForward;
+        public delegate* unmanaged<TSelf*, int*, int> CanSeekForward;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaPosition*, int*, int> CanSeekBackward;
+        public delegate* unmanaged<TSelf*, int*, int> CanSeekBackward;
     }
 }

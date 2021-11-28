@@ -170,57 +170,58 @@ public unsafe partial struct IXMLDOMNamedNodeMap : IXMLDOMNamedNodeMap.Interface
         HRESULT get__newEnum(IUnknown** ppUnk);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMNamedNodeMap*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMNamedNodeMap*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMNamedNodeMap*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMNamedNodeMap*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMNamedNodeMap*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMNamedNodeMap*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMNamedNodeMap*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMNamedNodeMap*, ushort*, IXMLDOMNode**, int> getNamedItem;
+        public delegate* unmanaged<TSelf*, ushort*, IXMLDOMNode**, int> getNamedItem;
 
         [NativeTypeName("HRESULT (IXMLDOMNode *, IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMNamedNodeMap*, IXMLDOMNode*, IXMLDOMNode**, int> setNamedItem;
+        public delegate* unmanaged<TSelf*, IXMLDOMNode*, IXMLDOMNode**, int> setNamedItem;
 
         [NativeTypeName("HRESULT (BSTR, IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMNamedNodeMap*, ushort*, IXMLDOMNode**, int> removeNamedItem;
+        public delegate* unmanaged<TSelf*, ushort*, IXMLDOMNode**, int> removeNamedItem;
 
         [NativeTypeName("HRESULT (long, IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMNamedNodeMap*, int, IXMLDOMNode**, int> get_item;
+        public delegate* unmanaged<TSelf*, int, IXMLDOMNode**, int> get_item;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMNamedNodeMap*, int*, int> get_length;
+        public delegate* unmanaged<TSelf*, int*, int> get_length;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMNamedNodeMap*, ushort*, ushort*, IXMLDOMNode**, int> getQualifiedItem;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, IXMLDOMNode**, int> getQualifiedItem;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMNamedNodeMap*, ushort*, ushort*, IXMLDOMNode**, int> removeQualifiedItem;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, IXMLDOMNode**, int> removeQualifiedItem;
 
         [NativeTypeName("HRESULT (IXMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMNamedNodeMap*, IXMLDOMNode**, int> nextNode;
+        public delegate* unmanaged<TSelf*, IXMLDOMNode**, int> nextNode;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMNamedNodeMap*, int> reset;
+        public delegate* unmanaged<TSelf*, int> reset;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLDOMNamedNodeMap*, IUnknown**, int> get__newEnum;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> get__newEnum;
     }
 }

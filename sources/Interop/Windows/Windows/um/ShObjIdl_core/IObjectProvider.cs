@@ -52,18 +52,19 @@ public unsafe partial struct IObjectProvider : IObjectProvider.Interface
         HRESULT QueryObject([NativeTypeName("const GUID &")] Guid* guidObject, [NativeTypeName("const IID &")] Guid* riid, void** ppvOut);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectProvider*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectProvider*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectProvider*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectProvider*, Guid*, Guid*, void**, int> QueryObject;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, void**, int> QueryObject;
     }
 }

@@ -72,24 +72,25 @@ public unsafe partial struct ITransferDestination : ITransferDestination.Interfa
         HRESULT CreateItem([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("DWORD")] uint dwAttributes, [NativeTypeName("ULONGLONG")] ulong ullSize, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, [NativeTypeName("const IID &")] Guid* riidItem, void** ppvItem, [NativeTypeName("const IID &")] Guid* riidResources, void** ppvResources);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferDestination*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferDestination*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferDestination*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITransferAdviseSink *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferDestination*, ITransferAdviseSink*, uint*, int> Advise;
+        public delegate* unmanaged<TSelf*, ITransferAdviseSink*, uint*, int> Advise;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferDestination*, uint, int> Unadvise;
+        public delegate* unmanaged<TSelf*, uint, int> Unadvise;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, ULONGLONG, TRANSFER_SOURCE_FLAGS, const IID &, void **, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferDestination*, ushort*, uint, ulong, uint, Guid*, void**, Guid*, void**, int> CreateItem;
+        public delegate* unmanaged<TSelf*, ushort*, uint, ulong, uint, Guid*, void**, Guid*, void**, int> CreateItem;
     }
 }

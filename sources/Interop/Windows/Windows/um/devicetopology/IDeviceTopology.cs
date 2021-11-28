@@ -112,36 +112,37 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface
         HRESULT GetSignalPath(IPart* pIPartFrom, IPart* pIPartTo, BOOL bRejectMixedPaths, IPartsList** ppParts);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeviceTopology*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeviceTopology*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeviceTopology*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeviceTopology*, uint*, int> GetConnectorCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetConnectorCount;
 
         [NativeTypeName("HRESULT (UINT, IConnector **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeviceTopology*, uint, IConnector**, int> GetConnector;
+        public delegate* unmanaged<TSelf*, uint, IConnector**, int> GetConnector;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeviceTopology*, uint*, int> GetSubunitCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetSubunitCount;
 
         [NativeTypeName("HRESULT (UINT, ISubunit **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeviceTopology*, uint, ISubunit**, int> GetSubunit;
+        public delegate* unmanaged<TSelf*, uint, ISubunit**, int> GetSubunit;
 
         [NativeTypeName("HRESULT (UINT, IPart **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeviceTopology*, uint, IPart**, int> GetPartById;
+        public delegate* unmanaged<TSelf*, uint, IPart**, int> GetPartById;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeviceTopology*, ushort**, int> GetDeviceId;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDeviceId;
 
         [NativeTypeName("HRESULT (IPart *, IPart *, BOOL, IPartsList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeviceTopology*, IPart*, IPart*, BOOL, IPartsList**, int> GetSignalPath;
+        public delegate* unmanaged<TSelf*, IPart*, IPart*, BOOL, IPartsList**, int> GetSignalPath;
     }
 }

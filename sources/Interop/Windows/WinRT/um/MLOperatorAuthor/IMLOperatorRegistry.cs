@@ -63,21 +63,22 @@ public unsafe partial struct IMLOperatorRegistry : IMLOperatorRegistry.Interface
         HRESULT RegisterOperatorKernel([NativeTypeName("const MLOperatorKernelDescription *")] MLOperatorKernelDescription* operatorKernel, IMLOperatorKernelFactory* operatorKernelFactory, IMLOperatorShapeInferrer* shapeInferrer);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorRegistry*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorRegistry*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorRegistry*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const MLOperatorSetId *, int32_t, const MLOperatorSchemaDescription *const *, uint32_t, IMLOperatorTypeInferrer *, IMLOperatorShapeInferrer *) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorRegistry*, MLOperatorSetId*, int, MLOperatorSchemaDescription**, uint, IMLOperatorTypeInferrer*, IMLOperatorShapeInferrer*, int> RegisterOperatorSetSchema;
+        public delegate* unmanaged<TSelf*, MLOperatorSetId*, int, MLOperatorSchemaDescription**, uint, IMLOperatorTypeInferrer*, IMLOperatorShapeInferrer*, int> RegisterOperatorSetSchema;
 
         [NativeTypeName("HRESULT (const MLOperatorKernelDescription *, IMLOperatorKernelFactory *, IMLOperatorShapeInferrer *) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorRegistry*, MLOperatorKernelDescription*, IMLOperatorKernelFactory*, IMLOperatorShapeInferrer*, int> RegisterOperatorKernel;
+        public delegate* unmanaged<TSelf*, MLOperatorKernelDescription*, IMLOperatorKernelFactory*, IMLOperatorShapeInferrer*, int> RegisterOperatorKernel;
     }
 }

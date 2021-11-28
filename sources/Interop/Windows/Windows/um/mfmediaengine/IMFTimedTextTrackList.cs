@@ -76,24 +76,25 @@ public unsafe partial struct IMFTimedTextTrackList : IMFTimedTextTrackList.Inter
         HRESULT GetTrackById([NativeTypeName("DWORD")] uint trackId, IMFTimedTextTrack** track);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextTrackList*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextTrackList*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextTrackList*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("DWORD () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextTrackList*, uint> GetLength;
+        public delegate* unmanaged<TSelf*, uint> GetLength;
 
         [NativeTypeName("HRESULT (DWORD, IMFTimedTextTrack **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextTrackList*, uint, IMFTimedTextTrack**, int> GetTrack;
+        public delegate* unmanaged<TSelf*, uint, IMFTimedTextTrack**, int> GetTrack;
 
         [NativeTypeName("HRESULT (DWORD, IMFTimedTextTrack **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextTrackList*, uint, IMFTimedTextTrack**, int> GetTrackById;
+        public delegate* unmanaged<TSelf*, uint, IMFTimedTextTrack**, int> GetTrackById;
     }
 }

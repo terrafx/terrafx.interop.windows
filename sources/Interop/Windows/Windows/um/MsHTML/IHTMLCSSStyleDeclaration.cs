@@ -3810,1149 +3810,1150 @@ public unsafe partial struct IHTMLCSSStyleDeclaration : IHTMLCSSStyleDeclaration
         HRESULT get_msTransformOrigin([NativeTypeName("BSTR *")] ushort** p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, int*, int> get_length;
+        public delegate* unmanaged<TSelf*, int*, int> get_length;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_parentRule;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_parentRule;
 
         [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, ushort**, int> getPropertyValue;
+        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> getPropertyValue;
 
         [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, ushort**, int> getPropertyPriority;
+        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> getPropertyPriority;
 
         [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, ushort**, int> removeProperty;
+        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> removeProperty;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, VARIANT*, VARIANT*, int> setProperty;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, VARIANT*, int> setProperty;
 
         [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, int, ushort**, int> item;
+        public delegate* unmanaged<TSelf*, int, ushort**, int> item;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_fontFamily;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_fontFamily;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_fontFamily;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_fontFamily;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_fontStyle;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_fontStyle;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_fontStyle;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_fontStyle;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_fontVariant;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_fontVariant;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_fontVariant;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_fontVariant;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_fontWeight;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_fontWeight;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_fontWeight;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_fontWeight;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_fontSize;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_fontSize;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_fontSize;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_fontSize;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_font;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_font;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_font;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_font;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_color;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_color;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_color;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_color;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_background;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_background;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_background;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_background;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_backgroundColor;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_backgroundColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_backgroundColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_backgroundColor;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_backgroundImage;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_backgroundImage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_backgroundImage;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_backgroundImage;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_backgroundRepeat;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_backgroundRepeat;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_backgroundRepeat;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_backgroundRepeat;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_backgroundAttachment;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_backgroundAttachment;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_backgroundAttachment;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_backgroundAttachment;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_backgroundPosition;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_backgroundPosition;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_backgroundPosition;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_backgroundPosition;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_backgroundPositionX;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_backgroundPositionX;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_backgroundPositionX;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_backgroundPositionX;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_backgroundPositionY;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_backgroundPositionY;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_backgroundPositionY;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_backgroundPositionY;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_wordSpacing;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_wordSpacing;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_wordSpacing;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_wordSpacing;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_letterSpacing;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_letterSpacing;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_letterSpacing;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_letterSpacing;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_textDecoration;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_textDecoration;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_textDecoration;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_textDecoration;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_verticalAlign;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_verticalAlign;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_verticalAlign;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_verticalAlign;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_textTransform;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_textTransform;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_textTransform;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_textTransform;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_textAlign;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_textAlign;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_textAlign;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_textAlign;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_textIndent;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_textIndent;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_textIndent;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_textIndent;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_lineHeight;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_lineHeight;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_lineHeight;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_lineHeight;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_marginTop;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_marginTop;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_marginTop;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_marginTop;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_marginRight;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_marginRight;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_marginRight;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_marginRight;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_marginBottom;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_marginBottom;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_marginBottom;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_marginBottom;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_marginLeft;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_marginLeft;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_marginLeft;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_marginLeft;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_margin;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_margin;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_margin;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_margin;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_paddingTop;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_paddingTop;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_paddingTop;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_paddingTop;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_paddingRight;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_paddingRight;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_paddingRight;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_paddingRight;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_paddingBottom;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_paddingBottom;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_paddingBottom;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_paddingBottom;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_paddingLeft;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_paddingLeft;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_paddingLeft;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_paddingLeft;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_padding;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_padding;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_padding;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_padding;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_border;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_border;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_border;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_border;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_borderTop;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_borderTop;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_borderTop;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_borderTop;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_borderRight;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_borderRight;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_borderRight;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_borderRight;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_borderBottom;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_borderBottom;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_borderBottom;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_borderBottom;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_borderLeft;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_borderLeft;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_borderLeft;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_borderLeft;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_borderColor;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_borderColor;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_borderColor;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_borderColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_borderTopColor;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_borderTopColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_borderTopColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_borderTopColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_borderRightColor;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_borderRightColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_borderRightColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_borderRightColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_borderBottomColor;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_borderBottomColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_borderBottomColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_borderBottomColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_borderLeftColor;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_borderLeftColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_borderLeftColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_borderLeftColor;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_borderWidth;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_borderWidth;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_borderWidth;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_borderWidth;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_borderTopWidth;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_borderTopWidth;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_borderTopWidth;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_borderTopWidth;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_borderRightWidth;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_borderRightWidth;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_borderRightWidth;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_borderRightWidth;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_borderBottomWidth;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_borderBottomWidth;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_borderBottomWidth;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_borderBottomWidth;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_borderLeftWidth;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_borderLeftWidth;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_borderLeftWidth;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_borderLeftWidth;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_borderStyle;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_borderStyle;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_borderStyle;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_borderStyle;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_borderTopStyle;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_borderTopStyle;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_borderTopStyle;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_borderTopStyle;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_borderRightStyle;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_borderRightStyle;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_borderRightStyle;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_borderRightStyle;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_borderBottomStyle;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_borderBottomStyle;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_borderBottomStyle;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_borderBottomStyle;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_borderLeftStyle;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_borderLeftStyle;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_borderLeftStyle;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_borderLeftStyle;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_width;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_width;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_width;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_width;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_height;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_height;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_height;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_height;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_styleFloat;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_styleFloat;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_styleFloat;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_styleFloat;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_clear;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_clear;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_clear;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_clear;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_display;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_display;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_display;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_display;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_visibility;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_visibility;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_visibility;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_visibility;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_listStyleType;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_listStyleType;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_listStyleType;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_listStyleType;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_listStylePosition;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_listStylePosition;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_listStylePosition;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_listStylePosition;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_listStyleImage;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_listStyleImage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_listStyleImage;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_listStyleImage;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_listStyle;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_listStyle;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_listStyle;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_listStyle;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_whiteSpace;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_whiteSpace;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_whiteSpace;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_whiteSpace;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_top;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_top;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_top;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_top;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_left;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_left;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_left;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_left;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_zIndex;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_zIndex;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_zIndex;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_zIndex;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_overflow;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_overflow;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_overflow;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_overflow;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_pageBreakBefore;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_pageBreakBefore;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_pageBreakBefore;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_pageBreakBefore;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_pageBreakAfter;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_pageBreakAfter;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_pageBreakAfter;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_pageBreakAfter;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_cssText;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_cssText;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_cssText;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_cssText;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_cursor;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_cursor;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_cursor;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_cursor;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_clip;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_clip;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_clip;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_clip;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_filter;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_filter;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_filter;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_filter;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_tableLayout;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_tableLayout;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_tableLayout;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_tableLayout;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_borderCollapse;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_borderCollapse;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_borderCollapse;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_borderCollapse;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_direction;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_direction;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_direction;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_direction;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_behavior;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_behavior;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_behavior;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_behavior;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_position;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_position;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_position;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_position;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_unicodeBidi;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_unicodeBidi;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_unicodeBidi;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_unicodeBidi;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_bottom;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_bottom;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_bottom;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_bottom;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_right;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_right;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_right;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_right;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_imeMode;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_imeMode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_imeMode;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_imeMode;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_rubyAlign;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_rubyAlign;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_rubyAlign;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_rubyAlign;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_rubyPosition;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_rubyPosition;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_rubyPosition;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_rubyPosition;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_rubyOverhang;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_rubyOverhang;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_rubyOverhang;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_rubyOverhang;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_layoutGridChar;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_layoutGridChar;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_layoutGridChar;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_layoutGridChar;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_layoutGridLine;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_layoutGridLine;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_layoutGridLine;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_layoutGridLine;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_layoutGridMode;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_layoutGridMode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_layoutGridMode;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_layoutGridMode;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_layoutGridType;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_layoutGridType;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_layoutGridType;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_layoutGridType;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_layoutGrid;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_layoutGrid;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_layoutGrid;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_layoutGrid;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_textAutospace;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_textAutospace;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_textAutospace;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_textAutospace;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_wordBreak;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_wordBreak;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_wordBreak;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_wordBreak;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_lineBreak;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_lineBreak;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_lineBreak;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_lineBreak;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_textJustify;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_textJustify;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_textJustify;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_textJustify;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_textJustifyTrim;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_textJustifyTrim;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_textJustifyTrim;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_textJustifyTrim;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_textKashida;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_textKashida;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_textKashida;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_textKashida;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_overflowX;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_overflowX;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_overflowX;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_overflowX;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_overflowY;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_overflowY;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_overflowY;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_overflowY;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_accelerator;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_accelerator;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_accelerator;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_accelerator;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_layoutFlow;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_layoutFlow;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_layoutFlow;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_layoutFlow;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_zoom;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_zoom;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_zoom;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_zoom;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_wordWrap;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_wordWrap;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_wordWrap;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_wordWrap;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_textUnderlinePosition;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_textUnderlinePosition;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_textUnderlinePosition;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_textUnderlinePosition;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_scrollbarBaseColor;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_scrollbarBaseColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_scrollbarBaseColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarBaseColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_scrollbarFaceColor;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_scrollbarFaceColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_scrollbarFaceColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarFaceColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_scrollbar3dLightColor;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_scrollbar3dLightColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_scrollbar3dLightColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbar3dLightColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_scrollbarShadowColor;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_scrollbarShadowColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_scrollbarShadowColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarShadowColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_scrollbarHighlightColor;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_scrollbarHighlightColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_scrollbarHighlightColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarHighlightColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_scrollbarDarkShadowColor;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_scrollbarDarkShadowColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_scrollbarDarkShadowColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarDarkShadowColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_scrollbarArrowColor;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_scrollbarArrowColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_scrollbarArrowColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarArrowColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_scrollbarTrackColor;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_scrollbarTrackColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_scrollbarTrackColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarTrackColor;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_writingMode;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_writingMode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_writingMode;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_writingMode;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_textAlignLast;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_textAlignLast;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_textAlignLast;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_textAlignLast;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_textKashidaSpace;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_textKashidaSpace;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_textKashidaSpace;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_textKashidaSpace;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_textOverflow;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_textOverflow;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_textOverflow;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_textOverflow;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_minHeight;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_minHeight;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_minHeight;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_minHeight;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_msInterpolationMode;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_msInterpolationMode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_msInterpolationMode;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_msInterpolationMode;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_maxHeight;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_maxHeight;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_maxHeight;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_maxHeight;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_minWidth;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_minWidth;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_minWidth;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_minWidth;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_maxWidth;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_maxWidth;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_maxWidth;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_maxWidth;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_content;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_content;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_content;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_content;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_captionSide;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_captionSide;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_captionSide;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_captionSide;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_counterIncrement;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_counterIncrement;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_counterIncrement;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_counterIncrement;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_counterReset;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_counterReset;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_counterReset;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_counterReset;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_outline;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_outline;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_outline;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_outline;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_outlineWidth;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_outlineWidth;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_outlineWidth;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_outlineWidth;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_outlineStyle;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_outlineStyle;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_outlineStyle;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_outlineStyle;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_outlineColor;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_outlineColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_outlineColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_outlineColor;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_boxSizing;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_boxSizing;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_boxSizing;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_boxSizing;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_borderSpacing;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_borderSpacing;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_borderSpacing;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_borderSpacing;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_orphans;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_orphans;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_orphans;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_orphans;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_widows;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_widows;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_widows;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_widows;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_pageBreakInside;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_pageBreakInside;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_pageBreakInside;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_pageBreakInside;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_emptyCells;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_emptyCells;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_emptyCells;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_emptyCells;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_msBlockProgression;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_msBlockProgression;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_msBlockProgression;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_msBlockProgression;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_quotes;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_quotes;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_quotes;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_quotes;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_alignmentBaseline;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_alignmentBaseline;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_alignmentBaseline;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_alignmentBaseline;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_baselineShift;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_baselineShift;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_baselineShift;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_baselineShift;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_dominantBaseline;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_dominantBaseline;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_dominantBaseline;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_dominantBaseline;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_fontSizeAdjust;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_fontSizeAdjust;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_fontSizeAdjust;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_fontSizeAdjust;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_fontStretch;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_fontStretch;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_fontStretch;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_fontStretch;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_opacity;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_opacity;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_opacity;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_opacity;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_clipPath;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_clipPath;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_clipPath;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_clipPath;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_clipRule;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_clipRule;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_clipRule;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_clipRule;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_fill;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_fill;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_fill;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_fill;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_fillOpacity;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_fillOpacity;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_fillOpacity;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_fillOpacity;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_fillRule;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_fillRule;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_fillRule;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_fillRule;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_kerning;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_kerning;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_kerning;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_kerning;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_marker;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_marker;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_marker;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_marker;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_markerEnd;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_markerEnd;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_markerEnd;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_markerEnd;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_markerMid;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_markerMid;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_markerMid;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_markerMid;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_markerStart;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_markerStart;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_markerStart;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_markerStart;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_mask;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_mask;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_mask;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_mask;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_pointerEvents;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_pointerEvents;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_pointerEvents;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_pointerEvents;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_stopColor;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_stopColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_stopColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_stopColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_stopOpacity;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_stopOpacity;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_stopOpacity;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_stopOpacity;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_stroke;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_stroke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_stroke;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_stroke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_strokeDasharray;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_strokeDasharray;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_strokeDasharray;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_strokeDasharray;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_strokeDashoffset;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_strokeDashoffset;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_strokeDashoffset;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_strokeDashoffset;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_strokeLinecap;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_strokeLinecap;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_strokeLinecap;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_strokeLinecap;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_strokeLinejoin;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_strokeLinejoin;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_strokeLinejoin;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_strokeLinejoin;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_strokeMiterlimit;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_strokeMiterlimit;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_strokeMiterlimit;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_strokeMiterlimit;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_strokeOpacity;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_strokeOpacity;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_strokeOpacity;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_strokeOpacity;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_strokeWidth;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_strokeWidth;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_strokeWidth;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_strokeWidth;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_textAnchor;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_textAnchor;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_textAnchor;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_textAnchor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_glyphOrientationHorizontal;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_glyphOrientationHorizontal;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_glyphOrientationHorizontal;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_glyphOrientationHorizontal;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_glyphOrientationVertical;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_glyphOrientationVertical;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_glyphOrientationVertical;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_glyphOrientationVertical;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_borderRadius;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_borderRadius;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_borderRadius;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_borderRadius;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_borderTopLeftRadius;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_borderTopLeftRadius;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_borderTopLeftRadius;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_borderTopLeftRadius;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_borderTopRightRadius;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_borderTopRightRadius;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_borderTopRightRadius;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_borderTopRightRadius;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_borderBottomRightRadius;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_borderBottomRightRadius;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_borderBottomRightRadius;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_borderBottomRightRadius;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_borderBottomLeftRadius;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_borderBottomLeftRadius;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_borderBottomLeftRadius;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_borderBottomLeftRadius;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_clipTop;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_clipTop;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_clipTop;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_clipTop;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_clipRight;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_clipRight;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_clipRight;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_clipRight;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_clipBottom;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_clipBottom;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT, int> put_clipLeft;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_clipLeft;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, VARIANT*, int> get_clipLeft;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_clipLeft;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_cssFloat;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_cssFloat;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_cssFloat;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_cssFloat;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_backgroundClip;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_backgroundClip;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_backgroundClip;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_backgroundClip;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_backgroundOrigin;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_backgroundOrigin;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_backgroundOrigin;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_backgroundOrigin;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_backgroundSize;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_backgroundSize;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_backgroundSize;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_backgroundSize;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_boxShadow;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_boxShadow;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_boxShadow;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_boxShadow;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_msTransform;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_msTransform;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_msTransform;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_msTransform;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort*, int> put_msTransformOrigin;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_msTransformOrigin;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCSSStyleDeclaration*, ushort**, int> get_msTransformOrigin;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_msTransformOrigin;
     }
 }

@@ -106,33 +106,34 @@ public unsafe partial struct IMFExtendedCameraControl : IMFExtendedCameraControl
         HRESULT CommitSettings();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("ULONGLONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraControl*, ulong> GetCapabilities;
+        public delegate* unmanaged<TSelf*, ulong> GetCapabilities;
 
         [NativeTypeName("HRESULT (ULONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraControl*, ulong, int> SetFlags;
+        public delegate* unmanaged<TSelf*, ulong, int> SetFlags;
 
         [NativeTypeName("ULONGLONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraControl*, ulong> GetFlags;
+        public delegate* unmanaged<TSelf*, ulong> GetFlags;
 
         [NativeTypeName("HRESULT (BYTE **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraControl*, byte**, uint*, int> LockPayload;
+        public delegate* unmanaged<TSelf*, byte**, uint*, int> LockPayload;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraControl*, int> UnlockPayload;
+        public delegate* unmanaged<TSelf*, int> UnlockPayload;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraControl*, int> CommitSettings;
+        public delegate* unmanaged<TSelf*, int> CommitSettings;
     }
 }

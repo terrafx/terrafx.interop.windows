@@ -72,24 +72,25 @@ public unsafe partial struct INameSpaceTreeAccessible : INameSpaceTreeAccessible
         HRESULT OnGetAccessibilityRole(IShellItem* psi, VARIANT* pvarRole);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeAccessible*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeAccessible*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeAccessible*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellItem *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeAccessible*, IShellItem*, ushort**, int> OnGetDefaultAccessibilityAction;
+        public delegate* unmanaged<TSelf*, IShellItem*, ushort**, int> OnGetDefaultAccessibilityAction;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeAccessible*, IShellItem*, int> OnDoDefaultAccessibilityAction;
+        public delegate* unmanaged<TSelf*, IShellItem*, int> OnDoDefaultAccessibilityAction;
 
         [NativeTypeName("HRESULT (IShellItem *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeAccessible*, IShellItem*, VARIANT*, int> OnGetAccessibilityRole;
+        public delegate* unmanaged<TSelf*, IShellItem*, VARIANT*, int> OnGetAccessibilityRole;
     }
 }

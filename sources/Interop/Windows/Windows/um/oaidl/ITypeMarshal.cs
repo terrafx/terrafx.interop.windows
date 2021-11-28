@@ -82,27 +82,28 @@ public unsafe partial struct ITypeMarshal : ITypeMarshal.Interface
         HRESULT Free([NativeTypeName("PVOID")] void* pvType);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeMarshal*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeMarshal*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeMarshal*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PVOID, DWORD, PVOID, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeMarshal*, void*, uint, void*, uint*, int> Size;
+        public delegate* unmanaged<TSelf*, void*, uint, void*, uint*, int> Size;
 
         [NativeTypeName("HRESULT (PVOID, DWORD, PVOID, ULONG, BYTE *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeMarshal*, void*, uint, void*, uint, byte*, uint*, int> Marshal;
+        public delegate* unmanaged<TSelf*, void*, uint, void*, uint, byte*, uint*, int> Marshal;
 
         [NativeTypeName("HRESULT (PVOID, DWORD, ULONG, BYTE *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeMarshal*, void*, uint, uint, byte*, uint*, int> Unmarshal;
+        public delegate* unmanaged<TSelf*, void*, uint, uint, byte*, uint*, int> Unmarshal;
 
         [NativeTypeName("HRESULT (PVOID) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeMarshal*, void*, int> Free;
+        public delegate* unmanaged<TSelf*, void*, int> Free;
     }
 }

@@ -75,27 +75,28 @@ public unsafe partial struct IAppxManifestPackageDependency2 : IAppxManifestPack
         HRESULT GetMaxMajorVersionTested([NativeTypeName("UINT16 *")] ushort* maxMajorVersionTested);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestPackageDependency2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestPackageDependency2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestPackageDependency2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestPackageDependency2*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestPackageDependency2*, ushort**, int> GetPublisher;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetPublisher;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestPackageDependency2*, ulong*, int> GetMinVersion;
+        public delegate* unmanaged<TSelf*, ulong*, int> GetMinVersion;
 
         [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestPackageDependency2*, ushort*, int> GetMaxMajorVersionTested;
+        public delegate* unmanaged<TSelf*, ushort*, int> GetMaxMajorVersionTested;
     }
 }

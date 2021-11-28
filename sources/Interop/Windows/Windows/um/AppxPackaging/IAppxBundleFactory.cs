@@ -74,24 +74,25 @@ public unsafe partial struct IAppxBundleFactory : IAppxBundleFactory.Interface
         HRESULT CreateBundleManifestReader(IStream* inputStream, IAppxBundleManifestReader** manifestReader);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleFactory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleFactory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleFactory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IStream *, UINT64, IAppxBundleWriter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleFactory*, IStream*, ulong, IAppxBundleWriter**, int> CreateBundleWriter;
+        public delegate* unmanaged<TSelf*, IStream*, ulong, IAppxBundleWriter**, int> CreateBundleWriter;
 
         [NativeTypeName("HRESULT (IStream *, IAppxBundleReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleFactory*, IStream*, IAppxBundleReader**, int> CreateBundleReader;
+        public delegate* unmanaged<TSelf*, IStream*, IAppxBundleReader**, int> CreateBundleReader;
 
         [NativeTypeName("HRESULT (IStream *, IAppxBundleManifestReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleFactory*, IStream*, IAppxBundleManifestReader**, int> CreateBundleManifestReader;
+        public delegate* unmanaged<TSelf*, IStream*, IAppxBundleManifestReader**, int> CreateBundleManifestReader;
     }
 }

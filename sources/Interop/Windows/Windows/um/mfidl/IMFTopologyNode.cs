@@ -412,153 +412,154 @@ public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface
         HRESULT CloneFrom(IMFTopologyNode* pNode);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, PROPVARIANT*, int> GetItem;
+        public delegate* unmanaged<TSelf*, Guid*, PROPVARIANT*, int> GetItem;
 
         [NativeTypeName("HRESULT (const GUID &, MF_ATTRIBUTE_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, MF_ATTRIBUTE_TYPE*, int> GetItemType;
+        public delegate* unmanaged<TSelf*, Guid*, MF_ATTRIBUTE_TYPE*, int> GetItemType;
 
         [NativeTypeName("HRESULT (const GUID &, const PROPVARIANT &, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, PROPVARIANT*, BOOL*, int> CompareItem;
+        public delegate* unmanaged<TSelf*, Guid*, PROPVARIANT*, BOOL*, int> CompareItem;
 
         [NativeTypeName("HRESULT (IMFAttributes *, MF_ATTRIBUTES_MATCH_TYPE, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, BOOL*, int> Compare;
+        public delegate* unmanaged<TSelf*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, BOOL*, int> Compare;
 
         [NativeTypeName("HRESULT (const GUID &, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, uint*, int> GetUINT32;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, int> GetUINT32;
 
         [NativeTypeName("HRESULT (const GUID &, UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, ulong*, int> GetUINT64;
+        public delegate* unmanaged<TSelf*, Guid*, ulong*, int> GetUINT64;
 
         [NativeTypeName("HRESULT (const GUID &, double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, double*, int> GetDouble;
+        public delegate* unmanaged<TSelf*, Guid*, double*, int> GetDouble;
 
         [NativeTypeName("HRESULT (const GUID &, GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, Guid*, int> GetGUID;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, int> GetGUID;
 
         [NativeTypeName("HRESULT (const GUID &, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, uint*, int> GetStringLength;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, int> GetStringLength;
 
         [NativeTypeName("HRESULT (const GUID &, LPWSTR, UINT32, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, ushort*, uint, uint*, int> GetString;
+        public delegate* unmanaged<TSelf*, Guid*, ushort*, uint, uint*, int> GetString;
 
         [NativeTypeName("HRESULT (const GUID &, LPWSTR *, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, ushort**, uint*, int> GetAllocatedString;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint*, int> GetAllocatedString;
 
         [NativeTypeName("HRESULT (const GUID &, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, uint*, int> GetBlobSize;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, int> GetBlobSize;
 
         [NativeTypeName("HRESULT (const GUID &, UINT8 *, UINT32, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, byte*, uint, uint*, int> GetBlob;
+        public delegate* unmanaged<TSelf*, Guid*, byte*, uint, uint*, int> GetBlob;
 
         [NativeTypeName("HRESULT (const GUID &, UINT8 **, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, byte**, uint*, int> GetAllocatedBlob;
+        public delegate* unmanaged<TSelf*, Guid*, byte**, uint*, int> GetAllocatedBlob;
 
         [NativeTypeName("HRESULT (const GUID &, const IID &, LPVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, Guid*, void**, int> GetUnknown;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, void**, int> GetUnknown;
 
         [NativeTypeName("HRESULT (const GUID &, const PROPVARIANT &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, PROPVARIANT*, int> SetItem;
+        public delegate* unmanaged<TSelf*, Guid*, PROPVARIANT*, int> SetItem;
 
         [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, int> DeleteItem;
+        public delegate* unmanaged<TSelf*, Guid*, int> DeleteItem;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, int> DeleteAllItems;
+        public delegate* unmanaged<TSelf*, int> DeleteAllItems;
 
         [NativeTypeName("HRESULT (const GUID &, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, uint, int> SetUINT32;
+        public delegate* unmanaged<TSelf*, Guid*, uint, int> SetUINT32;
 
         [NativeTypeName("HRESULT (const GUID &, UINT64) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, ulong, int> SetUINT64;
+        public delegate* unmanaged<TSelf*, Guid*, ulong, int> SetUINT64;
 
         [NativeTypeName("HRESULT (const GUID &, double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, double, int> SetDouble;
+        public delegate* unmanaged<TSelf*, Guid*, double, int> SetDouble;
 
         [NativeTypeName("HRESULT (const GUID &, const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, Guid*, int> SetGUID;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, int> SetGUID;
 
         [NativeTypeName("HRESULT (const GUID &, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, ushort*, int> SetString;
+        public delegate* unmanaged<TSelf*, Guid*, ushort*, int> SetString;
 
         [NativeTypeName("HRESULT (const GUID &, const UINT8 *, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, byte*, uint, int> SetBlob;
+        public delegate* unmanaged<TSelf*, Guid*, byte*, uint, int> SetBlob;
 
         [NativeTypeName("HRESULT (const GUID &, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, Guid*, IUnknown*, int> SetUnknown;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetUnknown;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, int> LockStore;
+        public delegate* unmanaged<TSelf*, int> LockStore;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, int> UnlockStore;
+        public delegate* unmanaged<TSelf*, int> UnlockStore;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, uint*, int> GetCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (UINT32, GUID *, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, uint, Guid*, PROPVARIANT*, int> GetItemByIndex;
+        public delegate* unmanaged<TSelf*, uint, Guid*, PROPVARIANT*, int> GetItemByIndex;
 
         [NativeTypeName("HRESULT (IMFAttributes *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, IMFAttributes*, int> CopyAllItems;
+        public delegate* unmanaged<TSelf*, IMFAttributes*, int> CopyAllItems;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, IUnknown*, int> SetObject;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> SetObject;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, IUnknown**, int> GetObject;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> GetObject;
 
         [NativeTypeName("HRESULT (MF_TOPOLOGY_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, MF_TOPOLOGY_TYPE*, int> GetNodeType;
+        public delegate* unmanaged<TSelf*, MF_TOPOLOGY_TYPE*, int> GetNodeType;
 
         [NativeTypeName("HRESULT (TOPOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, ulong*, int> GetTopoNodeID;
+        public delegate* unmanaged<TSelf*, ulong*, int> GetTopoNodeID;
 
         [NativeTypeName("HRESULT (TOPOID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, ulong, int> SetTopoNodeID;
+        public delegate* unmanaged<TSelf*, ulong, int> SetTopoNodeID;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, uint*, int> GetInputCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetInputCount;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, uint*, int> GetOutputCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetOutputCount;
 
         [NativeTypeName("HRESULT (DWORD, IMFTopologyNode *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, uint, IMFTopologyNode*, uint, int> ConnectOutput;
+        public delegate* unmanaged<TSelf*, uint, IMFTopologyNode*, uint, int> ConnectOutput;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, uint, int> DisconnectOutput;
+        public delegate* unmanaged<TSelf*, uint, int> DisconnectOutput;
 
         [NativeTypeName("HRESULT (DWORD, IMFTopologyNode **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, uint, IMFTopologyNode**, uint*, int> GetInput;
+        public delegate* unmanaged<TSelf*, uint, IMFTopologyNode**, uint*, int> GetInput;
 
         [NativeTypeName("HRESULT (DWORD, IMFTopologyNode **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, uint, IMFTopologyNode**, uint*, int> GetOutput;
+        public delegate* unmanaged<TSelf*, uint, IMFTopologyNode**, uint*, int> GetOutput;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, uint, IMFMediaType*, int> SetOutputPrefType;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaType*, int> SetOutputPrefType;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, uint, IMFMediaType**, int> GetOutputPrefType;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaType**, int> GetOutputPrefType;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, uint, IMFMediaType*, int> SetInputPrefType;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaType*, int> SetInputPrefType;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, uint, IMFMediaType**, int> GetInputPrefType;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaType**, int> GetInputPrefType;
 
         [NativeTypeName("HRESULT (IMFTopologyNode *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNode*, IMFTopologyNode*, int> CloneFrom;
+        public delegate* unmanaged<TSelf*, IMFTopologyNode*, int> CloneFrom;
     }
 }

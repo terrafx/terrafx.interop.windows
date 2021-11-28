@@ -62,21 +62,22 @@ public unsafe partial struct IUIAnimationPrimitiveInterpolation : IUIAnimationPr
         HRESULT AddSinusoidal(uint dimension, [NativeTypeName("UI_ANIMATION_SECONDS")] double beginOffset, float bias, float amplitude, float frequency, float phase);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationPrimitiveInterpolation*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationPrimitiveInterpolation*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationPrimitiveInterpolation*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, UI_ANIMATION_SECONDS, FLOAT, FLOAT, FLOAT, FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationPrimitiveInterpolation*, uint, double, float, float, float, float, int> AddCubic;
+        public delegate* unmanaged<TSelf*, uint, double, float, float, float, float, int> AddCubic;
 
         [NativeTypeName("HRESULT (UINT, UI_ANIMATION_SECONDS, FLOAT, FLOAT, FLOAT, FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationPrimitiveInterpolation*, uint, double, float, float, float, float, int> AddSinusoidal;
+        public delegate* unmanaged<TSelf*, uint, double, float, float, float, float, int> AddSinusoidal;
     }
 }

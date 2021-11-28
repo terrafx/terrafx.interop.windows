@@ -150,51 +150,52 @@ public unsafe partial struct ISVGEllipseElement : ISVGEllipseElement.Interface
         HRESULT get_ry(ISVGAnimatedLength** p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGEllipseElement*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGEllipseElement*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGEllipseElement*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGEllipseElement*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGEllipseElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGEllipseElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGEllipseElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGEllipseElement*, ISVGAnimatedLength*, int> putref_cx;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_cx;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGEllipseElement*, ISVGAnimatedLength**, int> get_cx;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_cx;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGEllipseElement*, ISVGAnimatedLength*, int> putref_cy;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_cy;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGEllipseElement*, ISVGAnimatedLength**, int> get_cy;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_cy;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGEllipseElement*, ISVGAnimatedLength*, int> putref_rx;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_rx;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGEllipseElement*, ISVGAnimatedLength**, int> get_rx;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_rx;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGEllipseElement*, ISVGAnimatedLength*, int> putref_ry;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_ry;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGEllipseElement*, ISVGAnimatedLength**, int> get_ry;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_ry;
     }
 }

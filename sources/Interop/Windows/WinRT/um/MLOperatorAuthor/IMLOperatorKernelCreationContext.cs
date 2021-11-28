@@ -165,54 +165,55 @@ public unsafe partial struct IMLOperatorKernelCreationContext : IMLOperatorKerne
         void GetExecutionInterface(IUnknown** executionObject);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorKernelCreationContext*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorKernelCreationContext*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorKernelCreationContext*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const char *, MLOperatorAttributeType, uint32_t *) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorKernelCreationContext*, sbyte*, MLOperatorAttributeType, uint*, int> GetAttributeElementCount;
+        public delegate* unmanaged<TSelf*, sbyte*, MLOperatorAttributeType, uint*, int> GetAttributeElementCount;
 
         [NativeTypeName("HRESULT (const char *, MLOperatorAttributeType, uint32_t, size_t, void *) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorKernelCreationContext*, sbyte*, MLOperatorAttributeType, uint, nuint, void*, int> GetAttribute;
+        public delegate* unmanaged<TSelf*, sbyte*, MLOperatorAttributeType, uint, nuint, void*, int> GetAttribute;
 
         [NativeTypeName("HRESULT (const char *, uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorKernelCreationContext*, sbyte*, uint, uint*, int> GetStringAttributeElementLength;
+        public delegate* unmanaged<TSelf*, sbyte*, uint, uint*, int> GetStringAttributeElementLength;
 
         [NativeTypeName("HRESULT (const char *, uint32_t, uint32_t, char *) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorKernelCreationContext*, sbyte*, uint, uint, sbyte*, int> GetStringAttributeElement;
+        public delegate* unmanaged<TSelf*, sbyte*, uint, uint, sbyte*, int> GetStringAttributeElement;
 
         [NativeTypeName("uint32_t () const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorKernelCreationContext*, uint> GetInputCount;
+        public delegate* unmanaged<TSelf*, uint> GetInputCount;
 
         [NativeTypeName("uint32_t () const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorKernelCreationContext*, uint> GetOutputCount;
+        public delegate* unmanaged<TSelf*, uint> GetOutputCount;
 
         [NativeTypeName("bool (uint32_t) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorKernelCreationContext*, uint, byte> IsInputValid;
+        public delegate* unmanaged<TSelf*, uint, byte> IsInputValid;
 
         [NativeTypeName("bool (uint32_t) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorKernelCreationContext*, uint, byte> IsOutputValid;
+        public delegate* unmanaged<TSelf*, uint, byte> IsOutputValid;
 
         [NativeTypeName("HRESULT (uint32_t, MLOperatorEdgeDescription *) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorKernelCreationContext*, uint, MLOperatorEdgeDescription*, int> GetInputEdgeDescription;
+        public delegate* unmanaged<TSelf*, uint, MLOperatorEdgeDescription*, int> GetInputEdgeDescription;
 
         [NativeTypeName("HRESULT (uint32_t, MLOperatorEdgeDescription *) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorKernelCreationContext*, uint, MLOperatorEdgeDescription*, int> GetOutputEdgeDescription;
+        public delegate* unmanaged<TSelf*, uint, MLOperatorEdgeDescription*, int> GetOutputEdgeDescription;
 
         [NativeTypeName("bool () const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorKernelCreationContext*, byte> HasTensorShapeDescription;
+        public delegate* unmanaged<TSelf*, byte> HasTensorShapeDescription;
 
         [NativeTypeName("HRESULT (IMLOperatorTensorShapeDescription **) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorKernelCreationContext*, IMLOperatorTensorShapeDescription**, int> GetTensorShapeDescription;
+        public delegate* unmanaged<TSelf*, IMLOperatorTensorShapeDescription**, int> GetTensorShapeDescription;
 
         [NativeTypeName("void (IUnknown **) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorKernelCreationContext*, IUnknown**, void> GetExecutionInterface;
+        public delegate* unmanaged<TSelf*, IUnknown**, void> GetExecutionInterface;
     }
 }

@@ -62,21 +62,22 @@ public unsafe partial struct IObjectWithProgID : IObjectWithProgID.Interface
         HRESULT GetProgID([NativeTypeName("LPWSTR *")] ushort** ppszProgID);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectWithProgID*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectWithProgID*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectWithProgID*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectWithProgID*, ushort*, int> SetProgID;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetProgID;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectWithProgID*, ushort**, int> GetProgID;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetProgID;
     }
 }

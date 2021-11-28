@@ -112,36 +112,37 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
         HRESULT OnSessionDisconnected(AudioSessionDisconnectReason DisconnectReason);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionEvents*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionEvents*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionEvents*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionEvents*, ushort*, Guid*, int> OnDisplayNameChanged;
+        public delegate* unmanaged<TSelf*, ushort*, Guid*, int> OnDisplayNameChanged;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionEvents*, ushort*, Guid*, int> OnIconPathChanged;
+        public delegate* unmanaged<TSelf*, ushort*, Guid*, int> OnIconPathChanged;
 
         [NativeTypeName("HRESULT (float, BOOL, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionEvents*, float, BOOL, Guid*, int> OnSimpleVolumeChanged;
+        public delegate* unmanaged<TSelf*, float, BOOL, Guid*, int> OnSimpleVolumeChanged;
 
         [NativeTypeName("HRESULT (DWORD, float *, DWORD, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionEvents*, uint, float*, uint, Guid*, int> OnChannelVolumeChanged;
+        public delegate* unmanaged<TSelf*, uint, float*, uint, Guid*, int> OnChannelVolumeChanged;
 
         [NativeTypeName("HRESULT (LPCGUID, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionEvents*, Guid*, Guid*, int> OnGroupingParamChanged;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, int> OnGroupingParamChanged;
 
         [NativeTypeName("HRESULT (AudioSessionState) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionEvents*, AudioSessionState, int> OnStateChanged;
+        public delegate* unmanaged<TSelf*, AudioSessionState, int> OnStateChanged;
 
         [NativeTypeName("HRESULT (AudioSessionDisconnectReason) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionEvents*, AudioSessionDisconnectReason, int> OnSessionDisconnected;
+        public delegate* unmanaged<TSelf*, AudioSessionDisconnectReason, int> OnSessionDisconnected;
     }
 }

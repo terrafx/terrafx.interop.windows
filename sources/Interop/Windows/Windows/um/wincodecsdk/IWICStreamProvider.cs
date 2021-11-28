@@ -82,27 +82,28 @@ public unsafe partial struct IWICStreamProvider : IWICStreamProvider.Interface
         HRESULT RefreshStream();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStreamProvider*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStreamProvider*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStreamProvider*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStreamProvider*, IStream**, int> GetStream;
+        public delegate* unmanaged<TSelf*, IStream**, int> GetStream;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStreamProvider*, uint*, int> GetPersistOptions;
+        public delegate* unmanaged<TSelf*, uint*, int> GetPersistOptions;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStreamProvider*, Guid*, int> GetPreferredVendorGUID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetPreferredVendorGUID;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICStreamProvider*, int> RefreshStream;
+        public delegate* unmanaged<TSelf*, int> RefreshStream;
     }
 }

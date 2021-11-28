@@ -230,75 +230,76 @@ public unsafe partial struct IShellLinkDual : IShellLinkDual.Interface
         HRESULT Save(VARIANT vWhere);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, ushort**, int> get_Path;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_Path;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, ushort*, int> put_Path;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_Path;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, ushort**, int> get_Description;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_Description;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, ushort*, int> put_Description;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_Description;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, ushort**, int> get_WorkingDirectory;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_WorkingDirectory;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, ushort*, int> put_WorkingDirectory;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_WorkingDirectory;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, ushort**, int> get_Arguments;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_Arguments;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, ushort*, int> put_Arguments;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_Arguments;
 
         [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, int*, int> get_Hotkey;
+        public delegate* unmanaged<TSelf*, int*, int> get_Hotkey;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, int, int> put_Hotkey;
+        public delegate* unmanaged<TSelf*, int, int> put_Hotkey;
 
         [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, int*, int> get_ShowCommand;
+        public delegate* unmanaged<TSelf*, int*, int> get_ShowCommand;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, int, int> put_ShowCommand;
+        public delegate* unmanaged<TSelf*, int, int> put_ShowCommand;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, int, int> Resolve;
+        public delegate* unmanaged<TSelf*, int, int> Resolve;
 
         [NativeTypeName("HRESULT (BSTR *, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, ushort**, int*, int> GetIconLocation;
+        public delegate* unmanaged<TSelf*, ushort**, int*, int> GetIconLocation;
 
         [NativeTypeName("HRESULT (BSTR, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, ushort*, int, int> SetIconLocation;
+        public delegate* unmanaged<TSelf*, ushort*, int, int> SetIconLocation;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellLinkDual*, VARIANT, int> Save;
+        public delegate* unmanaged<TSelf*, VARIANT, int> Save;
     }
 }

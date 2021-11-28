@@ -52,18 +52,19 @@ public unsafe partial struct IThumbnailHandlerFactory : IThumbnailHandlerFactory
         HRESULT GetThumbnailHandler([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlChild, IBindCtx* pbc, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IThumbnailHandlerFactory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IThumbnailHandlerFactory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IThumbnailHandlerFactory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, IBindCtx *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IThumbnailHandlerFactory*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int> GetThumbnailHandler;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int> GetThumbnailHandler;
     }
 }

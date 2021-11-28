@@ -132,42 +132,43 @@ public unsafe partial struct ISyncMgrSynchronizeCallback : ISyncMgrSynchronizeCa
         HRESULT EstablishConnection([NativeTypeName("LPCWSTR")] ushort* pwszConnection, [NativeTypeName("DWORD")] uint dwReserved);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSynchronizeCallback*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSynchronizeCallback*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSynchronizeCallback*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSynchronizeCallback*, HRESULT, int> ShowPropertiesCompleted;
+        public delegate* unmanaged<TSelf*, HRESULT, int> ShowPropertiesCompleted;
 
         [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSynchronizeCallback*, HRESULT, int> PrepareForSyncCompleted;
+        public delegate* unmanaged<TSelf*, HRESULT, int> PrepareForSyncCompleted;
 
         [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSynchronizeCallback*, HRESULT, int> SynchronizeCompleted;
+        public delegate* unmanaged<TSelf*, HRESULT, int> SynchronizeCompleted;
 
         [NativeTypeName("HRESULT (HRESULT, ULONG, const GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSynchronizeCallback*, HRESULT, uint, Guid*, int> ShowErrorCompleted;
+        public delegate* unmanaged<TSelf*, HRESULT, uint, Guid*, int> ShowErrorCompleted;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSynchronizeCallback*, BOOL, int> EnableModeless;
+        public delegate* unmanaged<TSelf*, BOOL, int> EnableModeless;
 
         [NativeTypeName("HRESULT (const GUID &, const SYNCMGRPROGRESSITEM *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSynchronizeCallback*, Guid*, SYNCMGRPROGRESSITEM*, int> Progress;
+        public delegate* unmanaged<TSelf*, Guid*, SYNCMGRPROGRESSITEM*, int> Progress;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR, const SYNCMGRLOGERRORINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSynchronizeCallback*, uint, ushort*, SYNCMGRLOGERRORINFO*, int> LogError;
+        public delegate* unmanaged<TSelf*, uint, ushort*, SYNCMGRLOGERRORINFO*, int> LogError;
 
         [NativeTypeName("HRESULT (const GUID &, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSynchronizeCallback*, Guid*, uint, int> DeleteLogError;
+        public delegate* unmanaged<TSelf*, Guid*, uint, int> DeleteLogError;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSynchronizeCallback*, ushort*, uint, int> EstablishConnection;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> EstablishConnection;
     }
 }

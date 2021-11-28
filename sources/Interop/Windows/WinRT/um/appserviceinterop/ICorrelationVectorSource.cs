@@ -53,18 +53,19 @@ public unsafe partial struct ICorrelationVectorSource : ICorrelationVectorSource
         HRESULT get_CorrelationVector(HSTRING* cv);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICorrelationVectorSource*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICorrelationVectorSource*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICorrelationVectorSource*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICorrelationVectorSource*, HSTRING*, int> get_CorrelationVector;
+        public delegate* unmanaged<TSelf*, HSTRING*, int> get_CorrelationVector;
     }
 }

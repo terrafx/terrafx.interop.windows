@@ -79,27 +79,28 @@ public unsafe partial struct IPersistPropertyBag : IPersistPropertyBag.Interface
         HRESULT Save(IPropertyBag* pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistPropertyBag*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistPropertyBag*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistPropertyBag*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistPropertyBag*, Guid*, int> GetClassID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetClassID;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistPropertyBag*, int> InitNew;
+        public delegate* unmanaged<TSelf*, int> InitNew;
 
         [NativeTypeName("HRESULT (IPropertyBag *, IErrorLog *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistPropertyBag*, IPropertyBag*, IErrorLog*, int> Load;
+        public delegate* unmanaged<TSelf*, IPropertyBag*, IErrorLog*, int> Load;
 
         [NativeTypeName("HRESULT (IPropertyBag *, BOOL, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistPropertyBag*, IPropertyBag*, BOOL, BOOL, int> Save;
+        public delegate* unmanaged<TSelf*, IPropertyBag*, BOOL, BOOL, int> Save;
     }
 }

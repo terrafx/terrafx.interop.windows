@@ -63,21 +63,22 @@ public unsafe partial struct IGraphicsCaptureItemInterop : IGraphicsCaptureItemI
         HRESULT CreateForMonitor(HMONITOR monitor, [NativeTypeName("const IID &")] Guid* riid, void** result);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphicsCaptureItemInterop*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphicsCaptureItemInterop*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphicsCaptureItemInterop*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphicsCaptureItemInterop*, HWND, Guid*, void**, int> CreateForWindow;
+        public delegate* unmanaged<TSelf*, HWND, Guid*, void**, int> CreateForWindow;
 
         [NativeTypeName("HRESULT (HMONITOR, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphicsCaptureItemInterop*, HMONITOR, Guid*, void**, int> CreateForMonitor;
+        public delegate* unmanaged<TSelf*, HMONITOR, Guid*, void**, int> CreateForMonitor;
     }
 }

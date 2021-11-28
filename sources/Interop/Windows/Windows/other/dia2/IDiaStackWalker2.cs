@@ -57,21 +57,22 @@ public unsafe partial struct IDiaStackWalker2 : IDiaStackWalker2.Interface
     {
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackWalker2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackWalker2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackWalker2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDiaStackWalkHelper *, IDiaEnumStackFrames **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackWalker2*, IDiaStackWalkHelper*, IDiaEnumStackFrames**, int> getEnumFrames;
+        public delegate* unmanaged<TSelf*, IDiaStackWalkHelper*, IDiaEnumStackFrames**, int> getEnumFrames;
 
         [NativeTypeName("HRESULT (enum CV_CPU_TYPE_e, IDiaStackWalkHelper *, IDiaEnumStackFrames **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackWalker2*, CV_CPU_TYPE_e, IDiaStackWalkHelper*, IDiaEnumStackFrames**, int> getEnumFrames2;
+        public delegate* unmanaged<TSelf*, CV_CPU_TYPE_e, IDiaStackWalkHelper*, IDiaEnumStackFrames**, int> getEnumFrames2;
     }
 }

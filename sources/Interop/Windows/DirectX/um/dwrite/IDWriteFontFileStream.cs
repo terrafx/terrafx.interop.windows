@@ -83,27 +83,28 @@ public unsafe partial struct IDWriteFontFileStream : IDWriteFontFileStream.Inter
         HRESULT GetLastWriteTime([NativeTypeName("UINT64 *")] ulong* lastWriteTime);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFileStream*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFileStream*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFileStream*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const void **, UINT64, UINT64, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFileStream*, void**, ulong, ulong, void**, int> ReadFileFragment;
+        public delegate* unmanaged<TSelf*, void**, ulong, ulong, void**, int> ReadFileFragment;
 
         [NativeTypeName("void (void *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFileStream*, void*, void> ReleaseFileFragment;
+        public delegate* unmanaged<TSelf*, void*, void> ReleaseFileFragment;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFileStream*, ulong*, int> GetFileSize;
+        public delegate* unmanaged<TSelf*, ulong*, int> GetFileSize;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFileStream*, ulong*, int> GetLastWriteTime;
+        public delegate* unmanaged<TSelf*, ulong*, int> GetLastWriteTime;
     }
 }

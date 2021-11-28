@@ -59,21 +59,22 @@ public unsafe partial struct ITfFnConfigureRegisterWord : ITfFnConfigureRegister
         HRESULT Show(HWND hwndParent, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* rguidProfile, [NativeTypeName("BSTR")] ushort* bstrRegistered);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnConfigureRegisterWord*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnConfigureRegisterWord*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnConfigureRegisterWord*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnConfigureRegisterWord*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (HWND, LANGID, const GUID &, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnConfigureRegisterWord*, HWND, ushort, Guid*, ushort*, int> Show;
+        public delegate* unmanaged<TSelf*, HWND, ushort, Guid*, ushort*, int> Show;
     }
 }

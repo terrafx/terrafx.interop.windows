@@ -72,24 +72,25 @@ public unsafe partial struct IAMStreamControl : IAMStreamControl.Interface
         HRESULT GetInfo(AM_STREAM_INFO* pInfo);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStreamControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStreamControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStreamControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const REFERENCE_TIME *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStreamControl*, long*, uint, int> StartAt;
+        public delegate* unmanaged<TSelf*, long*, uint, int> StartAt;
 
         [NativeTypeName("HRESULT (const REFERENCE_TIME *, BOOL, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStreamControl*, long*, BOOL, uint, int> StopAt;
+        public delegate* unmanaged<TSelf*, long*, BOOL, uint, int> StopAt;
 
         [NativeTypeName("HRESULT (AM_STREAM_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStreamControl*, AM_STREAM_INFO*, int> GetInfo;
+        public delegate* unmanaged<TSelf*, AM_STREAM_INFO*, int> GetInfo;
     }
 }

@@ -82,27 +82,28 @@ public unsafe partial struct IDXGIDebug1 : IDXGIDebug1.Interface
         BOOL IsLeakTrackingEnabledForThread();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDebug1*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDebug1*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDebug1*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (GUID, DXGI_DEBUG_RLO_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDebug1*, Guid, DXGI_DEBUG_RLO_FLAGS, int> ReportLiveObjects;
+        public delegate* unmanaged<TSelf*, Guid, DXGI_DEBUG_RLO_FLAGS, int> ReportLiveObjects;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDebug1*, void> EnableLeakTrackingForThread;
+        public delegate* unmanaged<TSelf*, void> EnableLeakTrackingForThread;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDebug1*, void> DisableLeakTrackingForThread;
+        public delegate* unmanaged<TSelf*, void> DisableLeakTrackingForThread;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDebug1*, int> IsLeakTrackingEnabledForThread;
+        public delegate* unmanaged<TSelf*, int> IsLeakTrackingEnabledForThread;
     }
 }

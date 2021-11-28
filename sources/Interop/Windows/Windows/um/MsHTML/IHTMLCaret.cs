@@ -162,51 +162,52 @@ public unsafe partial struct IHTMLCaret : IHTMLCaret.Interface
         HRESULT SetCaretDirection(CARET_DIRECTION eDir);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCaret*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCaret*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCaret*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDisplayPointer *, BOOL, CARET_DIRECTION) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCaret*, IDisplayPointer*, BOOL, CARET_DIRECTION, int> MoveCaretToPointer;
+        public delegate* unmanaged<TSelf*, IDisplayPointer*, BOOL, CARET_DIRECTION, int> MoveCaretToPointer;
 
         [NativeTypeName("HRESULT (IDisplayPointer *, BOOL, BOOL, CARET_DIRECTION) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCaret*, IDisplayPointer*, BOOL, BOOL, CARET_DIRECTION, int> MoveCaretToPointerEx;
+        public delegate* unmanaged<TSelf*, IDisplayPointer*, BOOL, BOOL, CARET_DIRECTION, int> MoveCaretToPointerEx;
 
         [NativeTypeName("HRESULT (IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCaret*, IMarkupPointer*, int> MoveMarkupPointerToCaret;
+        public delegate* unmanaged<TSelf*, IMarkupPointer*, int> MoveMarkupPointerToCaret;
 
         [NativeTypeName("HRESULT (IDisplayPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCaret*, IDisplayPointer*, int> MoveDisplayPointerToCaret;
+        public delegate* unmanaged<TSelf*, IDisplayPointer*, int> MoveDisplayPointerToCaret;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCaret*, BOOL*, int> IsVisible;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsVisible;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCaret*, BOOL, int> Show;
+        public delegate* unmanaged<TSelf*, BOOL, int> Show;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCaret*, int> Hide;
+        public delegate* unmanaged<TSelf*, int> Hide;
 
         [NativeTypeName("HRESULT (OLECHAR *, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCaret*, ushort*, int, int> InsertText;
+        public delegate* unmanaged<TSelf*, ushort*, int, int> InsertText;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCaret*, int> ScrollIntoView;
+        public delegate* unmanaged<TSelf*, int> ScrollIntoView;
 
         [NativeTypeName("HRESULT (POINT *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCaret*, POINT*, BOOL, int> GetLocation;
+        public delegate* unmanaged<TSelf*, POINT*, BOOL, int> GetLocation;
 
         [NativeTypeName("HRESULT (CARET_DIRECTION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCaret*, CARET_DIRECTION*, int> GetCaretDirection;
+        public delegate* unmanaged<TSelf*, CARET_DIRECTION*, int> GetCaretDirection;
 
         [NativeTypeName("HRESULT (CARET_DIRECTION) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCaret*, CARET_DIRECTION, int> SetCaretDirection;
+        public delegate* unmanaged<TSelf*, CARET_DIRECTION, int> SetCaretDirection;
     }
 }

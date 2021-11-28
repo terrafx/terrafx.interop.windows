@@ -62,21 +62,22 @@ public unsafe partial struct ISyncMgrSynchronizeInvoke : ISyncMgrSynchronizeInvo
         HRESULT UpdateAll();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSynchronizeInvoke*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSynchronizeInvoke*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSynchronizeInvoke*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, const IID &, DWORD, const BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSynchronizeInvoke*, uint, Guid*, uint, byte*, int> UpdateItems;
+        public delegate* unmanaged<TSelf*, uint, Guid*, uint, byte*, int> UpdateItems;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSynchronizeInvoke*, int> UpdateAll;
+        public delegate* unmanaged<TSelf*, int> UpdateAll;
     }
 }

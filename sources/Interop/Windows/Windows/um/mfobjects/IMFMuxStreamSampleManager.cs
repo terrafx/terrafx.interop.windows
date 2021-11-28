@@ -76,24 +76,25 @@ public unsafe partial struct IMFMuxStreamSampleManager : IMFMuxStreamSampleManag
         ulong GetStreamConfiguration();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMuxStreamSampleManager*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMuxStreamSampleManager*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMuxStreamSampleManager*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMuxStreamSampleManager*, uint*, int> GetStreamCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetStreamCount;
 
         [NativeTypeName("HRESULT (DWORD, IMFSample **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMuxStreamSampleManager*, uint, IMFSample**, int> GetSample;
+        public delegate* unmanaged<TSelf*, uint, IMFSample**, int> GetSample;
 
         [NativeTypeName("ULONGLONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMuxStreamSampleManager*, ulong> GetStreamConfiguration;
+        public delegate* unmanaged<TSelf*, ulong> GetStreamConfiguration;
     }
 }

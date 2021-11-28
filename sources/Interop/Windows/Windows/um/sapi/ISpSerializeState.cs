@@ -62,21 +62,22 @@ public unsafe partial struct ISpSerializeState : ISpSerializeState.Interface
         HRESULT SetSerializedState(byte* pbData, [NativeTypeName("ULONG")] uint ulSize, [NativeTypeName("DWORD")] uint dwReserved);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpSerializeState*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpSerializeState*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpSerializeState*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE **, ULONG *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpSerializeState*, byte**, uint*, uint, int> GetSerializedState;
+        public delegate* unmanaged<TSelf*, byte**, uint*, uint, int> GetSerializedState;
 
         [NativeTypeName("HRESULT (BYTE *, ULONG, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpSerializeState*, byte*, uint, uint, int> SetSerializedState;
+        public delegate* unmanaged<TSelf*, byte*, uint, uint, int> SetSerializedState;
     }
 }

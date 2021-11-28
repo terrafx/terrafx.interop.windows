@@ -92,30 +92,31 @@ public unsafe partial struct ITfUIElementMgr : ITfUIElementMgr.Interface
         HRESULT EnumUIElements(IEnumTfUIElements** ppEnum);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfUIElementMgr*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfUIElementMgr*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfUIElementMgr*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITfUIElement *, BOOL *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfUIElementMgr*, ITfUIElement*, BOOL*, uint*, int> BeginUIElement;
+        public delegate* unmanaged<TSelf*, ITfUIElement*, BOOL*, uint*, int> BeginUIElement;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfUIElementMgr*, uint, int> UpdateUIElement;
+        public delegate* unmanaged<TSelf*, uint, int> UpdateUIElement;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfUIElementMgr*, uint, int> EndUIElement;
+        public delegate* unmanaged<TSelf*, uint, int> EndUIElement;
 
         [NativeTypeName("HRESULT (DWORD, ITfUIElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfUIElementMgr*, uint, ITfUIElement**, int> GetUIElement;
+        public delegate* unmanaged<TSelf*, uint, ITfUIElement**, int> GetUIElement;
 
         [NativeTypeName("HRESULT (IEnumTfUIElements **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfUIElementMgr*, IEnumTfUIElements**, int> EnumUIElements;
+        public delegate* unmanaged<TSelf*, IEnumTfUIElements**, int> EnumUIElements;
     }
 }

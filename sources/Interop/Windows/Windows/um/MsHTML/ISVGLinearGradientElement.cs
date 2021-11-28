@@ -150,51 +150,52 @@ public unsafe partial struct ISVGLinearGradientElement : ISVGLinearGradientEleme
         HRESULT get_y2(ISVGAnimatedLength** p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLinearGradientElement*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLinearGradientElement*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLinearGradientElement*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLinearGradientElement*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLinearGradientElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLinearGradientElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLinearGradientElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLinearGradientElement*, ISVGAnimatedLength*, int> putref_x1;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_x1;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLinearGradientElement*, ISVGAnimatedLength**, int> get_x1;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_x1;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLinearGradientElement*, ISVGAnimatedLength*, int> putref_y1;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_y1;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLinearGradientElement*, ISVGAnimatedLength**, int> get_y1;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_y1;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLinearGradientElement*, ISVGAnimatedLength*, int> putref_x2;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_x2;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLinearGradientElement*, ISVGAnimatedLength**, int> get_x2;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_x2;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLinearGradientElement*, ISVGAnimatedLength*, int> putref_y2;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_y2;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLinearGradientElement*, ISVGAnimatedLength**, int> get_y2;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_y2;
     }
 }

@@ -82,27 +82,28 @@ public unsafe partial struct IShellImageDataFactory : IShellImageDataFactory.Int
         HRESULT GetDataFormatFromPath([NativeTypeName("LPCWSTR")] ushort* pszPath, Guid* pDataFormat);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageDataFactory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageDataFactory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageDataFactory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellImageData **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageDataFactory*, IShellImageData**, int> CreateIShellImageData;
+        public delegate* unmanaged<TSelf*, IShellImageData**, int> CreateIShellImageData;
 
         [NativeTypeName("HRESULT (LPCWSTR, IShellImageData **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageDataFactory*, ushort*, IShellImageData**, int> CreateImageFromFile;
+        public delegate* unmanaged<TSelf*, ushort*, IShellImageData**, int> CreateImageFromFile;
 
         [NativeTypeName("HRESULT (IStream *, IShellImageData **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageDataFactory*, IStream*, IShellImageData**, int> CreateImageFromStream;
+        public delegate* unmanaged<TSelf*, IStream*, IShellImageData**, int> CreateImageFromStream;
 
         [NativeTypeName("HRESULT (LPCWSTR, GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageDataFactory*, ushort*, Guid*, int> GetDataFormatFromPath;
+        public delegate* unmanaged<TSelf*, ushort*, Guid*, int> GetDataFormatFromPath;
     }
 }

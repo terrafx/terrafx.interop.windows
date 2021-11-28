@@ -82,27 +82,28 @@ public unsafe partial struct IDropTarget : IDropTarget.Interface
         HRESULT Drop(IDataObject* pDataObj, [NativeTypeName("DWORD")] uint grfKeyState, POINTL pt, [NativeTypeName("DWORD *")] uint* pdwEffect);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDropTarget*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDropTarget*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDropTarget*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDataObject *, DWORD, POINTL, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDropTarget*, IDataObject*, uint, POINTL, uint*, int> DragEnter;
+        public delegate* unmanaged<TSelf*, IDataObject*, uint, POINTL, uint*, int> DragEnter;
 
         [NativeTypeName("HRESULT (DWORD, POINTL, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDropTarget*, uint, POINTL, uint*, int> DragOver;
+        public delegate* unmanaged<TSelf*, uint, POINTL, uint*, int> DragOver;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDropTarget*, int> DragLeave;
+        public delegate* unmanaged<TSelf*, int> DragLeave;
 
         [NativeTypeName("HRESULT (IDataObject *, DWORD, POINTL, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDropTarget*, IDataObject*, uint, POINTL, uint*, int> Drop;
+        public delegate* unmanaged<TSelf*, IDataObject*, uint, POINTL, uint*, int> Drop;
     }
 }

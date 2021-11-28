@@ -83,30 +83,31 @@ public unsafe partial struct IDirectManipulationCompositor2 : IDirectManipulatio
         HRESULT AddContentWithCrossProcessChaining(IDirectManipulationPrimaryContent* content, IUnknown* device, IUnknown* parentVisual, IUnknown* childVisual);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationCompositor2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationCompositor2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationCompositor2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDirectManipulationContent *, IUnknown *, IUnknown *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationCompositor2*, IDirectManipulationContent*, IUnknown*, IUnknown*, IUnknown*, int> AddContent;
+        public delegate* unmanaged<TSelf*, IDirectManipulationContent*, IUnknown*, IUnknown*, IUnknown*, int> AddContent;
 
         [NativeTypeName("HRESULT (IDirectManipulationContent *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationCompositor2*, IDirectManipulationContent*, int> RemoveContent;
+        public delegate* unmanaged<TSelf*, IDirectManipulationContent*, int> RemoveContent;
 
         [NativeTypeName("HRESULT (IDirectManipulationUpdateManager *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationCompositor2*, IDirectManipulationUpdateManager*, int> SetUpdateManager;
+        public delegate* unmanaged<TSelf*, IDirectManipulationUpdateManager*, int> SetUpdateManager;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationCompositor2*, int> Flush;
+        public delegate* unmanaged<TSelf*, int> Flush;
 
         [NativeTypeName("HRESULT (IDirectManipulationPrimaryContent *, IUnknown *, IUnknown *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationCompositor2*, IDirectManipulationPrimaryContent*, IUnknown*, IUnknown*, IUnknown*, int> AddContentWithCrossProcessChaining;
+        public delegate* unmanaged<TSelf*, IDirectManipulationPrimaryContent*, IUnknown*, IUnknown*, IUnknown*, int> AddContentWithCrossProcessChaining;
     }
 }

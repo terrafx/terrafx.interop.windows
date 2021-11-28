@@ -310,99 +310,100 @@ public unsafe partial struct IHTMLFormElement : IHTMLFormElement.Interface
         HRESULT tags(VARIANT tagName, IDispatch** pdisp);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, ushort*, int> put_action;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_action;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, ushort**, int> get_action;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_action;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, ushort*, int> put_dir;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_dir;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, ushort**, int> get_dir;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_dir;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, ushort*, int> put_encoding;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_encoding;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, ushort**, int> get_encoding;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_encoding;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, ushort*, int> put_method;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_method;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, ushort**, int> get_method;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_method;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, IDispatch**, int> get_elements;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_elements;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, ushort*, int> put_target;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_target;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, ushort**, int> get_target;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_target;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, ushort*, int> put_name;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_name;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, ushort**, int> get_name;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_name;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, VARIANT, int> put_onsubmit;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onsubmit;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, VARIANT*, int> get_onsubmit;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onsubmit;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, VARIANT, int> put_onreset;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onreset;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, VARIANT*, int> get_onreset;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onreset;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, int> submit;
+        public delegate* unmanaged<TSelf*, int> submit;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, int> reset;
+        public delegate* unmanaged<TSelf*, int> reset;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, int, int> put_length;
+        public delegate* unmanaged<TSelf*, int, int> put_length;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, int*, int> get_length;
+        public delegate* unmanaged<TSelf*, int*, int> get_length;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, IUnknown**, int> get__newEnum;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> get__newEnum;
 
         [NativeTypeName("HRESULT (VARIANT, VARIANT, IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, VARIANT, VARIANT, IDispatch**, int> item;
+        public delegate* unmanaged<TSelf*, VARIANT, VARIANT, IDispatch**, int> item;
 
         [NativeTypeName("HRESULT (VARIANT, IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFormElement*, VARIANT, IDispatch**, int> tags;
+        public delegate* unmanaged<TSelf*, VARIANT, IDispatch**, int> tags;
     }
 }

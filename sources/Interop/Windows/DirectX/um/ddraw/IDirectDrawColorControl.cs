@@ -61,21 +61,22 @@ public unsafe partial struct IDirectDrawColorControl : IDirectDrawColorControl.I
         HRESULT SetColorControls([NativeTypeName("LPDDCOLORCONTROL")] DDCOLORCONTROL* param0);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawColorControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawColorControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawColorControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPDDCOLORCONTROL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawColorControl*, DDCOLORCONTROL*, int> GetColorControls;
+        public delegate* unmanaged<TSelf*, DDCOLORCONTROL*, int> GetColorControls;
 
         [NativeTypeName("HRESULT (LPDDCOLORCONTROL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawColorControl*, DDCOLORCONTROL*, int> SetColorControls;
+        public delegate* unmanaged<TSelf*, DDCOLORCONTROL*, int> SetColorControls;
     }
 }

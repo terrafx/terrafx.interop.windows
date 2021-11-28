@@ -345,114 +345,115 @@ public unsafe partial struct IDiscFormat2RawCD : IDiscFormat2RawCD.Interface
         HRESULT get_SupportedWriteSpeedDescriptors(SAFEARRAY** supportedSpeedDescriptors);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IDiscRecorder2 *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, IDiscRecorder2*, short*, int> IsRecorderSupported;
+        public delegate* unmanaged<TSelf*, IDiscRecorder2*, short*, int> IsRecorderSupported;
 
         [NativeTypeName("HRESULT (IDiscRecorder2 *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, IDiscRecorder2*, short*, int> IsCurrentMediaSupported;
+        public delegate* unmanaged<TSelf*, IDiscRecorder2*, short*, int> IsCurrentMediaSupported;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, short*, int> get_MediaPhysicallyBlank;
+        public delegate* unmanaged<TSelf*, short*, int> get_MediaPhysicallyBlank;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, short*, int> get_MediaHeuristicallyBlank;
+        public delegate* unmanaged<TSelf*, short*, int> get_MediaHeuristicallyBlank;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, SAFEARRAY**, int> get_SupportedMediaTypes;
+        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_SupportedMediaTypes;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, int> PrepareMedia;
+        public delegate* unmanaged<TSelf*, int> PrepareMedia;
 
         [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, IStream*, int> WriteMedia;
+        public delegate* unmanaged<TSelf*, IStream*, int> WriteMedia;
 
         [NativeTypeName("HRESULT (IStream *, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, IStream*, int, int> WriteMedia2;
+        public delegate* unmanaged<TSelf*, IStream*, int, int> WriteMedia2;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, int> CancelWrite;
+        public delegate* unmanaged<TSelf*, int> CancelWrite;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, int> ReleaseMedia;
+        public delegate* unmanaged<TSelf*, int> ReleaseMedia;
 
         [NativeTypeName("HRESULT (LONG, VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, int, short, int> SetWriteSpeed;
+        public delegate* unmanaged<TSelf*, int, short, int> SetWriteSpeed;
 
         [NativeTypeName("HRESULT (IDiscRecorder2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, IDiscRecorder2*, int> put_Recorder;
+        public delegate* unmanaged<TSelf*, IDiscRecorder2*, int> put_Recorder;
 
         [NativeTypeName("HRESULT (IDiscRecorder2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, IDiscRecorder2**, int> get_Recorder;
+        public delegate* unmanaged<TSelf*, IDiscRecorder2**, int> get_Recorder;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, short, int> put_BufferUnderrunFreeDisabled;
+        public delegate* unmanaged<TSelf*, short, int> put_BufferUnderrunFreeDisabled;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, short*, int> get_BufferUnderrunFreeDisabled;
+        public delegate* unmanaged<TSelf*, short*, int> get_BufferUnderrunFreeDisabled;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, int*, int> get_StartOfNextSession;
+        public delegate* unmanaged<TSelf*, int*, int> get_StartOfNextSession;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, int*, int> get_LastPossibleStartOfLeadout;
+        public delegate* unmanaged<TSelf*, int*, int> get_LastPossibleStartOfLeadout;
 
         [NativeTypeName("HRESULT (IMAPI_MEDIA_PHYSICAL_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, IMAPI_MEDIA_PHYSICAL_TYPE*, int> get_CurrentPhysicalMediaType;
+        public delegate* unmanaged<TSelf*, IMAPI_MEDIA_PHYSICAL_TYPE*, int> get_CurrentPhysicalMediaType;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, SAFEARRAY**, int> get_SupportedSectorTypes;
+        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_SupportedSectorTypes;
 
         [NativeTypeName("HRESULT (IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE, int> put_RequestedSectorType;
+        public delegate* unmanaged<TSelf*, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE, int> put_RequestedSectorType;
 
         [NativeTypeName("HRESULT (IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE*, int> get_RequestedSectorType;
+        public delegate* unmanaged<TSelf*, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE*, int> get_RequestedSectorType;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, ushort*, int> put_ClientName;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ClientName;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, ushort**, int> get_ClientName;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ClientName;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, int*, int> get_RequestedWriteSpeed;
+        public delegate* unmanaged<TSelf*, int*, int> get_RequestedWriteSpeed;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, short*, int> get_RequestedRotationTypeIsPureCAV;
+        public delegate* unmanaged<TSelf*, short*, int> get_RequestedRotationTypeIsPureCAV;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, int*, int> get_CurrentWriteSpeed;
+        public delegate* unmanaged<TSelf*, int*, int> get_CurrentWriteSpeed;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, short*, int> get_CurrentRotationTypeIsPureCAV;
+        public delegate* unmanaged<TSelf*, short*, int> get_CurrentRotationTypeIsPureCAV;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, SAFEARRAY**, int> get_SupportedWriteSpeeds;
+        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_SupportedWriteSpeeds;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2RawCD*, SAFEARRAY**, int> get_SupportedWriteSpeedDescriptors;
+        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_SupportedWriteSpeedDescriptors;
     }
 }

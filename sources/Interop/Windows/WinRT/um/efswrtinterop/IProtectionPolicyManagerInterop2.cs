@@ -116,39 +116,40 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
         HRESULT RequestAccessForAppWithMessageForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING appPackageFamilyName, IUnknown* auditInfoUnk, HSTRING messageFromApp, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProtectionPolicyManagerInterop2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IProtectionPolicyManagerInterop2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IProtectionPolicyManagerInterop2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProtectionPolicyManagerInterop2*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProtectionPolicyManagerInterop2*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProtectionPolicyManagerInterop2*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HWND, HSTRING, HSTRING, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, Guid*, void**, int> RequestAccessForAppWithWindowAsync;
+        public delegate* unmanaged<TSelf*, HWND, HSTRING, HSTRING, Guid*, void**, int> RequestAccessForAppWithWindowAsync;
 
         [NativeTypeName("HRESULT (HWND, HSTRING, HSTRING, IUnknown *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, IUnknown*, Guid*, void**, int> RequestAccessWithAuditingInfoForWindowAsync;
+        public delegate* unmanaged<TSelf*, HWND, HSTRING, HSTRING, IUnknown*, Guid*, void**, int> RequestAccessWithAuditingInfoForWindowAsync;
 
         [NativeTypeName("HRESULT (HWND, HSTRING, HSTRING, IUnknown *, HSTRING, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, IUnknown*, HSTRING, Guid*, void**, int> RequestAccessWithMessageForWindowAsync;
+        public delegate* unmanaged<TSelf*, HWND, HSTRING, HSTRING, IUnknown*, HSTRING, Guid*, void**, int> RequestAccessWithMessageForWindowAsync;
 
         [NativeTypeName("HRESULT (HWND, HSTRING, HSTRING, IUnknown *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, IUnknown*, Guid*, void**, int> RequestAccessForAppWithAuditingInfoForWindowAsync;
+        public delegate* unmanaged<TSelf*, HWND, HSTRING, HSTRING, IUnknown*, Guid*, void**, int> RequestAccessForAppWithAuditingInfoForWindowAsync;
 
         [NativeTypeName("HRESULT (HWND, HSTRING, HSTRING, IUnknown *, HSTRING, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, IUnknown*, HSTRING, Guid*, void**, int> RequestAccessForAppWithMessageForWindowAsync;
+        public delegate* unmanaged<TSelf*, HWND, HSTRING, HSTRING, IUnknown*, HSTRING, Guid*, void**, int> RequestAccessForAppWithMessageForWindowAsync;
     }
 }

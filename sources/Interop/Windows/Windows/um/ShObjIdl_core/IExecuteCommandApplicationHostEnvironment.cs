@@ -52,18 +52,19 @@ public unsafe partial struct IExecuteCommandApplicationHostEnvironment : IExecut
         HRESULT GetValue(AHE_TYPE* pahe);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExecuteCommandApplicationHostEnvironment*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExecuteCommandApplicationHostEnvironment*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExecuteCommandApplicationHostEnvironment*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (AHE_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExecuteCommandApplicationHostEnvironment*, AHE_TYPE*, int> GetValue;
+        public delegate* unmanaged<TSelf*, AHE_TYPE*, int> GetValue;
     }
 }

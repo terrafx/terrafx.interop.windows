@@ -112,36 +112,37 @@ public unsafe partial struct IShellItemArray : IShellItemArray.Interface
         HRESULT EnumItems(IEnumShellItems** ppenumShellItems);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemArray*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemArray*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemArray*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IBindCtx *, const GUID &, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemArray*, IBindCtx*, Guid*, Guid*, void**, int> BindToHandler;
+        public delegate* unmanaged<TSelf*, IBindCtx*, Guid*, Guid*, void**, int> BindToHandler;
 
         [NativeTypeName("HRESULT (GETPROPERTYSTOREFLAGS, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemArray*, GETPROPERTYSTOREFLAGS, Guid*, void**, int> GetPropertyStore;
+        public delegate* unmanaged<TSelf*, GETPROPERTYSTOREFLAGS, Guid*, void**, int> GetPropertyStore;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemArray*, PROPERTYKEY*, Guid*, void**, int> GetPropertyDescriptionList;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, Guid*, void**, int> GetPropertyDescriptionList;
 
         [NativeTypeName("HRESULT (SIATTRIBFLAGS, SFGAOF, SFGAOF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemArray*, SIATTRIBFLAGS, uint, uint*, int> GetAttributes;
+        public delegate* unmanaged<TSelf*, SIATTRIBFLAGS, uint, uint*, int> GetAttributes;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemArray*, uint*, int> GetCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (DWORD, IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemArray*, uint, IShellItem**, int> GetItemAt;
+        public delegate* unmanaged<TSelf*, uint, IShellItem**, int> GetItemAt;
 
         [NativeTypeName("HRESULT (IEnumShellItems **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemArray*, IEnumShellItems**, int> EnumItems;
+        public delegate* unmanaged<TSelf*, IEnumShellItems**, int> EnumItems;
     }
 }

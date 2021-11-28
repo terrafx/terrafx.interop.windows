@@ -212,84 +212,85 @@ public unsafe partial struct IMarkupServices2 : IMarkupServices2.Interface
         HRESULT SaveSegmentsToClipboard(ISegmentList* pSegmentList, [NativeTypeName("DWORD")] uint dwFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMarkupPointer **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, IMarkupPointer**, int> CreateMarkupPointer;
+        public delegate* unmanaged<TSelf*, IMarkupPointer**, int> CreateMarkupPointer;
 
         [NativeTypeName("HRESULT (IMarkupContainer **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, IMarkupContainer**, int> CreateMarkupContainer;
+        public delegate* unmanaged<TSelf*, IMarkupContainer**, int> CreateMarkupContainer;
 
         [NativeTypeName("HRESULT (ELEMENT_TAG_ID, OLECHAR *, IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, ELEMENT_TAG_ID, ushort*, IHTMLElement**, int> CreateElement;
+        public delegate* unmanaged<TSelf*, ELEMENT_TAG_ID, ushort*, IHTMLElement**, int> CreateElement;
 
         [NativeTypeName("HRESULT (IHTMLElement *, IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, IHTMLElement*, IHTMLElement**, int> CloneElement;
+        public delegate* unmanaged<TSelf*, IHTMLElement*, IHTMLElement**, int> CloneElement;
 
         [NativeTypeName("HRESULT (IHTMLElement *, IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, IHTMLElement*, IMarkupPointer*, IMarkupPointer*, int> InsertElement;
+        public delegate* unmanaged<TSelf*, IHTMLElement*, IMarkupPointer*, IMarkupPointer*, int> InsertElement;
 
         [NativeTypeName("HRESULT (IHTMLElement *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, IHTMLElement*, int> RemoveElement;
+        public delegate* unmanaged<TSelf*, IHTMLElement*, int> RemoveElement;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, IMarkupPointer*, IMarkupPointer*, int> Remove;
+        public delegate* unmanaged<TSelf*, IMarkupPointer*, IMarkupPointer*, int> Remove;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, IMarkupPointer*, IMarkupPointer*, IMarkupPointer*, int> Copy;
+        public delegate* unmanaged<TSelf*, IMarkupPointer*, IMarkupPointer*, IMarkupPointer*, int> Copy;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, IMarkupPointer*, IMarkupPointer*, IMarkupPointer*, int> Move;
+        public delegate* unmanaged<TSelf*, IMarkupPointer*, IMarkupPointer*, IMarkupPointer*, int> Move;
 
         [NativeTypeName("HRESULT (OLECHAR *, long, IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, ushort*, int, IMarkupPointer*, int> InsertText;
+        public delegate* unmanaged<TSelf*, ushort*, int, IMarkupPointer*, int> InsertText;
 
         [NativeTypeName("HRESULT (OLECHAR *, DWORD, IMarkupContainer **, IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, ushort*, uint, IMarkupContainer**, IMarkupPointer*, IMarkupPointer*, int> ParseString;
+        public delegate* unmanaged<TSelf*, ushort*, uint, IMarkupContainer**, IMarkupPointer*, IMarkupPointer*, int> ParseString;
 
         [NativeTypeName("HRESULT (HGLOBAL, DWORD, IMarkupContainer **, IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, HGLOBAL, uint, IMarkupContainer**, IMarkupPointer*, IMarkupPointer*, int> ParseGlobal;
+        public delegate* unmanaged<TSelf*, HGLOBAL, uint, IMarkupContainer**, IMarkupPointer*, IMarkupPointer*, int> ParseGlobal;
 
         [NativeTypeName("HRESULT (IHTMLElement *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, IHTMLElement*, BOOL*, int> IsScopedElement;
+        public delegate* unmanaged<TSelf*, IHTMLElement*, BOOL*, int> IsScopedElement;
 
         [NativeTypeName("HRESULT (IHTMLElement *, ELEMENT_TAG_ID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, IHTMLElement*, ELEMENT_TAG_ID*, int> GetElementTagId;
+        public delegate* unmanaged<TSelf*, IHTMLElement*, ELEMENT_TAG_ID*, int> GetElementTagId;
 
         [NativeTypeName("HRESULT (BSTR, ELEMENT_TAG_ID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, ushort*, ELEMENT_TAG_ID*, int> GetTagIDForName;
+        public delegate* unmanaged<TSelf*, ushort*, ELEMENT_TAG_ID*, int> GetTagIDForName;
 
         [NativeTypeName("HRESULT (ELEMENT_TAG_ID, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, ELEMENT_TAG_ID, ushort**, int> GetNameForTagID;
+        public delegate* unmanaged<TSelf*, ELEMENT_TAG_ID, ushort**, int> GetNameForTagID;
 
         [NativeTypeName("HRESULT (IHTMLTxtRange *, IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, IHTMLTxtRange*, IMarkupPointer*, IMarkupPointer*, int> MovePointersToRange;
+        public delegate* unmanaged<TSelf*, IHTMLTxtRange*, IMarkupPointer*, IMarkupPointer*, int> MovePointersToRange;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, IMarkupPointer *, IHTMLTxtRange *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, IMarkupPointer*, IMarkupPointer*, IHTMLTxtRange*, int> MoveRangeToPointers;
+        public delegate* unmanaged<TSelf*, IMarkupPointer*, IMarkupPointer*, IHTMLTxtRange*, int> MoveRangeToPointers;
 
         [NativeTypeName("HRESULT (OLECHAR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, ushort*, int> BeginUndoUnit;
+        public delegate* unmanaged<TSelf*, ushort*, int> BeginUndoUnit;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, int> EndUndoUnit;
+        public delegate* unmanaged<TSelf*, int> EndUndoUnit;
 
         [NativeTypeName("HRESULT (HGLOBAL, DWORD, IMarkupContainer *, IMarkupContainer **, IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, HGLOBAL, uint, IMarkupContainer*, IMarkupContainer**, IMarkupPointer*, IMarkupPointer*, int> ParseGlobalEx;
+        public delegate* unmanaged<TSelf*, HGLOBAL, uint, IMarkupContainer*, IMarkupContainer**, IMarkupPointer*, IMarkupPointer*, int> ParseGlobalEx;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, IMarkupPointer *, IMarkupPointer *, IMarkupPointer *, IHTMLElement **, IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, IMarkupPointer*, IMarkupPointer*, IMarkupPointer*, IMarkupPointer*, IHTMLElement**, IHTMLElement**, int> ValidateElements;
+        public delegate* unmanaged<TSelf*, IMarkupPointer*, IMarkupPointer*, IMarkupPointer*, IMarkupPointer*, IHTMLElement**, IHTMLElement**, int> ValidateElements;
 
         [NativeTypeName("HRESULT (ISegmentList *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupServices2*, ISegmentList*, uint, int> SaveSegmentsToClipboard;
+        public delegate* unmanaged<TSelf*, ISegmentList*, uint, int> SaveSegmentsToClipboard;
     }
 }

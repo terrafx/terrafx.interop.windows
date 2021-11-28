@@ -52,18 +52,19 @@ public unsafe partial struct IDelegateFolder : IDelegateFolder.Interface
         HRESULT SetItemAlloc(IMalloc* pmalloc);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDelegateFolder*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDelegateFolder*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDelegateFolder*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMalloc *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDelegateFolder*, IMalloc*, int> SetItemAlloc;
+        public delegate* unmanaged<TSelf*, IMalloc*, int> SetItemAlloc;
     }
 }

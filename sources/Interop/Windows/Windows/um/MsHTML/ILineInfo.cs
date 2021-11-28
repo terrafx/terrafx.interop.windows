@@ -92,30 +92,31 @@ public unsafe partial struct ILineInfo : ILineInfo.Interface
         HRESULT get_lineDirection([NativeTypeName("LONG *")] int* p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILineInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ILineInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ILineInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILineInfo*, int*, int> get_x;
+        public delegate* unmanaged<TSelf*, int*, int> get_x;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILineInfo*, int*, int> get_baseLine;
+        public delegate* unmanaged<TSelf*, int*, int> get_baseLine;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILineInfo*, int*, int> get_textDescent;
+        public delegate* unmanaged<TSelf*, int*, int> get_textDescent;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILineInfo*, int*, int> get_textHeight;
+        public delegate* unmanaged<TSelf*, int*, int> get_textHeight;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILineInfo*, int*, int> get_lineDirection;
+        public delegate* unmanaged<TSelf*, int*, int> get_lineDirection;
     }
 }

@@ -581,243 +581,244 @@ public unsafe partial struct ID3D12GraphicsCommandList5 : ID3D12GraphicsCommandL
         void RSSetShadingRateImage(ID3D12Resource* shadingRateImage);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ushort*, int> SetName;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetName;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, Guid*, void**, int> GetDevice;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDevice;
 
         [NativeTypeName("D3D12_COMMAND_LIST_TYPE () __attribute__((stdcall))")]
-        public new delegate* unmanaged[SuppressGCTransition]<ID3D12GraphicsCommandList5*, D3D12_COMMAND_LIST_TYPE> GetType;
+        public new delegate* unmanaged[SuppressGCTransition]<TSelf*, D3D12_COMMAND_LIST_TYPE> GetType;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, int> Close;
+        public delegate* unmanaged<TSelf*, int> Close;
 
         [NativeTypeName("HRESULT (ID3D12CommandAllocator *, ID3D12PipelineState *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12CommandAllocator*, ID3D12PipelineState*, int> Reset;
+        public delegate* unmanaged<TSelf*, ID3D12CommandAllocator*, ID3D12PipelineState*, int> Reset;
 
         [NativeTypeName("void (ID3D12PipelineState *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12PipelineState*, void> ClearState;
+        public delegate* unmanaged<TSelf*, ID3D12PipelineState*, void> ClearState;
 
         [NativeTypeName("void (UINT, UINT, UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, uint, uint, uint, void> DrawInstanced;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, uint, void> DrawInstanced;
 
         [NativeTypeName("void (UINT, UINT, UINT, INT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, uint, uint, int, uint, void> DrawIndexedInstanced;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, int, uint, void> DrawIndexedInstanced;
 
         [NativeTypeName("void (UINT, UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, uint, uint, void> Dispatch;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, void> Dispatch;
 
         [NativeTypeName("void (ID3D12Resource *, UINT64, ID3D12Resource *, UINT64, UINT64) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void> CopyBufferRegion;
+        public delegate* unmanaged<TSelf*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void> CopyBufferRegion;
 
         [NativeTypeName("void (const D3D12_TEXTURE_COPY_LOCATION *, UINT, UINT, UINT, const D3D12_TEXTURE_COPY_LOCATION *, const D3D12_BOX *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, D3D12_TEXTURE_COPY_LOCATION*, uint, uint, uint, D3D12_TEXTURE_COPY_LOCATION*, D3D12_BOX*, void> CopyTextureRegion;
+        public delegate* unmanaged<TSelf*, D3D12_TEXTURE_COPY_LOCATION*, uint, uint, uint, D3D12_TEXTURE_COPY_LOCATION*, D3D12_BOX*, void> CopyTextureRegion;
 
         [NativeTypeName("void (ID3D12Resource *, ID3D12Resource *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12Resource*, ID3D12Resource*, void> CopyResource;
+        public delegate* unmanaged<TSelf*, ID3D12Resource*, ID3D12Resource*, void> CopyResource;
 
         [NativeTypeName("void (ID3D12Resource *, const D3D12_TILED_RESOURCE_COORDINATE *, const D3D12_TILE_REGION_SIZE *, ID3D12Resource *, UINT64, D3D12_TILE_COPY_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12Resource*, D3D12_TILED_RESOURCE_COORDINATE*, D3D12_TILE_REGION_SIZE*, ID3D12Resource*, ulong, D3D12_TILE_COPY_FLAGS, void> CopyTiles;
+        public delegate* unmanaged<TSelf*, ID3D12Resource*, D3D12_TILED_RESOURCE_COORDINATE*, D3D12_TILE_REGION_SIZE*, ID3D12Resource*, ulong, D3D12_TILE_COPY_FLAGS, void> CopyTiles;
 
         [NativeTypeName("void (ID3D12Resource *, UINT, ID3D12Resource *, UINT, DXGI_FORMAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12Resource*, uint, ID3D12Resource*, uint, DXGI_FORMAT, void> ResolveSubresource;
+        public delegate* unmanaged<TSelf*, ID3D12Resource*, uint, ID3D12Resource*, uint, DXGI_FORMAT, void> ResolveSubresource;
 
         [NativeTypeName("void (D3D12_PRIMITIVE_TOPOLOGY) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, D3D_PRIMITIVE_TOPOLOGY, void> IASetPrimitiveTopology;
+        public delegate* unmanaged<TSelf*, D3D_PRIMITIVE_TOPOLOGY, void> IASetPrimitiveTopology;
 
         [NativeTypeName("void (UINT, const D3D12_VIEWPORT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, D3D12_VIEWPORT*, void> RSSetViewports;
+        public delegate* unmanaged<TSelf*, uint, D3D12_VIEWPORT*, void> RSSetViewports;
 
         [NativeTypeName("void (UINT, const D3D12_RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, RECT*, void> RSSetScissorRects;
+        public delegate* unmanaged<TSelf*, uint, RECT*, void> RSSetScissorRects;
 
         [NativeTypeName("void (const FLOAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, float*, void> OMSetBlendFactor;
+        public delegate* unmanaged<TSelf*, float*, void> OMSetBlendFactor;
 
         [NativeTypeName("void (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, void> OMSetStencilRef;
+        public delegate* unmanaged<TSelf*, uint, void> OMSetStencilRef;
 
         [NativeTypeName("void (ID3D12PipelineState *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12PipelineState*, void> SetPipelineState;
+        public delegate* unmanaged<TSelf*, ID3D12PipelineState*, void> SetPipelineState;
 
         [NativeTypeName("void (UINT, const D3D12_RESOURCE_BARRIER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, D3D12_RESOURCE_BARRIER*, void> ResourceBarrier;
+        public delegate* unmanaged<TSelf*, uint, D3D12_RESOURCE_BARRIER*, void> ResourceBarrier;
 
         [NativeTypeName("void (ID3D12GraphicsCommandList *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12GraphicsCommandList*, void> ExecuteBundle;
+        public delegate* unmanaged<TSelf*, ID3D12GraphicsCommandList*, void> ExecuteBundle;
 
         [NativeTypeName("void (UINT, ID3D12DescriptorHeap *const *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, ID3D12DescriptorHeap**, void> SetDescriptorHeaps;
+        public delegate* unmanaged<TSelf*, uint, ID3D12DescriptorHeap**, void> SetDescriptorHeaps;
 
         [NativeTypeName("void (ID3D12RootSignature *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12RootSignature*, void> SetComputeRootSignature;
+        public delegate* unmanaged<TSelf*, ID3D12RootSignature*, void> SetComputeRootSignature;
 
         [NativeTypeName("void (ID3D12RootSignature *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12RootSignature*, void> SetGraphicsRootSignature;
+        public delegate* unmanaged<TSelf*, ID3D12RootSignature*, void> SetGraphicsRootSignature;
 
         [NativeTypeName("void (UINT, D3D12_GPU_DESCRIPTOR_HANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, D3D12_GPU_DESCRIPTOR_HANDLE, void> SetComputeRootDescriptorTable;
+        public delegate* unmanaged<TSelf*, uint, D3D12_GPU_DESCRIPTOR_HANDLE, void> SetComputeRootDescriptorTable;
 
         [NativeTypeName("void (UINT, D3D12_GPU_DESCRIPTOR_HANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, D3D12_GPU_DESCRIPTOR_HANDLE, void> SetGraphicsRootDescriptorTable;
+        public delegate* unmanaged<TSelf*, uint, D3D12_GPU_DESCRIPTOR_HANDLE, void> SetGraphicsRootDescriptorTable;
 
         [NativeTypeName("void (UINT, UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, uint, uint, void> SetComputeRoot32BitConstant;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, void> SetComputeRoot32BitConstant;
 
         [NativeTypeName("void (UINT, UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, uint, uint, void> SetGraphicsRoot32BitConstant;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, void> SetGraphicsRoot32BitConstant;
 
         [NativeTypeName("void (UINT, UINT, const void *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, uint, void*, uint, void> SetComputeRoot32BitConstants;
+        public delegate* unmanaged<TSelf*, uint, uint, void*, uint, void> SetComputeRoot32BitConstants;
 
         [NativeTypeName("void (UINT, UINT, const void *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, uint, void*, uint, void> SetGraphicsRoot32BitConstants;
+        public delegate* unmanaged<TSelf*, uint, uint, void*, uint, void> SetGraphicsRoot32BitConstants;
 
         [NativeTypeName("void (UINT, D3D12_GPU_VIRTUAL_ADDRESS) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, ulong, void> SetComputeRootConstantBufferView;
+        public delegate* unmanaged<TSelf*, uint, ulong, void> SetComputeRootConstantBufferView;
 
         [NativeTypeName("void (UINT, D3D12_GPU_VIRTUAL_ADDRESS) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, ulong, void> SetGraphicsRootConstantBufferView;
+        public delegate* unmanaged<TSelf*, uint, ulong, void> SetGraphicsRootConstantBufferView;
 
         [NativeTypeName("void (UINT, D3D12_GPU_VIRTUAL_ADDRESS) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, ulong, void> SetComputeRootShaderResourceView;
+        public delegate* unmanaged<TSelf*, uint, ulong, void> SetComputeRootShaderResourceView;
 
         [NativeTypeName("void (UINT, D3D12_GPU_VIRTUAL_ADDRESS) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, ulong, void> SetGraphicsRootShaderResourceView;
+        public delegate* unmanaged<TSelf*, uint, ulong, void> SetGraphicsRootShaderResourceView;
 
         [NativeTypeName("void (UINT, D3D12_GPU_VIRTUAL_ADDRESS) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, ulong, void> SetComputeRootUnorderedAccessView;
+        public delegate* unmanaged<TSelf*, uint, ulong, void> SetComputeRootUnorderedAccessView;
 
         [NativeTypeName("void (UINT, D3D12_GPU_VIRTUAL_ADDRESS) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, ulong, void> SetGraphicsRootUnorderedAccessView;
+        public delegate* unmanaged<TSelf*, uint, ulong, void> SetGraphicsRootUnorderedAccessView;
 
         [NativeTypeName("void (const D3D12_INDEX_BUFFER_VIEW *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, D3D12_INDEX_BUFFER_VIEW*, void> IASetIndexBuffer;
+        public delegate* unmanaged<TSelf*, D3D12_INDEX_BUFFER_VIEW*, void> IASetIndexBuffer;
 
         [NativeTypeName("void (UINT, UINT, const D3D12_VERTEX_BUFFER_VIEW *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, uint, D3D12_VERTEX_BUFFER_VIEW*, void> IASetVertexBuffers;
+        public delegate* unmanaged<TSelf*, uint, uint, D3D12_VERTEX_BUFFER_VIEW*, void> IASetVertexBuffers;
 
         [NativeTypeName("void (UINT, UINT, const D3D12_STREAM_OUTPUT_BUFFER_VIEW *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, uint, D3D12_STREAM_OUTPUT_BUFFER_VIEW*, void> SOSetTargets;
+        public delegate* unmanaged<TSelf*, uint, uint, D3D12_STREAM_OUTPUT_BUFFER_VIEW*, void> SOSetTargets;
 
         [NativeTypeName("void (UINT, const D3D12_CPU_DESCRIPTOR_HANDLE *, BOOL, const D3D12_CPU_DESCRIPTOR_HANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, D3D12_CPU_DESCRIPTOR_HANDLE*, BOOL, D3D12_CPU_DESCRIPTOR_HANDLE*, void> OMSetRenderTargets;
+        public delegate* unmanaged<TSelf*, uint, D3D12_CPU_DESCRIPTOR_HANDLE*, BOOL, D3D12_CPU_DESCRIPTOR_HANDLE*, void> OMSetRenderTargets;
 
         [NativeTypeName("void (D3D12_CPU_DESCRIPTOR_HANDLE, D3D12_CLEAR_FLAGS, FLOAT, UINT8, UINT, const D3D12_RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, D3D12_CPU_DESCRIPTOR_HANDLE, D3D12_CLEAR_FLAGS, float, byte, uint, RECT*, void> ClearDepthStencilView;
+        public delegate* unmanaged<TSelf*, D3D12_CPU_DESCRIPTOR_HANDLE, D3D12_CLEAR_FLAGS, float, byte, uint, RECT*, void> ClearDepthStencilView;
 
         [NativeTypeName("void (D3D12_CPU_DESCRIPTOR_HANDLE, const FLOAT *, UINT, const D3D12_RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, D3D12_CPU_DESCRIPTOR_HANDLE, float*, uint, RECT*, void> ClearRenderTargetView;
+        public delegate* unmanaged<TSelf*, D3D12_CPU_DESCRIPTOR_HANDLE, float*, uint, RECT*, void> ClearRenderTargetView;
 
         [NativeTypeName("void (D3D12_GPU_DESCRIPTOR_HANDLE, D3D12_CPU_DESCRIPTOR_HANDLE, ID3D12Resource *, const UINT *, UINT, const D3D12_RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, D3D12_GPU_DESCRIPTOR_HANDLE, D3D12_CPU_DESCRIPTOR_HANDLE, ID3D12Resource*, uint*, uint, RECT*, void> ClearUnorderedAccessViewUint;
+        public delegate* unmanaged<TSelf*, D3D12_GPU_DESCRIPTOR_HANDLE, D3D12_CPU_DESCRIPTOR_HANDLE, ID3D12Resource*, uint*, uint, RECT*, void> ClearUnorderedAccessViewUint;
 
         [NativeTypeName("void (D3D12_GPU_DESCRIPTOR_HANDLE, D3D12_CPU_DESCRIPTOR_HANDLE, ID3D12Resource *, const FLOAT *, UINT, const D3D12_RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, D3D12_GPU_DESCRIPTOR_HANDLE, D3D12_CPU_DESCRIPTOR_HANDLE, ID3D12Resource*, float*, uint, RECT*, void> ClearUnorderedAccessViewFloat;
+        public delegate* unmanaged<TSelf*, D3D12_GPU_DESCRIPTOR_HANDLE, D3D12_CPU_DESCRIPTOR_HANDLE, ID3D12Resource*, float*, uint, RECT*, void> ClearUnorderedAccessViewFloat;
 
         [NativeTypeName("void (ID3D12Resource *, const D3D12_DISCARD_REGION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12Resource*, D3D12_DISCARD_REGION*, void> DiscardResource;
+        public delegate* unmanaged<TSelf*, ID3D12Resource*, D3D12_DISCARD_REGION*, void> DiscardResource;
 
         [NativeTypeName("void (ID3D12QueryHeap *, D3D12_QUERY_TYPE, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, void> BeginQuery;
+        public delegate* unmanaged<TSelf*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, void> BeginQuery;
 
         [NativeTypeName("void (ID3D12QueryHeap *, D3D12_QUERY_TYPE, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, void> EndQuery;
+        public delegate* unmanaged<TSelf*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, void> EndQuery;
 
         [NativeTypeName("void (ID3D12QueryHeap *, D3D12_QUERY_TYPE, UINT, UINT, ID3D12Resource *, UINT64) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, uint, ID3D12Resource*, ulong, void> ResolveQueryData;
+        public delegate* unmanaged<TSelf*, ID3D12QueryHeap*, D3D12_QUERY_TYPE, uint, uint, ID3D12Resource*, ulong, void> ResolveQueryData;
 
         [NativeTypeName("void (ID3D12Resource *, UINT64, D3D12_PREDICATION_OP) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12Resource*, ulong, D3D12_PREDICATION_OP, void> SetPredication;
+        public delegate* unmanaged<TSelf*, ID3D12Resource*, ulong, D3D12_PREDICATION_OP, void> SetPredication;
 
         [NativeTypeName("void (UINT, const void *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, void*, uint, void> SetMarker;
+        public delegate* unmanaged<TSelf*, uint, void*, uint, void> SetMarker;
 
         [NativeTypeName("void (UINT, const void *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, void*, uint, void> BeginEvent;
+        public delegate* unmanaged<TSelf*, uint, void*, uint, void> BeginEvent;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, void> EndEvent;
+        public delegate* unmanaged<TSelf*, void> EndEvent;
 
         [NativeTypeName("void (ID3D12CommandSignature *, UINT, ID3D12Resource *, UINT64, ID3D12Resource *, UINT64) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void> ExecuteIndirect;
+        public delegate* unmanaged<TSelf*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void> ExecuteIndirect;
 
         [NativeTypeName("void (ID3D12Resource *, UINT64, ID3D12Resource *, UINT64, UINT, ID3D12Resource *const *, const D3D12_SUBRESOURCE_RANGE_UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, D3D12_SUBRESOURCE_RANGE_UINT64*, void> AtomicCopyBufferUINT;
+        public delegate* unmanaged<TSelf*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, D3D12_SUBRESOURCE_RANGE_UINT64*, void> AtomicCopyBufferUINT;
 
         [NativeTypeName("void (ID3D12Resource *, UINT64, ID3D12Resource *, UINT64, UINT, ID3D12Resource *const *, const D3D12_SUBRESOURCE_RANGE_UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, D3D12_SUBRESOURCE_RANGE_UINT64*, void> AtomicCopyBufferUINT64;
+        public delegate* unmanaged<TSelf*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, uint, ID3D12Resource**, D3D12_SUBRESOURCE_RANGE_UINT64*, void> AtomicCopyBufferUINT64;
 
         [NativeTypeName("void (FLOAT, FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, float, float, void> OMSetDepthBounds;
+        public delegate* unmanaged<TSelf*, float, float, void> OMSetDepthBounds;
 
         [NativeTypeName("void (UINT, UINT, D3D12_SAMPLE_POSITION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, uint, D3D12_SAMPLE_POSITION*, void> SetSamplePositions;
+        public delegate* unmanaged<TSelf*, uint, uint, D3D12_SAMPLE_POSITION*, void> SetSamplePositions;
 
         [NativeTypeName("void (ID3D12Resource *, UINT, UINT, UINT, ID3D12Resource *, UINT, D3D12_RECT *, DXGI_FORMAT, D3D12_RESOLVE_MODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, RECT*, DXGI_FORMAT, D3D12_RESOLVE_MODE, void> ResolveSubresourceRegion;
+        public delegate* unmanaged<TSelf*, ID3D12Resource*, uint, uint, uint, ID3D12Resource*, uint, RECT*, DXGI_FORMAT, D3D12_RESOLVE_MODE, void> ResolveSubresourceRegion;
 
         [NativeTypeName("void (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, void> SetViewInstanceMask;
+        public delegate* unmanaged<TSelf*, uint, void> SetViewInstanceMask;
 
         [NativeTypeName("void (UINT, const D3D12_WRITEBUFFERIMMEDIATE_PARAMETER *, const D3D12_WRITEBUFFERIMMEDIATE_MODE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER*, D3D12_WRITEBUFFERIMMEDIATE_MODE*, void> WriteBufferImmediate;
+        public delegate* unmanaged<TSelf*, uint, D3D12_WRITEBUFFERIMMEDIATE_PARAMETER*, D3D12_WRITEBUFFERIMMEDIATE_MODE*, void> WriteBufferImmediate;
 
         [NativeTypeName("void (ID3D12ProtectedResourceSession *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12ProtectedResourceSession*, void> SetProtectedResourceSession;
+        public delegate* unmanaged<TSelf*, ID3D12ProtectedResourceSession*, void> SetProtectedResourceSession;
 
         [NativeTypeName("void (UINT, const D3D12_RENDER_PASS_RENDER_TARGET_DESC *, const D3D12_RENDER_PASS_DEPTH_STENCIL_DESC *, D3D12_RENDER_PASS_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, uint, D3D12_RENDER_PASS_RENDER_TARGET_DESC*, D3D12_RENDER_PASS_DEPTH_STENCIL_DESC*, D3D12_RENDER_PASS_FLAGS, void> BeginRenderPass;
+        public delegate* unmanaged<TSelf*, uint, D3D12_RENDER_PASS_RENDER_TARGET_DESC*, D3D12_RENDER_PASS_DEPTH_STENCIL_DESC*, D3D12_RENDER_PASS_FLAGS, void> BeginRenderPass;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, void> EndRenderPass;
+        public delegate* unmanaged<TSelf*, void> EndRenderPass;
 
         [NativeTypeName("void (ID3D12MetaCommand *, const void *, SIZE_T) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12MetaCommand*, void*, nuint, void> InitializeMetaCommand;
+        public delegate* unmanaged<TSelf*, ID3D12MetaCommand*, void*, nuint, void> InitializeMetaCommand;
 
         [NativeTypeName("void (ID3D12MetaCommand *, const void *, SIZE_T) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12MetaCommand*, void*, nuint, void> ExecuteMetaCommand;
+        public delegate* unmanaged<TSelf*, ID3D12MetaCommand*, void*, nuint, void> ExecuteMetaCommand;
 
         [NativeTypeName("void (const D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_DESC *, UINT, const D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_DESC*, uint, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC*, void> BuildRaytracingAccelerationStructure;
+        public delegate* unmanaged<TSelf*, D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_DESC*, uint, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC*, void> BuildRaytracingAccelerationStructure;
 
         [NativeTypeName("void (const D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC *, UINT, const D3D12_GPU_VIRTUAL_ADDRESS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC*, uint, ulong*, void> EmitRaytracingAccelerationStructurePostbuildInfo;
+        public delegate* unmanaged<TSelf*, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC*, uint, ulong*, void> EmitRaytracingAccelerationStructurePostbuildInfo;
 
         [NativeTypeName("void (D3D12_GPU_VIRTUAL_ADDRESS, D3D12_GPU_VIRTUAL_ADDRESS, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_COPY_MODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ulong, ulong, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_COPY_MODE, void> CopyRaytracingAccelerationStructure;
+        public delegate* unmanaged<TSelf*, ulong, ulong, D3D12_RAYTRACING_ACCELERATION_STRUCTURE_COPY_MODE, void> CopyRaytracingAccelerationStructure;
 
         [NativeTypeName("void (ID3D12StateObject *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12StateObject*, void> SetPipelineState1;
+        public delegate* unmanaged<TSelf*, ID3D12StateObject*, void> SetPipelineState1;
 
         [NativeTypeName("void (const D3D12_DISPATCH_RAYS_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, D3D12_DISPATCH_RAYS_DESC*, void> DispatchRays;
+        public delegate* unmanaged<TSelf*, D3D12_DISPATCH_RAYS_DESC*, void> DispatchRays;
 
         [NativeTypeName("void (D3D12_SHADING_RATE, const D3D12_SHADING_RATE_COMBINER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, D3D12_SHADING_RATE, D3D12_SHADING_RATE_COMBINER*, void> RSSetShadingRate;
+        public delegate* unmanaged<TSelf*, D3D12_SHADING_RATE, D3D12_SHADING_RATE_COMBINER*, void> RSSetShadingRate;
 
         [NativeTypeName("void (ID3D12Resource *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12GraphicsCommandList5*, ID3D12Resource*, void> RSSetShadingRateImage;
+        public delegate* unmanaged<TSelf*, ID3D12Resource*, void> RSSetShadingRateImage;
     }
 }

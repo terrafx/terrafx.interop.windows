@@ -62,21 +62,22 @@ public unsafe partial struct IWbemStatusCodeText : IWbemStatusCodeText.Interface
         HRESULT GetFacilityCodeText(HRESULT hRes, [NativeTypeName("LCID")] uint LocaleId, [NativeTypeName("long")] int lFlags, [NativeTypeName("BSTR *")] ushort** MessageText);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemStatusCodeText*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemStatusCodeText*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemStatusCodeText*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HRESULT, LCID, long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemStatusCodeText*, HRESULT, uint, int, ushort**, int> GetErrorCodeText;
+        public delegate* unmanaged<TSelf*, HRESULT, uint, int, ushort**, int> GetErrorCodeText;
 
         [NativeTypeName("HRESULT (HRESULT, LCID, long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemStatusCodeText*, HRESULT, uint, int, ushort**, int> GetFacilityCodeText;
+        public delegate* unmanaged<TSelf*, HRESULT, uint, int, ushort**, int> GetFacilityCodeText;
     }
 }

@@ -495,153 +495,154 @@ public unsafe partial struct IDirectDrawSurface7 : IDirectDrawSurface7.Interface
         HRESULT GetLOD([NativeTypeName("LPDWORD")] uint* param0);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAWSURFACE7) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, IDirectDrawSurface7*, int> AddAttachedSurface;
+        public delegate* unmanaged<TSelf*, IDirectDrawSurface7*, int> AddAttachedSurface;
 
         [NativeTypeName("HRESULT (LPRECT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, RECT*, int> AddOverlayDirtyRect;
+        public delegate* unmanaged<TSelf*, RECT*, int> AddOverlayDirtyRect;
 
         [NativeTypeName("HRESULT (LPRECT, LPDIRECTDRAWSURFACE7, LPRECT, DWORD, LPDDBLTFX) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, RECT*, IDirectDrawSurface7*, RECT*, uint, DDBLTFX*, int> Blt;
+        public delegate* unmanaged<TSelf*, RECT*, IDirectDrawSurface7*, RECT*, uint, DDBLTFX*, int> Blt;
 
         [NativeTypeName("HRESULT (LPDDBLTBATCH, DWORD, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, DDBLTBATCH*, uint, uint, int> BltBatch;
+        public delegate* unmanaged<TSelf*, DDBLTBATCH*, uint, uint, int> BltBatch;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, LPDIRECTDRAWSURFACE7, LPRECT, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, uint, uint, IDirectDrawSurface7*, RECT*, uint, int> BltFast;
+        public delegate* unmanaged<TSelf*, uint, uint, IDirectDrawSurface7*, RECT*, uint, int> BltFast;
 
         [NativeTypeName("HRESULT (DWORD, LPDIRECTDRAWSURFACE7) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, uint, IDirectDrawSurface7*, int> DeleteAttachedSurface;
+        public delegate* unmanaged<TSelf*, uint, IDirectDrawSurface7*, int> DeleteAttachedSurface;
 
         [NativeTypeName("HRESULT (LPVOID, LPDDENUMSURFACESCALLBACK7) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, void*, delegate* unmanaged<IDirectDrawSurface7*, DDSURFACEDESC2*, void*, HRESULT>, int> EnumAttachedSurfaces;
+        public delegate* unmanaged<TSelf*, void*, delegate* unmanaged<TSelf*, DDSURFACEDESC2*, void*, HRESULT>, int> EnumAttachedSurfaces;
 
         [NativeTypeName("HRESULT (DWORD, LPVOID, LPDDENUMSURFACESCALLBACK7) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, uint, void*, delegate* unmanaged<IDirectDrawSurface7*, DDSURFACEDESC2*, void*, HRESULT>, int> EnumOverlayZOrders;
+        public delegate* unmanaged<TSelf*, uint, void*, delegate* unmanaged<TSelf*, DDSURFACEDESC2*, void*, HRESULT>, int> EnumOverlayZOrders;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAWSURFACE7, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, IDirectDrawSurface7*, uint, int> Flip;
+        public delegate* unmanaged<TSelf*, IDirectDrawSurface7*, uint, int> Flip;
 
         [NativeTypeName("HRESULT (LPDDSCAPS2, LPDIRECTDRAWSURFACE7 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, DDSCAPS2*, IDirectDrawSurface7**, int> GetAttachedSurface;
+        public delegate* unmanaged<TSelf*, DDSCAPS2*, IDirectDrawSurface7**, int> GetAttachedSurface;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, uint, int> GetBltStatus;
+        public delegate* unmanaged<TSelf*, uint, int> GetBltStatus;
 
         [NativeTypeName("HRESULT (LPDDSCAPS2) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, DDSCAPS2*, int> GetCaps;
+        public delegate* unmanaged<TSelf*, DDSCAPS2*, int> GetCaps;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAWCLIPPER *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, IDirectDrawClipper**, int> GetClipper;
+        public delegate* unmanaged<TSelf*, IDirectDrawClipper**, int> GetClipper;
 
         [NativeTypeName("HRESULT (DWORD, LPDDCOLORKEY) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, uint, DDCOLORKEY*, int> GetColorKey;
+        public delegate* unmanaged<TSelf*, uint, DDCOLORKEY*, int> GetColorKey;
 
         [NativeTypeName("HRESULT (HDC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, HDC*, int> GetDC;
+        public delegate* unmanaged<TSelf*, HDC*, int> GetDC;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, uint, int> GetFlipStatus;
+        public delegate* unmanaged<TSelf*, uint, int> GetFlipStatus;
 
         [NativeTypeName("HRESULT (LPLONG, LPLONG) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, int*, int*, int> GetOverlayPosition;
+        public delegate* unmanaged<TSelf*, int*, int*, int> GetOverlayPosition;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAWPALETTE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, IDirectDrawPalette**, int> GetPalette;
+        public delegate* unmanaged<TSelf*, IDirectDrawPalette**, int> GetPalette;
 
         [NativeTypeName("HRESULT (LPDDPIXELFORMAT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, DDPIXELFORMAT*, int> GetPixelFormat;
+        public delegate* unmanaged<TSelf*, DDPIXELFORMAT*, int> GetPixelFormat;
 
         [NativeTypeName("HRESULT (LPDDSURFACEDESC2) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, DDSURFACEDESC2*, int> GetSurfaceDesc;
+        public delegate* unmanaged<TSelf*, DDSURFACEDESC2*, int> GetSurfaceDesc;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAW, LPDDSURFACEDESC2) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, IDirectDraw*, DDSURFACEDESC2*, int> Initialize;
+        public delegate* unmanaged<TSelf*, IDirectDraw*, DDSURFACEDESC2*, int> Initialize;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, int> IsLost;
+        public delegate* unmanaged<TSelf*, int> IsLost;
 
         [NativeTypeName("HRESULT (LPRECT, LPDDSURFACEDESC2, DWORD, HANDLE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, RECT*, DDSURFACEDESC2*, uint, HANDLE, int> Lock;
+        public delegate* unmanaged<TSelf*, RECT*, DDSURFACEDESC2*, uint, HANDLE, int> Lock;
 
         [NativeTypeName("HRESULT (HDC) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, HDC, int> ReleaseDC;
+        public delegate* unmanaged<TSelf*, HDC, int> ReleaseDC;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, int> Restore;
+        public delegate* unmanaged<TSelf*, int> Restore;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAWCLIPPER) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, IDirectDrawClipper*, int> SetClipper;
+        public delegate* unmanaged<TSelf*, IDirectDrawClipper*, int> SetClipper;
 
         [NativeTypeName("HRESULT (DWORD, LPDDCOLORKEY) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, uint, DDCOLORKEY*, int> SetColorKey;
+        public delegate* unmanaged<TSelf*, uint, DDCOLORKEY*, int> SetColorKey;
 
         [NativeTypeName("HRESULT (LONG, LONG) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, int, int, int> SetOverlayPosition;
+        public delegate* unmanaged<TSelf*, int, int, int> SetOverlayPosition;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAWPALETTE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, IDirectDrawPalette*, int> SetPalette;
+        public delegate* unmanaged<TSelf*, IDirectDrawPalette*, int> SetPalette;
 
         [NativeTypeName("HRESULT (LPRECT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, RECT*, int> Unlock;
+        public delegate* unmanaged<TSelf*, RECT*, int> Unlock;
 
         [NativeTypeName("HRESULT (LPRECT, LPDIRECTDRAWSURFACE7, LPRECT, DWORD, LPDDOVERLAYFX) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, RECT*, IDirectDrawSurface7*, RECT*, uint, DDOVERLAYFX*, int> UpdateOverlay;
+        public delegate* unmanaged<TSelf*, RECT*, IDirectDrawSurface7*, RECT*, uint, DDOVERLAYFX*, int> UpdateOverlay;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, uint, int> UpdateOverlayDisplay;
+        public delegate* unmanaged<TSelf*, uint, int> UpdateOverlayDisplay;
 
         [NativeTypeName("HRESULT (DWORD, LPDIRECTDRAWSURFACE7) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, uint, IDirectDrawSurface7*, int> UpdateOverlayZOrder;
+        public delegate* unmanaged<TSelf*, uint, IDirectDrawSurface7*, int> UpdateOverlayZOrder;
 
         [NativeTypeName("HRESULT (LPVOID *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, void**, int> GetDDInterface;
+        public delegate* unmanaged<TSelf*, void**, int> GetDDInterface;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, uint, int> PageLock;
+        public delegate* unmanaged<TSelf*, uint, int> PageLock;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, uint, int> PageUnlock;
+        public delegate* unmanaged<TSelf*, uint, int> PageUnlock;
 
         [NativeTypeName("HRESULT (LPDDSURFACEDESC2, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, DDSURFACEDESC2*, uint, int> SetSurfaceDesc;
+        public delegate* unmanaged<TSelf*, DDSURFACEDESC2*, uint, int> SetSurfaceDesc;
 
         [NativeTypeName("HRESULT (const GUID &, LPVOID, DWORD, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, Guid*, void*, uint, uint, int> SetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, void*, uint, uint, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, LPVOID, LPDWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, Guid*, void*, uint*, int> GetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, void*, uint*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, Guid*, int> FreePrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, int> FreePrivateData;
 
         [NativeTypeName("HRESULT (LPDWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, uint*, int> GetUniquenessValue;
+        public delegate* unmanaged<TSelf*, uint*, int> GetUniquenessValue;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, int> ChangeUniquenessValue;
+        public delegate* unmanaged<TSelf*, int> ChangeUniquenessValue;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, uint, int> SetPriority;
+        public delegate* unmanaged<TSelf*, uint, int> SetPriority;
 
         [NativeTypeName("HRESULT (LPDWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, uint*, int> GetPriority;
+        public delegate* unmanaged<TSelf*, uint*, int> GetPriority;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, uint, int> SetLOD;
+        public delegate* unmanaged<TSelf*, uint, int> SetLOD;
 
         [NativeTypeName("HRESULT (LPDWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawSurface7*, uint*, int> GetLOD;
+        public delegate* unmanaged<TSelf*, uint*, int> GetLOD;
     }
 }

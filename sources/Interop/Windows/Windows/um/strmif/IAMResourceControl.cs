@@ -52,18 +52,19 @@ public unsafe partial struct IAMResourceControl : IAMResourceControl.Interface
         HRESULT Reserve([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PVOID")] void* pvReserved);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMResourceControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMResourceControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMResourceControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, PVOID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMResourceControl*, uint, void*, int> Reserve;
+        public delegate* unmanaged<TSelf*, uint, void*, int> Reserve;
     }
 }

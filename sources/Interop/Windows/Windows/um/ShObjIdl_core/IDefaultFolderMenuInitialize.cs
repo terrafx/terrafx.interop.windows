@@ -82,27 +82,28 @@ public unsafe partial struct IDefaultFolderMenuInitialize : IDefaultFolderMenuIn
         HRESULT SetHandlerClsid([NativeTypeName("const IID &")] Guid* rclsid);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDefaultFolderMenuInitialize*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDefaultFolderMenuInitialize*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDefaultFolderMenuInitialize*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, IContextMenuCB *, LPCITEMIDLIST, IShellFolder *, UINT, LPCITEMIDLIST *, IUnknown *, UINT, const HKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDefaultFolderMenuInitialize*, HWND, IContextMenuCB*, ITEMIDLIST*, IShellFolder*, uint, ITEMIDLIST**, IUnknown*, uint, HKEY*, int> Initialize;
+        public delegate* unmanaged<TSelf*, HWND, IContextMenuCB*, ITEMIDLIST*, IShellFolder*, uint, ITEMIDLIST**, IUnknown*, uint, HKEY*, int> Initialize;
 
         [NativeTypeName("HRESULT (DEFAULT_FOLDER_MENU_RESTRICTIONS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDefaultFolderMenuInitialize*, DEFAULT_FOLDER_MENU_RESTRICTIONS, int> SetMenuRestrictions;
+        public delegate* unmanaged<TSelf*, DEFAULT_FOLDER_MENU_RESTRICTIONS, int> SetMenuRestrictions;
 
         [NativeTypeName("HRESULT (DEFAULT_FOLDER_MENU_RESTRICTIONS, DEFAULT_FOLDER_MENU_RESTRICTIONS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDefaultFolderMenuInitialize*, DEFAULT_FOLDER_MENU_RESTRICTIONS, DEFAULT_FOLDER_MENU_RESTRICTIONS*, int> GetMenuRestrictions;
+        public delegate* unmanaged<TSelf*, DEFAULT_FOLDER_MENU_RESTRICTIONS, DEFAULT_FOLDER_MENU_RESTRICTIONS*, int> GetMenuRestrictions;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDefaultFolderMenuInitialize*, Guid*, int> SetHandlerClsid;
+        public delegate* unmanaged<TSelf*, Guid*, int> SetHandlerClsid;
     }
 }

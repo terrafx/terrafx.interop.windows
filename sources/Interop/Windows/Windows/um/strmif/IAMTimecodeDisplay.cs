@@ -82,27 +82,28 @@ public unsafe partial struct IAMTimecodeDisplay : IAMTimecodeDisplay.Interface
         HRESULT SetTCDisplay([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeDisplay*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeDisplay*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeDisplay*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeDisplay*, int*, int> GetTCDisplayEnable;
+        public delegate* unmanaged<TSelf*, int*, int> GetTCDisplayEnable;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeDisplay*, int, int> SetTCDisplayEnable;
+        public delegate* unmanaged<TSelf*, int, int> SetTCDisplayEnable;
 
         [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeDisplay*, int, int*, int> GetTCDisplay;
+        public delegate* unmanaged<TSelf*, int, int*, int> GetTCDisplay;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeDisplay*, int, int, int> SetTCDisplay;
+        public delegate* unmanaged<TSelf*, int, int, int> SetTCDisplay;
     }
 }

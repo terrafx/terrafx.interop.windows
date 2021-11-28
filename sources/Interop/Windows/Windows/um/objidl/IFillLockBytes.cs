@@ -82,27 +82,28 @@ public unsafe partial struct IFillLockBytes : IFillLockBytes.Interface
         HRESULT Terminate(BOOL bCanceled);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFillLockBytes*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFillLockBytes*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFillLockBytes*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFillLockBytes*, void*, uint, uint*, int> FillAppend;
+        public delegate* unmanaged<TSelf*, void*, uint, uint*, int> FillAppend;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER, const void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFillLockBytes*, ULARGE_INTEGER, void*, uint, uint*, int> FillAt;
+        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, void*, uint, uint*, int> FillAt;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFillLockBytes*, ULARGE_INTEGER, int> SetFillSize;
+        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, int> SetFillSize;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFillLockBytes*, BOOL, int> Terminate;
+        public delegate* unmanaged<TSelf*, BOOL, int> Terminate;
     }
 }

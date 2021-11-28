@@ -92,30 +92,31 @@ public unsafe partial struct IChannelAudioVolume : IChannelAudioVolume.Interface
         HRESULT GetAllVolumes([NativeTypeName("UINT32")] uint dwCount, float* pfVolumes);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IChannelAudioVolume*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IChannelAudioVolume*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IChannelAudioVolume*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IChannelAudioVolume*, uint*, int> GetChannelCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetChannelCount;
 
         [NativeTypeName("HRESULT (UINT32, const float, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IChannelAudioVolume*, uint, float, Guid*, int> SetChannelVolume;
+        public delegate* unmanaged<TSelf*, uint, float, Guid*, int> SetChannelVolume;
 
         [NativeTypeName("HRESULT (UINT32, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IChannelAudioVolume*, uint, float*, int> GetChannelVolume;
+        public delegate* unmanaged<TSelf*, uint, float*, int> GetChannelVolume;
 
         [NativeTypeName("HRESULT (UINT32, const float *, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IChannelAudioVolume*, uint, float*, Guid*, int> SetAllVolumes;
+        public delegate* unmanaged<TSelf*, uint, float*, Guid*, int> SetAllVolumes;
 
         [NativeTypeName("HRESULT (UINT32, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IChannelAudioVolume*, uint, float*, int> GetAllVolumes;
+        public delegate* unmanaged<TSelf*, uint, float*, int> GetAllVolumes;
     }
 }

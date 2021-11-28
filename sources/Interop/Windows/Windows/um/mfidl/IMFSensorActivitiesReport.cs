@@ -74,24 +74,25 @@ public unsafe partial struct IMFSensorActivitiesReport : IMFSensorActivitiesRepo
         HRESULT GetActivityReportByDeviceName([NativeTypeName("LPCWSTR")] ushort* SymbolicName, IMFSensorActivityReport** sensorActivityReport);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorActivitiesReport*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorActivitiesReport*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorActivitiesReport*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorActivitiesReport*, uint*, int> GetCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (ULONG, IMFSensorActivityReport **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorActivitiesReport*, uint, IMFSensorActivityReport**, int> GetActivityReport;
+        public delegate* unmanaged<TSelf*, uint, IMFSensorActivityReport**, int> GetActivityReport;
 
         [NativeTypeName("HRESULT (LPCWSTR, IMFSensorActivityReport **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorActivitiesReport*, ushort*, IMFSensorActivityReport**, int> GetActivityReportByDeviceName;
+        public delegate* unmanaged<TSelf*, ushort*, IMFSensorActivityReport**, int> GetActivityReportByDeviceName;
     }
 }

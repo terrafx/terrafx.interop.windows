@@ -93,30 +93,31 @@ public unsafe partial struct IMLOperatorTensorShapeDescription : IMLOperatorTens
         HRESULT GetOutputTensorShape([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("uint32_t *")] uint* dimensions);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorTensorShapeDescription*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorTensorShapeDescription*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorTensorShapeDescription*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorTensorShapeDescription*, uint, uint*, int> GetInputTensorDimensionCount;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> GetInputTensorDimensionCount;
 
         [NativeTypeName("HRESULT (uint32_t, uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorTensorShapeDescription*, uint, uint, uint*, int> GetInputTensorShape;
+        public delegate* unmanaged<TSelf*, uint, uint, uint*, int> GetInputTensorShape;
 
         [NativeTypeName("bool () const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorTensorShapeDescription*, byte> HasOutputShapeDescription;
+        public delegate* unmanaged<TSelf*, byte> HasOutputShapeDescription;
 
         [NativeTypeName("HRESULT (uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorTensorShapeDescription*, uint, uint*, int> GetOutputTensorDimensionCount;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> GetOutputTensorDimensionCount;
 
         [NativeTypeName("HRESULT (uint32_t, uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorTensorShapeDescription*, uint, uint, uint*, int> GetOutputTensorShape;
+        public delegate* unmanaged<TSelf*, uint, uint, uint*, int> GetOutputTensorShape;
     }
 }

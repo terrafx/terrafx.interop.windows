@@ -184,57 +184,58 @@ public unsafe partial struct IMFCaptureSource : IMFCaptureSource.Interface
         HRESULT GetStreamIndexFromFriendlyName([NativeTypeName("UINT32")] uint uifriendlyName, [NativeTypeName("DWORD *")] uint* pdwActualStreamIndex);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSource*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSource*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSource*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MF_CAPTURE_ENGINE_DEVICE_TYPE, IMFMediaSource **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSource*, MF_CAPTURE_ENGINE_DEVICE_TYPE, IMFMediaSource**, int> GetCaptureDeviceSource;
+        public delegate* unmanaged<TSelf*, MF_CAPTURE_ENGINE_DEVICE_TYPE, IMFMediaSource**, int> GetCaptureDeviceSource;
 
         [NativeTypeName("HRESULT (MF_CAPTURE_ENGINE_DEVICE_TYPE, IMFActivate **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSource*, MF_CAPTURE_ENGINE_DEVICE_TYPE, IMFActivate**, int> GetCaptureDeviceActivate;
+        public delegate* unmanaged<TSelf*, MF_CAPTURE_ENGINE_DEVICE_TYPE, IMFActivate**, int> GetCaptureDeviceActivate;
 
         [NativeTypeName("HRESULT (const IID &, const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSource*, Guid*, Guid*, IUnknown**, int> GetService;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, IUnknown**, int> GetService;
 
         [NativeTypeName("HRESULT (DWORD, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSource*, uint, IUnknown*, int> AddEffect;
+        public delegate* unmanaged<TSelf*, uint, IUnknown*, int> AddEffect;
 
         [NativeTypeName("HRESULT (DWORD, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSource*, uint, IUnknown*, int> RemoveEffect;
+        public delegate* unmanaged<TSelf*, uint, IUnknown*, int> RemoveEffect;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSource*, uint, int> RemoveAllEffects;
+        public delegate* unmanaged<TSelf*, uint, int> RemoveAllEffects;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSource*, uint, uint, IMFMediaType**, int> GetAvailableDeviceMediaType;
+        public delegate* unmanaged<TSelf*, uint, uint, IMFMediaType**, int> GetAvailableDeviceMediaType;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSource*, uint, IMFMediaType*, int> SetCurrentDeviceMediaType;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaType*, int> SetCurrentDeviceMediaType;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSource*, uint, IMFMediaType**, int> GetCurrentDeviceMediaType;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaType**, int> GetCurrentDeviceMediaType;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSource*, uint*, int> GetDeviceStreamCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetDeviceStreamCount;
 
         [NativeTypeName("HRESULT (DWORD, MF_CAPTURE_ENGINE_STREAM_CATEGORY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSource*, uint, MF_CAPTURE_ENGINE_STREAM_CATEGORY*, int> GetDeviceStreamCategory;
+        public delegate* unmanaged<TSelf*, uint, MF_CAPTURE_ENGINE_STREAM_CATEGORY*, int> GetDeviceStreamCategory;
 
         [NativeTypeName("HRESULT (DWORD, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSource*, uint, BOOL*, int> GetMirrorState;
+        public delegate* unmanaged<TSelf*, uint, BOOL*, int> GetMirrorState;
 
         [NativeTypeName("HRESULT (DWORD, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSource*, uint, BOOL, int> SetMirrorState;
+        public delegate* unmanaged<TSelf*, uint, BOOL, int> SetMirrorState;
 
         [NativeTypeName("HRESULT (UINT32, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureSource*, uint, uint*, int> GetStreamIndexFromFriendlyName;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> GetStreamIndexFromFriendlyName;
     }
 }

@@ -102,33 +102,34 @@ public unsafe partial struct IMemInputPin : IMemInputPin.Interface
         HRESULT ReceiveCanBlock();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemInputPin*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemInputPin*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemInputPin*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMemAllocator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemInputPin*, IMemAllocator**, int> GetAllocator;
+        public delegate* unmanaged<TSelf*, IMemAllocator**, int> GetAllocator;
 
         [NativeTypeName("HRESULT (IMemAllocator *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemInputPin*, IMemAllocator*, BOOL, int> NotifyAllocator;
+        public delegate* unmanaged<TSelf*, IMemAllocator*, BOOL, int> NotifyAllocator;
 
         [NativeTypeName("HRESULT (ALLOCATOR_PROPERTIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemInputPin*, ALLOCATOR_PROPERTIES*, int> GetAllocatorRequirements;
+        public delegate* unmanaged<TSelf*, ALLOCATOR_PROPERTIES*, int> GetAllocatorRequirements;
 
         [NativeTypeName("HRESULT (IMediaSample *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemInputPin*, IMediaSample*, int> Receive;
+        public delegate* unmanaged<TSelf*, IMediaSample*, int> Receive;
 
         [NativeTypeName("HRESULT (IMediaSample **, long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemInputPin*, IMediaSample**, int, int*, int> ReceiveMultiple;
+        public delegate* unmanaged<TSelf*, IMediaSample**, int, int*, int> ReceiveMultiple;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemInputPin*, int> ReceiveCanBlock;
+        public delegate* unmanaged<TSelf*, int> ReceiveCanBlock;
     }
 }

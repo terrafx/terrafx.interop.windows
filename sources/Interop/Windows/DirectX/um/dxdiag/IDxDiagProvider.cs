@@ -61,21 +61,22 @@ public unsafe partial struct IDxDiagProvider : IDxDiagProvider.Interface
         HRESULT GetRootContainer(IDxDiagContainer** ppInstance);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxDiagProvider*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxDiagProvider*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxDiagProvider*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DXDIAG_INIT_PARAMS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxDiagProvider*, DXDIAG_INIT_PARAMS*, int> Initialize;
+        public delegate* unmanaged<TSelf*, DXDIAG_INIT_PARAMS*, int> Initialize;
 
         [NativeTypeName("HRESULT (IDxDiagContainer **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxDiagProvider*, IDxDiagContainer**, int> GetRootContainer;
+        public delegate* unmanaged<TSelf*, IDxDiagContainer**, int> GetRootContainer;
     }
 }

@@ -82,27 +82,28 @@ public unsafe partial struct IEnumPrivacyRecords : IEnumPrivacyRecords.Interface
         HRESULT Next([NativeTypeName("BSTR *")] ushort** pbstrUrl, [NativeTypeName("BSTR *")] ushort** pbstrPolicyRef, [NativeTypeName("LONG *")] int* pdwReserved, [NativeTypeName("DWORD *")] uint* pdwPrivacyFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumPrivacyRecords*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumPrivacyRecords*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumPrivacyRecords*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumPrivacyRecords*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumPrivacyRecords*, uint*, int> GetSize;
+        public delegate* unmanaged<TSelf*, uint*, int> GetSize;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumPrivacyRecords*, BOOL*, int> GetPrivacyImpacted;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetPrivacyImpacted;
 
         [NativeTypeName("HRESULT (BSTR *, BSTR *, LONG *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumPrivacyRecords*, ushort**, ushort**, int*, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, ushort**, ushort**, int*, uint*, int> Next;
     }
 }

@@ -112,36 +112,37 @@ public unsafe partial struct IVMRDeinterlaceControl : IVMRDeinterlaceControl.Int
         HRESULT GetActualDeinterlaceMode([NativeTypeName("DWORD")] uint dwStreamID, [NativeTypeName("LPGUID")] Guid* lpDeinterlaceMode);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRDeinterlaceControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRDeinterlaceControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRDeinterlaceControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (VMRVideoDesc *, LPDWORD, LPGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRDeinterlaceControl*, VMRVideoDesc*, uint*, Guid*, int> GetNumberOfDeinterlaceModes;
+        public delegate* unmanaged<TSelf*, VMRVideoDesc*, uint*, Guid*, int> GetNumberOfDeinterlaceModes;
 
         [NativeTypeName("HRESULT (LPGUID, VMRVideoDesc *, VMRDeinterlaceCaps *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRDeinterlaceControl*, Guid*, VMRVideoDesc*, VMRDeinterlaceCaps*, int> GetDeinterlaceModeCaps;
+        public delegate* unmanaged<TSelf*, Guid*, VMRVideoDesc*, VMRDeinterlaceCaps*, int> GetDeinterlaceModeCaps;
 
         [NativeTypeName("HRESULT (DWORD, LPGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRDeinterlaceControl*, uint, Guid*, int> GetDeinterlaceMode;
+        public delegate* unmanaged<TSelf*, uint, Guid*, int> GetDeinterlaceMode;
 
         [NativeTypeName("HRESULT (DWORD, LPGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRDeinterlaceControl*, uint, Guid*, int> SetDeinterlaceMode;
+        public delegate* unmanaged<TSelf*, uint, Guid*, int> SetDeinterlaceMode;
 
         [NativeTypeName("HRESULT (LPDWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRDeinterlaceControl*, uint*, int> GetDeinterlacePrefs;
+        public delegate* unmanaged<TSelf*, uint*, int> GetDeinterlacePrefs;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRDeinterlaceControl*, uint, int> SetDeinterlacePrefs;
+        public delegate* unmanaged<TSelf*, uint, int> SetDeinterlacePrefs;
 
         [NativeTypeName("HRESULT (DWORD, LPGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRDeinterlaceControl*, uint, Guid*, int> GetActualDeinterlaceMode;
+        public delegate* unmanaged<TSelf*, uint, Guid*, int> GetActualDeinterlaceMode;
     }
 }

@@ -76,27 +76,28 @@ public unsafe partial struct IFileSinkFilter2 : IFileSinkFilter2.Interface
         HRESULT GetMode([NativeTypeName("DWORD *")] uint* pdwFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSinkFilter2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSinkFilter2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSinkFilter2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCOLESTR, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSinkFilter2*, ushort*, AM_MEDIA_TYPE*, int> SetFileName;
+        public delegate* unmanaged<TSelf*, ushort*, AM_MEDIA_TYPE*, int> SetFileName;
 
         [NativeTypeName("HRESULT (LPOLESTR *, AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSinkFilter2*, ushort**, AM_MEDIA_TYPE*, int> GetCurFile;
+        public delegate* unmanaged<TSelf*, ushort**, AM_MEDIA_TYPE*, int> GetCurFile;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSinkFilter2*, uint, int> SetMode;
+        public delegate* unmanaged<TSelf*, uint, int> SetMode;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSinkFilter2*, uint*, int> GetMode;
+        public delegate* unmanaged<TSelf*, uint*, int> GetMode;
     }
 }

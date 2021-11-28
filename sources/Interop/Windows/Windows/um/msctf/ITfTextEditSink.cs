@@ -52,18 +52,19 @@ public unsafe partial struct ITfTextEditSink : ITfTextEditSink.Interface
         HRESULT OnEndEdit(ITfContext* pic, [NativeTypeName("TfEditCookie")] uint ecReadOnly, ITfEditRecord* pEditRecord);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTextEditSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTextEditSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTextEditSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITfContext *, TfEditCookie, ITfEditRecord *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTextEditSink*, ITfContext*, uint, ITfEditRecord*, int> OnEndEdit;
+        public delegate* unmanaged<TSelf*, ITfContext*, uint, ITfEditRecord*, int> OnEndEdit;
     }
 }

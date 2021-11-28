@@ -52,18 +52,19 @@ public unsafe partial struct IAudioClock2 : IAudioClock2.Interface
         HRESULT GetDevicePosition([NativeTypeName("UINT64 *")] ulong* DevicePosition, [NativeTypeName("UINT64 *")] ulong* QPCPosition);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioClock2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioClock2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioClock2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT64 *, UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioClock2*, ulong*, ulong*, int> GetDevicePosition;
+        public delegate* unmanaged<TSelf*, ulong*, ulong*, int> GetDevicePosition;
     }
 }

@@ -87,33 +87,34 @@ public unsafe partial struct ITfInputScope2 : ITfInputScope2.Interface
         HRESULT EnumWordList(IEnumString** ppEnumString);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputScope2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputScope2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputScope2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (InputScope **, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputScope2*, InputScope**, uint*, int> GetInputScopes;
+        public delegate* unmanaged<TSelf*, InputScope**, uint*, int> GetInputScopes;
 
         [NativeTypeName("HRESULT (BSTR **, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputScope2*, ushort***, uint*, int> GetPhrase;
+        public delegate* unmanaged<TSelf*, ushort***, uint*, int> GetPhrase;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputScope2*, ushort**, int> GetRegularExpression;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetRegularExpression;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputScope2*, ushort**, int> GetSRGS;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetSRGS;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputScope2*, ushort**, int> GetXML;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetXML;
 
         [NativeTypeName("HRESULT (IEnumString **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputScope2*, IEnumString**, int> EnumWordList;
+        public delegate* unmanaged<TSelf*, IEnumString**, int> EnumWordList;
     }
 }

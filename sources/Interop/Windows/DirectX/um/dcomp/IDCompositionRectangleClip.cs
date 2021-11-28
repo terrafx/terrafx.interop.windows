@@ -285,87 +285,88 @@ public unsafe partial struct IDCompositionRectangleClip : IDCompositionRectangle
         HRESULT SetBottomRightRadiusY(float radius);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetLeft;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetLeft;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, float, int> SetLeft1;
+        public delegate* unmanaged<TSelf*, float, int> SetLeft1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetTop;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetTop;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, float, int> SetTop1;
+        public delegate* unmanaged<TSelf*, float, int> SetTop1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetRight;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetRight;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, float, int> SetRight1;
+        public delegate* unmanaged<TSelf*, float, int> SetRight1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetBottom;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetBottom;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, float, int> SetBottom1;
+        public delegate* unmanaged<TSelf*, float, int> SetBottom1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetTopLeftRadiusX;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetTopLeftRadiusX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, float, int> SetTopLeftRadiusX1;
+        public delegate* unmanaged<TSelf*, float, int> SetTopLeftRadiusX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetTopLeftRadiusY;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetTopLeftRadiusY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, float, int> SetTopLeftRadiusY1;
+        public delegate* unmanaged<TSelf*, float, int> SetTopLeftRadiusY1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetTopRightRadiusX;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetTopRightRadiusX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, float, int> SetTopRightRadiusX1;
+        public delegate* unmanaged<TSelf*, float, int> SetTopRightRadiusX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetTopRightRadiusY;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetTopRightRadiusY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, float, int> SetTopRightRadiusY1;
+        public delegate* unmanaged<TSelf*, float, int> SetTopRightRadiusY1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetBottomLeftRadiusX;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetBottomLeftRadiusX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, float, int> SetBottomLeftRadiusX1;
+        public delegate* unmanaged<TSelf*, float, int> SetBottomLeftRadiusX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetBottomLeftRadiusY;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetBottomLeftRadiusY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, float, int> SetBottomLeftRadiusY1;
+        public delegate* unmanaged<TSelf*, float, int> SetBottomLeftRadiusY1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetBottomRightRadiusX;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetBottomRightRadiusX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, float, int> SetBottomRightRadiusX1;
+        public delegate* unmanaged<TSelf*, float, int> SetBottomRightRadiusX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, IDCompositionAnimation*, int> SetBottomRightRadiusY;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetBottomRightRadiusY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRectangleClip*, float, int> SetBottomRightRadiusY1;
+        public delegate* unmanaged<TSelf*, float, int> SetBottomRightRadiusY1;
     }
 }

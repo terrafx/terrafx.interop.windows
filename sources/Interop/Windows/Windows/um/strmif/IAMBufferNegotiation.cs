@@ -62,21 +62,22 @@ public unsafe partial struct IAMBufferNegotiation : IAMBufferNegotiation.Interfa
         HRESULT GetAllocatorProperties(ALLOCATOR_PROPERTIES* pprop);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMBufferNegotiation*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMBufferNegotiation*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMBufferNegotiation*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const ALLOCATOR_PROPERTIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMBufferNegotiation*, ALLOCATOR_PROPERTIES*, int> SuggestAllocatorProperties;
+        public delegate* unmanaged<TSelf*, ALLOCATOR_PROPERTIES*, int> SuggestAllocatorProperties;
 
         [NativeTypeName("HRESULT (ALLOCATOR_PROPERTIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMBufferNegotiation*, ALLOCATOR_PROPERTIES*, int> GetAllocatorProperties;
+        public delegate* unmanaged<TSelf*, ALLOCATOR_PROPERTIES*, int> GetAllocatorProperties;
     }
 }

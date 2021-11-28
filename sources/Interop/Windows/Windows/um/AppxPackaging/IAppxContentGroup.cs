@@ -64,21 +64,22 @@ public unsafe partial struct IAppxContentGroup : IAppxContentGroup.Interface
         HRESULT GetFiles(IAppxContentGroupFilesEnumerator** enumerator);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxContentGroup*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxContentGroup*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxContentGroup*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxContentGroup*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
 
         [NativeTypeName("HRESULT (IAppxContentGroupFilesEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxContentGroup*, IAppxContentGroupFilesEnumerator**, int> GetFiles;
+        public delegate* unmanaged<TSelf*, IAppxContentGroupFilesEnumerator**, int> GetFiles;
     }
 }

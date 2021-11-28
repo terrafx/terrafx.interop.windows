@@ -62,21 +62,22 @@ public unsafe partial struct ITfCreatePropertyStore : ITfCreatePropertyStore.Int
         HRESULT CreatePropertyStore([NativeTypeName("const GUID &")] Guid* guidProp, ITfRange* pRange, [NativeTypeName("ULONG")] uint cb, IStream* pStream, ITfPropertyStore** ppStore);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCreatePropertyStore*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCreatePropertyStore*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCreatePropertyStore*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, ITfRange *, ITfPropertyStore *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCreatePropertyStore*, Guid*, ITfRange*, ITfPropertyStore*, BOOL*, int> IsStoreSerializable;
+        public delegate* unmanaged<TSelf*, Guid*, ITfRange*, ITfPropertyStore*, BOOL*, int> IsStoreSerializable;
 
         [NativeTypeName("HRESULT (const GUID &, ITfRange *, ULONG, IStream *, ITfPropertyStore **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCreatePropertyStore*, Guid*, ITfRange*, uint, IStream*, ITfPropertyStore**, int> CreatePropertyStore;
+        public delegate* unmanaged<TSelf*, Guid*, ITfRange*, uint, IStream*, ITfPropertyStore**, int> CreatePropertyStore;
     }
 }

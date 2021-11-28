@@ -87,33 +87,34 @@ public unsafe partial struct IAdviseSink2 : IAdviseSink2.Interface
         void OnLinkSrcChange(IMoniker* pmk);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdviseSink2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdviseSink2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdviseSink2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (FORMATETC *, STGMEDIUM *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdviseSink2*, FORMATETC*, STGMEDIUM*, void> OnDataChange;
+        public delegate* unmanaged<TSelf*, FORMATETC*, STGMEDIUM*, void> OnDataChange;
 
         [NativeTypeName("void (DWORD, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdviseSink2*, uint, int, void> OnViewChange;
+        public delegate* unmanaged<TSelf*, uint, int, void> OnViewChange;
 
         [NativeTypeName("void (IMoniker *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdviseSink2*, IMoniker*, void> OnRename;
+        public delegate* unmanaged<TSelf*, IMoniker*, void> OnRename;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdviseSink2*, void> OnSave;
+        public delegate* unmanaged<TSelf*, void> OnSave;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdviseSink2*, void> OnClose;
+        public delegate* unmanaged<TSelf*, void> OnClose;
 
         [NativeTypeName("void (IMoniker *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdviseSink2*, IMoniker*, void> OnLinkSrcChange;
+        public delegate* unmanaged<TSelf*, IMoniker*, void> OnLinkSrcChange;
     }
 }

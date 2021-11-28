@@ -112,36 +112,37 @@ public unsafe partial struct IDiaEnumInputAssemblyFiles : IDiaEnumInputAssemblyF
         HRESULT Clone(IDiaEnumInputAssemblyFiles** ppenum);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumInputAssemblyFiles*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumInputAssemblyFiles*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumInputAssemblyFiles*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumInputAssemblyFiles*, IUnknown**, int> get__NewEnum;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> get__NewEnum;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumInputAssemblyFiles*, int*, int> get_Count;
+        public delegate* unmanaged<TSelf*, int*, int> get_Count;
 
         [NativeTypeName("HRESULT (DWORD, IDiaInputAssemblyFile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumInputAssemblyFiles*, uint, IDiaInputAssemblyFile**, int> Item;
+        public delegate* unmanaged<TSelf*, uint, IDiaInputAssemblyFile**, int> Item;
 
         [NativeTypeName("HRESULT (ULONG, IDiaInputAssemblyFile **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumInputAssemblyFiles*, uint, IDiaInputAssemblyFile**, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, IDiaInputAssemblyFile**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumInputAssemblyFiles*, uint, int> Skip;
+        public delegate* unmanaged<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumInputAssemblyFiles*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IDiaEnumInputAssemblyFiles **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumInputAssemblyFiles*, IDiaEnumInputAssemblyFiles**, int> Clone;
+        public delegate* unmanaged<TSelf*, IDiaEnumInputAssemblyFiles**, int> Clone;
     }
 }

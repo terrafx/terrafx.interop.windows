@@ -82,27 +82,28 @@ public unsafe partial struct IMFSimpleAudioVolume : IMFSimpleAudioVolume.Interfa
         HRESULT GetMute(BOOL* pbMute);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSimpleAudioVolume*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSimpleAudioVolume*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSimpleAudioVolume*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSimpleAudioVolume*, float, int> SetMasterVolume;
+        public delegate* unmanaged<TSelf*, float, int> SetMasterVolume;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSimpleAudioVolume*, float*, int> GetMasterVolume;
+        public delegate* unmanaged<TSelf*, float*, int> GetMasterVolume;
 
         [NativeTypeName("HRESULT (const BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSimpleAudioVolume*, BOOL, int> SetMute;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetMute;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSimpleAudioVolume*, BOOL*, int> GetMute;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetMute;
     }
 }

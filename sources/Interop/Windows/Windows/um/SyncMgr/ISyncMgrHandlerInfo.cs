@@ -112,36 +112,37 @@ public unsafe partial struct ISyncMgrHandlerInfo : ISyncMgrHandlerInfo.Interface
         HRESULT IsConnected();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandlerInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandlerInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandlerInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SYNCMGR_HANDLER_TYPE *) __attribute__((stdcall))")]
-        public new delegate* unmanaged<ISyncMgrHandlerInfo*, SYNCMGR_HANDLER_TYPE*, int> GetType;
+        public new delegate* unmanaged<TSelf*, SYNCMGR_HANDLER_TYPE*, int> GetType;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandlerInfo*, ushort**, int> GetTypeLabel;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetTypeLabel;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandlerInfo*, ushort**, int> GetComment;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetComment;
 
         [NativeTypeName("HRESULT (FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandlerInfo*, FILETIME*, int> GetLastSyncTime;
+        public delegate* unmanaged<TSelf*, FILETIME*, int> GetLastSyncTime;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandlerInfo*, int> IsActive;
+        public delegate* unmanaged<TSelf*, int> IsActive;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandlerInfo*, int> IsEnabled;
+        public delegate* unmanaged<TSelf*, int> IsEnabled;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandlerInfo*, int> IsConnected;
+        public delegate* unmanaged<TSelf*, int> IsConnected;
     }
 }

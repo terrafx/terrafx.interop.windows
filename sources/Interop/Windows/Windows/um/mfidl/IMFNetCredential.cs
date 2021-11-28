@@ -92,30 +92,31 @@ public unsafe partial struct IMFNetCredential : IMFNetCredential.Interface
         HRESULT LoggedOnUser(BOOL* pfLoggedOnUser);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCredential*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCredential*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCredential*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE *, DWORD, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCredential*, byte*, uint, BOOL, int> SetUser;
+        public delegate* unmanaged<TSelf*, byte*, uint, BOOL, int> SetUser;
 
         [NativeTypeName("HRESULT (BYTE *, DWORD, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCredential*, byte*, uint, BOOL, int> SetPassword;
+        public delegate* unmanaged<TSelf*, byte*, uint, BOOL, int> SetPassword;
 
         [NativeTypeName("HRESULT (BYTE *, DWORD *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCredential*, byte*, uint*, BOOL, int> GetUser;
+        public delegate* unmanaged<TSelf*, byte*, uint*, BOOL, int> GetUser;
 
         [NativeTypeName("HRESULT (BYTE *, DWORD *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCredential*, byte*, uint*, BOOL, int> GetPassword;
+        public delegate* unmanaged<TSelf*, byte*, uint*, BOOL, int> GetPassword;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCredential*, BOOL*, int> LoggedOnUser;
+        public delegate* unmanaged<TSelf*, BOOL*, int> LoggedOnUser;
     }
 }

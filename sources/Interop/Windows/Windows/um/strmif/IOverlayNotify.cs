@@ -82,27 +82,28 @@ public unsafe partial struct IOverlayNotify : IOverlayNotify.Interface
         HRESULT OnPositionChange([NativeTypeName("const RECT *")] RECT* pSourceRect, [NativeTypeName("const RECT *")] RECT* pDestinationRect);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlayNotify*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlayNotify*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlayNotify*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, const PALETTEENTRY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlayNotify*, uint, PALETTEENTRY*, int> OnPaletteChange;
+        public delegate* unmanaged<TSelf*, uint, PALETTEENTRY*, int> OnPaletteChange;
 
         [NativeTypeName("HRESULT (const RECT *, const RECT *, const RGNDATA *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlayNotify*, RECT*, RECT*, RGNDATA*, int> OnClipChange;
+        public delegate* unmanaged<TSelf*, RECT*, RECT*, RGNDATA*, int> OnClipChange;
 
         [NativeTypeName("HRESULT (const COLORKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlayNotify*, COLORKEY*, int> OnColorKeyChange;
+        public delegate* unmanaged<TSelf*, COLORKEY*, int> OnColorKeyChange;
 
         [NativeTypeName("HRESULT (const RECT *, const RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOverlayNotify*, RECT*, RECT*, int> OnPositionChange;
+        public delegate* unmanaged<TSelf*, RECT*, RECT*, int> OnPositionChange;
     }
 }

@@ -160,54 +160,55 @@ public unsafe partial struct ISVGPointList : ISVGPointList.Interface
         HRESULT appendItem(ISVGPoint* pNewItem, ISVGPoint** ppResult);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPointList*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPointList*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPointList*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPointList*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPointList*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPointList*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPointList*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPointList*, int, int> put_numberOfItems;
+        public delegate* unmanaged<TSelf*, int, int> put_numberOfItems;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPointList*, int*, int> get_numberOfItems;
+        public delegate* unmanaged<TSelf*, int*, int> get_numberOfItems;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPointList*, int> clear;
+        public delegate* unmanaged<TSelf*, int> clear;
 
         [NativeTypeName("HRESULT (ISVGPoint *, ISVGPoint **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPointList*, ISVGPoint*, ISVGPoint**, int> initialize;
+        public delegate* unmanaged<TSelf*, ISVGPoint*, ISVGPoint**, int> initialize;
 
         [NativeTypeName("HRESULT (long, ISVGPoint **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPointList*, int, ISVGPoint**, int> getItem;
+        public delegate* unmanaged<TSelf*, int, ISVGPoint**, int> getItem;
 
         [NativeTypeName("HRESULT (ISVGPoint *, long, ISVGPoint **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPointList*, ISVGPoint*, int, ISVGPoint**, int> insertItemBefore;
+        public delegate* unmanaged<TSelf*, ISVGPoint*, int, ISVGPoint**, int> insertItemBefore;
 
         [NativeTypeName("HRESULT (ISVGPoint *, long, ISVGPoint **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPointList*, ISVGPoint*, int, ISVGPoint**, int> replaceItem;
+        public delegate* unmanaged<TSelf*, ISVGPoint*, int, ISVGPoint**, int> replaceItem;
 
         [NativeTypeName("HRESULT (long, ISVGPoint **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPointList*, int, ISVGPoint**, int> removeItem;
+        public delegate* unmanaged<TSelf*, int, ISVGPoint**, int> removeItem;
 
         [NativeTypeName("HRESULT (ISVGPoint *, ISVGPoint **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPointList*, ISVGPoint*, ISVGPoint**, int> appendItem;
+        public delegate* unmanaged<TSelf*, ISVGPoint*, ISVGPoint**, int> appendItem;
     }
 }

@@ -107,39 +107,40 @@ public unsafe partial struct IMenuPopup : IMenuPopup.Interface
         HRESULT SetSubMenu(IMenuPopup* pmp, BOOL fSet);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMenuPopup*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMenuPopup*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMenuPopup*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMenuPopup*, HWND*, int> GetWindow;
+        public delegate* unmanaged<TSelf*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMenuPopup*, BOOL, int> ContextSensitiveHelp;
+        public delegate* unmanaged<TSelf*, BOOL, int> ContextSensitiveHelp;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMenuPopup*, IUnknown*, int> SetClient;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> SetClient;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMenuPopup*, IUnknown**, int> GetClient;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> GetClient;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMenuPopup*, RECT*, int> OnPosRectChangeDB;
+        public delegate* unmanaged<TSelf*, RECT*, int> OnPosRectChangeDB;
 
         [NativeTypeName("HRESULT (POINTL *, RECTL *, MP_POPUPFLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMenuPopup*, POINTL*, RECTL*, int, int> Popup;
+        public delegate* unmanaged<TSelf*, POINTL*, RECTL*, int, int> Popup;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMenuPopup*, uint, int> OnSelect;
+        public delegate* unmanaged<TSelf*, uint, int> OnSelect;
 
         [NativeTypeName("HRESULT (IMenuPopup *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMenuPopup*, IMenuPopup*, BOOL, int> SetSubMenu;
+        public delegate* unmanaged<TSelf*, IMenuPopup*, BOOL, int> SetSubMenu;
     }
 }

@@ -112,36 +112,37 @@ public unsafe partial struct IFileDialogEvents : IFileDialogEvents.Interface
         HRESULT OnOverwrite(IFileDialog* pfd, IShellItem* psi, FDE_OVERWRITE_RESPONSE* pResponse);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogEvents*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogEvents*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogEvents*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IFileDialog *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogEvents*, IFileDialog*, int> OnFileOk;
+        public delegate* unmanaged<TSelf*, IFileDialog*, int> OnFileOk;
 
         [NativeTypeName("HRESULT (IFileDialog *, IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogEvents*, IFileDialog*, IShellItem*, int> OnFolderChanging;
+        public delegate* unmanaged<TSelf*, IFileDialog*, IShellItem*, int> OnFolderChanging;
 
         [NativeTypeName("HRESULT (IFileDialog *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogEvents*, IFileDialog*, int> OnFolderChange;
+        public delegate* unmanaged<TSelf*, IFileDialog*, int> OnFolderChange;
 
         [NativeTypeName("HRESULT (IFileDialog *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogEvents*, IFileDialog*, int> OnSelectionChange;
+        public delegate* unmanaged<TSelf*, IFileDialog*, int> OnSelectionChange;
 
         [NativeTypeName("HRESULT (IFileDialog *, IShellItem *, FDE_SHAREVIOLATION_RESPONSE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogEvents*, IFileDialog*, IShellItem*, FDE_SHAREVIOLATION_RESPONSE*, int> OnShareViolation;
+        public delegate* unmanaged<TSelf*, IFileDialog*, IShellItem*, FDE_SHAREVIOLATION_RESPONSE*, int> OnShareViolation;
 
         [NativeTypeName("HRESULT (IFileDialog *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogEvents*, IFileDialog*, int> OnTypeChange;
+        public delegate* unmanaged<TSelf*, IFileDialog*, int> OnTypeChange;
 
         [NativeTypeName("HRESULT (IFileDialog *, IShellItem *, FDE_OVERWRITE_RESPONSE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogEvents*, IFileDialog*, IShellItem*, FDE_OVERWRITE_RESPONSE*, int> OnOverwrite;
+        public delegate* unmanaged<TSelf*, IFileDialog*, IShellItem*, FDE_OVERWRITE_RESPONSE*, int> OnOverwrite;
     }
 }

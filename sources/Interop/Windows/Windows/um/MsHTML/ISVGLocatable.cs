@@ -130,45 +130,46 @@ public unsafe partial struct ISVGLocatable : ISVGLocatable.Interface
         HRESULT getTransformToElement(ISVGElement* pElement, ISVGMatrix** ppResult);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLocatable*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLocatable*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLocatable*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLocatable*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLocatable*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLocatable*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLocatable*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (ISVGElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLocatable*, ISVGElement**, int> get_nearestViewportElement;
+        public delegate* unmanaged<TSelf*, ISVGElement**, int> get_nearestViewportElement;
 
         [NativeTypeName("HRESULT (ISVGElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLocatable*, ISVGElement**, int> get_farthestViewportElement;
+        public delegate* unmanaged<TSelf*, ISVGElement**, int> get_farthestViewportElement;
 
         [NativeTypeName("HRESULT (ISVGRect **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLocatable*, ISVGRect**, int> getBBox;
+        public delegate* unmanaged<TSelf*, ISVGRect**, int> getBBox;
 
         [NativeTypeName("HRESULT (ISVGMatrix **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLocatable*, ISVGMatrix**, int> getCTM;
+        public delegate* unmanaged<TSelf*, ISVGMatrix**, int> getCTM;
 
         [NativeTypeName("HRESULT (ISVGMatrix **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLocatable*, ISVGMatrix**, int> getScreenCTM;
+        public delegate* unmanaged<TSelf*, ISVGMatrix**, int> getScreenCTM;
 
         [NativeTypeName("HRESULT (ISVGElement *, ISVGMatrix **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLocatable*, ISVGElement*, ISVGMatrix**, int> getTransformToElement;
+        public delegate* unmanaged<TSelf*, ISVGElement*, ISVGMatrix**, int> getTransformToElement;
     }
 }

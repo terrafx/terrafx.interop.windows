@@ -62,21 +62,22 @@ public unsafe partial struct ITfKeyTraceEventSink : ITfKeyTraceEventSink.Interfa
         HRESULT OnKeyTraceUp(WPARAM wParam, LPARAM lParam);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfKeyTraceEventSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfKeyTraceEventSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfKeyTraceEventSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfKeyTraceEventSink*, WPARAM, LPARAM, int> OnKeyTraceDown;
+        public delegate* unmanaged<TSelf*, WPARAM, LPARAM, int> OnKeyTraceDown;
 
         [NativeTypeName("HRESULT (WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfKeyTraceEventSink*, WPARAM, LPARAM, int> OnKeyTraceUp;
+        public delegate* unmanaged<TSelf*, WPARAM, LPARAM, int> OnKeyTraceUp;
     }
 }

@@ -53,18 +53,19 @@ public unsafe partial struct IRemoteSystemAdditionalInfoProvider : IRemoteSystem
         HRESULT GetAdditionalInfo(HSTRING* deduplicationId, [NativeTypeName("const IID &")] Guid* riid, void** mapView);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRemoteSystemAdditionalInfoProvider*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRemoteSystemAdditionalInfoProvider*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRemoteSystemAdditionalInfoProvider*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HSTRING *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRemoteSystemAdditionalInfoProvider*, HSTRING*, Guid*, void**, int> GetAdditionalInfo;
+        public delegate* unmanaged<TSelf*, HSTRING*, Guid*, void**, int> GetAdditionalInfo;
     }
 }

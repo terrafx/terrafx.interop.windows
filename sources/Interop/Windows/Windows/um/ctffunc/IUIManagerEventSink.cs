@@ -104,33 +104,34 @@ public unsafe partial struct IUIManagerEventSink : IUIManagerEventSink.Interface
         HRESULT OnWindowClosed();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIManagerEventSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIManagerEventSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIManagerEventSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIManagerEventSink*, RECT*, int> OnWindowOpening;
+        public delegate* unmanaged<TSelf*, RECT*, int> OnWindowOpening;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIManagerEventSink*, RECT*, int> OnWindowOpened;
+        public delegate* unmanaged<TSelf*, RECT*, int> OnWindowOpened;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIManagerEventSink*, RECT*, int> OnWindowUpdating;
+        public delegate* unmanaged<TSelf*, RECT*, int> OnWindowUpdating;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIManagerEventSink*, RECT*, int> OnWindowUpdated;
+        public delegate* unmanaged<TSelf*, RECT*, int> OnWindowUpdated;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIManagerEventSink*, int> OnWindowClosing;
+        public delegate* unmanaged<TSelf*, int> OnWindowClosing;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIManagerEventSink*, int> OnWindowClosed;
+        public delegate* unmanaged<TSelf*, int> OnWindowClosed;
     }
 }

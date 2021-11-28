@@ -123,42 +123,43 @@ public unsafe partial struct IZoneIdentifier2 : IZoneIdentifier2.Interface
         HRESULT RemoveAppZoneId();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IZoneIdentifier2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IZoneIdentifier2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IZoneIdentifier2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IZoneIdentifier2*, uint*, int> GetId;
+        public delegate* unmanaged<TSelf*, uint*, int> GetId;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IZoneIdentifier2*, uint, int> SetId;
+        public delegate* unmanaged<TSelf*, uint, int> SetId;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IZoneIdentifier2*, int> Remove;
+        public delegate* unmanaged<TSelf*, int> Remove;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IZoneIdentifier2*, ushort**, int> GetLastWriterPackageFamilyName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetLastWriterPackageFamilyName;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IZoneIdentifier2*, ushort*, int> SetLastWriterPackageFamilyName;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetLastWriterPackageFamilyName;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IZoneIdentifier2*, int> RemoveLastWriterPackageFamilyName;
+        public delegate* unmanaged<TSelf*, int> RemoveLastWriterPackageFamilyName;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IZoneIdentifier2*, uint*, int> GetAppZoneId;
+        public delegate* unmanaged<TSelf*, uint*, int> GetAppZoneId;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IZoneIdentifier2*, uint, int> SetAppZoneId;
+        public delegate* unmanaged<TSelf*, uint, int> SetAppZoneId;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IZoneIdentifier2*, int> RemoveAppZoneId;
+        public delegate* unmanaged<TSelf*, int> RemoveAppZoneId;
     }
 }

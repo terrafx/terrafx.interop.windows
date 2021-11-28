@@ -52,18 +52,19 @@ public unsafe partial struct IOpenSearchSource : IOpenSearchSource.Interface
         HRESULT GetResults(HWND hwnd, [NativeTypeName("LPCWSTR")] ushort* pszQuery, [NativeTypeName("DWORD")] uint dwStartIndex, [NativeTypeName("DWORD")] uint dwCount, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOpenSearchSource*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOpenSearchSource*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOpenSearchSource*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, LPCWSTR, DWORD, DWORD, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOpenSearchSource*, HWND, ushort*, uint, uint, Guid*, void**, int> GetResults;
+        public delegate* unmanaged<TSelf*, HWND, ushort*, uint, uint, Guid*, void**, int> GetResults;
     }
 }

@@ -73,27 +73,28 @@ public unsafe partial struct IHWEventHandler2 : IHWEventHandler2.Interface
         HRESULT HandleEventWithHWND([NativeTypeName("LPCWSTR")] ushort* pszDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszAltDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszEventType, HWND hwndOwner);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHWEventHandler2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHWEventHandler2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHWEventHandler2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHWEventHandler2*, ushort*, int> Initialize;
+        public delegate* unmanaged<TSelf*, ushort*, int> Initialize;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHWEventHandler2*, ushort*, ushort*, ushort*, int> HandleEvent;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, int> HandleEvent;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, LPCWSTR, IDataObject *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHWEventHandler2*, ushort*, ushort*, ushort*, ushort*, IDataObject*, int> HandleEventWithContent;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, ushort*, IDataObject*, int> HandleEventWithContent;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR, HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHWEventHandler2*, ushort*, ushort*, ushort*, HWND, int> HandleEventWithHWND;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, HWND, int> HandleEventWithHWND;
     }
 }

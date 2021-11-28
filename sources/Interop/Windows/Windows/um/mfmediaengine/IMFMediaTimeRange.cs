@@ -106,33 +106,34 @@ public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface
         HRESULT Clear();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaTimeRange*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaTimeRange*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaTimeRange*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("DWORD () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaTimeRange*, uint> GetLength;
+        public delegate* unmanaged<TSelf*, uint> GetLength;
 
         [NativeTypeName("HRESULT (DWORD, double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaTimeRange*, uint, double*, int> GetStart;
+        public delegate* unmanaged<TSelf*, uint, double*, int> GetStart;
 
         [NativeTypeName("HRESULT (DWORD, double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaTimeRange*, uint, double*, int> GetEnd;
+        public delegate* unmanaged<TSelf*, uint, double*, int> GetEnd;
 
         [NativeTypeName("BOOL (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaTimeRange*, double, int> ContainsTime;
+        public delegate* unmanaged<TSelf*, double, int> ContainsTime;
 
         [NativeTypeName("HRESULT (double, double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaTimeRange*, double, double, int> AddRange;
+        public delegate* unmanaged<TSelf*, double, double, int> AddRange;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaTimeRange*, int> Clear;
+        public delegate* unmanaged<TSelf*, int> Clear;
     }
 }

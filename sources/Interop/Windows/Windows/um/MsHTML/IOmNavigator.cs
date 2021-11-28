@@ -270,87 +270,88 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         HRESULT get_userProfile(IHTMLOpsProfile** p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, ushort**, int> get_appCodeName;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_appCodeName;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, ushort**, int> get_appName;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_appName;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, ushort**, int> get_appVersion;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_appVersion;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, ushort**, int> get_userAgent;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_userAgent;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, short*, int> javaEnabled;
+        public delegate* unmanaged<TSelf*, short*, int> javaEnabled;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, short*, int> taintEnabled;
+        public delegate* unmanaged<TSelf*, short*, int> taintEnabled;
 
         [NativeTypeName("HRESULT (IHTMLMimeTypesCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, IHTMLMimeTypesCollection**, int> get_mimeTypes;
+        public delegate* unmanaged<TSelf*, IHTMLMimeTypesCollection**, int> get_mimeTypes;
 
         [NativeTypeName("HRESULT (IHTMLPluginsCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, IHTMLPluginsCollection**, int> get_plugins;
+        public delegate* unmanaged<TSelf*, IHTMLPluginsCollection**, int> get_plugins;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, short*, int> get_cookieEnabled;
+        public delegate* unmanaged<TSelf*, short*, int> get_cookieEnabled;
 
         [NativeTypeName("HRESULT (IHTMLOpsProfile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, IHTMLOpsProfile**, int> get_opsProfile;
+        public delegate* unmanaged<TSelf*, IHTMLOpsProfile**, int> get_opsProfile;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, ushort**, int> toString;
+        public delegate* unmanaged<TSelf*, ushort**, int> toString;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, ushort**, int> get_cpuClass;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_cpuClass;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, ushort**, int> get_systemLanguage;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_systemLanguage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, ushort**, int> get_browserLanguage;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_browserLanguage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, ushort**, int> get_userLanguage;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_userLanguage;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, ushort**, int> get_platform;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_platform;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, ushort**, int> get_appMinorVersion;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_appMinorVersion;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, int*, int> get_connectionSpeed;
+        public delegate* unmanaged<TSelf*, int*, int> get_connectionSpeed;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, short*, int> get_onLine;
+        public delegate* unmanaged<TSelf*, short*, int> get_onLine;
 
         [NativeTypeName("HRESULT (IHTMLOpsProfile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOmNavigator*, IHTMLOpsProfile**, int> get_userProfile;
+        public delegate* unmanaged<TSelf*, IHTMLOpsProfile**, int> get_userProfile;
     }
 }

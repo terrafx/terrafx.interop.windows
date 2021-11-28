@@ -100,36 +100,37 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface
         HRESULT GetEnumOptions([NativeTypeName("DWORD *")] uint* pdwOptions);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumACString*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumACString*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumACString*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, LPOLESTR *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumACString*, uint, ushort**, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, ushort**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumACString*, uint, int> Skip;
+        public delegate* unmanaged<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumACString*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IEnumString **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumACString*, IEnumString**, int> Clone;
+        public delegate* unmanaged<TSelf*, IEnumString**, int> Clone;
 
         [NativeTypeName("HRESULT (LPWSTR, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumACString*, ushort*, uint, uint*, int> NextItem;
+        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, int> NextItem;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumACString*, uint, int> SetEnumOptions;
+        public delegate* unmanaged<TSelf*, uint, int> SetEnumOptions;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumACString*, uint*, int> GetEnumOptions;
+        public delegate* unmanaged<TSelf*, uint*, int> GetEnumOptions;
     }
 }

@@ -92,30 +92,31 @@ public unsafe partial struct IEnumWbemClassObject : IEnumWbemClassObject.Interfa
         HRESULT Skip([NativeTypeName("long")] int lTimeout, [NativeTypeName("ULONG")] uint nCount);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumWbemClassObject*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumWbemClassObject*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumWbemClassObject*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumWbemClassObject*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (long, ULONG, IWbemClassObject **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumWbemClassObject*, int, uint, IWbemClassObject**, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, int, uint, IWbemClassObject**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG, IWbemObjectSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumWbemClassObject*, uint, IWbemObjectSink*, int> NextAsync;
+        public delegate* unmanaged<TSelf*, uint, IWbemObjectSink*, int> NextAsync;
 
         [NativeTypeName("HRESULT (IEnumWbemClassObject **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumWbemClassObject*, IEnumWbemClassObject**, int> Clone;
+        public delegate* unmanaged<TSelf*, IEnumWbemClassObject**, int> Clone;
 
         [NativeTypeName("HRESULT (long, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumWbemClassObject*, int, uint, int> Skip;
+        public delegate* unmanaged<TSelf*, int, uint, int> Skip;
     }
 }

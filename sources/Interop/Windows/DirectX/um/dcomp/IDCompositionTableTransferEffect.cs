@@ -220,69 +220,70 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
         HRESULT SetAlphaTableValue(uint index, float value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTableTransferEffect*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTableTransferEffect*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTableTransferEffect*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTableTransferEffect*, uint, IUnknown*, uint, int> SetInput;
+        public delegate* unmanaged<TSelf*, uint, IUnknown*, uint, int> SetInput;
 
         [NativeTypeName("HRESULT (const float *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTableTransferEffect*, float*, uint, int> SetRedTable;
+        public delegate* unmanaged<TSelf*, float*, uint, int> SetRedTable;
 
         [NativeTypeName("HRESULT (const float *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTableTransferEffect*, float*, uint, int> SetGreenTable;
+        public delegate* unmanaged<TSelf*, float*, uint, int> SetGreenTable;
 
         [NativeTypeName("HRESULT (const float *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTableTransferEffect*, float*, uint, int> SetBlueTable;
+        public delegate* unmanaged<TSelf*, float*, uint, int> SetBlueTable;
 
         [NativeTypeName("HRESULT (const float *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTableTransferEffect*, float*, uint, int> SetAlphaTable;
+        public delegate* unmanaged<TSelf*, float*, uint, int> SetAlphaTable;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTableTransferEffect*, BOOL, int> SetRedDisable;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetRedDisable;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTableTransferEffect*, BOOL, int> SetGreenDisable;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetGreenDisable;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTableTransferEffect*, BOOL, int> SetBlueDisable;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetBlueDisable;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTableTransferEffect*, BOOL, int> SetAlphaDisable;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetAlphaDisable;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTableTransferEffect*, BOOL, int> SetClampOutput;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetClampOutput;
 
         [NativeTypeName("HRESULT (UINT, IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTableTransferEffect*, uint, IDCompositionAnimation*, int> SetRedTableValue;
+        public delegate* unmanaged<TSelf*, uint, IDCompositionAnimation*, int> SetRedTableValue;
 
         [NativeTypeName("HRESULT (UINT, float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTableTransferEffect*, uint, float, int> SetRedTableValue1;
+        public delegate* unmanaged<TSelf*, uint, float, int> SetRedTableValue1;
 
         [NativeTypeName("HRESULT (UINT, IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTableTransferEffect*, uint, IDCompositionAnimation*, int> SetGreenTableValue;
+        public delegate* unmanaged<TSelf*, uint, IDCompositionAnimation*, int> SetGreenTableValue;
 
         [NativeTypeName("HRESULT (UINT, float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTableTransferEffect*, uint, float, int> SetGreenTableValue1;
+        public delegate* unmanaged<TSelf*, uint, float, int> SetGreenTableValue1;
 
         [NativeTypeName("HRESULT (UINT, IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTableTransferEffect*, uint, IDCompositionAnimation*, int> SetBlueTableValue;
+        public delegate* unmanaged<TSelf*, uint, IDCompositionAnimation*, int> SetBlueTableValue;
 
         [NativeTypeName("HRESULT (UINT, float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTableTransferEffect*, uint, float, int> SetBlueTableValue1;
+        public delegate* unmanaged<TSelf*, uint, float, int> SetBlueTableValue1;
 
         [NativeTypeName("HRESULT (UINT, IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTableTransferEffect*, uint, IDCompositionAnimation*, int> SetAlphaTableValue;
+        public delegate* unmanaged<TSelf*, uint, IDCompositionAnimation*, int> SetAlphaTableValue;
 
         [NativeTypeName("HRESULT (UINT, float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTableTransferEffect*, uint, float, int> SetAlphaTableValue1;
+        public delegate* unmanaged<TSelf*, uint, float, int> SetAlphaTableValue1;
     }
 }

@@ -76,27 +76,28 @@ public unsafe partial struct IAutoComplete2 : IAutoComplete2.Interface
         HRESULT GetOptions([NativeTypeName("DWORD *")] uint* pdwFlag);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAutoComplete2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAutoComplete2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAutoComplete2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, IUnknown *, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAutoComplete2*, HWND, IUnknown*, ushort*, ushort*, int> Init;
+        public delegate* unmanaged<TSelf*, HWND, IUnknown*, ushort*, ushort*, int> Init;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAutoComplete2*, BOOL, int> Enable;
+        public delegate* unmanaged<TSelf*, BOOL, int> Enable;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAutoComplete2*, uint, int> SetOptions;
+        public delegate* unmanaged<TSelf*, uint, int> SetOptions;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAutoComplete2*, uint*, int> GetOptions;
+        public delegate* unmanaged<TSelf*, uint*, int> GetOptions;
     }
 }

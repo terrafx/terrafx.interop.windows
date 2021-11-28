@@ -62,21 +62,22 @@ public unsafe partial struct IAudioOutputSelector : IAudioOutputSelector.Interfa
         HRESULT SetSelection(uint nIdSelect, [NativeTypeName("LPCGUID")] Guid* pguidEventContext);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioOutputSelector*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioOutputSelector*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioOutputSelector*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioOutputSelector*, uint*, int> GetSelection;
+        public delegate* unmanaged<TSelf*, uint*, int> GetSelection;
 
         [NativeTypeName("HRESULT (UINT, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioOutputSelector*, uint, Guid*, int> SetSelection;
+        public delegate* unmanaged<TSelf*, uint, Guid*, int> SetSelection;
     }
 }

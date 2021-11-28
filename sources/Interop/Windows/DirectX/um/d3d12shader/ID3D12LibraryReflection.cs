@@ -63,21 +63,22 @@ public unsafe partial struct ID3D12LibraryReflection : ID3D12LibraryReflection.I
         ID3D12FunctionReflection* GetFunctionByIndex(int FunctionIndex);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12LibraryReflection*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12LibraryReflection*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12LibraryReflection*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (D3D12_LIBRARY_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID3D12LibraryReflection*, D3D12_LIBRARY_DESC*, int> GetDesc;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D3D12_LIBRARY_DESC*, int> GetDesc;
 
         [NativeTypeName("ID3D12FunctionReflection *(INT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12LibraryReflection*, int, ID3D12FunctionReflection*> GetFunctionByIndex;
+        public delegate* unmanaged<TSelf*, int, ID3D12FunctionReflection*> GetFunctionByIndex;
     }
 }

@@ -62,21 +62,22 @@ public unsafe partial struct IItemNameLimits : IItemNameLimits.Interface
         HRESULT GetMaxLength([NativeTypeName("LPCWSTR")] ushort* pszName, int* piMaxNameLen);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IItemNameLimits*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IItemNameLimits*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IItemNameLimits*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IItemNameLimits*, ushort**, ushort**, int> GetValidCharacters;
+        public delegate* unmanaged<TSelf*, ushort**, ushort**, int> GetValidCharacters;
 
         [NativeTypeName("HRESULT (LPCWSTR, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IItemNameLimits*, ushort*, int*, int> GetMaxLength;
+        public delegate* unmanaged<TSelf*, ushort*, int*, int> GetMaxLength;
     }
 }

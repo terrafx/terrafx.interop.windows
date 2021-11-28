@@ -72,24 +72,25 @@ public unsafe partial struct IAsyncManager : IAsyncManager.Interface
         HRESULT GetState([NativeTypeName("ULONG *")] uint* pulStateFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncManager*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncManager*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncManager*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncManager*, HRESULT, int> CompleteCall;
+        public delegate* unmanaged<TSelf*, HRESULT, int> CompleteCall;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncManager*, Guid*, void**, int> GetCallContext;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetCallContext;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAsyncManager*, uint*, int> GetState;
+        public delegate* unmanaged<TSelf*, uint*, int> GetState;
     }
 }

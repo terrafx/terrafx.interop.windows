@@ -74,24 +74,25 @@ public unsafe partial struct IInkDesktopHost : IInkDesktopHost.Interface
         HRESULT CreateAndInitializeInkPresenter(IUnknown* rootVisual, float width, float height, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInkDesktopHost*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInkDesktopHost*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInkDesktopHost*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IInkHostWorkItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInkDesktopHost*, IInkHostWorkItem*, int> QueueWorkItem;
+        public delegate* unmanaged<TSelf*, IInkHostWorkItem*, int> QueueWorkItem;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInkDesktopHost*, Guid*, void**, int> CreateInkPresenter;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> CreateInkPresenter;
 
         [NativeTypeName("HRESULT (IUnknown *, float, float, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInkDesktopHost*, IUnknown*, float, float, Guid*, void**, int> CreateAndInitializeInkPresenter;
+        public delegate* unmanaged<TSelf*, IUnknown*, float, float, Guid*, void**, int> CreateAndInitializeInkPresenter;
     }
 }

@@ -120,39 +120,40 @@ public unsafe partial struct IDCompositionTurbulenceEffect : IDCompositionTurbul
         HRESULT SetStitchable(BOOL stitchable);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTurbulenceEffect*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTurbulenceEffect*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTurbulenceEffect*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTurbulenceEffect*, uint, IUnknown*, uint, int> SetInput;
+        public delegate* unmanaged<TSelf*, uint, IUnknown*, uint, int> SetInput;
 
         [NativeTypeName("HRESULT (const D2D1_VECTOR_2F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTurbulenceEffect*, D2D_VECTOR_2F*, int> SetOffset;
+        public delegate* unmanaged<TSelf*, D2D_VECTOR_2F*, int> SetOffset;
 
         [NativeTypeName("HRESULT (const D2D1_VECTOR_2F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTurbulenceEffect*, D2D_VECTOR_2F*, int> SetBaseFrequency;
+        public delegate* unmanaged<TSelf*, D2D_VECTOR_2F*, int> SetBaseFrequency;
 
         [NativeTypeName("HRESULT (const D2D1_VECTOR_2F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTurbulenceEffect*, D2D_VECTOR_2F*, int> SetSize;
+        public delegate* unmanaged<TSelf*, D2D_VECTOR_2F*, int> SetSize;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTurbulenceEffect*, uint, int> SetNumOctaves;
+        public delegate* unmanaged<TSelf*, uint, int> SetNumOctaves;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTurbulenceEffect*, uint, int> SetSeed;
+        public delegate* unmanaged<TSelf*, uint, int> SetSeed;
 
         [NativeTypeName("HRESULT (D2D1_TURBULENCE_NOISE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTurbulenceEffect*, D2D1_TURBULENCE_NOISE, int> SetNoise;
+        public delegate* unmanaged<TSelf*, D2D1_TURBULENCE_NOISE, int> SetNoise;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTurbulenceEffect*, BOOL, int> SetStitchable;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetStitchable;
     }
 }

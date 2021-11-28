@@ -62,21 +62,22 @@ public unsafe partial struct IFolderViewOptions : IFolderViewOptions.Interface
         HRESULT GetFolderViewOptions(FOLDERVIEWOPTIONS* pfvoFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderViewOptions*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderViewOptions*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderViewOptions*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (FOLDERVIEWOPTIONS, FOLDERVIEWOPTIONS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderViewOptions*, FOLDERVIEWOPTIONS, FOLDERVIEWOPTIONS, int> SetFolderViewOptions;
+        public delegate* unmanaged<TSelf*, FOLDERVIEWOPTIONS, FOLDERVIEWOPTIONS, int> SetFolderViewOptions;
 
         [NativeTypeName("HRESULT (FOLDERVIEWOPTIONS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderViewOptions*, FOLDERVIEWOPTIONS*, int> GetFolderViewOptions;
+        public delegate* unmanaged<TSelf*, FOLDERVIEWOPTIONS*, int> GetFolderViewOptions;
     }
 }

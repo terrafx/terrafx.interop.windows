@@ -362,120 +362,121 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         HRESULT DisplayUI(HWND hwndParent, [NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ISpNotifySink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, ISpNotifySink*, int> SetNotifySink;
+        public delegate* unmanaged<TSelf*, ISpNotifySink*, int> SetNotifySink;
 
         [NativeTypeName("HRESULT (HWND, UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, HWND, uint, WPARAM, LPARAM, int> SetNotifyWindowMessage;
+        public delegate* unmanaged<TSelf*, HWND, uint, WPARAM, LPARAM, int> SetNotifyWindowMessage;
 
         [NativeTypeName("HRESULT (SPNOTIFYCALLBACK *, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int> SetNotifyCallbackFunction;
+        public delegate* unmanaged<TSelf*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int> SetNotifyCallbackFunction;
 
         [NativeTypeName("HRESULT (ISpNotifyCallback *, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, ISpNotifyCallback*, WPARAM, LPARAM, int> SetNotifyCallbackInterface;
+        public delegate* unmanaged<TSelf*, ISpNotifyCallback*, WPARAM, LPARAM, int> SetNotifyCallbackInterface;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, int> SetNotifyWin32Event;
+        public delegate* unmanaged<TSelf*, int> SetNotifyWin32Event;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, uint, int> WaitForNotifyEvent;
+        public delegate* unmanaged<TSelf*, uint, int> WaitForNotifyEvent;
 
         [NativeTypeName("HANDLE () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, void*> GetNotifyEventHandle;
+        public delegate* unmanaged<TSelf*, void*> GetNotifyEventHandle;
 
         [NativeTypeName("HRESULT (ULONGLONG, ULONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, ulong, ulong, int> SetInterest;
+        public delegate* unmanaged<TSelf*, ulong, ulong, int> SetInterest;
 
         [NativeTypeName("HRESULT (ULONG, SPEVENT *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, uint, SPEVENT*, uint*, int> GetEvents;
+        public delegate* unmanaged<TSelf*, uint, SPEVENT*, uint*, int> GetEvents;
 
         [NativeTypeName("HRESULT (SPEVENTSOURCEINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, SPEVENTSOURCEINFO*, int> GetInfo;
+        public delegate* unmanaged<TSelf*, SPEVENTSOURCEINFO*, int> GetInfo;
 
         [NativeTypeName("HRESULT (IUnknown *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, IUnknown*, BOOL, int> SetOutput;
+        public delegate* unmanaged<TSelf*, IUnknown*, BOOL, int> SetOutput;
 
         [NativeTypeName("HRESULT (ISpObjectToken **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, ISpObjectToken**, int> GetOutputObjectToken;
+        public delegate* unmanaged<TSelf*, ISpObjectToken**, int> GetOutputObjectToken;
 
         [NativeTypeName("HRESULT (ISpStreamFormat **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, ISpStreamFormat**, int> GetOutputStream;
+        public delegate* unmanaged<TSelf*, ISpStreamFormat**, int> GetOutputStream;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, int> Pause;
+        public delegate* unmanaged<TSelf*, int> Pause;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, int> Resume;
+        public delegate* unmanaged<TSelf*, int> Resume;
 
         [NativeTypeName("HRESULT (ISpObjectToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, ISpObjectToken*, int> SetVoice;
+        public delegate* unmanaged<TSelf*, ISpObjectToken*, int> SetVoice;
 
         [NativeTypeName("HRESULT (ISpObjectToken **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, ISpObjectToken**, int> GetVoice;
+        public delegate* unmanaged<TSelf*, ISpObjectToken**, int> GetVoice;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, ushort*, uint, uint*, int> Speak;
+        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, int> Speak;
 
         [NativeTypeName("HRESULT (IStream *, DWORD, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, IStream*, uint, uint*, int> SpeakStream;
+        public delegate* unmanaged<TSelf*, IStream*, uint, uint*, int> SpeakStream;
 
         [NativeTypeName("HRESULT (SPVOICESTATUS *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, SPVOICESTATUS*, ushort**, int> GetStatus;
+        public delegate* unmanaged<TSelf*, SPVOICESTATUS*, ushort**, int> GetStatus;
 
         [NativeTypeName("HRESULT (LPCWSTR, long, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, ushort*, int, uint*, int> Skip;
+        public delegate* unmanaged<TSelf*, ushort*, int, uint*, int> Skip;
 
         [NativeTypeName("HRESULT (SPVPRIORITY) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, SPVPRIORITY, int> SetPriority;
+        public delegate* unmanaged<TSelf*, SPVPRIORITY, int> SetPriority;
 
         [NativeTypeName("HRESULT (SPVPRIORITY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, SPVPRIORITY*, int> GetPriority;
+        public delegate* unmanaged<TSelf*, SPVPRIORITY*, int> GetPriority;
 
         [NativeTypeName("HRESULT (SPEVENTENUM) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, SPEVENTENUM, int> SetAlertBoundary;
+        public delegate* unmanaged<TSelf*, SPEVENTENUM, int> SetAlertBoundary;
 
         [NativeTypeName("HRESULT (SPEVENTENUM *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, SPEVENTENUM*, int> GetAlertBoundary;
+        public delegate* unmanaged<TSelf*, SPEVENTENUM*, int> GetAlertBoundary;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, int, int> SetRate;
+        public delegate* unmanaged<TSelf*, int, int> SetRate;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, int*, int> GetRate;
+        public delegate* unmanaged<TSelf*, int*, int> GetRate;
 
         [NativeTypeName("HRESULT (USHORT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, ushort, int> SetVolume;
+        public delegate* unmanaged<TSelf*, ushort, int> SetVolume;
 
         [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, ushort*, int> GetVolume;
+        public delegate* unmanaged<TSelf*, ushort*, int> GetVolume;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, uint, int> WaitUntilDone;
+        public delegate* unmanaged<TSelf*, uint, int> WaitUntilDone;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, uint, int> SetSyncSpeakTimeout;
+        public delegate* unmanaged<TSelf*, uint, int> SetSyncSpeakTimeout;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, uint*, int> GetSyncSpeakTimeout;
+        public delegate* unmanaged<TSelf*, uint*, int> GetSyncSpeakTimeout;
 
         [NativeTypeName("HANDLE () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, void*> SpeakCompleteEvent;
+        public delegate* unmanaged<TSelf*, void*> SpeakCompleteEvent;
 
         [NativeTypeName("HRESULT (LPCWSTR, void *, ULONG, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, ushort*, void*, uint, BOOL*, int> IsUISupported;
+        public delegate* unmanaged<TSelf*, ushort*, void*, uint, BOOL*, int> IsUISupported;
 
         [NativeTypeName("HRESULT (HWND, LPCWSTR, LPCWSTR, void *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpVoice*, HWND, ushort*, ushort*, void*, uint, int> DisplayUI;
+        public delegate* unmanaged<TSelf*, HWND, ushort*, ushort*, void*, uint, int> DisplayUI;
     }
 }

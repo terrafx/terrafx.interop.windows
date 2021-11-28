@@ -142,45 +142,46 @@ public unsafe partial struct IGraphConfig : IGraphConfig.Interface
         HRESULT RemoveFilterEx(IBaseFilter* pFilter, [NativeTypeName("DWORD")] uint Flags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphConfig*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphConfig*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphConfig*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IPin *, IPin *, const AM_MEDIA_TYPE *, IBaseFilter *, HANDLE, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphConfig*, IPin*, IPin*, AM_MEDIA_TYPE*, IBaseFilter*, HANDLE, uint, int> Reconnect;
+        public delegate* unmanaged<TSelf*, IPin*, IPin*, AM_MEDIA_TYPE*, IBaseFilter*, HANDLE, uint, int> Reconnect;
 
         [NativeTypeName("HRESULT (IGraphConfigCallback *, PVOID, DWORD, HANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphConfig*, IGraphConfigCallback*, void*, uint, HANDLE, int> Reconfigure;
+        public delegate* unmanaged<TSelf*, IGraphConfigCallback*, void*, uint, HANDLE, int> Reconfigure;
 
         [NativeTypeName("HRESULT (IBaseFilter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphConfig*, IBaseFilter*, int> AddFilterToCache;
+        public delegate* unmanaged<TSelf*, IBaseFilter*, int> AddFilterToCache;
 
         [NativeTypeName("HRESULT (IEnumFilters **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphConfig*, IEnumFilters**, int> EnumCacheFilter;
+        public delegate* unmanaged<TSelf*, IEnumFilters**, int> EnumCacheFilter;
 
         [NativeTypeName("HRESULT (IBaseFilter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphConfig*, IBaseFilter*, int> RemoveFilterFromCache;
+        public delegate* unmanaged<TSelf*, IBaseFilter*, int> RemoveFilterFromCache;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphConfig*, long*, int> GetStartTime;
+        public delegate* unmanaged<TSelf*, long*, int> GetStartTime;
 
         [NativeTypeName("HRESULT (IPin *, IPinConnection *, HANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphConfig*, IPin*, IPinConnection*, HANDLE, int> PushThroughData;
+        public delegate* unmanaged<TSelf*, IPin*, IPinConnection*, HANDLE, int> PushThroughData;
 
         [NativeTypeName("HRESULT (IBaseFilter *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphConfig*, IBaseFilter*, uint, int> SetFilterFlags;
+        public delegate* unmanaged<TSelf*, IBaseFilter*, uint, int> SetFilterFlags;
 
         [NativeTypeName("HRESULT (IBaseFilter *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphConfig*, IBaseFilter*, uint*, int> GetFilterFlags;
+        public delegate* unmanaged<TSelf*, IBaseFilter*, uint*, int> GetFilterFlags;
 
         [NativeTypeName("HRESULT (IBaseFilter *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGraphConfig*, IBaseFilter*, uint, int> RemoveFilterEx;
+        public delegate* unmanaged<TSelf*, IBaseFilter*, uint, int> RemoveFilterEx;
     }
 }

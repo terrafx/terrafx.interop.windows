@@ -250,81 +250,82 @@ public unsafe partial struct IHTMLFrameBase : IHTMLFrameBase.Interface
         HRESULT get_scrolling([NativeTypeName("BSTR *")] ushort** p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, ushort*, int> put_src;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_src;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, ushort**, int> get_src;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_src;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, ushort*, int> put_name;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_name;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, ushort**, int> get_name;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_name;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, VARIANT, int> put_border;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_border;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, VARIANT*, int> get_border;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_border;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, ushort*, int> put_frameBorder;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_frameBorder;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, ushort**, int> get_frameBorder;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_frameBorder;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, VARIANT, int> put_frameSpacing;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_frameSpacing;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, VARIANT*, int> get_frameSpacing;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_frameSpacing;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, VARIANT, int> put_marginWidth;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_marginWidth;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, VARIANT*, int> get_marginWidth;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_marginWidth;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, VARIANT, int> put_marginHeight;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_marginHeight;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, VARIANT*, int> get_marginHeight;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_marginHeight;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, short, int> put_noResize;
+        public delegate* unmanaged<TSelf*, short, int> put_noResize;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, short*, int> get_noResize;
+        public delegate* unmanaged<TSelf*, short*, int> get_noResize;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, ushort*, int> put_scrolling;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_scrolling;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLFrameBase*, ushort**, int> get_scrolling;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_scrolling;
     }
 }

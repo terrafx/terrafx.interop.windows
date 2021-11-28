@@ -52,18 +52,19 @@ public unsafe partial struct IStartMenuPinnedList : IStartMenuPinnedList.Interfa
         HRESULT RemoveFromList(IShellItem* pitem);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStartMenuPinnedList*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IStartMenuPinnedList*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IStartMenuPinnedList*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStartMenuPinnedList*, IShellItem*, int> RemoveFromList;
+        public delegate* unmanaged<TSelf*, IShellItem*, int> RemoveFromList;
     }
 }

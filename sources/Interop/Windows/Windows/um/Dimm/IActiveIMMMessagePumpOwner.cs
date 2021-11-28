@@ -92,30 +92,31 @@ public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpO
         HRESULT Resume([NativeTypeName("DWORD")] uint dwCookie);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IActiveIMMMessagePumpOwner*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IActiveIMMMessagePumpOwner*, int> Start;
+        public delegate* unmanaged<TSelf*, int> Start;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IActiveIMMMessagePumpOwner*, int> End;
+        public delegate* unmanaged<TSelf*, int> End;
 
         [NativeTypeName("HRESULT (const MSG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IActiveIMMMessagePumpOwner*, MSG*, int> OnTranslateMessage;
+        public delegate* unmanaged<TSelf*, MSG*, int> OnTranslateMessage;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint*, int> Pause;
+        public delegate* unmanaged<TSelf*, uint*, int> Pause;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint, int> Resume;
+        public delegate* unmanaged<TSelf*, uint, int> Resume;
     }
 }

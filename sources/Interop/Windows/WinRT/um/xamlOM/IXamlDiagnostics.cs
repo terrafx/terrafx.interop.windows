@@ -125,39 +125,40 @@ public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface
         HRESULT GetInitializationData([NativeTypeName("BSTR *")] ushort** pInitializationData);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXamlDiagnostics*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXamlDiagnostics*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXamlDiagnostics*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IInspectable **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int> GetDispatcher;
+        public delegate* unmanaged<TSelf*, IInspectable**, int> GetDispatcher;
 
         [NativeTypeName("HRESULT (IInspectable **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int> GetUiLayer;
+        public delegate* unmanaged<TSelf*, IInspectable**, int> GetUiLayer;
 
         [NativeTypeName("HRESULT (IInspectable **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXamlDiagnostics*, IInspectable**, int> GetApplication;
+        public delegate* unmanaged<TSelf*, IInspectable**, int> GetApplication;
 
         [NativeTypeName("HRESULT (InstanceHandle, IInspectable **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXamlDiagnostics*, InstanceHandle, IInspectable**, int> GetIInspectableFromHandle;
+        public delegate* unmanaged<TSelf*, InstanceHandle, IInspectable**, int> GetIInspectableFromHandle;
 
         [NativeTypeName("HRESULT (IInspectable *, InstanceHandle *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXamlDiagnostics*, IInspectable*, InstanceHandle*, int> GetHandleFromIInspectable;
+        public delegate* unmanaged<TSelf*, IInspectable*, InstanceHandle*, int> GetHandleFromIInspectable;
 
         [NativeTypeName("HRESULT (RECT, unsigned int *, InstanceHandle **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXamlDiagnostics*, RECT, uint*, InstanceHandle**, int> HitTest;
+        public delegate* unmanaged<TSelf*, RECT, uint*, InstanceHandle**, int> HitTest;
 
         [NativeTypeName("HRESULT (IInspectable *, InstanceHandle *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXamlDiagnostics*, IInspectable*, InstanceHandle*, int> RegisterInstance;
+        public delegate* unmanaged<TSelf*, IInspectable*, InstanceHandle*, int> RegisterInstance;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXamlDiagnostics*, ushort**, int> GetInitializationData;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetInitializationData;
     }
 }

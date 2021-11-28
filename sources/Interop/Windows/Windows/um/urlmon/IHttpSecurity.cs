@@ -59,21 +59,22 @@ public unsafe partial struct IHttpSecurity : IHttpSecurity.Interface
         HRESULT OnSecurityProblem([NativeTypeName("DWORD")] uint dwProblem);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHttpSecurity*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHttpSecurity*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHttpSecurity*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHttpSecurity*, Guid*, HWND*, int> GetWindow;
+        public delegate* unmanaged<TSelf*, Guid*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHttpSecurity*, uint, int> OnSecurityProblem;
+        public delegate* unmanaged<TSelf*, uint, int> OnSecurityProblem;
     }
 }

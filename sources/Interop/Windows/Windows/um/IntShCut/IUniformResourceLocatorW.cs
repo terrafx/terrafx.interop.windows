@@ -72,24 +72,25 @@ public unsafe partial struct IUniformResourceLocatorW : IUniformResourceLocatorW
         HRESULT InvokeCommand([NativeTypeName("PURLINVOKECOMMANDINFOW")] URLINVOKECOMMANDINFOW* purlici);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUniformResourceLocatorW*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUniformResourceLocatorW*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUniformResourceLocatorW*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUniformResourceLocatorW*, ushort*, uint, int> SetURL;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> SetURL;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUniformResourceLocatorW*, ushort**, int> GetURL;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetURL;
 
         [NativeTypeName("HRESULT (PURLINVOKECOMMANDINFOW) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUniformResourceLocatorW*, URLINVOKECOMMANDINFOW*, int> InvokeCommand;
+        public delegate* unmanaged<TSelf*, URLINVOKECOMMANDINFOW*, int> InvokeCommand;
     }
 }

@@ -92,30 +92,31 @@ public unsafe partial struct IMMDeviceEnumerator : IMMDeviceEnumerator.Interface
         HRESULT UnregisterEndpointNotificationCallback(IMMNotificationClient* pClient);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMMDeviceEnumerator*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMMDeviceEnumerator*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMMDeviceEnumerator*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (EDataFlow, DWORD, IMMDeviceCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMMDeviceEnumerator*, EDataFlow, uint, IMMDeviceCollection**, int> EnumAudioEndpoints;
+        public delegate* unmanaged<TSelf*, EDataFlow, uint, IMMDeviceCollection**, int> EnumAudioEndpoints;
 
         [NativeTypeName("HRESULT (EDataFlow, ERole, IMMDevice **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMMDeviceEnumerator*, EDataFlow, ERole, IMMDevice**, int> GetDefaultAudioEndpoint;
+        public delegate* unmanaged<TSelf*, EDataFlow, ERole, IMMDevice**, int> GetDefaultAudioEndpoint;
 
         [NativeTypeName("HRESULT (LPCWSTR, IMMDevice **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMMDeviceEnumerator*, ushort*, IMMDevice**, int> GetDevice;
+        public delegate* unmanaged<TSelf*, ushort*, IMMDevice**, int> GetDevice;
 
         [NativeTypeName("HRESULT (IMMNotificationClient *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMMDeviceEnumerator*, IMMNotificationClient*, int> RegisterEndpointNotificationCallback;
+        public delegate* unmanaged<TSelf*, IMMNotificationClient*, int> RegisterEndpointNotificationCallback;
 
         [NativeTypeName("HRESULT (IMMNotificationClient *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMMDeviceEnumerator*, IMMNotificationClient*, int> UnregisterEndpointNotificationCallback;
+        public delegate* unmanaged<TSelf*, IMMNotificationClient*, int> UnregisterEndpointNotificationCallback;
     }
 }

@@ -82,27 +82,28 @@ public unsafe partial struct ITrayDeskBand : ITrayDeskBand.Interface
         HRESULT DeskBandRegistrationChanged();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITrayDeskBand*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITrayDeskBand*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITrayDeskBand*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITrayDeskBand*, Guid*, int> ShowDeskBand;
+        public delegate* unmanaged<TSelf*, Guid*, int> ShowDeskBand;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITrayDeskBand*, Guid*, int> HideDeskBand;
+        public delegate* unmanaged<TSelf*, Guid*, int> HideDeskBand;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITrayDeskBand*, Guid*, int> IsDeskBandShown;
+        public delegate* unmanaged<TSelf*, Guid*, int> IsDeskBandShown;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITrayDeskBand*, int> DeskBandRegistrationChanged;
+        public delegate* unmanaged<TSelf*, int> DeskBandRegistrationChanged;
     }
 }

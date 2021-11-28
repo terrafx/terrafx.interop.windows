@@ -73,24 +73,25 @@ public unsafe partial struct ID3D11On12Device : ID3D11On12Device.Interface
         void AcquireWrappedResources([NativeTypeName("ID3D11Resource *const *")] ID3D11Resource** ppResources, uint NumResources);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11On12Device*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11On12Device*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11On12Device*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, const D3D11_RESOURCE_FLAGS *, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11On12Device*, IUnknown*, D3D11_RESOURCE_FLAGS*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int> CreateWrappedResource;
+        public delegate* unmanaged<TSelf*, IUnknown*, D3D11_RESOURCE_FLAGS*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int> CreateWrappedResource;
 
         [NativeTypeName("void (ID3D11Resource *const *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11On12Device*, ID3D11Resource**, uint, void> ReleaseWrappedResources;
+        public delegate* unmanaged<TSelf*, ID3D11Resource**, uint, void> ReleaseWrappedResources;
 
         [NativeTypeName("void (ID3D11Resource *const *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11On12Device*, ID3D11Resource**, uint, void> AcquireWrappedResources;
+        public delegate* unmanaged<TSelf*, ID3D11Resource**, uint, void> AcquireWrappedResources;
     }
 }

@@ -72,24 +72,25 @@ public unsafe partial struct IAMVfwCaptureDialogs : IAMVfwCaptureDialogs.Interfa
         HRESULT SendDriverMessage(int iDialog, int uMsg, [NativeTypeName("long")] int dw1, [NativeTypeName("long")] int dw2);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVfwCaptureDialogs*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVfwCaptureDialogs*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVfwCaptureDialogs*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVfwCaptureDialogs*, int, int> HasDialog;
+        public delegate* unmanaged<TSelf*, int, int> HasDialog;
 
         [NativeTypeName("HRESULT (int, HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVfwCaptureDialogs*, int, HWND, int> ShowDialog;
+        public delegate* unmanaged<TSelf*, int, HWND, int> ShowDialog;
 
         [NativeTypeName("HRESULT (int, int, long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVfwCaptureDialogs*, int, int, int, int, int> SendDriverMessage;
+        public delegate* unmanaged<TSelf*, int, int, int, int, int> SendDriverMessage;
     }
 }

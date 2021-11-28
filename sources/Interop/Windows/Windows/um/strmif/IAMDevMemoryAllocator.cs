@@ -92,30 +92,31 @@ public unsafe partial struct IAMDevMemoryAllocator : IAMDevMemoryAllocator.Inter
         HRESULT GetDevMemoryObject(IUnknown** ppUnkInnner, IUnknown* pUnkOuter);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDevMemoryAllocator*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDevMemoryAllocator*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDevMemoryAllocator*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *, DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDevMemoryAllocator*, uint*, uint*, uint*, uint*, int> GetInfo;
+        public delegate* unmanaged<TSelf*, uint*, uint*, uint*, uint*, int> GetInfo;
 
         [NativeTypeName("HRESULT (const BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDevMemoryAllocator*, byte*, int> CheckMemory;
+        public delegate* unmanaged<TSelf*, byte*, int> CheckMemory;
 
         [NativeTypeName("HRESULT (BYTE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDevMemoryAllocator*, byte**, uint*, int> Alloc;
+        public delegate* unmanaged<TSelf*, byte**, uint*, int> Alloc;
 
         [NativeTypeName("HRESULT (BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDevMemoryAllocator*, byte*, int> Free;
+        public delegate* unmanaged<TSelf*, byte*, int> Free;
 
         [NativeTypeName("HRESULT (IUnknown **, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDevMemoryAllocator*, IUnknown**, IUnknown*, int> GetDevMemoryObject;
+        public delegate* unmanaged<TSelf*, IUnknown**, IUnknown*, int> GetDevMemoryObject;
     }
 }

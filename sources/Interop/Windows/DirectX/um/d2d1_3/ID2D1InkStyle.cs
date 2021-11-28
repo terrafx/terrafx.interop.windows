@@ -90,30 +90,31 @@ public unsafe partial struct ID2D1InkStyle : ID2D1InkStyle.Interface
         D2D1_INK_NIB_SHAPE GetNibShape();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1InkStyle*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1InkStyle*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1InkStyle*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1InkStyle*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("void (const D2D1_MATRIX_3X2_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1InkStyle*, D2D_MATRIX_3X2_F*, void> SetNibTransform;
+        public delegate* unmanaged<TSelf*, D2D_MATRIX_3X2_F*, void> SetNibTransform;
 
         [NativeTypeName("void (D2D1_MATRIX_3X2_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1InkStyle*, D2D_MATRIX_3X2_F*, void> GetNibTransform;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D_MATRIX_3X2_F*, void> GetNibTransform;
 
         [NativeTypeName("void (D2D1_INK_NIB_SHAPE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1InkStyle*, D2D1_INK_NIB_SHAPE, void> SetNibShape;
+        public delegate* unmanaged<TSelf*, D2D1_INK_NIB_SHAPE, void> SetNibShape;
 
         [NativeTypeName("D2D1_INK_NIB_SHAPE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1InkStyle*, D2D1_INK_NIB_SHAPE> GetNibShape;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_INK_NIB_SHAPE> GetNibShape;
     }
 }

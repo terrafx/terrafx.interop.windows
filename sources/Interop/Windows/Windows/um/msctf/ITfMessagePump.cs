@@ -82,27 +82,28 @@ public unsafe partial struct ITfMessagePump : ITfMessagePump.Interface
         HRESULT GetMessageW([NativeTypeName("LPMSG")] MSG* pMsg, HWND hwnd, uint wMsgFilterMin, uint wMsgFilterMax, BOOL* pfResult);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfMessagePump*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfMessagePump*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfMessagePump*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPMSG, HWND, UINT, UINT, UINT, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfMessagePump*, MSG*, HWND, uint, uint, uint, BOOL*, int> PeekMessageA;
+        public delegate* unmanaged<TSelf*, MSG*, HWND, uint, uint, uint, BOOL*, int> PeekMessageA;
 
         [NativeTypeName("HRESULT (LPMSG, HWND, UINT, UINT, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfMessagePump*, MSG*, HWND, uint, uint, BOOL*, int> GetMessageA;
+        public delegate* unmanaged<TSelf*, MSG*, HWND, uint, uint, BOOL*, int> GetMessageA;
 
         [NativeTypeName("HRESULT (LPMSG, HWND, UINT, UINT, UINT, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfMessagePump*, MSG*, HWND, uint, uint, uint, BOOL*, int> PeekMessageW;
+        public delegate* unmanaged<TSelf*, MSG*, HWND, uint, uint, uint, BOOL*, int> PeekMessageW;
 
         [NativeTypeName("HRESULT (LPMSG, HWND, UINT, UINT, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfMessagePump*, MSG*, HWND, uint, uint, BOOL*, int> GetMessageW;
+        public delegate* unmanaged<TSelf*, MSG*, HWND, uint, uint, BOOL*, int> GetMessageW;
     }
 }

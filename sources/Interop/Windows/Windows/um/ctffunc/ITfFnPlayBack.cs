@@ -69,24 +69,25 @@ public unsafe partial struct ITfFnPlayBack : ITfFnPlayBack.Interface
         HRESULT Play(ITfRange* pRange);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnPlayBack*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnPlayBack*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnPlayBack*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnPlayBack*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (ITfRange *, ITfRange **, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnPlayBack*, ITfRange*, ITfRange**, BOOL*, int> QueryRange;
+        public delegate* unmanaged<TSelf*, ITfRange*, ITfRange**, BOOL*, int> QueryRange;
 
         [NativeTypeName("HRESULT (ITfRange *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnPlayBack*, ITfRange*, int> Play;
+        public delegate* unmanaged<TSelf*, ITfRange*, int> Play;
     }
 }

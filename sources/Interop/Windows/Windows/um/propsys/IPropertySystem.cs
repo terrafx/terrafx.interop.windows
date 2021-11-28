@@ -132,42 +132,43 @@ public unsafe partial struct IPropertySystem : IPropertySystem.Interface
         HRESULT RefreshPropertySchema();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertySystem*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertySystem*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertySystem*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertySystem*, PROPERTYKEY*, Guid*, void**, int> GetPropertyDescription;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, Guid*, void**, int> GetPropertyDescription;
 
         [NativeTypeName("HRESULT (LPCWSTR, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertySystem*, ushort*, Guid*, void**, int> GetPropertyDescriptionByName;
+        public delegate* unmanaged<TSelf*, ushort*, Guid*, void**, int> GetPropertyDescriptionByName;
 
         [NativeTypeName("HRESULT (LPCWSTR, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertySystem*, ushort*, Guid*, void**, int> GetPropertyDescriptionListFromString;
+        public delegate* unmanaged<TSelf*, ushort*, Guid*, void**, int> GetPropertyDescriptionListFromString;
 
         [NativeTypeName("HRESULT (PROPDESC_ENUMFILTER, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertySystem*, PROPDESC_ENUMFILTER, Guid*, void**, int> EnumeratePropertyDescriptions;
+        public delegate* unmanaged<TSelf*, PROPDESC_ENUMFILTER, Guid*, void**, int> EnumeratePropertyDescriptions;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, const PROPVARIANT &, PROPDESC_FORMAT_FLAGS, LPWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertySystem*, PROPERTYKEY*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, ushort*, uint, int> FormatForDisplay;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, ushort*, uint, int> FormatForDisplay;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, const PROPVARIANT &, PROPDESC_FORMAT_FLAGS, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertySystem*, PROPERTYKEY*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, ushort**, int> FormatForDisplayAlloc;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, ushort**, int> FormatForDisplayAlloc;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertySystem*, ushort*, int> RegisterPropertySchema;
+        public delegate* unmanaged<TSelf*, ushort*, int> RegisterPropertySchema;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertySystem*, ushort*, int> UnregisterPropertySchema;
+        public delegate* unmanaged<TSelf*, ushort*, int> UnregisterPropertySchema;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertySystem*, int> RefreshPropertySchema;
+        public delegate* unmanaged<TSelf*, int> RefreshPropertySchema;
     }
 }

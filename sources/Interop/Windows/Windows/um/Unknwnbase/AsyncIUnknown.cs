@@ -106,33 +106,34 @@ public unsafe partial struct AsyncIUnknown : AsyncIUnknown.Interface
         uint Finish_Release();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIUnknown*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIUnknown*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIUnknown*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIUnknown*, Guid*, int> Begin_QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, int> Begin_QueryInterface;
 
         [NativeTypeName("HRESULT (void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIUnknown*, void**, int> Finish_QueryInterface;
+        public delegate* unmanaged<TSelf*, void**, int> Finish_QueryInterface;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIUnknown*, int> Begin_AddRef;
+        public delegate* unmanaged<TSelf*, int> Begin_AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIUnknown*, uint> Finish_AddRef;
+        public delegate* unmanaged<TSelf*, uint> Finish_AddRef;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIUnknown*, int> Begin_Release;
+        public delegate* unmanaged<TSelf*, int> Begin_Release;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIUnknown*, uint> Finish_Release;
+        public delegate* unmanaged<TSelf*, uint> Finish_Release;
     }
 }

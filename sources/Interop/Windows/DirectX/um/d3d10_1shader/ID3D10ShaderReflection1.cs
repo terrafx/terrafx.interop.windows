@@ -191,60 +191,61 @@ public unsafe partial struct ID3D10ShaderReflection1 : ID3D10ShaderReflection1.I
         HRESULT IsSampleFrequencyShader(BOOL* pbSampleFrequency);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflection1*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflection1*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflection1*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (D3D10_SHADER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflection1*, D3D10_SHADER_DESC*, int> GetDesc;
+        public delegate* unmanaged<TSelf*, D3D10_SHADER_DESC*, int> GetDesc;
 
         [NativeTypeName("ID3D10ShaderReflectionConstantBuffer *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflection1*, uint, ID3D10ShaderReflectionConstantBuffer*> GetConstantBufferByIndex;
+        public delegate* unmanaged<TSelf*, uint, ID3D10ShaderReflectionConstantBuffer*> GetConstantBufferByIndex;
 
         [NativeTypeName("ID3D10ShaderReflectionConstantBuffer *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflection1*, sbyte*, ID3D10ShaderReflectionConstantBuffer*> GetConstantBufferByName;
+        public delegate* unmanaged<TSelf*, sbyte*, ID3D10ShaderReflectionConstantBuffer*> GetConstantBufferByName;
 
         [NativeTypeName("HRESULT (UINT, D3D10_SHADER_INPUT_BIND_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflection1*, uint, D3D10_SHADER_INPUT_BIND_DESC*, int> GetResourceBindingDesc;
+        public delegate* unmanaged<TSelf*, uint, D3D10_SHADER_INPUT_BIND_DESC*, int> GetResourceBindingDesc;
 
         [NativeTypeName("HRESULT (UINT, D3D10_SIGNATURE_PARAMETER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflection1*, uint, D3D10_SIGNATURE_PARAMETER_DESC*, int> GetInputParameterDesc;
+        public delegate* unmanaged<TSelf*, uint, D3D10_SIGNATURE_PARAMETER_DESC*, int> GetInputParameterDesc;
 
         [NativeTypeName("HRESULT (UINT, D3D10_SIGNATURE_PARAMETER_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflection1*, uint, D3D10_SIGNATURE_PARAMETER_DESC*, int> GetOutputParameterDesc;
+        public delegate* unmanaged<TSelf*, uint, D3D10_SIGNATURE_PARAMETER_DESC*, int> GetOutputParameterDesc;
 
         [NativeTypeName("ID3D10ShaderReflectionVariable *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflection1*, sbyte*, ID3D10ShaderReflectionVariable*> GetVariableByName;
+        public delegate* unmanaged<TSelf*, sbyte*, ID3D10ShaderReflectionVariable*> GetVariableByName;
 
         [NativeTypeName("HRESULT (LPCSTR, D3D10_SHADER_INPUT_BIND_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflection1*, sbyte*, D3D10_SHADER_INPUT_BIND_DESC*, int> GetResourceBindingDescByName;
+        public delegate* unmanaged<TSelf*, sbyte*, D3D10_SHADER_INPUT_BIND_DESC*, int> GetResourceBindingDescByName;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflection1*, uint*, int> GetMovInstructionCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetMovInstructionCount;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflection1*, uint*, int> GetMovcInstructionCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetMovcInstructionCount;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflection1*, uint*, int> GetConversionInstructionCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetConversionInstructionCount;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflection1*, uint*, int> GetBitwiseInstructionCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetBitwiseInstructionCount;
 
         [NativeTypeName("HRESULT (D3D10_PRIMITIVE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflection1*, D3D_PRIMITIVE*, int> GetGSInputPrimitive;
+        public delegate* unmanaged<TSelf*, D3D_PRIMITIVE*, int> GetGSInputPrimitive;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflection1*, BOOL*, int> IsLevel9Shader;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsLevel9Shader;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflection1*, BOOL*, int> IsSampleFrequencyShader;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsSampleFrequencyShader;
     }
 }

@@ -93,30 +93,31 @@ public unsafe partial struct ICastingController : ICastingController.Interface
         HRESULT UnAdvise([NativeTypeName("DWORD")] uint cookie);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICastingController*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICastingController*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICastingController*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICastingController*, IUnknown*, IUnknown*, int> Initialize;
+        public delegate* unmanaged<TSelf*, IUnknown*, IUnknown*, int> Initialize;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICastingController*, int> Connect;
+        public delegate* unmanaged<TSelf*, int> Connect;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICastingController*, int> Disconnect;
+        public delegate* unmanaged<TSelf*, int> Disconnect;
 
         [NativeTypeName("HRESULT (ICastingEventHandler *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICastingController*, ICastingEventHandler*, uint*, int> Advise;
+        public delegate* unmanaged<TSelf*, ICastingEventHandler*, uint*, int> Advise;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICastingController*, uint, int> UnAdvise;
+        public delegate* unmanaged<TSelf*, uint, int> UnAdvise;
     }
 }

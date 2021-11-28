@@ -72,24 +72,25 @@ public unsafe partial struct IQuickActivate : IQuickActivate.Interface
         HRESULT GetContentExtent([NativeTypeName("LPSIZEL")] SIZE* pSizel);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQuickActivate*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IQuickActivate*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IQuickActivate*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (QACONTAINER *, QACONTROL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQuickActivate*, QACONTAINER*, QACONTROL*, int> QuickActivate;
+        public delegate* unmanaged<TSelf*, QACONTAINER*, QACONTROL*, int> QuickActivate;
 
         [NativeTypeName("HRESULT (LPSIZEL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQuickActivate*, SIZE*, int> SetContentExtent;
+        public delegate* unmanaged<TSelf*, SIZE*, int> SetContentExtent;
 
         [NativeTypeName("HRESULT (LPSIZEL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQuickActivate*, SIZE*, int> GetContentExtent;
+        public delegate* unmanaged<TSelf*, SIZE*, int> GetContentExtent;
     }
 }

@@ -94,30 +94,31 @@ public unsafe partial struct IAppxBlockMapFile : IAppxBlockMapFile.Interface
         HRESULT ValidateFileHash(IStream* fileStream, BOOL* isValid);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBlockMapFile*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBlockMapFile*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBlockMapFile*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxBlockMapBlocksEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBlockMapFile*, IAppxBlockMapBlocksEnumerator**, int> GetBlocks;
+        public delegate* unmanaged<TSelf*, IAppxBlockMapBlocksEnumerator**, int> GetBlocks;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBlockMapFile*, uint*, int> GetLocalFileHeaderSize;
+        public delegate* unmanaged<TSelf*, uint*, int> GetLocalFileHeaderSize;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBlockMapFile*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBlockMapFile*, ulong*, int> GetUncompressedSize;
+        public delegate* unmanaged<TSelf*, ulong*, int> GetUncompressedSize;
 
         [NativeTypeName("HRESULT (IStream *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBlockMapFile*, IStream*, BOOL*, int> ValidateFileHash;
+        public delegate* unmanaged<TSelf*, IStream*, BOOL*, int> ValidateFileHash;
     }
 }

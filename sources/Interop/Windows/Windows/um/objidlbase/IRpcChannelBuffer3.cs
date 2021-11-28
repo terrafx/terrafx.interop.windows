@@ -154,54 +154,55 @@ public unsafe partial struct IRpcChannelBuffer3 : IRpcChannelBuffer3.Interface
         HRESULT RegisterAsync(RPCOLEMESSAGE* pMsg, IAsyncManager* pAsyncMgr);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcChannelBuffer3*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcChannelBuffer3*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcChannelBuffer3*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (RPCOLEMESSAGE *, const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcChannelBuffer3*, RPCOLEMESSAGE*, Guid*, int> GetBuffer;
+        public delegate* unmanaged<TSelf*, RPCOLEMESSAGE*, Guid*, int> GetBuffer;
 
         [NativeTypeName("HRESULT (RPCOLEMESSAGE *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcChannelBuffer3*, RPCOLEMESSAGE*, uint*, int> SendReceive;
+        public delegate* unmanaged<TSelf*, RPCOLEMESSAGE*, uint*, int> SendReceive;
 
         [NativeTypeName("HRESULT (RPCOLEMESSAGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcChannelBuffer3*, RPCOLEMESSAGE*, int> FreeBuffer;
+        public delegate* unmanaged<TSelf*, RPCOLEMESSAGE*, int> FreeBuffer;
 
         [NativeTypeName("HRESULT (DWORD *, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcChannelBuffer3*, uint*, void**, int> GetDestCtx;
+        public delegate* unmanaged<TSelf*, uint*, void**, int> GetDestCtx;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcChannelBuffer3*, int> IsConnected;
+        public delegate* unmanaged<TSelf*, int> IsConnected;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcChannelBuffer3*, uint*, int> GetProtocolVersion;
+        public delegate* unmanaged<TSelf*, uint*, int> GetProtocolVersion;
 
         [NativeTypeName("HRESULT (RPCOLEMESSAGE *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcChannelBuffer3*, RPCOLEMESSAGE*, uint*, int> Send;
+        public delegate* unmanaged<TSelf*, RPCOLEMESSAGE*, uint*, int> Send;
 
         [NativeTypeName("HRESULT (RPCOLEMESSAGE *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcChannelBuffer3*, RPCOLEMESSAGE*, uint, uint*, int> Receive;
+        public delegate* unmanaged<TSelf*, RPCOLEMESSAGE*, uint, uint*, int> Receive;
 
         [NativeTypeName("HRESULT (RPCOLEMESSAGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcChannelBuffer3*, RPCOLEMESSAGE*, int> Cancel;
+        public delegate* unmanaged<TSelf*, RPCOLEMESSAGE*, int> Cancel;
 
         [NativeTypeName("HRESULT (RPCOLEMESSAGE *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcChannelBuffer3*, RPCOLEMESSAGE*, Guid*, void**, int> GetCallContext;
+        public delegate* unmanaged<TSelf*, RPCOLEMESSAGE*, Guid*, void**, int> GetCallContext;
 
         [NativeTypeName("HRESULT (RPCOLEMESSAGE *, DWORD *, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcChannelBuffer3*, RPCOLEMESSAGE*, uint*, void**, int> GetDestCtxEx;
+        public delegate* unmanaged<TSelf*, RPCOLEMESSAGE*, uint*, void**, int> GetDestCtxEx;
 
         [NativeTypeName("HRESULT (RPCOLEMESSAGE *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcChannelBuffer3*, RPCOLEMESSAGE*, uint*, int> GetState;
+        public delegate* unmanaged<TSelf*, RPCOLEMESSAGE*, uint*, int> GetState;
 
         [NativeTypeName("HRESULT (RPCOLEMESSAGE *, IAsyncManager *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcChannelBuffer3*, RPCOLEMESSAGE*, IAsyncManager*, int> RegisterAsync;
+        public delegate* unmanaged<TSelf*, RPCOLEMESSAGE*, IAsyncManager*, int> RegisterAsync;
     }
 }

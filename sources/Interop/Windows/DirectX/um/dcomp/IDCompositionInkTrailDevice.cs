@@ -63,21 +63,22 @@ public unsafe partial struct IDCompositionInkTrailDevice : IDCompositionInkTrail
         HRESULT CreateDelegatedInkTrailForSwapChain(IUnknown* swapChain, IDCompositionDelegatedInkTrail** inkTrail);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionInkTrailDevice*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionInkTrailDevice*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionInkTrailDevice*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDCompositionDelegatedInkTrail **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionInkTrailDevice*, IDCompositionDelegatedInkTrail**, int> CreateDelegatedInkTrail;
+        public delegate* unmanaged<TSelf*, IDCompositionDelegatedInkTrail**, int> CreateDelegatedInkTrail;
 
         [NativeTypeName("HRESULT (IUnknown *, IDCompositionDelegatedInkTrail **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionInkTrailDevice*, IUnknown*, IDCompositionDelegatedInkTrail**, int> CreateDelegatedInkTrailForSwapChain;
+        public delegate* unmanaged<TSelf*, IUnknown*, IDCompositionDelegatedInkTrail**, int> CreateDelegatedInkTrailForSwapChain;
     }
 }

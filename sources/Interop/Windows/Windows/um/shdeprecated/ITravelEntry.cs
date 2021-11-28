@@ -72,24 +72,25 @@ public unsafe partial struct ITravelEntry : ITravelEntry.Interface
         HRESULT GetPidl([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITravelEntry*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITravelEntry*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITravelEntry*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITravelEntry*, IUnknown*, int> Invoke;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> Invoke;
 
         [NativeTypeName("HRESULT (IUnknown *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITravelEntry*, IUnknown*, BOOL, int> Update;
+        public delegate* unmanaged<TSelf*, IUnknown*, BOOL, int> Update;
 
         [NativeTypeName("HRESULT (LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITravelEntry*, ITEMIDLIST**, int> GetPidl;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST**, int> GetPidl;
     }
 }

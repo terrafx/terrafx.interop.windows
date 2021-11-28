@@ -164,51 +164,52 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface
         HRESULT GetScrollMode(MF_TIMED_TEXT_SCROLL_MODE* scrollMode);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextRegion*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextRegion*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextRegion*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextRegion*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
 
         [NativeTypeName("HRESULT (double *, double *, MF_TIMED_TEXT_UNIT_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextRegion*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetPosition;
+        public delegate* unmanaged<TSelf*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetPosition;
 
         [NativeTypeName("HRESULT (double *, double *, MF_TIMED_TEXT_UNIT_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextRegion*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetExtent;
+        public delegate* unmanaged<TSelf*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetExtent;
 
         [NativeTypeName("HRESULT (MFARGB *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextRegion*, MFARGB*, int> GetBackgroundColor;
+        public delegate* unmanaged<TSelf*, MFARGB*, int> GetBackgroundColor;
 
         [NativeTypeName("HRESULT (MF_TIMED_TEXT_WRITING_MODE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextRegion*, MF_TIMED_TEXT_WRITING_MODE*, int> GetWritingMode;
+        public delegate* unmanaged<TSelf*, MF_TIMED_TEXT_WRITING_MODE*, int> GetWritingMode;
 
         [NativeTypeName("HRESULT (MF_TIMED_TEXT_DISPLAY_ALIGNMENT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextRegion*, MF_TIMED_TEXT_DISPLAY_ALIGNMENT*, int> GetDisplayAlignment;
+        public delegate* unmanaged<TSelf*, MF_TIMED_TEXT_DISPLAY_ALIGNMENT*, int> GetDisplayAlignment;
 
         [NativeTypeName("HRESULT (double *, MF_TIMED_TEXT_UNIT_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextRegion*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetLineHeight;
+        public delegate* unmanaged<TSelf*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetLineHeight;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextRegion*, BOOL*, int> GetClipOverflow;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetClipOverflow;
 
         [NativeTypeName("HRESULT (double *, double *, double *, double *, MF_TIMED_TEXT_UNIT_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextRegion*, double*, double*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetPadding;
+        public delegate* unmanaged<TSelf*, double*, double*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetPadding;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextRegion*, BOOL*, int> GetWrap;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetWrap;
 
         [NativeTypeName("HRESULT (INT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextRegion*, int*, int> GetZIndex;
+        public delegate* unmanaged<TSelf*, int*, int> GetZIndex;
 
         [NativeTypeName("HRESULT (MF_TIMED_TEXT_SCROLL_MODE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextRegion*, MF_TIMED_TEXT_SCROLL_MODE*, int> GetScrollMode;
+        public delegate* unmanaged<TSelf*, MF_TIMED_TEXT_SCROLL_MODE*, int> GetScrollMode;
     }
 }

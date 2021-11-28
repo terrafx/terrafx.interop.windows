@@ -54,18 +54,19 @@ public unsafe partial struct IAudioClientDuckingControl : IAudioClientDuckingCon
         HRESULT SetDuckingOptionsForCurrentStream(AUDIO_DUCKING_OPTIONS options);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioClientDuckingControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioClientDuckingControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioClientDuckingControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (AUDIO_DUCKING_OPTIONS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioClientDuckingControl*, AUDIO_DUCKING_OPTIONS, int> SetDuckingOptionsForCurrentStream;
+        public delegate* unmanaged<TSelf*, AUDIO_DUCKING_OPTIONS, int> SetDuckingOptionsForCurrentStream;
     }
 }

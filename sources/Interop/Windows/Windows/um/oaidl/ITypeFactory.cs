@@ -52,18 +52,19 @@ public unsafe partial struct ITypeFactory : ITypeFactory.Interface
         HRESULT CreateFromTypeInfo(ITypeInfo* pTypeInfo, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppv);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeFactory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeFactory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeFactory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITypeInfo *, const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeFactory*, ITypeInfo*, Guid*, IUnknown**, int> CreateFromTypeInfo;
+        public delegate* unmanaged<TSelf*, ITypeInfo*, Guid*, IUnknown**, int> CreateFromTypeInfo;
     }
 }

@@ -74,24 +74,25 @@ public unsafe partial struct IMFNetCrossOriginSupport : IMFNetCrossOriginSupport
         HRESULT IsSameOrigin([NativeTypeName("LPCWSTR")] ushort* wszURL, BOOL* pfIsSameOrigin);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCrossOriginSupport*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCrossOriginSupport*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCrossOriginSupport*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MF_CROSS_ORIGIN_POLICY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCrossOriginSupport*, MF_CROSS_ORIGIN_POLICY*, int> GetCrossOriginPolicy;
+        public delegate* unmanaged<TSelf*, MF_CROSS_ORIGIN_POLICY*, int> GetCrossOriginPolicy;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCrossOriginSupport*, ushort**, int> GetSourceOrigin;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetSourceOrigin;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCrossOriginSupport*, ushort*, BOOL*, int> IsSameOrigin;
+        public delegate* unmanaged<TSelf*, ushort*, BOOL*, int> IsSameOrigin;
     }
 }

@@ -52,18 +52,19 @@ public unsafe partial struct ITfReverseConversionMgr : ITfReverseConversionMgr.I
         HRESULT GetReverseConversion([NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("DWORD")] uint dwflag, ITfReverseConversion** ppReverseConversion);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfReverseConversionMgr*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfReverseConversionMgr*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfReverseConversionMgr*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LANGID, const GUID &, DWORD, ITfReverseConversion **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfReverseConversionMgr*, ushort, Guid*, uint, ITfReverseConversion**, int> GetReverseConversion;
+        public delegate* unmanaged<TSelf*, ushort, Guid*, uint, ITfReverseConversion**, int> GetReverseConversion;
     }
 }

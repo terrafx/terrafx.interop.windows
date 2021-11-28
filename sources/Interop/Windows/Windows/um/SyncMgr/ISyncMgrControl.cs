@@ -192,60 +192,61 @@ public unsafe partial struct ISyncMgrControl : ISyncMgrControl.Interface
         HRESULT EnableItem(BOOL fEnable, [NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR")] ushort* pszItemID, HWND hwndOwner, SYNCMGR_CONTROL_FLAGS nControlFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, HWND, IUnknown *, SYNCMGR_SYNC_CONTROL_FLAGS, ISyncMgrSyncResult *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrControl*, ushort*, HWND, IUnknown*, SYNCMGR_SYNC_CONTROL_FLAGS, ISyncMgrSyncResult*, int> StartHandlerSync;
+        public delegate* unmanaged<TSelf*, ushort*, HWND, IUnknown*, SYNCMGR_SYNC_CONTROL_FLAGS, ISyncMgrSyncResult*, int> StartHandlerSync;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR *, ULONG, HWND, IUnknown *, SYNCMGR_SYNC_CONTROL_FLAGS, ISyncMgrSyncResult *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrControl*, ushort*, ushort**, uint, HWND, IUnknown*, SYNCMGR_SYNC_CONTROL_FLAGS, ISyncMgrSyncResult*, int> StartItemSync;
+        public delegate* unmanaged<TSelf*, ushort*, ushort**, uint, HWND, IUnknown*, SYNCMGR_SYNC_CONTROL_FLAGS, ISyncMgrSyncResult*, int> StartItemSync;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrControl*, HWND, int> StartSyncAll;
+        public delegate* unmanaged<TSelf*, HWND, int> StartSyncAll;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrControl*, ushort*, int> StopHandlerSync;
+        public delegate* unmanaged<TSelf*, ushort*, int> StopHandlerSync;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrControl*, ushort*, ushort**, uint, int> StopItemSync;
+        public delegate* unmanaged<TSelf*, ushort*, ushort**, uint, int> StopItemSync;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrControl*, int> StopSyncAll;
+        public delegate* unmanaged<TSelf*, int> StopSyncAll;
 
         [NativeTypeName("HRESULT (const IID &, SYNCMGR_CONTROL_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrControl*, Guid*, SYNCMGR_CONTROL_FLAGS, int> UpdateHandlerCollection;
+        public delegate* unmanaged<TSelf*, Guid*, SYNCMGR_CONTROL_FLAGS, int> UpdateHandlerCollection;
 
         [NativeTypeName("HRESULT (LPCWSTR, SYNCMGR_CONTROL_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrControl*, ushort*, SYNCMGR_CONTROL_FLAGS, int> UpdateHandler;
+        public delegate* unmanaged<TSelf*, ushort*, SYNCMGR_CONTROL_FLAGS, int> UpdateHandler;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, SYNCMGR_CONTROL_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrControl*, ushort*, ushort*, SYNCMGR_CONTROL_FLAGS, int> UpdateItem;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, SYNCMGR_CONTROL_FLAGS, int> UpdateItem;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, SYNCMGR_CONTROL_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrControl*, ushort*, ushort*, SYNCMGR_CONTROL_FLAGS, int> UpdateEvents;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, SYNCMGR_CONTROL_FLAGS, int> UpdateEvents;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, ISyncMgrConflict *, SYNCMGR_UPDATE_REASON) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrControl*, ushort*, ushort*, ISyncMgrConflict*, SYNCMGR_UPDATE_REASON, int> UpdateConflict;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, ISyncMgrConflict*, SYNCMGR_UPDATE_REASON, int> UpdateConflict;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, SYNCMGR_CONTROL_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrControl*, ushort*, ushort*, SYNCMGR_CONTROL_FLAGS, int> UpdateConflicts;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, SYNCMGR_CONTROL_FLAGS, int> UpdateConflicts;
 
         [NativeTypeName("HRESULT (BOOL, LPCWSTR, HWND, SYNCMGR_CONTROL_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrControl*, BOOL, ushort*, HWND, SYNCMGR_CONTROL_FLAGS, int> ActivateHandler;
+        public delegate* unmanaged<TSelf*, BOOL, ushort*, HWND, SYNCMGR_CONTROL_FLAGS, int> ActivateHandler;
 
         [NativeTypeName("HRESULT (BOOL, LPCWSTR, HWND, SYNCMGR_CONTROL_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrControl*, BOOL, ushort*, HWND, SYNCMGR_CONTROL_FLAGS, int> EnableHandler;
+        public delegate* unmanaged<TSelf*, BOOL, ushort*, HWND, SYNCMGR_CONTROL_FLAGS, int> EnableHandler;
 
         [NativeTypeName("HRESULT (BOOL, LPCWSTR, LPCWSTR, HWND, SYNCMGR_CONTROL_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrControl*, BOOL, ushort*, ushort*, HWND, SYNCMGR_CONTROL_FLAGS, int> EnableItem;
+        public delegate* unmanaged<TSelf*, BOOL, ushort*, ushort*, HWND, SYNCMGR_CONTROL_FLAGS, int> EnableItem;
     }
 }

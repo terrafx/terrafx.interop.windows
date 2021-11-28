@@ -132,51 +132,52 @@ public unsafe partial struct AsyncIAdviseSink2 : AsyncIAdviseSink2.Interface
         void Finish_OnLinkSrcChange();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIAdviseSink2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIAdviseSink2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIAdviseSink2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (FORMATETC *, STGMEDIUM *) __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIAdviseSink2*, FORMATETC*, STGMEDIUM*, void> Begin_OnDataChange;
+        public delegate* unmanaged<TSelf*, FORMATETC*, STGMEDIUM*, void> Begin_OnDataChange;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIAdviseSink2*, void> Finish_OnDataChange;
+        public delegate* unmanaged<TSelf*, void> Finish_OnDataChange;
 
         [NativeTypeName("void (DWORD, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIAdviseSink2*, uint, int, void> Begin_OnViewChange;
+        public delegate* unmanaged<TSelf*, uint, int, void> Begin_OnViewChange;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIAdviseSink2*, void> Finish_OnViewChange;
+        public delegate* unmanaged<TSelf*, void> Finish_OnViewChange;
 
         [NativeTypeName("void (IMoniker *) __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIAdviseSink2*, IMoniker*, void> Begin_OnRename;
+        public delegate* unmanaged<TSelf*, IMoniker*, void> Begin_OnRename;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIAdviseSink2*, void> Finish_OnRename;
+        public delegate* unmanaged<TSelf*, void> Finish_OnRename;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIAdviseSink2*, void> Begin_OnSave;
+        public delegate* unmanaged<TSelf*, void> Begin_OnSave;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIAdviseSink2*, void> Finish_OnSave;
+        public delegate* unmanaged<TSelf*, void> Finish_OnSave;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIAdviseSink2*, void> Begin_OnClose;
+        public delegate* unmanaged<TSelf*, void> Begin_OnClose;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIAdviseSink2*, void> Finish_OnClose;
+        public delegate* unmanaged<TSelf*, void> Finish_OnClose;
 
         [NativeTypeName("void (IMoniker *) __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIAdviseSink2*, IMoniker*, void> Begin_OnLinkSrcChange;
+        public delegate* unmanaged<TSelf*, IMoniker*, void> Begin_OnLinkSrcChange;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIAdviseSink2*, void> Finish_OnLinkSrcChange;
+        public delegate* unmanaged<TSelf*, void> Finish_OnLinkSrcChange;
     }
 }

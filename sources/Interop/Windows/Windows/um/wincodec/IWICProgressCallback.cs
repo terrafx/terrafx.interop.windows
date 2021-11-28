@@ -52,18 +52,19 @@ public unsafe partial struct IWICProgressCallback : IWICProgressCallback.Interfa
         HRESULT Notify([NativeTypeName("ULONG")] uint uFrameNum, WICProgressOperation operation, double dblProgress);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICProgressCallback*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICProgressCallback*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICProgressCallback*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, WICProgressOperation, double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICProgressCallback*, uint, WICProgressOperation, double, int> Notify;
+        public delegate* unmanaged<TSelf*, uint, WICProgressOperation, double, int> Notify;
     }
 }

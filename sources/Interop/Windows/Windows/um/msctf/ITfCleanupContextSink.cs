@@ -52,18 +52,19 @@ public unsafe partial struct ITfCleanupContextSink : ITfCleanupContextSink.Inter
         HRESULT OnCleanupContext([NativeTypeName("TfEditCookie")] uint ecWrite, ITfContext* pic);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCleanupContextSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCleanupContextSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCleanupContextSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfContext *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCleanupContextSink*, uint, ITfContext*, int> OnCleanupContext;
+        public delegate* unmanaged<TSelf*, uint, ITfContext*, int> OnCleanupContext;
     }
 }

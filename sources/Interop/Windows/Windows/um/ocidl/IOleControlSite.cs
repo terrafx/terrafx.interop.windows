@@ -112,36 +112,37 @@ public unsafe partial struct IOleControlSite : IOleControlSite.Interface
         HRESULT ShowPropertyFrame();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleControlSite*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleControlSite*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleControlSite*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleControlSite*, int> OnControlInfoChanged;
+        public delegate* unmanaged<TSelf*, int> OnControlInfoChanged;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleControlSite*, BOOL, int> LockInPlaceActive;
+        public delegate* unmanaged<TSelf*, BOOL, int> LockInPlaceActive;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleControlSite*, IDispatch**, int> GetExtendedControl;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> GetExtendedControl;
 
         [NativeTypeName("HRESULT (POINTL *, POINTF *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleControlSite*, POINTL*, POINTF*, uint, int> TransformCoords;
+        public delegate* unmanaged<TSelf*, POINTL*, POINTF*, uint, int> TransformCoords;
 
         [NativeTypeName("HRESULT (MSG *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleControlSite*, MSG*, uint, int> TranslateAccelerator;
+        public delegate* unmanaged<TSelf*, MSG*, uint, int> TranslateAccelerator;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleControlSite*, BOOL, int> OnFocus;
+        public delegate* unmanaged<TSelf*, BOOL, int> OnFocus;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleControlSite*, int> ShowPropertyFrame;
+        public delegate* unmanaged<TSelf*, int> ShowPropertyFrame;
     }
 }

@@ -84,27 +84,28 @@ public unsafe partial struct ICredentialProviderUserArray : ICredentialProviderU
         HRESULT GetAt([NativeTypeName("DWORD")] uint userIndex, ICredentialProviderUser** user);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderUserArray*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderUserArray*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderUserArray*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderUserArray*, Guid*, int> SetProviderFilter;
+        public delegate* unmanaged<TSelf*, Guid*, int> SetProviderFilter;
 
         [NativeTypeName("HRESULT (CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderUserArray*, CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS*, int> GetAccountOptions;
+        public delegate* unmanaged<TSelf*, CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS*, int> GetAccountOptions;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderUserArray*, uint*, int> GetCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (DWORD, ICredentialProviderUser **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderUserArray*, uint, ICredentialProviderUser**, int> GetAt;
+        public delegate* unmanaged<TSelf*, uint, ICredentialProviderUser**, int> GetAt;
     }
 }

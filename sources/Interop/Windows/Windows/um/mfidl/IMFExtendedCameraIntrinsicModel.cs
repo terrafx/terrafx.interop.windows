@@ -72,24 +72,25 @@ public unsafe partial struct IMFExtendedCameraIntrinsicModel : IMFExtendedCamera
         HRESULT GetDistortionModelType(MFCameraIntrinsic_DistortionModelType* pDistortionModelType);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraIntrinsicModel*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraIntrinsicModel*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraIntrinsicModel*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MFExtendedCameraIntrinsic_IntrinsicModel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraIntrinsicModel*, MFExtendedCameraIntrinsic_IntrinsicModel*, int> GetModel;
+        public delegate* unmanaged<TSelf*, MFExtendedCameraIntrinsic_IntrinsicModel*, int> GetModel;
 
         [NativeTypeName("HRESULT (const MFExtendedCameraIntrinsic_IntrinsicModel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraIntrinsicModel*, MFExtendedCameraIntrinsic_IntrinsicModel*, int> SetModel;
+        public delegate* unmanaged<TSelf*, MFExtendedCameraIntrinsic_IntrinsicModel*, int> SetModel;
 
         [NativeTypeName("HRESULT (MFCameraIntrinsic_DistortionModelType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraIntrinsicModel*, MFCameraIntrinsic_DistortionModelType*, int> GetDistortionModelType;
+        public delegate* unmanaged<TSelf*, MFCameraIntrinsic_DistortionModelType*, int> GetDistortionModelType;
     }
 }

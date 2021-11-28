@@ -96,33 +96,34 @@ public unsafe partial struct IOleInPlaceUIWindow : IOleInPlaceUIWindow.Interface
         HRESULT SetActiveObject(IOleInPlaceActiveObject* pActiveObject, [NativeTypeName("LPCOLESTR")] ushort* pszObjName);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceUIWindow*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceUIWindow*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceUIWindow*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceUIWindow*, HWND*, int> GetWindow;
+        public delegate* unmanaged<TSelf*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceUIWindow*, BOOL, int> ContextSensitiveHelp;
+        public delegate* unmanaged<TSelf*, BOOL, int> ContextSensitiveHelp;
 
         [NativeTypeName("HRESULT (LPRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceUIWindow*, RECT*, int> GetBorder;
+        public delegate* unmanaged<TSelf*, RECT*, int> GetBorder;
 
         [NativeTypeName("HRESULT (LPCBORDERWIDTHS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceUIWindow*, RECT*, int> RequestBorderSpace;
+        public delegate* unmanaged<TSelf*, RECT*, int> RequestBorderSpace;
 
         [NativeTypeName("HRESULT (LPCBORDERWIDTHS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceUIWindow*, RECT*, int> SetBorderSpace;
+        public delegate* unmanaged<TSelf*, RECT*, int> SetBorderSpace;
 
         [NativeTypeName("HRESULT (IOleInPlaceActiveObject *, LPCOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceUIWindow*, IOleInPlaceActiveObject*, ushort*, int> SetActiveObject;
+        public delegate* unmanaged<TSelf*, IOleInPlaceActiveObject*, ushort*, int> SetActiveObject;
     }
 }

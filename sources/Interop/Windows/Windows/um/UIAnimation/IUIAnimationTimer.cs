@@ -112,36 +112,37 @@ public unsafe partial struct IUIAnimationTimer : IUIAnimationTimer.Interface
         HRESULT SetFrameRateThreshold([NativeTypeName("UINT32")] uint framesPerSecond);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTimer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTimer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTimer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUIAnimationTimerUpdateHandler *, UI_ANIMATION_IDLE_BEHAVIOR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTimer*, IUIAnimationTimerUpdateHandler*, UI_ANIMATION_IDLE_BEHAVIOR, int> SetTimerUpdateHandler;
+        public delegate* unmanaged<TSelf*, IUIAnimationTimerUpdateHandler*, UI_ANIMATION_IDLE_BEHAVIOR, int> SetTimerUpdateHandler;
 
         [NativeTypeName("HRESULT (IUIAnimationTimerEventHandler *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTimer*, IUIAnimationTimerEventHandler*, int> SetTimerEventHandler;
+        public delegate* unmanaged<TSelf*, IUIAnimationTimerEventHandler*, int> SetTimerEventHandler;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTimer*, int> Enable;
+        public delegate* unmanaged<TSelf*, int> Enable;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTimer*, int> Disable;
+        public delegate* unmanaged<TSelf*, int> Disable;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTimer*, int> IsEnabled;
+        public delegate* unmanaged<TSelf*, int> IsEnabled;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTimer*, double*, int> GetTime;
+        public delegate* unmanaged<TSelf*, double*, int> GetTime;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTimer*, uint, int> SetFrameRateThreshold;
+        public delegate* unmanaged<TSelf*, uint, int> SetFrameRateThreshold;
     }
 }

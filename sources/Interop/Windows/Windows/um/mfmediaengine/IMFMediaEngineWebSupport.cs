@@ -72,24 +72,25 @@ public unsafe partial struct IMFMediaEngineWebSupport : IMFMediaEngineWebSupport
         HRESULT DisconnectWebAudio();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineWebSupport*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineWebSupport*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineWebSupport*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineWebSupport*, int> ShouldDelayTheLoadEvent;
+        public delegate* unmanaged<TSelf*, int> ShouldDelayTheLoadEvent;
 
         [NativeTypeName("HRESULT (DWORD, IAudioSourceProvider **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineWebSupport*, uint, IAudioSourceProvider**, int> ConnectWebAudio;
+        public delegate* unmanaged<TSelf*, uint, IAudioSourceProvider**, int> ConnectWebAudio;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineWebSupport*, int> DisconnectWebAudio;
+        public delegate* unmanaged<TSelf*, int> DisconnectWebAudio;
     }
 }

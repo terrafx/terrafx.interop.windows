@@ -62,21 +62,22 @@ public unsafe partial struct IKsFormatSupport : IKsFormatSupport.Interface
         HRESULT GetDevicePreferredFormat([NativeTypeName("PKSDATAFORMAT *")] KSDATAFORMAT** ppKsFormat);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsFormatSupport*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsFormatSupport*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsFormatSupport*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PKSDATAFORMAT, DWORD, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsFormatSupport*, KSDATAFORMAT*, uint, BOOL*, int> IsFormatSupported;
+        public delegate* unmanaged<TSelf*, KSDATAFORMAT*, uint, BOOL*, int> IsFormatSupported;
 
         [NativeTypeName("HRESULT (PKSDATAFORMAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsFormatSupport*, KSDATAFORMAT**, int> GetDevicePreferredFormat;
+        public delegate* unmanaged<TSelf*, KSDATAFORMAT**, int> GetDevicePreferredFormat;
     }
 }

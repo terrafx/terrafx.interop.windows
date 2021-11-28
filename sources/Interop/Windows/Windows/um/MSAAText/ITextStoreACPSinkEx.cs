@@ -108,42 +108,43 @@ public unsafe partial struct ITextStoreACPSinkEx : ITextStoreACPSinkEx.Interface
         HRESULT OnDisconnect();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACPSinkEx*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACPSinkEx*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACPSinkEx*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, const TS_TEXTCHANGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACPSinkEx*, uint, TS_TEXTCHANGE*, int> OnTextChange;
+        public delegate* unmanaged<TSelf*, uint, TS_TEXTCHANGE*, int> OnTextChange;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACPSinkEx*, int> OnSelectionChange;
+        public delegate* unmanaged<TSelf*, int> OnSelectionChange;
 
         [NativeTypeName("HRESULT (TsLayoutCode, TsViewCookie) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACPSinkEx*, TsLayoutCode, uint, int> OnLayoutChange;
+        public delegate* unmanaged<TSelf*, TsLayoutCode, uint, int> OnLayoutChange;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACPSinkEx*, uint, int> OnStatusChange;
+        public delegate* unmanaged<TSelf*, uint, int> OnStatusChange;
 
         [NativeTypeName("HRESULT (LONG, LONG, ULONG, const TS_ATTRID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACPSinkEx*, int, int, uint, Guid*, int> OnAttrsChange;
+        public delegate* unmanaged<TSelf*, int, int, uint, Guid*, int> OnAttrsChange;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACPSinkEx*, uint, int> OnLockGranted;
+        public delegate* unmanaged<TSelf*, uint, int> OnLockGranted;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACPSinkEx*, int> OnStartEditTransaction;
+        public delegate* unmanaged<TSelf*, int> OnStartEditTransaction;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACPSinkEx*, int> OnEndEditTransaction;
+        public delegate* unmanaged<TSelf*, int> OnEndEditTransaction;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACPSinkEx*, int> OnDisconnect;
+        public delegate* unmanaged<TSelf*, int> OnDisconnect;
     }
 }

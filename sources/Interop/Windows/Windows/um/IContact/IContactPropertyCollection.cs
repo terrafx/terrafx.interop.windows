@@ -112,36 +112,37 @@ public unsafe partial struct IContactPropertyCollection : IContactPropertyCollec
         HRESULT GetPropertyArrayElementID([NativeTypeName("LPWSTR")] ushort* pszArrayElementID, [NativeTypeName("DWORD")] uint cchArrayElementID, [NativeTypeName("DWORD *")] uint* pdwcchArrayElementIDRequired);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactPropertyCollection*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactPropertyCollection*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactPropertyCollection*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactPropertyCollection*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactPropertyCollection*, int> Next;
+        public delegate* unmanaged<TSelf*, int> Next;
 
         [NativeTypeName("HRESULT (LPWSTR, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactPropertyCollection*, ushort*, uint, uint*, int> GetPropertyName;
+        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, int> GetPropertyName;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactPropertyCollection*, uint*, int> GetPropertyType;
+        public delegate* unmanaged<TSelf*, uint*, int> GetPropertyType;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactPropertyCollection*, uint*, int> GetPropertyVersion;
+        public delegate* unmanaged<TSelf*, uint*, int> GetPropertyVersion;
 
         [NativeTypeName("HRESULT (FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactPropertyCollection*, FILETIME*, int> GetPropertyModificationDate;
+        public delegate* unmanaged<TSelf*, FILETIME*, int> GetPropertyModificationDate;
 
         [NativeTypeName("HRESULT (LPWSTR, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactPropertyCollection*, ushort*, uint, uint*, int> GetPropertyArrayElementID;
+        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, int> GetPropertyArrayElementID;
     }
 }

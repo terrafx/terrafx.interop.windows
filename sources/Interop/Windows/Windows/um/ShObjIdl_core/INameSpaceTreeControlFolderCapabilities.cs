@@ -52,18 +52,19 @@ public unsafe partial struct INameSpaceTreeControlFolderCapabilities : INameSpac
         HRESULT GetFolderCapabilities(NSTCFOLDERCAPABILITIES nfcMask, NSTCFOLDERCAPABILITIES* pnfcValue);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlFolderCapabilities*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlFolderCapabilities*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlFolderCapabilities*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (NSTCFOLDERCAPABILITIES, NSTCFOLDERCAPABILITIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlFolderCapabilities*, NSTCFOLDERCAPABILITIES, NSTCFOLDERCAPABILITIES*, int> GetFolderCapabilities;
+        public delegate* unmanaged<TSelf*, NSTCFOLDERCAPABILITIES, NSTCFOLDERCAPABILITIES*, int> GetFolderCapabilities;
     }
 }

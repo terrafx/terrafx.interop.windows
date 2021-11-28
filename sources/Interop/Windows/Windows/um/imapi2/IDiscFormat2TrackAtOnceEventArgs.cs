@@ -159,60 +159,61 @@ public unsafe partial struct IDiscFormat2TrackAtOnceEventArgs : IDiscFormat2Trac
         HRESULT get_RemainingTime([NativeTypeName("LONG *")] int* value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2TrackAtOnceEventArgs*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2TrackAtOnceEventArgs*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2TrackAtOnceEventArgs*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2TrackAtOnceEventArgs*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2TrackAtOnceEventArgs*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2TrackAtOnceEventArgs*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2TrackAtOnceEventArgs*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2TrackAtOnceEventArgs*, int*, int> get_StartLba;
+        public delegate* unmanaged<TSelf*, int*, int> get_StartLba;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2TrackAtOnceEventArgs*, int*, int> get_SectorCount;
+        public delegate* unmanaged<TSelf*, int*, int> get_SectorCount;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2TrackAtOnceEventArgs*, int*, int> get_LastReadLba;
+        public delegate* unmanaged<TSelf*, int*, int> get_LastReadLba;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2TrackAtOnceEventArgs*, int*, int> get_LastWrittenLba;
+        public delegate* unmanaged<TSelf*, int*, int> get_LastWrittenLba;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2TrackAtOnceEventArgs*, int*, int> get_TotalSystemBuffer;
+        public delegate* unmanaged<TSelf*, int*, int> get_TotalSystemBuffer;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2TrackAtOnceEventArgs*, int*, int> get_UsedSystemBuffer;
+        public delegate* unmanaged<TSelf*, int*, int> get_UsedSystemBuffer;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2TrackAtOnceEventArgs*, int*, int> get_FreeSystemBuffer;
+        public delegate* unmanaged<TSelf*, int*, int> get_FreeSystemBuffer;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2TrackAtOnceEventArgs*, int*, int> get_CurrentTrackNumber;
+        public delegate* unmanaged<TSelf*, int*, int> get_CurrentTrackNumber;
 
         [NativeTypeName("HRESULT (IMAPI_FORMAT2_TAO_WRITE_ACTION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2TrackAtOnceEventArgs*, IMAPI_FORMAT2_TAO_WRITE_ACTION*, int> get_CurrentAction;
+        public delegate* unmanaged<TSelf*, IMAPI_FORMAT2_TAO_WRITE_ACTION*, int> get_CurrentAction;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2TrackAtOnceEventArgs*, int*, int> get_ElapsedTime;
+        public delegate* unmanaged<TSelf*, int*, int> get_ElapsedTime;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscFormat2TrackAtOnceEventArgs*, int*, int> get_RemainingTime;
+        public delegate* unmanaged<TSelf*, int*, int> get_RemainingTime;
     }
 }

@@ -91,33 +91,34 @@ public unsafe partial struct ID3D12DeviceRemovedExtendedData2 : ID3D12DeviceRemo
         D3D12_DRED_DEVICE_STATE GetDeviceState();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12DeviceRemovedExtendedData2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12DeviceRemovedExtendedData2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12DeviceRemovedExtendedData2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12DeviceRemovedExtendedData2*, D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT*, int> GetAutoBreadcrumbsOutput;
+        public delegate* unmanaged<TSelf*, D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT*, int> GetAutoBreadcrumbsOutput;
 
         [NativeTypeName("HRESULT (D3D12_DRED_PAGE_FAULT_OUTPUT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12DeviceRemovedExtendedData2*, D3D12_DRED_PAGE_FAULT_OUTPUT*, int> GetPageFaultAllocationOutput;
+        public delegate* unmanaged<TSelf*, D3D12_DRED_PAGE_FAULT_OUTPUT*, int> GetPageFaultAllocationOutput;
 
         [NativeTypeName("HRESULT (D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12DeviceRemovedExtendedData2*, D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1*, int> GetAutoBreadcrumbsOutput1;
+        public delegate* unmanaged<TSelf*, D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1*, int> GetAutoBreadcrumbsOutput1;
 
         [NativeTypeName("HRESULT (D3D12_DRED_PAGE_FAULT_OUTPUT1 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12DeviceRemovedExtendedData2*, D3D12_DRED_PAGE_FAULT_OUTPUT1*, int> GetPageFaultAllocationOutput1;
+        public delegate* unmanaged<TSelf*, D3D12_DRED_PAGE_FAULT_OUTPUT1*, int> GetPageFaultAllocationOutput1;
 
         [NativeTypeName("HRESULT (D3D12_DRED_PAGE_FAULT_OUTPUT2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12DeviceRemovedExtendedData2*, D3D12_DRED_PAGE_FAULT_OUTPUT2*, int> GetPageFaultAllocationOutput2;
+        public delegate* unmanaged<TSelf*, D3D12_DRED_PAGE_FAULT_OUTPUT2*, int> GetPageFaultAllocationOutput2;
 
         [NativeTypeName("D3D12_DRED_DEVICE_STATE () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12DeviceRemovedExtendedData2*, D3D12_DRED_DEVICE_STATE> GetDeviceState;
+        public delegate* unmanaged<TSelf*, D3D12_DRED_DEVICE_STATE> GetDeviceState;
     }
 }

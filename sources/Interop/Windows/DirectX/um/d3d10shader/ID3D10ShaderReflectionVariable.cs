@@ -37,12 +37,13 @@ public unsafe partial struct ID3D10ShaderReflectionVariable : ID3D10ShaderReflec
         ID3D10ShaderReflectionType* GetType();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (D3D10_SHADER_VARIABLE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderReflectionVariable*, D3D10_SHADER_VARIABLE_DESC*, int> GetDesc;
+        public delegate* unmanaged<TSelf*, D3D10_SHADER_VARIABLE_DESC*, int> GetDesc;
 
         [NativeTypeName("ID3D10ShaderReflectionType *() __attribute__((nothrow)) __attribute__((stdcall))")]
-        public new delegate* unmanaged<ID3D10ShaderReflectionVariable*, ID3D10ShaderReflectionType*> GetType;
+        public new delegate* unmanaged<TSelf*, ID3D10ShaderReflectionType*> GetType;
     }
 }

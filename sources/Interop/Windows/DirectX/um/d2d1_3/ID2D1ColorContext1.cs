@@ -102,36 +102,37 @@ public unsafe partial struct ID2D1ColorContext1 : ID2D1ColorContext1.Interface
         HRESULT GetSimpleColorProfile(D2D1_SIMPLE_COLOR_PROFILE* simpleProfile);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ColorContext1*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ColorContext1*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ColorContext1*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ColorContext1*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("D2D1_COLOR_SPACE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1ColorContext1*, D2D1_COLOR_SPACE> GetColorSpace;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_COLOR_SPACE> GetColorSpace;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1ColorContext1*, uint> GetProfileSize;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetProfileSize;
 
         [NativeTypeName("HRESULT (BYTE *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ColorContext1*, byte*, uint, int> GetProfile;
+        public delegate* unmanaged<TSelf*, byte*, uint, int> GetProfile;
 
         [NativeTypeName("D2D1_COLOR_CONTEXT_TYPE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1ColorContext1*, D2D1_COLOR_CONTEXT_TYPE> GetColorContextType;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_COLOR_CONTEXT_TYPE> GetColorContextType;
 
         [NativeTypeName("DXGI_COLOR_SPACE_TYPE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1ColorContext1*, DXGI_COLOR_SPACE_TYPE> GetDXGIColorSpace;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DXGI_COLOR_SPACE_TYPE> GetDXGIColorSpace;
 
         [NativeTypeName("HRESULT (D2D1_SIMPLE_COLOR_PROFILE *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1ColorContext1*, D2D1_SIMPLE_COLOR_PROFILE*, int> GetSimpleColorProfile;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_SIMPLE_COLOR_PROFILE*, int> GetSimpleColorProfile;
     }
 }

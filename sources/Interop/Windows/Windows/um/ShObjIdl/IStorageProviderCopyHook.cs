@@ -52,18 +52,19 @@ public unsafe partial struct IStorageProviderCopyHook : IStorageProviderCopyHook
         HRESULT CopyCallback(HWND hwnd, uint operation, uint flags, [NativeTypeName("LPCWSTR")] ushort* srcFile, [NativeTypeName("DWORD")] uint srcAttribs, [NativeTypeName("LPCWSTR")] ushort* destFile, [NativeTypeName("DWORD")] uint destAttribs, uint* result);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorageProviderCopyHook*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorageProviderCopyHook*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorageProviderCopyHook*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, UINT, UINT, LPCWSTR, DWORD, LPCWSTR, DWORD, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorageProviderCopyHook*, HWND, uint, uint, ushort*, uint, ushort*, uint, uint*, int> CopyCallback;
+        public delegate* unmanaged<TSelf*, HWND, uint, uint, ushort*, uint, ushort*, uint, uint*, int> CopyCallback;
     }
 }

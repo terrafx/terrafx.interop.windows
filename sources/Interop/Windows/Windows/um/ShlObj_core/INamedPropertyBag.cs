@@ -72,24 +72,25 @@ public unsafe partial struct INamedPropertyBag : INamedPropertyBag.Interface
         HRESULT RemovePropertyNPB([NativeTypeName("PCWSTR")] ushort* pszBagname, [NativeTypeName("PCWSTR")] ushort* pszPropName);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<INamedPropertyBag*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INamedPropertyBag*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INamedPropertyBag*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PCWSTR, PCWSTR, PROPVARIANT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<INamedPropertyBag*, ushort*, ushort*, PROPVARIANT*, int> ReadPropertyNPB;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, PROPVARIANT*, int> ReadPropertyNPB;
 
         [NativeTypeName("HRESULT (PCWSTR, PCWSTR, PROPVARIANT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<INamedPropertyBag*, ushort*, ushort*, PROPVARIANT*, int> WritePropertyNPB;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, PROPVARIANT*, int> WritePropertyNPB;
 
         [NativeTypeName("HRESULT (PCWSTR, PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<INamedPropertyBag*, ushort*, ushort*, int> RemovePropertyNPB;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> RemovePropertyNPB;
     }
 }

@@ -84,27 +84,28 @@ public unsafe partial struct IMFDXGIBuffer : IMFDXGIBuffer.Interface
         HRESULT SetUnknown([NativeTypeName("const IID &")] Guid* guid, IUnknown* pUnkData);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDXGIBuffer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDXGIBuffer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDXGIBuffer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, LPVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDXGIBuffer*, Guid*, void**, int> GetResource;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetResource;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDXGIBuffer*, uint*, int> GetSubresourceIndex;
+        public delegate* unmanaged<TSelf*, uint*, int> GetSubresourceIndex;
 
         [NativeTypeName("HRESULT (const IID &, const IID &, LPVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDXGIBuffer*, Guid*, Guid*, void**, int> GetUnknown;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, void**, int> GetUnknown;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDXGIBuffer*, Guid*, IUnknown*, int> SetUnknown;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetUnknown;
     }
 }

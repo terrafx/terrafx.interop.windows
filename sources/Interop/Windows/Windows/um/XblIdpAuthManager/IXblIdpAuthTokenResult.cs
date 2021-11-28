@@ -242,75 +242,76 @@ public unsafe partial struct IXblIdpAuthTokenResult : IXblIdpAuthTokenResult.Int
         HRESULT GetTitleRestrictions([NativeTypeName("LPWSTR *")] ushort** titleRestrictions);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (XBL_IDP_AUTH_TOKEN_STATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, XBL_IDP_AUTH_TOKEN_STATUS*, int> GetStatus;
+        public delegate* unmanaged<TSelf*, XBL_IDP_AUTH_TOKEN_STATUS*, int> GetStatus;
 
         [NativeTypeName("HRESULT (HRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, HRESULT*, int> GetErrorCode;
+        public delegate* unmanaged<TSelf*, HRESULT*, int> GetErrorCode;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetToken;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetToken;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetSignature;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetSignature;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetSandbox;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetSandbox;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetEnvironment;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetEnvironment;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetMsaAccountId;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetMsaAccountId;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetXuid;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetXuid;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetGamertag;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetGamertag;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetAgeGroup;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetAgeGroup;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetPrivileges;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetPrivileges;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetMsaTarget;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetMsaTarget;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetMsaPolicy;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetMsaPolicy;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetMsaAppId;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetMsaAppId;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetRedirect;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetRedirect;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetMessageW;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetMessageW;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetHelpId;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetHelpId;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetEnforcementBans;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetEnforcementBans;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetRestrictions;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetRestrictions;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXblIdpAuthTokenResult*, ushort**, int> GetTitleRestrictions;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetTitleRestrictions;
     }
 }

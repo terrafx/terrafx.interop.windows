@@ -72,24 +72,25 @@ public unsafe partial struct IHandlerInfo : IHandlerInfo.Interface
         HRESULT GetApplicationIconReference([NativeTypeName("LPWSTR *")] ushort** value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHandlerInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHandlerInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHandlerInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHandlerInfo*, ushort**, int> GetApplicationDisplayName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetApplicationDisplayName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHandlerInfo*, ushort**, int> GetApplicationPublisher;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetApplicationPublisher;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHandlerInfo*, ushort**, int> GetApplicationIconReference;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetApplicationIconReference;
     }
 }

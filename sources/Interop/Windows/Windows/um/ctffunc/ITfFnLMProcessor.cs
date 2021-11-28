@@ -119,39 +119,40 @@ public unsafe partial struct ITfFnLMProcessor : ITfFnLMProcessor.Interface
         HRESULT InvokeFunc(ITfContext* pic, [NativeTypeName("const GUID &")] Guid* refguidFunc);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnLMProcessor*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnLMProcessor*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnLMProcessor*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnLMProcessor*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (ITfRange *, ITfRange **, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnLMProcessor*, ITfRange*, ITfRange**, BOOL*, int> QueryRange;
+        public delegate* unmanaged<TSelf*, ITfRange*, ITfRange**, BOOL*, int> QueryRange;
 
         [NativeTypeName("HRESULT (LANGID, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnLMProcessor*, ushort, BOOL*, int> QueryLangID;
+        public delegate* unmanaged<TSelf*, ushort, BOOL*, int> QueryLangID;
 
         [NativeTypeName("HRESULT (ITfRange *, ITfCandidateList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnLMProcessor*, ITfRange*, ITfCandidateList**, int> GetReconversion;
+        public delegate* unmanaged<TSelf*, ITfRange*, ITfCandidateList**, int> GetReconversion;
 
         [NativeTypeName("HRESULT (ITfRange *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnLMProcessor*, ITfRange*, int> Reconvert;
+        public delegate* unmanaged<TSelf*, ITfRange*, int> Reconvert;
 
         [NativeTypeName("HRESULT (BOOL, WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnLMProcessor*, BOOL, WPARAM, LPARAM, BOOL*, int> QueryKey;
+        public delegate* unmanaged<TSelf*, BOOL, WPARAM, LPARAM, BOOL*, int> QueryKey;
 
         [NativeTypeName("HRESULT (BOOL, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnLMProcessor*, BOOL, WPARAM, LPARAM, int> InvokeKey;
+        public delegate* unmanaged<TSelf*, BOOL, WPARAM, LPARAM, int> InvokeKey;
 
         [NativeTypeName("HRESULT (ITfContext *, const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnLMProcessor*, ITfContext*, Guid*, int> InvokeFunc;
+        public delegate* unmanaged<TSelf*, ITfContext*, Guid*, int> InvokeFunc;
     }
 }

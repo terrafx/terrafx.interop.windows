@@ -69,24 +69,25 @@ public unsafe partial struct IDxcBlobEncoding : IDxcBlobEncoding.Interface
         HRESULT GetEncoding(BOOL* pKnown, [NativeTypeName("UINT32 *")] uint* pCodePage);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcBlobEncoding*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcBlobEncoding*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcBlobEncoding*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("LPVOID () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcBlobEncoding*, void*> GetBufferPointer;
+        public delegate* unmanaged<TSelf*, void*> GetBufferPointer;
 
         [NativeTypeName("SIZE_T () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcBlobEncoding*, nuint> GetBufferSize;
+        public delegate* unmanaged<TSelf*, nuint> GetBufferSize;
 
         [NativeTypeName("HRESULT (BOOL *, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcBlobEncoding*, BOOL*, uint*, int> GetEncoding;
+        public delegate* unmanaged<TSelf*, BOOL*, uint*, int> GetEncoding;
     }
 }

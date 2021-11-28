@@ -62,21 +62,22 @@ public unsafe partial struct IDvdState : IDvdState.Interface
         HRESULT GetParentalLevel([NativeTypeName("ULONG *")] uint* pulParentalLevel);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDvdState*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDvdState*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDvdState*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDvdState*, ulong*, int> GetDiscID;
+        public delegate* unmanaged<TSelf*, ulong*, int> GetDiscID;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDvdState*, uint*, int> GetParentalLevel;
+        public delegate* unmanaged<TSelf*, uint*, int> GetParentalLevel;
     }
 }

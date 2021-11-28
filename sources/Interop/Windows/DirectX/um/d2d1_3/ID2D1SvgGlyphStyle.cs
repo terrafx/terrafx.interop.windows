@@ -102,33 +102,34 @@ public unsafe partial struct ID2D1SvgGlyphStyle : ID2D1SvgGlyphStyle.Interface
         void GetStroke(ID2D1Brush** brush, float* strokeWidth = null, float* dashes = null, [NativeTypeName("UINT32")] uint dashesCount = 0, float* dashOffset = null);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgGlyphStyle*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgGlyphStyle*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgGlyphStyle*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgGlyphStyle*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("HRESULT (ID2D1Brush *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgGlyphStyle*, ID2D1Brush*, int> SetFill;
+        public delegate* unmanaged<TSelf*, ID2D1Brush*, int> SetFill;
 
         [NativeTypeName("void (ID2D1Brush **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgGlyphStyle*, ID2D1Brush**, void> GetFill;
+        public delegate* unmanaged<TSelf*, ID2D1Brush**, void> GetFill;
 
         [NativeTypeName("HRESULT (ID2D1Brush *, FLOAT, const FLOAT *, UINT32, FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgGlyphStyle*, ID2D1Brush*, float, float*, uint, float, int> SetStroke;
+        public delegate* unmanaged<TSelf*, ID2D1Brush*, float, float*, uint, float, int> SetStroke;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1SvgGlyphStyle*, uint> GetStrokeDashesCount;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetStrokeDashesCount;
 
         [NativeTypeName("void (ID2D1Brush **, FLOAT *, FLOAT *, UINT32, FLOAT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgGlyphStyle*, ID2D1Brush**, float*, float*, uint, float*, void> GetStroke;
+        public delegate* unmanaged<TSelf*, ID2D1Brush**, float*, float*, uint, float*, void> GetStroke;
     }
 }

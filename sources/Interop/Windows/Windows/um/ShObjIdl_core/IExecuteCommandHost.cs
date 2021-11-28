@@ -52,18 +52,19 @@ public unsafe partial struct IExecuteCommandHost : IExecuteCommandHost.Interface
         HRESULT GetUIMode(EC_HOST_UI_MODE* pUIMode);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExecuteCommandHost*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExecuteCommandHost*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExecuteCommandHost*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (EC_HOST_UI_MODE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExecuteCommandHost*, EC_HOST_UI_MODE*, int> GetUIMode;
+        public delegate* unmanaged<TSelf*, EC_HOST_UI_MODE*, int> GetUIMode;
     }
 }

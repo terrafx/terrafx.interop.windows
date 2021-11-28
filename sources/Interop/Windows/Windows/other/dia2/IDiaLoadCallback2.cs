@@ -117,42 +117,43 @@ public unsafe partial struct IDiaLoadCallback2 : IDiaLoadCallback2.Interface
         HRESULT RestrictSystemRootAccess();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLoadCallback2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLoadCallback2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLoadCallback2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL, DWORD, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLoadCallback2*, BOOL, uint, byte*, int> NotifyDebugDir;
+        public delegate* unmanaged<TSelf*, BOOL, uint, byte*, int> NotifyDebugDir;
 
         [NativeTypeName("HRESULT (LPCOLESTR, HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLoadCallback2*, ushort*, HRESULT, int> NotifyOpenDBG;
+        public delegate* unmanaged<TSelf*, ushort*, HRESULT, int> NotifyOpenDBG;
 
         [NativeTypeName("HRESULT (LPCOLESTR, HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLoadCallback2*, ushort*, HRESULT, int> NotifyOpenPDB;
+        public delegate* unmanaged<TSelf*, ushort*, HRESULT, int> NotifyOpenPDB;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictRegistryAccess;
+        public delegate* unmanaged<TSelf*, int> RestrictRegistryAccess;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictSymbolServerAccess;
+        public delegate* unmanaged<TSelf*, int> RestrictSymbolServerAccess;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictOriginalPathAccess;
+        public delegate* unmanaged<TSelf*, int> RestrictOriginalPathAccess;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictReferencePathAccess;
+        public delegate* unmanaged<TSelf*, int> RestrictReferencePathAccess;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictDBGAccess;
+        public delegate* unmanaged<TSelf*, int> RestrictDBGAccess;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLoadCallback2*, int> RestrictSystemRootAccess;
+        public delegate* unmanaged<TSelf*, int> RestrictSystemRootAccess;
     }
 }

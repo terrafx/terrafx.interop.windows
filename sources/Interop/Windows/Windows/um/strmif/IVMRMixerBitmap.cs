@@ -72,24 +72,25 @@ public unsafe partial struct IVMRMixerBitmap : IVMRMixerBitmap.Interface
         HRESULT GetAlphaBitmapParameters([NativeTypeName("PVMRALPHABITMAP")] VMRALPHABITMAP* pBmpParms);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRMixerBitmap*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRMixerBitmap*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRMixerBitmap*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const VMRALPHABITMAP *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRMixerBitmap*, VMRALPHABITMAP*, int> SetAlphaBitmap;
+        public delegate* unmanaged<TSelf*, VMRALPHABITMAP*, int> SetAlphaBitmap;
 
         [NativeTypeName("HRESULT (PVMRALPHABITMAP) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRMixerBitmap*, VMRALPHABITMAP*, int> UpdateAlphaBitmapParameters;
+        public delegate* unmanaged<TSelf*, VMRALPHABITMAP*, int> UpdateAlphaBitmapParameters;
 
         [NativeTypeName("HRESULT (PVMRALPHABITMAP) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRMixerBitmap*, VMRALPHABITMAP*, int> GetAlphaBitmapParameters;
+        public delegate* unmanaged<TSelf*, VMRALPHABITMAP*, int> GetAlphaBitmapParameters;
     }
 }

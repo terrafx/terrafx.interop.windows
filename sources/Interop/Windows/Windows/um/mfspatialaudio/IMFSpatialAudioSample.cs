@@ -382,156 +382,157 @@ public unsafe partial struct IMFSpatialAudioSample : IMFSpatialAudioSample.Inter
         HRESULT GetSpatialAudioObjectByIndex([NativeTypeName("DWORD")] uint dwIndex, IMFSpatialAudioObjectBuffer** ppAudioObjBuffer);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, PROPVARIANT*, int> GetItem;
+        public delegate* unmanaged<TSelf*, Guid*, PROPVARIANT*, int> GetItem;
 
         [NativeTypeName("HRESULT (const GUID &, MF_ATTRIBUTE_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, MF_ATTRIBUTE_TYPE*, int> GetItemType;
+        public delegate* unmanaged<TSelf*, Guid*, MF_ATTRIBUTE_TYPE*, int> GetItemType;
 
         [NativeTypeName("HRESULT (const GUID &, const PROPVARIANT &, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, PROPVARIANT*, BOOL*, int> CompareItem;
+        public delegate* unmanaged<TSelf*, Guid*, PROPVARIANT*, BOOL*, int> CompareItem;
 
         [NativeTypeName("HRESULT (IMFAttributes *, MF_ATTRIBUTES_MATCH_TYPE, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, BOOL*, int> Compare;
+        public delegate* unmanaged<TSelf*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, BOOL*, int> Compare;
 
         [NativeTypeName("HRESULT (const GUID &, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, uint*, int> GetUINT32;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, int> GetUINT32;
 
         [NativeTypeName("HRESULT (const GUID &, UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, ulong*, int> GetUINT64;
+        public delegate* unmanaged<TSelf*, Guid*, ulong*, int> GetUINT64;
 
         [NativeTypeName("HRESULT (const GUID &, double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, double*, int> GetDouble;
+        public delegate* unmanaged<TSelf*, Guid*, double*, int> GetDouble;
 
         [NativeTypeName("HRESULT (const GUID &, GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, Guid*, int> GetGUID;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, int> GetGUID;
 
         [NativeTypeName("HRESULT (const GUID &, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, uint*, int> GetStringLength;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, int> GetStringLength;
 
         [NativeTypeName("HRESULT (const GUID &, LPWSTR, UINT32, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, ushort*, uint, uint*, int> GetString;
+        public delegate* unmanaged<TSelf*, Guid*, ushort*, uint, uint*, int> GetString;
 
         [NativeTypeName("HRESULT (const GUID &, LPWSTR *, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, ushort**, uint*, int> GetAllocatedString;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint*, int> GetAllocatedString;
 
         [NativeTypeName("HRESULT (const GUID &, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, uint*, int> GetBlobSize;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, int> GetBlobSize;
 
         [NativeTypeName("HRESULT (const GUID &, UINT8 *, UINT32, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, byte*, uint, uint*, int> GetBlob;
+        public delegate* unmanaged<TSelf*, Guid*, byte*, uint, uint*, int> GetBlob;
 
         [NativeTypeName("HRESULT (const GUID &, UINT8 **, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, byte**, uint*, int> GetAllocatedBlob;
+        public delegate* unmanaged<TSelf*, Guid*, byte**, uint*, int> GetAllocatedBlob;
 
         [NativeTypeName("HRESULT (const GUID &, const IID &, LPVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, Guid*, void**, int> GetUnknown;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, void**, int> GetUnknown;
 
         [NativeTypeName("HRESULT (const GUID &, const PROPVARIANT &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, PROPVARIANT*, int> SetItem;
+        public delegate* unmanaged<TSelf*, Guid*, PROPVARIANT*, int> SetItem;
 
         [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, int> DeleteItem;
+        public delegate* unmanaged<TSelf*, Guid*, int> DeleteItem;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, int> DeleteAllItems;
+        public delegate* unmanaged<TSelf*, int> DeleteAllItems;
 
         [NativeTypeName("HRESULT (const GUID &, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, uint, int> SetUINT32;
+        public delegate* unmanaged<TSelf*, Guid*, uint, int> SetUINT32;
 
         [NativeTypeName("HRESULT (const GUID &, UINT64) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, ulong, int> SetUINT64;
+        public delegate* unmanaged<TSelf*, Guid*, ulong, int> SetUINT64;
 
         [NativeTypeName("HRESULT (const GUID &, double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, double, int> SetDouble;
+        public delegate* unmanaged<TSelf*, Guid*, double, int> SetDouble;
 
         [NativeTypeName("HRESULT (const GUID &, const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, Guid*, int> SetGUID;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, int> SetGUID;
 
         [NativeTypeName("HRESULT (const GUID &, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, ushort*, int> SetString;
+        public delegate* unmanaged<TSelf*, Guid*, ushort*, int> SetString;
 
         [NativeTypeName("HRESULT (const GUID &, const UINT8 *, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, byte*, uint, int> SetBlob;
+        public delegate* unmanaged<TSelf*, Guid*, byte*, uint, int> SetBlob;
 
         [NativeTypeName("HRESULT (const GUID &, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, Guid*, IUnknown*, int> SetUnknown;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetUnknown;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, int> LockStore;
+        public delegate* unmanaged<TSelf*, int> LockStore;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, int> UnlockStore;
+        public delegate* unmanaged<TSelf*, int> UnlockStore;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, uint*, int> GetCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (UINT32, GUID *, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, uint, Guid*, PROPVARIANT*, int> GetItemByIndex;
+        public delegate* unmanaged<TSelf*, uint, Guid*, PROPVARIANT*, int> GetItemByIndex;
 
         [NativeTypeName("HRESULT (IMFAttributes *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, IMFAttributes*, int> CopyAllItems;
+        public delegate* unmanaged<TSelf*, IMFAttributes*, int> CopyAllItems;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, uint*, int> GetSampleFlags;
+        public delegate* unmanaged<TSelf*, uint*, int> GetSampleFlags;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, uint, int> SetSampleFlags;
+        public delegate* unmanaged<TSelf*, uint, int> SetSampleFlags;
 
         [NativeTypeName("HRESULT (LONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, long*, int> GetSampleTime;
+        public delegate* unmanaged<TSelf*, long*, int> GetSampleTime;
 
         [NativeTypeName("HRESULT (LONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, long, int> SetSampleTime;
+        public delegate* unmanaged<TSelf*, long, int> SetSampleTime;
 
         [NativeTypeName("HRESULT (LONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, long*, int> GetSampleDuration;
+        public delegate* unmanaged<TSelf*, long*, int> GetSampleDuration;
 
         [NativeTypeName("HRESULT (LONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, long, int> SetSampleDuration;
+        public delegate* unmanaged<TSelf*, long, int> SetSampleDuration;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, uint*, int> GetBufferCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetBufferCount;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaBuffer **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, uint, IMFMediaBuffer**, int> GetBufferByIndex;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaBuffer**, int> GetBufferByIndex;
 
         [NativeTypeName("HRESULT (IMFMediaBuffer **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, IMFMediaBuffer**, int> ConvertToContiguousBuffer;
+        public delegate* unmanaged<TSelf*, IMFMediaBuffer**, int> ConvertToContiguousBuffer;
 
         [NativeTypeName("HRESULT (IMFMediaBuffer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, IMFMediaBuffer*, int> AddBuffer;
+        public delegate* unmanaged<TSelf*, IMFMediaBuffer*, int> AddBuffer;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, uint, int> RemoveBufferByIndex;
+        public delegate* unmanaged<TSelf*, uint, int> RemoveBufferByIndex;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, int> RemoveAllBuffers;
+        public delegate* unmanaged<TSelf*, int> RemoveAllBuffers;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, uint*, int> GetTotalLength;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTotalLength;
 
         [NativeTypeName("HRESULT (IMFMediaBuffer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, IMFMediaBuffer*, int> CopyToBuffer;
+        public delegate* unmanaged<TSelf*, IMFMediaBuffer*, int> CopyToBuffer;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, uint*, int> GetObjectCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetObjectCount;
 
         [NativeTypeName("HRESULT (IMFSpatialAudioObjectBuffer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, IMFSpatialAudioObjectBuffer*, int> AddSpatialAudioObject;
+        public delegate* unmanaged<TSelf*, IMFSpatialAudioObjectBuffer*, int> AddSpatialAudioObject;
 
         [NativeTypeName("HRESULT (DWORD, IMFSpatialAudioObjectBuffer **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSpatialAudioSample*, uint, IMFSpatialAudioObjectBuffer**, int> GetSpatialAudioObjectByIndex;
+        public delegate* unmanaged<TSelf*, uint, IMFSpatialAudioObjectBuffer**, int> GetSpatialAudioObjectByIndex;
     }
 }

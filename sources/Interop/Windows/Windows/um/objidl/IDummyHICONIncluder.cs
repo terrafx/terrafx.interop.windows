@@ -52,18 +52,19 @@ public unsafe partial struct IDummyHICONIncluder : IDummyHICONIncluder.Interface
         HRESULT Dummy(HICON h1, HDC h2);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDummyHICONIncluder*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDummyHICONIncluder*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDummyHICONIncluder*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HICON, HDC) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDummyHICONIncluder*, HICON, HDC, int> Dummy;
+        public delegate* unmanaged<TSelf*, HICON, HDC, int> Dummy;
     }
 }

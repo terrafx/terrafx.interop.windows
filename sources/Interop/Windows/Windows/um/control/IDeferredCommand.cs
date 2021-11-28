@@ -82,27 +82,28 @@ public unsafe partial struct IDeferredCommand : IDeferredCommand.Interface
         HRESULT GetHResult(HRESULT* phrResult);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeferredCommand*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeferredCommand*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeferredCommand*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeferredCommand*, int> Cancel;
+        public delegate* unmanaged<TSelf*, int> Cancel;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeferredCommand*, int*, int> Confidence;
+        public delegate* unmanaged<TSelf*, int*, int> Confidence;
 
         [NativeTypeName("HRESULT (REFTIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeferredCommand*, double, int> Postpone;
+        public delegate* unmanaged<TSelf*, double, int> Postpone;
 
         [NativeTypeName("HRESULT (HRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeferredCommand*, HRESULT*, int> GetHResult;
+        public delegate* unmanaged<TSelf*, HRESULT*, int> GetHResult;
     }
 }

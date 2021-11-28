@@ -114,36 +114,37 @@ public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface
         void DebugServerRelease(void* pv);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcStubBuffer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcStubBuffer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcStubBuffer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcStubBuffer*, IUnknown*, int> Connect;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> Connect;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcStubBuffer*, void> Disconnect;
+        public delegate* unmanaged<TSelf*, void> Disconnect;
 
         [NativeTypeName("HRESULT (RPCOLEMESSAGE *, IRpcChannelBuffer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcStubBuffer*, RPCOLEMESSAGE*, IRpcChannelBuffer*, int> Invoke;
+        public delegate* unmanaged<TSelf*, RPCOLEMESSAGE*, IRpcChannelBuffer*, int> Invoke;
 
         [NativeTypeName("IRpcStubBuffer *(const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcStubBuffer*, Guid*, IRpcStubBuffer*> IsIIDSupported;
+        public delegate* unmanaged<TSelf*, Guid*, IRpcStubBuffer*> IsIIDSupported;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcStubBuffer*, uint> CountRefs;
+        public delegate* unmanaged<TSelf*, uint> CountRefs;
 
         [NativeTypeName("HRESULT (void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcStubBuffer*, void**, int> DebugServerQueryInterface;
+        public delegate* unmanaged<TSelf*, void**, int> DebugServerQueryInterface;
 
         [NativeTypeName("void (void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRpcStubBuffer*, void*, void> DebugServerRelease;
+        public delegate* unmanaged<TSelf*, void*, void> DebugServerRelease;
     }
 }

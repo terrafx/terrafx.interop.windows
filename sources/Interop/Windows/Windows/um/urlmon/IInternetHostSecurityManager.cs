@@ -72,24 +72,25 @@ public unsafe partial struct IInternetHostSecurityManager : IInternetHostSecurit
         HRESULT QueryCustomPolicy([NativeTypeName("const GUID &")] Guid* guidKey, byte** ppPolicy, [NativeTypeName("DWORD *")] uint* pcbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD")] uint dwReserved);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetHostSecurityManager*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetHostSecurityManager*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetHostSecurityManager*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE *, DWORD *, DWORD_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetHostSecurityManager*, byte*, uint*, nuint, int> GetSecurityId;
+        public delegate* unmanaged<TSelf*, byte*, uint*, nuint, int> GetSecurityId;
 
         [NativeTypeName("HRESULT (DWORD, BYTE *, DWORD, BYTE *, DWORD, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetHostSecurityManager*, uint, byte*, uint, byte*, uint, uint, uint, int> ProcessUrlAction;
+        public delegate* unmanaged<TSelf*, uint, byte*, uint, byte*, uint, uint, uint, int> ProcessUrlAction;
 
         [NativeTypeName("HRESULT (const GUID &, BYTE **, DWORD *, BYTE *, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetHostSecurityManager*, Guid*, byte**, uint*, byte*, uint, uint, int> QueryCustomPolicy;
+        public delegate* unmanaged<TSelf*, Guid*, byte**, uint*, byte*, uint, uint, int> QueryCustomPolicy;
     }
 }

@@ -72,24 +72,25 @@ public unsafe partial struct ICommDlgBrowser : ICommDlgBrowser.Interface
         HRESULT IncludeObject(IShellView* ppshv, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICommDlgBrowser*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICommDlgBrowser*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICommDlgBrowser*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellView *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICommDlgBrowser*, IShellView*, int> OnDefaultCommand;
+        public delegate* unmanaged<TSelf*, IShellView*, int> OnDefaultCommand;
 
         [NativeTypeName("HRESULT (IShellView *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICommDlgBrowser*, IShellView*, uint, int> OnStateChange;
+        public delegate* unmanaged<TSelf*, IShellView*, uint, int> OnStateChange;
 
         [NativeTypeName("HRESULT (IShellView *, LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICommDlgBrowser*, IShellView*, ITEMIDLIST*, int> IncludeObject;
+        public delegate* unmanaged<TSelf*, IShellView*, ITEMIDLIST*, int> IncludeObject;
     }
 }

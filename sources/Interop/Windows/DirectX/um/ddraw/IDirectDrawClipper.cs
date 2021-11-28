@@ -101,33 +101,34 @@ public unsafe partial struct IDirectDrawClipper : IDirectDrawClipper.Interface
         HRESULT SetHWnd([NativeTypeName("DWORD")] uint param0, HWND param1);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawClipper*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawClipper*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawClipper*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPRECT, LPRGNDATA, LPDWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawClipper*, RECT*, RGNDATA*, uint*, int> GetClipList;
+        public delegate* unmanaged<TSelf*, RECT*, RGNDATA*, uint*, int> GetClipList;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawClipper*, HWND*, int> GetHWnd;
+        public delegate* unmanaged<TSelf*, HWND*, int> GetHWnd;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAW, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawClipper*, IDirectDraw*, uint, int> Initialize;
+        public delegate* unmanaged<TSelf*, IDirectDraw*, uint, int> Initialize;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawClipper*, BOOL*, int> IsClipListChanged;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsClipListChanged;
 
         [NativeTypeName("HRESULT (LPRGNDATA, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawClipper*, RGNDATA*, uint, int> SetClipList;
+        public delegate* unmanaged<TSelf*, RGNDATA*, uint, int> SetClipList;
 
         [NativeTypeName("HRESULT (DWORD, HWND) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawClipper*, uint, HWND, int> SetHWnd;
+        public delegate* unmanaged<TSelf*, uint, HWND, int> SetHWnd;
     }
 }

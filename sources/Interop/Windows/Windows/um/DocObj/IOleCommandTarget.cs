@@ -62,21 +62,22 @@ public unsafe partial struct IOleCommandTarget : IOleCommandTarget.Interface
         HRESULT Exec([NativeTypeName("const GUID *")] Guid* pguidCmdGroup, [NativeTypeName("DWORD")] uint nCmdID, [NativeTypeName("DWORD")] uint nCmdexecopt, VARIANT* pvaIn, VARIANT* pvaOut);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleCommandTarget*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleCommandTarget*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleCommandTarget*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID *, ULONG, OLECMD *, OLECMDTEXT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleCommandTarget*, Guid*, uint, OLECMD*, OLECMDTEXT*, int> QueryStatus;
+        public delegate* unmanaged<TSelf*, Guid*, uint, OLECMD*, OLECMDTEXT*, int> QueryStatus;
 
         [NativeTypeName("HRESULT (const GUID *, DWORD, DWORD, VARIANT *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleCommandTarget*, Guid*, uint, uint, VARIANT*, VARIANT*, int> Exec;
+        public delegate* unmanaged<TSelf*, Guid*, uint, uint, VARIANT*, VARIANT*, int> Exec;
     }
 }

@@ -52,18 +52,19 @@ public unsafe partial struct IShellItemImageFactory : IShellItemImageFactory.Int
         HRESULT GetImage(SIZE size, [NativeTypeName("SIIGBF")] int flags, HBITMAP* phbm);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemImageFactory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemImageFactory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemImageFactory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SIZE, SIIGBF, HBITMAP *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemImageFactory*, SIZE, int, HBITMAP*, int> GetImage;
+        public delegate* unmanaged<TSelf*, SIZE, int, HBITMAP*, int> GetImage;
     }
 }

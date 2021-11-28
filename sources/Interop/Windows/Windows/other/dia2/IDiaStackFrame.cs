@@ -192,60 +192,61 @@ public unsafe partial struct IDiaStackFrame : IDiaStackFrame.Interface
         HRESULT get_registerValue([NativeTypeName("DWORD")] uint index, [NativeTypeName("ULONGLONG *")] ulong* pRetVal);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackFrame*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackFrame*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackFrame*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackFrame*, uint*, int> get_type;
+        public delegate* unmanaged<TSelf*, uint*, int> get_type;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackFrame*, ulong*, int> get_base;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_base;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackFrame*, uint*, int> get_size;
+        public delegate* unmanaged<TSelf*, uint*, int> get_size;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackFrame*, ulong*, int> get_returnAddress;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_returnAddress;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackFrame*, ulong*, int> get_localsBase;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_localsBase;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackFrame*, uint*, int> get_lengthLocals;
+        public delegate* unmanaged<TSelf*, uint*, int> get_lengthLocals;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackFrame*, uint*, int> get_lengthParams;
+        public delegate* unmanaged<TSelf*, uint*, int> get_lengthParams;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackFrame*, uint*, int> get_lengthProlog;
+        public delegate* unmanaged<TSelf*, uint*, int> get_lengthProlog;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackFrame*, uint*, int> get_lengthSavedRegisters;
+        public delegate* unmanaged<TSelf*, uint*, int> get_lengthSavedRegisters;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackFrame*, BOOL*, int> get_systemExceptionHandling;
+        public delegate* unmanaged<TSelf*, BOOL*, int> get_systemExceptionHandling;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackFrame*, BOOL*, int> get_cplusplusExceptionHandling;
+        public delegate* unmanaged<TSelf*, BOOL*, int> get_cplusplusExceptionHandling;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackFrame*, BOOL*, int> get_functionStart;
+        public delegate* unmanaged<TSelf*, BOOL*, int> get_functionStart;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackFrame*, BOOL*, int> get_allocatesBasePointer;
+        public delegate* unmanaged<TSelf*, BOOL*, int> get_allocatesBasePointer;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackFrame*, uint*, int> get_maxStack;
+        public delegate* unmanaged<TSelf*, uint*, int> get_maxStack;
 
         [NativeTypeName("HRESULT (DWORD, ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackFrame*, uint, ulong*, int> get_registerValue;
+        public delegate* unmanaged<TSelf*, uint, ulong*, int> get_registerValue;
     }
 }

@@ -62,21 +62,22 @@ public unsafe partial struct IAudioPeakMeter : IAudioPeakMeter.Interface
         HRESULT GetLevel(uint nChannel, float* pfLevel);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioPeakMeter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioPeakMeter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioPeakMeter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioPeakMeter*, uint*, int> GetChannelCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetChannelCount;
 
         [NativeTypeName("HRESULT (UINT, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioPeakMeter*, uint, float*, int> GetLevel;
+        public delegate* unmanaged<TSelf*, uint, float*, int> GetLevel;
     }
 }

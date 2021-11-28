@@ -52,18 +52,19 @@ public unsafe partial struct IMFVideoRendererEffectControl : IMFVideoRendererEff
         HRESULT OnAppServiceConnectionEstablished(IUnknown* pAppServiceConnection);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFVideoRendererEffectControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFVideoRendererEffectControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFVideoRendererEffectControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFVideoRendererEffectControl*, IUnknown*, int> OnAppServiceConnectionEstablished;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> OnAppServiceConnectionEstablished;
     }
 }

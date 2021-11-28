@@ -165,51 +165,52 @@ public unsafe partial struct IVisualTreeService : IVisualTreeService.Interface
         HRESULT ClearChildren(InstanceHandle parent);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualTreeService*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualTreeService*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualTreeService*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IVisualTreeServiceCallback *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualTreeService*, IVisualTreeServiceCallback*, int> AdviseVisualTreeChange;
+        public delegate* unmanaged<TSelf*, IVisualTreeServiceCallback*, int> AdviseVisualTreeChange;
 
         [NativeTypeName("HRESULT (IVisualTreeServiceCallback *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualTreeService*, IVisualTreeServiceCallback*, int> UnadviseVisualTreeChange;
+        public delegate* unmanaged<TSelf*, IVisualTreeServiceCallback*, int> UnadviseVisualTreeChange;
 
         [NativeTypeName("HRESULT (unsigned int *, EnumType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualTreeService*, uint*, EnumType**, int> GetEnums;
+        public delegate* unmanaged<TSelf*, uint*, EnumType**, int> GetEnums;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, InstanceHandle *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualTreeService*, ushort*, ushort*, InstanceHandle*, int> CreateInstance;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, InstanceHandle*, int> CreateInstance;
 
         [NativeTypeName("HRESULT (InstanceHandle, unsigned int *, PropertyChainSource **, unsigned int *, PropertyChainValue **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualTreeService*, InstanceHandle, uint*, PropertyChainSource**, uint*, PropertyChainValue**, int> GetPropertyValuesChain;
+        public delegate* unmanaged<TSelf*, InstanceHandle, uint*, PropertyChainSource**, uint*, PropertyChainValue**, int> GetPropertyValuesChain;
 
         [NativeTypeName("HRESULT (InstanceHandle, InstanceHandle, unsigned int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualTreeService*, InstanceHandle, InstanceHandle, uint, int> SetProperty;
+        public delegate* unmanaged<TSelf*, InstanceHandle, InstanceHandle, uint, int> SetProperty;
 
         [NativeTypeName("HRESULT (InstanceHandle, unsigned int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualTreeService*, InstanceHandle, uint, int> ClearProperty;
+        public delegate* unmanaged<TSelf*, InstanceHandle, uint, int> ClearProperty;
 
         [NativeTypeName("HRESULT (InstanceHandle, unsigned int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualTreeService*, InstanceHandle, uint*, int> GetCollectionCount;
+        public delegate* unmanaged<TSelf*, InstanceHandle, uint*, int> GetCollectionCount;
 
         [NativeTypeName("HRESULT (InstanceHandle, unsigned int, unsigned int *, CollectionElementValue **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualTreeService*, InstanceHandle, uint, uint*, CollectionElementValue**, int> GetCollectionElements;
+        public delegate* unmanaged<TSelf*, InstanceHandle, uint, uint*, CollectionElementValue**, int> GetCollectionElements;
 
         [NativeTypeName("HRESULT (InstanceHandle, InstanceHandle, unsigned int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualTreeService*, InstanceHandle, InstanceHandle, uint, int> AddChild;
+        public delegate* unmanaged<TSelf*, InstanceHandle, InstanceHandle, uint, int> AddChild;
 
         [NativeTypeName("HRESULT (InstanceHandle, unsigned int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualTreeService*, InstanceHandle, uint, int> RemoveChild;
+        public delegate* unmanaged<TSelf*, InstanceHandle, uint, int> RemoveChild;
 
         [NativeTypeName("HRESULT (InstanceHandle) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualTreeService*, InstanceHandle, int> ClearChildren;
+        public delegate* unmanaged<TSelf*, InstanceHandle, int> ClearChildren;
     }
 }

@@ -92,30 +92,31 @@ public unsafe partial struct IQueryAssociations : IQueryAssociations.Interface
         HRESULT GetEnum([NativeTypeName("ASSOCF")] uint flags, ASSOCENUM assocenum, [NativeTypeName("LPCWSTR")] ushort* pszExtra, [NativeTypeName("const IID &")] Guid* riid, void** ppvOut);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueryAssociations*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueryAssociations*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueryAssociations*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ASSOCF, LPCWSTR, HKEY, HWND) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueryAssociations*, uint, ushort*, HKEY, HWND, int> Init;
+        public delegate* unmanaged<TSelf*, uint, ushort*, HKEY, HWND, int> Init;
 
         [NativeTypeName("HRESULT (ASSOCF, ASSOCSTR, LPCWSTR, LPWSTR, DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueryAssociations*, uint, ASSOCSTR, ushort*, ushort*, uint*, int> GetString;
+        public delegate* unmanaged<TSelf*, uint, ASSOCSTR, ushort*, ushort*, uint*, int> GetString;
 
         [NativeTypeName("HRESULT (ASSOCF, ASSOCKEY, LPCWSTR, HKEY *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueryAssociations*, uint, ASSOCKEY, ushort*, HKEY*, int> GetKey;
+        public delegate* unmanaged<TSelf*, uint, ASSOCKEY, ushort*, HKEY*, int> GetKey;
 
         [NativeTypeName("HRESULT (ASSOCF, ASSOCDATA, LPCWSTR, void *, DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueryAssociations*, uint, ASSOCDATA, ushort*, void*, uint*, int> GetData;
+        public delegate* unmanaged<TSelf*, uint, ASSOCDATA, ushort*, void*, uint*, int> GetData;
 
         [NativeTypeName("HRESULT (ASSOCF, ASSOCENUM, LPCWSTR, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueryAssociations*, uint, ASSOCENUM, ushort*, Guid*, void**, int> GetEnum;
+        public delegate* unmanaged<TSelf*, uint, ASSOCENUM, ushort*, Guid*, void**, int> GetEnum;
     }
 }

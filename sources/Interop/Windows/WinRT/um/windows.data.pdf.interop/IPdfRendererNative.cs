@@ -66,21 +66,22 @@ public unsafe partial struct IPdfRendererNative : IPdfRendererNative.Interface
         HRESULT RenderPageToDeviceContext(IUnknown* pdfPage, ID2D1DeviceContext* pD2DDeviceContext, PDF_RENDER_PARAMS* pRenderParams);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPdfRendererNative*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPdfRendererNative*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPdfRendererNative*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, IDXGISurface *, POINT, PDF_RENDER_PARAMS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPdfRendererNative*, IUnknown*, IDXGISurface*, POINT, PDF_RENDER_PARAMS*, int> RenderPageToSurface;
+        public delegate* unmanaged<TSelf*, IUnknown*, IDXGISurface*, POINT, PDF_RENDER_PARAMS*, int> RenderPageToSurface;
 
         [NativeTypeName("HRESULT (IUnknown *, ID2D1DeviceContext *, PDF_RENDER_PARAMS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPdfRendererNative*, IUnknown*, ID2D1DeviceContext*, PDF_RENDER_PARAMS*, int> RenderPageToDeviceContext;
+        public delegate* unmanaged<TSelf*, IUnknown*, ID2D1DeviceContext*, PDF_RENDER_PARAMS*, int> RenderPageToDeviceContext;
     }
 }

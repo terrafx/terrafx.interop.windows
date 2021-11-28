@@ -92,30 +92,31 @@ public unsafe partial struct ISpPhoneticAlphabetConverter : ISpPhoneticAlphabetC
         HRESULT GetMaxConvertLength([NativeTypeName("DWORD")] uint cSrcLength, BOOL bSAPI2UPS, [NativeTypeName("DWORD *")] uint* pcMaxDestLength);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhoneticAlphabetConverter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhoneticAlphabetConverter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhoneticAlphabetConverter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (WORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhoneticAlphabetConverter*, ushort*, int> GetLangId;
+        public delegate* unmanaged<TSelf*, ushort*, int> GetLangId;
 
         [NativeTypeName("HRESULT (WORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhoneticAlphabetConverter*, ushort, int> SetLangId;
+        public delegate* unmanaged<TSelf*, ushort, int> SetLangId;
 
         [NativeTypeName("HRESULT (const SPPHONEID *, SPPHONEID *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhoneticAlphabetConverter*, ushort*, ushort*, uint, int> SAPI2UPS;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, uint, int> SAPI2UPS;
 
         [NativeTypeName("HRESULT (const SPPHONEID *, SPPHONEID *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhoneticAlphabetConverter*, ushort*, ushort*, uint, int> UPS2SAPI;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, uint, int> UPS2SAPI;
 
         [NativeTypeName("HRESULT (DWORD, BOOL, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhoneticAlphabetConverter*, uint, BOOL, uint*, int> GetMaxConvertLength;
+        public delegate* unmanaged<TSelf*, uint, BOOL, uint*, int> GetMaxConvertLength;
     }
 }

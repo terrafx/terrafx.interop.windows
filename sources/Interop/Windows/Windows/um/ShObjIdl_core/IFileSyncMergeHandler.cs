@@ -62,21 +62,22 @@ public unsafe partial struct IFileSyncMergeHandler : IFileSyncMergeHandler.Inter
         HRESULT ShowResolveConflictUIAsync([NativeTypeName("LPCWSTR")] ushort* localFilePath, HMONITOR monitorToDisplayOn);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSyncMergeHandler*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSyncMergeHandler*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSyncMergeHandler*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, MERGE_UPDATE_STATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSyncMergeHandler*, ushort*, ushort*, MERGE_UPDATE_STATUS*, int> Merge;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, MERGE_UPDATE_STATUS*, int> Merge;
 
         [NativeTypeName("HRESULT (LPCWSTR, HMONITOR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSyncMergeHandler*, ushort*, HMONITOR, int> ShowResolveConflictUIAsync;
+        public delegate* unmanaged<TSelf*, ushort*, HMONITOR, int> ShowResolveConflictUIAsync;
     }
 }

@@ -62,21 +62,22 @@ public unsafe partial struct ISyncMgrHandlerCollection : ISyncMgrHandlerCollecti
         HRESULT BindToHandler([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandlerCollection*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandlerCollection*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandlerCollection*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumString **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandlerCollection*, IEnumString**, int> GetHandlerEnumerator;
+        public delegate* unmanaged<TSelf*, IEnumString**, int> GetHandlerEnumerator;
 
         [NativeTypeName("HRESULT (LPCWSTR, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandlerCollection*, ushort*, Guid*, void**, int> BindToHandler;
+        public delegate* unmanaged<TSelf*, ushort*, Guid*, void**, int> BindToHandler;
     }
 }

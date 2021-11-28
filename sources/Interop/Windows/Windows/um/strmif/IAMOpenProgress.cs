@@ -62,21 +62,22 @@ public unsafe partial struct IAMOpenProgress : IAMOpenProgress.Interface
         HRESULT AbortOperation();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMOpenProgress*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMOpenProgress*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMOpenProgress*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LONGLONG *, LONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMOpenProgress*, long*, long*, int> QueryProgress;
+        public delegate* unmanaged<TSelf*, long*, long*, int> QueryProgress;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMOpenProgress*, int> AbortOperation;
+        public delegate* unmanaged<TSelf*, int> AbortOperation;
     }
 }

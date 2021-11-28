@@ -371,129 +371,130 @@ public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface
         HRESULT UnselectAll();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, int> MoveSelectionUp;
+        public delegate* unmanaged<TSelf*, int> MoveSelectionUp;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, int> MoveSelectionDown;
+        public delegate* unmanaged<TSelf*, int> MoveSelectionDown;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, int> ResetSort;
+        public delegate* unmanaged<TSelf*, int> ResetSort;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, int> NewFolder;
+        public delegate* unmanaged<TSelf*, int> NewFolder;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, int> Synchronize;
+        public delegate* unmanaged<TSelf*, int> Synchronize;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, int> Import;
+        public delegate* unmanaged<TSelf*, int> Import;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, int> Export;
+        public delegate* unmanaged<TSelf*, int> Export;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, ushort*, int> InvokeContextMenuCommand;
+        public delegate* unmanaged<TSelf*, ushort*, int> InvokeContextMenuCommand;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, int> MoveSelectionTo;
+        public delegate* unmanaged<TSelf*, int> MoveSelectionTo;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, short*, int> get_SubscriptionsEnabled;
+        public delegate* unmanaged<TSelf*, short*, int> get_SubscriptionsEnabled;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, short*, int> CreateSubscriptionForSelection;
+        public delegate* unmanaged<TSelf*, short*, int> CreateSubscriptionForSelection;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, short*, int> DeleteSubscriptionForSelection;
+        public delegate* unmanaged<TSelf*, short*, int> DeleteSubscriptionForSelection;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, ushort*, int> SetRoot;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetRoot;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, int*, int> get_EnumOptions;
+        public delegate* unmanaged<TSelf*, int*, int> get_EnumOptions;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, int, int> put_EnumOptions;
+        public delegate* unmanaged<TSelf*, int, int> put_EnumOptions;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, IDispatch**, int> get_SelectedItem;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_SelectedItem;
 
         [NativeTypeName("HRESULT (IDispatch *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, IDispatch*, int> put_SelectedItem;
+        public delegate* unmanaged<TSelf*, IDispatch*, int> put_SelectedItem;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, VARIANT*, int> get_Root;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_Root;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, VARIANT, int> put_Root;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_Root;
 
         [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, int*, int> get_Depth;
+        public delegate* unmanaged<TSelf*, int*, int> get_Depth;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, int, int> put_Depth;
+        public delegate* unmanaged<TSelf*, int, int> put_Depth;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, uint*, int> get_Mode;
+        public delegate* unmanaged<TSelf*, uint*, int> get_Mode;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, uint, int> put_Mode;
+        public delegate* unmanaged<TSelf*, uint, int> put_Mode;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, uint*, int> get_Flags;
+        public delegate* unmanaged<TSelf*, uint*, int> get_Flags;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, uint, int> put_Flags;
+        public delegate* unmanaged<TSelf*, uint, int> put_Flags;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, uint, int> put_TVFlags;
+        public delegate* unmanaged<TSelf*, uint, int> put_TVFlags;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, uint*, int> get_TVFlags;
+        public delegate* unmanaged<TSelf*, uint*, int> get_TVFlags;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, ushort**, int> get_Columns;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_Columns;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, ushort*, int> put_Columns;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_Columns;
 
         [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, int*, int> get_CountViewTypes;
+        public delegate* unmanaged<TSelf*, int*, int> get_CountViewTypes;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, int, int> SetViewType;
+        public delegate* unmanaged<TSelf*, int, int> SetViewType;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, IDispatch**, int> SelectedItems;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> SelectedItems;
 
         [NativeTypeName("HRESULT (VARIANT, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, VARIANT, int, int> Expand;
+        public delegate* unmanaged<TSelf*, VARIANT, int, int> Expand;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellNameSpace*, int> UnselectAll;
+        public delegate* unmanaged<TSelf*, int> UnselectAll;
     }
 }

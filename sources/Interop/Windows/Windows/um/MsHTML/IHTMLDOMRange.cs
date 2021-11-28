@@ -330,105 +330,106 @@ public unsafe partial struct IHTMLDOMRange : IHTMLDOMRange.Interface
         HRESULT getBoundingClientRect(IHTMLRect** ppRect);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IHTMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, IHTMLDOMNode**, int> get_startContainer;
+        public delegate* unmanaged<TSelf*, IHTMLDOMNode**, int> get_startContainer;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, int*, int> get_startOffset;
+        public delegate* unmanaged<TSelf*, int*, int> get_startOffset;
 
         [NativeTypeName("HRESULT (IHTMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, IHTMLDOMNode**, int> get_endContainer;
+        public delegate* unmanaged<TSelf*, IHTMLDOMNode**, int> get_endContainer;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, int*, int> get_endOffset;
+        public delegate* unmanaged<TSelf*, int*, int> get_endOffset;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, short*, int> get_collapsed;
+        public delegate* unmanaged<TSelf*, short*, int> get_collapsed;
 
         [NativeTypeName("HRESULT (IHTMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, IHTMLDOMNode**, int> get_commonAncestorContainer;
+        public delegate* unmanaged<TSelf*, IHTMLDOMNode**, int> get_commonAncestorContainer;
 
         [NativeTypeName("HRESULT (IDispatch *, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, IDispatch*, int, int> setStart;
+        public delegate* unmanaged<TSelf*, IDispatch*, int, int> setStart;
 
         [NativeTypeName("HRESULT (IDispatch *, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, IDispatch*, int, int> setEnd;
+        public delegate* unmanaged<TSelf*, IDispatch*, int, int> setEnd;
 
         [NativeTypeName("HRESULT (IDispatch *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, IDispatch*, int> setStartBefore;
+        public delegate* unmanaged<TSelf*, IDispatch*, int> setStartBefore;
 
         [NativeTypeName("HRESULT (IDispatch *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, IDispatch*, int> setStartAfter;
+        public delegate* unmanaged<TSelf*, IDispatch*, int> setStartAfter;
 
         [NativeTypeName("HRESULT (IDispatch *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, IDispatch*, int> setEndBefore;
+        public delegate* unmanaged<TSelf*, IDispatch*, int> setEndBefore;
 
         [NativeTypeName("HRESULT (IDispatch *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, IDispatch*, int> setEndAfter;
+        public delegate* unmanaged<TSelf*, IDispatch*, int> setEndAfter;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, short, int> collapse;
+        public delegate* unmanaged<TSelf*, short, int> collapse;
 
         [NativeTypeName("HRESULT (IDispatch *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, IDispatch*, int> selectNode;
+        public delegate* unmanaged<TSelf*, IDispatch*, int> selectNode;
 
         [NativeTypeName("HRESULT (IDispatch *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, IDispatch*, int> selectNodeContents;
+        public delegate* unmanaged<TSelf*, IDispatch*, int> selectNodeContents;
 
         [NativeTypeName("HRESULT (short, IDispatch *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, short, IDispatch*, int*, int> compareBoundaryPoints;
+        public delegate* unmanaged<TSelf*, short, IDispatch*, int*, int> compareBoundaryPoints;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, int> deleteContents;
+        public delegate* unmanaged<TSelf*, int> deleteContents;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, IDispatch**, int> extractContents;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> extractContents;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, IDispatch**, int> cloneContents;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> cloneContents;
 
         [NativeTypeName("HRESULT (IDispatch *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, IDispatch*, int> insertNode;
+        public delegate* unmanaged<TSelf*, IDispatch*, int> insertNode;
 
         [NativeTypeName("HRESULT (IDispatch *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, IDispatch*, int> surroundContents;
+        public delegate* unmanaged<TSelf*, IDispatch*, int> surroundContents;
 
         [NativeTypeName("HRESULT (IHTMLDOMRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, IHTMLDOMRange**, int> cloneRange;
+        public delegate* unmanaged<TSelf*, IHTMLDOMRange**, int> cloneRange;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, ushort**, int> toString;
+        public delegate* unmanaged<TSelf*, ushort**, int> toString;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, int> detach;
+        public delegate* unmanaged<TSelf*, int> detach;
 
         [NativeTypeName("HRESULT (IHTMLRectCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, IHTMLRectCollection**, int> getClientRects;
+        public delegate* unmanaged<TSelf*, IHTMLRectCollection**, int> getClientRects;
 
         [NativeTypeName("HRESULT (IHTMLRect **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDOMRange*, IHTMLRect**, int> getBoundingClientRect;
+        public delegate* unmanaged<TSelf*, IHTMLRect**, int> getBoundingClientRect;
     }
 }

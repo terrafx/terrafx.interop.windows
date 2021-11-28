@@ -82,27 +82,28 @@ public unsafe partial struct IEventTarget2 : IEventTarget2.Interface
         HRESULT UnregisterForDOMEventListeners(IDOMEventRegistrationCallback* pCallback);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEventTarget2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEventTarget2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEventTarget2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEventTarget2*, SAFEARRAY**, int> GetRegisteredEventTypes;
+        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> GetRegisteredEventTypes;
 
         [NativeTypeName("HRESULT (LPCWSTR, SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEventTarget2*, ushort*, SAFEARRAY**, int> GetListenersForType;
+        public delegate* unmanaged<TSelf*, ushort*, SAFEARRAY**, int> GetListenersForType;
 
         [NativeTypeName("HRESULT (IDOMEventRegistrationCallback *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEventTarget2*, IDOMEventRegistrationCallback*, int> RegisterForDOMEventListeners;
+        public delegate* unmanaged<TSelf*, IDOMEventRegistrationCallback*, int> RegisterForDOMEventListeners;
 
         [NativeTypeName("HRESULT (IDOMEventRegistrationCallback *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEventTarget2*, IDOMEventRegistrationCallback*, int> UnregisterForDOMEventListeners;
+        public delegate* unmanaged<TSelf*, IDOMEventRegistrationCallback*, int> UnregisterForDOMEventListeners;
     }
 }

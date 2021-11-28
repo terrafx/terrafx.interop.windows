@@ -87,33 +87,34 @@ public unsafe partial struct ITaskbarList2 : ITaskbarList2.Interface
         HRESULT MarkFullscreenWindow(HWND hwnd, BOOL fFullscreen);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITaskbarList2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITaskbarList2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITaskbarList2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITaskbarList2*, int> HrInit;
+        public delegate* unmanaged<TSelf*, int> HrInit;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITaskbarList2*, HWND, int> AddTab;
+        public delegate* unmanaged<TSelf*, HWND, int> AddTab;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITaskbarList2*, HWND, int> DeleteTab;
+        public delegate* unmanaged<TSelf*, HWND, int> DeleteTab;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITaskbarList2*, HWND, int> ActivateTab;
+        public delegate* unmanaged<TSelf*, HWND, int> ActivateTab;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITaskbarList2*, HWND, int> SetActiveAlt;
+        public delegate* unmanaged<TSelf*, HWND, int> SetActiveAlt;
 
         [NativeTypeName("HRESULT (HWND, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITaskbarList2*, HWND, BOOL, int> MarkFullscreenWindow;
+        public delegate* unmanaged<TSelf*, HWND, BOOL, int> MarkFullscreenWindow;
     }
 }

@@ -92,30 +92,31 @@ public unsafe partial struct IVMRMonitorConfig : IVMRMonitorConfig.Interface
         HRESULT GetAvailableMonitors(VMRMONITORINFO* pInfo, [NativeTypeName("DWORD")] uint dwMaxInfoArraySize, [NativeTypeName("DWORD *")] uint* pdwNumDevices);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRMonitorConfig*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRMonitorConfig*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRMonitorConfig*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const VMRGUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRMonitorConfig*, VMRGUID*, int> SetMonitor;
+        public delegate* unmanaged<TSelf*, VMRGUID*, int> SetMonitor;
 
         [NativeTypeName("HRESULT (VMRGUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRMonitorConfig*, VMRGUID*, int> GetMonitor;
+        public delegate* unmanaged<TSelf*, VMRGUID*, int> GetMonitor;
 
         [NativeTypeName("HRESULT (const VMRGUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRMonitorConfig*, VMRGUID*, int> SetDefaultMonitor;
+        public delegate* unmanaged<TSelf*, VMRGUID*, int> SetDefaultMonitor;
 
         [NativeTypeName("HRESULT (VMRGUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRMonitorConfig*, VMRGUID*, int> GetDefaultMonitor;
+        public delegate* unmanaged<TSelf*, VMRGUID*, int> GetDefaultMonitor;
 
         [NativeTypeName("HRESULT (VMRMONITORINFO *, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRMonitorConfig*, VMRMONITORINFO*, uint, uint*, int> GetAvailableMonitors;
+        public delegate* unmanaged<TSelf*, VMRMONITORINFO*, uint, uint*, int> GetAvailableMonitors;
     }
 }

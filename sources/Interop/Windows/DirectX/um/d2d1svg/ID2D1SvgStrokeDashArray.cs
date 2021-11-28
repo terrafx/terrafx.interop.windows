@@ -126,42 +126,43 @@ public unsafe partial struct ID2D1SvgStrokeDashArray : ID2D1SvgStrokeDashArray.I
         uint GetDashesCount();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("void (ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, ID2D1SvgElement**, void> GetElement;
+        public delegate* unmanaged<TSelf*, ID2D1SvgElement**, void> GetElement;
 
         [NativeTypeName("HRESULT (ID2D1SvgAttribute **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, ID2D1SvgAttribute**, int> Clone;
+        public delegate* unmanaged<TSelf*, ID2D1SvgAttribute**, int> Clone;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, uint, int> RemoveDashesAtEnd;
+        public delegate* unmanaged<TSelf*, uint, int> RemoveDashesAtEnd;
 
         [NativeTypeName("HRESULT (const D2D1_SVG_LENGTH *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, D2D1_SVG_LENGTH*, uint, uint, int> UpdateDashes;
+        public delegate* unmanaged<TSelf*, D2D1_SVG_LENGTH*, uint, uint, int> UpdateDashes;
 
         [NativeTypeName("HRESULT (const FLOAT *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, float*, uint, uint, int> UpdateDashes1;
+        public delegate* unmanaged<TSelf*, float*, uint, uint, int> UpdateDashes1;
 
         [NativeTypeName("HRESULT (D2D1_SVG_LENGTH *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, D2D1_SVG_LENGTH*, uint, uint, int> GetDashes;
+        public delegate* unmanaged<TSelf*, D2D1_SVG_LENGTH*, uint, uint, int> GetDashes;
 
         [NativeTypeName("HRESULT (FLOAT *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgStrokeDashArray*, float*, uint, uint, int> GetDashes1;
+        public delegate* unmanaged<TSelf*, float*, uint, uint, int> GetDashes1;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1SvgStrokeDashArray*, uint> GetDashesCount;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetDashesCount;
     }
 }

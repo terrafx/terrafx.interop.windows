@@ -83,30 +83,31 @@ public unsafe partial struct IPersistSerializedPropStorage2 : IPersistSerialized
         HRESULT GetPropertyStorageBuffer(PCUSERIALIZEDPROPSTORAGE psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("DWORD *")] uint* pcbWritten);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistSerializedPropStorage2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistSerializedPropStorage2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistSerializedPropStorage2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PERSIST_SPROPSTORE_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistSerializedPropStorage2*, int, int> SetFlags;
+        public delegate* unmanaged<TSelf*, int, int> SetFlags;
 
         [NativeTypeName("HRESULT (PCUSERIALIZEDPROPSTORAGE, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistSerializedPropStorage2*, PCUSERIALIZEDPROPSTORAGE, uint, int> SetPropertyStorage;
+        public delegate* unmanaged<TSelf*, PCUSERIALIZEDPROPSTORAGE, uint, int> SetPropertyStorage;
 
         [NativeTypeName("HRESULT (SERIALIZEDPROPSTORAGE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistSerializedPropStorage2*, PCUSERIALIZEDPROPSTORAGE*, uint*, int> GetPropertyStorage;
+        public delegate* unmanaged<TSelf*, PCUSERIALIZEDPROPSTORAGE*, uint*, int> GetPropertyStorage;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistSerializedPropStorage2*, uint*, int> GetPropertyStorageSize;
+        public delegate* unmanaged<TSelf*, uint*, int> GetPropertyStorageSize;
 
         [NativeTypeName("HRESULT (SERIALIZEDPROPSTORAGE *, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistSerializedPropStorage2*, PCUSERIALIZEDPROPSTORAGE, uint, uint*, int> GetPropertyStorageBuffer;
+        public delegate* unmanaged<TSelf*, PCUSERIALIZEDPROPSTORAGE, uint, uint*, int> GetPropertyStorageBuffer;
     }
 }

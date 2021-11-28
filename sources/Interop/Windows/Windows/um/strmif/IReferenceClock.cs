@@ -82,27 +82,28 @@ public unsafe partial struct IReferenceClock : IReferenceClock.Interface
         HRESULT Unadvise([NativeTypeName("DWORD_PTR")] nuint dwAdviseCookie);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IReferenceClock*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IReferenceClock*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IReferenceClock*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IReferenceClock*, long*, int> GetTime;
+        public delegate* unmanaged<TSelf*, long*, int> GetTime;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME, REFERENCE_TIME, HEVENT, DWORD_PTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IReferenceClock*, long, long, HEVENT, nuint*, int> AdviseTime;
+        public delegate* unmanaged<TSelf*, long, long, HEVENT, nuint*, int> AdviseTime;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME, REFERENCE_TIME, HSEMAPHORE, DWORD_PTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IReferenceClock*, long, long, HSEMAPHORE, nuint*, int> AdvisePeriodic;
+        public delegate* unmanaged<TSelf*, long, long, HSEMAPHORE, nuint*, int> AdvisePeriodic;
 
         [NativeTypeName("HRESULT (DWORD_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IReferenceClock*, nuint, int> Unadvise;
+        public delegate* unmanaged<TSelf*, nuint, int> Unadvise;
     }
 }

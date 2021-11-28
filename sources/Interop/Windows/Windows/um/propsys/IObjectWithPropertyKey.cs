@@ -62,21 +62,22 @@ public unsafe partial struct IObjectWithPropertyKey : IObjectWithPropertyKey.Int
         HRESULT GetPropertyKey(PROPERTYKEY* pkey);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectWithPropertyKey*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectWithPropertyKey*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectWithPropertyKey*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectWithPropertyKey*, PROPERTYKEY*, int> SetPropertyKey;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, int> SetPropertyKey;
 
         [NativeTypeName("HRESULT (PROPERTYKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectWithPropertyKey*, PROPERTYKEY*, int> GetPropertyKey;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, int> GetPropertyKey;
     }
 }

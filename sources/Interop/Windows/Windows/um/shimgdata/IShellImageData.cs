@@ -342,105 +342,106 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface
         HRESULT ReplaceFrame([NativeTypeName("Image *")] byte* pImg);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, ULONG, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, uint, uint, uint, int> Decode;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, int> Decode;
 
         [NativeTypeName("HRESULT (HDC, LPRECT, LPRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, HDC, RECT*, RECT*, int> Draw;
+        public delegate* unmanaged<TSelf*, HDC, RECT*, RECT*, int> Draw;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, int> NextFrame;
+        public delegate* unmanaged<TSelf*, int> NextFrame;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, int> NextPage;
+        public delegate* unmanaged<TSelf*, int> NextPage;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, int> PrevPage;
+        public delegate* unmanaged<TSelf*, int> PrevPage;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, int> IsTransparent;
+        public delegate* unmanaged<TSelf*, int> IsTransparent;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, int> IsAnimated;
+        public delegate* unmanaged<TSelf*, int> IsAnimated;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, int> IsVector;
+        public delegate* unmanaged<TSelf*, int> IsVector;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, int> IsMultipage;
+        public delegate* unmanaged<TSelf*, int> IsMultipage;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, int> IsEditable;
+        public delegate* unmanaged<TSelf*, int> IsEditable;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, int> IsPrintable;
+        public delegate* unmanaged<TSelf*, int> IsPrintable;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, int> IsDecoded;
+        public delegate* unmanaged<TSelf*, int> IsDecoded;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, uint*, int> GetCurrentPage;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCurrentPage;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, uint*, int> GetPageCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetPageCount;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, uint, int> SelectPage;
+        public delegate* unmanaged<TSelf*, uint, int> SelectPage;
 
         [NativeTypeName("HRESULT (SIZE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, SIZE*, int> GetSize;
+        public delegate* unmanaged<TSelf*, SIZE*, int> GetSize;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, Guid*, int> GetRawDataFormat;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetRawDataFormat;
 
         [NativeTypeName("HRESULT (PixelFormat *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, uint*, int> GetPixelFormat;
+        public delegate* unmanaged<TSelf*, uint*, int> GetPixelFormat;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, uint*, int> GetDelay;
+        public delegate* unmanaged<TSelf*, uint*, int> GetDelay;
 
         [NativeTypeName("HRESULT (DWORD, IPropertySetStorage **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, uint, IPropertySetStorage**, int> GetProperties;
+        public delegate* unmanaged<TSelf*, uint, IPropertySetStorage**, int> GetProperties;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, uint, int> Rotate;
+        public delegate* unmanaged<TSelf*, uint, int> Rotate;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, InterpolationMode) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, uint, uint, uint, int> Scale;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, int> Scale;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, int> DiscardEdit;
+        public delegate* unmanaged<TSelf*, int> DiscardEdit;
 
         [NativeTypeName("HRESULT (IPropertyBag *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, IPropertyBag*, int> SetEncoderParams;
+        public delegate* unmanaged<TSelf*, IPropertyBag*, int> SetEncoderParams;
 
         [NativeTypeName("HRESULT (LPWSTR, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, ushort*, uint, int> DisplayName;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> DisplayName;
 
         [NativeTypeName("HRESULT (ULONG *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, uint*, uint*, int> GetResolution;
+        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetResolution;
 
         [NativeTypeName("HRESULT (GUID *, EncoderParameters **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, Guid*, byte**, int> GetEncoderParams;
+        public delegate* unmanaged<TSelf*, Guid*, byte**, int> GetEncoderParams;
 
         [NativeTypeName("HRESULT (IShellImageDataAbort *, IShellImageDataAbort **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, IShellImageDataAbort*, IShellImageDataAbort**, int> RegisterAbort;
+        public delegate* unmanaged<TSelf*, IShellImageDataAbort*, IShellImageDataAbort**, int> RegisterAbort;
 
         [NativeTypeName("HRESULT (Image **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, byte**, int> CloneFrame;
+        public delegate* unmanaged<TSelf*, byte**, int> CloneFrame;
 
         [NativeTypeName("HRESULT (Image *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellImageData*, byte*, int> ReplaceFrame;
+        public delegate* unmanaged<TSelf*, byte*, int> ReplaceFrame;
     }
 }

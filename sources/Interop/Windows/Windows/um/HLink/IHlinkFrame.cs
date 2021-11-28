@@ -92,30 +92,31 @@ public unsafe partial struct IHlinkFrame : IHlinkFrame.Interface
         HRESULT UpdateHlink([NativeTypeName("ULONG")] uint uHLID, IMoniker* pimkTarget, [NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPCWSTR")] ushort* pwzFriendlyName);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkFrame*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkFrame*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkFrame*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IHlinkBrowseContext *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkFrame*, IHlinkBrowseContext*, int> SetBrowseContext;
+        public delegate* unmanaged<TSelf*, IHlinkBrowseContext*, int> SetBrowseContext;
 
         [NativeTypeName("HRESULT (IHlinkBrowseContext **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkFrame*, IHlinkBrowseContext**, int> GetBrowseContext;
+        public delegate* unmanaged<TSelf*, IHlinkBrowseContext**, int> GetBrowseContext;
 
         [NativeTypeName("HRESULT (DWORD, LPBC, IBindStatusCallback *, IHlink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkFrame*, uint, IBindCtx*, IBindStatusCallback*, IHlink*, int> Navigate;
+        public delegate* unmanaged<TSelf*, uint, IBindCtx*, IBindStatusCallback*, IHlink*, int> Navigate;
 
         [NativeTypeName("HRESULT (DWORD, IMoniker *, LPCWSTR, LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkFrame*, uint, IMoniker*, ushort*, ushort*, uint, int> OnNavigate;
+        public delegate* unmanaged<TSelf*, uint, IMoniker*, ushort*, ushort*, uint, int> OnNavigate;
 
         [NativeTypeName("HRESULT (ULONG, IMoniker *, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkFrame*, uint, IMoniker*, ushort*, ushort*, int> UpdateHlink;
+        public delegate* unmanaged<TSelf*, uint, IMoniker*, ushort*, ushort*, int> UpdateHlink;
     }
 }

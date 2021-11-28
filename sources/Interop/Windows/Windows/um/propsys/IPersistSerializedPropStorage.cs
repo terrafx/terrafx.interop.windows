@@ -72,24 +72,25 @@ public unsafe partial struct IPersistSerializedPropStorage : IPersistSerializedP
         HRESULT GetPropertyStorage([NativeTypeName("SERIALIZEDPROPSTORAGE **")] PCUSERIALIZEDPROPSTORAGE* ppsps, [NativeTypeName("DWORD *")] uint* pcb);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistSerializedPropStorage*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistSerializedPropStorage*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistSerializedPropStorage*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PERSIST_SPROPSTORE_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistSerializedPropStorage*, int, int> SetFlags;
+        public delegate* unmanaged<TSelf*, int, int> SetFlags;
 
         [NativeTypeName("HRESULT (PCUSERIALIZEDPROPSTORAGE, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistSerializedPropStorage*, PCUSERIALIZEDPROPSTORAGE, uint, int> SetPropertyStorage;
+        public delegate* unmanaged<TSelf*, PCUSERIALIZEDPROPSTORAGE, uint, int> SetPropertyStorage;
 
         [NativeTypeName("HRESULT (SERIALIZEDPROPSTORAGE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistSerializedPropStorage*, PCUSERIALIZEDPROPSTORAGE*, uint*, int> GetPropertyStorage;
+        public delegate* unmanaged<TSelf*, PCUSERIALIZEDPROPSTORAGE*, uint*, int> GetPropertyStorage;
     }
 }

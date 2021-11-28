@@ -72,24 +72,25 @@ public unsafe partial struct IAccServerDocMgr : IAccServerDocMgr.Interface
         HRESULT OnDocumentFocus(IUnknown* punk);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccServerDocMgr*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccServerDocMgr*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccServerDocMgr*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccServerDocMgr*, Guid*, IUnknown*, int> NewDocument;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> NewDocument;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccServerDocMgr*, IUnknown*, int> RevokeDocument;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> RevokeDocument;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccServerDocMgr*, IUnknown*, int> OnDocumentFocus;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> OnDocumentFocus;
     }
 }

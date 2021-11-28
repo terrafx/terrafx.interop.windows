@@ -52,18 +52,19 @@ public unsafe partial struct IHTMLEditHost : IHTMLEditHost.Interface
         HRESULT SnapRect(IHTMLElement* pIElement, RECT* prcNew, ELEMENT_CORNER eHandle);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditHost*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditHost*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditHost*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IHTMLElement *, RECT *, ELEMENT_CORNER) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditHost*, IHTMLElement*, RECT*, ELEMENT_CORNER, int> SnapRect;
+        public delegate* unmanaged<TSelf*, IHTMLElement*, RECT*, ELEMENT_CORNER, int> SnapRect;
     }
 }

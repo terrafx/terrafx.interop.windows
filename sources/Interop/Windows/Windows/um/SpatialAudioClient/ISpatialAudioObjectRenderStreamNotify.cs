@@ -52,18 +52,19 @@ public unsafe partial struct ISpatialAudioObjectRenderStreamNotify : ISpatialAud
         HRESULT OnAvailableDynamicObjectCountChange(ISpatialAudioObjectRenderStreamBase* sender, [NativeTypeName("LONGLONG")] long hnsComplianceDeadlineTime, [NativeTypeName("UINT32")] uint availableDynamicObjectCountChange);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectRenderStreamNotify*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectRenderStreamNotify*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectRenderStreamNotify*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ISpatialAudioObjectRenderStreamBase *, LONGLONG, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectRenderStreamNotify*, ISpatialAudioObjectRenderStreamBase*, long, uint, int> OnAvailableDynamicObjectCountChange;
+        public delegate* unmanaged<TSelf*, ISpatialAudioObjectRenderStreamBase*, long, uint, int> OnAvailableDynamicObjectCountChange;
     }
 }

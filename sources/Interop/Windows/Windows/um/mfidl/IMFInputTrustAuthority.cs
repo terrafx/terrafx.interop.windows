@@ -102,33 +102,34 @@ public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Int
         HRESULT Reset();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFInputTrustAuthority*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFInputTrustAuthority*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFInputTrustAuthority*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFInputTrustAuthority*, Guid*, void**, int> GetDecrypter;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDecrypter;
 
         [NativeTypeName("HRESULT (MFPOLICYMANAGER_ACTION, IMFActivate **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFInputTrustAuthority*, MFPOLICYMANAGER_ACTION, IMFActivate**, int> RequestAccess;
+        public delegate* unmanaged<TSelf*, MFPOLICYMANAGER_ACTION, IMFActivate**, int> RequestAccess;
 
         [NativeTypeName("HRESULT (MFPOLICYMANAGER_ACTION, IMFOutputPolicy **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFInputTrustAuthority*, MFPOLICYMANAGER_ACTION, IMFOutputPolicy**, int> GetPolicy;
+        public delegate* unmanaged<TSelf*, MFPOLICYMANAGER_ACTION, IMFOutputPolicy**, int> GetPolicy;
 
         [NativeTypeName("HRESULT (MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFInputTrustAuthority*, MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS*, int> BindAccess;
+        public delegate* unmanaged<TSelf*, MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS*, int> BindAccess;
 
         [NativeTypeName("HRESULT (MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFInputTrustAuthority*, MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS*, int> UpdateAccess;
+        public delegate* unmanaged<TSelf*, MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS*, int> UpdateAccess;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFInputTrustAuthority*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
     }
 }

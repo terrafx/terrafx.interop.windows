@@ -82,27 +82,28 @@ public unsafe partial struct ITfReadOnlyProperty : ITfReadOnlyProperty.Interface
         HRESULT GetContext(ITfContext** ppContext);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfReadOnlyProperty*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfReadOnlyProperty*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfReadOnlyProperty*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public new delegate* unmanaged<ITfReadOnlyProperty*, Guid*, int> GetType;
+        public new delegate* unmanaged<TSelf*, Guid*, int> GetType;
 
         [NativeTypeName("HRESULT (TfEditCookie, IEnumTfRanges **, ITfRange *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfReadOnlyProperty*, uint, IEnumTfRanges**, ITfRange*, int> EnumRanges;
+        public delegate* unmanaged<TSelf*, uint, IEnumTfRanges**, ITfRange*, int> EnumRanges;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfReadOnlyProperty*, uint, ITfRange*, VARIANT*, int> GetValue;
+        public delegate* unmanaged<TSelf*, uint, ITfRange*, VARIANT*, int> GetValue;
 
         [NativeTypeName("HRESULT (ITfContext **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfReadOnlyProperty*, ITfContext**, int> GetContext;
+        public delegate* unmanaged<TSelf*, ITfContext**, int> GetContext;
     }
 }

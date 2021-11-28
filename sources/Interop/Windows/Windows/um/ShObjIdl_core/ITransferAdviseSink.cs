@@ -112,36 +112,37 @@ public unsafe partial struct ITransferAdviseSink : ITransferAdviseSink.Interface
         HRESULT PropertyFailure(IShellItem* psi, [NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* pkey, HRESULT hrError);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferAdviseSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferAdviseSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferAdviseSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONGLONG, ULONGLONG, int, int, int, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferAdviseSink*, ulong, ulong, int, int, int, int, int> UpdateProgress;
+        public delegate* unmanaged<TSelf*, ulong, ulong, int, int, int, int, int> UpdateProgress;
 
         [NativeTypeName("HRESULT (TRANSFER_ADVISE_STATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferAdviseSink*, uint, int> UpdateTransferState;
+        public delegate* unmanaged<TSelf*, uint, int> UpdateTransferState;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItem *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferAdviseSink*, IShellItem*, IShellItem*, ushort*, int> ConfirmOverwrite;
+        public delegate* unmanaged<TSelf*, IShellItem*, IShellItem*, ushort*, int> ConfirmOverwrite;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferAdviseSink*, IShellItem*, int> ConfirmEncryptionLoss;
+        public delegate* unmanaged<TSelf*, IShellItem*, int> ConfirmEncryptionLoss;
 
         [NativeTypeName("HRESULT (IShellItem *, LPCWSTR, HRESULT, LPWSTR, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferAdviseSink*, IShellItem*, ushort*, HRESULT, ushort*, uint, int> FileFailure;
+        public delegate* unmanaged<TSelf*, IShellItem*, ushort*, HRESULT, ushort*, uint, int> FileFailure;
 
         [NativeTypeName("HRESULT (IShellItem *, LPCWSTR, HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferAdviseSink*, IShellItem*, ushort*, HRESULT, int> SubStreamFailure;
+        public delegate* unmanaged<TSelf*, IShellItem*, ushort*, HRESULT, int> SubStreamFailure;
 
         [NativeTypeName("HRESULT (IShellItem *, const PROPERTYKEY *, HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferAdviseSink*, IShellItem*, PROPERTYKEY*, HRESULT, int> PropertyFailure;
+        public delegate* unmanaged<TSelf*, IShellItem*, PROPERTYKEY*, HRESULT, int> PropertyFailure;
     }
 }

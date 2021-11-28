@@ -54,18 +54,19 @@ public unsafe partial struct ICredentialProviderCredentialWithFieldOptions : ICr
         HRESULT GetFieldOptions([NativeTypeName("DWORD")] uint fieldID, CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS* options);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderCredentialWithFieldOptions*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderCredentialWithFieldOptions*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderCredentialWithFieldOptions*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProviderCredentialWithFieldOptions*, uint, CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS*, int> GetFieldOptions;
+        public delegate* unmanaged<TSelf*, uint, CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS*, int> GetFieldOptions;
     }
 }

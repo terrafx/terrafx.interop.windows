@@ -82,27 +82,28 @@ public unsafe partial struct IEnumTfPropertyValue : IEnumTfPropertyValue.Interfa
         HRESULT Skip([NativeTypeName("ULONG")] uint ulCount);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfPropertyValue*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfPropertyValue*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfPropertyValue*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumTfPropertyValue **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfPropertyValue*, IEnumTfPropertyValue**, int> Clone;
+        public delegate* unmanaged<TSelf*, IEnumTfPropertyValue**, int> Clone;
 
         [NativeTypeName("HRESULT (ULONG, TF_PROPERTYVAL *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfPropertyValue*, uint, TF_PROPERTYVAL*, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, TF_PROPERTYVAL*, uint*, int> Next;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfPropertyValue*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfPropertyValue*, uint, int> Skip;
+        public delegate* unmanaged<TSelf*, uint, int> Skip;
     }
 }

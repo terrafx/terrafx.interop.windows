@@ -260,84 +260,85 @@ public unsafe partial struct IHTMLDocument5 : IHTMLDocument5.Interface
         HRESULT get_compatMode([NativeTypeName("BSTR *")] ushort** p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, VARIANT, int> put_onmousewheel;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onmousewheel;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, VARIANT*, int> get_onmousewheel;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onmousewheel;
 
         [NativeTypeName("HRESULT (IHTMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, IHTMLDOMNode**, int> get_doctype;
+        public delegate* unmanaged<TSelf*, IHTMLDOMNode**, int> get_doctype;
 
         [NativeTypeName("HRESULT (IHTMLDOMImplementation **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, IHTMLDOMImplementation**, int> get_implementation;
+        public delegate* unmanaged<TSelf*, IHTMLDOMImplementation**, int> get_implementation;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLDOMAttribute **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, ushort*, IHTMLDOMAttribute**, int> createAttribute;
+        public delegate* unmanaged<TSelf*, ushort*, IHTMLDOMAttribute**, int> createAttribute;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLDOMNode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, ushort*, IHTMLDOMNode**, int> createComment;
+        public delegate* unmanaged<TSelf*, ushort*, IHTMLDOMNode**, int> createComment;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, VARIANT, int> put_onfocusin;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onfocusin;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, VARIANT*, int> get_onfocusin;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onfocusin;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, VARIANT, int> put_onfocusout;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onfocusout;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, VARIANT*, int> get_onfocusout;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onfocusout;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, VARIANT, int> put_onactivate;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onactivate;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, VARIANT*, int> get_onactivate;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onactivate;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, VARIANT, int> put_ondeactivate;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_ondeactivate;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, VARIANT*, int> get_ondeactivate;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_ondeactivate;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, VARIANT, int> put_onbeforeactivate;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onbeforeactivate;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, VARIANT*, int> get_onbeforeactivate;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onbeforeactivate;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, VARIANT, int> put_onbeforedeactivate;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onbeforedeactivate;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, VARIANT*, int> get_onbeforedeactivate;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onbeforedeactivate;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDocument5*, ushort**, int> get_compatMode;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_compatMode;
     }
 }

@@ -177,69 +177,70 @@ public unsafe partial struct IWICMetadataReaderInfo : IWICMetadataReaderInfo.Int
         HRESULT CreateInstance(IWICMetadataReader** ppIReader);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReaderInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReaderInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReaderInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (WICComponentType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReaderInfo*, WICComponentType*, int> GetComponentType;
+        public delegate* unmanaged<TSelf*, WICComponentType*, int> GetComponentType;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReaderInfo*, Guid*, int> GetCLSID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetCLSID;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReaderInfo*, uint*, int> GetSigningStatus;
+        public delegate* unmanaged<TSelf*, uint*, int> GetSigningStatus;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReaderInfo*, uint, ushort*, uint*, int> GetAuthor;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetAuthor;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReaderInfo*, Guid*, int> GetVendorGUID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetVendorGUID;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReaderInfo*, uint, ushort*, uint*, int> GetVersion;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetVersion;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReaderInfo*, uint, ushort*, uint*, int> GetSpecVersion;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetSpecVersion;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReaderInfo*, uint, ushort*, uint*, int> GetFriendlyName;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetFriendlyName;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReaderInfo*, Guid*, int> GetMetadataFormat;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetMetadataFormat;
 
         [NativeTypeName("HRESULT (UINT, GUID *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReaderInfo*, uint, Guid*, uint*, int> GetContainerFormats;
+        public delegate* unmanaged<TSelf*, uint, Guid*, uint*, int> GetContainerFormats;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReaderInfo*, uint, ushort*, uint*, int> GetDeviceManufacturer;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetDeviceManufacturer;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReaderInfo*, uint, ushort*, uint*, int> GetDeviceModels;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetDeviceModels;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReaderInfo*, BOOL*, int> DoesRequireFullStream;
+        public delegate* unmanaged<TSelf*, BOOL*, int> DoesRequireFullStream;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReaderInfo*, BOOL*, int> DoesSupportPadding;
+        public delegate* unmanaged<TSelf*, BOOL*, int> DoesSupportPadding;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReaderInfo*, BOOL*, int> DoesRequireFixedSize;
+        public delegate* unmanaged<TSelf*, BOOL*, int> DoesRequireFixedSize;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, WICMetadataPattern *, UINT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReaderInfo*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int> GetPatterns;
+        public delegate* unmanaged<TSelf*, Guid*, uint, WICMetadataPattern*, uint*, uint*, int> GetPatterns;
 
         [NativeTypeName("HRESULT (const GUID &, IStream *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReaderInfo*, Guid*, IStream*, BOOL*, int> MatchesPattern;
+        public delegate* unmanaged<TSelf*, Guid*, IStream*, BOOL*, int> MatchesPattern;
 
         [NativeTypeName("HRESULT (IWICMetadataReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataReaderInfo*, IWICMetadataReader**, int> CreateInstance;
+        public delegate* unmanaged<TSelf*, IWICMetadataReader**, int> CreateInstance;
     }
 }

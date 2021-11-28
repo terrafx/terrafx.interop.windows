@@ -52,18 +52,19 @@ public unsafe partial struct IMFExtendedCameraController : IMFExtendedCameraCont
         HRESULT GetExtendedCameraControl([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("ULONG")] uint ulPropertyId, IMFExtendedCameraControl** ppControl);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraController*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraController*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraController*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, ULONG, IMFExtendedCameraControl **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraController*, uint, uint, IMFExtendedCameraControl**, int> GetExtendedCameraControl;
+        public delegate* unmanaged<TSelf*, uint, uint, IMFExtendedCameraControl**, int> GetExtendedCameraControl;
     }
 }

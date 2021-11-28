@@ -62,21 +62,22 @@ public unsafe partial struct IDOMEventRegistrationCallback : IDOMEventRegistrati
         HRESULT OnDOMEventListenerRemoved([NativeTypeName("ULONGLONG")] ulong ullCookie);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMEventRegistrationCallback*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMEventRegistrationCallback*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMEventRegistrationCallback*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IScriptEventHandler *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMEventRegistrationCallback*, ushort*, IScriptEventHandler*, int> OnDOMEventListenerAdded;
+        public delegate* unmanaged<TSelf*, ushort*, IScriptEventHandler*, int> OnDOMEventListenerAdded;
 
         [NativeTypeName("HRESULT (ULONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMEventRegistrationCallback*, ulong, int> OnDOMEventListenerRemoved;
+        public delegate* unmanaged<TSelf*, ulong, int> OnDOMEventListenerRemoved;
     }
 }

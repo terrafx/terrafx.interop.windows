@@ -74,24 +74,25 @@ public unsafe partial struct IMFPMPHostApp : IMFPMPHostApp.Interface
         HRESULT ActivateClassById([NativeTypeName("LPCWSTR")] ushort* id, IStream* pStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPMPHostApp*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPMPHostApp*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPMPHostApp*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPMPHostApp*, int> LockProcess;
+        public delegate* unmanaged<TSelf*, int> LockProcess;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPMPHostApp*, int> UnlockProcess;
+        public delegate* unmanaged<TSelf*, int> UnlockProcess;
 
         [NativeTypeName("HRESULT (LPCWSTR, IStream *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPMPHostApp*, ushort*, IStream*, Guid*, void**, int> ActivateClassById;
+        public delegate* unmanaged<TSelf*, ushort*, IStream*, Guid*, void**, int> ActivateClassById;
     }
 }

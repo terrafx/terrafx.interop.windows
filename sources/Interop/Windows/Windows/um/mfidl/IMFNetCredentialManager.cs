@@ -72,24 +72,25 @@ public unsafe partial struct IMFNetCredentialManager : IMFNetCredentialManager.I
         HRESULT SetGood(IMFNetCredential* pCred, BOOL fGood);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCredentialManager*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCredentialManager*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCredentialManager*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MFNetCredentialManagerGetParam *, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCredentialManager*, MFNetCredentialManagerGetParam*, IMFAsyncCallback*, IUnknown*, int> BeginGetCredentials;
+        public delegate* unmanaged<TSelf*, MFNetCredentialManagerGetParam*, IMFAsyncCallback*, IUnknown*, int> BeginGetCredentials;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *, IMFNetCredential **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCredentialManager*, IMFAsyncResult*, IMFNetCredential**, int> EndGetCredentials;
+        public delegate* unmanaged<TSelf*, IMFAsyncResult*, IMFNetCredential**, int> EndGetCredentials;
 
         [NativeTypeName("HRESULT (IMFNetCredential *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetCredentialManager*, IMFNetCredential*, BOOL, int> SetGood;
+        public delegate* unmanaged<TSelf*, IMFNetCredential*, BOOL, int> SetGood;
     }
 }

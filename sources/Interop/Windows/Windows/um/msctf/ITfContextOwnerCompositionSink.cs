@@ -72,24 +72,25 @@ public unsafe partial struct ITfContextOwnerCompositionSink : ITfContextOwnerCom
         HRESULT OnEndComposition(ITfCompositionView* pComposition);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContextOwnerCompositionSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContextOwnerCompositionSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContextOwnerCompositionSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITfCompositionView *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContextOwnerCompositionSink*, ITfCompositionView*, BOOL*, int> OnStartComposition;
+        public delegate* unmanaged<TSelf*, ITfCompositionView*, BOOL*, int> OnStartComposition;
 
         [NativeTypeName("HRESULT (ITfCompositionView *, ITfRange *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContextOwnerCompositionSink*, ITfCompositionView*, ITfRange*, int> OnUpdateComposition;
+        public delegate* unmanaged<TSelf*, ITfCompositionView*, ITfRange*, int> OnUpdateComposition;
 
         [NativeTypeName("HRESULT (ITfCompositionView *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContextOwnerCompositionSink*, ITfCompositionView*, int> OnEndComposition;
+        public delegate* unmanaged<TSelf*, ITfCompositionView*, int> OnEndComposition;
     }
 }

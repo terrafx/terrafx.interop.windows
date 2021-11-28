@@ -62,21 +62,22 @@ public unsafe partial struct IWaitMultiple : IWaitMultiple.Interface
         HRESULT AddSynchronize(ISynchronize* pSync);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWaitMultiple*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWaitMultiple*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWaitMultiple*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, ISynchronize **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWaitMultiple*, uint, ISynchronize**, int> WaitMultiple;
+        public delegate* unmanaged<TSelf*, uint, ISynchronize**, int> WaitMultiple;
 
         [NativeTypeName("HRESULT (ISynchronize *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWaitMultiple*, ISynchronize*, int> AddSynchronize;
+        public delegate* unmanaged<TSelf*, ISynchronize*, int> AddSynchronize;
     }
 }

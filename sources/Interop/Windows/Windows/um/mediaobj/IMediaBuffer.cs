@@ -72,24 +72,25 @@ public unsafe partial struct IMediaBuffer : IMediaBuffer.Interface
         HRESULT GetBufferAndLength(byte** ppBuffer, [NativeTypeName("DWORD *")] uint* pcbLength);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaBuffer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaBuffer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaBuffer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaBuffer*, uint, int> SetLength;
+        public delegate* unmanaged<TSelf*, uint, int> SetLength;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaBuffer*, uint*, int> GetMaxLength;
+        public delegate* unmanaged<TSelf*, uint*, int> GetMaxLength;
 
         [NativeTypeName("HRESULT (BYTE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaBuffer*, byte**, uint*, int> GetBufferAndLength;
+        public delegate* unmanaged<TSelf*, byte**, uint*, int> GetBufferAndLength;
     }
 }

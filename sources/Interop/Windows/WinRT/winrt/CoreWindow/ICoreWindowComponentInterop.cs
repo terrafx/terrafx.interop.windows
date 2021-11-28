@@ -63,21 +63,22 @@ public unsafe partial struct ICoreWindowComponentInterop : ICoreWindowComponentI
         HRESULT GetViewInstanceId([NativeTypeName("UINT32 *")] uint* componentViewInstanceId);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowComponentInterop*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowComponentInterop*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowComponentInterop*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32, HWND, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowComponentInterop*, uint, HWND, IUnknown*, int> ConfigureComponentInput;
+        public delegate* unmanaged<TSelf*, uint, HWND, IUnknown*, int> ConfigureComponentInput;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowComponentInterop*, uint*, int> GetViewInstanceId;
+        public delegate* unmanaged<TSelf*, uint*, int> GetViewInstanceId;
     }
 }

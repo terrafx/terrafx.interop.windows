@@ -62,21 +62,22 @@ public unsafe partial struct IMFSecureChannel : IMFSecureChannel.Interface
         HRESULT SetupSession(byte* pbEncryptedSessionKey, [NativeTypeName("DWORD")] uint cbSessionKey);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSecureChannel*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSecureChannel*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSecureChannel*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSecureChannel*, byte**, uint*, int> GetCertificate;
+        public delegate* unmanaged<TSelf*, byte**, uint*, int> GetCertificate;
 
         [NativeTypeName("HRESULT (BYTE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSecureChannel*, byte*, uint, int> SetupSession;
+        public delegate* unmanaged<TSelf*, byte*, uint, int> SetupSession;
     }
 }

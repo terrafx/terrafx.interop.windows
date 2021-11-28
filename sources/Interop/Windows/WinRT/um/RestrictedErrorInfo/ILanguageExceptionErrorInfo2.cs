@@ -82,27 +82,28 @@ public unsafe partial struct ILanguageExceptionErrorInfo2 : ILanguageExceptionEr
         HRESULT GetPropagationContextHead(ILanguageExceptionErrorInfo2** propagatedLanguageExceptionErrorInfoHead);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILanguageExceptionErrorInfo2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ILanguageExceptionErrorInfo2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ILanguageExceptionErrorInfo2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILanguageExceptionErrorInfo2*, IUnknown**, int> GetLanguageException;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> GetLanguageException;
 
         [NativeTypeName("HRESULT (ILanguageExceptionErrorInfo2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILanguageExceptionErrorInfo2*, ILanguageExceptionErrorInfo2**, int> GetPreviousLanguageExceptionErrorInfo;
+        public delegate* unmanaged<TSelf*, ILanguageExceptionErrorInfo2**, int> GetPreviousLanguageExceptionErrorInfo;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILanguageExceptionErrorInfo2*, IUnknown*, int> CapturePropagationContext;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> CapturePropagationContext;
 
         [NativeTypeName("HRESULT (ILanguageExceptionErrorInfo2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILanguageExceptionErrorInfo2*, ILanguageExceptionErrorInfo2**, int> GetPropagationContextHead;
+        public delegate* unmanaged<TSelf*, ILanguageExceptionErrorInfo2**, int> GetPropagationContextHead;
     }
 }

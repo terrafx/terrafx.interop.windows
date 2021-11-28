@@ -62,21 +62,22 @@ public unsafe partial struct IMFSourceBufferAppendMode : IMFSourceBufferAppendMo
         HRESULT SetAppendMode(MF_MSE_APPEND_MODE mode);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBufferAppendMode*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBufferAppendMode*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBufferAppendMode*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("MF_MSE_APPEND_MODE () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBufferAppendMode*, MF_MSE_APPEND_MODE> GetAppendMode;
+        public delegate* unmanaged<TSelf*, MF_MSE_APPEND_MODE> GetAppendMode;
 
         [NativeTypeName("HRESULT (MF_MSE_APPEND_MODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBufferAppendMode*, MF_MSE_APPEND_MODE, int> SetAppendMode;
+        public delegate* unmanaged<TSelf*, MF_MSE_APPEND_MODE, int> SetAppendMode;
     }
 }

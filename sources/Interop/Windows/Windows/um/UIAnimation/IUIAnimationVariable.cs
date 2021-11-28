@@ -182,57 +182,58 @@ public unsafe partial struct IUIAnimationVariable : IUIAnimationVariable.Interfa
         HRESULT SetVariableIntegerChangeHandler(IUIAnimationVariableIntegerChangeHandler* handler);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DOUBLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable*, double*, int> GetValue;
+        public delegate* unmanaged<TSelf*, double*, int> GetValue;
 
         [NativeTypeName("HRESULT (DOUBLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable*, double*, int> GetFinalValue;
+        public delegate* unmanaged<TSelf*, double*, int> GetFinalValue;
 
         [NativeTypeName("HRESULT (DOUBLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable*, double*, int> GetPreviousValue;
+        public delegate* unmanaged<TSelf*, double*, int> GetPreviousValue;
 
         [NativeTypeName("HRESULT (INT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable*, int*, int> GetIntegerValue;
+        public delegate* unmanaged<TSelf*, int*, int> GetIntegerValue;
 
         [NativeTypeName("HRESULT (INT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable*, int*, int> GetFinalIntegerValue;
+        public delegate* unmanaged<TSelf*, int*, int> GetFinalIntegerValue;
 
         [NativeTypeName("HRESULT (INT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable*, int*, int> GetPreviousIntegerValue;
+        public delegate* unmanaged<TSelf*, int*, int> GetPreviousIntegerValue;
 
         [NativeTypeName("HRESULT (IUIAnimationStoryboard **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable*, IUIAnimationStoryboard**, int> GetCurrentStoryboard;
+        public delegate* unmanaged<TSelf*, IUIAnimationStoryboard**, int> GetCurrentStoryboard;
 
         [NativeTypeName("HRESULT (DOUBLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable*, double, int> SetLowerBound;
+        public delegate* unmanaged<TSelf*, double, int> SetLowerBound;
 
         [NativeTypeName("HRESULT (DOUBLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable*, double, int> SetUpperBound;
+        public delegate* unmanaged<TSelf*, double, int> SetUpperBound;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_ROUNDING_MODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable*, UI_ANIMATION_ROUNDING_MODE, int> SetRoundingMode;
+        public delegate* unmanaged<TSelf*, UI_ANIMATION_ROUNDING_MODE, int> SetRoundingMode;
 
         [NativeTypeName("HRESULT (IUnknown *, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable*, IUnknown*, uint, int> SetTag;
+        public delegate* unmanaged<TSelf*, IUnknown*, uint, int> SetTag;
 
         [NativeTypeName("HRESULT (IUnknown **, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable*, IUnknown**, uint*, int> GetTag;
+        public delegate* unmanaged<TSelf*, IUnknown**, uint*, int> GetTag;
 
         [NativeTypeName("HRESULT (IUIAnimationVariableChangeHandler *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable*, IUIAnimationVariableChangeHandler*, int> SetVariableChangeHandler;
+        public delegate* unmanaged<TSelf*, IUIAnimationVariableChangeHandler*, int> SetVariableChangeHandler;
 
         [NativeTypeName("HRESULT (IUIAnimationVariableIntegerChangeHandler *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable*, IUIAnimationVariableIntegerChangeHandler*, int> SetVariableIntegerChangeHandler;
+        public delegate* unmanaged<TSelf*, IUIAnimationVariableIntegerChangeHandler*, int> SetVariableIntegerChangeHandler;
     }
 }

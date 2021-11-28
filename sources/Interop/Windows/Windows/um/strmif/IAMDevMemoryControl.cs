@@ -72,24 +72,25 @@ public unsafe partial struct IAMDevMemoryControl : IAMDevMemoryControl.Interface
         HRESULT GetDevId([NativeTypeName("DWORD *")] uint* pdwDevId);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDevMemoryControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDevMemoryControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDevMemoryControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDevMemoryControl*, int> QueryWriteSync;
+        public delegate* unmanaged<TSelf*, int> QueryWriteSync;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDevMemoryControl*, int> WriteSync;
+        public delegate* unmanaged<TSelf*, int> WriteSync;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMDevMemoryControl*, uint*, int> GetDevId;
+        public delegate* unmanaged<TSelf*, uint*, int> GetDevId;
     }
 }

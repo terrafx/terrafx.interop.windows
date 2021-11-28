@@ -182,57 +182,58 @@ public unsafe partial struct IFolderView : IFolderView.Interface
         HRESULT SelectAndPositionItems(uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, POINT* apt, [NativeTypeName("DWORD")] uint dwFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderView*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderView*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderView*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderView*, uint*, int> GetCurrentViewMode;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCurrentViewMode;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderView*, uint, int> SetCurrentViewMode;
+        public delegate* unmanaged<TSelf*, uint, int> SetCurrentViewMode;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderView*, Guid*, void**, int> GetFolder;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetFolder;
 
         [NativeTypeName("HRESULT (int, LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderView*, int, ITEMIDLIST**, int> Item;
+        public delegate* unmanaged<TSelf*, int, ITEMIDLIST**, int> Item;
 
         [NativeTypeName("HRESULT (UINT, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderView*, uint, int*, int> ItemCount;
+        public delegate* unmanaged<TSelf*, uint, int*, int> ItemCount;
 
         [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderView*, uint, Guid*, void**, int> Items;
+        public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> Items;
 
         [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderView*, int*, int> GetSelectionMarkedItem;
+        public delegate* unmanaged<TSelf*, int*, int> GetSelectionMarkedItem;
 
         [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderView*, int*, int> GetFocusedItem;
+        public delegate* unmanaged<TSelf*, int*, int> GetFocusedItem;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, POINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderView*, ITEMIDLIST*, POINT*, int> GetItemPosition;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, POINT*, int> GetItemPosition;
 
         [NativeTypeName("HRESULT (POINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderView*, POINT*, int> GetSpacing;
+        public delegate* unmanaged<TSelf*, POINT*, int> GetSpacing;
 
         [NativeTypeName("HRESULT (POINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderView*, POINT*, int> GetDefaultSpacing;
+        public delegate* unmanaged<TSelf*, POINT*, int> GetDefaultSpacing;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderView*, int> GetAutoArrange;
+        public delegate* unmanaged<TSelf*, int> GetAutoArrange;
 
         [NativeTypeName("HRESULT (int, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderView*, int, uint, int> SelectItem;
+        public delegate* unmanaged<TSelf*, int, uint, int> SelectItem;
 
         [NativeTypeName("HRESULT (UINT, LPCITEMIDLIST *, POINT *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderView*, uint, ITEMIDLIST**, POINT*, uint, int> SelectAndPositionItems;
+        public delegate* unmanaged<TSelf*, uint, ITEMIDLIST**, POINT*, uint, int> SelectAndPositionItems;
     }
 }

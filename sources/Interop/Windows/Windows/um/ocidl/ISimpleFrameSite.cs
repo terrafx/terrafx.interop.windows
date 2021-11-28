@@ -62,21 +62,22 @@ public unsafe partial struct ISimpleFrameSite : ISimpleFrameSite.Interface
         HRESULT PostMessageFilter(HWND hWnd, uint msg, WPARAM wp, LPARAM lp, LRESULT* plResult, [NativeTypeName("DWORD")] uint dwCookie);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISimpleFrameSite*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISimpleFrameSite*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISimpleFrameSite*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, UINT, WPARAM, LPARAM, LRESULT *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISimpleFrameSite*, HWND, uint, WPARAM, LPARAM, LRESULT*, uint*, int> PreMessageFilter;
+        public delegate* unmanaged<TSelf*, HWND, uint, WPARAM, LPARAM, LRESULT*, uint*, int> PreMessageFilter;
 
         [NativeTypeName("HRESULT (HWND, UINT, WPARAM, LPARAM, LRESULT *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISimpleFrameSite*, HWND, uint, WPARAM, LPARAM, LRESULT*, uint, int> PostMessageFilter;
+        public delegate* unmanaged<TSelf*, HWND, uint, WPARAM, LPARAM, LRESULT*, uint, int> PostMessageFilter;
     }
 }

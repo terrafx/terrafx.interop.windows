@@ -72,24 +72,25 @@ public unsafe partial struct IDvdGraphBuilder : IDvdGraphBuilder.Interface
         HRESULT RenderDvdVideoVolume([NativeTypeName("LPCWSTR")] ushort* lpcwszPathName, [NativeTypeName("DWORD")] uint dwFlags, AM_DVD_RENDERSTATUS* pStatus);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDvdGraphBuilder*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDvdGraphBuilder*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDvdGraphBuilder*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IGraphBuilder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDvdGraphBuilder*, IGraphBuilder**, int> GetFiltergraph;
+        public delegate* unmanaged<TSelf*, IGraphBuilder**, int> GetFiltergraph;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDvdGraphBuilder*, Guid*, void**, int> GetDvdInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDvdInterface;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, AM_DVD_RENDERSTATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDvdGraphBuilder*, ushort*, uint, AM_DVD_RENDERSTATUS*, int> RenderDvdVideoVolume;
+        public delegate* unmanaged<TSelf*, ushort*, uint, AM_DVD_RENDERSTATUS*, int> RenderDvdVideoVolume;
     }
 }

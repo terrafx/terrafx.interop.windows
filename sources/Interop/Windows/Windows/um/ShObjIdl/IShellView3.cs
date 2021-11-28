@@ -171,69 +171,70 @@ public unsafe partial struct IShellView3 : IShellView3.Interface
         HRESULT CreateViewWindow3(IShellBrowser* psbOwner, IShellView* psvPrev, [NativeTypeName("SV3CVW3_FLAGS")] uint dwViewFlags, FOLDERFLAGS dwMask, FOLDERFLAGS dwFlags, FOLDERVIEWMODE fvMode, [NativeTypeName("const SHELLVIEWID *")] Guid* pvid, [NativeTypeName("const RECT *")] RECT* prcView, HWND* phwndView);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView3*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView3*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView3*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView3*, HWND*, int> GetWindow;
+        public delegate* unmanaged<TSelf*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView3*, BOOL, int> ContextSensitiveHelp;
+        public delegate* unmanaged<TSelf*, BOOL, int> ContextSensitiveHelp;
 
         [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView3*, MSG*, int> TranslateAcceleratorW;
+        public delegate* unmanaged<TSelf*, MSG*, int> TranslateAcceleratorW;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView3*, BOOL, int> EnableModeless;
+        public delegate* unmanaged<TSelf*, BOOL, int> EnableModeless;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView3*, uint, int> UIActivate;
+        public delegate* unmanaged<TSelf*, uint, int> UIActivate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView3*, int> Refresh;
+        public delegate* unmanaged<TSelf*, int> Refresh;
 
         [NativeTypeName("HRESULT (IShellView *, LPCFOLDERSETTINGS, IShellBrowser *, RECT *, HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView3*, IShellView*, FOLDERSETTINGS*, IShellBrowser*, RECT*, HWND*, int> CreateViewWindow;
+        public delegate* unmanaged<TSelf*, IShellView*, FOLDERSETTINGS*, IShellBrowser*, RECT*, HWND*, int> CreateViewWindow;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView3*, int> DestroyViewWindow;
+        public delegate* unmanaged<TSelf*, int> DestroyViewWindow;
 
         [NativeTypeName("HRESULT (LPFOLDERSETTINGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView3*, FOLDERSETTINGS*, int> GetCurrentInfo;
+        public delegate* unmanaged<TSelf*, FOLDERSETTINGS*, int> GetCurrentInfo;
 
         [NativeTypeName("HRESULT (DWORD, LPFNSVADDPROPSHEETPAGE, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView3*, uint, delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL>, LPARAM, int> AddPropertySheetPages;
+        public delegate* unmanaged<TSelf*, uint, delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL>, LPARAM, int> AddPropertySheetPages;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView3*, int> SaveViewState;
+        public delegate* unmanaged<TSelf*, int> SaveViewState;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, SVSIF) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView3*, ITEMIDLIST*, uint, int> SelectItem;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, uint, int> SelectItem;
 
         [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView3*, uint, Guid*, void**, int> GetItemObject;
+        public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> GetItemObject;
 
         [NativeTypeName("HRESULT (SHELLVIEWID *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView3*, Guid*, uint, int> GetView;
+        public delegate* unmanaged<TSelf*, Guid*, uint, int> GetView;
 
         [NativeTypeName("HRESULT (LPSV2CVW2_PARAMS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView3*, SV2CVW2_PARAMS*, int> CreateViewWindow2;
+        public delegate* unmanaged<TSelf*, SV2CVW2_PARAMS*, int> CreateViewWindow2;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView3*, ITEMIDLIST*, int> HandleRename;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, int> HandleRename;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, UINT, POINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView3*, ITEMIDLIST*, uint, POINT*, int> SelectAndPositionItem;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, uint, POINT*, int> SelectAndPositionItem;
 
         [NativeTypeName("HRESULT (IShellBrowser *, IShellView *, SV3CVW3_FLAGS, FOLDERFLAGS, FOLDERFLAGS, FOLDERVIEWMODE, const SHELLVIEWID *, const RECT *, HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView3*, IShellBrowser*, IShellView*, uint, FOLDERFLAGS, FOLDERFLAGS, FOLDERVIEWMODE, Guid*, RECT*, HWND*, int> CreateViewWindow3;
+        public delegate* unmanaged<TSelf*, IShellBrowser*, IShellView*, uint, FOLDERFLAGS, FOLDERFLAGS, FOLDERVIEWMODE, Guid*, RECT*, HWND*, int> CreateViewWindow3;
     }
 }

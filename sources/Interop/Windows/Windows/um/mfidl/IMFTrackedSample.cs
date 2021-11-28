@@ -52,18 +52,19 @@ public unsafe partial struct IMFTrackedSample : IMFTrackedSample.Interface
         HRESULT SetAllocator(IMFAsyncCallback* pSampleAllocator, IUnknown* pUnkState);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTrackedSample*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTrackedSample*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTrackedSample*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTrackedSample*, IMFAsyncCallback*, IUnknown*, int> SetAllocator;
+        public delegate* unmanaged<TSelf*, IMFAsyncCallback*, IUnknown*, int> SetAllocator;
     }
 }

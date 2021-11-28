@@ -72,24 +72,25 @@ public unsafe partial struct IMFSourceReaderCallback : IMFSourceReaderCallback.I
         HRESULT OnEvent([NativeTypeName("DWORD")] uint dwStreamIndex, IMFMediaEvent* pEvent);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceReaderCallback*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceReaderCallback*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceReaderCallback*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HRESULT, DWORD, DWORD, LONGLONG, IMFSample *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceReaderCallback*, HRESULT, uint, uint, long, IMFSample*, int> OnReadSample;
+        public delegate* unmanaged<TSelf*, HRESULT, uint, uint, long, IMFSample*, int> OnReadSample;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceReaderCallback*, uint, int> OnFlush;
+        public delegate* unmanaged<TSelf*, uint, int> OnFlush;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaEvent *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceReaderCallback*, uint, IMFMediaEvent*, int> OnEvent;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaEvent*, int> OnEvent;
     }
 }

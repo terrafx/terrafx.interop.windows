@@ -72,24 +72,25 @@ public unsafe partial struct IMediaObjectInPlace : IMediaObjectInPlace.Interface
         HRESULT GetLatency([NativeTypeName("REFERENCE_TIME *")] long* pLatencyTime);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObjectInPlace*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObjectInPlace*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObjectInPlace*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, BYTE *, REFERENCE_TIME, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObjectInPlace*, uint, byte*, long, uint, int> Process;
+        public delegate* unmanaged<TSelf*, uint, byte*, long, uint, int> Process;
 
         [NativeTypeName("HRESULT (IMediaObjectInPlace **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObjectInPlace*, IMediaObjectInPlace**, int> Clone;
+        public delegate* unmanaged<TSelf*, IMediaObjectInPlace**, int> Clone;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObjectInPlace*, long*, int> GetLatency;
+        public delegate* unmanaged<TSelf*, long*, int> GetLatency;
     }
 }

@@ -294,90 +294,91 @@ public unsafe partial struct ITextStoreACP2 : ITextStoreACP2.Interface
         HRESULT GetScreenExt([NativeTypeName("TsViewCookie")] uint vcView, RECT* prc);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, Guid*, IUnknown*, uint, int> AdviseSink;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, uint, int> AdviseSink;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, IUnknown*, int> UnadviseSink;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> UnadviseSink;
 
         [NativeTypeName("HRESULT (DWORD, HRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, uint, HRESULT*, int> RequestLock;
+        public delegate* unmanaged<TSelf*, uint, HRESULT*, int> RequestLock;
 
         [NativeTypeName("HRESULT (TS_STATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, TS_STATUS*, int> GetStatus;
+        public delegate* unmanaged<TSelf*, TS_STATUS*, int> GetStatus;
 
         [NativeTypeName("HRESULT (LONG, LONG, ULONG, LONG *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, int, int, uint, int*, int*, int> QueryInsert;
+        public delegate* unmanaged<TSelf*, int, int, uint, int*, int*, int> QueryInsert;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, TS_SELECTION_ACP *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, uint, uint, TS_SELECTION_ACP*, uint*, int> GetSelection;
+        public delegate* unmanaged<TSelf*, uint, uint, TS_SELECTION_ACP*, uint*, int> GetSelection;
 
         [NativeTypeName("HRESULT (ULONG, const TS_SELECTION_ACP *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, uint, TS_SELECTION_ACP*, int> SetSelection;
+        public delegate* unmanaged<TSelf*, uint, TS_SELECTION_ACP*, int> SetSelection;
 
         [NativeTypeName("HRESULT (LONG, LONG, WCHAR *, ULONG, ULONG *, TS_RUNINFO *, ULONG, ULONG *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, int, int, ushort*, uint, uint*, TS_RUNINFO*, uint, uint*, int*, int> GetText;
+        public delegate* unmanaged<TSelf*, int, int, ushort*, uint, uint*, TS_RUNINFO*, uint, uint*, int*, int> GetText;
 
         [NativeTypeName("HRESULT (DWORD, LONG, LONG, const WCHAR *, ULONG, TS_TEXTCHANGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, uint, int, int, ushort*, uint, TS_TEXTCHANGE*, int> SetText;
+        public delegate* unmanaged<TSelf*, uint, int, int, ushort*, uint, TS_TEXTCHANGE*, int> SetText;
 
         [NativeTypeName("HRESULT (LONG, LONG, IDataObject **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, int, int, IDataObject**, int> GetFormattedText;
+        public delegate* unmanaged<TSelf*, int, int, IDataObject**, int> GetFormattedText;
 
         [NativeTypeName("HRESULT (LONG, const GUID &, const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, int, Guid*, Guid*, IUnknown**, int> GetEmbedded;
+        public delegate* unmanaged<TSelf*, int, Guid*, Guid*, IUnknown**, int> GetEmbedded;
 
         [NativeTypeName("HRESULT (const GUID *, const FORMATETC *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, Guid*, FORMATETC*, BOOL*, int> QueryInsertEmbedded;
+        public delegate* unmanaged<TSelf*, Guid*, FORMATETC*, BOOL*, int> QueryInsertEmbedded;
 
         [NativeTypeName("HRESULT (DWORD, LONG, LONG, IDataObject *, TS_TEXTCHANGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, uint, int, int, IDataObject*, TS_TEXTCHANGE*, int> InsertEmbedded;
+        public delegate* unmanaged<TSelf*, uint, int, int, IDataObject*, TS_TEXTCHANGE*, int> InsertEmbedded;
 
         [NativeTypeName("HRESULT (DWORD, const WCHAR *, ULONG, LONG *, LONG *, TS_TEXTCHANGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, uint, ushort*, uint, int*, int*, TS_TEXTCHANGE*, int> InsertTextAtSelection;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint, int*, int*, TS_TEXTCHANGE*, int> InsertTextAtSelection;
 
         [NativeTypeName("HRESULT (DWORD, IDataObject *, LONG *, LONG *, TS_TEXTCHANGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, uint, IDataObject*, int*, int*, TS_TEXTCHANGE*, int> InsertEmbeddedAtSelection;
+        public delegate* unmanaged<TSelf*, uint, IDataObject*, int*, int*, TS_TEXTCHANGE*, int> InsertEmbeddedAtSelection;
 
         [NativeTypeName("HRESULT (DWORD, ULONG, const TS_ATTRID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, uint, uint, Guid*, int> RequestSupportedAttrs;
+        public delegate* unmanaged<TSelf*, uint, uint, Guid*, int> RequestSupportedAttrs;
 
         [NativeTypeName("HRESULT (LONG, ULONG, const TS_ATTRID *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, int, uint, Guid*, uint, int> RequestAttrsAtPosition;
+        public delegate* unmanaged<TSelf*, int, uint, Guid*, uint, int> RequestAttrsAtPosition;
 
         [NativeTypeName("HRESULT (LONG, ULONG, const TS_ATTRID *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, int, uint, Guid*, uint, int> RequestAttrsTransitioningAtPosition;
+        public delegate* unmanaged<TSelf*, int, uint, Guid*, uint, int> RequestAttrsTransitioningAtPosition;
 
         [NativeTypeName("HRESULT (LONG, LONG, ULONG, const TS_ATTRID *, DWORD, LONG *, BOOL *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, int, int, uint, Guid*, uint, int*, BOOL*, int*, int> FindNextAttrTransition;
+        public delegate* unmanaged<TSelf*, int, int, uint, Guid*, uint, int*, BOOL*, int*, int> FindNextAttrTransition;
 
         [NativeTypeName("HRESULT (ULONG, TS_ATTRVAL *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, uint, TS_ATTRVAL*, uint*, int> RetrieveRequestedAttrs;
+        public delegate* unmanaged<TSelf*, uint, TS_ATTRVAL*, uint*, int> RetrieveRequestedAttrs;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, int*, int> GetEndACP;
+        public delegate* unmanaged<TSelf*, int*, int> GetEndACP;
 
         [NativeTypeName("HRESULT (TsViewCookie *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, uint*, int> GetActiveView;
+        public delegate* unmanaged<TSelf*, uint*, int> GetActiveView;
 
         [NativeTypeName("HRESULT (TsViewCookie, const POINT *, DWORD, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, uint, POINT*, uint, int*, int> GetACPFromPoint;
+        public delegate* unmanaged<TSelf*, uint, POINT*, uint, int*, int> GetACPFromPoint;
 
         [NativeTypeName("HRESULT (TsViewCookie, LONG, LONG, RECT *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, uint, int, int, RECT*, BOOL*, int> GetTextExt;
+        public delegate* unmanaged<TSelf*, uint, int, int, RECT*, BOOL*, int> GetTextExt;
 
         [NativeTypeName("HRESULT (TsViewCookie, RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITextStoreACP2*, uint, RECT*, int> GetScreenExt;
+        public delegate* unmanaged<TSelf*, uint, RECT*, int> GetScreenExt;
     }
 }

@@ -82,27 +82,28 @@ public unsafe partial struct IFrameworkInputPane : IFrameworkInputPane.Interface
         HRESULT Location(RECT* prcInputPaneScreenLocation);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFrameworkInputPane*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFrameworkInputPane*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFrameworkInputPane*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, IFrameworkInputPaneHandler *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFrameworkInputPane*, IUnknown*, IFrameworkInputPaneHandler*, uint*, int> Advise;
+        public delegate* unmanaged<TSelf*, IUnknown*, IFrameworkInputPaneHandler*, uint*, int> Advise;
 
         [NativeTypeName("HRESULT (HWND, IFrameworkInputPaneHandler *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFrameworkInputPane*, HWND, IFrameworkInputPaneHandler*, uint*, int> AdviseWithHWND;
+        public delegate* unmanaged<TSelf*, HWND, IFrameworkInputPaneHandler*, uint*, int> AdviseWithHWND;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFrameworkInputPane*, uint, int> Unadvise;
+        public delegate* unmanaged<TSelf*, uint, int> Unadvise;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFrameworkInputPane*, RECT*, int> Location;
+        public delegate* unmanaged<TSelf*, RECT*, int> Location;
     }
 }

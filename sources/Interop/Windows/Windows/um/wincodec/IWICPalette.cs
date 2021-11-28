@@ -142,45 +142,46 @@ public unsafe partial struct IWICPalette : IWICPalette.Interface
         HRESULT HasAlpha(BOOL* pfHasAlpha);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPalette*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPalette*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPalette*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (WICBitmapPaletteType, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPalette*, WICBitmapPaletteType, BOOL, int> InitializePredefined;
+        public delegate* unmanaged<TSelf*, WICBitmapPaletteType, BOOL, int> InitializePredefined;
 
         [NativeTypeName("HRESULT (WICColor *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPalette*, uint*, uint, int> InitializeCustom;
+        public delegate* unmanaged<TSelf*, uint*, uint, int> InitializeCustom;
 
         [NativeTypeName("HRESULT (IWICBitmapSource *, UINT, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPalette*, IWICBitmapSource*, uint, BOOL, int> InitializeFromBitmap;
+        public delegate* unmanaged<TSelf*, IWICBitmapSource*, uint, BOOL, int> InitializeFromBitmap;
 
         [NativeTypeName("HRESULT (IWICPalette *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPalette*, IWICPalette*, int> InitializeFromPalette;
+        public delegate* unmanaged<TSelf*, IWICPalette*, int> InitializeFromPalette;
 
         [NativeTypeName("HRESULT (WICBitmapPaletteType *) __attribute__((stdcall))")]
-        public new delegate* unmanaged<IWICPalette*, WICBitmapPaletteType*, int> GetType;
+        public new delegate* unmanaged<TSelf*, WICBitmapPaletteType*, int> GetType;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPalette*, uint*, int> GetColorCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetColorCount;
 
         [NativeTypeName("HRESULT (UINT, WICColor *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPalette*, uint, uint*, uint*, int> GetColors;
+        public delegate* unmanaged<TSelf*, uint, uint*, uint*, int> GetColors;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPalette*, BOOL*, int> IsBlackWhite;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsBlackWhite;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPalette*, BOOL*, int> IsGrayscale;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsGrayscale;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPalette*, BOOL*, int> HasAlpha;
+        public delegate* unmanaged<TSelf*, BOOL*, int> HasAlpha;
     }
 }

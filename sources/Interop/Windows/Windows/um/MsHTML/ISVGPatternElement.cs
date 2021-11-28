@@ -210,69 +210,70 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
         HRESULT get_height(ISVGAnimatedLength** p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPatternElement*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPatternElement*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPatternElement*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPatternElement*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPatternElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPatternElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPatternElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (ISVGAnimatedEnumeration *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration*, int> putref_patternUnits;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedEnumeration*, int> putref_patternUnits;
 
         [NativeTypeName("HRESULT (ISVGAnimatedEnumeration **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration**, int> get_patternUnits;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedEnumeration**, int> get_patternUnits;
 
         [NativeTypeName("HRESULT (ISVGAnimatedEnumeration *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration*, int> putref_patternContentUnits;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedEnumeration*, int> putref_patternContentUnits;
 
         [NativeTypeName("HRESULT (ISVGAnimatedEnumeration **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration**, int> get_patternContentUnits;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedEnumeration**, int> get_patternContentUnits;
 
         [NativeTypeName("HRESULT (ISVGAnimatedTransformList *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedTransformList*, int> putref_patternTransform;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedTransformList*, int> putref_patternTransform;
 
         [NativeTypeName("HRESULT (ISVGAnimatedTransformList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedTransformList**, int> get_patternTransform;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedTransformList**, int> get_patternTransform;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int> putref_x;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_x;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int> get_x;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_x;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int> putref_y;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_y;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int> get_y;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_y;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int> putref_width;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_width;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int> get_width;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_width;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int> putref_height;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_height;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int> get_height;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_height;
     }
 }

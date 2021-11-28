@@ -74,24 +74,25 @@ public unsafe partial struct IMFContentDecryptionModuleAccess : IMFContentDecryp
         HRESULT GetKeySystem([NativeTypeName("LPWSTR *")] ushort** keySystem);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentDecryptionModuleAccess*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentDecryptionModuleAccess*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentDecryptionModuleAccess*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IPropertyStore *, IMFContentDecryptionModule **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentDecryptionModuleAccess*, IPropertyStore*, IMFContentDecryptionModule**, int> CreateContentDecryptionModule;
+        public delegate* unmanaged<TSelf*, IPropertyStore*, IMFContentDecryptionModule**, int> CreateContentDecryptionModule;
 
         [NativeTypeName("HRESULT (IPropertyStore **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentDecryptionModuleAccess*, IPropertyStore**, int> GetConfiguration;
+        public delegate* unmanaged<TSelf*, IPropertyStore**, int> GetConfiguration;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentDecryptionModuleAccess*, ushort**, int> GetKeySystem;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetKeySystem;
     }
 }

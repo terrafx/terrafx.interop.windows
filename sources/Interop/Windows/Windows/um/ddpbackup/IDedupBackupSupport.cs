@@ -52,18 +52,19 @@ public unsafe partial struct IDedupBackupSupport : IDedupBackupSupport.Interface
         HRESULT RestoreFiles([NativeTypeName("ULONG")] uint NumberOfFiles, [NativeTypeName("BSTR *")] ushort** FileFullPaths, IDedupReadFileCallback* Store, [NativeTypeName("DWORD")] uint Flags, HRESULT* FileResults);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDedupBackupSupport*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDedupBackupSupport*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDedupBackupSupport*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, BSTR *, IDedupReadFileCallback *, DWORD, HRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDedupBackupSupport*, uint, ushort**, IDedupReadFileCallback*, uint, HRESULT*, int> RestoreFiles;
+        public delegate* unmanaged<TSelf*, uint, ushort**, IDedupReadFileCallback*, uint, HRESULT*, int> RestoreFiles;
     }
 }

@@ -62,21 +62,22 @@ public unsafe partial struct IAMClockSlave : IAMClockSlave.Interface
         HRESULT GetErrorTolerance([NativeTypeName("DWORD *")] uint* pdwTolerance);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMClockSlave*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMClockSlave*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMClockSlave*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMClockSlave*, uint, int> SetErrorTolerance;
+        public delegate* unmanaged<TSelf*, uint, int> SetErrorTolerance;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMClockSlave*, uint*, int> GetErrorTolerance;
+        public delegate* unmanaged<TSelf*, uint*, int> GetErrorTolerance;
     }
 }

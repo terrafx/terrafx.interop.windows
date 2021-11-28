@@ -420,132 +420,133 @@ public unsafe partial struct IHTMLBodyElement : IHTMLBodyElement.Interface
         HRESULT createTextRange(IHTMLTxtRange** range);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, ushort*, int> put_background;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_background;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, ushort**, int> get_background;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_background;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, ushort*, int> put_bgProperties;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_bgProperties;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, ushort**, int> get_bgProperties;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_bgProperties;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT, int> put_leftMargin;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_leftMargin;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT*, int> get_leftMargin;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_leftMargin;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT, int> put_topMargin;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_topMargin;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT*, int> get_topMargin;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_topMargin;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT, int> put_rightMargin;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_rightMargin;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT*, int> get_rightMargin;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_rightMargin;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT, int> put_bottomMargin;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_bottomMargin;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT*, int> get_bottomMargin;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_bottomMargin;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, short, int> put_noWrap;
+        public delegate* unmanaged<TSelf*, short, int> put_noWrap;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, short*, int> get_noWrap;
+        public delegate* unmanaged<TSelf*, short*, int> get_noWrap;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT, int> put_bgColor;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_bgColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT*, int> get_bgColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_bgColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT, int> put_text;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_text;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT*, int> get_text;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_text;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT, int> put_link;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_link;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT*, int> get_link;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_link;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT, int> put_vLink;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_vLink;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT*, int> get_vLink;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_vLink;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT, int> put_aLink;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_aLink;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT*, int> get_aLink;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_aLink;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT, int> put_onload;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onload;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT*, int> get_onload;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onload;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT, int> put_onunload;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onunload;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT*, int> get_onunload;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onunload;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, ushort*, int> put_scroll;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_scroll;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, ushort**, int> get_scroll;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_scroll;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT, int> put_onselect;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onselect;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT*, int> get_onselect;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onselect;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT, int> put_onbeforeunload;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onbeforeunload;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, VARIANT*, int> get_onbeforeunload;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onbeforeunload;
 
         [NativeTypeName("HRESULT (IHTMLTxtRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLBodyElement*, IHTMLTxtRange**, int> createTextRange;
+        public delegate* unmanaged<TSelf*, IHTMLTxtRange**, int> createTextRange;
     }
 }

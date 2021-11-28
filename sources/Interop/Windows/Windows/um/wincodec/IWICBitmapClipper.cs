@@ -87,33 +87,34 @@ public unsafe partial struct IWICBitmapClipper : IWICBitmapClipper.Interface
         HRESULT Initialize(IWICBitmapSource* pISource, [NativeTypeName("const WICRect *")] WICRect* prc);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapClipper*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapClipper*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapClipper*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapClipper*, uint*, uint*, int> GetSize;
+        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetSize;
 
         [NativeTypeName("HRESULT (WICPixelFormatGUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapClipper*, Guid*, int> GetPixelFormat;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetPixelFormat;
 
         [NativeTypeName("HRESULT (double *, double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapClipper*, double*, double*, int> GetResolution;
+        public delegate* unmanaged<TSelf*, double*, double*, int> GetResolution;
 
         [NativeTypeName("HRESULT (IWICPalette *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapClipper*, IWICPalette*, int> CopyPalette;
+        public delegate* unmanaged<TSelf*, IWICPalette*, int> CopyPalette;
 
         [NativeTypeName("HRESULT (const WICRect *, UINT, UINT, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapClipper*, WICRect*, uint, uint, byte*, int> CopyPixels;
+        public delegate* unmanaged<TSelf*, WICRect*, uint, uint, byte*, int> CopyPixels;
 
         [NativeTypeName("HRESULT (IWICBitmapSource *, const WICRect *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapClipper*, IWICBitmapSource*, WICRect*, int> Initialize;
+        public delegate* unmanaged<TSelf*, IWICBitmapSource*, WICRect*, int> Initialize;
     }
 }

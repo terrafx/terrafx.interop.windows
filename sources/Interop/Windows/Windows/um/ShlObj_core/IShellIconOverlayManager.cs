@@ -92,30 +92,31 @@ public unsafe partial struct IShellIconOverlayManager : IShellIconOverlayManager
         HRESULT OverlayIndexFromImageIndex(int iImage, int* piIndex, BOOL fAdd);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellIconOverlayManager*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellIconOverlayManager*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellIconOverlayManager*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PCWSTR, DWORD, int *, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellIconOverlayManager*, ushort*, uint, int*, uint, int> GetFileOverlayInfo;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int*, uint, int> GetFileOverlayInfo;
 
         [NativeTypeName("HRESULT (PCWSTR, DWORD, int *, DWORD, int) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellIconOverlayManager*, ushort*, uint, int*, uint, int, int> GetReservedOverlayInfo;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int*, uint, int, int> GetReservedOverlayInfo;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellIconOverlayManager*, uint, int> RefreshOverlayImages;
+        public delegate* unmanaged<TSelf*, uint, int> RefreshOverlayImages;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellIconOverlayManager*, int> LoadNonloadedOverlayIdentifiers;
+        public delegate* unmanaged<TSelf*, int> LoadNonloadedOverlayIdentifiers;
 
         [NativeTypeName("HRESULT (int, int *, BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellIconOverlayManager*, int, int*, BOOL, int> OverlayIndexFromImageIndex;
+        public delegate* unmanaged<TSelf*, int, int*, BOOL, int> OverlayIndexFromImageIndex;
     }
 }

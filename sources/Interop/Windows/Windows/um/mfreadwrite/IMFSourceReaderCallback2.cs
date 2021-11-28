@@ -83,30 +83,31 @@ public unsafe partial struct IMFSourceReaderCallback2 : IMFSourceReaderCallback2
         HRESULT OnStreamError([NativeTypeName("DWORD")] uint dwStreamIndex, HRESULT hrStatus);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceReaderCallback2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceReaderCallback2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceReaderCallback2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HRESULT, DWORD, DWORD, LONGLONG, IMFSample *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceReaderCallback2*, HRESULT, uint, uint, long, IMFSample*, int> OnReadSample;
+        public delegate* unmanaged<TSelf*, HRESULT, uint, uint, long, IMFSample*, int> OnReadSample;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceReaderCallback2*, uint, int> OnFlush;
+        public delegate* unmanaged<TSelf*, uint, int> OnFlush;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaEvent *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceReaderCallback2*, uint, IMFMediaEvent*, int> OnEvent;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaEvent*, int> OnEvent;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceReaderCallback2*, int> OnTransformChange;
+        public delegate* unmanaged<TSelf*, int> OnTransformChange;
 
         [NativeTypeName("HRESULT (DWORD, HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceReaderCallback2*, uint, HRESULT, int> OnStreamError;
+        public delegate* unmanaged<TSelf*, uint, HRESULT, int> OnStreamError;
     }
 }

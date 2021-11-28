@@ -63,21 +63,22 @@ public unsafe partial struct IDxcVersionInfo : IDxcVersionInfo.Interface
         HRESULT GetFlags([NativeTypeName("UINT32 *")] uint* pFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcVersionInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcVersionInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcVersionInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32 *, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcVersionInfo*, uint*, uint*, int> GetVersion;
+        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetVersion;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcVersionInfo*, uint*, int> GetFlags;
+        public delegate* unmanaged<TSelf*, uint*, int> GetFlags;
     }
 }

@@ -160,48 +160,49 @@ public unsafe partial struct IMFTimedTextCue : IMFTimedTextCue.Interface
         HRESULT GetLine([NativeTypeName("DWORD")] uint index, IMFTimedTextFormattedText** line);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCue*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCue*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCue*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("DWORD () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCue*, uint> GetId;
+        public delegate* unmanaged<TSelf*, uint> GetId;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCue*, ushort**, int> GetOriginalId;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetOriginalId;
 
         [NativeTypeName("MF_TIMED_TEXT_TRACK_KIND () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCue*, MF_TIMED_TEXT_TRACK_KIND> GetCueKind;
+        public delegate* unmanaged<TSelf*, MF_TIMED_TEXT_TRACK_KIND> GetCueKind;
 
         [NativeTypeName("double () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCue*, double> GetStartTime;
+        public delegate* unmanaged<TSelf*, double> GetStartTime;
 
         [NativeTypeName("double () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCue*, double> GetDuration;
+        public delegate* unmanaged<TSelf*, double> GetDuration;
 
         [NativeTypeName("DWORD () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCue*, uint> GetTrackId;
+        public delegate* unmanaged<TSelf*, uint> GetTrackId;
 
         [NativeTypeName("HRESULT (IMFTimedTextBinary **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCue*, IMFTimedTextBinary**, int> GetData;
+        public delegate* unmanaged<TSelf*, IMFTimedTextBinary**, int> GetData;
 
         [NativeTypeName("HRESULT (IMFTimedTextRegion **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCue*, IMFTimedTextRegion**, int> GetRegion;
+        public delegate* unmanaged<TSelf*, IMFTimedTextRegion**, int> GetRegion;
 
         [NativeTypeName("HRESULT (IMFTimedTextStyle **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCue*, IMFTimedTextStyle**, int> GetStyle;
+        public delegate* unmanaged<TSelf*, IMFTimedTextStyle**, int> GetStyle;
 
         [NativeTypeName("DWORD () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCue*, uint> GetLineCount;
+        public delegate* unmanaged<TSelf*, uint> GetLineCount;
 
         [NativeTypeName("HRESULT (DWORD, IMFTimedTextFormattedText **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextCue*, uint, IMFTimedTextFormattedText**, int> GetLine;
+        public delegate* unmanaged<TSelf*, uint, IMFTimedTextFormattedText**, int> GetLine;
     }
 }

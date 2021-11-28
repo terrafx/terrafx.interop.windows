@@ -53,18 +53,19 @@ public unsafe partial struct IMLOperatorTypeInferrer : IMLOperatorTypeInferrer.I
         HRESULT InferOutputTypes(IMLOperatorTypeInferenceContext* context);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorTypeInferrer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorTypeInferrer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorTypeInferrer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMLOperatorTypeInferenceContext *) noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorTypeInferrer*, IMLOperatorTypeInferenceContext*, int> InferOutputTypes;
+        public delegate* unmanaged<TSelf*, IMLOperatorTypeInferenceContext*, int> InferOutputTypes;
     }
 }

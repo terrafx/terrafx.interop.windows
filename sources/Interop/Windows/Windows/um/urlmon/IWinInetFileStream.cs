@@ -62,21 +62,22 @@ public unsafe partial struct IWinInetFileStream : IWinInetFileStream.Interface
         HRESULT SetDeleteFile([NativeTypeName("DWORD_PTR")] nuint dwReserved);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWinInetFileStream*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWinInetFileStream*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWinInetFileStream*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD_PTR, DWORD_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWinInetFileStream*, nuint, nuint, int> SetHandleForUnlock;
+        public delegate* unmanaged<TSelf*, nuint, nuint, int> SetHandleForUnlock;
 
         [NativeTypeName("HRESULT (DWORD_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWinInetFileStream*, nuint, int> SetDeleteFile;
+        public delegate* unmanaged<TSelf*, nuint, int> SetDeleteFile;
     }
 }

@@ -120,39 +120,40 @@ public unsafe partial struct IDCompositionAffineTransform2DEffect : IDCompositio
         HRESULT SetSharpness(float sharpness);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionAffineTransform2DEffect*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionAffineTransform2DEffect*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionAffineTransform2DEffect*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionAffineTransform2DEffect*, uint, IUnknown*, uint, int> SetInput;
+        public delegate* unmanaged<TSelf*, uint, IUnknown*, uint, int> SetInput;
 
         [NativeTypeName("HRESULT (D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionAffineTransform2DEffect*, D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE, int> SetInterpolationMode;
+        public delegate* unmanaged<TSelf*, D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE, int> SetInterpolationMode;
 
         [NativeTypeName("HRESULT (D2D1_BORDER_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionAffineTransform2DEffect*, D2D1_BORDER_MODE, int> SetBorderMode;
+        public delegate* unmanaged<TSelf*, D2D1_BORDER_MODE, int> SetBorderMode;
 
         [NativeTypeName("HRESULT (const D2D1_MATRIX_3X2_F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionAffineTransform2DEffect*, D2D_MATRIX_3X2_F*, int> SetTransformMatrix;
+        public delegate* unmanaged<TSelf*, D2D_MATRIX_3X2_F*, int> SetTransformMatrix;
 
         [NativeTypeName("HRESULT (int, int, IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionAffineTransform2DEffect*, int, int, IDCompositionAnimation*, int> SetTransformMatrixElement;
+        public delegate* unmanaged<TSelf*, int, int, IDCompositionAnimation*, int> SetTransformMatrixElement;
 
         [NativeTypeName("HRESULT (int, int, float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionAffineTransform2DEffect*, int, int, float, int> SetTransformMatrixElement1;
+        public delegate* unmanaged<TSelf*, int, int, float, int> SetTransformMatrixElement1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionAffineTransform2DEffect*, IDCompositionAnimation*, int> SetSharpness;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetSharpness;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionAffineTransform2DEffect*, float, int> SetSharpness1;
+        public delegate* unmanaged<TSelf*, float, int> SetSharpness1;
     }
 }

@@ -94,33 +94,34 @@ public unsafe partial struct IAccountsSettingsPaneInterop : IAccountsSettingsPan
         HRESULT ShowAddAccountForWindowAsync(HWND appWindow, [NativeTypeName("const IID &")] Guid* riid, void** asyncAction);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccountsSettingsPaneInterop*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccountsSettingsPaneInterop*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccountsSettingsPaneInterop*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccountsSettingsPaneInterop*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccountsSettingsPaneInterop*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccountsSettingsPaneInterop*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HWND, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccountsSettingsPaneInterop*, HWND, Guid*, void**, int> GetForWindow;
+        public delegate* unmanaged<TSelf*, HWND, Guid*, void**, int> GetForWindow;
 
         [NativeTypeName("HRESULT (HWND, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccountsSettingsPaneInterop*, HWND, Guid*, void**, int> ShowManageAccountsForWindowAsync;
+        public delegate* unmanaged<TSelf*, HWND, Guid*, void**, int> ShowManageAccountsForWindowAsync;
 
         [NativeTypeName("HRESULT (HWND, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccountsSettingsPaneInterop*, HWND, Guid*, void**, int> ShowAddAccountForWindowAsync;
+        public delegate* unmanaged<TSelf*, HWND, Guid*, void**, int> ShowAddAccountForWindowAsync;
     }
 }

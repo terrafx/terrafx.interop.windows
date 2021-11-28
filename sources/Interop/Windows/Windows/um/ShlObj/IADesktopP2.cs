@@ -82,27 +82,28 @@ public unsafe partial struct IADesktopP2 : IADesktopP2.Interface
         HRESULT MakeDynamicChanges(IOleObject* pOleObj);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IADesktopP2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IADesktopP2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IADesktopP2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IADesktopP2*, int> ReReadWallpaper;
+        public delegate* unmanaged<TSelf*, int> ReReadWallpaper;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IADesktopP2*, uint*, uint, int> GetADObjectFlags;
+        public delegate* unmanaged<TSelf*, uint*, uint, int> GetADObjectFlags;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IADesktopP2*, int> UpdateAllDesktopSubscriptions;
+        public delegate* unmanaged<TSelf*, int> UpdateAllDesktopSubscriptions;
 
         [NativeTypeName("HRESULT (IOleObject *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IADesktopP2*, IOleObject*, int> MakeDynamicChanges;
+        public delegate* unmanaged<TSelf*, IOleObject*, int> MakeDynamicChanges;
     }
 }

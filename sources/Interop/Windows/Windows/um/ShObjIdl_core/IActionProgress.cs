@@ -102,33 +102,34 @@ public unsafe partial struct IActionProgress : IActionProgress.Interface
         HRESULT End();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IActionProgress*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IActionProgress*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IActionProgress*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SPACTION, SPBEGINF) __attribute__((stdcall))")]
-        public delegate* unmanaged<IActionProgress*, SPACTION, uint, int> Begin;
+        public delegate* unmanaged<TSelf*, SPACTION, uint, int> Begin;
 
         [NativeTypeName("HRESULT (ULONGLONG, ULONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IActionProgress*, ulong, ulong, int> UpdateProgress;
+        public delegate* unmanaged<TSelf*, ulong, ulong, int> UpdateProgress;
 
         [NativeTypeName("HRESULT (SPTEXT, LPCWSTR, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IActionProgress*, SPTEXT, ushort*, BOOL, int> UpdateText;
+        public delegate* unmanaged<TSelf*, SPTEXT, ushort*, BOOL, int> UpdateText;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IActionProgress*, BOOL*, int> QueryCancel;
+        public delegate* unmanaged<TSelf*, BOOL*, int> QueryCancel;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IActionProgress*, int> ResetCancel;
+        public delegate* unmanaged<TSelf*, int> ResetCancel;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IActionProgress*, int> End;
+        public delegate* unmanaged<TSelf*, int> End;
     }
 }

@@ -132,42 +132,43 @@ public unsafe partial struct IDataObject : IDataObject.Interface
         HRESULT EnumDAdvise(IEnumSTATDATA** ppenumAdvise);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObject*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObject*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObject*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (FORMATETC *, STGMEDIUM *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObject*, FORMATETC*, STGMEDIUM*, int> GetData;
+        public delegate* unmanaged<TSelf*, FORMATETC*, STGMEDIUM*, int> GetData;
 
         [NativeTypeName("HRESULT (FORMATETC *, STGMEDIUM *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObject*, FORMATETC*, STGMEDIUM*, int> GetDataHere;
+        public delegate* unmanaged<TSelf*, FORMATETC*, STGMEDIUM*, int> GetDataHere;
 
         [NativeTypeName("HRESULT (FORMATETC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObject*, FORMATETC*, int> QueryGetData;
+        public delegate* unmanaged<TSelf*, FORMATETC*, int> QueryGetData;
 
         [NativeTypeName("HRESULT (FORMATETC *, FORMATETC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObject*, FORMATETC*, FORMATETC*, int> GetCanonicalFormatEtc;
+        public delegate* unmanaged<TSelf*, FORMATETC*, FORMATETC*, int> GetCanonicalFormatEtc;
 
         [NativeTypeName("HRESULT (FORMATETC *, STGMEDIUM *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObject*, FORMATETC*, STGMEDIUM*, BOOL, int> SetData;
+        public delegate* unmanaged<TSelf*, FORMATETC*, STGMEDIUM*, BOOL, int> SetData;
 
         [NativeTypeName("HRESULT (DWORD, IEnumFORMATETC **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObject*, uint, IEnumFORMATETC**, int> EnumFormatEtc;
+        public delegate* unmanaged<TSelf*, uint, IEnumFORMATETC**, int> EnumFormatEtc;
 
         [NativeTypeName("HRESULT (FORMATETC *, DWORD, IAdviseSink *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int> DAdvise;
+        public delegate* unmanaged<TSelf*, FORMATETC*, uint, IAdviseSink*, uint*, int> DAdvise;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObject*, uint, int> DUnadvise;
+        public delegate* unmanaged<TSelf*, uint, int> DUnadvise;
 
         [NativeTypeName("HRESULT (IEnumSTATDATA **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObject*, IEnumSTATDATA**, int> EnumDAdvise;
+        public delegate* unmanaged<TSelf*, IEnumSTATDATA**, int> EnumDAdvise;
     }
 }

@@ -83,27 +83,28 @@ public unsafe partial struct IVMRSurfaceAllocator : IVMRSurfaceAllocator.Interfa
         HRESULT AdviseNotify(IVMRSurfaceAllocatorNotify* lpIVMRSurfAllocNotify);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurfaceAllocator*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurfaceAllocator*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurfaceAllocator*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD_PTR, VMRALLOCATIONINFO *, DWORD *, LPDIRECTDRAWSURFACE7 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurfaceAllocator*, nuint, VMRALLOCATIONINFO*, uint*, IDirectDrawSurface7**, int> AllocateSurface;
+        public delegate* unmanaged<TSelf*, nuint, VMRALLOCATIONINFO*, uint*, IDirectDrawSurface7**, int> AllocateSurface;
 
         [NativeTypeName("HRESULT (DWORD_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurfaceAllocator*, nuint, int> FreeSurface;
+        public delegate* unmanaged<TSelf*, nuint, int> FreeSurface;
 
         [NativeTypeName("HRESULT (DWORD_PTR, LPDIRECTDRAWSURFACE7, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurfaceAllocator*, nuint, IDirectDrawSurface7*, uint, int> PrepareSurface;
+        public delegate* unmanaged<TSelf*, nuint, IDirectDrawSurface7*, uint, int> PrepareSurface;
 
         [NativeTypeName("HRESULT (IVMRSurfaceAllocatorNotify *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurfaceAllocator*, IVMRSurfaceAllocatorNotify*, int> AdviseNotify;
+        public delegate* unmanaged<TSelf*, IVMRSurfaceAllocatorNotify*, int> AdviseNotify;
     }
 }

@@ -115,36 +115,37 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface
         void GetDataInterface(IUnknown** dataInterface);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorTensor*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorTensor*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorTensor*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("uint32_t () const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorTensor*, uint> GetDimensionCount;
+        public delegate* unmanaged<TSelf*, uint> GetDimensionCount;
 
         [NativeTypeName("HRESULT (uint32_t, uint32_t *) const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorTensor*, uint, uint*, int> GetShape;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> GetShape;
 
         [NativeTypeName("MLOperatorTensorDataType () const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorTensor*, MLOperatorTensorDataType> GetTensorDataType;
+        public delegate* unmanaged<TSelf*, MLOperatorTensorDataType> GetTensorDataType;
 
         [NativeTypeName("bool () const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorTensor*, byte> IsCpuData;
+        public delegate* unmanaged<TSelf*, byte> IsCpuData;
 
         [NativeTypeName("bool () const noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorTensor*, byte> IsDataInterface;
+        public delegate* unmanaged<TSelf*, byte> IsDataInterface;
 
         [NativeTypeName("void *() noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorTensor*, void*> GetData;
+        public delegate* unmanaged<TSelf*, void*> GetData;
 
         [NativeTypeName("void (IUnknown **) noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorTensor*, IUnknown**, void> GetDataInterface;
+        public delegate* unmanaged<TSelf*, IUnknown**, void> GetDataInterface;
     }
 }

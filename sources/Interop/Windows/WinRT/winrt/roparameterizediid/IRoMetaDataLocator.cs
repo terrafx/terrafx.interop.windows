@@ -25,9 +25,10 @@ public unsafe partial struct IRoMetaDataLocator : IRoMetaDataLocator.Interface
         HRESULT Locate([NativeTypeName("PCWSTR")] ushort* nameElement, [NativeTypeName("IRoSimpleMetaDataBuilder &")] IRoSimpleMetaDataBuilder* metaDataDestination);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (PCWSTR, IRoSimpleMetaDataBuilder &) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRoMetaDataLocator*, ushort*, IRoSimpleMetaDataBuilder*, int> Locate;
+        public delegate* unmanaged<TSelf*, ushort*, IRoSimpleMetaDataBuilder*, int> Locate;
     }
 }

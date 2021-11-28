@@ -105,33 +105,34 @@ public unsafe partial struct IDCompositionAnimation : IDCompositionAnimation.Int
         HRESULT End(double endOffset, float endValue);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionAnimation*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionAnimation*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionAnimation*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionAnimation*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (LARGE_INTEGER) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionAnimation*, LARGE_INTEGER, int> SetAbsoluteBeginTime;
+        public delegate* unmanaged<TSelf*, LARGE_INTEGER, int> SetAbsoluteBeginTime;
 
         [NativeTypeName("HRESULT (double, float, float, float, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionAnimation*, double, float, float, float, float, int> AddCubic;
+        public delegate* unmanaged<TSelf*, double, float, float, float, float, int> AddCubic;
 
         [NativeTypeName("HRESULT (double, float, float, float, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionAnimation*, double, float, float, float, float, int> AddSinusoidal;
+        public delegate* unmanaged<TSelf*, double, float, float, float, float, int> AddSinusoidal;
 
         [NativeTypeName("HRESULT (double, double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionAnimation*, double, double, int> AddRepeat;
+        public delegate* unmanaged<TSelf*, double, double, int> AddRepeat;
 
         [NativeTypeName("HRESULT (double, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionAnimation*, double, float, int> End;
+        public delegate* unmanaged<TSelf*, double, float, int> End;
     }
 }

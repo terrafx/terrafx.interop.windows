@@ -110,42 +110,43 @@ public unsafe partial struct IAppxManifestPackageId2 : IAppxManifestPackageId2.I
         HRESULT GetArchitecture2(APPX_PACKAGE_ARCHITECTURE2* architecture);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestPackageId2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestPackageId2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestPackageId2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestPackageId2*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
 
         [NativeTypeName("HRESULT (APPX_PACKAGE_ARCHITECTURE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestPackageId2*, APPX_PACKAGE_ARCHITECTURE*, int> GetArchitecture;
+        public delegate* unmanaged<TSelf*, APPX_PACKAGE_ARCHITECTURE*, int> GetArchitecture;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestPackageId2*, ushort**, int> GetPublisher;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetPublisher;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestPackageId2*, ulong*, int> GetVersion;
+        public delegate* unmanaged<TSelf*, ulong*, int> GetVersion;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestPackageId2*, ushort**, int> GetResourceId;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetResourceId;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestPackageId2*, ushort*, BOOL*, int> ComparePublisher;
+        public delegate* unmanaged<TSelf*, ushort*, BOOL*, int> ComparePublisher;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestPackageId2*, ushort**, int> GetPackageFullName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetPackageFullName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestPackageId2*, ushort**, int> GetPackageFamilyName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetPackageFamilyName;
 
         [NativeTypeName("HRESULT (APPX_PACKAGE_ARCHITECTURE2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestPackageId2*, APPX_PACKAGE_ARCHITECTURE2*, int> GetArchitecture2;
+        public delegate* unmanaged<TSelf*, APPX_PACKAGE_ARCHITECTURE2*, int> GetArchitecture2;
     }
 }

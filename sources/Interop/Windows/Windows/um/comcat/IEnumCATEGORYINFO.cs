@@ -82,27 +82,28 @@ public unsafe partial struct IEnumCATEGORYINFO : IEnumCATEGORYINFO.Interface
         HRESULT Clone(IEnumCATEGORYINFO** ppenum);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumCATEGORYINFO*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumCATEGORYINFO*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumCATEGORYINFO*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, CATEGORYINFO *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumCATEGORYINFO*, uint, CATEGORYINFO*, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, CATEGORYINFO*, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumCATEGORYINFO*, uint, int> Skip;
+        public delegate* unmanaged<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumCATEGORYINFO*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IEnumCATEGORYINFO **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumCATEGORYINFO*, IEnumCATEGORYINFO**, int> Clone;
+        public delegate* unmanaged<TSelf*, IEnumCATEGORYINFO**, int> Clone;
     }
 }

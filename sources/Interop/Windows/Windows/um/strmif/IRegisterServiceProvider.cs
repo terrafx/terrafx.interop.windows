@@ -52,18 +52,19 @@ public unsafe partial struct IRegisterServiceProvider : IRegisterServiceProvider
         HRESULT RegisterService([NativeTypeName("const GUID &")] Guid* guidService, IUnknown* pUnkObject);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRegisterServiceProvider*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRegisterServiceProvider*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRegisterServiceProvider*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRegisterServiceProvider*, Guid*, IUnknown*, int> RegisterService;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> RegisterService;
     }
 }

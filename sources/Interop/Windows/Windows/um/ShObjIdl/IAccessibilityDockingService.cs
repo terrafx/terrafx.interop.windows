@@ -74,24 +74,25 @@ public unsafe partial struct IAccessibilityDockingService : IAccessibilityDockin
         HRESULT UndockWindow(HWND hwnd);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccessibilityDockingService*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccessibilityDockingService*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccessibilityDockingService*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HMONITOR, UINT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccessibilityDockingService*, HMONITOR, uint*, uint*, int> GetAvailableSize;
+        public delegate* unmanaged<TSelf*, HMONITOR, uint*, uint*, int> GetAvailableSize;
 
         [NativeTypeName("HRESULT (HWND, HMONITOR, UINT, IAccessibilityDockingServiceCallback *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccessibilityDockingService*, HWND, HMONITOR, uint, IAccessibilityDockingServiceCallback*, int> DockWindow;
+        public delegate* unmanaged<TSelf*, HWND, HMONITOR, uint, IAccessibilityDockingServiceCallback*, int> DockWindow;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccessibilityDockingService*, HWND, int> UndockWindow;
+        public delegate* unmanaged<TSelf*, HWND, int> UndockWindow;
     }
 }

@@ -52,18 +52,19 @@ public unsafe partial struct ISegment : ISegment.Interface
         HRESULT GetPointers(IMarkupPointer* pIStart, IMarkupPointer* pIEnd);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISegment*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISegment*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISegment*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISegment*, IMarkupPointer*, IMarkupPointer*, int> GetPointers;
+        public delegate* unmanaged<TSelf*, IMarkupPointer*, IMarkupPointer*, int> GetPointers;
     }
 }

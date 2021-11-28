@@ -52,18 +52,19 @@ public unsafe partial struct IMFNetProxyLocatorFactory : IMFNetProxyLocatorFacto
         HRESULT CreateProxyLocator([NativeTypeName("LPCWSTR")] ushort* pszProtocol, IMFNetProxyLocator** ppProxyLocator);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetProxyLocatorFactory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetProxyLocatorFactory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetProxyLocatorFactory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IMFNetProxyLocator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetProxyLocatorFactory*, ushort*, IMFNetProxyLocator**, int> CreateProxyLocator;
+        public delegate* unmanaged<TSelf*, ushort*, IMFNetProxyLocator**, int> CreateProxyLocator;
     }
 }

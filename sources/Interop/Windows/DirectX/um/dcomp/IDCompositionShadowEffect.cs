@@ -160,51 +160,52 @@ public unsafe partial struct IDCompositionShadowEffect : IDCompositionShadowEffe
         HRESULT SetAlpha(float amount);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionShadowEffect*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionShadowEffect*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionShadowEffect*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionShadowEffect*, uint, IUnknown*, uint, int> SetInput;
+        public delegate* unmanaged<TSelf*, uint, IUnknown*, uint, int> SetInput;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionShadowEffect*, IDCompositionAnimation*, int> SetStandardDeviation;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetStandardDeviation;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionShadowEffect*, float, int> SetStandardDeviation1;
+        public delegate* unmanaged<TSelf*, float, int> SetStandardDeviation1;
 
         [NativeTypeName("HRESULT (const D2D1_VECTOR_4F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionShadowEffect*, D2D_VECTOR_4F*, int> SetColor;
+        public delegate* unmanaged<TSelf*, D2D_VECTOR_4F*, int> SetColor;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionShadowEffect*, IDCompositionAnimation*, int> SetRed;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetRed;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionShadowEffect*, float, int> SetRed1;
+        public delegate* unmanaged<TSelf*, float, int> SetRed1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionShadowEffect*, IDCompositionAnimation*, int> SetGreen;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetGreen;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionShadowEffect*, float, int> SetGreen1;
+        public delegate* unmanaged<TSelf*, float, int> SetGreen1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionShadowEffect*, IDCompositionAnimation*, int> SetBlue;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetBlue;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionShadowEffect*, float, int> SetBlue1;
+        public delegate* unmanaged<TSelf*, float, int> SetBlue1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionShadowEffect*, IDCompositionAnimation*, int> SetAlpha;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetAlpha;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionShadowEffect*, float, int> SetAlpha1;
+        public delegate* unmanaged<TSelf*, float, int> SetAlpha1;
     }
 }

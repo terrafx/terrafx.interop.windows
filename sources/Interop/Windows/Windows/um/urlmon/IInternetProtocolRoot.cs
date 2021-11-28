@@ -102,33 +102,34 @@ public unsafe partial struct IInternetProtocolRoot : IInternetProtocolRoot.Inter
         HRESULT Resume();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolRoot*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolRoot*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolRoot*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IInternetProtocolSink *, IInternetBindInfo *, DWORD, HANDLE_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolRoot*, ushort*, IInternetProtocolSink*, IInternetBindInfo*, uint, HANDLE_PTR, int> Start;
+        public delegate* unmanaged<TSelf*, ushort*, IInternetProtocolSink*, IInternetBindInfo*, uint, HANDLE_PTR, int> Start;
 
         [NativeTypeName("HRESULT (PROTOCOLDATA *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolRoot*, PROTOCOLDATA*, int> Continue;
+        public delegate* unmanaged<TSelf*, PROTOCOLDATA*, int> Continue;
 
         [NativeTypeName("HRESULT (HRESULT, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolRoot*, HRESULT, uint, int> Abort;
+        public delegate* unmanaged<TSelf*, HRESULT, uint, int> Abort;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolRoot*, uint, int> Terminate;
+        public delegate* unmanaged<TSelf*, uint, int> Terminate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolRoot*, int> Suspend;
+        public delegate* unmanaged<TSelf*, int> Suspend;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolRoot*, int> Resume;
+        public delegate* unmanaged<TSelf*, int> Resume;
     }
 }

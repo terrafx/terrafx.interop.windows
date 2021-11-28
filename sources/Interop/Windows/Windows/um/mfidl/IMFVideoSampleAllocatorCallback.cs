@@ -62,21 +62,22 @@ public unsafe partial struct IMFVideoSampleAllocatorCallback : IMFVideoSampleAll
         HRESULT GetFreeSampleCount([NativeTypeName("LONG *")] int* plSamples);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFVideoSampleAllocatorCallback*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFVideoSampleAllocatorCallback*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFVideoSampleAllocatorCallback*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFVideoSampleAllocatorNotify *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFVideoSampleAllocatorCallback*, IMFVideoSampleAllocatorNotify*, int> SetCallback;
+        public delegate* unmanaged<TSelf*, IMFVideoSampleAllocatorNotify*, int> SetCallback;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFVideoSampleAllocatorCallback*, int*, int> GetFreeSampleCount;
+        public delegate* unmanaged<TSelf*, int*, int> GetFreeSampleCount;
     }
 }

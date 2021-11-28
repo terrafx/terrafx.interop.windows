@@ -124,48 +124,49 @@ public unsafe partial struct ID2D1StrokeStyle1 : ID2D1StrokeStyle1.Interface
         D2D1_STROKE_TRANSFORM_TYPE GetStrokeTransformType();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1StrokeStyle1*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1StrokeStyle1*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1StrokeStyle1*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1StrokeStyle1*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("D2D1_CAP_STYLE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1StrokeStyle1*, D2D1_CAP_STYLE> GetStartCap;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_CAP_STYLE> GetStartCap;
 
         [NativeTypeName("D2D1_CAP_STYLE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1StrokeStyle1*, D2D1_CAP_STYLE> GetEndCap;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_CAP_STYLE> GetEndCap;
 
         [NativeTypeName("D2D1_CAP_STYLE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1StrokeStyle1*, D2D1_CAP_STYLE> GetDashCap;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_CAP_STYLE> GetDashCap;
 
         [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1StrokeStyle1*, float> GetMiterLimit;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, float> GetMiterLimit;
 
         [NativeTypeName("D2D1_LINE_JOIN () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1StrokeStyle1*, D2D1_LINE_JOIN> GetLineJoin;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_LINE_JOIN> GetLineJoin;
 
         [NativeTypeName("FLOAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1StrokeStyle1*, float> GetDashOffset;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, float> GetDashOffset;
 
         [NativeTypeName("D2D1_DASH_STYLE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1StrokeStyle1*, D2D1_DASH_STYLE> GetDashStyle;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_DASH_STYLE> GetDashStyle;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1StrokeStyle1*, uint> GetDashesCount;
+        public delegate* unmanaged<TSelf*, uint> GetDashesCount;
 
         [NativeTypeName("void (FLOAT *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1StrokeStyle1*, float*, uint, void> GetDashes;
+        public delegate* unmanaged<TSelf*, float*, uint, void> GetDashes;
 
         [NativeTypeName("D2D1_STROKE_TRANSFORM_TYPE () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1StrokeStyle1*, D2D1_STROKE_TRANSFORM_TYPE> GetStrokeTransformType;
+        public delegate* unmanaged<TSelf*, D2D1_STROKE_TRANSFORM_TYPE> GetStrokeTransformType;
     }
 }

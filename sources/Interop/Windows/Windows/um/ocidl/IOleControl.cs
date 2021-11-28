@@ -82,27 +82,28 @@ public unsafe partial struct IOleControl : IOleControl.Interface
         HRESULT FreezeEvents(BOOL bFreeze);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CONTROLINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleControl*, CONTROLINFO*, int> GetControlInfo;
+        public delegate* unmanaged<TSelf*, CONTROLINFO*, int> GetControlInfo;
 
         [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleControl*, MSG*, int> OnMnemonic;
+        public delegate* unmanaged<TSelf*, MSG*, int> OnMnemonic;
 
         [NativeTypeName("HRESULT (DISPID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleControl*, int, int> OnAmbientPropertyChange;
+        public delegate* unmanaged<TSelf*, int, int> OnAmbientPropertyChange;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleControl*, BOOL, int> FreezeEvents;
+        public delegate* unmanaged<TSelf*, BOOL, int> FreezeEvents;
     }
 }

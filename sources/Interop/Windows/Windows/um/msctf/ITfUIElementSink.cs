@@ -72,24 +72,25 @@ public unsafe partial struct ITfUIElementSink : ITfUIElementSink.Interface
         HRESULT EndUIElement([NativeTypeName("DWORD")] uint dwUIElementId);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfUIElementSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfUIElementSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfUIElementSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfUIElementSink*, uint, BOOL*, int> BeginUIElement;
+        public delegate* unmanaged<TSelf*, uint, BOOL*, int> BeginUIElement;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfUIElementSink*, uint, int> UpdateUIElement;
+        public delegate* unmanaged<TSelf*, uint, int> UpdateUIElement;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfUIElementSink*, uint, int> EndUIElement;
+        public delegate* unmanaged<TSelf*, uint, int> EndUIElement;
     }
 }

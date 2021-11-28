@@ -72,24 +72,25 @@ public unsafe partial struct _IManipulationEvents : _IManipulationEvents.Interfa
         HRESULT ManipulationCompleted(float x, float y, float cumulativeTranslationX, float cumulativeTranslationY, float cumulativeScale, float cumulativeExpansion, float cumulativeRotation);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<_IManipulationEvents*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<_IManipulationEvents*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<_IManipulationEvents*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (FLOAT, FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<_IManipulationEvents*, float, float, int> ManipulationStarted;
+        public delegate* unmanaged<TSelf*, float, float, int> ManipulationStarted;
 
         [NativeTypeName("HRESULT (FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<_IManipulationEvents*, float, float, float, float, float, float, float, float, float, float, float, float, int> ManipulationDelta;
+        public delegate* unmanaged<TSelf*, float, float, float, float, float, float, float, float, float, float, float, float, int> ManipulationDelta;
 
         [NativeTypeName("HRESULT (FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<_IManipulationEvents*, float, float, float, float, float, float, float, int> ManipulationCompleted;
+        public delegate* unmanaged<TSelf*, float, float, float, float, float, float, float, int> ManipulationCompleted;
     }
 }
