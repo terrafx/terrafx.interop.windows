@@ -102,33 +102,34 @@ public unsafe partial struct ITfContextOwner : ITfContextOwner.Interface
         HRESULT GetAttribute([NativeTypeName("const GUID &")] Guid* rguidAttribute, VARIANT* pvarValue);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContextOwner*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContextOwner*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContextOwner*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const POINT *, DWORD, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContextOwner*, POINT*, uint, int*, int> GetACPFromPoint;
+        public delegate* unmanaged<TSelf*, POINT*, uint, int*, int> GetACPFromPoint;
 
         [NativeTypeName("HRESULT (LONG, LONG, RECT *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContextOwner*, int, int, RECT*, BOOL*, int> GetTextExt;
+        public delegate* unmanaged<TSelf*, int, int, RECT*, BOOL*, int> GetTextExt;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContextOwner*, RECT*, int> GetScreenExt;
+        public delegate* unmanaged<TSelf*, RECT*, int> GetScreenExt;
 
         [NativeTypeName("HRESULT (TF_STATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContextOwner*, TS_STATUS*, int> GetStatus;
+        public delegate* unmanaged<TSelf*, TS_STATUS*, int> GetStatus;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContextOwner*, HWND*, int> GetWnd;
+        public delegate* unmanaged<TSelf*, HWND*, int> GetWnd;
 
         [NativeTypeName("HRESULT (const GUID &, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContextOwner*, Guid*, VARIANT*, int> GetAttribute;
+        public delegate* unmanaged<TSelf*, Guid*, VARIANT*, int> GetAttribute;
     }
 }

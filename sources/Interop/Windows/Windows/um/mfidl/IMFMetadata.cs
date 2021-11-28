@@ -112,36 +112,37 @@ public unsafe partial struct IMFMetadata : IMFMetadata.Interface
         HRESULT GetAllPropertyNames(PROPVARIANT* ppvNames);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMetadata*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMetadata*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMetadata*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMetadata*, ushort*, int> SetLanguage;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetLanguage;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMetadata*, ushort**, int> GetLanguage;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetLanguage;
 
         [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMetadata*, PROPVARIANT*, int> GetAllLanguages;
+        public delegate* unmanaged<TSelf*, PROPVARIANT*, int> GetAllLanguages;
 
         [NativeTypeName("HRESULT (LPCWSTR, const PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMetadata*, ushort*, PROPVARIANT*, int> SetProperty;
+        public delegate* unmanaged<TSelf*, ushort*, PROPVARIANT*, int> SetProperty;
 
         [NativeTypeName("HRESULT (LPCWSTR, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMetadata*, ushort*, PROPVARIANT*, int> GetProperty;
+        public delegate* unmanaged<TSelf*, ushort*, PROPVARIANT*, int> GetProperty;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMetadata*, ushort*, int> DeleteProperty;
+        public delegate* unmanaged<TSelf*, ushort*, int> DeleteProperty;
 
         [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMetadata*, PROPVARIANT*, int> GetAllPropertyNames;
+        public delegate* unmanaged<TSelf*, PROPVARIANT*, int> GetAllPropertyNames;
     }
 }

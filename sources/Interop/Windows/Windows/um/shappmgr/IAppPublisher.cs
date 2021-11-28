@@ -82,27 +82,28 @@ public unsafe partial struct IAppPublisher : IAppPublisher.Interface
         HRESULT EnumApps(Guid* pAppCategoryId, IEnumPublishedApps** ppepa);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppPublisher*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppPublisher*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppPublisher*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppPublisher*, uint*, int> GetNumberOfCategories;
+        public delegate* unmanaged<TSelf*, uint*, int> GetNumberOfCategories;
 
         [NativeTypeName("HRESULT (APPCATEGORYINFOLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppPublisher*, APPCATEGORYINFOLIST*, int> GetCategories;
+        public delegate* unmanaged<TSelf*, APPCATEGORYINFOLIST*, int> GetCategories;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppPublisher*, uint*, int> GetNumberOfApps;
+        public delegate* unmanaged<TSelf*, uint*, int> GetNumberOfApps;
 
         [NativeTypeName("HRESULT (GUID *, IEnumPublishedApps **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppPublisher*, Guid*, IEnumPublishedApps**, int> EnumApps;
+        public delegate* unmanaged<TSelf*, Guid*, IEnumPublishedApps**, int> EnumApps;
     }
 }

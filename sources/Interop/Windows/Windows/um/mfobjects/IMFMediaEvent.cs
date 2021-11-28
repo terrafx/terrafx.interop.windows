@@ -292,117 +292,118 @@ public unsafe partial struct IMFMediaEvent : IMFMediaEvent.Interface
         HRESULT GetValue(PROPVARIANT* pvValue);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, PROPVARIANT*, int> GetItem;
+        public delegate* unmanaged<TSelf*, Guid*, PROPVARIANT*, int> GetItem;
 
         [NativeTypeName("HRESULT (const GUID &, MF_ATTRIBUTE_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, MF_ATTRIBUTE_TYPE*, int> GetItemType;
+        public delegate* unmanaged<TSelf*, Guid*, MF_ATTRIBUTE_TYPE*, int> GetItemType;
 
         [NativeTypeName("HRESULT (const GUID &, const PROPVARIANT &, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, PROPVARIANT*, BOOL*, int> CompareItem;
+        public delegate* unmanaged<TSelf*, Guid*, PROPVARIANT*, BOOL*, int> CompareItem;
 
         [NativeTypeName("HRESULT (IMFAttributes *, MF_ATTRIBUTES_MATCH_TYPE, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, BOOL*, int> Compare;
+        public delegate* unmanaged<TSelf*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, BOOL*, int> Compare;
 
         [NativeTypeName("HRESULT (const GUID &, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, uint*, int> GetUINT32;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, int> GetUINT32;
 
         [NativeTypeName("HRESULT (const GUID &, UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, ulong*, int> GetUINT64;
+        public delegate* unmanaged<TSelf*, Guid*, ulong*, int> GetUINT64;
 
         [NativeTypeName("HRESULT (const GUID &, double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, double*, int> GetDouble;
+        public delegate* unmanaged<TSelf*, Guid*, double*, int> GetDouble;
 
         [NativeTypeName("HRESULT (const GUID &, GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, Guid*, int> GetGUID;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, int> GetGUID;
 
         [NativeTypeName("HRESULT (const GUID &, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, uint*, int> GetStringLength;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, int> GetStringLength;
 
         [NativeTypeName("HRESULT (const GUID &, LPWSTR, UINT32, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, ushort*, uint, uint*, int> GetString;
+        public delegate* unmanaged<TSelf*, Guid*, ushort*, uint, uint*, int> GetString;
 
         [NativeTypeName("HRESULT (const GUID &, LPWSTR *, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, ushort**, uint*, int> GetAllocatedString;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint*, int> GetAllocatedString;
 
         [NativeTypeName("HRESULT (const GUID &, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, uint*, int> GetBlobSize;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, int> GetBlobSize;
 
         [NativeTypeName("HRESULT (const GUID &, UINT8 *, UINT32, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, byte*, uint, uint*, int> GetBlob;
+        public delegate* unmanaged<TSelf*, Guid*, byte*, uint, uint*, int> GetBlob;
 
         [NativeTypeName("HRESULT (const GUID &, UINT8 **, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, byte**, uint*, int> GetAllocatedBlob;
+        public delegate* unmanaged<TSelf*, Guid*, byte**, uint*, int> GetAllocatedBlob;
 
         [NativeTypeName("HRESULT (const GUID &, const IID &, LPVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, Guid*, void**, int> GetUnknown;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, void**, int> GetUnknown;
 
         [NativeTypeName("HRESULT (const GUID &, const PROPVARIANT &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, PROPVARIANT*, int> SetItem;
+        public delegate* unmanaged<TSelf*, Guid*, PROPVARIANT*, int> SetItem;
 
         [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, int> DeleteItem;
+        public delegate* unmanaged<TSelf*, Guid*, int> DeleteItem;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, int> DeleteAllItems;
+        public delegate* unmanaged<TSelf*, int> DeleteAllItems;
 
         [NativeTypeName("HRESULT (const GUID &, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, uint, int> SetUINT32;
+        public delegate* unmanaged<TSelf*, Guid*, uint, int> SetUINT32;
 
         [NativeTypeName("HRESULT (const GUID &, UINT64) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, ulong, int> SetUINT64;
+        public delegate* unmanaged<TSelf*, Guid*, ulong, int> SetUINT64;
 
         [NativeTypeName("HRESULT (const GUID &, double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, double, int> SetDouble;
+        public delegate* unmanaged<TSelf*, Guid*, double, int> SetDouble;
 
         [NativeTypeName("HRESULT (const GUID &, const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, Guid*, int> SetGUID;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, int> SetGUID;
 
         [NativeTypeName("HRESULT (const GUID &, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, ushort*, int> SetString;
+        public delegate* unmanaged<TSelf*, Guid*, ushort*, int> SetString;
 
         [NativeTypeName("HRESULT (const GUID &, const UINT8 *, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, byte*, uint, int> SetBlob;
+        public delegate* unmanaged<TSelf*, Guid*, byte*, uint, int> SetBlob;
 
         [NativeTypeName("HRESULT (const GUID &, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, IUnknown*, int> SetUnknown;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetUnknown;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, int> LockStore;
+        public delegate* unmanaged<TSelf*, int> LockStore;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, int> UnlockStore;
+        public delegate* unmanaged<TSelf*, int> UnlockStore;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, uint*, int> GetCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (UINT32, GUID *, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, uint, Guid*, PROPVARIANT*, int> GetItemByIndex;
+        public delegate* unmanaged<TSelf*, uint, Guid*, PROPVARIANT*, int> GetItemByIndex;
 
         [NativeTypeName("HRESULT (IMFAttributes *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, IMFAttributes*, int> CopyAllItems;
+        public delegate* unmanaged<TSelf*, IMFAttributes*, int> CopyAllItems;
 
         [NativeTypeName("HRESULT (MediaEventType *) __attribute__((stdcall))")]
-        public new delegate* unmanaged<IMFMediaEvent*, uint*, int> GetType;
+        public new delegate* unmanaged<TSelf*, uint*, int> GetType;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, Guid*, int> GetExtendedType;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetExtendedType;
 
         [NativeTypeName("HRESULT (HRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, HRESULT*, int> GetStatus;
+        public delegate* unmanaged<TSelf*, HRESULT*, int> GetStatus;
 
         [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEvent*, PROPVARIANT*, int> GetValue;
+        public delegate* unmanaged<TSelf*, PROPVARIANT*, int> GetValue;
     }
 }

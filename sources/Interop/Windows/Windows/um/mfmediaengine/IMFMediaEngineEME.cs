@@ -64,21 +64,22 @@ public unsafe partial struct IMFMediaEngineEME : IMFMediaEngineEME.Interface
         HRESULT SetMediaKeys(IMFMediaKeys* keys);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineEME*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineEME*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineEME*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFMediaKeys **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineEME*, IMFMediaKeys**, int> get_Keys;
+        public delegate* unmanaged<TSelf*, IMFMediaKeys**, int> get_Keys;
 
         [NativeTypeName("HRESULT (IMFMediaKeys *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineEME*, IMFMediaKeys*, int> SetMediaKeys;
+        public delegate* unmanaged<TSelf*, IMFMediaKeys*, int> SetMediaKeys;
     }
 }

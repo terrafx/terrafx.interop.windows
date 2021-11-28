@@ -92,30 +92,31 @@ public unsafe partial struct IMFSequencerSource : IMFSequencerSource.Interface
         HRESULT UpdateTopologyFlags([NativeTypeName("MFSequencerElementId")] uint dwId, [NativeTypeName("DWORD")] uint dwFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSequencerSource*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSequencerSource*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSequencerSource*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFTopology *, DWORD, MFSequencerElementId *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSequencerSource*, IMFTopology*, uint, uint*, int> AppendTopology;
+        public delegate* unmanaged<TSelf*, IMFTopology*, uint, uint*, int> AppendTopology;
 
         [NativeTypeName("HRESULT (MFSequencerElementId) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSequencerSource*, uint, int> DeleteTopology;
+        public delegate* unmanaged<TSelf*, uint, int> DeleteTopology;
 
         [NativeTypeName("HRESULT (IMFPresentationDescriptor *, MFSequencerElementId *, IMFTopology **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSequencerSource*, IMFPresentationDescriptor*, uint*, IMFTopology**, int> GetPresentationContext;
+        public delegate* unmanaged<TSelf*, IMFPresentationDescriptor*, uint*, IMFTopology**, int> GetPresentationContext;
 
         [NativeTypeName("HRESULT (MFSequencerElementId, IMFTopology *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSequencerSource*, uint, IMFTopology*, int> UpdateTopology;
+        public delegate* unmanaged<TSelf*, uint, IMFTopology*, int> UpdateTopology;
 
         [NativeTypeName("HRESULT (MFSequencerElementId, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSequencerSource*, uint, uint, int> UpdateTopologyFlags;
+        public delegate* unmanaged<TSelf*, uint, uint, int> UpdateTopologyFlags;
     }
 }

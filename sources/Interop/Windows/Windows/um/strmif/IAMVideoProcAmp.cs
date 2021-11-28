@@ -72,24 +72,25 @@ public unsafe partial struct IAMVideoProcAmp : IAMVideoProcAmp.Interface
         HRESULT Get([NativeTypeName("long")] int Property, [NativeTypeName("long *")] int* lValue, [NativeTypeName("long *")] int* Flags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoProcAmp*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoProcAmp*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoProcAmp*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long, long *, long *, long *, long *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoProcAmp*, int, int*, int*, int*, int*, int*, int> GetRange;
+        public delegate* unmanaged<TSelf*, int, int*, int*, int*, int*, int*, int> GetRange;
 
         [NativeTypeName("HRESULT (long, long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoProcAmp*, int, int, int, int> Set;
+        public delegate* unmanaged<TSelf*, int, int, int, int> Set;
 
         [NativeTypeName("HRESULT (long, long *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoProcAmp*, int, int*, int*, int> Get;
+        public delegate* unmanaged<TSelf*, int, int*, int*, int> Get;
     }
 }

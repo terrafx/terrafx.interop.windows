@@ -109,39 +109,40 @@ public unsafe partial struct IMFCapturePhotoSink : IMFCapturePhotoSink.Interface
         HRESULT SetOutputByteStream(IMFByteStream* pByteStream);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCapturePhotoSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCapturePhotoSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCapturePhotoSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCapturePhotoSink*, uint, IMFMediaType**, int> GetOutputMediaType;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaType**, int> GetOutputMediaType;
 
         [NativeTypeName("HRESULT (DWORD, const GUID &, const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCapturePhotoSink*, uint, Guid*, Guid*, IUnknown**, int> GetService;
+        public delegate* unmanaged<TSelf*, uint, Guid*, Guid*, IUnknown**, int> GetService;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType *, IMFAttributes *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCapturePhotoSink*, uint, IMFMediaType*, IMFAttributes*, uint*, int> AddStream;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaType*, IMFAttributes*, uint*, int> AddStream;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCapturePhotoSink*, int> Prepare;
+        public delegate* unmanaged<TSelf*, int> Prepare;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCapturePhotoSink*, int> RemoveAllStreams;
+        public delegate* unmanaged<TSelf*, int> RemoveAllStreams;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCapturePhotoSink*, ushort*, int> SetOutputFileName;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetOutputFileName;
 
         [NativeTypeName("HRESULT (IMFCaptureEngineOnSampleCallback *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCapturePhotoSink*, IMFCaptureEngineOnSampleCallback*, int> SetSampleCallback;
+        public delegate* unmanaged<TSelf*, IMFCaptureEngineOnSampleCallback*, int> SetSampleCallback;
 
         [NativeTypeName("HRESULT (IMFByteStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCapturePhotoSink*, IMFByteStream*, int> SetOutputByteStream;
+        public delegate* unmanaged<TSelf*, IMFByteStream*, int> SetOutputByteStream;
     }
 }

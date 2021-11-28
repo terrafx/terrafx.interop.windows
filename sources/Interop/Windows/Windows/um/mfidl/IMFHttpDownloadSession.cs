@@ -74,24 +74,25 @@ public unsafe partial struct IMFHttpDownloadSession : IMFHttpDownloadSession.Int
         HRESULT Close();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFHttpDownloadSession*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFHttpDownloadSession*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFHttpDownloadSession*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFHttpDownloadSession*, ushort*, uint, int> SetServer;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> SetServer;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL, BOOL, LPCWSTR, LPCWSTR, IMFHttpDownloadRequest **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFHttpDownloadSession*, ushort*, BOOL, BOOL, ushort*, ushort*, IMFHttpDownloadRequest**, int> CreateRequest;
+        public delegate* unmanaged<TSelf*, ushort*, BOOL, BOOL, ushort*, ushort*, IMFHttpDownloadRequest**, int> CreateRequest;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFHttpDownloadSession*, int> Close;
+        public delegate* unmanaged<TSelf*, int> Close;
     }
 }

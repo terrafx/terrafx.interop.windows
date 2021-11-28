@@ -69,24 +69,25 @@ public unsafe partial struct ITfFnLangProfileUtil : ITfFnLangProfileUtil.Interfa
         HRESULT IsProfileAvailableForLang([NativeTypeName("LANGID")] ushort langid, BOOL* pfAvailable);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnLangProfileUtil*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnLangProfileUtil*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnLangProfileUtil*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnLangProfileUtil*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnLangProfileUtil*, int> RegisterActiveProfiles;
+        public delegate* unmanaged<TSelf*, int> RegisterActiveProfiles;
 
         [NativeTypeName("HRESULT (LANGID, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnLangProfileUtil*, ushort, BOOL*, int> IsProfileAvailableForLang;
+        public delegate* unmanaged<TSelf*, ushort, BOOL*, int> IsProfileAvailableForLang;
     }
 }

@@ -320,102 +320,103 @@ public unsafe partial struct IWebBrowser : IWebBrowser.Interface
         HRESULT get_Busy([NativeTypeName("VARIANT_BOOL *")] short* pBool);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, int> GoBack;
+        public delegate* unmanaged<TSelf*, int> GoBack;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, int> GoForward;
+        public delegate* unmanaged<TSelf*, int> GoForward;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, int> GoHome;
+        public delegate* unmanaged<TSelf*, int> GoHome;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, int> GoSearch;
+        public delegate* unmanaged<TSelf*, int> GoSearch;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *, VARIANT *, VARIANT *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, ushort*, VARIANT*, VARIANT*, VARIANT*, VARIANT*, int> Navigate;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, VARIANT*, VARIANT*, VARIANT*, int> Navigate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, int> Refresh;
+        public delegate* unmanaged<TSelf*, int> Refresh;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, VARIANT*, int> Refresh2;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> Refresh2;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, int> Stop;
+        public delegate* unmanaged<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, IDispatch**, int> get_Application;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_Application;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, IDispatch**, int> get_Parent;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_Parent;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, IDispatch**, int> get_Container;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_Container;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, IDispatch**, int> get_Document;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_Document;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, short*, int> get_TopLevelContainer;
+        public delegate* unmanaged<TSelf*, short*, int> get_TopLevelContainer;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, ushort**, int> get_Type;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_Type;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, int*, int> get_Left;
+        public delegate* unmanaged<TSelf*, int*, int> get_Left;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, int, int> put_Left;
+        public delegate* unmanaged<TSelf*, int, int> put_Left;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, int*, int> get_Top;
+        public delegate* unmanaged<TSelf*, int*, int> get_Top;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, int, int> put_Top;
+        public delegate* unmanaged<TSelf*, int, int> put_Top;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, int*, int> get_Width;
+        public delegate* unmanaged<TSelf*, int*, int> get_Width;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, int, int> put_Width;
+        public delegate* unmanaged<TSelf*, int, int> put_Width;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, int*, int> get_Height;
+        public delegate* unmanaged<TSelf*, int*, int> get_Height;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, int, int> put_Height;
+        public delegate* unmanaged<TSelf*, int, int> put_Height;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, ushort**, int> get_LocationName;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_LocationName;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, ushort**, int> get_LocationURL;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_LocationURL;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebBrowser*, short*, int> get_Busy;
+        public delegate* unmanaged<TSelf*, short*, int> get_Busy;
     }
 }

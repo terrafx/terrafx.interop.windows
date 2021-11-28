@@ -150,51 +150,52 @@ public unsafe partial struct ISVGElement : ISVGElement.Interface
         HRESULT get_focusable(ISVGAnimatedEnumeration** p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGElement*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGElement*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGElement*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGElement*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGElement*, ushort*, int> put_xmlbase;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_xmlbase;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGElement*, ushort**, int> get_xmlbase;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_xmlbase;
 
         [NativeTypeName("HRESULT (ISVGSVGElement *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGElement*, ISVGSVGElement*, int> putref_ownerSVGElement;
+        public delegate* unmanaged<TSelf*, ISVGSVGElement*, int> putref_ownerSVGElement;
 
         [NativeTypeName("HRESULT (ISVGSVGElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGElement*, ISVGSVGElement**, int> get_ownerSVGElement;
+        public delegate* unmanaged<TSelf*, ISVGSVGElement**, int> get_ownerSVGElement;
 
         [NativeTypeName("HRESULT (ISVGElement *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGElement*, ISVGElement*, int> putref_viewportElement;
+        public delegate* unmanaged<TSelf*, ISVGElement*, int> putref_viewportElement;
 
         [NativeTypeName("HRESULT (ISVGElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGElement*, ISVGElement**, int> get_viewportElement;
+        public delegate* unmanaged<TSelf*, ISVGElement**, int> get_viewportElement;
 
         [NativeTypeName("HRESULT (ISVGAnimatedEnumeration *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGElement*, ISVGAnimatedEnumeration*, int> putref_focusable;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedEnumeration*, int> putref_focusable;
 
         [NativeTypeName("HRESULT (ISVGAnimatedEnumeration **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGElement*, ISVGAnimatedEnumeration**, int> get_focusable;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedEnumeration**, int> get_focusable;
     }
 }

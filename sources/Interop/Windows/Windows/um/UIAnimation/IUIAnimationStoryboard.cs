@@ -212,66 +212,67 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
         HRESULT SetStoryboardEventHandler(IUIAnimationStoryboardEventHandler* handler);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboard*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboard*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboard*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUIAnimationVariable *, IUIAnimationTransition *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationVariable*, IUIAnimationTransition*, int> AddTransition;
+        public delegate* unmanaged<TSelf*, IUIAnimationVariable*, IUIAnimationTransition*, int> AddTransition;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_KEYFRAME, UI_ANIMATION_SECONDS, UI_ANIMATION_KEYFRAME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboard*, UI_ANIMATION_KEYFRAME*, double, UI_ANIMATION_KEYFRAME**, int> AddKeyframeAtOffset;
+        public delegate* unmanaged<TSelf*, UI_ANIMATION_KEYFRAME*, double, UI_ANIMATION_KEYFRAME**, int> AddKeyframeAtOffset;
 
         [NativeTypeName("HRESULT (IUIAnimationTransition *, UI_ANIMATION_KEYFRAME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME**, int> AddKeyframeAfterTransition;
+        public delegate* unmanaged<TSelf*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME**, int> AddKeyframeAfterTransition;
 
         [NativeTypeName("HRESULT (IUIAnimationVariable *, IUIAnimationTransition *, UI_ANIMATION_KEYFRAME) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationVariable*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME*, int> AddTransitionAtKeyframe;
+        public delegate* unmanaged<TSelf*, IUIAnimationVariable*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME*, int> AddTransitionAtKeyframe;
 
         [NativeTypeName("HRESULT (IUIAnimationVariable *, IUIAnimationTransition *, UI_ANIMATION_KEYFRAME, UI_ANIMATION_KEYFRAME) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationVariable*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME*, UI_ANIMATION_KEYFRAME*, int> AddTransitionBetweenKeyframes;
+        public delegate* unmanaged<TSelf*, IUIAnimationVariable*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME*, UI_ANIMATION_KEYFRAME*, int> AddTransitionBetweenKeyframes;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_KEYFRAME, UI_ANIMATION_KEYFRAME, INT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboard*, UI_ANIMATION_KEYFRAME*, UI_ANIMATION_KEYFRAME*, int, int> RepeatBetweenKeyframes;
+        public delegate* unmanaged<TSelf*, UI_ANIMATION_KEYFRAME*, UI_ANIMATION_KEYFRAME*, int, int> RepeatBetweenKeyframes;
 
         [NativeTypeName("HRESULT (IUIAnimationVariable *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationVariable*, int> HoldVariable;
+        public delegate* unmanaged<TSelf*, IUIAnimationVariable*, int> HoldVariable;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboard*, double, int> SetLongestAcceptableDelay;
+        public delegate* unmanaged<TSelf*, double, int> SetLongestAcceptableDelay;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, UI_ANIMATION_SCHEDULING_RESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboard*, double, UI_ANIMATION_SCHEDULING_RESULT*, int> Schedule;
+        public delegate* unmanaged<TSelf*, double, UI_ANIMATION_SCHEDULING_RESULT*, int> Schedule;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboard*, int> Conclude;
+        public delegate* unmanaged<TSelf*, int> Conclude;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboard*, double, int> Finish;
+        public delegate* unmanaged<TSelf*, double, int> Finish;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboard*, int> Abandon;
+        public delegate* unmanaged<TSelf*, int> Abandon;
 
         [NativeTypeName("HRESULT (IUnknown *, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboard*, IUnknown*, uint, int> SetTag;
+        public delegate* unmanaged<TSelf*, IUnknown*, uint, int> SetTag;
 
         [NativeTypeName("HRESULT (IUnknown **, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboard*, IUnknown**, uint*, int> GetTag;
+        public delegate* unmanaged<TSelf*, IUnknown**, uint*, int> GetTag;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_STORYBOARD_STATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboard*, UI_ANIMATION_STORYBOARD_STATUS*, int> GetStatus;
+        public delegate* unmanaged<TSelf*, UI_ANIMATION_STORYBOARD_STATUS*, int> GetStatus;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboard*, double*, int> GetElapsedTime;
+        public delegate* unmanaged<TSelf*, double*, int> GetElapsedTime;
 
         [NativeTypeName("HRESULT (IUIAnimationStoryboardEventHandler *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationStoryboardEventHandler*, int> SetStoryboardEventHandler;
+        public delegate* unmanaged<TSelf*, IUIAnimationStoryboardEventHandler*, int> SetStoryboardEventHandler;
     }
 }

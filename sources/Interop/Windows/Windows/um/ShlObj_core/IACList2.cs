@@ -69,24 +69,25 @@ public unsafe partial struct IACList2 : IACList2.Interface
         HRESULT GetOptions([NativeTypeName("DWORD *")] uint* pdwFlag);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IACList2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IACList2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IACList2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IACList2*, ushort*, int> Expand;
+        public delegate* unmanaged<TSelf*, ushort*, int> Expand;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IACList2*, uint, int> SetOptions;
+        public delegate* unmanaged<TSelf*, uint, int> SetOptions;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IACList2*, uint*, int> GetOptions;
+        public delegate* unmanaged<TSelf*, uint*, int> GetOptions;
     }
 }

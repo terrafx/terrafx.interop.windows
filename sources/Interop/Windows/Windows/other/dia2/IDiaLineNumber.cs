@@ -182,57 +182,58 @@ public unsafe partial struct IDiaLineNumber : IDiaLineNumber.Interface
         HRESULT get_compilandId([NativeTypeName("DWORD *")] uint* pRetVal);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLineNumber*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLineNumber*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLineNumber*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLineNumber*, IDiaSymbol**, int> get_compiland;
+        public delegate* unmanaged<TSelf*, IDiaSymbol**, int> get_compiland;
 
         [NativeTypeName("HRESULT (IDiaSourceFile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLineNumber*, IDiaSourceFile**, int> get_sourceFile;
+        public delegate* unmanaged<TSelf*, IDiaSourceFile**, int> get_sourceFile;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_lineNumber;
+        public delegate* unmanaged<TSelf*, uint*, int> get_lineNumber;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_lineNumberEnd;
+        public delegate* unmanaged<TSelf*, uint*, int> get_lineNumberEnd;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_columnNumber;
+        public delegate* unmanaged<TSelf*, uint*, int> get_columnNumber;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_columnNumberEnd;
+        public delegate* unmanaged<TSelf*, uint*, int> get_columnNumberEnd;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_addressSection;
+        public delegate* unmanaged<TSelf*, uint*, int> get_addressSection;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_addressOffset;
+        public delegate* unmanaged<TSelf*, uint*, int> get_addressOffset;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_relativeVirtualAddress;
+        public delegate* unmanaged<TSelf*, uint*, int> get_relativeVirtualAddress;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLineNumber*, ulong*, int> get_virtualAddress;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_virtualAddress;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_length;
+        public delegate* unmanaged<TSelf*, uint*, int> get_length;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_sourceFileId;
+        public delegate* unmanaged<TSelf*, uint*, int> get_sourceFileId;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLineNumber*, BOOL*, int> get_statement;
+        public delegate* unmanaged<TSelf*, BOOL*, int> get_statement;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLineNumber*, uint*, int> get_compilandId;
+        public delegate* unmanaged<TSelf*, uint*, int> get_compilandId;
     }
 }

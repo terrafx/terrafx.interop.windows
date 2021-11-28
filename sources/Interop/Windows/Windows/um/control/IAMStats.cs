@@ -130,45 +130,46 @@ public unsafe partial struct IAMStats : IAMStats.Interface
         HRESULT AddValue([NativeTypeName("long")] int lIndex, double dValue);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStats*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStats*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStats*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStats*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStats*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStats*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStats*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStats*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStats*, int*, int> get_Count;
+        public delegate* unmanaged<TSelf*, int*, int> get_Count;
 
         [NativeTypeName("HRESULT (long, BSTR *, long *, double *, double *, double *, double *, double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStats*, int, ushort**, int*, double*, double*, double*, double*, double*, int> GetValueByIndex;
+        public delegate* unmanaged<TSelf*, int, ushort**, int*, double*, double*, double*, double*, double*, int> GetValueByIndex;
 
         [NativeTypeName("HRESULT (BSTR, long *, long *, double *, double *, double *, double *, double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStats*, ushort*, int*, int*, double*, double*, double*, double*, double*, int> GetValueByName;
+        public delegate* unmanaged<TSelf*, ushort*, int*, int*, double*, double*, double*, double*, double*, int> GetValueByName;
 
         [NativeTypeName("HRESULT (BSTR, long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStats*, ushort*, int, int*, int> GetIndex;
+        public delegate* unmanaged<TSelf*, ushort*, int, int*, int> GetIndex;
 
         [NativeTypeName("HRESULT (long, double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStats*, int, double, int> AddValue;
+        public delegate* unmanaged<TSelf*, int, double, int> AddValue;
     }
 }

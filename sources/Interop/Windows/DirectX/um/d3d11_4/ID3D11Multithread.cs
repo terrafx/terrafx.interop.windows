@@ -83,27 +83,28 @@ public unsafe partial struct ID3D11Multithread : ID3D11Multithread.Interface
         BOOL GetMultithreadProtected();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Multithread*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Multithread*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Multithread*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Multithread*, void> Enter;
+        public delegate* unmanaged<TSelf*, void> Enter;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Multithread*, void> Leave;
+        public delegate* unmanaged<TSelf*, void> Leave;
 
         [NativeTypeName("BOOL (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Multithread*, BOOL, int> SetMultithreadProtected;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetMultithreadProtected;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11Multithread*, int> GetMultithreadProtected;
+        public delegate* unmanaged<TSelf*, int> GetMultithreadProtected;
     }
 }

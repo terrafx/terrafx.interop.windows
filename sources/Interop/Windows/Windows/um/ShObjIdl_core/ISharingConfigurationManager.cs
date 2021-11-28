@@ -112,36 +112,37 @@ public unsafe partial struct ISharingConfigurationManager : ISharingConfiguratio
         HRESULT ArePrintersShared();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISharingConfigurationManager*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISharingConfigurationManager*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISharingConfigurationManager*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DEF_SHARE_ID, SHARE_ROLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, SHARE_ROLE, int> CreateShare;
+        public delegate* unmanaged<TSelf*, DEF_SHARE_ID, SHARE_ROLE, int> CreateShare;
 
         [NativeTypeName("HRESULT (DEF_SHARE_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, int> DeleteShare;
+        public delegate* unmanaged<TSelf*, DEF_SHARE_ID, int> DeleteShare;
 
         [NativeTypeName("HRESULT (DEF_SHARE_ID) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, int> ShareExists;
+        public delegate* unmanaged<TSelf*, DEF_SHARE_ID, int> ShareExists;
 
         [NativeTypeName("HRESULT (DEF_SHARE_ID, SHARE_ROLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, SHARE_ROLE*, int> GetSharePermissions;
+        public delegate* unmanaged<TSelf*, DEF_SHARE_ID, SHARE_ROLE*, int> GetSharePermissions;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISharingConfigurationManager*, int> SharePrinters;
+        public delegate* unmanaged<TSelf*, int> SharePrinters;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISharingConfigurationManager*, int> StopSharingPrinters;
+        public delegate* unmanaged<TSelf*, int> StopSharingPrinters;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISharingConfigurationManager*, int> ArePrintersShared;
+        public delegate* unmanaged<TSelf*, int> ArePrintersShared;
     }
 }

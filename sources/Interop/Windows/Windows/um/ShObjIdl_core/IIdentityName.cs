@@ -57,21 +57,22 @@ public unsafe partial struct IIdentityName : IIdentityName.Interface
     {
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IIdentityName*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IIdentityName*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IIdentityName*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IIdentityName*, ITEMIDLIST**, int> GetItemIDList;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST**, int> GetItemIDList;
 
         [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IIdentityName*, IShellItem**, int> GetItem;
+        public delegate* unmanaged<TSelf*, IShellItem**, int> GetItem;
     }
 }

@@ -64,21 +64,22 @@ public unsafe partial struct IMFClockConsumer : IMFClockConsumer.Interface
         HRESULT GetPresentationClock(IMFPresentationClock** ppPresentationClock);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFClockConsumer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFClockConsumer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFClockConsumer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFPresentationClock *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFClockConsumer*, IMFPresentationClock*, int> SetPresentationClock;
+        public delegate* unmanaged<TSelf*, IMFPresentationClock*, int> SetPresentationClock;
 
         [NativeTypeName("HRESULT (IMFPresentationClock **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFClockConsumer*, IMFPresentationClock**, int> GetPresentationClock;
+        public delegate* unmanaged<TSelf*, IMFPresentationClock**, int> GetPresentationClock;
     }
 }

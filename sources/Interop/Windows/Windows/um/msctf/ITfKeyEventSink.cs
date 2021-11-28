@@ -102,33 +102,34 @@ public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface
         HRESULT OnPreservedKey(ITfContext* pic, [NativeTypeName("const GUID &")] Guid* rguid, BOOL* pfEaten);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfKeyEventSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfKeyEventSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfKeyEventSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfKeyEventSink*, BOOL, int> OnSetFocus;
+        public delegate* unmanaged<TSelf*, BOOL, int> OnSetFocus;
 
         [NativeTypeName("HRESULT (ITfContext *, WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfKeyEventSink*, ITfContext*, WPARAM, LPARAM, BOOL*, int> OnTestKeyDown;
+        public delegate* unmanaged<TSelf*, ITfContext*, WPARAM, LPARAM, BOOL*, int> OnTestKeyDown;
 
         [NativeTypeName("HRESULT (ITfContext *, WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfKeyEventSink*, ITfContext*, WPARAM, LPARAM, BOOL*, int> OnTestKeyUp;
+        public delegate* unmanaged<TSelf*, ITfContext*, WPARAM, LPARAM, BOOL*, int> OnTestKeyUp;
 
         [NativeTypeName("HRESULT (ITfContext *, WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfKeyEventSink*, ITfContext*, WPARAM, LPARAM, BOOL*, int> OnKeyDown;
+        public delegate* unmanaged<TSelf*, ITfContext*, WPARAM, LPARAM, BOOL*, int> OnKeyDown;
 
         [NativeTypeName("HRESULT (ITfContext *, WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfKeyEventSink*, ITfContext*, WPARAM, LPARAM, BOOL*, int> OnKeyUp;
+        public delegate* unmanaged<TSelf*, ITfContext*, WPARAM, LPARAM, BOOL*, int> OnKeyUp;
 
         [NativeTypeName("HRESULT (ITfContext *, const GUID &, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfKeyEventSink*, ITfContext*, Guid*, BOOL*, int> OnPreservedKey;
+        public delegate* unmanaged<TSelf*, ITfContext*, Guid*, BOOL*, int> OnPreservedKey;
     }
 }

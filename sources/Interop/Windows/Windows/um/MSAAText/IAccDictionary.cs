@@ -92,30 +92,31 @@ public unsafe partial struct IAccDictionary : IAccDictionary.Interface
         HRESULT ConvertValueToString([NativeTypeName("const GUID &")] Guid* Term, [NativeTypeName("LCID")] uint lcid, VARIANT varValue, [NativeTypeName("BSTR *")] ushort** pbstrResult, [NativeTypeName("LCID *")] uint* plcid);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccDictionary*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccDictionary*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccDictionary*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, LCID, BSTR *, LCID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccDictionary*, Guid*, uint, ushort**, uint*, int> GetLocalizedString;
+        public delegate* unmanaged<TSelf*, Guid*, uint, ushort**, uint*, int> GetLocalizedString;
 
         [NativeTypeName("HRESULT (const GUID &, GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccDictionary*, Guid*, Guid*, int> GetParentTerm;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, int> GetParentTerm;
 
         [NativeTypeName("HRESULT (const GUID &, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccDictionary*, Guid*, ushort**, int> GetMnemonicString;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, int> GetMnemonicString;
 
         [NativeTypeName("HRESULT (BSTR, GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccDictionary*, ushort*, Guid*, int> LookupMnemonicTerm;
+        public delegate* unmanaged<TSelf*, ushort*, Guid*, int> LookupMnemonicTerm;
 
         [NativeTypeName("HRESULT (const GUID &, LCID, VARIANT, BSTR *, LCID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccDictionary*, Guid*, uint, VARIANT, ushort**, uint*, int> ConvertValueToString;
+        public delegate* unmanaged<TSelf*, Guid*, uint, VARIANT, ushort**, uint*, int> ConvertValueToString;
     }
 }

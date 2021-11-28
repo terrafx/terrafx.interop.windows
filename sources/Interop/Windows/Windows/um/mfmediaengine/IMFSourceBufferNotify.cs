@@ -94,30 +94,31 @@ public unsafe partial struct IMFSourceBufferNotify : IMFSourceBufferNotify.Inter
         void OnUpdateEnd();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBufferNotify*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBufferNotify*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBufferNotify*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBufferNotify*, void> OnUpdateStart;
+        public delegate* unmanaged<TSelf*, void> OnUpdateStart;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBufferNotify*, void> OnAbort;
+        public delegate* unmanaged<TSelf*, void> OnAbort;
 
         [NativeTypeName("void (HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBufferNotify*, HRESULT, void> OnError;
+        public delegate* unmanaged<TSelf*, HRESULT, void> OnError;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBufferNotify*, void> OnUpdate;
+        public delegate* unmanaged<TSelf*, void> OnUpdate;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBufferNotify*, void> OnUpdateEnd;
+        public delegate* unmanaged<TSelf*, void> OnUpdateEnd;
     }
 }

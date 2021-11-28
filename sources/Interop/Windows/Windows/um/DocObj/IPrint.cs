@@ -72,24 +72,25 @@ public unsafe partial struct IPrint : IPrint.Interface
         HRESULT Print([NativeTypeName("DWORD")] uint grfFlags, DVTARGETDEVICE** pptd, PAGESET** ppPageSet, STGMEDIUM* pstgmOptions, IContinueCallback* pcallback, [NativeTypeName("LONG")] int nFirstPage, [NativeTypeName("LONG *")] int* pcPagesPrinted, [NativeTypeName("LONG *")] int* pnLastPage);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrint*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrint*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrint*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrint*, int, int> SetInitialPageNum;
+        public delegate* unmanaged<TSelf*, int, int> SetInitialPageNum;
 
         [NativeTypeName("HRESULT (LONG *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrint*, int*, int*, int> GetPageInfo;
+        public delegate* unmanaged<TSelf*, int*, int*, int> GetPageInfo;
 
         [NativeTypeName("HRESULT (DWORD, DVTARGETDEVICE **, PAGESET **, STGMEDIUM *, IContinueCallback *, LONG, LONG *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrint*, uint, DVTARGETDEVICE**, PAGESET**, STGMEDIUM*, IContinueCallback*, int, int*, int*, int> Print;
+        public delegate* unmanaged<TSelf*, uint, DVTARGETDEVICE**, PAGESET**, STGMEDIUM*, IContinueCallback*, int, int*, int*, int> Print;
     }
 }

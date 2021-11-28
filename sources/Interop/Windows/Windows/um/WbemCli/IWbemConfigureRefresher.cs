@@ -92,30 +92,31 @@ public unsafe partial struct IWbemConfigureRefresher : IWbemConfigureRefresher.I
         HRESULT AddEnum(IWbemServices* pNamespace, [NativeTypeName("LPCWSTR")] ushort* wszClassName, [NativeTypeName("long")] int lFlags, IWbemContext* pContext, IWbemHiPerfEnum** ppEnum, [NativeTypeName("long *")] int* plId);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemConfigureRefresher*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemConfigureRefresher*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemConfigureRefresher*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IWbemServices *, LPCWSTR, long, IWbemContext *, IWbemClassObject **, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemConfigureRefresher*, IWbemServices*, ushort*, int, IWbemContext*, IWbemClassObject**, int*, int> AddObjectByPath;
+        public delegate* unmanaged<TSelf*, IWbemServices*, ushort*, int, IWbemContext*, IWbemClassObject**, int*, int> AddObjectByPath;
 
         [NativeTypeName("HRESULT (IWbemServices *, IWbemClassObject *, long, IWbemContext *, IWbemClassObject **, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemConfigureRefresher*, IWbemServices*, IWbemClassObject*, int, IWbemContext*, IWbemClassObject**, int*, int> AddObjectByTemplate;
+        public delegate* unmanaged<TSelf*, IWbemServices*, IWbemClassObject*, int, IWbemContext*, IWbemClassObject**, int*, int> AddObjectByTemplate;
 
         [NativeTypeName("HRESULT (IWbemRefresher *, long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemConfigureRefresher*, IWbemRefresher*, int, int*, int> AddRefresher;
+        public delegate* unmanaged<TSelf*, IWbemRefresher*, int, int*, int> AddRefresher;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemConfigureRefresher*, int, int, int> Remove;
+        public delegate* unmanaged<TSelf*, int, int, int> Remove;
 
         [NativeTypeName("HRESULT (IWbemServices *, LPCWSTR, long, IWbemContext *, IWbemHiPerfEnum **, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemConfigureRefresher*, IWbemServices*, ushort*, int, IWbemContext*, IWbemHiPerfEnum**, int*, int> AddEnum;
+        public delegate* unmanaged<TSelf*, IWbemServices*, ushort*, int, IWbemContext*, IWbemHiPerfEnum**, int*, int> AddEnum;
     }
 }

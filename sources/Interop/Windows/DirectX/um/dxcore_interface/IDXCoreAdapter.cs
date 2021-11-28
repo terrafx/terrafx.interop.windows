@@ -145,45 +145,46 @@ public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface
         HRESULT GetFactory([NativeTypeName("const IID &")] Guid* riid, void** ppvFactory);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("bool () __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDXCoreAdapter*, byte> IsValid;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, byte> IsValid;
 
         [NativeTypeName("bool (const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapter*, Guid*, byte> IsAttributeSupported;
+        public delegate* unmanaged<TSelf*, Guid*, byte> IsAttributeSupported;
 
         [NativeTypeName("bool (DXCoreAdapterProperty) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDXCoreAdapter*, DXCoreAdapterProperty, byte> IsPropertySupported;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DXCoreAdapterProperty, byte> IsPropertySupported;
 
         [NativeTypeName("HRESULT (DXCoreAdapterProperty, size_t, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterProperty, nuint, void*, int> GetProperty;
+        public delegate* unmanaged<TSelf*, DXCoreAdapterProperty, nuint, void*, int> GetProperty;
 
         [NativeTypeName("HRESULT (DXCoreAdapterProperty, size_t *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterProperty, nuint*, int> GetPropertySize;
+        public delegate* unmanaged<TSelf*, DXCoreAdapterProperty, nuint*, int> GetPropertySize;
 
         [NativeTypeName("bool (DXCoreAdapterState) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDXCoreAdapter*, DXCoreAdapterState, byte> IsQueryStateSupported;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DXCoreAdapterState, byte> IsQueryStateSupported;
 
         [NativeTypeName("HRESULT (DXCoreAdapterState, size_t, const void *, size_t, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, nuint, void*, nuint, void*, int> QueryState;
+        public delegate* unmanaged<TSelf*, DXCoreAdapterState, nuint, void*, nuint, void*, int> QueryState;
 
         [NativeTypeName("bool (DXCoreAdapterState) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDXCoreAdapter*, DXCoreAdapterState, byte> IsSetStateSupported;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DXCoreAdapterState, byte> IsSetStateSupported;
 
         [NativeTypeName("HRESULT (DXCoreAdapterState, size_t, const void *, size_t, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapter*, DXCoreAdapterState, nuint, void*, nuint, void*, int> SetState;
+        public delegate* unmanaged<TSelf*, DXCoreAdapterState, nuint, void*, nuint, void*, int> SetState;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapter*, Guid*, void**, int> GetFactory;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetFactory;
     }
 }

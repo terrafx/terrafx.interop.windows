@@ -320,102 +320,103 @@ public unsafe partial struct IHTMLTableCell : IHTMLTableCell.Interface
         HRESULT get_cellIndex([NativeTypeName("long *")] int* p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, int, int> put_rowSpan;
+        public delegate* unmanaged<TSelf*, int, int> put_rowSpan;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, int*, int> get_rowSpan;
+        public delegate* unmanaged<TSelf*, int*, int> get_rowSpan;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, int, int> put_colSpan;
+        public delegate* unmanaged<TSelf*, int, int> put_colSpan;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, int*, int> get_colSpan;
+        public delegate* unmanaged<TSelf*, int*, int> get_colSpan;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, ushort*, int> put_align;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_align;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, ushort**, int> get_align;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_align;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, ushort*, int> put_vAlign;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_vAlign;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, ushort**, int> get_vAlign;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_vAlign;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, VARIANT, int> put_bgColor;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_bgColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, VARIANT*, int> get_bgColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_bgColor;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, short, int> put_noWrap;
+        public delegate* unmanaged<TSelf*, short, int> put_noWrap;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, short*, int> get_noWrap;
+        public delegate* unmanaged<TSelf*, short*, int> get_noWrap;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, ushort*, int> put_background;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_background;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, ushort**, int> get_background;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_background;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, VARIANT, int> put_borderColor;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_borderColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, VARIANT*, int> get_borderColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_borderColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, VARIANT, int> put_borderColorLight;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_borderColorLight;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, VARIANT*, int> get_borderColorLight;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_borderColorLight;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, VARIANT, int> put_borderColorDark;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_borderColorDark;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, VARIANT*, int> get_borderColorDark;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_borderColorDark;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, VARIANT, int> put_width;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_width;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, VARIANT*, int> get_width;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_width;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, VARIANT, int> put_height;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_height;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, VARIANT*, int> get_height;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_height;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLTableCell*, int*, int> get_cellIndex;
+        public delegate* unmanaged<TSelf*, int*, int> get_cellIndex;
     }
 }

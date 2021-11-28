@@ -82,27 +82,28 @@ public unsafe partial struct IWICBitmapSourceTransform : IWICBitmapSourceTransfo
         HRESULT DoesSupportTransform(WICBitmapTransformOptions dstTransform, BOOL* pfIsSupported);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapSourceTransform*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapSourceTransform*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapSourceTransform*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const WICRect *, UINT, UINT, WICPixelFormatGUID *, WICBitmapTransformOptions, UINT, UINT, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapSourceTransform*, WICRect*, uint, uint, Guid*, WICBitmapTransformOptions, uint, uint, byte*, int> CopyPixels;
+        public delegate* unmanaged<TSelf*, WICRect*, uint, uint, Guid*, WICBitmapTransformOptions, uint, uint, byte*, int> CopyPixels;
 
         [NativeTypeName("HRESULT (UINT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapSourceTransform*, uint*, uint*, int> GetClosestSize;
+        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetClosestSize;
 
         [NativeTypeName("HRESULT (WICPixelFormatGUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapSourceTransform*, Guid*, int> GetClosestPixelFormat;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetClosestPixelFormat;
 
         [NativeTypeName("HRESULT (WICBitmapTransformOptions, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapSourceTransform*, WICBitmapTransformOptions, BOOL*, int> DoesSupportTransform;
+        public delegate* unmanaged<TSelf*, WICBitmapTransformOptions, BOOL*, int> DoesSupportTransform;
     }
 }

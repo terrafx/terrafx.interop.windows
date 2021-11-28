@@ -82,27 +82,28 @@ public unsafe partial struct IComThreadingInfo : IComThreadingInfo.Interface
         HRESULT SetCurrentLogicalThreadId([NativeTypeName("const GUID &")] Guid* rguid);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IComThreadingInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IComThreadingInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IComThreadingInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (APTTYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IComThreadingInfo*, APTTYPE*, int> GetCurrentApartmentType;
+        public delegate* unmanaged<TSelf*, APTTYPE*, int> GetCurrentApartmentType;
 
         [NativeTypeName("HRESULT (THDTYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IComThreadingInfo*, THDTYPE*, int> GetCurrentThreadType;
+        public delegate* unmanaged<TSelf*, THDTYPE*, int> GetCurrentThreadType;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IComThreadingInfo*, Guid*, int> GetCurrentLogicalThreadId;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetCurrentLogicalThreadId;
 
         [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IComThreadingInfo*, Guid*, int> SetCurrentLogicalThreadId;
+        public delegate* unmanaged<TSelf*, Guid*, int> SetCurrentLogicalThreadId;
     }
 }

@@ -147,45 +147,46 @@ public unsafe partial struct IXAPO : IXAPO.Interface
         uint CalcOutputFrames([NativeTypeName("UINT32")] uint InputFrameCount);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAPO*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAPO*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAPO*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (XAPO_REGISTRATION_PROPERTIES **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAPO*, XAPO_REGISTRATION_PROPERTIES**, int> GetRegistrationProperties;
+        public delegate* unmanaged<TSelf*, XAPO_REGISTRATION_PROPERTIES**, int> GetRegistrationProperties;
 
         [NativeTypeName("HRESULT (const WAVEFORMATEX *, const WAVEFORMATEX *, WAVEFORMATEX **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAPO*, WAVEFORMATEX*, WAVEFORMATEX*, WAVEFORMATEX**, int> IsInputFormatSupported;
+        public delegate* unmanaged<TSelf*, WAVEFORMATEX*, WAVEFORMATEX*, WAVEFORMATEX**, int> IsInputFormatSupported;
 
         [NativeTypeName("HRESULT (const WAVEFORMATEX *, const WAVEFORMATEX *, WAVEFORMATEX **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAPO*, WAVEFORMATEX*, WAVEFORMATEX*, WAVEFORMATEX**, int> IsOutputFormatSupported;
+        public delegate* unmanaged<TSelf*, WAVEFORMATEX*, WAVEFORMATEX*, WAVEFORMATEX**, int> IsOutputFormatSupported;
 
         [NativeTypeName("HRESULT (const void *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAPO*, void*, uint, int> Initialize;
+        public delegate* unmanaged<TSelf*, void*, uint, int> Initialize;
 
         [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAPO*, void> Reset;
+        public delegate* unmanaged<TSelf*, void> Reset;
 
         [NativeTypeName("HRESULT (UINT32, const XAPO_LOCKFORPROCESS_PARAMETERS *, UINT32, const XAPO_LOCKFORPROCESS_PARAMETERS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAPO*, uint, XAPO_LOCKFORPROCESS_PARAMETERS*, uint, XAPO_LOCKFORPROCESS_PARAMETERS*, int> LockForProcess;
+        public delegate* unmanaged<TSelf*, uint, XAPO_LOCKFORPROCESS_PARAMETERS*, uint, XAPO_LOCKFORPROCESS_PARAMETERS*, int> LockForProcess;
 
         [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAPO*, void> UnlockForProcess;
+        public delegate* unmanaged<TSelf*, void> UnlockForProcess;
 
         [NativeTypeName("void (UINT32, const XAPO_PROCESS_BUFFER_PARAMETERS *, UINT32, XAPO_PROCESS_BUFFER_PARAMETERS *, BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAPO*, uint, XAPO_PROCESS_BUFFER_PARAMETERS*, uint, XAPO_PROCESS_BUFFER_PARAMETERS*, BOOL, void> Process;
+        public delegate* unmanaged<TSelf*, uint, XAPO_PROCESS_BUFFER_PARAMETERS*, uint, XAPO_PROCESS_BUFFER_PARAMETERS*, BOOL, void> Process;
 
         [NativeTypeName("UINT32 (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAPO*, uint, uint> CalcInputFrames;
+        public delegate* unmanaged<TSelf*, uint, uint> CalcInputFrames;
 
         [NativeTypeName("UINT32 (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAPO*, uint, uint> CalcOutputFrames;
+        public delegate* unmanaged<TSelf*, uint, uint> CalcOutputFrames;
     }
 }

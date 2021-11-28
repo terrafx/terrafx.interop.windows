@@ -82,27 +82,28 @@ public unsafe partial struct IConfigAviMux : IConfigAviMux.Interface
         HRESULT GetOutputCompatibilityIndex(BOOL* pfOldIndex);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConfigAviMux*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IConfigAviMux*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IConfigAviMux*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConfigAviMux*, int, int> SetMasterStream;
+        public delegate* unmanaged<TSelf*, int, int> SetMasterStream;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConfigAviMux*, int*, int> GetMasterStream;
+        public delegate* unmanaged<TSelf*, int*, int> GetMasterStream;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConfigAviMux*, BOOL, int> SetOutputCompatibilityIndex;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetOutputCompatibilityIndex;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConfigAviMux*, BOOL*, int> GetOutputCompatibilityIndex;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetOutputCompatibilityIndex;
     }
 }

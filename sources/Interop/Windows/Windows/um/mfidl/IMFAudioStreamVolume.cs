@@ -92,30 +92,31 @@ public unsafe partial struct IMFAudioStreamVolume : IMFAudioStreamVolume.Interfa
         HRESULT GetAllVolumes([NativeTypeName("UINT32")] uint dwCount, float* pfVolumes);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFAudioStreamVolume*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFAudioStreamVolume*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFAudioStreamVolume*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFAudioStreamVolume*, uint*, int> GetChannelCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetChannelCount;
 
         [NativeTypeName("HRESULT (UINT32, const float) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFAudioStreamVolume*, uint, float, int> SetChannelVolume;
+        public delegate* unmanaged<TSelf*, uint, float, int> SetChannelVolume;
 
         [NativeTypeName("HRESULT (UINT32, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFAudioStreamVolume*, uint, float*, int> GetChannelVolume;
+        public delegate* unmanaged<TSelf*, uint, float*, int> GetChannelVolume;
 
         [NativeTypeName("HRESULT (UINT32, const float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFAudioStreamVolume*, uint, float*, int> SetAllVolumes;
+        public delegate* unmanaged<TSelf*, uint, float*, int> SetAllVolumes;
 
         [NativeTypeName("HRESULT (UINT32, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFAudioStreamVolume*, uint, float*, int> GetAllVolumes;
+        public delegate* unmanaged<TSelf*, uint, float*, int> GetAllVolumes;
     }
 }

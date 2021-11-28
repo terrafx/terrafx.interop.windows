@@ -52,18 +52,19 @@ public unsafe partial struct IDiaReadExeAtOffsetCallback : IDiaReadExeAtOffsetCa
         HRESULT ReadExecutableAt([NativeTypeName("DWORDLONG")] ulong fileOffset, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaReadExeAtOffsetCallback*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaReadExeAtOffsetCallback*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaReadExeAtOffsetCallback*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORDLONG, DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaReadExeAtOffsetCallback*, ulong, uint, uint*, byte*, int> ReadExecutableAt;
+        public delegate* unmanaged<TSelf*, ulong, uint, uint*, byte*, int> ReadExecutableAt;
     }
 }

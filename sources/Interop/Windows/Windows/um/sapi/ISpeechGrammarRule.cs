@@ -140,48 +140,49 @@ public unsafe partial struct ISpeechGrammarRule : ISpeechGrammarRule.Interface
         HRESULT AddState(ISpeechGrammarRuleState** State);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRule*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRule*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRule*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRule*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRule*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRule*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRule*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (SpeechRuleAttributes *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRule*, SpeechRuleAttributes*, int> get_Attributes;
+        public delegate* unmanaged<TSelf*, SpeechRuleAttributes*, int> get_Attributes;
 
         [NativeTypeName("HRESULT (ISpeechGrammarRuleState **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRule*, ISpeechGrammarRuleState**, int> get_InitialState;
+        public delegate* unmanaged<TSelf*, ISpeechGrammarRuleState**, int> get_InitialState;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRule*, ushort**, int> get_Name;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_Name;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRule*, int*, int> get_Id;
+        public delegate* unmanaged<TSelf*, int*, int> get_Id;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRule*, int> Clear;
+        public delegate* unmanaged<TSelf*, int> Clear;
 
         [NativeTypeName("HRESULT (const BSTR, const BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRule*, ushort*, ushort*, int> AddResource;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> AddResource;
 
         [NativeTypeName("HRESULT (ISpeechGrammarRuleState **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRule*, ISpeechGrammarRuleState**, int> AddState;
+        public delegate* unmanaged<TSelf*, ISpeechGrammarRuleState**, int> AddState;
     }
 }

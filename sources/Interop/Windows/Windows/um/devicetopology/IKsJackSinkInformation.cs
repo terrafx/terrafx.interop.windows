@@ -52,18 +52,19 @@ public unsafe partial struct IKsJackSinkInformation : IKsJackSinkInformation.Int
         HRESULT GetJackSinkInformation(KSJACK_SINK_INFORMATION* pJackSinkInformation);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsJackSinkInformation*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsJackSinkInformation*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsJackSinkInformation*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (KSJACK_SINK_INFORMATION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsJackSinkInformation*, KSJACK_SINK_INFORMATION*, int> GetJackSinkInformation;
+        public delegate* unmanaged<TSelf*, KSJACK_SINK_INFORMATION*, int> GetJackSinkInformation;
     }
 }

@@ -82,27 +82,28 @@ public unsafe partial struct ISpProperties : ISpProperties.Interface
         HRESULT GetPropertyString([NativeTypeName("LPCWSTR")] ushort* pName, [NativeTypeName("LPWSTR *")] ushort** ppCoMemValue);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpProperties*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpProperties*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpProperties*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpProperties*, ushort*, int, int> SetPropertyNum;
+        public delegate* unmanaged<TSelf*, ushort*, int, int> SetPropertyNum;
 
         [NativeTypeName("HRESULT (LPCWSTR, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpProperties*, ushort*, int*, int> GetPropertyNum;
+        public delegate* unmanaged<TSelf*, ushort*, int*, int> GetPropertyNum;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpProperties*, ushort*, ushort*, int> SetPropertyString;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> SetPropertyString;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpProperties*, ushort*, ushort**, int> GetPropertyString;
+        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> GetPropertyString;
     }
 }

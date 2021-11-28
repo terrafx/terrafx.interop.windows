@@ -84,30 +84,31 @@ public unsafe partial struct IWebAuthenticationCoreManagerInterop : IWebAuthenti
         HRESULT RequestTokenWithWebAccountForWindowAsync(HWND appWindow, IInspectable* request, IInspectable* webAccount, [NativeTypeName("const IID &")] Guid* riid, void** asyncInfo);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HWND, IInspectable *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, HWND, IInspectable*, Guid*, void**, int> RequestTokenForWindowAsync;
+        public delegate* unmanaged<TSelf*, HWND, IInspectable*, Guid*, void**, int> RequestTokenForWindowAsync;
 
         [NativeTypeName("HRESULT (HWND, IInspectable *, IInspectable *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebAuthenticationCoreManagerInterop*, HWND, IInspectable*, IInspectable*, Guid*, void**, int> RequestTokenWithWebAccountForWindowAsync;
+        public delegate* unmanaged<TSelf*, HWND, IInspectable*, IInspectable*, Guid*, void**, int> RequestTokenWithWebAccountForWindowAsync;
     }
 }

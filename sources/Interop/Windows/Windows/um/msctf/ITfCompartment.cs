@@ -62,21 +62,22 @@ public unsafe partial struct ITfCompartment : ITfCompartment.Interface
         HRESULT GetValue(VARIANT* pvarValue);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCompartment*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCompartment*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCompartment*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfClientId, const VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCompartment*, uint, VARIANT*, int> SetValue;
+        public delegate* unmanaged<TSelf*, uint, VARIANT*, int> SetValue;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCompartment*, VARIANT*, int> GetValue;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> GetValue;
     }
 }

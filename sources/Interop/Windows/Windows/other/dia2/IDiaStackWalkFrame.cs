@@ -92,30 +92,31 @@ public unsafe partial struct IDiaStackWalkFrame : IDiaStackWalkFrame.Interface
         HRESULT searchForReturnAddressStart(IDiaFrameData* frame, [NativeTypeName("ULONGLONG")] ulong startAddress, [NativeTypeName("ULONGLONG *")] ulong* returnAddress);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackWalkFrame*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackWalkFrame*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackWalkFrame*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackWalkFrame*, uint, ulong*, int> get_registerValue;
+        public delegate* unmanaged<TSelf*, uint, ulong*, int> get_registerValue;
 
         [NativeTypeName("HRESULT (DWORD, ULONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackWalkFrame*, uint, ulong, int> put_registerValue;
+        public delegate* unmanaged<TSelf*, uint, ulong, int> put_registerValue;
 
         [NativeTypeName("HRESULT (enum MemoryTypeEnum, ULONGLONG, DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackWalkFrame*, MemoryTypeEnum, ulong, uint, uint*, byte*, int> readMemory;
+        public delegate* unmanaged<TSelf*, MemoryTypeEnum, ulong, uint, uint*, byte*, int> readMemory;
 
         [NativeTypeName("HRESULT (IDiaFrameData *, ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackWalkFrame*, IDiaFrameData*, ulong*, int> searchForReturnAddress;
+        public delegate* unmanaged<TSelf*, IDiaFrameData*, ulong*, int> searchForReturnAddress;
 
         [NativeTypeName("HRESULT (IDiaFrameData *, ULONGLONG, ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaStackWalkFrame*, IDiaFrameData*, ulong, ulong*, int> searchForReturnAddressStart;
+        public delegate* unmanaged<TSelf*, IDiaFrameData*, ulong, ulong*, int> searchForReturnAddressStart;
     }
 }

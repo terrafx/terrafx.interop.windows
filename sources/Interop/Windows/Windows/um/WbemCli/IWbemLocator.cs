@@ -52,18 +52,19 @@ public unsafe partial struct IWbemLocator : IWbemLocator.Interface
         HRESULT ConnectServer([NativeTypeName("const BSTR")] ushort* strNetworkResource, [NativeTypeName("const BSTR")] ushort* strUser, [NativeTypeName("const BSTR")] ushort* strPassword, [NativeTypeName("const BSTR")] ushort* strLocale, [NativeTypeName("long")] int lSecurityFlags, [NativeTypeName("const BSTR")] ushort* strAuthority, IWbemContext* pCtx, IWbemServices** ppNamespace);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemLocator*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemLocator*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemLocator*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const BSTR, const BSTR, const BSTR, const BSTR, long, const BSTR, IWbemContext *, IWbemServices **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemLocator*, ushort*, ushort*, ushort*, ushort*, int, ushort*, IWbemContext*, IWbemServices**, int> ConnectServer;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, ushort*, int, ushort*, IWbemContext*, IWbemServices**, int> ConnectServer;
     }
 }

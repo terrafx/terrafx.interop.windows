@@ -96,33 +96,34 @@ public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interfa
         HRESULT GetJunctionCLSID([NativeTypeName("CLSID *")] Guid* pclsid);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSystemBindData2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSystemBindData2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSystemBindData2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const WIN32_FIND_DATAW *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSystemBindData2*, WIN32_FIND_DATAW*, int> SetFindData;
+        public delegate* unmanaged<TSelf*, WIN32_FIND_DATAW*, int> SetFindData;
 
         [NativeTypeName("HRESULT (WIN32_FIND_DATAW *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSystemBindData2*, WIN32_FIND_DATAW*, int> GetFindData;
+        public delegate* unmanaged<TSelf*, WIN32_FIND_DATAW*, int> GetFindData;
 
         [NativeTypeName("HRESULT (LARGE_INTEGER) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSystemBindData2*, LARGE_INTEGER, int> SetFileID;
+        public delegate* unmanaged<TSelf*, LARGE_INTEGER, int> SetFileID;
 
         [NativeTypeName("HRESULT (LARGE_INTEGER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSystemBindData2*, LARGE_INTEGER*, int> GetFileID;
+        public delegate* unmanaged<TSelf*, LARGE_INTEGER*, int> GetFileID;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSystemBindData2*, Guid*, int> SetJunctionCLSID;
+        public delegate* unmanaged<TSelf*, Guid*, int> SetJunctionCLSID;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSystemBindData2*, Guid*, int> GetJunctionCLSID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetJunctionCLSID;
     }
 }

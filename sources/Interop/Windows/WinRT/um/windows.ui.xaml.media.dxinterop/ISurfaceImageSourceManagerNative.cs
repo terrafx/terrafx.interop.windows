@@ -55,18 +55,19 @@ public unsafe partial struct ISurfaceImageSourceManagerNative : ISurfaceImageSou
         HRESULT FlushAllSurfacesWithDevice(IUnknown* device);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfaceImageSourceManagerNative*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfaceImageSourceManagerNative*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfaceImageSourceManagerNative*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfaceImageSourceManagerNative*, IUnknown*, int> FlushAllSurfacesWithDevice;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> FlushAllSurfacesWithDevice;
     }
 }

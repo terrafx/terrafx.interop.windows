@@ -92,30 +92,31 @@ public unsafe partial struct IAMTimecodeReader : IAMTimecodeReader.Interface
         HRESULT GetTimecode([NativeTypeName("PTIMECODE_SAMPLE")] TIMECODE_SAMPLE* pTimecodeSample);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeReader*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeReader*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeReader*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeReader*, int, int*, int> GetTCRMode;
+        public delegate* unmanaged<TSelf*, int, int*, int> GetTCRMode;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeReader*, int, int, int> SetTCRMode;
+        public delegate* unmanaged<TSelf*, int, int, int> SetTCRMode;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeReader*, int, int> put_VITCLine;
+        public delegate* unmanaged<TSelf*, int, int> put_VITCLine;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeReader*, int*, int> get_VITCLine;
+        public delegate* unmanaged<TSelf*, int*, int> get_VITCLine;
 
         [NativeTypeName("HRESULT (PTIMECODE_SAMPLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeReader*, TIMECODE_SAMPLE*, int> GetTimecode;
+        public delegate* unmanaged<TSelf*, TIMECODE_SAMPLE*, int> GetTimecode;
     }
 }

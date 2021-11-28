@@ -74,24 +74,25 @@ public unsafe partial struct IAppxFactory2 : IAppxFactory2.Interface
         HRESULT CreateContentGroupMapWriter(IStream* stream, IAppxContentGroupMapWriter** contentGroupMapWriter);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxFactory2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxFactory2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxFactory2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IStream *, IAppxContentGroupMapReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxFactory2*, IStream*, IAppxContentGroupMapReader**, int> CreateContentGroupMapReader;
+        public delegate* unmanaged<TSelf*, IStream*, IAppxContentGroupMapReader**, int> CreateContentGroupMapReader;
 
         [NativeTypeName("HRESULT (IStream *, IAppxSourceContentGroupMapReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxFactory2*, IStream*, IAppxSourceContentGroupMapReader**, int> CreateSourceContentGroupMapReader;
+        public delegate* unmanaged<TSelf*, IStream*, IAppxSourceContentGroupMapReader**, int> CreateSourceContentGroupMapReader;
 
         [NativeTypeName("HRESULT (IStream *, IAppxContentGroupMapWriter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxFactory2*, IStream*, IAppxContentGroupMapWriter**, int> CreateContentGroupMapWriter;
+        public delegate* unmanaged<TSelf*, IStream*, IAppxContentGroupMapWriter**, int> CreateContentGroupMapWriter;
     }
 }

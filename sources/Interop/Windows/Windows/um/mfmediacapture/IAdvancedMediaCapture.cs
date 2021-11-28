@@ -54,18 +54,19 @@ public unsafe partial struct IAdvancedMediaCapture : IAdvancedMediaCapture.Inter
         HRESULT GetAdvancedMediaCaptureSettings(IAdvancedMediaCaptureSettings** value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdvancedMediaCapture*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdvancedMediaCapture*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdvancedMediaCapture*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAdvancedMediaCaptureSettings **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdvancedMediaCapture*, IAdvancedMediaCaptureSettings**, int> GetAdvancedMediaCaptureSettings;
+        public delegate* unmanaged<TSelf*, IAdvancedMediaCaptureSettings**, int> GetAdvancedMediaCaptureSettings;
     }
 }

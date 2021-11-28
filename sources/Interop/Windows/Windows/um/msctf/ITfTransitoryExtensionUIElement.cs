@@ -80,30 +80,31 @@ public unsafe partial struct ITfTransitoryExtensionUIElement : ITfTransitoryExte
         HRESULT GetDocumentMgr(ITfDocumentMgr** ppdim);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTransitoryExtensionUIElement*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTransitoryExtensionUIElement*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTransitoryExtensionUIElement*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTransitoryExtensionUIElement*, ushort**, int> GetDescription;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDescription;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTransitoryExtensionUIElement*, Guid*, int> GetGUID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetGUID;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTransitoryExtensionUIElement*, BOOL, int> Show;
+        public delegate* unmanaged<TSelf*, BOOL, int> Show;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTransitoryExtensionUIElement*, BOOL*, int> IsShown;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsShown;
 
         [NativeTypeName("HRESULT (ITfDocumentMgr **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTransitoryExtensionUIElement*, ITfDocumentMgr**, int> GetDocumentMgr;
+        public delegate* unmanaged<TSelf*, ITfDocumentMgr**, int> GetDocumentMgr;
     }
 }

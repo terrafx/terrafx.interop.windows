@@ -74,24 +74,25 @@ public unsafe partial struct IMFSampleOutputStream : IMFSampleOutputStream.Inter
         HRESULT Close();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSampleOutputStream*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSampleOutputStream*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSampleOutputStream*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFSample *, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSampleOutputStream*, IMFSample*, IMFAsyncCallback*, IUnknown*, int> BeginWriteSample;
+        public delegate* unmanaged<TSelf*, IMFSample*, IMFAsyncCallback*, IUnknown*, int> BeginWriteSample;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSampleOutputStream*, IMFAsyncResult*, int> EndWriteSample;
+        public delegate* unmanaged<TSelf*, IMFAsyncResult*, int> EndWriteSample;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSampleOutputStream*, int> Close;
+        public delegate* unmanaged<TSelf*, int> Close;
     }
 }

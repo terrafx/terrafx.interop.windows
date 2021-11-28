@@ -132,45 +132,46 @@ public unsafe partial struct ISpatialAudioObjectForHrtf : ISpatialAudioObjectFor
         HRESULT SetDirectivity(SpatialAudioHrtfDirectivityUnion* directivity);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectForHrtf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectForHrtf*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectForHrtf*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE **, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectForHrtf*, byte**, uint*, int> GetBuffer;
+        public delegate* unmanaged<TSelf*, byte**, uint*, int> GetBuffer;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectForHrtf*, uint, int> SetEndOfStream;
+        public delegate* unmanaged<TSelf*, uint, int> SetEndOfStream;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectForHrtf*, BOOL*, int> IsActive;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsActive;
 
         [NativeTypeName("HRESULT (AudioObjectType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectForHrtf*, AudioObjectType*, int> GetAudioObjectType;
+        public delegate* unmanaged<TSelf*, AudioObjectType*, int> GetAudioObjectType;
 
         [NativeTypeName("HRESULT (float, float, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectForHrtf*, float, float, float, int> SetPosition;
+        public delegate* unmanaged<TSelf*, float, float, float, int> SetPosition;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectForHrtf*, float, int> SetGain;
+        public delegate* unmanaged<TSelf*, float, int> SetGain;
 
         [NativeTypeName("HRESULT (const SpatialAudioHrtfOrientation *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectForHrtf*, float**, int> SetOrientation;
+        public delegate* unmanaged<TSelf*, float**, int> SetOrientation;
 
         [NativeTypeName("HRESULT (SpatialAudioHrtfEnvironmentType) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectForHrtf*, SpatialAudioHrtfEnvironmentType, int> SetEnvironment;
+        public delegate* unmanaged<TSelf*, SpatialAudioHrtfEnvironmentType, int> SetEnvironment;
 
         [NativeTypeName("HRESULT (SpatialAudioHrtfDistanceDecay *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectForHrtf*, SpatialAudioHrtfDistanceDecay*, int> SetDistanceDecay;
+        public delegate* unmanaged<TSelf*, SpatialAudioHrtfDistanceDecay*, int> SetDistanceDecay;
 
         [NativeTypeName("HRESULT (SpatialAudioHrtfDirectivityUnion *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioObjectForHrtf*, SpatialAudioHrtfDirectivityUnion*, int> SetDirectivity;
+        public delegate* unmanaged<TSelf*, SpatialAudioHrtfDirectivityUnion*, int> SetDirectivity;
     }
 }

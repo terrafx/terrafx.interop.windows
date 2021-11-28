@@ -185,57 +185,58 @@ public unsafe partial struct IDCompositionRotateTransform3D : IDCompositionRotat
         HRESULT SetCenterZ(float centerZ);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRotateTransform3D*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRotateTransform3D*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRotateTransform3D*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int> SetAngle;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetAngle;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRotateTransform3D*, float, int> SetAngle1;
+        public delegate* unmanaged<TSelf*, float, int> SetAngle1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int> SetAxisX;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetAxisX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRotateTransform3D*, float, int> SetAxisX1;
+        public delegate* unmanaged<TSelf*, float, int> SetAxisX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int> SetAxisY;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetAxisY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRotateTransform3D*, float, int> SetAxisY1;
+        public delegate* unmanaged<TSelf*, float, int> SetAxisY1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int> SetAxisZ;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetAxisZ;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRotateTransform3D*, float, int> SetAxisZ1;
+        public delegate* unmanaged<TSelf*, float, int> SetAxisZ1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int> SetCenterX;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetCenterX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRotateTransform3D*, float, int> SetCenterX1;
+        public delegate* unmanaged<TSelf*, float, int> SetCenterX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int> SetCenterY;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetCenterY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRotateTransform3D*, float, int> SetCenterY1;
+        public delegate* unmanaged<TSelf*, float, int> SetCenterY1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRotateTransform3D*, IDCompositionAnimation*, int> SetCenterZ;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetCenterZ;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionRotateTransform3D*, float, int> SetCenterZ1;
+        public delegate* unmanaged<TSelf*, float, int> SetCenterZ1;
     }
 }

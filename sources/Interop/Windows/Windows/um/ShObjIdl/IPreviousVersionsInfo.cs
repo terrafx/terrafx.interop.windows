@@ -52,18 +52,19 @@ public unsafe partial struct IPreviousVersionsInfo : IPreviousVersionsInfo.Inter
         HRESULT AreSnapshotsAvailable([NativeTypeName("LPCWSTR")] ushort* pszPath, BOOL fOkToBeSlow, BOOL* pfAvailable);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPreviousVersionsInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPreviousVersionsInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPreviousVersionsInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPreviousVersionsInfo*, ushort*, BOOL, BOOL*, int> AreSnapshotsAvailable;
+        public delegate* unmanaged<TSelf*, ushort*, BOOL, BOOL*, int> AreSnapshotsAvailable;
     }
 }

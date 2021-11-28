@@ -72,24 +72,25 @@ public unsafe partial struct IDWriteInMemoryFontFileLoader : IDWriteInMemoryFont
         uint GetFileCount();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteInMemoryFontFileLoader*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteInMemoryFontFileLoader*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteInMemoryFontFileLoader*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const void *, UINT32, IDWriteFontFileStream **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteInMemoryFontFileLoader*, void*, uint, IDWriteFontFileStream**, int> CreateStreamFromKey;
+        public delegate* unmanaged<TSelf*, void*, uint, IDWriteFontFileStream**, int> CreateStreamFromKey;
 
         [NativeTypeName("HRESULT (IDWriteFactory *, const void *, UINT32, IUnknown *, IDWriteFontFile **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteInMemoryFontFileLoader*, IDWriteFactory*, void*, uint, IUnknown*, IDWriteFontFile**, int> CreateInMemoryFontFileReference;
+        public delegate* unmanaged<TSelf*, IDWriteFactory*, void*, uint, IUnknown*, IDWriteFontFile**, int> CreateInMemoryFontFileReference;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteInMemoryFontFileLoader*, uint> GetFileCount;
+        public delegate* unmanaged<TSelf*, uint> GetFileCount;
     }
 }

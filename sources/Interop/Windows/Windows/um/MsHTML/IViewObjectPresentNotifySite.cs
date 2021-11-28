@@ -74,27 +74,28 @@ public unsafe partial struct IViewObjectPresentNotifySite : IViewObjectPresentNo
         HRESULT RequestFrame();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IViewObjectPresentNotifySite*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IViewObjectPresentNotifySite*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IViewObjectPresentNotifySite*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, UINT, UINT, UINT, DXGI_FORMAT, VIEW_OBJECT_ALPHA_MODE, ISurfacePresenter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IViewObjectPresentNotifySite*, IUnknown*, uint, uint, uint, DXGI_FORMAT, VIEW_OBJECT_ALPHA_MODE, ISurfacePresenter**, int> CreateSurfacePresenter;
+        public delegate* unmanaged<TSelf*, IUnknown*, uint, uint, uint, DXGI_FORMAT, VIEW_OBJECT_ALPHA_MODE, ISurfacePresenter**, int> CreateSurfacePresenter;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IViewObjectPresentNotifySite*, BOOL*, int> IsHardwareComposition;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsHardwareComposition;
 
         [NativeTypeName("HRESULT (VIEW_OBJECT_COMPOSITION_MODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IViewObjectPresentNotifySite*, VIEW_OBJECT_COMPOSITION_MODE, int> SetCompositionMode;
+        public delegate* unmanaged<TSelf*, VIEW_OBJECT_COMPOSITION_MODE, int> SetCompositionMode;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IViewObjectPresentNotifySite*, int> RequestFrame;
+        public delegate* unmanaged<TSelf*, int> RequestFrame;
     }
 }

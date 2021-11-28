@@ -210,69 +210,70 @@ public unsafe partial struct IHTMLDialog : IHTMLDialog.Interface
         HRESULT toString([NativeTypeName("BSTR *")] ushort** String);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDialog*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDialog*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDialog*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDialog*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDialog*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDialog*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDialog*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDialog*, VARIANT, int> put_dialogTop;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_dialogTop;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDialog*, VARIANT*, int> get_dialogTop;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_dialogTop;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDialog*, VARIANT, int> put_dialogLeft;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_dialogLeft;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDialog*, VARIANT*, int> get_dialogLeft;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_dialogLeft;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDialog*, VARIANT, int> put_dialogWidth;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_dialogWidth;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDialog*, VARIANT*, int> get_dialogWidth;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_dialogWidth;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDialog*, VARIANT, int> put_dialogHeight;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_dialogHeight;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDialog*, VARIANT*, int> get_dialogHeight;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_dialogHeight;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDialog*, VARIANT*, int> get_dialogArguments;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_dialogArguments;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDialog*, VARIANT*, int> get_menuArguments;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_menuArguments;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDialog*, VARIANT, int> put_returnValue;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_returnValue;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDialog*, VARIANT*, int> get_returnValue;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_returnValue;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDialog*, int> close;
+        public delegate* unmanaged<TSelf*, int> close;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLDialog*, ushort**, int> toString;
+        public delegate* unmanaged<TSelf*, ushort**, int> toString;
     }
 }

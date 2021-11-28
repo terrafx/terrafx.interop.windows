@@ -73,27 +73,28 @@ public unsafe partial struct IHttpNegotiate3 : IHttpNegotiate3.Interface
         HRESULT GetSerializedClientCertContext(byte** ppbCert, [NativeTypeName("DWORD *")] uint* pcbCert);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHttpNegotiate3*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHttpNegotiate3*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHttpNegotiate3*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, DWORD, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHttpNegotiate3*, ushort*, ushort*, uint, ushort**, int> BeginningTransaction;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, uint, ushort**, int> BeginningTransaction;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR, LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHttpNegotiate3*, uint, ushort*, ushort*, ushort**, int> OnResponse;
+        public delegate* unmanaged<TSelf*, uint, ushort*, ushort*, ushort**, int> OnResponse;
 
         [NativeTypeName("HRESULT (BYTE *, DWORD *, DWORD_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHttpNegotiate3*, byte*, uint*, nuint, int> GetRootSecurityId;
+        public delegate* unmanaged<TSelf*, byte*, uint*, nuint, int> GetRootSecurityId;
 
         [NativeTypeName("HRESULT (BYTE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHttpNegotiate3*, byte**, uint*, int> GetSerializedClientCertContext;
+        public delegate* unmanaged<TSelf*, byte**, uint*, int> GetSerializedClientCertContext;
     }
 }

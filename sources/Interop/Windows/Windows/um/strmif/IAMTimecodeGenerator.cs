@@ -102,33 +102,34 @@ public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interfa
         HRESULT GetTimecode([NativeTypeName("PTIMECODE_SAMPLE")] TIMECODE_SAMPLE* pTimecodeSample);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeGenerator*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeGenerator*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeGenerator*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeGenerator*, int, int*, int> GetTCGMode;
+        public delegate* unmanaged<TSelf*, int, int*, int> GetTCGMode;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeGenerator*, int, int, int> SetTCGMode;
+        public delegate* unmanaged<TSelf*, int, int, int> SetTCGMode;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeGenerator*, int, int> put_VITCLine;
+        public delegate* unmanaged<TSelf*, int, int> put_VITCLine;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeGenerator*, int*, int> get_VITCLine;
+        public delegate* unmanaged<TSelf*, int*, int> get_VITCLine;
 
         [NativeTypeName("HRESULT (PTIMECODE_SAMPLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeGenerator*, TIMECODE_SAMPLE*, int> SetTimecode;
+        public delegate* unmanaged<TSelf*, TIMECODE_SAMPLE*, int> SetTimecode;
 
         [NativeTypeName("HRESULT (PTIMECODE_SAMPLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTimecodeGenerator*, TIMECODE_SAMPLE*, int> GetTimecode;
+        public delegate* unmanaged<TSelf*, TIMECODE_SAMPLE*, int> GetTimecode;
     }
 }

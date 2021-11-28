@@ -125,39 +125,40 @@ public unsafe partial struct IDCompositionSkewTransform : IDCompositionSkewTrans
         HRESULT SetCenterY(float centerY);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionSkewTransform*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionSkewTransform*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionSkewTransform*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionSkewTransform*, IDCompositionAnimation*, int> SetAngleX;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetAngleX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionSkewTransform*, float, int> SetAngleX1;
+        public delegate* unmanaged<TSelf*, float, int> SetAngleX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionSkewTransform*, IDCompositionAnimation*, int> SetAngleY;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetAngleY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionSkewTransform*, float, int> SetAngleY1;
+        public delegate* unmanaged<TSelf*, float, int> SetAngleY1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionSkewTransform*, IDCompositionAnimation*, int> SetCenterX;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetCenterX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionSkewTransform*, float, int> SetCenterX1;
+        public delegate* unmanaged<TSelf*, float, int> SetCenterX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionSkewTransform*, IDCompositionAnimation*, int> SetCenterY;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetCenterY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionSkewTransform*, float, int> SetCenterY1;
+        public delegate* unmanaged<TSelf*, float, int> SetCenterY1;
     }
 }

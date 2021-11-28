@@ -82,27 +82,28 @@ public unsafe partial struct IEnumTfLatticeElements : IEnumTfLatticeElements.Int
         HRESULT Skip([NativeTypeName("ULONG")] uint ulCount);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfLatticeElements*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfLatticeElements*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfLatticeElements*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumTfLatticeElements **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfLatticeElements*, IEnumTfLatticeElements**, int> Clone;
+        public delegate* unmanaged<TSelf*, IEnumTfLatticeElements**, int> Clone;
 
         [NativeTypeName("HRESULT (ULONG, TF_LMLATTELEMENT *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfLatticeElements*, uint, TF_LMLATTELEMENT*, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, TF_LMLATTELEMENT*, uint*, int> Next;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfLatticeElements*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfLatticeElements*, uint, int> Skip;
+        public delegate* unmanaged<TSelf*, uint, int> Skip;
     }
 }

@@ -74,24 +74,25 @@ public unsafe partial struct IMFMediaKeySessionNotify : IMFMediaKeySessionNotify
         void KeyError(ushort code, [NativeTypeName("DWORD")] uint systemCode);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaKeySessionNotify*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaKeySessionNotify*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaKeySessionNotify*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (BSTR, const BYTE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaKeySessionNotify*, ushort*, byte*, uint, void> KeyMessage;
+        public delegate* unmanaged<TSelf*, ushort*, byte*, uint, void> KeyMessage;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaKeySessionNotify*, void> KeyAdded;
+        public delegate* unmanaged<TSelf*, void> KeyAdded;
 
         [NativeTypeName("void (USHORT, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaKeySessionNotify*, ushort, uint, void> KeyError;
+        public delegate* unmanaged<TSelf*, ushort, uint, void> KeyError;
     }
 }

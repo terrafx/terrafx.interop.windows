@@ -81,27 +81,28 @@ public unsafe partial struct ID3D11On12On7 : ID3D11On12On7.Interface
         void* GetThreadLastCreatedResource();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11On12On7*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11On12On7*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11On12On7*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID3D12Device *, ID3D12CommandQueue *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11On12On7*, ID3D12Device*, ID3D12CommandQueue*, void> SetThreadDeviceCreationParams;
+        public delegate* unmanaged<TSelf*, ID3D12Device*, ID3D12CommandQueue*, void> SetThreadDeviceCreationParams;
 
         [NativeTypeName("void (ID3D12Resource *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11On12On7*, ID3D12Resource*, void> SetThreadResourceCreationParams;
+        public delegate* unmanaged<TSelf*, ID3D12Resource*, void> SetThreadResourceCreationParams;
 
         [NativeTypeName("ID3D11On12On7Device *() __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11On12On7*, ID3D11On12On7Device*> GetThreadLastCreatedDevice;
+        public delegate* unmanaged<TSelf*, ID3D11On12On7Device*> GetThreadLastCreatedDevice;
 
         [NativeTypeName("ID3D11On12On7Resource *() __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11On12On7*, void*> GetThreadLastCreatedResource;
+        public delegate* unmanaged<TSelf*, void*> GetThreadLastCreatedResource;
     }
 }

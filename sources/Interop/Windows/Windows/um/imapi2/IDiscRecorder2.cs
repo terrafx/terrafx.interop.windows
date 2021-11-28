@@ -280,90 +280,91 @@ public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface
         HRESULT get_ExclusiveAccessOwner([NativeTypeName("BSTR *")] ushort** value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, int> EjectMedia;
+        public delegate* unmanaged<TSelf*, int> EjectMedia;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, int> CloseTray;
+        public delegate* unmanaged<TSelf*, int> CloseTray;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, short, ushort*, int> AcquireExclusiveAccess;
+        public delegate* unmanaged<TSelf*, short, ushort*, int> AcquireExclusiveAccess;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, int> ReleaseExclusiveAccess;
+        public delegate* unmanaged<TSelf*, int> ReleaseExclusiveAccess;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, int> DisableMcn;
+        public delegate* unmanaged<TSelf*, int> DisableMcn;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, int> EnableMcn;
+        public delegate* unmanaged<TSelf*, int> EnableMcn;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, ushort*, int> InitializeDiscRecorder;
+        public delegate* unmanaged<TSelf*, ushort*, int> InitializeDiscRecorder;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, ushort**, int> get_ActiveDiscRecorder;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ActiveDiscRecorder;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, ushort**, int> get_VendorId;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_VendorId;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, ushort**, int> get_ProductId;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ProductId;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, ushort**, int> get_ProductRevision;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ProductRevision;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, ushort**, int> get_VolumeName;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_VolumeName;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, SAFEARRAY**, int> get_VolumePathNames;
+        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_VolumePathNames;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, short*, int> get_DeviceCanLoadMedia;
+        public delegate* unmanaged<TSelf*, short*, int> get_DeviceCanLoadMedia;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, int*, int> get_LegacyDeviceNumber;
+        public delegate* unmanaged<TSelf*, int*, int> get_LegacyDeviceNumber;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, SAFEARRAY**, int> get_SupportedFeaturePages;
+        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_SupportedFeaturePages;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, SAFEARRAY**, int> get_CurrentFeaturePages;
+        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_CurrentFeaturePages;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, SAFEARRAY**, int> get_SupportedProfiles;
+        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_SupportedProfiles;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, SAFEARRAY**, int> get_CurrentProfiles;
+        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_CurrentProfiles;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, SAFEARRAY**, int> get_SupportedModePages;
+        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_SupportedModePages;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder2*, ushort**, int> get_ExclusiveAccessOwner;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ExclusiveAccessOwner;
     }
 }

@@ -52,18 +52,19 @@ public unsafe partial struct ITranscodeImage : ITranscodeImage.Interface
         HRESULT TranscodeImage(IShellItem* pShellItem, uint uiMaxWidth, uint uiMaxHeight, [NativeTypeName("DWORD")] uint flags, IStream* pvImage, uint* puiWidth, uint* puiHeight);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITranscodeImage*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITranscodeImage*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITranscodeImage*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellItem *, UINT, UINT, DWORD, IStream *, UINT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITranscodeImage*, IShellItem*, uint, uint, uint, IStream*, uint*, uint*, int> TranscodeImage;
+        public delegate* unmanaged<TSelf*, IShellItem*, uint, uint, uint, IStream*, uint*, uint*, int> TranscodeImage;
     }
 }

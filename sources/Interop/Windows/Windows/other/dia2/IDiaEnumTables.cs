@@ -112,36 +112,37 @@ public unsafe partial struct IDiaEnumTables : IDiaEnumTables.Interface
         HRESULT Clone(IDiaEnumTables** ppenum);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumTables*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumTables*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumTables*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumTables*, IUnknown**, int> get__NewEnum;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> get__NewEnum;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumTables*, int*, int> get_Count;
+        public delegate* unmanaged<TSelf*, int*, int> get_Count;
 
         [NativeTypeName("HRESULT (VARIANT, IDiaTable **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumTables*, VARIANT, IDiaTable**, int> Item;
+        public delegate* unmanaged<TSelf*, VARIANT, IDiaTable**, int> Item;
 
         [NativeTypeName("HRESULT (ULONG, IDiaTable **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumTables*, uint, IDiaTable**, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, IDiaTable**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumTables*, uint, int> Skip;
+        public delegate* unmanaged<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumTables*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IDiaEnumTables **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumTables*, IDiaEnumTables**, int> Clone;
+        public delegate* unmanaged<TSelf*, IDiaEnumTables**, int> Clone;
     }
 }

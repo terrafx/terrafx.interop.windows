@@ -142,45 +142,46 @@ public unsafe partial struct IBindCtx : IBindCtx.Interface
         HRESULT RevokeObjectParam([NativeTypeName("LPOLESTR")] ushort* pszKey);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindCtx*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindCtx*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindCtx*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindCtx*, IUnknown*, int> RegisterObjectBound;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> RegisterObjectBound;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindCtx*, IUnknown*, int> RevokeObjectBound;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> RevokeObjectBound;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindCtx*, int> ReleaseBoundObjects;
+        public delegate* unmanaged<TSelf*, int> ReleaseBoundObjects;
 
         [NativeTypeName("HRESULT (BIND_OPTS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindCtx*, BIND_OPTS*, int> SetBindOptions;
+        public delegate* unmanaged<TSelf*, BIND_OPTS*, int> SetBindOptions;
 
         [NativeTypeName("HRESULT (BIND_OPTS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindCtx*, BIND_OPTS*, int> GetBindOptions;
+        public delegate* unmanaged<TSelf*, BIND_OPTS*, int> GetBindOptions;
 
         [NativeTypeName("HRESULT (IRunningObjectTable **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindCtx*, IRunningObjectTable**, int> GetRunningObjectTable;
+        public delegate* unmanaged<TSelf*, IRunningObjectTable**, int> GetRunningObjectTable;
 
         [NativeTypeName("HRESULT (LPOLESTR, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindCtx*, ushort*, IUnknown*, int> RegisterObjectParam;
+        public delegate* unmanaged<TSelf*, ushort*, IUnknown*, int> RegisterObjectParam;
 
         [NativeTypeName("HRESULT (LPOLESTR, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindCtx*, ushort*, IUnknown**, int> GetObjectParam;
+        public delegate* unmanaged<TSelf*, ushort*, IUnknown**, int> GetObjectParam;
 
         [NativeTypeName("HRESULT (IEnumString **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindCtx*, IEnumString**, int> EnumObjectParam;
+        public delegate* unmanaged<TSelf*, IEnumString**, int> EnumObjectParam;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindCtx*, ushort*, int> RevokeObjectParam;
+        public delegate* unmanaged<TSelf*, ushort*, int> RevokeObjectParam;
     }
 }

@@ -82,27 +82,28 @@ public unsafe partial struct IHTMLSelectElementEx : IHTMLSelectElementEx.Interfa
         HRESULT GetDropdownOpen(BOOL* pfOpen);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLSelectElementEx*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLSelectElementEx*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLSelectElementEx*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLSelectElementEx*, BOOL, int> ShowDropdown;
+        public delegate* unmanaged<TSelf*, BOOL, int> ShowDropdown;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLSelectElementEx*, uint, int> SetSelectExFlags;
+        public delegate* unmanaged<TSelf*, uint, int> SetSelectExFlags;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLSelectElementEx*, uint*, int> GetSelectExFlags;
+        public delegate* unmanaged<TSelf*, uint*, int> GetSelectExFlags;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLSelectElementEx*, BOOL*, int> GetDropdownOpen;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetDropdownOpen;
     }
 }

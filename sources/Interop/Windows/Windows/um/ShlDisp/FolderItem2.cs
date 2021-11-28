@@ -209,84 +209,85 @@ public unsafe partial struct FolderItem2 : FolderItem2.Interface
         HRESULT ExtendedProperty([NativeTypeName("BSTR")] ushort* bstrPropName, VARIANT* pvRet);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, IDispatch**, int> get_Application;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_Application;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, IDispatch**, int> get_Parent;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_Parent;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, ushort**, int> get_Name;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_Name;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, ushort*, int> put_Name;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_Name;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, ushort**, int> get_Path;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_Path;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, IDispatch**, int> get_GetLink;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_GetLink;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, IDispatch**, int> get_GetFolder;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_GetFolder;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, short*, int> get_IsLink;
+        public delegate* unmanaged<TSelf*, short*, int> get_IsLink;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, short*, int> get_IsFolder;
+        public delegate* unmanaged<TSelf*, short*, int> get_IsFolder;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, short*, int> get_IsFileSystem;
+        public delegate* unmanaged<TSelf*, short*, int> get_IsFileSystem;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, short*, int> get_IsBrowsable;
+        public delegate* unmanaged<TSelf*, short*, int> get_IsBrowsable;
 
         [NativeTypeName("HRESULT (DATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, double*, int> get_ModifyDate;
+        public delegate* unmanaged<TSelf*, double*, int> get_ModifyDate;
 
         [NativeTypeName("HRESULT (DATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, double, int> put_ModifyDate;
+        public delegate* unmanaged<TSelf*, double, int> put_ModifyDate;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, int*, int> get_Size;
+        public delegate* unmanaged<TSelf*, int*, int> get_Size;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, ushort**, int> get_Type;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_Type;
 
         [NativeTypeName("HRESULT (FolderItemVerbs **) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, FolderItemVerbs**, int> Verbs;
+        public delegate* unmanaged<TSelf*, FolderItemVerbs**, int> Verbs;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, VARIANT, int> InvokeVerb;
+        public delegate* unmanaged<TSelf*, VARIANT, int> InvokeVerb;
 
         [NativeTypeName("HRESULT (VARIANT, VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, VARIANT, VARIANT, int> InvokeVerbEx;
+        public delegate* unmanaged<TSelf*, VARIANT, VARIANT, int> InvokeVerbEx;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<FolderItem2*, ushort*, VARIANT*, int> ExtendedProperty;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> ExtendedProperty;
     }
 }

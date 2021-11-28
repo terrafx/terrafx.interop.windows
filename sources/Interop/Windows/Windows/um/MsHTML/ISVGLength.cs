@@ -170,57 +170,58 @@ public unsafe partial struct ISVGLength : ISVGLength.Interface
         HRESULT convertToSpecifiedUnits(short unitType);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLength*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLength*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLength*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLength*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLength*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLength*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLength*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (short) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLength*, short, int> put_unitType;
+        public delegate* unmanaged<TSelf*, short, int> put_unitType;
 
         [NativeTypeName("HRESULT (short *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLength*, short*, int> get_unitType;
+        public delegate* unmanaged<TSelf*, short*, int> get_unitType;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLength*, float, int> put_value;
+        public delegate* unmanaged<TSelf*, float, int> put_value;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLength*, float*, int> get_value;
+        public delegate* unmanaged<TSelf*, float*, int> get_value;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLength*, float, int> put_valueInSpecifiedUnits;
+        public delegate* unmanaged<TSelf*, float, int> put_valueInSpecifiedUnits;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLength*, float*, int> get_valueInSpecifiedUnits;
+        public delegate* unmanaged<TSelf*, float*, int> get_valueInSpecifiedUnits;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLength*, ushort*, int> put_valueAsString;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_valueAsString;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLength*, ushort**, int> get_valueAsString;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_valueAsString;
 
         [NativeTypeName("HRESULT (short, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLength*, short, float, int> newValueSpecifiedUnits;
+        public delegate* unmanaged<TSelf*, short, float, int> newValueSpecifiedUnits;
 
         [NativeTypeName("HRESULT (short) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLength*, short, int> convertToSpecifiedUnits;
+        public delegate* unmanaged<TSelf*, short, int> convertToSpecifiedUnits;
     }
 }

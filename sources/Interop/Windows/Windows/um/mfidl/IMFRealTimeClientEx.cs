@@ -74,24 +74,25 @@ public unsafe partial struct IMFRealTimeClientEx : IMFRealTimeClientEx.Interface
         HRESULT SetWorkQueueEx([NativeTypeName("DWORD")] uint dwMultithreadedWorkQueueId, [NativeTypeName("LONG")] int lWorkItemBasePriority);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRealTimeClientEx*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRealTimeClientEx*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRealTimeClientEx*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *, LPCWSTR, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRealTimeClientEx*, uint*, ushort*, int, int> RegisterThreadsEx;
+        public delegate* unmanaged<TSelf*, uint*, ushort*, int, int> RegisterThreadsEx;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRealTimeClientEx*, int> UnregisterThreads;
+        public delegate* unmanaged<TSelf*, int> UnregisterThreads;
 
         [NativeTypeName("HRESULT (DWORD, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRealTimeClientEx*, uint, int, int> SetWorkQueueEx;
+        public delegate* unmanaged<TSelf*, uint, int, int> SetWorkQueueEx;
     }
 }

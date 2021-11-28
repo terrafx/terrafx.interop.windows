@@ -62,21 +62,22 @@ public unsafe partial struct IShellItemFilter : IShellItemFilter.Interface
         HRESULT GetEnumFlagsForItem(IShellItem* psi, [NativeTypeName("SHCONTF *")] uint* pgrfFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemFilter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemFilter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemFilter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemFilter*, IShellItem*, int> IncludeItem;
+        public delegate* unmanaged<TSelf*, IShellItem*, int> IncludeItem;
 
         [NativeTypeName("HRESULT (IShellItem *, SHCONTF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemFilter*, IShellItem*, uint*, int> GetEnumFlagsForItem;
+        public delegate* unmanaged<TSelf*, IShellItem*, uint*, int> GetEnumFlagsForItem;
     }
 }

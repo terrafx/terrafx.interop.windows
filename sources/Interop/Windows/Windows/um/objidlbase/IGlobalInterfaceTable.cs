@@ -72,24 +72,25 @@ public unsafe partial struct IGlobalInterfaceTable : IGlobalInterfaceTable.Inter
         HRESULT GetInterfaceFromGlobal([NativeTypeName("DWORD")] uint dwCookie, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGlobalInterfaceTable*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IGlobalInterfaceTable*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IGlobalInterfaceTable*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, const IID &, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGlobalInterfaceTable*, IUnknown*, Guid*, uint*, int> RegisterInterfaceInGlobal;
+        public delegate* unmanaged<TSelf*, IUnknown*, Guid*, uint*, int> RegisterInterfaceInGlobal;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGlobalInterfaceTable*, uint, int> RevokeInterfaceFromGlobal;
+        public delegate* unmanaged<TSelf*, uint, int> RevokeInterfaceFromGlobal;
 
         [NativeTypeName("HRESULT (DWORD, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGlobalInterfaceTable*, uint, Guid*, void**, int> GetInterfaceFromGlobal;
+        public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> GetInterfaceFromGlobal;
     }
 }

@@ -62,21 +62,22 @@ public unsafe partial struct IFileSystemBindData : IFileSystemBindData.Interface
         HRESULT GetFindData(WIN32_FIND_DATAW* pfd);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSystemBindData*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSystemBindData*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSystemBindData*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const WIN32_FIND_DATAW *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSystemBindData*, WIN32_FIND_DATAW*, int> SetFindData;
+        public delegate* unmanaged<TSelf*, WIN32_FIND_DATAW*, int> SetFindData;
 
         [NativeTypeName("HRESULT (WIN32_FIND_DATAW *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileSystemBindData*, WIN32_FIND_DATAW*, int> GetFindData;
+        public delegate* unmanaged<TSelf*, WIN32_FIND_DATAW*, int> GetFindData;
     }
 }

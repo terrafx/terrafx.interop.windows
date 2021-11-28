@@ -94,30 +94,31 @@ public unsafe partial struct IInkPresenterDesktop : IInkPresenterDesktop.Interfa
         HRESULT OnHighContrastChanged();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInkPresenterDesktop*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInkPresenterDesktop*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInkPresenterDesktop*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInkPresenterDesktop*, IUnknown*, IUnknown*, int> SetRootVisual;
+        public delegate* unmanaged<TSelf*, IUnknown*, IUnknown*, int> SetRootVisual;
 
         [NativeTypeName("HRESULT (IInkCommitRequestHandler *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInkPresenterDesktop*, IInkCommitRequestHandler*, int> SetCommitRequestHandler;
+        public delegate* unmanaged<TSelf*, IInkCommitRequestHandler*, int> SetCommitRequestHandler;
 
         [NativeTypeName("HRESULT (float *, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInkPresenterDesktop*, float*, float*, int> GetSize;
+        public delegate* unmanaged<TSelf*, float*, float*, int> GetSize;
 
         [NativeTypeName("HRESULT (float, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInkPresenterDesktop*, float, float, int> SetSize;
+        public delegate* unmanaged<TSelf*, float, float, int> SetSize;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInkPresenterDesktop*, int> OnHighContrastChanged;
+        public delegate* unmanaged<TSelf*, int> OnHighContrastChanged;
     }
 }

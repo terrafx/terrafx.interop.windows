@@ -52,18 +52,19 @@ public unsafe partial struct IMFMediaEngineTransferSource : IMFMediaEngineTransf
         HRESULT TransferSourceToMediaEngine(IMFMediaEngine* destination);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineTransferSource*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineTransferSource*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineTransferSource*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFMediaEngine *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineTransferSource*, IMFMediaEngine*, int> TransferSourceToMediaEngine;
+        public delegate* unmanaged<TSelf*, IMFMediaEngine*, int> TransferSourceToMediaEngine;
     }
 }

@@ -82,27 +82,28 @@ public unsafe partial struct IMFTimedTextStyle2 : IMFTimedTextStyle2.Interface
         HRESULT GetFontAngleInDegrees(double* value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFTimedTextRuby **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle2*, IMFTimedTextRuby**, int> GetRuby;
+        public delegate* unmanaged<TSelf*, IMFTimedTextRuby**, int> GetRuby;
 
         [NativeTypeName("HRESULT (IMFTimedTextBouten **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle2*, IMFTimedTextBouten**, int> GetBouten;
+        public delegate* unmanaged<TSelf*, IMFTimedTextBouten**, int> GetBouten;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle2*, BOOL*, int> IsTextCombined;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsTextCombined;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle2*, double*, int> GetFontAngleInDegrees;
+        public delegate* unmanaged<TSelf*, double*, int> GetFontAngleInDegrees;
     }
 }

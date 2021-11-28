@@ -72,24 +72,25 @@ public unsafe partial struct IApplicationActivationManager : IApplicationActivat
         HRESULT ActivateForProtocol([NativeTypeName("LPCWSTR")] ushort* appUserModelId, IShellItemArray* itemArray, [NativeTypeName("DWORD *")] uint* processId);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IApplicationActivationManager*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IApplicationActivationManager*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IApplicationActivationManager*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, ACTIVATEOPTIONS, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IApplicationActivationManager*, ushort*, ushort*, ACTIVATEOPTIONS, uint*, int> ActivateApplication;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, ACTIVATEOPTIONS, uint*, int> ActivateApplication;
 
         [NativeTypeName("HRESULT (LPCWSTR, IShellItemArray *, LPCWSTR, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IApplicationActivationManager*, ushort*, IShellItemArray*, ushort*, uint*, int> ActivateForFile;
+        public delegate* unmanaged<TSelf*, ushort*, IShellItemArray*, ushort*, uint*, int> ActivateForFile;
 
         [NativeTypeName("HRESULT (LPCWSTR, IShellItemArray *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IApplicationActivationManager*, ushort*, IShellItemArray*, uint*, int> ActivateForProtocol;
+        public delegate* unmanaged<TSelf*, ushort*, IShellItemArray*, uint*, int> ActivateForProtocol;
     }
 }

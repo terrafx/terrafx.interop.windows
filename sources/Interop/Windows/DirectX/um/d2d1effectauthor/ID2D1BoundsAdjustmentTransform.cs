@@ -71,24 +71,25 @@ public unsafe partial struct ID2D1BoundsAdjustmentTransform : ID2D1BoundsAdjustm
         void GetOutputBounds([NativeTypeName("D2D1_RECT_L *")] RECT* outputBounds);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1BoundsAdjustmentTransform*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1BoundsAdjustmentTransform*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1BoundsAdjustmentTransform*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1BoundsAdjustmentTransform*, uint> GetInputCount;
+        public delegate* unmanaged<TSelf*, uint> GetInputCount;
 
         [NativeTypeName("void (const D2D1_RECT_L *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1BoundsAdjustmentTransform*, RECT*, void> SetOutputBounds;
+        public delegate* unmanaged<TSelf*, RECT*, void> SetOutputBounds;
 
         [NativeTypeName("void (D2D1_RECT_L *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1BoundsAdjustmentTransform*, RECT*, void> GetOutputBounds;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, RECT*, void> GetOutputBounds;
     }
 }

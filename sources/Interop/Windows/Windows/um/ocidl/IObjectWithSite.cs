@@ -62,21 +62,22 @@ public unsafe partial struct IObjectWithSite : IObjectWithSite.Interface
         HRESULT GetSite([NativeTypeName("const IID &")] Guid* riid, void** ppvSite);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectWithSite*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectWithSite*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectWithSite*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectWithSite*, IUnknown*, int> SetSite;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> SetSite;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IObjectWithSite*, Guid*, void**, int> GetSite;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetSite;
     }
 }

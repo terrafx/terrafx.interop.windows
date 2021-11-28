@@ -72,24 +72,25 @@ public unsafe partial struct IDiaImageData : IDiaImageData.Interface
         HRESULT get_imageBase([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaImageData*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaImageData*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaImageData*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaImageData*, uint*, int> get_relativeVirtualAddress;
+        public delegate* unmanaged<TSelf*, uint*, int> get_relativeVirtualAddress;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaImageData*, ulong*, int> get_virtualAddress;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_virtualAddress;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaImageData*, ulong*, int> get_imageBase;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_imageBase;
     }
 }

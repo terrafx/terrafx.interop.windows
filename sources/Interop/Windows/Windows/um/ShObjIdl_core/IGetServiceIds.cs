@@ -52,18 +52,19 @@ public unsafe partial struct IGetServiceIds : IGetServiceIds.Interface
         HRESULT GetServiceIds([NativeTypeName("ULONG *")] uint* serviceIdCount, Guid** serviceIds);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGetServiceIds*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IGetServiceIds*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IGetServiceIds*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, GUID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IGetServiceIds*, uint*, Guid**, int> GetServiceIds;
+        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetServiceIds;
     }
 }

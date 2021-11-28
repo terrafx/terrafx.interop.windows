@@ -72,24 +72,25 @@ public unsafe partial struct IAppxManifestQualifiedResource : IAppxManifestQuali
         HRESULT GetDXFeatureLevel(DX_FEATURE_LEVEL* dxFeatureLevel);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestQualifiedResource*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestQualifiedResource*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestQualifiedResource*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestQualifiedResource*, ushort**, int> GetLanguage;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetLanguage;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestQualifiedResource*, uint*, int> GetScale;
+        public delegate* unmanaged<TSelf*, uint*, int> GetScale;
 
         [NativeTypeName("HRESULT (DX_FEATURE_LEVEL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestQualifiedResource*, DX_FEATURE_LEVEL*, int> GetDXFeatureLevel;
+        public delegate* unmanaged<TSelf*, DX_FEATURE_LEVEL*, int> GetDXFeatureLevel;
     }
 }

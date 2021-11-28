@@ -82,27 +82,28 @@ public unsafe partial struct IWICMetadataQueryReader : IWICMetadataQueryReader.I
         HRESULT GetEnumerator(IEnumString** ppIEnumString);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataQueryReader*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataQueryReader*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataQueryReader*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataQueryReader*, Guid*, int> GetContainerFormat;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetContainerFormat;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataQueryReader*, uint, ushort*, uint*, int> GetLocation;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetLocation;
 
         [NativeTypeName("HRESULT (LPCWSTR, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataQueryReader*, ushort*, PROPVARIANT*, int> GetMetadataByName;
+        public delegate* unmanaged<TSelf*, ushort*, PROPVARIANT*, int> GetMetadataByName;
 
         [NativeTypeName("HRESULT (IEnumString **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICMetadataQueryReader*, IEnumString**, int> GetEnumerator;
+        public delegate* unmanaged<TSelf*, IEnumString**, int> GetEnumerator;
     }
 }

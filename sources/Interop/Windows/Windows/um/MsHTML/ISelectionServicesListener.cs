@@ -92,30 +92,31 @@ public unsafe partial struct ISelectionServicesListener : ISelectionServicesList
         HRESULT GetTypeDetail([NativeTypeName("BSTR *")] ushort** pTypeDetail);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISelectionServicesListener*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISelectionServicesListener*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISelectionServicesListener*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISelectionServicesListener*, int> BeginSelectionUndo;
+        public delegate* unmanaged<TSelf*, int> BeginSelectionUndo;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISelectionServicesListener*, int> EndSelectionUndo;
+        public delegate* unmanaged<TSelf*, int> EndSelectionUndo;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, IMarkupPointer *, IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISelectionServicesListener*, IMarkupPointer*, IMarkupPointer*, IMarkupPointer*, IMarkupPointer*, int> OnSelectedElementExit;
+        public delegate* unmanaged<TSelf*, IMarkupPointer*, IMarkupPointer*, IMarkupPointer*, IMarkupPointer*, int> OnSelectedElementExit;
 
         [NativeTypeName("HRESULT (SELECTION_TYPE, ISelectionServicesListener *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISelectionServicesListener*, SELECTION_TYPE, ISelectionServicesListener*, int> OnChangeType;
+        public delegate* unmanaged<TSelf*, SELECTION_TYPE, ISelectionServicesListener*, int> OnChangeType;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISelectionServicesListener*, ushort**, int> GetTypeDetail;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetTypeDetail;
     }
 }

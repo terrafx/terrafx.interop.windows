@@ -82,27 +82,28 @@ public unsafe partial struct AsyncIPipeByte : AsyncIPipeByte.Interface
         HRESULT Finish_Push();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIPipeByte*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIPipeByte*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIPipeByte*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIPipeByte*, uint, int> Begin_Pull;
+        public delegate* unmanaged<TSelf*, uint, int> Begin_Pull;
 
         [NativeTypeName("HRESULT (BYTE *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIPipeByte*, byte*, uint*, int> Finish_Pull;
+        public delegate* unmanaged<TSelf*, byte*, uint*, int> Finish_Pull;
 
         [NativeTypeName("HRESULT (BYTE *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIPipeByte*, byte*, uint, int> Begin_Push;
+        public delegate* unmanaged<TSelf*, byte*, uint, int> Begin_Push;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIPipeByte*, int> Finish_Push;
+        public delegate* unmanaged<TSelf*, int> Finish_Push;
     }
 }

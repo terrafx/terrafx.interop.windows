@@ -102,33 +102,34 @@ public unsafe partial struct IMFMediaTypeHandler : IMFMediaTypeHandler.Interface
         HRESULT GetMajorType(Guid* pguidMajorType);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaTypeHandler*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaTypeHandler*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaTypeHandler*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFMediaType *, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaTypeHandler*, IMFMediaType*, IMFMediaType**, int> IsMediaTypeSupported;
+        public delegate* unmanaged<TSelf*, IMFMediaType*, IMFMediaType**, int> IsMediaTypeSupported;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaTypeHandler*, uint*, int> GetMediaTypeCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetMediaTypeCount;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaTypeHandler*, uint, IMFMediaType**, int> GetMediaTypeByIndex;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaType**, int> GetMediaTypeByIndex;
 
         [NativeTypeName("HRESULT (IMFMediaType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaTypeHandler*, IMFMediaType*, int> SetCurrentMediaType;
+        public delegate* unmanaged<TSelf*, IMFMediaType*, int> SetCurrentMediaType;
 
         [NativeTypeName("HRESULT (IMFMediaType **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaTypeHandler*, IMFMediaType**, int> GetCurrentMediaType;
+        public delegate* unmanaged<TSelf*, IMFMediaType**, int> GetCurrentMediaType;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaTypeHandler*, Guid*, int> GetMajorType;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetMajorType;
     }
 }

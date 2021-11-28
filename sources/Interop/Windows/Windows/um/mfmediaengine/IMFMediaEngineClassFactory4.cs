@@ -52,18 +52,19 @@ public unsafe partial struct IMFMediaEngineClassFactory4 : IMFMediaEngineClassFa
         HRESULT CreateContentDecryptionModuleFactory([NativeTypeName("LPCWSTR")] ushort* keySystem, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineClassFactory4*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineClassFactory4*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineClassFactory4*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, const IID &, LPVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineClassFactory4*, ushort*, Guid*, void**, int> CreateContentDecryptionModuleFactory;
+        public delegate* unmanaged<TSelf*, ushort*, Guid*, void**, int> CreateContentDecryptionModuleFactory;
     }
 }

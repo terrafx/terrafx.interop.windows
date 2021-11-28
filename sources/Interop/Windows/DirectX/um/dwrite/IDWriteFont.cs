@@ -153,48 +153,49 @@ public unsafe partial struct IDWriteFont : IDWriteFont.Interface
         HRESULT CreateFontFace(IDWriteFontFace** fontFace);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFont*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFont*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFont*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDWriteFontFamily **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFont*, IDWriteFontFamily**, int> GetFontFamily;
+        public delegate* unmanaged<TSelf*, IDWriteFontFamily**, int> GetFontFamily;
 
         [NativeTypeName("DWRITE_FONT_WEIGHT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteFont*, DWRITE_FONT_WEIGHT> GetWeight;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_FONT_WEIGHT> GetWeight;
 
         [NativeTypeName("DWRITE_FONT_STRETCH () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteFont*, DWRITE_FONT_STRETCH> GetStretch;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_FONT_STRETCH> GetStretch;
 
         [NativeTypeName("DWRITE_FONT_STYLE () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteFont*, DWRITE_FONT_STYLE> GetStyle;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_FONT_STYLE> GetStyle;
 
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteFont*, int> IsSymbolFont;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, int> IsSymbolFont;
 
         [NativeTypeName("HRESULT (IDWriteLocalizedStrings **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFont*, IDWriteLocalizedStrings**, int> GetFaceNames;
+        public delegate* unmanaged<TSelf*, IDWriteLocalizedStrings**, int> GetFaceNames;
 
         [NativeTypeName("HRESULT (DWRITE_INFORMATIONAL_STRING_ID, IDWriteLocalizedStrings **, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFont*, DWRITE_INFORMATIONAL_STRING_ID, IDWriteLocalizedStrings**, BOOL*, int> GetInformationalStrings;
+        public delegate* unmanaged<TSelf*, DWRITE_INFORMATIONAL_STRING_ID, IDWriteLocalizedStrings**, BOOL*, int> GetInformationalStrings;
 
         [NativeTypeName("DWRITE_FONT_SIMULATIONS () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteFont*, DWRITE_FONT_SIMULATIONS> GetSimulations;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_FONT_SIMULATIONS> GetSimulations;
 
         [NativeTypeName("void (DWRITE_FONT_METRICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteFont*, DWRITE_FONT_METRICS*, void> GetMetrics;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_FONT_METRICS*, void> GetMetrics;
 
         [NativeTypeName("HRESULT (UINT32, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFont*, uint, BOOL*, int> HasCharacter;
+        public delegate* unmanaged<TSelf*, uint, BOOL*, int> HasCharacter;
 
         [NativeTypeName("HRESULT (IDWriteFontFace **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFont*, IDWriteFontFace**, int> CreateFontFace;
+        public delegate* unmanaged<TSelf*, IDWriteFontFace**, int> CreateFontFace;
     }
 }

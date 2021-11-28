@@ -63,21 +63,22 @@ public unsafe partial struct IPrintDocumentPageSource : IPrintDocumentPageSource
         HRESULT MakeDocument(IInspectable* printTaskOptions, IPrintDocumentPackageTarget* docPackageTarget);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintDocumentPageSource*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintDocumentPageSource*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintDocumentPageSource*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IPrintDocumentPackageTarget *, IPrintPreviewPageCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintDocumentPageSource*, IPrintDocumentPackageTarget*, IPrintPreviewPageCollection**, int> GetPreviewPageCollection;
+        public delegate* unmanaged<TSelf*, IPrintDocumentPackageTarget*, IPrintPreviewPageCollection**, int> GetPreviewPageCollection;
 
         [NativeTypeName("HRESULT (IInspectable *, IPrintDocumentPackageTarget *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPrintDocumentPageSource*, IInspectable*, IPrintDocumentPackageTarget*, int> MakeDocument;
+        public delegate* unmanaged<TSelf*, IInspectable*, IPrintDocumentPackageTarget*, int> MakeDocument;
     }
 }

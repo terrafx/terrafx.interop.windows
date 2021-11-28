@@ -62,21 +62,22 @@ public unsafe partial struct IHandlerActivationHost : IHandlerActivationHost.Int
         HRESULT BeforeCreateProcess([NativeTypeName("LPCWSTR")] ushort* applicationPath, [NativeTypeName("LPCWSTR")] ushort* commandLine, IHandlerInfo* handlerInfo);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHandlerActivationHost*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHandlerActivationHost*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHandlerActivationHost*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, IShellItemArray *, IHandlerInfo *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHandlerActivationHost*, Guid*, IShellItemArray*, IHandlerInfo*, int> BeforeCoCreateInstance;
+        public delegate* unmanaged<TSelf*, Guid*, IShellItemArray*, IHandlerInfo*, int> BeforeCoCreateInstance;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, IHandlerInfo *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHandlerActivationHost*, ushort*, ushort*, IHandlerInfo*, int> BeforeCreateProcess;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, IHandlerInfo*, int> BeforeCreateProcess;
     }
 }

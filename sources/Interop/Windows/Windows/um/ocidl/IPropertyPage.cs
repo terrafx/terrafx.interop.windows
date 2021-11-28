@@ -152,48 +152,49 @@ public unsafe partial struct IPropertyPage : IPropertyPage.Interface
         HRESULT TranslateAccelerator(MSG* pMsg);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyPage*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyPage*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyPage*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IPropertyPageSite *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyPage*, IPropertyPageSite*, int> SetPageSite;
+        public delegate* unmanaged<TSelf*, IPropertyPageSite*, int> SetPageSite;
 
         [NativeTypeName("HRESULT (HWND, LPCRECT, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyPage*, HWND, RECT*, BOOL, int> Activate;
+        public delegate* unmanaged<TSelf*, HWND, RECT*, BOOL, int> Activate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyPage*, int> Deactivate;
+        public delegate* unmanaged<TSelf*, int> Deactivate;
 
         [NativeTypeName("HRESULT (PROPPAGEINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyPage*, PROPPAGEINFO*, int> GetPageInfo;
+        public delegate* unmanaged<TSelf*, PROPPAGEINFO*, int> GetPageInfo;
 
         [NativeTypeName("HRESULT (ULONG, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyPage*, uint, IUnknown**, int> SetObjects;
+        public delegate* unmanaged<TSelf*, uint, IUnknown**, int> SetObjects;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyPage*, uint, int> Show;
+        public delegate* unmanaged<TSelf*, uint, int> Show;
 
         [NativeTypeName("HRESULT (LPCRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyPage*, RECT*, int> Move;
+        public delegate* unmanaged<TSelf*, RECT*, int> Move;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyPage*, int> IsPageDirty;
+        public delegate* unmanaged<TSelf*, int> IsPageDirty;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyPage*, int> Apply;
+        public delegate* unmanaged<TSelf*, int> Apply;
 
         [NativeTypeName("HRESULT (LPCOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyPage*, ushort*, int> Help;
+        public delegate* unmanaged<TSelf*, ushort*, int> Help;
 
         [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyPage*, MSG*, int> TranslateAccelerator;
+        public delegate* unmanaged<TSelf*, MSG*, int> TranslateAccelerator;
     }
 }

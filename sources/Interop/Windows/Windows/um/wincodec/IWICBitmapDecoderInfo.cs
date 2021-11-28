@@ -212,84 +212,85 @@ public unsafe partial struct IWICBitmapDecoderInfo : IWICBitmapDecoderInfo.Inter
         HRESULT CreateInstance(IWICBitmapDecoder** ppIBitmapDecoder);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (WICComponentType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, WICComponentType*, int> GetComponentType;
+        public delegate* unmanaged<TSelf*, WICComponentType*, int> GetComponentType;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, Guid*, int> GetCLSID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetCLSID;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, uint*, int> GetSigningStatus;
+        public delegate* unmanaged<TSelf*, uint*, int> GetSigningStatus;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, uint, ushort*, uint*, int> GetAuthor;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetAuthor;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, Guid*, int> GetVendorGUID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetVendorGUID;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, uint, ushort*, uint*, int> GetVersion;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetVersion;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, uint, ushort*, uint*, int> GetSpecVersion;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetSpecVersion;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, uint, ushort*, uint*, int> GetFriendlyName;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetFriendlyName;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, Guid*, int> GetContainerFormat;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetContainerFormat;
 
         [NativeTypeName("HRESULT (UINT, GUID *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, uint, Guid*, uint*, int> GetPixelFormats;
+        public delegate* unmanaged<TSelf*, uint, Guid*, uint*, int> GetPixelFormats;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, uint, ushort*, uint*, int> GetColorManagementVersion;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetColorManagementVersion;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, uint, ushort*, uint*, int> GetDeviceManufacturer;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetDeviceManufacturer;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, uint, ushort*, uint*, int> GetDeviceModels;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetDeviceModels;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, uint, ushort*, uint*, int> GetMimeTypes;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetMimeTypes;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, uint, ushort*, uint*, int> GetFileExtensions;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetFileExtensions;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, BOOL*, int> DoesSupportAnimation;
+        public delegate* unmanaged<TSelf*, BOOL*, int> DoesSupportAnimation;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, BOOL*, int> DoesSupportChromakey;
+        public delegate* unmanaged<TSelf*, BOOL*, int> DoesSupportChromakey;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, BOOL*, int> DoesSupportLossless;
+        public delegate* unmanaged<TSelf*, BOOL*, int> DoesSupportLossless;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, BOOL*, int> DoesSupportMultiframe;
+        public delegate* unmanaged<TSelf*, BOOL*, int> DoesSupportMultiframe;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, ushort*, BOOL*, int> MatchesMimeType;
+        public delegate* unmanaged<TSelf*, ushort*, BOOL*, int> MatchesMimeType;
 
         [NativeTypeName("HRESULT (UINT, WICBitmapPattern *, UINT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, uint, WICBitmapPattern*, uint*, uint*, int> GetPatterns;
+        public delegate* unmanaged<TSelf*, uint, WICBitmapPattern*, uint*, uint*, int> GetPatterns;
 
         [NativeTypeName("HRESULT (IStream *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, IStream*, BOOL*, int> MatchesPattern;
+        public delegate* unmanaged<TSelf*, IStream*, BOOL*, int> MatchesPattern;
 
         [NativeTypeName("HRESULT (IWICBitmapDecoder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICBitmapDecoderInfo*, IWICBitmapDecoder**, int> CreateInstance;
+        public delegate* unmanaged<TSelf*, IWICBitmapDecoder**, int> CreateInstance;
     }
 }

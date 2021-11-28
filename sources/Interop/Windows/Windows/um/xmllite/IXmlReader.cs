@@ -272,84 +272,85 @@ public unsafe partial struct IXmlReader : IXmlReader.Interface
         BOOL IsEOF();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, IUnknown*, int> SetInput;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> SetInput;
 
         [NativeTypeName("HRESULT (UINT, LONG_PTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, uint, nint*, int> GetProperty;
+        public delegate* unmanaged<TSelf*, uint, nint*, int> GetProperty;
 
         [NativeTypeName("HRESULT (UINT, LONG_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, uint, nint, int> SetProperty;
+        public delegate* unmanaged<TSelf*, uint, nint, int> SetProperty;
 
         [NativeTypeName("HRESULT (XmlNodeType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, XmlNodeType*, int> Read;
+        public delegate* unmanaged<TSelf*, XmlNodeType*, int> Read;
 
         [NativeTypeName("HRESULT (XmlNodeType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, XmlNodeType*, int> GetNodeType;
+        public delegate* unmanaged<TSelf*, XmlNodeType*, int> GetNodeType;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, int> MoveToFirstAttribute;
+        public delegate* unmanaged<TSelf*, int> MoveToFirstAttribute;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, int> MoveToNextAttribute;
+        public delegate* unmanaged<TSelf*, int> MoveToNextAttribute;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, ushort*, ushort*, int> MoveToAttributeByName;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> MoveToAttributeByName;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, int> MoveToElement;
+        public delegate* unmanaged<TSelf*, int> MoveToElement;
 
         [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, ushort**, uint*, int> GetQualifiedName;
+        public delegate* unmanaged<TSelf*, ushort**, uint*, int> GetQualifiedName;
 
         [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, ushort**, uint*, int> GetNamespaceUri;
+        public delegate* unmanaged<TSelf*, ushort**, uint*, int> GetNamespaceUri;
 
         [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, ushort**, uint*, int> GetLocalName;
+        public delegate* unmanaged<TSelf*, ushort**, uint*, int> GetLocalName;
 
         [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, ushort**, uint*, int> GetPrefix;
+        public delegate* unmanaged<TSelf*, ushort**, uint*, int> GetPrefix;
 
         [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, ushort**, uint*, int> GetValue;
+        public delegate* unmanaged<TSelf*, ushort**, uint*, int> GetValue;
 
         [NativeTypeName("HRESULT (WCHAR *, UINT, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, ushort*, uint, uint*, int> ReadValueChunk;
+        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, int> ReadValueChunk;
 
         [NativeTypeName("HRESULT (LPCWSTR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, ushort**, uint*, int> GetBaseUri;
+        public delegate* unmanaged<TSelf*, ushort**, uint*, int> GetBaseUri;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, int> IsDefault;
+        public delegate* unmanaged<TSelf*, int> IsDefault;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, int> IsEmptyElement;
+        public delegate* unmanaged<TSelf*, int> IsEmptyElement;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, uint*, int> GetLineNumber;
+        public delegate* unmanaged<TSelf*, uint*, int> GetLineNumber;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, uint*, int> GetLinePosition;
+        public delegate* unmanaged<TSelf*, uint*, int> GetLinePosition;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, uint*, int> GetAttributeCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetAttributeCount;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, uint*, int> GetDepth;
+        public delegate* unmanaged<TSelf*, uint*, int> GetDepth;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXmlReader*, int> IsEOF;
+        public delegate* unmanaged<TSelf*, int> IsEOF;
     }
 }

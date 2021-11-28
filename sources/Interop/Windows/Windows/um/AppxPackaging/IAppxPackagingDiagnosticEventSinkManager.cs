@@ -52,18 +52,19 @@ public unsafe partial struct IAppxPackagingDiagnosticEventSinkManager : IAppxPac
         HRESULT SetSinkForProcess(IAppxPackagingDiagnosticEventSink* sink);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackagingDiagnosticEventSinkManager*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackagingDiagnosticEventSinkManager*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackagingDiagnosticEventSinkManager*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxPackagingDiagnosticEventSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackagingDiagnosticEventSinkManager*, IAppxPackagingDiagnosticEventSink*, int> SetSinkForProcess;
+        public delegate* unmanaged<TSelf*, IAppxPackagingDiagnosticEventSink*, int> SetSinkForProcess;
     }
 }

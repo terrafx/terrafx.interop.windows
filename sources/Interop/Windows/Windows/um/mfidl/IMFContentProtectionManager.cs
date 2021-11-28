@@ -62,21 +62,22 @@ public unsafe partial struct IMFContentProtectionManager : IMFContentProtectionM
         HRESULT EndEnableContent(IMFAsyncResult* pResult);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentProtectionManager*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentProtectionManager*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentProtectionManager*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFActivate *, IMFTopology *, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentProtectionManager*, IMFActivate*, IMFTopology*, IMFAsyncCallback*, IUnknown*, int> BeginEnableContent;
+        public delegate* unmanaged<TSelf*, IMFActivate*, IMFTopology*, IMFAsyncCallback*, IUnknown*, int> BeginEnableContent;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentProtectionManager*, IMFAsyncResult*, int> EndEnableContent;
+        public delegate* unmanaged<TSelf*, IMFAsyncResult*, int> EndEnableContent;
     }
 }

@@ -82,27 +82,28 @@ public unsafe partial struct IEnumExtraSearch : IEnumExtraSearch.Interface
         HRESULT Clone(IEnumExtraSearch** ppenum);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumExtraSearch*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumExtraSearch*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumExtraSearch*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, EXTRASEARCH *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumExtraSearch*, uint, EXTRASEARCH*, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, EXTRASEARCH*, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumExtraSearch*, uint, int> Skip;
+        public delegate* unmanaged<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumExtraSearch*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IEnumExtraSearch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumExtraSearch*, IEnumExtraSearch**, int> Clone;
+        public delegate* unmanaged<TSelf*, IEnumExtraSearch**, int> Clone;
     }
 }

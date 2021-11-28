@@ -82,27 +82,28 @@ public unsafe partial struct IInternetProtocolSink : IInternetProtocolSink.Inter
         HRESULT ReportResult(HRESULT hrResult, [NativeTypeName("DWORD")] uint dwError, [NativeTypeName("LPCWSTR")] ushort* szResult);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PROTOCOLDATA *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolSink*, PROTOCOLDATA*, int> Switch;
+        public delegate* unmanaged<TSelf*, PROTOCOLDATA*, int> Switch;
 
         [NativeTypeName("HRESULT (ULONG, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolSink*, uint, ushort*, int> ReportProgress;
+        public delegate* unmanaged<TSelf*, uint, ushort*, int> ReportProgress;
 
         [NativeTypeName("HRESULT (DWORD, ULONG, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolSink*, uint, uint, uint, int> ReportData;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, int> ReportData;
 
         [NativeTypeName("HRESULT (HRESULT, DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolSink*, HRESULT, uint, ushort*, int> ReportResult;
+        public delegate* unmanaged<TSelf*, HRESULT, uint, ushort*, int> ReportResult;
     }
 }

@@ -52,18 +52,19 @@ public unsafe partial struct IQueryCancelAutoPlay : IQueryCancelAutoPlay.Interfa
         HRESULT AllowAutoPlay([NativeTypeName("LPCWSTR")] ushort* pszPath, [NativeTypeName("DWORD")] uint dwContentType, [NativeTypeName("LPCWSTR")] ushort* pszLabel, [NativeTypeName("DWORD")] uint dwSerialNumber);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueryCancelAutoPlay*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueryCancelAutoPlay*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueryCancelAutoPlay*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQueryCancelAutoPlay*, ushort*, uint, ushort*, uint, int> AllowAutoPlay;
+        public delegate* unmanaged<TSelf*, ushort*, uint, ushort*, uint, int> AllowAutoPlay;
     }
 }

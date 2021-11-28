@@ -74,24 +74,25 @@ public unsafe partial struct IAppxManifestTargetDeviceFamily : IAppxManifestTarg
         HRESULT GetMaxVersionTested([NativeTypeName("UINT64 *")] ulong* maxVersionTested);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestTargetDeviceFamily*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestTargetDeviceFamily*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestTargetDeviceFamily*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestTargetDeviceFamily*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestTargetDeviceFamily*, ulong*, int> GetMinVersion;
+        public delegate* unmanaged<TSelf*, ulong*, int> GetMinVersion;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestTargetDeviceFamily*, ulong*, int> GetMaxVersionTested;
+        public delegate* unmanaged<TSelf*, ulong*, int> GetMaxVersionTested;
     }
 }

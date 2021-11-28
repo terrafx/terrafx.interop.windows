@@ -119,45 +119,46 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface
         HRESULT ReleaseDC(RECT* pDirtyRect);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGISurface1*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGISurface1*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGISurface1*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGISurface1*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGISurface1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGISurface1*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGISurface1*, Guid*, void**, int> GetParent;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetParent;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGISurface1*, Guid*, void**, int> GetDevice;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDevice;
 
         [NativeTypeName("HRESULT (DXGI_SURFACE_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGISurface1*, DXGI_SURFACE_DESC*, int> GetDesc;
+        public delegate* unmanaged<TSelf*, DXGI_SURFACE_DESC*, int> GetDesc;
 
         [NativeTypeName("HRESULT (DXGI_MAPPED_RECT *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGISurface1*, DXGI_MAPPED_RECT*, uint, int> Map;
+        public delegate* unmanaged<TSelf*, DXGI_MAPPED_RECT*, uint, int> Map;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGISurface1*, int> Unmap;
+        public delegate* unmanaged<TSelf*, int> Unmap;
 
         [NativeTypeName("HRESULT (BOOL, HDC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGISurface1*, BOOL, HDC*, int> GetDC;
+        public delegate* unmanaged<TSelf*, BOOL, HDC*, int> GetDC;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGISurface1*, RECT*, int> ReleaseDC;
+        public delegate* unmanaged<TSelf*, RECT*, int> ReleaseDC;
     }
 }

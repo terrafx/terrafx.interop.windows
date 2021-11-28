@@ -112,36 +112,37 @@ public unsafe partial struct IDiaInjectedSource : IDiaInjectedSource.Interface
         HRESULT get_source([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaInjectedSource*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaInjectedSource*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaInjectedSource*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaInjectedSource*, uint*, int> get_crc;
+        public delegate* unmanaged<TSelf*, uint*, int> get_crc;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaInjectedSource*, ulong*, int> get_length;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_length;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaInjectedSource*, ushort**, int> get_filename;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_filename;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaInjectedSource*, ushort**, int> get_objectFilename;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_objectFilename;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaInjectedSource*, ushort**, int> get_virtualFilename;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_virtualFilename;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaInjectedSource*, uint*, int> get_sourceCompression;
+        public delegate* unmanaged<TSelf*, uint*, int> get_sourceCompression;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaInjectedSource*, uint, uint*, byte*, int> get_source;
+        public delegate* unmanaged<TSelf*, uint, uint*, byte*, int> get_source;
     }
 }

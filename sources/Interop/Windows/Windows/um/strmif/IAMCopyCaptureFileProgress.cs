@@ -52,18 +52,19 @@ public unsafe partial struct IAMCopyCaptureFileProgress : IAMCopyCaptureFileProg
         HRESULT Progress(int iProgress);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMCopyCaptureFileProgress*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMCopyCaptureFileProgress*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMCopyCaptureFileProgress*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMCopyCaptureFileProgress*, int, int> Progress;
+        public delegate* unmanaged<TSelf*, int, int> Progress;
     }
 }

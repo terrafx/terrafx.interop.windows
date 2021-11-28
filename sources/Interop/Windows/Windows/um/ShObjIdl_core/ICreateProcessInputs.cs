@@ -112,36 +112,37 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
         HRESULT SetEnvironmentVariableW([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszValue);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateProcessInputs*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateProcessInputs*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateProcessInputs*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateProcessInputs*, uint*, int> GetCreateFlags;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCreateFlags;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateProcessInputs*, uint, int> SetCreateFlags;
+        public delegate* unmanaged<TSelf*, uint, int> SetCreateFlags;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateProcessInputs*, uint, int> AddCreateFlags;
+        public delegate* unmanaged<TSelf*, uint, int> AddCreateFlags;
 
         [NativeTypeName("HRESULT (WORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateProcessInputs*, ushort, int> SetHotKey;
+        public delegate* unmanaged<TSelf*, ushort, int> SetHotKey;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateProcessInputs*, uint, int> AddStartupFlags;
+        public delegate* unmanaged<TSelf*, uint, int> AddStartupFlags;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateProcessInputs*, ushort*, int> SetTitle;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetTitle;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateProcessInputs*, ushort*, ushort*, int> SetEnvironmentVariableW;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> SetEnvironmentVariableW;
     }
 }

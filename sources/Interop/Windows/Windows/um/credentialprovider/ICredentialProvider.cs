@@ -122,39 +122,40 @@ public unsafe partial struct ICredentialProvider : ICredentialProvider.Interface
         HRESULT GetCredentialAt([NativeTypeName("DWORD")] uint dwIndex, ICredentialProviderCredential** ppcpc);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProvider*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProvider*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProvider*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CREDENTIAL_PROVIDER_USAGE_SCENARIO, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProvider*, CREDENTIAL_PROVIDER_USAGE_SCENARIO, uint, int> SetUsageScenario;
+        public delegate* unmanaged<TSelf*, CREDENTIAL_PROVIDER_USAGE_SCENARIO, uint, int> SetUsageScenario;
 
         [NativeTypeName("HRESULT (const CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProvider*, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION*, int> SetSerialization;
+        public delegate* unmanaged<TSelf*, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION*, int> SetSerialization;
 
         [NativeTypeName("HRESULT (ICredentialProviderEvents *, UINT_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProvider*, ICredentialProviderEvents*, nuint, int> Advise;
+        public delegate* unmanaged<TSelf*, ICredentialProviderEvents*, nuint, int> Advise;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProvider*, int> UnAdvise;
+        public delegate* unmanaged<TSelf*, int> UnAdvise;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProvider*, uint*, int> GetFieldDescriptorCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetFieldDescriptorCount;
 
         [NativeTypeName("HRESULT (DWORD, CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProvider*, uint, CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR**, int> GetFieldDescriptorAt;
+        public delegate* unmanaged<TSelf*, uint, CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR**, int> GetFieldDescriptorAt;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProvider*, uint*, uint*, BOOL*, int> GetCredentialCount;
+        public delegate* unmanaged<TSelf*, uint*, uint*, BOOL*, int> GetCredentialCount;
 
         [NativeTypeName("HRESULT (DWORD, ICredentialProviderCredential **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICredentialProvider*, uint, ICredentialProviderCredential**, int> GetCredentialAt;
+        public delegate* unmanaged<TSelf*, uint, ICredentialProviderCredential**, int> GetCredentialAt;
     }
 }

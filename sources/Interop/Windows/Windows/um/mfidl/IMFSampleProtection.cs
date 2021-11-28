@@ -92,30 +92,31 @@ public unsafe partial struct IMFSampleProtection : IMFSampleProtection.Interface
         HRESULT InitInputProtection([NativeTypeName("DWORD")] uint dwVersion, [NativeTypeName("DWORD")] uint dwInputId, byte* pbSeed, [NativeTypeName("DWORD")] uint cbSeed);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSampleProtection*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSampleProtection*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSampleProtection*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSampleProtection*, uint*, int> GetInputProtectionVersion;
+        public delegate* unmanaged<TSelf*, uint*, int> GetInputProtectionVersion;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSampleProtection*, uint*, int> GetOutputProtectionVersion;
+        public delegate* unmanaged<TSelf*, uint*, int> GetOutputProtectionVersion;
 
         [NativeTypeName("HRESULT (DWORD, BYTE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSampleProtection*, uint, byte**, uint*, int> GetProtectionCertificate;
+        public delegate* unmanaged<TSelf*, uint, byte**, uint*, int> GetProtectionCertificate;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, BYTE *, DWORD, BYTE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSampleProtection*, uint, uint, byte*, uint, byte**, uint*, int> InitOutputProtection;
+        public delegate* unmanaged<TSelf*, uint, uint, byte*, uint, byte**, uint*, int> InitOutputProtection;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, BYTE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSampleProtection*, uint, uint, byte*, uint, int> InitInputProtection;
+        public delegate* unmanaged<TSelf*, uint, uint, byte*, uint, int> InitInputProtection;
     }
 }

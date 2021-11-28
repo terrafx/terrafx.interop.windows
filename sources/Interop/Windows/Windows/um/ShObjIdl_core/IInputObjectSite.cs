@@ -52,18 +52,19 @@ public unsafe partial struct IInputObjectSite : IInputObjectSite.Interface
         HRESULT OnFocusChangeIS(IUnknown* punkObj, BOOL fSetFocus);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInputObjectSite*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInputObjectSite*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInputObjectSite*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInputObjectSite*, IUnknown*, BOOL, int> OnFocusChangeIS;
+        public delegate* unmanaged<TSelf*, IUnknown*, BOOL, int> OnFocusChangeIS;
     }
 }

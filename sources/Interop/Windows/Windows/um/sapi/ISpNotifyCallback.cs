@@ -24,9 +24,10 @@ public unsafe partial struct ISpNotifyCallback : ISpNotifyCallback.Interface
         HRESULT NotifyCallback(WPARAM wParam, LPARAM lParam);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpNotifyCallback*, WPARAM, LPARAM, int> NotifyCallback;
+        public delegate* unmanaged<TSelf*, WPARAM, LPARAM, int> NotifyCallback;
     }
 }

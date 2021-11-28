@@ -59,21 +59,22 @@ public unsafe partial struct IHTMLEditHost2 : IHTMLEditHost2.Interface
         HRESULT PreDrag();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditHost2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditHost2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditHost2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IHTMLElement *, RECT *, ELEMENT_CORNER) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditHost2*, IHTMLElement*, RECT*, ELEMENT_CORNER, int> SnapRect;
+        public delegate* unmanaged<TSelf*, IHTMLElement*, RECT*, ELEMENT_CORNER, int> SnapRect;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditHost2*, int> PreDrag;
+        public delegate* unmanaged<TSelf*, int> PreDrag;
     }
 }

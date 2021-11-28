@@ -83,30 +83,31 @@ public unsafe partial struct IWebWizardExtension : IWebWizardExtension.Interface
         HRESULT SetErrorURL([NativeTypeName("LPCWSTR")] ushort* pszErrorURL);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebWizardExtension*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebWizardExtension*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebWizardExtension*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HPROPSHEETPAGE *, UINT, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebWizardExtension*, HPROPSHEETPAGE*, uint, uint*, int> AddPages;
+        public delegate* unmanaged<TSelf*, HPROPSHEETPAGE*, uint, uint*, int> AddPages;
 
         [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebWizardExtension*, HPROPSHEETPAGE*, int> GetFirstPage;
+        public delegate* unmanaged<TSelf*, HPROPSHEETPAGE*, int> GetFirstPage;
 
         [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebWizardExtension*, HPROPSHEETPAGE*, int> GetLastPage;
+        public delegate* unmanaged<TSelf*, HPROPSHEETPAGE*, int> GetLastPage;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebWizardExtension*, ushort*, int> SetInitialURL;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetInitialURL;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWebWizardExtension*, ushort*, int> SetErrorURL;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetErrorURL;
     }
 }

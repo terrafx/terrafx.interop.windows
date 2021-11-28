@@ -92,30 +92,31 @@ public unsafe partial struct IRunnableObject : IRunnableObject.Interface
         HRESULT SetContainedObject(BOOL fContained);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRunnableObject*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRunnableObject*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRunnableObject*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCLSID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRunnableObject*, Guid*, int> GetRunningClass;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetRunningClass;
 
         [NativeTypeName("HRESULT (LPBINDCTX) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRunnableObject*, IBindCtx*, int> Run;
+        public delegate* unmanaged<TSelf*, IBindCtx*, int> Run;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRunnableObject*, int> IsRunning;
+        public delegate* unmanaged<TSelf*, int> IsRunning;
 
         [NativeTypeName("HRESULT (BOOL, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRunnableObject*, BOOL, BOOL, int> LockRunning;
+        public delegate* unmanaged<TSelf*, BOOL, BOOL, int> LockRunning;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRunnableObject*, BOOL, int> SetContainedObject;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetContainedObject;
     }
 }

@@ -52,18 +52,19 @@ public unsafe partial struct IMFDLNASinkInit : IMFDLNASinkInit.Interface
         HRESULT Initialize(IMFByteStream* pByteStream, BOOL fPal);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDLNASinkInit*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDLNASinkInit*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDLNASinkInit*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFByteStream *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDLNASinkInit*, IMFByteStream*, BOOL, int> Initialize;
+        public delegate* unmanaged<TSelf*, IMFByteStream*, BOOL, int> Initialize;
     }
 }

@@ -132,42 +132,43 @@ public unsafe partial struct ITfLangBarMgr : ITfLangBarMgr.Interface
         HRESULT GetShowFloatingStatus([NativeTypeName("DWORD *")] uint* pdwFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarMgr*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarMgr*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarMgr*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITfLangBarEventSink *, HWND, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarMgr*, ITfLangBarEventSink*, HWND, uint, uint*, int> AdviseEventSink;
+        public delegate* unmanaged<TSelf*, ITfLangBarEventSink*, HWND, uint, uint*, int> AdviseEventSink;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarMgr*, uint, int> UnadviseEventSink;
+        public delegate* unmanaged<TSelf*, uint, int> UnadviseEventSink;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarMgr*, uint, uint, Guid*, IUnknown**, int> GetThreadMarshalInterface;
+        public delegate* unmanaged<TSelf*, uint, uint, Guid*, IUnknown**, int> GetThreadMarshalInterface;
 
         [NativeTypeName("HRESULT (DWORD, ITfLangBarItemMgr **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarMgr*, uint, ITfLangBarItemMgr**, uint*, int> GetThreadLangBarItemMgr;
+        public delegate* unmanaged<TSelf*, uint, ITfLangBarItemMgr**, uint*, int> GetThreadLangBarItemMgr;
 
         [NativeTypeName("HRESULT (DWORD, ITfInputProcessorProfiles **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarMgr*, uint, ITfInputProcessorProfiles**, uint*, int> GetInputProcessorProfiles;
+        public delegate* unmanaged<TSelf*, uint, ITfInputProcessorProfiles**, uint*, int> GetInputProcessorProfiles;
 
         [NativeTypeName("HRESULT (DWORD *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarMgr*, uint*, BOOL, int> RestoreLastFocus;
+        public delegate* unmanaged<TSelf*, uint*, BOOL, int> RestoreLastFocus;
 
         [NativeTypeName("HRESULT (ITfLangBarEventSink *, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarMgr*, ITfLangBarEventSink*, uint, uint, int> SetModalInput;
+        public delegate* unmanaged<TSelf*, ITfLangBarEventSink*, uint, uint, int> SetModalInput;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarMgr*, uint, int> ShowFloating;
+        public delegate* unmanaged<TSelf*, uint, int> ShowFloating;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarMgr*, uint*, int> GetShowFloatingStatus;
+        public delegate* unmanaged<TSelf*, uint*, int> GetShowFloatingStatus;
     }
 }

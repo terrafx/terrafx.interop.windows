@@ -135,42 +135,43 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
         DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS GetColorSpace();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDecodeSwapChain*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDecodeSwapChain*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDecodeSwapChain*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDecodeSwapChain*, uint, uint, uint, int> PresentBuffer;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, int> PresentBuffer;
 
         [NativeTypeName("HRESULT (const RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDecodeSwapChain*, RECT*, int> SetSourceRect;
+        public delegate* unmanaged<TSelf*, RECT*, int> SetSourceRect;
 
         [NativeTypeName("HRESULT (const RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDecodeSwapChain*, RECT*, int> SetTargetRect;
+        public delegate* unmanaged<TSelf*, RECT*, int> SetTargetRect;
 
         [NativeTypeName("HRESULT (UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDecodeSwapChain*, uint, uint, int> SetDestSize;
+        public delegate* unmanaged<TSelf*, uint, uint, int> SetDestSize;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDecodeSwapChain*, RECT*, int> GetSourceRect;
+        public delegate* unmanaged<TSelf*, RECT*, int> GetSourceRect;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDecodeSwapChain*, RECT*, int> GetTargetRect;
+        public delegate* unmanaged<TSelf*, RECT*, int> GetTargetRect;
 
         [NativeTypeName("HRESULT (UINT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDecodeSwapChain*, uint*, uint*, int> GetDestSize;
+        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetDestSize;
 
         [NativeTypeName("HRESULT (DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDecodeSwapChain*, DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS, int> SetColorSpace;
+        public delegate* unmanaged<TSelf*, DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS, int> SetColorSpace;
 
         [NativeTypeName("DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIDecodeSwapChain*, DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS> GetColorSpace;
+        public delegate* unmanaged<TSelf*, DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS> GetColorSpace;
     }
 }

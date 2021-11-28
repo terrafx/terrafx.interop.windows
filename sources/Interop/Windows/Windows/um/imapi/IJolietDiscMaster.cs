@@ -102,33 +102,34 @@ public unsafe partial struct IJolietDiscMaster : IJolietDiscMaster.Interface
         HRESULT SetJolietProperties(IPropertyStorage* pPropStg);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IJolietDiscMaster*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IJolietDiscMaster*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IJolietDiscMaster*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IJolietDiscMaster*, int*, int> GetTotalDataBlocks;
+        public delegate* unmanaged<TSelf*, int*, int> GetTotalDataBlocks;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IJolietDiscMaster*, int*, int> GetUsedDataBlocks;
+        public delegate* unmanaged<TSelf*, int*, int> GetUsedDataBlocks;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IJolietDiscMaster*, int*, int> GetDataBlockSize;
+        public delegate* unmanaged<TSelf*, int*, int> GetDataBlockSize;
 
         [NativeTypeName("HRESULT (IStorage *, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IJolietDiscMaster*, IStorage*, int, int> AddData;
+        public delegate* unmanaged<TSelf*, IStorage*, int, int> AddData;
 
         [NativeTypeName("HRESULT (IPropertyStorage **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IJolietDiscMaster*, IPropertyStorage**, int> GetJolietProperties;
+        public delegate* unmanaged<TSelf*, IPropertyStorage**, int> GetJolietProperties;
 
         [NativeTypeName("HRESULT (IPropertyStorage *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IJolietDiscMaster*, IPropertyStorage*, int> SetJolietProperties;
+        public delegate* unmanaged<TSelf*, IPropertyStorage*, int> SetJolietProperties;
     }
 }

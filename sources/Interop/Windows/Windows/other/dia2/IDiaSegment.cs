@@ -132,42 +132,43 @@ public unsafe partial struct IDiaSegment : IDiaSegment.Interface
         HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSegment*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSegment*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSegment*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSegment*, uint*, int> get_frame;
+        public delegate* unmanaged<TSelf*, uint*, int> get_frame;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSegment*, uint*, int> get_offset;
+        public delegate* unmanaged<TSelf*, uint*, int> get_offset;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSegment*, uint*, int> get_length;
+        public delegate* unmanaged<TSelf*, uint*, int> get_length;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSegment*, BOOL*, int> get_read;
+        public delegate* unmanaged<TSelf*, BOOL*, int> get_read;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSegment*, BOOL*, int> get_write;
+        public delegate* unmanaged<TSelf*, BOOL*, int> get_write;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSegment*, BOOL*, int> get_execute;
+        public delegate* unmanaged<TSelf*, BOOL*, int> get_execute;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSegment*, uint*, int> get_addressSection;
+        public delegate* unmanaged<TSelf*, uint*, int> get_addressSection;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSegment*, uint*, int> get_relativeVirtualAddress;
+        public delegate* unmanaged<TSelf*, uint*, int> get_relativeVirtualAddress;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSegment*, ulong*, int> get_virtualAddress;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_virtualAddress;
     }
 }

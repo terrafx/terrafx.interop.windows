@@ -92,30 +92,31 @@ public unsafe partial struct IMFSSLCertificateManager : IMFSSLCertificateManager
         HRESULT OnServerCertificate([NativeTypeName("LPCWSTR")] ushort* pszURL, byte* pbData, [NativeTypeName("DWORD")] uint cbData, BOOL* pfIsGood);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSSLCertificateManager*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSSLCertificateManager*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSSLCertificateManager*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, BYTE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSSLCertificateManager*, ushort*, byte**, uint*, int> GetClientCertificate;
+        public delegate* unmanaged<TSelf*, ushort*, byte**, uint*, int> GetClientCertificate;
 
         [NativeTypeName("HRESULT (LPCWSTR, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSSLCertificateManager*, ushort*, IMFAsyncCallback*, IUnknown*, int> BeginGetClientCertificate;
+        public delegate* unmanaged<TSelf*, ushort*, IMFAsyncCallback*, IUnknown*, int> BeginGetClientCertificate;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *, BYTE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSSLCertificateManager*, IMFAsyncResult*, byte**, uint*, int> EndGetClientCertificate;
+        public delegate* unmanaged<TSelf*, IMFAsyncResult*, byte**, uint*, int> EndGetClientCertificate;
 
         [NativeTypeName("HRESULT (LPCWSTR, BOOL *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSSLCertificateManager*, ushort*, BOOL*, BOOL*, int> GetCertificatePolicy;
+        public delegate* unmanaged<TSelf*, ushort*, BOOL*, BOOL*, int> GetCertificatePolicy;
 
         [NativeTypeName("HRESULT (LPCWSTR, BYTE *, DWORD, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSSLCertificateManager*, ushort*, byte*, uint, BOOL*, int> OnServerCertificate;
+        public delegate* unmanaged<TSelf*, ushort*, byte*, uint, BOOL*, int> OnServerCertificate;
     }
 }

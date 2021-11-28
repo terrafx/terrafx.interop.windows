@@ -112,36 +112,37 @@ public unsafe partial struct IAccStore : IAccStore.Interface
         HRESULT GetFocused([NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccStore*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccStore*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccStore*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccStore*, Guid*, IUnknown*, int> Register;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> Register;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccStore*, IUnknown*, int> Unregister;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> Unregister;
 
         [NativeTypeName("HRESULT (IEnumUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccStore*, IEnumUnknown**, int> GetDocuments;
+        public delegate* unmanaged<TSelf*, IEnumUnknown**, int> GetDocuments;
 
         [NativeTypeName("HRESULT (HWND, const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccStore*, HWND, Guid*, IUnknown**, int> LookupByHWND;
+        public delegate* unmanaged<TSelf*, HWND, Guid*, IUnknown**, int> LookupByHWND;
 
         [NativeTypeName("HRESULT (POINT, const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccStore*, POINT, Guid*, IUnknown**, int> LookupByPoint;
+        public delegate* unmanaged<TSelf*, POINT, Guid*, IUnknown**, int> LookupByPoint;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccStore*, IUnknown*, int> OnDocumentFocus;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> OnDocumentFocus;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccStore*, Guid*, IUnknown**, int> GetFocused;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown**, int> GetFocused;
     }
 }

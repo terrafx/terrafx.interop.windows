@@ -53,18 +53,19 @@ public unsafe partial struct IDirect3DDxgiInterfaceAccess : IDirect3DDxgiInterfa
         HRESULT GetInterface([NativeTypeName("const IID &")] Guid* iid, void** p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirect3DDxgiInterfaceAccess*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirect3DDxgiInterfaceAccess*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirect3DDxgiInterfaceAccess*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirect3DDxgiInterfaceAccess*, Guid*, void**, int> GetInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetInterface;
     }
 }

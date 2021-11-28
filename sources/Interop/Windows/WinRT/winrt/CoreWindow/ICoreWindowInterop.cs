@@ -63,21 +63,22 @@ public unsafe partial struct ICoreWindowInterop : ICoreWindowInterop.Interface
         HRESULT put_MessageHandled([NativeTypeName("boolean")] byte value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowInterop*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowInterop*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowInterop*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowInterop*, HWND*, int> get_WindowHandle;
+        public delegate* unmanaged<TSelf*, HWND*, int> get_WindowHandle;
 
         [NativeTypeName("HRESULT (boolean) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowInterop*, byte, int> put_MessageHandled;
+        public delegate* unmanaged<TSelf*, byte, int> put_MessageHandled;
     }
 }

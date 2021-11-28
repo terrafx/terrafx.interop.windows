@@ -82,27 +82,28 @@ public unsafe partial struct ITfComposition : ITfComposition.Interface
         HRESULT EndComposition([NativeTypeName("TfEditCookie")] uint ecWrite);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfComposition*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfComposition*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfComposition*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITfRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfComposition*, ITfRange**, int> GetRange;
+        public delegate* unmanaged<TSelf*, ITfRange**, int> GetRange;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfRange *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfComposition*, uint, ITfRange*, int> ShiftStart;
+        public delegate* unmanaged<TSelf*, uint, ITfRange*, int> ShiftStart;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfRange *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfComposition*, uint, ITfRange*, int> ShiftEnd;
+        public delegate* unmanaged<TSelf*, uint, ITfRange*, int> ShiftEnd;
 
         [NativeTypeName("HRESULT (TfEditCookie) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfComposition*, uint, int> EndComposition;
+        public delegate* unmanaged<TSelf*, uint, int> EndComposition;
     }
 }

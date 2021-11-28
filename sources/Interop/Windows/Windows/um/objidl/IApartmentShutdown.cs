@@ -54,18 +54,19 @@ public unsafe partial struct IApartmentShutdown : IApartmentShutdown.Interface
         void OnUninitialize([NativeTypeName("UINT64")] ulong ui64ApartmentIdentifier);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IApartmentShutdown*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IApartmentShutdown*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IApartmentShutdown*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (UINT64) __attribute__((stdcall))")]
-        public delegate* unmanaged<IApartmentShutdown*, ulong, void> OnUninitialize;
+        public delegate* unmanaged<TSelf*, ulong, void> OnUninitialize;
     }
 }

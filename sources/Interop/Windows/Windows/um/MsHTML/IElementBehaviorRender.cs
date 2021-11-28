@@ -72,24 +72,25 @@ public unsafe partial struct IElementBehaviorRender : IElementBehaviorRender.Int
         HRESULT HitTestPoint(POINT* pPoint, IUnknown* pReserved, BOOL* pbHit);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorRender*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorRender*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorRender*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HDC, LONG, RECT *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorRender*, HDC, int, RECT*, IUnknown*, int> Draw;
+        public delegate* unmanaged<TSelf*, HDC, int, RECT*, IUnknown*, int> Draw;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorRender*, int*, int> GetRenderInfo;
+        public delegate* unmanaged<TSelf*, int*, int> GetRenderInfo;
 
         [NativeTypeName("HRESULT (POINT *, IUnknown *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorRender*, POINT*, IUnknown*, BOOL*, int> HitTestPoint;
+        public delegate* unmanaged<TSelf*, POINT*, IUnknown*, BOOL*, int> HitTestPoint;
     }
 }

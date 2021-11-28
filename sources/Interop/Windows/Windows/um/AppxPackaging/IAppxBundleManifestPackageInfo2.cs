@@ -74,24 +74,25 @@ public unsafe partial struct IAppxBundleManifestPackageInfo2 : IAppxBundleManife
         HRESULT GetIsDefaultApplicablePackage(BOOL* isDefaultApplicablePackage);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleManifestPackageInfo2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleManifestPackageInfo2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleManifestPackageInfo2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleManifestPackageInfo2*, BOOL*, int> GetIsPackageReference;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetIsPackageReference;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleManifestPackageInfo2*, BOOL*, int> GetIsNonQualifiedResourcePackage;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetIsNonQualifiedResourcePackage;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleManifestPackageInfo2*, BOOL*, int> GetIsDefaultApplicablePackage;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetIsDefaultApplicablePackage;
     }
 }

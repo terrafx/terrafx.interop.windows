@@ -192,60 +192,61 @@ public unsafe partial struct IDiscRecorder : IDiscRecorder.Interface
         HRESULT Close();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (byte *, ULONG, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder*, byte*, uint, uint, int> Init;
+        public delegate* unmanaged<TSelf*, byte*, uint, uint, int> Init;
 
         [NativeTypeName("HRESULT (byte *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder*, byte*, uint, uint*, int> GetRecorderGUID;
+        public delegate* unmanaged<TSelf*, byte*, uint, uint*, int> GetRecorderGUID;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder*, int*, int> GetRecorderType;
+        public delegate* unmanaged<TSelf*, int*, int> GetRecorderType;
 
         [NativeTypeName("HRESULT (BSTR *, BSTR *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder*, ushort**, ushort**, ushort**, int> GetDisplayNames;
+        public delegate* unmanaged<TSelf*, ushort**, ushort**, ushort**, int> GetDisplayNames;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder*, ushort**, int> GetBasePnPID;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetBasePnPID;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder*, ushort**, int> GetPath;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetPath;
 
         [NativeTypeName("HRESULT (IPropertyStorage **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder*, IPropertyStorage**, int> GetRecorderProperties;
+        public delegate* unmanaged<TSelf*, IPropertyStorage**, int> GetRecorderProperties;
 
         [NativeTypeName("HRESULT (IPropertyStorage *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder*, IPropertyStorage*, int> SetRecorderProperties;
+        public delegate* unmanaged<TSelf*, IPropertyStorage*, int> SetRecorderProperties;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder*, uint*, int> GetRecorderState;
+        public delegate* unmanaged<TSelf*, uint*, int> GetRecorderState;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder*, int> OpenExclusive;
+        public delegate* unmanaged<TSelf*, int> OpenExclusive;
 
         [NativeTypeName("HRESULT (long *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder*, int*, int*, int> QueryMediaType;
+        public delegate* unmanaged<TSelf*, int*, int*, int> QueryMediaType;
 
         [NativeTypeName("HRESULT (byte *, byte *, ULONG *, ULONG *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder*, byte*, byte*, uint*, uint*, uint*, int> QueryMediaInfo;
+        public delegate* unmanaged<TSelf*, byte*, byte*, uint*, uint*, uint*, int> QueryMediaInfo;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder*, int> Eject;
+        public delegate* unmanaged<TSelf*, int> Eject;
 
         [NativeTypeName("HRESULT (boolean) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder*, byte, int> Erase;
+        public delegate* unmanaged<TSelf*, byte, int> Erase;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscRecorder*, int> Close;
+        public delegate* unmanaged<TSelf*, int> Close;
     }
 }

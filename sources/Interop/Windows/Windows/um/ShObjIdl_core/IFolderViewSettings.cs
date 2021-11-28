@@ -112,36 +112,37 @@ public unsafe partial struct IFolderViewSettings : IFolderViewSettings.Interface
         HRESULT GetGroupSubsetCount(uint* pcVisibleRows);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderViewSettings*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderViewSettings*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderViewSettings*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderViewSettings*, Guid*, void**, int> GetColumnPropertyList;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetColumnPropertyList;
 
         [NativeTypeName("HRESULT (PROPERTYKEY *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderViewSettings*, PROPERTYKEY*, BOOL*, int> GetGroupByProperty;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, BOOL*, int> GetGroupByProperty;
 
         [NativeTypeName("HRESULT (FOLDERLOGICALVIEWMODE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderViewSettings*, FOLDERLOGICALVIEWMODE*, int> GetViewMode;
+        public delegate* unmanaged<TSelf*, FOLDERLOGICALVIEWMODE*, int> GetViewMode;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderViewSettings*, uint*, int> GetIconSize;
+        public delegate* unmanaged<TSelf*, uint*, int> GetIconSize;
 
         [NativeTypeName("HRESULT (FOLDERFLAGS *, FOLDERFLAGS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderViewSettings*, FOLDERFLAGS*, FOLDERFLAGS*, int> GetFolderFlags;
+        public delegate* unmanaged<TSelf*, FOLDERFLAGS*, FOLDERFLAGS*, int> GetFolderFlags;
 
         [NativeTypeName("HRESULT (SORTCOLUMN *, UINT, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderViewSettings*, SORTCOLUMN*, uint, uint*, int> GetSortColumns;
+        public delegate* unmanaged<TSelf*, SORTCOLUMN*, uint, uint*, int> GetSortColumns;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderViewSettings*, uint*, int> GetGroupSubsetCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetGroupSubsetCount;
     }
 }

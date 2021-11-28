@@ -92,30 +92,31 @@ public unsafe partial struct ISyncMgrResolutionHandler : ISyncMgrResolutionHandl
         HRESULT KeepItems(ISyncMgrConflictResolutionItems* pArray, SYNCMGR_RESOLUTION_FEEDBACK* pFeedback);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrResolutionHandler*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrResolutionHandler*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrResolutionHandler*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SYNCMGR_RESOLUTION_ABILITIES_FLAGS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrResolutionHandler*, uint*, int> QueryAbilities;
+        public delegate* unmanaged<TSelf*, uint*, int> QueryAbilities;
 
         [NativeTypeName("HRESULT (IShellItem *, SYNCMGR_RESOLUTION_FEEDBACK *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrResolutionHandler*, IShellItem*, SYNCMGR_RESOLUTION_FEEDBACK*, int> KeepOther;
+        public delegate* unmanaged<TSelf*, IShellItem*, SYNCMGR_RESOLUTION_FEEDBACK*, int> KeepOther;
 
         [NativeTypeName("HRESULT (SYNCMGR_RESOLUTION_FEEDBACK *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrResolutionHandler*, SYNCMGR_RESOLUTION_FEEDBACK*, int> KeepRecent;
+        public delegate* unmanaged<TSelf*, SYNCMGR_RESOLUTION_FEEDBACK*, int> KeepRecent;
 
         [NativeTypeName("HRESULT (SYNCMGR_RESOLUTION_FEEDBACK *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrResolutionHandler*, SYNCMGR_RESOLUTION_FEEDBACK*, int> RemoveFromSyncSet;
+        public delegate* unmanaged<TSelf*, SYNCMGR_RESOLUTION_FEEDBACK*, int> RemoveFromSyncSet;
 
         [NativeTypeName("HRESULT (ISyncMgrConflictResolutionItems *, SYNCMGR_RESOLUTION_FEEDBACK *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrResolutionHandler*, ISyncMgrConflictResolutionItems*, SYNCMGR_RESOLUTION_FEEDBACK*, int> KeepItems;
+        public delegate* unmanaged<TSelf*, ISyncMgrConflictResolutionItems*, SYNCMGR_RESOLUTION_FEEDBACK*, int> KeepItems;
     }
 }

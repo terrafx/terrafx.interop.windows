@@ -62,21 +62,22 @@ public unsafe partial struct IExtractIconW : IExtractIconW.Interface
         HRESULT Extract([NativeTypeName("PCWSTR")] ushort* pszFile, uint nIconIndex, HICON* phiconLarge, HICON* phiconSmall, uint nIconSize);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExtractIconW*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExtractIconW*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExtractIconW*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, PWSTR, UINT, int *, UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExtractIconW*, uint, ushort*, uint, int*, uint*, int> GetIconLocation;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint, int*, uint*, int> GetIconLocation;
 
         [NativeTypeName("HRESULT (PCWSTR, UINT, HICON *, HICON *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExtractIconW*, ushort*, uint, HICON*, HICON*, uint, int> Extract;
+        public delegate* unmanaged<TSelf*, ushort*, uint, HICON*, HICON*, uint, int> Extract;
     }
 }

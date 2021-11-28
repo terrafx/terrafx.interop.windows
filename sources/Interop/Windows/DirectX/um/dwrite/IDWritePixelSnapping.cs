@@ -73,24 +73,25 @@ public unsafe partial struct IDWritePixelSnapping : IDWritePixelSnapping.Interfa
         HRESULT GetPixelsPerDip(void* clientDrawingContext, float* pixelsPerDip);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWritePixelSnapping*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWritePixelSnapping*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWritePixelSnapping*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (void *, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWritePixelSnapping*, void*, BOOL*, int> IsPixelSnappingDisabled;
+        public delegate* unmanaged<TSelf*, void*, BOOL*, int> IsPixelSnappingDisabled;
 
         [NativeTypeName("HRESULT (void *, DWRITE_MATRIX *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWritePixelSnapping*, void*, DWRITE_MATRIX*, int> GetCurrentTransform;
+        public delegate* unmanaged<TSelf*, void*, DWRITE_MATRIX*, int> GetCurrentTransform;
 
         [NativeTypeName("HRESULT (void *, FLOAT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWritePixelSnapping*, void*, float*, int> GetPixelsPerDip;
+        public delegate* unmanaged<TSelf*, void*, float*, int> GetPixelsPerDip;
     }
 }

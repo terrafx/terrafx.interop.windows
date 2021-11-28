@@ -199,78 +199,79 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         HRESULT IsKeepPixelAspectRatio([NativeTypeName("long *")] int* pKeepAspect);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, int*, int> CountModes;
+        public delegate* unmanaged<TSelf*, int*, int> CountModes;
 
         [NativeTypeName("HRESULT (long, long *, long *, long *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, int, int*, int*, int*, int> GetModeInfo;
+        public delegate* unmanaged<TSelf*, int, int*, int*, int*, int> GetModeInfo;
 
         [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, int*, int> GetCurrentMode;
+        public delegate* unmanaged<TSelf*, int*, int> GetCurrentMode;
 
         [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, int, int> IsModeAvailable;
+        public delegate* unmanaged<TSelf*, int, int> IsModeAvailable;
 
         [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, int, int> IsModeEnabled;
+        public delegate* unmanaged<TSelf*, int, int> IsModeEnabled;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, int, int, int> SetEnabled;
+        public delegate* unmanaged<TSelf*, int, int, int> SetEnabled;
 
         [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, int*, int> GetClipFactor;
+        public delegate* unmanaged<TSelf*, int*, int> GetClipFactor;
 
         [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, int, int> SetClipFactor;
+        public delegate* unmanaged<TSelf*, int, int> SetClipFactor;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, HWND, int> SetMessageDrain;
+        public delegate* unmanaged<TSelf*, HWND, int> SetMessageDrain;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, HWND*, int> GetMessageDrain;
+        public delegate* unmanaged<TSelf*, HWND*, int> GetMessageDrain;
 
         [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, int, int> SetMonitor;
+        public delegate* unmanaged<TSelf*, int, int> SetMonitor;
 
         [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, int*, int> GetMonitor;
+        public delegate* unmanaged<TSelf*, int*, int> GetMonitor;
 
         [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, int, int> HideOnDeactivate;
+        public delegate* unmanaged<TSelf*, int, int> HideOnDeactivate;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, int> IsHideOnDeactivate;
+        public delegate* unmanaged<TSelf*, int> IsHideOnDeactivate;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, ushort*, int> SetCaption;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetCaption;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, ushort**, int> GetCaption;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetCaption;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, int> SetDefault;
+        public delegate* unmanaged<TSelf*, int> SetDefault;
 
         [NativeTypeName("HRESULT (HWND, HACCEL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, HWND, HACCEL, int> SetAcceleratorTable;
+        public delegate* unmanaged<TSelf*, HWND, HACCEL, int> SetAcceleratorTable;
 
         [NativeTypeName("HRESULT (HWND *, HACCEL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, HWND*, HACCEL*, int> GetAcceleratorTable;
+        public delegate* unmanaged<TSelf*, HWND*, HACCEL*, int> GetAcceleratorTable;
 
         [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, int, int> KeepPixelAspectRatio;
+        public delegate* unmanaged<TSelf*, int, int> KeepPixelAspectRatio;
 
         [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFullScreenVideoEx*, int*, int> IsKeepPixelAspectRatio;
+        public delegate* unmanaged<TSelf*, int*, int> IsKeepPixelAspectRatio;
     }
 }

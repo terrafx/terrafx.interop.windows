@@ -160,54 +160,55 @@ public unsafe partial struct ISVGLengthList : ISVGLengthList.Interface
         HRESULT appendItem(ISVGLength* newItem, ISVGLength** ppResult);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLengthList*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLengthList*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLengthList*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLengthList*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLengthList*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLengthList*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLengthList*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLengthList*, int, int> put_numberOfItems;
+        public delegate* unmanaged<TSelf*, int, int> put_numberOfItems;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLengthList*, int*, int> get_numberOfItems;
+        public delegate* unmanaged<TSelf*, int*, int> get_numberOfItems;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLengthList*, int> clear;
+        public delegate* unmanaged<TSelf*, int> clear;
 
         [NativeTypeName("HRESULT (ISVGLength *, ISVGLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLengthList*, ISVGLength*, ISVGLength**, int> initialize;
+        public delegate* unmanaged<TSelf*, ISVGLength*, ISVGLength**, int> initialize;
 
         [NativeTypeName("HRESULT (long, ISVGLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLengthList*, int, ISVGLength**, int> getItem;
+        public delegate* unmanaged<TSelf*, int, ISVGLength**, int> getItem;
 
         [NativeTypeName("HRESULT (ISVGLength *, long, ISVGLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLengthList*, ISVGLength*, int, ISVGLength**, int> insertItemBefore;
+        public delegate* unmanaged<TSelf*, ISVGLength*, int, ISVGLength**, int> insertItemBefore;
 
         [NativeTypeName("HRESULT (ISVGLength *, long, ISVGLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLengthList*, ISVGLength*, int, ISVGLength**, int> replaceItem;
+        public delegate* unmanaged<TSelf*, ISVGLength*, int, ISVGLength**, int> replaceItem;
 
         [NativeTypeName("HRESULT (long, ISVGLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLengthList*, int, ISVGLength**, int> removeItem;
+        public delegate* unmanaged<TSelf*, int, ISVGLength**, int> removeItem;
 
         [NativeTypeName("HRESULT (ISVGLength *, ISVGLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGLengthList*, ISVGLength*, ISVGLength**, int> appendItem;
+        public delegate* unmanaged<TSelf*, ISVGLength*, ISVGLength**, int> appendItem;
     }
 }

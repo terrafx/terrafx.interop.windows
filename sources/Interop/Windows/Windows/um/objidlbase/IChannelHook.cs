@@ -102,33 +102,34 @@ public unsafe partial struct IChannelHook : IChannelHook.Interface
         void ServerFillBuffer([NativeTypeName("const GUID &")] Guid* uExtent, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("ULONG *")] uint* pDataSize, void* pDataBuffer, HRESULT hrFault);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IChannelHook*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IChannelHook*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IChannelHook*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (const GUID &, const IID &, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IChannelHook*, Guid*, Guid*, uint*, void> ClientGetSize;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, uint*, void> ClientGetSize;
 
         [NativeTypeName("void (const GUID &, const IID &, ULONG *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IChannelHook*, Guid*, Guid*, uint*, void*, void> ClientFillBuffer;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, uint*, void*, void> ClientFillBuffer;
 
         [NativeTypeName("void (const GUID &, const IID &, ULONG, void *, DWORD, HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IChannelHook*, Guid*, Guid*, uint, void*, uint, HRESULT, void> ClientNotify;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, uint, void*, uint, HRESULT, void> ClientNotify;
 
         [NativeTypeName("void (const GUID &, const IID &, ULONG, void *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IChannelHook*, Guid*, Guid*, uint, void*, uint, void> ServerNotify;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, uint, void*, uint, void> ServerNotify;
 
         [NativeTypeName("void (const GUID &, const IID &, HRESULT, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IChannelHook*, Guid*, Guid*, HRESULT, uint*, void> ServerGetSize;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, HRESULT, uint*, void> ServerGetSize;
 
         [NativeTypeName("void (const GUID &, const IID &, ULONG *, void *, HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IChannelHook*, Guid*, Guid*, uint*, void*, HRESULT, void> ServerFillBuffer;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, uint*, void*, HRESULT, void> ServerFillBuffer;
     }
 }

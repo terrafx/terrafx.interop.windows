@@ -59,21 +59,22 @@ public unsafe partial struct ITfFnGetSAPIObject : ITfFnGetSAPIObject.Interface
         HRESULT Get(TfSapiObject sObj, IUnknown** ppunk);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnGetSAPIObject*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnGetSAPIObject*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnGetSAPIObject*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnGetSAPIObject*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (TfSapiObject, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnGetSAPIObject*, TfSapiObject, IUnknown**, int> Get;
+        public delegate* unmanaged<TSelf*, TfSapiObject, IUnknown**, int> Get;
     }
 }

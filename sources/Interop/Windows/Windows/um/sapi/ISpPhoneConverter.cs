@@ -76,27 +76,28 @@ public unsafe partial struct ISpPhoneConverter : ISpPhoneConverter.Interface
         HRESULT IdToPhone([NativeTypeName("PCSPPHONEID")] ushort* pId, [NativeTypeName("WCHAR *")] ushort* pszPhone);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhoneConverter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhoneConverter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhoneConverter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ISpObjectToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhoneConverter*, ISpObjectToken*, int> SetObjectToken;
+        public delegate* unmanaged<TSelf*, ISpObjectToken*, int> SetObjectToken;
 
         [NativeTypeName("HRESULT (ISpObjectToken **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhoneConverter*, ISpObjectToken**, int> GetObjectToken;
+        public delegate* unmanaged<TSelf*, ISpObjectToken**, int> GetObjectToken;
 
         [NativeTypeName("HRESULT (LPCWSTR, SPPHONEID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhoneConverter*, ushort*, ushort*, int> PhoneToId;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> PhoneToId;
 
         [NativeTypeName("HRESULT (PCSPPHONEID, WCHAR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpPhoneConverter*, ushort*, ushort*, int> IdToPhone;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> IdToPhone;
     }
 }

@@ -62,21 +62,22 @@ public unsafe partial struct IAddrExclusionControl : IAddrExclusionControl.Inter
         HRESULT UpdateAddrExclusionList(IUnknown* pEnumerator);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAddrExclusionControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAddrExclusionControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAddrExclusionControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAddrExclusionControl*, Guid*, void**, int> GetCurrentAddrExclusionList;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetCurrentAddrExclusionList;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAddrExclusionControl*, IUnknown*, int> UpdateAddrExclusionList;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> UpdateAddrExclusionList;
     }
 }

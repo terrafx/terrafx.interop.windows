@@ -92,30 +92,31 @@ public unsafe partial struct ICreateErrorInfo : ICreateErrorInfo.Interface
         HRESULT SetHelpContext([NativeTypeName("DWORD")] uint dwHelpContext);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateErrorInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateErrorInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateErrorInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateErrorInfo*, Guid*, int> SetGUID;
+        public delegate* unmanaged<TSelf*, Guid*, int> SetGUID;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateErrorInfo*, ushort*, int> SetSource;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetSource;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateErrorInfo*, ushort*, int> SetDescription;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetDescription;
 
         [NativeTypeName("HRESULT (LPOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateErrorInfo*, ushort*, int> SetHelpFile;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetHelpFile;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICreateErrorInfo*, uint, int> SetHelpContext;
+        public delegate* unmanaged<TSelf*, uint, int> SetHelpContext;
     }
 }

@@ -154,54 +154,55 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface
         HRESULT Unmap();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Bitmap1*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Bitmap1*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Bitmap1*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Bitmap1*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("D2D1_SIZE_F () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap1*, D2D_SIZE_F*, D2D_SIZE_F*> GetSize;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D_SIZE_F*, D2D_SIZE_F*> GetSize;
 
         [NativeTypeName("D2D1_SIZE_U () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap1*, D2D_SIZE_U*, D2D_SIZE_U*> GetPixelSize;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D_SIZE_U*, D2D_SIZE_U*> GetPixelSize;
 
         [NativeTypeName("D2D1_PIXEL_FORMAT () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap1*, D2D1_PIXEL_FORMAT*, D2D1_PIXEL_FORMAT*> GetPixelFormat;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_PIXEL_FORMAT*, D2D1_PIXEL_FORMAT*> GetPixelFormat;
 
         [NativeTypeName("void (FLOAT *, FLOAT *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap1*, float*, float*, void> GetDpi;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, float*, float*, void> GetDpi;
 
         [NativeTypeName("HRESULT (const D2D1_POINT_2U *, ID2D1Bitmap *, const D2D1_RECT_U *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Bitmap1*, D2D_POINT_2U*, ID2D1Bitmap*, D2D_RECT_U*, int> CopyFromBitmap;
+        public delegate* unmanaged<TSelf*, D2D_POINT_2U*, ID2D1Bitmap*, D2D_RECT_U*, int> CopyFromBitmap;
 
         [NativeTypeName("HRESULT (const D2D1_POINT_2U *, ID2D1RenderTarget *, const D2D1_RECT_U *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Bitmap1*, D2D_POINT_2U*, ID2D1RenderTarget*, D2D_RECT_U*, int> CopyFromRenderTarget;
+        public delegate* unmanaged<TSelf*, D2D_POINT_2U*, ID2D1RenderTarget*, D2D_RECT_U*, int> CopyFromRenderTarget;
 
         [NativeTypeName("HRESULT (const D2D1_RECT_U *, const void *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Bitmap1*, D2D_RECT_U*, void*, uint, int> CopyFromMemory;
+        public delegate* unmanaged<TSelf*, D2D_RECT_U*, void*, uint, int> CopyFromMemory;
 
         [NativeTypeName("void (ID2D1ColorContext **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Bitmap1*, ID2D1ColorContext**, void> GetColorContext;
+        public delegate* unmanaged<TSelf*, ID2D1ColorContext**, void> GetColorContext;
 
         [NativeTypeName("D2D1_BITMAP_OPTIONS () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap1*, D2D1_BITMAP_OPTIONS> GetOptions;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_BITMAP_OPTIONS> GetOptions;
 
         [NativeTypeName("HRESULT (IDXGISurface **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Bitmap1*, IDXGISurface**, int> GetSurface;
+        public delegate* unmanaged<TSelf*, IDXGISurface**, int> GetSurface;
 
         [NativeTypeName("HRESULT (D2D1_MAP_OPTIONS, D2D1_MAPPED_RECT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Bitmap1*, D2D1_MAP_OPTIONS, D2D1_MAPPED_RECT*, int> Map;
+        public delegate* unmanaged<TSelf*, D2D1_MAP_OPTIONS, D2D1_MAPPED_RECT*, int> Map;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Bitmap1*, int> Unmap;
+        public delegate* unmanaged<TSelf*, int> Unmap;
     }
 }

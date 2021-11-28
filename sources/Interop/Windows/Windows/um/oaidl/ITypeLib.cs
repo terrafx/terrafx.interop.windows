@@ -142,45 +142,46 @@ public unsafe partial struct ITypeLib : ITypeLib.Interface
         void ReleaseTLibAttr(TLIBATTR* pTLibAttr);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLib*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLib*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLib*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("UINT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLib*, uint> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLib*, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (UINT, TYPEKIND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLib*, uint, TYPEKIND*, int> GetTypeInfoType;
+        public delegate* unmanaged<TSelf*, uint, TYPEKIND*, int> GetTypeInfoType;
 
         [NativeTypeName("HRESULT (const GUID &, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLib*, Guid*, ITypeInfo**, int> GetTypeInfoOfGuid;
+        public delegate* unmanaged<TSelf*, Guid*, ITypeInfo**, int> GetTypeInfoOfGuid;
 
         [NativeTypeName("HRESULT (TLIBATTR **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLib*, TLIBATTR**, int> GetLibAttr;
+        public delegate* unmanaged<TSelf*, TLIBATTR**, int> GetLibAttr;
 
         [NativeTypeName("HRESULT (ITypeComp **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLib*, ITypeComp**, int> GetTypeComp;
+        public delegate* unmanaged<TSelf*, ITypeComp**, int> GetTypeComp;
 
         [NativeTypeName("HRESULT (INT, BSTR *, BSTR *, DWORD *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLib*, int, ushort**, ushort**, uint*, ushort**, int> GetDocumentation;
+        public delegate* unmanaged<TSelf*, int, ushort**, ushort**, uint*, ushort**, int> GetDocumentation;
 
         [NativeTypeName("HRESULT (LPOLESTR, ULONG, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLib*, ushort*, uint, BOOL*, int> IsName;
+        public delegate* unmanaged<TSelf*, ushort*, uint, BOOL*, int> IsName;
 
         [NativeTypeName("HRESULT (LPOLESTR, ULONG, ITypeInfo **, MEMBERID *, USHORT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLib*, ushort*, uint, ITypeInfo**, int*, ushort*, int> FindName;
+        public delegate* unmanaged<TSelf*, ushort*, uint, ITypeInfo**, int*, ushort*, int> FindName;
 
         [NativeTypeName("void (TLIBATTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLib*, TLIBATTR*, void> ReleaseTLibAttr;
+        public delegate* unmanaged<TSelf*, TLIBATTR*, void> ReleaseTLibAttr;
     }
 }

@@ -64,21 +64,22 @@ public unsafe partial struct ITensorNative : ITensorNative.Interface
         HRESULT GetD3D12Resource(ID3D12Resource** result);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITensorNative*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITensorNative*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITensorNative*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE **, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITensorNative*, byte**, uint*, int> GetBuffer;
+        public delegate* unmanaged<TSelf*, byte**, uint*, int> GetBuffer;
 
         [NativeTypeName("HRESULT (ID3D12Resource **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITensorNative*, ID3D12Resource**, int> GetD3D12Resource;
+        public delegate* unmanaged<TSelf*, ID3D12Resource**, int> GetD3D12Resource;
     }
 }

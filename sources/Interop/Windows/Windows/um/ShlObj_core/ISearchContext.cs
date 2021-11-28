@@ -72,24 +72,25 @@ public unsafe partial struct ISearchContext : ISearchContext.Interface
         HRESULT GetSearchStyle([NativeTypeName("DWORD *")] uint* pdwSearchStyle);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISearchContext*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISearchContext*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISearchContext*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISearchContext*, ushort**, int> GetSearchUrl;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetSearchUrl;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISearchContext*, ushort**, int> GetSearchText;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetSearchText;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISearchContext*, uint*, int> GetSearchStyle;
+        public delegate* unmanaged<TSelf*, uint*, int> GetSearchStyle;
     }
 }

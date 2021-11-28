@@ -132,42 +132,43 @@ public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEven
         HRESULT NotifyEraseComplete(HRESULT status);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMasterProgressEvents*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMasterProgressEvents*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMasterProgressEvents*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (boolean *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMasterProgressEvents*, byte*, int> QueryCancel;
+        public delegate* unmanaged<TSelf*, byte*, int> QueryCancel;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMasterProgressEvents*, int> NotifyPnPActivity;
+        public delegate* unmanaged<TSelf*, int> NotifyPnPActivity;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMasterProgressEvents*, int, int, int> NotifyAddProgress;
+        public delegate* unmanaged<TSelf*, int, int, int> NotifyAddProgress;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMasterProgressEvents*, int, int, int> NotifyBlockProgress;
+        public delegate* unmanaged<TSelf*, int, int, int> NotifyBlockProgress;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMasterProgressEvents*, int, int, int> NotifyTrackProgress;
+        public delegate* unmanaged<TSelf*, int, int, int> NotifyTrackProgress;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMasterProgressEvents*, int, int> NotifyPreparingBurn;
+        public delegate* unmanaged<TSelf*, int, int> NotifyPreparingBurn;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMasterProgressEvents*, int, int> NotifyClosingDisc;
+        public delegate* unmanaged<TSelf*, int, int> NotifyClosingDisc;
 
         [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMasterProgressEvents*, HRESULT, int> NotifyBurnComplete;
+        public delegate* unmanaged<TSelf*, HRESULT, int> NotifyBurnComplete;
 
         [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiscMasterProgressEvents*, HRESULT, int> NotifyEraseComplete;
+        public delegate* unmanaged<TSelf*, HRESULT, int> NotifyEraseComplete;
     }
 }

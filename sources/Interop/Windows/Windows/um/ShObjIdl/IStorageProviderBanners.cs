@@ -82,27 +82,28 @@ public unsafe partial struct IStorageProviderBanners : IStorageProviderBanners.I
         HRESULT GetBanner([NativeTypeName("LPCWSTR")] ushort* providerIdentity, [NativeTypeName("LPCWSTR")] ushort* subscriptionId, [NativeTypeName("LPWSTR *")] ushort** contentId);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorageProviderBanners*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorageProviderBanners*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorageProviderBanners*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorageProviderBanners*, ushort*, ushort*, ushort*, int> SetBanner;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, int> SetBanner;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorageProviderBanners*, ushort*, ushort*, int> ClearBanner;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> ClearBanner;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorageProviderBanners*, ushort*, int> ClearAllBanners;
+        public delegate* unmanaged<TSelf*, ushort*, int> ClearAllBanners;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStorageProviderBanners*, ushort*, ushort*, ushort**, int> GetBanner;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort**, int> GetBanner;
     }
 }

@@ -64,21 +64,22 @@ public unsafe partial struct IMFContentDecryptionModuleFactory : IMFContentDecry
         HRESULT CreateContentDecryptionModuleAccess([NativeTypeName("LPCWSTR")] ushort* keySystem, IPropertyStore** configurations, [NativeTypeName("DWORD")] uint numConfigurations, IMFContentDecryptionModuleAccess** contentDecryptionModuleAccess);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentDecryptionModuleFactory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentDecryptionModuleFactory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentDecryptionModuleFactory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("BOOL (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentDecryptionModuleFactory*, ushort*, ushort*, int> IsTypeSupported;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> IsTypeSupported;
 
         [NativeTypeName("HRESULT (LPCWSTR, IPropertyStore **, DWORD, IMFContentDecryptionModuleAccess **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentDecryptionModuleFactory*, ushort*, IPropertyStore**, uint, IMFContentDecryptionModuleAccess**, int> CreateContentDecryptionModuleAccess;
+        public delegate* unmanaged<TSelf*, ushort*, IPropertyStore**, uint, IMFContentDecryptionModuleAccess**, int> CreateContentDecryptionModuleAccess;
     }
 }

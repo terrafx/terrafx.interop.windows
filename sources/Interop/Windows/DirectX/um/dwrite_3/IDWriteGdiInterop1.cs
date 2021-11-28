@@ -118,42 +118,43 @@ public unsafe partial struct IDWriteGdiInterop1 : IDWriteGdiInterop1.Interface
         HRESULT GetMatchingFontsByLOGFONT([NativeTypeName("const LOGFONT *")] LOGFONTW* logFont, IDWriteFontSet* fontSet, IDWriteFontSet** filteredSet);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGdiInterop1*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGdiInterop1*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGdiInterop1*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const LOGFONTW *, IDWriteFont **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGdiInterop1*, LOGFONTW*, IDWriteFont**, int> CreateFontFromLOGFONT;
+        public delegate* unmanaged<TSelf*, LOGFONTW*, IDWriteFont**, int> CreateFontFromLOGFONT;
 
         [NativeTypeName("HRESULT (IDWriteFont *, LOGFONTW *, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGdiInterop1*, IDWriteFont*, LOGFONTW*, BOOL*, int> ConvertFontToLOGFONT;
+        public delegate* unmanaged<TSelf*, IDWriteFont*, LOGFONTW*, BOOL*, int> ConvertFontToLOGFONT;
 
         [NativeTypeName("HRESULT (IDWriteFontFace *, LOGFONTW *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGdiInterop1*, IDWriteFontFace*, LOGFONTW*, int> ConvertFontFaceToLOGFONT;
+        public delegate* unmanaged<TSelf*, IDWriteFontFace*, LOGFONTW*, int> ConvertFontFaceToLOGFONT;
 
         [NativeTypeName("HRESULT (HDC, IDWriteFontFace **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGdiInterop1*, HDC, IDWriteFontFace**, int> CreateFontFaceFromHdc;
+        public delegate* unmanaged<TSelf*, HDC, IDWriteFontFace**, int> CreateFontFaceFromHdc;
 
         [NativeTypeName("HRESULT (HDC, UINT32, UINT32, IDWriteBitmapRenderTarget **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGdiInterop1*, HDC, uint, uint, IDWriteBitmapRenderTarget**, int> CreateBitmapRenderTarget;
+        public delegate* unmanaged<TSelf*, HDC, uint, uint, IDWriteBitmapRenderTarget**, int> CreateBitmapRenderTarget;
 
         [NativeTypeName("HRESULT (const LOGFONTW *, IDWriteFontCollection *, IDWriteFont **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGdiInterop1*, LOGFONTW*, IDWriteFontCollection*, IDWriteFont**, int> CreateFontFromLOGFONT1;
+        public delegate* unmanaged<TSelf*, LOGFONTW*, IDWriteFontCollection*, IDWriteFont**, int> CreateFontFromLOGFONT1;
 
         [NativeTypeName("HRESULT (IDWriteFontFace *, FONTSIGNATURE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGdiInterop1*, IDWriteFontFace*, FONTSIGNATURE*, int> GetFontSignature;
+        public delegate* unmanaged<TSelf*, IDWriteFontFace*, FONTSIGNATURE*, int> GetFontSignature;
 
         [NativeTypeName("HRESULT (IDWriteFont *, FONTSIGNATURE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGdiInterop1*, IDWriteFont*, FONTSIGNATURE*, int> GetFontSignature1;
+        public delegate* unmanaged<TSelf*, IDWriteFont*, FONTSIGNATURE*, int> GetFontSignature1;
 
         [NativeTypeName("HRESULT (const LOGFONT *, IDWriteFontSet *, IDWriteFontSet **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGdiInterop1*, LOGFONTW*, IDWriteFontSet*, IDWriteFontSet**, int> GetMatchingFontsByLOGFONT;
+        public delegate* unmanaged<TSelf*, LOGFONTW*, IDWriteFontSet*, IDWriteFontSet**, int> GetMatchingFontsByLOGFONT;
     }
 }

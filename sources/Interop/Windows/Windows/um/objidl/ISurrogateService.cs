@@ -92,30 +92,31 @@ public unsafe partial struct ISurrogateService : ISurrogateService.Interface
         HRESULT ProcessShutdown(ShutdownType shutdownType);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurrogateService*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurrogateService*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurrogateService*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, IProcessLock *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurrogateService*, Guid*, IProcessLock*, BOOL*, int> Init;
+        public delegate* unmanaged<TSelf*, Guid*, IProcessLock*, BOOL*, int> Init;
 
         [NativeTypeName("HRESULT (const GUID &, ApplicationType) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurrogateService*, Guid*, ApplicationType, int> ApplicationLaunch;
+        public delegate* unmanaged<TSelf*, Guid*, ApplicationType, int> ApplicationLaunch;
 
         [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurrogateService*, Guid*, int> ApplicationFree;
+        public delegate* unmanaged<TSelf*, Guid*, int> ApplicationFree;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurrogateService*, uint, int> CatalogRefresh;
+        public delegate* unmanaged<TSelf*, uint, int> CatalogRefresh;
 
         [NativeTypeName("HRESULT (ShutdownType) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurrogateService*, ShutdownType, int> ProcessShutdown;
+        public delegate* unmanaged<TSelf*, ShutdownType, int> ProcessShutdown;
     }
 }

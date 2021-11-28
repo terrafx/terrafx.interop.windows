@@ -66,24 +66,25 @@ public unsafe partial struct ITfTextInputProcessorEx : ITfTextInputProcessorEx.I
         HRESULT ActivateEx(ITfThreadMgr* ptim, [NativeTypeName("TfClientId")] uint tid, [NativeTypeName("DWORD")] uint dwFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTextInputProcessorEx*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTextInputProcessorEx*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTextInputProcessorEx*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITfThreadMgr *, TfClientId) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTextInputProcessorEx*, ITfThreadMgr*, uint, int> Activate;
+        public delegate* unmanaged<TSelf*, ITfThreadMgr*, uint, int> Activate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTextInputProcessorEx*, int> Deactivate;
+        public delegate* unmanaged<TSelf*, int> Deactivate;
 
         [NativeTypeName("HRESULT (ITfThreadMgr *, TfClientId, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTextInputProcessorEx*, ITfThreadMgr*, uint, uint, int> ActivateEx;
+        public delegate* unmanaged<TSelf*, ITfThreadMgr*, uint, uint, int> ActivateEx;
     }
 }

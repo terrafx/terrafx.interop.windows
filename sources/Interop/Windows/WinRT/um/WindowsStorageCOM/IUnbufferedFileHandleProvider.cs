@@ -65,21 +65,22 @@ public unsafe partial struct IUnbufferedFileHandleProvider : IUnbufferedFileHand
         HRESULT CloseUnbufferedFileHandle();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUnbufferedFileHandleProvider*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUnbufferedFileHandleProvider*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUnbufferedFileHandleProvider*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnbufferedFileHandleOplockCallback *, DWORD_PTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUnbufferedFileHandleProvider*, IUnbufferedFileHandleOplockCallback*, nuint*, int> OpenUnbufferedFileHandle;
+        public delegate* unmanaged<TSelf*, IUnbufferedFileHandleOplockCallback*, nuint*, int> OpenUnbufferedFileHandle;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUnbufferedFileHandleProvider*, int> CloseUnbufferedFileHandle;
+        public delegate* unmanaged<TSelf*, int> CloseUnbufferedFileHandle;
     }
 }

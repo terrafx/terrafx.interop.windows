@@ -121,45 +121,46 @@ public unsafe partial struct ISpEventSource : ISpEventSource.Interface
         HRESULT GetInfo(SPEVENTSOURCEINFO* pInfo);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpEventSource*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpEventSource*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpEventSource*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ISpNotifySink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpEventSource*, ISpNotifySink*, int> SetNotifySink;
+        public delegate* unmanaged<TSelf*, ISpNotifySink*, int> SetNotifySink;
 
         [NativeTypeName("HRESULT (HWND, UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpEventSource*, HWND, uint, WPARAM, LPARAM, int> SetNotifyWindowMessage;
+        public delegate* unmanaged<TSelf*, HWND, uint, WPARAM, LPARAM, int> SetNotifyWindowMessage;
 
         [NativeTypeName("HRESULT (SPNOTIFYCALLBACK *, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpEventSource*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int> SetNotifyCallbackFunction;
+        public delegate* unmanaged<TSelf*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int> SetNotifyCallbackFunction;
 
         [NativeTypeName("HRESULT (ISpNotifyCallback *, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpEventSource*, ISpNotifyCallback*, WPARAM, LPARAM, int> SetNotifyCallbackInterface;
+        public delegate* unmanaged<TSelf*, ISpNotifyCallback*, WPARAM, LPARAM, int> SetNotifyCallbackInterface;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpEventSource*, int> SetNotifyWin32Event;
+        public delegate* unmanaged<TSelf*, int> SetNotifyWin32Event;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpEventSource*, uint, int> WaitForNotifyEvent;
+        public delegate* unmanaged<TSelf*, uint, int> WaitForNotifyEvent;
 
         [NativeTypeName("HANDLE () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpEventSource*, void*> GetNotifyEventHandle;
+        public delegate* unmanaged<TSelf*, void*> GetNotifyEventHandle;
 
         [NativeTypeName("HRESULT (ULONGLONG, ULONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpEventSource*, ulong, ulong, int> SetInterest;
+        public delegate* unmanaged<TSelf*, ulong, ulong, int> SetInterest;
 
         [NativeTypeName("HRESULT (ULONG, SPEVENT *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpEventSource*, uint, SPEVENT*, uint*, int> GetEvents;
+        public delegate* unmanaged<TSelf*, uint, SPEVENT*, uint*, int> GetEvents;
 
         [NativeTypeName("HRESULT (SPEVENTSOURCEINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpEventSource*, SPEVENTSOURCEINFO*, int> GetInfo;
+        public delegate* unmanaged<TSelf*, SPEVENTSOURCEINFO*, int> GetInfo;
     }
 }

@@ -100,36 +100,37 @@ public unsafe partial struct IDCompositionVirtualSurface : IDCompositionVirtualS
         HRESULT Trim([NativeTypeName("const RECT *")] RECT* rectangles, uint count);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVirtualSurface*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVirtualSurface*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVirtualSurface*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const RECT *, const IID &, void **, POINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVirtualSurface*, RECT*, Guid*, void**, POINT*, int> BeginDraw;
+        public delegate* unmanaged<TSelf*, RECT*, Guid*, void**, POINT*, int> BeginDraw;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVirtualSurface*, int> EndDraw;
+        public delegate* unmanaged<TSelf*, int> EndDraw;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVirtualSurface*, int> SuspendDraw;
+        public delegate* unmanaged<TSelf*, int> SuspendDraw;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVirtualSurface*, int> ResumeDraw;
+        public delegate* unmanaged<TSelf*, int> ResumeDraw;
 
         [NativeTypeName("HRESULT (const RECT *, const RECT *, int, int) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVirtualSurface*, RECT*, RECT*, int, int, int> Scroll;
+        public delegate* unmanaged<TSelf*, RECT*, RECT*, int, int, int> Scroll;
 
         [NativeTypeName("HRESULT (UINT, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVirtualSurface*, uint, uint, int> Resize;
+        public delegate* unmanaged<TSelf*, uint, uint, int> Resize;
 
         [NativeTypeName("HRESULT (const RECT *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVirtualSurface*, RECT*, uint, int> Trim;
+        public delegate* unmanaged<TSelf*, RECT*, uint, int> Trim;
     }
 }

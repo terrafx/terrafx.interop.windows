@@ -62,21 +62,22 @@ public unsafe partial struct IClassFactory : IClassFactory.Interface
         HRESULT LockServer(BOOL fLock);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClassFactory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IClassFactory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IClassFactory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClassFactory*, IUnknown*, Guid*, void**, int> CreateInstance;
+        public delegate* unmanaged<TSelf*, IUnknown*, Guid*, void**, int> CreateInstance;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IClassFactory*, BOOL, int> LockServer;
+        public delegate* unmanaged<TSelf*, BOOL, int> LockServer;
     }
 }

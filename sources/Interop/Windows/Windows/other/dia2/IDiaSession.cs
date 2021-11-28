@@ -632,192 +632,193 @@ public unsafe partial struct IDiaSession : IDiaSession.Interface
         HRESULT findInputAssemblyFile(IDiaSymbol* pSymbol, IDiaInputAssemblyFile** ppResult);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, ulong*, int> get_loadAddress;
+        public delegate* unmanaged<TSelf*, ulong*, int> get_loadAddress;
 
         [NativeTypeName("HRESULT (ULONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, ulong, int> put_loadAddress;
+        public delegate* unmanaged<TSelf*, ulong, int> put_loadAddress;
 
         [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaSymbol**, int> get_globalScope;
+        public delegate* unmanaged<TSelf*, IDiaSymbol**, int> get_globalScope;
 
         [NativeTypeName("HRESULT (IDiaEnumTables **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaEnumTables**, int> getEnumTables;
+        public delegate* unmanaged<TSelf*, IDiaEnumTables**, int> getEnumTables;
 
         [NativeTypeName("HRESULT (IDiaEnumSymbolsByAddr **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaEnumSymbolsByAddr**, int> getSymbolsByAddr;
+        public delegate* unmanaged<TSelf*, IDiaEnumSymbolsByAddr**, int> getSymbolsByAddr;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, enum SymTagEnum, LPCOLESTR, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaSymbol*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int> findChildren;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int> findChildren;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, enum SymTagEnum, LPCOLESTR, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaSymbol*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int> findChildrenEx;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, SymTagEnum, ushort*, uint, IDiaEnumSymbols**, int> findChildrenEx;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, enum SymTagEnum, LPCOLESTR, DWORD, DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaSymbol*, SymTagEnum, ushort*, uint, uint, uint, IDiaEnumSymbols**, int> findChildrenExByAddr;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, SymTagEnum, ushort*, uint, uint, uint, IDiaEnumSymbols**, int> findChildrenExByAddr;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, enum SymTagEnum, LPCOLESTR, DWORD, ULONGLONG, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaSymbol*, SymTagEnum, ushort*, uint, ulong, IDiaEnumSymbols**, int> findChildrenExByVA;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, SymTagEnum, ushort*, uint, ulong, IDiaEnumSymbols**, int> findChildrenExByVA;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, enum SymTagEnum, LPCOLESTR, DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaSymbol*, SymTagEnum, ushort*, uint, uint, IDiaEnumSymbols**, int> findChildrenExByRVA;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, SymTagEnum, ushort*, uint, uint, IDiaEnumSymbols**, int> findChildrenExByRVA;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, enum SymTagEnum, IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, uint, uint, SymTagEnum, IDiaSymbol**, int> findSymbolByAddr;
+        public delegate* unmanaged<TSelf*, uint, uint, SymTagEnum, IDiaSymbol**, int> findSymbolByAddr;
 
         [NativeTypeName("HRESULT (DWORD, enum SymTagEnum, IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, uint, SymTagEnum, IDiaSymbol**, int> findSymbolByRVA;
+        public delegate* unmanaged<TSelf*, uint, SymTagEnum, IDiaSymbol**, int> findSymbolByRVA;
 
         [NativeTypeName("HRESULT (ULONGLONG, enum SymTagEnum, IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, ulong, SymTagEnum, IDiaSymbol**, int> findSymbolByVA;
+        public delegate* unmanaged<TSelf*, ulong, SymTagEnum, IDiaSymbol**, int> findSymbolByVA;
 
         [NativeTypeName("HRESULT (ULONG, enum SymTagEnum, IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, uint, SymTagEnum, IDiaSymbol**, int> findSymbolByToken;
+        public delegate* unmanaged<TSelf*, uint, SymTagEnum, IDiaSymbol**, int> findSymbolByToken;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, IDiaSymbol *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaSymbol*, IDiaSymbol*, int> symsAreEquiv;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, IDiaSymbol*, int> symsAreEquiv;
 
         [NativeTypeName("HRESULT (DWORD, IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, uint, IDiaSymbol**, int> symbolById;
+        public delegate* unmanaged<TSelf*, uint, IDiaSymbol**, int> symbolById;
 
         [NativeTypeName("HRESULT (DWORD, enum SymTagEnum, IDiaSymbol **, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, uint, SymTagEnum, IDiaSymbol**, int*, int> findSymbolByRVAEx;
+        public delegate* unmanaged<TSelf*, uint, SymTagEnum, IDiaSymbol**, int*, int> findSymbolByRVAEx;
 
         [NativeTypeName("HRESULT (ULONGLONG, enum SymTagEnum, IDiaSymbol **, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, ulong, SymTagEnum, IDiaSymbol**, int*, int> findSymbolByVAEx;
+        public delegate* unmanaged<TSelf*, ulong, SymTagEnum, IDiaSymbol**, int*, int> findSymbolByVAEx;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, LPCOLESTR, DWORD, IDiaEnumSourceFiles **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaSymbol*, ushort*, uint, IDiaEnumSourceFiles**, int> findFile;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, ushort*, uint, IDiaEnumSourceFiles**, int> findFile;
 
         [NativeTypeName("HRESULT (DWORD, IDiaSourceFile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, uint, IDiaSourceFile**, int> findFileById;
+        public delegate* unmanaged<TSelf*, uint, IDiaSourceFile**, int> findFileById;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, IDiaSourceFile *, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaSymbol*, IDiaSourceFile*, IDiaEnumLineNumbers**, int> findLines;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, IDiaSourceFile*, IDiaEnumLineNumbers**, int> findLines;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, uint, uint, uint, IDiaEnumLineNumbers**, int> findLinesByAddr;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, IDiaEnumLineNumbers**, int> findLinesByAddr;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, uint, uint, IDiaEnumLineNumbers**, int> findLinesByRVA;
+        public delegate* unmanaged<TSelf*, uint, uint, IDiaEnumLineNumbers**, int> findLinesByRVA;
 
         [NativeTypeName("HRESULT (ULONGLONG, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, ulong, uint, IDiaEnumLineNumbers**, int> findLinesByVA;
+        public delegate* unmanaged<TSelf*, ulong, uint, IDiaEnumLineNumbers**, int> findLinesByVA;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, IDiaSourceFile *, DWORD, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaSymbol*, IDiaSourceFile*, uint, uint, IDiaEnumLineNumbers**, int> findLinesByLinenum;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, IDiaSourceFile*, uint, uint, IDiaEnumLineNumbers**, int> findLinesByLinenum;
 
         [NativeTypeName("HRESULT (LPCOLESTR, IDiaEnumInjectedSources **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, ushort*, IDiaEnumInjectedSources**, int> findInjectedSource;
+        public delegate* unmanaged<TSelf*, ushort*, IDiaEnumInjectedSources**, int> findInjectedSource;
 
         [NativeTypeName("HRESULT (IDiaEnumDebugStreams **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaEnumDebugStreams**, int> getEnumDebugStreams;
+        public delegate* unmanaged<TSelf*, IDiaEnumDebugStreams**, int> getEnumDebugStreams;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaSymbol*, uint, uint, IDiaEnumSymbols**, int> findInlineFramesByAddr;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, uint, uint, IDiaEnumSymbols**, int> findInlineFramesByAddr;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaSymbol*, uint, IDiaEnumSymbols**, int> findInlineFramesByRVA;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, uint, IDiaEnumSymbols**, int> findInlineFramesByRVA;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, ULONGLONG, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaSymbol*, ulong, IDiaEnumSymbols**, int> findInlineFramesByVA;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, ulong, IDiaEnumSymbols**, int> findInlineFramesByVA;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaSymbol*, IDiaEnumLineNumbers**, int> findInlineeLines;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, IDiaEnumLineNumbers**, int> findInlineeLines;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, DWORD, DWORD, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaSymbol*, uint, uint, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByAddr;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, uint, uint, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByAddr;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, DWORD, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaSymbol*, uint, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByRVA;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, uint, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByRVA;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, ULONGLONG, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaSymbol*, ulong, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByVA;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, ulong, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByVA;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, IDiaSourceFile *, DWORD, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaSymbol*, IDiaSourceFile*, uint, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByLinenum;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, IDiaSourceFile*, uint, uint, IDiaEnumLineNumbers**, int> findInlineeLinesByLinenum;
 
         [NativeTypeName("HRESULT (LPCOLESTR, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, ushort*, uint, IDiaEnumSymbols**, int> findInlineesByName;
+        public delegate* unmanaged<TSelf*, ushort*, uint, IDiaEnumSymbols**, int> findInlineesByName;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, IDiaSourceFile *, DWORD, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaSymbol*, IDiaSourceFile*, uint, uint, IDiaEnumLineNumbers**, int> findAcceleratorInlineeLinesByLinenum;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, IDiaSourceFile*, uint, uint, IDiaEnumLineNumbers**, int> findAcceleratorInlineeLinesByLinenum;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaSymbol*, uint, IDiaEnumSymbols**, int> findSymbolsForAcceleratorPointerTag;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, uint, IDiaEnumSymbols**, int> findSymbolsForAcceleratorPointerTag;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, DWORD, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaSymbol*, uint, uint, IDiaEnumSymbols**, int> findSymbolsByRVAForAcceleratorPointerTag;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, uint, uint, IDiaEnumSymbols**, int> findSymbolsByRVAForAcceleratorPointerTag;
 
         [NativeTypeName("HRESULT (LPCOLESTR, DWORD, IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, ushort*, uint, IDiaEnumSymbols**, int> findAcceleratorInlineesByName;
+        public delegate* unmanaged<TSelf*, ushort*, uint, IDiaEnumSymbols**, int> findAcceleratorInlineesByName;
 
         [NativeTypeName("HRESULT (ULONGLONG, DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, ulong, uint*, uint*, int> addressForVA;
+        public delegate* unmanaged<TSelf*, ulong, uint*, uint*, int> addressForVA;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, uint, uint*, uint*, int> addressForRVA;
+        public delegate* unmanaged<TSelf*, uint, uint*, uint*, int> addressForRVA;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, uint, uint, uint, IDiaEnumLineNumbers**, int> findILOffsetsByAddr;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, IDiaEnumLineNumbers**, int> findILOffsetsByAddr;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, uint, uint, IDiaEnumLineNumbers**, int> findILOffsetsByRVA;
+        public delegate* unmanaged<TSelf*, uint, uint, IDiaEnumLineNumbers**, int> findILOffsetsByRVA;
 
         [NativeTypeName("HRESULT (ULONGLONG, DWORD, IDiaEnumLineNumbers **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, ulong, uint, IDiaEnumLineNumbers**, int> findILOffsetsByVA;
+        public delegate* unmanaged<TSelf*, ulong, uint, IDiaEnumLineNumbers**, int> findILOffsetsByVA;
 
         [NativeTypeName("HRESULT (IDiaEnumInputAssemblyFiles **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaEnumInputAssemblyFiles**, int> findInputAssemblyFiles;
+        public delegate* unmanaged<TSelf*, IDiaEnumInputAssemblyFiles**, int> findInputAssemblyFiles;
 
         [NativeTypeName("HRESULT (DWORD, IDiaInputAssemblyFile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, uint, IDiaInputAssemblyFile**, int> findInputAssembly;
+        public delegate* unmanaged<TSelf*, uint, IDiaInputAssemblyFile**, int> findInputAssembly;
 
         [NativeTypeName("HRESULT (DWORD, IDiaInputAssemblyFile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, uint, IDiaInputAssemblyFile**, int> findInputAssemblyById;
+        public delegate* unmanaged<TSelf*, uint, IDiaInputAssemblyFile**, int> findInputAssemblyById;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, uint*, int> getFuncMDTokenMapSize;
+        public delegate* unmanaged<TSelf*, uint*, int> getFuncMDTokenMapSize;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, uint, uint*, byte*, int> getFuncMDTokenMap;
+        public delegate* unmanaged<TSelf*, uint, uint*, byte*, int> getFuncMDTokenMap;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, uint*, int> getTypeMDTokenMapSize;
+        public delegate* unmanaged<TSelf*, uint*, int> getTypeMDTokenMapSize;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, uint, uint*, byte*, int> getTypeMDTokenMap;
+        public delegate* unmanaged<TSelf*, uint, uint*, byte*, int> getTypeMDTokenMap;
 
         [NativeTypeName("HRESULT (ULONGLONG, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, ulong, uint, uint*, int> getNumberOfFunctionFragments_VA;
+        public delegate* unmanaged<TSelf*, ulong, uint, uint*, int> getNumberOfFunctionFragments_VA;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, uint, uint, uint*, int> getNumberOfFunctionFragments_RVA;
+        public delegate* unmanaged<TSelf*, uint, uint, uint*, int> getNumberOfFunctionFragments_RVA;
 
         [NativeTypeName("HRESULT (ULONGLONG, DWORD, DWORD, ULONGLONG *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, ulong, uint, uint, ulong*, uint*, int> getFunctionFragments_VA;
+        public delegate* unmanaged<TSelf*, ulong, uint, uint, ulong*, uint*, int> getFunctionFragments_VA;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, uint, uint, uint, uint*, uint*, int> getFunctionFragments_RVA;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, uint*, uint*, int> getFunctionFragments_RVA;
 
         [NativeTypeName("HRESULT (IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaEnumSymbols**, int> getExports;
+        public delegate* unmanaged<TSelf*, IDiaEnumSymbols**, int> getExports;
 
         [NativeTypeName("HRESULT (IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaEnumSymbols**, int> getHeapAllocationSites;
+        public delegate* unmanaged<TSelf*, IDiaEnumSymbols**, int> getHeapAllocationSites;
 
         [NativeTypeName("HRESULT (IDiaSymbol *, IDiaInputAssemblyFile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSession*, IDiaSymbol*, IDiaInputAssemblyFile**, int> findInputAssemblyFile;
+        public delegate* unmanaged<TSelf*, IDiaSymbol*, IDiaInputAssemblyFile**, int> findInputAssemblyFile;
     }
 }

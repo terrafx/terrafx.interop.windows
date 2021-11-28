@@ -102,33 +102,34 @@ public unsafe partial struct IOleClientSite : IOleClientSite.Interface
         HRESULT RequestNewObjectLayout();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleClientSite*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleClientSite*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleClientSite*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleClientSite*, int> SaveObject;
+        public delegate* unmanaged<TSelf*, int> SaveObject;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, IMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleClientSite*, uint, uint, IMoniker**, int> GetMoniker;
+        public delegate* unmanaged<TSelf*, uint, uint, IMoniker**, int> GetMoniker;
 
         [NativeTypeName("HRESULT (IOleContainer **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleClientSite*, IOleContainer**, int> GetContainer;
+        public delegate* unmanaged<TSelf*, IOleContainer**, int> GetContainer;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleClientSite*, int> ShowObject;
+        public delegate* unmanaged<TSelf*, int> ShowObject;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleClientSite*, BOOL, int> OnShowWindow;
+        public delegate* unmanaged<TSelf*, BOOL, int> OnShowWindow;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleClientSite*, int> RequestNewObjectLayout;
+        public delegate* unmanaged<TSelf*, int> RequestNewObjectLayout;
     }
 }

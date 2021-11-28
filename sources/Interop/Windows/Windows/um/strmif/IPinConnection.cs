@@ -82,27 +82,28 @@ public unsafe partial struct IPinConnection : IPinConnection.Interface
         HRESULT DynamicDisconnect();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinConnection*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinConnection*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinConnection*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinConnection*, AM_MEDIA_TYPE*, int> DynamicQueryAccept;
+        public delegate* unmanaged<TSelf*, AM_MEDIA_TYPE*, int> DynamicQueryAccept;
 
         [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinConnection*, HANDLE, int> NotifyEndOfStream;
+        public delegate* unmanaged<TSelf*, HANDLE, int> NotifyEndOfStream;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinConnection*, int> IsEndPin;
+        public delegate* unmanaged<TSelf*, int> IsEndPin;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinConnection*, int> DynamicDisconnect;
+        public delegate* unmanaged<TSelf*, int> DynamicDisconnect;
     }
 }

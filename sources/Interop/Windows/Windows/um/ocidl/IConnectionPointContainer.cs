@@ -62,21 +62,22 @@ public unsafe partial struct IConnectionPointContainer : IConnectionPointContain
         HRESULT FindConnectionPoint([NativeTypeName("const IID &")] Guid* riid, IConnectionPoint** ppCP);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnectionPointContainer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnectionPointContainer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnectionPointContainer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumConnectionPoints **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnectionPointContainer*, IEnumConnectionPoints**, int> EnumConnectionPoints;
+        public delegate* unmanaged<TSelf*, IEnumConnectionPoints**, int> EnumConnectionPoints;
 
         [NativeTypeName("HRESULT (const IID &, IConnectionPoint **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnectionPointContainer*, Guid*, IConnectionPoint**, int> FindConnectionPoint;
+        public delegate* unmanaged<TSelf*, Guid*, IConnectionPoint**, int> FindConnectionPoint;
     }
 }

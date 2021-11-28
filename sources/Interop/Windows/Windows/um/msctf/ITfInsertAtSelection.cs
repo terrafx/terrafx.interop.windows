@@ -62,21 +62,22 @@ public unsafe partial struct ITfInsertAtSelection : ITfInsertAtSelection.Interfa
         HRESULT InsertEmbeddedAtSelection([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("DWORD")] uint dwFlags, IDataObject* pDataObject, ITfRange** ppRange);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInsertAtSelection*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInsertAtSelection*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInsertAtSelection*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfEditCookie, DWORD, const WCHAR *, LONG, ITfRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInsertAtSelection*, uint, uint, ushort*, int, ITfRange**, int> InsertTextAtSelection;
+        public delegate* unmanaged<TSelf*, uint, uint, ushort*, int, ITfRange**, int> InsertTextAtSelection;
 
         [NativeTypeName("HRESULT (TfEditCookie, DWORD, IDataObject *, ITfRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInsertAtSelection*, uint, uint, IDataObject*, ITfRange**, int> InsertEmbeddedAtSelection;
+        public delegate* unmanaged<TSelf*, uint, uint, IDataObject*, ITfRange**, int> InsertEmbeddedAtSelection;
     }
 }

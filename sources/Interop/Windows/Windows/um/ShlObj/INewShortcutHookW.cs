@@ -102,33 +102,34 @@ public unsafe partial struct INewShortcutHookW : INewShortcutHookW.Interface
         HRESULT GetExtension([NativeTypeName("PWSTR")] ushort* pszExtension, int cchExtension);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<INewShortcutHookW*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INewShortcutHookW*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INewShortcutHookW*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PCWSTR, HWND) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<INewShortcutHookW*, ushort*, HWND, int> SetReferent;
+        public delegate* unmanaged<TSelf*, ushort*, HWND, int> SetReferent;
 
         [NativeTypeName("HRESULT (PWSTR, int) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<INewShortcutHookW*, ushort*, int, int> GetReferent;
+        public delegate* unmanaged<TSelf*, ushort*, int, int> GetReferent;
 
         [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<INewShortcutHookW*, ushort*, int> SetFolder;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetFolder;
 
         [NativeTypeName("HRESULT (PWSTR, int) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<INewShortcutHookW*, ushort*, int, int> GetFolder;
+        public delegate* unmanaged<TSelf*, ushort*, int, int> GetFolder;
 
         [NativeTypeName("HRESULT (PWSTR, int) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<INewShortcutHookW*, ushort*, int, int> GetName;
+        public delegate* unmanaged<TSelf*, ushort*, int, int> GetName;
 
         [NativeTypeName("HRESULT (PWSTR, int) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<INewShortcutHookW*, ushort*, int, int> GetExtension;
+        public delegate* unmanaged<TSelf*, ushort*, int, int> GetExtension;
     }
 }

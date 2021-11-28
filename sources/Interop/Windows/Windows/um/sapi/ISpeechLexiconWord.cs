@@ -110,39 +110,40 @@ public unsafe partial struct ISpeechLexiconWord : ISpeechLexiconWord.Interface
         HRESULT get_Pronunciations(ISpeechLexiconPronunciations** Pronunciations);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechLexiconWord*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechLexiconWord*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechLexiconWord*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechLexiconWord*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechLexiconWord*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechLexiconWord*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechLexiconWord*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (SpeechLanguageId *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechLexiconWord*, int*, int> get_LangId;
+        public delegate* unmanaged<TSelf*, int*, int> get_LangId;
 
         [NativeTypeName("HRESULT (SpeechWordType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechLexiconWord*, SpeechWordType*, int> get_Type;
+        public delegate* unmanaged<TSelf*, SpeechWordType*, int> get_Type;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechLexiconWord*, ushort**, int> get_Word;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_Word;
 
         [NativeTypeName("HRESULT (ISpeechLexiconPronunciations **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechLexiconWord*, ISpeechLexiconPronunciations**, int> get_Pronunciations;
+        public delegate* unmanaged<TSelf*, ISpeechLexiconPronunciations**, int> get_Pronunciations;
     }
 }

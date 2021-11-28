@@ -52,18 +52,19 @@ public unsafe partial struct IMultiQI : IMultiQI.Interface
         HRESULT QueryMultipleInterfaces([NativeTypeName("ULONG")] uint cMQIs, MULTI_QI* pMQIs);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultiQI*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultiQI*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultiQI*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, MULTI_QI *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultiQI*, uint, MULTI_QI*, int> QueryMultipleInterfaces;
+        public delegate* unmanaged<TSelf*, uint, MULTI_QI*, int> QueryMultipleInterfaces;
     }
 }

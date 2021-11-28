@@ -52,18 +52,19 @@ public unsafe partial struct ISequenceNumber : ISequenceNumber.Interface
         HRESULT GetSequenceNumber([NativeTypeName("long")] int nCurrent, [NativeTypeName("long *")] int* pnNew);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISequenceNumber*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISequenceNumber*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISequenceNumber*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISequenceNumber*, int, int*, int> GetSequenceNumber;
+        public delegate* unmanaged<TSelf*, int, int*, int> GetSequenceNumber;
     }
 }

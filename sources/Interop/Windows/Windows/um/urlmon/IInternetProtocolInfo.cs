@@ -82,27 +82,28 @@ public unsafe partial struct IInternetProtocolInfo : IInternetProtocolInfo.Inter
         HRESULT QueryInfo([NativeTypeName("LPCWSTR")] ushort* pwzUrl, QUERYOPTION OueryOption, [NativeTypeName("DWORD")] uint dwQueryFlags, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD")] uint cbBuffer, [NativeTypeName("DWORD *")] uint* pcbBuf, [NativeTypeName("DWORD")] uint dwReserved);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, PARSEACTION, DWORD, LPWSTR, DWORD, DWORD *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolInfo*, ushort*, PARSEACTION, uint, ushort*, uint, uint*, uint, int> ParseUrl;
+        public delegate* unmanaged<TSelf*, ushort*, PARSEACTION, uint, ushort*, uint, uint*, uint, int> ParseUrl;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, DWORD, LPWSTR, DWORD, DWORD *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolInfo*, ushort*, ushort*, uint, ushort*, uint, uint*, uint, int> CombineUrl;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, uint, ushort*, uint, uint*, uint, int> CombineUrl;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolInfo*, ushort*, ushort*, uint, int> CompareUrl;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, uint, int> CompareUrl;
 
         [NativeTypeName("HRESULT (LPCWSTR, QUERYOPTION, DWORD, LPVOID, DWORD, DWORD *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolInfo*, ushort*, QUERYOPTION, uint, void*, uint, uint*, uint, int> QueryInfo;
+        public delegate* unmanaged<TSelf*, ushort*, QUERYOPTION, uint, void*, uint, uint*, uint, int> QueryInfo;
     }
 }

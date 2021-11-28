@@ -124,39 +124,40 @@ public unsafe partial struct IAppxEncryptionFactory : IAppxEncryptionFactory.Int
         HRESULT CreateEncryptedBundleReader(IStream* inputStream, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo, IAppxBundleReader** bundleReader);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptionFactory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptionFactory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptionFactory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IStream *, IStream *, const APPX_ENCRYPTED_PACKAGE_SETTINGS *, const APPX_KEY_INFO *, const APPX_ENCRYPTED_EXEMPTIONS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptionFactory*, IStream*, IStream*, APPX_ENCRYPTED_PACKAGE_SETTINGS*, APPX_KEY_INFO*, APPX_ENCRYPTED_EXEMPTIONS*, int> EncryptPackage;
+        public delegate* unmanaged<TSelf*, IStream*, IStream*, APPX_ENCRYPTED_PACKAGE_SETTINGS*, APPX_KEY_INFO*, APPX_ENCRYPTED_EXEMPTIONS*, int> EncryptPackage;
 
         [NativeTypeName("HRESULT (IStream *, IStream *, const APPX_KEY_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptionFactory*, IStream*, IStream*, APPX_KEY_INFO*, int> DecryptPackage;
+        public delegate* unmanaged<TSelf*, IStream*, IStream*, APPX_KEY_INFO*, int> DecryptPackage;
 
         [NativeTypeName("HRESULT (IStream *, IStream *, const APPX_ENCRYPTED_PACKAGE_SETTINGS *, const APPX_KEY_INFO *, const APPX_ENCRYPTED_EXEMPTIONS *, IAppxEncryptedPackageWriter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptionFactory*, IStream*, IStream*, APPX_ENCRYPTED_PACKAGE_SETTINGS*, APPX_KEY_INFO*, APPX_ENCRYPTED_EXEMPTIONS*, IAppxEncryptedPackageWriter**, int> CreateEncryptedPackageWriter;
+        public delegate* unmanaged<TSelf*, IStream*, IStream*, APPX_ENCRYPTED_PACKAGE_SETTINGS*, APPX_KEY_INFO*, APPX_ENCRYPTED_EXEMPTIONS*, IAppxEncryptedPackageWriter**, int> CreateEncryptedPackageWriter;
 
         [NativeTypeName("HRESULT (IStream *, const APPX_KEY_INFO *, IAppxPackageReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptionFactory*, IStream*, APPX_KEY_INFO*, IAppxPackageReader**, int> CreateEncryptedPackageReader;
+        public delegate* unmanaged<TSelf*, IStream*, APPX_KEY_INFO*, IAppxPackageReader**, int> CreateEncryptedPackageReader;
 
         [NativeTypeName("HRESULT (IStream *, IStream *, const APPX_ENCRYPTED_PACKAGE_SETTINGS *, const APPX_KEY_INFO *, const APPX_ENCRYPTED_EXEMPTIONS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptionFactory*, IStream*, IStream*, APPX_ENCRYPTED_PACKAGE_SETTINGS*, APPX_KEY_INFO*, APPX_ENCRYPTED_EXEMPTIONS*, int> EncryptBundle;
+        public delegate* unmanaged<TSelf*, IStream*, IStream*, APPX_ENCRYPTED_PACKAGE_SETTINGS*, APPX_KEY_INFO*, APPX_ENCRYPTED_EXEMPTIONS*, int> EncryptBundle;
 
         [NativeTypeName("HRESULT (IStream *, IStream *, const APPX_KEY_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptionFactory*, IStream*, IStream*, APPX_KEY_INFO*, int> DecryptBundle;
+        public delegate* unmanaged<TSelf*, IStream*, IStream*, APPX_KEY_INFO*, int> DecryptBundle;
 
         [NativeTypeName("HRESULT (IStream *, UINT64, const APPX_ENCRYPTED_PACKAGE_SETTINGS *, const APPX_KEY_INFO *, const APPX_ENCRYPTED_EXEMPTIONS *, IAppxEncryptedBundleWriter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptionFactory*, IStream*, ulong, APPX_ENCRYPTED_PACKAGE_SETTINGS*, APPX_KEY_INFO*, APPX_ENCRYPTED_EXEMPTIONS*, IAppxEncryptedBundleWriter**, int> CreateEncryptedBundleWriter;
+        public delegate* unmanaged<TSelf*, IStream*, ulong, APPX_ENCRYPTED_PACKAGE_SETTINGS*, APPX_KEY_INFO*, APPX_ENCRYPTED_EXEMPTIONS*, IAppxEncryptedBundleWriter**, int> CreateEncryptedBundleWriter;
 
         [NativeTypeName("HRESULT (IStream *, const APPX_KEY_INFO *, IAppxBundleReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptionFactory*, IStream*, APPX_KEY_INFO*, IAppxBundleReader**, int> CreateEncryptedBundleReader;
+        public delegate* unmanaged<TSelf*, IStream*, APPX_KEY_INFO*, IAppxBundleReader**, int> CreateEncryptedBundleReader;
     }
 }

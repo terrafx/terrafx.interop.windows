@@ -152,48 +152,49 @@ public unsafe partial struct IAnchor : IAnchor.Interface
         HRESULT Clone(IAnchor** ppaClone);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAnchor*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAnchor*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAnchor*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TsGravity) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAnchor*, TsGravity, int> SetGravity;
+        public delegate* unmanaged<TSelf*, TsGravity, int> SetGravity;
 
         [NativeTypeName("HRESULT (TsGravity *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAnchor*, TsGravity*, int> GetGravity;
+        public delegate* unmanaged<TSelf*, TsGravity*, int> GetGravity;
 
         [NativeTypeName("HRESULT (IAnchor *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAnchor*, IAnchor*, BOOL*, int> IsEqual;
+        public delegate* unmanaged<TSelf*, IAnchor*, BOOL*, int> IsEqual;
 
         [NativeTypeName("HRESULT (IAnchor *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAnchor*, IAnchor*, int*, int> Compare;
+        public delegate* unmanaged<TSelf*, IAnchor*, int*, int> Compare;
 
         [NativeTypeName("HRESULT (DWORD, LONG, LONG *, IAnchor *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAnchor*, uint, int, int*, IAnchor*, int> Shift;
+        public delegate* unmanaged<TSelf*, uint, int, int*, IAnchor*, int> Shift;
 
         [NativeTypeName("HRESULT (IAnchor *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAnchor*, IAnchor*, int> ShiftTo;
+        public delegate* unmanaged<TSelf*, IAnchor*, int> ShiftTo;
 
         [NativeTypeName("HRESULT (DWORD, TsShiftDir, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAnchor*, uint, TsShiftDir, BOOL*, int> ShiftRegion;
+        public delegate* unmanaged<TSelf*, uint, TsShiftDir, BOOL*, int> ShiftRegion;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAnchor*, uint, int> SetChangeHistoryMask;
+        public delegate* unmanaged<TSelf*, uint, int> SetChangeHistoryMask;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAnchor*, uint*, int> GetChangeHistory;
+        public delegate* unmanaged<TSelf*, uint*, int> GetChangeHistory;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAnchor*, int> ClearChangeHistory;
+        public delegate* unmanaged<TSelf*, int> ClearChangeHistory;
 
         [NativeTypeName("HRESULT (IAnchor **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAnchor*, IAnchor**, int> Clone;
+        public delegate* unmanaged<TSelf*, IAnchor**, int> Clone;
     }
 }

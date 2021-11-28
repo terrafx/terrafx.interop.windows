@@ -54,18 +54,19 @@ public unsafe partial struct IMFSensorActivitiesReportCallback : IMFSensorActivi
         HRESULT OnActivitiesReport(IMFSensorActivitiesReport* sensorActivitiesReport);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorActivitiesReportCallback*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorActivitiesReportCallback*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorActivitiesReportCallback*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFSensorActivitiesReport *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorActivitiesReportCallback*, IMFSensorActivitiesReport*, int> OnActivitiesReport;
+        public delegate* unmanaged<TSelf*, IMFSensorActivitiesReport*, int> OnActivitiesReport;
     }
 }

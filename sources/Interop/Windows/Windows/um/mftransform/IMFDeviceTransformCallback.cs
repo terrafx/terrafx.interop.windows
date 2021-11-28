@@ -54,18 +54,19 @@ public unsafe partial struct IMFDeviceTransformCallback : IMFDeviceTransformCall
         HRESULT OnBufferSent(IMFAttributes* pCallbackAttributes, [NativeTypeName("DWORD")] uint pinId);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDeviceTransformCallback*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDeviceTransformCallback*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDeviceTransformCallback*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFAttributes *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFDeviceTransformCallback*, IMFAttributes*, uint, int> OnBufferSent;
+        public delegate* unmanaged<TSelf*, IMFAttributes*, uint, int> OnBufferSent;
     }
 }

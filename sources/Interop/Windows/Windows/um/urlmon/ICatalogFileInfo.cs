@@ -62,21 +62,22 @@ public unsafe partial struct ICatalogFileInfo : ICatalogFileInfo.Interface
         HRESULT GetJavaTrust(void** ppJavaTrust);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICatalogFileInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICatalogFileInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICatalogFileInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICatalogFileInfo*, sbyte**, int> GetCatalogFile;
+        public delegate* unmanaged<TSelf*, sbyte**, int> GetCatalogFile;
 
         [NativeTypeName("HRESULT (void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICatalogFileInfo*, void**, int> GetJavaTrust;
+        public delegate* unmanaged<TSelf*, void**, int> GetJavaTrust;
     }
 }

@@ -112,36 +112,37 @@ public unsafe partial struct IUIAnimationInterpolator : IUIAnimationInterpolator
         HRESULT GetDependencies(UI_ANIMATION_DEPENDENCIES* initialValueDependencies, UI_ANIMATION_DEPENDENCIES* initialVelocityDependencies, UI_ANIMATION_DEPENDENCIES* durationDependencies);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationInterpolator*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationInterpolator*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationInterpolator*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DOUBLE, DOUBLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationInterpolator*, double, double, int> SetInitialValueAndVelocity;
+        public delegate* unmanaged<TSelf*, double, double, int> SetInitialValueAndVelocity;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationInterpolator*, double, int> SetDuration;
+        public delegate* unmanaged<TSelf*, double, int> SetDuration;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationInterpolator*, double*, int> GetDuration;
+        public delegate* unmanaged<TSelf*, double*, int> GetDuration;
 
         [NativeTypeName("HRESULT (DOUBLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationInterpolator*, double*, int> GetFinalValue;
+        public delegate* unmanaged<TSelf*, double*, int> GetFinalValue;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationInterpolator*, double, double*, int> InterpolateValue;
+        public delegate* unmanaged<TSelf*, double, double*, int> InterpolateValue;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationInterpolator*, double, double*, int> InterpolateVelocity;
+        public delegate* unmanaged<TSelf*, double, double*, int> InterpolateVelocity;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_DEPENDENCIES *, UI_ANIMATION_DEPENDENCIES *, UI_ANIMATION_DEPENDENCIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationInterpolator*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, int> GetDependencies;
+        public delegate* unmanaged<TSelf*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, UI_ANIMATION_DEPENDENCIES*, int> GetDependencies;
     }
 }

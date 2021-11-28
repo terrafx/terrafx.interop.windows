@@ -112,36 +112,37 @@ public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface
         HRESULT Execute();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExecuteCommand*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExecuteCommand*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExecuteCommand*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExecuteCommand*, uint, int> SetKeyState;
+        public delegate* unmanaged<TSelf*, uint, int> SetKeyState;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExecuteCommand*, ushort*, int> SetParameters;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetParameters;
 
         [NativeTypeName("HRESULT (POINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExecuteCommand*, POINT, int> SetPosition;
+        public delegate* unmanaged<TSelf*, POINT, int> SetPosition;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExecuteCommand*, int, int> SetShowWindow;
+        public delegate* unmanaged<TSelf*, int, int> SetShowWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExecuteCommand*, BOOL, int> SetNoShowUI;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetNoShowUI;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExecuteCommand*, ushort*, int> SetDirectory;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetDirectory;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExecuteCommand*, int> Execute;
+        public delegate* unmanaged<TSelf*, int> Execute;
     }
 }

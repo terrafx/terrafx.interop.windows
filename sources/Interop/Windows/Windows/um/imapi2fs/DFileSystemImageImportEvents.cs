@@ -80,30 +80,31 @@ public unsafe partial struct DFileSystemImageImportEvents : DFileSystemImageImpo
         HRESULT UpdateImport(IDispatch* @object, FsiFileSystems fileSystem, [NativeTypeName("BSTR")] ushort* currentItem, [NativeTypeName("LONG")] int importedDirectoryItems, [NativeTypeName("LONG")] int totalDirectoryItems, [NativeTypeName("LONG")] int importedFileItems, [NativeTypeName("LONG")] int totalFileItems);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<DFileSystemImageImportEvents*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<DFileSystemImageImportEvents*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<DFileSystemImageImportEvents*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<DFileSystemImageImportEvents*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<DFileSystemImageImportEvents*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<DFileSystemImageImportEvents*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<DFileSystemImageImportEvents*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IDispatch *, FsiFileSystems, BSTR, LONG, LONG, LONG, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<DFileSystemImageImportEvents*, IDispatch*, FsiFileSystems, ushort*, int, int, int, int, int> UpdateImport;
+        public delegate* unmanaged<TSelf*, IDispatch*, FsiFileSystems, ushort*, int, int, int, int, int> UpdateImport;
     }
 }

@@ -62,21 +62,22 @@ public unsafe partial struct IProfferService : IProfferService.Interface
         HRESULT RevokeService([NativeTypeName("DWORD")] uint cookie);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProfferService*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IProfferService*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IProfferService*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, IServiceProvider *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProfferService*, Guid*, IServiceProvider*, uint*, int> ProfferService;
+        public delegate* unmanaged<TSelf*, Guid*, IServiceProvider*, uint*, int> ProfferService;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProfferService*, uint, int> RevokeService;
+        public delegate* unmanaged<TSelf*, uint, int> RevokeService;
     }
 }

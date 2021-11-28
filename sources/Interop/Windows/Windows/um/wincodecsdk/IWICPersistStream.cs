@@ -97,36 +97,37 @@ public unsafe partial struct IWICPersistStream : IWICPersistStream.Interface
         HRESULT SaveEx(IStream* pIStream, [NativeTypeName("DWORD")] uint dwPersistOptions, BOOL fClearDirty);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPersistStream*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPersistStream*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPersistStream*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPersistStream*, Guid*, int> GetClassID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetClassID;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPersistStream*, int> IsDirty;
+        public delegate* unmanaged<TSelf*, int> IsDirty;
 
         [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPersistStream*, IStream*, int> Load;
+        public delegate* unmanaged<TSelf*, IStream*, int> Load;
 
         [NativeTypeName("HRESULT (IStream *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPersistStream*, IStream*, BOOL, int> Save;
+        public delegate* unmanaged<TSelf*, IStream*, BOOL, int> Save;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPersistStream*, ULARGE_INTEGER*, int> GetSizeMax;
+        public delegate* unmanaged<TSelf*, ULARGE_INTEGER*, int> GetSizeMax;
 
         [NativeTypeName("HRESULT (IStream *, const GUID *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPersistStream*, IStream*, Guid*, uint, int> LoadEx;
+        public delegate* unmanaged<TSelf*, IStream*, Guid*, uint, int> LoadEx;
 
         [NativeTypeName("HRESULT (IStream *, DWORD, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPersistStream*, IStream*, uint, BOOL, int> SaveEx;
+        public delegate* unmanaged<TSelf*, IStream*, uint, BOOL, int> SaveEx;
     }
 }

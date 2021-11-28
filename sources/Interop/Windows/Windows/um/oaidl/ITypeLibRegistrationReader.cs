@@ -52,18 +52,19 @@ public unsafe partial struct ITypeLibRegistrationReader : ITypeLibRegistrationRe
         HRESULT EnumTypeLibRegistrations(IEnumUnknown** ppEnumUnknown);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLibRegistrationReader*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLibRegistrationReader*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLibRegistrationReader*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeLibRegistrationReader*, IEnumUnknown**, int> EnumTypeLibRegistrations;
+        public delegate* unmanaged<TSelf*, IEnumUnknown**, int> EnumTypeLibRegistrations;
     }
 }

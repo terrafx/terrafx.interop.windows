@@ -52,18 +52,19 @@ public unsafe partial struct IElementBehaviorSiteCategory : IElementBehaviorSite
         HRESULT GetRelatedBehaviors([NativeTypeName("LONG")] int lDirection, [NativeTypeName("LPOLESTR")] ushort* pchCategory, IEnumUnknown** ppEnumerator);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSiteCategory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSiteCategory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSiteCategory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LONG, LPOLESTR, IEnumUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSiteCategory*, int, ushort*, IEnumUnknown**, int> GetRelatedBehaviors;
+        public delegate* unmanaged<TSelf*, int, ushort*, IEnumUnknown**, int> GetRelatedBehaviors;
     }
 }

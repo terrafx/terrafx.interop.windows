@@ -53,18 +53,19 @@ public unsafe partial struct IVisualInteractionSourceInterop : IVisualInteractio
         HRESULT TryRedirectForManipulation([NativeTypeName("const POINTER_INFO &")] POINTER_INFO* pointerInfo);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualInteractionSourceInterop*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualInteractionSourceInterop*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualInteractionSourceInterop*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const POINTER_INFO &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVisualInteractionSourceInterop*, POINTER_INFO*, int> TryRedirectForManipulation;
+        public delegate* unmanaged<TSelf*, POINTER_INFO*, int> TryRedirectForManipulation;
     }
 }

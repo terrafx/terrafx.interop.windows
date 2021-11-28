@@ -74,24 +74,25 @@ public unsafe partial struct IMFMediaEngineClassFactory : IMFMediaEngineClassFac
         HRESULT CreateError(IMFMediaError** ppError);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineClassFactory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineClassFactory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineClassFactory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IMFAttributes *, IMFMediaEngine **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineClassFactory*, uint, IMFAttributes*, IMFMediaEngine**, int> CreateInstance;
+        public delegate* unmanaged<TSelf*, uint, IMFAttributes*, IMFMediaEngine**, int> CreateInstance;
 
         [NativeTypeName("HRESULT (IMFMediaTimeRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineClassFactory*, IMFMediaTimeRange**, int> CreateTimeRange;
+        public delegate* unmanaged<TSelf*, IMFMediaTimeRange**, int> CreateTimeRange;
 
         [NativeTypeName("HRESULT (IMFMediaError **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineClassFactory*, IMFMediaError**, int> CreateError;
+        public delegate* unmanaged<TSelf*, IMFMediaError**, int> CreateError;
     }
 }

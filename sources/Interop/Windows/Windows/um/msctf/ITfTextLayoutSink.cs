@@ -52,18 +52,19 @@ public unsafe partial struct ITfTextLayoutSink : ITfTextLayoutSink.Interface
         HRESULT OnLayoutChange(ITfContext* pic, TfLayoutCode lcode, ITfContextView* pView);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTextLayoutSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTextLayoutSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTextLayoutSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITfContext *, TfLayoutCode, ITfContextView *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTextLayoutSink*, ITfContext*, TfLayoutCode, ITfContextView*, int> OnLayoutChange;
+        public delegate* unmanaged<TSelf*, ITfContext*, TfLayoutCode, ITfContextView*, int> OnLayoutChange;
     }
 }

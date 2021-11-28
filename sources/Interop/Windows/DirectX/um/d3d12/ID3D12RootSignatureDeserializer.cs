@@ -55,18 +55,19 @@ public unsafe partial struct ID3D12RootSignatureDeserializer : ID3D12RootSignatu
         D3D12_ROOT_SIGNATURE_DESC* GetRootSignatureDesc();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12RootSignatureDeserializer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12RootSignatureDeserializer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12RootSignatureDeserializer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("const D3D12_ROOT_SIGNATURE_DESC *() __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID3D12RootSignatureDeserializer*, D3D12_ROOT_SIGNATURE_DESC*> GetRootSignatureDesc;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D3D12_ROOT_SIGNATURE_DESC*> GetRootSignatureDesc;
     }
 }

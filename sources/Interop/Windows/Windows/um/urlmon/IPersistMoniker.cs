@@ -102,33 +102,34 @@ public unsafe partial struct IPersistMoniker : IPersistMoniker.Interface
         HRESULT GetCurMoniker(IMoniker** ppimkName);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMoniker*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMoniker*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMoniker*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMoniker*, Guid*, int> GetClassID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetClassID;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMoniker*, int> IsDirty;
+        public delegate* unmanaged<TSelf*, int> IsDirty;
 
         [NativeTypeName("HRESULT (BOOL, IMoniker *, LPBC, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMoniker*, BOOL, IMoniker*, IBindCtx*, uint, int> Load;
+        public delegate* unmanaged<TSelf*, BOOL, IMoniker*, IBindCtx*, uint, int> Load;
 
         [NativeTypeName("HRESULT (IMoniker *, LPBC, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMoniker*, IMoniker*, IBindCtx*, BOOL, int> Save;
+        public delegate* unmanaged<TSelf*, IMoniker*, IBindCtx*, BOOL, int> Save;
 
         [NativeTypeName("HRESULT (IMoniker *, LPBC) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMoniker*, IMoniker*, IBindCtx*, int> SaveCompleted;
+        public delegate* unmanaged<TSelf*, IMoniker*, IBindCtx*, int> SaveCompleted;
 
         [NativeTypeName("HRESULT (IMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMoniker*, IMoniker**, int> GetCurMoniker;
+        public delegate* unmanaged<TSelf*, IMoniker**, int> GetCurMoniker;
     }
 }

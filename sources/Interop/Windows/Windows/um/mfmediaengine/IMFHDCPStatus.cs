@@ -62,21 +62,22 @@ public unsafe partial struct IMFHDCPStatus : IMFHDCPStatus.Interface
         HRESULT Set(MF_HDCP_STATUS status);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFHDCPStatus*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFHDCPStatus*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFHDCPStatus*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MF_HDCP_STATUS *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFHDCPStatus*, MF_HDCP_STATUS*, BOOL*, int> Query;
+        public delegate* unmanaged<TSelf*, MF_HDCP_STATUS*, BOOL*, int> Query;
 
         [NativeTypeName("HRESULT (MF_HDCP_STATUS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFHDCPStatus*, MF_HDCP_STATUS, int> Set;
+        public delegate* unmanaged<TSelf*, MF_HDCP_STATUS, int> Set;
     }
 }

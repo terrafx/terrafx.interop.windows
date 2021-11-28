@@ -53,18 +53,19 @@ public unsafe partial struct IMLOperatorKernel : IMLOperatorKernel.Interface
         HRESULT Compute(IMLOperatorKernelContext* context);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorKernel*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorKernel*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorKernel*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMLOperatorKernelContext *) noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<IMLOperatorKernel*, IMLOperatorKernelContext*, int> Compute;
+        public delegate* unmanaged<TSelf*, IMLOperatorKernelContext*, int> Compute;
     }
 }

@@ -72,24 +72,25 @@ public unsafe partial struct IContactCollection : IContactCollection.Interface
         HRESULT GetCurrent(IContact** ppContact);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactCollection*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactCollection*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactCollection*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactCollection*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactCollection*, int> Next;
+        public delegate* unmanaged<TSelf*, int> Next;
 
         [NativeTypeName("HRESULT (IContact **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactCollection*, IContact**, int> GetCurrent;
+        public delegate* unmanaged<TSelf*, IContact**, int> GetCurrent;
     }
 }

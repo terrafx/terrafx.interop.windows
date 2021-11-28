@@ -82,27 +82,28 @@ public unsafe partial struct IExplorerBrowserEvents : IExplorerBrowserEvents.Int
         HRESULT OnNavigationFailed([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowserEvents*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowserEvents*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowserEvents*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int> OnNavigationPending;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, int> OnNavigationPending;
 
         [NativeTypeName("HRESULT (IShellView *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowserEvents*, IShellView*, int> OnViewCreated;
+        public delegate* unmanaged<TSelf*, IShellView*, int> OnViewCreated;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int> OnNavigationComplete;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, int> OnNavigationComplete;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int> OnNavigationFailed;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, int> OnNavigationFailed;
     }
 }

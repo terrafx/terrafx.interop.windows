@@ -487,108 +487,109 @@ public unsafe partial struct ID2D1SvgElement : ID2D1SvgElement.Interface
         HRESULT GetAttributeValueLength([NativeTypeName("PCWSTR")] ushort* name, D2D1_SVG_ATTRIBUTE_STRING_TYPE type, [NativeTypeName("UINT32 *")] uint* valueLength);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("void (ID2D1SvgDocument **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ID2D1SvgDocument**, void> GetDocument;
+        public delegate* unmanaged<TSelf*, ID2D1SvgDocument**, void> GetDocument;
 
         [NativeTypeName("HRESULT (PWSTR, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ushort*, uint, int> GetTagName;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> GetTagName;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, uint> GetTagNameLength;
+        public delegate* unmanaged<TSelf*, uint> GetTagNameLength;
 
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1SvgElement*, int> IsTextContent;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, int> IsTextContent;
 
         [NativeTypeName("void (ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ID2D1SvgElement**, void> GetParent;
+        public delegate* unmanaged<TSelf*, ID2D1SvgElement**, void> GetParent;
 
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1SvgElement*, int> HasChildren;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, int> HasChildren;
 
         [NativeTypeName("void (ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ID2D1SvgElement**, void> GetFirstChild;
+        public delegate* unmanaged<TSelf*, ID2D1SvgElement**, void> GetFirstChild;
 
         [NativeTypeName("void (ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ID2D1SvgElement**, void> GetLastChild;
+        public delegate* unmanaged<TSelf*, ID2D1SvgElement**, void> GetLastChild;
 
         [NativeTypeName("HRESULT (ID2D1SvgElement *, ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ID2D1SvgElement*, ID2D1SvgElement**, int> GetPreviousChild;
+        public delegate* unmanaged<TSelf*, ID2D1SvgElement*, ID2D1SvgElement**, int> GetPreviousChild;
 
         [NativeTypeName("HRESULT (ID2D1SvgElement *, ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ID2D1SvgElement*, ID2D1SvgElement**, int> GetNextChild;
+        public delegate* unmanaged<TSelf*, ID2D1SvgElement*, ID2D1SvgElement**, int> GetNextChild;
 
         [NativeTypeName("HRESULT (ID2D1SvgElement *, ID2D1SvgElement *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ID2D1SvgElement*, ID2D1SvgElement*, int> InsertChildBefore;
+        public delegate* unmanaged<TSelf*, ID2D1SvgElement*, ID2D1SvgElement*, int> InsertChildBefore;
 
         [NativeTypeName("HRESULT (ID2D1SvgElement *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ID2D1SvgElement*, int> AppendChild;
+        public delegate* unmanaged<TSelf*, ID2D1SvgElement*, int> AppendChild;
 
         [NativeTypeName("HRESULT (ID2D1SvgElement *, ID2D1SvgElement *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ID2D1SvgElement*, ID2D1SvgElement*, int> ReplaceChild;
+        public delegate* unmanaged<TSelf*, ID2D1SvgElement*, ID2D1SvgElement*, int> ReplaceChild;
 
         [NativeTypeName("HRESULT (ID2D1SvgElement *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ID2D1SvgElement*, int> RemoveChild;
+        public delegate* unmanaged<TSelf*, ID2D1SvgElement*, int> RemoveChild;
 
         [NativeTypeName("HRESULT (PCWSTR, ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ushort*, ID2D1SvgElement**, int> CreateChild;
+        public delegate* unmanaged<TSelf*, ushort*, ID2D1SvgElement**, int> CreateChild;
 
         [NativeTypeName("BOOL (PCWSTR, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ushort*, BOOL*, int> IsAttributeSpecified;
+        public delegate* unmanaged<TSelf*, ushort*, BOOL*, int> IsAttributeSpecified;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, uint> GetSpecifiedAttributeCount;
+        public delegate* unmanaged<TSelf*, uint> GetSpecifiedAttributeCount;
 
         [NativeTypeName("HRESULT (UINT32, PWSTR, UINT32, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, uint, ushort*, uint, BOOL*, int> GetSpecifiedAttributeName;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint, BOOL*, int> GetSpecifiedAttributeName;
 
         [NativeTypeName("HRESULT (UINT32, UINT32 *, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, uint, uint*, BOOL*, int> GetSpecifiedAttributeNameLength;
+        public delegate* unmanaged<TSelf*, uint, uint*, BOOL*, int> GetSpecifiedAttributeNameLength;
 
         [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ushort*, int> RemoveAttribute;
+        public delegate* unmanaged<TSelf*, ushort*, int> RemoveAttribute;
 
         [NativeTypeName("HRESULT (const WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ushort*, uint, int> SetTextValue;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> SetTextValue;
 
         [NativeTypeName("HRESULT (PWSTR, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ushort*, uint, int> GetTextValue;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> GetTextValue;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, uint> GetTextValueLength;
+        public delegate* unmanaged<TSelf*, uint> GetTextValueLength;
 
         [NativeTypeName("HRESULT (PCWSTR, ID2D1SvgAttribute *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ushort*, ID2D1SvgAttribute*, int> SetAttributeValue13;
+        public delegate* unmanaged<TSelf*, ushort*, ID2D1SvgAttribute*, int> SetAttributeValue13;
 
         [NativeTypeName("HRESULT (PCWSTR, D2D1_SVG_ATTRIBUTE_POD_TYPE, const void *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ushort*, D2D1_SVG_ATTRIBUTE_POD_TYPE, void*, uint, int> SetAttributeValue14;
+        public delegate* unmanaged<TSelf*, ushort*, D2D1_SVG_ATTRIBUTE_POD_TYPE, void*, uint, int> SetAttributeValue14;
 
         [NativeTypeName("HRESULT (PCWSTR, D2D1_SVG_ATTRIBUTE_STRING_TYPE, PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ushort*, D2D1_SVG_ATTRIBUTE_STRING_TYPE, ushort*, int> SetAttributeValue15;
+        public delegate* unmanaged<TSelf*, ushort*, D2D1_SVG_ATTRIBUTE_STRING_TYPE, ushort*, int> SetAttributeValue15;
 
         [NativeTypeName("HRESULT (PCWSTR, const IID &, void **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ushort*, Guid*, void**, int> GetAttributeValue13;
+        public delegate* unmanaged<TSelf*, ushort*, Guid*, void**, int> GetAttributeValue13;
 
         [NativeTypeName("HRESULT (PCWSTR, D2D1_SVG_ATTRIBUTE_POD_TYPE, void *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ushort*, D2D1_SVG_ATTRIBUTE_POD_TYPE, void*, uint, int> GetAttributeValue14;
+        public delegate* unmanaged<TSelf*, ushort*, D2D1_SVG_ATTRIBUTE_POD_TYPE, void*, uint, int> GetAttributeValue14;
 
         [NativeTypeName("HRESULT (PCWSTR, D2D1_SVG_ATTRIBUTE_STRING_TYPE, PWSTR, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ushort*, D2D1_SVG_ATTRIBUTE_STRING_TYPE, ushort*, uint, int> GetAttributeValue15;
+        public delegate* unmanaged<TSelf*, ushort*, D2D1_SVG_ATTRIBUTE_STRING_TYPE, ushort*, uint, int> GetAttributeValue15;
 
         [NativeTypeName("HRESULT (PCWSTR, D2D1_SVG_ATTRIBUTE_STRING_TYPE, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1SvgElement*, ushort*, D2D1_SVG_ATTRIBUTE_STRING_TYPE, uint*, int> GetAttributeValueLength;
+        public delegate* unmanaged<TSelf*, ushort*, D2D1_SVG_ATTRIBUTE_STRING_TYPE, uint*, int> GetAttributeValueLength;
     }
 }

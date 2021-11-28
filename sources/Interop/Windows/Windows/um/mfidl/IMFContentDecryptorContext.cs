@@ -54,18 +54,19 @@ public unsafe partial struct IMFContentDecryptorContext : IMFContentDecryptorCon
         HRESULT InitializeHardwareKey(uint InputPrivateDataByteCount, [NativeTypeName("const void *")] void* InputPrivateData, [NativeTypeName("UINT64 *")] ulong* OutputPrivateData);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentDecryptorContext*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentDecryptorContext*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentDecryptorContext*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, const void *, UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFContentDecryptorContext*, uint, void*, ulong*, int> InitializeHardwareKey;
+        public delegate* unmanaged<TSelf*, uint, void*, ulong*, int> InitializeHardwareKey;
     }
 }

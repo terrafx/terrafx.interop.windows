@@ -111,36 +111,37 @@ public unsafe partial struct IMarkupContainer2 : IMarkupContainer2.Interface
         HRESULT GetMasterElement(IHTMLElement** ppElementMaster);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupContainer2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupContainer2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupContainer2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IHTMLDocument2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupContainer2*, IHTMLDocument2**, int> OwningDoc;
+        public delegate* unmanaged<TSelf*, IHTMLDocument2**, int> OwningDoc;
 
         [NativeTypeName("HRESULT (IHTMLChangeSink *, IHTMLChangeLog **, BOOL, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupContainer2*, IHTMLChangeSink*, IHTMLChangeLog**, BOOL, BOOL, int> CreateChangeLog;
+        public delegate* unmanaged<TSelf*, IHTMLChangeSink*, IHTMLChangeLog**, BOOL, BOOL, int> CreateChangeLog;
 
         [NativeTypeName("HRESULT (IHTMLChangeSink *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupContainer2*, IHTMLChangeSink*, uint*, int> RegisterForDirtyRange;
+        public delegate* unmanaged<TSelf*, IHTMLChangeSink*, uint*, int> RegisterForDirtyRange;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupContainer2*, uint, int> UnRegisterForDirtyRange;
+        public delegate* unmanaged<TSelf*, uint, int> UnRegisterForDirtyRange;
 
         [NativeTypeName("HRESULT (DWORD, IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupContainer2*, uint, IMarkupPointer*, IMarkupPointer*, int> GetAndClearDirtyRange;
+        public delegate* unmanaged<TSelf*, uint, IMarkupPointer*, IMarkupPointer*, int> GetAndClearDirtyRange;
 
         [NativeTypeName("long () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupContainer2*, int> GetVersionNumber;
+        public delegate* unmanaged<TSelf*, int> GetVersionNumber;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupContainer2*, IHTMLElement**, int> GetMasterElement;
+        public delegate* unmanaged<TSelf*, IHTMLElement**, int> GetMasterElement;
     }
 }

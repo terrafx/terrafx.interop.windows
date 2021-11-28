@@ -52,18 +52,19 @@ public unsafe partial struct IMFPMediaPlayerCallback : IMFPMediaPlayerCallback.I
         void OnMediaPlayerEvent(MFP_EVENT_HEADER* pEventHeader);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPMediaPlayerCallback*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPMediaPlayerCallback*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPMediaPlayerCallback*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (MFP_EVENT_HEADER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPMediaPlayerCallback*, MFP_EVENT_HEADER*, void> OnMediaPlayerEvent;
+        public delegate* unmanaged<TSelf*, MFP_EVENT_HEADER*, void> OnMediaPlayerEvent;
     }
 }

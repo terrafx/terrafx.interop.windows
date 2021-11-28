@@ -82,27 +82,28 @@ public unsafe partial struct IInitializeSpy : IInitializeSpy.Interface
         HRESULT PostUninitialize([NativeTypeName("DWORD")] uint dwNewThreadAptRefs);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInitializeSpy*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInitializeSpy*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInitializeSpy*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInitializeSpy*, uint, uint, int> PreInitialize;
+        public delegate* unmanaged<TSelf*, uint, uint, int> PreInitialize;
 
         [NativeTypeName("HRESULT (HRESULT, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInitializeSpy*, HRESULT, uint, uint, int> PostInitialize;
+        public delegate* unmanaged<TSelf*, HRESULT, uint, uint, int> PostInitialize;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInitializeSpy*, uint, int> PreUninitialize;
+        public delegate* unmanaged<TSelf*, uint, int> PreUninitialize;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInitializeSpy*, uint, int> PostUninitialize;
+        public delegate* unmanaged<TSelf*, uint, int> PostUninitialize;
     }
 }

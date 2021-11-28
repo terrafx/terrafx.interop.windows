@@ -112,36 +112,37 @@ public unsafe partial struct IPropertyChangeArray : IPropertyChangeArray.Interfa
         HRESULT IsKeyInArray([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyChangeArray*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyChangeArray*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyChangeArray*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyChangeArray*, uint*, int> GetCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyChangeArray*, uint, Guid*, void**, int> GetAt;
+        public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> GetAt;
 
         [NativeTypeName("HRESULT (UINT, IPropertyChange *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyChangeArray*, uint, IPropertyChange*, int> InsertAt;
+        public delegate* unmanaged<TSelf*, uint, IPropertyChange*, int> InsertAt;
 
         [NativeTypeName("HRESULT (IPropertyChange *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyChangeArray*, IPropertyChange*, int> Append;
+        public delegate* unmanaged<TSelf*, IPropertyChange*, int> Append;
 
         [NativeTypeName("HRESULT (IPropertyChange *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyChangeArray*, IPropertyChange*, int> AppendOrReplace;
+        public delegate* unmanaged<TSelf*, IPropertyChange*, int> AppendOrReplace;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyChangeArray*, uint, int> RemoveAt;
+        public delegate* unmanaged<TSelf*, uint, int> RemoveAt;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyChangeArray*, PROPERTYKEY*, int> IsKeyInArray;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, int> IsKeyInArray;
     }
 }

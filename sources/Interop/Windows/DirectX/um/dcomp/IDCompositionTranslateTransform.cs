@@ -85,27 +85,28 @@ public unsafe partial struct IDCompositionTranslateTransform : IDCompositionTran
         HRESULT SetOffsetY(float offsetY);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTranslateTransform*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTranslateTransform*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTranslateTransform*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTranslateTransform*, IDCompositionAnimation*, int> SetOffsetX;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetOffsetX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTranslateTransform*, float, int> SetOffsetX1;
+        public delegate* unmanaged<TSelf*, float, int> SetOffsetX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTranslateTransform*, IDCompositionAnimation*, int> SetOffsetY;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetOffsetY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTranslateTransform*, float, int> SetOffsetY1;
+        public delegate* unmanaged<TSelf*, float, int> SetOffsetY1;
     }
 }

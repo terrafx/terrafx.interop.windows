@@ -99,33 +99,34 @@ public unsafe partial struct IPersistStreamInit : IPersistStreamInit.Interface
         HRESULT InitNew();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistStreamInit*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistStreamInit*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistStreamInit*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistStreamInit*, Guid*, int> GetClassID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetClassID;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistStreamInit*, int> IsDirty;
+        public delegate* unmanaged<TSelf*, int> IsDirty;
 
         [NativeTypeName("HRESULT (LPSTREAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistStreamInit*, IStream*, int> Load;
+        public delegate* unmanaged<TSelf*, IStream*, int> Load;
 
         [NativeTypeName("HRESULT (LPSTREAM, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistStreamInit*, IStream*, BOOL, int> Save;
+        public delegate* unmanaged<TSelf*, IStream*, BOOL, int> Save;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistStreamInit*, ULARGE_INTEGER*, int> GetSizeMax;
+        public delegate* unmanaged<TSelf*, ULARGE_INTEGER*, int> GetSizeMax;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistStreamInit*, int> InitNew;
+        public delegate* unmanaged<TSelf*, int> InitNew;
     }
 }

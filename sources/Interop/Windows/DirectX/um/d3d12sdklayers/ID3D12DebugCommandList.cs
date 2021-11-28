@@ -73,24 +73,25 @@ public unsafe partial struct ID3D12DebugCommandList : ID3D12DebugCommandList.Int
         D3D12_DEBUG_FEATURE GetFeatureMask();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12DebugCommandList*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12DebugCommandList*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12DebugCommandList*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("BOOL (ID3D12Resource *, UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12DebugCommandList*, ID3D12Resource*, uint, uint, int> AssertResourceState;
+        public delegate* unmanaged<TSelf*, ID3D12Resource*, uint, uint, int> AssertResourceState;
 
         [NativeTypeName("HRESULT (D3D12_DEBUG_FEATURE) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12DebugCommandList*, D3D12_DEBUG_FEATURE, int> SetFeatureMask;
+        public delegate* unmanaged<TSelf*, D3D12_DEBUG_FEATURE, int> SetFeatureMask;
 
         [NativeTypeName("D3D12_DEBUG_FEATURE () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12DebugCommandList*, D3D12_DEBUG_FEATURE> GetFeatureMask;
+        public delegate* unmanaged<TSelf*, D3D12_DEBUG_FEATURE> GetFeatureMask;
     }
 }

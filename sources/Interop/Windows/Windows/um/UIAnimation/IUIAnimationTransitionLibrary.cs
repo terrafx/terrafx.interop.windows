@@ -162,51 +162,52 @@ public unsafe partial struct IUIAnimationTransitionLibrary : IUIAnimationTransit
         HRESULT CreateParabolicTransitionFromAcceleration(double finalValue, double finalVelocity, double acceleration, IUIAnimationTransition** transition);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransitionLibrary*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransitionLibrary*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransitionLibrary*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DOUBLE, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransitionLibrary*, double, IUIAnimationTransition**, int> CreateInstantaneousTransition;
+        public delegate* unmanaged<TSelf*, double, IUIAnimationTransition**, int> CreateInstantaneousTransition;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransitionLibrary*, double, IUIAnimationTransition**, int> CreateConstantTransition;
+        public delegate* unmanaged<TSelf*, double, IUIAnimationTransition**, int> CreateConstantTransition;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE, UI_ANIMATION_SECONDS, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, double, IUIAnimationTransition**, int> CreateDiscreteTransition;
+        public delegate* unmanaged<TSelf*, double, double, double, IUIAnimationTransition**, int> CreateDiscreteTransition;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, IUIAnimationTransition**, int> CreateLinearTransition;
+        public delegate* unmanaged<TSelf*, double, double, IUIAnimationTransition**, int> CreateLinearTransition;
 
         [NativeTypeName("HRESULT (DOUBLE, DOUBLE, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, IUIAnimationTransition**, int> CreateLinearTransitionFromSpeed;
+        public delegate* unmanaged<TSelf*, double, double, IUIAnimationTransition**, int> CreateLinearTransitionFromSpeed;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, UI_ANIMATION_SECONDS, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, IUIAnimationTransition**, int> CreateSinusoidalTransitionFromVelocity;
+        public delegate* unmanaged<TSelf*, double, double, IUIAnimationTransition**, int> CreateSinusoidalTransitionFromVelocity;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE, DOUBLE, UI_ANIMATION_SECONDS, UI_ANIMATION_SLOPE, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, double, double, UI_ANIMATION_SLOPE, IUIAnimationTransition**, int> CreateSinusoidalTransitionFromRange;
+        public delegate* unmanaged<TSelf*, double, double, double, double, UI_ANIMATION_SLOPE, IUIAnimationTransition**, int> CreateSinusoidalTransitionFromRange;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE, DOUBLE, DOUBLE, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, double, double, IUIAnimationTransition**, int> CreateAccelerateDecelerateTransition;
+        public delegate* unmanaged<TSelf*, double, double, double, double, IUIAnimationTransition**, int> CreateAccelerateDecelerateTransition;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransitionLibrary*, double, IUIAnimationTransition**, int> CreateReversalTransition;
+        public delegate* unmanaged<TSelf*, double, IUIAnimationTransition**, int> CreateReversalTransition;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE, DOUBLE, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, double, IUIAnimationTransition**, int> CreateCubicTransition;
+        public delegate* unmanaged<TSelf*, double, double, double, IUIAnimationTransition**, int> CreateCubicTransition;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, DOUBLE, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, IUIAnimationTransition**, int> CreateSmoothStopTransition;
+        public delegate* unmanaged<TSelf*, double, double, IUIAnimationTransition**, int> CreateSmoothStopTransition;
 
         [NativeTypeName("HRESULT (DOUBLE, DOUBLE, DOUBLE, IUIAnimationTransition **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransitionLibrary*, double, double, double, IUIAnimationTransition**, int> CreateParabolicTransitionFromAcceleration;
+        public delegate* unmanaged<TSelf*, double, double, double, IUIAnimationTransition**, int> CreateParabolicTransitionFromAcceleration;
     }
 }

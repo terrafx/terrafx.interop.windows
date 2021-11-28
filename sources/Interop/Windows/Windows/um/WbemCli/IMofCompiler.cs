@@ -72,24 +72,25 @@ public unsafe partial struct IMofCompiler : IMofCompiler.Interface
         HRESULT CreateBMOF([NativeTypeName("LPWSTR")] ushort* TextFileName, [NativeTypeName("LPWSTR")] ushort* BMOFFileName, [NativeTypeName("LPWSTR")] ushort* ServerAndNamespace, [NativeTypeName("LONG")] int lOptionFlags, [NativeTypeName("LONG")] int lClassFlags, [NativeTypeName("LONG")] int lInstanceFlags, WBEM_COMPILE_STATUS_INFO* pInfo);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMofCompiler*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMofCompiler*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMofCompiler*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR, LPWSTR, LPWSTR, LPWSTR, LPWSTR, LONG, LONG, LONG, WBEM_COMPILE_STATUS_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMofCompiler*, ushort*, ushort*, ushort*, ushort*, ushort*, int, int, int, WBEM_COMPILE_STATUS_INFO*, int> CompileFile;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, ushort*, ushort*, int, int, int, WBEM_COMPILE_STATUS_INFO*, int> CompileFile;
 
         [NativeTypeName("HRESULT (long, BYTE *, LPWSTR, LPWSTR, LPWSTR, LPWSTR, LONG, LONG, LONG, WBEM_COMPILE_STATUS_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMofCompiler*, int, byte*, ushort*, ushort*, ushort*, ushort*, int, int, int, WBEM_COMPILE_STATUS_INFO*, int> CompileBuffer;
+        public delegate* unmanaged<TSelf*, int, byte*, ushort*, ushort*, ushort*, ushort*, int, int, int, WBEM_COMPILE_STATUS_INFO*, int> CompileBuffer;
 
         [NativeTypeName("HRESULT (LPWSTR, LPWSTR, LPWSTR, LONG, LONG, LONG, WBEM_COMPILE_STATUS_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMofCompiler*, ushort*, ushort*, ushort*, int, int, int, WBEM_COMPILE_STATUS_INFO*, int> CreateBMOF;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, int, int, int, WBEM_COMPILE_STATUS_INFO*, int> CreateBMOF;
     }
 }

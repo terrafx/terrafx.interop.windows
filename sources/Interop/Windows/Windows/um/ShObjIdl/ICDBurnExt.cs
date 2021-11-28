@@ -52,18 +52,19 @@ public unsafe partial struct ICDBurnExt : ICDBurnExt.Interface
         HRESULT GetSupportedActionTypes([NativeTypeName("CDBE_ACTIONS *")] uint* pdwActions);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICDBurnExt*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICDBurnExt*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICDBurnExt*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CDBE_ACTIONS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICDBurnExt*, uint*, int> GetSupportedActionTypes;
+        public delegate* unmanaged<TSelf*, uint*, int> GetSupportedActionTypes;
     }
 }

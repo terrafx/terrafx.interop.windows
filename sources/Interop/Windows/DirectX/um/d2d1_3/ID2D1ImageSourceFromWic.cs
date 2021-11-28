@@ -94,33 +94,34 @@ public unsafe partial struct ID2D1ImageSourceFromWic : ID2D1ImageSourceFromWic.I
         void GetSource(IWICBitmapSource** wicBitmapSource);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ImageSourceFromWic*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ImageSourceFromWic*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ImageSourceFromWic*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ImageSourceFromWic*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ImageSourceFromWic*, int> OfferResources;
+        public delegate* unmanaged<TSelf*, int> OfferResources;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ImageSourceFromWic*, BOOL*, int> TryReclaimResources;
+        public delegate* unmanaged<TSelf*, BOOL*, int> TryReclaimResources;
 
         [NativeTypeName("HRESULT (const D2D1_RECT_U *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ImageSourceFromWic*, D2D_RECT_U*, int> EnsureCached;
+        public delegate* unmanaged<TSelf*, D2D_RECT_U*, int> EnsureCached;
 
         [NativeTypeName("HRESULT (const D2D1_RECT_U *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ImageSourceFromWic*, D2D_RECT_U*, int> TrimCache;
+        public delegate* unmanaged<TSelf*, D2D_RECT_U*, int> TrimCache;
 
         [NativeTypeName("void (IWICBitmapSource **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1ImageSourceFromWic*, IWICBitmapSource**, void> GetSource;
+        public delegate* unmanaged<TSelf*, IWICBitmapSource**, void> GetSource;
     }
 }

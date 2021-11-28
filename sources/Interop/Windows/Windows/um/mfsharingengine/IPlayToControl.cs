@@ -64,21 +64,22 @@ public unsafe partial struct IPlayToControl : IPlayToControl.Interface
         HRESULT Disconnect();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPlayToControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPlayToControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPlayToControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFSharingEngineClassFactory *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPlayToControl*, IMFSharingEngineClassFactory*, int> Connect;
+        public delegate* unmanaged<TSelf*, IMFSharingEngineClassFactory*, int> Connect;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPlayToControl*, int> Disconnect;
+        public delegate* unmanaged<TSelf*, int> Disconnect;
     }
 }

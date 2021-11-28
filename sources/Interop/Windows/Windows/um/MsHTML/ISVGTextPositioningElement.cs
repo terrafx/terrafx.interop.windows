@@ -170,57 +170,58 @@ public unsafe partial struct ISVGTextPositioningElement : ISVGTextPositioningEle
         HRESULT get_rotate(ISVGAnimatedNumberList** p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGTextPositioningElement*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGTextPositioningElement*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGTextPositioningElement*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGTextPositioningElement*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGTextPositioningElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGTextPositioningElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGTextPositioningElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLengthList *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGTextPositioningElement*, ISVGAnimatedLengthList*, int> putref_x;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLengthList*, int> putref_x;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLengthList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGTextPositioningElement*, ISVGAnimatedLengthList**, int> get_x;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLengthList**, int> get_x;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLengthList *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGTextPositioningElement*, ISVGAnimatedLengthList*, int> putref_y;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLengthList*, int> putref_y;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLengthList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGTextPositioningElement*, ISVGAnimatedLengthList**, int> get_y;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLengthList**, int> get_y;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLengthList *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGTextPositioningElement*, ISVGAnimatedLengthList*, int> putref_dx;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLengthList*, int> putref_dx;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLengthList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGTextPositioningElement*, ISVGAnimatedLengthList**, int> get_dx;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLengthList**, int> get_dx;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLengthList *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGTextPositioningElement*, ISVGAnimatedLengthList*, int> putref_dy;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLengthList*, int> putref_dy;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLengthList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGTextPositioningElement*, ISVGAnimatedLengthList**, int> get_dy;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedLengthList**, int> get_dy;
 
         [NativeTypeName("HRESULT (ISVGAnimatedNumberList *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGTextPositioningElement*, ISVGAnimatedNumberList*, int> putref_rotate;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedNumberList*, int> putref_rotate;
 
         [NativeTypeName("HRESULT (ISVGAnimatedNumberList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGTextPositioningElement*, ISVGAnimatedNumberList**, int> get_rotate;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedNumberList**, int> get_rotate;
     }
 }

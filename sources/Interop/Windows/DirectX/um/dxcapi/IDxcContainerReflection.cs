@@ -103,33 +103,34 @@ public unsafe partial struct IDxcContainerReflection : IDxcContainerReflection.I
         HRESULT GetPartReflection([NativeTypeName("UINT32")] uint idx, [NativeTypeName("const IID &")] Guid* iid, void** ppvObject);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcContainerReflection*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcContainerReflection*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcContainerReflection*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDxcBlob *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcContainerReflection*, IDxcBlob*, int> Load;
+        public delegate* unmanaged<TSelf*, IDxcBlob*, int> Load;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcContainerReflection*, uint*, int> GetPartCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetPartCount;
 
         [NativeTypeName("HRESULT (UINT32, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcContainerReflection*, uint, uint*, int> GetPartKind;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> GetPartKind;
 
         [NativeTypeName("HRESULT (UINT32, IDxcBlob **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcContainerReflection*, uint, IDxcBlob**, int> GetPartContent;
+        public delegate* unmanaged<TSelf*, uint, IDxcBlob**, int> GetPartContent;
 
         [NativeTypeName("HRESULT (UINT32, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcContainerReflection*, uint, uint*, int> FindFirstPartKind;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> FindFirstPartKind;
 
         [NativeTypeName("HRESULT (UINT32, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcContainerReflection*, uint, Guid*, void**, int> GetPartReflection;
+        public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> GetPartReflection;
     }
 }

@@ -85,27 +85,28 @@ public unsafe partial struct IXAudio2VoiceCallback : IXAudio2VoiceCallback.Inter
         void OnVoiceError(void* pBufferContext, HRESULT Error);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("void (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2VoiceCallback*, uint, void> OnVoiceProcessingPassStart;
+        public delegate* unmanaged<TSelf*, uint, void> OnVoiceProcessingPassStart;
 
         [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2VoiceCallback*, void> OnVoiceProcessingPassEnd;
+        public delegate* unmanaged<TSelf*, void> OnVoiceProcessingPassEnd;
 
         [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2VoiceCallback*, void> OnStreamEnd;
+        public delegate* unmanaged<TSelf*, void> OnStreamEnd;
 
         [NativeTypeName("void (void *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2VoiceCallback*, void*, void> OnBufferStart;
+        public delegate* unmanaged<TSelf*, void*, void> OnBufferStart;
 
         [NativeTypeName("void (void *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2VoiceCallback*, void*, void> OnBufferEnd;
+        public delegate* unmanaged<TSelf*, void*, void> OnBufferEnd;
 
         [NativeTypeName("void (void *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2VoiceCallback*, void*, void> OnLoopEnd;
+        public delegate* unmanaged<TSelf*, void*, void> OnLoopEnd;
 
         [NativeTypeName("void (void *, HRESULT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2VoiceCallback*, void*, HRESULT, void> OnVoiceError;
+        public delegate* unmanaged<TSelf*, void*, HRESULT, void> OnVoiceError;
     }
 }

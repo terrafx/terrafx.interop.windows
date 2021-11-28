@@ -112,36 +112,37 @@ public unsafe partial struct IHTMLPaintSite : IHTMLPaintSite.Interface
         HRESULT GetHitTestCookie([NativeTypeName("LONG *")] int* plCookie);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPaintSite*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPaintSite*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPaintSite*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPaintSite*, int> InvalidatePainterInfo;
+        public delegate* unmanaged<TSelf*, int> InvalidatePainterInfo;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPaintSite*, RECT*, int> InvalidateRect;
+        public delegate* unmanaged<TSelf*, RECT*, int> InvalidateRect;
 
         [NativeTypeName("HRESULT (HRGN) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPaintSite*, HRGN, int> InvalidateRegion;
+        public delegate* unmanaged<TSelf*, HRGN, int> InvalidateRegion;
 
         [NativeTypeName("HRESULT (LONG, HTML_PAINT_DRAW_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPaintSite*, int, HTML_PAINT_DRAW_INFO*, int> GetDrawInfo;
+        public delegate* unmanaged<TSelf*, int, HTML_PAINT_DRAW_INFO*, int> GetDrawInfo;
 
         [NativeTypeName("HRESULT (POINT, POINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPaintSite*, POINT, POINT*, int> TransformGlobalToLocal;
+        public delegate* unmanaged<TSelf*, POINT, POINT*, int> TransformGlobalToLocal;
 
         [NativeTypeName("HRESULT (POINT, POINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPaintSite*, POINT, POINT*, int> TransformLocalToGlobal;
+        public delegate* unmanaged<TSelf*, POINT, POINT*, int> TransformLocalToGlobal;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPaintSite*, int*, int> GetHitTestCookie;
+        public delegate* unmanaged<TSelf*, int*, int> GetHitTestCookie;
     }
 }

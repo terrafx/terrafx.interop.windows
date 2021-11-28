@@ -72,24 +72,25 @@ public unsafe partial struct INetworkFolderInternal : INetworkFolderInternal.Int
         HRESULT GetProvider(uint itemIdCount, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** itemIds, uint providerMaxLength, [NativeTypeName("LPWSTR")] ushort* provider);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<INetworkFolderInternal*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INetworkFolderInternal*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INetworkFolderInternal*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INetworkFolderInternal*, uint*, int> GetResourceDisplayType;
+        public delegate* unmanaged<TSelf*, uint*, int> GetResourceDisplayType;
 
         [NativeTypeName("HRESULT (LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INetworkFolderInternal*, ITEMIDLIST**, int> GetIDList;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST**, int> GetIDList;
 
         [NativeTypeName("HRESULT (UINT, LPCITEMIDLIST *, UINT, LPWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<INetworkFolderInternal*, uint, ITEMIDLIST**, uint, ushort*, int> GetProvider;
+        public delegate* unmanaged<TSelf*, uint, ITEMIDLIST**, uint, ushort*, int> GetProvider;
     }
 }

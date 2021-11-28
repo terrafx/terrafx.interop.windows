@@ -62,21 +62,22 @@ public unsafe partial struct IContinueCallback : IContinueCallback.Interface
         HRESULT FContinuePrinting([NativeTypeName("LONG")] int nCntPrinted, [NativeTypeName("LONG")] int nCurPage, [NativeTypeName("wchar_t *")] ushort* pwszPrintStatus);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContinueCallback*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContinueCallback*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContinueCallback*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContinueCallback*, int> FContinue;
+        public delegate* unmanaged<TSelf*, int> FContinue;
 
         [NativeTypeName("HRESULT (LONG, LONG, wchar_t *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContinueCallback*, int, int, ushort*, int> FContinuePrinting;
+        public delegate* unmanaged<TSelf*, int, int, ushort*, int> FContinuePrinting;
     }
 }

@@ -72,24 +72,25 @@ public unsafe partial struct IExpDispSupportXP : IExpDispSupportXP.Interface
         HRESULT OnInvoke([NativeTypeName("DISPID")] int dispidMember, [NativeTypeName("const IID &")] Guid* iid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pdispparams, VARIANT* pVarResult, EXCEPINFO* pexcepinfo, uint* puArgErr);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExpDispSupportXP*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExpDispSupportXP*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExpDispSupportXP*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, CIE4ConnectionPoint **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExpDispSupportXP*, Guid*, CIE4ConnectionPoint**, int> FindCIE4ConnectionPoint;
+        public delegate* unmanaged<TSelf*, Guid*, CIE4ConnectionPoint**, int> FindCIE4ConnectionPoint;
 
         [NativeTypeName("HRESULT (MSG *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExpDispSupportXP*, MSG*, uint, int> OnTranslateAccelerator;
+        public delegate* unmanaged<TSelf*, MSG*, uint, int> OnTranslateAccelerator;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExpDispSupportXP*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> OnInvoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> OnInvoke;
     }
 }

@@ -52,18 +52,19 @@ public unsafe partial struct IMMEndpoint : IMMEndpoint.Interface
         HRESULT GetDataFlow(EDataFlow* pDataFlow);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMMEndpoint*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMMEndpoint*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMMEndpoint*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (EDataFlow *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMMEndpoint*, EDataFlow*, int> GetDataFlow;
+        public delegate* unmanaged<TSelf*, EDataFlow*, int> GetDataFlow;
     }
 }

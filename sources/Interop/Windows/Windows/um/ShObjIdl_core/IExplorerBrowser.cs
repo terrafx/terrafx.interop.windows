@@ -192,60 +192,61 @@ public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface
         HRESULT GetCurrentView([NativeTypeName("const IID &")] Guid* riid, void** ppv);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowser*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowser*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowser*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, const RECT *, const FOLDERSETTINGS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowser*, HWND, RECT*, FOLDERSETTINGS*, int> Initialize;
+        public delegate* unmanaged<TSelf*, HWND, RECT*, FOLDERSETTINGS*, int> Initialize;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowser*, int> Destroy;
+        public delegate* unmanaged<TSelf*, int> Destroy;
 
         [NativeTypeName("HRESULT (HDWP *, RECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowser*, HDWP*, RECT, int> SetRect;
+        public delegate* unmanaged<TSelf*, HDWP*, RECT, int> SetRect;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowser*, ushort*, int> SetPropertyBag;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetPropertyBag;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowser*, ushort*, int> SetEmptyText;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetEmptyText;
 
         [NativeTypeName("HRESULT (const FOLDERSETTINGS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowser*, FOLDERSETTINGS*, int> SetFolderSettings;
+        public delegate* unmanaged<TSelf*, FOLDERSETTINGS*, int> SetFolderSettings;
 
         [NativeTypeName("HRESULT (IExplorerBrowserEvents *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowser*, IExplorerBrowserEvents*, uint*, int> Advise;
+        public delegate* unmanaged<TSelf*, IExplorerBrowserEvents*, uint*, int> Advise;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowser*, uint, int> Unadvise;
+        public delegate* unmanaged<TSelf*, uint, int> Unadvise;
 
         [NativeTypeName("HRESULT (EXPLORER_BROWSER_OPTIONS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowser*, EXPLORER_BROWSER_OPTIONS, int> SetOptions;
+        public delegate* unmanaged<TSelf*, EXPLORER_BROWSER_OPTIONS, int> SetOptions;
 
         [NativeTypeName("HRESULT (EXPLORER_BROWSER_OPTIONS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowser*, EXPLORER_BROWSER_OPTIONS*, int> GetOptions;
+        public delegate* unmanaged<TSelf*, EXPLORER_BROWSER_OPTIONS*, int> GetOptions;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowser*, ITEMIDLIST*, uint, int> BrowseToIDList;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, uint, int> BrowseToIDList;
 
         [NativeTypeName("HRESULT (IUnknown *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowser*, IUnknown*, uint, int> BrowseToObject;
+        public delegate* unmanaged<TSelf*, IUnknown*, uint, int> BrowseToObject;
 
         [NativeTypeName("HRESULT (IUnknown *, EXPLORER_BROWSER_FILL_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowser*, IUnknown*, EXPLORER_BROWSER_FILL_FLAGS, int> FillFromObject;
+        public delegate* unmanaged<TSelf*, IUnknown*, EXPLORER_BROWSER_FILL_FLAGS, int> FillFromObject;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowser*, int> RemoveAll;
+        public delegate* unmanaged<TSelf*, int> RemoveAll;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExplorerBrowser*, Guid*, void**, int> GetCurrentView;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetCurrentView;
     }
 }

@@ -190,63 +190,64 @@ public unsafe partial struct IHTMLWindow6 : IHTMLWindow6.Interface
         HRESULT msWriteProfilerMark([NativeTypeName("BSTR")] ushort* bstrProfilerMarkName);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLWindow6*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLWindow6*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLWindow6*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLWindow6*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLWindow6*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLWindow6*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLWindow6*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLWindow6*, VARIANT, int> put_XDomainRequest;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_XDomainRequest;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLWindow6*, VARIANT*, int> get_XDomainRequest;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_XDomainRequest;
 
         [NativeTypeName("HRESULT (IHTMLStorage **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLWindow6*, IHTMLStorage**, int> get_sessionStorage;
+        public delegate* unmanaged<TSelf*, IHTMLStorage**, int> get_sessionStorage;
 
         [NativeTypeName("HRESULT (IHTMLStorage **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLWindow6*, IHTMLStorage**, int> get_localStorage;
+        public delegate* unmanaged<TSelf*, IHTMLStorage**, int> get_localStorage;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLWindow6*, VARIANT, int> put_onhashchange;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onhashchange;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLWindow6*, VARIANT*, int> get_onhashchange;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onhashchange;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLWindow6*, int*, int> get_maxConnectionsPerServer;
+        public delegate* unmanaged<TSelf*, int*, int> get_maxConnectionsPerServer;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLWindow6*, ushort*, VARIANT, int> postMessage;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT, int> postMessage;
 
         [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLWindow6*, ushort*, ushort**, int> toStaticHTML;
+        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> toStaticHTML;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLWindow6*, VARIANT, int> put_onmessage;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onmessage;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLWindow6*, VARIANT*, int> get_onmessage;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onmessage;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLWindow6*, ushort*, int> msWriteProfilerMark;
+        public delegate* unmanaged<TSelf*, ushort*, int> msWriteProfilerMark;
     }
 }

@@ -628,261 +628,262 @@ public unsafe partial struct ID3D11VideoContext3 : ID3D11VideoContext3.Interface
         HRESULT SubmitDecoderBuffers2(ID3D11VideoDecoder* pDecoder, uint NumBuffers, [NativeTypeName("const D3D11_VIDEO_DECODER_BUFFER_DESC2 *")] D3D11_VIDEO_DECODER_BUFFER_DESC2* pBufferDesc);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11Device**, void> GetDevice;
+        public delegate* unmanaged<TSelf*, ID3D11Device**, void> GetDevice;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (ID3D11VideoDecoder *, D3D11_VIDEO_DECODER_BUFFER_TYPE, UINT *, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoDecoder*, D3D11_VIDEO_DECODER_BUFFER_TYPE, uint*, void**, int> GetDecoderBuffer;
+        public delegate* unmanaged<TSelf*, ID3D11VideoDecoder*, D3D11_VIDEO_DECODER_BUFFER_TYPE, uint*, void**, int> GetDecoderBuffer;
 
         [NativeTypeName("HRESULT (ID3D11VideoDecoder *, D3D11_VIDEO_DECODER_BUFFER_TYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoDecoder*, D3D11_VIDEO_DECODER_BUFFER_TYPE, int> ReleaseDecoderBuffer;
+        public delegate* unmanaged<TSelf*, ID3D11VideoDecoder*, D3D11_VIDEO_DECODER_BUFFER_TYPE, int> ReleaseDecoderBuffer;
 
         [NativeTypeName("HRESULT (ID3D11VideoDecoder *, ID3D11VideoDecoderOutputView *, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int> DecoderBeginFrame;
+        public delegate* unmanaged<TSelf*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, int> DecoderBeginFrame;
 
         [NativeTypeName("HRESULT (ID3D11VideoDecoder *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoDecoder*, int> DecoderEndFrame;
+        public delegate* unmanaged<TSelf*, ID3D11VideoDecoder*, int> DecoderEndFrame;
 
         [NativeTypeName("HRESULT (ID3D11VideoDecoder *, UINT, const D3D11_VIDEO_DECODER_BUFFER_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoDecoder*, uint, D3D11_VIDEO_DECODER_BUFFER_DESC*, int> SubmitDecoderBuffers;
+        public delegate* unmanaged<TSelf*, ID3D11VideoDecoder*, uint, D3D11_VIDEO_DECODER_BUFFER_DESC*, int> SubmitDecoderBuffers;
 
         [NativeTypeName("APP_DEPRECATED_HRESULT (ID3D11VideoDecoder *, const D3D11_VIDEO_DECODER_EXTENSION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoDecoder*, D3D11_VIDEO_DECODER_EXTENSION*, int> DecoderExtension;
+        public delegate* unmanaged<TSelf*, ID3D11VideoDecoder*, D3D11_VIDEO_DECODER_EXTENSION*, int> DecoderExtension;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, BOOL, const RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, BOOL, RECT*, void> VideoProcessorSetOutputTargetRect;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, BOOL, RECT*, void> VideoProcessorSetOutputTargetRect;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, BOOL, const D3D11_VIDEO_COLOR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, BOOL, D3D11_VIDEO_COLOR*, void> VideoProcessorSetOutputBackgroundColor;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, BOOL, D3D11_VIDEO_COLOR*, void> VideoProcessorSetOutputBackgroundColor;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, const D3D11_VIDEO_PROCESSOR_COLOR_SPACE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, D3D11_VIDEO_PROCESSOR_COLOR_SPACE*, void> VideoProcessorSetOutputColorSpace;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, D3D11_VIDEO_PROCESSOR_COLOR_SPACE*, void> VideoProcessorSetOutputColorSpace;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE, uint, void> VideoProcessorSetOutputAlphaFillMode;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE, uint, void> VideoProcessorSetOutputAlphaFillMode;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, BOOL, SIZE) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, BOOL, SIZE, void> VideoProcessorSetOutputConstriction;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, BOOL, SIZE, void> VideoProcessorSetOutputConstriction;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, BOOL, void> VideoProcessorSetOutputStereoMode;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, BOOL, void> VideoProcessorSetOutputStereoMode;
 
         [NativeTypeName("APP_DEPRECATED_HRESULT (ID3D11VideoProcessor *, const GUID *, UINT, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, Guid*, uint, void*, int> VideoProcessorSetOutputExtension;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, Guid*, uint, void*, int> VideoProcessorSetOutputExtension;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, BOOL *, RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, BOOL*, RECT*, void> VideoProcessorGetOutputTargetRect;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, BOOL*, RECT*, void> VideoProcessorGetOutputTargetRect;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, BOOL *, D3D11_VIDEO_COLOR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, BOOL*, D3D11_VIDEO_COLOR*, void> VideoProcessorGetOutputBackgroundColor;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, BOOL*, D3D11_VIDEO_COLOR*, void> VideoProcessorGetOutputBackgroundColor;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, D3D11_VIDEO_PROCESSOR_COLOR_SPACE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, D3D11_VIDEO_PROCESSOR_COLOR_SPACE*, void> VideoProcessorGetOutputColorSpace;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, D3D11_VIDEO_PROCESSOR_COLOR_SPACE*, void> VideoProcessorGetOutputColorSpace;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE*, uint*, void> VideoProcessorGetOutputAlphaFillMode;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE*, uint*, void> VideoProcessorGetOutputAlphaFillMode;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, BOOL *, SIZE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, BOOL*, SIZE*, void> VideoProcessorGetOutputConstriction;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, BOOL*, SIZE*, void> VideoProcessorGetOutputConstriction;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, BOOL*, void> VideoProcessorGetOutputStereoMode;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, BOOL*, void> VideoProcessorGetOutputStereoMode;
 
         [NativeTypeName("APP_DEPRECATED_HRESULT (ID3D11VideoProcessor *, const GUID *, UINT, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, Guid*, uint, void*, int> VideoProcessorGetOutputExtension;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, Guid*, uint, void*, int> VideoProcessorGetOutputExtension;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, D3D11_VIDEO_FRAME_FORMAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_FRAME_FORMAT, void> VideoProcessorSetStreamFrameFormat;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_FRAME_FORMAT, void> VideoProcessorSetStreamFrameFormat;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, const D3D11_VIDEO_PROCESSOR_COLOR_SPACE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_PROCESSOR_COLOR_SPACE*, void> VideoProcessorSetStreamColorSpace;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_PROCESSOR_COLOR_SPACE*, void> VideoProcessorSetStreamColorSpace;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE, BOOL, const DXGI_RATIONAL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE, BOOL, DXGI_RATIONAL*, void> VideoProcessorSetStreamOutputRate;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE, BOOL, DXGI_RATIONAL*, void> VideoProcessorSetStreamOutputRate;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL, const RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL, RECT*, void> VideoProcessorSetStreamSourceRect;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, BOOL, RECT*, void> VideoProcessorSetStreamSourceRect;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL, const RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL, RECT*, void> VideoProcessorSetStreamDestRect;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, BOOL, RECT*, void> VideoProcessorSetStreamDestRect;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL, FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL, float, void> VideoProcessorSetStreamAlpha;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, BOOL, float, void> VideoProcessorSetStreamAlpha;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, UINT, const UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, uint, uint*, void> VideoProcessorSetStreamPalette;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, uint, uint*, void> VideoProcessorSetStreamPalette;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL, const DXGI_RATIONAL *, const DXGI_RATIONAL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL, DXGI_RATIONAL*, DXGI_RATIONAL*, void> VideoProcessorSetStreamPixelAspectRatio;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, BOOL, DXGI_RATIONAL*, DXGI_RATIONAL*, void> VideoProcessorSetStreamPixelAspectRatio;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL, FLOAT, FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL, float, float, void> VideoProcessorSetStreamLumaKey;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, BOOL, float, float, void> VideoProcessorSetStreamLumaKey;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT, BOOL, BOOL, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT, BOOL, BOOL, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE, int, void> VideoProcessorSetStreamStereoFormat;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, BOOL, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT, BOOL, BOOL, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE, int, void> VideoProcessorSetStreamStereoFormat;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL, void> VideoProcessorSetStreamAutoProcessingMode;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, BOOL, void> VideoProcessorSetStreamAutoProcessingMode;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, D3D11_VIDEO_PROCESSOR_FILTER, BOOL, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_PROCESSOR_FILTER, BOOL, int, void> VideoProcessorSetStreamFilter;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_PROCESSOR_FILTER, BOOL, int, void> VideoProcessorSetStreamFilter;
 
         [NativeTypeName("APP_DEPRECATED_HRESULT (ID3D11VideoProcessor *, UINT, const GUID *, UINT, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int> VideoProcessorSetStreamExtension;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int> VideoProcessorSetStreamExtension;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, D3D11_VIDEO_FRAME_FORMAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_FRAME_FORMAT*, void> VideoProcessorGetStreamFrameFormat;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_FRAME_FORMAT*, void> VideoProcessorGetStreamFrameFormat;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, D3D11_VIDEO_PROCESSOR_COLOR_SPACE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_PROCESSOR_COLOR_SPACE*, void> VideoProcessorGetStreamColorSpace;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_PROCESSOR_COLOR_SPACE*, void> VideoProcessorGetStreamColorSpace;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE *, BOOL *, DXGI_RATIONAL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE*, BOOL*, DXGI_RATIONAL*, void> VideoProcessorGetStreamOutputRate;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_PROCESSOR_OUTPUT_RATE*, BOOL*, DXGI_RATIONAL*, void> VideoProcessorGetStreamOutputRate;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *, RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL*, RECT*, void> VideoProcessorGetStreamSourceRect;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, BOOL*, RECT*, void> VideoProcessorGetStreamSourceRect;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *, RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL*, RECT*, void> VideoProcessorGetStreamDestRect;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, BOOL*, RECT*, void> VideoProcessorGetStreamDestRect;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *, FLOAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL*, float*, void> VideoProcessorGetStreamAlpha;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, BOOL*, float*, void> VideoProcessorGetStreamAlpha;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, UINT, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, uint, uint*, void> VideoProcessorGetStreamPalette;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, uint, uint*, void> VideoProcessorGetStreamPalette;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *, DXGI_RATIONAL *, DXGI_RATIONAL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL*, DXGI_RATIONAL*, DXGI_RATIONAL*, void> VideoProcessorGetStreamPixelAspectRatio;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, BOOL*, DXGI_RATIONAL*, DXGI_RATIONAL*, void> VideoProcessorGetStreamPixelAspectRatio;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *, FLOAT *, FLOAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL*, float*, float*, void> VideoProcessorGetStreamLumaKey;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, BOOL*, float*, float*, void> VideoProcessorGetStreamLumaKey;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT *, BOOL *, BOOL *, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE *, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL*, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT*, BOOL*, BOOL*, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE*, int*, void> VideoProcessorGetStreamStereoFormat;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, BOOL*, D3D11_VIDEO_PROCESSOR_STEREO_FORMAT*, BOOL*, BOOL*, D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE*, int*, void> VideoProcessorGetStreamStereoFormat;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL*, void> VideoProcessorGetStreamAutoProcessingMode;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, BOOL*, void> VideoProcessorGetStreamAutoProcessingMode;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, D3D11_VIDEO_PROCESSOR_FILTER, BOOL *, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_PROCESSOR_FILTER, BOOL*, int*, void> VideoProcessorGetStreamFilter;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, D3D11_VIDEO_PROCESSOR_FILTER, BOOL*, int*, void> VideoProcessorGetStreamFilter;
 
         [NativeTypeName("APP_DEPRECATED_HRESULT (ID3D11VideoProcessor *, UINT, const GUID *, UINT, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int> VideoProcessorGetStreamExtension;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, Guid*, uint, void*, int> VideoProcessorGetStreamExtension;
 
         [NativeTypeName("HRESULT (ID3D11VideoProcessor *, ID3D11VideoProcessorOutputView *, UINT, UINT, const D3D11_VIDEO_PROCESSOR_STREAM *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, D3D11_VIDEO_PROCESSOR_STREAM*, int> VideoProcessorBlt;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, ID3D11VideoProcessorOutputView*, uint, uint, D3D11_VIDEO_PROCESSOR_STREAM*, int> VideoProcessorBlt;
 
         [NativeTypeName("HRESULT (ID3D11CryptoSession *, UINT, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, void*, int> NegotiateCryptoSessionKeyExchange;
+        public delegate* unmanaged<TSelf*, ID3D11CryptoSession*, uint, void*, int> NegotiateCryptoSessionKeyExchange;
 
         [NativeTypeName("void (ID3D11CryptoSession *, ID3D11Texture2D *, ID3D11Texture2D *, UINT, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void> EncryptionBlt;
+        public delegate* unmanaged<TSelf*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, uint, void*, void> EncryptionBlt;
 
         [NativeTypeName("void (ID3D11CryptoSession *, ID3D11Texture2D *, ID3D11Texture2D *, D3D11_ENCRYPTED_BLOCK_INFO *, UINT, const void *, UINT, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, D3D11_ENCRYPTED_BLOCK_INFO*, uint, void*, uint, void*, void> DecryptionBlt;
+        public delegate* unmanaged<TSelf*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, D3D11_ENCRYPTED_BLOCK_INFO*, uint, void*, uint, void*, void> DecryptionBlt;
 
         [NativeTypeName("void (ID3D11CryptoSession *, UINT, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, void*, void> StartSessionKeyRefresh;
+        public delegate* unmanaged<TSelf*, ID3D11CryptoSession*, uint, void*, void> StartSessionKeyRefresh;
 
         [NativeTypeName("void (ID3D11CryptoSession *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11CryptoSession*, void> FinishSessionKeyRefresh;
+        public delegate* unmanaged<TSelf*, ID3D11CryptoSession*, void> FinishSessionKeyRefresh;
 
         [NativeTypeName("HRESULT (ID3D11CryptoSession *, UINT, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, void*, int> GetEncryptionBltKey;
+        public delegate* unmanaged<TSelf*, ID3D11CryptoSession*, uint, void*, int> GetEncryptionBltKey;
 
         [NativeTypeName("HRESULT (ID3D11AuthenticatedChannel *, UINT, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, void*, int> NegotiateAuthenticatedChannelKeyExchange;
+        public delegate* unmanaged<TSelf*, ID3D11AuthenticatedChannel*, uint, void*, int> NegotiateAuthenticatedChannelKeyExchange;
 
         [NativeTypeName("HRESULT (ID3D11AuthenticatedChannel *, UINT, const void *, UINT, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int> QueryAuthenticatedChannel;
+        public delegate* unmanaged<TSelf*, ID3D11AuthenticatedChannel*, uint, void*, uint, void*, int> QueryAuthenticatedChannel;
 
         [NativeTypeName("HRESULT (ID3D11AuthenticatedChannel *, UINT, const void *, D3D11_AUTHENTICATED_CONFIGURE_OUTPUT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11AuthenticatedChannel*, uint, void*, D3D11_AUTHENTICATED_CONFIGURE_OUTPUT*, int> ConfigureAuthenticatedChannel;
+        public delegate* unmanaged<TSelf*, ID3D11AuthenticatedChannel*, uint, void*, D3D11_AUTHENTICATED_CONFIGURE_OUTPUT*, int> ConfigureAuthenticatedChannel;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL, D3D11_VIDEO_PROCESSOR_ROTATION) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL, D3D11_VIDEO_PROCESSOR_ROTATION, void> VideoProcessorSetStreamRotation;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, BOOL, D3D11_VIDEO_PROCESSOR_ROTATION, void> VideoProcessorSetStreamRotation;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *, D3D11_VIDEO_PROCESSOR_ROTATION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL*, D3D11_VIDEO_PROCESSOR_ROTATION*, void> VideoProcessorGetStreamRotation;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, BOOL*, D3D11_VIDEO_PROCESSOR_ROTATION*, void> VideoProcessorGetStreamRotation;
 
         [NativeTypeName("HRESULT (ID3D11VideoDecoder *, UINT, const D3D11_VIDEO_DECODER_BUFFER_DESC1 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoDecoder*, uint, D3D11_VIDEO_DECODER_BUFFER_DESC1*, int> SubmitDecoderBuffers1;
+        public delegate* unmanaged<TSelf*, ID3D11VideoDecoder*, uint, D3D11_VIDEO_DECODER_BUFFER_DESC1*, int> SubmitDecoderBuffers1;
 
         [NativeTypeName("HRESULT (ID3D11CryptoSession *, UINT, const void *, UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11CryptoSession*, uint, void*, ulong*, int> GetDataForNewHardwareKey;
+        public delegate* unmanaged<TSelf*, ID3D11CryptoSession*, uint, void*, ulong*, int> GetDataForNewHardwareKey;
 
         [NativeTypeName("HRESULT (ID3D11CryptoSession *, D3D11_CRYPTO_SESSION_STATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11CryptoSession*, D3D11_CRYPTO_SESSION_STATUS*, int> CheckCryptoSessionStatus;
+        public delegate* unmanaged<TSelf*, ID3D11CryptoSession*, D3D11_CRYPTO_SESSION_STATUS*, int> CheckCryptoSessionStatus;
 
         [NativeTypeName("HRESULT (ID3D11VideoDecoder *, DXGI_COLOR_SPACE_TYPE, const D3D11_VIDEO_SAMPLE_DESC *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoDecoder*, DXGI_COLOR_SPACE_TYPE, D3D11_VIDEO_SAMPLE_DESC*, uint, int> DecoderEnableDownsampling;
+        public delegate* unmanaged<TSelf*, ID3D11VideoDecoder*, DXGI_COLOR_SPACE_TYPE, D3D11_VIDEO_SAMPLE_DESC*, uint, int> DecoderEnableDownsampling;
 
         [NativeTypeName("HRESULT (ID3D11VideoDecoder *, const D3D11_VIDEO_SAMPLE_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoDecoder*, D3D11_VIDEO_SAMPLE_DESC*, int> DecoderUpdateDownsampling;
+        public delegate* unmanaged<TSelf*, ID3D11VideoDecoder*, D3D11_VIDEO_SAMPLE_DESC*, int> DecoderUpdateDownsampling;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, DXGI_COLOR_SPACE_TYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, DXGI_COLOR_SPACE_TYPE, void> VideoProcessorSetOutputColorSpace1;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, DXGI_COLOR_SPACE_TYPE, void> VideoProcessorSetOutputColorSpace1;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, BOOL, void> VideoProcessorSetOutputShaderUsage;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, BOOL, void> VideoProcessorSetOutputShaderUsage;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, DXGI_COLOR_SPACE_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, DXGI_COLOR_SPACE_TYPE*, void> VideoProcessorGetOutputColorSpace1;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, DXGI_COLOR_SPACE_TYPE*, void> VideoProcessorGetOutputColorSpace1;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, BOOL*, void> VideoProcessorGetOutputShaderUsage;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, BOOL*, void> VideoProcessorGetOutputShaderUsage;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, DXGI_COLOR_SPACE_TYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, DXGI_COLOR_SPACE_TYPE, void> VideoProcessorSetStreamColorSpace1;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, DXGI_COLOR_SPACE_TYPE, void> VideoProcessorSetStreamColorSpace1;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL, BOOL, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL, BOOL, BOOL, void> VideoProcessorSetStreamMirror;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, BOOL, BOOL, BOOL, void> VideoProcessorSetStreamMirror;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, DXGI_COLOR_SPACE_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, DXGI_COLOR_SPACE_TYPE*, void> VideoProcessorGetStreamColorSpace1;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, DXGI_COLOR_SPACE_TYPE*, void> VideoProcessorGetStreamColorSpace1;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, BOOL *, BOOL *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, BOOL*, BOOL*, BOOL*, void> VideoProcessorGetStreamMirror;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, BOOL*, BOOL*, BOOL*, void> VideoProcessorGetStreamMirror;
 
         [NativeTypeName("HRESULT (ID3D11VideoProcessor *, UINT, UINT, DXGI_FORMAT, UINT, const D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, uint, DXGI_FORMAT, uint, D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT*, uint*, int> VideoProcessorGetBehaviorHints;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, uint, DXGI_FORMAT, uint, D3D11_VIDEO_PROCESSOR_STREAM_BEHAVIOR_HINT*, uint*, int> VideoProcessorGetBehaviorHints;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, DXGI_HDR_METADATA_TYPE, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, DXGI_HDR_METADATA_TYPE, uint, void*, void> VideoProcessorSetOutputHDRMetaData;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, DXGI_HDR_METADATA_TYPE, uint, void*, void> VideoProcessorSetOutputHDRMetaData;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, DXGI_HDR_METADATA_TYPE *, UINT, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, DXGI_HDR_METADATA_TYPE*, uint, void*, void> VideoProcessorGetOutputHDRMetaData;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, DXGI_HDR_METADATA_TYPE*, uint, void*, void> VideoProcessorGetOutputHDRMetaData;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, DXGI_HDR_METADATA_TYPE, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, DXGI_HDR_METADATA_TYPE, uint, void*, void> VideoProcessorSetStreamHDRMetaData;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, DXGI_HDR_METADATA_TYPE, uint, void*, void> VideoProcessorSetStreamHDRMetaData;
 
         [NativeTypeName("void (ID3D11VideoProcessor *, UINT, DXGI_HDR_METADATA_TYPE *, UINT, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoProcessor*, uint, DXGI_HDR_METADATA_TYPE*, uint, void*, void> VideoProcessorGetStreamHDRMetaData;
+        public delegate* unmanaged<TSelf*, ID3D11VideoProcessor*, uint, DXGI_HDR_METADATA_TYPE*, uint, void*, void> VideoProcessorGetStreamHDRMetaData;
 
         [NativeTypeName("HRESULT (ID3D11VideoDecoder *, ID3D11VideoDecoderOutputView *, UINT, const void *, UINT, const UINT *, ID3D11Buffer *const *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int> DecoderBeginFrame1;
+        public delegate* unmanaged<TSelf*, ID3D11VideoDecoder*, ID3D11VideoDecoderOutputView*, uint, void*, uint, uint*, ID3D11Buffer**, int> DecoderBeginFrame1;
 
         [NativeTypeName("HRESULT (ID3D11VideoDecoder *, UINT, const D3D11_VIDEO_DECODER_BUFFER_DESC2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11VideoContext3*, ID3D11VideoDecoder*, uint, D3D11_VIDEO_DECODER_BUFFER_DESC2*, int> SubmitDecoderBuffers2;
+        public delegate* unmanaged<TSelf*, ID3D11VideoDecoder*, uint, D3D11_VIDEO_DECODER_BUFFER_DESC2*, int> SubmitDecoderBuffers2;
     }
 }

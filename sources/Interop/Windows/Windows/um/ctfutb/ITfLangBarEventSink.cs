@@ -102,33 +102,34 @@ public unsafe partial struct ITfLangBarEventSink : ITfLangBarEventSink.Interface
         HRESULT GetItemFloatingRect([NativeTypeName("DWORD")] uint dwThreadId, [NativeTypeName("const GUID &")] Guid* rguid, RECT* prc);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarEventSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarEventSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarEventSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarEventSink*, uint, int> OnSetFocus;
+        public delegate* unmanaged<TSelf*, uint, int> OnSetFocus;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarEventSink*, uint, int> OnThreadTerminate;
+        public delegate* unmanaged<TSelf*, uint, int> OnThreadTerminate;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarEventSink*, uint, int> OnThreadItemChange;
+        public delegate* unmanaged<TSelf*, uint, int> OnThreadItemChange;
 
         [NativeTypeName("HRESULT (DWORD, UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarEventSink*, uint, uint, WPARAM, LPARAM, int> OnModalInput;
+        public delegate* unmanaged<TSelf*, uint, uint, WPARAM, LPARAM, int> OnModalInput;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarEventSink*, uint, int> ShowFloating;
+        public delegate* unmanaged<TSelf*, uint, int> ShowFloating;
 
         [NativeTypeName("HRESULT (DWORD, const GUID &, RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarEventSink*, uint, Guid*, RECT*, int> GetItemFloatingRect;
+        public delegate* unmanaged<TSelf*, uint, Guid*, RECT*, int> GetItemFloatingRect;
     }
 }

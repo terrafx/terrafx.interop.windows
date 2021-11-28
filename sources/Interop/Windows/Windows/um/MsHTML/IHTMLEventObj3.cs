@@ -230,75 +230,76 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         HRESULT get_nextPage([NativeTypeName("BSTR *")] ushort** p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, short*, int> get_contentOverflow;
+        public delegate* unmanaged<TSelf*, short*, int> get_contentOverflow;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, short, int> put_shiftLeft;
+        public delegate* unmanaged<TSelf*, short, int> put_shiftLeft;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, short*, int> get_shiftLeft;
+        public delegate* unmanaged<TSelf*, short*, int> get_shiftLeft;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, short, int> put_altLeft;
+        public delegate* unmanaged<TSelf*, short, int> put_altLeft;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, short*, int> get_altLeft;
+        public delegate* unmanaged<TSelf*, short*, int> get_altLeft;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, short, int> put_ctrlLeft;
+        public delegate* unmanaged<TSelf*, short, int> put_ctrlLeft;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, short*, int> get_ctrlLeft;
+        public delegate* unmanaged<TSelf*, short*, int> get_ctrlLeft;
 
         [NativeTypeName("HRESULT (LONG_PTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, nint*, int> get_imeCompositionChange;
+        public delegate* unmanaged<TSelf*, nint*, int> get_imeCompositionChange;
 
         [NativeTypeName("HRESULT (LONG_PTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, nint*, int> get_imeNotifyCommand;
+        public delegate* unmanaged<TSelf*, nint*, int> get_imeNotifyCommand;
 
         [NativeTypeName("HRESULT (LONG_PTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, nint*, int> get_imeNotifyData;
+        public delegate* unmanaged<TSelf*, nint*, int> get_imeNotifyData;
 
         [NativeTypeName("HRESULT (LONG_PTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, nint*, int> get_imeRequest;
+        public delegate* unmanaged<TSelf*, nint*, int> get_imeRequest;
 
         [NativeTypeName("HRESULT (LONG_PTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, nint*, int> get_imeRequestData;
+        public delegate* unmanaged<TSelf*, nint*, int> get_imeRequestData;
 
         [NativeTypeName("HRESULT (LONG_PTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, nint*, int> get_keyboardLayout;
+        public delegate* unmanaged<TSelf*, nint*, int> get_keyboardLayout;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, int*, int> get_behaviorCookie;
+        public delegate* unmanaged<TSelf*, int*, int> get_behaviorCookie;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, int*, int> get_behaviorPart;
+        public delegate* unmanaged<TSelf*, int*, int> get_behaviorPart;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEventObj3*, ushort**, int> get_nextPage;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_nextPage;
     }
 }

@@ -132,42 +132,43 @@ public unsafe partial struct IAudioSessionControl : IAudioSessionControl.Interfa
         HRESULT UnregisterAudioSessionNotification(IAudioSessionEvents* NewNotifications);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (AudioSessionState *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionControl*, AudioSessionState*, int> GetState;
+        public delegate* unmanaged<TSelf*, AudioSessionState*, int> GetState;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionControl*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionControl*, ushort*, Guid*, int> SetDisplayName;
+        public delegate* unmanaged<TSelf*, ushort*, Guid*, int> SetDisplayName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionControl*, ushort**, int> GetIconPath;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetIconPath;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionControl*, ushort*, Guid*, int> SetIconPath;
+        public delegate* unmanaged<TSelf*, ushort*, Guid*, int> SetIconPath;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionControl*, Guid*, int> GetGroupingParam;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetGroupingParam;
 
         [NativeTypeName("HRESULT (LPCGUID, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionControl*, Guid*, Guid*, int> SetGroupingParam;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, int> SetGroupingParam;
 
         [NativeTypeName("HRESULT (IAudioSessionEvents *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionControl*, IAudioSessionEvents*, int> RegisterAudioSessionNotification;
+        public delegate* unmanaged<TSelf*, IAudioSessionEvents*, int> RegisterAudioSessionNotification;
 
         [NativeTypeName("HRESULT (IAudioSessionEvents *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioSessionControl*, IAudioSessionEvents*, int> UnregisterAudioSessionNotification;
+        public delegate* unmanaged<TSelf*, IAudioSessionEvents*, int> UnregisterAudioSessionNotification;
     }
 }

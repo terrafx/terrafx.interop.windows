@@ -62,21 +62,22 @@ public unsafe partial struct IFrameworkInputPaneHandler : IFrameworkInputPaneHan
         HRESULT Hiding(BOOL fEnsureFocusedElementInView);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFrameworkInputPaneHandler*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFrameworkInputPaneHandler*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFrameworkInputPaneHandler*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (RECT *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFrameworkInputPaneHandler*, RECT*, BOOL, int> Showing;
+        public delegate* unmanaged<TSelf*, RECT*, BOOL, int> Showing;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFrameworkInputPaneHandler*, BOOL, int> Hiding;
+        public delegate* unmanaged<TSelf*, BOOL, int> Hiding;
     }
 }

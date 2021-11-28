@@ -53,18 +53,19 @@ public unsafe partial struct ID3D12SDKConfiguration : ID3D12SDKConfiguration.Int
         HRESULT SetSDKVersion(uint SDKVersion, [NativeTypeName("LPCSTR")] sbyte* SDKPath);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12SDKConfiguration*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12SDKConfiguration*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12SDKConfiguration*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, LPCSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12SDKConfiguration*, uint, sbyte*, int> SetSDKVersion;
+        public delegate* unmanaged<TSelf*, uint, sbyte*, int> SetSDKVersion;
     }
 }

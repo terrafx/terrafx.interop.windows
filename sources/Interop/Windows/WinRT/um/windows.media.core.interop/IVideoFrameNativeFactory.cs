@@ -74,27 +74,28 @@ public unsafe partial struct IVideoFrameNativeFactory : IVideoFrameNativeFactory
         HRESULT CreateFromMFSample(IMFSample* data, [NativeTypeName("const GUID &")] Guid* subtype, [NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height, BOOL forceReadOnly, [NativeTypeName("const MFVideoArea *")] MFVideoArea* minDisplayAperture, IMFDXGIDeviceManager* device, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoFrameNativeFactory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoFrameNativeFactory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoFrameNativeFactory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoFrameNativeFactory*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoFrameNativeFactory*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoFrameNativeFactory*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (IMFSample *, const GUID &, UINT32, UINT32, BOOL, const MFVideoArea *, IMFDXGIDeviceManager *, const IID &, LPVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoFrameNativeFactory*, IMFSample*, Guid*, uint, uint, BOOL, MFVideoArea*, IMFDXGIDeviceManager*, Guid*, void**, int> CreateFromMFSample;
+        public delegate* unmanaged<TSelf*, IMFSample*, Guid*, uint, uint, BOOL, MFVideoArea*, IMFDXGIDeviceManager*, Guid*, void**, int> CreateFromMFSample;
     }
 }

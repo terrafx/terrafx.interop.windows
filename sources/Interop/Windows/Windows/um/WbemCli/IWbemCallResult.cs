@@ -82,27 +82,28 @@ public unsafe partial struct IWbemCallResult : IWbemCallResult.Interface
         HRESULT GetCallStatus([NativeTypeName("long")] int lTimeout, [NativeTypeName("long *")] int* plStatus);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemCallResult*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemCallResult*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemCallResult*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long, IWbemClassObject **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemCallResult*, int, IWbemClassObject**, int> GetResultObject;
+        public delegate* unmanaged<TSelf*, int, IWbemClassObject**, int> GetResultObject;
 
         [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemCallResult*, int, ushort**, int> GetResultString;
+        public delegate* unmanaged<TSelf*, int, ushort**, int> GetResultString;
 
         [NativeTypeName("HRESULT (long, IWbemServices **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemCallResult*, int, IWbemServices**, int> GetResultServices;
+        public delegate* unmanaged<TSelf*, int, IWbemServices**, int> GetResultServices;
 
         [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemCallResult*, int, int*, int> GetCallStatus;
+        public delegate* unmanaged<TSelf*, int, int*, int> GetCallStatus;
     }
 }

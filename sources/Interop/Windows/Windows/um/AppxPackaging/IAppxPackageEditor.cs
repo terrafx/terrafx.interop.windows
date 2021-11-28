@@ -104,33 +104,34 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface
         HRESULT UpdatePackageManifest(IStream* packageStream, IStream* updatedManifestStream, BOOL isPackageEncrypted, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS options);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageEditor*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageEditor*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageEditor*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageEditor*, ushort*, int> SetWorkingDirectory;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetWorkingDirectory;
 
         [NativeTypeName("HRESULT (IStream *, IStream *, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageEditor*, IStream*, IStream*, IStream*, int> CreateDeltaPackage;
+        public delegate* unmanaged<TSelf*, IStream*, IStream*, IStream*, int> CreateDeltaPackage;
 
         [NativeTypeName("HRESULT (IStream *, IStream *, LPCWSTR, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageEditor*, IStream*, IStream*, ushort*, IStream*, int> CreateDeltaPackageUsingBaselineBlockMap;
+        public delegate* unmanaged<TSelf*, IStream*, IStream*, ushort*, IStream*, int> CreateDeltaPackageUsingBaselineBlockMap;
 
         [NativeTypeName("HRESULT (IStream *, IStream *, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageEditor*, IStream*, IStream*, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION, int> UpdatePackage;
+        public delegate* unmanaged<TSelf*, IStream*, IStream*, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION, int> UpdatePackage;
 
         [NativeTypeName("HRESULT (IStream *, IStream *, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION, const APPX_ENCRYPTED_PACKAGE_SETTINGS2 *, const APPX_KEY_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageEditor*, IStream*, IStream*, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION, APPX_ENCRYPTED_PACKAGE_SETTINGS2*, APPX_KEY_INFO*, int> UpdateEncryptedPackage;
+        public delegate* unmanaged<TSelf*, IStream*, IStream*, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION, APPX_ENCRYPTED_PACKAGE_SETTINGS2*, APPX_KEY_INFO*, int> UpdateEncryptedPackage;
 
         [NativeTypeName("HRESULT (IStream *, IStream *, BOOL, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageEditor*, IStream*, IStream*, BOOL, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS, int> UpdatePackageManifest;
+        public delegate* unmanaged<TSelf*, IStream*, IStream*, BOOL, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS, int> UpdatePackageManifest;
     }
 }

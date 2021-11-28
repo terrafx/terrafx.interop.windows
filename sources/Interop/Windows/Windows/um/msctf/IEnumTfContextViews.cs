@@ -82,27 +82,28 @@ public unsafe partial struct IEnumTfContextViews : IEnumTfContextViews.Interface
         HRESULT Skip([NativeTypeName("ULONG")] uint ulCount);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfContextViews*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfContextViews*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfContextViews*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumTfContextViews **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfContextViews*, IEnumTfContextViews**, int> Clone;
+        public delegate* unmanaged<TSelf*, IEnumTfContextViews**, int> Clone;
 
         [NativeTypeName("HRESULT (ULONG, ITfContextView **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfContextViews*, uint, ITfContextView**, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, ITfContextView**, uint*, int> Next;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfContextViews*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfContextViews*, uint, int> Skip;
+        public delegate* unmanaged<TSelf*, uint, int> Skip;
     }
 }

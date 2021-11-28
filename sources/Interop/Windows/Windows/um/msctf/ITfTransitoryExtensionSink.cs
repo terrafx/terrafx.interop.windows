@@ -52,18 +52,19 @@ public unsafe partial struct ITfTransitoryExtensionSink : ITfTransitoryExtension
         HRESULT OnTransitoryExtensionUpdated(ITfContext* pic, [NativeTypeName("TfEditCookie")] uint ecReadOnly, ITfRange* pResultRange, ITfRange* pCompositionRange, BOOL* pfDeleteResultRange);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTransitoryExtensionSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTransitoryExtensionSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTransitoryExtensionSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITfContext *, TfEditCookie, ITfRange *, ITfRange *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTransitoryExtensionSink*, ITfContext*, uint, ITfRange*, ITfRange*, BOOL*, int> OnTransitoryExtensionUpdated;
+        public delegate* unmanaged<TSelf*, ITfContext*, uint, ITfRange*, ITfRange*, BOOL*, int> OnTransitoryExtensionUpdated;
     }
 }

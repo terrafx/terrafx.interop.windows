@@ -83,27 +83,28 @@ public unsafe partial struct ID3D12SharingContract : ID3D12SharingContract.Inter
         void EndCapturableWork([NativeTypeName("const GUID &")] Guid* guid);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12SharingContract*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12SharingContract*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12SharingContract*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID3D12Resource *, UINT, HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12SharingContract*, ID3D12Resource*, uint, HWND, void> Present;
+        public delegate* unmanaged<TSelf*, ID3D12Resource*, uint, HWND, void> Present;
 
         [NativeTypeName("void (ID3D12Fence *, UINT64) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12SharingContract*, ID3D12Fence*, ulong, void> SharedFenceSignal;
+        public delegate* unmanaged<TSelf*, ID3D12Fence*, ulong, void> SharedFenceSignal;
 
         [NativeTypeName("void (const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12SharingContract*, Guid*, void> BeginCapturableWork;
+        public delegate* unmanaged<TSelf*, Guid*, void> BeginCapturableWork;
 
         [NativeTypeName("void (const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12SharingContract*, Guid*, void> EndCapturableWork;
+        public delegate* unmanaged<TSelf*, Guid*, void> EndCapturableWork;
     }
 }

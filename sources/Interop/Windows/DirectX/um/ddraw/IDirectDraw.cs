@@ -235,75 +235,76 @@ public unsafe partial struct IDirectDraw : IDirectDraw.Interface
         HRESULT WaitForVerticalBlank([NativeTypeName("DWORD")] uint param0, HANDLE param1);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, int> Compact;
+        public delegate* unmanaged<TSelf*, int> Compact;
 
         [NativeTypeName("HRESULT (DWORD, LPDIRECTDRAWCLIPPER *, IUnknown *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, uint, IDirectDrawClipper**, IUnknown*, int> CreateClipper;
+        public delegate* unmanaged<TSelf*, uint, IDirectDrawClipper**, IUnknown*, int> CreateClipper;
 
         [NativeTypeName("HRESULT (DWORD, LPPALETTEENTRY, LPDIRECTDRAWPALETTE *, IUnknown *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, uint, PALETTEENTRY*, IDirectDrawPalette**, IUnknown*, int> CreatePalette;
+        public delegate* unmanaged<TSelf*, uint, PALETTEENTRY*, IDirectDrawPalette**, IUnknown*, int> CreatePalette;
 
         [NativeTypeName("HRESULT (LPDDSURFACEDESC, LPDIRECTDRAWSURFACE *, IUnknown *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, DDSURFACEDESC*, IDirectDrawSurface**, IUnknown*, int> CreateSurface;
+        public delegate* unmanaged<TSelf*, DDSURFACEDESC*, IDirectDrawSurface**, IUnknown*, int> CreateSurface;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAWSURFACE, LPDIRECTDRAWSURFACE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, IDirectDrawSurface*, IDirectDrawSurface**, int> DuplicateSurface;
+        public delegate* unmanaged<TSelf*, IDirectDrawSurface*, IDirectDrawSurface**, int> DuplicateSurface;
 
         [NativeTypeName("HRESULT (DWORD, LPDDSURFACEDESC, LPVOID, LPDDENUMMODESCALLBACK) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, uint, DDSURFACEDESC*, void*, delegate* unmanaged<DDSURFACEDESC*, void*, HRESULT>, int> EnumDisplayModes;
+        public delegate* unmanaged<TSelf*, uint, DDSURFACEDESC*, void*, delegate* unmanaged<DDSURFACEDESC*, void*, HRESULT>, int> EnumDisplayModes;
 
         [NativeTypeName("HRESULT (DWORD, LPDDSURFACEDESC, LPVOID, LPDDENUMSURFACESCALLBACK) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, uint, DDSURFACEDESC*, void*, delegate* unmanaged<IDirectDrawSurface*, DDSURFACEDESC*, void*, HRESULT>, int> EnumSurfaces;
+        public delegate* unmanaged<TSelf*, uint, DDSURFACEDESC*, void*, delegate* unmanaged<IDirectDrawSurface*, DDSURFACEDESC*, void*, HRESULT>, int> EnumSurfaces;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, int> FlipToGDISurface;
+        public delegate* unmanaged<TSelf*, int> FlipToGDISurface;
 
         [NativeTypeName("HRESULT (LPDDCAPS, LPDDCAPS) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, DDCAPS_DX7*, DDCAPS_DX7*, int> GetCaps;
+        public delegate* unmanaged<TSelf*, DDCAPS_DX7*, DDCAPS_DX7*, int> GetCaps;
 
         [NativeTypeName("HRESULT (LPDDSURFACEDESC) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, DDSURFACEDESC*, int> GetDisplayMode;
+        public delegate* unmanaged<TSelf*, DDSURFACEDESC*, int> GetDisplayMode;
 
         [NativeTypeName("HRESULT (LPDWORD, LPDWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, uint*, uint*, int> GetFourCCCodes;
+        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetFourCCCodes;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAWSURFACE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, IDirectDrawSurface**, int> GetGDISurface;
+        public delegate* unmanaged<TSelf*, IDirectDrawSurface**, int> GetGDISurface;
 
         [NativeTypeName("HRESULT (LPDWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, uint*, int> GetMonitorFrequency;
+        public delegate* unmanaged<TSelf*, uint*, int> GetMonitorFrequency;
 
         [NativeTypeName("HRESULT (LPDWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, uint*, int> GetScanLine;
+        public delegate* unmanaged<TSelf*, uint*, int> GetScanLine;
 
         [NativeTypeName("HRESULT (LPBOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, BOOL*, int> GetVerticalBlankStatus;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetVerticalBlankStatus;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, Guid*, int> Initialize;
+        public delegate* unmanaged<TSelf*, Guid*, int> Initialize;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, int> RestoreDisplayMode;
+        public delegate* unmanaged<TSelf*, int> RestoreDisplayMode;
 
         [NativeTypeName("HRESULT (HWND, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, HWND, uint, int> SetCooperativeLevel;
+        public delegate* unmanaged<TSelf*, HWND, uint, int> SetCooperativeLevel;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, uint, uint, uint, int> SetDisplayMode;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, int> SetDisplayMode;
 
         [NativeTypeName("HRESULT (DWORD, HANDLE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDraw*, uint, HANDLE, int> WaitForVerticalBlank;
+        public delegate* unmanaged<TSelf*, uint, HANDLE, int> WaitForVerticalBlank;
     }
 }

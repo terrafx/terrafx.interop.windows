@@ -162,51 +162,52 @@ public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface
         HRESULT Enable(BOOL fEnable);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleUndoManager*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleUndoManager*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleUndoManager*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IOleParentUndoUnit *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleUndoManager*, IOleParentUndoUnit*, int> Open;
+        public delegate* unmanaged<TSelf*, IOleParentUndoUnit*, int> Open;
 
         [NativeTypeName("HRESULT (IOleParentUndoUnit *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleUndoManager*, IOleParentUndoUnit*, BOOL, int> Close;
+        public delegate* unmanaged<TSelf*, IOleParentUndoUnit*, BOOL, int> Close;
 
         [NativeTypeName("HRESULT (IOleUndoUnit *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleUndoManager*, IOleUndoUnit*, int> Add;
+        public delegate* unmanaged<TSelf*, IOleUndoUnit*, int> Add;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleUndoManager*, uint*, int> GetOpenParentState;
+        public delegate* unmanaged<TSelf*, uint*, int> GetOpenParentState;
 
         [NativeTypeName("HRESULT (IOleUndoUnit *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleUndoManager*, IOleUndoUnit*, int> DiscardFrom;
+        public delegate* unmanaged<TSelf*, IOleUndoUnit*, int> DiscardFrom;
 
         [NativeTypeName("HRESULT (IOleUndoUnit *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleUndoManager*, IOleUndoUnit*, int> UndoTo;
+        public delegate* unmanaged<TSelf*, IOleUndoUnit*, int> UndoTo;
 
         [NativeTypeName("HRESULT (IOleUndoUnit *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleUndoManager*, IOleUndoUnit*, int> RedoTo;
+        public delegate* unmanaged<TSelf*, IOleUndoUnit*, int> RedoTo;
 
         [NativeTypeName("HRESULT (IEnumOleUndoUnits **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleUndoManager*, IEnumOleUndoUnits**, int> EnumUndoable;
+        public delegate* unmanaged<TSelf*, IEnumOleUndoUnits**, int> EnumUndoable;
 
         [NativeTypeName("HRESULT (IEnumOleUndoUnits **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleUndoManager*, IEnumOleUndoUnits**, int> EnumRedoable;
+        public delegate* unmanaged<TSelf*, IEnumOleUndoUnits**, int> EnumRedoable;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleUndoManager*, ushort**, int> GetLastUndoDescription;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetLastUndoDescription;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleUndoManager*, ushort**, int> GetLastRedoDescription;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetLastRedoDescription;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleUndoManager*, BOOL, int> Enable;
+        public delegate* unmanaged<TSelf*, BOOL, int> Enable;
     }
 }

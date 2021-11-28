@@ -52,18 +52,19 @@ public unsafe partial struct IMFSourceOpenMonitor : IMFSourceOpenMonitor.Interfa
         HRESULT OnSourceEvent(IMFMediaEvent* pEvent);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceOpenMonitor*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceOpenMonitor*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceOpenMonitor*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFMediaEvent *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceOpenMonitor*, IMFMediaEvent*, int> OnSourceEvent;
+        public delegate* unmanaged<TSelf*, IMFMediaEvent*, int> OnSourceEvent;
     }
 }

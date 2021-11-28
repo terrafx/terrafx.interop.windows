@@ -153,51 +153,52 @@ public unsafe partial struct IDXGIOutputDuplication : IDXGIOutputDuplication.Int
         HRESULT ReleaseFrame();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIOutputDuplication*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIOutputDuplication*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIOutputDuplication*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIOutputDuplication*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIOutputDuplication*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIOutputDuplication*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIOutputDuplication*, Guid*, void**, int> GetParent;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetParent;
 
         [NativeTypeName("void (DXGI_OUTDUPL_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDXGIOutputDuplication*, DXGI_OUTDUPL_DESC*, void> GetDesc;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DXGI_OUTDUPL_DESC*, void> GetDesc;
 
         [NativeTypeName("HRESULT (UINT, DXGI_OUTDUPL_FRAME_INFO *, IDXGIResource **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIOutputDuplication*, uint, DXGI_OUTDUPL_FRAME_INFO*, IDXGIResource**, int> AcquireNextFrame;
+        public delegate* unmanaged<TSelf*, uint, DXGI_OUTDUPL_FRAME_INFO*, IDXGIResource**, int> AcquireNextFrame;
 
         [NativeTypeName("HRESULT (UINT, RECT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIOutputDuplication*, uint, RECT*, uint*, int> GetFrameDirtyRects;
+        public delegate* unmanaged<TSelf*, uint, RECT*, uint*, int> GetFrameDirtyRects;
 
         [NativeTypeName("HRESULT (UINT, DXGI_OUTDUPL_MOVE_RECT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIOutputDuplication*, uint, DXGI_OUTDUPL_MOVE_RECT*, uint*, int> GetFrameMoveRects;
+        public delegate* unmanaged<TSelf*, uint, DXGI_OUTDUPL_MOVE_RECT*, uint*, int> GetFrameMoveRects;
 
         [NativeTypeName("HRESULT (UINT, void *, UINT *, DXGI_OUTDUPL_POINTER_SHAPE_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIOutputDuplication*, uint, void*, uint*, DXGI_OUTDUPL_POINTER_SHAPE_INFO*, int> GetFramePointerShape;
+        public delegate* unmanaged<TSelf*, uint, void*, uint*, DXGI_OUTDUPL_POINTER_SHAPE_INFO*, int> GetFramePointerShape;
 
         [NativeTypeName("HRESULT (DXGI_MAPPED_RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIOutputDuplication*, DXGI_MAPPED_RECT*, int> MapDesktopSurface;
+        public delegate* unmanaged<TSelf*, DXGI_MAPPED_RECT*, int> MapDesktopSurface;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIOutputDuplication*, int> UnMapDesktopSurface;
+        public delegate* unmanaged<TSelf*, int> UnMapDesktopSurface;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIOutputDuplication*, int> ReleaseFrame;
+        public delegate* unmanaged<TSelf*, int> ReleaseFrame;
     }
 }

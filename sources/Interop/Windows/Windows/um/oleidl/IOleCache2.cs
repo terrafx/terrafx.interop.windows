@@ -97,36 +97,37 @@ public unsafe partial struct IOleCache2 : IOleCache2.Interface
         HRESULT DiscardCache([NativeTypeName("DWORD")] uint dwDiscardOptions);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleCache2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleCache2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleCache2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (FORMATETC *, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleCache2*, FORMATETC*, uint, uint*, int> Cache;
+        public delegate* unmanaged<TSelf*, FORMATETC*, uint, uint*, int> Cache;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleCache2*, uint, int> Uncache;
+        public delegate* unmanaged<TSelf*, uint, int> Uncache;
 
         [NativeTypeName("HRESULT (IEnumSTATDATA **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleCache2*, IEnumSTATDATA**, int> EnumCache;
+        public delegate* unmanaged<TSelf*, IEnumSTATDATA**, int> EnumCache;
 
         [NativeTypeName("HRESULT (IDataObject *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleCache2*, IDataObject*, int> InitCache;
+        public delegate* unmanaged<TSelf*, IDataObject*, int> InitCache;
 
         [NativeTypeName("HRESULT (FORMATETC *, STGMEDIUM *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleCache2*, FORMATETC*, STGMEDIUM*, BOOL, int> SetData;
+        public delegate* unmanaged<TSelf*, FORMATETC*, STGMEDIUM*, BOOL, int> SetData;
 
         [NativeTypeName("HRESULT (LPDATAOBJECT, DWORD, LPVOID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleCache2*, IDataObject*, uint, void*, int> UpdateCache;
+        public delegate* unmanaged<TSelf*, IDataObject*, uint, void*, int> UpdateCache;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleCache2*, uint, int> DiscardCache;
+        public delegate* unmanaged<TSelf*, uint, int> DiscardCache;
     }
 }

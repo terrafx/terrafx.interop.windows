@@ -62,21 +62,22 @@ public unsafe partial struct ISyncMgrConflictResolutionItems : ISyncMgrConflictR
         HRESULT GetItem(uint iIndex, CONFIRM_CONFLICT_RESULT_INFO* pItemInfo);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflictResolutionItems*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint*, int> GetCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (UINT, CONFIRM_CONFLICT_RESULT_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflictResolutionItems*, uint, CONFIRM_CONFLICT_RESULT_INFO*, int> GetItem;
+        public delegate* unmanaged<TSelf*, uint, CONFIRM_CONFLICT_RESULT_INFO*, int> GetItem;
     }
 }

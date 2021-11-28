@@ -52,18 +52,19 @@ public unsafe partial struct ITfInputProcessorProfileSubstituteLayout : ITfInput
         HRESULT GetSubstituteKeyboardLayout([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL* phKL);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputProcessorProfileSubstituteLayout*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputProcessorProfileSubstituteLayout*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputProcessorProfileSubstituteLayout*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &, HKL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputProcessorProfileSubstituteLayout*, Guid*, ushort, Guid*, HKL*, int> GetSubstituteKeyboardLayout;
+        public delegate* unmanaged<TSelf*, Guid*, ushort, Guid*, HKL*, int> GetSubstituteKeyboardLayout;
     }
 }

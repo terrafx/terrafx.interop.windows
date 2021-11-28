@@ -134,48 +134,49 @@ public unsafe partial struct IDiaEnumSymbolsByAddr2 : IDiaEnumSymbolsByAddr2.Int
         HRESULT PrevEx(BOOL fPromoteBlockSym, [NativeTypeName("ULONG")] uint celt, IDiaSymbol** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumSymbolsByAddr2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumSymbolsByAddr2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumSymbolsByAddr2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumSymbolsByAddr2*, uint, uint, IDiaSymbol**, int> symbolByAddr;
+        public delegate* unmanaged<TSelf*, uint, uint, IDiaSymbol**, int> symbolByAddr;
 
         [NativeTypeName("HRESULT (DWORD, IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumSymbolsByAddr2*, uint, IDiaSymbol**, int> symbolByRVA;
+        public delegate* unmanaged<TSelf*, uint, IDiaSymbol**, int> symbolByRVA;
 
         [NativeTypeName("HRESULT (ULONGLONG, IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumSymbolsByAddr2*, ulong, IDiaSymbol**, int> symbolByVA;
+        public delegate* unmanaged<TSelf*, ulong, IDiaSymbol**, int> symbolByVA;
 
         [NativeTypeName("HRESULT (ULONG, IDiaSymbol **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumSymbolsByAddr2*, uint, IDiaSymbol**, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, IDiaSymbol**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG, IDiaSymbol **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumSymbolsByAddr2*, uint, IDiaSymbol**, uint*, int> Prev;
+        public delegate* unmanaged<TSelf*, uint, IDiaSymbol**, uint*, int> Prev;
 
         [NativeTypeName("HRESULT (IDiaEnumSymbolsByAddr **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumSymbolsByAddr2*, IDiaEnumSymbolsByAddr**, int> Clone;
+        public delegate* unmanaged<TSelf*, IDiaEnumSymbolsByAddr**, int> Clone;
 
         [NativeTypeName("HRESULT (BOOL, DWORD, DWORD, IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumSymbolsByAddr2*, BOOL, uint, uint, IDiaSymbol**, int> symbolByAddrEx;
+        public delegate* unmanaged<TSelf*, BOOL, uint, uint, IDiaSymbol**, int> symbolByAddrEx;
 
         [NativeTypeName("HRESULT (BOOL, DWORD, IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumSymbolsByAddr2*, BOOL, uint, IDiaSymbol**, int> symbolByRVAEx;
+        public delegate* unmanaged<TSelf*, BOOL, uint, IDiaSymbol**, int> symbolByRVAEx;
 
         [NativeTypeName("HRESULT (BOOL, ULONGLONG, IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumSymbolsByAddr2*, BOOL, ulong, IDiaSymbol**, int> symbolByVAEx;
+        public delegate* unmanaged<TSelf*, BOOL, ulong, IDiaSymbol**, int> symbolByVAEx;
 
         [NativeTypeName("HRESULT (BOOL, ULONG, IDiaSymbol **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumSymbolsByAddr2*, BOOL, uint, IDiaSymbol**, uint*, int> NextEx;
+        public delegate* unmanaged<TSelf*, BOOL, uint, IDiaSymbol**, uint*, int> NextEx;
 
         [NativeTypeName("HRESULT (BOOL, ULONG, IDiaSymbol **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumSymbolsByAddr2*, BOOL, uint, IDiaSymbol**, uint*, int> PrevEx;
+        public delegate* unmanaged<TSelf*, BOOL, uint, IDiaSymbol**, uint*, int> PrevEx;
     }
 }

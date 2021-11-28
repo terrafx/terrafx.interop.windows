@@ -192,60 +192,61 @@ public unsafe partial struct IPin : IPin.Interface
         HRESULT NewSegment([NativeTypeName("REFERENCE_TIME")] long tStart, [NativeTypeName("REFERENCE_TIME")] long tStop, double dRate);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPin*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPin*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPin*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IPin *, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPin*, IPin*, AM_MEDIA_TYPE*, int> Connect;
+        public delegate* unmanaged<TSelf*, IPin*, AM_MEDIA_TYPE*, int> Connect;
 
         [NativeTypeName("HRESULT (IPin *, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPin*, IPin*, AM_MEDIA_TYPE*, int> ReceiveConnection;
+        public delegate* unmanaged<TSelf*, IPin*, AM_MEDIA_TYPE*, int> ReceiveConnection;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPin*, int> Disconnect;
+        public delegate* unmanaged<TSelf*, int> Disconnect;
 
         [NativeTypeName("HRESULT (IPin **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPin*, IPin**, int> ConnectedTo;
+        public delegate* unmanaged<TSelf*, IPin**, int> ConnectedTo;
 
         [NativeTypeName("HRESULT (AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPin*, AM_MEDIA_TYPE*, int> ConnectionMediaType;
+        public delegate* unmanaged<TSelf*, AM_MEDIA_TYPE*, int> ConnectionMediaType;
 
         [NativeTypeName("HRESULT (PIN_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPin*, PIN_INFO*, int> QueryPinInfo;
+        public delegate* unmanaged<TSelf*, PIN_INFO*, int> QueryPinInfo;
 
         [NativeTypeName("HRESULT (PIN_DIRECTION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPin*, PIN_DIRECTION*, int> QueryDirection;
+        public delegate* unmanaged<TSelf*, PIN_DIRECTION*, int> QueryDirection;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPin*, ushort**, int> QueryId;
+        public delegate* unmanaged<TSelf*, ushort**, int> QueryId;
 
         [NativeTypeName("HRESULT (const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPin*, AM_MEDIA_TYPE*, int> QueryAccept;
+        public delegate* unmanaged<TSelf*, AM_MEDIA_TYPE*, int> QueryAccept;
 
         [NativeTypeName("HRESULT (IEnumMediaTypes **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPin*, IEnumMediaTypes**, int> EnumMediaTypes;
+        public delegate* unmanaged<TSelf*, IEnumMediaTypes**, int> EnumMediaTypes;
 
         [NativeTypeName("HRESULT (IPin **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPin*, IPin**, uint*, int> QueryInternalConnections;
+        public delegate* unmanaged<TSelf*, IPin**, uint*, int> QueryInternalConnections;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPin*, int> EndOfStream;
+        public delegate* unmanaged<TSelf*, int> EndOfStream;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPin*, int> BeginFlush;
+        public delegate* unmanaged<TSelf*, int> BeginFlush;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPin*, int> EndFlush;
+        public delegate* unmanaged<TSelf*, int> EndFlush;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME, REFERENCE_TIME, double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPin*, long, long, double, int> NewSegment;
+        public delegate* unmanaged<TSelf*, long, long, double, int> NewSegment;
     }
 }

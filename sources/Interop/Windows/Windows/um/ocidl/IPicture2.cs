@@ -182,57 +182,58 @@ public unsafe partial struct IPicture2 : IPicture2.Interface
         HRESULT get_Attributes([NativeTypeName("DWORD *")] uint* pDwAttr);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPicture2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPicture2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPicture2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HHANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPicture2*, HHANDLE*, int> get_Handle;
+        public delegate* unmanaged<TSelf*, HHANDLE*, int> get_Handle;
 
         [NativeTypeName("HRESULT (HHANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPicture2*, HHANDLE*, int> get_hPal;
+        public delegate* unmanaged<TSelf*, HHANDLE*, int> get_hPal;
 
         [NativeTypeName("HRESULT (SHORT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPicture2*, short*, int> get_Type;
+        public delegate* unmanaged<TSelf*, short*, int> get_Type;
 
         [NativeTypeName("HRESULT (OLE_XSIZE_HIMETRIC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPicture2*, int*, int> get_Width;
+        public delegate* unmanaged<TSelf*, int*, int> get_Width;
 
         [NativeTypeName("HRESULT (OLE_YSIZE_HIMETRIC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPicture2*, int*, int> get_Height;
+        public delegate* unmanaged<TSelf*, int*, int> get_Height;
 
         [NativeTypeName("HRESULT (HDC, LONG, LONG, LONG, LONG, OLE_XPOS_HIMETRIC, OLE_YPOS_HIMETRIC, OLE_XSIZE_HIMETRIC, OLE_YSIZE_HIMETRIC, LPCRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPicture2*, HDC, int, int, int, int, int, int, int, int, RECT*, int> Render;
+        public delegate* unmanaged<TSelf*, HDC, int, int, int, int, int, int, int, int, RECT*, int> Render;
 
         [NativeTypeName("HRESULT (HHANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPicture2*, HHANDLE, int> set_hPal;
+        public delegate* unmanaged<TSelf*, HHANDLE, int> set_hPal;
 
         [NativeTypeName("HRESULT (HDC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPicture2*, HDC*, int> get_CurDC;
+        public delegate* unmanaged<TSelf*, HDC*, int> get_CurDC;
 
         [NativeTypeName("HRESULT (HDC, HDC *, HHANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPicture2*, HDC, HDC*, HHANDLE*, int> SelectPicture;
+        public delegate* unmanaged<TSelf*, HDC, HDC*, HHANDLE*, int> SelectPicture;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPicture2*, BOOL*, int> get_KeepOriginalFormat;
+        public delegate* unmanaged<TSelf*, BOOL*, int> get_KeepOriginalFormat;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPicture2*, BOOL, int> put_KeepOriginalFormat;
+        public delegate* unmanaged<TSelf*, BOOL, int> put_KeepOriginalFormat;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPicture2*, int> PictureChanged;
+        public delegate* unmanaged<TSelf*, int> PictureChanged;
 
         [NativeTypeName("HRESULT (LPSTREAM, BOOL, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPicture2*, IStream*, BOOL, int*, int> SaveAsFile;
+        public delegate* unmanaged<TSelf*, IStream*, BOOL, int*, int> SaveAsFile;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPicture2*, uint*, int> get_Attributes;
+        public delegate* unmanaged<TSelf*, uint*, int> get_Attributes;
     }
 }

@@ -62,21 +62,22 @@ public unsafe partial struct IMMDeviceCollection : IMMDeviceCollection.Interface
         HRESULT Item(uint nDevice, IMMDevice** ppDevice);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMMDeviceCollection*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMMDeviceCollection*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMMDeviceCollection*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMMDeviceCollection*, uint*, int> GetCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (UINT, IMMDevice **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMMDeviceCollection*, uint, IMMDevice**, int> Item;
+        public delegate* unmanaged<TSelf*, uint, IMMDevice**, int> Item;
     }
 }

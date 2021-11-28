@@ -72,24 +72,25 @@ public unsafe partial struct IElementBehaviorSiteLayout : IElementBehaviorSiteLa
         HRESULT GetMediaResolution(SIZE* psizeResolution);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSiteLayout*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSiteLayout*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSiteLayout*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSiteLayout*, int> InvalidateLayoutInfo;
+        public delegate* unmanaged<TSelf*, int> InvalidateLayoutInfo;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSiteLayout*, int> InvalidateSize;
+        public delegate* unmanaged<TSelf*, int> InvalidateSize;
 
         [NativeTypeName("HRESULT (SIZE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSiteLayout*, SIZE*, int> GetMediaResolution;
+        public delegate* unmanaged<TSelf*, SIZE*, int> GetMediaResolution;
     }
 }

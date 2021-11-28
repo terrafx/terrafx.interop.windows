@@ -62,21 +62,22 @@ public unsafe partial struct IMFReadWriteClassFactory : IMFReadWriteClassFactory
         HRESULT CreateInstanceFromObject([NativeTypeName("const IID &")] Guid* clsid, IUnknown* punkObject, IMFAttributes* pAttributes, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFReadWriteClassFactory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFReadWriteClassFactory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFReadWriteClassFactory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, LPCWSTR, IMFAttributes *, const IID &, LPVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFReadWriteClassFactory*, Guid*, ushort*, IMFAttributes*, Guid*, void**, int> CreateInstanceFromURL;
+        public delegate* unmanaged<TSelf*, Guid*, ushort*, IMFAttributes*, Guid*, void**, int> CreateInstanceFromURL;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown *, IMFAttributes *, const IID &, LPVOID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFReadWriteClassFactory*, Guid*, IUnknown*, IMFAttributes*, Guid*, void**, int> CreateInstanceFromObject;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, IMFAttributes*, Guid*, void**, int> CreateInstanceFromObject;
     }
 }

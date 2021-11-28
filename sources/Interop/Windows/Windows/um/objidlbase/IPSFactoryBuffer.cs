@@ -62,21 +62,22 @@ public unsafe partial struct IPSFactoryBuffer : IPSFactoryBuffer.Interface
         HRESULT CreateStub([NativeTypeName("const IID &")] Guid* riid, IUnknown* pUnkServer, IRpcStubBuffer** ppStub);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPSFactoryBuffer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPSFactoryBuffer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPSFactoryBuffer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, const IID &, IRpcProxyBuffer **, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPSFactoryBuffer*, IUnknown*, Guid*, IRpcProxyBuffer**, void**, int> CreateProxy;
+        public delegate* unmanaged<TSelf*, IUnknown*, Guid*, IRpcProxyBuffer**, void**, int> CreateProxy;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown *, IRpcStubBuffer **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPSFactoryBuffer*, Guid*, IUnknown*, IRpcStubBuffer**, int> CreateStub;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, IRpcStubBuffer**, int> CreateStub;
     }
 }

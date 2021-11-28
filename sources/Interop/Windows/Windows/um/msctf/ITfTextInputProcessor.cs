@@ -62,21 +62,22 @@ public unsafe partial struct ITfTextInputProcessor : ITfTextInputProcessor.Inter
         HRESULT Deactivate();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTextInputProcessor*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTextInputProcessor*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTextInputProcessor*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITfThreadMgr *, TfClientId) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTextInputProcessor*, ITfThreadMgr*, uint, int> Activate;
+        public delegate* unmanaged<TSelf*, ITfThreadMgr*, uint, int> Activate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfTextInputProcessor*, int> Deactivate;
+        public delegate* unmanaged<TSelf*, int> Deactivate;
     }
 }

@@ -125,39 +125,40 @@ public unsafe partial struct IDirectManipulationContent : IDirectManipulationCon
         HRESULT SyncContentTransform([NativeTypeName("const float *")] float* matrix, [NativeTypeName("DWORD")] uint pointCount);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationContent*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationContent*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationContent*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationContent*, RECT*, int> GetContentRect;
+        public delegate* unmanaged<TSelf*, RECT*, int> GetContentRect;
 
         [NativeTypeName("HRESULT (const RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationContent*, RECT*, int> SetContentRect;
+        public delegate* unmanaged<TSelf*, RECT*, int> SetContentRect;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationContent*, Guid*, void**, int> GetViewport;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetViewport;
 
         [NativeTypeName("HRESULT (const IID &, void **, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationContent*, Guid*, void**, uint*, int> GetTag;
+        public delegate* unmanaged<TSelf*, Guid*, void**, uint*, int> GetTag;
 
         [NativeTypeName("HRESULT (IUnknown *, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationContent*, IUnknown*, uint, int> SetTag;
+        public delegate* unmanaged<TSelf*, IUnknown*, uint, int> SetTag;
 
         [NativeTypeName("HRESULT (float *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationContent*, float*, uint, int> GetOutputTransform;
+        public delegate* unmanaged<TSelf*, float*, uint, int> GetOutputTransform;
 
         [NativeTypeName("HRESULT (float *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationContent*, float*, uint, int> GetContentTransform;
+        public delegate* unmanaged<TSelf*, float*, uint, int> GetContentTransform;
 
         [NativeTypeName("HRESULT (const float *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationContent*, float*, uint, int> SyncContentTransform;
+        public delegate* unmanaged<TSelf*, float*, uint, int> SyncContentTransform;
     }
 }

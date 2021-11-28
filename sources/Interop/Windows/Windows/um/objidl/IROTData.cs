@@ -52,18 +52,19 @@ public unsafe partial struct IROTData : IROTData.Interface
         HRESULT GetComparisonData(byte* pbData, [NativeTypeName("ULONG")] uint cbMax, [NativeTypeName("ULONG *")] uint* pcbData);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IROTData*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IROTData*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IROTData*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (byte *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IROTData*, byte*, uint, uint*, int> GetComparisonData;
+        public delegate* unmanaged<TSelf*, byte*, uint, uint*, int> GetComparisonData;
     }
 }

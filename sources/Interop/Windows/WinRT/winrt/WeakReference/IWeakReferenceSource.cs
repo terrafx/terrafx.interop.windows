@@ -53,18 +53,19 @@ public unsafe partial struct IWeakReferenceSource : IWeakReferenceSource.Interfa
         HRESULT GetWeakReference(IWeakReference** weakReference);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWeakReferenceSource*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWeakReferenceSource*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWeakReferenceSource*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IWeakReference **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWeakReferenceSource*, IWeakReference**, int> GetWeakReference;
+        public delegate* unmanaged<TSelf*, IWeakReference**, int> GetWeakReference;
     }
 }

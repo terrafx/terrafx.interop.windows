@@ -82,27 +82,28 @@ public unsafe partial struct IFileDialogControlEvents : IFileDialogControlEvents
         HRESULT OnControlActivating(IFileDialogCustomize* pfdc, [NativeTypeName("DWORD")] uint dwIDCtl);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogControlEvents*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogControlEvents*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogControlEvents*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IFileDialogCustomize *, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogControlEvents*, IFileDialogCustomize*, uint, uint, int> OnItemSelected;
+        public delegate* unmanaged<TSelf*, IFileDialogCustomize*, uint, uint, int> OnItemSelected;
 
         [NativeTypeName("HRESULT (IFileDialogCustomize *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogControlEvents*, IFileDialogCustomize*, uint, int> OnButtonClicked;
+        public delegate* unmanaged<TSelf*, IFileDialogCustomize*, uint, int> OnButtonClicked;
 
         [NativeTypeName("HRESULT (IFileDialogCustomize *, DWORD, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogControlEvents*, IFileDialogCustomize*, uint, BOOL, int> OnCheckButtonToggled;
+        public delegate* unmanaged<TSelf*, IFileDialogCustomize*, uint, BOOL, int> OnCheckButtonToggled;
 
         [NativeTypeName("HRESULT (IFileDialogCustomize *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFileDialogControlEvents*, IFileDialogCustomize*, uint, int> OnControlActivating;
+        public delegate* unmanaged<TSelf*, IFileDialogCustomize*, uint, int> OnControlActivating;
     }
 }

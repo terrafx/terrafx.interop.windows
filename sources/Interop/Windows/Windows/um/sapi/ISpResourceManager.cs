@@ -69,24 +69,25 @@ public unsafe partial struct ISpResourceManager : ISpResourceManager.Interface
         HRESULT GetObject([NativeTypeName("const GUID &")] Guid* guidServiceId, [NativeTypeName("const IID &")] Guid* ObjectCLSID, [NativeTypeName("const IID &")] Guid* ObjectIID, BOOL fReleaseWhenLastExternalRefReleased, void** ppObject);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpResourceManager*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpResourceManager*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpResourceManager*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpResourceManager*, Guid*, Guid*, void**, int> QueryService;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, void**, int> QueryService;
 
         [NativeTypeName("HRESULT (const GUID &, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpResourceManager*, Guid*, IUnknown*, int> SetObject;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetObject;
 
         [NativeTypeName("HRESULT (const GUID &, const IID &, const IID &, BOOL, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpResourceManager*, Guid*, Guid*, Guid*, BOOL, void**, int> GetObject;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, Guid*, BOOL, void**, int> GetObject;
     }
 }

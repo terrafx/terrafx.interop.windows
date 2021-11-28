@@ -62,21 +62,22 @@ public unsafe partial struct ITfSource : ITfSource.Interface
         HRESULT UnadviseSink([NativeTypeName("DWORD")] uint dwCookie);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfSource*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfSource*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfSource*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfSource*, Guid*, IUnknown*, uint*, int> AdviseSink;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, uint*, int> AdviseSink;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfSource*, uint, int> UnadviseSink;
+        public delegate* unmanaged<TSelf*, uint, int> UnadviseSink;
     }
 }

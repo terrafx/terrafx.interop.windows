@@ -52,18 +52,19 @@ public unsafe partial struct IWrappedProtocol : IWrappedProtocol.Interface
         HRESULT GetWrapperCode([NativeTypeName("LONG *")] int* pnCode, [NativeTypeName("DWORD_PTR")] nuint dwReserved);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWrappedProtocol*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWrappedProtocol*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWrappedProtocol*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LONG *, DWORD_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWrappedProtocol*, int*, nuint, int> GetWrapperCode;
+        public delegate* unmanaged<TSelf*, int*, nuint, int> GetWrapperCode;
     }
 }

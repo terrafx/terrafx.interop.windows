@@ -210,69 +210,70 @@ public unsafe partial struct IScriptErrorList : IScriptErrorList.Interface
         HRESULT setPerErrorDisplay(BOOL fPerErrorDisplay);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptErrorList*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptErrorList*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptErrorList*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptErrorList*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptErrorList*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptErrorList*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptErrorList*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptErrorList*, int> advanceError;
+        public delegate* unmanaged<TSelf*, int> advanceError;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptErrorList*, int> retreatError;
+        public delegate* unmanaged<TSelf*, int> retreatError;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptErrorList*, BOOL*, int> canAdvanceError;
+        public delegate* unmanaged<TSelf*, BOOL*, int> canAdvanceError;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptErrorList*, BOOL*, int> canRetreatError;
+        public delegate* unmanaged<TSelf*, BOOL*, int> canRetreatError;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptErrorList*, int*, int> getErrorLine;
+        public delegate* unmanaged<TSelf*, int*, int> getErrorLine;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptErrorList*, int*, int> getErrorChar;
+        public delegate* unmanaged<TSelf*, int*, int> getErrorChar;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptErrorList*, int*, int> getErrorCode;
+        public delegate* unmanaged<TSelf*, int*, int> getErrorCode;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptErrorList*, ushort**, int> getErrorMsg;
+        public delegate* unmanaged<TSelf*, ushort**, int> getErrorMsg;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptErrorList*, ushort**, int> getErrorUrl;
+        public delegate* unmanaged<TSelf*, ushort**, int> getErrorUrl;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptErrorList*, BOOL*, int> getAlwaysShowLockState;
+        public delegate* unmanaged<TSelf*, BOOL*, int> getAlwaysShowLockState;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptErrorList*, BOOL*, int> getDetailsPaneOpen;
+        public delegate* unmanaged<TSelf*, BOOL*, int> getDetailsPaneOpen;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptErrorList*, BOOL, int> setDetailsPaneOpen;
+        public delegate* unmanaged<TSelf*, BOOL, int> setDetailsPaneOpen;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptErrorList*, BOOL*, int> getPerErrorDisplay;
+        public delegate* unmanaged<TSelf*, BOOL*, int> getPerErrorDisplay;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IScriptErrorList*, BOOL, int> setPerErrorDisplay;
+        public delegate* unmanaged<TSelf*, BOOL, int> setPerErrorDisplay;
     }
 }

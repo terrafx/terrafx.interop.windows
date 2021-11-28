@@ -100,36 +100,37 @@ public unsafe partial struct ISVGFitToViewBox : ISVGFitToViewBox.Interface
         HRESULT get_preserveAspectRatio(ISVGAnimatedPreserveAspectRatio** p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGFitToViewBox*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGFitToViewBox*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGFitToViewBox*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGFitToViewBox*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGFitToViewBox*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGFitToViewBox*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGFitToViewBox*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (ISVGAnimatedRect **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGFitToViewBox*, ISVGAnimatedRect**, int> get_viewBox;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedRect**, int> get_viewBox;
 
         [NativeTypeName("HRESULT (ISVGAnimatedPreserveAspectRatio *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGFitToViewBox*, ISVGAnimatedPreserveAspectRatio*, int> putref_preserveAspectRatio;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedPreserveAspectRatio*, int> putref_preserveAspectRatio;
 
         [NativeTypeName("HRESULT (ISVGAnimatedPreserveAspectRatio **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISVGFitToViewBox*, ISVGAnimatedPreserveAspectRatio**, int> get_preserveAspectRatio;
+        public delegate* unmanaged<TSelf*, ISVGAnimatedPreserveAspectRatio**, int> get_preserveAspectRatio;
     }
 }

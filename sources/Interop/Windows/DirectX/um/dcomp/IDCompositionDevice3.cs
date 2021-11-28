@@ -322,117 +322,118 @@ public unsafe partial struct IDCompositionDevice3 : IDCompositionDevice3.Interfa
         HRESULT CreateAffineTransform2DEffect(IDCompositionAffineTransform2DEffect** affineTransform2dEffect);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, int> Commit;
+        public delegate* unmanaged<TSelf*, int> Commit;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, int> WaitForCommitCompletion;
+        public delegate* unmanaged<TSelf*, int> WaitForCommitCompletion;
 
         [NativeTypeName("HRESULT (DCOMPOSITION_FRAME_STATISTICS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, DCOMPOSITION_FRAME_STATISTICS*, int> GetFrameStatistics;
+        public delegate* unmanaged<TSelf*, DCOMPOSITION_FRAME_STATISTICS*, int> GetFrameStatistics;
 
         [NativeTypeName("HRESULT (IDCompositionVisual2 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionVisual2**, int> CreateVisual;
+        public delegate* unmanaged<TSelf*, IDCompositionVisual2**, int> CreateVisual;
 
         [NativeTypeName("HRESULT (IUnknown *, IDCompositionSurfaceFactory **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IUnknown*, IDCompositionSurfaceFactory**, int> CreateSurfaceFactory;
+        public delegate* unmanaged<TSelf*, IUnknown*, IDCompositionSurfaceFactory**, int> CreateSurfaceFactory;
 
         [NativeTypeName("HRESULT (UINT, UINT, DXGI_FORMAT, DXGI_ALPHA_MODE, IDCompositionSurface **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, uint, uint, DXGI_FORMAT, DXGI_ALPHA_MODE, IDCompositionSurface**, int> CreateSurface;
+        public delegate* unmanaged<TSelf*, uint, uint, DXGI_FORMAT, DXGI_ALPHA_MODE, IDCompositionSurface**, int> CreateSurface;
 
         [NativeTypeName("HRESULT (UINT, UINT, DXGI_FORMAT, DXGI_ALPHA_MODE, IDCompositionVirtualSurface **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, uint, uint, DXGI_FORMAT, DXGI_ALPHA_MODE, IDCompositionVirtualSurface**, int> CreateVirtualSurface;
+        public delegate* unmanaged<TSelf*, uint, uint, DXGI_FORMAT, DXGI_ALPHA_MODE, IDCompositionVirtualSurface**, int> CreateVirtualSurface;
 
         [NativeTypeName("HRESULT (IDCompositionTranslateTransform **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionTranslateTransform**, int> CreateTranslateTransform;
+        public delegate* unmanaged<TSelf*, IDCompositionTranslateTransform**, int> CreateTranslateTransform;
 
         [NativeTypeName("HRESULT (IDCompositionScaleTransform **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionScaleTransform**, int> CreateScaleTransform;
+        public delegate* unmanaged<TSelf*, IDCompositionScaleTransform**, int> CreateScaleTransform;
 
         [NativeTypeName("HRESULT (IDCompositionRotateTransform **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionRotateTransform**, int> CreateRotateTransform;
+        public delegate* unmanaged<TSelf*, IDCompositionRotateTransform**, int> CreateRotateTransform;
 
         [NativeTypeName("HRESULT (IDCompositionSkewTransform **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionSkewTransform**, int> CreateSkewTransform;
+        public delegate* unmanaged<TSelf*, IDCompositionSkewTransform**, int> CreateSkewTransform;
 
         [NativeTypeName("HRESULT (IDCompositionMatrixTransform **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionMatrixTransform**, int> CreateMatrixTransform;
+        public delegate* unmanaged<TSelf*, IDCompositionMatrixTransform**, int> CreateMatrixTransform;
 
         [NativeTypeName("HRESULT (IDCompositionTransform **, UINT, IDCompositionTransform **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionTransform**, uint, IDCompositionTransform**, int> CreateTransformGroup;
+        public delegate* unmanaged<TSelf*, IDCompositionTransform**, uint, IDCompositionTransform**, int> CreateTransformGroup;
 
         [NativeTypeName("HRESULT (IDCompositionTranslateTransform3D **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionTranslateTransform3D**, int> CreateTranslateTransform3D;
+        public delegate* unmanaged<TSelf*, IDCompositionTranslateTransform3D**, int> CreateTranslateTransform3D;
 
         [NativeTypeName("HRESULT (IDCompositionScaleTransform3D **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionScaleTransform3D**, int> CreateScaleTransform3D;
+        public delegate* unmanaged<TSelf*, IDCompositionScaleTransform3D**, int> CreateScaleTransform3D;
 
         [NativeTypeName("HRESULT (IDCompositionRotateTransform3D **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionRotateTransform3D**, int> CreateRotateTransform3D;
+        public delegate* unmanaged<TSelf*, IDCompositionRotateTransform3D**, int> CreateRotateTransform3D;
 
         [NativeTypeName("HRESULT (IDCompositionMatrixTransform3D **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionMatrixTransform3D**, int> CreateMatrixTransform3D;
+        public delegate* unmanaged<TSelf*, IDCompositionMatrixTransform3D**, int> CreateMatrixTransform3D;
 
         [NativeTypeName("HRESULT (IDCompositionTransform3D **, UINT, IDCompositionTransform3D **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionTransform3D**, uint, IDCompositionTransform3D**, int> CreateTransform3DGroup;
+        public delegate* unmanaged<TSelf*, IDCompositionTransform3D**, uint, IDCompositionTransform3D**, int> CreateTransform3DGroup;
 
         [NativeTypeName("HRESULT (IDCompositionEffectGroup **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionEffectGroup**, int> CreateEffectGroup;
+        public delegate* unmanaged<TSelf*, IDCompositionEffectGroup**, int> CreateEffectGroup;
 
         [NativeTypeName("HRESULT (IDCompositionRectangleClip **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionRectangleClip**, int> CreateRectangleClip;
+        public delegate* unmanaged<TSelf*, IDCompositionRectangleClip**, int> CreateRectangleClip;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionAnimation**, int> CreateAnimation;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation**, int> CreateAnimation;
 
         [NativeTypeName("HRESULT (IDCompositionGaussianBlurEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionGaussianBlurEffect**, int> CreateGaussianBlurEffect;
+        public delegate* unmanaged<TSelf*, IDCompositionGaussianBlurEffect**, int> CreateGaussianBlurEffect;
 
         [NativeTypeName("HRESULT (IDCompositionBrightnessEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionBrightnessEffect**, int> CreateBrightnessEffect;
+        public delegate* unmanaged<TSelf*, IDCompositionBrightnessEffect**, int> CreateBrightnessEffect;
 
         [NativeTypeName("HRESULT (IDCompositionColorMatrixEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionColorMatrixEffect**, int> CreateColorMatrixEffect;
+        public delegate* unmanaged<TSelf*, IDCompositionColorMatrixEffect**, int> CreateColorMatrixEffect;
 
         [NativeTypeName("HRESULT (IDCompositionShadowEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionShadowEffect**, int> CreateShadowEffect;
+        public delegate* unmanaged<TSelf*, IDCompositionShadowEffect**, int> CreateShadowEffect;
 
         [NativeTypeName("HRESULT (IDCompositionHueRotationEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionHueRotationEffect**, int> CreateHueRotationEffect;
+        public delegate* unmanaged<TSelf*, IDCompositionHueRotationEffect**, int> CreateHueRotationEffect;
 
         [NativeTypeName("HRESULT (IDCompositionSaturationEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionSaturationEffect**, int> CreateSaturationEffect;
+        public delegate* unmanaged<TSelf*, IDCompositionSaturationEffect**, int> CreateSaturationEffect;
 
         [NativeTypeName("HRESULT (IDCompositionTurbulenceEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionTurbulenceEffect**, int> CreateTurbulenceEffect;
+        public delegate* unmanaged<TSelf*, IDCompositionTurbulenceEffect**, int> CreateTurbulenceEffect;
 
         [NativeTypeName("HRESULT (IDCompositionLinearTransferEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionLinearTransferEffect**, int> CreateLinearTransferEffect;
+        public delegate* unmanaged<TSelf*, IDCompositionLinearTransferEffect**, int> CreateLinearTransferEffect;
 
         [NativeTypeName("HRESULT (IDCompositionTableTransferEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionTableTransferEffect**, int> CreateTableTransferEffect;
+        public delegate* unmanaged<TSelf*, IDCompositionTableTransferEffect**, int> CreateTableTransferEffect;
 
         [NativeTypeName("HRESULT (IDCompositionCompositeEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionCompositeEffect**, int> CreateCompositeEffect;
+        public delegate* unmanaged<TSelf*, IDCompositionCompositeEffect**, int> CreateCompositeEffect;
 
         [NativeTypeName("HRESULT (IDCompositionBlendEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionBlendEffect**, int> CreateBlendEffect;
+        public delegate* unmanaged<TSelf*, IDCompositionBlendEffect**, int> CreateBlendEffect;
 
         [NativeTypeName("HRESULT (IDCompositionArithmeticCompositeEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionArithmeticCompositeEffect**, int> CreateArithmeticCompositeEffect;
+        public delegate* unmanaged<TSelf*, IDCompositionArithmeticCompositeEffect**, int> CreateArithmeticCompositeEffect;
 
         [NativeTypeName("HRESULT (IDCompositionAffineTransform2DEffect **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionDevice3*, IDCompositionAffineTransform2DEffect**, int> CreateAffineTransform2DEffect;
+        public delegate* unmanaged<TSelf*, IDCompositionAffineTransform2DEffect**, int> CreateAffineTransform2DEffect;
     }
 }

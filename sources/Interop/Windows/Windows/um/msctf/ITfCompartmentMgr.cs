@@ -72,24 +72,25 @@ public unsafe partial struct ITfCompartmentMgr : ITfCompartmentMgr.Interface
         HRESULT EnumCompartments(IEnumGUID** ppEnum);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCompartmentMgr*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCompartmentMgr*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCompartmentMgr*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, ITfCompartment **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCompartmentMgr*, Guid*, ITfCompartment**, int> GetCompartment;
+        public delegate* unmanaged<TSelf*, Guid*, ITfCompartment**, int> GetCompartment;
 
         [NativeTypeName("HRESULT (TfClientId, const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCompartmentMgr*, uint, Guid*, int> ClearCompartment;
+        public delegate* unmanaged<TSelf*, uint, Guid*, int> ClearCompartment;
 
         [NativeTypeName("HRESULT (IEnumGUID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCompartmentMgr*, IEnumGUID**, int> EnumCompartments;
+        public delegate* unmanaged<TSelf*, IEnumGUID**, int> EnumCompartments;
     }
 }

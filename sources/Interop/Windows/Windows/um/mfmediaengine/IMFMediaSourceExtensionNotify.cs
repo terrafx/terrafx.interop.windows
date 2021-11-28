@@ -74,24 +74,25 @@ public unsafe partial struct IMFMediaSourceExtensionNotify : IMFMediaSourceExten
         void OnSourceClose();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSourceExtensionNotify*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSourceExtensionNotify*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSourceExtensionNotify*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSourceExtensionNotify*, void> OnSourceOpen;
+        public delegate* unmanaged<TSelf*, void> OnSourceOpen;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSourceExtensionNotify*, void> OnSourceEnded;
+        public delegate* unmanaged<TSelf*, void> OnSourceEnded;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSourceExtensionNotify*, void> OnSourceClose;
+        public delegate* unmanaged<TSelf*, void> OnSourceClose;
     }
 }

@@ -75,24 +75,25 @@ public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings : ID3D12Dev
         void SetWatsonDumpEnablement(D3D12_DRED_ENABLEMENT Enablement);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (D3D12_DRED_ENABLEMENT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings*, D3D12_DRED_ENABLEMENT, void> SetAutoBreadcrumbsEnablement;
+        public delegate* unmanaged<TSelf*, D3D12_DRED_ENABLEMENT, void> SetAutoBreadcrumbsEnablement;
 
         [NativeTypeName("void (D3D12_DRED_ENABLEMENT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings*, D3D12_DRED_ENABLEMENT, void> SetPageFaultEnablement;
+        public delegate* unmanaged<TSelf*, D3D12_DRED_ENABLEMENT, void> SetPageFaultEnablement;
 
         [NativeTypeName("void (D3D12_DRED_ENABLEMENT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12DeviceRemovedExtendedDataSettings*, D3D12_DRED_ENABLEMENT, void> SetWatsonDumpEnablement;
+        public delegate* unmanaged<TSelf*, D3D12_DRED_ENABLEMENT, void> SetWatsonDumpEnablement;
     }
 }

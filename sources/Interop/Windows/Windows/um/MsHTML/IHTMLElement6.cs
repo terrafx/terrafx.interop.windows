@@ -820,252 +820,253 @@ public unsafe partial struct IHTMLElement6 : IHTMLElement6.Interface
         HRESULT hasAttributes([NativeTypeName("VARIANT_BOOL *")] short* pfHasAttributes);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (VARIANT *, BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, ushort*, VARIANT*, int> getAttributeNS;
+        public delegate* unmanaged<TSelf*, VARIANT*, ushort*, VARIANT*, int> getAttributeNS;
 
         [NativeTypeName("HRESULT (VARIANT *, BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, ushort*, VARIANT*, int> setAttributeNS;
+        public delegate* unmanaged<TSelf*, VARIANT*, ushort*, VARIANT*, int> setAttributeNS;
 
         [NativeTypeName("HRESULT (VARIANT *, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, ushort*, int> removeAttributeNS;
+        public delegate* unmanaged<TSelf*, VARIANT*, ushort*, int> removeAttributeNS;
 
         [NativeTypeName("HRESULT (VARIANT *, BSTR, IHTMLDOMAttribute2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, ushort*, IHTMLDOMAttribute2**, int> getAttributeNodeNS;
+        public delegate* unmanaged<TSelf*, VARIANT*, ushort*, IHTMLDOMAttribute2**, int> getAttributeNodeNS;
 
         [NativeTypeName("HRESULT (IHTMLDOMAttribute2 *, IHTMLDOMAttribute2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, IHTMLDOMAttribute2*, IHTMLDOMAttribute2**, int> setAttributeNodeNS;
+        public delegate* unmanaged<TSelf*, IHTMLDOMAttribute2*, IHTMLDOMAttribute2**, int> setAttributeNodeNS;
 
         [NativeTypeName("HRESULT (VARIANT *, BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, ushort*, short*, int> hasAttributeNS;
+        public delegate* unmanaged<TSelf*, VARIANT*, ushort*, short*, int> hasAttributeNS;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, ushort*, VARIANT*, int> getAttribute;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> getAttribute;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, ushort*, VARIANT*, int> setAttribute;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> setAttribute;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, ushort*, int> removeAttribute;
+        public delegate* unmanaged<TSelf*, ushort*, int> removeAttribute;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLDOMAttribute2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, ushort*, IHTMLDOMAttribute2**, int> getAttributeNode;
+        public delegate* unmanaged<TSelf*, ushort*, IHTMLDOMAttribute2**, int> getAttributeNode;
 
         [NativeTypeName("HRESULT (IHTMLDOMAttribute2 *, IHTMLDOMAttribute2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, IHTMLDOMAttribute2*, IHTMLDOMAttribute2**, int> setAttributeNode;
+        public delegate* unmanaged<TSelf*, IHTMLDOMAttribute2*, IHTMLDOMAttribute2**, int> setAttributeNode;
 
         [NativeTypeName("HRESULT (IHTMLDOMAttribute2 *, IHTMLDOMAttribute2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, IHTMLDOMAttribute2*, IHTMLDOMAttribute2**, int> removeAttributeNode;
+        public delegate* unmanaged<TSelf*, IHTMLDOMAttribute2*, IHTMLDOMAttribute2**, int> removeAttributeNode;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, ushort*, short*, int> hasAttribute;
+        public delegate* unmanaged<TSelf*, ushort*, short*, int> hasAttribute;
 
         [NativeTypeName("HRESULT (VARIANT *, BSTR, IHTMLElementCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, ushort*, IHTMLElementCollection**, int> getElementsByTagNameNS;
+        public delegate* unmanaged<TSelf*, VARIANT*, ushort*, IHTMLElementCollection**, int> getElementsByTagNameNS;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, ushort**, int> get_tagName;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_tagName;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, ushort**, int> get_nodeName;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_nodeName;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLElementCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, ushort*, IHTMLElementCollection**, int> getElementsByClassName;
+        public delegate* unmanaged<TSelf*, ushort*, IHTMLElementCollection**, int> getElementsByClassName;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, ushort*, short*, int> msMatchesSelector;
+        public delegate* unmanaged<TSelf*, ushort*, short*, int> msMatchesSelector;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onabort;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onabort;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onabort;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onabort;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_oncanplay;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_oncanplay;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_oncanplay;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_oncanplay;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_oncanplaythrough;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_oncanplaythrough;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_oncanplaythrough;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_oncanplaythrough;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onchange;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onchange;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onchange;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onchange;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_ondurationchange;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_ondurationchange;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_ondurationchange;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_ondurationchange;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onemptied;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onemptied;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onemptied;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onemptied;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onended;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onended;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onended;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onended;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onerror;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onerror;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onerror;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onerror;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_oninput;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_oninput;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_oninput;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_oninput;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onload;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onload;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onload;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onload;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onloadeddata;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onloadeddata;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onloadeddata;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onloadeddata;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onloadedmetadata;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onloadedmetadata;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onloadedmetadata;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onloadedmetadata;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onloadstart;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onloadstart;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onloadstart;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onloadstart;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onpause;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onpause;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onpause;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onpause;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onplay;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onplay;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onplay;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onplay;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onplaying;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onplaying;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onplaying;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onplaying;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onprogress;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onprogress;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onprogress;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onprogress;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onratechange;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onratechange;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onratechange;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onratechange;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onreset;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onreset;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onreset;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onreset;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onseeked;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onseeked;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onseeked;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onseeked;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onseeking;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onseeking;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onseeking;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onseeking;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onselect;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onselect;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onselect;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onselect;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onstalled;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onstalled;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onstalled;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onstalled;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onsubmit;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onsubmit;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onsubmit;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onsubmit;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onsuspend;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onsuspend;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onsuspend;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onsuspend;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_ontimeupdate;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_ontimeupdate;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_ontimeupdate;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_ontimeupdate;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onvolumechange;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onvolumechange;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onvolumechange;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onvolumechange;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT, int> put_onwaiting;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onwaiting;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, VARIANT*, int> get_onwaiting;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onwaiting;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement6*, short*, int> hasAttributes;
+        public delegate* unmanaged<TSelf*, short*, int> hasAttributes;
     }
 }

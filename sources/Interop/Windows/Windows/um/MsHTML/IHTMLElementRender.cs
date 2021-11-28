@@ -62,21 +62,22 @@ public unsafe partial struct IHTMLElementRender : IHTMLElementRender.Interface
         HRESULT SetDocumentPrinter([NativeTypeName("BSTR")] ushort* bstrPrinterName, HDC hDC);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementRender*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementRender*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementRender*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HDC) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementRender*, HDC, int> DrawToDC;
+        public delegate* unmanaged<TSelf*, HDC, int> DrawToDC;
 
         [NativeTypeName("HRESULT (BSTR, HDC) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementRender*, ushort*, HDC, int> SetDocumentPrinter;
+        public delegate* unmanaged<TSelf*, ushort*, HDC, int> SetDocumentPrinter;
     }
 }

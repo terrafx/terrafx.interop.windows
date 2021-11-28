@@ -52,18 +52,19 @@ public unsafe partial struct IInkD2DRenderer2 : IInkD2DRenderer2.Interface
         HRESULT Draw(IUnknown* pD2D1DeviceContext, IUnknown* pInkStrokeIterable, INK_HIGH_CONTRAST_ADJUSTMENT highContrastAdjustment);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInkD2DRenderer2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInkD2DRenderer2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInkD2DRenderer2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, IUnknown *, INK_HIGH_CONTRAST_ADJUSTMENT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInkD2DRenderer2*, IUnknown*, IUnknown*, INK_HIGH_CONTRAST_ADJUSTMENT, int> Draw;
+        public delegate* unmanaged<TSelf*, IUnknown*, IUnknown*, INK_HIGH_CONTRAST_ADJUSTMENT, int> Draw;
     }
 }

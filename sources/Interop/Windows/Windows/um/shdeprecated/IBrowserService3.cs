@@ -709,297 +709,298 @@ public unsafe partial struct IBrowserService3 : IBrowserService3.Interface
         HRESULT IEParseDisplayNameEx(uint uiCP, [NativeTypeName("LPCWSTR")] ushort* pwszPath, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IOleInPlaceSite **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, IOleInPlaceSite**, int> GetParentSite;
+        public delegate* unmanaged<TSelf*, IOleInPlaceSite**, int> GetParentSite;
 
         [NativeTypeName("HRESULT (IShellView *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, IShellView*, ushort*, int> SetTitle;
+        public delegate* unmanaged<TSelf*, IShellView*, ushort*, int> SetTitle;
 
         [NativeTypeName("HRESULT (IShellView *, LPWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, IShellView*, ushort*, uint, int> GetTitle;
+        public delegate* unmanaged<TSelf*, IShellView*, ushort*, uint, int> GetTitle;
 
         [NativeTypeName("HRESULT (IOleObject **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, IOleObject**, int> GetOleObject;
+        public delegate* unmanaged<TSelf*, IOleObject**, int> GetOleObject;
 
         [NativeTypeName("HRESULT (ITravelLog **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, ITravelLog**, int> GetTravelLog;
+        public delegate* unmanaged<TSelf*, ITravelLog**, int> GetTravelLog;
 
         [NativeTypeName("HRESULT (UINT, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, uint, BOOL, int> ShowControlWindow;
+        public delegate* unmanaged<TSelf*, uint, BOOL, int> ShowControlWindow;
 
         [NativeTypeName("HRESULT (UINT, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, uint, BOOL*, int> IsControlWindowShown;
+        public delegate* unmanaged<TSelf*, uint, BOOL*, int> IsControlWindowShown;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, LPWSTR, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, ITEMIDLIST*, ushort*, uint, int> IEGetDisplayName;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, ushort*, uint, int> IEGetDisplayName;
 
         [NativeTypeName("HRESULT (UINT, LPCWSTR, LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, uint, ushort*, ITEMIDLIST**, int> IEParseDisplayName;
+        public delegate* unmanaged<TSelf*, uint, ushort*, ITEMIDLIST**, int> IEParseDisplayName;
 
         [NativeTypeName("HRESULT (HRESULT, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, HRESULT, ushort*, int> DisplayParseError;
+        public delegate* unmanaged<TSelf*, HRESULT, ushort*, int> DisplayParseError;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, ITEMIDLIST*, uint, int> NavigateToPidl;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, uint, int> NavigateToPidl;
 
         [NativeTypeName("HRESULT (BNSTATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, BNSTATE, int> SetNavigateState;
+        public delegate* unmanaged<TSelf*, BNSTATE, int> SetNavigateState;
 
         [NativeTypeName("HRESULT (BNSTATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, BNSTATE*, int> GetNavigateState;
+        public delegate* unmanaged<TSelf*, BNSTATE*, int> GetNavigateState;
 
         [NativeTypeName("HRESULT (IShellView *, LPCITEMIDLIST, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, IShellView*, ITEMIDLIST*, BOOL*, int> NotifyRedirect;
+        public delegate* unmanaged<TSelf*, IShellView*, ITEMIDLIST*, BOOL*, int> NotifyRedirect;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, int> UpdateWindowList;
+        public delegate* unmanaged<TSelf*, int> UpdateWindowList;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, int> UpdateBackForwardState;
+        public delegate* unmanaged<TSelf*, int> UpdateBackForwardState;
 
         [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, uint, uint, int> SetFlags;
+        public delegate* unmanaged<TSelf*, uint, uint, int> SetFlags;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, uint*, int> GetFlags;
+        public delegate* unmanaged<TSelf*, uint*, int> GetFlags;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, int> CanNavigateNow;
+        public delegate* unmanaged<TSelf*, int> CanNavigateNow;
 
         [NativeTypeName("HRESULT (LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, ITEMIDLIST**, int> GetPidl;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST**, int> GetPidl;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, ITEMIDLIST*, int> SetReferrer;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, int> SetReferrer;
 
         [NativeTypeName("DWORD () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, uint> GetBrowserIndex;
+        public delegate* unmanaged<TSelf*, uint> GetBrowserIndex;
 
         [NativeTypeName("HRESULT (DWORD, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, uint, IUnknown**, int> GetBrowserByIndex;
+        public delegate* unmanaged<TSelf*, uint, IUnknown**, int> GetBrowserByIndex;
 
         [NativeTypeName("HRESULT (IOleObject **, IStream **, IBindCtx **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, IOleObject**, IStream**, IBindCtx**, int> GetHistoryObject;
+        public delegate* unmanaged<TSelf*, IOleObject**, IStream**, IBindCtx**, int> GetHistoryObject;
 
         [NativeTypeName("HRESULT (IOleObject *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, IOleObject*, BOOL, int> SetHistoryObject;
+        public delegate* unmanaged<TSelf*, IOleObject*, BOOL, int> SetHistoryObject;
 
         [NativeTypeName("HRESULT (IOleObject *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, IOleObject*, int> CacheOLEServer;
+        public delegate* unmanaged<TSelf*, IOleObject*, int> CacheOLEServer;
 
         [NativeTypeName("HRESULT (VARIANT *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, VARIANT*, VARIANT*, int> GetSetCodePage;
+        public delegate* unmanaged<TSelf*, VARIANT*, VARIANT*, int> GetSetCodePage;
 
         [NativeTypeName("HRESULT (IShellView *, BOOL, VARIANT *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, IShellView*, BOOL, VARIANT*, VARIANT*, int> OnHttpEquiv;
+        public delegate* unmanaged<TSelf*, IShellView*, BOOL, VARIANT*, VARIANT*, int> OnHttpEquiv;
 
         [NativeTypeName("HRESULT (HPALETTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, HPALETTE*, int> GetPalette;
+        public delegate* unmanaged<TSelf*, HPALETTE*, int> GetPalette;
 
         [NativeTypeName("HRESULT (BOOL, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, BOOL, int, int> RegisterWindow;
+        public delegate* unmanaged<TSelf*, BOOL, int, int> RegisterWindow;
 
         [NativeTypeName("LRESULT (HWND, UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, HWND, uint, WPARAM, LPARAM, nint> WndProcBS;
+        public delegate* unmanaged<TSelf*, HWND, uint, WPARAM, LPARAM, nint> WndProcBS;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, int> SetAsDefFolderSettings;
+        public delegate* unmanaged<TSelf*, int> SetAsDefFolderSettings;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, RECT*, int> GetViewRect;
+        public delegate* unmanaged<TSelf*, RECT*, int> GetViewRect;
 
         [NativeTypeName("HRESULT (WPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, WPARAM, int> OnSize;
+        public delegate* unmanaged<TSelf*, WPARAM, int> OnSize;
 
         [NativeTypeName("HRESULT (struct tagCREATESTRUCTW *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, CREATESTRUCTW*, int> OnCreate;
+        public delegate* unmanaged<TSelf*, CREATESTRUCTW*, int> OnCreate;
 
         [NativeTypeName("LRESULT (WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, WPARAM, LPARAM, nint> OnCommand;
+        public delegate* unmanaged<TSelf*, WPARAM, LPARAM, nint> OnCommand;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, int> OnDestroy;
+        public delegate* unmanaged<TSelf*, int> OnDestroy;
 
         [NativeTypeName("LRESULT (struct tagNMHDR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, NMHDR*, nint> OnNotify;
+        public delegate* unmanaged<TSelf*, NMHDR*, nint> OnNotify;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, int> OnSetFocus;
+        public delegate* unmanaged<TSelf*, int> OnSetFocus;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, BOOL, int> OnFrameWindowActivateBS;
+        public delegate* unmanaged<TSelf*, BOOL, int> OnFrameWindowActivateBS;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, int> ReleaseShellView;
+        public delegate* unmanaged<TSelf*, int> ReleaseShellView;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, int> ActivatePendingView;
+        public delegate* unmanaged<TSelf*, int> ActivatePendingView;
 
         [NativeTypeName("HRESULT (IShellView *, IShellView *, LPRECT, HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, IShellView*, IShellView*, RECT*, HWND*, int> CreateViewWindow;
+        public delegate* unmanaged<TSelf*, IShellView*, IShellView*, RECT*, HWND*, int> CreateViewWindow;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, Guid*, void**, int> CreateBrowserPropSheetExt;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> CreateBrowserPropSheetExt;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, HWND*, int> GetViewWindow;
+        public delegate* unmanaged<TSelf*, HWND*, int> GetViewWindow;
 
         [NativeTypeName("HRESULT (LPCBASEBROWSERDATA *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, BASEBROWSERDATA**, int> GetBaseBrowserData;
+        public delegate* unmanaged<TSelf*, BASEBROWSERDATA**, int> GetBaseBrowserData;
 
         [NativeTypeName("LPBASEBROWSERDATA () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, BASEBROWSERDATA*> PutBaseBrowserData;
+        public delegate* unmanaged<TSelf*, BASEBROWSERDATA*> PutBaseBrowserData;
 
         [NativeTypeName("HRESULT (ITravelLog *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, ITravelLog*, uint, int> InitializeTravelLog;
+        public delegate* unmanaged<TSelf*, ITravelLog*, uint, int> InitializeTravelLog;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, int> SetTopBrowser;
+        public delegate* unmanaged<TSelf*, int> SetTopBrowser;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, int, int> Offline;
+        public delegate* unmanaged<TSelf*, int, int> Offline;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, BOOL, int> AllowViewResize;
+        public delegate* unmanaged<TSelf*, BOOL, int> AllowViewResize;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, uint, int> SetActivateState;
+        public delegate* unmanaged<TSelf*, uint, int> SetActivateState;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, int, int> UpdateSecureLockIcon;
+        public delegate* unmanaged<TSelf*, int, int> UpdateSecureLockIcon;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, int> InitializeDownloadManager;
+        public delegate* unmanaged<TSelf*, int> InitializeDownloadManager;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, int> InitializeTransitionSite;
+        public delegate* unmanaged<TSelf*, int> InitializeTransitionSite;
 
         [NativeTypeName("HRESULT (HWND, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, HWND, IUnknown*, int> _Initialize;
+        public delegate* unmanaged<TSelf*, HWND, IUnknown*, int> _Initialize;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, int> _CancelPendingNavigationAsync;
+        public delegate* unmanaged<TSelf*, int> _CancelPendingNavigationAsync;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, int> _CancelPendingView;
+        public delegate* unmanaged<TSelf*, int> _CancelPendingView;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, int> _MaySaveChanges;
+        public delegate* unmanaged<TSelf*, int> _MaySaveChanges;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, BOOL, int> _PauseOrResumeView;
+        public delegate* unmanaged<TSelf*, BOOL, int> _PauseOrResumeView;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, int> _DisableModeless;
+        public delegate* unmanaged<TSelf*, int> _DisableModeless;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, ITEMIDLIST*, uint, uint, int> _NavigateToPidl;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, uint, uint, int> _NavigateToPidl;
 
         [NativeTypeName("HRESULT (IShellView *, LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, IShellView*, ITEMIDLIST*, int> _TryShell2Rename;
+        public delegate* unmanaged<TSelf*, IShellView*, ITEMIDLIST*, int> _TryShell2Rename;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, int> _SwitchActivationNow;
+        public delegate* unmanaged<TSelf*, int> _SwitchActivationNow;
 
         [NativeTypeName("HRESULT (IUnknown *, BOOL, const GUID *, DWORD, DWORD, VARIANTARG *, VARIANTARG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, IUnknown*, BOOL, Guid*, uint, uint, VARIANT*, VARIANT*, int> _ExecChildren;
+        public delegate* unmanaged<TSelf*, IUnknown*, BOOL, Guid*, uint, uint, VARIANT*, VARIANT*, int> _ExecChildren;
 
         [NativeTypeName("HRESULT (HWND, BOOL, UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, HWND, BOOL, uint, WPARAM, LPARAM, int> _SendChildren;
+        public delegate* unmanaged<TSelf*, HWND, BOOL, uint, WPARAM, LPARAM, int> _SendChildren;
 
         [NativeTypeName("HRESULT (struct tagFolderSetData *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, FOLDERSETDATA*, int> GetFolderSetData;
+        public delegate* unmanaged<TSelf*, FOLDERSETDATA*, int> GetFolderSetData;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, uint, int> _OnFocusChange;
+        public delegate* unmanaged<TSelf*, uint, int> _OnFocusChange;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, BOOL, int> v_ShowHideChildWindows;
+        public delegate* unmanaged<TSelf*, BOOL, int> v_ShowHideChildWindows;
 
         [NativeTypeName("UINT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, uint> _get_itbLastFocus;
+        public delegate* unmanaged<TSelf*, uint> _get_itbLastFocus;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, uint, int> _put_itbLastFocus;
+        public delegate* unmanaged<TSelf*, uint, int> _put_itbLastFocus;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, uint, int> _UIActivateView;
+        public delegate* unmanaged<TSelf*, uint, int> _UIActivateView;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, RECT*, int> _GetViewBorderRect;
+        public delegate* unmanaged<TSelf*, RECT*, int> _GetViewBorderRect;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, int> _UpdateViewRectSize;
+        public delegate* unmanaged<TSelf*, int> _UpdateViewRectSize;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, uint, int> _ResizeNextBorder;
+        public delegate* unmanaged<TSelf*, uint, int> _ResizeNextBorder;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, int> _ResizeView;
+        public delegate* unmanaged<TSelf*, int> _ResizeView;
 
         [NativeTypeName("HRESULT (LPRECT, HMONITOR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, RECT*, HMONITOR, int> _GetEffectiveClientArea;
+        public delegate* unmanaged<TSelf*, RECT*, HMONITOR, int> _GetEffectiveClientArea;
 
         [NativeTypeName("IStream *(LPCITEMIDLIST, DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, ITEMIDLIST*, uint, ushort*, IStream*> v_GetViewStream;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, uint, ushort*, IStream*> v_GetViewStream;
 
         [NativeTypeName("LRESULT (UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, uint, WPARAM, LPARAM, nint> ForwardViewMsg;
+        public delegate* unmanaged<TSelf*, uint, WPARAM, LPARAM, nint> ForwardViewMsg;
 
         [NativeTypeName("HRESULT (HACCEL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, HACCEL, int> SetAcceleratorMenu;
+        public delegate* unmanaged<TSelf*, HACCEL, int> SetAcceleratorMenu;
 
         [NativeTypeName("int () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, int> _GetToolbarCount;
+        public delegate* unmanaged<TSelf*, int> _GetToolbarCount;
 
         [NativeTypeName("LPTOOLBARITEM (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, int, TOOLBARITEM*> _GetToolbarItem;
+        public delegate* unmanaged<TSelf*, int, TOOLBARITEM*> _GetToolbarItem;
 
         [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, IStream*, int> _SaveToolbars;
+        public delegate* unmanaged<TSelf*, IStream*, int> _SaveToolbars;
 
         [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, IStream*, int> _LoadToolbars;
+        public delegate* unmanaged<TSelf*, IStream*, int> _LoadToolbars;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, BOOL, int> _CloseAndReleaseToolbars;
+        public delegate* unmanaged<TSelf*, BOOL, int> _CloseAndReleaseToolbars;
 
         [NativeTypeName("HRESULT (LPMSG, UINT, int, LPTOOLBARITEM *, HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, MSG*, uint, int, TOOLBARITEM**, HWND*, int> v_MayGetNextToolbarFocus;
+        public delegate* unmanaged<TSelf*, MSG*, uint, int, TOOLBARITEM**, HWND*, int> v_MayGetNextToolbarFocus;
 
         [NativeTypeName("HRESULT (UINT, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, uint, BOOL, int> _ResizeNextBorderHelper;
+        public delegate* unmanaged<TSelf*, uint, BOOL, int> _ResizeNextBorderHelper;
 
         [NativeTypeName("UINT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, IUnknown*, uint> _FindTBar;
+        public delegate* unmanaged<TSelf*, IUnknown*, uint> _FindTBar;
 
         [NativeTypeName("HRESULT (LPTOOLBARITEM, HWND, LPMSG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, TOOLBARITEM*, HWND, MSG*, int> _SetFocus;
+        public delegate* unmanaged<TSelf*, TOOLBARITEM*, HWND, MSG*, int> _SetFocus;
 
         [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, MSG*, int> v_MayTranslateAccelerator;
+        public delegate* unmanaged<TSelf*, MSG*, int> v_MayTranslateAccelerator;
 
         [NativeTypeName("HRESULT (IUnknown *, LPRECT, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, IUnknown*, RECT*, BOOL, int> _GetBorderDWHelper;
+        public delegate* unmanaged<TSelf*, IUnknown*, RECT*, BOOL, int> _GetBorderDWHelper;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, ITEMIDLIST*, int> v_CheckZoneCrossing;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, int> v_CheckZoneCrossing;
 
         [NativeTypeName("HRESULT (HWND, LPRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, HWND, RECT*, int> _PositionViewWindow;
+        public delegate* unmanaged<TSelf*, HWND, RECT*, int> _PositionViewWindow;
 
         [NativeTypeName("HRESULT (UINT, LPCWSTR, DWORD, LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBrowserService3*, uint, ushort*, uint, ITEMIDLIST**, int> IEParseDisplayNameEx;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint, ITEMIDLIST**, int> IEParseDisplayNameEx;
     }
 }

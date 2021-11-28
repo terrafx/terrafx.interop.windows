@@ -62,21 +62,22 @@ public unsafe partial struct IDiaEnumStackFrames : IDiaEnumStackFrames.Interface
         HRESULT Reset();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumStackFrames*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumStackFrames*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumStackFrames*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, IDiaStackFrame **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumStackFrames*, uint, IDiaStackFrame**, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, IDiaStackFrame**, uint*, int> Next;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumStackFrames*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
     }
 }

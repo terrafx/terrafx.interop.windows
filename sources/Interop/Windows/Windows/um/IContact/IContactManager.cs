@@ -102,33 +102,34 @@ public unsafe partial struct IContactManager : IContactManager.Interface
         HRESULT GetContactCollection(IContactCollection** ppContactCollection);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactManager*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactManager*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactManager*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactManager*, ushort*, ushort*, int> Initialize;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> Initialize;
 
         [NativeTypeName("HRESULT (LPCWSTR, IContact **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactManager*, ushort*, IContact**, int> Load;
+        public delegate* unmanaged<TSelf*, ushort*, IContact**, int> Load;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactManager*, ushort*, ushort*, int> MergeContactIDs;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> MergeContactIDs;
 
         [NativeTypeName("HRESULT (IContact **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactManager*, IContact**, int> GetMeContact;
+        public delegate* unmanaged<TSelf*, IContact**, int> GetMeContact;
 
         [NativeTypeName("HRESULT (IContact *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactManager*, IContact*, int> SetMeContact;
+        public delegate* unmanaged<TSelf*, IContact*, int> SetMeContact;
 
         [NativeTypeName("HRESULT (IContactCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContactManager*, IContactCollection**, int> GetContactCollection;
+        public delegate* unmanaged<TSelf*, IContactCollection**, int> GetContactCollection;
     }
 }

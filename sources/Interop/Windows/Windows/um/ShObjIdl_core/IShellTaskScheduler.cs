@@ -82,27 +82,28 @@ public unsafe partial struct IShellTaskScheduler : IShellTaskScheduler.Interface
         HRESULT Status([NativeTypeName("DWORD")] uint dwReleaseStatus, [NativeTypeName("DWORD")] uint dwThreadTimeout);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellTaskScheduler*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellTaskScheduler*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellTaskScheduler*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IRunnableTask *, const TASKOWNERID &, DWORD_PTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellTaskScheduler*, IRunnableTask*, Guid*, nuint, uint, int> AddTask;
+        public delegate* unmanaged<TSelf*, IRunnableTask*, Guid*, nuint, uint, int> AddTask;
 
         [NativeTypeName("HRESULT (const TASKOWNERID &, DWORD_PTR, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellTaskScheduler*, Guid*, nuint, BOOL, int> RemoveTasks;
+        public delegate* unmanaged<TSelf*, Guid*, nuint, BOOL, int> RemoveTasks;
 
         [NativeTypeName("UINT (const TASKOWNERID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellTaskScheduler*, Guid*, uint> CountTasks;
+        public delegate* unmanaged<TSelf*, Guid*, uint> CountTasks;
 
         [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellTaskScheduler*, uint, uint, int> Status;
+        public delegate* unmanaged<TSelf*, uint, uint, int> Status;
     }
 }

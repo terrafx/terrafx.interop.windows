@@ -92,30 +92,31 @@ public unsafe partial struct IHlinkTarget : IHlinkTarget.Interface
         HRESULT GetFriendlyName([NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPWSTR *")] ushort** ppwzFriendlyName);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkTarget*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkTarget*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkTarget*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IHlinkBrowseContext *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkTarget*, IHlinkBrowseContext*, int> SetBrowseContext;
+        public delegate* unmanaged<TSelf*, IHlinkBrowseContext*, int> SetBrowseContext;
 
         [NativeTypeName("HRESULT (IHlinkBrowseContext **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkTarget*, IHlinkBrowseContext**, int> GetBrowseContext;
+        public delegate* unmanaged<TSelf*, IHlinkBrowseContext**, int> GetBrowseContext;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkTarget*, uint, ushort*, int> Navigate;
+        public delegate* unmanaged<TSelf*, uint, ushort*, int> Navigate;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, IMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkTarget*, ushort*, uint, IMoniker**, int> GetMoniker;
+        public delegate* unmanaged<TSelf*, ushort*, uint, IMoniker**, int> GetMoniker;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkTarget*, ushort*, ushort**, int> GetFriendlyName;
+        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> GetFriendlyName;
     }
 }

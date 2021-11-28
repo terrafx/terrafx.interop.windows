@@ -122,39 +122,40 @@ public unsafe partial struct IDiaPropertyStorage : IDiaPropertyStorage.Interface
         HRESULT ReadBSTR([NativeTypeName("PROPID")] uint id, [NativeTypeName("BSTR *")] ushort** pValue);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaPropertyStorage*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaPropertyStorage*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaPropertyStorage*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, const PROPSPEC *, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaPropertyStorage*, uint, PROPSPEC*, PROPVARIANT*, int> ReadMultiple;
+        public delegate* unmanaged<TSelf*, uint, PROPSPEC*, PROPVARIANT*, int> ReadMultiple;
 
         [NativeTypeName("HRESULT (ULONG, const PROPID *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaPropertyStorage*, uint, uint*, ushort**, int> ReadPropertyNames;
+        public delegate* unmanaged<TSelf*, uint, uint*, ushort**, int> ReadPropertyNames;
 
         [NativeTypeName("HRESULT (IEnumSTATPROPSTG **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaPropertyStorage*, IEnumSTATPROPSTG**, int> Enum;
+        public delegate* unmanaged<TSelf*, IEnumSTATPROPSTG**, int> Enum;
 
         [NativeTypeName("HRESULT (PROPID, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaPropertyStorage*, uint, uint*, int> ReadDWORD;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> ReadDWORD;
 
         [NativeTypeName("HRESULT (PROPID, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaPropertyStorage*, uint, int*, int> ReadLONG;
+        public delegate* unmanaged<TSelf*, uint, int*, int> ReadLONG;
 
         [NativeTypeName("HRESULT (PROPID, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaPropertyStorage*, uint, BOOL*, int> ReadBOOL;
+        public delegate* unmanaged<TSelf*, uint, BOOL*, int> ReadBOOL;
 
         [NativeTypeName("HRESULT (PROPID, ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaPropertyStorage*, uint, ulong*, int> ReadULONGLONG;
+        public delegate* unmanaged<TSelf*, uint, ulong*, int> ReadULONGLONG;
 
         [NativeTypeName("HRESULT (PROPID, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaPropertyStorage*, uint, ushort**, int> ReadBSTR;
+        public delegate* unmanaged<TSelf*, uint, ushort**, int> ReadBSTR;
     }
 }

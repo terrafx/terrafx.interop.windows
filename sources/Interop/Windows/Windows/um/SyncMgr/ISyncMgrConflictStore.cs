@@ -82,27 +82,28 @@ public unsafe partial struct ISyncMgrConflictStore : ISyncMgrConflictStore.Inter
         HRESULT GetCount([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR")] ushort* pszItemID, [NativeTypeName("DWORD *")] uint* pnConflicts);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflictStore*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflictStore*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflictStore*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, IEnumSyncMgrConflict **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflictStore*, ushort*, ushort*, IEnumSyncMgrConflict**, int> EnumConflicts;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, IEnumSyncMgrConflict**, int> EnumConflicts;
 
         [NativeTypeName("HRESULT (const SYNCMGR_CONFLICT_ID_INFO *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflictStore*, SYNCMGR_CONFLICT_ID_INFO*, Guid*, void**, int> BindToConflict;
+        public delegate* unmanaged<TSelf*, SYNCMGR_CONFLICT_ID_INFO*, Guid*, void**, int> BindToConflict;
 
         [NativeTypeName("HRESULT (const SYNCMGR_CONFLICT_ID_INFO *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflictStore*, SYNCMGR_CONFLICT_ID_INFO*, uint, int> RemoveConflicts;
+        public delegate* unmanaged<TSelf*, SYNCMGR_CONFLICT_ID_INFO*, uint, int> RemoveConflicts;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrConflictStore*, ushort*, ushort*, uint*, int> GetCount;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, uint*, int> GetCount;
     }
 }

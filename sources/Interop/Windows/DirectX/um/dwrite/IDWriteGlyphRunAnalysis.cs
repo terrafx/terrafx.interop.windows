@@ -73,24 +73,25 @@ public unsafe partial struct IDWriteGlyphRunAnalysis : IDWriteGlyphRunAnalysis.I
         HRESULT GetAlphaBlendParams(IDWriteRenderingParams* renderingParams, float* blendGamma, float* blendEnhancedContrast, float* blendClearTypeLevel);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGlyphRunAnalysis*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGlyphRunAnalysis*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGlyphRunAnalysis*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWRITE_TEXTURE_TYPE, RECT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGlyphRunAnalysis*, DWRITE_TEXTURE_TYPE, RECT*, int> GetAlphaTextureBounds;
+        public delegate* unmanaged<TSelf*, DWRITE_TEXTURE_TYPE, RECT*, int> GetAlphaTextureBounds;
 
         [NativeTypeName("HRESULT (DWRITE_TEXTURE_TYPE, const RECT *, BYTE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGlyphRunAnalysis*, DWRITE_TEXTURE_TYPE, RECT*, byte*, uint, int> CreateAlphaTexture;
+        public delegate* unmanaged<TSelf*, DWRITE_TEXTURE_TYPE, RECT*, byte*, uint, int> CreateAlphaTexture;
 
         [NativeTypeName("HRESULT (IDWriteRenderingParams *, FLOAT *, FLOAT *, FLOAT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGlyphRunAnalysis*, IDWriteRenderingParams*, float*, float*, float*, int> GetAlphaBlendParams;
+        public delegate* unmanaged<TSelf*, IDWriteRenderingParams*, float*, float*, float*, int> GetAlphaBlendParams;
     }
 }

@@ -82,27 +82,28 @@ public unsafe partial struct IAccClientDocMgr : IAccClientDocMgr.Interface
         HRESULT GetFocused([NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccClientDocMgr*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccClientDocMgr*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccClientDocMgr*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccClientDocMgr*, IEnumUnknown**, int> GetDocuments;
+        public delegate* unmanaged<TSelf*, IEnumUnknown**, int> GetDocuments;
 
         [NativeTypeName("HRESULT (HWND, const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccClientDocMgr*, HWND, Guid*, IUnknown**, int> LookupByHWND;
+        public delegate* unmanaged<TSelf*, HWND, Guid*, IUnknown**, int> LookupByHWND;
 
         [NativeTypeName("HRESULT (POINT, const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccClientDocMgr*, POINT, Guid*, IUnknown**, int> LookupByPoint;
+        public delegate* unmanaged<TSelf*, POINT, Guid*, IUnknown**, int> LookupByPoint;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccClientDocMgr*, Guid*, IUnknown**, int> GetFocused;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown**, int> GetFocused;
     }
 }

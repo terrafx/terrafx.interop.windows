@@ -176,54 +176,55 @@ public unsafe partial struct IMFTimedTextTrack : IMFTimedTextTrack.Interface
         HRESULT GetCueList(IMFTimedTextCueList** cues);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextTrack*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextTrack*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextTrack*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("DWORD () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextTrack*, uint> GetId;
+        public delegate* unmanaged<TSelf*, uint> GetId;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextTrack*, ushort**, int> GetLabel;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetLabel;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextTrack*, ushort*, int> SetLabel;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetLabel;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextTrack*, ushort**, int> GetLanguage;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetLanguage;
 
         [NativeTypeName("MF_TIMED_TEXT_TRACK_KIND () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextTrack*, MF_TIMED_TEXT_TRACK_KIND> GetTrackKind;
+        public delegate* unmanaged<TSelf*, MF_TIMED_TEXT_TRACK_KIND> GetTrackKind;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextTrack*, int> IsInBand;
+        public delegate* unmanaged<TSelf*, int> IsInBand;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextTrack*, ushort**, int> GetInBandMetadataTrackDispatchType;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetInBandMetadataTrackDispatchType;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextTrack*, int> IsActive;
+        public delegate* unmanaged<TSelf*, int> IsActive;
 
         [NativeTypeName("MF_TIMED_TEXT_ERROR_CODE () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextTrack*, MF_TIMED_TEXT_ERROR_CODE> GetErrorCode;
+        public delegate* unmanaged<TSelf*, MF_TIMED_TEXT_ERROR_CODE> GetErrorCode;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextTrack*, int> GetExtendedErrorCode;
+        public delegate* unmanaged<TSelf*, int> GetExtendedErrorCode;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextTrack*, Guid*, int> GetDataFormat;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetDataFormat;
 
         [NativeTypeName("MF_TIMED_TEXT_TRACK_READY_STATE () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextTrack*, MF_TIMED_TEXT_TRACK_READY_STATE> GetReadyState;
+        public delegate* unmanaged<TSelf*, MF_TIMED_TEXT_TRACK_READY_STATE> GetReadyState;
 
         [NativeTypeName("HRESULT (IMFTimedTextCueList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextTrack*, IMFTimedTextCueList**, int> GetCueList;
+        public delegate* unmanaged<TSelf*, IMFTimedTextCueList**, int> GetCueList;
     }
 }

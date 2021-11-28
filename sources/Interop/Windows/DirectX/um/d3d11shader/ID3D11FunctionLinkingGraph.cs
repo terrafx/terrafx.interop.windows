@@ -123,39 +123,40 @@ public unsafe partial struct ID3D11FunctionLinkingGraph : ID3D11FunctionLinkingG
         HRESULT GenerateHlsl(uint uFlags, ID3DBlob** ppBuffer);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11FunctionLinkingGraph*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11FunctionLinkingGraph*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11FunctionLinkingGraph*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (struct ID3D11ModuleInstance **, ID3DBlob **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, ID3DBlob**, int> CreateModuleInstance;
+        public delegate* unmanaged<TSelf*, ID3D11ModuleInstance**, ID3DBlob**, int> CreateModuleInstance;
 
         [NativeTypeName("HRESULT (const D3D11_PARAMETER_DESC *, UINT, struct ID3D11LinkingNode **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11FunctionLinkingGraph*, D3D11_PARAMETER_DESC*, uint, ID3D11LinkingNode**, int> SetInputSignature;
+        public delegate* unmanaged<TSelf*, D3D11_PARAMETER_DESC*, uint, ID3D11LinkingNode**, int> SetInputSignature;
 
         [NativeTypeName("HRESULT (const D3D11_PARAMETER_DESC *, UINT, struct ID3D11LinkingNode **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11FunctionLinkingGraph*, D3D11_PARAMETER_DESC*, uint, ID3D11LinkingNode**, int> SetOutputSignature;
+        public delegate* unmanaged<TSelf*, D3D11_PARAMETER_DESC*, uint, ID3D11LinkingNode**, int> SetOutputSignature;
 
         [NativeTypeName("HRESULT (LPCSTR, struct ID3D11Module *, LPCSTR, struct ID3D11LinkingNode **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11FunctionLinkingGraph*, sbyte*, ID3D11Module*, sbyte*, ID3D11LinkingNode**, int> CallFunction;
+        public delegate* unmanaged<TSelf*, sbyte*, ID3D11Module*, sbyte*, ID3D11LinkingNode**, int> CallFunction;
 
         [NativeTypeName("HRESULT (struct ID3D11LinkingNode *, INT, struct ID3D11LinkingNode *, INT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int> PassValue;
+        public delegate* unmanaged<TSelf*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int> PassValue;
 
         [NativeTypeName("HRESULT (struct ID3D11LinkingNode *, INT, LPCSTR, struct ID3D11LinkingNode *, INT, LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, sbyte*, ID3D11LinkingNode*, int, sbyte*, int> PassValueWithSwizzle;
+        public delegate* unmanaged<TSelf*, ID3D11LinkingNode*, int, sbyte*, ID3D11LinkingNode*, int, sbyte*, int> PassValueWithSwizzle;
 
         [NativeTypeName("HRESULT (ID3DBlob **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11FunctionLinkingGraph*, ID3DBlob**, int> GetLastError;
+        public delegate* unmanaged<TSelf*, ID3DBlob**, int> GetLastError;
 
         [NativeTypeName("HRESULT (UINT, ID3DBlob **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11FunctionLinkingGraph*, uint, ID3DBlob**, int> GenerateHlsl;
+        public delegate* unmanaged<TSelf*, uint, ID3DBlob**, int> GenerateHlsl;
     }
 }

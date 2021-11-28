@@ -52,18 +52,19 @@ public unsafe partial struct IInitializeWithPropertyStore : IInitializeWithPrope
         HRESULT Initialize(IPropertyStore* pps);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInitializeWithPropertyStore*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInitializeWithPropertyStore*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInitializeWithPropertyStore*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IPropertyStore *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInitializeWithPropertyStore*, IPropertyStore*, int> Initialize;
+        public delegate* unmanaged<TSelf*, IPropertyStore*, int> Initialize;
     }
 }

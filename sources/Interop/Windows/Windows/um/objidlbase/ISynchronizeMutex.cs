@@ -73,27 +73,28 @@ public unsafe partial struct ISynchronizeMutex : ISynchronizeMutex.Interface
         HRESULT ReleaseMutex();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISynchronizeMutex*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISynchronizeMutex*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISynchronizeMutex*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISynchronizeMutex*, uint, uint, int> Wait;
+        public delegate* unmanaged<TSelf*, uint, uint, int> Wait;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISynchronizeMutex*, int> Signal;
+        public delegate* unmanaged<TSelf*, int> Signal;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISynchronizeMutex*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISynchronizeMutex*, int> ReleaseMutex;
+        public delegate* unmanaged<TSelf*, int> ReleaseMutex;
     }
 }

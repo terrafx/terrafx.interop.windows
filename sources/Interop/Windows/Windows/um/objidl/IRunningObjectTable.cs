@@ -112,36 +112,37 @@ public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
         HRESULT EnumRunning(IEnumMoniker** ppenumMoniker);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRunningObjectTable*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRunningObjectTable*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRunningObjectTable*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IUnknown *, IMoniker *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRunningObjectTable*, uint, IUnknown*, IMoniker*, uint*, int> Register;
+        public delegate* unmanaged<TSelf*, uint, IUnknown*, IMoniker*, uint*, int> Register;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRunningObjectTable*, uint, int> Revoke;
+        public delegate* unmanaged<TSelf*, uint, int> Revoke;
 
         [NativeTypeName("HRESULT (IMoniker *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRunningObjectTable*, IMoniker*, int> IsRunning;
+        public delegate* unmanaged<TSelf*, IMoniker*, int> IsRunning;
 
         [NativeTypeName("HRESULT (IMoniker *, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRunningObjectTable*, IMoniker*, IUnknown**, int> GetObject;
+        public delegate* unmanaged<TSelf*, IMoniker*, IUnknown**, int> GetObject;
 
         [NativeTypeName("HRESULT (DWORD, FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRunningObjectTable*, uint, FILETIME*, int> NoteChangeTime;
+        public delegate* unmanaged<TSelf*, uint, FILETIME*, int> NoteChangeTime;
 
         [NativeTypeName("HRESULT (IMoniker *, FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRunningObjectTable*, IMoniker*, FILETIME*, int> GetTimeOfLastChange;
+        public delegate* unmanaged<TSelf*, IMoniker*, FILETIME*, int> GetTimeOfLastChange;
 
         [NativeTypeName("HRESULT (IEnumMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRunningObjectTable*, IEnumMoniker**, int> EnumRunning;
+        public delegate* unmanaged<TSelf*, IEnumMoniker**, int> EnumRunning;
     }
 }

@@ -93,30 +93,31 @@ public unsafe partial struct IDxcOptimizerPass : IDxcOptimizerPass.Interface
         HRESULT GetOptionArgDescription([NativeTypeName("UINT32")] uint argIndex, [NativeTypeName("LPWSTR *")] ushort** ppResult);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcOptimizerPass*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcOptimizerPass*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcOptimizerPass*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcOptimizerPass*, ushort**, int> GetOptionName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetOptionName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcOptimizerPass*, ushort**, int> GetDescription;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDescription;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcOptimizerPass*, uint*, int> GetOptionArgCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetOptionArgCount;
 
         [NativeTypeName("HRESULT (UINT32, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcOptimizerPass*, uint, ushort**, int> GetOptionArgName;
+        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetOptionArgName;
 
         [NativeTypeName("HRESULT (UINT32, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcOptimizerPass*, uint, ushort**, int> GetOptionArgDescription;
+        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetOptionArgDescription;
     }
 }

@@ -62,21 +62,22 @@ public unsafe partial struct IEnumerableView : IEnumerableView.Interface
         HRESULT CreateEnumIDListFromContents([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, [NativeTypeName("DWORD")] uint dwEnumFlags, IEnumIDList** ppEnumIDList);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumerableView*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumerableView*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumerableView*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumReadyCallback *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumerableView*, IEnumReadyCallback*, int> SetEnumReadyCallback;
+        public delegate* unmanaged<TSelf*, IEnumReadyCallback*, int> SetEnumReadyCallback;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, DWORD, IEnumIDList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumerableView*, ITEMIDLIST*, uint, IEnumIDList**, int> CreateEnumIDListFromContents;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, uint, IEnumIDList**, int> CreateEnumIDListFromContents;
     }
 }

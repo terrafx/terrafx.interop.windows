@@ -54,18 +54,19 @@ public unsafe partial struct IAdvancedMediaCaptureInitializationSettings : IAdva
         HRESULT SetDirectxDeviceManager(IMFDXGIDeviceManager* value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdvancedMediaCaptureInitializationSettings*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdvancedMediaCaptureInitializationSettings*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdvancedMediaCaptureInitializationSettings*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFDXGIDeviceManager *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdvancedMediaCaptureInitializationSettings*, IMFDXGIDeviceManager*, int> SetDirectxDeviceManager;
+        public delegate* unmanaged<TSelf*, IMFDXGIDeviceManager*, int> SetDirectxDeviceManager;
     }
 }

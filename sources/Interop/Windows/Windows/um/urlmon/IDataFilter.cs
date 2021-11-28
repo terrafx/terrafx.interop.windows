@@ -72,24 +72,25 @@ public unsafe partial struct IDataFilter : IDataFilter.Interface
         HRESULT SetEncodingLevel([NativeTypeName("DWORD")] uint dwEncLevel);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataFilter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataFilter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataFilter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, LONG, BYTE *, LONG, BYTE *, LONG, LONG *, LONG *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataFilter*, uint, int, byte*, int, byte*, int, int*, int*, uint, int> DoEncode;
+        public delegate* unmanaged<TSelf*, uint, int, byte*, int, byte*, int, int*, int*, uint, int> DoEncode;
 
         [NativeTypeName("HRESULT (DWORD, LONG, BYTE *, LONG, BYTE *, LONG, LONG *, LONG *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataFilter*, uint, int, byte*, int, byte*, int, int*, int*, uint, int> DoDecode;
+        public delegate* unmanaged<TSelf*, uint, int, byte*, int, byte*, int, int*, int*, uint, int> DoDecode;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataFilter*, uint, int> SetEncodingLevel;
+        public delegate* unmanaged<TSelf*, uint, int> SetEncodingLevel;
     }
 }

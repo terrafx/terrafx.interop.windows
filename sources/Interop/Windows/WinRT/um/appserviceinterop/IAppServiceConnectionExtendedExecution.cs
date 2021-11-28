@@ -53,18 +53,19 @@ public unsafe partial struct IAppServiceConnectionExtendedExecution : IAppServic
         HRESULT OpenForExtendedExecutionAsync([NativeTypeName("const IID &")] Guid* riid, void** operation);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppServiceConnectionExtendedExecution*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppServiceConnectionExtendedExecution*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppServiceConnectionExtendedExecution*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppServiceConnectionExtendedExecution*, Guid*, void**, int> OpenForExtendedExecutionAsync;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> OpenForExtendedExecutionAsync;
     }
 }

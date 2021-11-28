@@ -99,33 +99,34 @@ public unsafe partial struct IPersistMemory : IPersistMemory.Interface
         HRESULT InitNew();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMemory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMemory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMemory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMemory*, Guid*, int> GetClassID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetClassID;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMemory*, int> IsDirty;
+        public delegate* unmanaged<TSelf*, int> IsDirty;
 
         [NativeTypeName("HRESULT (LPVOID, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMemory*, void*, uint, int> Load;
+        public delegate* unmanaged<TSelf*, void*, uint, int> Load;
 
         [NativeTypeName("HRESULT (LPVOID, BOOL, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMemory*, void*, BOOL, uint, int> Save;
+        public delegate* unmanaged<TSelf*, void*, BOOL, uint, int> Save;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMemory*, uint*, int> GetSizeMax;
+        public delegate* unmanaged<TSelf*, uint*, int> GetSizeMax;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistMemory*, int> InitNew;
+        public delegate* unmanaged<TSelf*, int> InitNew;
     }
 }

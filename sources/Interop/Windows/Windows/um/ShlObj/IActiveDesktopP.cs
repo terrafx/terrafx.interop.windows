@@ -82,27 +82,28 @@ public unsafe partial struct IActiveDesktopP : IActiveDesktopP.Interface
         HRESULT GetScheme([NativeTypeName("PWSTR")] ushort* pwszSchemeName, [NativeTypeName("DWORD *")] uint* pdwcchBuffer, [NativeTypeName("DWORD")] uint dwFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IActiveDesktopP*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IActiveDesktopP*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IActiveDesktopP*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IActiveDesktopP*, uint, int> SetSafeMode;
+        public delegate* unmanaged<TSelf*, uint, int> SetSafeMode;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IActiveDesktopP*, int> EnsureUpdateHTML;
+        public delegate* unmanaged<TSelf*, int> EnsureUpdateHTML;
 
         [NativeTypeName("HRESULT (PCWSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IActiveDesktopP*, ushort*, uint, int> SetScheme;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> SetScheme;
 
         [NativeTypeName("HRESULT (PWSTR, DWORD *, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IActiveDesktopP*, ushort*, uint*, uint, int> GetScheme;
+        public delegate* unmanaged<TSelf*, ushort*, uint*, uint, int> GetScheme;
     }
 }

@@ -64,21 +64,22 @@ public unsafe partial struct IAppxEncryptedBundleWriter3 : IAppxEncryptedBundleW
         HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream, BOOL isDefaultApplicablePackage);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptedBundleWriter3*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptedBundleWriter3*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptedBundleWriter3*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IStream *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptedBundleWriter3*, ushort*, IStream*, BOOL, int> AddPayloadPackageEncrypted;
+        public delegate* unmanaged<TSelf*, ushort*, IStream*, BOOL, int> AddPayloadPackageEncrypted;
 
         [NativeTypeName("HRESULT (LPCWSTR, IStream *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptedBundleWriter3*, ushort*, IStream*, BOOL, int> AddExternalPackageReference;
+        public delegate* unmanaged<TSelf*, ushort*, IStream*, BOOL, int> AddExternalPackageReference;
     }
 }

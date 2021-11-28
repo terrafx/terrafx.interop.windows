@@ -54,18 +54,19 @@ public unsafe partial struct IAppxBundleManifestReader2 : IAppxBundleManifestRea
         HRESULT GetOptionalBundles(IAppxBundleManifestOptionalBundleInfoEnumerator** optionalBundles);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleManifestReader2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleManifestReader2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleManifestReader2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxBundleManifestOptionalBundleInfoEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleManifestReader2*, IAppxBundleManifestOptionalBundleInfoEnumerator**, int> GetOptionalBundles;
+        public delegate* unmanaged<TSelf*, IAppxBundleManifestOptionalBundleInfoEnumerator**, int> GetOptionalBundles;
     }
 }

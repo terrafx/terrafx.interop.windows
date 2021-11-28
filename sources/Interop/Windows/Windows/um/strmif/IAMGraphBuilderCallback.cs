@@ -62,21 +62,22 @@ public unsafe partial struct IAMGraphBuilderCallback : IAMGraphBuilderCallback.I
         HRESULT CreatedFilter(IBaseFilter* pFil);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMGraphBuilderCallback*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMGraphBuilderCallback*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMGraphBuilderCallback*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMoniker *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMGraphBuilderCallback*, IMoniker*, int> SelectedFilter;
+        public delegate* unmanaged<TSelf*, IMoniker*, int> SelectedFilter;
 
         [NativeTypeName("HRESULT (IBaseFilter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMGraphBuilderCallback*, IBaseFilter*, int> CreatedFilter;
+        public delegate* unmanaged<TSelf*, IBaseFilter*, int> CreatedFilter;
     }
 }

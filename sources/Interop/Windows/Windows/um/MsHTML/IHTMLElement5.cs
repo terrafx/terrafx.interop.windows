@@ -720,222 +720,223 @@ public unsafe partial struct IHTMLElement5 : IHTMLElement5.Interface
         HRESULT get_ariaRelevant([NativeTypeName("BSTR *")] ushort** p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR, IHTMLDOMAttribute2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, IHTMLDOMAttribute2**, int> getAttributeNode;
+        public delegate* unmanaged<TSelf*, ushort*, IHTMLDOMAttribute2**, int> getAttributeNode;
 
         [NativeTypeName("HRESULT (IHTMLDOMAttribute2 *, IHTMLDOMAttribute2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, IHTMLDOMAttribute2*, IHTMLDOMAttribute2**, int> setAttributeNode;
+        public delegate* unmanaged<TSelf*, IHTMLDOMAttribute2*, IHTMLDOMAttribute2**, int> setAttributeNode;
 
         [NativeTypeName("HRESULT (IHTMLDOMAttribute2 *, IHTMLDOMAttribute2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, IHTMLDOMAttribute2*, IHTMLDOMAttribute2**, int> removeAttributeNode;
+        public delegate* unmanaged<TSelf*, IHTMLDOMAttribute2*, IHTMLDOMAttribute2**, int> removeAttributeNode;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, short*, int> hasAttribute;
+        public delegate* unmanaged<TSelf*, ushort*, short*, int> hasAttribute;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_role;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_role;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_role;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_role;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaBusy;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaBusy;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaBusy;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaBusy;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaChecked;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaChecked;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaChecked;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaChecked;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaDisabled;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaDisabled;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaDisabled;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaDisabled;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaExpanded;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaExpanded;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaExpanded;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaExpanded;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaHaspopup;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaHaspopup;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaHaspopup;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaHaspopup;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaHidden;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaHidden;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaHidden;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaHidden;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaInvalid;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaInvalid;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaInvalid;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaInvalid;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaMultiselectable;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaMultiselectable;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaMultiselectable;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaMultiselectable;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaPressed;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaPressed;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaPressed;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaPressed;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaReadonly;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaReadonly;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaReadonly;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaReadonly;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaRequired;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaRequired;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaRequired;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaRequired;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaSecret;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaSecret;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaSecret;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaSecret;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaSelected;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaSelected;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaSelected;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaSelected;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, VARIANT*, int> getAttribute;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> getAttribute;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, VARIANT, int> setAttribute;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT, int> setAttribute;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, short*, int> removeAttribute;
+        public delegate* unmanaged<TSelf*, ushort*, short*, int> removeAttribute;
 
         [NativeTypeName("HRESULT (IHTMLAttributeCollection3 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, IHTMLAttributeCollection3**, int> get_attributes;
+        public delegate* unmanaged<TSelf*, IHTMLAttributeCollection3**, int> get_attributes;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaValuenow;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaValuenow;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaValuenow;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaValuenow;
 
         [NativeTypeName("HRESULT (short) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, short, int> put_ariaPosinset;
+        public delegate* unmanaged<TSelf*, short, int> put_ariaPosinset;
 
         [NativeTypeName("HRESULT (short *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, short*, int> get_ariaPosinset;
+        public delegate* unmanaged<TSelf*, short*, int> get_ariaPosinset;
 
         [NativeTypeName("HRESULT (short) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, short, int> put_ariaSetsize;
+        public delegate* unmanaged<TSelf*, short, int> put_ariaSetsize;
 
         [NativeTypeName("HRESULT (short *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, short*, int> get_ariaSetsize;
+        public delegate* unmanaged<TSelf*, short*, int> get_ariaSetsize;
 
         [NativeTypeName("HRESULT (short) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, short, int> put_ariaLevel;
+        public delegate* unmanaged<TSelf*, short, int> put_ariaLevel;
 
         [NativeTypeName("HRESULT (short *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, short*, int> get_ariaLevel;
+        public delegate* unmanaged<TSelf*, short*, int> get_ariaLevel;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaValuemin;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaValuemin;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaValuemin;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaValuemin;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaValuemax;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaValuemax;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaValuemax;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaValuemax;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaControls;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaControls;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaControls;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaControls;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaDescribedby;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaDescribedby;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaDescribedby;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaDescribedby;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaFlowto;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaFlowto;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaFlowto;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaFlowto;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaLabelledby;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaLabelledby;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaLabelledby;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaLabelledby;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaActivedescendant;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaActivedescendant;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaActivedescendant;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaActivedescendant;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaOwns;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaOwns;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaOwns;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaOwns;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, short*, int> hasAttributes;
+        public delegate* unmanaged<TSelf*, short*, int> hasAttributes;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaLive;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaLive;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaLive;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaLive;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort*, int> put_ariaRelevant;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_ariaRelevant;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElement5*, ushort**, int> get_ariaRelevant;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_ariaRelevant;
     }
 }

@@ -99,33 +99,34 @@ public unsafe partial struct IPersistFile : IPersistFile.Interface
         HRESULT GetCurFile([NativeTypeName("LPOLESTR *")] ushort** ppszFileName);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistFile*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistFile*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistFile*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistFile*, Guid*, int> GetClassID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetClassID;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistFile*, int> IsDirty;
+        public delegate* unmanaged<TSelf*, int> IsDirty;
 
         [NativeTypeName("HRESULT (LPCOLESTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistFile*, ushort*, uint, int> Load;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> Load;
 
         [NativeTypeName("HRESULT (LPCOLESTR, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistFile*, ushort*, BOOL, int> Save;
+        public delegate* unmanaged<TSelf*, ushort*, BOOL, int> Save;
 
         [NativeTypeName("HRESULT (LPCOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistFile*, ushort*, int> SaveCompleted;
+        public delegate* unmanaged<TSelf*, ushort*, int> SaveCompleted;
 
         [NativeTypeName("HRESULT (LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistFile*, ushort**, int> GetCurFile;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetCurFile;
     }
 }

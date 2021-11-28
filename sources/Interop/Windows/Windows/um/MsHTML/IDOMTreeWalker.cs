@@ -200,66 +200,67 @@ public unsafe partial struct IDOMTreeWalker : IDOMTreeWalker.Interface
         HRESULT nextNode(IDispatch** ppRetNode);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMTreeWalker*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMTreeWalker*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMTreeWalker*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMTreeWalker*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMTreeWalker*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMTreeWalker*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMTreeWalker*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int> get_root;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_root;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMTreeWalker*, uint*, int> get_whatToShow;
+        public delegate* unmanaged<TSelf*, uint*, int> get_whatToShow;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int> get_filter;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_filter;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMTreeWalker*, short*, int> get_expandEntityReferences;
+        public delegate* unmanaged<TSelf*, short*, int> get_expandEntityReferences;
 
         [NativeTypeName("HRESULT (IDispatch *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMTreeWalker*, IDispatch*, int> putref_currentNode;
+        public delegate* unmanaged<TSelf*, IDispatch*, int> putref_currentNode;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int> get_currentNode;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_currentNode;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int> parentNode;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> parentNode;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int> firstChild;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> firstChild;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int> lastChild;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> lastChild;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int> previousSibling;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> previousSibling;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int> nextSibling;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> nextSibling;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int> previousNode;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> previousNode;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMTreeWalker*, IDispatch**, int> nextNode;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> nextNode;
     }
 }

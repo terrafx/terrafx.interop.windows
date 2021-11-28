@@ -80,30 +80,31 @@ public unsafe partial struct ITfToolTipUIElement : ITfToolTipUIElement.Interface
         HRESULT GetString([NativeTypeName("BSTR *")] ushort** pstr);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfToolTipUIElement*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfToolTipUIElement*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfToolTipUIElement*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfToolTipUIElement*, ushort**, int> GetDescription;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDescription;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfToolTipUIElement*, Guid*, int> GetGUID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetGUID;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfToolTipUIElement*, BOOL, int> Show;
+        public delegate* unmanaged<TSelf*, BOOL, int> Show;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfToolTipUIElement*, BOOL*, int> IsShown;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsShown;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfToolTipUIElement*, ushort**, int> GetString;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetString;
     }
 }

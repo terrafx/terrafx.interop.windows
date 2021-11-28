@@ -73,24 +73,25 @@ public unsafe partial struct IDxcOperationResult : IDxcOperationResult.Interface
         HRESULT GetErrorBuffer(IDxcBlobEncoding** ppErrors);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcOperationResult*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcOperationResult*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcOperationResult*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcOperationResult*, HRESULT*, int> GetStatus;
+        public delegate* unmanaged<TSelf*, HRESULT*, int> GetStatus;
 
         [NativeTypeName("HRESULT (IDxcBlob **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcOperationResult*, IDxcBlob**, int> GetResult;
+        public delegate* unmanaged<TSelf*, IDxcBlob**, int> GetResult;
 
         [NativeTypeName("HRESULT (IDxcBlobEncoding **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcOperationResult*, IDxcBlobEncoding**, int> GetErrorBuffer;
+        public delegate* unmanaged<TSelf*, IDxcBlobEncoding**, int> GetErrorBuffer;
     }
 }

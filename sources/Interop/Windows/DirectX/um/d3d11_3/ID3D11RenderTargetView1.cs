@@ -97,36 +97,37 @@ public unsafe partial struct ID3D11RenderTargetView1 : ID3D11RenderTargetView1.I
         void GetDesc1(D3D11_RENDER_TARGET_VIEW_DESC1* pDesc1);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11RenderTargetView1*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11RenderTargetView1*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11RenderTargetView1*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID3D11Device **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11RenderTargetView1*, ID3D11Device**, void> GetDevice;
+        public delegate* unmanaged<TSelf*, ID3D11Device**, void> GetDevice;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11RenderTargetView1*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11RenderTargetView1*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11RenderTargetView1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("void (ID3D11Resource **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11RenderTargetView1*, ID3D11Resource**, void> GetResource;
+        public delegate* unmanaged<TSelf*, ID3D11Resource**, void> GetResource;
 
         [NativeTypeName("void (D3D11_RENDER_TARGET_VIEW_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11RenderTargetView1*, D3D11_RENDER_TARGET_VIEW_DESC*, void> GetDesc;
+        public delegate* unmanaged<TSelf*, D3D11_RENDER_TARGET_VIEW_DESC*, void> GetDesc;
 
         [NativeTypeName("void (D3D11_RENDER_TARGET_VIEW_DESC1 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11RenderTargetView1*, D3D11_RENDER_TARGET_VIEW_DESC1*, void> GetDesc1;
+        public delegate* unmanaged<TSelf*, D3D11_RENDER_TARGET_VIEW_DESC1*, void> GetDesc1;
     }
 }

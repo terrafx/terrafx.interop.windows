@@ -222,69 +222,70 @@ public unsafe partial struct INameSpaceTreeControlEvents : INameSpaceTreeControl
         HRESULT OnGetDefaultIconIndex(IShellItem* psi, int* piDefaultIcon, int* piOpenIcon);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlEvents*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlEvents*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlEvents*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellItem *, NSTCEHITTEST, NSTCECLICKTYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, uint, uint, int> OnItemClick;
+        public delegate* unmanaged<TSelf*, IShellItem*, uint, uint, int> OnItemClick;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, int> OnPropertyItemCommit;
+        public delegate* unmanaged<TSelf*, IShellItem*, int> OnPropertyItemCommit;
 
         [NativeTypeName("HRESULT (IShellItem *, NSTCITEMSTATE, NSTCITEMSTATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, uint, uint, int> OnItemStateChanging;
+        public delegate* unmanaged<TSelf*, IShellItem*, uint, uint, int> OnItemStateChanging;
 
         [NativeTypeName("HRESULT (IShellItem *, NSTCITEMSTATE, NSTCITEMSTATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, uint, uint, int> OnItemStateChanged;
+        public delegate* unmanaged<TSelf*, IShellItem*, uint, uint, int> OnItemStateChanged;
 
         [NativeTypeName("HRESULT (IShellItemArray *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItemArray*, int> OnSelectionChanged;
+        public delegate* unmanaged<TSelf*, IShellItemArray*, int> OnSelectionChanged;
 
         [NativeTypeName("HRESULT (UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlEvents*, uint, WPARAM, LPARAM, int> OnKeyboardInput;
+        public delegate* unmanaged<TSelf*, uint, WPARAM, LPARAM, int> OnKeyboardInput;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, int> OnBeforeExpand;
+        public delegate* unmanaged<TSelf*, IShellItem*, int> OnBeforeExpand;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, int> OnAfterExpand;
+        public delegate* unmanaged<TSelf*, IShellItem*, int> OnAfterExpand;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, int> OnBeginLabelEdit;
+        public delegate* unmanaged<TSelf*, IShellItem*, int> OnBeginLabelEdit;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, int> OnEndLabelEdit;
+        public delegate* unmanaged<TSelf*, IShellItem*, int> OnEndLabelEdit;
 
         [NativeTypeName("HRESULT (IShellItem *, LPWSTR, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, ushort*, int, int> OnGetToolTip;
+        public delegate* unmanaged<TSelf*, IShellItem*, ushort*, int, int> OnGetToolTip;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, int> OnBeforeItemDelete;
+        public delegate* unmanaged<TSelf*, IShellItem*, int> OnBeforeItemDelete;
 
         [NativeTypeName("HRESULT (IShellItem *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, BOOL, int> OnItemAdded;
+        public delegate* unmanaged<TSelf*, IShellItem*, BOOL, int> OnItemAdded;
 
         [NativeTypeName("HRESULT (IShellItem *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, BOOL, int> OnItemDeleted;
+        public delegate* unmanaged<TSelf*, IShellItem*, BOOL, int> OnItemDeleted;
 
         [NativeTypeName("HRESULT (IShellItem *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, Guid*, void**, int> OnBeforeContextMenu;
+        public delegate* unmanaged<TSelf*, IShellItem*, Guid*, void**, int> OnBeforeContextMenu;
 
         [NativeTypeName("HRESULT (IShellItem *, IContextMenu *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, IContextMenu*, Guid*, void**, int> OnAfterContextMenu;
+        public delegate* unmanaged<TSelf*, IShellItem*, IContextMenu*, Guid*, void**, int> OnAfterContextMenu;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, int> OnBeforeStateImageChange;
+        public delegate* unmanaged<TSelf*, IShellItem*, int> OnBeforeStateImageChange;
 
         [NativeTypeName("HRESULT (IShellItem *, int *, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlEvents*, IShellItem*, int*, int*, int> OnGetDefaultIconIndex;
+        public delegate* unmanaged<TSelf*, IShellItem*, int*, int*, int> OnGetDefaultIconIndex;
     }
 }

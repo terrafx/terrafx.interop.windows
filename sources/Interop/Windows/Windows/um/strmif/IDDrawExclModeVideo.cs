@@ -113,36 +113,37 @@ public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
         HRESULT SetCallbackInterface(IDDrawExclModeVideoCallback* pCallback, [NativeTypeName("DWORD")] uint dwFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDDrawExclModeVideo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDDrawExclModeVideo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDDrawExclModeVideo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDirectDraw *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDDrawExclModeVideo*, IDirectDraw*, int> SetDDrawObject;
+        public delegate* unmanaged<TSelf*, IDirectDraw*, int> SetDDrawObject;
 
         [NativeTypeName("HRESULT (IDirectDraw **, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDDrawExclModeVideo*, IDirectDraw**, BOOL*, int> GetDDrawObject;
+        public delegate* unmanaged<TSelf*, IDirectDraw**, BOOL*, int> GetDDrawObject;
 
         [NativeTypeName("HRESULT (IDirectDrawSurface *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDDrawExclModeVideo*, IDirectDrawSurface*, int> SetDDrawSurface;
+        public delegate* unmanaged<TSelf*, IDirectDrawSurface*, int> SetDDrawSurface;
 
         [NativeTypeName("HRESULT (IDirectDrawSurface **, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDDrawExclModeVideo*, IDirectDrawSurface**, BOOL*, int> GetDDrawSurface;
+        public delegate* unmanaged<TSelf*, IDirectDrawSurface**, BOOL*, int> GetDDrawSurface;
 
         [NativeTypeName("HRESULT (const RECT *, const RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDDrawExclModeVideo*, RECT*, RECT*, int> SetDrawParameters;
+        public delegate* unmanaged<TSelf*, RECT*, RECT*, int> SetDrawParameters;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *, DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDDrawExclModeVideo*, uint*, uint*, uint*, uint*, int> GetNativeVideoProps;
+        public delegate* unmanaged<TSelf*, uint*, uint*, uint*, uint*, int> GetNativeVideoProps;
 
         [NativeTypeName("HRESULT (IDDrawExclModeVideoCallback *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDDrawExclModeVideo*, IDDrawExclModeVideoCallback*, uint, int> SetCallbackInterface;
+        public delegate* unmanaged<TSelf*, IDDrawExclModeVideoCallback*, uint, int> SetCallbackInterface;
     }
 }

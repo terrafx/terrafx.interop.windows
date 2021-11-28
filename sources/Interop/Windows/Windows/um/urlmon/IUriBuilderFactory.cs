@@ -62,21 +62,22 @@ public unsafe partial struct IUriBuilderFactory : IUriBuilderFactory.Interface
         HRESULT CreateInitializedIUriBuilder([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUriBuilder** ppIUriBuilder);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUriBuilderFactory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUriBuilderFactory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUriBuilderFactory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, DWORD_PTR, IUriBuilder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUriBuilderFactory*, uint, nuint, IUriBuilder**, int> CreateIUriBuilder;
+        public delegate* unmanaged<TSelf*, uint, nuint, IUriBuilder**, int> CreateIUriBuilder;
 
         [NativeTypeName("HRESULT (DWORD, DWORD_PTR, IUriBuilder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUriBuilderFactory*, uint, nuint, IUriBuilder**, int> CreateInitializedIUriBuilder;
+        public delegate* unmanaged<TSelf*, uint, nuint, IUriBuilder**, int> CreateInitializedIUriBuilder;
     }
 }

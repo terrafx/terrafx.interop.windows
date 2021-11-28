@@ -75,24 +75,25 @@ public unsafe partial struct IDCompositionMatrixTransform : IDCompositionMatrixT
         HRESULT SetMatrixElement(int row, int column, float value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionMatrixTransform*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionMatrixTransform*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionMatrixTransform*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const D2D_MATRIX_3X2_F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionMatrixTransform*, D2D_MATRIX_3X2_F*, int> SetMatrix;
+        public delegate* unmanaged<TSelf*, D2D_MATRIX_3X2_F*, int> SetMatrix;
 
         [NativeTypeName("HRESULT (int, int, IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionMatrixTransform*, int, int, IDCompositionAnimation*, int> SetMatrixElement;
+        public delegate* unmanaged<TSelf*, int, int, IDCompositionAnimation*, int> SetMatrixElement;
 
         [NativeTypeName("HRESULT (int, int, float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionMatrixTransform*, int, int, float, int> SetMatrixElement1;
+        public delegate* unmanaged<TSelf*, int, int, float, int> SetMatrixElement1;
     }
 }

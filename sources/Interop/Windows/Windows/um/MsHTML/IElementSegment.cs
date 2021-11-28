@@ -79,27 +79,28 @@ public unsafe partial struct IElementSegment : IElementSegment.Interface
         HRESULT IsPrimary(BOOL* pfPrimary);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementSegment*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementSegment*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementSegment*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementSegment*, IMarkupPointer*, IMarkupPointer*, int> GetPointers;
+        public delegate* unmanaged<TSelf*, IMarkupPointer*, IMarkupPointer*, int> GetPointers;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementSegment*, IHTMLElement**, int> GetElement;
+        public delegate* unmanaged<TSelf*, IHTMLElement**, int> GetElement;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementSegment*, BOOL, int> SetPrimary;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetPrimary;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementSegment*, BOOL*, int> IsPrimary;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsPrimary;
     }
 }

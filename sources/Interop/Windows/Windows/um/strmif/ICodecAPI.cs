@@ -192,60 +192,61 @@ public unsafe partial struct ICodecAPI : ICodecAPI.Interface
         HRESULT SetAllSettingsWithNotify(IStream* __MIDL__ICodecAPI0002, Guid** ChangedParam, [NativeTypeName("ULONG *")] uint* ChangedParamCount);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICodecAPI*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICodecAPI*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICodecAPI*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICodecAPI*, Guid*, int> IsSupported;
+        public delegate* unmanaged<TSelf*, Guid*, int> IsSupported;
 
         [NativeTypeName("HRESULT (const GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICodecAPI*, Guid*, int> IsModifiable;
+        public delegate* unmanaged<TSelf*, Guid*, int> IsModifiable;
 
         [NativeTypeName("HRESULT (const GUID *, VARIANT *, VARIANT *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICodecAPI*, Guid*, VARIANT*, VARIANT*, VARIANT*, int> GetParameterRange;
+        public delegate* unmanaged<TSelf*, Guid*, VARIANT*, VARIANT*, VARIANT*, int> GetParameterRange;
 
         [NativeTypeName("HRESULT (const GUID *, VARIANT **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICodecAPI*, Guid*, VARIANT**, uint*, int> GetParameterValues;
+        public delegate* unmanaged<TSelf*, Guid*, VARIANT**, uint*, int> GetParameterValues;
 
         [NativeTypeName("HRESULT (const GUID *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICodecAPI*, Guid*, VARIANT*, int> GetDefaultValue;
+        public delegate* unmanaged<TSelf*, Guid*, VARIANT*, int> GetDefaultValue;
 
         [NativeTypeName("HRESULT (const GUID *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICodecAPI*, Guid*, VARIANT*, int> GetValue;
+        public delegate* unmanaged<TSelf*, Guid*, VARIANT*, int> GetValue;
 
         [NativeTypeName("HRESULT (const GUID *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICodecAPI*, Guid*, VARIANT*, int> SetValue;
+        public delegate* unmanaged<TSelf*, Guid*, VARIANT*, int> SetValue;
 
         [NativeTypeName("HRESULT (const GUID *, LONG_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICodecAPI*, Guid*, nint, int> RegisterForEvent;
+        public delegate* unmanaged<TSelf*, Guid*, nint, int> RegisterForEvent;
 
         [NativeTypeName("HRESULT (const GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICodecAPI*, Guid*, int> UnregisterForEvent;
+        public delegate* unmanaged<TSelf*, Guid*, int> UnregisterForEvent;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICodecAPI*, int> SetAllDefaults;
+        public delegate* unmanaged<TSelf*, int> SetAllDefaults;
 
         [NativeTypeName("HRESULT (const GUID *, VARIANT *, GUID **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICodecAPI*, Guid*, VARIANT*, Guid**, uint*, int> SetValueWithNotify;
+        public delegate* unmanaged<TSelf*, Guid*, VARIANT*, Guid**, uint*, int> SetValueWithNotify;
 
         [NativeTypeName("HRESULT (GUID **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICodecAPI*, Guid**, uint*, int> SetAllDefaultsWithNotify;
+        public delegate* unmanaged<TSelf*, Guid**, uint*, int> SetAllDefaultsWithNotify;
 
         [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICodecAPI*, IStream*, int> GetAllSettings;
+        public delegate* unmanaged<TSelf*, IStream*, int> GetAllSettings;
 
         [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICodecAPI*, IStream*, int> SetAllSettings;
+        public delegate* unmanaged<TSelf*, IStream*, int> SetAllSettings;
 
         [NativeTypeName("HRESULT (IStream *, GUID **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICodecAPI*, IStream*, Guid**, uint*, int> SetAllSettingsWithNotify;
+        public delegate* unmanaged<TSelf*, IStream*, Guid**, uint*, int> SetAllSettingsWithNotify;
     }
 }

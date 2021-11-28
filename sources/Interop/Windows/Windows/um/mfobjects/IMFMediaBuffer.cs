@@ -92,30 +92,31 @@ public unsafe partial struct IMFMediaBuffer : IMFMediaBuffer.Interface
         HRESULT GetMaxLength([NativeTypeName("DWORD *")] uint* pcbMaxLength);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaBuffer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaBuffer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaBuffer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE **, DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaBuffer*, byte**, uint*, uint*, int> Lock;
+        public delegate* unmanaged<TSelf*, byte**, uint*, uint*, int> Lock;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaBuffer*, int> Unlock;
+        public delegate* unmanaged<TSelf*, int> Unlock;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaBuffer*, uint*, int> GetCurrentLength;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCurrentLength;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaBuffer*, uint, int> SetCurrentLength;
+        public delegate* unmanaged<TSelf*, uint, int> SetCurrentLength;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaBuffer*, uint*, int> GetMaxLength;
+        public delegate* unmanaged<TSelf*, uint*, int> GetMaxLength;
     }
 }

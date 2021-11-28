@@ -35,12 +35,13 @@ public unsafe partial struct ID3DInclude : ID3DInclude.Interface
         HRESULT Close([NativeTypeName("LPCVOID")] void* pData);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (D3D_INCLUDE_TYPE, LPCSTR, LPCVOID, LPCVOID *, UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3DInclude*, D3D_INCLUDE_TYPE, sbyte*, void*, void**, uint*, int> Open;
+        public delegate* unmanaged<TSelf*, D3D_INCLUDE_TYPE, sbyte*, void*, void**, uint*, int> Open;
 
         [NativeTypeName("HRESULT (LPCVOID) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3DInclude*, void*, int> Close;
+        public delegate* unmanaged<TSelf*, void*, int> Close;
     }
 }

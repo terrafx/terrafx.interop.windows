@@ -74,24 +74,25 @@ public unsafe partial struct IMFByteStreamTimeSeek : IMFByteStreamTimeSeek.Inter
         HRESULT GetTimeSeekResult([NativeTypeName("QWORD *")] ulong* pqwStartTime, [NativeTypeName("QWORD *")] ulong* pqwStopTime, [NativeTypeName("QWORD *")] ulong* pqwDuration);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFByteStreamTimeSeek*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFByteStreamTimeSeek*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFByteStreamTimeSeek*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFByteStreamTimeSeek*, BOOL*, int> IsTimeSeekSupported;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsTimeSeekSupported;
 
         [NativeTypeName("HRESULT (QWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFByteStreamTimeSeek*, ulong, int> TimeSeek;
+        public delegate* unmanaged<TSelf*, ulong, int> TimeSeek;
 
         [NativeTypeName("HRESULT (QWORD *, QWORD *, QWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFByteStreamTimeSeek*, ulong*, ulong*, ulong*, int> GetTimeSeekResult;
+        public delegate* unmanaged<TSelf*, ulong*, ulong*, ulong*, int> GetTimeSeekResult;
     }
 }

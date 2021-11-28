@@ -257,93 +257,94 @@ public unsafe partial struct IAMTVTuner : IAMTVTuner.Interface
         HRESULT get_AudioFrequency([NativeTypeName("long *")] int* lFreq);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long, long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, int, int, int, int> put_Channel;
+        public delegate* unmanaged<TSelf*, int, int, int, int> put_Channel;
 
         [NativeTypeName("HRESULT (long *, long *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, int*, int*, int*, int> get_Channel;
+        public delegate* unmanaged<TSelf*, int*, int*, int*, int> get_Channel;
 
         [NativeTypeName("HRESULT (long *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, int*, int*, int> ChannelMinMax;
+        public delegate* unmanaged<TSelf*, int*, int*, int> ChannelMinMax;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, int, int> put_CountryCode;
+        public delegate* unmanaged<TSelf*, int, int> put_CountryCode;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, int*, int> get_CountryCode;
+        public delegate* unmanaged<TSelf*, int*, int> get_CountryCode;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, int, int> put_TuningSpace;
+        public delegate* unmanaged<TSelf*, int, int> put_TuningSpace;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, int*, int> get_TuningSpace;
+        public delegate* unmanaged<TSelf*, int*, int> get_TuningSpace;
 
         [NativeTypeName("HRESULT (HANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, HANDLE, int> Logon;
+        public delegate* unmanaged<TSelf*, HANDLE, int> Logon;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, int> Logout;
+        public delegate* unmanaged<TSelf*, int> Logout;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, int*, int> SignalPresent;
+        public delegate* unmanaged<TSelf*, int*, int> SignalPresent;
 
         [NativeTypeName("HRESULT (AMTunerModeType) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, AMTunerModeType, int> put_Mode;
+        public delegate* unmanaged<TSelf*, AMTunerModeType, int> put_Mode;
 
         [NativeTypeName("HRESULT (AMTunerModeType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, AMTunerModeType*, int> get_Mode;
+        public delegate* unmanaged<TSelf*, AMTunerModeType*, int> get_Mode;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, int*, int> GetAvailableModes;
+        public delegate* unmanaged<TSelf*, int*, int> GetAvailableModes;
 
         [NativeTypeName("HRESULT (IAMTunerNotification *, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, IAMTunerNotification*, int, int> RegisterNotificationCallBack;
+        public delegate* unmanaged<TSelf*, IAMTunerNotification*, int, int> RegisterNotificationCallBack;
 
         [NativeTypeName("HRESULT (IAMTunerNotification *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, IAMTunerNotification*, int> UnRegisterNotificationCallBack;
+        public delegate* unmanaged<TSelf*, IAMTunerNotification*, int> UnRegisterNotificationCallBack;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, int*, int> get_AvailableTVFormats;
+        public delegate* unmanaged<TSelf*, int*, int> get_AvailableTVFormats;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, int*, int> get_TVFormat;
+        public delegate* unmanaged<TSelf*, int*, int> get_TVFormat;
 
         [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, int, int*, int> AutoTune;
+        public delegate* unmanaged<TSelf*, int, int*, int> AutoTune;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, int> StoreAutoTune;
+        public delegate* unmanaged<TSelf*, int> StoreAutoTune;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, int*, int> get_NumInputConnections;
+        public delegate* unmanaged<TSelf*, int*, int> get_NumInputConnections;
 
         [NativeTypeName("HRESULT (long, TunerInputType) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, int, TunerInputType, int> put_InputType;
+        public delegate* unmanaged<TSelf*, int, TunerInputType, int> put_InputType;
 
         [NativeTypeName("HRESULT (long, TunerInputType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, int, TunerInputType*, int> get_InputType;
+        public delegate* unmanaged<TSelf*, int, TunerInputType*, int> get_InputType;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, int, int> put_ConnectInput;
+        public delegate* unmanaged<TSelf*, int, int> put_ConnectInput;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, int*, int> get_ConnectInput;
+        public delegate* unmanaged<TSelf*, int*, int> get_ConnectInput;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, int*, int> get_VideoFrequency;
+        public delegate* unmanaged<TSelf*, int*, int> get_VideoFrequency;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMTVTuner*, int*, int> get_AudioFrequency;
+        public delegate* unmanaged<TSelf*, int*, int> get_AudioFrequency;
     }
 }

@@ -52,18 +52,19 @@ public unsafe partial struct IShellMenuCallback : IShellMenuCallback.Interface
         HRESULT CallbackSM([NativeTypeName("LPSMDATA")] SMDATA* psmd, uint uMsg, WPARAM wParam, LPARAM lParam);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellMenuCallback*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellMenuCallback*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellMenuCallback*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPSMDATA, UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellMenuCallback*, SMDATA*, uint, WPARAM, LPARAM, int> CallbackSM;
+        public delegate* unmanaged<TSelf*, SMDATA*, uint, WPARAM, LPARAM, int> CallbackSM;
     }
 }

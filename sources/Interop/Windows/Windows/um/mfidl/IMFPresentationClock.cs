@@ -157,54 +157,55 @@ public unsafe partial struct IMFPresentationClock : IMFPresentationClock.Interfa
         HRESULT Pause();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPresentationClock*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPresentationClock*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPresentationClock*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPresentationClock*, uint*, int> GetClockCharacteristics;
+        public delegate* unmanaged<TSelf*, uint*, int> GetClockCharacteristics;
 
         [NativeTypeName("HRESULT (DWORD, LONGLONG *, MFTIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPresentationClock*, uint, long*, long*, int> GetCorrelatedTime;
+        public delegate* unmanaged<TSelf*, uint, long*, long*, int> GetCorrelatedTime;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPresentationClock*, uint*, int> GetContinuityKey;
+        public delegate* unmanaged<TSelf*, uint*, int> GetContinuityKey;
 
         [NativeTypeName("HRESULT (DWORD, MFCLOCK_STATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPresentationClock*, uint, MFCLOCK_STATE*, int> GetState;
+        public delegate* unmanaged<TSelf*, uint, MFCLOCK_STATE*, int> GetState;
 
         [NativeTypeName("HRESULT (MFCLOCK_PROPERTIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPresentationClock*, MFCLOCK_PROPERTIES*, int> GetProperties;
+        public delegate* unmanaged<TSelf*, MFCLOCK_PROPERTIES*, int> GetProperties;
 
         [NativeTypeName("HRESULT (IMFPresentationTimeSource *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPresentationClock*, IMFPresentationTimeSource*, int> SetTimeSource;
+        public delegate* unmanaged<TSelf*, IMFPresentationTimeSource*, int> SetTimeSource;
 
         [NativeTypeName("HRESULT (IMFPresentationTimeSource **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPresentationClock*, IMFPresentationTimeSource**, int> GetTimeSource;
+        public delegate* unmanaged<TSelf*, IMFPresentationTimeSource**, int> GetTimeSource;
 
         [NativeTypeName("HRESULT (MFTIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPresentationClock*, long*, int> GetTime;
+        public delegate* unmanaged<TSelf*, long*, int> GetTime;
 
         [NativeTypeName("HRESULT (IMFClockStateSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPresentationClock*, IMFClockStateSink*, int> AddClockStateSink;
+        public delegate* unmanaged<TSelf*, IMFClockStateSink*, int> AddClockStateSink;
 
         [NativeTypeName("HRESULT (IMFClockStateSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPresentationClock*, IMFClockStateSink*, int> RemoveClockStateSink;
+        public delegate* unmanaged<TSelf*, IMFClockStateSink*, int> RemoveClockStateSink;
 
         [NativeTypeName("HRESULT (LONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPresentationClock*, long, int> Start;
+        public delegate* unmanaged<TSelf*, long, int> Start;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPresentationClock*, int> Stop;
+        public delegate* unmanaged<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPresentationClock*, int> Pause;
+        public delegate* unmanaged<TSelf*, int> Pause;
     }
 }

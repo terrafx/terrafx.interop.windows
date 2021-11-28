@@ -80,27 +80,28 @@ public unsafe partial struct IDWriteLocalFontFileLoader : IDWriteLocalFontFileLo
         HRESULT GetLastWriteTimeFromKey([NativeTypeName("const void *")] void* fontFileReferenceKey, [NativeTypeName("UINT32")] uint fontFileReferenceKeySize, FILETIME* lastWriteTime);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteLocalFontFileLoader*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteLocalFontFileLoader*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteLocalFontFileLoader*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const void *, UINT32, IDWriteFontFileStream **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteLocalFontFileLoader*, void*, uint, IDWriteFontFileStream**, int> CreateStreamFromKey;
+        public delegate* unmanaged<TSelf*, void*, uint, IDWriteFontFileStream**, int> CreateStreamFromKey;
 
         [NativeTypeName("HRESULT (const void *, UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteLocalFontFileLoader*, void*, uint, uint*, int> GetFilePathLengthFromKey;
+        public delegate* unmanaged<TSelf*, void*, uint, uint*, int> GetFilePathLengthFromKey;
 
         [NativeTypeName("HRESULT (const void *, UINT32, WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteLocalFontFileLoader*, void*, uint, ushort*, uint, int> GetFilePathFromKey;
+        public delegate* unmanaged<TSelf*, void*, uint, ushort*, uint, int> GetFilePathFromKey;
 
         [NativeTypeName("HRESULT (const void *, UINT32, FILETIME *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteLocalFontFileLoader*, void*, uint, FILETIME*, int> GetLastWriteTimeFromKey;
+        public delegate* unmanaged<TSelf*, void*, uint, FILETIME*, int> GetLastWriteTimeFromKey;
     }
 }

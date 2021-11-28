@@ -113,42 +113,43 @@ public unsafe partial struct IMF2DBuffer2 : IMF2DBuffer2.Interface
         HRESULT Copy2DTo(IMF2DBuffer2* pDestBuffer);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMF2DBuffer2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMF2DBuffer2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMF2DBuffer2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE **, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMF2DBuffer2*, byte**, int*, int> Lock2D;
+        public delegate* unmanaged<TSelf*, byte**, int*, int> Lock2D;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMF2DBuffer2*, int> Unlock2D;
+        public delegate* unmanaged<TSelf*, int> Unlock2D;
 
         [NativeTypeName("HRESULT (BYTE **, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMF2DBuffer2*, byte**, int*, int> GetScanline0AndPitch;
+        public delegate* unmanaged<TSelf*, byte**, int*, int> GetScanline0AndPitch;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMF2DBuffer2*, BOOL*, int> IsContiguousFormat;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsContiguousFormat;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMF2DBuffer2*, uint*, int> GetContiguousLength;
+        public delegate* unmanaged<TSelf*, uint*, int> GetContiguousLength;
 
         [NativeTypeName("HRESULT (BYTE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMF2DBuffer2*, byte*, uint, int> ContiguousCopyTo;
+        public delegate* unmanaged<TSelf*, byte*, uint, int> ContiguousCopyTo;
 
         [NativeTypeName("HRESULT (const BYTE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMF2DBuffer2*, byte*, uint, int> ContiguousCopyFrom;
+        public delegate* unmanaged<TSelf*, byte*, uint, int> ContiguousCopyFrom;
 
         [NativeTypeName("HRESULT (MF2DBuffer_LockFlags, BYTE **, LONG *, BYTE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMF2DBuffer2*, MF2DBuffer_LockFlags, byte**, int*, byte**, uint*, int> Lock2DSize;
+        public delegate* unmanaged<TSelf*, MF2DBuffer_LockFlags, byte**, int*, byte**, uint*, int> Lock2DSize;
 
         [NativeTypeName("HRESULT (IMF2DBuffer2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMF2DBuffer2*, IMF2DBuffer2*, int> Copy2DTo;
+        public delegate* unmanaged<TSelf*, IMF2DBuffer2*, int> Copy2DTo;
     }
 }

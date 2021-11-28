@@ -84,27 +84,28 @@ public unsafe partial struct ISpatialAudioMetadataReader : ISpatialAudioMetadata
         HRESULT Close();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioMetadataReader*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioMetadataReader*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioMetadataReader*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ISpatialAudioMetadataItems *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioMetadataReader*, ISpatialAudioMetadataItems*, int> Open;
+        public delegate* unmanaged<TSelf*, ISpatialAudioMetadataItems*, int> Open;
 
         [NativeTypeName("HRESULT (UINT8 *, UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioMetadataReader*, byte*, ushort*, int> ReadNextItem;
+        public delegate* unmanaged<TSelf*, byte*, ushort*, int> ReadNextItem;
 
         [NativeTypeName("HRESULT (BYTE *, void *, UINT32, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioMetadataReader*, byte*, void*, uint, uint*, int> ReadNextItemCommand;
+        public delegate* unmanaged<TSelf*, byte*, void*, uint, uint*, int> ReadNextItemCommand;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioMetadataReader*, int> Close;
+        public delegate* unmanaged<TSelf*, int> Close;
     }
 }

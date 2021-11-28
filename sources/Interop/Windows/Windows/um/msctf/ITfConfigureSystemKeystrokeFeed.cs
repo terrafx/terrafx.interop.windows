@@ -62,21 +62,22 @@ public unsafe partial struct ITfConfigureSystemKeystrokeFeed : ITfConfigureSyste
         HRESULT EnableSystemKeystrokeFeed();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfConfigureSystemKeystrokeFeed*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfConfigureSystemKeystrokeFeed*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfConfigureSystemKeystrokeFeed*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfConfigureSystemKeystrokeFeed*, int> DisableSystemKeystrokeFeed;
+        public delegate* unmanaged<TSelf*, int> DisableSystemKeystrokeFeed;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfConfigureSystemKeystrokeFeed*, int> EnableSystemKeystrokeFeed;
+        public delegate* unmanaged<TSelf*, int> EnableSystemKeystrokeFeed;
     }
 }

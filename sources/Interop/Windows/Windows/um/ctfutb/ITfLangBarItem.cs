@@ -82,27 +82,28 @@ public unsafe partial struct ITfLangBarItem : ITfLangBarItem.Interface
         HRESULT GetTooltipString([NativeTypeName("BSTR *")] ushort** pbstrToolTip);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarItem*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarItem*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarItem*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TF_LANGBARITEMINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarItem*, TF_LANGBARITEMINFO*, int> GetInfo;
+        public delegate* unmanaged<TSelf*, TF_LANGBARITEMINFO*, int> GetInfo;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarItem*, uint*, int> GetStatus;
+        public delegate* unmanaged<TSelf*, uint*, int> GetStatus;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarItem*, BOOL, int> Show;
+        public delegate* unmanaged<TSelf*, BOOL, int> Show;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarItem*, ushort**, int> GetTooltipString;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetTooltipString;
     }
 }

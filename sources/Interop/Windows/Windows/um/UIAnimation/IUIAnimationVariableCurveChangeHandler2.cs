@@ -52,18 +52,19 @@ public unsafe partial struct IUIAnimationVariableCurveChangeHandler2 : IUIAnimat
         HRESULT OnCurveChanged(IUIAnimationVariable2* variable);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariableCurveChangeHandler2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariableCurveChangeHandler2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariableCurveChangeHandler2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUIAnimationVariable2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariableCurveChangeHandler2*, IUIAnimationVariable2*, int> OnCurveChanged;
+        public delegate* unmanaged<TSelf*, IUIAnimationVariable2*, int> OnCurveChanged;
     }
 }

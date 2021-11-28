@@ -94,30 +94,31 @@ public unsafe partial struct IMFSensorTransformFactory : IMFSensorTransformFacto
         HRESULT CreateTransform([NativeTypeName("const GUID &")] Guid* guidSensorTransformID, IMFAttributes* pAttributes, IMFDeviceTransform** ppDeviceMFT);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorTransformFactory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorTransformFactory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorTransformFactory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFAttributes **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorTransformFactory*, IMFAttributes**, int> GetFactoryAttributes;
+        public delegate* unmanaged<TSelf*, IMFAttributes**, int> GetFactoryAttributes;
 
         [NativeTypeName("HRESULT (DWORD, IMFCollection *, IMFAttributes *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorTransformFactory*, uint, IMFCollection*, IMFAttributes*, int> InitializeFactory;
+        public delegate* unmanaged<TSelf*, uint, IMFCollection*, IMFAttributes*, int> InitializeFactory;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorTransformFactory*, uint*, int> GetTransformCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTransformCount;
 
         [NativeTypeName("HRESULT (DWORD, GUID *, IMFAttributes **, IMFCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorTransformFactory*, uint, Guid*, IMFAttributes**, IMFCollection**, int> GetTransformInformation;
+        public delegate* unmanaged<TSelf*, uint, Guid*, IMFAttributes**, IMFCollection**, int> GetTransformInformation;
 
         [NativeTypeName("HRESULT (const GUID &, IMFAttributes *, IMFDeviceTransform **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorTransformFactory*, Guid*, IMFAttributes*, IMFDeviceTransform**, int> CreateTransform;
+        public delegate* unmanaged<TSelf*, Guid*, IMFAttributes*, IMFDeviceTransform**, int> CreateTransform;
     }
 }

@@ -62,21 +62,22 @@ public unsafe partial struct IMFObjectReferenceStream : IMFObjectReferenceStream
         HRESULT LoadReference([NativeTypeName("const IID &")] Guid* riid, void** ppv);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFObjectReferenceStream*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFObjectReferenceStream*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFObjectReferenceStream*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFObjectReferenceStream*, Guid*, IUnknown*, int> SaveReference;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SaveReference;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFObjectReferenceStream*, Guid*, void**, int> LoadReference;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> LoadReference;
     }
 }

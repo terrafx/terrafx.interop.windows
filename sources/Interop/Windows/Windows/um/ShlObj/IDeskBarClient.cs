@@ -96,33 +96,34 @@ public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface
         HRESULT GetSize([NativeTypeName("DWORD")] uint dwWhich, [NativeTypeName("LPRECT")] RECT* prc);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeskBarClient*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeskBarClient*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeskBarClient*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeskBarClient*, HWND*, int> GetWindow;
+        public delegate* unmanaged<TSelf*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeskBarClient*, BOOL, int> ContextSensitiveHelp;
+        public delegate* unmanaged<TSelf*, BOOL, int> ContextSensitiveHelp;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeskBarClient*, IUnknown*, int> SetDeskBarSite;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> SetDeskBarSite;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeskBarClient*, uint, int> SetModeDBC;
+        public delegate* unmanaged<TSelf*, uint, int> SetModeDBC;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeskBarClient*, uint, int> UIActivateDBC;
+        public delegate* unmanaged<TSelf*, uint, int> UIActivateDBC;
 
         [NativeTypeName("HRESULT (DWORD, LPRECT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDeskBarClient*, uint, RECT*, int> GetSize;
+        public delegate* unmanaged<TSelf*, uint, RECT*, int> GetSize;
     }
 }

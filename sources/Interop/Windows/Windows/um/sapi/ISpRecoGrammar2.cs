@@ -122,39 +122,40 @@ public unsafe partial struct ISpRecoGrammar2 : ISpRecoGrammar2.Interface
         HRESULT SetSMLSecurityManager(IInternetSecurityManager* pSMLSecurityManager);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoGrammar2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoGrammar2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoGrammar2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SPRULE **, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoGrammar2*, SPRULE**, uint*, int> GetRules;
+        public delegate* unmanaged<TSelf*, SPRULE**, uint*, int> GetRules;
 
         [NativeTypeName("HRESULT (LPCWSTR, SPLOADOPTIONS, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoGrammar2*, ushort*, SPLOADOPTIONS, ushort*, ushort*, int> LoadCmdFromFile2;
+        public delegate* unmanaged<TSelf*, ushort*, SPLOADOPTIONS, ushort*, ushort*, int> LoadCmdFromFile2;
 
         [NativeTypeName("HRESULT (const SPBINARYGRAMMAR *, SPLOADOPTIONS, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoGrammar2*, SPBINARYGRAMMAR*, SPLOADOPTIONS, ushort*, ushort*, int> LoadCmdFromMemory2;
+        public delegate* unmanaged<TSelf*, SPBINARYGRAMMAR*, SPLOADOPTIONS, ushort*, ushort*, int> LoadCmdFromMemory2;
 
         [NativeTypeName("HRESULT (LPCWSTR, ULONG, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoGrammar2*, ushort*, uint, int, int> SetRulePriority;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int, int> SetRulePriority;
 
         [NativeTypeName("HRESULT (LPCWSTR, ULONG, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoGrammar2*, ushort*, uint, float, int> SetRuleWeight;
+        public delegate* unmanaged<TSelf*, ushort*, uint, float, int> SetRuleWeight;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoGrammar2*, float, int> SetDictationWeight;
+        public delegate* unmanaged<TSelf*, float, int> SetDictationWeight;
 
         [NativeTypeName("HRESULT (ISpeechResourceLoader *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoGrammar2*, ISpeechResourceLoader*, int> SetGrammarLoader;
+        public delegate* unmanaged<TSelf*, ISpeechResourceLoader*, int> SetGrammarLoader;
 
         [NativeTypeName("HRESULT (IInternetSecurityManager *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoGrammar2*, IInternetSecurityManager*, int> SetSMLSecurityManager;
+        public delegate* unmanaged<TSelf*, IInternetSecurityManager*, int> SetSMLSecurityManager;
     }
 }

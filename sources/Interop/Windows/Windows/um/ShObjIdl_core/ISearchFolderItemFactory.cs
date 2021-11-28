@@ -162,51 +162,52 @@ public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory
         HRESULT GetIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISearchFolderItemFactory*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISearchFolderItemFactory*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISearchFolderItemFactory*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISearchFolderItemFactory*, ushort*, int> SetDisplayName;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetDisplayName;
 
         [NativeTypeName("HRESULT (FOLDERTYPEID) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISearchFolderItemFactory*, Guid, int> SetFolderTypeID;
+        public delegate* unmanaged<TSelf*, Guid, int> SetFolderTypeID;
 
         [NativeTypeName("HRESULT (FOLDERLOGICALVIEWMODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISearchFolderItemFactory*, FOLDERLOGICALVIEWMODE, int> SetFolderLogicalViewMode;
+        public delegate* unmanaged<TSelf*, FOLDERLOGICALVIEWMODE, int> SetFolderLogicalViewMode;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISearchFolderItemFactory*, int, int> SetIconSize;
+        public delegate* unmanaged<TSelf*, int, int> SetIconSize;
 
         [NativeTypeName("HRESULT (UINT, const PROPERTYKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISearchFolderItemFactory*, uint, PROPERTYKEY*, int> SetVisibleColumns;
+        public delegate* unmanaged<TSelf*, uint, PROPERTYKEY*, int> SetVisibleColumns;
 
         [NativeTypeName("HRESULT (UINT, SORTCOLUMN *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISearchFolderItemFactory*, uint, SORTCOLUMN*, int> SetSortColumns;
+        public delegate* unmanaged<TSelf*, uint, SORTCOLUMN*, int> SetSortColumns;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISearchFolderItemFactory*, PROPERTYKEY*, int> SetGroupColumn;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, int> SetGroupColumn;
 
         [NativeTypeName("HRESULT (UINT, PROPERTYKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISearchFolderItemFactory*, uint, PROPERTYKEY*, int> SetStacks;
+        public delegate* unmanaged<TSelf*, uint, PROPERTYKEY*, int> SetStacks;
 
         [NativeTypeName("HRESULT (IShellItemArray *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISearchFolderItemFactory*, IShellItemArray*, int> SetScope;
+        public delegate* unmanaged<TSelf*, IShellItemArray*, int> SetScope;
 
         [NativeTypeName("HRESULT (ICondition *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISearchFolderItemFactory*, ICondition*, int> SetCondition;
+        public delegate* unmanaged<TSelf*, ICondition*, int> SetCondition;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISearchFolderItemFactory*, Guid*, void**, int> GetShellItem;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetShellItem;
 
         [NativeTypeName("HRESULT (LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISearchFolderItemFactory*, ITEMIDLIST**, int> GetIDList;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST**, int> GetIDList;
     }
 }

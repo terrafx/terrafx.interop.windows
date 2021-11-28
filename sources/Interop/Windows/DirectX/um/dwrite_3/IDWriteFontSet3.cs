@@ -244,96 +244,97 @@ public unsafe partial struct IDWriteFontSet3 : IDWriteFontSet3.Interface
         HRESULT GetFontSourceName([NativeTypeName("UINT32")] uint listIndex, [NativeTypeName("WCHAR *")] ushort* stringBuffer, [NativeTypeName("UINT32")] uint stringBufferSize);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, uint> GetFontCount;
+        public delegate* unmanaged<TSelf*, uint> GetFontCount;
 
         [NativeTypeName("HRESULT (UINT32, IDWriteFontFaceReference **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, uint, IDWriteFontFaceReference**, int> GetFontFaceReference;
+        public delegate* unmanaged<TSelf*, uint, IDWriteFontFaceReference**, int> GetFontFaceReference;
 
         [NativeTypeName("HRESULT (IDWriteFontFaceReference *, UINT32 *, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, IDWriteFontFaceReference*, uint*, BOOL*, int> FindFontFaceReference;
+        public delegate* unmanaged<TSelf*, IDWriteFontFaceReference*, uint*, BOOL*, int> FindFontFaceReference;
 
         [NativeTypeName("HRESULT (IDWriteFontFace *, UINT32 *, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, IDWriteFontFace*, uint*, BOOL*, int> FindFontFace;
+        public delegate* unmanaged<TSelf*, IDWriteFontFace*, uint*, BOOL*, int> FindFontFace;
 
         [NativeTypeName("HRESULT (DWRITE_FONT_PROPERTY_ID, IDWriteStringList **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, DWRITE_FONT_PROPERTY_ID, IDWriteStringList**, int> GetPropertyValues;
+        public delegate* unmanaged<TSelf*, DWRITE_FONT_PROPERTY_ID, IDWriteStringList**, int> GetPropertyValues;
 
         [NativeTypeName("HRESULT (DWRITE_FONT_PROPERTY_ID, const WCHAR *, IDWriteStringList **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, DWRITE_FONT_PROPERTY_ID, ushort*, IDWriteStringList**, int> GetPropertyValues1;
+        public delegate* unmanaged<TSelf*, DWRITE_FONT_PROPERTY_ID, ushort*, IDWriteStringList**, int> GetPropertyValues1;
 
         [NativeTypeName("HRESULT (UINT32, DWRITE_FONT_PROPERTY_ID, BOOL *, IDWriteLocalizedStrings **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, uint, DWRITE_FONT_PROPERTY_ID, BOOL*, IDWriteLocalizedStrings**, int> GetPropertyValues2;
+        public delegate* unmanaged<TSelf*, uint, DWRITE_FONT_PROPERTY_ID, BOOL*, IDWriteLocalizedStrings**, int> GetPropertyValues2;
 
         [NativeTypeName("HRESULT (const DWRITE_FONT_PROPERTY *, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, DWRITE_FONT_PROPERTY*, uint*, int> GetPropertyOccurrenceCount;
+        public delegate* unmanaged<TSelf*, DWRITE_FONT_PROPERTY*, uint*, int> GetPropertyOccurrenceCount;
 
         [NativeTypeName("HRESULT (const WCHAR *, DWRITE_FONT_WEIGHT, DWRITE_FONT_STRETCH, DWRITE_FONT_STYLE, IDWriteFontSet **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, ushort*, DWRITE_FONT_WEIGHT, DWRITE_FONT_STRETCH, DWRITE_FONT_STYLE, IDWriteFontSet**, int> GetMatchingFonts;
+        public delegate* unmanaged<TSelf*, ushort*, DWRITE_FONT_WEIGHT, DWRITE_FONT_STRETCH, DWRITE_FONT_STYLE, IDWriteFontSet**, int> GetMatchingFonts;
 
         [NativeTypeName("HRESULT (const DWRITE_FONT_PROPERTY *, UINT32, IDWriteFontSet **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, DWRITE_FONT_PROPERTY*, uint, IDWriteFontSet**, int> GetMatchingFonts1;
+        public delegate* unmanaged<TSelf*, DWRITE_FONT_PROPERTY*, uint, IDWriteFontSet**, int> GetMatchingFonts1;
 
         [NativeTypeName("HRESULT (const DWRITE_FONT_PROPERTY *, const DWRITE_FONT_AXIS_VALUE *, UINT32, IDWriteFontSet1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, DWRITE_FONT_PROPERTY*, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontSet1**, int> GetMatchingFonts2;
+        public delegate* unmanaged<TSelf*, DWRITE_FONT_PROPERTY*, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontSet1**, int> GetMatchingFonts2;
 
         [NativeTypeName("HRESULT (IDWriteFontSet1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, IDWriteFontSet1**, int> GetFirstFontResources;
+        public delegate* unmanaged<TSelf*, IDWriteFontSet1**, int> GetFirstFontResources;
 
         [NativeTypeName("HRESULT (const UINT32 *, UINT32, IDWriteFontSet1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, uint*, uint, IDWriteFontSet1**, int> GetFilteredFonts;
+        public delegate* unmanaged<TSelf*, uint*, uint, IDWriteFontSet1**, int> GetFilteredFonts;
 
         [NativeTypeName("HRESULT (const DWRITE_FONT_AXIS_RANGE *, UINT32, BOOL, IDWriteFontSet1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, DWRITE_FONT_AXIS_RANGE*, uint, BOOL, IDWriteFontSet1**, int> GetFilteredFonts1;
+        public delegate* unmanaged<TSelf*, DWRITE_FONT_AXIS_RANGE*, uint, BOOL, IDWriteFontSet1**, int> GetFilteredFonts1;
 
         [NativeTypeName("HRESULT (const DWRITE_FONT_PROPERTY *, UINT32, BOOL, IDWriteFontSet1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, DWRITE_FONT_PROPERTY*, uint, BOOL, IDWriteFontSet1**, int> GetFilteredFonts2;
+        public delegate* unmanaged<TSelf*, DWRITE_FONT_PROPERTY*, uint, BOOL, IDWriteFontSet1**, int> GetFilteredFonts2;
 
         [NativeTypeName("HRESULT (const DWRITE_FONT_AXIS_RANGE *, UINT32, BOOL, UINT32 *, UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, DWRITE_FONT_AXIS_RANGE*, uint, BOOL, uint*, uint, uint*, int> GetFilteredFontIndices;
+        public delegate* unmanaged<TSelf*, DWRITE_FONT_AXIS_RANGE*, uint, BOOL, uint*, uint, uint*, int> GetFilteredFontIndices;
 
         [NativeTypeName("HRESULT (const DWRITE_FONT_PROPERTY *, UINT32, BOOL, UINT32 *, UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, DWRITE_FONT_PROPERTY*, uint, BOOL, uint*, uint, uint*, int> GetFilteredFontIndices1;
+        public delegate* unmanaged<TSelf*, DWRITE_FONT_PROPERTY*, uint, BOOL, uint*, uint, uint*, int> GetFilteredFontIndices1;
 
         [NativeTypeName("HRESULT (UINT32, DWRITE_FONT_AXIS_RANGE *, UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, uint, DWRITE_FONT_AXIS_RANGE*, uint, uint*, int> GetFontAxisRanges;
+        public delegate* unmanaged<TSelf*, uint, DWRITE_FONT_AXIS_RANGE*, uint, uint*, int> GetFontAxisRanges;
 
         [NativeTypeName("HRESULT (DWRITE_FONT_AXIS_RANGE *, UINT32, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, DWRITE_FONT_AXIS_RANGE*, uint, uint*, int> GetFontAxisRanges1;
+        public delegate* unmanaged<TSelf*, DWRITE_FONT_AXIS_RANGE*, uint, uint*, int> GetFontAxisRanges1;
 
         [NativeTypeName("HRESULT (UINT32, IDWriteFontFaceReference1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, uint, IDWriteFontFaceReference1**, int> GetFontFaceReference1;
+        public delegate* unmanaged<TSelf*, uint, IDWriteFontFaceReference1**, int> GetFontFaceReference1;
 
         [NativeTypeName("HRESULT (UINT32, IDWriteFontResource **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, uint, IDWriteFontResource**, int> CreateFontResource;
+        public delegate* unmanaged<TSelf*, uint, IDWriteFontResource**, int> CreateFontResource;
 
         [NativeTypeName("HRESULT (UINT32, IDWriteFontFace5 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, uint, IDWriteFontFace5**, int> CreateFontFace;
+        public delegate* unmanaged<TSelf*, uint, IDWriteFontFace5**, int> CreateFontFace;
 
         [NativeTypeName("DWRITE_LOCALITY (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, uint, DWRITE_LOCALITY> GetFontLocality;
+        public delegate* unmanaged<TSelf*, uint, DWRITE_LOCALITY> GetFontLocality;
 
         [NativeTypeName("HANDLE () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, void*> GetExpirationEvent;
+        public delegate* unmanaged<TSelf*, void*> GetExpirationEvent;
 
         [NativeTypeName("DWRITE_FONT_SOURCE_TYPE (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, uint, DWRITE_FONT_SOURCE_TYPE> GetFontSourceType;
+        public delegate* unmanaged<TSelf*, uint, DWRITE_FONT_SOURCE_TYPE> GetFontSourceType;
 
         [NativeTypeName("UINT32 (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, uint, uint> GetFontSourceNameLength;
+        public delegate* unmanaged<TSelf*, uint, uint> GetFontSourceNameLength;
 
         [NativeTypeName("HRESULT (UINT32, WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontSet3*, uint, ushort*, uint, int> GetFontSourceName;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint, int> GetFontSourceName;
     }
 }

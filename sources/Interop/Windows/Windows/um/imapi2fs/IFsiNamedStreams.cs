@@ -110,39 +110,40 @@ public unsafe partial struct IFsiNamedStreams : IFsiNamedStreams.Interface
         HRESULT get_EnumNamedStreams(IEnumFsiItems** NewEnum);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiNamedStreams*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiNamedStreams*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiNamedStreams*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiNamedStreams*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiNamedStreams*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiNamedStreams*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiNamedStreams*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IEnumVARIANT **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiNamedStreams*, IEnumVARIANT**, int> get__NewEnum;
+        public delegate* unmanaged<TSelf*, IEnumVARIANT**, int> get__NewEnum;
 
         [NativeTypeName("HRESULT (LONG, IFsiFileItem2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiNamedStreams*, int, IFsiFileItem2**, int> get_Item;
+        public delegate* unmanaged<TSelf*, int, IFsiFileItem2**, int> get_Item;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiNamedStreams*, int*, int> get_Count;
+        public delegate* unmanaged<TSelf*, int*, int> get_Count;
 
         [NativeTypeName("HRESULT (IEnumFsiItems **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiNamedStreams*, IEnumFsiItems**, int> get_EnumNamedStreams;
+        public delegate* unmanaged<TSelf*, IEnumFsiItems**, int> get_EnumNamedStreams;
     }
 }

@@ -176,66 +176,67 @@ public unsafe partial struct IDWriteFontFaceReference1 : IDWriteFontFaceReferenc
         HRESULT GetFontAxisValues(DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference1*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference1*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference1*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDWriteFontFace3 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference1*, IDWriteFontFace3**, int> CreateFontFace;
+        public delegate* unmanaged<TSelf*, IDWriteFontFace3**, int> CreateFontFace;
 
         [NativeTypeName("HRESULT (DWRITE_FONT_SIMULATIONS, IDWriteFontFace3 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference1*, DWRITE_FONT_SIMULATIONS, IDWriteFontFace3**, int> CreateFontFaceWithSimulations;
+        public delegate* unmanaged<TSelf*, DWRITE_FONT_SIMULATIONS, IDWriteFontFace3**, int> CreateFontFaceWithSimulations;
 
         [NativeTypeName("BOOL (IDWriteFontFaceReference *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public new delegate* unmanaged<IDWriteFontFaceReference1*, IDWriteFontFaceReference*, int> Equals;
+        public new delegate* unmanaged<TSelf*, IDWriteFontFaceReference*, int> Equals;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteFontFaceReference1*, uint> GetFontFaceIndex;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetFontFaceIndex;
 
         [NativeTypeName("DWRITE_FONT_SIMULATIONS () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteFontFaceReference1*, DWRITE_FONT_SIMULATIONS> GetSimulations;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_FONT_SIMULATIONS> GetSimulations;
 
         [NativeTypeName("HRESULT (IDWriteFontFile **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference1*, IDWriteFontFile**, int> GetFontFile;
+        public delegate* unmanaged<TSelf*, IDWriteFontFile**, int> GetFontFile;
 
         [NativeTypeName("UINT64 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference1*, ulong> GetLocalFileSize;
+        public delegate* unmanaged<TSelf*, ulong> GetLocalFileSize;
 
         [NativeTypeName("UINT64 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference1*, ulong> GetFileSize;
+        public delegate* unmanaged<TSelf*, ulong> GetFileSize;
 
         [NativeTypeName("HRESULT (FILETIME *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference1*, FILETIME*, int> GetFileTime;
+        public delegate* unmanaged<TSelf*, FILETIME*, int> GetFileTime;
 
         [NativeTypeName("DWRITE_LOCALITY () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference1*, DWRITE_LOCALITY> GetLocality;
+        public delegate* unmanaged<TSelf*, DWRITE_LOCALITY> GetLocality;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference1*, int> EnqueueFontDownloadRequest;
+        public delegate* unmanaged<TSelf*, int> EnqueueFontDownloadRequest;
 
         [NativeTypeName("HRESULT (const WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference1*, ushort*, uint, int> EnqueueCharacterDownloadRequest;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> EnqueueCharacterDownloadRequest;
 
         [NativeTypeName("HRESULT (const UINT16 *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference1*, ushort*, uint, int> EnqueueGlyphDownloadRequest;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> EnqueueGlyphDownloadRequest;
 
         [NativeTypeName("HRESULT (UINT64, UINT64) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference1*, ulong, ulong, int> EnqueueFileFragmentDownloadRequest;
+        public delegate* unmanaged<TSelf*, ulong, ulong, int> EnqueueFileFragmentDownloadRequest;
 
         [NativeTypeName("HRESULT (IDWriteFontFace5 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference1*, IDWriteFontFace5**, int> CreateFontFace1;
+        public delegate* unmanaged<TSelf*, IDWriteFontFace5**, int> CreateFontFace1;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference1*, uint> GetFontAxisValueCount;
+        public delegate* unmanaged<TSelf*, uint> GetFontAxisValueCount;
 
         [NativeTypeName("HRESULT (DWRITE_FONT_AXIS_VALUE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference1*, DWRITE_FONT_AXIS_VALUE*, uint, int> GetFontAxisValues;
+        public delegate* unmanaged<TSelf*, DWRITE_FONT_AXIS_VALUE*, uint, int> GetFontAxisValues;
     }
 }

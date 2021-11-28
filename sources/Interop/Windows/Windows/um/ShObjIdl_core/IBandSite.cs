@@ -122,39 +122,40 @@ public unsafe partial struct IBandSite : IBandSite.Interface
         HRESULT GetBandSiteInfo(BANDSITEINFO* pbsinfo);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBandSite*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBandSite*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBandSite*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBandSite*, IUnknown*, int> AddBand;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> AddBand;
 
         [NativeTypeName("HRESULT (UINT, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBandSite*, uint, uint*, int> EnumBands;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> EnumBands;
 
         [NativeTypeName("HRESULT (DWORD, IDeskBand **, DWORD *, LPWSTR, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBandSite*, uint, IDeskBand**, uint*, ushort*, int, int> QueryBand;
+        public delegate* unmanaged<TSelf*, uint, IDeskBand**, uint*, ushort*, int, int> QueryBand;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBandSite*, uint, uint, uint, int> SetBandState;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, int> SetBandState;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBandSite*, uint, int> RemoveBand;
+        public delegate* unmanaged<TSelf*, uint, int> RemoveBand;
 
         [NativeTypeName("HRESULT (DWORD, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBandSite*, uint, Guid*, void**, int> GetBandObject;
+        public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> GetBandObject;
 
         [NativeTypeName("HRESULT (const BANDSITEINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBandSite*, BANDSITEINFO*, int> SetBandSiteInfo;
+        public delegate* unmanaged<TSelf*, BANDSITEINFO*, int> SetBandSiteInfo;
 
         [NativeTypeName("HRESULT (BANDSITEINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBandSite*, BANDSITEINFO*, int> GetBandSiteInfo;
+        public delegate* unmanaged<TSelf*, BANDSITEINFO*, int> GetBandSiteInfo;
     }
 }

@@ -105,33 +105,34 @@ public unsafe partial struct IDCompositionTranslateTransform3D : IDCompositionTr
         HRESULT SetOffsetZ(float offsetZ);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTranslateTransform3D*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTranslateTransform3D*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTranslateTransform3D*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTranslateTransform3D*, IDCompositionAnimation*, int> SetOffsetX;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetOffsetX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTranslateTransform3D*, float, int> SetOffsetX1;
+        public delegate* unmanaged<TSelf*, float, int> SetOffsetX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTranslateTransform3D*, IDCompositionAnimation*, int> SetOffsetY;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetOffsetY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTranslateTransform3D*, float, int> SetOffsetY1;
+        public delegate* unmanaged<TSelf*, float, int> SetOffsetY1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTranslateTransform3D*, IDCompositionAnimation*, int> SetOffsetZ;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetOffsetZ;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionTranslateTransform3D*, float, int> SetOffsetZ1;
+        public delegate* unmanaged<TSelf*, float, int> SetOffsetZ1;
     }
 }

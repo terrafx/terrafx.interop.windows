@@ -174,54 +174,55 @@ public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface
         HRESULT GetTextOutline(MFARGB* color, double* thickness, double* blurRadius, MF_TIMED_TEXT_UNIT_TYPE* unitType);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle*, int> IsExternal;
+        public delegate* unmanaged<TSelf*, int> IsExternal;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle*, ushort**, int> GetFontFamily;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetFontFamily;
 
         [NativeTypeName("HRESULT (double *, MF_TIMED_TEXT_UNIT_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetFontSize;
+        public delegate* unmanaged<TSelf*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetFontSize;
 
         [NativeTypeName("HRESULT (MFARGB *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle*, MFARGB*, int> GetColor;
+        public delegate* unmanaged<TSelf*, MFARGB*, int> GetColor;
 
         [NativeTypeName("HRESULT (MFARGB *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle*, MFARGB*, int> GetBackgroundColor;
+        public delegate* unmanaged<TSelf*, MFARGB*, int> GetBackgroundColor;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle*, BOOL*, int> GetShowBackgroundAlways;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetShowBackgroundAlways;
 
         [NativeTypeName("HRESULT (MF_TIMED_TEXT_FONT_STYLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle*, MF_TIMED_TEXT_FONT_STYLE*, int> GetFontStyle;
+        public delegate* unmanaged<TSelf*, MF_TIMED_TEXT_FONT_STYLE*, int> GetFontStyle;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle*, BOOL*, int> GetBold;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetBold;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle*, BOOL*, int> GetRightToLeft;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetRightToLeft;
 
         [NativeTypeName("HRESULT (MF_TIMED_TEXT_ALIGNMENT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle*, MF_TIMED_TEXT_ALIGNMENT*, int> GetTextAlignment;
+        public delegate* unmanaged<TSelf*, MF_TIMED_TEXT_ALIGNMENT*, int> GetTextAlignment;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle*, uint*, int> GetTextDecoration;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTextDecoration;
 
         [NativeTypeName("HRESULT (MFARGB *, double *, double *, MF_TIMED_TEXT_UNIT_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextStyle*, MFARGB*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetTextOutline;
+        public delegate* unmanaged<TSelf*, MFARGB*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int> GetTextOutline;
     }
 }

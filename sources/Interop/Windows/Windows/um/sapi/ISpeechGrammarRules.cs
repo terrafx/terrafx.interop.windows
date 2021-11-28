@@ -150,51 +150,52 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
         HRESULT CommitAndSave([NativeTypeName("BSTR *")] ushort** ErrorText, VARIANT* SaveStream);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRules*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRules*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRules*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRules*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRules*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRules*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRules*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRules*, int*, int> get_Count;
+        public delegate* unmanaged<TSelf*, int*, int> get_Count;
 
         [NativeTypeName("HRESULT (VARIANT, ISpeechGrammarRule **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRules*, VARIANT, ISpeechGrammarRule**, int> FindRule;
+        public delegate* unmanaged<TSelf*, VARIANT, ISpeechGrammarRule**, int> FindRule;
 
         [NativeTypeName("HRESULT (long, ISpeechGrammarRule **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRules*, int, ISpeechGrammarRule**, int> Item;
+        public delegate* unmanaged<TSelf*, int, ISpeechGrammarRule**, int> Item;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRules*, IUnknown**, int> get__NewEnum;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> get__NewEnum;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRules*, short*, int> get_Dynamic;
+        public delegate* unmanaged<TSelf*, short*, int> get_Dynamic;
 
         [NativeTypeName("HRESULT (BSTR, SpeechRuleAttributes, long, ISpeechGrammarRule **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRules*, ushort*, SpeechRuleAttributes, int, ISpeechGrammarRule**, int> Add;
+        public delegate* unmanaged<TSelf*, ushort*, SpeechRuleAttributes, int, ISpeechGrammarRule**, int> Add;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRules*, int> Commit;
+        public delegate* unmanaged<TSelf*, int> Commit;
 
         [NativeTypeName("HRESULT (BSTR *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechGrammarRules*, ushort**, VARIANT*, int> CommitAndSave;
+        public delegate* unmanaged<TSelf*, ushort**, VARIANT*, int> CommitAndSave;
     }
 }

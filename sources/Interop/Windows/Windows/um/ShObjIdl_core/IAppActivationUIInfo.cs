@@ -92,30 +92,31 @@ public unsafe partial struct IAppActivationUIInfo : IAppActivationUIInfo.Interfa
         HRESULT GetKeyState([NativeTypeName("DWORD *")] uint* value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppActivationUIInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppActivationUIInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppActivationUIInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HMONITOR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppActivationUIInfo*, HMONITOR*, int> GetMonitor;
+        public delegate* unmanaged<TSelf*, HMONITOR*, int> GetMonitor;
 
         [NativeTypeName("HRESULT (POINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppActivationUIInfo*, POINT*, int> GetInvokePoint;
+        public delegate* unmanaged<TSelf*, POINT*, int> GetInvokePoint;
 
         [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppActivationUIInfo*, int*, int> GetShowCommand;
+        public delegate* unmanaged<TSelf*, int*, int> GetShowCommand;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppActivationUIInfo*, BOOL*, int> GetShowUI;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetShowUI;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppActivationUIInfo*, uint*, int> GetKeyState;
+        public delegate* unmanaged<TSelf*, uint*, int> GetKeyState;
     }
 }

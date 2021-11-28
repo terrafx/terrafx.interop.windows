@@ -82,27 +82,28 @@ public unsafe partial struct IFolderBandPriv : IFolderBandPriv.Interface
         HRESULT SetNoText(BOOL fNoText);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderBandPriv*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderBandPriv*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderBandPriv*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderBandPriv*, BOOL, int> SetCascade;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetCascade;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderBandPriv*, BOOL, int> SetAccelerators;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetAccelerators;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderBandPriv*, BOOL, int> SetNoIcons;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetNoIcons;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderBandPriv*, BOOL, int> SetNoText;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetNoText;
     }
 }

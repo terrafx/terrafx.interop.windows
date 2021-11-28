@@ -52,18 +52,19 @@ public unsafe partial struct ICopyHookA : ICopyHookA.Interface
         uint CopyCallback(HWND hwnd, uint wFunc, uint wFlags, [NativeTypeName("PCSTR")] sbyte* pszSrcFile, [NativeTypeName("DWORD")] uint dwSrcAttribs, [NativeTypeName("PCSTR")] sbyte* pszDestFile, [NativeTypeName("DWORD")] uint dwDestAttribs);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICopyHookA*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICopyHookA*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICopyHookA*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("UINT (HWND, UINT, UINT, PCSTR, DWORD, PCSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICopyHookA*, HWND, uint, uint, sbyte*, uint, sbyte*, uint, uint> CopyCallback;
+        public delegate* unmanaged<TSelf*, HWND, uint, uint, sbyte*, uint, sbyte*, uint, uint> CopyCallback;
     }
 }

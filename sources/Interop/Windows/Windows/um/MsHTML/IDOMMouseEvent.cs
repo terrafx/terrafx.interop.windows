@@ -310,99 +310,100 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface
         HRESULT get_which(ushort* p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_screenX;
+        public delegate* unmanaged<TSelf*, int*, int> get_screenX;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_screenY;
+        public delegate* unmanaged<TSelf*, int*, int> get_screenY;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_clientX;
+        public delegate* unmanaged<TSelf*, int*, int> get_clientX;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_clientY;
+        public delegate* unmanaged<TSelf*, int*, int> get_clientY;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, short*, int> get_ctrlKey;
+        public delegate* unmanaged<TSelf*, short*, int> get_ctrlKey;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, short*, int> get_shiftKey;
+        public delegate* unmanaged<TSelf*, short*, int> get_shiftKey;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, short*, int> get_altKey;
+        public delegate* unmanaged<TSelf*, short*, int> get_altKey;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, short*, int> get_metaKey;
+        public delegate* unmanaged<TSelf*, short*, int> get_metaKey;
 
         [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, ushort*, int> get_button;
+        public delegate* unmanaged<TSelf*, ushort*, int> get_button;
 
         [NativeTypeName("HRESULT (IEventTarget **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, IEventTarget**, int> get_relatedTarget;
+        public delegate* unmanaged<TSelf*, IEventTarget**, int> get_relatedTarget;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, IHTMLWindow2 *, long, long, long, long, long, VARIANT_BOOL, VARIANT_BOOL, VARIANT_BOOL, VARIANT_BOOL, USHORT, IEventTarget *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, ushort*, short, short, IHTMLWindow2*, int, int, int, int, int, short, short, short, short, ushort, IEventTarget*, int> initMouseEvent;
+        public delegate* unmanaged<TSelf*, ushort*, short, short, IHTMLWindow2*, int, int, int, int, int, short, short, short, short, ushort, IEventTarget*, int> initMouseEvent;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, ushort*, short*, int> getModifierState;
+        public delegate* unmanaged<TSelf*, ushort*, short*, int> getModifierState;
 
         [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, ushort*, int> get_buttons;
+        public delegate* unmanaged<TSelf*, ushort*, int> get_buttons;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, IHTMLElement**, int> get_fromElement;
+        public delegate* unmanaged<TSelf*, IHTMLElement**, int> get_fromElement;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, IHTMLElement**, int> get_toElement;
+        public delegate* unmanaged<TSelf*, IHTMLElement**, int> get_toElement;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_x;
+        public delegate* unmanaged<TSelf*, int*, int> get_x;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_y;
+        public delegate* unmanaged<TSelf*, int*, int> get_y;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_offsetX;
+        public delegate* unmanaged<TSelf*, int*, int> get_offsetX;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_offsetY;
+        public delegate* unmanaged<TSelf*, int*, int> get_offsetY;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_pageX;
+        public delegate* unmanaged<TSelf*, int*, int> get_pageX;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_pageY;
+        public delegate* unmanaged<TSelf*, int*, int> get_pageY;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_layerX;
+        public delegate* unmanaged<TSelf*, int*, int> get_layerX;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, int*, int> get_layerY;
+        public delegate* unmanaged<TSelf*, int*, int> get_layerY;
 
         [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDOMMouseEvent*, ushort*, int> get_which;
+        public delegate* unmanaged<TSelf*, ushort*, int> get_which;
     }
 }

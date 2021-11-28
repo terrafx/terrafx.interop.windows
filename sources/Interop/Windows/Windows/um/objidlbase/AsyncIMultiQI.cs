@@ -62,21 +62,22 @@ public unsafe partial struct AsyncIMultiQI : AsyncIMultiQI.Interface
         HRESULT Finish_QueryMultipleInterfaces(MULTI_QI* pMQIs);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIMultiQI*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIMultiQI*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIMultiQI*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, MULTI_QI *) __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIMultiQI*, uint, MULTI_QI*, int> Begin_QueryMultipleInterfaces;
+        public delegate* unmanaged<TSelf*, uint, MULTI_QI*, int> Begin_QueryMultipleInterfaces;
 
         [NativeTypeName("HRESULT (MULTI_QI *) __attribute__((stdcall))")]
-        public delegate* unmanaged<AsyncIMultiQI*, MULTI_QI*, int> Finish_QueryMultipleInterfaces;
+        public delegate* unmanaged<TSelf*, MULTI_QI*, int> Finish_QueryMultipleInterfaces;
     }
 }

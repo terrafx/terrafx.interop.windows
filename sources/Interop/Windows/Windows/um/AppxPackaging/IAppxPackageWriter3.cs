@@ -54,18 +54,19 @@ public unsafe partial struct IAppxPackageWriter3 : IAppxPackageWriter3.Interface
         HRESULT AddPayloadFiles([NativeTypeName("UINT32")] uint fileCount, APPX_PACKAGE_WRITER_PAYLOAD_STREAM* payloadFiles, [NativeTypeName("UINT64")] ulong memoryLimit);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageWriter3*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageWriter3*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageWriter3*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32, APPX_PACKAGE_WRITER_PAYLOAD_STREAM *, UINT64) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageWriter3*, uint, APPX_PACKAGE_WRITER_PAYLOAD_STREAM*, ulong, int> AddPayloadFiles;
+        public delegate* unmanaged<TSelf*, uint, APPX_PACKAGE_WRITER_PAYLOAD_STREAM*, ulong, int> AddPayloadFiles;
     }
 }

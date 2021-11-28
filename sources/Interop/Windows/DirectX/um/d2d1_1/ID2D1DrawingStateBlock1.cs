@@ -98,36 +98,37 @@ public unsafe partial struct ID2D1DrawingStateBlock1 : ID2D1DrawingStateBlock1.I
         void SetDescription([NativeTypeName("const D2D1_DRAWING_STATE_DESCRIPTION1 *")] D2D1_DRAWING_STATE_DESCRIPTION1* stateDescription);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1DrawingStateBlock1*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1DrawingStateBlock1*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1DrawingStateBlock1*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1DrawingStateBlock1*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("void (D2D1_DRAWING_STATE_DESCRIPTION *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1DrawingStateBlock1*, D2D1_DRAWING_STATE_DESCRIPTION*, void> GetDescription;
+        public delegate* unmanaged<TSelf*, D2D1_DRAWING_STATE_DESCRIPTION*, void> GetDescription;
 
         [NativeTypeName("void (const D2D1_DRAWING_STATE_DESCRIPTION *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1DrawingStateBlock1*, D2D1_DRAWING_STATE_DESCRIPTION*, void> SetDescription;
+        public delegate* unmanaged<TSelf*, D2D1_DRAWING_STATE_DESCRIPTION*, void> SetDescription;
 
         [NativeTypeName("void (IDWriteRenderingParams *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1DrawingStateBlock1*, IDWriteRenderingParams*, void> SetTextRenderingParams;
+        public delegate* unmanaged<TSelf*, IDWriteRenderingParams*, void> SetTextRenderingParams;
 
         [NativeTypeName("void (IDWriteRenderingParams **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1DrawingStateBlock1*, IDWriteRenderingParams**, void> GetTextRenderingParams;
+        public delegate* unmanaged<TSelf*, IDWriteRenderingParams**, void> GetTextRenderingParams;
 
         [NativeTypeName("void (D2D1_DRAWING_STATE_DESCRIPTION1 *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1DrawingStateBlock1*, D2D1_DRAWING_STATE_DESCRIPTION1*, void> GetDescription1;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_DRAWING_STATE_DESCRIPTION1*, void> GetDescription1;
 
         [NativeTypeName("void (const D2D1_DRAWING_STATE_DESCRIPTION1 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1DrawingStateBlock1*, D2D1_DRAWING_STATE_DESCRIPTION1*, void> SetDescription1;
+        public delegate* unmanaged<TSelf*, D2D1_DRAWING_STATE_DESCRIPTION1*, void> SetDescription1;
     }
 }

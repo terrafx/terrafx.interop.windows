@@ -112,36 +112,37 @@ public unsafe partial struct IAMAnalogVideoEncoder : IAMAnalogVideoEncoder.Inter
         HRESULT get_CCEnable([NativeTypeName("long *")] int* lCCEnable);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAnalogVideoEncoder*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAnalogVideoEncoder*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAnalogVideoEncoder*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAnalogVideoEncoder*, int*, int> get_AvailableTVFormats;
+        public delegate* unmanaged<TSelf*, int*, int> get_AvailableTVFormats;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAnalogVideoEncoder*, int, int> put_TVFormat;
+        public delegate* unmanaged<TSelf*, int, int> put_TVFormat;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAnalogVideoEncoder*, int*, int> get_TVFormat;
+        public delegate* unmanaged<TSelf*, int*, int> get_TVFormat;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAnalogVideoEncoder*, int, int> put_CopyProtection;
+        public delegate* unmanaged<TSelf*, int, int> put_CopyProtection;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAnalogVideoEncoder*, int*, int> get_CopyProtection;
+        public delegate* unmanaged<TSelf*, int*, int> get_CopyProtection;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAnalogVideoEncoder*, int, int> put_CCEnable;
+        public delegate* unmanaged<TSelf*, int, int> put_CCEnable;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAnalogVideoEncoder*, int*, int> get_CCEnable;
+        public delegate* unmanaged<TSelf*, int*, int> get_CCEnable;
     }
 }

@@ -72,24 +72,25 @@ public unsafe partial struct IWizardExtension : IWizardExtension.Interface
         HRESULT GetLastPage(HPROPSHEETPAGE* phpage);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWizardExtension*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWizardExtension*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWizardExtension*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HPROPSHEETPAGE *, UINT, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWizardExtension*, HPROPSHEETPAGE*, uint, uint*, int> AddPages;
+        public delegate* unmanaged<TSelf*, HPROPSHEETPAGE*, uint, uint*, int> AddPages;
 
         [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWizardExtension*, HPROPSHEETPAGE*, int> GetFirstPage;
+        public delegate* unmanaged<TSelf*, HPROPSHEETPAGE*, int> GetFirstPage;
 
         [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWizardExtension*, HPROPSHEETPAGE*, int> GetLastPage;
+        public delegate* unmanaged<TSelf*, HPROPSHEETPAGE*, int> GetLastPage;
     }
 }

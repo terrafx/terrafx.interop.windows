@@ -158,48 +158,49 @@ public unsafe partial struct ID2D1Ink : ID2D1Ink.Interface
         HRESULT GetBounds(ID2D1InkStyle* inkStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* bounds);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Ink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Ink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Ink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Ink*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("void (const D2D1_INK_POINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Ink*, D2D1_INK_POINT*, void> SetStartPoint;
+        public delegate* unmanaged<TSelf*, D2D1_INK_POINT*, void> SetStartPoint;
 
         [NativeTypeName("D2D1_INK_POINT () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1Ink*, D2D1_INK_POINT*, D2D1_INK_POINT*> GetStartPoint;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D2D1_INK_POINT*, D2D1_INK_POINT*> GetStartPoint;
 
         [NativeTypeName("HRESULT (const D2D1_INK_BEZIER_SEGMENT *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Ink*, D2D1_INK_BEZIER_SEGMENT*, uint, int> AddSegments;
+        public delegate* unmanaged<TSelf*, D2D1_INK_BEZIER_SEGMENT*, uint, int> AddSegments;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Ink*, uint, int> RemoveSegmentsAtEnd;
+        public delegate* unmanaged<TSelf*, uint, int> RemoveSegmentsAtEnd;
 
         [NativeTypeName("HRESULT (UINT32, const D2D1_INK_BEZIER_SEGMENT *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Ink*, uint, D2D1_INK_BEZIER_SEGMENT*, uint, int> SetSegments;
+        public delegate* unmanaged<TSelf*, uint, D2D1_INK_BEZIER_SEGMENT*, uint, int> SetSegments;
 
         [NativeTypeName("HRESULT (const D2D1_INK_BEZIER_SEGMENT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Ink*, D2D1_INK_BEZIER_SEGMENT*, int> SetSegmentAtEnd;
+        public delegate* unmanaged<TSelf*, D2D1_INK_BEZIER_SEGMENT*, int> SetSegmentAtEnd;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID2D1Ink*, uint> GetSegmentCount;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetSegmentCount;
 
         [NativeTypeName("HRESULT (UINT32, D2D1_INK_BEZIER_SEGMENT *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Ink*, uint, D2D1_INK_BEZIER_SEGMENT*, uint, int> GetSegments;
+        public delegate* unmanaged<TSelf*, uint, D2D1_INK_BEZIER_SEGMENT*, uint, int> GetSegments;
 
         [NativeTypeName("HRESULT (ID2D1InkStyle *, const D2D1_MATRIX_3X2_F *, FLOAT, ID2D1SimplifiedGeometrySink *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Ink*, ID2D1InkStyle*, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int> StreamAsGeometry1;
+        public delegate* unmanaged<TSelf*, ID2D1InkStyle*, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int> StreamAsGeometry1;
 
         [NativeTypeName("HRESULT (ID2D1InkStyle *, const D2D1_MATRIX_3X2_F *, D2D1_RECT_F *) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Ink*, ID2D1InkStyle*, D2D_MATRIX_3X2_F*, D2D_RECT_F*, int> GetBounds;
+        public delegate* unmanaged<TSelf*, ID2D1InkStyle*, D2D_MATRIX_3X2_F*, D2D_RECT_F*, int> GetBounds;
     }
 }

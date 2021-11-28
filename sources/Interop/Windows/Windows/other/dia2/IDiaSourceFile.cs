@@ -92,30 +92,31 @@ public unsafe partial struct IDiaSourceFile : IDiaSourceFile.Interface
         HRESULT get_checksum([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSourceFile*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSourceFile*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSourceFile*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSourceFile*, uint*, int> get_uniqueId;
+        public delegate* unmanaged<TSelf*, uint*, int> get_uniqueId;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSourceFile*, ushort**, int> get_fileName;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_fileName;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSourceFile*, uint*, int> get_checksumType;
+        public delegate* unmanaged<TSelf*, uint*, int> get_checksumType;
 
         [NativeTypeName("HRESULT (IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSourceFile*, IDiaEnumSymbols**, int> get_compilands;
+        public delegate* unmanaged<TSelf*, IDiaEnumSymbols**, int> get_compilands;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaSourceFile*, uint, uint*, byte*, int> get_checksum;
+        public delegate* unmanaged<TSelf*, uint, uint*, byte*, int> get_checksum;
     }
 }

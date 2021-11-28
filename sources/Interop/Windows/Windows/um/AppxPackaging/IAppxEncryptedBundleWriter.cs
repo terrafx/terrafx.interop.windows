@@ -64,21 +64,22 @@ public unsafe partial struct IAppxEncryptedBundleWriter : IAppxEncryptedBundleWr
         HRESULT Close();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptedBundleWriter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptedBundleWriter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptedBundleWriter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptedBundleWriter*, ushort*, IStream*, int> AddPayloadPackageEncrypted;
+        public delegate* unmanaged<TSelf*, ushort*, IStream*, int> AddPayloadPackageEncrypted;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxEncryptedBundleWriter*, int> Close;
+        public delegate* unmanaged<TSelf*, int> Close;
     }
 }

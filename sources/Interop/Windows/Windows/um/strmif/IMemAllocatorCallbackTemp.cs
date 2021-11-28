@@ -104,39 +104,40 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
         HRESULT GetFreeCount([NativeTypeName("LONG *")] int* plBuffersFree);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemAllocatorCallbackTemp*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemAllocatorCallbackTemp*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemAllocatorCallbackTemp*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ALLOCATOR_PROPERTIES *, ALLOCATOR_PROPERTIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemAllocatorCallbackTemp*, ALLOCATOR_PROPERTIES*, ALLOCATOR_PROPERTIES*, int> SetProperties;
+        public delegate* unmanaged<TSelf*, ALLOCATOR_PROPERTIES*, ALLOCATOR_PROPERTIES*, int> SetProperties;
 
         [NativeTypeName("HRESULT (ALLOCATOR_PROPERTIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemAllocatorCallbackTemp*, ALLOCATOR_PROPERTIES*, int> GetProperties;
+        public delegate* unmanaged<TSelf*, ALLOCATOR_PROPERTIES*, int> GetProperties;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemAllocatorCallbackTemp*, int> Commit;
+        public delegate* unmanaged<TSelf*, int> Commit;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemAllocatorCallbackTemp*, int> Decommit;
+        public delegate* unmanaged<TSelf*, int> Decommit;
 
         [NativeTypeName("HRESULT (IMediaSample **, REFERENCE_TIME *, REFERENCE_TIME *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemAllocatorCallbackTemp*, IMediaSample**, long*, long*, uint, int> GetBuffer;
+        public delegate* unmanaged<TSelf*, IMediaSample**, long*, long*, uint, int> GetBuffer;
 
         [NativeTypeName("HRESULT (IMediaSample *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemAllocatorCallbackTemp*, IMediaSample*, int> ReleaseBuffer;
+        public delegate* unmanaged<TSelf*, IMediaSample*, int> ReleaseBuffer;
 
         [NativeTypeName("HRESULT (IMemAllocatorNotifyCallbackTemp *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemAllocatorCallbackTemp*, IMemAllocatorNotifyCallbackTemp*, int> SetNotify;
+        public delegate* unmanaged<TSelf*, IMemAllocatorNotifyCallbackTemp*, int> SetNotify;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemAllocatorCallbackTemp*, int*, int> GetFreeCount;
+        public delegate* unmanaged<TSelf*, int*, int> GetFreeCount;
     }
 }

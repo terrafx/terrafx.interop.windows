@@ -112,36 +112,37 @@ public unsafe partial struct IVMRFilterConfig : IVMRFilterConfig.Interface
         HRESULT GetRenderingMode([NativeTypeName("DWORD *")] uint* pMode);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRFilterConfig*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRFilterConfig*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRFilterConfig*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IVMRImageCompositor *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRFilterConfig*, IVMRImageCompositor*, int> SetImageCompositor;
+        public delegate* unmanaged<TSelf*, IVMRImageCompositor*, int> SetImageCompositor;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRFilterConfig*, uint, int> SetNumberOfStreams;
+        public delegate* unmanaged<TSelf*, uint, int> SetNumberOfStreams;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRFilterConfig*, uint*, int> GetNumberOfStreams;
+        public delegate* unmanaged<TSelf*, uint*, int> GetNumberOfStreams;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRFilterConfig*, uint, int> SetRenderingPrefs;
+        public delegate* unmanaged<TSelf*, uint, int> SetRenderingPrefs;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRFilterConfig*, uint*, int> GetRenderingPrefs;
+        public delegate* unmanaged<TSelf*, uint*, int> GetRenderingPrefs;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRFilterConfig*, uint, int> SetRenderingMode;
+        public delegate* unmanaged<TSelf*, uint, int> SetRenderingMode;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRFilterConfig*, uint*, int> GetRenderingMode;
+        public delegate* unmanaged<TSelf*, uint*, int> GetRenderingMode;
     }
 }

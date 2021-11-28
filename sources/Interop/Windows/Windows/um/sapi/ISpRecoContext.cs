@@ -292,99 +292,100 @@ public unsafe partial struct ISpRecoContext : ISpRecoContext.Interface
         HRESULT GetContextState(SPCONTEXTSTATE* peContextState);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ISpNotifySink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, ISpNotifySink*, int> SetNotifySink;
+        public delegate* unmanaged<TSelf*, ISpNotifySink*, int> SetNotifySink;
 
         [NativeTypeName("HRESULT (HWND, UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, HWND, uint, WPARAM, LPARAM, int> SetNotifyWindowMessage;
+        public delegate* unmanaged<TSelf*, HWND, uint, WPARAM, LPARAM, int> SetNotifyWindowMessage;
 
         [NativeTypeName("HRESULT (SPNOTIFYCALLBACK *, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int> SetNotifyCallbackFunction;
+        public delegate* unmanaged<TSelf*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int> SetNotifyCallbackFunction;
 
         [NativeTypeName("HRESULT (ISpNotifyCallback *, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, ISpNotifyCallback*, WPARAM, LPARAM, int> SetNotifyCallbackInterface;
+        public delegate* unmanaged<TSelf*, ISpNotifyCallback*, WPARAM, LPARAM, int> SetNotifyCallbackInterface;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, int> SetNotifyWin32Event;
+        public delegate* unmanaged<TSelf*, int> SetNotifyWin32Event;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, uint, int> WaitForNotifyEvent;
+        public delegate* unmanaged<TSelf*, uint, int> WaitForNotifyEvent;
 
         [NativeTypeName("HANDLE () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, void*> GetNotifyEventHandle;
+        public delegate* unmanaged<TSelf*, void*> GetNotifyEventHandle;
 
         [NativeTypeName("HRESULT (ULONGLONG, ULONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, ulong, ulong, int> SetInterest;
+        public delegate* unmanaged<TSelf*, ulong, ulong, int> SetInterest;
 
         [NativeTypeName("HRESULT (ULONG, SPEVENT *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, uint, SPEVENT*, uint*, int> GetEvents;
+        public delegate* unmanaged<TSelf*, uint, SPEVENT*, uint*, int> GetEvents;
 
         [NativeTypeName("HRESULT (SPEVENTSOURCEINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, SPEVENTSOURCEINFO*, int> GetInfo;
+        public delegate* unmanaged<TSelf*, SPEVENTSOURCEINFO*, int> GetInfo;
 
         [NativeTypeName("HRESULT (ISpRecognizer **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, ISpRecognizer**, int> GetRecognizer;
+        public delegate* unmanaged<TSelf*, ISpRecognizer**, int> GetRecognizer;
 
         [NativeTypeName("HRESULT (ULONGLONG, ISpRecoGrammar **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, ulong, ISpRecoGrammar**, int> CreateGrammar;
+        public delegate* unmanaged<TSelf*, ulong, ISpRecoGrammar**, int> CreateGrammar;
 
         [NativeTypeName("HRESULT (SPRECOCONTEXTSTATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, SPRECOCONTEXTSTATUS*, int> GetStatus;
+        public delegate* unmanaged<TSelf*, SPRECOCONTEXTSTATUS*, int> GetStatus;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, uint*, int> GetMaxAlternates;
+        public delegate* unmanaged<TSelf*, uint*, int> GetMaxAlternates;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, uint, int> SetMaxAlternates;
+        public delegate* unmanaged<TSelf*, uint, int> SetMaxAlternates;
 
         [NativeTypeName("HRESULT (SPAUDIOOPTIONS, const GUID *, const WAVEFORMATEX *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, SPAUDIOOPTIONS, Guid*, WAVEFORMATEX*, int> SetAudioOptions;
+        public delegate* unmanaged<TSelf*, SPAUDIOOPTIONS, Guid*, WAVEFORMATEX*, int> SetAudioOptions;
 
         [NativeTypeName("HRESULT (SPAUDIOOPTIONS *, GUID *, WAVEFORMATEX **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, SPAUDIOOPTIONS*, Guid*, WAVEFORMATEX**, int> GetAudioOptions;
+        public delegate* unmanaged<TSelf*, SPAUDIOOPTIONS*, Guid*, WAVEFORMATEX**, int> GetAudioOptions;
 
         [NativeTypeName("HRESULT (const SPSERIALIZEDRESULT *, ISpRecoResult **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, SPSERIALIZEDRESULT*, ISpRecoResult**, int> DeserializeResult;
+        public delegate* unmanaged<TSelf*, SPSERIALIZEDRESULT*, ISpRecoResult**, int> DeserializeResult;
 
         [NativeTypeName("HRESULT (SPBOOKMARKOPTIONS, ULONGLONG, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, SPBOOKMARKOPTIONS, ulong, LPARAM, int> Bookmark;
+        public delegate* unmanaged<TSelf*, SPBOOKMARKOPTIONS, ulong, LPARAM, int> Bookmark;
 
         [NativeTypeName("HRESULT (LPCWSTR, const ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, ushort*, uint, int> SetAdaptationData;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> SetAdaptationData;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, uint, int> Pause;
+        public delegate* unmanaged<TSelf*, uint, int> Pause;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, uint, int> Resume;
+        public delegate* unmanaged<TSelf*, uint, int> Resume;
 
         [NativeTypeName("HRESULT (ISpVoice *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, ISpVoice*, BOOL, int> SetVoice;
+        public delegate* unmanaged<TSelf*, ISpVoice*, BOOL, int> SetVoice;
 
         [NativeTypeName("HRESULT (ISpVoice **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, ISpVoice**, int> GetVoice;
+        public delegate* unmanaged<TSelf*, ISpVoice**, int> GetVoice;
 
         [NativeTypeName("HRESULT (ULONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, ulong, int> SetVoicePurgeEvent;
+        public delegate* unmanaged<TSelf*, ulong, int> SetVoicePurgeEvent;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, ulong*, int> GetVoicePurgeEvent;
+        public delegate* unmanaged<TSelf*, ulong*, int> GetVoicePurgeEvent;
 
         [NativeTypeName("HRESULT (SPCONTEXTSTATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, SPCONTEXTSTATE, int> SetContextState;
+        public delegate* unmanaged<TSelf*, SPCONTEXTSTATE, int> SetContextState;
 
         [NativeTypeName("HRESULT (SPCONTEXTSTATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecoContext*, SPCONTEXTSTATE*, int> GetContextState;
+        public delegate* unmanaged<TSelf*, SPCONTEXTSTATE*, int> GetContextState;
     }
 }

@@ -102,33 +102,34 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface
         HRESULT GetIconPath([NativeTypeName("LPWSTR *")] ushort** pszPath);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFAudioPolicy*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFAudioPolicy*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFAudioPolicy*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFAudioPolicy*, Guid*, int> SetGroupingParam;
+        public delegate* unmanaged<TSelf*, Guid*, int> SetGroupingParam;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFAudioPolicy*, Guid*, int> GetGroupingParam;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetGroupingParam;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFAudioPolicy*, ushort*, int> SetDisplayName;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetDisplayName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFAudioPolicy*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFAudioPolicy*, ushort*, int> SetIconPath;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetIconPath;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFAudioPolicy*, ushort**, int> GetIconPath;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetIconPath;
     }
 }

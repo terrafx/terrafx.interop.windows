@@ -250,81 +250,82 @@ public unsafe partial struct IHTMLRenderStyle : IHTMLRenderStyle.Interface
         HRESULT get_textDecoration([NativeTypeName("BSTR *")] ushort** p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, ushort*, int> put_textLineThroughStyle;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_textLineThroughStyle;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, ushort**, int> get_textLineThroughStyle;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_textLineThroughStyle;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, ushort*, int> put_textUnderlineStyle;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_textUnderlineStyle;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, ushort**, int> get_textUnderlineStyle;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_textUnderlineStyle;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, ushort*, int> put_textEffect;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_textEffect;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, ushort**, int> get_textEffect;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_textEffect;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, VARIANT, int> put_textColor;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_textColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, VARIANT*, int> get_textColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_textColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, VARIANT, int> put_textBackgroundColor;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_textBackgroundColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, VARIANT*, int> get_textBackgroundColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_textBackgroundColor;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, VARIANT, int> put_textDecorationColor;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_textDecorationColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, VARIANT*, int> get_textDecorationColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_textDecorationColor;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, int, int> put_renderingPriority;
+        public delegate* unmanaged<TSelf*, int, int> put_renderingPriority;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, int*, int> get_renderingPriority;
+        public delegate* unmanaged<TSelf*, int*, int> get_renderingPriority;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, ushort*, int> put_defaultTextSelection;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_defaultTextSelection;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, ushort**, int> get_defaultTextSelection;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_defaultTextSelection;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, ushort*, int> put_textDecoration;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_textDecoration;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLRenderStyle*, ushort**, int> get_textDecoration;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_textDecoration;
     }
 }

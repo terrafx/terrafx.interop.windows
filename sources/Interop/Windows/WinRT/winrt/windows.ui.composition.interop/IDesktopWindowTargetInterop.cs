@@ -53,18 +53,19 @@ public unsafe partial struct IDesktopWindowTargetInterop : IDesktopWindowTargetI
         HRESULT get_Hwnd(HWND* value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWindowTargetInterop*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWindowTargetInterop*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWindowTargetInterop*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWindowTargetInterop*, HWND*, int> get_Hwnd;
+        public delegate* unmanaged<TSelf*, HWND*, int> get_Hwnd;
     }
 }

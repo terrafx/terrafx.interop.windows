@@ -122,39 +122,40 @@ public unsafe partial struct ISyncMgrHandler : ISyncMgrHandler.Interface
         HRESULT Synchronize([NativeTypeName("LPCWSTR *")] ushort** ppszItemIDs, [NativeTypeName("ULONG")] uint cItems, HWND hwndOwner, ISyncMgrSessionCreator* pSessionCreator, IUnknown* punk);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandler*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandler*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandler*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandler*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
 
         [NativeTypeName("HRESULT (ISyncMgrHandlerInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandler*, ISyncMgrHandlerInfo**, int> GetHandlerInfo;
+        public delegate* unmanaged<TSelf*, ISyncMgrHandlerInfo**, int> GetHandlerInfo;
 
         [NativeTypeName("HRESULT (const GUID &, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandler*, Guid*, Guid*, void**, int> GetObjectW;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, void**, int> GetObjectW;
 
         [NativeTypeName("HRESULT (SYNCMGR_HANDLER_CAPABILITIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandler*, SYNCMGR_HANDLER_CAPABILITIES*, int> GetCapabilities;
+        public delegate* unmanaged<TSelf*, SYNCMGR_HANDLER_CAPABILITIES*, int> GetCapabilities;
 
         [NativeTypeName("HRESULT (SYNCMGR_HANDLER_POLICIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandler*, SYNCMGR_HANDLER_POLICIES*, int> GetPolicies;
+        public delegate* unmanaged<TSelf*, SYNCMGR_HANDLER_POLICIES*, int> GetPolicies;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandler*, BOOL, int> Activate;
+        public delegate* unmanaged<TSelf*, BOOL, int> Activate;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandler*, BOOL, int> Enable;
+        public delegate* unmanaged<TSelf*, BOOL, int> Enable;
 
         [NativeTypeName("HRESULT (LPCWSTR *, ULONG, HWND, ISyncMgrSessionCreator *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrHandler*, ushort**, uint, HWND, ISyncMgrSessionCreator*, IUnknown*, int> Synchronize;
+        public delegate* unmanaged<TSelf*, ushort**, uint, HWND, ISyncMgrSessionCreator*, IUnknown*, int> Synchronize;
     }
 }

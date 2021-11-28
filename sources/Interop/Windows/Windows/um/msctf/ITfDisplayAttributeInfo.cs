@@ -92,30 +92,31 @@ public unsafe partial struct ITfDisplayAttributeInfo : ITfDisplayAttributeInfo.I
         HRESULT Reset();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDisplayAttributeInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDisplayAttributeInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDisplayAttributeInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDisplayAttributeInfo*, Guid*, int> GetGUID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetGUID;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDisplayAttributeInfo*, ushort**, int> GetDescription;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDescription;
 
         [NativeTypeName("HRESULT (TF_DISPLAYATTRIBUTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDisplayAttributeInfo*, TF_DISPLAYATTRIBUTE*, int> GetAttributeInfo;
+        public delegate* unmanaged<TSelf*, TF_DISPLAYATTRIBUTE*, int> GetAttributeInfo;
 
         [NativeTypeName("HRESULT (const TF_DISPLAYATTRIBUTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDisplayAttributeInfo*, TF_DISPLAYATTRIBUTE*, int> SetAttributeInfo;
+        public delegate* unmanaged<TSelf*, TF_DISPLAYATTRIBUTE*, int> SetAttributeInfo;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDisplayAttributeInfo*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
     }
 }

@@ -252,78 +252,79 @@ public unsafe partial struct IMarkupPointer : IMarkupPointer.Interface
         HRESULT FindTextW([NativeTypeName("OLECHAR *")] ushort* pchFindText, [NativeTypeName("DWORD")] uint dwFlags, IMarkupPointer* pIEndMatch, IMarkupPointer* pIEndSearch);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IHTMLDocument2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, IHTMLDocument2**, int> OwningDoc;
+        public delegate* unmanaged<TSelf*, IHTMLDocument2**, int> OwningDoc;
 
         [NativeTypeName("HRESULT (POINTER_GRAVITY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, POINTER_GRAVITY*, int> Gravity;
+        public delegate* unmanaged<TSelf*, POINTER_GRAVITY*, int> Gravity;
 
         [NativeTypeName("HRESULT (POINTER_GRAVITY) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, POINTER_GRAVITY, int> SetGravity;
+        public delegate* unmanaged<TSelf*, POINTER_GRAVITY, int> SetGravity;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, BOOL*, int> Cling;
+        public delegate* unmanaged<TSelf*, BOOL*, int> Cling;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, BOOL, int> SetCling;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetCling;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, int> Unposition;
+        public delegate* unmanaged<TSelf*, int> Unposition;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, BOOL*, int> IsPositioned;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsPositioned;
 
         [NativeTypeName("HRESULT (IMarkupContainer **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, IMarkupContainer**, int> GetContainer;
+        public delegate* unmanaged<TSelf*, IMarkupContainer**, int> GetContainer;
 
         [NativeTypeName("HRESULT (IHTMLElement *, ELEMENT_ADJACENCY) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, IHTMLElement*, ELEMENT_ADJACENCY, int> MoveAdjacentToElement;
+        public delegate* unmanaged<TSelf*, IHTMLElement*, ELEMENT_ADJACENCY, int> MoveAdjacentToElement;
 
         [NativeTypeName("HRESULT (IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, IMarkupPointer*, int> MoveToPointer;
+        public delegate* unmanaged<TSelf*, IMarkupPointer*, int> MoveToPointer;
 
         [NativeTypeName("HRESULT (IMarkupContainer *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, IMarkupContainer*, BOOL, int> MoveToContainer;
+        public delegate* unmanaged<TSelf*, IMarkupContainer*, BOOL, int> MoveToContainer;
 
         [NativeTypeName("HRESULT (BOOL, MARKUP_CONTEXT_TYPE *, IHTMLElement **, long *, OLECHAR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, ushort*, int> Left;
+        public delegate* unmanaged<TSelf*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, ushort*, int> Left;
 
         [NativeTypeName("HRESULT (BOOL, MARKUP_CONTEXT_TYPE *, IHTMLElement **, long *, OLECHAR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, ushort*, int> Right;
+        public delegate* unmanaged<TSelf*, BOOL, MARKUP_CONTEXT_TYPE*, IHTMLElement**, int*, ushort*, int> Right;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, IHTMLElement**, int> CurrentScope;
+        public delegate* unmanaged<TSelf*, IHTMLElement**, int> CurrentScope;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, IMarkupPointer*, BOOL*, int> IsLeftOf;
+        public delegate* unmanaged<TSelf*, IMarkupPointer*, BOOL*, int> IsLeftOf;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, IMarkupPointer*, BOOL*, int> IsLeftOfOrEqualTo;
+        public delegate* unmanaged<TSelf*, IMarkupPointer*, BOOL*, int> IsLeftOfOrEqualTo;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, IMarkupPointer*, BOOL*, int> IsRightOf;
+        public delegate* unmanaged<TSelf*, IMarkupPointer*, BOOL*, int> IsRightOf;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, IMarkupPointer*, BOOL*, int> IsRightOfOrEqualTo;
+        public delegate* unmanaged<TSelf*, IMarkupPointer*, BOOL*, int> IsRightOfOrEqualTo;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, IMarkupPointer*, BOOL*, int> IsEqualTo;
+        public delegate* unmanaged<TSelf*, IMarkupPointer*, BOOL*, int> IsEqualTo;
 
         [NativeTypeName("HRESULT (MOVEUNIT_ACTION) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, MOVEUNIT_ACTION, int> MoveUnit;
+        public delegate* unmanaged<TSelf*, MOVEUNIT_ACTION, int> MoveUnit;
 
         [NativeTypeName("HRESULT (OLECHAR *, DWORD, IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMarkupPointer*, ushort*, uint, IMarkupPointer*, IMarkupPointer*, int> FindTextW;
+        public delegate* unmanaged<TSelf*, ushort*, uint, IMarkupPointer*, IMarkupPointer*, int> FindTextW;
     }
 }

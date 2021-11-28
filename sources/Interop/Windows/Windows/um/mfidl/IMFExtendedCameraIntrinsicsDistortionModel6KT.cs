@@ -62,21 +62,22 @@ public unsafe partial struct IMFExtendedCameraIntrinsicsDistortionModel6KT : IMF
         HRESULT SetDistortionModel([NativeTypeName("const MFCameraIntrinsic_DistortionModel6KT *")] MFCameraIntrinsic_DistortionModel6KT* pDistortionModel);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModel6KT*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModel6KT*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModel6KT*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MFCameraIntrinsic_DistortionModel6KT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModel6KT*, MFCameraIntrinsic_DistortionModel6KT*, int> GetDistortionModel;
+        public delegate* unmanaged<TSelf*, MFCameraIntrinsic_DistortionModel6KT*, int> GetDistortionModel;
 
         [NativeTypeName("HRESULT (const MFCameraIntrinsic_DistortionModel6KT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFExtendedCameraIntrinsicsDistortionModel6KT*, MFCameraIntrinsic_DistortionModel6KT*, int> SetDistortionModel;
+        public delegate* unmanaged<TSelf*, MFCameraIntrinsic_DistortionModel6KT*, int> SetDistortionModel;
     }
 }

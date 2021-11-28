@@ -90,33 +90,34 @@ public unsafe partial struct IHTMLElementAppliedStyles : IHTMLElementAppliedStyl
         HRESULT msGetRulesAppliedWithAncestor(VARIANT varContext, IRulesAppliedCollection** ppRulesAppliedCollection);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementAppliedStyles*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementAppliedStyles*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementAppliedStyles*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementAppliedStyles*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementAppliedStyles*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementAppliedStyles*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementAppliedStyles*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IRulesAppliedCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementAppliedStyles*, IRulesAppliedCollection**, int> msGetRulesApplied;
+        public delegate* unmanaged<TSelf*, IRulesAppliedCollection**, int> msGetRulesApplied;
 
         [NativeTypeName("HRESULT (VARIANT, IRulesAppliedCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementAppliedStyles*, VARIANT, IRulesAppliedCollection**, int> msGetRulesAppliedWithAncestor;
+        public delegate* unmanaged<TSelf*, VARIANT, IRulesAppliedCollection**, int> msGetRulesAppliedWithAncestor;
     }
 }

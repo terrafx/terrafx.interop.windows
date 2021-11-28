@@ -200,66 +200,67 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface
         HRESULT Render();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinInfo*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinInfo*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinInfo*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinInfo*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinInfo*, IUnknown**, int> get_Pin;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> get_Pin;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinInfo*, IDispatch**, int> get_ConnectedTo;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_ConnectedTo;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinInfo*, IDispatch**, int> get_ConnectionMediaType;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_ConnectionMediaType;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinInfo*, IDispatch**, int> get_FilterInfo;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_FilterInfo;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinInfo*, ushort**, int> get_Name;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_Name;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinInfo*, int*, int> get_Direction;
+        public delegate* unmanaged<TSelf*, int*, int> get_Direction;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinInfo*, ushort**, int> get_PinID;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_PinID;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinInfo*, IDispatch**, int> get_MediaTypes;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_MediaTypes;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinInfo*, IUnknown*, int> Connect;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> Connect;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinInfo*, IUnknown*, int> ConnectDirect;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> ConnectDirect;
 
         [NativeTypeName("HRESULT (IUnknown *, IDispatch *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinInfo*, IUnknown*, IDispatch*, int> ConnectWithType;
+        public delegate* unmanaged<TSelf*, IUnknown*, IDispatch*, int> ConnectWithType;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinInfo*, int> Disconnect;
+        public delegate* unmanaged<TSelf*, int> Disconnect;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPinInfo*, int> Render;
+        public delegate* unmanaged<TSelf*, int> Render;
     }
 }

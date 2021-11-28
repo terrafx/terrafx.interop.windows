@@ -139,54 +139,55 @@ public unsafe partial struct ID3D12Resource1 : ID3D12Resource1.Interface
         HRESULT GetProtectedResourceSession([NativeTypeName("const IID &")] Guid* riid, void** ppProtectedSession);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Resource1*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Resource1*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Resource1*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Resource1*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Resource1*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Resource1*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Resource1*, ushort*, int> SetName;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetName;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Resource1*, Guid*, void**, int> GetDevice;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDevice;
 
         [NativeTypeName("HRESULT (UINT, const D3D12_RANGE *, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Resource1*, uint, D3D12_RANGE*, void**, int> Map;
+        public delegate* unmanaged<TSelf*, uint, D3D12_RANGE*, void**, int> Map;
 
         [NativeTypeName("void (UINT, const D3D12_RANGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Resource1*, uint, D3D12_RANGE*, void> Unmap;
+        public delegate* unmanaged<TSelf*, uint, D3D12_RANGE*, void> Unmap;
 
         [NativeTypeName("D3D12_RESOURCE_DESC () __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID3D12Resource1*, D3D12_RESOURCE_DESC*, D3D12_RESOURCE_DESC*> GetDesc;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D3D12_RESOURCE_DESC*, D3D12_RESOURCE_DESC*> GetDesc;
 
         [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS () __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID3D12Resource1*, ulong> GetGPUVirtualAddress;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, ulong> GetGPUVirtualAddress;
 
         [NativeTypeName("HRESULT (UINT, const D3D12_BOX *, const void *, UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Resource1*, uint, D3D12_BOX*, void*, uint, uint, int> WriteToSubresource;
+        public delegate* unmanaged<TSelf*, uint, D3D12_BOX*, void*, uint, uint, int> WriteToSubresource;
 
         [NativeTypeName("HRESULT (void *, UINT, UINT, UINT, const D3D12_BOX *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Resource1*, void*, uint, uint, uint, D3D12_BOX*, int> ReadFromSubresource;
+        public delegate* unmanaged<TSelf*, void*, uint, uint, uint, D3D12_BOX*, int> ReadFromSubresource;
 
         [NativeTypeName("HRESULT (D3D12_HEAP_PROPERTIES *, D3D12_HEAP_FLAGS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Resource1*, D3D12_HEAP_PROPERTIES*, D3D12_HEAP_FLAGS*, int> GetHeapProperties;
+        public delegate* unmanaged<TSelf*, D3D12_HEAP_PROPERTIES*, D3D12_HEAP_FLAGS*, int> GetHeapProperties;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Resource1*, Guid*, void**, int> GetProtectedResourceSession;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetProtectedResourceSession;
     }
 }

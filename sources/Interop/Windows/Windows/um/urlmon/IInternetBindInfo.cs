@@ -62,21 +62,22 @@ public unsafe partial struct IInternetBindInfo : IInternetBindInfo.Interface
         HRESULT GetBindString([NativeTypeName("ULONG")] uint ulStringType, [NativeTypeName("LPOLESTR *")] ushort** ppwzStr, [NativeTypeName("ULONG")] uint cEl, [NativeTypeName("ULONG *")] uint* pcElFetched);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetBindInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetBindInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetBindInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *, BINDINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetBindInfo*, uint*, BINDINFO*, int> GetBindInfo;
+        public delegate* unmanaged<TSelf*, uint*, BINDINFO*, int> GetBindInfo;
 
         [NativeTypeName("HRESULT (ULONG, LPOLESTR *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetBindInfo*, uint, ushort**, uint, uint*, int> GetBindString;
+        public delegate* unmanaged<TSelf*, uint, ushort**, uint, uint*, int> GetBindString;
     }
 }

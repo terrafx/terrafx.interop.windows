@@ -72,24 +72,25 @@ public unsafe partial struct IAppxManifestHostRuntimeDependency : IAppxManifestH
         HRESULT GetMinVersion([NativeTypeName("UINT64 *")] ulong* minVersion);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestHostRuntimeDependency*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestHostRuntimeDependency*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestHostRuntimeDependency*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestHostRuntimeDependency*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestHostRuntimeDependency*, ushort**, int> GetPublisher;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetPublisher;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestHostRuntimeDependency*, ulong*, int> GetMinVersion;
+        public delegate* unmanaged<TSelf*, ulong*, int> GetMinVersion;
     }
 }

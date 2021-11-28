@@ -120,42 +120,43 @@ public unsafe partial struct IOleParentUndoUnit : IOleParentUndoUnit.Interface
         HRESULT GetParentState([NativeTypeName("DWORD *")] uint* pdwState);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleParentUndoUnit*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleParentUndoUnit*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleParentUndoUnit*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IOleUndoManager *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleParentUndoUnit*, IOleUndoManager*, int> Do;
+        public delegate* unmanaged<TSelf*, IOleUndoManager*, int> Do;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleParentUndoUnit*, ushort**, int> GetDescription;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDescription;
 
         [NativeTypeName("HRESULT (CLSID *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleParentUndoUnit*, Guid*, int*, int> GetUnitType;
+        public delegate* unmanaged<TSelf*, Guid*, int*, int> GetUnitType;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleParentUndoUnit*, int> OnNextAdd;
+        public delegate* unmanaged<TSelf*, int> OnNextAdd;
 
         [NativeTypeName("HRESULT (IOleParentUndoUnit *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleParentUndoUnit*, IOleParentUndoUnit*, int> Open;
+        public delegate* unmanaged<TSelf*, IOleParentUndoUnit*, int> Open;
 
         [NativeTypeName("HRESULT (IOleParentUndoUnit *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleParentUndoUnit*, IOleParentUndoUnit*, BOOL, int> Close;
+        public delegate* unmanaged<TSelf*, IOleParentUndoUnit*, BOOL, int> Close;
 
         [NativeTypeName("HRESULT (IOleUndoUnit *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleParentUndoUnit*, IOleUndoUnit*, int> Add;
+        public delegate* unmanaged<TSelf*, IOleUndoUnit*, int> Add;
 
         [NativeTypeName("HRESULT (IOleUndoUnit *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleParentUndoUnit*, IOleUndoUnit*, int> FindUnit;
+        public delegate* unmanaged<TSelf*, IOleUndoUnit*, int> FindUnit;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleParentUndoUnit*, uint*, int> GetParentState;
+        public delegate* unmanaged<TSelf*, uint*, int> GetParentState;
     }
 }

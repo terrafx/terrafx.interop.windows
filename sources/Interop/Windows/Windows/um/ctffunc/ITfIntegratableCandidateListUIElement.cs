@@ -94,30 +94,31 @@ public unsafe partial struct ITfIntegratableCandidateListUIElement : ITfIntegrat
         HRESULT FinalizeExactCompositionString();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfIntegratableCandidateListUIElement*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfIntegratableCandidateListUIElement*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfIntegratableCandidateListUIElement*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (GUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfIntegratableCandidateListUIElement*, Guid, int> SetIntegrationStyle;
+        public delegate* unmanaged<TSelf*, Guid, int> SetIntegrationStyle;
 
         [NativeTypeName("HRESULT (TfIntegratableCandidateListSelectionStyle *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfIntegratableCandidateListUIElement*, TfIntegratableCandidateListSelectionStyle*, int> GetSelectionStyle;
+        public delegate* unmanaged<TSelf*, TfIntegratableCandidateListSelectionStyle*, int> GetSelectionStyle;
 
         [NativeTypeName("HRESULT (WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfIntegratableCandidateListUIElement*, WPARAM, LPARAM, BOOL*, int> OnKeyDown;
+        public delegate* unmanaged<TSelf*, WPARAM, LPARAM, BOOL*, int> OnKeyDown;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfIntegratableCandidateListUIElement*, BOOL*, int> ShowCandidateNumbers;
+        public delegate* unmanaged<TSelf*, BOOL*, int> ShowCandidateNumbers;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfIntegratableCandidateListUIElement*, int> FinalizeExactCompositionString;
+        public delegate* unmanaged<TSelf*, int> FinalizeExactCompositionString;
     }
 }

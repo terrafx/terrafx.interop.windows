@@ -77,27 +77,28 @@ public unsafe partial struct IVMRImagePresenterExclModeConfig : IVMRImagePresent
         HRESULT GetXlcModeDDObjAndPrimarySurface([NativeTypeName("LPDIRECTDRAW7 *")] IDirectDraw7** lpDDObj, [NativeTypeName("LPDIRECTDRAWSURFACE7 *")] IDirectDrawSurface7** lpPrimarySurf);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRImagePresenterExclModeConfig*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRImagePresenterExclModeConfig*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRImagePresenterExclModeConfig*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRImagePresenterExclModeConfig*, uint, int> SetRenderingPrefs;
+        public delegate* unmanaged<TSelf*, uint, int> SetRenderingPrefs;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRImagePresenterExclModeConfig*, uint*, int> GetRenderingPrefs;
+        public delegate* unmanaged<TSelf*, uint*, int> GetRenderingPrefs;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAW7, LPDIRECTDRAWSURFACE7) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRImagePresenterExclModeConfig*, IDirectDraw7*, IDirectDrawSurface7*, int> SetXlcModeDDObjAndPrimarySurface;
+        public delegate* unmanaged<TSelf*, IDirectDraw7*, IDirectDrawSurface7*, int> SetXlcModeDDObjAndPrimarySurface;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAW7 *, LPDIRECTDRAWSURFACE7 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRImagePresenterExclModeConfig*, IDirectDraw7**, IDirectDrawSurface7**, int> GetXlcModeDDObjAndPrimarySurface;
+        public delegate* unmanaged<TSelf*, IDirectDraw7**, IDirectDrawSurface7**, int> GetXlcModeDDObjAndPrimarySurface;
     }
 }

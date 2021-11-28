@@ -150,48 +150,49 @@ public unsafe partial struct IDCompositionBrightnessEffect : IDCompositionBright
         HRESULT SetBlackPointY(float blackPointY);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionBrightnessEffect*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionBrightnessEffect*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionBrightnessEffect*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionBrightnessEffect*, uint, IUnknown*, uint, int> SetInput;
+        public delegate* unmanaged<TSelf*, uint, IUnknown*, uint, int> SetInput;
 
         [NativeTypeName("HRESULT (const D2D1_VECTOR_2F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionBrightnessEffect*, D2D_VECTOR_2F*, int> SetWhitePoint;
+        public delegate* unmanaged<TSelf*, D2D_VECTOR_2F*, int> SetWhitePoint;
 
         [NativeTypeName("HRESULT (const D2D1_VECTOR_2F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionBrightnessEffect*, D2D_VECTOR_2F*, int> SetBlackPoint;
+        public delegate* unmanaged<TSelf*, D2D_VECTOR_2F*, int> SetBlackPoint;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionBrightnessEffect*, IDCompositionAnimation*, int> SetWhitePointX;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetWhitePointX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionBrightnessEffect*, float, int> SetWhitePointX1;
+        public delegate* unmanaged<TSelf*, float, int> SetWhitePointX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionBrightnessEffect*, IDCompositionAnimation*, int> SetWhitePointY;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetWhitePointY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionBrightnessEffect*, float, int> SetWhitePointY1;
+        public delegate* unmanaged<TSelf*, float, int> SetWhitePointY1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionBrightnessEffect*, IDCompositionAnimation*, int> SetBlackPointX;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetBlackPointX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionBrightnessEffect*, float, int> SetBlackPointX1;
+        public delegate* unmanaged<TSelf*, float, int> SetBlackPointX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionBrightnessEffect*, IDCompositionAnimation*, int> SetBlackPointY;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetBlackPointY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionBrightnessEffect*, float, int> SetBlackPointY1;
+        public delegate* unmanaged<TSelf*, float, int> SetBlackPointY1;
     }
 }

@@ -72,24 +72,25 @@ public unsafe partial struct IMFRateSupport : IMFRateSupport.Interface
         HRESULT IsRateSupported(BOOL fThin, float flRate, float* pflNearestSupportedRate);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRateSupport*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRateSupport*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRateSupport*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MFRATE_DIRECTION, BOOL, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRateSupport*, MFRATE_DIRECTION, BOOL, float*, int> GetSlowestRate;
+        public delegate* unmanaged<TSelf*, MFRATE_DIRECTION, BOOL, float*, int> GetSlowestRate;
 
         [NativeTypeName("HRESULT (MFRATE_DIRECTION, BOOL, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRateSupport*, MFRATE_DIRECTION, BOOL, float*, int> GetFastestRate;
+        public delegate* unmanaged<TSelf*, MFRATE_DIRECTION, BOOL, float*, int> GetFastestRate;
 
         [NativeTypeName("HRESULT (BOOL, float, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRateSupport*, BOOL, float, float*, int> IsRateSupported;
+        public delegate* unmanaged<TSelf*, BOOL, float, float*, int> IsRateSupported;
     }
 }

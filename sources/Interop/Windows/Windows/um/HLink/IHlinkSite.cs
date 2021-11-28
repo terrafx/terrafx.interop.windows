@@ -82,27 +82,28 @@ public unsafe partial struct IHlinkSite : IHlinkSite.Interface
         HRESULT OnNavigationComplete([NativeTypeName("DWORD")] uint dwSiteData, [NativeTypeName("DWORD")] uint dwreserved, HRESULT hrError, [NativeTypeName("LPCWSTR")] ushort* pwzError);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkSite*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkSite*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkSite*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, const GUID &, const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkSite*, uint, Guid*, Guid*, IUnknown**, int> QueryService;
+        public delegate* unmanaged<TSelf*, uint, Guid*, Guid*, IUnknown**, int> QueryService;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD, IMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkSite*, uint, uint, uint, IMoniker**, int> GetMoniker;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, IMoniker**, int> GetMoniker;
 
         [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkSite*, uint, uint, int> ReadyToNavigate;
+        public delegate* unmanaged<TSelf*, uint, uint, int> ReadyToNavigate;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, HRESULT, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHlinkSite*, uint, uint, HRESULT, ushort*, int> OnNavigationComplete;
+        public delegate* unmanaged<TSelf*, uint, uint, HRESULT, ushort*, int> OnNavigationComplete;
     }
 }

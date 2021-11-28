@@ -82,27 +82,28 @@ public unsafe partial struct IPropertySetStorage : IPropertySetStorage.Interface
         HRESULT Enum(IEnumSTATPROPSETSTG** ppenum);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertySetStorage*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertySetStorage*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertySetStorage*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, const CLSID *, DWORD, DWORD, IPropertyStorage **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertySetStorage*, Guid*, Guid*, uint, uint, IPropertyStorage**, int> Create;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, uint, uint, IPropertyStorage**, int> Create;
 
         [NativeTypeName("HRESULT (const IID &, DWORD, IPropertyStorage **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertySetStorage*, Guid*, uint, IPropertyStorage**, int> Open;
+        public delegate* unmanaged<TSelf*, Guid*, uint, IPropertyStorage**, int> Open;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertySetStorage*, Guid*, int> Delete;
+        public delegate* unmanaged<TSelf*, Guid*, int> Delete;
 
         [NativeTypeName("HRESULT (IEnumSTATPROPSETSTG **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertySetStorage*, IEnumSTATPROPSETSTG**, int> Enum;
+        public delegate* unmanaged<TSelf*, IEnumSTATPROPSETSTG**, int> Enum;
     }
 }

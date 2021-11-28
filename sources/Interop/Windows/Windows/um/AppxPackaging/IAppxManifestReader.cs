@@ -134,42 +134,43 @@ public unsafe partial struct IAppxManifestReader : IAppxManifestReader.Interface
         HRESULT GetStream(IStream** manifestStream);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestReader*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestReader*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestReader*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxManifestPackageId **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestReader*, IAppxManifestPackageId**, int> GetPackageId;
+        public delegate* unmanaged<TSelf*, IAppxManifestPackageId**, int> GetPackageId;
 
         [NativeTypeName("HRESULT (IAppxManifestProperties **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestReader*, IAppxManifestProperties**, int> GetProperties;
+        public delegate* unmanaged<TSelf*, IAppxManifestProperties**, int> GetProperties;
 
         [NativeTypeName("HRESULT (IAppxManifestPackageDependenciesEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestReader*, IAppxManifestPackageDependenciesEnumerator**, int> GetPackageDependencies;
+        public delegate* unmanaged<TSelf*, IAppxManifestPackageDependenciesEnumerator**, int> GetPackageDependencies;
 
         [NativeTypeName("HRESULT (APPX_CAPABILITIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestReader*, APPX_CAPABILITIES*, int> GetCapabilities;
+        public delegate* unmanaged<TSelf*, APPX_CAPABILITIES*, int> GetCapabilities;
 
         [NativeTypeName("HRESULT (IAppxManifestResourcesEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestReader*, IAppxManifestResourcesEnumerator**, int> GetResources;
+        public delegate* unmanaged<TSelf*, IAppxManifestResourcesEnumerator**, int> GetResources;
 
         [NativeTypeName("HRESULT (IAppxManifestDeviceCapabilitiesEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestReader*, IAppxManifestDeviceCapabilitiesEnumerator**, int> GetDeviceCapabilities;
+        public delegate* unmanaged<TSelf*, IAppxManifestDeviceCapabilitiesEnumerator**, int> GetDeviceCapabilities;
 
         [NativeTypeName("HRESULT (LPCWSTR, UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestReader*, ushort*, ulong*, int> GetPrerequisite;
+        public delegate* unmanaged<TSelf*, ushort*, ulong*, int> GetPrerequisite;
 
         [NativeTypeName("HRESULT (IAppxManifestApplicationsEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestReader*, IAppxManifestApplicationsEnumerator**, int> GetApplications;
+        public delegate* unmanaged<TSelf*, IAppxManifestApplicationsEnumerator**, int> GetApplications;
 
         [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestReader*, IStream**, int> GetStream;
+        public delegate* unmanaged<TSelf*, IStream**, int> GetStream;
     }
 }

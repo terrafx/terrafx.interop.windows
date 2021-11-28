@@ -72,24 +72,25 @@ public unsafe partial struct ISurfacePresenter : ISurfacePresenter.Interface
         HRESULT IsCurrent(BOOL* pIsCurrent);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfacePresenter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfacePresenter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfacePresenter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfacePresenter*, uint, RECT*, int> Present;
+        public delegate* unmanaged<TSelf*, uint, RECT*, int> Present;
 
         [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfacePresenter*, uint, Guid*, void**, int> GetBuffer;
+        public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> GetBuffer;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISurfacePresenter*, BOOL*, int> IsCurrent;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsCurrent;
     }
 }

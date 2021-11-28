@@ -99,33 +99,34 @@ public unsafe partial struct IViewObject : IViewObject.Interface
         HRESULT GetAdvise([NativeTypeName("DWORD *")] uint* pAspects, [NativeTypeName("DWORD *")] uint* pAdvf, IAdviseSink** ppAdvSink);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IViewObject*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IViewObject*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IViewObject*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, LONG, void *, DVTARGETDEVICE *, HDC, HDC, LPCRECTL, LPCRECTL, BOOL (*)(ULONG_PTR) __attribute__((stdcall)), ULONG_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IViewObject*, uint, int, void*, DVTARGETDEVICE*, HDC, HDC, RECTL*, RECTL*, delegate* unmanaged<nuint, BOOL>, nuint, int> Draw;
+        public delegate* unmanaged<TSelf*, uint, int, void*, DVTARGETDEVICE*, HDC, HDC, RECTL*, RECTL*, delegate* unmanaged<nuint, BOOL>, nuint, int> Draw;
 
         [NativeTypeName("HRESULT (DWORD, LONG, void *, DVTARGETDEVICE *, HDC, LOGPALETTE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IViewObject*, uint, int, void*, DVTARGETDEVICE*, HDC, LOGPALETTE**, int> GetColorSet;
+        public delegate* unmanaged<TSelf*, uint, int, void*, DVTARGETDEVICE*, HDC, LOGPALETTE**, int> GetColorSet;
 
         [NativeTypeName("HRESULT (DWORD, LONG, void *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IViewObject*, uint, int, void*, uint*, int> Freeze;
+        public delegate* unmanaged<TSelf*, uint, int, void*, uint*, int> Freeze;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IViewObject*, uint, int> Unfreeze;
+        public delegate* unmanaged<TSelf*, uint, int> Unfreeze;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, IAdviseSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IViewObject*, uint, uint, IAdviseSink*, int> SetAdvise;
+        public delegate* unmanaged<TSelf*, uint, uint, IAdviseSink*, int> SetAdvise;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *, IAdviseSink **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IViewObject*, uint*, uint*, IAdviseSink**, int> GetAdvise;
+        public delegate* unmanaged<TSelf*, uint*, uint*, IAdviseSink**, int> GetAdvise;
     }
 }

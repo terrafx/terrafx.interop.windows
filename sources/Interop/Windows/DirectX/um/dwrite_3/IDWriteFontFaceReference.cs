@@ -191,57 +191,58 @@ public unsafe partial struct IDWriteFontFaceReference : IDWriteFontFaceReference
         HRESULT EnqueueFileFragmentDownloadRequest([NativeTypeName("UINT64")] ulong fileOffset, [NativeTypeName("UINT64")] ulong fragmentSize);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDWriteFontFace3 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference*, IDWriteFontFace3**, int> CreateFontFace;
+        public delegate* unmanaged<TSelf*, IDWriteFontFace3**, int> CreateFontFace;
 
         [NativeTypeName("HRESULT (DWRITE_FONT_SIMULATIONS, IDWriteFontFace3 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference*, DWRITE_FONT_SIMULATIONS, IDWriteFontFace3**, int> CreateFontFaceWithSimulations;
+        public delegate* unmanaged<TSelf*, DWRITE_FONT_SIMULATIONS, IDWriteFontFace3**, int> CreateFontFaceWithSimulations;
 
         [NativeTypeName("BOOL (IDWriteFontFaceReference *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public new delegate* unmanaged<IDWriteFontFaceReference*, IDWriteFontFaceReference*, int> Equals;
+        public new delegate* unmanaged<TSelf*, IDWriteFontFaceReference*, int> Equals;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteFontFaceReference*, uint> GetFontFaceIndex;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetFontFaceIndex;
 
         [NativeTypeName("DWRITE_FONT_SIMULATIONS () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteFontFaceReference*, DWRITE_FONT_SIMULATIONS> GetSimulations;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_FONT_SIMULATIONS> GetSimulations;
 
         [NativeTypeName("HRESULT (IDWriteFontFile **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference*, IDWriteFontFile**, int> GetFontFile;
+        public delegate* unmanaged<TSelf*, IDWriteFontFile**, int> GetFontFile;
 
         [NativeTypeName("UINT64 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference*, ulong> GetLocalFileSize;
+        public delegate* unmanaged<TSelf*, ulong> GetLocalFileSize;
 
         [NativeTypeName("UINT64 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference*, ulong> GetFileSize;
+        public delegate* unmanaged<TSelf*, ulong> GetFileSize;
 
         [NativeTypeName("HRESULT (FILETIME *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference*, FILETIME*, int> GetFileTime;
+        public delegate* unmanaged<TSelf*, FILETIME*, int> GetFileTime;
 
         [NativeTypeName("DWRITE_LOCALITY () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference*, DWRITE_LOCALITY> GetLocality;
+        public delegate* unmanaged<TSelf*, DWRITE_LOCALITY> GetLocality;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference*, int> EnqueueFontDownloadRequest;
+        public delegate* unmanaged<TSelf*, int> EnqueueFontDownloadRequest;
 
         [NativeTypeName("HRESULT (const WCHAR *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference*, ushort*, uint, int> EnqueueCharacterDownloadRequest;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> EnqueueCharacterDownloadRequest;
 
         [NativeTypeName("HRESULT (const UINT16 *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference*, ushort*, uint, int> EnqueueGlyphDownloadRequest;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> EnqueueGlyphDownloadRequest;
 
         [NativeTypeName("HRESULT (UINT64, UINT64) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontFaceReference*, ulong, ulong, int> EnqueueFileFragmentDownloadRequest;
+        public delegate* unmanaged<TSelf*, ulong, ulong, int> EnqueueFileFragmentDownloadRequest;
     }
 }

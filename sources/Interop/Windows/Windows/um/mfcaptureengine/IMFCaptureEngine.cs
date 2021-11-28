@@ -124,39 +124,40 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface
         HRESULT GetSource(IMFCaptureSource** ppSource);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureEngine*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureEngine*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureEngine*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFCaptureEngineOnEventCallback *, IMFAttributes *, IUnknown *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureEngine*, IMFCaptureEngineOnEventCallback*, IMFAttributes*, IUnknown*, IUnknown*, int> Initialize;
+        public delegate* unmanaged<TSelf*, IMFCaptureEngineOnEventCallback*, IMFAttributes*, IUnknown*, IUnknown*, int> Initialize;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureEngine*, int> StartPreview;
+        public delegate* unmanaged<TSelf*, int> StartPreview;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureEngine*, int> StopPreview;
+        public delegate* unmanaged<TSelf*, int> StopPreview;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureEngine*, int> StartRecord;
+        public delegate* unmanaged<TSelf*, int> StartRecord;
 
         [NativeTypeName("HRESULT (BOOL, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureEngine*, BOOL, BOOL, int> StopRecord;
+        public delegate* unmanaged<TSelf*, BOOL, BOOL, int> StopRecord;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureEngine*, int> TakePhoto;
+        public delegate* unmanaged<TSelf*, int> TakePhoto;
 
         [NativeTypeName("HRESULT (MF_CAPTURE_ENGINE_SINK_TYPE, IMFCaptureSink **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureEngine*, MF_CAPTURE_ENGINE_SINK_TYPE, IMFCaptureSink**, int> GetSink;
+        public delegate* unmanaged<TSelf*, MF_CAPTURE_ENGINE_SINK_TYPE, IMFCaptureSink**, int> GetSink;
 
         [NativeTypeName("HRESULT (IMFCaptureSource **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCaptureEngine*, IMFCaptureSource**, int> GetSource;
+        public delegate* unmanaged<TSelf*, IMFCaptureSource**, int> GetSource;
     }
 }

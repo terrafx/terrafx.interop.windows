@@ -83,27 +83,28 @@ public unsafe partial struct IVMRSurface : IVMRSurface.Interface
         HRESULT GetSurface([NativeTypeName("LPDIRECTDRAWSURFACE7 *")] IDirectDrawSurface7** lplpSurface);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurface*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurface*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurface*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurface*, int> IsSurfaceLocked;
+        public delegate* unmanaged<TSelf*, int> IsSurfaceLocked;
 
         [NativeTypeName("HRESULT (BYTE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurface*, byte**, int> LockSurface;
+        public delegate* unmanaged<TSelf*, byte**, int> LockSurface;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurface*, int> UnlockSurface;
+        public delegate* unmanaged<TSelf*, int> UnlockSurface;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAWSURFACE7 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRSurface*, IDirectDrawSurface7**, int> GetSurface;
+        public delegate* unmanaged<TSelf*, IDirectDrawSurface7**, int> GetSurface;
     }
 }

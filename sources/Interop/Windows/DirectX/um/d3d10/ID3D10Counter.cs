@@ -109,42 +109,43 @@ public unsafe partial struct ID3D10Counter : ID3D10Counter.Interface
         void GetDesc(D3D10_COUNTER_DESC* pDesc);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10Counter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10Counter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10Counter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID3D10Device **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10Counter*, ID3D10Device**, void> GetDevice;
+        public delegate* unmanaged<TSelf*, ID3D10Device**, void> GetDevice;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10Counter*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10Counter*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10Counter*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10Counter*, void> Begin;
+        public delegate* unmanaged<TSelf*, void> Begin;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10Counter*, void> End;
+        public delegate* unmanaged<TSelf*, void> End;
 
         [NativeTypeName("HRESULT (void *, UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10Counter*, void*, uint, uint, int> GetData;
+        public delegate* unmanaged<TSelf*, void*, uint, uint, int> GetData;
 
         [NativeTypeName("UINT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10Counter*, uint> GetDataSize;
+        public delegate* unmanaged<TSelf*, uint> GetDataSize;
 
         [NativeTypeName("void (D3D10_COUNTER_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10Counter*, D3D10_COUNTER_DESC*, void> GetDesc;
+        public delegate* unmanaged<TSelf*, D3D10_COUNTER_DESC*, void> GetDesc;
     }
 }

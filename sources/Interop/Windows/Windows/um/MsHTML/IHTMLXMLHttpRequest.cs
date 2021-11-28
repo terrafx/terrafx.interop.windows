@@ -210,69 +210,70 @@ public unsafe partial struct IHTMLXMLHttpRequest : IHTMLXMLHttpRequest.Interface
         HRESULT setRequestHeader([NativeTypeName("BSTR")] ushort* bstrHeader, [NativeTypeName("BSTR")] ushort* bstrValue);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXMLHttpRequest*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXMLHttpRequest*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXMLHttpRequest*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXMLHttpRequest*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXMLHttpRequest*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXMLHttpRequest*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXMLHttpRequest*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXMLHttpRequest*, int*, int> get_readyState;
+        public delegate* unmanaged<TSelf*, int*, int> get_readyState;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXMLHttpRequest*, VARIANT*, int> get_responseBody;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_responseBody;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXMLHttpRequest*, ushort**, int> get_responseText;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_responseText;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXMLHttpRequest*, IDispatch**, int> get_responseXML;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_responseXML;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXMLHttpRequest*, int*, int> get_status;
+        public delegate* unmanaged<TSelf*, int*, int> get_status;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXMLHttpRequest*, ushort**, int> get_statusText;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_statusText;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXMLHttpRequest*, VARIANT, int> put_onreadystatechange;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onreadystatechange;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXMLHttpRequest*, VARIANT*, int> get_onreadystatechange;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onreadystatechange;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXMLHttpRequest*, int> abort;
+        public delegate* unmanaged<TSelf*, int> abort;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, VARIANT, VARIANT, VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXMLHttpRequest*, ushort*, ushort*, VARIANT, VARIANT, VARIANT, int> open;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, VARIANT, VARIANT, VARIANT, int> open;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXMLHttpRequest*, VARIANT, int> send;
+        public delegate* unmanaged<TSelf*, VARIANT, int> send;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXMLHttpRequest*, ushort**, int> getAllResponseHeaders;
+        public delegate* unmanaged<TSelf*, ushort**, int> getAllResponseHeaders;
 
         [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXMLHttpRequest*, ushort*, ushort**, int> getResponseHeader;
+        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> getResponseHeader;
 
         [NativeTypeName("HRESULT (BSTR, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLXMLHttpRequest*, ushort*, ushort*, int> setRequestHeader;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> setRequestHeader;
     }
 }

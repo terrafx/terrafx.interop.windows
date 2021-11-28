@@ -63,21 +63,22 @@ public unsafe partial struct IXAudio2Extension : IXAudio2Extension.Interface
         void GetProcessor([NativeTypeName("XAUDIO2_PROCESSOR *")] uint* processor);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2Extension*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2Extension*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2Extension*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (UINT32 *, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2Extension*, uint*, uint*, void> GetProcessingQuantum;
+        public delegate* unmanaged<TSelf*, uint*, uint*, void> GetProcessingQuantum;
 
         [NativeTypeName("void (XAUDIO2_PROCESSOR *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2Extension*, uint*, void> GetProcessor;
+        public delegate* unmanaged<TSelf*, uint*, void> GetProcessor;
     }
 }

@@ -87,33 +87,34 @@ public unsafe partial struct IPropertyEnumType2 : IPropertyEnumType2.Interface
         HRESULT GetImageReference([NativeTypeName("LPWSTR *")] ushort** ppszImageRes);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyEnumType2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyEnumType2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyEnumType2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PROPENUMTYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyEnumType2*, PROPENUMTYPE*, int> GetEnumType;
+        public delegate* unmanaged<TSelf*, PROPENUMTYPE*, int> GetEnumType;
 
         [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyEnumType2*, PROPVARIANT*, int> GetValue;
+        public delegate* unmanaged<TSelf*, PROPVARIANT*, int> GetValue;
 
         [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyEnumType2*, PROPVARIANT*, int> GetRangeMinValue;
+        public delegate* unmanaged<TSelf*, PROPVARIANT*, int> GetRangeMinValue;
 
         [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyEnumType2*, PROPVARIANT*, int> GetRangeSetValue;
+        public delegate* unmanaged<TSelf*, PROPVARIANT*, int> GetRangeSetValue;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyEnumType2*, ushort**, int> GetDisplayText;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayText;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyEnumType2*, ushort**, int> GetImageReference;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetImageReference;
     }
 }

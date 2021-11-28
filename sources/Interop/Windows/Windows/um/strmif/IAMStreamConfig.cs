@@ -82,27 +82,28 @@ public unsafe partial struct IAMStreamConfig : IAMStreamConfig.Interface
         HRESULT GetStreamCaps(int iIndex, AM_MEDIA_TYPE** ppmt, byte* pSCC);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStreamConfig*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStreamConfig*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStreamConfig*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStreamConfig*, AM_MEDIA_TYPE*, int> SetFormat;
+        public delegate* unmanaged<TSelf*, AM_MEDIA_TYPE*, int> SetFormat;
 
         [NativeTypeName("HRESULT (AM_MEDIA_TYPE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStreamConfig*, AM_MEDIA_TYPE**, int> GetFormat;
+        public delegate* unmanaged<TSelf*, AM_MEDIA_TYPE**, int> GetFormat;
 
         [NativeTypeName("HRESULT (int *, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStreamConfig*, int*, int*, int> GetNumberOfCapabilities;
+        public delegate* unmanaged<TSelf*, int*, int*, int> GetNumberOfCapabilities;
 
         [NativeTypeName("HRESULT (int, AM_MEDIA_TYPE **, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStreamConfig*, int, AM_MEDIA_TYPE**, byte*, int> GetStreamCaps;
+        public delegate* unmanaged<TSelf*, int, AM_MEDIA_TYPE**, byte*, int> GetStreamCaps;
     }
 }

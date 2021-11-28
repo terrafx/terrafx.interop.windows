@@ -64,21 +64,22 @@ public unsafe partial struct IAppxManifestApplication : IAppxManifestApplication
         HRESULT GetAppUserModelId([NativeTypeName("LPWSTR *")] ushort** appUserModelId);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestApplication*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestApplication*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestApplication*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestApplication*, ushort*, ushort**, int> GetStringValue;
+        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> GetStringValue;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestApplication*, ushort**, int> GetAppUserModelId;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetAppUserModelId;
     }
 }

@@ -52,18 +52,19 @@ public unsafe partial struct IAccessibilityDockingServiceCallback : IAccessibili
         HRESULT Undocked(UNDOCK_REASON undockReason);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccessibilityDockingServiceCallback*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccessibilityDockingServiceCallback*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccessibilityDockingServiceCallback*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UNDOCK_REASON) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAccessibilityDockingServiceCallback*, UNDOCK_REASON, int> Undocked;
+        public delegate* unmanaged<TSelf*, UNDOCK_REASON, int> Undocked;
     }
 }

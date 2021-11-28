@@ -66,21 +66,22 @@ public unsafe partial struct IMFSourceBufferList : IMFSourceBufferList.Interface
         IMFSourceBuffer* GetSourceBuffer([NativeTypeName("DWORD")] uint index);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBufferList*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBufferList*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBufferList*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("DWORD () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBufferList*, uint> GetLength;
+        public delegate* unmanaged<TSelf*, uint> GetLength;
 
         [NativeTypeName("IMFSourceBuffer *(DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBufferList*, uint, IMFSourceBuffer*> GetSourceBuffer;
+        public delegate* unmanaged<TSelf*, uint, IMFSourceBuffer*> GetSourceBuffer;
     }
 }

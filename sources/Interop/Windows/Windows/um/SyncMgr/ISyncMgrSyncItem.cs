@@ -122,39 +122,40 @@ public unsafe partial struct ISyncMgrSyncItem : ISyncMgrSyncItem.Interface
         HRESULT Delete();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncItem*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncItem*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncItem*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncItem*, ushort**, int> GetItemID;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetItemID;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncItem*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
 
         [NativeTypeName("HRESULT (ISyncMgrSyncItemInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncItem*, ISyncMgrSyncItemInfo**, int> GetItemInfo;
+        public delegate* unmanaged<TSelf*, ISyncMgrSyncItemInfo**, int> GetItemInfo;
 
         [NativeTypeName("HRESULT (const GUID &, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncItem*, Guid*, Guid*, void**, int> GetObjectW;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, void**, int> GetObjectW;
 
         [NativeTypeName("HRESULT (SYNCMGR_ITEM_CAPABILITIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncItem*, SYNCMGR_ITEM_CAPABILITIES*, int> GetCapabilities;
+        public delegate* unmanaged<TSelf*, SYNCMGR_ITEM_CAPABILITIES*, int> GetCapabilities;
 
         [NativeTypeName("HRESULT (SYNCMGR_ITEM_POLICIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncItem*, SYNCMGR_ITEM_POLICIES*, int> GetPolicies;
+        public delegate* unmanaged<TSelf*, SYNCMGR_ITEM_POLICIES*, int> GetPolicies;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncItem*, BOOL, int> Enable;
+        public delegate* unmanaged<TSelf*, BOOL, int> Enable;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrSyncItem*, int> Delete;
+        public delegate* unmanaged<TSelf*, int> Delete;
     }
 }

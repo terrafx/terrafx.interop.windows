@@ -66,21 +66,22 @@ public unsafe partial struct IExternalConnection : IExternalConnection.Interface
         uint ReleaseConnection([NativeTypeName("DWORD")] uint extconn, [NativeTypeName("DWORD")] uint reserved, BOOL fLastReleaseCloses);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExternalConnection*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExternalConnection*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExternalConnection*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("DWORD (DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExternalConnection*, uint, uint, uint> AddConnection;
+        public delegate* unmanaged<TSelf*, uint, uint, uint> AddConnection;
 
         [NativeTypeName("DWORD (DWORD, DWORD, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExternalConnection*, uint, uint, BOOL, uint> ReleaseConnection;
+        public delegate* unmanaged<TSelf*, uint, uint, BOOL, uint> ReleaseConnection;
     }
 }

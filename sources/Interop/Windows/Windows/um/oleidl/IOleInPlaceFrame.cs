@@ -144,51 +144,52 @@ public unsafe partial struct IOleInPlaceFrame : IOleInPlaceFrame.Interface
         HRESULT TranslateAccelerator([NativeTypeName("LPMSG")] MSG* lpmsg, [NativeTypeName("WORD")] ushort wID);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceFrame*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceFrame*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceFrame*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceFrame*, HWND*, int> GetWindow;
+        public delegate* unmanaged<TSelf*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceFrame*, BOOL, int> ContextSensitiveHelp;
+        public delegate* unmanaged<TSelf*, BOOL, int> ContextSensitiveHelp;
 
         [NativeTypeName("HRESULT (LPRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceFrame*, RECT*, int> GetBorder;
+        public delegate* unmanaged<TSelf*, RECT*, int> GetBorder;
 
         [NativeTypeName("HRESULT (LPCBORDERWIDTHS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceFrame*, RECT*, int> RequestBorderSpace;
+        public delegate* unmanaged<TSelf*, RECT*, int> RequestBorderSpace;
 
         [NativeTypeName("HRESULT (LPCBORDERWIDTHS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceFrame*, RECT*, int> SetBorderSpace;
+        public delegate* unmanaged<TSelf*, RECT*, int> SetBorderSpace;
 
         [NativeTypeName("HRESULT (IOleInPlaceActiveObject *, LPCOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceFrame*, IOleInPlaceActiveObject*, ushort*, int> SetActiveObject;
+        public delegate* unmanaged<TSelf*, IOleInPlaceActiveObject*, ushort*, int> SetActiveObject;
 
         [NativeTypeName("HRESULT (HMENU, LPOLEMENUGROUPWIDTHS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceFrame*, HMENU, OLEMENUGROUPWIDTHS*, int> InsertMenus;
+        public delegate* unmanaged<TSelf*, HMENU, OLEMENUGROUPWIDTHS*, int> InsertMenus;
 
         [NativeTypeName("HRESULT (HMENU, HOLEMENU, HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceFrame*, HMENU, HGLOBAL, HWND, int> SetMenu;
+        public delegate* unmanaged<TSelf*, HMENU, HGLOBAL, HWND, int> SetMenu;
 
         [NativeTypeName("HRESULT (HMENU) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceFrame*, HMENU, int> RemoveMenus;
+        public delegate* unmanaged<TSelf*, HMENU, int> RemoveMenus;
 
         [NativeTypeName("HRESULT (LPCOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceFrame*, ushort*, int> SetStatusText;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetStatusText;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceFrame*, BOOL, int> EnableModeless;
+        public delegate* unmanaged<TSelf*, BOOL, int> EnableModeless;
 
         [NativeTypeName("HRESULT (LPMSG, WORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceFrame*, MSG*, ushort, int> TranslateAccelerator;
+        public delegate* unmanaged<TSelf*, MSG*, ushort, int> TranslateAccelerator;
     }
 }

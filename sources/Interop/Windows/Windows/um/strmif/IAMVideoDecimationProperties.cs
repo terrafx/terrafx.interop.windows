@@ -62,21 +62,22 @@ public unsafe partial struct IAMVideoDecimationProperties : IAMVideoDecimationPr
         HRESULT SetDecimationUsage(DECIMATION_USAGE Usage);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoDecimationProperties*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoDecimationProperties*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoDecimationProperties*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DECIMATION_USAGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoDecimationProperties*, DECIMATION_USAGE*, int> QueryDecimationUsage;
+        public delegate* unmanaged<TSelf*, DECIMATION_USAGE*, int> QueryDecimationUsage;
 
         [NativeTypeName("HRESULT (DECIMATION_USAGE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMVideoDecimationProperties*, DECIMATION_USAGE, int> SetDecimationUsage;
+        public delegate* unmanaged<TSelf*, DECIMATION_USAGE, int> SetDecimationUsage;
     }
 }

@@ -102,33 +102,34 @@ public unsafe partial struct IPerChannelDbLevel : IPerChannelDbLevel.Interface
         HRESULT SetLevelAllChannels([NativeTypeName("float []")] float* aLevelsDB, [NativeTypeName("ULONG")] uint cChannels, [NativeTypeName("LPCGUID")] Guid* pguidEventContext);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPerChannelDbLevel*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPerChannelDbLevel*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPerChannelDbLevel*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPerChannelDbLevel*, uint*, int> GetChannelCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetChannelCount;
 
         [NativeTypeName("HRESULT (UINT, float *, float *, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPerChannelDbLevel*, uint, float*, float*, float*, int> GetLevelRange;
+        public delegate* unmanaged<TSelf*, uint, float*, float*, float*, int> GetLevelRange;
 
         [NativeTypeName("HRESULT (UINT, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPerChannelDbLevel*, uint, float*, int> GetLevel;
+        public delegate* unmanaged<TSelf*, uint, float*, int> GetLevel;
 
         [NativeTypeName("HRESULT (UINT, float, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPerChannelDbLevel*, uint, float, Guid*, int> SetLevel;
+        public delegate* unmanaged<TSelf*, uint, float, Guid*, int> SetLevel;
 
         [NativeTypeName("HRESULT (float, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPerChannelDbLevel*, float, Guid*, int> SetLevelUniform;
+        public delegate* unmanaged<TSelf*, float, Guid*, int> SetLevelUniform;
 
         [NativeTypeName("HRESULT (float *, ULONG, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPerChannelDbLevel*, float*, uint, Guid*, int> SetLevelAllChannels;
+        public delegate* unmanaged<TSelf*, float*, uint, Guid*, int> SetLevelAllChannels;
     }
 }

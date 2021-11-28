@@ -52,18 +52,19 @@ public unsafe partial struct IAMPhysicalPinInfo : IAMPhysicalPinInfo.Interface
         HRESULT GetPhysicalType([NativeTypeName("long *")] int* pType, [NativeTypeName("LPOLESTR *")] ushort** ppszType);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPhysicalPinInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPhysicalPinInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPhysicalPinInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long *, LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPhysicalPinInfo*, int*, ushort**, int> GetPhysicalType;
+        public delegate* unmanaged<TSelf*, int*, ushort**, int> GetPhysicalType;
     }
 }

@@ -52,18 +52,19 @@ public unsafe partial struct IUIAnimationTransitionFactory2 : IUIAnimationTransi
         HRESULT CreateTransition(IUIAnimationInterpolator2* interpolator, IUIAnimationTransition2** transition);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransitionFactory2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransitionFactory2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransitionFactory2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUIAnimationInterpolator2 *, IUIAnimationTransition2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransitionFactory2*, IUIAnimationInterpolator2*, IUIAnimationTransition2**, int> CreateTransition;
+        public delegate* unmanaged<TSelf*, IUIAnimationInterpolator2*, IUIAnimationTransition2**, int> CreateTransition;
     }
 }

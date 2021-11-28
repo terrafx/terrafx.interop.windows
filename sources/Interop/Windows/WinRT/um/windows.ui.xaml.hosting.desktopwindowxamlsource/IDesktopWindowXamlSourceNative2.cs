@@ -69,24 +69,25 @@ public unsafe partial struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXam
         HRESULT PreTranslateMessage([NativeTypeName("const MSG *")] MSG* message, BOOL* result);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, HWND, int> AttachToWindow;
+        public delegate* unmanaged<TSelf*, HWND, int> AttachToWindow;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, HWND*, int> get_WindowHandle;
+        public delegate* unmanaged<TSelf*, HWND*, int> get_WindowHandle;
 
         [NativeTypeName("HRESULT (const MSG *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDesktopWindowXamlSourceNative2*, MSG*, BOOL*, int> PreTranslateMessage;
+        public delegate* unmanaged<TSelf*, MSG*, BOOL*, int> PreTranslateMessage;
     }
 }

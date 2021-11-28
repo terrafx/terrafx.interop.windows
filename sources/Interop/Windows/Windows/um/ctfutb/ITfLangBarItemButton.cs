@@ -120,42 +120,43 @@ public unsafe partial struct ITfLangBarItemButton : ITfLangBarItemButton.Interfa
         HRESULT GetText([NativeTypeName("BSTR *")] ushort** pbstrText);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarItemButton*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarItemButton*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarItemButton*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TF_LANGBARITEMINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarItemButton*, TF_LANGBARITEMINFO*, int> GetInfo;
+        public delegate* unmanaged<TSelf*, TF_LANGBARITEMINFO*, int> GetInfo;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarItemButton*, uint*, int> GetStatus;
+        public delegate* unmanaged<TSelf*, uint*, int> GetStatus;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarItemButton*, BOOL, int> Show;
+        public delegate* unmanaged<TSelf*, BOOL, int> Show;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarItemButton*, ushort**, int> GetTooltipString;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetTooltipString;
 
         [NativeTypeName("HRESULT (TfLBIClick, POINT, const RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarItemButton*, TfLBIClick, POINT, RECT*, int> OnClick;
+        public delegate* unmanaged<TSelf*, TfLBIClick, POINT, RECT*, int> OnClick;
 
         [NativeTypeName("HRESULT (ITfMenu *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarItemButton*, ITfMenu*, int> InitMenu;
+        public delegate* unmanaged<TSelf*, ITfMenu*, int> InitMenu;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarItemButton*, uint, int> OnMenuSelect;
+        public delegate* unmanaged<TSelf*, uint, int> OnMenuSelect;
 
         [NativeTypeName("HRESULT (HICON *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarItemButton*, HICON*, int> GetIcon;
+        public delegate* unmanaged<TSelf*, HICON*, int> GetIcon;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLangBarItemButton*, ushort**, int> GetText;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetText;
     }
 }

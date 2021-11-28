@@ -74,24 +74,25 @@ public unsafe partial struct IWICDdsFrameDecode : IWICDdsFrameDecode.Interface
         HRESULT CopyBlocks([NativeTypeName("const WICRect *")] WICRect* prcBoundsInBlocks, uint cbStride, uint cbBufferSize, byte* pbBuffer);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDdsFrameDecode*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDdsFrameDecode*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDdsFrameDecode*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDdsFrameDecode*, uint*, uint*, int> GetSizeInBlocks;
+        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetSizeInBlocks;
 
         [NativeTypeName("HRESULT (WICDdsFormatInfo *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDdsFrameDecode*, WICDdsFormatInfo*, int> GetFormatInfo;
+        public delegate* unmanaged<TSelf*, WICDdsFormatInfo*, int> GetFormatInfo;
 
         [NativeTypeName("HRESULT (const WICRect *, UINT, UINT, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDdsFrameDecode*, WICRect*, uint, uint, byte*, int> CopyBlocks;
+        public delegate* unmanaged<TSelf*, WICRect*, uint, uint, byte*, int> CopyBlocks;
     }
 }

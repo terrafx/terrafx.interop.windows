@@ -72,24 +72,25 @@ public unsafe partial struct IElementBehaviorSiteRender : IElementBehaviorSiteRe
         HRESULT InvalidateStyle();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSiteRender*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSiteRender*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSiteRender*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSiteRender*, RECT*, int> Invalidate;
+        public delegate* unmanaged<TSelf*, RECT*, int> Invalidate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSiteRender*, int> InvalidateRenderInfo;
+        public delegate* unmanaged<TSelf*, int> InvalidateRenderInfo;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementBehaviorSiteRender*, int> InvalidateStyle;
+        public delegate* unmanaged<TSelf*, int> InvalidateStyle;
     }
 }

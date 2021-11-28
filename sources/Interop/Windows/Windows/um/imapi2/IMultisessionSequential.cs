@@ -148,54 +148,55 @@ public unsafe partial struct IMultisessionSequential : IMultisessionSequential.I
         HRESULT get_FreeSectorsOnMedia([NativeTypeName("LONG *")] int* value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionSequential*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionSequential*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionSequential*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionSequential*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionSequential*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionSequential*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionSequential*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionSequential*, short*, int> get_IsSupportedOnCurrentMediaState;
+        public delegate* unmanaged<TSelf*, short*, int> get_IsSupportedOnCurrentMediaState;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionSequential*, short, int> put_InUse;
+        public delegate* unmanaged<TSelf*, short, int> put_InUse;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionSequential*, short*, int> get_InUse;
+        public delegate* unmanaged<TSelf*, short*, int> get_InUse;
 
         [NativeTypeName("HRESULT (IDiscRecorder2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionSequential*, IDiscRecorder2**, int> get_ImportRecorder;
+        public delegate* unmanaged<TSelf*, IDiscRecorder2**, int> get_ImportRecorder;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionSequential*, short*, int> get_IsFirstDataSession;
+        public delegate* unmanaged<TSelf*, short*, int> get_IsFirstDataSession;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionSequential*, int*, int> get_StartAddressOfPreviousSession;
+        public delegate* unmanaged<TSelf*, int*, int> get_StartAddressOfPreviousSession;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionSequential*, int*, int> get_LastWrittenAddressOfPreviousSession;
+        public delegate* unmanaged<TSelf*, int*, int> get_LastWrittenAddressOfPreviousSession;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionSequential*, int*, int> get_NextWritableAddress;
+        public delegate* unmanaged<TSelf*, int*, int> get_NextWritableAddress;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMultisessionSequential*, int*, int> get_FreeSectorsOnMedia;
+        public delegate* unmanaged<TSelf*, int*, int> get_FreeSectorsOnMedia;
     }
 }

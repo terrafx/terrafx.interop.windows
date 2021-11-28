@@ -75,24 +75,25 @@ public unsafe partial struct IDirectManipulationDeferContactService : IDirectMan
         HRESULT CancelDeferral([NativeTypeName("UINT32")] uint pointerId);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationDeferContactService*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationDeferContactService*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationDeferContactService*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationDeferContactService*, uint, uint, int> DeferContact;
+        public delegate* unmanaged<TSelf*, uint, uint, int> DeferContact;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationDeferContactService*, uint, int> CancelContact;
+        public delegate* unmanaged<TSelf*, uint, int> CancelContact;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectManipulationDeferContactService*, uint, int> CancelDeferral;
+        public delegate* unmanaged<TSelf*, uint, int> CancelDeferral;
     }
 }

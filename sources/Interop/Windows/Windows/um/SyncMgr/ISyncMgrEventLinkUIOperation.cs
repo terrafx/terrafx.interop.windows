@@ -59,21 +59,22 @@ public unsafe partial struct ISyncMgrEventLinkUIOperation : ISyncMgrEventLinkUIO
         HRESULT Init([NativeTypeName("const GUID &")] Guid* rguidEventID, ISyncMgrEvent* pEvent);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrEventLinkUIOperation*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrEventLinkUIOperation*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrEventLinkUIOperation*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrEventLinkUIOperation*, HWND, int> Run;
+        public delegate* unmanaged<TSelf*, HWND, int> Run;
 
         [NativeTypeName("HRESULT (const GUID &, ISyncMgrEvent *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISyncMgrEventLinkUIOperation*, Guid*, ISyncMgrEvent*, int> Init;
+        public delegate* unmanaged<TSelf*, Guid*, ISyncMgrEvent*, int> Init;
     }
 }

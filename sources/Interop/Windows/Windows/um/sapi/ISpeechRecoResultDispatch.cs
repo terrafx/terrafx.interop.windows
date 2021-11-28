@@ -200,66 +200,67 @@ public unsafe partial struct ISpeechRecoResultDispatch : ISpeechRecoResultDispat
         HRESULT SetTextFeedback([NativeTypeName("BSTR")] ushort* Feedback, [NativeTypeName("VARIANT_BOOL")] short WasSuccessful);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecoResultDispatch*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecoResultDispatch*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecoResultDispatch*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecoResultDispatch*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecoResultDispatch*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecoResultDispatch*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecoResultDispatch*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (ISpeechRecoContext **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecoResultDispatch*, ISpeechRecoContext**, int> get_RecoContext;
+        public delegate* unmanaged<TSelf*, ISpeechRecoContext**, int> get_RecoContext;
 
         [NativeTypeName("HRESULT (ISpeechRecoResultTimes **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecoResultDispatch*, ISpeechRecoResultTimes**, int> get_Times;
+        public delegate* unmanaged<TSelf*, ISpeechRecoResultTimes**, int> get_Times;
 
         [NativeTypeName("HRESULT (ISpeechAudioFormat *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecoResultDispatch*, ISpeechAudioFormat*, int> putref_AudioFormat;
+        public delegate* unmanaged<TSelf*, ISpeechAudioFormat*, int> putref_AudioFormat;
 
         [NativeTypeName("HRESULT (ISpeechAudioFormat **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecoResultDispatch*, ISpeechAudioFormat**, int> get_AudioFormat;
+        public delegate* unmanaged<TSelf*, ISpeechAudioFormat**, int> get_AudioFormat;
 
         [NativeTypeName("HRESULT (ISpeechPhraseInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecoResultDispatch*, ISpeechPhraseInfo**, int> get_PhraseInfo;
+        public delegate* unmanaged<TSelf*, ISpeechPhraseInfo**, int> get_PhraseInfo;
 
         [NativeTypeName("HRESULT (long, long, long, ISpeechPhraseAlternates **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecoResultDispatch*, int, int, int, ISpeechPhraseAlternates**, int> Alternates;
+        public delegate* unmanaged<TSelf*, int, int, int, ISpeechPhraseAlternates**, int> Alternates;
 
         [NativeTypeName("HRESULT (long, long, ISpeechMemoryStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecoResultDispatch*, int, int, ISpeechMemoryStream**, int> Audio;
+        public delegate* unmanaged<TSelf*, int, int, ISpeechMemoryStream**, int> Audio;
 
         [NativeTypeName("HRESULT (long, long, SpeechVoiceSpeakFlags, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecoResultDispatch*, int, int, SpeechVoiceSpeakFlags, int*, int> SpeakAudio;
+        public delegate* unmanaged<TSelf*, int, int, SpeechVoiceSpeakFlags, int*, int> SpeakAudio;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecoResultDispatch*, VARIANT*, int> SaveToMemory;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> SaveToMemory;
 
         [NativeTypeName("HRESULT (SpeechDiscardType) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecoResultDispatch*, SpeechDiscardType, int> DiscardResultInfo;
+        public delegate* unmanaged<TSelf*, SpeechDiscardType, int> DiscardResultInfo;
 
         [NativeTypeName("HRESULT (SPXMLRESULTOPTIONS, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecoResultDispatch*, SPXMLRESULTOPTIONS, ushort**, int> GetXMLResult;
+        public delegate* unmanaged<TSelf*, SPXMLRESULTOPTIONS, ushort**, int> GetXMLResult;
 
         [NativeTypeName("HRESULT (long *, BSTR *, BSTR *, BSTR *, HRESULT *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecoResultDispatch*, int*, ushort**, ushort**, ushort**, HRESULT*, short*, int> GetXMLErrorInfo;
+        public delegate* unmanaged<TSelf*, int*, ushort**, ushort**, ushort**, HRESULT*, short*, int> GetXMLErrorInfo;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpeechRecoResultDispatch*, ushort*, short, int> SetTextFeedback;
+        public delegate* unmanaged<TSelf*, ushort*, short, int> SetTextFeedback;
     }
 }

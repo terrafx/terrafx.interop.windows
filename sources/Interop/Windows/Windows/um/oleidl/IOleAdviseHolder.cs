@@ -102,33 +102,34 @@ public unsafe partial struct IOleAdviseHolder : IOleAdviseHolder.Interface
         HRESULT SendOnClose();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleAdviseHolder*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleAdviseHolder*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleAdviseHolder*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAdviseSink *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleAdviseHolder*, IAdviseSink*, uint*, int> Advise;
+        public delegate* unmanaged<TSelf*, IAdviseSink*, uint*, int> Advise;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleAdviseHolder*, uint, int> Unadvise;
+        public delegate* unmanaged<TSelf*, uint, int> Unadvise;
 
         [NativeTypeName("HRESULT (IEnumSTATDATA **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleAdviseHolder*, IEnumSTATDATA**, int> EnumAdvise;
+        public delegate* unmanaged<TSelf*, IEnumSTATDATA**, int> EnumAdvise;
 
         [NativeTypeName("HRESULT (IMoniker *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleAdviseHolder*, IMoniker*, int> SendOnRename;
+        public delegate* unmanaged<TSelf*, IMoniker*, int> SendOnRename;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleAdviseHolder*, int> SendOnSave;
+        public delegate* unmanaged<TSelf*, int> SendOnSave;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleAdviseHolder*, int> SendOnClose;
+        public delegate* unmanaged<TSelf*, int> SendOnClose;
     }
 }

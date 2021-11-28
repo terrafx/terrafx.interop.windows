@@ -89,30 +89,31 @@ public unsafe partial struct IPersistPropertyBag2 : IPersistPropertyBag2.Interfa
         HRESULT IsDirty();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistPropertyBag2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistPropertyBag2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistPropertyBag2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistPropertyBag2*, Guid*, int> GetClassID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetClassID;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistPropertyBag2*, int> InitNew;
+        public delegate* unmanaged<TSelf*, int> InitNew;
 
         [NativeTypeName("HRESULT (IPropertyBag2 *, IErrorLog *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistPropertyBag2*, IPropertyBag2*, IErrorLog*, int> Load;
+        public delegate* unmanaged<TSelf*, IPropertyBag2*, IErrorLog*, int> Load;
 
         [NativeTypeName("HRESULT (IPropertyBag2 *, BOOL, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistPropertyBag2*, IPropertyBag2*, BOOL, BOOL, int> Save;
+        public delegate* unmanaged<TSelf*, IPropertyBag2*, BOOL, BOOL, int> Save;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistPropertyBag2*, int> IsDirty;
+        public delegate* unmanaged<TSelf*, int> IsDirty;
     }
 }

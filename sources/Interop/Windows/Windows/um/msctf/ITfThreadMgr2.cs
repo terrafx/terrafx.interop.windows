@@ -184,57 +184,58 @@ public unsafe partial struct ITfThreadMgr2 : ITfThreadMgr2.Interface
         HRESULT ResumeKeystrokeHandling();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfClientId *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr2*, uint*, int> Activate;
+        public delegate* unmanaged<TSelf*, uint*, int> Activate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr2*, int> Deactivate;
+        public delegate* unmanaged<TSelf*, int> Deactivate;
 
         [NativeTypeName("HRESULT (ITfDocumentMgr **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr2*, ITfDocumentMgr**, int> CreateDocumentMgr;
+        public delegate* unmanaged<TSelf*, ITfDocumentMgr**, int> CreateDocumentMgr;
 
         [NativeTypeName("HRESULT (IEnumTfDocumentMgrs **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr2*, IEnumTfDocumentMgrs**, int> EnumDocumentMgrs;
+        public delegate* unmanaged<TSelf*, IEnumTfDocumentMgrs**, int> EnumDocumentMgrs;
 
         [NativeTypeName("HRESULT (ITfDocumentMgr **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr2*, ITfDocumentMgr**, int> GetFocus;
+        public delegate* unmanaged<TSelf*, ITfDocumentMgr**, int> GetFocus;
 
         [NativeTypeName("HRESULT (ITfDocumentMgr *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr2*, ITfDocumentMgr*, int> SetFocus;
+        public delegate* unmanaged<TSelf*, ITfDocumentMgr*, int> SetFocus;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr2*, BOOL*, int> IsThreadFocus;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsThreadFocus;
 
         [NativeTypeName("HRESULT (const IID &, ITfFunctionProvider **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr2*, Guid*, ITfFunctionProvider**, int> GetFunctionProvider;
+        public delegate* unmanaged<TSelf*, Guid*, ITfFunctionProvider**, int> GetFunctionProvider;
 
         [NativeTypeName("HRESULT (IEnumTfFunctionProviders **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr2*, IEnumTfFunctionProviders**, int> EnumFunctionProviders;
+        public delegate* unmanaged<TSelf*, IEnumTfFunctionProviders**, int> EnumFunctionProviders;
 
         [NativeTypeName("HRESULT (ITfCompartmentMgr **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr2*, ITfCompartmentMgr**, int> GetGlobalCompartment;
+        public delegate* unmanaged<TSelf*, ITfCompartmentMgr**, int> GetGlobalCompartment;
 
         [NativeTypeName("HRESULT (TfClientId *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr2*, uint*, uint, int> ActivateEx;
+        public delegate* unmanaged<TSelf*, uint*, uint, int> ActivateEx;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr2*, uint*, int> GetActiveFlags;
+        public delegate* unmanaged<TSelf*, uint*, int> GetActiveFlags;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr2*, int> SuspendKeystrokeHandling;
+        public delegate* unmanaged<TSelf*, int> SuspendKeystrokeHandling;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfThreadMgr2*, int> ResumeKeystrokeHandling;
+        public delegate* unmanaged<TSelf*, int> ResumeKeystrokeHandling;
     }
 }

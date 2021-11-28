@@ -62,21 +62,22 @@ public unsafe partial struct IPipeLong : IPipeLong.Interface
         HRESULT Push([NativeTypeName("LONG *")] int* buf, [NativeTypeName("ULONG")] uint cSent);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPipeLong*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPipeLong*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPipeLong*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LONG *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPipeLong*, int*, uint, uint*, int> Pull;
+        public delegate* unmanaged<TSelf*, int*, uint, uint*, int> Pull;
 
         [NativeTypeName("HRESULT (LONG *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPipeLong*, int*, uint, int> Push;
+        public delegate* unmanaged<TSelf*, int*, uint, int> Push;
     }
 }

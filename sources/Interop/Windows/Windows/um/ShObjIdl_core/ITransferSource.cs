@@ -172,54 +172,55 @@ public unsafe partial struct ITransferSource : ITransferSource.Interface
         HRESULT LeaveFolder(IShellItem* psiChildFolderDest);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferSource*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferSource*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferSource*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITransferAdviseSink *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferSource*, ITransferAdviseSink*, uint*, int> Advise;
+        public delegate* unmanaged<TSelf*, ITransferAdviseSink*, uint*, int> Advise;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferSource*, uint, int> Unadvise;
+        public delegate* unmanaged<TSelf*, uint, int> Unadvise;
 
         [NativeTypeName("HRESULT (IPropertyChangeArray *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferSource*, IPropertyChangeArray*, int> SetProperties;
+        public delegate* unmanaged<TSelf*, IPropertyChangeArray*, int> SetProperties;
 
         [NativeTypeName("HRESULT (IShellItem *, TRANSFER_SOURCE_FLAGS, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferSource*, IShellItem*, uint, Guid*, void**, int> OpenItem;
+        public delegate* unmanaged<TSelf*, IShellItem*, uint, Guid*, void**, int> OpenItem;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItem *, LPCWSTR, TRANSFER_SOURCE_FLAGS, IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferSource*, IShellItem*, IShellItem*, ushort*, uint, IShellItem**, int> MoveItem;
+        public delegate* unmanaged<TSelf*, IShellItem*, IShellItem*, ushort*, uint, IShellItem**, int> MoveItem;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItem *, TRANSFER_SOURCE_FLAGS, IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferSource*, IShellItem*, IShellItem*, uint, IShellItem**, int> RecycleItem;
+        public delegate* unmanaged<TSelf*, IShellItem*, IShellItem*, uint, IShellItem**, int> RecycleItem;
 
         [NativeTypeName("HRESULT (IShellItem *, TRANSFER_SOURCE_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferSource*, IShellItem*, uint, int> RemoveItem;
+        public delegate* unmanaged<TSelf*, IShellItem*, uint, int> RemoveItem;
 
         [NativeTypeName("HRESULT (IShellItem *, LPCWSTR, TRANSFER_SOURCE_FLAGS, IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferSource*, IShellItem*, ushort*, uint, IShellItem**, int> RenameItem;
+        public delegate* unmanaged<TSelf*, IShellItem*, ushort*, uint, IShellItem**, int> RenameItem;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItem *, LPCWSTR, TRANSFER_SOURCE_FLAGS, IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferSource*, IShellItem*, IShellItem*, ushort*, uint, IShellItem**, int> LinkItem;
+        public delegate* unmanaged<TSelf*, IShellItem*, IShellItem*, ushort*, uint, IShellItem**, int> LinkItem;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferSource*, IShellItem*, IShellItem**, int> ApplyPropertiesToItem;
+        public delegate* unmanaged<TSelf*, IShellItem*, IShellItem**, int> ApplyPropertiesToItem;
 
         [NativeTypeName("HRESULT (IShellItem *, IShellItem *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferSource*, IShellItem*, IShellItem*, ushort**, int> GetDefaultDestinationName;
+        public delegate* unmanaged<TSelf*, IShellItem*, IShellItem*, ushort**, int> GetDefaultDestinationName;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferSource*, IShellItem*, int> EnterFolder;
+        public delegate* unmanaged<TSelf*, IShellItem*, int> EnterFolder;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITransferSource*, IShellItem*, int> LeaveFolder;
+        public delegate* unmanaged<TSelf*, IShellItem*, int> LeaveFolder;
     }
 }

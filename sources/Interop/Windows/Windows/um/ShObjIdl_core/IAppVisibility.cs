@@ -82,27 +82,28 @@ public unsafe partial struct IAppVisibility : IAppVisibility.Interface
         HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppVisibility*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppVisibility*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppVisibility*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HMONITOR, MONITOR_APP_VISIBILITY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppVisibility*, HMONITOR, MONITOR_APP_VISIBILITY*, int> GetAppVisibilityOnMonitor;
+        public delegate* unmanaged<TSelf*, HMONITOR, MONITOR_APP_VISIBILITY*, int> GetAppVisibilityOnMonitor;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppVisibility*, BOOL*, int> IsLauncherVisible;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsLauncherVisible;
 
         [NativeTypeName("HRESULT (IAppVisibilityEvents *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppVisibility*, IAppVisibilityEvents*, uint*, int> Advise;
+        public delegate* unmanaged<TSelf*, IAppVisibilityEvents*, uint*, int> Advise;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppVisibility*, uint, int> Unadvise;
+        public delegate* unmanaged<TSelf*, uint, int> Unadvise;
     }
 }

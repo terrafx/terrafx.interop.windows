@@ -52,18 +52,19 @@ public unsafe partial struct IContextMenuCB : IContextMenuCB.Interface
         HRESULT CallBack(IShellFolder* psf, HWND hwndOwner, IDataObject* pdtobj, uint uMsg, WPARAM wParam, LPARAM lParam);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenuCB*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenuCB*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenuCB*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellFolder *, HWND, IDataObject *, UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenuCB*, IShellFolder*, HWND, IDataObject*, uint, WPARAM, LPARAM, int> CallBack;
+        public delegate* unmanaged<TSelf*, IShellFolder*, HWND, IDataObject*, uint, WPARAM, LPARAM, int> CallBack;
     }
 }

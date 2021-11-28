@@ -81,27 +81,28 @@ public unsafe partial struct ID3D10StateBlock : ID3D10StateBlock.Interface
         HRESULT GetDevice(ID3D10Device** ppDevice);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10StateBlock*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10StateBlock*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10StateBlock*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10StateBlock*, int> Capture;
+        public delegate* unmanaged<TSelf*, int> Capture;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10StateBlock*, int> Apply;
+        public delegate* unmanaged<TSelf*, int> Apply;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10StateBlock*, int> ReleaseAllDeviceObjects;
+        public delegate* unmanaged<TSelf*, int> ReleaseAllDeviceObjects;
 
         [NativeTypeName("HRESULT (ID3D10Device **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10StateBlock*, ID3D10Device**, int> GetDevice;
+        public delegate* unmanaged<TSelf*, ID3D10Device**, int> GetDevice;
     }
 }

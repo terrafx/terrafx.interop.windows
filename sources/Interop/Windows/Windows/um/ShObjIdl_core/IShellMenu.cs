@@ -132,42 +132,43 @@ public unsafe partial struct IShellMenu : IShellMenu.Interface
         HRESULT SetMenuToolbar(IUnknown* punk, [NativeTypeName("DWORD")] uint dwFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellMenu*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellMenu*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellMenu*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellMenuCallback *, UINT, UINT, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellMenu*, IShellMenuCallback*, uint, uint, uint, int> Initialize;
+        public delegate* unmanaged<TSelf*, IShellMenuCallback*, uint, uint, uint, int> Initialize;
 
         [NativeTypeName("HRESULT (IShellMenuCallback **, UINT *, UINT *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellMenu*, IShellMenuCallback**, uint*, uint*, uint*, int> GetMenuInfo;
+        public delegate* unmanaged<TSelf*, IShellMenuCallback**, uint*, uint*, uint*, int> GetMenuInfo;
 
         [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST, HKEY, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellMenu*, IShellFolder*, ITEMIDLIST*, HKEY, uint, int> SetShellFolder;
+        public delegate* unmanaged<TSelf*, IShellFolder*, ITEMIDLIST*, HKEY, uint, int> SetShellFolder;
 
         [NativeTypeName("HRESULT (DWORD *, LPITEMIDLIST *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellMenu*, uint*, ITEMIDLIST**, Guid*, void**, int> GetShellFolder;
+        public delegate* unmanaged<TSelf*, uint*, ITEMIDLIST**, Guid*, void**, int> GetShellFolder;
 
         [NativeTypeName("HRESULT (HMENU, HWND, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellMenu*, HMENU, HWND, uint, int> SetMenu;
+        public delegate* unmanaged<TSelf*, HMENU, HWND, uint, int> SetMenu;
 
         [NativeTypeName("HRESULT (HMENU *, HWND *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellMenu*, HMENU*, HWND*, uint*, int> GetMenu;
+        public delegate* unmanaged<TSelf*, HMENU*, HWND*, uint*, int> GetMenu;
 
         [NativeTypeName("HRESULT (LPSMDATA, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellMenu*, SMDATA*, uint, int> InvalidateItem;
+        public delegate* unmanaged<TSelf*, SMDATA*, uint, int> InvalidateItem;
 
         [NativeTypeName("HRESULT (LPSMDATA) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellMenu*, SMDATA*, int> GetState;
+        public delegate* unmanaged<TSelf*, SMDATA*, int> GetState;
 
         [NativeTypeName("HRESULT (IUnknown *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellMenu*, IUnknown*, uint, int> SetMenuToolbar;
+        public delegate* unmanaged<TSelf*, IUnknown*, uint, int> SetMenuToolbar;
     }
 }

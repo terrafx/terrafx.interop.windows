@@ -72,24 +72,25 @@ public unsafe partial struct ISpRecognizer2 : ISpRecognizer2.Interface
         HRESULT ResetAcousticModelAdaptation();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecognizer2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecognizer2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecognizer2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ISpPhrase *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecognizer2*, ISpPhrase*, uint, int> EmulateRecognitionEx;
+        public delegate* unmanaged<TSelf*, ISpPhrase*, uint, int> EmulateRecognitionEx;
 
         [NativeTypeName("HRESULT (BOOL, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecognizer2*, BOOL, BOOL, int> SetTrainingState;
+        public delegate* unmanaged<TSelf*, BOOL, BOOL, int> SetTrainingState;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecognizer2*, int> ResetAcousticModelAdaptation;
+        public delegate* unmanaged<TSelf*, int> ResetAcousticModelAdaptation;
     }
 }

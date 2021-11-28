@@ -62,21 +62,22 @@ public unsafe partial struct IShellIconOverlay : IShellIconOverlay.Interface
         HRESULT GetOverlayIconIndex([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, int* pIconIndex);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellIconOverlay*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellIconOverlay*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellIconOverlay*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellIconOverlay*, ITEMIDLIST*, int*, int> GetOverlayIndex;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, int*, int> GetOverlayIndex;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellIconOverlay*, ITEMIDLIST*, int*, int> GetOverlayIconIndex;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, int*, int> GetOverlayIconIndex;
     }
 }

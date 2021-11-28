@@ -200,66 +200,67 @@ public unsafe partial struct IXMLElement2 : IXMLElement2.Interface
         HRESULT get_attributes(IXMLElementCollection** pp);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLElement2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLElement2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLElement2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLElement2*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLElement2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLElement2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLElement2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLElement2*, ushort**, int> get_tagName;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_tagName;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLElement2*, ushort*, int> put_tagName;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_tagName;
 
         [NativeTypeName("HRESULT (IXMLElement2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLElement2*, IXMLElement2**, int> get_parent;
+        public delegate* unmanaged<TSelf*, IXMLElement2**, int> get_parent;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLElement2*, ushort*, VARIANT, int> setAttribute;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT, int> setAttribute;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLElement2*, ushort*, VARIANT*, int> getAttribute;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> getAttribute;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLElement2*, ushort*, int> removeAttribute;
+        public delegate* unmanaged<TSelf*, ushort*, int> removeAttribute;
 
         [NativeTypeName("HRESULT (IXMLElementCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLElement2*, IXMLElementCollection**, int> get_children;
+        public delegate* unmanaged<TSelf*, IXMLElementCollection**, int> get_children;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLElement2*, int*, int> get_type;
+        public delegate* unmanaged<TSelf*, int*, int> get_type;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLElement2*, ushort**, int> get_text;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_text;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLElement2*, ushort*, int> put_text;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_text;
 
         [NativeTypeName("HRESULT (IXMLElement2 *, long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLElement2*, IXMLElement2*, int, int, int> addChild;
+        public delegate* unmanaged<TSelf*, IXMLElement2*, int, int, int> addChild;
 
         [NativeTypeName("HRESULT (IXMLElement2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLElement2*, IXMLElement2*, int> removeChild;
+        public delegate* unmanaged<TSelf*, IXMLElement2*, int> removeChild;
 
         [NativeTypeName("HRESULT (IXMLElementCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXMLElement2*, IXMLElementCollection**, int> get_attributes;
+        public delegate* unmanaged<TSelf*, IXMLElementCollection**, int> get_attributes;
     }
 }

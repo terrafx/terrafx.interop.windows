@@ -52,18 +52,19 @@ public unsafe partial struct IMFTopologyNodeAttributeEditor : IMFTopologyNodeAtt
         HRESULT UpdateNodeAttributes([NativeTypeName("TOPOID")] ulong TopoId, [NativeTypeName("DWORD")] uint cUpdates, MFTOPONODE_ATTRIBUTE_UPDATE* pUpdates);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNodeAttributeEditor*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNodeAttributeEditor*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNodeAttributeEditor*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TOPOID, DWORD, MFTOPONODE_ATTRIBUTE_UPDATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTopologyNodeAttributeEditor*, ulong, uint, MFTOPONODE_ATTRIBUTE_UPDATE*, int> UpdateNodeAttributes;
+        public delegate* unmanaged<TSelf*, ulong, uint, MFTOPONODE_ATTRIBUTE_UPDATE*, int> UpdateNodeAttributes;
     }
 }

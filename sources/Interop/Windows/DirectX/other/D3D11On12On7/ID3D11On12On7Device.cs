@@ -35,12 +35,13 @@ public unsafe partial struct ID3D11On12On7Device : ID3D11On12On7Device.Interface
         HRESULT ReleaseResource(void* pResource, D3D12_RESOURCE_STATES state);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (ID3D11On12On7Resource *, D3D12_RESOURCE_STATES) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11On12On7Device*, void*, D3D12_RESOURCE_STATES, int> AcquireResource;
+        public delegate* unmanaged<TSelf*, void*, D3D12_RESOURCE_STATES, int> AcquireResource;
 
         [NativeTypeName("HRESULT (ID3D11On12On7Resource *, D3D12_RESOURCE_STATES) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D11On12On7Device*, void*, D3D12_RESOURCE_STATES, int> ReleaseResource;
+        public delegate* unmanaged<TSelf*, void*, D3D12_RESOURCE_STATES, int> ReleaseResource;
     }
 }

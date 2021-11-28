@@ -62,21 +62,22 @@ public unsafe partial struct ISpGrammarBuilder2 : ISpGrammarBuilder2.Interface
         HRESULT SetPhoneticAlphabet(PHONETICALPHABET phoneticALphabet);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpGrammarBuilder2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpGrammarBuilder2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpGrammarBuilder2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SPSTATEHANDLE, SPSTATEHANDLE, LPCWSTR, SPMATCHINGMODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpGrammarBuilder2*, SPSTATEHANDLE, SPSTATEHANDLE, ushort*, SPMATCHINGMODE, int> AddTextSubset;
+        public delegate* unmanaged<TSelf*, SPSTATEHANDLE, SPSTATEHANDLE, ushort*, SPMATCHINGMODE, int> AddTextSubset;
 
         [NativeTypeName("HRESULT (PHONETICALPHABET) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpGrammarBuilder2*, PHONETICALPHABET, int> SetPhoneticAlphabet;
+        public delegate* unmanaged<TSelf*, PHONETICALPHABET, int> SetPhoneticAlphabet;
     }
 }

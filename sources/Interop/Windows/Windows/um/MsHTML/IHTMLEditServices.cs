@@ -102,33 +102,34 @@ public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface
         HRESULT SelectRange(IMarkupPointer* pStart, IMarkupPointer* pEnd, SELECTION_TYPE eType);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditServices*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditServices*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditServices*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IHTMLEditDesigner *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditServices*, IHTMLEditDesigner*, int> AddDesigner;
+        public delegate* unmanaged<TSelf*, IHTMLEditDesigner*, int> AddDesigner;
 
         [NativeTypeName("HRESULT (IHTMLEditDesigner *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditServices*, IHTMLEditDesigner*, int> RemoveDesigner;
+        public delegate* unmanaged<TSelf*, IHTMLEditDesigner*, int> RemoveDesigner;
 
         [NativeTypeName("HRESULT (IMarkupContainer *, ISelectionServices **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditServices*, IMarkupContainer*, ISelectionServices**, int> GetSelectionServices;
+        public delegate* unmanaged<TSelf*, IMarkupContainer*, ISelectionServices**, int> GetSelectionServices;
 
         [NativeTypeName("HRESULT (IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, int> MoveToSelectionAnchor;
+        public delegate* unmanaged<TSelf*, IMarkupPointer*, int> MoveToSelectionAnchor;
 
         [NativeTypeName("HRESULT (IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, int> MoveToSelectionEnd;
+        public delegate* unmanaged<TSelf*, IMarkupPointer*, int> MoveToSelectionEnd;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, IMarkupPointer *, SELECTION_TYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, IMarkupPointer*, SELECTION_TYPE, int> SelectRange;
+        public delegate* unmanaged<TSelf*, IMarkupPointer*, IMarkupPointer*, SELECTION_TYPE, int> SelectRange;
     }
 }

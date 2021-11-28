@@ -52,18 +52,19 @@ public unsafe partial struct IEnumAssocHandlers : IEnumAssocHandlers.Interface
         HRESULT Next([NativeTypeName("ULONG")] uint celt, IAssocHandler** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumAssocHandlers*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumAssocHandlers*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumAssocHandlers*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, IAssocHandler **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumAssocHandlers*, uint, IAssocHandler**, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, IAssocHandler**, uint*, int> Next;
     }
 }

@@ -63,21 +63,22 @@ public unsafe partial struct ICastingSourceInfo : ICastingSourceInfo.Interface
         HRESULT GetProperties(INamedPropertyStore** props);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICastingSourceInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICastingSourceInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICastingSourceInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ICastingController **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICastingSourceInfo*, ICastingController**, int> GetController;
+        public delegate* unmanaged<TSelf*, ICastingController**, int> GetController;
 
         [NativeTypeName("HRESULT (INamedPropertyStore **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICastingSourceInfo*, INamedPropertyStore**, int> GetProperties;
+        public delegate* unmanaged<TSelf*, INamedPropertyStore**, int> GetProperties;
     }
 }

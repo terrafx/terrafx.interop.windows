@@ -104,39 +104,40 @@ public unsafe partial struct IOleInPlaceObjectWindowless : IOleInPlaceObjectWind
         HRESULT GetDropTarget(IDropTarget** ppDropTarget);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceObjectWindowless*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceObjectWindowless*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceObjectWindowless*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceObjectWindowless*, HWND*, int> GetWindow;
+        public delegate* unmanaged<TSelf*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceObjectWindowless*, BOOL, int> ContextSensitiveHelp;
+        public delegate* unmanaged<TSelf*, BOOL, int> ContextSensitiveHelp;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceObjectWindowless*, int> InPlaceDeactivate;
+        public delegate* unmanaged<TSelf*, int> InPlaceDeactivate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceObjectWindowless*, int> UIDeactivate;
+        public delegate* unmanaged<TSelf*, int> UIDeactivate;
 
         [NativeTypeName("HRESULT (LPCRECT, LPCRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceObjectWindowless*, RECT*, RECT*, int> SetObjectRects;
+        public delegate* unmanaged<TSelf*, RECT*, RECT*, int> SetObjectRects;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceObjectWindowless*, int> ReactivateAndUndo;
+        public delegate* unmanaged<TSelf*, int> ReactivateAndUndo;
 
         [NativeTypeName("HRESULT (UINT, WPARAM, LPARAM, LRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceObjectWindowless*, uint, WPARAM, LPARAM, LRESULT*, int> OnWindowMessage;
+        public delegate* unmanaged<TSelf*, uint, WPARAM, LPARAM, LRESULT*, int> OnWindowMessage;
 
         [NativeTypeName("HRESULT (IDropTarget **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleInPlaceObjectWindowless*, IDropTarget**, int> GetDropTarget;
+        public delegate* unmanaged<TSelf*, IDropTarget**, int> GetDropTarget;
     }
 }

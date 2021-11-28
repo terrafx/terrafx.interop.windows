@@ -62,21 +62,22 @@ public unsafe partial struct IAppVisibilityEvents : IAppVisibilityEvents.Interfa
         HRESULT LauncherVisibilityChange(BOOL currentVisibleState);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppVisibilityEvents*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppVisibilityEvents*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppVisibilityEvents*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HMONITOR, MONITOR_APP_VISIBILITY, MONITOR_APP_VISIBILITY) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppVisibilityEvents*, HMONITOR, MONITOR_APP_VISIBILITY, MONITOR_APP_VISIBILITY, int> AppVisibilityOnMonitorChanged;
+        public delegate* unmanaged<TSelf*, HMONITOR, MONITOR_APP_VISIBILITY, MONITOR_APP_VISIBILITY, int> AppVisibilityOnMonitorChanged;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppVisibilityEvents*, BOOL, int> LauncherVisibilityChange;
+        public delegate* unmanaged<TSelf*, BOOL, int> LauncherVisibilityChange;
     }
 }

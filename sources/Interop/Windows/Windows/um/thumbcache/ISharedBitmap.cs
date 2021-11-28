@@ -92,30 +92,31 @@ public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface
         HRESULT Detach(HBITMAP* phbm);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISharedBitmap*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISharedBitmap*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISharedBitmap*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HBITMAP *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISharedBitmap*, HBITMAP*, int> GetSharedBitmap;
+        public delegate* unmanaged<TSelf*, HBITMAP*, int> GetSharedBitmap;
 
         [NativeTypeName("HRESULT (SIZE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISharedBitmap*, SIZE*, int> GetSize;
+        public delegate* unmanaged<TSelf*, SIZE*, int> GetSize;
 
         [NativeTypeName("HRESULT (WTS_ALPHATYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISharedBitmap*, WTS_ALPHATYPE*, int> GetFormat;
+        public delegate* unmanaged<TSelf*, WTS_ALPHATYPE*, int> GetFormat;
 
         [NativeTypeName("HRESULT (HBITMAP, WTS_ALPHATYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISharedBitmap*, HBITMAP, WTS_ALPHATYPE, int> InitializeBitmap;
+        public delegate* unmanaged<TSelf*, HBITMAP, WTS_ALPHATYPE, int> InitializeBitmap;
 
         [NativeTypeName("HRESULT (HBITMAP *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISharedBitmap*, HBITMAP*, int> Detach;
+        public delegate* unmanaged<TSelf*, HBITMAP*, int> Detach;
     }
 }

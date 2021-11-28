@@ -79,27 +79,28 @@ public unsafe partial struct ITfFnReconversion : ITfFnReconversion.Interface
         HRESULT Reconvert(ITfRange* pRange);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnReconversion*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnReconversion*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnReconversion*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnReconversion*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (ITfRange *, ITfRange **, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnReconversion*, ITfRange*, ITfRange**, BOOL*, int> QueryRange;
+        public delegate* unmanaged<TSelf*, ITfRange*, ITfRange**, BOOL*, int> QueryRange;
 
         [NativeTypeName("HRESULT (ITfRange *, ITfCandidateList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnReconversion*, ITfRange*, ITfCandidateList**, int> GetReconversion;
+        public delegate* unmanaged<TSelf*, ITfRange*, ITfCandidateList**, int> GetReconversion;
 
         [NativeTypeName("HRESULT (ITfRange *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfFnReconversion*, ITfRange*, int> Reconvert;
+        public delegate* unmanaged<TSelf*, ITfRange*, int> Reconvert;
     }
 }

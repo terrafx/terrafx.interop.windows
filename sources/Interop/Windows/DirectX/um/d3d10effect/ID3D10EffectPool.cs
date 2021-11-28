@@ -51,18 +51,19 @@ public unsafe partial struct ID3D10EffectPool : ID3D10EffectPool.Interface
         ID3D10Effect* AsEffect();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10EffectPool*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10EffectPool*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10EffectPool*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("ID3D10Effect *() __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10EffectPool*, ID3D10Effect*> AsEffect;
+        public delegate* unmanaged<TSelf*, ID3D10Effect*> AsEffect;
     }
 }

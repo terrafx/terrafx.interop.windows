@@ -92,30 +92,31 @@ public unsafe partial struct ITaskbarList : ITaskbarList.Interface
         HRESULT SetActiveAlt(HWND hwnd);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITaskbarList*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITaskbarList*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITaskbarList*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITaskbarList*, int> HrInit;
+        public delegate* unmanaged<TSelf*, int> HrInit;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITaskbarList*, HWND, int> AddTab;
+        public delegate* unmanaged<TSelf*, HWND, int> AddTab;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITaskbarList*, HWND, int> DeleteTab;
+        public delegate* unmanaged<TSelf*, HWND, int> DeleteTab;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITaskbarList*, HWND, int> ActivateTab;
+        public delegate* unmanaged<TSelf*, HWND, int> ActivateTab;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITaskbarList*, HWND, int> SetActiveAlt;
+        public delegate* unmanaged<TSelf*, HWND, int> SetActiveAlt;
     }
 }

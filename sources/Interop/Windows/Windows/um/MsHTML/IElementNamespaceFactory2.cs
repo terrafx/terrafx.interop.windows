@@ -59,21 +59,22 @@ public unsafe partial struct IElementNamespaceFactory2 : IElementNamespaceFactor
         HRESULT CreateWithImplementation(IElementNamespace* pNamespace, [NativeTypeName("BSTR")] ushort* bstrImplementation);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementNamespaceFactory2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementNamespaceFactory2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementNamespaceFactory2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IElementNamespace *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementNamespaceFactory2*, IElementNamespace*, int> Create;
+        public delegate* unmanaged<TSelf*, IElementNamespace*, int> Create;
 
         [NativeTypeName("HRESULT (IElementNamespace *, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IElementNamespaceFactory2*, IElementNamespace*, ushort*, int> CreateWithImplementation;
+        public delegate* unmanaged<TSelf*, IElementNamespace*, ushort*, int> CreateWithImplementation;
     }
 }

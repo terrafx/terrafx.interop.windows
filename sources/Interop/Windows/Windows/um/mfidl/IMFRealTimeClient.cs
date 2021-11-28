@@ -72,24 +72,25 @@ public unsafe partial struct IMFRealTimeClient : IMFRealTimeClient.Interface
         HRESULT SetWorkQueue([NativeTypeName("DWORD")] uint dwWorkQueueId);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRealTimeClient*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRealTimeClient*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRealTimeClient*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRealTimeClient*, uint, ushort*, int> RegisterThreads;
+        public delegate* unmanaged<TSelf*, uint, ushort*, int> RegisterThreads;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRealTimeClient*, int> UnregisterThreads;
+        public delegate* unmanaged<TSelf*, int> UnregisterThreads;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRealTimeClient*, uint, int> SetWorkQueue;
+        public delegate* unmanaged<TSelf*, uint, int> SetWorkQueue;
     }
 }

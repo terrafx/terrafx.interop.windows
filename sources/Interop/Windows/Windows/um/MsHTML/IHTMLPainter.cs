@@ -82,27 +82,28 @@ public unsafe partial struct IHTMLPainter : IHTMLPainter.Interface
         HRESULT HitTestPoint(POINT pt, BOOL* pbHit, [NativeTypeName("LONG *")] int* plPartID);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPainter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPainter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPainter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (RECT, RECT, LONG, HDC, LPVOID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPainter*, RECT, RECT, int, HDC, void*, int> Draw;
+        public delegate* unmanaged<TSelf*, RECT, RECT, int, HDC, void*, int> Draw;
 
         [NativeTypeName("HRESULT (SIZE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPainter*, SIZE, int> OnResize;
+        public delegate* unmanaged<TSelf*, SIZE, int> OnResize;
 
         [NativeTypeName("HRESULT (HTML_PAINTER_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPainter*, HTML_PAINTER_INFO*, int> GetPainterInfo;
+        public delegate* unmanaged<TSelf*, HTML_PAINTER_INFO*, int> GetPainterInfo;
 
         [NativeTypeName("HRESULT (POINT, BOOL *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLPainter*, POINT, BOOL*, int*, int> HitTestPoint;
+        public delegate* unmanaged<TSelf*, POINT, BOOL*, int*, int> HitTestPoint;
     }
 }

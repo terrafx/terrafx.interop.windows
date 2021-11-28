@@ -220,72 +220,73 @@ public unsafe partial struct IHTMLControlRange : IHTMLControlRange.Interface
         HRESULT get_length([NativeTypeName("long *")] int* p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlRange*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlRange*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlRange*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlRange*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlRange*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlRange*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlRange*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlRange*, int> select;
+        public delegate* unmanaged<TSelf*, int> select;
 
         [NativeTypeName("HRESULT (IHTMLControlElement *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlRange*, IHTMLControlElement*, int> add;
+        public delegate* unmanaged<TSelf*, IHTMLControlElement*, int> add;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlRange*, int, int> remove;
+        public delegate* unmanaged<TSelf*, int, int> remove;
 
         [NativeTypeName("HRESULT (long, IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlRange*, int, IHTMLElement**, int> item;
+        public delegate* unmanaged<TSelf*, int, IHTMLElement**, int> item;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlRange*, VARIANT, int> scrollIntoView;
+        public delegate* unmanaged<TSelf*, VARIANT, int> scrollIntoView;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlRange*, ushort*, short*, int> queryCommandSupported;
+        public delegate* unmanaged<TSelf*, ushort*, short*, int> queryCommandSupported;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlRange*, ushort*, short*, int> queryCommandEnabled;
+        public delegate* unmanaged<TSelf*, ushort*, short*, int> queryCommandEnabled;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlRange*, ushort*, short*, int> queryCommandState;
+        public delegate* unmanaged<TSelf*, ushort*, short*, int> queryCommandState;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlRange*, ushort*, short*, int> queryCommandIndeterm;
+        public delegate* unmanaged<TSelf*, ushort*, short*, int> queryCommandIndeterm;
 
         [NativeTypeName("HRESULT (BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlRange*, ushort*, ushort**, int> queryCommandText;
+        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> queryCommandText;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlRange*, ushort*, VARIANT*, int> queryCommandValue;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> queryCommandValue;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlRange*, ushort*, short, VARIANT, short*, int> execCommand;
+        public delegate* unmanaged<TSelf*, ushort*, short, VARIANT, short*, int> execCommand;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlRange*, ushort*, short*, int> execCommandShowHelp;
+        public delegate* unmanaged<TSelf*, ushort*, short*, int> execCommandShowHelp;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlRange*, IHTMLElement**, int> commonParentElement;
+        public delegate* unmanaged<TSelf*, IHTMLElement**, int> commonParentElement;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLControlRange*, int*, int> get_length;
+        public delegate* unmanaged<TSelf*, int*, int> get_length;
     }
 }

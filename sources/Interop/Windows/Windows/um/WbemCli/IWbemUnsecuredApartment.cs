@@ -59,21 +59,22 @@ public unsafe partial struct IWbemUnsecuredApartment : IWbemUnsecuredApartment.I
         HRESULT CreateSinkStub(IWbemObjectSink* pSink, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* wszReserved, IWbemObjectSink** ppStub);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemUnsecuredApartment*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemUnsecuredApartment*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemUnsecuredApartment*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemUnsecuredApartment*, IUnknown*, IUnknown**, int> CreateObjectStub;
+        public delegate* unmanaged<TSelf*, IUnknown*, IUnknown**, int> CreateObjectStub;
 
         [NativeTypeName("HRESULT (IWbemObjectSink *, DWORD, LPCWSTR, IWbemObjectSink **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWbemUnsecuredApartment*, IWbemObjectSink*, uint, ushort*, IWbemObjectSink**, int> CreateSinkStub;
+        public delegate* unmanaged<TSelf*, IWbemObjectSink*, uint, ushort*, IWbemObjectSink**, int> CreateSinkStub;
     }
 }

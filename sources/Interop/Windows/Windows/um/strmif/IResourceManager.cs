@@ -122,39 +122,40 @@ public unsafe partial struct IResourceManager : IResourceManager.Interface
         HRESULT ReleaseFocus(IUnknown* pFocusObject);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IResourceManager*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IResourceManager*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IResourceManager*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, LONG, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IResourceManager*, ushort*, int, int*, int> Register;
+        public delegate* unmanaged<TSelf*, ushort*, int, int*, int> Register;
 
         [NativeTypeName("HRESULT (LPCWSTR, LONG, LONG *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IResourceManager*, ushort*, int, int*, int*, int> RegisterGroup;
+        public delegate* unmanaged<TSelf*, ushort*, int, int*, int*, int> RegisterGroup;
 
         [NativeTypeName("HRESULT (LONG, IUnknown *, IResourceConsumer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IResourceManager*, int, IUnknown*, IResourceConsumer*, int> RequestResource;
+        public delegate* unmanaged<TSelf*, int, IUnknown*, IResourceConsumer*, int> RequestResource;
 
         [NativeTypeName("HRESULT (LONG, IResourceConsumer *, HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IResourceManager*, int, IResourceConsumer*, HRESULT, int> NotifyAcquire;
+        public delegate* unmanaged<TSelf*, int, IResourceConsumer*, HRESULT, int> NotifyAcquire;
 
         [NativeTypeName("HRESULT (LONG, IResourceConsumer *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IResourceManager*, int, IResourceConsumer*, BOOL, int> NotifyRelease;
+        public delegate* unmanaged<TSelf*, int, IResourceConsumer*, BOOL, int> NotifyRelease;
 
         [NativeTypeName("HRESULT (LONG, IResourceConsumer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IResourceManager*, int, IResourceConsumer*, int> CancelRequest;
+        public delegate* unmanaged<TSelf*, int, IResourceConsumer*, int> CancelRequest;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IResourceManager*, IUnknown*, int> SetFocus;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> SetFocus;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IResourceManager*, IUnknown*, int> ReleaseFocus;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> ReleaseFocus;
     }
 }

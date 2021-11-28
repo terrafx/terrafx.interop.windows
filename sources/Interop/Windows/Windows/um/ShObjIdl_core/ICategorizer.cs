@@ -82,27 +82,28 @@ public unsafe partial struct ICategorizer : ICategorizer.Interface
         HRESULT CompareCategory(CATSORT_FLAGS csfFlags, [NativeTypeName("DWORD")] uint dwCategoryId1, [NativeTypeName("DWORD")] uint dwCategoryId2);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICategorizer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICategorizer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICategorizer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICategorizer*, ushort*, uint, int> GetDescription;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> GetDescription;
 
         [NativeTypeName("HRESULT (UINT, LPCITEMIDLIST *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICategorizer*, uint, ITEMIDLIST**, uint*, int> GetCategory;
+        public delegate* unmanaged<TSelf*, uint, ITEMIDLIST**, uint*, int> GetCategory;
 
         [NativeTypeName("HRESULT (DWORD, CATEGORY_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICategorizer*, uint, CATEGORY_INFO*, int> GetCategoryInfo;
+        public delegate* unmanaged<TSelf*, uint, CATEGORY_INFO*, int> GetCategoryInfo;
 
         [NativeTypeName("HRESULT (CATSORT_FLAGS, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICategorizer*, CATSORT_FLAGS, uint, uint, int> CompareCategory;
+        public delegate* unmanaged<TSelf*, CATSORT_FLAGS, uint, uint, int> CompareCategory;
     }
 }

@@ -201,63 +201,64 @@ public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface
         HRESULT WillUseFullScreen([NativeTypeName("long *")] int* UseWhenFullScreen);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawVideo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawVideo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawVideo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawVideo*, uint*, int> GetSwitches;
+        public delegate* unmanaged<TSelf*, uint*, int> GetSwitches;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawVideo*, uint, int> SetSwitches;
+        public delegate* unmanaged<TSelf*, uint, int> SetSwitches;
 
         [NativeTypeName("HRESULT (DDCAPS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawVideo*, DDCAPS_DX7*, int> GetCaps;
+        public delegate* unmanaged<TSelf*, DDCAPS_DX7*, int> GetCaps;
 
         [NativeTypeName("HRESULT (DDCAPS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawVideo*, DDCAPS_DX7*, int> GetEmulatedCaps;
+        public delegate* unmanaged<TSelf*, DDCAPS_DX7*, int> GetEmulatedCaps;
 
         [NativeTypeName("HRESULT (DDSURFACEDESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawVideo*, DDSURFACEDESC*, int> GetSurfaceDesc;
+        public delegate* unmanaged<TSelf*, DDSURFACEDESC*, int> GetSurfaceDesc;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawVideo*, uint*, uint*, int> GetFourCCCodes;
+        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetFourCCCodes;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAW) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawVideo*, IDirectDraw*, int> SetDirectDraw;
+        public delegate* unmanaged<TSelf*, IDirectDraw*, int> SetDirectDraw;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAW *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawVideo*, IDirectDraw**, int> GetDirectDraw;
+        public delegate* unmanaged<TSelf*, IDirectDraw**, int> GetDirectDraw;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawVideo*, uint*, int> GetSurfaceType;
+        public delegate* unmanaged<TSelf*, uint*, int> GetSurfaceType;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawVideo*, int> SetDefault;
+        public delegate* unmanaged<TSelf*, int> SetDefault;
 
         [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawVideo*, int, int> UseScanLine;
+        public delegate* unmanaged<TSelf*, int, int> UseScanLine;
 
         [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawVideo*, int*, int> CanUseScanLine;
+        public delegate* unmanaged<TSelf*, int*, int> CanUseScanLine;
 
         [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawVideo*, int, int> UseOverlayStretch;
+        public delegate* unmanaged<TSelf*, int, int> UseOverlayStretch;
 
         [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawVideo*, int*, int> CanUseOverlayStretch;
+        public delegate* unmanaged<TSelf*, int*, int> CanUseOverlayStretch;
 
         [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawVideo*, int, int> UseWhenFullScreen;
+        public delegate* unmanaged<TSelf*, int, int> UseWhenFullScreen;
 
         [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawVideo*, int*, int> WillUseFullScreen;
+        public delegate* unmanaged<TSelf*, int*, int> WillUseFullScreen;
     }
 }

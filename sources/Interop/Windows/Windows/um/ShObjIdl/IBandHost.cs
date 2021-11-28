@@ -72,24 +72,25 @@ public unsafe partial struct IBandHost : IBandHost.Interface
         HRESULT DestroyBand([NativeTypeName("const IID &")] Guid* rclsidBand);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBandHost*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBandHost*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBandHost*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, BOOL, BOOL, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBandHost*, Guid*, BOOL, BOOL, Guid*, void**, int> CreateBand;
+        public delegate* unmanaged<TSelf*, Guid*, BOOL, BOOL, Guid*, void**, int> CreateBand;
 
         [NativeTypeName("HRESULT (const IID &, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBandHost*, Guid*, BOOL, int> SetBandAvailability;
+        public delegate* unmanaged<TSelf*, Guid*, BOOL, int> SetBandAvailability;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBandHost*, Guid*, int> DestroyBand;
+        public delegate* unmanaged<TSelf*, Guid*, int> DestroyBand;
     }
 }

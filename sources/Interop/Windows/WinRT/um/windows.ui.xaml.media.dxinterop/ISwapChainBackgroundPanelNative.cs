@@ -56,18 +56,19 @@ public unsafe partial struct ISwapChainBackgroundPanelNative : ISwapChainBackgro
         HRESULT SetSwapChain(IDXGISwapChain* swapChain);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISwapChainBackgroundPanelNative*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISwapChainBackgroundPanelNative*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISwapChainBackgroundPanelNative*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDXGISwapChain *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISwapChainBackgroundPanelNative*, IDXGISwapChain*, int> SetSwapChain;
+        public delegate* unmanaged<TSelf*, IDXGISwapChain*, int> SetSwapChain;
     }
 }

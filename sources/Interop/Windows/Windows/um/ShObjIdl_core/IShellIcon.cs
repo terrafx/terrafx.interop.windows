@@ -52,18 +52,19 @@ public unsafe partial struct IShellIcon : IShellIcon.Interface
         HRESULT GetIconOf([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, uint flags, int* pIconIndex);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellIcon*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellIcon*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellIcon*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, UINT, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellIcon*, ITEMIDLIST*, uint, int*, int> GetIconOf;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, uint, int*, int> GetIconOf;
     }
 }

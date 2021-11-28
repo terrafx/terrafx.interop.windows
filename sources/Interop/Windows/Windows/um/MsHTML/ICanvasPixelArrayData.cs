@@ -52,18 +52,19 @@ public unsafe partial struct ICanvasPixelArrayData : ICanvasPixelArrayData.Inter
         HRESULT GetBufferPointer(byte** ppBuffer, [NativeTypeName("ULONG *")] uint* pBufferLength);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICanvasPixelArrayData*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICanvasPixelArrayData*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICanvasPixelArrayData*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICanvasPixelArrayData*, byte**, uint*, int> GetBufferPointer;
+        public delegate* unmanaged<TSelf*, byte**, uint*, int> GetBufferPointer;
     }
 }

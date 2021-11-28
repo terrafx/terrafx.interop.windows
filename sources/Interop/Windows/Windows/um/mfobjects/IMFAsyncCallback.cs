@@ -62,21 +62,22 @@ public unsafe partial struct IMFAsyncCallback : IMFAsyncCallback.Interface
         HRESULT Invoke(IMFAsyncResult* pAsyncResult);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFAsyncCallback*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFAsyncCallback*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFAsyncCallback*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFAsyncCallback*, uint*, uint*, int> GetParameters;
+        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetParameters;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFAsyncCallback*, IMFAsyncResult*, int> Invoke;
+        public delegate* unmanaged<TSelf*, IMFAsyncResult*, int> Invoke;
     }
 }

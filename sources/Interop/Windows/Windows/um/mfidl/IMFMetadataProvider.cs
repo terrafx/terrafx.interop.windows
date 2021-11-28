@@ -52,18 +52,19 @@ public unsafe partial struct IMFMetadataProvider : IMFMetadataProvider.Interface
         HRESULT GetMFMetadata(IMFPresentationDescriptor* pPresentationDescriptor, [NativeTypeName("DWORD")] uint dwStreamIdentifier, [NativeTypeName("DWORD")] uint dwFlags, IMFMetadata** ppMFMetadata);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMetadataProvider*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMetadataProvider*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMetadataProvider*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFPresentationDescriptor *, DWORD, DWORD, IMFMetadata **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMetadataProvider*, IMFPresentationDescriptor*, uint, uint, IMFMetadata**, int> GetMFMetadata;
+        public delegate* unmanaged<TSelf*, IMFPresentationDescriptor*, uint, uint, IMFMetadata**, int> GetMFMetadata;
     }
 }

@@ -45,15 +45,16 @@ public unsafe partial struct IXAudio2EngineCallback : IXAudio2EngineCallback.Int
         void OnCriticalError(HRESULT Error);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2EngineCallback*, void> OnProcessingPassStart;
+        public delegate* unmanaged<TSelf*, void> OnProcessingPassStart;
 
         [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2EngineCallback*, void> OnProcessingPassEnd;
+        public delegate* unmanaged<TSelf*, void> OnProcessingPassEnd;
 
         [NativeTypeName("void (HRESULT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2EngineCallback*, HRESULT, void> OnCriticalError;
+        public delegate* unmanaged<TSelf*, HRESULT, void> OnCriticalError;
     }
 }

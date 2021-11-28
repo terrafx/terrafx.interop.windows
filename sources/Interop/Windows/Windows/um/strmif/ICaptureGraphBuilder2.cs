@@ -132,42 +132,43 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
         HRESULT FindPin(IUnknown* pSource, PIN_DIRECTION pindir, [NativeTypeName("const GUID *")] Guid* pCategory, [NativeTypeName("const GUID *")] Guid* pType, BOOL fUnconnected, int num, IPin** ppPin);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IGraphBuilder *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder2*, IGraphBuilder*, int> SetFiltergraph;
+        public delegate* unmanaged<TSelf*, IGraphBuilder*, int> SetFiltergraph;
 
         [NativeTypeName("HRESULT (IGraphBuilder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder2*, IGraphBuilder**, int> GetFiltergraph;
+        public delegate* unmanaged<TSelf*, IGraphBuilder**, int> GetFiltergraph;
 
         [NativeTypeName("HRESULT (const GUID *, LPCOLESTR, IBaseFilter **, IFileSinkFilter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder2*, Guid*, ushort*, IBaseFilter**, IFileSinkFilter**, int> SetOutputFileName;
+        public delegate* unmanaged<TSelf*, Guid*, ushort*, IBaseFilter**, IFileSinkFilter**, int> SetOutputFileName;
 
         [NativeTypeName("HRESULT (const GUID *, const GUID *, IBaseFilter *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder2*, Guid*, Guid*, IBaseFilter*, Guid*, void**, int> FindInterface;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, IBaseFilter*, Guid*, void**, int> FindInterface;
 
         [NativeTypeName("HRESULT (const GUID *, const GUID *, IUnknown *, IBaseFilter *, IBaseFilter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder2*, Guid*, Guid*, IUnknown*, IBaseFilter*, IBaseFilter*, int> RenderStream;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, IUnknown*, IBaseFilter*, IBaseFilter*, int> RenderStream;
 
         [NativeTypeName("HRESULT (const GUID *, const GUID *, IBaseFilter *, REFERENCE_TIME *, REFERENCE_TIME *, WORD, WORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder2*, Guid*, Guid*, IBaseFilter*, long*, long*, ushort, ushort, int> ControlStream;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, IBaseFilter*, long*, long*, ushort, ushort, int> ControlStream;
 
         [NativeTypeName("HRESULT (LPCOLESTR, DWORDLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder2*, ushort*, ulong, int> AllocCapFile;
+        public delegate* unmanaged<TSelf*, ushort*, ulong, int> AllocCapFile;
 
         [NativeTypeName("HRESULT (LPOLESTR, LPOLESTR, int, IAMCopyCaptureFileProgress *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder2*, ushort*, ushort*, int, IAMCopyCaptureFileProgress*, int> CopyCaptureFile;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int, IAMCopyCaptureFileProgress*, int> CopyCaptureFile;
 
         [NativeTypeName("HRESULT (IUnknown *, PIN_DIRECTION, const GUID *, const GUID *, BOOL, int, IPin **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICaptureGraphBuilder2*, IUnknown*, PIN_DIRECTION, Guid*, Guid*, BOOL, int, IPin**, int> FindPin;
+        public delegate* unmanaged<TSelf*, IUnknown*, PIN_DIRECTION, Guid*, Guid*, BOOL, int, IPin**, int> FindPin;
     }
 }

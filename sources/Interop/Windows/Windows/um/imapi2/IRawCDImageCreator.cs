@@ -260,84 +260,85 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface
         HRESULT get_ExpectedTableOfContents(SAFEARRAY** value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, IStream**, int> CreateResultImage;
+        public delegate* unmanaged<TSelf*, IStream**, int> CreateResultImage;
 
         [NativeTypeName("HRESULT (IMAPI_CD_SECTOR_TYPE, IStream *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, IMAPI_CD_SECTOR_TYPE, IStream*, int*, int> AddTrack;
+        public delegate* unmanaged<TSelf*, IMAPI_CD_SECTOR_TYPE, IStream*, int*, int> AddTrack;
 
         [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, IStream*, int> AddSpecialPregap;
+        public delegate* unmanaged<TSelf*, IStream*, int> AddSpecialPregap;
 
         [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, IStream*, int> AddSubcodeRWGenerator;
+        public delegate* unmanaged<TSelf*, IStream*, int> AddSubcodeRWGenerator;
 
         [NativeTypeName("HRESULT (IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE, int> put_ResultingImageType;
+        public delegate* unmanaged<TSelf*, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE, int> put_ResultingImageType;
 
         [NativeTypeName("HRESULT (IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE*, int> get_ResultingImageType;
+        public delegate* unmanaged<TSelf*, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE*, int> get_ResultingImageType;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, int*, int> get_StartOfLeadout;
+        public delegate* unmanaged<TSelf*, int*, int> get_StartOfLeadout;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, int, int> put_StartOfLeadoutLimit;
+        public delegate* unmanaged<TSelf*, int, int> put_StartOfLeadoutLimit;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, int*, int> get_StartOfLeadoutLimit;
+        public delegate* unmanaged<TSelf*, int*, int> get_StartOfLeadoutLimit;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, short, int> put_DisableGaplessAudio;
+        public delegate* unmanaged<TSelf*, short, int> put_DisableGaplessAudio;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, short*, int> get_DisableGaplessAudio;
+        public delegate* unmanaged<TSelf*, short*, int> get_DisableGaplessAudio;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, ushort*, int> put_MediaCatalogNumber;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_MediaCatalogNumber;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, ushort**, int> get_MediaCatalogNumber;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_MediaCatalogNumber;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, int, int> put_StartingTrackNumber;
+        public delegate* unmanaged<TSelf*, int, int> put_StartingTrackNumber;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, int*, int> get_StartingTrackNumber;
+        public delegate* unmanaged<TSelf*, int*, int> get_StartingTrackNumber;
 
         [NativeTypeName("HRESULT (LONG, IRawCDImageTrackInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, int, IRawCDImageTrackInfo**, int> get_TrackInfo;
+        public delegate* unmanaged<TSelf*, int, IRawCDImageTrackInfo**, int> get_TrackInfo;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, int*, int> get_NumberOfExistingTracks;
+        public delegate* unmanaged<TSelf*, int*, int> get_NumberOfExistingTracks;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, int*, int> get_LastUsedUserSectorInImage;
+        public delegate* unmanaged<TSelf*, int*, int> get_LastUsedUserSectorInImage;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IRawCDImageCreator*, SAFEARRAY**, int> get_ExpectedTableOfContents;
+        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_ExpectedTableOfContents;
     }
 }

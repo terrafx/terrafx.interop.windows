@@ -134,45 +134,46 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
         HRESULT SetWindowClientAdapter(IUnknown* value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowAdapterInterop*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowAdapterInterop*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowAdapterInterop*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowAdapterInterop*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowAdapterInterop*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowAdapterInterop*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int> get_AppActivationClientAdapter;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> get_AppActivationClientAdapter;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int> get_ApplicationViewClientAdapter;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> get_ApplicationViewClientAdapter;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int> get_CoreApplicationViewClientAdapter;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> get_CoreApplicationViewClientAdapter;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int> get_HoloViewClientAdapter;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> get_HoloViewClientAdapter;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int> get_SystemNavigationClientAdapter;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> get_SystemNavigationClientAdapter;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int> get_TitleBarClientAdapter;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> get_TitleBarClientAdapter;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown*, int> SetWindowClientAdapter;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> SetWindowClientAdapter;
     }
 }

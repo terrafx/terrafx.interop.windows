@@ -172,54 +172,55 @@ public unsafe partial struct IPart : IPart.Interface
         HRESULT UnregisterControlChangeCallback(IControlChangeNotify* pNotify);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPart*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPart*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPart*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPart*, ushort**, int> GetName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPart*, uint*, int> GetLocalId;
+        public delegate* unmanaged<TSelf*, uint*, int> GetLocalId;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPart*, ushort**, int> GetGlobalId;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetGlobalId;
 
         [NativeTypeName("HRESULT (PartType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPart*, PartType*, int> GetPartType;
+        public delegate* unmanaged<TSelf*, PartType*, int> GetPartType;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPart*, Guid*, int> GetSubType;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetSubType;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPart*, uint*, int> GetControlInterfaceCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetControlInterfaceCount;
 
         [NativeTypeName("HRESULT (UINT, IControlInterface **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPart*, uint, IControlInterface**, int> GetControlInterface;
+        public delegate* unmanaged<TSelf*, uint, IControlInterface**, int> GetControlInterface;
 
         [NativeTypeName("HRESULT (IPartsList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPart*, IPartsList**, int> EnumPartsIncoming;
+        public delegate* unmanaged<TSelf*, IPartsList**, int> EnumPartsIncoming;
 
         [NativeTypeName("HRESULT (IPartsList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPart*, IPartsList**, int> EnumPartsOutgoing;
+        public delegate* unmanaged<TSelf*, IPartsList**, int> EnumPartsOutgoing;
 
         [NativeTypeName("HRESULT (IDeviceTopology **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPart*, IDeviceTopology**, int> GetTopologyObject;
+        public delegate* unmanaged<TSelf*, IDeviceTopology**, int> GetTopologyObject;
 
         [NativeTypeName("HRESULT (DWORD, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPart*, uint, Guid*, void**, int> Activate;
+        public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> Activate;
 
         [NativeTypeName("HRESULT (const GUID &, IControlChangeNotify *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPart*, Guid*, IControlChangeNotify*, int> RegisterControlChangeCallback;
+        public delegate* unmanaged<TSelf*, Guid*, IControlChangeNotify*, int> RegisterControlChangeCallback;
 
         [NativeTypeName("HRESULT (IControlChangeNotify *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPart*, IControlChangeNotify*, int> UnregisterControlChangeCallback;
+        public delegate* unmanaged<TSelf*, IControlChangeNotify*, int> UnregisterControlChangeCallback;
     }
 }

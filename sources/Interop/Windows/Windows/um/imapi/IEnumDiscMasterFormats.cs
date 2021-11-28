@@ -82,27 +82,28 @@ public unsafe partial struct IEnumDiscMasterFormats : IEnumDiscMasterFormats.Int
         HRESULT Clone(IEnumDiscMasterFormats** ppEnum);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumDiscMasterFormats*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumDiscMasterFormats*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumDiscMasterFormats*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, LPIID, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumDiscMasterFormats*, uint, Guid*, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, Guid*, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumDiscMasterFormats*, uint, int> Skip;
+        public delegate* unmanaged<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumDiscMasterFormats*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IEnumDiscMasterFormats **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumDiscMasterFormats*, IEnumDiscMasterFormats**, int> Clone;
+        public delegate* unmanaged<TSelf*, IEnumDiscMasterFormats**, int> Clone;
     }
 }

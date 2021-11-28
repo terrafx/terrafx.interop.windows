@@ -229,90 +229,91 @@ public unsafe partial struct IPropertyDescriptionSearchInfo : IPropertyDescripti
         HRESULT GetMaxSize(uint* pcbMaxSize);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PROPERTYKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, PROPERTYKEY*, int> GetPropertyKey;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, int> GetPropertyKey;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, ushort**, int> GetCanonicalName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetCanonicalName;
 
         [NativeTypeName("HRESULT (VARTYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, ushort*, int> GetPropertyType;
+        public delegate* unmanaged<TSelf*, ushort*, int> GetPropertyType;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, ushort**, int> GetEditInvitation;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetEditInvitation;
 
         [NativeTypeName("HRESULT (PROPDESC_TYPE_FLAGS, PROPDESC_TYPE_FLAGS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, PROPDESC_TYPE_FLAGS, PROPDESC_TYPE_FLAGS*, int> GetTypeFlags;
+        public delegate* unmanaged<TSelf*, PROPDESC_TYPE_FLAGS, PROPDESC_TYPE_FLAGS*, int> GetTypeFlags;
 
         [NativeTypeName("HRESULT (PROPDESC_VIEW_FLAGS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, PROPDESC_VIEW_FLAGS*, int> GetViewFlags;
+        public delegate* unmanaged<TSelf*, PROPDESC_VIEW_FLAGS*, int> GetViewFlags;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, uint*, int> GetDefaultColumnWidth;
+        public delegate* unmanaged<TSelf*, uint*, int> GetDefaultColumnWidth;
 
         [NativeTypeName("HRESULT (PROPDESC_DISPLAYTYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, PROPDESC_DISPLAYTYPE*, int> GetDisplayType;
+        public delegate* unmanaged<TSelf*, PROPDESC_DISPLAYTYPE*, int> GetDisplayType;
 
         [NativeTypeName("HRESULT (SHCOLSTATEF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, uint*, int> GetColumnState;
+        public delegate* unmanaged<TSelf*, uint*, int> GetColumnState;
 
         [NativeTypeName("HRESULT (PROPDESC_GROUPING_RANGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, PROPDESC_GROUPING_RANGE*, int> GetGroupingRange;
+        public delegate* unmanaged<TSelf*, PROPDESC_GROUPING_RANGE*, int> GetGroupingRange;
 
         [NativeTypeName("HRESULT (PROPDESC_RELATIVEDESCRIPTION_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, PROPDESC_RELATIVEDESCRIPTION_TYPE*, int> GetRelativeDescriptionType;
+        public delegate* unmanaged<TSelf*, PROPDESC_RELATIVEDESCRIPTION_TYPE*, int> GetRelativeDescriptionType;
 
         [NativeTypeName("HRESULT (const PROPVARIANT &, const PROPVARIANT &, LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, PROPVARIANT*, PROPVARIANT*, ushort**, ushort**, int> GetRelativeDescription;
+        public delegate* unmanaged<TSelf*, PROPVARIANT*, PROPVARIANT*, ushort**, ushort**, int> GetRelativeDescription;
 
         [NativeTypeName("HRESULT (PROPDESC_SORTDESCRIPTION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, PROPDESC_SORTDESCRIPTION*, int> GetSortDescription;
+        public delegate* unmanaged<TSelf*, PROPDESC_SORTDESCRIPTION*, int> GetSortDescription;
 
         [NativeTypeName("HRESULT (BOOL, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, BOOL, ushort**, int> GetSortDescriptionLabel;
+        public delegate* unmanaged<TSelf*, BOOL, ushort**, int> GetSortDescriptionLabel;
 
         [NativeTypeName("HRESULT (PROPDESC_AGGREGATION_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, PROPDESC_AGGREGATION_TYPE*, int> GetAggregationType;
+        public delegate* unmanaged<TSelf*, PROPDESC_AGGREGATION_TYPE*, int> GetAggregationType;
 
         [NativeTypeName("HRESULT (PROPDESC_CONDITION_TYPE *, CONDITION_OPERATION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, PROPDESC_CONDITION_TYPE*, CONDITION_OPERATION*, int> GetConditionType;
+        public delegate* unmanaged<TSelf*, PROPDESC_CONDITION_TYPE*, CONDITION_OPERATION*, int> GetConditionType;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, Guid*, void**, int> GetEnumTypeList;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetEnumTypeList;
 
         [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, PROPVARIANT*, int> CoerceToCanonicalValue;
+        public delegate* unmanaged<TSelf*, PROPVARIANT*, int> CoerceToCanonicalValue;
 
         [NativeTypeName("HRESULT (const PROPVARIANT &, PROPDESC_FORMAT_FLAGS, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, ushort**, int> FormatForDisplay;
+        public delegate* unmanaged<TSelf*, PROPVARIANT*, PROPDESC_FORMAT_FLAGS, ushort**, int> FormatForDisplay;
 
         [NativeTypeName("HRESULT (const PROPVARIANT &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, PROPVARIANT*, int> IsValueCanonical;
+        public delegate* unmanaged<TSelf*, PROPVARIANT*, int> IsValueCanonical;
 
         [NativeTypeName("HRESULT (PROPDESC_SEARCHINFO_FLAGS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, PROPDESC_SEARCHINFO_FLAGS*, int> GetSearchInfoFlags;
+        public delegate* unmanaged<TSelf*, PROPDESC_SEARCHINFO_FLAGS*, int> GetSearchInfoFlags;
 
         [NativeTypeName("HRESULT (PROPDESC_COLUMNINDEX_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, PROPDESC_COLUMNINDEX_TYPE*, int> GetColumnIndexType;
+        public delegate* unmanaged<TSelf*, PROPDESC_COLUMNINDEX_TYPE*, int> GetColumnIndexType;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, ushort**, int> GetProjectionString;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetProjectionString;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyDescriptionSearchInfo*, uint*, int> GetMaxSize;
+        public delegate* unmanaged<TSelf*, uint*, int> GetMaxSize;
     }
 }

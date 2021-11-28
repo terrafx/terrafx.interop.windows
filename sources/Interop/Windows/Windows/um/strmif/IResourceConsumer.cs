@@ -62,21 +62,22 @@ public unsafe partial struct IResourceConsumer : IResourceConsumer.Interface
         HRESULT ReleaseResource([NativeTypeName("LONG")] int idResource);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IResourceConsumer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IResourceConsumer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IResourceConsumer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IResourceConsumer*, int, int> AcquireResource;
+        public delegate* unmanaged<TSelf*, int, int> AcquireResource;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IResourceConsumer*, int, int> ReleaseResource;
+        public delegate* unmanaged<TSelf*, int, int> ReleaseResource;
     }
 }

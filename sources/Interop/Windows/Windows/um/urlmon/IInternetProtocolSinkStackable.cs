@@ -72,24 +72,25 @@ public unsafe partial struct IInternetProtocolSinkStackable : IInternetProtocolS
         HRESULT RollbackSwitch();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolSinkStackable*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolSinkStackable*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolSinkStackable*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IInternetProtocolSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolSinkStackable*, IInternetProtocolSink*, int> SwitchSink;
+        public delegate* unmanaged<TSelf*, IInternetProtocolSink*, int> SwitchSink;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolSinkStackable*, int> CommitSwitch;
+        public delegate* unmanaged<TSelf*, int> CommitSwitch;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetProtocolSinkStackable*, int> RollbackSwitch;
+        public delegate* unmanaged<TSelf*, int> RollbackSwitch;
     }
 }

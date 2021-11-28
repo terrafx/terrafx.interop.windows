@@ -213,63 +213,64 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface
         void GetOutput(ID2D1Image** outputImage);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Effect*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Effect*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Effect*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Effect*, uint> GetPropertyCount;
+        public delegate* unmanaged<TSelf*, uint> GetPropertyCount;
 
         [NativeTypeName("HRESULT (UINT32, PWSTR, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Effect*, uint, ushort*, uint, int> GetPropertyName;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint, int> GetPropertyName;
 
         [NativeTypeName("UINT32 (UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Effect*, uint, uint> GetPropertyNameLength;
+        public delegate* unmanaged<TSelf*, uint, uint> GetPropertyNameLength;
 
         [NativeTypeName("D2D1_PROPERTY_TYPE (UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public new delegate* unmanaged<ID2D1Effect*, uint, D2D1_PROPERTY_TYPE> GetType;
+        public new delegate* unmanaged<TSelf*, uint, D2D1_PROPERTY_TYPE> GetType;
 
         [NativeTypeName("UINT32 (PCWSTR) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Effect*, ushort*, uint> GetPropertyIndex;
+        public delegate* unmanaged<TSelf*, ushort*, uint> GetPropertyIndex;
 
         [NativeTypeName("HRESULT (PCWSTR, D2D1_PROPERTY_TYPE, const BYTE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Effect*, ushort*, D2D1_PROPERTY_TYPE, byte*, uint, int> SetValueByName1;
+        public delegate* unmanaged<TSelf*, ushort*, D2D1_PROPERTY_TYPE, byte*, uint, int> SetValueByName1;
 
         [NativeTypeName("HRESULT (UINT32, D2D1_PROPERTY_TYPE, const BYTE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Effect*, uint, D2D1_PROPERTY_TYPE, byte*, uint, int> SetValue1;
+        public delegate* unmanaged<TSelf*, uint, D2D1_PROPERTY_TYPE, byte*, uint, int> SetValue1;
 
         [NativeTypeName("HRESULT (PCWSTR, D2D1_PROPERTY_TYPE, BYTE *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Effect*, ushort*, D2D1_PROPERTY_TYPE, byte*, uint, int> GetValueByName1;
+        public delegate* unmanaged<TSelf*, ushort*, D2D1_PROPERTY_TYPE, byte*, uint, int> GetValueByName1;
 
         [NativeTypeName("HRESULT (UINT32, D2D1_PROPERTY_TYPE, BYTE *, UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Effect*, uint, D2D1_PROPERTY_TYPE, byte*, uint, int> GetValue1;
+        public delegate* unmanaged<TSelf*, uint, D2D1_PROPERTY_TYPE, byte*, uint, int> GetValue1;
 
         [NativeTypeName("UINT32 (UINT32) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Effect*, uint, uint> GetValueSize;
+        public delegate* unmanaged<TSelf*, uint, uint> GetValueSize;
 
         [NativeTypeName("HRESULT (UINT32, ID2D1Properties **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Effect*, uint, ID2D1Properties**, int> GetSubProperties;
+        public delegate* unmanaged<TSelf*, uint, ID2D1Properties**, int> GetSubProperties;
 
         [NativeTypeName("void (UINT32, ID2D1Image *, BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Effect*, uint, ID2D1Image*, BOOL, void> SetInput;
+        public delegate* unmanaged<TSelf*, uint, ID2D1Image*, BOOL, void> SetInput;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Effect*, uint, int> SetInputCount;
+        public delegate* unmanaged<TSelf*, uint, int> SetInputCount;
 
         [NativeTypeName("void (UINT32, ID2D1Image **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Effect*, uint, ID2D1Image**, void> GetInput;
+        public delegate* unmanaged<TSelf*, uint, ID2D1Image**, void> GetInput;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Effect*, uint> GetInputCount;
+        public delegate* unmanaged<TSelf*, uint> GetInputCount;
 
         [NativeTypeName("void (ID2D1Image **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1Effect*, ID2D1Image**, void> GetOutput;
+        public delegate* unmanaged<TSelf*, ID2D1Image**, void> GetOutput;
     }
 }

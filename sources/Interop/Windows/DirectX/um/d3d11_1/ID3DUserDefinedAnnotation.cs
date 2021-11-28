@@ -83,27 +83,28 @@ public unsafe partial struct ID3DUserDefinedAnnotation : ID3DUserDefinedAnnotati
         BOOL GetStatus();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3DUserDefinedAnnotation*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3DUserDefinedAnnotation*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3DUserDefinedAnnotation*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("INT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3DUserDefinedAnnotation*, ushort*, int> BeginEvent;
+        public delegate* unmanaged<TSelf*, ushort*, int> BeginEvent;
 
         [NativeTypeName("INT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3DUserDefinedAnnotation*, int> EndEvent;
+        public delegate* unmanaged<TSelf*, int> EndEvent;
 
         [NativeTypeName("void (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3DUserDefinedAnnotation*, ushort*, void> SetMarker;
+        public delegate* unmanaged<TSelf*, ushort*, void> SetMarker;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3DUserDefinedAnnotation*, int> GetStatus;
+        public delegate* unmanaged<TSelf*, int> GetStatus;
     }
 }

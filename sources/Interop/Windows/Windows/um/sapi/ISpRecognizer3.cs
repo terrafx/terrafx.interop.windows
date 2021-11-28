@@ -72,24 +72,25 @@ public unsafe partial struct ISpRecognizer3 : ISpRecognizer3.Interface
         HRESULT GetActiveCategory(ISpRecoCategory** ppCategory);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecognizer3*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecognizer3*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecognizer3*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SPCATEGORYTYPE, ISpRecoCategory **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecognizer3*, SPCATEGORYTYPE, ISpRecoCategory**, int> GetCategory;
+        public delegate* unmanaged<TSelf*, SPCATEGORYTYPE, ISpRecoCategory**, int> GetCategory;
 
         [NativeTypeName("HRESULT (ISpRecoCategory *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecognizer3*, ISpRecoCategory*, int> SetActiveCategory;
+        public delegate* unmanaged<TSelf*, ISpRecoCategory*, int> SetActiveCategory;
 
         [NativeTypeName("HRESULT (ISpRecoCategory **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpRecognizer3*, ISpRecoCategory**, int> GetActiveCategory;
+        public delegate* unmanaged<TSelf*, ISpRecoCategory**, int> GetActiveCategory;
     }
 }

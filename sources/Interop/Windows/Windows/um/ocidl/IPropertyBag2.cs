@@ -92,30 +92,31 @@ public unsafe partial struct IPropertyBag2 : IPropertyBag2.Interface
         HRESULT LoadObject([NativeTypeName("LPCOLESTR")] ushort* pstrName, [NativeTypeName("DWORD")] uint dwHint, IUnknown* pUnkObject, IErrorLog* pErrLog);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyBag2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyBag2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyBag2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, PROPBAG2 *, IErrorLog *, VARIANT *, HRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyBag2*, uint, PROPBAG2*, IErrorLog*, VARIANT*, HRESULT*, int> Read;
+        public delegate* unmanaged<TSelf*, uint, PROPBAG2*, IErrorLog*, VARIANT*, HRESULT*, int> Read;
 
         [NativeTypeName("HRESULT (ULONG, PROPBAG2 *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyBag2*, uint, PROPBAG2*, VARIANT*, int> Write;
+        public delegate* unmanaged<TSelf*, uint, PROPBAG2*, VARIANT*, int> Write;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyBag2*, uint*, int> CountProperties;
+        public delegate* unmanaged<TSelf*, uint*, int> CountProperties;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, PROPBAG2 *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyBag2*, uint, uint, PROPBAG2*, uint*, int> GetPropertyInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, PROPBAG2*, uint*, int> GetPropertyInfo;
 
         [NativeTypeName("HRESULT (LPCOLESTR, DWORD, IUnknown *, IErrorLog *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyBag2*, ushort*, uint, IUnknown*, IErrorLog*, int> LoadObject;
+        public delegate* unmanaged<TSelf*, ushort*, uint, IUnknown*, IErrorLog*, int> LoadObject;
     }
 }

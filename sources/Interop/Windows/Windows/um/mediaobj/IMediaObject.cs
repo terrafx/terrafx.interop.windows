@@ -252,78 +252,79 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         HRESULT Lock([NativeTypeName("LONG")] int bLock);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, uint*, uint*, int> GetStreamCount;
+        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetStreamCount;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, uint, uint*, int> GetInputStreamInfo;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> GetInputStreamInfo;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, uint, uint*, int> GetOutputStreamInfo;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> GetOutputStreamInfo;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DMO_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, uint, uint, DMO_MEDIA_TYPE*, int> GetInputType;
+        public delegate* unmanaged<TSelf*, uint, uint, DMO_MEDIA_TYPE*, int> GetInputType;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DMO_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, uint, uint, DMO_MEDIA_TYPE*, int> GetOutputType;
+        public delegate* unmanaged<TSelf*, uint, uint, DMO_MEDIA_TYPE*, int> GetOutputType;
 
         [NativeTypeName("HRESULT (DWORD, const DMO_MEDIA_TYPE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, uint, DMO_MEDIA_TYPE*, uint, int> SetInputType;
+        public delegate* unmanaged<TSelf*, uint, DMO_MEDIA_TYPE*, uint, int> SetInputType;
 
         [NativeTypeName("HRESULT (DWORD, const DMO_MEDIA_TYPE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, uint, DMO_MEDIA_TYPE*, uint, int> SetOutputType;
+        public delegate* unmanaged<TSelf*, uint, DMO_MEDIA_TYPE*, uint, int> SetOutputType;
 
         [NativeTypeName("HRESULT (DWORD, DMO_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, uint, DMO_MEDIA_TYPE*, int> GetInputCurrentType;
+        public delegate* unmanaged<TSelf*, uint, DMO_MEDIA_TYPE*, int> GetInputCurrentType;
 
         [NativeTypeName("HRESULT (DWORD, DMO_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, uint, DMO_MEDIA_TYPE*, int> GetOutputCurrentType;
+        public delegate* unmanaged<TSelf*, uint, DMO_MEDIA_TYPE*, int> GetOutputCurrentType;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, uint, uint*, uint*, uint*, int> GetInputSizeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint*, uint*, uint*, int> GetInputSizeInfo;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, uint, uint*, uint*, int> GetOutputSizeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint*, uint*, int> GetOutputSizeInfo;
 
         [NativeTypeName("HRESULT (DWORD, REFERENCE_TIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, uint, long*, int> GetInputMaxLatency;
+        public delegate* unmanaged<TSelf*, uint, long*, int> GetInputMaxLatency;
 
         [NativeTypeName("HRESULT (DWORD, REFERENCE_TIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, uint, long, int> SetInputMaxLatency;
+        public delegate* unmanaged<TSelf*, uint, long, int> SetInputMaxLatency;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, int> Flush;
+        public delegate* unmanaged<TSelf*, int> Flush;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, uint, int> Discontinuity;
+        public delegate* unmanaged<TSelf*, uint, int> Discontinuity;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, int> AllocateStreamingResources;
+        public delegate* unmanaged<TSelf*, int> AllocateStreamingResources;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, int> FreeStreamingResources;
+        public delegate* unmanaged<TSelf*, int> FreeStreamingResources;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, uint, uint*, int> GetInputStatus;
+        public delegate* unmanaged<TSelf*, uint, uint*, int> GetInputStatus;
 
         [NativeTypeName("HRESULT (DWORD, IMediaBuffer *, DWORD, REFERENCE_TIME, REFERENCE_TIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, uint, IMediaBuffer*, uint, long, long, int> ProcessInput;
+        public delegate* unmanaged<TSelf*, uint, IMediaBuffer*, uint, long, long, int> ProcessInput;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DMO_OUTPUT_DATA_BUFFER *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, uint, uint, DMO_OUTPUT_DATA_BUFFER*, uint*, int> ProcessOutput;
+        public delegate* unmanaged<TSelf*, uint, uint, DMO_OUTPUT_DATA_BUFFER*, uint*, int> ProcessOutput;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMediaObject*, int, int> Lock;
+        public delegate* unmanaged<TSelf*, int, int> Lock;
     }
 }

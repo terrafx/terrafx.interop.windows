@@ -75,24 +75,25 @@ public unsafe partial struct IDWriteTypography : IDWriteTypography.Interface
         HRESULT GetFontFeature([NativeTypeName("UINT32")] uint fontFeatureIndex, DWRITE_FONT_FEATURE* fontFeature);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTypography*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTypography*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTypography*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWRITE_FONT_FEATURE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTypography*, DWRITE_FONT_FEATURE, int> AddFontFeature;
+        public delegate* unmanaged<TSelf*, DWRITE_FONT_FEATURE, int> AddFontFeature;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteTypography*, uint> GetFontFeatureCount;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetFontFeatureCount;
 
         [NativeTypeName("HRESULT (UINT32, DWRITE_FONT_FEATURE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTypography*, uint, DWRITE_FONT_FEATURE*, int> GetFontFeature;
+        public delegate* unmanaged<TSelf*, uint, DWRITE_FONT_FEATURE*, int> GetFontFeature;
     }
 }

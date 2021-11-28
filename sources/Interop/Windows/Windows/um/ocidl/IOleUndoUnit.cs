@@ -82,27 +82,28 @@ public unsafe partial struct IOleUndoUnit : IOleUndoUnit.Interface
         HRESULT OnNextAdd();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleUndoUnit*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleUndoUnit*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleUndoUnit*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IOleUndoManager *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleUndoUnit*, IOleUndoManager*, int> Do;
+        public delegate* unmanaged<TSelf*, IOleUndoManager*, int> Do;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleUndoUnit*, ushort**, int> GetDescription;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDescription;
 
         [NativeTypeName("HRESULT (CLSID *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleUndoUnit*, Guid*, int*, int> GetUnitType;
+        public delegate* unmanaged<TSelf*, Guid*, int*, int> GetUnitType;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IOleUndoUnit*, int> OnNextAdd;
+        public delegate* unmanaged<TSelf*, int> OnNextAdd;
     }
 }

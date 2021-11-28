@@ -52,18 +52,19 @@ public unsafe partial struct IStreamUnbufferedInfo : IStreamUnbufferedInfo.Inter
         HRESULT GetSectorSize([NativeTypeName("ULONG *")] uint* pcbSectorSize);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamUnbufferedInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamUnbufferedInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamUnbufferedInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamUnbufferedInfo*, uint*, int> GetSectorSize;
+        public delegate* unmanaged<TSelf*, uint*, int> GetSectorSize;
     }
 }

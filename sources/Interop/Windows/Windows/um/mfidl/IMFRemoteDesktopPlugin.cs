@@ -52,18 +52,19 @@ public unsafe partial struct IMFRemoteDesktopPlugin : IMFRemoteDesktopPlugin.Int
         HRESULT UpdateTopology(IMFTopology* pTopology);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRemoteDesktopPlugin*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRemoteDesktopPlugin*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRemoteDesktopPlugin*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFTopology *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFRemoteDesktopPlugin*, IMFTopology*, int> UpdateTopology;
+        public delegate* unmanaged<TSelf*, IMFTopology*, int> UpdateTopology;
     }
 }

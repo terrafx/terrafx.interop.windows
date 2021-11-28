@@ -63,21 +63,22 @@ public unsafe partial struct ICoreInputInterop : ICoreInputInterop.Interface
         HRESULT put_MessageHandled([NativeTypeName("boolean")] byte value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreInputInterop*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreInputInterop*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreInputInterop*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreInputInterop*, IUnknown*, int> SetInputSource;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> SetInputSource;
 
         [NativeTypeName("HRESULT (boolean) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICoreInputInterop*, byte, int> put_MessageHandled;
+        public delegate* unmanaged<TSelf*, byte, int> put_MessageHandled;
     }
 }

@@ -72,24 +72,25 @@ public unsafe partial struct IContact : IContact.Interface
         HRESULT CommitChanges([NativeTypeName("DWORD")] uint dwCommitFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContact*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContact*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContact*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContact*, ushort*, uint, uint*, int> GetContactID;
+        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, int> GetContactID;
 
         [NativeTypeName("HRESULT (LPWSTR, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContact*, ushort*, uint, uint*, int> GetPath;
+        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, int> GetPath;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContact*, uint, int> CommitChanges;
+        public delegate* unmanaged<TSelf*, uint, int> CommitChanges;
     }
 }

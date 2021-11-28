@@ -82,27 +82,28 @@ public unsafe partial struct IUIAnimationTransition : IUIAnimationTransition.Int
         HRESULT GetDuration([NativeTypeName("UI_ANIMATION_SECONDS *")] double* duration);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransition*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransition*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransition*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DOUBLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransition*, double, int> SetInitialValue;
+        public delegate* unmanaged<TSelf*, double, int> SetInitialValue;
 
         [NativeTypeName("HRESULT (DOUBLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransition*, double, int> SetInitialVelocity;
+        public delegate* unmanaged<TSelf*, double, int> SetInitialVelocity;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransition*, int> IsDurationKnown;
+        public delegate* unmanaged<TSelf*, int> IsDurationKnown;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTransition*, double*, int> GetDuration;
+        public delegate* unmanaged<TSelf*, double*, int> GetDuration;
     }
 }

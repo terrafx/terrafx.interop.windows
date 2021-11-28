@@ -200,66 +200,67 @@ public unsafe partial struct IWriteEngine2 : IWriteEngine2.Interface
         HRESULT get_WriteInProgress([NativeTypeName("VARIANT_BOOL *")] short* value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWriteEngine2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWriteEngine2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWriteEngine2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWriteEngine2*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWriteEngine2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWriteEngine2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWriteEngine2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IStream *, LONG, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWriteEngine2*, IStream*, int, int, int> WriteSection;
+        public delegate* unmanaged<TSelf*, IStream*, int, int, int> WriteSection;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWriteEngine2*, int> CancelWrite;
+        public delegate* unmanaged<TSelf*, int> CancelWrite;
 
         [NativeTypeName("HRESULT (IDiscRecorder2Ex *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWriteEngine2*, IDiscRecorder2Ex*, int> put_Recorder;
+        public delegate* unmanaged<TSelf*, IDiscRecorder2Ex*, int> put_Recorder;
 
         [NativeTypeName("HRESULT (IDiscRecorder2Ex **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWriteEngine2*, IDiscRecorder2Ex**, int> get_Recorder;
+        public delegate* unmanaged<TSelf*, IDiscRecorder2Ex**, int> get_Recorder;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWriteEngine2*, short, int> put_UseStreamingWrite12;
+        public delegate* unmanaged<TSelf*, short, int> put_UseStreamingWrite12;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWriteEngine2*, short*, int> get_UseStreamingWrite12;
+        public delegate* unmanaged<TSelf*, short*, int> get_UseStreamingWrite12;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWriteEngine2*, int, int> put_StartingSectorsPerSecond;
+        public delegate* unmanaged<TSelf*, int, int> put_StartingSectorsPerSecond;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWriteEngine2*, int*, int> get_StartingSectorsPerSecond;
+        public delegate* unmanaged<TSelf*, int*, int> get_StartingSectorsPerSecond;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWriteEngine2*, int, int> put_EndingSectorsPerSecond;
+        public delegate* unmanaged<TSelf*, int, int> put_EndingSectorsPerSecond;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWriteEngine2*, int*, int> get_EndingSectorsPerSecond;
+        public delegate* unmanaged<TSelf*, int*, int> get_EndingSectorsPerSecond;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWriteEngine2*, int, int> put_BytesPerSector;
+        public delegate* unmanaged<TSelf*, int, int> put_BytesPerSector;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWriteEngine2*, int*, int> get_BytesPerSector;
+        public delegate* unmanaged<TSelf*, int*, int> get_BytesPerSector;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWriteEngine2*, short*, int> get_WriteInProgress;
+        public delegate* unmanaged<TSelf*, short*, int> get_WriteInProgress;
     }
 }

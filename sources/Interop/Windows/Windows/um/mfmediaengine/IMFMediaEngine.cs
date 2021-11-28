@@ -464,141 +464,142 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         HRESULT OnVideoStreamTick([NativeTypeName("LONGLONG *")] long* pPts);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFMediaError **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, IMFMediaError**, int> GetError;
+        public delegate* unmanaged<TSelf*, IMFMediaError**, int> GetError;
 
         [NativeTypeName("HRESULT (MF_MEDIA_ENGINE_ERR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, MF_MEDIA_ENGINE_ERR, int> SetErrorCode;
+        public delegate* unmanaged<TSelf*, MF_MEDIA_ENGINE_ERR, int> SetErrorCode;
 
         [NativeTypeName("HRESULT (IMFMediaEngineSrcElements *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, IMFMediaEngineSrcElements*, int> SetSourceElements;
+        public delegate* unmanaged<TSelf*, IMFMediaEngineSrcElements*, int> SetSourceElements;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, ushort*, int> SetSource;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetSource;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, ushort**, int> GetCurrentSource;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetCurrentSource;
 
         [NativeTypeName("USHORT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, ushort> GetNetworkState;
+        public delegate* unmanaged<TSelf*, ushort> GetNetworkState;
 
         [NativeTypeName("MF_MEDIA_ENGINE_PRELOAD () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, MF_MEDIA_ENGINE_PRELOAD> GetPreload;
+        public delegate* unmanaged<TSelf*, MF_MEDIA_ENGINE_PRELOAD> GetPreload;
 
         [NativeTypeName("HRESULT (MF_MEDIA_ENGINE_PRELOAD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, MF_MEDIA_ENGINE_PRELOAD, int> SetPreload;
+        public delegate* unmanaged<TSelf*, MF_MEDIA_ENGINE_PRELOAD, int> SetPreload;
 
         [NativeTypeName("HRESULT (IMFMediaTimeRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, IMFMediaTimeRange**, int> GetBuffered;
+        public delegate* unmanaged<TSelf*, IMFMediaTimeRange**, int> GetBuffered;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, int> Load;
+        public delegate* unmanaged<TSelf*, int> Load;
 
         [NativeTypeName("HRESULT (BSTR, MF_MEDIA_ENGINE_CANPLAY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, ushort*, MF_MEDIA_ENGINE_CANPLAY*, int> CanPlayType;
+        public delegate* unmanaged<TSelf*, ushort*, MF_MEDIA_ENGINE_CANPLAY*, int> CanPlayType;
 
         [NativeTypeName("USHORT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, ushort> GetReadyState;
+        public delegate* unmanaged<TSelf*, ushort> GetReadyState;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, int> IsSeeking;
+        public delegate* unmanaged<TSelf*, int> IsSeeking;
 
         [NativeTypeName("double () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, double> GetCurrentTime;
+        public delegate* unmanaged<TSelf*, double> GetCurrentTime;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, double, int> SetCurrentTime;
+        public delegate* unmanaged<TSelf*, double, int> SetCurrentTime;
 
         [NativeTypeName("double () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, double> GetStartTime;
+        public delegate* unmanaged<TSelf*, double> GetStartTime;
 
         [NativeTypeName("double () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, double> GetDuration;
+        public delegate* unmanaged<TSelf*, double> GetDuration;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, int> IsPaused;
+        public delegate* unmanaged<TSelf*, int> IsPaused;
 
         [NativeTypeName("double () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, double> GetDefaultPlaybackRate;
+        public delegate* unmanaged<TSelf*, double> GetDefaultPlaybackRate;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, double, int> SetDefaultPlaybackRate;
+        public delegate* unmanaged<TSelf*, double, int> SetDefaultPlaybackRate;
 
         [NativeTypeName("double () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, double> GetPlaybackRate;
+        public delegate* unmanaged<TSelf*, double> GetPlaybackRate;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, double, int> SetPlaybackRate;
+        public delegate* unmanaged<TSelf*, double, int> SetPlaybackRate;
 
         [NativeTypeName("HRESULT (IMFMediaTimeRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, IMFMediaTimeRange**, int> GetPlayed;
+        public delegate* unmanaged<TSelf*, IMFMediaTimeRange**, int> GetPlayed;
 
         [NativeTypeName("HRESULT (IMFMediaTimeRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, IMFMediaTimeRange**, int> GetSeekable;
+        public delegate* unmanaged<TSelf*, IMFMediaTimeRange**, int> GetSeekable;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, int> IsEnded;
+        public delegate* unmanaged<TSelf*, int> IsEnded;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, int> GetAutoPlay;
+        public delegate* unmanaged<TSelf*, int> GetAutoPlay;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, BOOL, int> SetAutoPlay;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetAutoPlay;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, int> GetLoop;
+        public delegate* unmanaged<TSelf*, int> GetLoop;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, BOOL, int> SetLoop;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetLoop;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, int> Play;
+        public delegate* unmanaged<TSelf*, int> Play;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, int> Pause;
+        public delegate* unmanaged<TSelf*, int> Pause;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, int> GetMuted;
+        public delegate* unmanaged<TSelf*, int> GetMuted;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, BOOL, int> SetMuted;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetMuted;
 
         [NativeTypeName("double () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, double> GetVolume;
+        public delegate* unmanaged<TSelf*, double> GetVolume;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, double, int> SetVolume;
+        public delegate* unmanaged<TSelf*, double, int> SetVolume;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, int> HasVideo;
+        public delegate* unmanaged<TSelf*, int> HasVideo;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, int> HasAudio;
+        public delegate* unmanaged<TSelf*, int> HasAudio;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, uint*, uint*, int> GetNativeVideoSize;
+        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetNativeVideoSize;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, uint*, uint*, int> GetVideoAspectRatio;
+        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetVideoAspectRatio;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, int> Shutdown;
+        public delegate* unmanaged<TSelf*, int> Shutdown;
 
         [NativeTypeName("HRESULT (IUnknown *, const MFVideoNormalizedRect *, const RECT *, const MFARGB *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, IUnknown*, MFVideoNormalizedRect*, RECT*, MFARGB*, int> TransferVideoFrame;
+        public delegate* unmanaged<TSelf*, IUnknown*, MFVideoNormalizedRect*, RECT*, MFARGB*, int> TransferVideoFrame;
 
         [NativeTypeName("HRESULT (LONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngine*, long*, int> OnVideoStreamTick;
+        public delegate* unmanaged<TSelf*, long*, int> OnVideoStreamTick;
     }
 }

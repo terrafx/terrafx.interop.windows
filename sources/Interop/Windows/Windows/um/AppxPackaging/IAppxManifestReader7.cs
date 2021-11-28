@@ -72,24 +72,25 @@ public unsafe partial struct IAppxManifestReader7 : IAppxManifestReader7.Interfa
         HRESULT GetHostRuntimeDependencies(IAppxManifestHostRuntimeDependenciesEnumerator** hostRuntimeDependencies);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestReader7*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestReader7*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestReader7*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxManifestDriverDependenciesEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestReader7*, IAppxManifestDriverDependenciesEnumerator**, int> GetDriverDependencies;
+        public delegate* unmanaged<TSelf*, IAppxManifestDriverDependenciesEnumerator**, int> GetDriverDependencies;
 
         [NativeTypeName("HRESULT (IAppxManifestOSPackageDependenciesEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestReader7*, IAppxManifestOSPackageDependenciesEnumerator**, int> GetOSPackageDependencies;
+        public delegate* unmanaged<TSelf*, IAppxManifestOSPackageDependenciesEnumerator**, int> GetOSPackageDependencies;
 
         [NativeTypeName("HRESULT (IAppxManifestHostRuntimeDependenciesEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxManifestReader7*, IAppxManifestHostRuntimeDependenciesEnumerator**, int> GetHostRuntimeDependencies;
+        public delegate* unmanaged<TSelf*, IAppxManifestHostRuntimeDependenciesEnumerator**, int> GetHostRuntimeDependencies;
     }
 }

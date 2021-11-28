@@ -52,18 +52,19 @@ public unsafe partial struct IMFPMPClient : IMFPMPClient.Interface
         HRESULT SetPMPHost(IMFPMPHost* pPMPHost);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPMPClient*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPMPClient*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPMPClient*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFPMPHost *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFPMPClient*, IMFPMPHost*, int> SetPMPHost;
+        public delegate* unmanaged<TSelf*, IMFPMPHost*, int> SetPMPHost;
     }
 }

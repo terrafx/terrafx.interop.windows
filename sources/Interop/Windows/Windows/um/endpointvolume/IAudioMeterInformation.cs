@@ -82,27 +82,28 @@ public unsafe partial struct IAudioMeterInformation : IAudioMeterInformation.Int
         HRESULT QueryHardwareSupport([NativeTypeName("DWORD *")] uint* pdwHardwareSupportMask);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioMeterInformation*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioMeterInformation*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioMeterInformation*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioMeterInformation*, float*, int> GetPeakValue;
+        public delegate* unmanaged<TSelf*, float*, int> GetPeakValue;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioMeterInformation*, uint*, int> GetMeteringChannelCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetMeteringChannelCount;
 
         [NativeTypeName("HRESULT (UINT32, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioMeterInformation*, uint, float*, int> GetChannelsPeakValues;
+        public delegate* unmanaged<TSelf*, uint, float*, int> GetChannelsPeakValues;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioMeterInformation*, uint*, int> QueryHardwareSupport;
+        public delegate* unmanaged<TSelf*, uint*, int> QueryHardwareSupport;
     }
 }

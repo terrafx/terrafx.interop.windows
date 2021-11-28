@@ -72,24 +72,25 @@ public unsafe partial struct IMFByteStreamBuffering : IMFByteStreamBuffering.Int
         HRESULT StopBuffering();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFByteStreamBuffering*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFByteStreamBuffering*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFByteStreamBuffering*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MFBYTESTREAM_BUFFERING_PARAMS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFByteStreamBuffering*, MFBYTESTREAM_BUFFERING_PARAMS*, int> SetBufferingParams;
+        public delegate* unmanaged<TSelf*, MFBYTESTREAM_BUFFERING_PARAMS*, int> SetBufferingParams;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFByteStreamBuffering*, BOOL, int> EnableBuffering;
+        public delegate* unmanaged<TSelf*, BOOL, int> EnableBuffering;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFByteStreamBuffering*, int> StopBuffering;
+        public delegate* unmanaged<TSelf*, int> StopBuffering;
     }
 }

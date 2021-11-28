@@ -53,18 +53,19 @@ public unsafe partial struct ID3D12LifetimeOwner : ID3D12LifetimeOwner.Interface
         void LifetimeStateUpdated(D3D12_LIFETIME_STATE NewState);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12LifetimeOwner*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12LifetimeOwner*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12LifetimeOwner*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (D3D12_LIFETIME_STATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12LifetimeOwner*, D3D12_LIFETIME_STATE, void> LifetimeStateUpdated;
+        public delegate* unmanaged<TSelf*, D3D12_LIFETIME_STATE, void> LifetimeStateUpdated;
     }
 }

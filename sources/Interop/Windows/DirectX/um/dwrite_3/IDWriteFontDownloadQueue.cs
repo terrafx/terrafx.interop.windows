@@ -107,33 +107,34 @@ public unsafe partial struct IDWriteFontDownloadQueue : IDWriteFontDownloadQueue
         ulong GetGenerationCount();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontDownloadQueue*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontDownloadQueue*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontDownloadQueue*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDWriteFontDownloadListener *, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontDownloadQueue*, IDWriteFontDownloadListener*, uint*, int> AddListener;
+        public delegate* unmanaged<TSelf*, IDWriteFontDownloadListener*, uint*, int> AddListener;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontDownloadQueue*, uint, int> RemoveListener;
+        public delegate* unmanaged<TSelf*, uint, int> RemoveListener;
 
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontDownloadQueue*, int> IsEmpty;
+        public delegate* unmanaged<TSelf*, int> IsEmpty;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontDownloadQueue*, IUnknown*, int> BeginDownload;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> BeginDownload;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontDownloadQueue*, int> CancelDownload;
+        public delegate* unmanaged<TSelf*, int> CancelDownload;
 
         [NativeTypeName("UINT64 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteFontDownloadQueue*, ulong> GetGenerationCount;
+        public delegate* unmanaged<TSelf*, ulong> GetGenerationCount;
     }
 }

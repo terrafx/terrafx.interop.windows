@@ -72,24 +72,25 @@ public unsafe partial struct IMFTrustedOutput : IMFTrustedOutput.Interface
         HRESULT IsFinal(BOOL* pfIsFinal);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTrustedOutput*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTrustedOutput*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTrustedOutput*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTrustedOutput*, uint*, int> GetOutputTrustAuthorityCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetOutputTrustAuthorityCount;
 
         [NativeTypeName("HRESULT (DWORD, IMFOutputTrustAuthority **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTrustedOutput*, uint, IMFOutputTrustAuthority**, int> GetOutputTrustAuthorityByIndex;
+        public delegate* unmanaged<TSelf*, uint, IMFOutputTrustAuthority**, int> GetOutputTrustAuthorityByIndex;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTrustedOutput*, BOOL*, int> IsFinal;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsFinal;
     }
 }

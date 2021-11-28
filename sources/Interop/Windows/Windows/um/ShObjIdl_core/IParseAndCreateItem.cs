@@ -62,21 +62,22 @@ public unsafe partial struct IParseAndCreateItem : IParseAndCreateItem.Interface
         HRESULT GetItem([NativeTypeName("const IID &")] Guid* riid, void** ppv);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IParseAndCreateItem*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IParseAndCreateItem*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IParseAndCreateItem*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IParseAndCreateItem*, IShellItem*, int> SetItem;
+        public delegate* unmanaged<TSelf*, IShellItem*, int> SetItem;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IParseAndCreateItem*, Guid*, void**, int> GetItem;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetItem;
     }
 }

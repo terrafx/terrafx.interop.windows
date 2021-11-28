@@ -81,30 +81,31 @@ public unsafe partial struct IDWriteTextAnalysisSink1 : IDWriteTextAnalysisSink1
         HRESULT SetGlyphOrientation([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32")] uint textLength, DWRITE_GLYPH_ORIENTATION_ANGLE glyphOrientationAngle, [NativeTypeName("UINT8")] byte adjustedBidiLevel, BOOL isSideways, BOOL isRightToLeft);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSink1*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSink1*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSink1*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32, UINT32, const DWRITE_SCRIPT_ANALYSIS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSink1*, uint, uint, DWRITE_SCRIPT_ANALYSIS*, int> SetScriptAnalysis;
+        public delegate* unmanaged<TSelf*, uint, uint, DWRITE_SCRIPT_ANALYSIS*, int> SetScriptAnalysis;
 
         [NativeTypeName("HRESULT (UINT32, UINT32, const DWRITE_LINE_BREAKPOINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSink1*, uint, uint, DWRITE_LINE_BREAKPOINT*, int> SetLineBreakpoints;
+        public delegate* unmanaged<TSelf*, uint, uint, DWRITE_LINE_BREAKPOINT*, int> SetLineBreakpoints;
 
         [NativeTypeName("HRESULT (UINT32, UINT32, UINT8, UINT8) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSink1*, uint, uint, byte, byte, int> SetBidiLevel;
+        public delegate* unmanaged<TSelf*, uint, uint, byte, byte, int> SetBidiLevel;
 
         [NativeTypeName("HRESULT (UINT32, UINT32, IDWriteNumberSubstitution *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSink1*, uint, uint, IDWriteNumberSubstitution*, int> SetNumberSubstitution;
+        public delegate* unmanaged<TSelf*, uint, uint, IDWriteNumberSubstitution*, int> SetNumberSubstitution;
 
         [NativeTypeName("HRESULT (UINT32, UINT32, DWRITE_GLYPH_ORIENTATION_ANGLE, UINT8, BOOL, BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSink1*, uint, uint, DWRITE_GLYPH_ORIENTATION_ANGLE, byte, BOOL, BOOL, int> SetGlyphOrientation;
+        public delegate* unmanaged<TSelf*, uint, uint, DWRITE_GLYPH_ORIENTATION_ANGLE, byte, BOOL, BOOL, int> SetGlyphOrientation;
     }
 }

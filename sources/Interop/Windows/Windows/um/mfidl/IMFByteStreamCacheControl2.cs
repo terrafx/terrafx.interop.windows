@@ -81,27 +81,28 @@ public unsafe partial struct IMFByteStreamCacheControl2 : IMFByteStreamCacheCont
         HRESULT IsBackgroundTransferActive(BOOL* pfActive);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFByteStreamCacheControl2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFByteStreamCacheControl2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFByteStreamCacheControl2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFByteStreamCacheControl2*, int> StopBackgroundTransfer;
+        public delegate* unmanaged<TSelf*, int> StopBackgroundTransfer;
 
         [NativeTypeName("HRESULT (DWORD *, MF_BYTE_STREAM_CACHE_RANGE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFByteStreamCacheControl2*, uint*, MF_BYTE_STREAM_CACHE_RANGE**, int> GetByteRanges;
+        public delegate* unmanaged<TSelf*, uint*, MF_BYTE_STREAM_CACHE_RANGE**, int> GetByteRanges;
 
         [NativeTypeName("HRESULT (QWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFByteStreamCacheControl2*, ulong, int> SetCacheLimit;
+        public delegate* unmanaged<TSelf*, ulong, int> SetCacheLimit;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFByteStreamCacheControl2*, BOOL*, int> IsBackgroundTransferActive;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsBackgroundTransferActive;
     }
 }

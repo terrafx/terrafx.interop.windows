@@ -87,30 +87,31 @@ public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface
     {
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<MFASYNCRESULT*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<MFASYNCRESULT*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<MFASYNCRESULT*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<MFASYNCRESULT*, IUnknown**, int> GetState;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> GetState;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<MFASYNCRESULT*, int> GetStatus;
+        public delegate* unmanaged<TSelf*, int> GetStatus;
 
         [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<MFASYNCRESULT*, HRESULT, int> SetStatus;
+        public delegate* unmanaged<TSelf*, HRESULT, int> SetStatus;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<MFASYNCRESULT*, IUnknown**, int> GetObject;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> GetObject;
 
         [NativeTypeName("IUnknown *() __attribute__((stdcall))")]
-        public delegate* unmanaged<MFASYNCRESULT*, IUnknown*> GetStateNoAddRef;
+        public delegate* unmanaged<TSelf*, IUnknown*> GetStateNoAddRef;
     }
 }

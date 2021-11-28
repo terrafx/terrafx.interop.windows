@@ -61,21 +61,22 @@ public unsafe partial struct IDirectDrawGammaControl : IDirectDrawGammaControl.I
         HRESULT SetGammaRamp([NativeTypeName("DWORD")] uint param0, [NativeTypeName("LPDDGAMMARAMP")] DDGAMMARAMP* param1);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawGammaControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawGammaControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawGammaControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, LPDDGAMMARAMP) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawGammaControl*, uint, DDGAMMARAMP*, int> GetGammaRamp;
+        public delegate* unmanaged<TSelf*, uint, DDGAMMARAMP*, int> GetGammaRamp;
 
         [NativeTypeName("HRESULT (DWORD, LPDDGAMMARAMP) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDirectDrawGammaControl*, uint, DDGAMMARAMP*, int> SetGammaRamp;
+        public delegate* unmanaged<TSelf*, uint, DDGAMMARAMP*, int> SetGammaRamp;
     }
 }

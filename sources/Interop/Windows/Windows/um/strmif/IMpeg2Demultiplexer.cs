@@ -72,24 +72,25 @@ public unsafe partial struct IMpeg2Demultiplexer : IMpeg2Demultiplexer.Interface
         HRESULT DeleteOutputPin([NativeTypeName("LPWSTR")] ushort* pszPinName);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMpeg2Demultiplexer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMpeg2Demultiplexer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMpeg2Demultiplexer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (AM_MEDIA_TYPE *, LPWSTR, IPin **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMpeg2Demultiplexer*, AM_MEDIA_TYPE*, ushort*, IPin**, int> CreateOutputPin;
+        public delegate* unmanaged<TSelf*, AM_MEDIA_TYPE*, ushort*, IPin**, int> CreateOutputPin;
 
         [NativeTypeName("HRESULT (LPWSTR, AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMpeg2Demultiplexer*, ushort*, AM_MEDIA_TYPE*, int> SetOutputPinMediaType;
+        public delegate* unmanaged<TSelf*, ushort*, AM_MEDIA_TYPE*, int> SetOutputPinMediaType;
 
         [NativeTypeName("HRESULT (LPWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMpeg2Demultiplexer*, ushort*, int> DeleteOutputPin;
+        public delegate* unmanaged<TSelf*, ushort*, int> DeleteOutputPin;
     }
 }

@@ -52,18 +52,19 @@ public unsafe partial struct IStdMarshalInfo : IStdMarshalInfo.Interface
         HRESULT GetClassForHandler([NativeTypeName("DWORD")] uint dwDestContext, void* pvDestContext, [NativeTypeName("CLSID *")] Guid* pClsid);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStdMarshalInfo*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IStdMarshalInfo*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IStdMarshalInfo*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, void *, CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStdMarshalInfo*, uint, void*, Guid*, int> GetClassForHandler;
+        public delegate* unmanaged<TSelf*, uint, void*, Guid*, int> GetClassForHandler;
     }
 }

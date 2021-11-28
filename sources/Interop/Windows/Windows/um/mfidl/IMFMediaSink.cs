@@ -132,42 +132,43 @@ public unsafe partial struct IMFMediaSink : IMFMediaSink.Interface
         HRESULT Shutdown();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSink*, uint*, int> GetCharacteristics;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCharacteristics;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaType *, IMFStreamSink **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSink*, uint, IMFMediaType*, IMFStreamSink**, int> AddStreamSink;
+        public delegate* unmanaged<TSelf*, uint, IMFMediaType*, IMFStreamSink**, int> AddStreamSink;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSink*, uint, int> RemoveStreamSink;
+        public delegate* unmanaged<TSelf*, uint, int> RemoveStreamSink;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSink*, uint*, int> GetStreamSinkCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetStreamSinkCount;
 
         [NativeTypeName("HRESULT (DWORD, IMFStreamSink **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSink*, uint, IMFStreamSink**, int> GetStreamSinkByIndex;
+        public delegate* unmanaged<TSelf*, uint, IMFStreamSink**, int> GetStreamSinkByIndex;
 
         [NativeTypeName("HRESULT (DWORD, IMFStreamSink **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSink*, uint, IMFStreamSink**, int> GetStreamSinkById;
+        public delegate* unmanaged<TSelf*, uint, IMFStreamSink**, int> GetStreamSinkById;
 
         [NativeTypeName("HRESULT (IMFPresentationClock *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSink*, IMFPresentationClock*, int> SetPresentationClock;
+        public delegate* unmanaged<TSelf*, IMFPresentationClock*, int> SetPresentationClock;
 
         [NativeTypeName("HRESULT (IMFPresentationClock **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSink*, IMFPresentationClock**, int> GetPresentationClock;
+        public delegate* unmanaged<TSelf*, IMFPresentationClock**, int> GetPresentationClock;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaSink*, int> Shutdown;
+        public delegate* unmanaged<TSelf*, int> Shutdown;
     }
 }

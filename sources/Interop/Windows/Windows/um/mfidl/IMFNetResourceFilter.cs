@@ -64,21 +64,22 @@ public unsafe partial struct IMFNetResourceFilter : IMFNetResourceFilter.Interfa
         HRESULT OnSendingRequest([NativeTypeName("LPCWSTR")] ushort* pszUrl);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetResourceFilter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetResourceFilter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetResourceFilter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetResourceFilter*, ushort*, short*, int> OnRedirect;
+        public delegate* unmanaged<TSelf*, ushort*, short*, int> OnRedirect;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFNetResourceFilter*, ushort*, int> OnSendingRequest;
+        public delegate* unmanaged<TSelf*, ushort*, int> OnSendingRequest;
     }
 }

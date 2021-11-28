@@ -52,18 +52,19 @@ public unsafe partial struct IApplicationAssociationRegistrationUI : IApplicatio
         HRESULT LaunchAdvancedAssociationUI([NativeTypeName("LPCWSTR")] ushort* pszAppRegistryName);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IApplicationAssociationRegistrationUI*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IApplicationAssociationRegistrationUI*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IApplicationAssociationRegistrationUI*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IApplicationAssociationRegistrationUI*, ushort*, int> LaunchAdvancedAssociationUI;
+        public delegate* unmanaged<TSelf*, ushort*, int> LaunchAdvancedAssociationUI;
     }
 }

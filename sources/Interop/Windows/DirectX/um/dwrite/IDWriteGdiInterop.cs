@@ -93,30 +93,31 @@ public unsafe partial struct IDWriteGdiInterop : IDWriteGdiInterop.Interface
         HRESULT CreateBitmapRenderTarget(HDC hdc, [NativeTypeName("UINT32")] uint width, [NativeTypeName("UINT32")] uint height, IDWriteBitmapRenderTarget** renderTarget);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGdiInterop*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGdiInterop*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGdiInterop*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const LOGFONTW *, IDWriteFont **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGdiInterop*, LOGFONTW*, IDWriteFont**, int> CreateFontFromLOGFONT;
+        public delegate* unmanaged<TSelf*, LOGFONTW*, IDWriteFont**, int> CreateFontFromLOGFONT;
 
         [NativeTypeName("HRESULT (IDWriteFont *, LOGFONTW *, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGdiInterop*, IDWriteFont*, LOGFONTW*, BOOL*, int> ConvertFontToLOGFONT;
+        public delegate* unmanaged<TSelf*, IDWriteFont*, LOGFONTW*, BOOL*, int> ConvertFontToLOGFONT;
 
         [NativeTypeName("HRESULT (IDWriteFontFace *, LOGFONTW *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGdiInterop*, IDWriteFontFace*, LOGFONTW*, int> ConvertFontFaceToLOGFONT;
+        public delegate* unmanaged<TSelf*, IDWriteFontFace*, LOGFONTW*, int> ConvertFontFaceToLOGFONT;
 
         [NativeTypeName("HRESULT (HDC, IDWriteFontFace **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGdiInterop*, HDC, IDWriteFontFace**, int> CreateFontFaceFromHdc;
+        public delegate* unmanaged<TSelf*, HDC, IDWriteFontFace**, int> CreateFontFaceFromHdc;
 
         [NativeTypeName("HRESULT (HDC, UINT32, UINT32, IDWriteBitmapRenderTarget **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteGdiInterop*, HDC, uint, uint, IDWriteBitmapRenderTarget**, int> CreateBitmapRenderTarget;
+        public delegate* unmanaged<TSelf*, HDC, uint, uint, IDWriteBitmapRenderTarget**, int> CreateBitmapRenderTarget;
     }
 }

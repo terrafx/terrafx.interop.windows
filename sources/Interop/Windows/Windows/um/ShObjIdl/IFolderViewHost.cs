@@ -52,18 +52,19 @@ public unsafe partial struct IFolderViewHost : IFolderViewHost.Interface
         HRESULT Initialize(HWND hwndParent, IDataObject* pdo, RECT* prc);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderViewHost*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderViewHost*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderViewHost*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, IDataObject *, RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFolderViewHost*, HWND, IDataObject*, RECT*, int> Initialize;
+        public delegate* unmanaged<TSelf*, HWND, IDataObject*, RECT*, int> Initialize;
     }
 }

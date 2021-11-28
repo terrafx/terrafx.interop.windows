@@ -102,33 +102,34 @@ public unsafe partial struct IPropertyKeyStore : IPropertyKeyStore.Interface
         HRESULT RemoveKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyKeyStore*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyKeyStore*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyKeyStore*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyKeyStore*, int*, int> GetKeyCount;
+        public delegate* unmanaged<TSelf*, int*, int> GetKeyCount;
 
         [NativeTypeName("HRESULT (int, PROPERTYKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyKeyStore*, int, PROPERTYKEY*, int> GetKeyAt;
+        public delegate* unmanaged<TSelf*, int, PROPERTYKEY*, int> GetKeyAt;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyKeyStore*, PROPERTYKEY*, int> AppendKey;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, int> AppendKey;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyKeyStore*, int, int> DeleteKey;
+        public delegate* unmanaged<TSelf*, int, int> DeleteKey;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyKeyStore*, PROPERTYKEY*, int> IsKeyInStore;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, int> IsKeyInStore;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyKeyStore*, PROPERTYKEY*, int> RemoveKey;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, int> RemoveKey;
     }
 }

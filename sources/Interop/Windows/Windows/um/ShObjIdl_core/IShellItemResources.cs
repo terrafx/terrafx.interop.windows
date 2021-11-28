@@ -142,45 +142,46 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
         HRESULT MarkForDelete();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemResources*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemResources*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemResources*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemResources*, uint*, int> GetAttributes;
+        public delegate* unmanaged<TSelf*, uint*, int> GetAttributes;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemResources*, ulong*, int> GetSize;
+        public delegate* unmanaged<TSelf*, ulong*, int> GetSize;
 
         [NativeTypeName("HRESULT (FILETIME *, FILETIME *, FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemResources*, FILETIME*, FILETIME*, FILETIME*, int> GetTimes;
+        public delegate* unmanaged<TSelf*, FILETIME*, FILETIME*, FILETIME*, int> GetTimes;
 
         [NativeTypeName("HRESULT (const FILETIME *, const FILETIME *, const FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemResources*, FILETIME*, FILETIME*, FILETIME*, int> SetTimes;
+        public delegate* unmanaged<TSelf*, FILETIME*, FILETIME*, FILETIME*, int> SetTimes;
 
         [NativeTypeName("HRESULT (const SHELL_ITEM_RESOURCE *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemResources*, SHELL_ITEM_RESOURCE*, ushort**, int> GetResourceDescription;
+        public delegate* unmanaged<TSelf*, SHELL_ITEM_RESOURCE*, ushort**, int> GetResourceDescription;
 
         [NativeTypeName("HRESULT (IEnumResources **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemResources*, IEnumResources**, int> EnumResources;
+        public delegate* unmanaged<TSelf*, IEnumResources**, int> EnumResources;
 
         [NativeTypeName("HRESULT (const SHELL_ITEM_RESOURCE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemResources*, SHELL_ITEM_RESOURCE*, int> SupportsResource;
+        public delegate* unmanaged<TSelf*, SHELL_ITEM_RESOURCE*, int> SupportsResource;
 
         [NativeTypeName("HRESULT (const SHELL_ITEM_RESOURCE *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemResources*, SHELL_ITEM_RESOURCE*, Guid*, void**, int> OpenResource;
+        public delegate* unmanaged<TSelf*, SHELL_ITEM_RESOURCE*, Guid*, void**, int> OpenResource;
 
         [NativeTypeName("HRESULT (const SHELL_ITEM_RESOURCE *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemResources*, SHELL_ITEM_RESOURCE*, Guid*, void**, int> CreateResource;
+        public delegate* unmanaged<TSelf*, SHELL_ITEM_RESOURCE*, Guid*, void**, int> CreateResource;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellItemResources*, int> MarkForDelete;
+        public delegate* unmanaged<TSelf*, int> MarkForDelete;
     }
 }

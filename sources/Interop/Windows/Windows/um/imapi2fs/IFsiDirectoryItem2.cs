@@ -234,96 +234,97 @@ public unsafe partial struct IFsiDirectoryItem2 : IFsiDirectoryItem2.Interface
         HRESULT AddTreeWithNamedStreams([NativeTypeName("BSTR")] ushort* sourceDirectory, [NativeTypeName("VARIANT_BOOL")] short includeBaseDirectory);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, ushort**, int> get_Name;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_Name;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, ushort**, int> get_FullPath;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_FullPath;
 
         [NativeTypeName("HRESULT (DATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, double*, int> get_CreationTime;
+        public delegate* unmanaged<TSelf*, double*, int> get_CreationTime;
 
         [NativeTypeName("HRESULT (DATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, double, int> put_CreationTime;
+        public delegate* unmanaged<TSelf*, double, int> put_CreationTime;
 
         [NativeTypeName("HRESULT (DATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, double*, int> get_LastAccessedTime;
+        public delegate* unmanaged<TSelf*, double*, int> get_LastAccessedTime;
 
         [NativeTypeName("HRESULT (DATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, double, int> put_LastAccessedTime;
+        public delegate* unmanaged<TSelf*, double, int> put_LastAccessedTime;
 
         [NativeTypeName("HRESULT (DATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, double*, int> get_LastModifiedTime;
+        public delegate* unmanaged<TSelf*, double*, int> get_LastModifiedTime;
 
         [NativeTypeName("HRESULT (DATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, double, int> put_LastModifiedTime;
+        public delegate* unmanaged<TSelf*, double, int> put_LastModifiedTime;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, short*, int> get_IsHidden;
+        public delegate* unmanaged<TSelf*, short*, int> get_IsHidden;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, short, int> put_IsHidden;
+        public delegate* unmanaged<TSelf*, short, int> put_IsHidden;
 
         [NativeTypeName("HRESULT (FsiFileSystems, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, FsiFileSystems, ushort**, int> FileSystemName;
+        public delegate* unmanaged<TSelf*, FsiFileSystems, ushort**, int> FileSystemName;
 
         [NativeTypeName("HRESULT (FsiFileSystems, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, FsiFileSystems, ushort**, int> FileSystemPath;
+        public delegate* unmanaged<TSelf*, FsiFileSystems, ushort**, int> FileSystemPath;
 
         [NativeTypeName("HRESULT (IEnumVARIANT **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, IEnumVARIANT**, int> get__NewEnum;
+        public delegate* unmanaged<TSelf*, IEnumVARIANT**, int> get__NewEnum;
 
         [NativeTypeName("HRESULT (BSTR, IFsiItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, ushort*, IFsiItem**, int> get_Item;
+        public delegate* unmanaged<TSelf*, ushort*, IFsiItem**, int> get_Item;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, int*, int> get_Count;
+        public delegate* unmanaged<TSelf*, int*, int> get_Count;
 
         [NativeTypeName("HRESULT (IEnumFsiItems **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, IEnumFsiItems**, int> get_EnumFsiItems;
+        public delegate* unmanaged<TSelf*, IEnumFsiItems**, int> get_EnumFsiItems;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, ushort*, int> AddDirectory;
+        public delegate* unmanaged<TSelf*, ushort*, int> AddDirectory;
 
         [NativeTypeName("HRESULT (BSTR, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, ushort*, IStream*, int> AddFile;
+        public delegate* unmanaged<TSelf*, ushort*, IStream*, int> AddFile;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, ushort*, short, int> AddTree;
+        public delegate* unmanaged<TSelf*, ushort*, short, int> AddTree;
 
         [NativeTypeName("HRESULT (IFsiItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, IFsiItem*, int> Add;
+        public delegate* unmanaged<TSelf*, IFsiItem*, int> Add;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, ushort*, int> Remove;
+        public delegate* unmanaged<TSelf*, ushort*, int> Remove;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, ushort*, int> RemoveTree;
+        public delegate* unmanaged<TSelf*, ushort*, int> RemoveTree;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IFsiDirectoryItem2*, ushort*, short, int> AddTreeWithNamedStreams;
+        public delegate* unmanaged<TSelf*, ushort*, short, int> AddTreeWithNamedStreams;
     }
 }

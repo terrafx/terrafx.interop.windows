@@ -62,21 +62,22 @@ public unsafe partial struct ICSSFilter : ICSSFilter.Interface
         HRESULT OnAmbientPropertyChange([NativeTypeName("LONG")] int dispid);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICSSFilter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICSSFilter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICSSFilter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ICSSFilterSite *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICSSFilter*, ICSSFilterSite*, int> SetSite;
+        public delegate* unmanaged<TSelf*, ICSSFilterSite*, int> SetSite;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICSSFilter*, int, int> OnAmbientPropertyChange;
+        public delegate* unmanaged<TSelf*, int, int> OnAmbientPropertyChange;
     }
 }

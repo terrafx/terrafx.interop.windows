@@ -100,36 +100,37 @@ public unsafe partial struct IMFMediaKeys2 : IMFMediaKeys2.Interface
         HRESULT GetDOMException(HRESULT systemCode, HRESULT* code);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaKeys2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaKeys2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaKeys2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, const BYTE *, DWORD, const BYTE *, DWORD, IMFMediaKeySessionNotify *, IMFMediaKeySession **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaKeys2*, ushort*, byte*, uint, byte*, uint, IMFMediaKeySessionNotify*, IMFMediaKeySession**, int> CreateSession;
+        public delegate* unmanaged<TSelf*, ushort*, byte*, uint, byte*, uint, IMFMediaKeySessionNotify*, IMFMediaKeySession**, int> CreateSession;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaKeys2*, ushort**, int> get_KeySystem;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_KeySystem;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaKeys2*, int> Shutdown;
+        public delegate* unmanaged<TSelf*, int> Shutdown;
 
         [NativeTypeName("HRESULT (IMFCdmSuspendNotify **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaKeys2*, IMFCdmSuspendNotify**, int> GetSuspendNotify;
+        public delegate* unmanaged<TSelf*, IMFCdmSuspendNotify**, int> GetSuspendNotify;
 
         [NativeTypeName("HRESULT (MF_MEDIAKEYSESSION_TYPE, IMFMediaKeySessionNotify2 *, IMFMediaKeySession2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaKeys2*, MF_MEDIAKEYSESSION_TYPE, IMFMediaKeySessionNotify2*, IMFMediaKeySession2**, int> CreateSession2;
+        public delegate* unmanaged<TSelf*, MF_MEDIAKEYSESSION_TYPE, IMFMediaKeySessionNotify2*, IMFMediaKeySession2**, int> CreateSession2;
 
         [NativeTypeName("HRESULT (const BYTE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaKeys2*, byte*, uint, int> SetServerCertificate;
+        public delegate* unmanaged<TSelf*, byte*, uint, int> SetServerCertificate;
 
         [NativeTypeName("HRESULT (HRESULT, HRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaKeys2*, HRESULT, HRESULT*, int> GetDOMException;
+        public delegate* unmanaged<TSelf*, HRESULT, HRESULT*, int> GetDOMException;
     }
 }

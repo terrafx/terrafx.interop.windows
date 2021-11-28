@@ -53,18 +53,19 @@ public unsafe partial struct IMemoryBufferByteAccess : IMemoryBufferByteAccess.I
         HRESULT GetBuffer(byte** value, [NativeTypeName("UINT32 *")] uint* capacity);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemoryBufferByteAccess*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemoryBufferByteAccess*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemoryBufferByteAccess*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE **, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMemoryBufferByteAccess*, byte**, uint*, int> GetBuffer;
+        public delegate* unmanaged<TSelf*, byte**, uint*, int> GetBuffer;
     }
 }

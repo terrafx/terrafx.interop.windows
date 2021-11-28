@@ -72,24 +72,25 @@ public unsafe partial struct IMFTimedTextBouten : IMFTimedTextBouten.Interface
         HRESULT GetBoutenPosition(MF_TIMED_TEXT_BOUTEN_POSITION* value);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextBouten*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextBouten*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextBouten*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MF_TIMED_TEXT_BOUTEN_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextBouten*, MF_TIMED_TEXT_BOUTEN_TYPE*, int> GetBoutenType;
+        public delegate* unmanaged<TSelf*, MF_TIMED_TEXT_BOUTEN_TYPE*, int> GetBoutenType;
 
         [NativeTypeName("HRESULT (MFARGB *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextBouten*, MFARGB*, int> GetBoutenColor;
+        public delegate* unmanaged<TSelf*, MFARGB*, int> GetBoutenColor;
 
         [NativeTypeName("HRESULT (MF_TIMED_TEXT_BOUTEN_POSITION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimedTextBouten*, MF_TIMED_TEXT_BOUTEN_POSITION*, int> GetBoutenPosition;
+        public delegate* unmanaged<TSelf*, MF_TIMED_TEXT_BOUTEN_POSITION*, int> GetBoutenPosition;
     }
 }

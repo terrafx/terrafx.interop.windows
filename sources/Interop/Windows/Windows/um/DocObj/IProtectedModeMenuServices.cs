@@ -72,24 +72,25 @@ public unsafe partial struct IProtectedModeMenuServices : IProtectedModeMenuServ
         HRESULT LoadMenuID([NativeTypeName("LPCWSTR")] ushort* pszModuleName, [NativeTypeName("WORD")] ushort wResourceID, HMENU* phMenu);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProtectedModeMenuServices*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IProtectedModeMenuServices*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IProtectedModeMenuServices*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HMENU *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProtectedModeMenuServices*, HMENU*, int> CreateMenu;
+        public delegate* unmanaged<TSelf*, HMENU*, int> CreateMenu;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, HMENU *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProtectedModeMenuServices*, ushort*, ushort*, HMENU*, int> LoadMenuW;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, HMENU*, int> LoadMenuW;
 
         [NativeTypeName("HRESULT (LPCWSTR, WORD, HMENU *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IProtectedModeMenuServices*, ushort*, ushort, HMENU*, int> LoadMenuID;
+        public delegate* unmanaged<TSelf*, ushort*, ushort, HMENU*, int> LoadMenuID;
     }
 }

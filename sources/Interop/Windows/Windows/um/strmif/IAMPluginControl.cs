@@ -112,36 +112,37 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface
         HRESULT IsLegacyDisabled([NativeTypeName("LPCWSTR")] ushort* dllName);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPluginControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPluginControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPluginControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPluginControl*, Guid*, Guid*, int> GetPreferredClsid;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, int> GetPreferredClsid;
 
         [NativeTypeName("HRESULT (DWORD, GUID *, CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPluginControl*, uint, Guid*, Guid*, int> GetPreferredClsidByIndex;
+        public delegate* unmanaged<TSelf*, uint, Guid*, Guid*, int> GetPreferredClsidByIndex;
 
         [NativeTypeName("HRESULT (const GUID &, const CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPluginControl*, Guid*, Guid*, int> SetPreferredClsid;
+        public delegate* unmanaged<TSelf*, Guid*, Guid*, int> SetPreferredClsid;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPluginControl*, Guid*, int> IsDisabled;
+        public delegate* unmanaged<TSelf*, Guid*, int> IsDisabled;
 
         [NativeTypeName("HRESULT (DWORD, CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPluginControl*, uint, Guid*, int> GetDisabledByIndex;
+        public delegate* unmanaged<TSelf*, uint, Guid*, int> GetDisabledByIndex;
 
         [NativeTypeName("HRESULT (const IID &, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPluginControl*, Guid*, BOOL, int> SetDisabled;
+        public delegate* unmanaged<TSelf*, Guid*, BOOL, int> SetDisabled;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMPluginControl*, ushort*, int> IsLegacyDisabled;
+        public delegate* unmanaged<TSelf*, ushort*, int> IsLegacyDisabled;
     }
 }

@@ -52,18 +52,19 @@ public unsafe partial struct ISecureUrlHost : ISecureUrlHost.Interface
         HRESULT ValidateSecureUrl(BOOL* pfAllow, [NativeTypeName("OLECHAR *")] ushort* pchUrlInQuestion, [NativeTypeName("DWORD")] uint dwFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISecureUrlHost*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISecureUrlHost*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISecureUrlHost*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *, OLECHAR *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISecureUrlHost*, BOOL*, ushort*, uint, int> ValidateSecureUrl;
+        public delegate* unmanaged<TSelf*, BOOL*, ushort*, uint, int> ValidateSecureUrl;
     }
 }

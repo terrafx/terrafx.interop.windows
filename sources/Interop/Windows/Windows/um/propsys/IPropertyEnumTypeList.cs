@@ -82,27 +82,28 @@ public unsafe partial struct IPropertyEnumTypeList : IPropertyEnumTypeList.Inter
         HRESULT FindMatchingIndex([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvarCmp, uint* pnIndex);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyEnumTypeList*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyEnumTypeList*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyEnumTypeList*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyEnumTypeList*, uint*, int> GetCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyEnumTypeList*, uint, Guid*, void**, int> GetAt;
+        public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> GetAt;
 
         [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyEnumTypeList*, uint, Guid*, void**, int> GetConditionAt;
+        public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> GetConditionAt;
 
         [NativeTypeName("HRESULT (const PROPVARIANT &, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyEnumTypeList*, PROPVARIANT*, uint*, int> FindMatchingIndex;
+        public delegate* unmanaged<TSelf*, PROPVARIANT*, uint*, int> FindMatchingIndex;
     }
 }

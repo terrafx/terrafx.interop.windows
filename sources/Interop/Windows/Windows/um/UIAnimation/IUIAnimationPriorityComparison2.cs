@@ -52,18 +52,19 @@ public unsafe partial struct IUIAnimationPriorityComparison2 : IUIAnimationPrior
         HRESULT HasPriority(IUIAnimationStoryboard2* scheduledStoryboard, IUIAnimationStoryboard2* newStoryboard, UI_ANIMATION_PRIORITY_EFFECT priorityEffect);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationPriorityComparison2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationPriorityComparison2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationPriorityComparison2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUIAnimationStoryboard2 *, IUIAnimationStoryboard2 *, UI_ANIMATION_PRIORITY_EFFECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationPriorityComparison2*, IUIAnimationStoryboard2*, IUIAnimationStoryboard2*, UI_ANIMATION_PRIORITY_EFFECT, int> HasPriority;
+        public delegate* unmanaged<TSelf*, IUIAnimationStoryboard2*, IUIAnimationStoryboard2*, UI_ANIMATION_PRIORITY_EFFECT, int> HasPriority;
     }
 }

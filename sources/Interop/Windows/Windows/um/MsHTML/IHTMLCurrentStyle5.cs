@@ -200,66 +200,67 @@ public unsafe partial struct IHTMLCurrentStyle5 : IHTMLCurrentStyle5.Interface
         HRESULT get_quotes([NativeTypeName("BSTR *")] ushort** p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle5*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle5*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle5*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle5*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle5*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle5*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle5*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle5*, ushort**, int> get_captionSide;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_captionSide;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle5*, ushort**, int> get_outline;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_outline;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle5*, VARIANT*, int> get_outlineWidth;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_outlineWidth;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle5*, ushort**, int> get_outlineStyle;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_outlineStyle;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle5*, VARIANT*, int> get_outlineColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_outlineColor;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle5*, ushort**, int> get_boxSizing;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_boxSizing;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle5*, ushort**, int> get_borderSpacing;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_borderSpacing;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle5*, VARIANT*, int> get_orphans;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_orphans;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle5*, VARIANT*, int> get_widows;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_widows;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle5*, ushort**, int> get_pageBreakInside;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_pageBreakInside;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle5*, ushort**, int> get_emptyCells;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_emptyCells;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle5*, ushort**, int> get_msBlockProgression;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_msBlockProgression;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle5*, ushort**, int> get_quotes;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_quotes;
     }
 }

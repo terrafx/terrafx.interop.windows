@@ -52,18 +52,19 @@ public unsafe partial struct IWindowForBindingUI : IWindowForBindingUI.Interface
         HRESULT GetWindow([NativeTypeName("const GUID &")] Guid* rguidReason, HWND* phwnd);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWindowForBindingUI*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWindowForBindingUI*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWindowForBindingUI*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWindowForBindingUI*, Guid*, HWND*, int> GetWindow;
+        public delegate* unmanaged<TSelf*, Guid*, HWND*, int> GetWindow;
     }
 }

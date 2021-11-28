@@ -72,24 +72,25 @@ public unsafe partial struct IMFMediaKeySystemAccess : IMFMediaKeySystemAccess.I
         HRESULT get_KeySystem([NativeTypeName("BSTR *")] ushort** pKeySystem);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaKeySystemAccess*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaKeySystemAccess*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaKeySystemAccess*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IPropertyStore *, IMFMediaKeys2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaKeySystemAccess*, IPropertyStore*, IMFMediaKeys2**, int> CreateMediaKeys;
+        public delegate* unmanaged<TSelf*, IPropertyStore*, IMFMediaKeys2**, int> CreateMediaKeys;
 
         [NativeTypeName("HRESULT (IPropertyStore **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaKeySystemAccess*, IPropertyStore**, int> get_SupportedConfiguration;
+        public delegate* unmanaged<TSelf*, IPropertyStore**, int> get_SupportedConfiguration;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaKeySystemAccess*, ushort**, int> get_KeySystem;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_KeySystem;
     }
 }

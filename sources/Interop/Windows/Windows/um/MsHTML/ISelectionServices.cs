@@ -102,33 +102,34 @@ public unsafe partial struct ISelectionServices : ISelectionServices.Interface
         HRESULT GetSelectionServicesListener(ISelectionServicesListener** ppISelectionServicesListener);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISelectionServices*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISelectionServices*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISelectionServices*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SELECTION_TYPE, ISelectionServicesListener *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISelectionServices*, SELECTION_TYPE, ISelectionServicesListener*, int> SetSelectionType;
+        public delegate* unmanaged<TSelf*, SELECTION_TYPE, ISelectionServicesListener*, int> SetSelectionType;
 
         [NativeTypeName("HRESULT (IMarkupContainer **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISelectionServices*, IMarkupContainer**, int> GetMarkupContainer;
+        public delegate* unmanaged<TSelf*, IMarkupContainer**, int> GetMarkupContainer;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, IMarkupPointer *, ISegment **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISelectionServices*, IMarkupPointer*, IMarkupPointer*, ISegment**, int> AddSegment;
+        public delegate* unmanaged<TSelf*, IMarkupPointer*, IMarkupPointer*, ISegment**, int> AddSegment;
 
         [NativeTypeName("HRESULT (IHTMLElement *, IElementSegment **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISelectionServices*, IHTMLElement*, IElementSegment**, int> AddElementSegment;
+        public delegate* unmanaged<TSelf*, IHTMLElement*, IElementSegment**, int> AddElementSegment;
 
         [NativeTypeName("HRESULT (ISegment *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISelectionServices*, ISegment*, int> RemoveSegment;
+        public delegate* unmanaged<TSelf*, ISegment*, int> RemoveSegment;
 
         [NativeTypeName("HRESULT (ISelectionServicesListener **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISelectionServices*, ISelectionServicesListener**, int> GetSelectionServicesListener;
+        public delegate* unmanaged<TSelf*, ISelectionServicesListener**, int> GetSelectionServicesListener;
     }
 }

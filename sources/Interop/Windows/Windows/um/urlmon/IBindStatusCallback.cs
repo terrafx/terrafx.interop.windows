@@ -122,39 +122,40 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
         HRESULT OnObjectAvailable([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindStatusCallback*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindStatusCallback*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindStatusCallback*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IBinding *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindStatusCallback*, uint, IBinding*, int> OnStartBinding;
+        public delegate* unmanaged<TSelf*, uint, IBinding*, int> OnStartBinding;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindStatusCallback*, int*, int> GetPriority;
+        public delegate* unmanaged<TSelf*, int*, int> GetPriority;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindStatusCallback*, uint, int> OnLowResource;
+        public delegate* unmanaged<TSelf*, uint, int> OnLowResource;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, ULONG, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindStatusCallback*, uint, uint, uint, ushort*, int> OnProgress;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, ushort*, int> OnProgress;
 
         [NativeTypeName("HRESULT (HRESULT, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindStatusCallback*, HRESULT, ushort*, int> OnStopBinding;
+        public delegate* unmanaged<TSelf*, HRESULT, ushort*, int> OnStopBinding;
 
         [NativeTypeName("HRESULT (DWORD *, BINDINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindStatusCallback*, uint*, BINDINFO*, int> GetBindInfo;
+        public delegate* unmanaged<TSelf*, uint*, BINDINFO*, int> GetBindInfo;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, FORMATETC *, STGMEDIUM *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindStatusCallback*, uint, uint, FORMATETC*, STGMEDIUM*, int> OnDataAvailable;
+        public delegate* unmanaged<TSelf*, uint, uint, FORMATETC*, STGMEDIUM*, int> OnDataAvailable;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IBindStatusCallback*, Guid*, IUnknown*, int> OnObjectAvailable;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> OnObjectAvailable;
     }
 }

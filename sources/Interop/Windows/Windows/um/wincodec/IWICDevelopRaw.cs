@@ -418,135 +418,136 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         HRESULT SetNotificationCallback(IWICDevelopRawNotificationCallback* pCallback);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, uint*, uint*, int> GetSize;
+        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetSize;
 
         [NativeTypeName("HRESULT (WICPixelFormatGUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, Guid*, int> GetPixelFormat;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetPixelFormat;
 
         [NativeTypeName("HRESULT (double *, double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, double*, double*, int> GetResolution;
+        public delegate* unmanaged<TSelf*, double*, double*, int> GetResolution;
 
         [NativeTypeName("HRESULT (IWICPalette *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, IWICPalette*, int> CopyPalette;
+        public delegate* unmanaged<TSelf*, IWICPalette*, int> CopyPalette;
 
         [NativeTypeName("HRESULT (const WICRect *, UINT, UINT, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, WICRect*, uint, uint, byte*, int> CopyPixels;
+        public delegate* unmanaged<TSelf*, WICRect*, uint, uint, byte*, int> CopyPixels;
 
         [NativeTypeName("HRESULT (IWICMetadataQueryReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, IWICMetadataQueryReader**, int> GetMetadataQueryReader;
+        public delegate* unmanaged<TSelf*, IWICMetadataQueryReader**, int> GetMetadataQueryReader;
 
         [NativeTypeName("HRESULT (UINT, IWICColorContext **, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, uint, IWICColorContext**, uint*, int> GetColorContexts;
+        public delegate* unmanaged<TSelf*, uint, IWICColorContext**, uint*, int> GetColorContexts;
 
         [NativeTypeName("HRESULT (IWICBitmapSource **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, IWICBitmapSource**, int> GetThumbnail;
+        public delegate* unmanaged<TSelf*, IWICBitmapSource**, int> GetThumbnail;
 
         [NativeTypeName("HRESULT (WICRawCapabilitiesInfo *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, WICRawCapabilitiesInfo*, int> QueryRawCapabilitiesInfo;
+        public delegate* unmanaged<TSelf*, WICRawCapabilitiesInfo*, int> QueryRawCapabilitiesInfo;
 
         [NativeTypeName("HRESULT (WICRawParameterSet) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, WICRawParameterSet, int> LoadParameterSet;
+        public delegate* unmanaged<TSelf*, WICRawParameterSet, int> LoadParameterSet;
 
         [NativeTypeName("HRESULT (IPropertyBag2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, IPropertyBag2**, int> GetCurrentParameterSet;
+        public delegate* unmanaged<TSelf*, IPropertyBag2**, int> GetCurrentParameterSet;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, double, int> SetExposureCompensation;
+        public delegate* unmanaged<TSelf*, double, int> SetExposureCompensation;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, double*, int> GetExposureCompensation;
+        public delegate* unmanaged<TSelf*, double*, int> GetExposureCompensation;
 
         [NativeTypeName("HRESULT (UINT, UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, uint, uint, uint, int> SetWhitePointRGB;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, int> SetWhitePointRGB;
 
         [NativeTypeName("HRESULT (UINT *, UINT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, uint*, uint*, uint*, int> GetWhitePointRGB;
+        public delegate* unmanaged<TSelf*, uint*, uint*, uint*, int> GetWhitePointRGB;
 
         [NativeTypeName("HRESULT (WICNamedWhitePoint) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, WICNamedWhitePoint, int> SetNamedWhitePoint;
+        public delegate* unmanaged<TSelf*, WICNamedWhitePoint, int> SetNamedWhitePoint;
 
         [NativeTypeName("HRESULT (WICNamedWhitePoint *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, WICNamedWhitePoint*, int> GetNamedWhitePoint;
+        public delegate* unmanaged<TSelf*, WICNamedWhitePoint*, int> GetNamedWhitePoint;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, uint, int> SetWhitePointKelvin;
+        public delegate* unmanaged<TSelf*, uint, int> SetWhitePointKelvin;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, uint*, int> GetWhitePointKelvin;
+        public delegate* unmanaged<TSelf*, uint*, int> GetWhitePointKelvin;
 
         [NativeTypeName("HRESULT (UINT *, UINT *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, uint*, uint*, uint*, int> GetKelvinRangeInfo;
+        public delegate* unmanaged<TSelf*, uint*, uint*, uint*, int> GetKelvinRangeInfo;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, double, int> SetContrast;
+        public delegate* unmanaged<TSelf*, double, int> SetContrast;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, double*, int> GetContrast;
+        public delegate* unmanaged<TSelf*, double*, int> GetContrast;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, double, int> SetGamma;
+        public delegate* unmanaged<TSelf*, double, int> SetGamma;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, double*, int> GetGamma;
+        public delegate* unmanaged<TSelf*, double*, int> GetGamma;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, double, int> SetSharpness;
+        public delegate* unmanaged<TSelf*, double, int> SetSharpness;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, double*, int> GetSharpness;
+        public delegate* unmanaged<TSelf*, double*, int> GetSharpness;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, double, int> SetSaturation;
+        public delegate* unmanaged<TSelf*, double, int> SetSaturation;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, double*, int> GetSaturation;
+        public delegate* unmanaged<TSelf*, double*, int> GetSaturation;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, double, int> SetTint;
+        public delegate* unmanaged<TSelf*, double, int> SetTint;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, double*, int> GetTint;
+        public delegate* unmanaged<TSelf*, double*, int> GetTint;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, double, int> SetNoiseReduction;
+        public delegate* unmanaged<TSelf*, double, int> SetNoiseReduction;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, double*, int> GetNoiseReduction;
+        public delegate* unmanaged<TSelf*, double*, int> GetNoiseReduction;
 
         [NativeTypeName("HRESULT (IWICColorContext *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, IWICColorContext*, int> SetDestinationColorContext;
+        public delegate* unmanaged<TSelf*, IWICColorContext*, int> SetDestinationColorContext;
 
         [NativeTypeName("HRESULT (UINT, const WICRawToneCurve *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, uint, WICRawToneCurve*, int> SetToneCurve;
+        public delegate* unmanaged<TSelf*, uint, WICRawToneCurve*, int> SetToneCurve;
 
         [NativeTypeName("HRESULT (UINT, WICRawToneCurve *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, uint, WICRawToneCurve*, uint*, int> GetToneCurve;
+        public delegate* unmanaged<TSelf*, uint, WICRawToneCurve*, uint*, int> GetToneCurve;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, double, int> SetRotation;
+        public delegate* unmanaged<TSelf*, double, int> SetRotation;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, double*, int> GetRotation;
+        public delegate* unmanaged<TSelf*, double*, int> GetRotation;
 
         [NativeTypeName("HRESULT (WICRawRenderMode) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, WICRawRenderMode, int> SetRenderMode;
+        public delegate* unmanaged<TSelf*, WICRawRenderMode, int> SetRenderMode;
 
         [NativeTypeName("HRESULT (WICRawRenderMode *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, WICRawRenderMode*, int> GetRenderMode;
+        public delegate* unmanaged<TSelf*, WICRawRenderMode*, int> GetRenderMode;
 
         [NativeTypeName("HRESULT (IWICDevelopRawNotificationCallback *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICDevelopRaw*, IWICDevelopRawNotificationCallback*, int> SetNotificationCallback;
+        public delegate* unmanaged<TSelf*, IWICDevelopRawNotificationCallback*, int> SetNotificationCallback;
     }
 }

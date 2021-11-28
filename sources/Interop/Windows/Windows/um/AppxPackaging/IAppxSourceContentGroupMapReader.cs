@@ -64,21 +64,22 @@ public unsafe partial struct IAppxSourceContentGroupMapReader : IAppxSourceConte
         HRESULT GetAutomaticGroups(IAppxContentGroupsEnumerator** automaticGroupsEnumerator);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxSourceContentGroupMapReader*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxSourceContentGroupMapReader*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxSourceContentGroupMapReader*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxContentGroup **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxSourceContentGroupMapReader*, IAppxContentGroup**, int> GetRequiredGroup;
+        public delegate* unmanaged<TSelf*, IAppxContentGroup**, int> GetRequiredGroup;
 
         [NativeTypeName("HRESULT (IAppxContentGroupsEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxSourceContentGroupMapReader*, IAppxContentGroupsEnumerator**, int> GetAutomaticGroups;
+        public delegate* unmanaged<TSelf*, IAppxContentGroupsEnumerator**, int> GetAutomaticGroups;
     }
 }

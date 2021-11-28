@@ -142,51 +142,52 @@ public unsafe partial struct ID2D1GeometrySink : ID2D1GeometrySink.Interface
         void AddArc([NativeTypeName("const D2D1_ARC_SEGMENT *")] D2D1_ARC_SEGMENT* arc);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GeometrySink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GeometrySink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GeometrySink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (D2D1_FILL_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GeometrySink*, D2D1_FILL_MODE, void> SetFillMode;
+        public delegate* unmanaged<TSelf*, D2D1_FILL_MODE, void> SetFillMode;
 
         [NativeTypeName("void (D2D1_PATH_SEGMENT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GeometrySink*, D2D1_PATH_SEGMENT, void> SetSegmentFlags;
+        public delegate* unmanaged<TSelf*, D2D1_PATH_SEGMENT, void> SetSegmentFlags;
 
         [NativeTypeName("void (D2D1_POINT_2F, D2D1_FIGURE_BEGIN) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GeometrySink*, D2D_POINT_2F, D2D1_FIGURE_BEGIN, void> BeginFigure;
+        public delegate* unmanaged<TSelf*, D2D_POINT_2F, D2D1_FIGURE_BEGIN, void> BeginFigure;
 
         [NativeTypeName("void (const D2D1_POINT_2F *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GeometrySink*, D2D_POINT_2F*, uint, void> AddLines;
+        public delegate* unmanaged<TSelf*, D2D_POINT_2F*, uint, void> AddLines;
 
         [NativeTypeName("void (const D2D1_BEZIER_SEGMENT *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GeometrySink*, D2D1_BEZIER_SEGMENT*, uint, void> AddBeziers;
+        public delegate* unmanaged<TSelf*, D2D1_BEZIER_SEGMENT*, uint, void> AddBeziers;
 
         [NativeTypeName("void (D2D1_FIGURE_END) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GeometrySink*, D2D1_FIGURE_END, void> EndFigure;
+        public delegate* unmanaged<TSelf*, D2D1_FIGURE_END, void> EndFigure;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GeometrySink*, int> Close;
+        public delegate* unmanaged<TSelf*, int> Close;
 
         [NativeTypeName("void (D2D1_POINT_2F) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GeometrySink*, D2D_POINT_2F, void> AddLine;
+        public delegate* unmanaged<TSelf*, D2D_POINT_2F, void> AddLine;
 
         [NativeTypeName("void (const D2D1_BEZIER_SEGMENT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GeometrySink*, D2D1_BEZIER_SEGMENT*, void> AddBezier;
+        public delegate* unmanaged<TSelf*, D2D1_BEZIER_SEGMENT*, void> AddBezier;
 
         [NativeTypeName("void (const D2D1_QUADRATIC_BEZIER_SEGMENT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GeometrySink*, D2D1_QUADRATIC_BEZIER_SEGMENT*, void> AddQuadraticBezier;
+        public delegate* unmanaged<TSelf*, D2D1_QUADRATIC_BEZIER_SEGMENT*, void> AddQuadraticBezier;
 
         [NativeTypeName("void (const D2D1_QUADRATIC_BEZIER_SEGMENT *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GeometrySink*, D2D1_QUADRATIC_BEZIER_SEGMENT*, uint, void> AddQuadraticBeziers;
+        public delegate* unmanaged<TSelf*, D2D1_QUADRATIC_BEZIER_SEGMENT*, uint, void> AddQuadraticBeziers;
 
         [NativeTypeName("void (const D2D1_ARC_SEGMENT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID2D1GeometrySink*, D2D1_ARC_SEGMENT*, void> AddArc;
+        public delegate* unmanaged<TSelf*, D2D1_ARC_SEGMENT*, void> AddArc;
     }
 }

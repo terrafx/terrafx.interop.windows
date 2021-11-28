@@ -62,21 +62,22 @@ public unsafe partial struct IAudioMute : IAudioMute.Interface
         HRESULT GetMute(BOOL* pbMuted);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioMute*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioMute*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioMute*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioMute*, BOOL, Guid*, int> SetMute;
+        public delegate* unmanaged<TSelf*, BOOL, Guid*, int> SetMute;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAudioMute*, BOOL*, int> GetMute;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetMute;
     }
 }

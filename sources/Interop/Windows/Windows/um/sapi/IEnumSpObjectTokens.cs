@@ -102,33 +102,34 @@ public unsafe partial struct IEnumSpObjectTokens : IEnumSpObjectTokens.Interface
         HRESULT GetCount([NativeTypeName("ULONG *")] uint* pCount);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumSpObjectTokens*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumSpObjectTokens*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumSpObjectTokens*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, ISpObjectToken **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumSpObjectTokens*, uint, ISpObjectToken**, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, ISpObjectToken**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumSpObjectTokens*, uint, int> Skip;
+        public delegate* unmanaged<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumSpObjectTokens*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IEnumSpObjectTokens **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumSpObjectTokens*, IEnumSpObjectTokens**, int> Clone;
+        public delegate* unmanaged<TSelf*, IEnumSpObjectTokens**, int> Clone;
 
         [NativeTypeName("HRESULT (ULONG, ISpObjectToken **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumSpObjectTokens*, uint, ISpObjectToken**, int> Item;
+        public delegate* unmanaged<TSelf*, uint, ISpObjectToken**, int> Item;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumSpObjectTokens*, uint*, int> GetCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
     }
 }

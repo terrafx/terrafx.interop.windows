@@ -270,87 +270,88 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         HRESULT abort();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, int*, int> get_status;
+        public delegate* unmanaged<TSelf*, int*, int> get_status;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, VARIANT, int> put_onchecking;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onchecking;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, VARIANT*, int> get_onchecking;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onchecking;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, VARIANT, int> put_onerror;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onerror;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, VARIANT*, int> get_onerror;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onerror;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, VARIANT, int> put_onnoupdate;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onnoupdate;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, VARIANT*, int> get_onnoupdate;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onnoupdate;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, VARIANT, int> put_ondownloading;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_ondownloading;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, VARIANT*, int> get_ondownloading;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_ondownloading;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, VARIANT, int> put_onprogress;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onprogress;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, VARIANT*, int> get_onprogress;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onprogress;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, VARIANT, int> put_onupdateready;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onupdateready;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, VARIANT*, int> get_onupdateready;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onupdateready;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, VARIANT, int> put_oncached;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_oncached;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, VARIANT*, int> get_oncached;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_oncached;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, VARIANT, int> put_onobsolete;
+        public delegate* unmanaged<TSelf*, VARIANT, int> put_onobsolete;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, VARIANT*, int> get_onobsolete;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_onobsolete;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, int> update;
+        public delegate* unmanaged<TSelf*, int> update;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, int> swapCache;
+        public delegate* unmanaged<TSelf*, int> swapCache;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLApplicationCache*, int> abort;
+        public delegate* unmanaged<TSelf*, int> abort;
     }
 }

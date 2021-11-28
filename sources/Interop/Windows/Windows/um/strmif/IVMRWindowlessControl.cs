@@ -192,60 +192,61 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
         HRESULT GetColorKey(COLORREF* lpClr);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRWindowlessControl*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRWindowlessControl*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRWindowlessControl*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LONG *, LONG *, LONG *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRWindowlessControl*, int*, int*, int*, int*, int> GetNativeVideoSize;
+        public delegate* unmanaged<TSelf*, int*, int*, int*, int*, int> GetNativeVideoSize;
 
         [NativeTypeName("HRESULT (LONG *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRWindowlessControl*, int*, int*, int> GetMinIdealVideoSize;
+        public delegate* unmanaged<TSelf*, int*, int*, int> GetMinIdealVideoSize;
 
         [NativeTypeName("HRESULT (LONG *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRWindowlessControl*, int*, int*, int> GetMaxIdealVideoSize;
+        public delegate* unmanaged<TSelf*, int*, int*, int> GetMaxIdealVideoSize;
 
         [NativeTypeName("HRESULT (const LPRECT, const LPRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRWindowlessControl*, RECT*, RECT*, int> SetVideoPosition;
+        public delegate* unmanaged<TSelf*, RECT*, RECT*, int> SetVideoPosition;
 
         [NativeTypeName("HRESULT (LPRECT, LPRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRWindowlessControl*, RECT*, RECT*, int> GetVideoPosition;
+        public delegate* unmanaged<TSelf*, RECT*, RECT*, int> GetVideoPosition;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRWindowlessControl*, uint*, int> GetAspectRatioMode;
+        public delegate* unmanaged<TSelf*, uint*, int> GetAspectRatioMode;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRWindowlessControl*, uint, int> SetAspectRatioMode;
+        public delegate* unmanaged<TSelf*, uint, int> SetAspectRatioMode;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRWindowlessControl*, HWND, int> SetVideoClippingWindow;
+        public delegate* unmanaged<TSelf*, HWND, int> SetVideoClippingWindow;
 
         [NativeTypeName("HRESULT (HWND, HDC) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRWindowlessControl*, HWND, HDC, int> RepaintVideo;
+        public delegate* unmanaged<TSelf*, HWND, HDC, int> RepaintVideo;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRWindowlessControl*, int> DisplayModeChanged;
+        public delegate* unmanaged<TSelf*, int> DisplayModeChanged;
 
         [NativeTypeName("HRESULT (BYTE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRWindowlessControl*, byte**, int> GetCurrentImage;
+        public delegate* unmanaged<TSelf*, byte**, int> GetCurrentImage;
 
         [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRWindowlessControl*, COLORREF, int> SetBorderColor;
+        public delegate* unmanaged<TSelf*, COLORREF, int> SetBorderColor;
 
         [NativeTypeName("HRESULT (COLORREF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRWindowlessControl*, COLORREF*, int> GetBorderColor;
+        public delegate* unmanaged<TSelf*, COLORREF*, int> GetBorderColor;
 
         [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRWindowlessControl*, COLORREF, int> SetColorKey;
+        public delegate* unmanaged<TSelf*, COLORREF, int> SetColorKey;
 
         [NativeTypeName("HRESULT (COLORREF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVMRWindowlessControl*, COLORREF*, int> GetColorKey;
+        public delegate* unmanaged<TSelf*, COLORREF*, int> GetColorKey;
     }
 }

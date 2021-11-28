@@ -122,39 +122,40 @@ public unsafe partial struct IDiaEnumDebugStreamData : IDiaEnumDebugStreamData.I
         HRESULT Clone(IDiaEnumDebugStreamData** ppenum);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumDebugStreamData*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumDebugStreamData*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumDebugStreamData*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumDebugStreamData*, IUnknown**, int> get__NewEnum;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> get__NewEnum;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumDebugStreamData*, int*, int> get_Count;
+        public delegate* unmanaged<TSelf*, int*, int> get_Count;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumDebugStreamData*, ushort**, int> get_name;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_name;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumDebugStreamData*, uint, uint, uint*, byte*, int> Item;
+        public delegate* unmanaged<TSelf*, uint, uint, uint*, byte*, int> Item;
 
         [NativeTypeName("HRESULT (ULONG, DWORD, DWORD *, BYTE *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumDebugStreamData*, uint, uint, uint*, byte*, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, uint, uint*, byte*, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumDebugStreamData*, uint, int> Skip;
+        public delegate* unmanaged<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumDebugStreamData*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IDiaEnumDebugStreamData **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaEnumDebugStreamData*, IDiaEnumDebugStreamData**, int> Clone;
+        public delegate* unmanaged<TSelf*, IDiaEnumDebugStreamData**, int> Clone;
     }
 }

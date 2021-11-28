@@ -106,36 +106,37 @@ public unsafe partial struct ISpNotifyTranslator : ISpNotifyTranslator.Interface
         HANDLE GetEventHandle();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpNotifyTranslator*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpNotifyTranslator*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpNotifyTranslator*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpNotifyTranslator*, int> Notify;
+        public delegate* unmanaged<TSelf*, int> Notify;
 
         [NativeTypeName("HRESULT (HWND, UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpNotifyTranslator*, HWND, uint, WPARAM, LPARAM, int> InitWindowMessage;
+        public delegate* unmanaged<TSelf*, HWND, uint, WPARAM, LPARAM, int> InitWindowMessage;
 
         [NativeTypeName("HRESULT (SPNOTIFYCALLBACK *, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpNotifyTranslator*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int> InitCallback;
+        public delegate* unmanaged<TSelf*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int> InitCallback;
 
         [NativeTypeName("HRESULT (ISpNotifyCallback *, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpNotifyTranslator*, ISpNotifyCallback*, WPARAM, LPARAM, int> InitSpNotifyCallback;
+        public delegate* unmanaged<TSelf*, ISpNotifyCallback*, WPARAM, LPARAM, int> InitSpNotifyCallback;
 
         [NativeTypeName("HRESULT (HANDLE, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpNotifyTranslator*, HANDLE, BOOL, int> InitWin32Event;
+        public delegate* unmanaged<TSelf*, HANDLE, BOOL, int> InitWin32Event;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpNotifyTranslator*, uint, int> Wait;
+        public delegate* unmanaged<TSelf*, uint, int> Wait;
 
         [NativeTypeName("HANDLE () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpNotifyTranslator*, void*> GetEventHandle;
+        public delegate* unmanaged<TSelf*, void*> GetEventHandle;
     }
 }

@@ -92,30 +92,31 @@ public unsafe partial struct IMFQualityAdvise : IMFQualityAdvise.Interface
         HRESULT DropTime([NativeTypeName("LONGLONG")] long hnsAmountToDrop);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFQualityAdvise*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFQualityAdvise*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFQualityAdvise*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MF_QUALITY_DROP_MODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFQualityAdvise*, MF_QUALITY_DROP_MODE, int> SetDropMode;
+        public delegate* unmanaged<TSelf*, MF_QUALITY_DROP_MODE, int> SetDropMode;
 
         [NativeTypeName("HRESULT (MF_QUALITY_LEVEL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFQualityAdvise*, MF_QUALITY_LEVEL, int> SetQualityLevel;
+        public delegate* unmanaged<TSelf*, MF_QUALITY_LEVEL, int> SetQualityLevel;
 
         [NativeTypeName("HRESULT (MF_QUALITY_DROP_MODE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFQualityAdvise*, MF_QUALITY_DROP_MODE*, int> GetDropMode;
+        public delegate* unmanaged<TSelf*, MF_QUALITY_DROP_MODE*, int> GetDropMode;
 
         [NativeTypeName("HRESULT (MF_QUALITY_LEVEL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFQualityAdvise*, MF_QUALITY_LEVEL*, int> GetQualityLevel;
+        public delegate* unmanaged<TSelf*, MF_QUALITY_LEVEL*, int> GetQualityLevel;
 
         [NativeTypeName("HRESULT (LONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFQualityAdvise*, long, int> DropTime;
+        public delegate* unmanaged<TSelf*, long, int> DropTime;
     }
 }

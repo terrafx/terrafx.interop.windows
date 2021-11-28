@@ -62,21 +62,22 @@ public unsafe partial struct ITfSystemLangBarItem : ITfSystemLangBarItem.Interfa
         HRESULT SetTooltipString([NativeTypeName("WCHAR *")] ushort* pchToolTip, [NativeTypeName("ULONG")] uint cch);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfSystemLangBarItem*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfSystemLangBarItem*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfSystemLangBarItem*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HICON) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfSystemLangBarItem*, HICON, int> SetIcon;
+        public delegate* unmanaged<TSelf*, HICON, int> SetIcon;
 
         [NativeTypeName("HRESULT (WCHAR *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfSystemLangBarItem*, ushort*, uint, int> SetTooltipString;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> SetTooltipString;
     }
 }

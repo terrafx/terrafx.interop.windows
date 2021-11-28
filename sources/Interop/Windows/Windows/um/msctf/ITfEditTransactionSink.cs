@@ -62,21 +62,22 @@ public unsafe partial struct ITfEditTransactionSink : ITfEditTransactionSink.Int
         HRESULT OnEndEditTransaction(ITfContext* pic);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfEditTransactionSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfEditTransactionSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfEditTransactionSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITfContext *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfEditTransactionSink*, ITfContext*, int> OnStartEditTransaction;
+        public delegate* unmanaged<TSelf*, ITfContext*, int> OnStartEditTransaction;
 
         [NativeTypeName("HRESULT (ITfContext *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfEditTransactionSink*, ITfContext*, int> OnEndEditTransaction;
+        public delegate* unmanaged<TSelf*, ITfContext*, int> OnEndEditTransaction;
     }
 }

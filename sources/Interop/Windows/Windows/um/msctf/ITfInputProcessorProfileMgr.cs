@@ -122,39 +122,40 @@ public unsafe partial struct ITfInputProcessorProfileMgr : ITfInputProcessorProf
         HRESULT GetActiveProfile([NativeTypeName("const GUID &")] Guid* catid, TF_INPUTPROCESSORPROFILE* pProfile);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputProcessorProfileMgr*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputProcessorProfileMgr*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, LANGID, const IID &, const GUID &, HKL, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputProcessorProfileMgr*, uint, ushort, Guid*, Guid*, HKL, uint, int> ActivateProfile;
+        public delegate* unmanaged<TSelf*, uint, ushort, Guid*, Guid*, HKL, uint, int> ActivateProfile;
 
         [NativeTypeName("HRESULT (DWORD, LANGID, const IID &, const GUID &, HKL, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputProcessorProfileMgr*, uint, ushort, Guid*, Guid*, HKL, uint, int> DeactivateProfile;
+        public delegate* unmanaged<TSelf*, uint, ushort, Guid*, Guid*, HKL, uint, int> DeactivateProfile;
 
         [NativeTypeName("HRESULT (DWORD, LANGID, const IID &, const GUID &, HKL, TF_INPUTPROCESSORPROFILE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputProcessorProfileMgr*, uint, ushort, Guid*, Guid*, HKL, TF_INPUTPROCESSORPROFILE*, int> GetProfile;
+        public delegate* unmanaged<TSelf*, uint, ushort, Guid*, Guid*, HKL, TF_INPUTPROCESSORPROFILE*, int> GetProfile;
 
         [NativeTypeName("HRESULT (LANGID, IEnumTfInputProcessorProfiles **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputProcessorProfileMgr*, ushort, IEnumTfInputProcessorProfiles**, int> EnumProfiles;
+        public delegate* unmanaged<TSelf*, ushort, IEnumTfInputProcessorProfiles**, int> EnumProfiles;
 
         [NativeTypeName("HRESULT (const IID &, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, uint, int> ReleaseInputProcessor;
+        public delegate* unmanaged<TSelf*, Guid*, uint, int> ReleaseInputProcessor;
 
         [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &, const WCHAR *, ULONG, const WCHAR *, ULONG, ULONG, HKL, DWORD, BOOL, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, ushort, Guid*, ushort*, uint, ushort*, uint, uint, HKL, uint, BOOL, uint, int> RegisterProfile;
+        public delegate* unmanaged<TSelf*, Guid*, ushort, Guid*, ushort*, uint, ushort*, uint, uint, HKL, uint, BOOL, uint, int> RegisterProfile;
 
         [NativeTypeName("HRESULT (const IID &, LANGID, const GUID &, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, ushort, Guid*, uint, int> UnregisterProfile;
+        public delegate* unmanaged<TSelf*, Guid*, ushort, Guid*, uint, int> UnregisterProfile;
 
         [NativeTypeName("HRESULT (const GUID &, TF_INPUTPROCESSORPROFILE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, TF_INPUTPROCESSORPROFILE*, int> GetActiveProfile;
+        public delegate* unmanaged<TSelf*, Guid*, TF_INPUTPROCESSORPROFILE*, int> GetActiveProfile;
     }
 }

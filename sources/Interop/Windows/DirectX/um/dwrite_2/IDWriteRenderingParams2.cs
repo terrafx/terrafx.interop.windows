@@ -97,36 +97,37 @@ public unsafe partial struct IDWriteRenderingParams2 : IDWriteRenderingParams2.I
         DWRITE_GRID_FIT_MODE GetGridFitMode();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteRenderingParams2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteRenderingParams2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteRenderingParams2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteRenderingParams2*, float> GetGamma;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, float> GetGamma;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteRenderingParams2*, float> GetEnhancedContrast;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, float> GetEnhancedContrast;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteRenderingParams2*, float> GetClearTypeLevel;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, float> GetClearTypeLevel;
 
         [NativeTypeName("DWRITE_PIXEL_GEOMETRY () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteRenderingParams2*, DWRITE_PIXEL_GEOMETRY> GetPixelGeometry;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_PIXEL_GEOMETRY> GetPixelGeometry;
 
         [NativeTypeName("DWRITE_RENDERING_MODE () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteRenderingParams2*, DWRITE_RENDERING_MODE> GetRenderingMode;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_RENDERING_MODE> GetRenderingMode;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteRenderingParams2*, float> GetGrayscaleEnhancedContrast;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, float> GetGrayscaleEnhancedContrast;
 
         [NativeTypeName("DWRITE_GRID_FIT_MODE () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteRenderingParams2*, DWRITE_GRID_FIT_MODE> GetGridFitMode;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_GRID_FIT_MODE> GetGridFitMode;
     }
 }

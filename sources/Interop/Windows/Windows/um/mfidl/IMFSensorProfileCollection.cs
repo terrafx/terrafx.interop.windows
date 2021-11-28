@@ -106,33 +106,34 @@ public unsafe partial struct IMFSensorProfileCollection : IMFSensorProfileCollec
         void RemoveProfile(SENSORPROFILEID* ProfileId);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorProfileCollection*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorProfileCollection*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorProfileCollection*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("DWORD () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorProfileCollection*, uint> GetProfileCount;
+        public delegate* unmanaged<TSelf*, uint> GetProfileCount;
 
         [NativeTypeName("HRESULT (DWORD, IMFSensorProfile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorProfileCollection*, uint, IMFSensorProfile**, int> GetProfile;
+        public delegate* unmanaged<TSelf*, uint, IMFSensorProfile**, int> GetProfile;
 
         [NativeTypeName("HRESULT (IMFSensorProfile *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorProfileCollection*, IMFSensorProfile*, int> AddProfile;
+        public delegate* unmanaged<TSelf*, IMFSensorProfile*, int> AddProfile;
 
         [NativeTypeName("HRESULT (SENSORPROFILEID *, IMFSensorProfile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorProfileCollection*, SENSORPROFILEID*, IMFSensorProfile**, int> FindProfile;
+        public delegate* unmanaged<TSelf*, SENSORPROFILEID*, IMFSensorProfile**, int> FindProfile;
 
         [NativeTypeName("void (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorProfileCollection*, uint, void> RemoveProfileByIndex;
+        public delegate* unmanaged<TSelf*, uint, void> RemoveProfileByIndex;
 
         [NativeTypeName("void (SENSORPROFILEID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorProfileCollection*, SENSORPROFILEID*, void> RemoveProfile;
+        public delegate* unmanaged<TSelf*, SENSORPROFILEID*, void> RemoveProfile;
     }
 }

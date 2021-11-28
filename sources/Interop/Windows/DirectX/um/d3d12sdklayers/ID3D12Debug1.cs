@@ -73,24 +73,25 @@ public unsafe partial struct ID3D12Debug1 : ID3D12Debug1.Interface
         void SetEnableSynchronizedCommandQueueValidation(BOOL Enable);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Debug1*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Debug1*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Debug1*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Debug1*, void> EnableDebugLayer;
+        public delegate* unmanaged<TSelf*, void> EnableDebugLayer;
 
         [NativeTypeName("void (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Debug1*, BOOL, void> SetEnableGPUBasedValidation;
+        public delegate* unmanaged<TSelf*, BOOL, void> SetEnableGPUBasedValidation;
 
         [NativeTypeName("void (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12Debug1*, BOOL, void> SetEnableSynchronizedCommandQueueValidation;
+        public delegate* unmanaged<TSelf*, BOOL, void> SetEnableSynchronizedCommandQueueValidation;
     }
 }

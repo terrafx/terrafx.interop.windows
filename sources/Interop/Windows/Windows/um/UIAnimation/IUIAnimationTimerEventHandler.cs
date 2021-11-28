@@ -72,24 +72,25 @@ public unsafe partial struct IUIAnimationTimerEventHandler : IUIAnimationTimerEv
         HRESULT OnRenderingTooSlow([NativeTypeName("UINT32")] uint framesPerSecond);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTimerEventHandler*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTimerEventHandler*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTimerEventHandler*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTimerEventHandler*, int> OnPreUpdate;
+        public delegate* unmanaged<TSelf*, int> OnPreUpdate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTimerEventHandler*, int> OnPostUpdate;
+        public delegate* unmanaged<TSelf*, int> OnPostUpdate;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationTimerEventHandler*, uint, int> OnRenderingTooSlow;
+        public delegate* unmanaged<TSelf*, uint, int> OnRenderingTooSlow;
     }
 }

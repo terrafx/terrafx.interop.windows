@@ -82,27 +82,28 @@ public unsafe partial struct ITfContextView : ITfContextView.Interface
         HRESULT GetWnd(HWND* phwnd);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContextView*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContextView*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContextView*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfEditCookie, const POINT *, DWORD, ITfRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContextView*, uint, POINT*, uint, ITfRange**, int> GetRangeFromPoint;
+        public delegate* unmanaged<TSelf*, uint, POINT*, uint, ITfRange**, int> GetRangeFromPoint;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, RECT *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContextView*, uint, ITfRange*, RECT*, BOOL*, int> GetTextExt;
+        public delegate* unmanaged<TSelf*, uint, ITfRange*, RECT*, BOOL*, int> GetTextExt;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContextView*, RECT*, int> GetScreenExt;
+        public delegate* unmanaged<TSelf*, RECT*, int> GetScreenExt;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContextView*, HWND*, int> GetWnd;
+        public delegate* unmanaged<TSelf*, HWND*, int> GetWnd;
     }
 }

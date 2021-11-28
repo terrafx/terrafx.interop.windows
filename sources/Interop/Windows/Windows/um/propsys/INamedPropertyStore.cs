@@ -82,27 +82,28 @@ public unsafe partial struct INamedPropertyStore : INamedPropertyStore.Interface
         HRESULT GetNameAt([NativeTypeName("DWORD")] uint iProp, [NativeTypeName("BSTR *")] ushort** pbstrName);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<INamedPropertyStore*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INamedPropertyStore*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INamedPropertyStore*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INamedPropertyStore*, ushort*, PROPVARIANT*, int> GetNamedValue;
+        public delegate* unmanaged<TSelf*, ushort*, PROPVARIANT*, int> GetNamedValue;
 
         [NativeTypeName("HRESULT (LPCWSTR, const PROPVARIANT &) __attribute__((stdcall))")]
-        public delegate* unmanaged<INamedPropertyStore*, ushort*, PROPVARIANT*, int> SetNamedValue;
+        public delegate* unmanaged<TSelf*, ushort*, PROPVARIANT*, int> SetNamedValue;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INamedPropertyStore*, uint*, int> GetNameCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetNameCount;
 
         [NativeTypeName("HRESULT (DWORD, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INamedPropertyStore*, uint, ushort**, int> GetNameAt;
+        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetNameAt;
     }
 }

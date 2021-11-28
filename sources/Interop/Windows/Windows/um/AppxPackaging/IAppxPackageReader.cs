@@ -94,30 +94,31 @@ public unsafe partial struct IAppxPackageReader : IAppxPackageReader.Interface
         HRESULT GetManifest(IAppxManifestReader** manifestReader);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageReader*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageReader*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageReader*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxBlockMapReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageReader*, IAppxBlockMapReader**, int> GetBlockMap;
+        public delegate* unmanaged<TSelf*, IAppxBlockMapReader**, int> GetBlockMap;
 
         [NativeTypeName("HRESULT (APPX_FOOTPRINT_FILE_TYPE, IAppxFile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageReader*, APPX_FOOTPRINT_FILE_TYPE, IAppxFile**, int> GetFootprintFile;
+        public delegate* unmanaged<TSelf*, APPX_FOOTPRINT_FILE_TYPE, IAppxFile**, int> GetFootprintFile;
 
         [NativeTypeName("HRESULT (LPCWSTR, IAppxFile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageReader*, ushort*, IAppxFile**, int> GetPayloadFile;
+        public delegate* unmanaged<TSelf*, ushort*, IAppxFile**, int> GetPayloadFile;
 
         [NativeTypeName("HRESULT (IAppxFilesEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageReader*, IAppxFilesEnumerator**, int> GetPayloadFiles;
+        public delegate* unmanaged<TSelf*, IAppxFilesEnumerator**, int> GetPayloadFiles;
 
         [NativeTypeName("HRESULT (IAppxManifestReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxPackageReader*, IAppxManifestReader**, int> GetManifest;
+        public delegate* unmanaged<TSelf*, IAppxManifestReader**, int> GetManifest;
     }
 }

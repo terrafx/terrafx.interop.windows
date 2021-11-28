@@ -164,51 +164,52 @@ public unsafe partial struct IMFSourceBuffer : IMFSourceBuffer.Interface
         HRESULT Remove(double start, double end);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBuffer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBuffer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBuffer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBuffer*, int> GetUpdating;
+        public delegate* unmanaged<TSelf*, int> GetUpdating;
 
         [NativeTypeName("HRESULT (IMFMediaTimeRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBuffer*, IMFMediaTimeRange**, int> GetBuffered;
+        public delegate* unmanaged<TSelf*, IMFMediaTimeRange**, int> GetBuffered;
 
         [NativeTypeName("double () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBuffer*, double> GetTimeStampOffset;
+        public delegate* unmanaged<TSelf*, double> GetTimeStampOffset;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBuffer*, double, int> SetTimeStampOffset;
+        public delegate* unmanaged<TSelf*, double, int> SetTimeStampOffset;
 
         [NativeTypeName("double () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBuffer*, double> GetAppendWindowStart;
+        public delegate* unmanaged<TSelf*, double> GetAppendWindowStart;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBuffer*, double, int> SetAppendWindowStart;
+        public delegate* unmanaged<TSelf*, double, int> SetAppendWindowStart;
 
         [NativeTypeName("double () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBuffer*, double> GetAppendWindowEnd;
+        public delegate* unmanaged<TSelf*, double> GetAppendWindowEnd;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBuffer*, double, int> SetAppendWindowEnd;
+        public delegate* unmanaged<TSelf*, double, int> SetAppendWindowEnd;
 
         [NativeTypeName("HRESULT (const BYTE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBuffer*, byte*, uint, int> Append;
+        public delegate* unmanaged<TSelf*, byte*, uint, int> Append;
 
         [NativeTypeName("HRESULT (IMFByteStream *, DWORDLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBuffer*, IMFByteStream*, ulong*, int> AppendByteStream;
+        public delegate* unmanaged<TSelf*, IMFByteStream*, ulong*, int> AppendByteStream;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBuffer*, int> Abort;
+        public delegate* unmanaged<TSelf*, int> Abort;
 
         [NativeTypeName("HRESULT (double, double) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSourceBuffer*, double, double, int> Remove;
+        public delegate* unmanaged<TSelf*, double, double, int> Remove;
     }
 }

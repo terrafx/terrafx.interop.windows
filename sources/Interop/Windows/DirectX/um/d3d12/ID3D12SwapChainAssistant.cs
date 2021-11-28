@@ -84,27 +84,28 @@ public unsafe partial struct ID3D12SwapChainAssistant : ID3D12SwapChainAssistant
         HRESULT InsertImplicitSync();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12SwapChainAssistant*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12SwapChainAssistant*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("LUID () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12SwapChainAssistant*, LUID*, LUID*> GetLUID;
+        public delegate* unmanaged<TSelf*, LUID*, LUID*> GetLUID;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, int> GetSwapChainObject;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetSwapChainObject;
 
         [NativeTypeName("HRESULT (const IID &, void **, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12SwapChainAssistant*, Guid*, void**, Guid*, void**, int> GetCurrentResourceAndCommandQueue;
+        public delegate* unmanaged<TSelf*, Guid*, void**, Guid*, void**, int> GetCurrentResourceAndCommandQueue;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12SwapChainAssistant*, int> InsertImplicitSync;
+        public delegate* unmanaged<TSelf*, int> InsertImplicitSync;
     }
 }

@@ -303,93 +303,94 @@ public unsafe partial struct IUIAnimationVariable2 : IUIAnimationVariable2.Inter
         HRESULT SetVariableCurveChangeHandler(IUIAnimationVariableCurveChangeHandler2* handler);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, uint*, int> GetDimension;
+        public delegate* unmanaged<TSelf*, uint*, int> GetDimension;
 
         [NativeTypeName("HRESULT (DOUBLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, double*, int> GetValue;
+        public delegate* unmanaged<TSelf*, double*, int> GetValue;
 
         [NativeTypeName("HRESULT (DOUBLE *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, double*, uint, int> GetVectorValue;
+        public delegate* unmanaged<TSelf*, double*, uint, int> GetVectorValue;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, IDCompositionAnimation*, int> GetCurve;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> GetCurve;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation **, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, IDCompositionAnimation**, uint, int> GetVectorCurve;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation**, uint, int> GetVectorCurve;
 
         [NativeTypeName("HRESULT (DOUBLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, double*, int> GetFinalValue;
+        public delegate* unmanaged<TSelf*, double*, int> GetFinalValue;
 
         [NativeTypeName("HRESULT (DOUBLE *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, double*, uint, int> GetFinalVectorValue;
+        public delegate* unmanaged<TSelf*, double*, uint, int> GetFinalVectorValue;
 
         [NativeTypeName("HRESULT (DOUBLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, double*, int> GetPreviousValue;
+        public delegate* unmanaged<TSelf*, double*, int> GetPreviousValue;
 
         [NativeTypeName("HRESULT (DOUBLE *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, double*, uint, int> GetPreviousVectorValue;
+        public delegate* unmanaged<TSelf*, double*, uint, int> GetPreviousVectorValue;
 
         [NativeTypeName("HRESULT (INT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, int*, int> GetIntegerValue;
+        public delegate* unmanaged<TSelf*, int*, int> GetIntegerValue;
 
         [NativeTypeName("HRESULT (INT32 *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, int*, uint, int> GetIntegerVectorValue;
+        public delegate* unmanaged<TSelf*, int*, uint, int> GetIntegerVectorValue;
 
         [NativeTypeName("HRESULT (INT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, int*, int> GetFinalIntegerValue;
+        public delegate* unmanaged<TSelf*, int*, int> GetFinalIntegerValue;
 
         [NativeTypeName("HRESULT (INT32 *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, int*, uint, int> GetFinalIntegerVectorValue;
+        public delegate* unmanaged<TSelf*, int*, uint, int> GetFinalIntegerVectorValue;
 
         [NativeTypeName("HRESULT (INT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, int*, int> GetPreviousIntegerValue;
+        public delegate* unmanaged<TSelf*, int*, int> GetPreviousIntegerValue;
 
         [NativeTypeName("HRESULT (INT32 *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, int*, uint, int> GetPreviousIntegerVectorValue;
+        public delegate* unmanaged<TSelf*, int*, uint, int> GetPreviousIntegerVectorValue;
 
         [NativeTypeName("HRESULT (IUIAnimationStoryboard2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, IUIAnimationStoryboard2**, int> GetCurrentStoryboard;
+        public delegate* unmanaged<TSelf*, IUIAnimationStoryboard2**, int> GetCurrentStoryboard;
 
         [NativeTypeName("HRESULT (DOUBLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, double, int> SetLowerBound;
+        public delegate* unmanaged<TSelf*, double, int> SetLowerBound;
 
         [NativeTypeName("HRESULT (const DOUBLE *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, double*, uint, int> SetLowerBoundVector;
+        public delegate* unmanaged<TSelf*, double*, uint, int> SetLowerBoundVector;
 
         [NativeTypeName("HRESULT (DOUBLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, double, int> SetUpperBound;
+        public delegate* unmanaged<TSelf*, double, int> SetUpperBound;
 
         [NativeTypeName("HRESULT (const DOUBLE *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, double*, uint, int> SetUpperBoundVector;
+        public delegate* unmanaged<TSelf*, double*, uint, int> SetUpperBoundVector;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_ROUNDING_MODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, UI_ANIMATION_ROUNDING_MODE, int> SetRoundingMode;
+        public delegate* unmanaged<TSelf*, UI_ANIMATION_ROUNDING_MODE, int> SetRoundingMode;
 
         [NativeTypeName("HRESULT (IUnknown *, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, IUnknown*, uint, int> SetTag;
+        public delegate* unmanaged<TSelf*, IUnknown*, uint, int> SetTag;
 
         [NativeTypeName("HRESULT (IUnknown **, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, IUnknown**, uint*, int> GetTag;
+        public delegate* unmanaged<TSelf*, IUnknown**, uint*, int> GetTag;
 
         [NativeTypeName("HRESULT (IUIAnimationVariableChangeHandler2 *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, IUIAnimationVariableChangeHandler2*, BOOL, int> SetVariableChangeHandler;
+        public delegate* unmanaged<TSelf*, IUIAnimationVariableChangeHandler2*, BOOL, int> SetVariableChangeHandler;
 
         [NativeTypeName("HRESULT (IUIAnimationVariableIntegerChangeHandler2 *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, IUIAnimationVariableIntegerChangeHandler2*, BOOL, int> SetVariableIntegerChangeHandler;
+        public delegate* unmanaged<TSelf*, IUIAnimationVariableIntegerChangeHandler2*, BOOL, int> SetVariableIntegerChangeHandler;
 
         [NativeTypeName("HRESULT (IUIAnimationVariableCurveChangeHandler2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUIAnimationVariable2*, IUIAnimationVariableCurveChangeHandler2*, int> SetVariableCurveChangeHandler;
+        public delegate* unmanaged<TSelf*, IUIAnimationVariableCurveChangeHandler2*, int> SetVariableCurveChangeHandler;
     }
 }

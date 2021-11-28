@@ -163,54 +163,55 @@ public unsafe partial struct IShellView : IShellView.Interface
         HRESULT GetItemObject(uint uItem, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView*, HWND*, int> GetWindow;
+        public delegate* unmanaged<TSelf*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView*, BOOL, int> ContextSensitiveHelp;
+        public delegate* unmanaged<TSelf*, BOOL, int> ContextSensitiveHelp;
 
         [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView*, MSG*, int> TranslateAcceleratorW;
+        public delegate* unmanaged<TSelf*, MSG*, int> TranslateAcceleratorW;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView*, BOOL, int> EnableModeless;
+        public delegate* unmanaged<TSelf*, BOOL, int> EnableModeless;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView*, uint, int> UIActivate;
+        public delegate* unmanaged<TSelf*, uint, int> UIActivate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView*, int> Refresh;
+        public delegate* unmanaged<TSelf*, int> Refresh;
 
         [NativeTypeName("HRESULT (IShellView *, LPCFOLDERSETTINGS, IShellBrowser *, RECT *, HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView*, IShellView*, FOLDERSETTINGS*, IShellBrowser*, RECT*, HWND*, int> CreateViewWindow;
+        public delegate* unmanaged<TSelf*, IShellView*, FOLDERSETTINGS*, IShellBrowser*, RECT*, HWND*, int> CreateViewWindow;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView*, int> DestroyViewWindow;
+        public delegate* unmanaged<TSelf*, int> DestroyViewWindow;
 
         [NativeTypeName("HRESULT (LPFOLDERSETTINGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView*, FOLDERSETTINGS*, int> GetCurrentInfo;
+        public delegate* unmanaged<TSelf*, FOLDERSETTINGS*, int> GetCurrentInfo;
 
         [NativeTypeName("HRESULT (DWORD, LPFNSVADDPROPSHEETPAGE, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView*, uint, delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL>, LPARAM, int> AddPropertySheetPages;
+        public delegate* unmanaged<TSelf*, uint, delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL>, LPARAM, int> AddPropertySheetPages;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView*, int> SaveViewState;
+        public delegate* unmanaged<TSelf*, int> SaveViewState;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, SVSIF) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView*, ITEMIDLIST*, uint, int> SelectItem;
+        public delegate* unmanaged<TSelf*, ITEMIDLIST*, uint, int> SelectItem;
 
         [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellView*, uint, Guid*, void**, int> GetItemObject;
+        public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> GetItemObject;
     }
 }

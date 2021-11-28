@@ -72,24 +72,25 @@ public unsafe partial struct IMFCapturePhotoConfirmation : IMFCapturePhotoConfir
         HRESULT GetPixelFormat(Guid* subtype);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCapturePhotoConfirmation*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCapturePhotoConfirmation*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCapturePhotoConfirmation*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFAsyncCallback *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCapturePhotoConfirmation*, IMFAsyncCallback*, int> SetPhotoConfirmationCallback;
+        public delegate* unmanaged<TSelf*, IMFAsyncCallback*, int> SetPhotoConfirmationCallback;
 
         [NativeTypeName("HRESULT (GUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCapturePhotoConfirmation*, Guid, int> SetPixelFormat;
+        public delegate* unmanaged<TSelf*, Guid, int> SetPixelFormat;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFCapturePhotoConfirmation*, Guid*, int> GetPixelFormat;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetPixelFormat;
     }
 }

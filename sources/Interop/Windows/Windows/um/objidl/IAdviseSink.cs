@@ -92,30 +92,31 @@ public unsafe partial struct IAdviseSink : IAdviseSink.Interface
         void OnClose();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdviseSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdviseSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdviseSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (FORMATETC *, STGMEDIUM *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdviseSink*, FORMATETC*, STGMEDIUM*, void> OnDataChange;
+        public delegate* unmanaged<TSelf*, FORMATETC*, STGMEDIUM*, void> OnDataChange;
 
         [NativeTypeName("void (DWORD, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdviseSink*, uint, int, void> OnViewChange;
+        public delegate* unmanaged<TSelf*, uint, int, void> OnViewChange;
 
         [NativeTypeName("void (IMoniker *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdviseSink*, IMoniker*, void> OnRename;
+        public delegate* unmanaged<TSelf*, IMoniker*, void> OnRename;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdviseSink*, void> OnSave;
+        public delegate* unmanaged<TSelf*, void> OnSave;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAdviseSink*, void> OnClose;
+        public delegate* unmanaged<TSelf*, void> OnClose;
     }
 }

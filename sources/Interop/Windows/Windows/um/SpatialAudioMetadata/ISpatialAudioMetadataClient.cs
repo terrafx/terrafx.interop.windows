@@ -94,30 +94,31 @@ public unsafe partial struct ISpatialAudioMetadataClient : ISpatialAudioMetadata
         HRESULT ActivateSpatialAudioMetadataReader(ISpatialAudioMetadataReader** metadataReader);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioMetadataClient*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioMetadataClient*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioMetadataClient*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT16, UINT16, ISpatialAudioMetadataItemsBuffer **, ISpatialAudioMetadataItems **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioMetadataClient*, ushort, ushort, ISpatialAudioMetadataItemsBuffer**, ISpatialAudioMetadataItems**, int> ActivateSpatialAudioMetadataItems;
+        public delegate* unmanaged<TSelf*, ushort, ushort, ISpatialAudioMetadataItemsBuffer**, ISpatialAudioMetadataItems**, int> ActivateSpatialAudioMetadataItems;
 
         [NativeTypeName("HRESULT (UINT16, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioMetadataClient*, ushort, uint*, int> GetSpatialAudioMetadataItemsBufferLength;
+        public delegate* unmanaged<TSelf*, ushort, uint*, int> GetSpatialAudioMetadataItemsBufferLength;
 
         [NativeTypeName("HRESULT (SpatialAudioMetadataWriterOverflowMode, ISpatialAudioMetadataWriter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioMetadataClient*, SpatialAudioMetadataWriterOverflowMode, ISpatialAudioMetadataWriter**, int> ActivateSpatialAudioMetadataWriter;
+        public delegate* unmanaged<TSelf*, SpatialAudioMetadataWriterOverflowMode, ISpatialAudioMetadataWriter**, int> ActivateSpatialAudioMetadataWriter;
 
         [NativeTypeName("HRESULT (ISpatialAudioMetadataCopier **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioMetadataClient*, ISpatialAudioMetadataCopier**, int> ActivateSpatialAudioMetadataCopier;
+        public delegate* unmanaged<TSelf*, ISpatialAudioMetadataCopier**, int> ActivateSpatialAudioMetadataCopier;
 
         [NativeTypeName("HRESULT (ISpatialAudioMetadataReader **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpatialAudioMetadataClient*, ISpatialAudioMetadataReader**, int> ActivateSpatialAudioMetadataReader;
+        public delegate* unmanaged<TSelf*, ISpatialAudioMetadataReader**, int> ActivateSpatialAudioMetadataReader;
     }
 }

@@ -286,108 +286,109 @@ public unsafe partial struct IDCompositionVisual3 : IDCompositionVisual3.Interfa
         HRESULT SetVisible(BOOL visible);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, IDCompositionAnimation*, int> SetOffsetX;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetOffsetX;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, float, int> SetOffsetX1;
+        public delegate* unmanaged<TSelf*, float, int> SetOffsetX1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, IDCompositionAnimation*, int> SetOffsetY;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetOffsetY;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, float, int> SetOffsetY1;
+        public delegate* unmanaged<TSelf*, float, int> SetOffsetY1;
 
         [NativeTypeName("HRESULT (IDCompositionTransform *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, IDCompositionTransform*, int> SetTransform;
+        public delegate* unmanaged<TSelf*, IDCompositionTransform*, int> SetTransform;
 
         [NativeTypeName("HRESULT (const D2D_MATRIX_3X2_F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, D2D_MATRIX_3X2_F*, int> SetTransform1;
+        public delegate* unmanaged<TSelf*, D2D_MATRIX_3X2_F*, int> SetTransform1;
 
         [NativeTypeName("HRESULT (IDCompositionVisual *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, IDCompositionVisual*, int> SetTransformParent;
+        public delegate* unmanaged<TSelf*, IDCompositionVisual*, int> SetTransformParent;
 
         [NativeTypeName("HRESULT (IDCompositionEffect *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, IDCompositionEffect*, int> SetEffect;
+        public delegate* unmanaged<TSelf*, IDCompositionEffect*, int> SetEffect;
 
         [NativeTypeName("HRESULT (DCOMPOSITION_BITMAP_INTERPOLATION_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, DCOMPOSITION_BITMAP_INTERPOLATION_MODE, int> SetBitmapInterpolationMode;
+        public delegate* unmanaged<TSelf*, DCOMPOSITION_BITMAP_INTERPOLATION_MODE, int> SetBitmapInterpolationMode;
 
         [NativeTypeName("HRESULT (DCOMPOSITION_BORDER_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, DCOMPOSITION_BORDER_MODE, int> SetBorderMode;
+        public delegate* unmanaged<TSelf*, DCOMPOSITION_BORDER_MODE, int> SetBorderMode;
 
         [NativeTypeName("HRESULT (IDCompositionClip *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, IDCompositionClip*, int> SetClip;
+        public delegate* unmanaged<TSelf*, IDCompositionClip*, int> SetClip;
 
         [NativeTypeName("HRESULT (const D2D_RECT_F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, D2D_RECT_F*, int> SetClip1;
+        public delegate* unmanaged<TSelf*, D2D_RECT_F*, int> SetClip1;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, IUnknown*, int> SetContent;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> SetContent;
 
         [NativeTypeName("HRESULT (IDCompositionVisual *, BOOL, IDCompositionVisual *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, IDCompositionVisual*, BOOL, IDCompositionVisual*, int> AddVisual;
+        public delegate* unmanaged<TSelf*, IDCompositionVisual*, BOOL, IDCompositionVisual*, int> AddVisual;
 
         [NativeTypeName("HRESULT (IDCompositionVisual *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, IDCompositionVisual*, int> RemoveVisual;
+        public delegate* unmanaged<TSelf*, IDCompositionVisual*, int> RemoveVisual;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, int> RemoveAllVisuals;
+        public delegate* unmanaged<TSelf*, int> RemoveAllVisuals;
 
         [NativeTypeName("HRESULT (DCOMPOSITION_COMPOSITE_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, DCOMPOSITION_COMPOSITE_MODE, int> SetCompositeMode;
+        public delegate* unmanaged<TSelf*, DCOMPOSITION_COMPOSITE_MODE, int> SetCompositeMode;
 
         [NativeTypeName("HRESULT (DCOMPOSITION_OPACITY_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, DCOMPOSITION_OPACITY_MODE, int> SetOpacityMode;
+        public delegate* unmanaged<TSelf*, DCOMPOSITION_OPACITY_MODE, int> SetOpacityMode;
 
         [NativeTypeName("HRESULT (DCOMPOSITION_BACKFACE_VISIBILITY) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, DCOMPOSITION_BACKFACE_VISIBILITY, int> SetBackFaceVisibility;
+        public delegate* unmanaged<TSelf*, DCOMPOSITION_BACKFACE_VISIBILITY, int> SetBackFaceVisibility;
 
         [NativeTypeName("HRESULT (const D2D1_COLOR_F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, DXGI_RGBA*, int> EnableHeatMap;
+        public delegate* unmanaged<TSelf*, DXGI_RGBA*, int> EnableHeatMap;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, int> DisableHeatMap;
+        public delegate* unmanaged<TSelf*, int> DisableHeatMap;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, int> EnableRedrawRegions;
+        public delegate* unmanaged<TSelf*, int> EnableRedrawRegions;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, int> DisableRedrawRegions;
+        public delegate* unmanaged<TSelf*, int> DisableRedrawRegions;
 
         [NativeTypeName("HRESULT (DCOMPOSITION_DEPTH_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, DCOMPOSITION_DEPTH_MODE, int> SetDepthMode;
+        public delegate* unmanaged<TSelf*, DCOMPOSITION_DEPTH_MODE, int> SetDepthMode;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, IDCompositionAnimation*, int> SetOffsetZ;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetOffsetZ;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, float, int> SetOffsetZ1;
+        public delegate* unmanaged<TSelf*, float, int> SetOffsetZ1;
 
         [NativeTypeName("HRESULT (IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, IDCompositionAnimation*, int> SetOpacity;
+        public delegate* unmanaged<TSelf*, IDCompositionAnimation*, int> SetOpacity;
 
         [NativeTypeName("HRESULT (float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, float, int> SetOpacity1;
+        public delegate* unmanaged<TSelf*, float, int> SetOpacity1;
 
         [NativeTypeName("HRESULT (IDCompositionTransform3D *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, IDCompositionTransform3D*, int> SetTransform2;
+        public delegate* unmanaged<TSelf*, IDCompositionTransform3D*, int> SetTransform2;
 
         [NativeTypeName("HRESULT (const D2D_MATRIX_4X4_F &) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, D2D_MATRIX_4X4_F*, int> SetTransform3;
+        public delegate* unmanaged<TSelf*, D2D_MATRIX_4X4_F*, int> SetTransform3;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDCompositionVisual3*, BOOL, int> SetVisible;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetVisible;
     }
 }

@@ -82,27 +82,28 @@ public unsafe partial struct IEnumTfLangBarItems : IEnumTfLangBarItems.Interface
         HRESULT Skip([NativeTypeName("ULONG")] uint ulCount);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfLangBarItems*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfLangBarItems*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfLangBarItems*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumTfLangBarItems **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfLangBarItems*, IEnumTfLangBarItems**, int> Clone;
+        public delegate* unmanaged<TSelf*, IEnumTfLangBarItems**, int> Clone;
 
         [NativeTypeName("HRESULT (ULONG, ITfLangBarItem **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfLangBarItems*, uint, ITfLangBarItem**, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, ITfLangBarItem**, uint*, int> Next;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfLangBarItems*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumTfLangBarItems*, uint, int> Skip;
+        public delegate* unmanaged<TSelf*, uint, int> Skip;
     }
 }

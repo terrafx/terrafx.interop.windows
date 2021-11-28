@@ -280,90 +280,91 @@ public unsafe partial struct IHTMLElementDefaults : IHTMLElementDefaults.Interfa
         HRESULT get_frozen([NativeTypeName("VARIANT_BOOL *")] short* p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IHTMLStyle **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, IHTMLStyle**, int> get_style;
+        public delegate* unmanaged<TSelf*, IHTMLStyle**, int> get_style;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, short, int> put_tabStop;
+        public delegate* unmanaged<TSelf*, short, int> put_tabStop;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, short*, int> get_tabStop;
+        public delegate* unmanaged<TSelf*, short*, int> get_tabStop;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, short, int> put_viewInheritStyle;
+        public delegate* unmanaged<TSelf*, short, int> put_viewInheritStyle;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, short*, int> get_viewInheritStyle;
+        public delegate* unmanaged<TSelf*, short*, int> get_viewInheritStyle;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, short, int> put_viewMasterTab;
+        public delegate* unmanaged<TSelf*, short, int> put_viewMasterTab;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, short*, int> get_viewMasterTab;
+        public delegate* unmanaged<TSelf*, short*, int> get_viewMasterTab;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, int, int> put_scrollSegmentX;
+        public delegate* unmanaged<TSelf*, int, int> put_scrollSegmentX;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, int*, int> get_scrollSegmentX;
+        public delegate* unmanaged<TSelf*, int*, int> get_scrollSegmentX;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, int, int> put_scrollSegmentY;
+        public delegate* unmanaged<TSelf*, int, int> put_scrollSegmentY;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, int*, int> get_scrollSegmentY;
+        public delegate* unmanaged<TSelf*, int*, int> get_scrollSegmentY;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, short, int> put_isMultiLine;
+        public delegate* unmanaged<TSelf*, short, int> put_isMultiLine;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, short*, int> get_isMultiLine;
+        public delegate* unmanaged<TSelf*, short*, int> get_isMultiLine;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, ushort*, int> put_contentEditable;
+        public delegate* unmanaged<TSelf*, ushort*, int> put_contentEditable;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, ushort**, int> get_contentEditable;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_contentEditable;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, short, int> put_canHaveHTML;
+        public delegate* unmanaged<TSelf*, short, int> put_canHaveHTML;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, short*, int> get_canHaveHTML;
+        public delegate* unmanaged<TSelf*, short*, int> get_canHaveHTML;
 
         [NativeTypeName("HRESULT (IHTMLDocument *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, IHTMLDocument*, int> putref_viewLink;
+        public delegate* unmanaged<TSelf*, IHTMLDocument*, int> putref_viewLink;
 
         [NativeTypeName("HRESULT (IHTMLDocument **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, IHTMLDocument**, int> get_viewLink;
+        public delegate* unmanaged<TSelf*, IHTMLDocument**, int> get_viewLink;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, short, int> put_frozen;
+        public delegate* unmanaged<TSelf*, short, int> put_frozen;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLElementDefaults*, short*, int> get_frozen;
+        public delegate* unmanaged<TSelf*, short*, int> get_frozen;
     }
 }

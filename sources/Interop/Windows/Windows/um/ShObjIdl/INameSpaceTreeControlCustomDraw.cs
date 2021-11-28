@@ -82,27 +82,28 @@ public unsafe partial struct INameSpaceTreeControlCustomDraw : INameSpaceTreeCon
         HRESULT ItemPostPaint(HDC hdc, RECT* prc, NSTCCUSTOMDRAW* pnstccdItem);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlCustomDraw*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlCustomDraw*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlCustomDraw*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HDC, RECT *, LRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlCustomDraw*, HDC, RECT*, LRESULT*, int> PrePaint;
+        public delegate* unmanaged<TSelf*, HDC, RECT*, LRESULT*, int> PrePaint;
 
         [NativeTypeName("HRESULT (HDC, RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlCustomDraw*, HDC, RECT*, int> PostPaint;
+        public delegate* unmanaged<TSelf*, HDC, RECT*, int> PostPaint;
 
         [NativeTypeName("HRESULT (HDC, RECT *, NSTCCUSTOMDRAW *, COLORREF *, COLORREF *, LRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlCustomDraw*, HDC, RECT*, NSTCCUSTOMDRAW*, COLORREF*, COLORREF*, LRESULT*, int> ItemPrePaint;
+        public delegate* unmanaged<TSelf*, HDC, RECT*, NSTCCUSTOMDRAW*, COLORREF*, COLORREF*, LRESULT*, int> ItemPrePaint;
 
         [NativeTypeName("HRESULT (HDC, RECT *, NSTCCUSTOMDRAW *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INameSpaceTreeControlCustomDraw*, HDC, RECT*, NSTCCUSTOMDRAW*, int> ItemPostPaint;
+        public delegate* unmanaged<TSelf*, HDC, RECT*, NSTCCUSTOMDRAW*, int> ItemPostPaint;
     }
 }

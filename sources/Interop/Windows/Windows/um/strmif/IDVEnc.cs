@@ -62,21 +62,22 @@ public unsafe partial struct IDVEnc : IDVEnc.Interface
         HRESULT put_IFormatResolution(int VideoFormat, int DVFormat, int Resolution, byte fDVInfo, DVINFO* sDVInfo);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDVEnc*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDVEnc*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDVEnc*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (int *, int *, int *, BYTE, DVINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDVEnc*, int*, int*, int*, byte, DVINFO*, int> get_IFormatResolution;
+        public delegate* unmanaged<TSelf*, int*, int*, int*, byte, DVINFO*, int> get_IFormatResolution;
 
         [NativeTypeName("HRESULT (int, int, int, BYTE, DVINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDVEnc*, int, int, int, byte, DVINFO*, int> put_IFormatResolution;
+        public delegate* unmanaged<TSelf*, int, int, int, byte, DVINFO*, int> put_IFormatResolution;
     }
 }

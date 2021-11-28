@@ -80,30 +80,31 @@ public unsafe partial struct INamespaceWalkCB2 : INamespaceWalkCB2.Interface
         HRESULT WalkComplete(HRESULT hr);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<INamespaceWalkCB2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INamespaceWalkCB2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<INamespaceWalkCB2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<INamespaceWalkCB2*, IShellFolder*, ITEMIDLIST*, int> FoundItem;
+        public delegate* unmanaged<TSelf*, IShellFolder*, ITEMIDLIST*, int> FoundItem;
 
         [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<INamespaceWalkCB2*, IShellFolder*, ITEMIDLIST*, int> EnterFolder;
+        public delegate* unmanaged<TSelf*, IShellFolder*, ITEMIDLIST*, int> EnterFolder;
 
         [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<INamespaceWalkCB2*, IShellFolder*, ITEMIDLIST*, int> LeaveFolder;
+        public delegate* unmanaged<TSelf*, IShellFolder*, ITEMIDLIST*, int> LeaveFolder;
 
         [NativeTypeName("HRESULT (LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<INamespaceWalkCB2*, ushort**, ushort**, int> InitializeProgressDialog;
+        public delegate* unmanaged<TSelf*, ushort**, ushort**, int> InitializeProgressDialog;
 
         [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<INamespaceWalkCB2*, HRESULT, int> WalkComplete;
+        public delegate* unmanaged<TSelf*, HRESULT, int> WalkComplete;
     }
 }

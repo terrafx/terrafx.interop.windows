@@ -150,51 +150,52 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
         HRESULT GetCurrentPage(uint* puPage);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCandidateListUIElement*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCandidateListUIElement*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCandidateListUIElement*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCandidateListUIElement*, ushort**, int> GetDescription;
+        public delegate* unmanaged<TSelf*, ushort**, int> GetDescription;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCandidateListUIElement*, Guid*, int> GetGUID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetGUID;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCandidateListUIElement*, BOOL, int> Show;
+        public delegate* unmanaged<TSelf*, BOOL, int> Show;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCandidateListUIElement*, BOOL*, int> IsShown;
+        public delegate* unmanaged<TSelf*, BOOL*, int> IsShown;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCandidateListUIElement*, uint*, int> GetUpdatedFlags;
+        public delegate* unmanaged<TSelf*, uint*, int> GetUpdatedFlags;
 
         [NativeTypeName("HRESULT (ITfDocumentMgr **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCandidateListUIElement*, ITfDocumentMgr**, int> GetDocumentMgr;
+        public delegate* unmanaged<TSelf*, ITfDocumentMgr**, int> GetDocumentMgr;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCandidateListUIElement*, uint*, int> GetCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCandidateListUIElement*, uint*, int> GetSelection;
+        public delegate* unmanaged<TSelf*, uint*, int> GetSelection;
 
         [NativeTypeName("HRESULT (UINT, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCandidateListUIElement*, uint, ushort**, int> GetString;
+        public delegate* unmanaged<TSelf*, uint, ushort**, int> GetString;
 
         [NativeTypeName("HRESULT (UINT *, UINT, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCandidateListUIElement*, uint*, uint, uint*, int> GetPageIndex;
+        public delegate* unmanaged<TSelf*, uint*, uint, uint*, int> GetPageIndex;
 
         [NativeTypeName("HRESULT (UINT *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCandidateListUIElement*, uint*, uint, int> SetPageIndex;
+        public delegate* unmanaged<TSelf*, uint*, uint, int> SetPageIndex;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfCandidateListUIElement*, uint*, int> GetCurrentPage;
+        public delegate* unmanaged<TSelf*, uint*, int> GetCurrentPage;
     }
 }

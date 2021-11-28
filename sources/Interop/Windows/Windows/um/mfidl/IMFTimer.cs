@@ -62,21 +62,22 @@ public unsafe partial struct IMFTimer : IMFTimer.Interface
         HRESULT CancelTimer(IUnknown* punkKey);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimer*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimer*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimer*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, LONGLONG, IMFAsyncCallback *, IUnknown *, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimer*, uint, long, IMFAsyncCallback*, IUnknown*, IUnknown**, int> SetTimer;
+        public delegate* unmanaged<TSelf*, uint, long, IMFAsyncCallback*, IUnknown*, IUnknown**, int> SetTimer;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTimer*, IUnknown*, int> CancelTimer;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> CancelTimer;
     }
 }

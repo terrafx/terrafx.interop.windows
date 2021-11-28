@@ -192,60 +192,61 @@ public unsafe partial struct ITfContext : ITfContext.Interface
         HRESULT CreateRangeBackup([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, ITfRangeBackup** ppBackup);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContext*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContext*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContext*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfClientId, ITfEditSession *, DWORD, HRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContext*, uint, ITfEditSession*, uint, HRESULT*, int> RequestEditSession;
+        public delegate* unmanaged<TSelf*, uint, ITfEditSession*, uint, HRESULT*, int> RequestEditSession;
 
         [NativeTypeName("HRESULT (TfClientId, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContext*, uint, BOOL*, int> InWriteSession;
+        public delegate* unmanaged<TSelf*, uint, BOOL*, int> InWriteSession;
 
         [NativeTypeName("HRESULT (TfEditCookie, ULONG, ULONG, TF_SELECTION *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContext*, uint, uint, uint, TF_SELECTION*, uint*, int> GetSelection;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, TF_SELECTION*, uint*, int> GetSelection;
 
         [NativeTypeName("HRESULT (TfEditCookie, ULONG, const TF_SELECTION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContext*, uint, uint, TF_SELECTION*, int> SetSelection;
+        public delegate* unmanaged<TSelf*, uint, uint, TF_SELECTION*, int> SetSelection;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContext*, uint, ITfRange**, int> GetStart;
+        public delegate* unmanaged<TSelf*, uint, ITfRange**, int> GetStart;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContext*, uint, ITfRange**, int> GetEnd;
+        public delegate* unmanaged<TSelf*, uint, ITfRange**, int> GetEnd;
 
         [NativeTypeName("HRESULT (ITfContextView **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContext*, ITfContextView**, int> GetActiveView;
+        public delegate* unmanaged<TSelf*, ITfContextView**, int> GetActiveView;
 
         [NativeTypeName("HRESULT (IEnumTfContextViews **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContext*, IEnumTfContextViews**, int> EnumViews;
+        public delegate* unmanaged<TSelf*, IEnumTfContextViews**, int> EnumViews;
 
         [NativeTypeName("HRESULT (TF_STATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContext*, TS_STATUS*, int> GetStatus;
+        public delegate* unmanaged<TSelf*, TS_STATUS*, int> GetStatus;
 
         [NativeTypeName("HRESULT (const GUID &, ITfProperty **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContext*, Guid*, ITfProperty**, int> GetProperty;
+        public delegate* unmanaged<TSelf*, Guid*, ITfProperty**, int> GetProperty;
 
         [NativeTypeName("HRESULT (const GUID &, ITfReadOnlyProperty **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContext*, Guid*, ITfReadOnlyProperty**, int> GetAppProperty;
+        public delegate* unmanaged<TSelf*, Guid*, ITfReadOnlyProperty**, int> GetAppProperty;
 
         [NativeTypeName("HRESULT (const GUID **, ULONG, const GUID **, ULONG, ITfReadOnlyProperty **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContext*, Guid**, uint, Guid**, uint, ITfReadOnlyProperty**, int> TrackProperties;
+        public delegate* unmanaged<TSelf*, Guid**, uint, Guid**, uint, ITfReadOnlyProperty**, int> TrackProperties;
 
         [NativeTypeName("HRESULT (IEnumTfProperties **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContext*, IEnumTfProperties**, int> EnumProperties;
+        public delegate* unmanaged<TSelf*, IEnumTfProperties**, int> EnumProperties;
 
         [NativeTypeName("HRESULT (ITfDocumentMgr **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContext*, ITfDocumentMgr**, int> GetDocumentMgr;
+        public delegate* unmanaged<TSelf*, ITfDocumentMgr**, int> GetDocumentMgr;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, ITfRangeBackup **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfContext*, uint, ITfRange*, ITfRangeBackup**, int> CreateRangeBackup;
+        public delegate* unmanaged<TSelf*, uint, ITfRange*, ITfRangeBackup**, int> CreateRangeBackup;
     }
 }

@@ -62,21 +62,22 @@ public unsafe partial struct IKsJackDescription2 : IKsJackDescription2.Interface
         HRESULT GetJackDescription2(uint nJack, KSJACK_DESCRIPTION2* pDescription2);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsJackDescription2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsJackDescription2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsJackDescription2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsJackDescription2*, uint*, int> GetJackCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetJackCount;
 
         [NativeTypeName("HRESULT (UINT, KSJACK_DESCRIPTION2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsJackDescription2*, uint, KSJACK_DESCRIPTION2*, int> GetJackDescription2;
+        public delegate* unmanaged<TSelf*, uint, KSJACK_DESCRIPTION2*, int> GetJackDescription2;
     }
 }

@@ -186,69 +186,70 @@ public unsafe partial struct ISpStreamFormatConverter : ISpStreamFormatConverter
         HRESULT ScaleBaseToConvertedOffset([NativeTypeName("ULONGLONG")] ulong ullOffsetBaseStream, [NativeTypeName("ULONGLONG *")] ulong* pullOffsetConvertedStream);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpStreamFormatConverter*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpStreamFormatConverter*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpStreamFormatConverter*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpStreamFormatConverter*, void*, uint, uint*, int> Read;
+        public delegate* unmanaged<TSelf*, void*, uint, uint*, int> Read;
 
         [NativeTypeName("HRESULT (const void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpStreamFormatConverter*, void*, uint, uint*, int> Write;
+        public delegate* unmanaged<TSelf*, void*, uint, uint*, int> Write;
 
         [NativeTypeName("HRESULT (LARGE_INTEGER, DWORD, ULARGE_INTEGER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpStreamFormatConverter*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int> Seek;
+        public delegate* unmanaged<TSelf*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int> Seek;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpStreamFormatConverter*, ULARGE_INTEGER, int> SetSize;
+        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, int> SetSize;
 
         [NativeTypeName("HRESULT (IStream *, ULARGE_INTEGER, ULARGE_INTEGER *, ULARGE_INTEGER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpStreamFormatConverter*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int> CopyTo;
+        public delegate* unmanaged<TSelf*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int> CopyTo;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpStreamFormatConverter*, uint, int> Commit;
+        public delegate* unmanaged<TSelf*, uint, int> Commit;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpStreamFormatConverter*, int> Revert;
+        public delegate* unmanaged<TSelf*, int> Revert;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpStreamFormatConverter*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> LockRegion;
+        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> LockRegion;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpStreamFormatConverter*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> UnlockRegion;
+        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> UnlockRegion;
 
         [NativeTypeName("HRESULT (STATSTG *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpStreamFormatConverter*, STATSTG*, uint, int> Stat;
+        public delegate* unmanaged<TSelf*, STATSTG*, uint, int> Stat;
 
         [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpStreamFormatConverter*, IStream**, int> Clone;
+        public delegate* unmanaged<TSelf*, IStream**, int> Clone;
 
         [NativeTypeName("HRESULT (GUID *, WAVEFORMATEX **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpStreamFormatConverter*, Guid*, WAVEFORMATEX**, int> GetFormat;
+        public delegate* unmanaged<TSelf*, Guid*, WAVEFORMATEX**, int> GetFormat;
 
         [NativeTypeName("HRESULT (ISpStreamFormat *, BOOL, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpStreamFormatConverter*, ISpStreamFormat*, BOOL, BOOL, int> SetBaseStream;
+        public delegate* unmanaged<TSelf*, ISpStreamFormat*, BOOL, BOOL, int> SetBaseStream;
 
         [NativeTypeName("HRESULT (ISpStreamFormat **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpStreamFormatConverter*, ISpStreamFormat**, int> GetBaseStream;
+        public delegate* unmanaged<TSelf*, ISpStreamFormat**, int> GetBaseStream;
 
         [NativeTypeName("HRESULT (const GUID &, const WAVEFORMATEX *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpStreamFormatConverter*, Guid*, WAVEFORMATEX*, int> SetFormat;
+        public delegate* unmanaged<TSelf*, Guid*, WAVEFORMATEX*, int> SetFormat;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpStreamFormatConverter*, int> ResetSeekPosition;
+        public delegate* unmanaged<TSelf*, int> ResetSeekPosition;
 
         [NativeTypeName("HRESULT (ULONGLONG, ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpStreamFormatConverter*, ulong, ulong*, int> ScaleConvertedToBaseOffset;
+        public delegate* unmanaged<TSelf*, ulong, ulong*, int> ScaleConvertedToBaseOffset;
 
         [NativeTypeName("HRESULT (ULONGLONG, ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ISpStreamFormatConverter*, ulong, ulong*, int> ScaleBaseToConvertedOffset;
+        public delegate* unmanaged<TSelf*, ulong, ulong*, int> ScaleBaseToConvertedOffset;
     }
 }

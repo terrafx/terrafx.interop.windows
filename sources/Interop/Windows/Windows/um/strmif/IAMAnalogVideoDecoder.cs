@@ -132,42 +132,43 @@ public unsafe partial struct IAMAnalogVideoDecoder : IAMAnalogVideoDecoder.Inter
         HRESULT get_OutputEnable([NativeTypeName("long *")] int* plOutputEnable);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAnalogVideoDecoder*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAnalogVideoDecoder*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAnalogVideoDecoder*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAnalogVideoDecoder*, int*, int> get_AvailableTVFormats;
+        public delegate* unmanaged<TSelf*, int*, int> get_AvailableTVFormats;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAnalogVideoDecoder*, int, int> put_TVFormat;
+        public delegate* unmanaged<TSelf*, int, int> put_TVFormat;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAnalogVideoDecoder*, int*, int> get_TVFormat;
+        public delegate* unmanaged<TSelf*, int*, int> get_TVFormat;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAnalogVideoDecoder*, int*, int> get_HorizontalLocked;
+        public delegate* unmanaged<TSelf*, int*, int> get_HorizontalLocked;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAnalogVideoDecoder*, int, int> put_VCRHorizontalLocking;
+        public delegate* unmanaged<TSelf*, int, int> put_VCRHorizontalLocking;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAnalogVideoDecoder*, int*, int> get_VCRHorizontalLocking;
+        public delegate* unmanaged<TSelf*, int*, int> get_VCRHorizontalLocking;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAnalogVideoDecoder*, int*, int> get_NumberOfLines;
+        public delegate* unmanaged<TSelf*, int*, int> get_NumberOfLines;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAnalogVideoDecoder*, int, int> put_OutputEnable;
+        public delegate* unmanaged<TSelf*, int, int> put_OutputEnable;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAnalogVideoDecoder*, int*, int> get_OutputEnable;
+        public delegate* unmanaged<TSelf*, int*, int> get_OutputEnable;
     }
 }

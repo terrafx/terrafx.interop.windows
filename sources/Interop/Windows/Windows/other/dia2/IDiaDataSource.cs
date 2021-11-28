@@ -122,39 +122,40 @@ public unsafe partial struct IDiaDataSource : IDiaDataSource.Interface
         HRESULT loadDataFromMiscInfo([NativeTypeName("LPCOLESTR")] ushort* executable, [NativeTypeName("LPCOLESTR")] ushort* searchPath, [NativeTypeName("DWORD")] uint timeStampExe, [NativeTypeName("DWORD")] uint timeStampDbg, [NativeTypeName("DWORD")] uint sizeOfExe, [NativeTypeName("DWORD")] uint cbMiscInfo, byte* pbMiscInfo, IUnknown* pCallback);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaDataSource*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaDataSource*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaDataSource*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaDataSource*, ushort**, int> get_lastError;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_lastError;
 
         [NativeTypeName("HRESULT (LPCOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaDataSource*, ushort*, int> loadDataFromPdb;
+        public delegate* unmanaged<TSelf*, ushort*, int> loadDataFromPdb;
 
         [NativeTypeName("HRESULT (LPCOLESTR, GUID *, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaDataSource*, ushort*, Guid*, uint, uint, int> loadAndValidateDataFromPdb;
+        public delegate* unmanaged<TSelf*, ushort*, Guid*, uint, uint, int> loadAndValidateDataFromPdb;
 
         [NativeTypeName("HRESULT (LPCOLESTR, LPCOLESTR, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaDataSource*, ushort*, ushort*, IUnknown*, int> loadDataForExe;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, IUnknown*, int> loadDataForExe;
 
         [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaDataSource*, IStream*, int> loadDataFromIStream;
+        public delegate* unmanaged<TSelf*, IStream*, int> loadDataFromIStream;
 
         [NativeTypeName("HRESULT (IDiaSession **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaDataSource*, IDiaSession**, int> openSession;
+        public delegate* unmanaged<TSelf*, IDiaSession**, int> openSession;
 
         [NativeTypeName("HRESULT (LPCOLESTR, LPCOLESTR, DWORD, BYTE *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaDataSource*, ushort*, ushort*, uint, byte*, IUnknown*, int> loadDataFromCodeViewInfo;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, uint, byte*, IUnknown*, int> loadDataFromCodeViewInfo;
 
         [NativeTypeName("HRESULT (LPCOLESTR, LPCOLESTR, DWORD, DWORD, DWORD, DWORD, BYTE *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaDataSource*, ushort*, ushort*, uint, uint, uint, uint, byte*, IUnknown*, int> loadDataFromMiscInfo;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, uint, uint, uint, uint, byte*, IUnknown*, int> loadDataFromMiscInfo;
     }
 }

@@ -72,24 +72,25 @@ public unsafe partial struct ICDBurn : ICDBurn.Interface
         HRESULT HasRecordableDrive(BOOL* pfHasRecorder);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICDBurn*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICDBurn*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ICDBurn*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICDBurn*, ushort*, uint, int> GetRecorderDriveLetter;
+        public delegate* unmanaged<TSelf*, ushort*, uint, int> GetRecorderDriveLetter;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICDBurn*, HWND, int> Burn;
+        public delegate* unmanaged<TSelf*, HWND, int> Burn;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ICDBurn*, BOOL*, int> HasRecordableDrive;
+        public delegate* unmanaged<TSelf*, BOOL*, int> HasRecordableDrive;
     }
 }

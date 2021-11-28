@@ -62,21 +62,22 @@ public unsafe partial struct ITrackingProtection : ITrackingProtection.Interface
         HRESULT GetEnabled(BOOL* pfEnabled);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITrackingProtection*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITrackingProtection*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITrackingProtection*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITrackingProtection*, ushort*, BOOL*, int> EvaluateUrl;
+        public delegate* unmanaged<TSelf*, ushort*, BOOL*, int> EvaluateUrl;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITrackingProtection*, BOOL*, int> GetEnabled;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetEnabled;
     }
 }

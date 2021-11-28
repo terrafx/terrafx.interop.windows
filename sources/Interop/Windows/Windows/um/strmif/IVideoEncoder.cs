@@ -92,36 +92,37 @@ public unsafe partial struct IVideoEncoder : IVideoEncoder.Interface
     {
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoEncoder*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoEncoder*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoEncoder*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoEncoder*, Guid*, int> IsSupported;
+        public delegate* unmanaged<TSelf*, Guid*, int> IsSupported;
 
         [NativeTypeName("HRESULT (const GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoEncoder*, Guid*, int> IsAvailable;
+        public delegate* unmanaged<TSelf*, Guid*, int> IsAvailable;
 
         [NativeTypeName("HRESULT (const GUID *, VARIANT *, VARIANT *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoEncoder*, Guid*, VARIANT*, VARIANT*, VARIANT*, int> GetParameterRange;
+        public delegate* unmanaged<TSelf*, Guid*, VARIANT*, VARIANT*, VARIANT*, int> GetParameterRange;
 
         [NativeTypeName("HRESULT (const GUID *, VARIANT **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoEncoder*, Guid*, VARIANT**, uint*, int> GetParameterValues;
+        public delegate* unmanaged<TSelf*, Guid*, VARIANT**, uint*, int> GetParameterValues;
 
         [NativeTypeName("HRESULT (const GUID *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoEncoder*, Guid*, VARIANT*, int> GetDefaultValue;
+        public delegate* unmanaged<TSelf*, Guid*, VARIANT*, int> GetDefaultValue;
 
         [NativeTypeName("HRESULT (const GUID *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoEncoder*, Guid*, VARIANT*, int> GetValue;
+        public delegate* unmanaged<TSelf*, Guid*, VARIANT*, int> GetValue;
 
         [NativeTypeName("HRESULT (const GUID *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IVideoEncoder*, Guid*, VARIANT*, int> SetValue;
+        public delegate* unmanaged<TSelf*, Guid*, VARIANT*, int> SetValue;
     }
 }

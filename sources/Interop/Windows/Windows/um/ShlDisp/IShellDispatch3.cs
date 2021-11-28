@@ -304,126 +304,127 @@ public unsafe partial struct IShellDispatch3 : IShellDispatch3.Interface
         HRESULT AddToRecent(VARIANT varFile, [NativeTypeName("BSTR")] ushort* bstrCategory);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, IDispatch**, int> get_Application;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_Application;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, IDispatch**, int> get_Parent;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_Parent;
 
         [NativeTypeName("HRESULT (VARIANT, Folder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, VARIANT, Folder**, int> NameSpace;
+        public delegate* unmanaged<TSelf*, VARIANT, Folder**, int> NameSpace;
 
         [NativeTypeName("HRESULT (long, BSTR, long, VARIANT, Folder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, int, ushort*, int, VARIANT, Folder**, int> BrowseForFolder;
+        public delegate* unmanaged<TSelf*, int, ushort*, int, VARIANT, Folder**, int> BrowseForFolder;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, IDispatch**, int> Windows;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> Windows;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, VARIANT, int> Open;
+        public delegate* unmanaged<TSelf*, VARIANT, int> Open;
 
         [NativeTypeName("HRESULT (VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, VARIANT, int> Explore;
+        public delegate* unmanaged<TSelf*, VARIANT, int> Explore;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, int> MinimizeAll;
+        public delegate* unmanaged<TSelf*, int> MinimizeAll;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, int> UndoMinimizeALL;
+        public delegate* unmanaged<TSelf*, int> UndoMinimizeALL;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, int> FileRun;
+        public delegate* unmanaged<TSelf*, int> FileRun;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, int> CascadeWindows;
+        public delegate* unmanaged<TSelf*, int> CascadeWindows;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, int> TileVertically;
+        public delegate* unmanaged<TSelf*, int> TileVertically;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, int> TileHorizontally;
+        public delegate* unmanaged<TSelf*, int> TileHorizontally;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, int> ShutdownWindows;
+        public delegate* unmanaged<TSelf*, int> ShutdownWindows;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, int> Suspend;
+        public delegate* unmanaged<TSelf*, int> Suspend;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, int> EjectPC;
+        public delegate* unmanaged<TSelf*, int> EjectPC;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, int> SetTime;
+        public delegate* unmanaged<TSelf*, int> SetTime;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, int> TrayProperties;
+        public delegate* unmanaged<TSelf*, int> TrayProperties;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, int> Help;
+        public delegate* unmanaged<TSelf*, int> Help;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, int> FindFiles;
+        public delegate* unmanaged<TSelf*, int> FindFiles;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, int> FindComputer;
+        public delegate* unmanaged<TSelf*, int> FindComputer;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, int> RefreshMenu;
+        public delegate* unmanaged<TSelf*, int> RefreshMenu;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, ushort*, int> ControlPanelItem;
+        public delegate* unmanaged<TSelf*, ushort*, int> ControlPanelItem;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, ushort*, ushort*, int*, int> IsRestricted;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, int*, int> IsRestricted;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT, VARIANT, VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, ushort*, VARIANT, VARIANT, VARIANT, VARIANT, int> ShellExecuteW;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT, VARIANT, VARIANT, VARIANT, int> ShellExecuteW;
 
         [NativeTypeName("HRESULT (BSTR, BSTR, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, ushort*, ushort*, ushort*, int> FindPrinter;
+        public delegate* unmanaged<TSelf*, ushort*, ushort*, ushort*, int> FindPrinter;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, ushort*, VARIANT*, int> GetSystemInformation;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> GetSystemInformation;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, ushort*, VARIANT, VARIANT*, int> ServiceStart;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT, VARIANT*, int> ServiceStart;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, ushort*, VARIANT, VARIANT*, int> ServiceStop;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT, VARIANT*, int> ServiceStop;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, ushort*, VARIANT*, int> IsServiceRunning;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> IsServiceRunning;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, ushort*, VARIANT*, int> CanStartStopService;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> CanStartStopService;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, ushort*, VARIANT, VARIANT*, int> ShowBrowserBar;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT, VARIANT*, int> ShowBrowserBar;
 
         [NativeTypeName("HRESULT (VARIANT, BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellDispatch3*, VARIANT, ushort*, int> AddToRecent;
+        public delegate* unmanaged<TSelf*, VARIANT, ushort*, int> AddToRecent;
     }
 }

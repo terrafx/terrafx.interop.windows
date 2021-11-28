@@ -82,27 +82,28 @@ public unsafe partial struct IDataAdviseHolder : IDataAdviseHolder.Interface
         HRESULT SendOnDataChange(IDataObject* pDataObject, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD")] uint advf);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataAdviseHolder*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataAdviseHolder*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataAdviseHolder*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDataObject *, FORMATETC *, DWORD, IAdviseSink *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int> Advise;
+        public delegate* unmanaged<TSelf*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int> Advise;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataAdviseHolder*, uint, int> Unadvise;
+        public delegate* unmanaged<TSelf*, uint, int> Unadvise;
 
         [NativeTypeName("HRESULT (IEnumSTATDATA **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataAdviseHolder*, IEnumSTATDATA**, int> EnumAdvise;
+        public delegate* unmanaged<TSelf*, IEnumSTATDATA**, int> EnumAdvise;
 
         [NativeTypeName("HRESULT (IDataObject *, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataAdviseHolder*, IDataObject*, uint, uint, int> SendOnDataChange;
+        public delegate* unmanaged<TSelf*, IDataObject*, uint, uint, int> SendOnDataChange;
     }
 }

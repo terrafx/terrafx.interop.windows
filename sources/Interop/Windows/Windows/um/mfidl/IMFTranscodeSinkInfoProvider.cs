@@ -82,27 +82,28 @@ public unsafe partial struct IMFTranscodeSinkInfoProvider : IMFTranscodeSinkInfo
         HRESULT GetSinkInfo(MF_TRANSCODE_SINK_INFO* pSinkInfo);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTranscodeSinkInfoProvider*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTranscodeSinkInfoProvider*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTranscodeSinkInfoProvider*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTranscodeSinkInfoProvider*, ushort*, int> SetOutputFile;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetOutputFile;
 
         [NativeTypeName("HRESULT (IMFActivate *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTranscodeSinkInfoProvider*, IMFActivate*, int> SetOutputByteStream;
+        public delegate* unmanaged<TSelf*, IMFActivate*, int> SetOutputByteStream;
 
         [NativeTypeName("HRESULT (IMFTranscodeProfile *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTranscodeSinkInfoProvider*, IMFTranscodeProfile*, int> SetProfile;
+        public delegate* unmanaged<TSelf*, IMFTranscodeProfile*, int> SetProfile;
 
         [NativeTypeName("HRESULT (MF_TRANSCODE_SINK_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFTranscodeSinkInfoProvider*, MF_TRANSCODE_SINK_INFO*, int> GetSinkInfo;
+        public delegate* unmanaged<TSelf*, MF_TRANSCODE_SINK_INFO*, int> GetSinkInfo;
     }
 }

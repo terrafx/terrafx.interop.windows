@@ -250,81 +250,82 @@ public unsafe partial struct IHTMLCurrentStyle2 : IHTMLCurrentStyle2.Interface
         HRESULT get_isBlock([NativeTypeName("VARIANT_BOOL *")] short* p);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, ushort**, int> get_layoutFlow;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_layoutFlow;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, ushort**, int> get_wordWrap;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_wordWrap;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, ushort**, int> get_textUnderlinePosition;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_textUnderlinePosition;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, short*, int> get_hasLayout;
+        public delegate* unmanaged<TSelf*, short*, int> get_hasLayout;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, VARIANT*, int> get_scrollbarBaseColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarBaseColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, VARIANT*, int> get_scrollbarFaceColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarFaceColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, VARIANT*, int> get_scrollbar3dLightColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbar3dLightColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, VARIANT*, int> get_scrollbarShadowColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarShadowColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, VARIANT*, int> get_scrollbarHighlightColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarHighlightColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, VARIANT*, int> get_scrollbarDarkShadowColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarDarkShadowColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, VARIANT*, int> get_scrollbarArrowColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarArrowColor;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, VARIANT*, int> get_scrollbarTrackColor;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_scrollbarTrackColor;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, ushort**, int> get_writingMode;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_writingMode;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, VARIANT*, int> get_zoom;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_zoom;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, ushort**, int> get_filter;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_filter;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, ushort**, int> get_textAlignLast;
+        public delegate* unmanaged<TSelf*, ushort**, int> get_textAlignLast;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, VARIANT*, int> get_textKashidaSpace;
+        public delegate* unmanaged<TSelf*, VARIANT*, int> get_textKashidaSpace;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCurrentStyle2*, short*, int> get_isBlock;
+        public delegate* unmanaged<TSelf*, short*, int> get_isBlock;
     }
 }

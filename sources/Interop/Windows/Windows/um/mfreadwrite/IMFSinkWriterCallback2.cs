@@ -76,27 +76,28 @@ public unsafe partial struct IMFSinkWriterCallback2 : IMFSinkWriterCallback2.Int
         HRESULT OnStreamError([NativeTypeName("DWORD")] uint dwStreamIndex, HRESULT hrStatus);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSinkWriterCallback2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSinkWriterCallback2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSinkWriterCallback2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSinkWriterCallback2*, HRESULT, int> OnFinalize;
+        public delegate* unmanaged<TSelf*, HRESULT, int> OnFinalize;
 
         [NativeTypeName("HRESULT (DWORD, LPVOID) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSinkWriterCallback2*, uint, void*, int> OnMarker;
+        public delegate* unmanaged<TSelf*, uint, void*, int> OnMarker;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSinkWriterCallback2*, int> OnTransformChange;
+        public delegate* unmanaged<TSelf*, int> OnTransformChange;
 
         [NativeTypeName("HRESULT (DWORD, HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSinkWriterCallback2*, uint, HRESULT, int> OnStreamError;
+        public delegate* unmanaged<TSelf*, uint, HRESULT, int> OnStreamError;
     }
 }

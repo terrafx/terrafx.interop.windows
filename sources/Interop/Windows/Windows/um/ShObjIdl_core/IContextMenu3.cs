@@ -80,30 +80,31 @@ public unsafe partial struct IContextMenu3 : IContextMenu3.Interface
         HRESULT HandleMenuMsg2(uint uMsg, WPARAM wParam, LPARAM lParam, LRESULT* plResult);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenu3*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenu3*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenu3*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HMENU, UINT, UINT, UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenu3*, HMENU, uint, uint, uint, uint, int> QueryContextMenu;
+        public delegate* unmanaged<TSelf*, HMENU, uint, uint, uint, uint, int> QueryContextMenu;
 
         [NativeTypeName("HRESULT (CMINVOKECOMMANDINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenu3*, CMINVOKECOMMANDINFO*, int> InvokeCommand;
+        public delegate* unmanaged<TSelf*, CMINVOKECOMMANDINFO*, int> InvokeCommand;
 
         [NativeTypeName("HRESULT (UINT_PTR, UINT, UINT *, CHAR *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenu3*, nuint, uint, uint*, sbyte*, uint, int> GetCommandString;
+        public delegate* unmanaged<TSelf*, nuint, uint, uint*, sbyte*, uint, int> GetCommandString;
 
         [NativeTypeName("HRESULT (UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenu3*, uint, WPARAM, LPARAM, int> HandleMenuMsg;
+        public delegate* unmanaged<TSelf*, uint, WPARAM, LPARAM, int> HandleMenuMsg;
 
         [NativeTypeName("HRESULT (UINT, WPARAM, LPARAM, LRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IContextMenu3*, uint, WPARAM, LPARAM, LRESULT*, int> HandleMenuMsg2;
+        public delegate* unmanaged<TSelf*, uint, WPARAM, LPARAM, LRESULT*, int> HandleMenuMsg2;
     }
 }

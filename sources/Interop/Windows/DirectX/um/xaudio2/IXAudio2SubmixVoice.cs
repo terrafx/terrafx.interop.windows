@@ -151,63 +151,64 @@ public unsafe partial struct IXAudio2SubmixVoice : IXAudio2SubmixVoice.Interface
     {
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("void (XAUDIO2_VOICE_DETAILS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2SubmixVoice*, XAUDIO2_VOICE_DETAILS*, void> GetVoiceDetails;
+        public delegate* unmanaged<TSelf*, XAUDIO2_VOICE_DETAILS*, void> GetVoiceDetails;
 
         [NativeTypeName("HRESULT (const XAUDIO2_VOICE_SENDS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2SubmixVoice*, XAUDIO2_VOICE_SENDS*, int> SetOutputVoices;
+        public delegate* unmanaged<TSelf*, XAUDIO2_VOICE_SENDS*, int> SetOutputVoices;
 
         [NativeTypeName("HRESULT (const XAUDIO2_EFFECT_CHAIN *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2SubmixVoice*, XAUDIO2_EFFECT_CHAIN*, int> SetEffectChain;
+        public delegate* unmanaged<TSelf*, XAUDIO2_EFFECT_CHAIN*, int> SetEffectChain;
 
         [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2SubmixVoice*, uint, uint, int> EnableEffect;
+        public delegate* unmanaged<TSelf*, uint, uint, int> EnableEffect;
 
         [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2SubmixVoice*, uint, uint, int> DisableEffect;
+        public delegate* unmanaged<TSelf*, uint, uint, int> DisableEffect;
 
         [NativeTypeName("void (UINT32, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2SubmixVoice*, uint, BOOL*, void> GetEffectState;
+        public delegate* unmanaged<TSelf*, uint, BOOL*, void> GetEffectState;
 
         [NativeTypeName("HRESULT (UINT32, const void *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2SubmixVoice*, uint, void*, uint, uint, int> SetEffectParameters;
+        public delegate* unmanaged<TSelf*, uint, void*, uint, uint, int> SetEffectParameters;
 
         [NativeTypeName("HRESULT (UINT32, void *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2SubmixVoice*, uint, void*, uint, int> GetEffectParameters;
+        public delegate* unmanaged<TSelf*, uint, void*, uint, int> GetEffectParameters;
 
         [NativeTypeName("HRESULT (const XAUDIO2_FILTER_PARAMETERS *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2SubmixVoice*, XAUDIO2_FILTER_PARAMETERS*, uint, int> SetFilterParameters;
+        public delegate* unmanaged<TSelf*, XAUDIO2_FILTER_PARAMETERS*, uint, int> SetFilterParameters;
 
         [NativeTypeName("void (XAUDIO2_FILTER_PARAMETERS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2SubmixVoice*, XAUDIO2_FILTER_PARAMETERS*, void> GetFilterParameters;
+        public delegate* unmanaged<TSelf*, XAUDIO2_FILTER_PARAMETERS*, void> GetFilterParameters;
 
         [NativeTypeName("HRESULT (IXAudio2Voice *, const XAUDIO2_FILTER_PARAMETERS *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2SubmixVoice*, IXAudio2Voice*, XAUDIO2_FILTER_PARAMETERS*, uint, int> SetOutputFilterParameters;
+        public delegate* unmanaged<TSelf*, IXAudio2Voice*, XAUDIO2_FILTER_PARAMETERS*, uint, int> SetOutputFilterParameters;
 
         [NativeTypeName("void (IXAudio2Voice *, XAUDIO2_FILTER_PARAMETERS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2SubmixVoice*, IXAudio2Voice*, XAUDIO2_FILTER_PARAMETERS*, void> GetOutputFilterParameters;
+        public delegate* unmanaged<TSelf*, IXAudio2Voice*, XAUDIO2_FILTER_PARAMETERS*, void> GetOutputFilterParameters;
 
         [NativeTypeName("HRESULT (float, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2SubmixVoice*, float, uint, int> SetVolume;
+        public delegate* unmanaged<TSelf*, float, uint, int> SetVolume;
 
         [NativeTypeName("void (float *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2SubmixVoice*, float*, void> GetVolume;
+        public delegate* unmanaged<TSelf*, float*, void> GetVolume;
 
         [NativeTypeName("HRESULT (UINT32, const float *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2SubmixVoice*, uint, float*, uint, int> SetChannelVolumes;
+        public delegate* unmanaged<TSelf*, uint, float*, uint, int> SetChannelVolumes;
 
         [NativeTypeName("void (UINT32, float *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2SubmixVoice*, uint, float*, void> GetChannelVolumes;
+        public delegate* unmanaged<TSelf*, uint, float*, void> GetChannelVolumes;
 
         [NativeTypeName("HRESULT (IXAudio2Voice *, UINT32, UINT32, const float *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2SubmixVoice*, IXAudio2Voice*, uint, uint, float*, uint, int> SetOutputMatrix;
+        public delegate* unmanaged<TSelf*, IXAudio2Voice*, uint, uint, float*, uint, int> SetOutputMatrix;
 
         [NativeTypeName("void (IXAudio2Voice *, UINT32, UINT32, float *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2SubmixVoice*, IXAudio2Voice*, uint, uint, float*, void> GetOutputMatrix;
+        public delegate* unmanaged<TSelf*, IXAudio2Voice*, uint, uint, float*, void> GetOutputMatrix;
 
         [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IXAudio2SubmixVoice*, void> DestroyVoice;
+        public delegate* unmanaged<TSelf*, void> DestroyVoice;
     }
 }

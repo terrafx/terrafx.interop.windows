@@ -109,36 +109,37 @@ public unsafe partial struct IPersistStorage : IPersistStorage.Interface
         HRESULT HandsOffStorage();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistStorage*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistStorage*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistStorage*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistStorage*, Guid*, int> GetClassID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetClassID;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistStorage*, int> IsDirty;
+        public delegate* unmanaged<TSelf*, int> IsDirty;
 
         [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistStorage*, IStorage*, int> InitNew;
+        public delegate* unmanaged<TSelf*, IStorage*, int> InitNew;
 
         [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistStorage*, IStorage*, int> Load;
+        public delegate* unmanaged<TSelf*, IStorage*, int> Load;
 
         [NativeTypeName("HRESULT (IStorage *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistStorage*, IStorage*, BOOL, int> Save;
+        public delegate* unmanaged<TSelf*, IStorage*, BOOL, int> Save;
 
         [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistStorage*, IStorage*, int> SaveCompleted;
+        public delegate* unmanaged<TSelf*, IStorage*, int> SaveCompleted;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPersistStorage*, int> HandsOffStorage;
+        public delegate* unmanaged<TSelf*, int> HandsOffStorage;
     }
 }

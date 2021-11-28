@@ -84,27 +84,28 @@ public unsafe partial struct IMFSensorProcessActivity : IMFSensorProcessActivity
         HRESULT GetReportTime(FILETIME* pft);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorProcessActivity*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorProcessActivity*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorProcessActivity*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorProcessActivity*, uint*, int> GetProcessId;
+        public delegate* unmanaged<TSelf*, uint*, int> GetProcessId;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorProcessActivity*, BOOL*, int> GetStreamingState;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetStreamingState;
 
         [NativeTypeName("HRESULT (MFSensorDeviceMode *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorProcessActivity*, MFSensorDeviceMode*, int> GetStreamingMode;
+        public delegate* unmanaged<TSelf*, MFSensorDeviceMode*, int> GetStreamingMode;
 
         [NativeTypeName("HRESULT (FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFSensorProcessActivity*, FILETIME*, int> GetReportTime;
+        public delegate* unmanaged<TSelf*, FILETIME*, int> GetReportTime;
     }
 }

@@ -62,21 +62,22 @@ public unsafe partial struct IAMAsyncReaderTimestampScaling : IAMAsyncReaderTime
         HRESULT SetTimestampMode(BOOL fRaw);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAsyncReaderTimestampScaling*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAsyncReaderTimestampScaling*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAsyncReaderTimestampScaling*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAsyncReaderTimestampScaling*, BOOL*, int> GetTimestampMode;
+        public delegate* unmanaged<TSelf*, BOOL*, int> GetTimestampMode;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMAsyncReaderTimestampScaling*, BOOL, int> SetTimestampMode;
+        public delegate* unmanaged<TSelf*, BOOL, int> SetTimestampMode;
     }
 }

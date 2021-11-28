@@ -254,102 +254,103 @@ public unsafe partial struct IDXGIFactory7 : IDXGIFactory7.Interface
         HRESULT UnregisterAdaptersChangedEvent([NativeTypeName("DWORD")] uint dwCookie);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, Guid*, void**, int> GetParent;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetParent;
 
         [NativeTypeName("HRESULT (UINT, IDXGIAdapter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, uint, IDXGIAdapter**, int> EnumAdapters;
+        public delegate* unmanaged<TSelf*, uint, IDXGIAdapter**, int> EnumAdapters;
 
         [NativeTypeName("HRESULT (HWND, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, HWND, uint, int> MakeWindowAssociation;
+        public delegate* unmanaged<TSelf*, HWND, uint, int> MakeWindowAssociation;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, HWND*, int> GetWindowAssociation;
+        public delegate* unmanaged<TSelf*, HWND*, int> GetWindowAssociation;
 
         [NativeTypeName("HRESULT (IUnknown *, DXGI_SWAP_CHAIN_DESC *, IDXGISwapChain **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, IUnknown*, DXGI_SWAP_CHAIN_DESC*, IDXGISwapChain**, int> CreateSwapChain;
+        public delegate* unmanaged<TSelf*, IUnknown*, DXGI_SWAP_CHAIN_DESC*, IDXGISwapChain**, int> CreateSwapChain;
 
         [NativeTypeName("HRESULT (HMODULE, IDXGIAdapter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, HMODULE, IDXGIAdapter**, int> CreateSoftwareAdapter;
+        public delegate* unmanaged<TSelf*, HMODULE, IDXGIAdapter**, int> CreateSoftwareAdapter;
 
         [NativeTypeName("HRESULT (UINT, IDXGIAdapter1 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, uint, IDXGIAdapter1**, int> EnumAdapters1;
+        public delegate* unmanaged<TSelf*, uint, IDXGIAdapter1**, int> EnumAdapters1;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, int> IsCurrent;
+        public delegate* unmanaged<TSelf*, int> IsCurrent;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, int> IsWindowedStereoEnabled;
+        public delegate* unmanaged<TSelf*, int> IsWindowedStereoEnabled;
 
         [NativeTypeName("HRESULT (IUnknown *, HWND, const DXGI_SWAP_CHAIN_DESC1 *, const DXGI_SWAP_CHAIN_FULLSCREEN_DESC *, IDXGIOutput *, IDXGISwapChain1 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, IUnknown*, HWND, DXGI_SWAP_CHAIN_DESC1*, DXGI_SWAP_CHAIN_FULLSCREEN_DESC*, IDXGIOutput*, IDXGISwapChain1**, int> CreateSwapChainForHwnd;
+        public delegate* unmanaged<TSelf*, IUnknown*, HWND, DXGI_SWAP_CHAIN_DESC1*, DXGI_SWAP_CHAIN_FULLSCREEN_DESC*, IDXGIOutput*, IDXGISwapChain1**, int> CreateSwapChainForHwnd;
 
         [NativeTypeName("HRESULT (IUnknown *, IUnknown *, const DXGI_SWAP_CHAIN_DESC1 *, IDXGIOutput *, IDXGISwapChain1 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, IUnknown*, IUnknown*, DXGI_SWAP_CHAIN_DESC1*, IDXGIOutput*, IDXGISwapChain1**, int> CreateSwapChainForCoreWindow;
+        public delegate* unmanaged<TSelf*, IUnknown*, IUnknown*, DXGI_SWAP_CHAIN_DESC1*, IDXGIOutput*, IDXGISwapChain1**, int> CreateSwapChainForCoreWindow;
 
         [NativeTypeName("HRESULT (HANDLE, LUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, HANDLE, LUID*, int> GetSharedResourceAdapterLuid;
+        public delegate* unmanaged<TSelf*, HANDLE, LUID*, int> GetSharedResourceAdapterLuid;
 
         [NativeTypeName("HRESULT (HWND, UINT, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, HWND, uint, uint*, int> RegisterStereoStatusWindow;
+        public delegate* unmanaged<TSelf*, HWND, uint, uint*, int> RegisterStereoStatusWindow;
 
         [NativeTypeName("HRESULT (HANDLE, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, HANDLE, uint*, int> RegisterStereoStatusEvent;
+        public delegate* unmanaged<TSelf*, HANDLE, uint*, int> RegisterStereoStatusEvent;
 
         [NativeTypeName("void (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, uint, void> UnregisterStereoStatus;
+        public delegate* unmanaged<TSelf*, uint, void> UnregisterStereoStatus;
 
         [NativeTypeName("HRESULT (HWND, UINT, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, HWND, uint, uint*, int> RegisterOcclusionStatusWindow;
+        public delegate* unmanaged<TSelf*, HWND, uint, uint*, int> RegisterOcclusionStatusWindow;
 
         [NativeTypeName("HRESULT (HANDLE, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, HANDLE, uint*, int> RegisterOcclusionStatusEvent;
+        public delegate* unmanaged<TSelf*, HANDLE, uint*, int> RegisterOcclusionStatusEvent;
 
         [NativeTypeName("void (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, uint, void> UnregisterOcclusionStatus;
+        public delegate* unmanaged<TSelf*, uint, void> UnregisterOcclusionStatus;
 
         [NativeTypeName("HRESULT (IUnknown *, const DXGI_SWAP_CHAIN_DESC1 *, IDXGIOutput *, IDXGISwapChain1 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, IUnknown*, DXGI_SWAP_CHAIN_DESC1*, IDXGIOutput*, IDXGISwapChain1**, int> CreateSwapChainForComposition;
+        public delegate* unmanaged<TSelf*, IUnknown*, DXGI_SWAP_CHAIN_DESC1*, IDXGIOutput*, IDXGISwapChain1**, int> CreateSwapChainForComposition;
 
         [NativeTypeName("UINT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, uint> GetCreationFlags;
+        public delegate* unmanaged<TSelf*, uint> GetCreationFlags;
 
         [NativeTypeName("HRESULT (LUID, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, LUID, Guid*, void**, int> EnumAdapterByLuid;
+        public delegate* unmanaged<TSelf*, LUID, Guid*, void**, int> EnumAdapterByLuid;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, Guid*, void**, int> EnumWarpAdapter;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> EnumWarpAdapter;
 
         [NativeTypeName("HRESULT (DXGI_FEATURE, void *, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, DXGI_FEATURE, void*, uint, int> CheckFeatureSupport;
+        public delegate* unmanaged<TSelf*, DXGI_FEATURE, void*, uint, int> CheckFeatureSupport;
 
         [NativeTypeName("HRESULT (UINT, DXGI_GPU_PREFERENCE, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, uint, DXGI_GPU_PREFERENCE, Guid*, void**, int> EnumAdapterByGpuPreference;
+        public delegate* unmanaged<TSelf*, uint, DXGI_GPU_PREFERENCE, Guid*, void**, int> EnumAdapterByGpuPreference;
 
         [NativeTypeName("HRESULT (HANDLE, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, HANDLE, uint*, int> RegisterAdaptersChangedEvent;
+        public delegate* unmanaged<TSelf*, HANDLE, uint*, int> RegisterAdaptersChangedEvent;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXGIFactory7*, uint, int> UnregisterAdaptersChangedEvent;
+        public delegate* unmanaged<TSelf*, uint, int> UnregisterAdaptersChangedEvent;
     }
 }

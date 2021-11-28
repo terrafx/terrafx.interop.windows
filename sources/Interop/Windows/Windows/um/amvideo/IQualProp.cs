@@ -100,33 +100,34 @@ public unsafe partial struct IQualProp : IQualProp.Interface
         HRESULT get_DevSyncOffset(int* piDev);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQualProp*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IQualProp*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IQualProp*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQualProp*, int*, int> get_FramesDroppedInRenderer;
+        public delegate* unmanaged<TSelf*, int*, int> get_FramesDroppedInRenderer;
 
         [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQualProp*, int*, int> get_FramesDrawn;
+        public delegate* unmanaged<TSelf*, int*, int> get_FramesDrawn;
 
         [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQualProp*, int*, int> get_AvgFrameRate;
+        public delegate* unmanaged<TSelf*, int*, int> get_AvgFrameRate;
 
         [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQualProp*, int*, int> get_Jitter;
+        public delegate* unmanaged<TSelf*, int*, int> get_Jitter;
 
         [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQualProp*, int*, int> get_AvgSyncOffset;
+        public delegate* unmanaged<TSelf*, int*, int> get_AvgSyncOffset;
 
         [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IQualProp*, int*, int> get_DevSyncOffset;
+        public delegate* unmanaged<TSelf*, int*, int> get_DevSyncOffset;
     }
 }

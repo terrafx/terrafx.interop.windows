@@ -68,24 +68,25 @@ public unsafe partial struct IPlayToControlWithCapabilities : IPlayToControlWith
         HRESULT GetCapabilities(PLAYTO_SOURCE_CREATEFLAGS* pCapabilities);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPlayToControlWithCapabilities*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPlayToControlWithCapabilities*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPlayToControlWithCapabilities*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFSharingEngineClassFactory *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPlayToControlWithCapabilities*, IMFSharingEngineClassFactory*, int> Connect;
+        public delegate* unmanaged<TSelf*, IMFSharingEngineClassFactory*, int> Connect;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPlayToControlWithCapabilities*, int> Disconnect;
+        public delegate* unmanaged<TSelf*, int> Disconnect;
 
         [NativeTypeName("HRESULT (PLAYTO_SOURCE_CREATEFLAGS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPlayToControlWithCapabilities*, PLAYTO_SOURCE_CREATEFLAGS*, int> GetCapabilities;
+        public delegate* unmanaged<TSelf*, PLAYTO_SOURCE_CREATEFLAGS*, int> GetCapabilities;
     }
 }

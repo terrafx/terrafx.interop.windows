@@ -52,18 +52,19 @@ public unsafe partial struct ITfMouseSink : ITfMouseSink.Interface
         HRESULT OnMouseEvent([NativeTypeName("ULONG")] uint uEdge, [NativeTypeName("ULONG")] uint uQuadrant, [NativeTypeName("DWORD")] uint dwBtnStatus, BOOL* pfEaten);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfMouseSink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfMouseSink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfMouseSink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, DWORD, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfMouseSink*, uint, uint, uint, BOOL*, int> OnMouseEvent;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, BOOL*, int> OnMouseEvent;
     }
 }

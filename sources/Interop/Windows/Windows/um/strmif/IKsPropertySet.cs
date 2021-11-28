@@ -72,24 +72,25 @@ public unsafe partial struct IKsPropertySet : IKsPropertySet.Interface
         HRESULT QuerySupported([NativeTypeName("const GUID &")] Guid* guidPropSet, [NativeTypeName("DWORD")] uint dwPropID, [NativeTypeName("DWORD *")] uint* pTypeSupport);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsPropertySet*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsPropertySet*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsPropertySet*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, DWORD, LPVOID, DWORD, LPVOID, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsPropertySet*, Guid*, uint, void*, uint, void*, uint, int> Set;
+        public delegate* unmanaged<TSelf*, Guid*, uint, void*, uint, void*, uint, int> Set;
 
         [NativeTypeName("HRESULT (const GUID &, DWORD, LPVOID, DWORD, LPVOID, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsPropertySet*, Guid*, uint, void*, uint, void*, uint, uint*, int> Get;
+        public delegate* unmanaged<TSelf*, Guid*, uint, void*, uint, void*, uint, uint*, int> Get;
 
         [NativeTypeName("HRESULT (const GUID &, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IKsPropertySet*, Guid*, uint, uint*, int> QuerySupported;
+        public delegate* unmanaged<TSelf*, Guid*, uint, uint*, int> QuerySupported;
     }
 }

@@ -107,33 +107,34 @@ public unsafe partial struct IDXCoreAdapterList : IDXCoreAdapterList.Interface
         bool IsAdapterPreferenceSupported(DXCoreAdapterPreference preference);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapterList*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapterList*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapterList*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (uint32_t, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapterList*, uint, Guid*, void**, int> GetAdapter;
+        public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> GetAdapter;
 
         [NativeTypeName("uint32_t () __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDXCoreAdapterList*, uint> GetAdapterCount;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint> GetAdapterCount;
 
         [NativeTypeName("bool () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapterList*, byte> IsStale;
+        public delegate* unmanaged<TSelf*, byte> IsStale;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapterList*, Guid*, void**, int> GetFactory;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetFactory;
 
         [NativeTypeName("HRESULT (uint32_t, const DXCoreAdapterPreference *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDXCoreAdapterList*, uint, DXCoreAdapterPreference*, int> Sort;
+        public delegate* unmanaged<TSelf*, uint, DXCoreAdapterPreference*, int> Sort;
 
         [NativeTypeName("bool (DXCoreAdapterPreference) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDXCoreAdapterList*, DXCoreAdapterPreference, byte> IsAdapterPreferenceSupported;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DXCoreAdapterPreference, byte> IsAdapterPreferenceSupported;
     }
 }

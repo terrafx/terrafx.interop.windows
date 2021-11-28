@@ -53,18 +53,19 @@ public unsafe partial struct ILearningModelOperatorProviderNative : ILearningMod
         HRESULT GetRegistry(IMLOperatorRegistry** ppOperatorRegistry);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILearningModelOperatorProviderNative*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ILearningModelOperatorProviderNative*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ILearningModelOperatorProviderNative*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMLOperatorRegistry **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILearningModelOperatorProviderNative*, IMLOperatorRegistry**, int> GetRegistry;
+        public delegate* unmanaged<TSelf*, IMLOperatorRegistry**, int> GetRegistry;
     }
 }

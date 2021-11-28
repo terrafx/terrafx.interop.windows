@@ -82,27 +82,28 @@ public unsafe partial struct IPropertyPageSite : IPropertyPageSite.Interface
         HRESULT TranslateAccelerator(MSG* pMsg);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyPageSite*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyPageSite*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyPageSite*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyPageSite*, uint, int> OnStatusChange;
+        public delegate* unmanaged<TSelf*, uint, int> OnStatusChange;
 
         [NativeTypeName("HRESULT (LCID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyPageSite*, uint*, int> GetLocaleID;
+        public delegate* unmanaged<TSelf*, uint*, int> GetLocaleID;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyPageSite*, IUnknown**, int> GetPageContainer;
+        public delegate* unmanaged<TSelf*, IUnknown**, int> GetPageContainer;
 
         [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPropertyPageSite*, MSG*, int> TranslateAccelerator;
+        public delegate* unmanaged<TSelf*, MSG*, int> TranslateAccelerator;
     }
 }

@@ -64,21 +64,22 @@ public unsafe partial struct IAppxBundleWriter3 : IAppxBundleWriter3.Interface
         HRESULT Close([NativeTypeName("LPCWSTR")] ushort* hashMethodString);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleWriter3*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleWriter3*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleWriter3*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleWriter3*, ushort*, IStream*, int> AddPackageReference;
+        public delegate* unmanaged<TSelf*, ushort*, IStream*, int> AddPackageReference;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAppxBundleWriter3*, ushort*, int> Close;
+        public delegate* unmanaged<TSelf*, ushort*, int> Close;
     }
 }

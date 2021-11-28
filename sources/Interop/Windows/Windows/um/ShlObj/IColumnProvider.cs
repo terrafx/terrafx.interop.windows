@@ -72,24 +72,25 @@ public unsafe partial struct IColumnProvider : IColumnProvider.Interface
         HRESULT GetItemData([NativeTypeName("LPCSHCOLUMNID")] PROPERTYKEY* pscid, [NativeTypeName("LPCSHCOLUMNDATA")] SHCOLUMNDATA* pscd, VARIANT* pvarData);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IColumnProvider*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IColumnProvider*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IColumnProvider*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCSHCOLUMNINIT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IColumnProvider*, SHCOLUMNINIT*, int> Initialize;
+        public delegate* unmanaged<TSelf*, SHCOLUMNINIT*, int> Initialize;
 
         [NativeTypeName("HRESULT (DWORD, SHCOLUMNINFO *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IColumnProvider*, uint, SHCOLUMNINFO*, int> GetColumnInfo;
+        public delegate* unmanaged<TSelf*, uint, SHCOLUMNINFO*, int> GetColumnInfo;
 
         [NativeTypeName("HRESULT (LPCSHCOLUMNID, LPCSHCOLUMNDATA, VARIANT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IColumnProvider*, PROPERTYKEY*, SHCOLUMNDATA*, VARIANT*, int> GetItemData;
+        public delegate* unmanaged<TSelf*, PROPERTYKEY*, SHCOLUMNDATA*, VARIANT*, int> GetItemData;
     }
 }

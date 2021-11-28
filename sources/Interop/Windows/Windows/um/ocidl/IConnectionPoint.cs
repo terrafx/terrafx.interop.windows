@@ -92,30 +92,31 @@ public unsafe partial struct IConnectionPoint : IConnectionPoint.Interface
         HRESULT EnumConnections(IEnumConnections** ppEnum);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnectionPoint*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnectionPoint*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnectionPoint*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnectionPoint*, Guid*, int> GetConnectionInterface;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetConnectionInterface;
 
         [NativeTypeName("HRESULT (IConnectionPointContainer **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnectionPoint*, IConnectionPointContainer**, int> GetConnectionPointContainer;
+        public delegate* unmanaged<TSelf*, IConnectionPointContainer**, int> GetConnectionPointContainer;
 
         [NativeTypeName("HRESULT (IUnknown *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnectionPoint*, IUnknown*, uint*, int> Advise;
+        public delegate* unmanaged<TSelf*, IUnknown*, uint*, int> Advise;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnectionPoint*, uint, int> Unadvise;
+        public delegate* unmanaged<TSelf*, uint, int> Unadvise;
 
         [NativeTypeName("HRESULT (IEnumConnections **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IConnectionPoint*, IEnumConnections**, int> EnumConnections;
+        public delegate* unmanaged<TSelf*, IEnumConnections**, int> EnumConnections;
     }
 }

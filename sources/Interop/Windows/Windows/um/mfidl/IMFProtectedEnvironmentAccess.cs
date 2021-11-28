@@ -64,21 +64,22 @@ public unsafe partial struct IMFProtectedEnvironmentAccess : IMFProtectedEnviron
         HRESULT ReadGRL([NativeTypeName("UINT32 *")] uint* outputLength, byte** output);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFProtectedEnvironmentAccess*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFProtectedEnvironmentAccess*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFProtectedEnvironmentAccess*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32, const BYTE *, UINT32, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFProtectedEnvironmentAccess*, uint, byte*, uint, byte*, int> Call;
+        public delegate* unmanaged<TSelf*, uint, byte*, uint, byte*, int> Call;
 
         [NativeTypeName("HRESULT (UINT32 *, BYTE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFProtectedEnvironmentAccess*, uint*, byte**, int> ReadGRL;
+        public delegate* unmanaged<TSelf*, uint*, byte**, int> ReadGRL;
     }
 }

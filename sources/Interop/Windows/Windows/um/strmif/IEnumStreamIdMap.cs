@@ -82,27 +82,28 @@ public unsafe partial struct IEnumStreamIdMap : IEnumStreamIdMap.Interface
         HRESULT Clone(IEnumStreamIdMap** ppIEnumStreamIdMap);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumStreamIdMap*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumStreamIdMap*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumStreamIdMap*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, STREAM_ID_MAP *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumStreamIdMap*, uint, STREAM_ID_MAP*, uint*, int> Next;
+        public delegate* unmanaged<TSelf*, uint, STREAM_ID_MAP*, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumStreamIdMap*, uint, int> Skip;
+        public delegate* unmanaged<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumStreamIdMap*, int> Reset;
+        public delegate* unmanaged<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IEnumStreamIdMap **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IEnumStreamIdMap*, IEnumStreamIdMap**, int> Clone;
+        public delegate* unmanaged<TSelf*, IEnumStreamIdMap**, int> Clone;
     }
 }

@@ -62,21 +62,22 @@ public unsafe partial struct IStreamBuilder : IStreamBuilder.Interface
         HRESULT Backout(IPin* ppinOut, IGraphBuilder* pGraph);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamBuilder*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamBuilder*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamBuilder*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IPin *, IGraphBuilder *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamBuilder*, IPin*, IGraphBuilder*, int> Render;
+        public delegate* unmanaged<TSelf*, IPin*, IGraphBuilder*, int> Render;
 
         [NativeTypeName("HRESULT (IPin *, IGraphBuilder *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IStreamBuilder*, IPin*, IGraphBuilder*, int> Backout;
+        public delegate* unmanaged<TSelf*, IPin*, IGraphBuilder*, int> Backout;
     }
 }

@@ -54,18 +54,19 @@ public unsafe partial struct ILearningModelDeviceFactoryNative : ILearningModelD
         HRESULT CreateFromD3D12CommandQueue(ID3D12CommandQueue* value, IUnknown** result);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILearningModelDeviceFactoryNative*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ILearningModelDeviceFactoryNative*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ILearningModelDeviceFactoryNative*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ID3D12CommandQueue *, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ILearningModelDeviceFactoryNative*, ID3D12CommandQueue*, IUnknown**, int> CreateFromD3D12CommandQueue;
+        public delegate* unmanaged<TSelf*, ID3D12CommandQueue*, IUnknown**, int> CreateFromD3D12CommandQueue;
     }
 }

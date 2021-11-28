@@ -85,27 +85,28 @@ public unsafe partial struct ID3D10EffectTechnique : ID3D10EffectTechnique.Inter
         HRESULT ComputeStateBlockMask(D3D10_STATE_BLOCK_MASK* pStateBlockMask);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10EffectTechnique*, int> IsValid;
+        public delegate* unmanaged<TSelf*, int> IsValid;
 
         [NativeTypeName("HRESULT (D3D10_TECHNIQUE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10EffectTechnique*, D3D10_TECHNIQUE_DESC*, int> GetDesc;
+        public delegate* unmanaged<TSelf*, D3D10_TECHNIQUE_DESC*, int> GetDesc;
 
         [NativeTypeName("ID3D10EffectVariable *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10EffectTechnique*, uint, ID3D10EffectVariable*> GetAnnotationByIndex;
+        public delegate* unmanaged<TSelf*, uint, ID3D10EffectVariable*> GetAnnotationByIndex;
 
         [NativeTypeName("ID3D10EffectVariable *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10EffectTechnique*, sbyte*, ID3D10EffectVariable*> GetAnnotationByName;
+        public delegate* unmanaged<TSelf*, sbyte*, ID3D10EffectVariable*> GetAnnotationByName;
 
         [NativeTypeName("ID3D10EffectPass *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10EffectTechnique*, uint, ID3D10EffectPass*> GetPassByIndex;
+        public delegate* unmanaged<TSelf*, uint, ID3D10EffectPass*> GetPassByIndex;
 
         [NativeTypeName("ID3D10EffectPass *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10EffectTechnique*, sbyte*, ID3D10EffectPass*> GetPassByName;
+        public delegate* unmanaged<TSelf*, sbyte*, ID3D10EffectPass*> GetPassByName;
 
         [NativeTypeName("HRESULT (D3D10_STATE_BLOCK_MASK *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10EffectTechnique*, D3D10_STATE_BLOCK_MASK*, int> ComputeStateBlockMask;
+        public delegate* unmanaged<TSelf*, D3D10_STATE_BLOCK_MASK*, int> ComputeStateBlockMask;
     }
 }

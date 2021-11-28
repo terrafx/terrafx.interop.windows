@@ -62,21 +62,22 @@ public unsafe partial struct ITfLanguageProfileNotifySink : ITfLanguageProfileNo
         HRESULT OnLanguageChanged();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLanguageProfileNotifySink*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLanguageProfileNotifySink*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLanguageProfileNotifySink*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LANGID, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLanguageProfileNotifySink*, ushort, BOOL*, int> OnLanguageChange;
+        public delegate* unmanaged<TSelf*, ushort, BOOL*, int> OnLanguageChange;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfLanguageProfileNotifySink*, int> OnLanguageChanged;
+        public delegate* unmanaged<TSelf*, int> OnLanguageChanged;
     }
 }

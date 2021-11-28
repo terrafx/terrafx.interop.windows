@@ -72,24 +72,25 @@ public unsafe partial struct IUserNotificationCallback : IUserNotificationCallba
         HRESULT OnContextMenu(POINT* pt);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUserNotificationCallback*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUserNotificationCallback*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUserNotificationCallback*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (POINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUserNotificationCallback*, POINT*, int> OnBalloonUserClick;
+        public delegate* unmanaged<TSelf*, POINT*, int> OnBalloonUserClick;
 
         [NativeTypeName("HRESULT (POINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUserNotificationCallback*, POINT*, int> OnLeftClick;
+        public delegate* unmanaged<TSelf*, POINT*, int> OnLeftClick;
 
         [NativeTypeName("HRESULT (POINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUserNotificationCallback*, POINT*, int> OnContextMenu;
+        public delegate* unmanaged<TSelf*, POINT*, int> OnContextMenu;
     }
 }

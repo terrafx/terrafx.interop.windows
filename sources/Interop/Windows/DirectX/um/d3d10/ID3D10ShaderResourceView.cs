@@ -88,33 +88,34 @@ public unsafe partial struct ID3D10ShaderResourceView : ID3D10ShaderResourceView
         void GetDesc(D3D10_SHADER_RESOURCE_VIEW_DESC* pDesc);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderResourceView*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderResourceView*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderResourceView*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID3D10Device **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderResourceView*, ID3D10Device**, void> GetDevice;
+        public delegate* unmanaged<TSelf*, ID3D10Device**, void> GetDevice;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderResourceView*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderResourceView*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderResourceView*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("void (ID3D10Resource **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderResourceView*, ID3D10Resource**, void> GetResource;
+        public delegate* unmanaged<TSelf*, ID3D10Resource**, void> GetResource;
 
         [NativeTypeName("void (D3D10_SHADER_RESOURCE_VIEW_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D10ShaderResourceView*, D3D10_SHADER_RESOURCE_VIEW_DESC*, void> GetDesc;
+        public delegate* unmanaged<TSelf*, D3D10_SHADER_RESOURCE_VIEW_DESC*, void> GetDesc;
     }
 }

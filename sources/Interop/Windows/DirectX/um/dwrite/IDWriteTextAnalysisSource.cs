@@ -93,30 +93,31 @@ public unsafe partial struct IDWriteTextAnalysisSource : IDWriteTextAnalysisSour
         HRESULT GetNumberSubstitution([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32 *")] uint* textLength, IDWriteNumberSubstitution** numberSubstitution);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSource*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSource*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSource*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32, const WCHAR **, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSource*, uint, ushort**, uint*, int> GetTextAtPosition;
+        public delegate* unmanaged<TSelf*, uint, ushort**, uint*, int> GetTextAtPosition;
 
         [NativeTypeName("HRESULT (UINT32, const WCHAR **, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSource*, uint, ushort**, uint*, int> GetTextBeforePosition;
+        public delegate* unmanaged<TSelf*, uint, ushort**, uint*, int> GetTextBeforePosition;
 
         [NativeTypeName("DWRITE_READING_DIRECTION () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextAnalysisSource*, DWRITE_READING_DIRECTION> GetParagraphReadingDirection;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_READING_DIRECTION> GetParagraphReadingDirection;
 
         [NativeTypeName("HRESULT (UINT32, UINT32 *, const WCHAR **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSource*, uint, uint*, ushort**, int> GetLocaleName;
+        public delegate* unmanaged<TSelf*, uint, uint*, ushort**, int> GetLocaleName;
 
         [NativeTypeName("HRESULT (UINT32, UINT32 *, IDWriteNumberSubstitution **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSource*, uint, uint*, IDWriteNumberSubstitution**, int> GetNumberSubstitution;
+        public delegate* unmanaged<TSelf*, uint, uint*, IDWriteNumberSubstitution**, int> GetNumberSubstitution;
     }
 }

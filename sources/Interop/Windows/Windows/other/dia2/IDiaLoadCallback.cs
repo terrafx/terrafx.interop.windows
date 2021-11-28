@@ -92,30 +92,31 @@ public unsafe partial struct IDiaLoadCallback : IDiaLoadCallback.Interface
         HRESULT RestrictSymbolServerAccess();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLoadCallback*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLoadCallback*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLoadCallback*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL, DWORD, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLoadCallback*, BOOL, uint, byte*, int> NotifyDebugDir;
+        public delegate* unmanaged<TSelf*, BOOL, uint, byte*, int> NotifyDebugDir;
 
         [NativeTypeName("HRESULT (LPCOLESTR, HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLoadCallback*, ushort*, HRESULT, int> NotifyOpenDBG;
+        public delegate* unmanaged<TSelf*, ushort*, HRESULT, int> NotifyOpenDBG;
 
         [NativeTypeName("HRESULT (LPCOLESTR, HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLoadCallback*, ushort*, HRESULT, int> NotifyOpenPDB;
+        public delegate* unmanaged<TSelf*, ushort*, HRESULT, int> NotifyOpenPDB;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLoadCallback*, int> RestrictRegistryAccess;
+        public delegate* unmanaged<TSelf*, int> RestrictRegistryAccess;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDiaLoadCallback*, int> RestrictSymbolServerAccess;
+        public delegate* unmanaged<TSelf*, int> RestrictSymbolServerAccess;
     }
 }

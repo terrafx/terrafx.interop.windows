@@ -66,24 +66,25 @@ public unsafe partial struct IDragSourceHelper2 : IDragSourceHelper2.Interface
         HRESULT SetFlags([NativeTypeName("DWORD")] uint dwFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDragSourceHelper2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDragSourceHelper2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDragSourceHelper2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPSHDRAGIMAGE, IDataObject *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDragSourceHelper2*, SHDRAGIMAGE*, IDataObject*, int> InitializeFromBitmap;
+        public delegate* unmanaged<TSelf*, SHDRAGIMAGE*, IDataObject*, int> InitializeFromBitmap;
 
         [NativeTypeName("HRESULT (HWND, POINT *, IDataObject *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDragSourceHelper2*, HWND, POINT*, IDataObject*, int> InitializeFromWindow;
+        public delegate* unmanaged<TSelf*, HWND, POINT*, IDataObject*, int> InitializeFromWindow;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDragSourceHelper2*, uint, int> SetFlags;
+        public delegate* unmanaged<TSelf*, uint, int> SetFlags;
     }
 }

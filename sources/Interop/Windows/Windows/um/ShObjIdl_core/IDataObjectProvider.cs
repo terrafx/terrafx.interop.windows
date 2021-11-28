@@ -62,21 +62,22 @@ public unsafe partial struct IDataObjectProvider : IDataObjectProvider.Interface
         HRESULT SetDataObject(IDataObject* dataObject);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObjectProvider*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObjectProvider*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObjectProvider*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDataObject **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObjectProvider*, IDataObject**, int> GetDataObject;
+        public delegate* unmanaged<TSelf*, IDataObject**, int> GetDataObject;
 
         [NativeTypeName("HRESULT (IDataObject *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDataObjectProvider*, IDataObject*, int> SetDataObject;
+        public delegate* unmanaged<TSelf*, IDataObject*, int> SetDataObject;
     }
 }

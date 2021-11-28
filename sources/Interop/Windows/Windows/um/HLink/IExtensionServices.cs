@@ -62,21 +62,22 @@ public unsafe partial struct IExtensionServices : IExtensionServices.Interface
         HRESULT SetAuthenticateData(HWND phwnd, [NativeTypeName("LPCWSTR")] ushort* pwzUsername, [NativeTypeName("LPCWSTR")] ushort* pwzPassword);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExtensionServices*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExtensionServices*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IExtensionServices*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExtensionServices*, ushort*, int> SetAdditionalHeaders;
+        public delegate* unmanaged<TSelf*, ushort*, int> SetAdditionalHeaders;
 
         [NativeTypeName("HRESULT (HWND, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IExtensionServices*, HWND, ushort*, ushort*, int> SetAuthenticateData;
+        public delegate* unmanaged<TSelf*, HWND, ushort*, ushort*, int> SetAuthenticateData;
     }
 }

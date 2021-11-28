@@ -62,21 +62,22 @@ public unsafe partial struct IThumbnailExtractor : IThumbnailExtractor.Interface
         HRESULT OnFileUpdated(IStorage* pStg);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IThumbnailExtractor*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IThumbnailExtractor*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IThumbnailExtractor*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IStorage *, ULONG, ULONG, ULONG *, ULONG *, HBITMAP *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IThumbnailExtractor*, IStorage*, uint, uint, uint*, uint*, HBITMAP*, int> ExtractThumbnail;
+        public delegate* unmanaged<TSelf*, IStorage*, uint, uint, uint*, uint*, HBITMAP*, int> ExtractThumbnail;
 
         [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IThumbnailExtractor*, IStorage*, int> OnFileUpdated;
+        public delegate* unmanaged<TSelf*, IStorage*, int> OnFileUpdated;
     }
 }

@@ -62,21 +62,22 @@ public unsafe partial struct ITfSourceSingle : ITfSourceSingle.Interface
         HRESULT UnadviseSingleSink([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("const IID &")] Guid* riid);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfSourceSingle*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfSourceSingle*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfSourceSingle*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfClientId, const IID &, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfSourceSingle*, uint, Guid*, IUnknown*, int> AdviseSingleSink;
+        public delegate* unmanaged<TSelf*, uint, Guid*, IUnknown*, int> AdviseSingleSink;
 
         [NativeTypeName("HRESULT (TfClientId, const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfSourceSingle*, uint, Guid*, int> UnadviseSingleSink;
+        public delegate* unmanaged<TSelf*, uint, Guid*, int> UnadviseSingleSink;
     }
 }

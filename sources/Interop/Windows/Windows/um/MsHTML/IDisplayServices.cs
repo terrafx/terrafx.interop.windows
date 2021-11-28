@@ -112,36 +112,37 @@ public unsafe partial struct IDisplayServices : IDisplayServices.Interface
         HRESULT HasFlowLayout(IHTMLElement* pIElement, BOOL* pfHasFlowLayout);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayServices*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayServices*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayServices*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDisplayPointer **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayServices*, IDisplayPointer**, int> CreateDisplayPointer;
+        public delegate* unmanaged<TSelf*, IDisplayPointer**, int> CreateDisplayPointer;
 
         [NativeTypeName("HRESULT (RECT *, COORD_SYSTEM, COORD_SYSTEM, IHTMLElement *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayServices*, RECT*, COORD_SYSTEM, COORD_SYSTEM, IHTMLElement*, int> TransformRect;
+        public delegate* unmanaged<TSelf*, RECT*, COORD_SYSTEM, COORD_SYSTEM, IHTMLElement*, int> TransformRect;
 
         [NativeTypeName("HRESULT (POINT *, COORD_SYSTEM, COORD_SYSTEM, IHTMLElement *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayServices*, POINT*, COORD_SYSTEM, COORD_SYSTEM, IHTMLElement*, int> TransformPoint;
+        public delegate* unmanaged<TSelf*, POINT*, COORD_SYSTEM, COORD_SYSTEM, IHTMLElement*, int> TransformPoint;
 
         [NativeTypeName("HRESULT (IHTMLCaret **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayServices*, IHTMLCaret**, int> GetCaret;
+        public delegate* unmanaged<TSelf*, IHTMLCaret**, int> GetCaret;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, IHTMLComputedStyle **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayServices*, IMarkupPointer*, IHTMLComputedStyle**, int> GetComputedStyle;
+        public delegate* unmanaged<TSelf*, IMarkupPointer*, IHTMLComputedStyle**, int> GetComputedStyle;
 
         [NativeTypeName("HRESULT (IHTMLElement *, RECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayServices*, IHTMLElement*, RECT, int> ScrollRectIntoView;
+        public delegate* unmanaged<TSelf*, IHTMLElement*, RECT, int> ScrollRectIntoView;
 
         [NativeTypeName("HRESULT (IHTMLElement *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDisplayServices*, IHTMLElement*, BOOL*, int> HasFlowLayout;
+        public delegate* unmanaged<TSelf*, IHTMLElement*, BOOL*, int> HasFlowLayout;
     }
 }

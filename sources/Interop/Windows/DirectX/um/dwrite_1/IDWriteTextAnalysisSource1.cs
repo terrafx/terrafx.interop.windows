@@ -88,33 +88,34 @@ public unsafe partial struct IDWriteTextAnalysisSource1 : IDWriteTextAnalysisSou
         HRESULT GetVerticalGlyphOrientation([NativeTypeName("UINT32")] uint textPosition, [NativeTypeName("UINT32 *")] uint* textLength, DWRITE_VERTICAL_GLYPH_ORIENTATION* glyphOrientation, [NativeTypeName("UINT8 *")] byte* bidiLevel);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSource1*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSource1*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSource1*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32, const WCHAR **, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSource1*, uint, ushort**, uint*, int> GetTextAtPosition;
+        public delegate* unmanaged<TSelf*, uint, ushort**, uint*, int> GetTextAtPosition;
 
         [NativeTypeName("HRESULT (UINT32, const WCHAR **, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSource1*, uint, ushort**, uint*, int> GetTextBeforePosition;
+        public delegate* unmanaged<TSelf*, uint, ushort**, uint*, int> GetTextBeforePosition;
 
         [NativeTypeName("DWRITE_READING_DIRECTION () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteTextAnalysisSource1*, DWRITE_READING_DIRECTION> GetParagraphReadingDirection;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_READING_DIRECTION> GetParagraphReadingDirection;
 
         [NativeTypeName("HRESULT (UINT32, UINT32 *, const WCHAR **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSource1*, uint, uint*, ushort**, int> GetLocaleName;
+        public delegate* unmanaged<TSelf*, uint, uint*, ushort**, int> GetLocaleName;
 
         [NativeTypeName("HRESULT (UINT32, UINT32 *, IDWriteNumberSubstitution **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSource1*, uint, uint*, IDWriteNumberSubstitution**, int> GetNumberSubstitution;
+        public delegate* unmanaged<TSelf*, uint, uint*, IDWriteNumberSubstitution**, int> GetNumberSubstitution;
 
         [NativeTypeName("HRESULT (UINT32, UINT32 *, DWRITE_VERTICAL_GLYPH_ORIENTATION *, UINT8 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteTextAnalysisSource1*, uint, uint*, DWRITE_VERTICAL_GLYPH_ORIENTATION*, byte*, int> GetVerticalGlyphOrientation;
+        public delegate* unmanaged<TSelf*, uint, uint*, DWRITE_VERTICAL_GLYPH_ORIENTATION*, byte*, int> GetVerticalGlyphOrientation;
     }
 }

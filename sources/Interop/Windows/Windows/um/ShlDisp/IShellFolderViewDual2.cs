@@ -163,63 +163,64 @@ public unsafe partial struct IShellFolderViewDual2 : IShellFolderViewDual2.Inter
         HRESULT SelectItemRelative(int iRelative);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolderViewDual2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolderViewDual2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolderViewDual2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolderViewDual2*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolderViewDual2*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolderViewDual2*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolderViewDual2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolderViewDual2*, IDispatch**, int> get_Application;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_Application;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolderViewDual2*, IDispatch**, int> get_Parent;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_Parent;
 
         [NativeTypeName("HRESULT (Folder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolderViewDual2*, Folder**, int> get_Folder;
+        public delegate* unmanaged<TSelf*, Folder**, int> get_Folder;
 
         [NativeTypeName("HRESULT (FolderItems **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolderViewDual2*, FolderItems**, int> SelectedItems;
+        public delegate* unmanaged<TSelf*, FolderItems**, int> SelectedItems;
 
         [NativeTypeName("HRESULT (FolderItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolderViewDual2*, FolderItem**, int> get_FocusedItem;
+        public delegate* unmanaged<TSelf*, FolderItem**, int> get_FocusedItem;
 
         [NativeTypeName("HRESULT (VARIANT *, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolderViewDual2*, VARIANT*, int, int> SelectItem;
+        public delegate* unmanaged<TSelf*, VARIANT*, int, int> SelectItem;
 
         [NativeTypeName("HRESULT (FolderItem *, VARIANT, VARIANT, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolderViewDual2*, FolderItem*, VARIANT, VARIANT, ushort**, int> PopupItemMenu;
+        public delegate* unmanaged<TSelf*, FolderItem*, VARIANT, VARIANT, ushort**, int> PopupItemMenu;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolderViewDual2*, IDispatch**, int> get_Script;
+        public delegate* unmanaged<TSelf*, IDispatch**, int> get_Script;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolderViewDual2*, int*, int> get_ViewOptions;
+        public delegate* unmanaged<TSelf*, int*, int> get_ViewOptions;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolderViewDual2*, uint*, int> get_CurrentViewMode;
+        public delegate* unmanaged<TSelf*, uint*, int> get_CurrentViewMode;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolderViewDual2*, uint, int> put_CurrentViewMode;
+        public delegate* unmanaged<TSelf*, uint, int> put_CurrentViewMode;
 
         [NativeTypeName("HRESULT (int) __attribute__((stdcall))")]
-        public delegate* unmanaged<IShellFolderViewDual2*, int, int> SelectItemRelative;
+        public delegate* unmanaged<TSelf*, int, int> SelectItemRelative;
     }
 }

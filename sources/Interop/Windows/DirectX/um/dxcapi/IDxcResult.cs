@@ -116,39 +116,40 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface
         DXC_OUT_KIND PrimaryOutput();
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcResult*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcResult*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcResult*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcResult*, HRESULT*, int> GetStatus;
+        public delegate* unmanaged<TSelf*, HRESULT*, int> GetStatus;
 
         [NativeTypeName("HRESULT (IDxcBlob **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcResult*, IDxcBlob**, int> GetResult;
+        public delegate* unmanaged<TSelf*, IDxcBlob**, int> GetResult;
 
         [NativeTypeName("HRESULT (IDxcBlobEncoding **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcResult*, IDxcBlobEncoding**, int> GetErrorBuffer;
+        public delegate* unmanaged<TSelf*, IDxcBlobEncoding**, int> GetErrorBuffer;
 
         [NativeTypeName("BOOL (DXC_OUT_KIND) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcResult*, DXC_OUT_KIND, int> HasOutput;
+        public delegate* unmanaged<TSelf*, DXC_OUT_KIND, int> HasOutput;
 
         [NativeTypeName("HRESULT (DXC_OUT_KIND, const IID &, void **, IDxcBlobUtf16 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcResult*, DXC_OUT_KIND, Guid*, void**, IDxcBlobUtf16**, int> GetOutput;
+        public delegate* unmanaged<TSelf*, DXC_OUT_KIND, Guid*, void**, IDxcBlobUtf16**, int> GetOutput;
 
         [NativeTypeName("UINT32 ()")]
-        public delegate* unmanaged<IDxcResult*, uint> GetNumOutputs;
+        public delegate* unmanaged<TSelf*, uint> GetNumOutputs;
 
         [NativeTypeName("DXC_OUT_KIND (UINT32)")]
-        public delegate* unmanaged<IDxcResult*, uint, DXC_OUT_KIND> GetOutputByIndex;
+        public delegate* unmanaged<TSelf*, uint, DXC_OUT_KIND> GetOutputByIndex;
 
         [NativeTypeName("DXC_OUT_KIND ()")]
-        public delegate* unmanaged<IDxcResult*, DXC_OUT_KIND> PrimaryOutput;
+        public delegate* unmanaged<TSelf*, DXC_OUT_KIND> PrimaryOutput;
     }
 }

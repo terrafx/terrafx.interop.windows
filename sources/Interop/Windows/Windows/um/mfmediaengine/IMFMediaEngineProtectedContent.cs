@@ -104,33 +104,34 @@ public unsafe partial struct IMFMediaEngineProtectedContent : IMFMediaEngineProt
         HRESULT SetApplicationCertificate([NativeTypeName("const BYTE *")] byte* pbBlob, [NativeTypeName("DWORD")] uint cbBlob);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineProtectedContent*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineProtectedContent*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineProtectedContent*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineProtectedContent*, IUnknown*, int> ShareResources;
+        public delegate* unmanaged<TSelf*, IUnknown*, int> ShareResources;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineProtectedContent*, uint*, int> GetRequiredProtections;
+        public delegate* unmanaged<TSelf*, uint*, int> GetRequiredProtections;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineProtectedContent*, HWND, int> SetOPMWindow;
+        public delegate* unmanaged<TSelf*, HWND, int> SetOPMWindow;
 
         [NativeTypeName("HRESULT (IUnknown *, const MFVideoNormalizedRect *, const RECT *, const MFARGB *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineProtectedContent*, IUnknown*, MFVideoNormalizedRect*, RECT*, MFARGB*, uint*, int> TransferVideoFrame;
+        public delegate* unmanaged<TSelf*, IUnknown*, MFVideoNormalizedRect*, RECT*, MFARGB*, uint*, int> TransferVideoFrame;
 
         [NativeTypeName("HRESULT (IMFContentProtectionManager *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineProtectedContent*, IMFContentProtectionManager*, int> SetContentProtectionManager;
+        public delegate* unmanaged<TSelf*, IMFContentProtectionManager*, int> SetContentProtectionManager;
 
         [NativeTypeName("HRESULT (const BYTE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IMFMediaEngineProtectedContent*, byte*, uint, int> SetApplicationCertificate;
+        public delegate* unmanaged<TSelf*, byte*, uint, int> SetApplicationCertificate;
     }
 }

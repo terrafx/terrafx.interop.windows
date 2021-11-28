@@ -83,30 +83,31 @@ public unsafe partial struct IPublishingWizard : IPublishingWizard.Interface
         HRESULT GetTransferManifest(HRESULT* phrFromTransfer, IXMLDOMDocument** pdocManifest);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPublishingWizard*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPublishingWizard*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IPublishingWizard*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HPROPSHEETPAGE *, UINT, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPublishingWizard*, HPROPSHEETPAGE*, uint, uint*, int> AddPages;
+        public delegate* unmanaged<TSelf*, HPROPSHEETPAGE*, uint, uint*, int> AddPages;
 
         [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPublishingWizard*, HPROPSHEETPAGE*, int> GetFirstPage;
+        public delegate* unmanaged<TSelf*, HPROPSHEETPAGE*, int> GetFirstPage;
 
         [NativeTypeName("HRESULT (HPROPSHEETPAGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPublishingWizard*, HPROPSHEETPAGE*, int> GetLastPage;
+        public delegate* unmanaged<TSelf*, HPROPSHEETPAGE*, int> GetLastPage;
 
         [NativeTypeName("HRESULT (IDataObject *, DWORD, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPublishingWizard*, IDataObject*, uint, ushort*, int> Initialize;
+        public delegate* unmanaged<TSelf*, IDataObject*, uint, ushort*, int> Initialize;
 
         [NativeTypeName("HRESULT (HRESULT *, IXMLDOMDocument **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IPublishingWizard*, HRESULT*, IXMLDOMDocument**, int> GetTransferManifest;
+        public delegate* unmanaged<TSelf*, HRESULT*, IXMLDOMDocument**, int> GetTransferManifest;
     }
 }

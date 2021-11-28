@@ -92,30 +92,31 @@ public unsafe partial struct IAMCrossbar : IAMCrossbar.Interface
         HRESULT get_CrossbarPinInfo(BOOL IsInputPin, [NativeTypeName("long")] int PinIndex, [NativeTypeName("long *")] int* PinIndexRelated, [NativeTypeName("long *")] int* PhysicalType);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMCrossbar*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMCrossbar*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMCrossbar*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMCrossbar*, int*, int*, int> get_PinCounts;
+        public delegate* unmanaged<TSelf*, int*, int*, int> get_PinCounts;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMCrossbar*, int, int, int> CanRoute;
+        public delegate* unmanaged<TSelf*, int, int, int> CanRoute;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMCrossbar*, int, int, int> Route;
+        public delegate* unmanaged<TSelf*, int, int, int> Route;
 
         [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMCrossbar*, int, int*, int> get_IsRoutedTo;
+        public delegate* unmanaged<TSelf*, int, int*, int> get_IsRoutedTo;
 
         [NativeTypeName("HRESULT (BOOL, long, long *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMCrossbar*, BOOL, int, int*, int*, int> get_CrossbarPinInfo;
+        public delegate* unmanaged<TSelf*, BOOL, int, int*, int*, int> get_CrossbarPinInfo;
     }
 }

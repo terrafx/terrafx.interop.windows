@@ -72,24 +72,25 @@ public unsafe partial struct IAMStreamSelect : IAMStreamSelect.Interface
         HRESULT Enable([NativeTypeName("long")] int lIndex, [NativeTypeName("DWORD")] uint dwFlags);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStreamSelect*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStreamSelect*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStreamSelect*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStreamSelect*, uint*, int> Count;
+        public delegate* unmanaged<TSelf*, uint*, int> Count;
 
         [NativeTypeName("HRESULT (long, AM_MEDIA_TYPE **, DWORD *, LCID *, DWORD *, LPWSTR *, IUnknown **, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStreamSelect*, int, AM_MEDIA_TYPE**, uint*, uint*, uint*, ushort**, IUnknown**, IUnknown**, int> Info;
+        public delegate* unmanaged<TSelf*, int, AM_MEDIA_TYPE**, uint*, uint*, uint*, ushort**, IUnknown**, IUnknown**, int> Info;
 
         [NativeTypeName("HRESULT (long, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IAMStreamSelect*, int, uint, int> Enable;
+        public delegate* unmanaged<TSelf*, int, uint, int> Enable;
     }
 }

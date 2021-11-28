@@ -130,45 +130,46 @@ public unsafe partial struct IHTMLCanvasElement : IHTMLCanvasElement.Interface
         HRESULT toDataURL([NativeTypeName("BSTR")] ushort* type, VARIANT jpegquality, [NativeTypeName("BSTR *")] ushort** pUrl);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCanvasElement*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCanvasElement*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCanvasElement*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCanvasElement*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCanvasElement*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCanvasElement*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCanvasElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCanvasElement*, int, int> put_width;
+        public delegate* unmanaged<TSelf*, int, int> put_width;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCanvasElement*, int*, int> get_width;
+        public delegate* unmanaged<TSelf*, int*, int> get_width;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCanvasElement*, int, int> put_height;
+        public delegate* unmanaged<TSelf*, int, int> put_height;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCanvasElement*, int*, int> get_height;
+        public delegate* unmanaged<TSelf*, int*, int> get_height;
 
         [NativeTypeName("HRESULT (BSTR, ICanvasRenderingContext2D **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCanvasElement*, ushort*, ICanvasRenderingContext2D**, int> getContext;
+        public delegate* unmanaged<TSelf*, ushort*, ICanvasRenderingContext2D**, int> getContext;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IHTMLCanvasElement*, ushort*, VARIANT, ushort**, int> toDataURL;
+        public delegate* unmanaged<TSelf*, ushort*, VARIANT, ushort**, int> toDataURL;
     }
 }

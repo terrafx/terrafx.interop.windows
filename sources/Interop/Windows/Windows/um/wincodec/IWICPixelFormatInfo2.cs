@@ -153,60 +153,61 @@ public unsafe partial struct IWICPixelFormatInfo2 : IWICPixelFormatInfo2.Interfa
         HRESULT GetNumericRepresentation(WICPixelFormatNumericRepresentation* pNumericRepresentation);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPixelFormatInfo2*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPixelFormatInfo2*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPixelFormatInfo2*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (WICComponentType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPixelFormatInfo2*, WICComponentType*, int> GetComponentType;
+        public delegate* unmanaged<TSelf*, WICComponentType*, int> GetComponentType;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPixelFormatInfo2*, Guid*, int> GetCLSID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetCLSID;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPixelFormatInfo2*, uint*, int> GetSigningStatus;
+        public delegate* unmanaged<TSelf*, uint*, int> GetSigningStatus;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPixelFormatInfo2*, uint, ushort*, uint*, int> GetAuthor;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetAuthor;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPixelFormatInfo2*, Guid*, int> GetVendorGUID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetVendorGUID;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPixelFormatInfo2*, uint, ushort*, uint*, int> GetVersion;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetVersion;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPixelFormatInfo2*, uint, ushort*, uint*, int> GetSpecVersion;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetSpecVersion;
 
         [NativeTypeName("HRESULT (UINT, WCHAR *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPixelFormatInfo2*, uint, ushort*, uint*, int> GetFriendlyName;
+        public delegate* unmanaged<TSelf*, uint, ushort*, uint*, int> GetFriendlyName;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPixelFormatInfo2*, Guid*, int> GetFormatGUID;
+        public delegate* unmanaged<TSelf*, Guid*, int> GetFormatGUID;
 
         [NativeTypeName("HRESULT (IWICColorContext **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPixelFormatInfo2*, IWICColorContext**, int> GetColorContext;
+        public delegate* unmanaged<TSelf*, IWICColorContext**, int> GetColorContext;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPixelFormatInfo2*, uint*, int> GetBitsPerPixel;
+        public delegate* unmanaged<TSelf*, uint*, int> GetBitsPerPixel;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPixelFormatInfo2*, uint*, int> GetChannelCount;
+        public delegate* unmanaged<TSelf*, uint*, int> GetChannelCount;
 
         [NativeTypeName("HRESULT (UINT, UINT, BYTE *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPixelFormatInfo2*, uint, uint, byte*, uint*, int> GetChannelMask;
+        public delegate* unmanaged<TSelf*, uint, uint, byte*, uint*, int> GetChannelMask;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPixelFormatInfo2*, BOOL*, int> SupportsTransparency;
+        public delegate* unmanaged<TSelf*, BOOL*, int> SupportsTransparency;
 
         [NativeTypeName("HRESULT (WICPixelFormatNumericRepresentation *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICPixelFormatInfo2*, WICPixelFormatNumericRepresentation*, int> GetNumericRepresentation;
+        public delegate* unmanaged<TSelf*, WICPixelFormatNumericRepresentation*, int> GetNumericRepresentation;
     }
 }

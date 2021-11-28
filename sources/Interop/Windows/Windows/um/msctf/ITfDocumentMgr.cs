@@ -102,33 +102,34 @@ public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface
         HRESULT EnumContexts(IEnumTfContexts** ppEnum);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDocumentMgr*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDocumentMgr*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDocumentMgr*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfClientId, DWORD, IUnknown *, ITfContext **, TfEditCookie *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDocumentMgr*, uint, uint, IUnknown*, ITfContext**, uint*, int> CreateContext;
+        public delegate* unmanaged<TSelf*, uint, uint, IUnknown*, ITfContext**, uint*, int> CreateContext;
 
         [NativeTypeName("HRESULT (ITfContext *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDocumentMgr*, ITfContext*, int> Push;
+        public delegate* unmanaged<TSelf*, ITfContext*, int> Push;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDocumentMgr*, uint, int> Pop;
+        public delegate* unmanaged<TSelf*, uint, int> Pop;
 
         [NativeTypeName("HRESULT (ITfContext **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDocumentMgr*, ITfContext**, int> GetTop;
+        public delegate* unmanaged<TSelf*, ITfContext**, int> GetTop;
 
         [NativeTypeName("HRESULT (ITfContext **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDocumentMgr*, ITfContext**, int> GetBase;
+        public delegate* unmanaged<TSelf*, ITfContext**, int> GetBase;
 
         [NativeTypeName("HRESULT (IEnumTfContexts **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITfDocumentMgr*, IEnumTfContexts**, int> EnumContexts;
+        public delegate* unmanaged<TSelf*, IEnumTfContexts**, int> EnumContexts;
     }
 }

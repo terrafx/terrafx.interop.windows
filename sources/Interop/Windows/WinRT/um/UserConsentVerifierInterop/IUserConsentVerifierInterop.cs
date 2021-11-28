@@ -74,27 +74,28 @@ public unsafe partial struct IUserConsentVerifierInterop : IUserConsentVerifierI
         HRESULT RequestVerificationForWindowAsync(HWND appWindow, HSTRING message, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUserConsentVerifierInterop*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUserConsentVerifierInterop*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IUserConsentVerifierInterop*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUserConsentVerifierInterop*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUserConsentVerifierInterop*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUserConsentVerifierInterop*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HWND, HSTRING, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IUserConsentVerifierInterop*, HWND, HSTRING, Guid*, void**, int> RequestVerificationForWindowAsync;
+        public delegate* unmanaged<TSelf*, HWND, HSTRING, Guid*, void**, int> RequestVerificationForWindowAsync;
     }
 }

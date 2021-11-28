@@ -54,18 +54,19 @@ public unsafe partial struct IThumbnailSettings : IThumbnailSettings.Interface
         HRESULT SetContext(WTS_CONTEXTFLAGS dwContext);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IThumbnailSettings*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IThumbnailSettings*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IThumbnailSettings*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (WTS_CONTEXTFLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<IThumbnailSettings*, WTS_CONTEXTFLAGS, int> SetContext;
+        public delegate* unmanaged<TSelf*, WTS_CONTEXTFLAGS, int> SetContext;
     }
 }

@@ -119,45 +119,46 @@ public unsafe partial struct IDWriteBitmapRenderTarget1 : IDWriteBitmapRenderTar
         HRESULT SetTextAntialiasMode(DWRITE_TEXT_ANTIALIAS_MODE antialiasMode);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteBitmapRenderTarget1*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteBitmapRenderTarget1*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteBitmapRenderTarget1*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (FLOAT, FLOAT, DWRITE_MEASURING_MODE, const DWRITE_GLYPH_RUN *, IDWriteRenderingParams *, COLORREF, RECT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteBitmapRenderTarget1*, float, float, DWRITE_MEASURING_MODE, DWRITE_GLYPH_RUN*, IDWriteRenderingParams*, COLORREF, RECT*, int> DrawGlyphRun;
+        public delegate* unmanaged<TSelf*, float, float, DWRITE_MEASURING_MODE, DWRITE_GLYPH_RUN*, IDWriteRenderingParams*, COLORREF, RECT*, int> DrawGlyphRun;
 
         [NativeTypeName("HDC () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteBitmapRenderTarget1*, void*> GetMemoryDC;
+        public delegate* unmanaged<TSelf*, void*> GetMemoryDC;
 
         [NativeTypeName("FLOAT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteBitmapRenderTarget1*, float> GetPixelsPerDip;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, float> GetPixelsPerDip;
 
         [NativeTypeName("HRESULT (FLOAT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteBitmapRenderTarget1*, float, int> SetPixelsPerDip;
+        public delegate* unmanaged<TSelf*, float, int> SetPixelsPerDip;
 
         [NativeTypeName("HRESULT (DWRITE_MATRIX *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteBitmapRenderTarget1*, DWRITE_MATRIX*, int> GetCurrentTransform;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_MATRIX*, int> GetCurrentTransform;
 
         [NativeTypeName("HRESULT (const DWRITE_MATRIX *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteBitmapRenderTarget1*, DWRITE_MATRIX*, int> SetCurrentTransform;
+        public delegate* unmanaged<TSelf*, DWRITE_MATRIX*, int> SetCurrentTransform;
 
         [NativeTypeName("HRESULT (SIZE *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteBitmapRenderTarget1*, SIZE*, int> GetSize;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, SIZE*, int> GetSize;
 
         [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteBitmapRenderTarget1*, uint, uint, int> Resize;
+        public delegate* unmanaged<TSelf*, uint, uint, int> Resize;
 
         [NativeTypeName("DWRITE_TEXT_ANTIALIAS_MODE () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<IDWriteBitmapRenderTarget1*, DWRITE_TEXT_ANTIALIAS_MODE> GetTextAntialiasMode;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, DWRITE_TEXT_ANTIALIAS_MODE> GetTextAntialiasMode;
 
         [NativeTypeName("HRESULT (DWRITE_TEXT_ANTIALIAS_MODE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDWriteBitmapRenderTarget1*, DWRITE_TEXT_ANTIALIAS_MODE, int> SetTextAntialiasMode;
+        public delegate* unmanaged<TSelf*, DWRITE_TEXT_ANTIALIAS_MODE, int> SetTextAntialiasMode;
     }
 }

@@ -145,45 +145,46 @@ public unsafe partial struct IWICJpegFrameDecode : IWICJpegFrameDecode.Interface
         HRESULT CopyMinimalStream(uint streamOffset, uint cbStreamData, byte* pbStreamData, uint* pcbStreamDataActual);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICJpegFrameDecode*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICJpegFrameDecode*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICJpegFrameDecode*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICJpegFrameDecode*, BOOL*, int> DoesSupportIndexing;
+        public delegate* unmanaged<TSelf*, BOOL*, int> DoesSupportIndexing;
 
         [NativeTypeName("HRESULT (WICJpegIndexingOptions, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICJpegFrameDecode*, WICJpegIndexingOptions, uint, int> SetIndexing;
+        public delegate* unmanaged<TSelf*, WICJpegIndexingOptions, uint, int> SetIndexing;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICJpegFrameDecode*, int> ClearIndexing;
+        public delegate* unmanaged<TSelf*, int> ClearIndexing;
 
         [NativeTypeName("HRESULT (UINT, UINT, DXGI_JPEG_AC_HUFFMAN_TABLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICJpegFrameDecode*, uint, uint, DXGI_JPEG_AC_HUFFMAN_TABLE*, int> GetAcHuffmanTable;
+        public delegate* unmanaged<TSelf*, uint, uint, DXGI_JPEG_AC_HUFFMAN_TABLE*, int> GetAcHuffmanTable;
 
         [NativeTypeName("HRESULT (UINT, UINT, DXGI_JPEG_DC_HUFFMAN_TABLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICJpegFrameDecode*, uint, uint, DXGI_JPEG_DC_HUFFMAN_TABLE*, int> GetDcHuffmanTable;
+        public delegate* unmanaged<TSelf*, uint, uint, DXGI_JPEG_DC_HUFFMAN_TABLE*, int> GetDcHuffmanTable;
 
         [NativeTypeName("HRESULT (UINT, UINT, DXGI_JPEG_QUANTIZATION_TABLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICJpegFrameDecode*, uint, uint, DXGI_JPEG_QUANTIZATION_TABLE*, int> GetQuantizationTable;
+        public delegate* unmanaged<TSelf*, uint, uint, DXGI_JPEG_QUANTIZATION_TABLE*, int> GetQuantizationTable;
 
         [NativeTypeName("HRESULT (WICJpegFrameHeader *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICJpegFrameDecode*, WICJpegFrameHeader*, int> GetFrameHeader;
+        public delegate* unmanaged<TSelf*, WICJpegFrameHeader*, int> GetFrameHeader;
 
         [NativeTypeName("HRESULT (UINT, WICJpegScanHeader *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICJpegFrameDecode*, uint, WICJpegScanHeader*, int> GetScanHeader;
+        public delegate* unmanaged<TSelf*, uint, WICJpegScanHeader*, int> GetScanHeader;
 
         [NativeTypeName("HRESULT (UINT, UINT, UINT, BYTE *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICJpegFrameDecode*, uint, uint, uint, byte*, uint*, int> CopyScan;
+        public delegate* unmanaged<TSelf*, uint, uint, uint, byte*, uint*, int> CopyScan;
 
         [NativeTypeName("HRESULT (UINT, UINT, BYTE *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IWICJpegFrameDecode*, uint, uint, byte*, uint*, int> CopyMinimalStream;
+        public delegate* unmanaged<TSelf*, uint, uint, byte*, uint*, int> CopyMinimalStream;
     }
 }

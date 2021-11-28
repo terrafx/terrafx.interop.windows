@@ -57,18 +57,19 @@ public unsafe partial struct ID3D12ShaderReflectionVariable : ID3D12ShaderReflec
         uint GetInterfaceSlot(uint uArrayIndex);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (D3D12_SHADER_VARIABLE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflectionVariable*, D3D12_SHADER_VARIABLE_DESC*, int> GetDesc;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, D3D12_SHADER_VARIABLE_DESC*, int> GetDesc;
 
         [NativeTypeName("ID3D12ShaderReflectionType *() __attribute__((nothrow)) __attribute__((stdcall))")]
-        public new delegate* unmanaged<ID3D12ShaderReflectionVariable*, ID3D12ShaderReflectionType*> GetType;
+        public new delegate* unmanaged<TSelf*, ID3D12ShaderReflectionType*> GetType;
 
         [NativeTypeName("ID3D12ShaderReflectionConstantBuffer *() __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<ID3D12ShaderReflectionVariable*, ID3D12ShaderReflectionConstantBuffer*> GetBuffer;
+        public delegate* unmanaged<TSelf*, ID3D12ShaderReflectionConstantBuffer*> GetBuffer;
 
         [NativeTypeName("UINT (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[SuppressGCTransition]<ID3D12ShaderReflectionVariable*, uint, uint> GetInterfaceSlot;
+        public delegate* unmanaged[SuppressGCTransition]<TSelf*, uint, uint> GetInterfaceSlot;
     }
 }

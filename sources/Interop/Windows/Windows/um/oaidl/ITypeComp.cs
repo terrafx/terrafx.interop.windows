@@ -62,21 +62,22 @@ public unsafe partial struct ITypeComp : ITypeComp.Interface
         HRESULT BindType([NativeTypeName("LPOLESTR")] ushort* szName, [NativeTypeName("ULONG")] uint lHashVal, ITypeInfo** ppTInfo, ITypeComp** ppTComp);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeComp*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeComp*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeComp*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPOLESTR, ULONG, WORD, ITypeInfo **, DESCKIND *, BINDPTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeComp*, ushort*, uint, ushort, ITypeInfo**, DESCKIND*, BINDPTR*, int> Bind;
+        public delegate* unmanaged<TSelf*, ushort*, uint, ushort, ITypeInfo**, DESCKIND*, BINDPTR*, int> Bind;
 
         [NativeTypeName("HRESULT (LPOLESTR, ULONG, ITypeInfo **, ITypeComp **) __attribute__((stdcall))")]
-        public delegate* unmanaged<ITypeComp*, ushort*, uint, ITypeInfo**, ITypeComp**, int> BindType;
+        public delegate* unmanaged<TSelf*, ushort*, uint, ITypeInfo**, ITypeComp**, int> BindType;
     }
 }

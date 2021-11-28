@@ -83,27 +83,28 @@ public unsafe partial struct IDxcContainerBuilder : IDxcContainerBuilder.Interfa
         HRESULT SerializeContainer(IDxcOperationResult** ppResult);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcContainerBuilder*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcContainerBuilder*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcContainerBuilder*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDxcBlob *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcContainerBuilder*, IDxcBlob*, int> Load;
+        public delegate* unmanaged<TSelf*, IDxcBlob*, int> Load;
 
         [NativeTypeName("HRESULT (UINT32, IDxcBlob *) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcContainerBuilder*, uint, IDxcBlob*, int> AddPart;
+        public delegate* unmanaged<TSelf*, uint, IDxcBlob*, int> AddPart;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcContainerBuilder*, uint, int> RemovePart;
+        public delegate* unmanaged<TSelf*, uint, int> RemovePart;
 
         [NativeTypeName("HRESULT (IDxcOperationResult **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IDxcContainerBuilder*, IDxcOperationResult**, int> SerializeContainer;
+        public delegate* unmanaged<TSelf*, IDxcOperationResult**, int> SerializeContainer;
     }
 }

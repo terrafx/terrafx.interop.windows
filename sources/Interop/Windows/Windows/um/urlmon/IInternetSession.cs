@@ -112,36 +112,37 @@ public unsafe partial struct IInternetSession : IInternetSession.Interface
         HRESULT GetSessionOption([NativeTypeName("DWORD")] uint dwOption, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD *")] uint* pdwBufferLength, [NativeTypeName("DWORD")] uint dwReserved);
     }
 
-    public partial struct Vtbl
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetSession*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetSession*, uint> AddRef;
+        public delegate* unmanaged<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetSession*, uint> Release;
+        public delegate* unmanaged<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IClassFactory *, const IID &, LPCWSTR, ULONG, const LPCWSTR *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetSession*, IClassFactory*, Guid*, ushort*, uint, ushort**, uint, int> RegisterNameSpace;
+        public delegate* unmanaged<TSelf*, IClassFactory*, Guid*, ushort*, uint, ushort**, uint, int> RegisterNameSpace;
 
         [NativeTypeName("HRESULT (IClassFactory *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetSession*, IClassFactory*, ushort*, int> UnregisterNameSpace;
+        public delegate* unmanaged<TSelf*, IClassFactory*, ushort*, int> UnregisterNameSpace;
 
         [NativeTypeName("HRESULT (IClassFactory *, const IID &, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetSession*, IClassFactory*, Guid*, ushort*, int> RegisterMimeFilter;
+        public delegate* unmanaged<TSelf*, IClassFactory*, Guid*, ushort*, int> RegisterMimeFilter;
 
         [NativeTypeName("HRESULT (IClassFactory *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetSession*, IClassFactory*, ushort*, int> UnregisterMimeFilter;
+        public delegate* unmanaged<TSelf*, IClassFactory*, ushort*, int> UnregisterMimeFilter;
 
         [NativeTypeName("HRESULT (LPBC, LPCWSTR, IUnknown *, IUnknown **, IInternetProtocol **, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetSession*, IBindCtx*, ushort*, IUnknown*, IUnknown**, IInternetProtocol**, uint, int> CreateBinding;
+        public delegate* unmanaged<TSelf*, IBindCtx*, ushort*, IUnknown*, IUnknown**, IInternetProtocol**, uint, int> CreateBinding;
 
         [NativeTypeName("HRESULT (DWORD, LPVOID, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetSession*, uint, void*, uint, uint, int> SetSessionOption;
+        public delegate* unmanaged<TSelf*, uint, void*, uint, uint, int> SetSessionOption;
 
         [NativeTypeName("HRESULT (DWORD, LPVOID, DWORD *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<IInternetSession*, uint, void*, uint*, uint, int> GetSessionOption;
+        public delegate* unmanaged<TSelf*, uint, void*, uint*, uint, int> GetSessionOption;
     }
 }
