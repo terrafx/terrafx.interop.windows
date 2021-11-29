@@ -9,7 +9,9 @@ namespace TerraFX.Interop.DirectX;
 
 public static unsafe partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.XAPOAlloc"]/*' />
     public static void* XAPOAlloc(nuint size) => CoTaskMemAlloc(size);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.XAPOFree"]/*' />
     public static void XAPOFree(void* p) => CoTaskMemFree(p);
 }

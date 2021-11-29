@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+  <member name="DirectX.XAPOAlloc">
+    <summary>Memory allocation macro used by IXAPO methods that must allocate arbitrary sized structures that are subsequently returned to the application.</summary>
+    <param name="size">Size, in bytes, of the memory block to be allocated.</param>
+    <remarks>XAPOFree and XAPOAlloc are memory allocation macros that allow one module to allocate memory and another to free it, by guaranteeing that the same heap manager is used regardless of differences between the build environments of the two modules.</remarks>
+  </member>
+  <member name="DirectX.XAPOFree">
+    <summary>Macro used to free memory allocated with the XAPOAlloc macro.</summary>
+    <param name="p">Pointer to the memory block to be freed.</param>
+    <remarks>XAPOFree and XAPOAlloc are memory allocation macros that allow one module to allocate memory and another to free it, by guaranteeing that the same heap manager is used regardless of differences between the build environments of the two modules.</remarks>
+  </member>
+</doc>

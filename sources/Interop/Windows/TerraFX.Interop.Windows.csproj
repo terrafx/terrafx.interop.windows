@@ -8,4 +8,8 @@
     <TargetFrameworks>net6.0</TargetFrameworks>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="**/*.xml" />
+  </ItemGroup>
+
 </Project>

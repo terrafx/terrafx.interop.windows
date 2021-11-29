@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<doc>
+  <member name="XAPO_PROCESS_BUFFER_PARAMETERS">
+    <summary>Defines stream buffer parameters that may change from one call to the next. Used with the Process method.</summary>
+    <remarks>Although the format and maximum size values of a particular stream buffer are constant, as defined by the XAPO_LOCKFORPROCESS_BUFFER_PARAMETERS structure, the actual memory address of the stream buffer is permitted to change. For constant-bit-rate (CBR) XAPOs, ValidFrameCount is constant and is always equal to the corresponding XAPO_LOCKFORPROCESS_BUFFER_PARAMETERS.MaxFrameCount for this buffer.</remarks>
+  </member>
+  <member name="XAPO_PROCESS_BUFFER_PARAMETERS.pBuffer">
+    <summary>Pointer to a stream buffer that contains audio data. The buffer must be 16-byte aligned, non-NULL, and must be at least XAPO_LOCKFORPROCESS_BUFFER_PARAMETERS.MaxFrameCount frames in size.</summary>
+  </member>
+  <member name="XAPO_PROCESS_BUFFER_PARAMETERS.BufferFlags">
+    <summary>An XAPO_BUFFER_FLAGS enumeration describing the contents of the stream buffer.</summary>
+  </member>
+  <member name="XAPO_PROCESS_BUFFER_PARAMETERS.ValidFrameCount">
+    <summary>Number of frames to process; this value must be within the range 0 to XAPO_LOCKFORPROCESS_BUFFER_PARAMETERS.MaxFrameCount.</summary>
+  </member>
+</doc>

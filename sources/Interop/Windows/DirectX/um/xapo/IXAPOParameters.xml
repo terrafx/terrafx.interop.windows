@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<doc>
+  <member name="IXAPOParameters.GetParameters">
+    <summary>Gets the current values for any effect-specific parameters.</summary>
+    <param name="pParameters">Receives an effect-specific parameter block.</param>
+    <param name="ParameterByteSize">Size of pParameters, in bytes.</param>
+    <remarks>
+      <para>The data in pParameters is completely effect-specific and determined by the implementation of the IXAPOParameters::GetParameters function. The data returned in pParameters can be used to provide information about the current state of the XAPO.</para>
+      <para>Unlike SetParameters, XAudio2 does not call this method on the realtime audio processing thread. Thus, the XAPO must protect variables shared with IXAPOParameters::SetParameters or IXAPO::Process using appropriate synchronization. The CXAPOParametersBase class is an implementation of IXAPOParameters and its implementation of GetParameters efficiently handles this synchronization for the user.</para>
+      <para>XAudio2 calls this method from the IXAudio2Voice::GetEffectParameters method.</para>
+      <para>This method may block and should never be called from the realtime audio processing thread instead get the current parameters from CXAPOParametersBase::BeginProcess.</para>
+    </remarks>
+  </member>
+  <member name="IXAPOParameters.SetParameters">
+    <summary>Sets effect-specific parameters.</summary>
+    <param name="pParameters">Effect-specific parameter block.</param>
+    <param name="ParameterByteSize">Size of pParameters, in bytes.</param>
+    <remarks>
+      <para>The data in pParameters is completely effect-specific and determined by the implementation of the IXAPOParameters::SetParameters function. The data passed to SetParameters can be used to set the state of the XAPO and control the behavior of the IXAPO::Process function.</para>
+      <para>SetParameters can only be called on the real-time audio processing thread; no synchronization between SetParameters and the IXAPO::Process method is necessary. However, the IXAudio2Voice::SetEffectParameters method may be called from any thread as it adds in the required synchronization to deliver a copy (asynchronously) of the parameters to SetParameters on the real-time thread; no synchronization between IXAudio2Voice::SetEffectParameters and the IXAPO::Process method is necessary.</para>
+    </remarks>
+  </member>
+  <member name="IXAPOParameters">
+    <summary>An optional interface that allows an XAPO to use effect-specific parameters.</summary>
+  </member>
+</doc>

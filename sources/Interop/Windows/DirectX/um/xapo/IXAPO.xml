@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+  <member name="IXAPO.CalcInputFrames">
+    <summary>Returns the number of input frames required to generate the given number of output frames.</summary>
+    <param name="OutputFrameCount">The number of output frames desired.</param>
+    <returns>Returns the number of input frames required.</returns>
+    <remarks>
+      <para>XAudio2 calls this method to determine what size input buffer an XAPO requires to generate the given number of output frames. This method only needs to be called once while an XAPO is locked. CalcInputFrames is only called by XAudio2 if the XAPO is locked.</para>
+      <para>This function should not block, because it may be called from the realtime audio processing thread.</para>
+    </remarks>
+  </member>
+  <member name="IXAPO.CalcOutputFrames">
+    <summary>Returns the number of output frames that will be generated from a given number of input frames.</summary>
+    <param name="InputFrameCount">The number of input frames.</param>
+    <returns>Returns the number of output frames that will be produced.</returns>
+    <remarks>
+      <para>XAudio2 calls this method to determine how large of an output buffer an XAPO will require for a certain number of input frames. CalcOutputFrames is only called by XAudio2 if the XAPO is locked.</para>
+      <para>This function should not block, because it may be called from the realtime audio processing thread.</para>
+    </remarks>
+  </member>
+  <member name="IXAPO.GetRegistrationProperties">
+    <summary>Returns the registration properties of an XAPO.</summary>
+    <param name="ppRegistrationProperties">Receives a pointer to a XAPO_REGISTRATION_PROPERTIES structure containing the registration properties the XAPO was created with; use XAPOFree to free the structure.</param>
+    <returns>Returns S_OK if successful; returns an error code otherwise.</returns>
+  </member>
+  <member name="IXAPO.Initialize">
+    <summary>Performs any effect-specific initialization.</summary>
+    <param name="pData">Effect-specific initialization parameters, may be NULL if DataByteSize is 0.</param>
+    <param name="DataByteSize">Size of pData in bytes, may be 0 if pData is NULL.</param>
+    <returns>Returns S_OK if successful, an error code otherwise.</returns>
+    <remarks>The contents of pData are defined by a given XAPO. Immutable parameters (constant for the lifetime of the XAPO) should be set in this method. Once initialized, an XAPO cannot be initialized again. An XAPO should be initialized before passing it to XAudio2 as part of an effect chain.</remarks>
+  </member>
+  <member name="IXAPO.IsInputFormatSupported">
+    <summary>Queries if a specific input format is supported for a given output format.</summary>
+    <param name="pOutputFormat">Output format.</param>
+    <param name="pRequestedInputFormat">Input format to check for being supported.</param>
+    <param name="ppSupportedInputFormat">If not NULL, and the input format is not supported for the given output format, ppSupportedInputFormat returns a pointer to the closest input format that is supported. Use XAPOFree to free the returned structure.</param>
+    <returns>Returns S_OK if the format pair is supported. Returns XAPO_E_FORMAT_UNSUPPORTED if the format pair is not supported.</returns>
+    <remarks>The IXAPO::IsOutputFormatSupported and IsInputFormatSupported methods allow an XAPO to indicate which audio formats it is capable of processing. If a requested format is not supported, the XAPO should return the closest format that it does support. The closest format should be determined based on frame rate, bit depth, and channel count, in that order of importance. The behavior of IsInputFormatSupported is allowed to change, based on the internal state of the XAPO, but its behavior should remain constant between calls to the IXAPO::LockForProcess and IXAPO::UnlockForProcess methods.</remarks>
+  </member>
+  <member name="IXAPO.IsOutputFormatSupported">
+    <summary>Queries if a specific output format is supported for a given input format.</summary>
+    <param name="pInputFormat">Input format.</param>
+    <param name="pRequestedOutputFormat">Output format to check for being supported.</param>
+    <param name="ppSupportedOutputFormat">If not NULL and the output format is not supported for the given input format, ppSupportedOutputFormat returns a pointer to the closest output format that is supported. Use XAPOFree to free the returned structure.</param>
+    <returns>Returns S_OK if the format pair is supported. Returns XAPO_E_FORMAT_UNSUPPORTED if the format pair is not supported.</returns>
+    <remarks>The IXAPO::IsInputFormatSupported and IsOutputFormatSupported methods allow an XAPO to indicate which audio formats it is capable of processing. If a requested format is not supported, the XAPO should return the closest format that it does support. The closest format should be determined based on frame rate, bit depth, and channel count, in that order of importance. The behavior of IsOutputFormatSupported is allowed to change, based on the internal state of the XAPO, but its behavior should remain constant between calls to the IXAPO::LockForProcess and IXAPO::UnlockForProcess methods.</remarks>
+  </member>
+  <member name="IXAPO.LockForProcess">
+    <summary>Called by XAudio2 to lock the input and output configurations of an XAPO allowing it to do any final initialization before Process is called on the realtime thread.</summary>
+    <param name="InputLockedParameterCount">Number of elements in ppInputLockedParameters. Must be within the XAPO_REGISTRATION_PROPERTIES.MinInputBufferCount and XAPO_REGISTRATION_PROPERTIES.MaxInputBufferCount values passed to CXAPOBase::CXAPOBase.</param>
+    <param name="pInputLockedParameters">Array of input XAPO_LOCKFORPROCESS_BUFFER_PARAMETERS structures. pInputLockedParameters may be NULL if InputLockedParameterCount is 0, otherwise it must have InputLockedParameterCount elements.</param>
+    <param name="OutputLockedParameterCount">Number of elements in ppOutputLockedParameters. Must be within the XAPO_REGISTRATION_PROPERTIES.MinOutputBufferCount and XAPO_REGISTRATION_PROPERTIES.MaxOutputBufferCount values passed to CXAPOBase::CXAPOBase. If the XAPO_FLAG_BUFFERCOUNT_MUST_MATCH flag was specified in XAPO_REGISTRATION_PROPERTIES.Flags then OutputLockedParameterCount must equal InputLockedParameterCount.</param>
+    <param name="pOutputLockedParameters">Array of output XAPO_LOCKFORPROCESS_BUFFER_PARAMETERS structures. pOutputLockedParameters may be NULL if OutputLockedParameterCount is 0, otherwise it must have OutputLockedParameterCount elements.</param>
+    <returns>Returns S_OK if successful, an error code otherwise.</returns>
+    <remarks>
+      <para>Once locked, the input and output configuration and any other locked parameters remain constant until UnLockForProcess is called. After an XAPO is locked, further calls to LockForProcess have no effect until the UnLockForProcess function is called.</para>
+      <para>An XAPO indicates what specific formats it supports through its implementation of the IsInputFormatSupported and IsOutputFormatSupported methods. An XAPO should assert the input and output configurations are supported and that any required effect-specific initialization is complete. The IsInputFormatSupported, IsOutputFormatSupported, and Initialize methods should be used as necessary before calling this method.</para>
+      <para>Because Process is a nonblocking method, all internal memory buffers required for Process should be allocated in LockForProcess.</para>
+      <para>Process is never called before LockForProcess returns successfully.</para>
+      <para>LockForProcess is called directly by XAudio2 and should not be called by the client code.</para>
+    </remarks>
+  </member>
+  <member name="IXAPO.Process">
+    <summary>Runs the XAPO's digital signal processing (DSP) code on the given input and output buffers.</summary>
+    <param name="InputProcessParameterCount">Number of elements in pInputProcessParameters.</param>
+    <param name="pInputProcessParameters">Input array of XAPO_PROCESS_BUFFER_PARAMETERS structures.</param>
+    <param name="OutputProcessParameterCount">Number of elements in pOutputProcessParameters.</param>
+    <param name="pOutputProcessParameters">Output array of XAPO_PROCESS_BUFFER_PARAMETERS structures. On input, the value of XAPO_PROCESS_BUFFER_PARAMETERS. ValidFrameCount indicates the number of frames that the XAPO should write to the output buffer. On output, the value of XAPO_PROCESS_BUFFER_PARAMETERS. ValidFrameCount indicates the actual number of frames written.</param>
+    <param name="IsEnabled">TRUE to process normally; FALSE to process thru. See Remarks for additional information.</param>
+    <remarks>
+      <para>Implementations of this function should not block, as the function is called from the realtime audio processing thread.</para>
+      <para>All code that could cause a delay, such as format validation and memory allocation, should be put in the IXAPO::LockForProcess method, which is not called from the realtime audio processing thread.</para>
+      <para>For in-place processing, the pInputProcessParameters parameter will not necessarily be the same as pOutputProcessParameters. Rather, their pBuffer members will point to the same memory.</para>
+      <para>Multiple input and output buffers may be used with in-place XAPOs, though the input buffer count must equal the output buffer count. For in-place processing when multiple input and output buffers are used, the XAPO may assume the number of input buffers equals the number of output buffers.</para>
+      <para>In addition to writing to the output buffer, as appropriate, an XAPO is responsible for setting the output stream's buffer flags and valid frame count.</para>
+      <para>When IsEnabled is FALSE, the XAPO should not apply its normal processing to the given input/output buffers during. It should instead pass data from input to output with as little modification possible. Effects that perform format conversion should continue to do so. Effects must ensure transitions between normal and thru processing do not introduce discontinuities into the signal.</para>
+      <para>When writing a Process method, it is important to note XAudio2 audio data is interleaved, which means data from each channel is adjacent for a particular sample number. For example, if there was a 4-channel wave playing into an XAudio2 source voice, the audio data would be a sample of channel 0, a sample of channel 1, a sample of channel 2, a sample of channel 3, and then the next sample of channels 0, 1, 2, 3, and so on.</para>
+    </remarks>
+  </member>
+  <member name="IXAPO.Reset">
+    <summary>Resets variables dependent on frame history.</summary>
+    <remarks>
+      <para>Constant and locked parameters such as the input and output formats remain unchanged. Variables set by IXAPOParameters::SetParameters remain unchanged.</para>
+      <para>For example, an effect with delay should zero out its delay line during this method, but should not reallocate anything as the XAPO remains locked with a constant input and output configuration.</para>
+      <para>XAudio2 only calls this method if the XAPO is locked.</para>
+      <para>This method is called from the realtime thread and should not block.</para>
+    </remarks>
+  </member>
+  <member name="IXAPO.UnlockForProcess">
+    <summary>Deallocates variables that were allocated with the LockForProcess method.</summary>
+    <remarks>Unlocking an XAPO instance allows it to be reused with different input and output formats.</remarks>
+  </member>
+  <member name="IXAPO">
+    <summary>The interface for an Audio Processing Object which be used in an XAudio2 effect chain.</summary>
+  </member>
+</doc>

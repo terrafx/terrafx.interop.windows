@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<doc>
+  <member name="XAPO_REGISTRATION_PROPERTIES">
+    <summary>Describes general characteristics of an XAPO. Used withIXAPO::GetRegistrationProperties, CXAPOParametersBase::CXAPOParametersBase, andCXAPOBase::CXAPOBase.</summary>
+  </member>
+  <member name="XAPO_REGISTRATION_PROPERTIES.clsid">
+    <summary>COM class ID for use with the CoCreateInstance function.</summary>
+  </member>
+  <member name="XAPO_REGISTRATION_PROPERTIES.FriendlyName">
+    <summary>Friendly name, a unicode string.</summary>
+  </member>
+  <member name="XAPO_REGISTRATION_PROPERTIES.CopyrightInfo">
+    <summary>Copyright information, a unicode string.</summary>
+  </member>
+  <member name="XAPO_REGISTRATION_PROPERTIES.MajorVersion">
+    <summary>Major version number.</summary>
+  </member>
+  <member name="XAPO_REGISTRATION_PROPERTIES.MinorVersion">
+    <summary>Minor version number.</summary>
+  </member>
+  <member name="XAPO_REGISTRATION_PROPERTIES.Flags">
+    <summary>
+      <para>XAPO property flags that describe the general characteristics of process behavior. These flags are described in the following table.</para>
+      <para>For example, consider an effect which may be ran in stereo to 5.1 mode ormono to mono mode.  When set to stereo to 5.1, it will be run with separateinput and output buffers as format conversion is not permitted in-place.However, if configured to run mono to mono, the same XAPO can be runin-place.  Thus the same implementation may be conveniently reusedfor various input/output configurations, while taking advantage ofin-place processing when possible.</para>
+    </summary>
+  </member>
+  <member name="XAPO_REGISTRATION_PROPERTIES.MinInputBufferCount">
+    <summary>Minimum number of input streams required for processing.</summary>
+  </member>
+  <member name="XAPO_REGISTRATION_PROPERTIES.MaxInputBufferCount">
+    <summary>Maximum number of input streams required for processing.</summary>
+  </member>
+  <member name="XAPO_REGISTRATION_PROPERTIES.MinOutputBufferCount">
+    <summary>Minimum number of output streams required for processing.</summary>
+  </member>
+  <member name="XAPO_REGISTRATION_PROPERTIES.MaxOutputBufferCount">
+    <summary>Maximum number of output streams required for processing.</summary>
+  </member>
+</doc>

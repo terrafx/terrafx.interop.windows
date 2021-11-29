@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+  <member name="XAPO_LOCKFORPROCESS_PARAMETERS">
+    <summary>Defines stream buffer parameters that remain constant while an XAPO is locked. Used with the IXAPO::LockForProcess method.</summary>
+    <remarks>The byte size of the respective stream buffer must be at least MaxFrameCount × (pFormat-nBlockAlign) bytes.</remarks>
+  </member>
+  <member name="XAPO_LOCKFORPROCESS_PARAMETERS.pFormat">
+    <summary>A WAVFORMATEX describing the format for the stream buffer.</summary>
+  </member>
+  <member name="XAPO_LOCKFORPROCESS_PARAMETERS.MaxFrameCount">
+    <summary>Maximum number of frames in the stream buffer that IXAPO::Process would ever be required to handle, irrespective of dynamic parameter settings.</summary>
+  </member>
+</doc>
