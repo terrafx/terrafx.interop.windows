@@ -2685,6 +2685,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "errhandlingapi", "errhandli
 		generation\Windows\um\errhandlingapi\um-errhandlingapi.h = generation\Windows\um\errhandlingapi\um-errhandlingapi.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sddl", "sddl", "{B14E16A7-6D68-4D45-A0A0-90CF9C1A79EB}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\shared\sddl\generate.rsp = generation\Windows\shared\sddl\generate.rsp
+		generation\Windows\shared\sddl\header.txt = generation\Windows\shared\sddl\header.txt
+		generation\Windows\shared\sddl\shared-sddl.h = generation\Windows\shared\sddl\shared-sddl.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3100,6 +3107,7 @@ Global
 		{E861DAD6-1605-417F-9850-2CB8BDFFA53A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{73647067-4ED1-478A-BD13-8E9DB203BAC9} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{6783A12A-BC19-47EA-A006-2D856681241E} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{B14E16A7-6D68-4D45-A0A0-90CF9C1A79EB} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
