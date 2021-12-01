@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_OUTDUPL_POINTER_POSITION">
+    <summary>
+      <para>The <b>DXGI_OUTDUPL_POINTER_POSITION</b> structure describes the position of the hardware cursor.</para>
+    </summary>
+    <remarks>
+      <para>The <b>Position</b> member is valid only if the <b>Visible</b> member’s value is set to <b>TRUE</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
+    <seealso cref="DXGI_OUTDUPL_FRAME_INFO" />
+  </member>
+  <member name="DXGI_OUTDUPL_POINTER_POSITION.Position">
+    <summary>
+      <para>The position of the hardware cursor relative to the top-left of the adapter output.</para>
+    </summary>
+  </member>
+  <member name="DXGI_OUTDUPL_POINTER_POSITION.Visible">
+    <summary>
+      <para>Specifies whether the hardware cursor is visible. <b>TRUE</b> if visible; otherwise, <b>FALSE</b>. If the hardware cursor is not visible, the calling application does not display the cursor in the client.</para>
+    </summary>
+  </member>
+</doc>

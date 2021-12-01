@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDXGIDebug1.DisableLeakTrackingForThread">
+    <summary>
+      <para>Stops tracking leaks for the current thread.</para>
+    </summary>
+    <seealso cref="DXGIGetDebugInterface1" />
+    <seealso cref="IDXGIDebug1" />
+  </member>
+  <member name="IDXGIDebug1.EnableLeakTrackingForThread">
+    <summary>
+      <para>Starts tracking leaks for the current thread.</para>
+    </summary>
+    <seealso cref="DXGIGetDebugInterface1" />
+    <seealso cref="IDXGIDebug1" />
+  </member>
+  <member name="IDXGIDebug1.IsLeakTrackingEnabledForThread">
+    <summary>
+      <para>Gets a value indicating whether leak tracking is turned on for the current thread.</para>
+    </summary>
+    <returns>
+      <para>
+        <b>TRUE</b> if leak tracking is turned on for the current thread; otherwise, <b>FALSE</b>.</para>
+    </returns>
+    <seealso cref="DXGIGetDebugInterface1" />
+    <seealso cref="IDXGIDebug1" />
+  </member>
+  <member name="IDXGIDebug1">
+    <summary>
+      <para>Controls debug settings for Microsoft DirectX Graphics Infrastructure (DXGI). You can use the  <b>IDXGIDebug1</b> interface in Windows Store apps.</para>
+    </summary>
+    <remarks>
+      <para>Call the <see cref="DXGIGetDebugInterface1" /> function to obtain the <b>IDXGIDebug1</b> interface.</para>
+      <para>The <b>IDXGIDebug1</b> interface can be used only if the debug layer is turned on. For more info, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-layers">Debug Layer</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
+    <seealso cref="DXGIGetDebugInterface1" />
+    <seealso cref="IDXGIDebug" />
+  </member>
+</doc>

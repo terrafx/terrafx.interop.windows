@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_MORPHOLOGY_PROP">
+    <summary>
+      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/morphology">Morphology effect</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_MORPHOLOGY_PROP.D2D1_MORPHOLOGY_PROP_MODE">
+    <summary>
+      <para>The morphology mode.</para>
+      <para>The type is D2D1_MORPHOLOGY_MODE.</para>
+      <para>The default value is D2D1_MORPHOLOGY_MODE_ERODE.</para>
+    </summary>
+  </member>
+  <member name="D2D1_MORPHOLOGY_PROP.D2D1_MORPHOLOGY_PROP_WIDTH">
+    <summary>
+      <para>Size of the kernel in the X direction. The units are in DIPs. Values must be between 1 and 100 inclusive.</para>
+      <para>The type is UINT.</para>
+      <para>The default value is 1.</para>
+    </summary>
+  </member>
+  <member name="D2D1_MORPHOLOGY_PROP.D2D1_MORPHOLOGY_PROP_HEIGHT">
+    <summary>
+      <para>Size of the kernel in the Y direction. The units are in DIPs. Values must be between 1 and 100 inclusive.</para>
+      <para>The type is UINT.</para>
+      <para>The default value is 1.</para>
+    </summary>
+  </member>
+  <member name="D2D1_MORPHOLOGY_PROP.D2D1_MORPHOLOGY_PROP_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

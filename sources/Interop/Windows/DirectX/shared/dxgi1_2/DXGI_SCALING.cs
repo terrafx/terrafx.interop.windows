@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_SCALING.xml' path='doc/member[@name="DXGI_SCALING"]/*' />
 public enum DXGI_SCALING
 {
+    /// <include file='DXGI_SCALING.xml' path='doc/member[@name="DXGI_SCALING.DXGI_SCALING_STRETCH"]/*' />
     DXGI_SCALING_STRETCH = 0,
+
+    /// <include file='DXGI_SCALING.xml' path='doc/member[@name="DXGI_SCALING.DXGI_SCALING_NONE"]/*' />
     DXGI_SCALING_NONE = 1,
+
+    /// <include file='DXGI_SCALING.xml' path='doc/member[@name="DXGI_SCALING.DXGI_SCALING_ASPECT_RATIO_STRETCH"]/*' />
     DXGI_SCALING_ASPECT_RATIO_STRETCH = 2,
 }

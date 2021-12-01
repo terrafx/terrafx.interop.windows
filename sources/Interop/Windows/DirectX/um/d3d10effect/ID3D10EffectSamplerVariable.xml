@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D10EffectSamplerVariable.GetBackingStore">
+    <summary>
+      <para>Get a pointer to a variable that contains sampler state.</para>
+    </summary>
+    <param name="Index">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Index into an array of sampler descriptions. If there is only one sampler variable in the effect, use 0.</para>
+    </param>
+    <param name="pSamplerDesc">
+      <para>Type: <b><see cref="D3D10_SAMPLER_DESC" />*</b></para>
+      <para>A pointer to a sampler description (see <see cref="D3D10_SAMPLER_DESC" />).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D10EffectSamplerVariable Interface" />
+  </member>
+  <member name="ID3D10EffectSamplerVariable.GetSampler">
+    <summary>
+      <para>Get a pointer to a sampler interface.</para>
+    </summary>
+    <param name="Index">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Index into an array of sampler interfaces. If there is only one sampler interface, use 0.</para>
+    </param>
+    <param name="ppSampler">
+      <para>Type: <b><see cref="ID3D10SamplerState" />**</b></para>
+      <para>The address of a pointer to a sampler interface (see <see cref="ID3D10SamplerState Interface" />).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D10EffectSamplerVariable Interface" />
+  </member>
+  <member name="ID3D10EffectSamplerVariable">
+    <summary>
+      <para>A sampler interface accesses sampler state.</para>
+    </summary>
+    <remarks>
+      <para>An <b>ID3D10EffectSamplerVariable Interface</b> is created when an effect is read into memory.</para>
+      <para>Effect variables are saved in memory in the backing store; when a technique is applied, the values in the backing store are copied to the device. You
+can use either of these methods to return state. For examples, see <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-effects-set-state">Two Ways to Get the State in an Effect Variable</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-interfaces">Effect Interfaces (Direct3D 10)</seealso>
+    <seealso cref="ID3D10EffectVariable" />
+  </member>
+</doc>

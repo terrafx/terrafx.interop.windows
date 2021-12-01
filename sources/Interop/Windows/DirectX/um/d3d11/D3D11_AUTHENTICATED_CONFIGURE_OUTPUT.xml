@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_AUTHENTICATED_CONFIGURE_OUTPUT">
+    <summary>
+      <para>Contains the response from the <see cref="ID3D11VideoContext.ConfigureAuthenticatedChannel" /> method.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+  </member>
+  <member name="D3D11_AUTHENTICATED_CONFIGURE_OUTPUT.omac">
+    <summary>
+      <para>A <see cref="D3D11_OMAC" /> structure that contains a Message Authentication Code (MAC) of the data. The driver uses AES-based one-key CBC MAC (OMAC) to calculate this value for the block of data that appears after this structure member.</para>
+    </summary>
+  </member>
+  <member name="D3D11_AUTHENTICATED_CONFIGURE_OUTPUT.ConfigureType">
+    <summary>
+      <para>A GUID that specifies the command. For a list of GUIDs, see <see cref="D3D11_AUTHENTICATED_CONFIGURE_INPUT" />.</para>
+    </summary>
+  </member>
+  <member name="D3D11_AUTHENTICATED_CONFIGURE_OUTPUT.hChannel">
+    <summary>
+      <para>A handle to the authenticated channel.</para>
+    </summary>
+  </member>
+  <member name="D3D11_AUTHENTICATED_CONFIGURE_OUTPUT.SequenceNumber">
+    <summary>
+      <para>The command sequence number.</para>
+    </summary>
+  </member>
+  <member name="D3D11_AUTHENTICATED_CONFIGURE_OUTPUT.ReturnCode">
+    <summary>
+      <para>The result code for the command.</para>
+    </summary>
+  </member>
+</doc>

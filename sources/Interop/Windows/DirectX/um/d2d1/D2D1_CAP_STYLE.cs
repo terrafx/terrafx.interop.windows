@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_CAP_STYLE.xml' path='doc/member[@name="D2D1_CAP_STYLE"]/*' />
 public enum D2D1_CAP_STYLE : uint
 {
+    /// <include file='D2D1_CAP_STYLE.xml' path='doc/member[@name="D2D1_CAP_STYLE.D2D1_CAP_STYLE_FLAT"]/*' />
     D2D1_CAP_STYLE_FLAT = 0,
+
+    /// <include file='D2D1_CAP_STYLE.xml' path='doc/member[@name="D2D1_CAP_STYLE.D2D1_CAP_STYLE_SQUARE"]/*' />
     D2D1_CAP_STYLE_SQUARE = 1,
+
+    /// <include file='D2D1_CAP_STYLE.xml' path='doc/member[@name="D2D1_CAP_STYLE.D2D1_CAP_STYLE_ROUND"]/*' />
     D2D1_CAP_STYLE_ROUND = 2,
+
+    /// <include file='D2D1_CAP_STYLE.xml' path='doc/member[@name="D2D1_CAP_STYLE.D2D1_CAP_STYLE_TRIANGLE"]/*' />
     D2D1_CAP_STYLE_TRIANGLE = 3,
+
+    /// <include file='D2D1_CAP_STYLE.xml' path='doc/member[@name="D2D1_CAP_STYLE.D2D1_CAP_STYLE_FORCE_DWORD"]/*' />
     D2D1_CAP_STYLE_FORCE_DWORD = 0xffffffff,
 }

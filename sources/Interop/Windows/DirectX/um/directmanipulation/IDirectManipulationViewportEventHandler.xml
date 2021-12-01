@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirectManipulationViewportEventHandler.OnContentUpdated">
+    <summary>
+      <para>Called when content inside a viewport is updated.</para>
+    </summary>
+    <param name="viewport">
+      <para>The viewport that is updated.</para>
+    </param>
+    <param name="content">
+      <para>The content in the viewport that has changed.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method is called once for each  content change in the viewport. This can result in multiple <b>OnContentUpdated</b> calls. For instance, when the position of the content is changed, you can use <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationcontent-getcontenttransform">IDirectManipualtionContent.GetContentTransform</a> to retrieve the new value.</para>
+      <para>If you have actions that need to be executed once for a viewport update, implement <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewporteventhandler-onviewportupdated">OnViewportUpdated</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewporteventhandler">IDirectManipulationViewportEventHandler</seealso>
+  </member>
+  <member name="IDirectManipulationViewportEventHandler.OnViewportStatusChanged">
+    <summary>
+      <para>Called when the status of a viewport changes.</para>
+    </summary>
+    <param name="viewport">
+      <para>The viewport for which status has changed.</para>
+    </param>
+    <param name="current">
+      <para>The new status of the viewport.</para>
+    </param>
+    <param name="previous">
+      <para>The previous status of the viewport.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If you call <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-getstatus">GetStatus</a> from within this handler, the status returned is not guaranteed to be the same as at the time of the call. This is because of the asynchronous nature of the notification.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewporteventhandler">IDirectManipulationViewportEventHandler</seealso>
+  </member>
+  <member name="IDirectManipulationViewportEventHandler.OnViewportUpdated">
+    <summary>
+      <para>Called after all content in the viewport has been updated.</para>
+    </summary>
+    <param name="viewport">
+      <para>The viewport that has been updated.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If you have actions that need to be executed once for a viewport update, implement <b>OnViewportUpdated</b>. <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewporteventhandler-oncontentupdated">OnContentUpdated</a> is called once for each  content change in the viewport. This can result in multiple <b>OnContentUpdated</b> calls.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewporteventhandler">IDirectManipulationViewportEventHandler</seealso>
+  </member>
+  <member name="IDirectManipulationViewportEventHandler">
+    <summary>
+      <para>Defines methods for handling status and update events for the viewport.</para>
+      <para>
+        <b>Note</b>  When implementing a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> object, ensure that the <see cref="IUnknown" /> implementation supports multithreading through thread-safe reference counting. For more information, see <see cref="InterlockedIncrement" /> and <see cref="InterlockedDecrement" />.</para>
+    </summary>
+    <remarks>
+      <para>Client apps implement this handler to receive status and update events for viewports. Use <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-addeventhandler">AddEventHandler</a> to set the handler for a viewport. Each viewport can have more than one handler.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-interfaces">Direct Manipulation Interfaces</seealso>
+  </member>
+</doc>

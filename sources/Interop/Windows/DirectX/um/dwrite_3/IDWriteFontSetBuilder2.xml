@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFontSetBuilder2.AddFont">
+    <summary>
+      <para>Adds a font to the set being built, with the caller supplying enough information to search on and determine axis ranges, avoiding the need to open the potentially non-local font.</para>
+    </summary>
+    <param name="fontFile">
+      <para>Type: <b><see cref="IDWriteFontFile" />*</b></para>
+      <para>Font file reference object to add to the set.</para>
+    </param>
+    <param name="fontFaceIndex">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>The zero-based index of a font face in a collection.</para>
+    </param>
+    <param name="fontSimulations">
+      <para>Type: <b><see cref="DWRITE_FONT_SIMULATIONS" /></b></para>
+      <para>Font face simulation flags for algorithmic emboldening and italicization.</para>
+    </param>
+    <param name="fontAxisValues">
+      <para>Type: <b><see cref="DWRITE_FONT_AXIS_VALUE" /> const *</b></para>
+      <para>A pointer to an array containing a list of font axis values. The array should be the size (the number of elements) indicated by the <i>fontAxisValueCount</i> argument.</para>
+    </param>
+    <param name="fontAxisValueCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>The number of font axis values contained in the <i>fontAxisValues</i> array.</para>
+    </param>
+    <param name="fontAxisRanges">
+      <para>Type: <b><see cref="DWRITE_FONT_AXIS_RANGE" /> const *</b></para>
+      <para>List of axis ranges.</para>
+    </param>
+    <param name="fontAxisRangeCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>Number of axis ranges.</para>
+    </param>
+    <param name="properties">
+      <para>Type: <b><see cref="DWRITE_FONT_PROPERTY" /> const *</b></para>
+      <para>List of properties to associate with the reference.</para>
+    </param>
+    <param name="propertyCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>The number of properties defined.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+    <remarks>
+      <para>The font properties should include at least a family (typographic or weight/style/stretch). Otherwise the font would be accessible in the <b>IDWriteFontSet</b> only by index, not name.</para>
+    </remarks>
+  </member>
+  <member name="IDWriteFontSetBuilder2.AddFontFile">
+    <summary>
+      <para>Adds references to all the fonts in the specified font file. The method parses the font file to determine the fonts and their properties.</para>
+    </summary>
+    <param name="filePath">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">WCHAR</a> const *</b></para>
+      <para>Absolute file path to add to the font set.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+  </member>
+  <member name="IDWriteFontSetBuilder2">
+    <summary>
+      <para>Contains methods for building a font set.</para>
+      <para>This interface extends <see cref="IDWriteFontSetBuilder1" />.</para>
+    </summary>
+    <seealso cref="IDWriteFontSetBuilder1" />
+  </member>
+</doc>

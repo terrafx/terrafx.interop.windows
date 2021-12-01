@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID3D12DeviceDownlevel.xml' path='doc/member[@name="ID3D12DeviceDownlevel"]/*' />
 [Guid("74EAEE3F-2F4B-476D-82BA-2B85CB49E310")]
 [NativeTypeName("struct ID3D12DeviceDownlevel : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID3D12DeviceDownlevel : ID3D12DeviceDownlevel.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID3D12DeviceDownlevel : ID3D12DeviceDownlevel.Inter
         return ((delegate* unmanaged<ID3D12DeviceDownlevel*, Guid*, void**, int>)(lpVtbl[0]))((ID3D12DeviceDownlevel*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID3D12DeviceDownlevel : ID3D12DeviceDownlevel.Inter
         return ((delegate* unmanaged<ID3D12DeviceDownlevel*, uint>)(lpVtbl[1]))((ID3D12DeviceDownlevel*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID3D12DeviceDownlevel : ID3D12DeviceDownlevel.Inter
         return ((delegate* unmanaged<ID3D12DeviceDownlevel*, uint>)(lpVtbl[2]))((ID3D12DeviceDownlevel*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID3D12DeviceDownlevel.xml' path='doc/member[@name="ID3D12DeviceDownlevel.QueryVideoMemoryInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT QueryVideoMemoryInfo(uint NodeIndex, DXGI_MEMORY_SEGMENT_GROUP MemorySegmentGroup, DXGI_QUERY_VIDEO_MEMORY_INFO* pVideoMemoryInfo)

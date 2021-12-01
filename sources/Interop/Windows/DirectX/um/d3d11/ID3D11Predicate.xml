@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11Predicate">
+    <summary>
+      <para>A predicate interface determines whether geometry should be processed depending on the results of a previous draw call.</para>
+    </summary>
+    <remarks>
+      <para>To create a predicate object, call <see cref="ID3D11Device.CreatePredicate" />. To set the predicate object, call <see cref="ID3D11DeviceContext.SetPredication" />.</para>
+      <para>There are two types of predicates: stream-output-overflow predicates and occlusion predicates. Stream-output-overflow predicates cause any geometry residing in stream-output buffers that were overflowed to not be processed. Occlusion predicates cause any geometry that did not have a single sample pass the depth/stencil tests to not be processed.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-interfaces">Core Interfaces</seealso>
+    <seealso cref="ID3D11Query" />
+  </member>
+</doc>

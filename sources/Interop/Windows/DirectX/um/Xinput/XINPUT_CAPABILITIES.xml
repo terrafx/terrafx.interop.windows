@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="XINPUT_CAPABILITIES">
+    <summary>
+      <para>Describes the capabilities of a connected controller. The <see cref="XInputGetCapabilities" /> function returns <b>XINPUT_CAPABILITIES</b>.</para>
+    </summary>
+    <remarks>
+      <para>
+        <see cref="XInputGetCapabilities" /> returns <b>XINPUT_CAPABILITIES</b> to indicate the characteristics and available functionality of a specified controller.</para>
+      <para>
+        <see cref="XInputGetCapabilities" /> sets the structure members to indicate which inputs the device supports. For binary state controls, such as digital buttons, the corresponding bit reflects whether or not the control is supported by the device. For proportional controls, such as thumbsticks, the value indicates the resolution for that control. Some number of the least significant bits may not be set, indicating that the control does not provide resolution to that level.</para>
+      <para>The <i>SubType</i> member indicates the specific subtype of controller present. Games may detect the controller subtype and tune their handling of controller input or output based on subtypes that are well suited to their game genre. For example, a car racing game might check for the presence of a wheel controller to provide finer control of the car being driven. However, titles must not disable or ignore a device based on its subtype. Subtypes not recognized by the game or for which the game is not specifically tuned should be treated as a standard Xbox 360 Controller (XINPUT_DEVSUBTYPE_GAMEPAD).</para>
+      <para>Older XUSB Windows drivers report incomplete capabilities information, particularly for wireless devices. The latest XUSB Windows driver provides full support for wired and wireless devices, and more complete and accurate capabilities flags.</para>
+    </remarks>
+    <seealso cref="XINPUT_GAMEPAD" />
+    <seealso cref="XINPUT_VIBRATION" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xinput/structures">XInput Structures</seealso>
+    <seealso cref="XInputGetCapabilities" />
+  </member>
+  <member name="XINPUT_CAPABILITIES.Type">
+    <summary>
+      <para>Controller type. It must be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>XINPUT_DEVTYPE_GAMEPAD</description>
+          <description>The device is a game controller. </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="XINPUT_CAPABILITIES.SubType">
+    <summary>
+      <para>Subtype of the game controller. See <a href="https://docs.microsoft.com//windows/desktop/xinput/xinput-and-controller-subtypes">XINPUT and Controller Subtypes</a> for a list of allowed subtypes.</para>
+      <para>
+        <b>Note</b>  For restrictions on the use of this subtype value, see Remarks. More subtypes may be added in the future.</para>
+    </summary>
+  </member>
+  <member name="XINPUT_CAPABILITIES.Flags">
+    <summary>
+      <para>Features of the controller.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>XINPUT_CAPS_VOICE_SUPPORTED</description>
+          <description>Device has an integrated voice device.</description>
+        </item>
+        <item>
+          <description>XINPUT_CAPS_FFB_SUPPORTED</description>
+          <description>Device supports force feedback functionality. Note that these force-feedback features beyond rumble are not currently supported through XINPUT on Windows.</description>
+        </item>
+        <item>
+          <description>XINPUT_CAPS_WIRELESS</description>
+          <description>Device is wireless.</description>
+        </item>
+        <item>
+          <description>XINPUT_CAPS_PMD_SUPPORTED</description>
+          <description>Device supports plug-in modules. Note that plug-in modules like the text input device (TID)
+are not supported currently through XINPUT on Windows.</description>
+        </item>
+        <item>
+          <description>XINPUT_CAPS_NO_NAVIGATION</description>
+          <description>Device lacks menu navigation buttons (START, BACK, DPAD).</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="XINPUT_CAPABILITIES.Gamepad">
+    <summary>
+      <para>
+        <see cref="XINPUT_GAMEPAD" /> structure that describes available controller features and control resolutions.</para>
+    </summary>
+  </member>
+  <member name="XINPUT_CAPABILITIES.Vibration">
+    <summary>
+      <para>
+        <see cref="XINPUT_VIBRATION" /> structure that describes available vibration functionality and resolutions.</para>
+    </summary>
+  </member>
+</doc>

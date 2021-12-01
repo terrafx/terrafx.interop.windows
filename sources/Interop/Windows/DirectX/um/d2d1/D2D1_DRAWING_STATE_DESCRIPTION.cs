@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_DRAWING_STATE_DESCRIPTION.xml' path='doc/member[@name="D2D1_DRAWING_STATE_DESCRIPTION"]/*' />
 public partial struct D2D1_DRAWING_STATE_DESCRIPTION
 {
+    /// <include file='D2D1_DRAWING_STATE_DESCRIPTION.xml' path='doc/member[@name="D2D1_DRAWING_STATE_DESCRIPTION.antialiasMode"]/*' />
     public D2D1_ANTIALIAS_MODE antialiasMode;
 
+    /// <include file='D2D1_DRAWING_STATE_DESCRIPTION.xml' path='doc/member[@name="D2D1_DRAWING_STATE_DESCRIPTION.textAntialiasMode"]/*' />
     public D2D1_TEXT_ANTIALIAS_MODE textAntialiasMode;
 
+    /// <include file='D2D1_DRAWING_STATE_DESCRIPTION.xml' path='doc/member[@name="D2D1_DRAWING_STATE_DESCRIPTION.tag1"]/*' />
     [NativeTypeName("D2D1_TAG")]
     public ulong tag1;
 
+    /// <include file='D2D1_DRAWING_STATE_DESCRIPTION.xml' path='doc/member[@name="D2D1_DRAWING_STATE_DESCRIPTION.tag2"]/*' />
     [NativeTypeName("D2D1_TAG")]
     public ulong tag2;
 
+    /// <include file='D2D1_DRAWING_STATE_DESCRIPTION.xml' path='doc/member[@name="D2D1_DRAWING_STATE_DESCRIPTION.transform"]/*' />
     [NativeTypeName("D2D1_MATRIX_3X2_F")]
     public D2D_MATRIX_3X2_F transform;
 }

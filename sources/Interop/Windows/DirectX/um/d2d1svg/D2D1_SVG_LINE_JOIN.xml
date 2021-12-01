@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_SVG_LINE_JOIN">
+    <summary>
+      <para>Specifies a value for the SVG stroke-linejoin property.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_LINE_JOIN.D2D1_SVG_LINE_JOIN_BEVEL">
+    <summary>
+      <para>The property is set to SVG's 'bevel' value.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_LINE_JOIN.D2D1_SVG_LINE_JOIN_MITER">
+    <summary>
+      <para>The property is set to SVG's 'miter' value. Note that this is equivalent to D2D1_LINE_JOIN_MITER_OR_BEVEL, not D2D1_LINE_JOIN_MITER.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_LINE_JOIN.D2D1_SVG_LINE_JOIN_ROUND">
+    <summary>
+      <para>The property is set to SVG's 'round' value.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_LINE_JOIN.D2D1_SVG_LINE_JOIN_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

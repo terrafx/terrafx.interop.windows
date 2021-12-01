@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_BREAK_CONDITION">
+    <summary>
+      <para>Indicates the condition at the edges of inline object or text used to determine line-breaking behavior.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_BREAK_CONDITION.DWRITE_BREAK_CONDITION_NEUTRAL">
+    <summary>
+      <para>Indicates whether a break is allowed by determining  the condition of the neighboring text span or inline object.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_BREAK_CONDITION.DWRITE_BREAK_CONDITION_CAN_BREAK">
+    <summary>
+      <para>Indicates that a line break is allowed, unless overruled by the condition of the
+neighboring text span or inline object, either prohibited by a
+"may not break" condition or forced by a "must break" condition.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_BREAK_CONDITION.DWRITE_BREAK_CONDITION_MAY_NOT_BREAK">
+    <summary>
+      <para>Indicates that there should be no line  break, unless overruled by a "must break" condition from
+the neighboring text span or inline object.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_BREAK_CONDITION.DWRITE_BREAK_CONDITION_MUST_BREAK">
+    <summary>
+      <para>Indicates that the line break must happen, regardless of the condition of the adjacent
+text span or inline object.</para>
+    </summary>
+  </member>
+</doc>

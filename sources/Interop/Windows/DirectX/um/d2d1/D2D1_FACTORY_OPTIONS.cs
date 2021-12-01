@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_FACTORY_OPTIONS.xml' path='doc/member[@name="D2D1_FACTORY_OPTIONS"]/*' />
 public partial struct D2D1_FACTORY_OPTIONS
 {
+    /// <include file='D2D1_FACTORY_OPTIONS.xml' path='doc/member[@name="D2D1_FACTORY_OPTIONS.debugLevel"]/*' />
     public D2D1_DEBUG_LEVEL debugLevel;
 }

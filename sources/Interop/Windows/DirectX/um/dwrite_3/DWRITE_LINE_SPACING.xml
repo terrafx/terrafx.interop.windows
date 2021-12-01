@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_LINE_SPACING">
+    <summary>
+      <para>Sets the vertical spacing between lines of text.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_LINE_SPACING.method">
+    <summary>
+      <para>Type: <b><see cref="DWRITE_LINE_SPACING_METHOD" /></b></para>
+      <para>Method used to determine line spacing.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_LINE_SPACING.height">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>Spacing between lines. The interpretation of this parameter depends upon the line spacing method, as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>Line spacing: ignored</description>
+        </item>
+        <item>
+          <description>uniform line spacing: explicit distance in DIPs between lines</description>
+        </item>
+        <item>
+          <description>proportional line spacing: a scaling factor to be applied to the computed line height;
+for each line, the height of the line is computed as for default line spacing, and the scaling factor is applied to that value.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="DWRITE_LINE_SPACING.baseline">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>Distance from top of line to baseline.
+The interpretation of this parameter depends upon the line spacing method, as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>default line spacing: ignored</description>
+        </item>
+        <item>
+          <description>uniform line spacing: explicit distance in DIPs from the top of the line to the baseline</description>
+        </item>
+        <item>
+          <description>proportional line spacing: a scaling factor applied to the computed baseline; for each line,
+the baseline distance is computed as for default line spacing, and the scaling factor is applied to that value.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="DWRITE_LINE_SPACING.leadingBefore">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>Proportion of the entire leading distributed before the line. The allowed value is between 0 and 1.0. The remaining
+leading is distributed after the line. It is ignored for the default and uniform line spacing methods.
+The leading that is available to distribute before or after the line depends on the values of the height and
+baseline parameters.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_LINE_SPACING.fontLineGapUsage">
+    <summary>
+      <para>Type: <b><see cref="DWRITE_FONT_LINE_GAP_USAGE" /></b></para>
+      <para>Specify whether <see cref="DWRITE_FONT_METRICS" />.lineGap value should be part of the line metrics.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CD3D11_BOX.CD3D11_BOX">
+    <summary>
+      <para>Instantiates a new instance of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151614(v=vs.85)">CD3D11_BOX</a> structure that is initialized with a <b>CD3D11_BOX</b> structure.</para>
+    </summary>
+    <param name="o">
+      <para>Instantiates a new instance of a CD3D11_BOX structure that is initialized with a <b>D3D11_BOX</b> structure.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151614(v=vs.85)">CD3D11_BOX</seealso>
+  </member>
+  <member name="CD3D11_BOX.CD3D11_BOX">
+    <summary>
+      <para>Instantiates a new instance of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151614(v=vs.85)">CD3D11_BOX</a> structure that is initialized with the dimensions of a box.</para>
+    </summary>
+    <param name="Left">
+      <para>Type: <b>LONG</b></para>
+      <para>The x-coordinate of the left hand side  of the box.</para>
+    </param>
+    <param name="Top">
+      <para>Type: <b>LONG</b></para>
+      <para>The y-coordinate of the top of the box.</para>
+    </param>
+    <param name="Front">
+      <para>Type: <b>LONG</b></para>
+      <para>The z-coordinate of the front of the box.</para>
+    </param>
+    <param name="Right">
+      <para>Type: <b>LONG</b></para>
+      <para>The x-coordinate of the right hand side of the box.</para>
+    </param>
+    <param name="Bottom">
+      <para>Type: <b>LONG</b></para>
+      <para>The y-coordinate of the bottom of the box.</para>
+    </param>
+    <param name="Back">
+      <para>Type: <b>LONG</b></para>
+      <para>The y-coordinate of the back of the box.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151614(v=vs.85)">CD3D11_BOX</seealso>
+  </member>
+  <member name="CD3D11_BOX.CD3D11_BOX">
+    <summary>
+      <para>Instantiates a new instance of an uninitialized <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151614(v=vs.85)">CD3D11_BOX</a> structure.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151614(v=vs.85)">CD3D11_BOX</seealso>
+  </member>
+</doc>

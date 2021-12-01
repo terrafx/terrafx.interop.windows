@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDXGIFactory6">
+    <summary>
+      <para>This interface enables a single method that enumerates graphics adapters based on a given GPU preference.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
+    <seealso cref="IDXGIFactory" />
+    <seealso cref="IDXGIFactory1" />
+    <seealso cref="IDXGIFactory2" />
+    <seealso cref="IDXGIFactory3" />
+    <seealso cref="IDXGIFactory4" />
+    <seealso cref="IDXGIFactory5" />
+    <seealso href="https://github.com/microsoft/directx-graphics-samples/tree/develop/samples/uwp/d3d12xgpu">xGPU UWP sample</seealso>
+    <seealso href="https://github.com/microsoft/directx-graphics-samples/tree/develop/samples/desktop/d3d12xgpu">xGPU desktop sample</seealso>
+  </member>
+</doc>

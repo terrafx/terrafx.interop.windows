@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D10RasterizerState.GetDesc">
+    <summary>
+      <para>Get the properties of a rasterizer-state object.</para>
+    </summary>
+    <param name="pDesc">
+      <para>Type: <b><see cref="D3D10_RASTERIZER_DESC" />*</b></para>
+      <para>Pointer to a rasterizer-state description (see <see cref="D3D10_RASTERIZER_DESC" />).</para>
+    </param>
+    <seealso cref="ID3D10RasterizerState Interface" />
+  </member>
+  <member name="ID3D10RasterizerState">
+    <summary>
+      <para>A rasterizer-state interface accesses rasterizer state for the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-rasterizer-stage">rasterizer stage</a>.</para>
+    </summary>
+    <remarks>
+      <para>A rasterizer-state object is created with <see cref="ID3D10Device.CreateRasterizerState" /> and bound to the pipeline with <see cref="ID3D10Device.RSSetState" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-interfaces">Core Interfaces</seealso>
+    <seealso cref="ID3D10DeviceChild" />
+  </member>
+</doc>

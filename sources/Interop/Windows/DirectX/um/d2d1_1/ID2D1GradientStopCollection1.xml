@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1GradientStopCollection1.GetBufferPrecision">
+    <summary>
+      <para>Gets the precision of the gradient buffer.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="D2D1_BUFFER_PRECISION" /></b></para>
+      <para>The buffer precision of the gradient buffer.</para>
+    </returns>
+    <remarks>
+      <para>If this object was created using <see cref="ID2D1RenderTarget.CreateGradientStopCollection" />, this method returns D2D1_BUFFER_PRECISION_8BPC_UNORM.</para>
+    </remarks>
+    <seealso cref="ID2D1DeviceContext.CreateEffect" />
+    <seealso cref="ID2D1DeviceContext.CreateGradientStopCollection" />
+    <seealso cref="ID2D1GradientStopCollection1" />
+    <seealso cref="ID2D1RenderTarget.CreateGradientStopCollection" />
+  </member>
+  <member name="ID2D1GradientStopCollection1.GetColorInterpolationMode">
+    <summary>
+      <para>Retrieves the color interpolation mode that the gradient stop collection uses.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="D2D1_COLOR_INTERPOLATION_MODE" /></b></para>
+      <para>The color interpolation mode.</para>
+    </returns>
+    <seealso cref="ID2D1DeviceContext.CreateGradientStopCollection" />
+    <seealso cref="ID2D1GradientStopCollection1" />
+    <seealso cref="ID2D1RenderTarget.CreateGradientStopCollection" />
+  </member>
+  <member name="ID2D1GradientStopCollection1.GetGradientStops1">
+    <summary>
+      <para>Copies the gradient stops from the collection into memory.</para>
+    </summary>
+    <param name="gradientStops">
+      <para>Type: <b><see cref="D2D1_GRADIENT_STOP" />*</b></para>
+      <para>When this method returns, contains a pointer to a one-dimensional array of <see cref="D2D1_GRADIENT_STOP" /> structures.</para>
+    </param>
+    <param name="gradientStopsCount">
+      <para>Type: <b>UINT</b></para>
+      <para>The number of gradient stops to copy.</para>
+    </param>
+    <remarks>
+      <para>If the <see cref="ID2D1DeviceContext.CreateGradientStopCollection" />, this method returns the same values specified in the creation method. If the <b>ID2D1GradientStopCollection1</b> object was created using <b>ID2D1RenderTarget.CreateGradientStopCollection</b>, the stops returned here will first be transformed into the gamma space specified by the <i>colorInterpolationGamma</i> parameter. See the <see cref="ID2D1DeviceContext.CreateGradientStopCollection" />  method for more info about color space and gamma space.</para>
+      <para>If <i>gradientStopsCount</i> is less than the number of gradient stops in the collection, the remaining gradient stops are omitted. If <i>gradientStopsCount</i> is larger than the number of gradient stops in the collection, the extra gradient stops are set to <b>NULL</b>. To obtain the number of gradient stops in the collection, use the <see cref="GetGradientStopCount" /> method.</para>
+    </remarks>
+    <seealso cref="ID2D1DeviceContext.CreateEffect" />
+    <seealso cref="ID2D1DeviceContext.CreateGradientStopCollection" />
+    <seealso cref="ID2D1GradientStopCollection1" />
+    <seealso cref="ID2D1RenderTarget.CreateGradientStopCollection" />
+  </member>
+  <member name="ID2D1GradientStopCollection1.GetPostInterpolationSpace">
+    <summary>
+      <para>Gets the color space after interpolation has occurred.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="D2D1_COLOR_SPACE" /></b></para>
+      <para>This method returns the color space.</para>
+    </returns>
+    <remarks>
+      <para>If you create using <see cref="ID2D1RenderTarget.CreateGradientStopCollection" />, this method returns <see cref="D2D1_COLOR_SPACE_SRGB" />.</para>
+    </remarks>
+    <seealso cref="ID2D1DeviceContext.CreateEffect" />
+    <seealso cref="ID2D1DeviceContext.CreateGradientStopCollection" />
+    <seealso cref="ID2D1GradientStopCollection1" />
+    <seealso cref="ID2D1RenderTarget.CreateGradientStopCollection" />
+  </member>
+  <member name="ID2D1GradientStopCollection1.GetPreInterpolationSpace">
+    <summary>
+      <para>Gets the color space of the input colors as well as the space in which gradient stops are interpolated.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="D2D1_COLOR_SPACE" /></b></para>
+      <para>This method returns the color space.</para>
+    </returns>
+    <remarks>
+      <para>If this object was created using <see cref="ID2D1RenderTarget.CreateGradientStopCollection" />, this method  returns the color space related to the color interpolation gamma.</para>
+    </remarks>
+    <seealso cref="ID2D1DeviceContext.CreateEffect" />
+    <seealso cref="ID2D1DeviceContext.CreateGradientStopCollection" />
+    <seealso cref="ID2D1GradientStopCollection1" />
+    <seealso cref="ID2D1RenderTarget.CreateGradientStopCollection" />
+  </member>
+  <member name="ID2D1GradientStopCollection1">
+    <summary>
+      <para>Represents a collection of <see cref="D2D1_GRADIENT_STOP" /> objects for linear and radial gradient brushes. It provides get methods for all the new parameters added to the gradient stop collection.</para>
+    </summary>
+    <seealso cref="ID2D1DeviceContext.CreateGradientStopCollection" />
+    <seealso cref="ID2D1GradientStopCollection" />
+    <seealso cref="ID2D1RenderTarget.CreateGradientStopCollection" />
+  </member>
+</doc>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION">
+    <summary>
+      <para>Determines the type and direction of automatic scrolling animation to apply.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-enumerations">Direct Manipulation Enumerations</seealso>
+  </member>
+  <member name="DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION.DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION_STOP">
+    <summary>
+      <para>If content is scrolling, slowly stop along the direction of the motion.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION.DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION_FORWARD">
+    <summary>
+      <para>Scroll towards the positive boundary of the content.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION.DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION_REVERSE">
+    <summary>
+      <para>Scroll towards the origin of the content.</para>
+    </summary>
+  </member>
+</doc>

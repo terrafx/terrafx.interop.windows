@@ -7,8 +7,10 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_OUTDUPL_FLAG.xml' path='doc/member[@name="DXGI_OUTDUPL_FLAG"]/*' />
 [Flags]
 public enum DXGI_OUTDUPL_FLAG
 {
+    /// <include file='DXGI_OUTDUPL_FLAG.xml' path='doc/member[@name="DXGI_OUTDUPL_FLAG.DXGI_OUTDUPL_COMPOSITED_UI_CAPTURE_ONLY"]/*' />
     DXGI_OUTDUPL_COMPOSITED_UI_CAPTURE_ONLY = 1,
 }

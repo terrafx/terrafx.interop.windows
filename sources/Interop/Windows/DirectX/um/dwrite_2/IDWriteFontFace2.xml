@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFontFace2.GetColorPaletteCount">
+    <summary>
+      <para>Gets the number of color palettes defined by the font.</para>
+    </summary>
+    <returns>
+      <para>The return value is zero if the font has no color information. Color fonts are required to define at least one palette, with palette index zero reserved as the default palette.</para>
+    </returns>
+    <seealso cref="IDWriteFontFace2" />
+  </member>
+  <member name="IDWriteFontFace2.GetPaletteEntries">
+    <summary>
+      <para>Gets color values from the font's color palette.</para>
+    </summary>
+    <param name="colorPaletteIndex">
+      <para>Zero-based index of the color palette. If the font does not have a palette with the specified index, the method returns <b>DWRITE_E_NOCOLOR</b>.</para>
+    </param>
+    <param name="firstEntryIndex">
+      <para>Zero-based index of the first palette entry to read.</para>
+    </param>
+    <param name="entryCount">
+      <para>Number of palette entries to read.</para>
+    </param>
+    <param name="paletteEntries">
+      <para>Array that receives the color values.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>E_INVALIDARG</para>
+          </description>
+          <description>
+            <para>The sum of <i>firstEntryIndex</i> and <i>entryCount</i> is greater
+than the actual number of palette entries that's returned by the <see cref="GetPaletteEntryCount" /> method.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>DWRITE_E_NOCOLOR</para>
+          </description>
+          <description>
+            <para>The font doesn't have a palette with the specified palette index.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IDWriteFontFace2" />
+  </member>
+  <member name="IDWriteFontFace2.GetPaletteEntryCount">
+    <summary>
+      <para>Get the number of entries in each color palette.</para>
+    </summary>
+    <returns>
+      <para>The number of entries in each color palette. All color palettes
+in a font have the same number of palette entries. The return value is
+zero if the font has no color information.</para>
+    </returns>
+    <seealso cref="IDWriteFontFace2" />
+  </member>
+  <member name="IDWriteFontFace2.GetRecommendedRenderingMode">
+    <summary>
+      <para>Determines the recommended text rendering and grid-fit mode to be used based on the font, size, world transform, and measuring mode.</para>
+    </summary>
+    <param name="fontEmSize">
+      <para>Type: <b>FLOAT</b></para>
+      <para>Logical font size in DIPs.</para>
+    </param>
+    <param name="dpiX">
+      <para>Type: <b>FLOAT</b></para>
+      <para>Number of pixels per logical inch in the horizontal direction.</para>
+    </param>
+    <param name="dpiY">
+      <para>Type: <b>FLOAT</b></para>
+      <para>Number of pixels per logical inch in the vertical direction.</para>
+    </param>
+    <param name="transform">
+      <para>Type: <b>const <see cref="DWRITE_MATRIX" />*</b></para>
+      <para>A <see cref="DWRITE_MATRIX" /> structure that describes the world transform.</para>
+    </param>
+    <param name="isSideways">
+      <para>Type: <b>BOOL</b></para>
+      <para>Specifies whether the font is sideways. <b>TRUE</b> if the font is sideways; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <param name="outlineThreshold">
+      <para>Type: <b><see cref="DWRITE_OUTLINE_THRESHOLD" /></b></para>
+      <para>A <see cref="DWRITE_OUTLINE_THRESHOLD" />-typed value that specifies the quality of the graphics system's outline rendering, affects the size threshold above which outline rendering is used.</para>
+    </param>
+    <param name="measuringMode">
+      <para>Type: <b><see cref="DWRITE_MEASURING_MODE" /></b></para>
+      <para>A <see cref="DWRITE_MEASURING_MODE" />-typed value that specifies  the method used to measure during text layout. For proper glyph spacing, this method returns a rendering mode that is compatible with the specified measuring mode.</para>
+    </param>
+    <param name="renderingParams">
+      <para>Type: <b><see cref="IDWriteRenderingParams" />*</b></para>
+      <para>A pointer to a <see cref="IDWriteRenderingParams" /> interface for the rendering parameters object. This parameter is necessary in case the rendering parameters object overrides the rendering mode.</para>
+    </param>
+    <param name="renderingMode">
+      <para>Type: <b><see cref="DWRITE_RENDERING_MODE" />*</b></para>
+      <para>A pointer to a variable that receives a <see cref="DWRITE_RENDERING_MODE" />-typed value for the recommended rendering mode.</para>
+    </param>
+    <param name="gridFitMode">
+      <para>Type: <b><see cref="DWRITE_GRID_FIT_MODE" />*</b></para>
+      <para>A pointer to a variable that receives a <see cref="DWRITE_GRID_FIT_MODE" />-typed value for the recommended grid-fit mode.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontFace2" />
+  </member>
+  <member name="IDWriteFontFace2.IsColorFont">
+    <summary>
+      <para>Allows you to determine if a color rendering path is potentially necessary.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>BOOL</b></para>
+      <para>Returns <b>TRUE</b> if a color rendering path is potentially necessary.</para>
+    </returns>
+    <seealso cref="IDWriteFontFace2" />
+  </member>
+  <member name="IDWriteFontFace2">
+    <summary>
+      <para>Represents an absolute reference to a font face. This interface contains font face type, appropriate file references, and face identification data. It adds the ability to check whether a color rendering path is potentially necessary.</para>
+      <para>This interface extends <see cref="IDWriteFontFace1" />. Various font data such as metrics, names, and glyph outlines are obtained from <b>IDWriteFontFace</b>.</para>
+    </summary>
+    <seealso cref="IDWriteFontFace1" />
+  </member>
+</doc>

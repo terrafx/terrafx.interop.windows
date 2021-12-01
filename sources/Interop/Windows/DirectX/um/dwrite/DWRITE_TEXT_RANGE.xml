@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_TEXT_RANGE">
+    <summary>
+      <para>Specifies a range of text positions where format is applied in the text represented by an <see cref="IDWriteTextLayout" /> object.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_TEXT_RANGE.startPosition">
+    <summary>
+      <para>Type: <b>UINT32</b></para>
+      <para>The start position of the text range.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_TEXT_RANGE.length">
+    <summary>
+      <para>Type: <b>UINT32</b></para>
+      <para>The number positions in the text range.</para>
+    </summary>
+  </member>
+</doc>

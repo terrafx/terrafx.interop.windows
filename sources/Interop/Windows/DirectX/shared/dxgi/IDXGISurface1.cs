@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDXGISurface1.xml' path='doc/member[@name="IDXGISurface1"]/*' />
 [Guid("4AE63092-6327-4C1B-80AE-BFE12EA32B86")]
 [NativeTypeName("struct IDXGISurface1 : IDXGISurface")]
 [NativeInheritance("IDXGISurface")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface
         return ((delegate* unmanaged<IDXGISurface1*, Guid*, void**, int>)(lpVtbl[0]))((IDXGISurface1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface
         return ((delegate* unmanaged<IDXGISurface1*, uint>)(lpVtbl[1]))((IDXGISurface1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface
         return ((delegate* unmanaged<IDXGISurface1*, uint>)(lpVtbl[2]))((IDXGISurface1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDXGIObject.SetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint DataSize, [NativeTypeName("const void *")] void* pData)
@@ -47,6 +52,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface
         return ((delegate* unmanaged<IDXGISurface1*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGISurface1*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
     }
 
+    /// <inheritdoc cref="IDXGIObject.SetPrivateDataInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown)
@@ -54,6 +60,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface
         return ((delegate* unmanaged<IDXGISurface1*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGISurface1*)Unsafe.AsPointer(ref this), Name, pUnknown);
     }
 
+    /// <inheritdoc cref="IDXGIObject.GetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint* pDataSize, void* pData)
@@ -61,6 +68,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface
         return ((delegate* unmanaged<IDXGISurface1*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGISurface1*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
     }
 
+    /// <inheritdoc cref="IDXGIObject.GetParent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetParent([NativeTypeName("const IID &")] Guid* riid, void** ppParent)
@@ -68,6 +76,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface
         return ((delegate* unmanaged<IDXGISurface1*, Guid*, void**, int>)(lpVtbl[6]))((IDXGISurface1*)Unsafe.AsPointer(ref this), riid, ppParent);
     }
 
+    /// <inheritdoc cref="IDXGIDeviceSubObject.GetDevice" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppDevice)
@@ -75,6 +84,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface
         return ((delegate* unmanaged<IDXGISurface1*, Guid*, void**, int>)(lpVtbl[7]))((IDXGISurface1*)Unsafe.AsPointer(ref this), riid, ppDevice);
     }
 
+    /// <inheritdoc cref="IDXGISurface.GetDesc" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetDesc(DXGI_SURFACE_DESC* pDesc)
@@ -82,6 +92,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface
         return ((delegate* unmanaged<IDXGISurface1*, DXGI_SURFACE_DESC*, int>)(lpVtbl[8]))((IDXGISurface1*)Unsafe.AsPointer(ref this), pDesc);
     }
 
+    /// <inheritdoc cref="IDXGISurface.Map" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Map(DXGI_MAPPED_RECT* pLockedRect, uint MapFlags)
@@ -89,6 +100,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface
         return ((delegate* unmanaged<IDXGISurface1*, DXGI_MAPPED_RECT*, uint, int>)(lpVtbl[9]))((IDXGISurface1*)Unsafe.AsPointer(ref this), pLockedRect, MapFlags);
     }
 
+    /// <inheritdoc cref="IDXGISurface.Unmap" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT Unmap()
@@ -96,6 +108,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface
         return ((delegate* unmanaged<IDXGISurface1*, int>)(lpVtbl[10]))((IDXGISurface1*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDXGISurface1.xml' path='doc/member[@name="IDXGISurface1.GetDC"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetDC(BOOL Discard, HDC* phdc)
@@ -103,6 +116,7 @@ public unsafe partial struct IDXGISurface1 : IDXGISurface1.Interface
         return ((delegate* unmanaged<IDXGISurface1*, BOOL, HDC*, int>)(lpVtbl[11]))((IDXGISurface1*)Unsafe.AsPointer(ref this), Discard, phdc);
     }
 
+    /// <include file='IDXGISurface1.xml' path='doc/member[@name="IDXGISurface1.ReleaseDC"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT ReleaseDC(RECT* pDirtyRect)

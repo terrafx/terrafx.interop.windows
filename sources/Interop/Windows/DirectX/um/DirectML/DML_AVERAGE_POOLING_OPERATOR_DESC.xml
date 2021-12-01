@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_AVERAGE_POOLING_OPERATOR_DESC">
+    <summary>
+      <para>Averages values across the elements within the sliding window over the input tensor.</para>
+    </summary>
+  </member>
+  <member name="DML_AVERAGE_POOLING_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>An input tensor of <i>Sizes</i><code>{ BatchCount, ChannelCount, Height, Width }</code> for 4D, and <code>{ BatchCount, ChannelCount, Depth, Height, Weight }</code> for 5D.</para>
+    </summary>
+  </member>
+  <member name="DML_AVERAGE_POOLING_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A description of the output tensor. The sizes of the output tensor can be computed as follows.</para>
+      <code>OutputTensor-&gt;Sizes[0] = InputTensor-&gt;Sizes[0];
+OutputTensor-&gt;Sizes[1] = InputTensor-&gt;Sizes[1];
+
+for (UINT i = 0; i &lt; DimensionCount; ++i) {
+    UINT PaddedSize = InputTensor-&gt;Sizes[i + 2] + StartPadding[i] + EndPadding[i];
+    OutputTensor-&gt;Sizes[i + 2] = (PaddedSize - WindowSizes[i]) / Strides[i] + 1;
+}
+</code>
+    </summary>
+  </member>
+  <member name="DML_AVERAGE_POOLING_OPERATOR_DESC.DimensionCount">
+    <summary>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>The number of spatial dimensions of the input tensor <i>InputTensor</i>, which also corresponds to the number of dimensions of the sliding window <i>WindowSize</i>. This value also determines the size of the <i>Strides</i>, <i>StartPadding</i>, and <i>EndPadding</i> arrays. It should be set to 2 when <i>InputTensor</i> is 4D, and 3 when it's a 5D tensor.</para>
+    </summary>
+  </member>
+  <member name="DML_AVERAGE_POOLING_OPERATOR_DESC.Strides">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>The strides for the sliding window dimensions of sizes <code>{ Height, Width }</code> when the <i>DimensionCount</i> is set to 2, or <code>{ Depth, Height, Width }</code> when set to 3.</para>
+    </summary>
+  </member>
+  <member name="DML_AVERAGE_POOLING_OPERATOR_DESC.WindowSize">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>The dimensions of the sliding window in <code>{ Height, Width }</code> when <i>DimensionCount</i> is set to 2, or <code>{ Depth, Height, Width }</code> when set to 3.</para>
+    </summary>
+  </member>
+  <member name="DML_AVERAGE_POOLING_OPERATOR_DESC.StartPadding">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>The number of padding elements to be applied to the beginning of each spatial dimension of the input tensor <i>InputTensor</i>. The values are in <code>{ Height, Width }</code> when <i>DimensionCount</i> is set to 2, or <code>{ Depth, Height, Width }</code> when set to 3.</para>
+    </summary>
+  </member>
+  <member name="DML_AVERAGE_POOLING_OPERATOR_DESC.EndPadding">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>The number of padding elements to be applied to the end of each spatial dimension of the input tensor <i>InputTensor</i>. The values are in <code>{ Height, Width }</code> when <i>DimensionCount</i> is set to 2, or <code>{ Depth, Height, Width }</code> when set to 3.</para>
+    </summary>
+  </member>
+  <member name="DML_AVERAGE_POOLING_OPERATOR_DESC.IncludePadding">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>Indicates whether to include the padding elements around the spatial edges when calculating the average value across all elements within the sliding window. When the value is set to <b>FALSE</b>, the padding elements are not counted as part of the divisor value of the averaging calculation.</para>
+    </summary>
+  </member>
+</doc>

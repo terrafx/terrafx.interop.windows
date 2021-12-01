@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_MEMORY_SEGMENT_GROUP">
+    <summary>
+      <para>Specifies the memory segment group to use.</para>
+    </summary>
+    <remarks>
+      <para>This enum is used by <see cref="QueryVideoMemoryInfo" /> and <see cref="SetVideoMemoryReservation" />.</para>
+      <para>Refer to the remarks for <see cref="D3D12_MEMORY_POOL" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-enums">DXGI Enumerations</seealso>
+  </member>
+  <member name="DXGI_MEMORY_SEGMENT_GROUP.DXGI_MEMORY_SEGMENT_GROUP_LOCAL">
+    <summary>
+      <para>The grouping of segments which is considered local to the video adapter, and represents the fastest available memory to the GPU. Applications should target the local segment group as the target size for their working set.</para>
+    </summary>
+  </member>
+  <member name="DXGI_MEMORY_SEGMENT_GROUP.DXGI_MEMORY_SEGMENT_GROUP_NON_LOCAL">
+    <summary>
+      <para>The grouping of segments which is considered non-local to the video adapter, and may have slower performance than the local segment group.</para>
+    </summary>
+  </member>
+</doc>

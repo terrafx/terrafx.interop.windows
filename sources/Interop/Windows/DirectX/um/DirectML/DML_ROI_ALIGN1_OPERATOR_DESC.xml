@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_ROI_ALIGN1_OPERATOR_DESC">
+    <summary>
+      <para>Performs an ROI align operation, as described in the <a href="https://arxiv.org/abs/1703.06870">Mask R-CNN</a> paper. In summary, the operation extracts cropped windows from the input image tensor, and resizes them to a common output size specified by the last 2 dimensions of <i>OutputTensor</i> using the specified <i>InterpolationMode</i>.</para>
+      <blockquote>
+        <para>[!IMPORTANT]
+This API is available as part of the DirectML standalone redistributable package (see <a href="https://www.nuget.org/packages/microsoft.ai.directml/">Microsoft.AI.DirectML</a> version 1.6 and later. Also see <a href="https://docs.microsoft.com//windows/ai/directml/dml-version-history">DirectML version history</a>.</para>
+      </blockquote>
+      <para>The general logic is as follows.</para>
+      <code>for every region roiIndex
+    outputSizeX = OutputTensor.Sizes[3]
+    outputSizeY = OutputTensor.Sizes[2]
+    scaledRegionX1 = ROITensor[roiIndex, 0] * SpatialScaleX
+    scaledRegionY1 = ROITensor[roiIndex, 1] * SpatialScaleY
+    scaledRegionX2 = ROITensor[roiIndex, 2] * SpatialScaleX
+    scaledRegionY2 = ROITensor[roiIndex, 3] * SpatialScaleY
+    scaledRegionSizeX = scaledRegionX2 - scaledRegionX1
+    scaledRegionSizeY = scaledRegionY2 - scaledRegionY1
+    inputSamplesPerOutputSampleX = clamp(scaledRegionSizeX / outputSizeX, MinimumSamplesPerOutput, MaximumSamplesPerOutput)
+    inputSamplesPerOutputSampleY = clamp(scaledRegionSizeY / outputSizeY, MinimumSamplesPerOutput, MaximumSamplesPerOutput)
+    outputSampleSizeX = outputSizeX * inputSamplesPerOutputSampleX
+    outputSampleSizeY = outputSizeY * inputSamplesPerOutputSampleY
+    outputSampleToInputScaleX = scaledRegionSizeX / outputSampleSizeX
+    outputSampleToInputScaleY = scaledRegionSizeX / outputSampleSizeX
+
+    compute all output values
+endfor
+</code>
+      <para>Compute all the output values for the current region as follows.</para>
+      <code>for every output tensor element x y and channel in the region
+    outputValue = getOutputValue(channel, outputTensorX, outputTensorY)
+    OutputTensor[roiIndex, channel, outputTensorY, outputTensorX] = outputValue
+endfor
+</code>
+      <para>Compute each input sample for the output element as follows.</para>
+      <code>outputTensorSampleX = outputTensorX * inputSamplesPerOutputSampleX
+outputTensorSampleY = outputTensorY * inputSamplesPerOutputSampleY
+outputValue = 0
+for sampleX from outputTensorSampleX to &lt;= outputTensorSampleX + inputSamplesPerOutputSampleX
+    for sampleY from outputTensorSampleY to &lt;= outputTensorSampleY + inputSamplesPerOutputSampleY
+        inputTensorX = (sampleX - OutputPixelOffset) * outputSampleToInputScaleX + scaledRegionX1 - InputPixelOffset
+        inputTensorY = (sampleY - OutputPixelOffset) * outputSampleToInputScaleY + scaledRegionY1 - InputPixelOffset
+        inputValue = interpolate2D(InputTensor, BatchIndicesTensor[roiIndex], channel, inputTensorX, inputTensorY)
+        outputValue = either average or maximum with inputValue
+    endfor
+endfor
+return outputValue
+</code>
+    </summary>
+  </member>
+  <member name="DML_ROI_ALIGN1_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the input data with dimensions <code>{ BatchCount, ChannelCount, InputHeight, InputWidth }</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_ROI_ALIGN1_OPERATOR_DESC.ROITensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the regions of interest (ROI) data, a series of bounding boxes in floating-point coordinates that point into the X and Y dimensions of the input tensor. The allowed dimensions of <i>ROITensor</i> are <code>{ NumROIs, 4 }</code>, <code>{ 1, NumROIs, 4 }</code>, or <code>{ 1, 1, NumROIs, 4 }</code>. For each ROI, the values will be the coordinates of its top-left and bottom-right corners in the order <code>[x1, y1, x2, y2]</code>. Regions can be empty, meaning that all output pixels come from the single input coordinate, and regions can be inverted (for example, x2 less than x1), meaning that the output receives a mirrored/flipped version of the input. These coordinates are first scaled by <i>SpatialScaleX</i> and <i>SpatialScaleY</i>, but if they are both 1.0, then the region rectangles simply correspond directly to the input tensor coordinates.</para>
+    </summary>
+  </member>
+  <member name="DML_ROI_ALIGN1_OPERATOR_DESC.BatchIndicesTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the batch indices to extract the ROIs from. The allowed dimensions of <i>BatchIndicesTensor</i> are <code>{ NumROIs }</code>, <code>{ 1, NumROIs }</code>, <code>{ 1, 1, NumROIs }</code>, or <code>{ 1, 1, 1, NumROIs }</code>. Each value is the index of a batch from <i>InputTensor</i>. The behavior is undefined if the values are not in the range <code>[0, BatchCount)</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_ROI_ALIGN1_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the output data. The expected dimensions of <i>OutputTensor</i> are <code>{ NumROIs, ChannelCount, OutputHeight, OutputWidth }</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_ROI_ALIGN1_OPERATOR_DESC.ReductionFunction">
+    <summary>
+      <para>Type: <b><see cref="DML_REDUCE_FUNCTION" /></b></para>
+      <para>The reduction function to use when reducing across all input samples that contribute to an output element (<b>DML_REDUCE_FUNCTION_AVERAGE</b> or <b>DML_REDUCE_FUNCTION_MAX</b>). The number of input samples to reduce across is bounded by <i>MinimumSamplesPerOutput</i> and <i>MaximumSamplesPerOutput</i>.</para>
+    </summary>
+  </member>
+  <member name="DML_ROI_ALIGN1_OPERATOR_DESC.InterpolationMode">
+    <summary>
+      <para>Type: <b><see cref="DML_INTERPOLATION_MODE" /></b></para>
+      <para>The interpolation mode to use when resizing the regions.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>DML_INTERPOLATION_MODE_NEAREST_NEIGHBOR</b>. Uses the <i>nearest nighbor</i> algorithm, which chooses the input element nearest to the corresponding pixel center for each output element.</description>
+        </item>
+        <item>
+          <description>
+            <b>DML_INTERPOLATION_MODE_LINEAR</b>. Uses the <i>bilinear</i> algorithm, which computes the output element by doing the weighted average of the 2 nearest neighboring input elements per dimension. Since only 2 dimensions are resized, the weighted average is computed on a total of 4 input elements for each output element.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="DML_ROI_ALIGN1_OPERATOR_DESC.SpatialScaleX">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
+      <para>The X (or width) component of the scaling factor to multiply the <i>ROITensor</i> coordinates by in order to make them proportionate to <i>InputHeight</i> and <i>InputWidth</i>. For example, if <i>ROITensor</i> contains normalized coordinates (values in the range <code>[0..1]</code>), then <i>SpatialScaleX</i> would usually have the same value as <i>InputWidth</i>.</para>
+    </summary>
+  </member>
+  <member name="DML_ROI_ALIGN1_OPERATOR_DESC.SpatialScaleY">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
+      <para>The Y (or height) component of the scaling factor to multiply the <i>ROITensor</i> coordinates by in order to make them proportionate to <i>InputHeight</i> and <i>InputWidth</i>. For example, if <i>ROITensor</i> contains normalized coordinates (values in the range <code>[0..1]</code>), then <i>SpatialScaleY</i> would usually have the same value as <i>InputHeight</i>.</para>
+    </summary>
+  </member>
+  <member name="DML_ROI_ALIGN1_OPERATOR_DESC.InputPixelOffset">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
+      <para>The offset from <code>(0,0)</code> of the input coordinates to the top-left pixel center, typically either 0 or 0.5. When this value is 0, the top-left corner of the pixel is used instead of its center, which usually won't give the expected result, but is useful for compatibility with some frameworks. When this value is 0.5, pixels are treated as being at the center, which is the same behavior as <see cref="DML_ROI_ALIGN_OPERATOR_DESC" />.</para>
+    </summary>
+  </member>
+  <member name="DML_ROI_ALIGN1_OPERATOR_DESC.OutputPixelOffset">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
+      <para>The offset from the top-left pixel center to <code>(0,0)</code> of the output coordinates, typically either 0 or -0.5. When this value is 0, the top-left corner of the pixel is used instead of its center, which usually won't give the expected result, but is useful for compatibility with some frameworks. When this value is -0.5, pixels are treated as being at the center, which is the same behavior as <see cref="DML_ROI_ALIGN_OPERATOR_DESC" />.</para>
+    </summary>
+  </member>
+  <member name="DML_ROI_ALIGN1_OPERATOR_DESC.OutOfBoundsInputValue">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
+      <para>The value to read from <i>InputTensor</i> when the ROIs are outside the bounds of <i>InputTensor</i>. This can happen when the values obtained after scaling <i>ROITensor</i> by <i>SpatialScaleX</i> and <i>SpatialScaleY</i> are bigger than <i>InputWidth</i> and <i>InputHeight</i>.</para>
+    </summary>
+  </member>
+  <member name="DML_ROI_ALIGN1_OPERATOR_DESC.MinimumSamplesPerOutput">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The minimum number of input samples to use for every output element. The operator will calculate the number of input samples by doing <i>ScaledCropSize</i> / <i>OutputSize</i>, and then clamping it to <i>MinimumSamplesPerOutput</i> and <i>MaximumSamplesPerOutput</i>.</para>
+    </summary>
+  </member>
+  <member name="DML_ROI_ALIGN1_OPERATOR_DESC.MaximumSamplesPerOutput">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The maximum number of input samples to use for every output element. The operator will calculate the number of input samples by doing <i>ScaledCropSize</i> / <i>OutputSize</i>, and then clamping it to <i>MinimumSamplesPerOutput</i> and <i>MaximumSamplesPerOutput</i>.</para>
+    </summary>
+  </member>
+  <member name="DML_ROI_ALIGN1_OPERATOR_DESC.AlignRegionsToCorners">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>The output sample points in each region should be stretched out to the very corners of the region rather than evenly spread within the region. The default value is <b>FALSE</b>, which is the same behavior as <see cref="DML_ROI_ALIGN_OPERATOR_DESC" />.</para>
+    </summary>
+  </member>
+</doc>

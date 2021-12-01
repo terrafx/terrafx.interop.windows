@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC">
+    <summary>
+      <para>Computes backpropagation gradients for a rectified linear unit (ReLU). This operator performs the following element-wise computation.</para>
+      <code>X = InputTensor
+dY = InputGradientTensor
+
+OutputGradientTensor = (X &gt; 0 ? dY : 0)
+</code>
+      <para>The corresponding forward-pass operator is <see cref="DML_ACTIVATION_RELU_OPERATOR_DESC" />.</para>
+    </summary>
+    <seealso cref="DML_ACTIVATION_RELU_OPERATOR_DESC" />
+  </member>
+  <member name="DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The input (feature) tensor. This is typically the same input as was provided during the forward pass (see <see cref="DML_ACTIVATION_RELU_OPERATOR_DESC" />).</para>
+    </summary>
+  </member>
+  <member name="DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC.InputGradientTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The incoming gradient tensor. This is typically obtained from the output of backpropagation of a preceding layer. The <i>Sizes</i> and <i>DataType</i> of this tensor must exactly match those of the <i>InputTensor</i>.</para>
+    </summary>
+  </member>
+  <member name="DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>An output tensor containing the backpropagated gradients. The <i>Sizes</i> and <i>DataType</i> of this tensor must exactly match those of the <i>InputTensor</i>.</para>
+    </summary>
+  </member>
+</doc>

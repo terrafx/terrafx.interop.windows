@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_DEPTH_SPACE_ORDER">
+    <summary>
+      <para>Defines constants controlling the transform applied in the DirectML operators <see cref="DML_OPERATOR_DEPTH_TO_SPACE1" /> and <b>DML_OPERATOR_SPACE_TO_DEPTH1</b>. These are used within the <see cref="DML_DEPTH_TO_SPACE1_OPERATOR_DESC" /> and <see cref="DML_SPACE_TO_DEPTH1_OPERATOR_DESC" /> structures.</para>
+    </summary>
+    <remarks>
+      <para>See <see cref="DML_DEPTH_TO_SPACE1_OPERATOR_DESC" /> and <see cref="DML_SPACE_TO_DEPTH1_OPERATOR_DESC" /> documentation for examples showing the effect of these values.</para>
+    </remarks>
+    <seealso cref="DML_DEPTH_TO_SPACE1_OPERATOR_DESC" />
+    <seealso cref="DML_SPACE_TO_DEPTH1_OPERATOR_DESC" />
+  </member>
+  <member name="DML_DEPTH_SPACE_ORDER.DML_DEPTH_SPACE_ORDER_DEPTH_COLUMN_ROW">
+    <summary>
+      <para>Causes tensors used in <see cref="DML_DEPTH_TO_SPACE1_OPERATOR_DESC" /> and <see cref="DML_SPACE_TO_DEPTH1_OPERATOR_DESC" /> to be interpreted with the following layouts, where dimensions in parenthesis are flattened together.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>Depth version</b>: [Batch, (BlockHeight, BlockWidth, Channels), Height, Width]</description>
+        </item>
+        <item>
+          <description>
+            <b>Space version</b>: [Batch, Channels, (Height, BlockHeight), (Width, BlockWidth)]</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="DML_DEPTH_SPACE_ORDER.DML_DEPTH_SPACE_ORDER_COLUMN_ROW_DEPTH">
+    <summary>
+      <para>Causes tensors used in <see cref="DML_DEPTH_TO_SPACE1_OPERATOR_DESC" /> and <see cref="DML_SPACE_TO_DEPTH1_OPERATOR_DESC" /> to be interpreted with the following layouts, where dimensions in parenthesis are flattened together.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>Depth version</b>: [Batch, (Channels, BlockHeight, BlockWidth), Height, Width]</description>
+        </item>
+        <item>
+          <description>
+            <b>Space version</b>: [Batch, Channels, (Height, BlockHeight), (Width, BlockWidth)]</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

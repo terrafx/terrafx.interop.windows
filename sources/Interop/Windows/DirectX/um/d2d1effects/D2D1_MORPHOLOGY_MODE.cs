@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_MORPHOLOGY_MODE.xml' path='doc/member[@name="D2D1_MORPHOLOGY_MODE"]/*' />
 public enum D2D1_MORPHOLOGY_MODE : uint
 {
+    /// <include file='D2D1_MORPHOLOGY_MODE.xml' path='doc/member[@name="D2D1_MORPHOLOGY_MODE.D2D1_MORPHOLOGY_MODE_ERODE"]/*' />
     D2D1_MORPHOLOGY_MODE_ERODE = 0,
+
+    /// <include file='D2D1_MORPHOLOGY_MODE.xml' path='doc/member[@name="D2D1_MORPHOLOGY_MODE.D2D1_MORPHOLOGY_MODE_DILATE"]/*' />
     D2D1_MORPHOLOGY_MODE_DILATE = 1,
+
+    /// <include file='D2D1_MORPHOLOGY_MODE.xml' path='doc/member[@name="D2D1_MORPHOLOGY_MODE.D2D1_MORPHOLOGY_MODE_FORCE_DWORD"]/*' />
     D2D1_MORPHOLOGY_MODE_FORCE_DWORD = 0xffffffff,
 }

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_PANOSE_ASPECT_RATIO">
+    <summary>
+      <para>The <b>DWRITE_PANOSE_ASPECT_RATIO</b> enumeration contains values that specify info about the ratio between width and height of the character face.</para>
+    </summary>
+    <seealso cref="DWRITE_PANOSE" />
+  </member>
+  <member name="DWRITE_PANOSE_ASPECT_RATIO.DWRITE_PANOSE_ASPECT_RATIO_ANY">
+    <summary>
+      <para>Any aspect ratio.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ASPECT_RATIO.DWRITE_PANOSE_ASPECT_RATIO_NO_FIT">
+    <summary>
+      <para>No fit for aspect ratio.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ASPECT_RATIO.DWRITE_PANOSE_ASPECT_RATIO_VERY_CONDENSED">
+    <summary>
+      <para>Very condensed aspect ratio.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ASPECT_RATIO.DWRITE_PANOSE_ASPECT_RATIO_CONDENSED">
+    <summary>
+      <para>Condensed aspect ratio.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ASPECT_RATIO.DWRITE_PANOSE_ASPECT_RATIO_NORMAL">
+    <summary>
+      <para>Normal aspect ratio.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ASPECT_RATIO.DWRITE_PANOSE_ASPECT_RATIO_EXPANDED">
+    <summary>
+      <para>Expanded aspect ratio.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ASPECT_RATIO.DWRITE_PANOSE_ASPECT_RATIO_VERY_EXPANDED">
+    <summary>
+      <para>Very expanded aspect ratio.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteRenderingParams1.GetGrayscaleEnhancedContrast">
+    <summary>
+      <para>Gets the amount of contrast enhancement to use for grayscale antialiasing.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The contrast enhancement value. Valid values are greater than or equal to zero.</para>
+    </returns>
+    <seealso cref="IDWriteRenderingParams1" />
+  </member>
+  <member name="IDWriteRenderingParams1">
+    <summary>
+      <para>Represents text rendering settings for glyph rasterization and filtering.</para>
+    </summary>
+    <seealso cref="IDWriteRenderingParams" />
+  </member>
+</doc>

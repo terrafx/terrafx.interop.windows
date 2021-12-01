@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_CHANNEL_DEPTH">
+    <summary>
+      <para>Allows a caller to control the channel depth of a stage in the rendering pipeline.</para>
+    </summary>
+    <seealso cref="ID2D1RenderInfo.SetOutputBuffer" />
+  </member>
+  <member name="D2D1_CHANNEL_DEPTH.D2D1_CHANNEL_DEPTH_DEFAULT">
+    <summary>
+      <para>The channel depth is the default. It is inherited from the inputs.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CHANNEL_DEPTH.D2D1_CHANNEL_DEPTH_1">
+    <summary>
+      <para>The channel depth is 1.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CHANNEL_DEPTH.D2D1_CHANNEL_DEPTH_4">
+    <summary>
+      <para>The channel depth is 4.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CHANNEL_DEPTH.D2D1_CHANNEL_DEPTH_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

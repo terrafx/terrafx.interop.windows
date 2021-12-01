@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_SVG_DISPLAY">
+    <summary>
+      <para>Specifies a value for the SVG display property.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_DISPLAY.D2D1_SVG_DISPLAY_INLINE">
+    <summary>
+      <para>The element uses the default display behavior.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_DISPLAY.D2D1_SVG_DISPLAY_NONE">
+    <summary>
+      <para>The element and all children are not rendered directly.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_DISPLAY.D2D1_SVG_DISPLAY_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

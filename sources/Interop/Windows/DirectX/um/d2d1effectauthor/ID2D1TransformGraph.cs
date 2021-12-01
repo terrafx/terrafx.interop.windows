@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID2D1TransformGraph.xml' path='doc/member[@name="ID2D1TransformGraph"]/*' />
 [Guid("13D29038-C3E6-4034-9081-13B53A417992")]
 [NativeTypeName("struct ID2D1TransformGraph : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
         return ((delegate* unmanaged<ID2D1TransformGraph*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
         return ((delegate* unmanaged<ID2D1TransformGraph*, uint>)(lpVtbl[1]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
         return ((delegate* unmanaged<ID2D1TransformGraph*, uint>)(lpVtbl[2]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID2D1TransformGraph.xml' path='doc/member[@name="ID2D1TransformGraph.GetInputCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("UINT32")]
@@ -48,6 +53,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
         return ((delegate* unmanaged<ID2D1TransformGraph*, uint>)(lpVtbl[3]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID2D1TransformGraph.xml' path='doc/member[@name="ID2D1TransformGraph.SetSingleTransformNode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetSingleTransformNode(ID2D1TransformNode* node)
@@ -55,6 +61,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
         return ((delegate* unmanaged<ID2D1TransformGraph*, ID2D1TransformNode*, int>)(lpVtbl[4]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), node);
     }
 
+    /// <include file='ID2D1TransformGraph.xml' path='doc/member[@name="ID2D1TransformGraph.AddNode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT AddNode(ID2D1TransformNode* node)
@@ -62,6 +69,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
         return ((delegate* unmanaged<ID2D1TransformGraph*, ID2D1TransformNode*, int>)(lpVtbl[5]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), node);
     }
 
+    /// <include file='ID2D1TransformGraph.xml' path='doc/member[@name="ID2D1TransformGraph.RemoveNode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT RemoveNode(ID2D1TransformNode* node)
@@ -69,6 +77,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
         return ((delegate* unmanaged<ID2D1TransformGraph*, ID2D1TransformNode*, int>)(lpVtbl[6]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), node);
     }
 
+    /// <include file='ID2D1TransformGraph.xml' path='doc/member[@name="ID2D1TransformGraph.SetOutputNode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetOutputNode(ID2D1TransformNode* node)
@@ -76,6 +85,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
         return ((delegate* unmanaged<ID2D1TransformGraph*, ID2D1TransformNode*, int>)(lpVtbl[7]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), node);
     }
 
+    /// <include file='ID2D1TransformGraph.xml' path='doc/member[@name="ID2D1TransformGraph.ConnectNode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT ConnectNode(ID2D1TransformNode* fromNode, ID2D1TransformNode* toNode, [NativeTypeName("UINT32")] uint toNodeInputIndex)
@@ -83,6 +93,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
         return ((delegate* unmanaged<ID2D1TransformGraph*, ID2D1TransformNode*, ID2D1TransformNode*, uint, int>)(lpVtbl[8]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), fromNode, toNode, toNodeInputIndex);
     }
 
+    /// <include file='ID2D1TransformGraph.xml' path='doc/member[@name="ID2D1TransformGraph.ConnectToEffectInput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT ConnectToEffectInput([NativeTypeName("UINT32")] uint toEffectInputIndex, ID2D1TransformNode* node, [NativeTypeName("UINT32")] uint toNodeInputIndex)
@@ -90,6 +101,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
         return ((delegate* unmanaged<ID2D1TransformGraph*, uint, ID2D1TransformNode*, uint, int>)(lpVtbl[9]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), toEffectInputIndex, node, toNodeInputIndex);
     }
 
+    /// <include file='ID2D1TransformGraph.xml' path='doc/member[@name="ID2D1TransformGraph.Clear"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public void Clear()
@@ -97,6 +109,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
         ((delegate* unmanaged<ID2D1TransformGraph*, void>)(lpVtbl[10]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID2D1TransformGraph.xml' path='doc/member[@name="ID2D1TransformGraph.SetPassthroughGraph"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT SetPassthroughGraph([NativeTypeName("UINT32")] uint effectInputIndex)

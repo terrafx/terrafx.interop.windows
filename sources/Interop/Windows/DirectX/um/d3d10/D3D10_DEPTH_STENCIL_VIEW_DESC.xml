@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_DEPTH_STENCIL_VIEW_DESC">
+    <summary>
+      <para>Specifies the <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">subresource(s)</a> from a texture that are accessible using a depth-stencil view.</para>
+    </summary>
+    <remarks>
+      <para>These are valid formats for a depth-stencil view:</para>
+      <list type="bullet">
+        <item>
+          <description>DXGI_FORMAT_D16_UNORM</description>
+        </item>
+        <item>
+          <description>DXGI_FORMAT_D24_UNORM_S8_UINT</description>
+        </item>
+        <item>
+          <description>DXGI_FORMAT_D32_FLOAT</description>
+        </item>
+        <item>
+          <description>DXGI_FORMAT_D32_FLOAT_S8X24_UINT</description>
+        </item>
+        <item>
+          <description>DXGI_FORMAT_UNKNOWN</description>
+        </item>
+      </list>
+      <para>A depth-stencil view cannot use a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-access-views">typeless format</a>.  If the format chosen is DXGI_FORMAT_UNKNOWN, then the format of the parent resource is used.</para>
+      <para>A depth-stencil-view description is needed when calling <see cref="ID3D10Device.CreateDepthStencilView" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures">Resource Structures</seealso>
+  </member>
+  <member name="D3D10_DEPTH_STENCIL_VIEW_DESC.Format">
+    <summary>
+      <para>Type: <b><see cref="DXGI_FORMAT" /></b></para>
+      <para>Resource data  format (see <see cref="DXGI_FORMAT" />). See remarks for allowable formats.</para>
+    </summary>
+  </member>
+  <member name="D3D10_DEPTH_STENCIL_VIEW_DESC.ViewDimension">
+    <summary>
+      <para>Type: <b><see cref="D3D10_DSV_DIMENSION" /></b></para>
+      <para>Type of resource (see <see cref="D3D10_DSV_DIMENSION" />). Specifies how a depth-stencil resource will be accessed; the value is stored in the union in this structure.</para>
+    </summary>
+  </member>
+  <member name="D3D10_DEPTH_STENCIL_VIEW_DESC.Texture1D">
+    <summary>
+      <para>Type: <b><see cref="D3D10_TEX1D_DSV" /></b></para>
+      <para>Specifies a 1D texture subresource (see <see cref="D3D10_TEX1D_DSV" />).</para>
+    </summary>
+  </member>
+  <member name="D3D10_DEPTH_STENCIL_VIEW_DESC.Texture1DArray">
+    <summary>
+      <para>Type: <b><see cref="D3D10_TEX1D_ARRAY_DSV" /></b></para>
+      <para>Specifies an array of 1D texture subresources (see <see cref="D3D10_TEX1D_ARRAY_DSV" />).</para>
+    </summary>
+  </member>
+  <member name="D3D10_DEPTH_STENCIL_VIEW_DESC.Texture2D">
+    <summary>
+      <para>Type: <b><see cref="D3D10_TEX2D_DSV" /></b></para>
+      <para>Specifies a 2D texture subresource (see <see cref="D3D10_TEX2D_DSV" />).</para>
+    </summary>
+  </member>
+  <member name="D3D10_DEPTH_STENCIL_VIEW_DESC.Texture2DArray">
+    <summary>
+      <para>Type: <b><see cref="D3D10_TEX2D_ARRAY_DSV" /></b></para>
+      <para>Specifies an array of 2D texture subresources (see <see cref="D3D10_TEX2D_ARRAY_DSV" />).</para>
+    </summary>
+  </member>
+  <member name="D3D10_DEPTH_STENCIL_VIEW_DESC.Texture2DMS">
+    <summary>
+      <para>Type: <b><see cref="D3D10_TEX2DMS_DSV" /></b></para>
+      <para>Specifies a multisampled 2D texture contains a single subresource (see <see cref="D3D10_TEX2DMS_DSV" />).</para>
+    </summary>
+  </member>
+  <member name="D3D10_DEPTH_STENCIL_VIEW_DESC.Texture2DMSArray">
+    <summary>
+      <para>Type: <b><see cref="D3D10_TEX2DMS_ARRAY_DSV" /></b></para>
+      <para>Specifies a multisampled 2D texture contains a single subresource per texture (see <see cref="D3D10_TEX2DMS_ARRAY_DSV" />).</para>
+    </summary>
+  </member>
+</doc>

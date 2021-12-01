@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_FILL_MODE">
+    <summary>
+      <para>Determines the fill mode to use when rendering triangles.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration is part of a rasterizer-state object description (see <see cref="D3D10_RASTERIZER_DESC" />).</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-enums">Core Enumerations</seealso>
+  </member>
+  <member name="D3D10_FILL_MODE.D3D10_FILL_WIREFRAME">
+    <summary>
+      <para>Draw lines connecting the vertices. <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-primitive-topologies">Adjacent vertices</a> are not drawn.</para>
+    </summary>
+  </member>
+  <member name="D3D10_FILL_MODE.D3D10_FILL_SOLID">
+    <summary>
+      <para>Fill the triangles formed by the vertices. Adjacent vertices are not drawn.</para>
+    </summary>
+  </member>
+</doc>

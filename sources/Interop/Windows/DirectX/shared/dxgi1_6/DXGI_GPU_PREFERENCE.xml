@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_GPU_PREFERENCE">
+    <summary>
+      <para>The preference of GPU for the app to run on.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration is used in the <see cref="IDXGIFactory6.EnumAdapterByGpuPreference" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-enums">DXGI Enumerations</seealso>
+    <seealso href="https://github.com/microsoft/directx-graphics-samples/tree/develop/samples/uwp/d3d12xgpu">xGPU UWP sample</seealso>
+    <seealso href="https://github.com/microsoft/directx-graphics-samples/tree/develop/samples/desktop/d3d12xgpu">xGPU desktop sample</seealso>
+  </member>
+  <member name="DXGI_GPU_PREFERENCE.DXGI_GPU_PREFERENCE_UNSPECIFIED">
+    <summary>
+      <para>No preference of GPU.</para>
+    </summary>
+  </member>
+  <member name="DXGI_GPU_PREFERENCE.DXGI_GPU_PREFERENCE_MINIMUM_POWER">
+    <summary>
+      <para>Preference for the minimum-powered GPU (such as an integrated graphics processor, or iGPU).</para>
+    </summary>
+  </member>
+  <member name="DXGI_GPU_PREFERENCE.DXGI_GPU_PREFERENCE_HIGH_PERFORMANCE">
+    <summary>
+      <para>Preference for the highest performing GPU, such as a discrete graphics processor (dGPU) or external graphics processor (xGPU).</para>
+    </summary>
+  </member>
+</doc>

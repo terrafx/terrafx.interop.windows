@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DIRECTMANIPULATION_SNAPPOINT_COORDINATE">
+    <summary>
+      <para>Defines the coordinate system for a collection of snap points.</para>
+    </summary>
+    <remarks>
+      <para>If <b>DIRECTMANIPULATION_COORDINATE_ORIGIN</b> and <b>DIRECTMANIPULATION_COORDINATE_MIRRORED</b> are both specified, the snap points are interpreted as specified from the bottom and right boundaries of the content (the size of the content - the size of the viewport). This is intended for RTL reading scenarios where content is normally specified and rendered from right-to-left or bottom-to-top.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-enumerations">Direct Manipulation Enumerations</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationprimarycontent-setsnapcoordinate">SetSnapCoordinate</seealso>
+  </member>
+  <member name="DIRECTMANIPULATION_SNAPPOINT_COORDINATE.DIRECTMANIPULATION_COORDINATE_BOUNDARY">
+    <summary>
+      <para>Default.</para>
+      <para>Snap points are specified relative to the top and left boundaries of the content unless <b>DIRECTMANIPULATION_COORDINATE_MIRRORED</b> is also specified, in which case they are relative to the bottom and right boundaries of the content. For zoom, the boundary is 1.0f.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_SNAPPOINT_COORDINATE.DIRECTMANIPULATION_COORDINATE_ORIGIN">
+    <summary>
+      <para>Snap points are specified relative to the origin of the viewport.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_SNAPPOINT_COORDINATE.DIRECTMANIPULATION_COORDINATE_MIRRORED">
+    <summary>
+      <para>Snap points are interpreted as specified in the negative direction of the origin. The origin is shifted to the bottom and right of the viewport or content. Cannot be set for zoom.</para>
+    </summary>
+  </member>
+</doc>

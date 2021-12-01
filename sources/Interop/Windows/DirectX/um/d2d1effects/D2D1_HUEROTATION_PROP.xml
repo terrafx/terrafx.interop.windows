@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_HUEROTATION_PROP">
+    <summary>
+      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/hue-rotate">Hue rotate effect</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_HUEROTATION_PROP.D2D1_HUEROTATION_PROP_ANGLE">
+    <summary>
+      <para>The angle to rotate the hue, in degrees.</para>
+      <para>The type is FLOAT.</para>
+      <para>The default is 0.0f.</para>
+    </summary>
+  </member>
+  <member name="D2D1_HUEROTATION_PROP.D2D1_HUEROTATION_PROP_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

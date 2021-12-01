@@ -7,10 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DCOMPOSITION_BORDER_MODE.xml' path='doc/member[@name="DCOMPOSITION_BORDER_MODE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum DCOMPOSITION_BORDER_MODE
 {
+    /// <include file='DCOMPOSITION_BORDER_MODE.xml' path='doc/member[@name="DCOMPOSITION_BORDER_MODE.DCOMPOSITION_BORDER_MODE_SOFT"]/*' />
     DCOMPOSITION_BORDER_MODE_SOFT = 0,
+
+    /// <include file='DCOMPOSITION_BORDER_MODE.xml' path='doc/member[@name="DCOMPOSITION_BORDER_MODE.DCOMPOSITION_BORDER_MODE_HARD"]/*' />
     DCOMPOSITION_BORDER_MODE_HARD = 1,
+
+    /// <include file='DCOMPOSITION_BORDER_MODE.xml' path='doc/member[@name="DCOMPOSITION_BORDER_MODE.DCOMPOSITION_BORDER_MODE_INHERIT"]/*' />
     DCOMPOSITION_BORDER_MODE_INHERIT = unchecked((int)(0xffffffff)),
 }

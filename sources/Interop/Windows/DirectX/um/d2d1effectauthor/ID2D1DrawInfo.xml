@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1DrawInfo.SetPixelShader">
+    <summary>
+      <para>Set the shader instructions for this transform.</para>
+    </summary>
+    <param name="shaderId">
+      <para>Type: <b>REFGUID</b></para>
+      <para>The resource id for the  shader.</para>
+    </param>
+    <param name="pixelOptions">
+      <para>Type: <b><see cref="D2D1_PIXEL_OPTIONS" /></b></para>
+      <para>Additional information provided to the renderer to indicate the operations the pixel shader does.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If this call fails, the corresponding <see cref="ID2D1Effect" /> instance is placed into an error state and will fail to Draw, it will place the context into an error state which can be retrieved through the <see cref="ID2D1DeviceContext.EndDraw" /> call.</para>
+      <para>Specifying <i>pixelOptions</i> other than D2D1_PIXEL_OPTIONS_NONE can enable the renderer to perform certain optimizations such as combining various parts of the effect graph together. If this information does not accurately describe the shader, indeterminate rendering artifacts can result.</para>
+    </remarks>
+    <seealso cref="ID2D1DrawInfo" />
+  </member>
+  <member name="ID2D1DrawInfo.SetPixelShaderConstantBuffer">
+    <summary>
+      <para>Sets the constant buffer for this transform's pixel shader.</para>
+    </summary>
+    <param name="buffer">
+      <para>Type: <b>const BYTE*</b></para>
+      <para>The data applied to the constant buffer.</para>
+    </param>
+    <param name="bufferCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of bytes of data in the constant buffer</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1DrawInfo" />
+  </member>
+  <member name="ID2D1DrawInfo.SetResourceTexture">
+    <summary>
+      <para>Sets the resource texture corresponding to the given shader texture index.</para>
+    </summary>
+    <param name="textureIndex">
+      <para>Type: <b>UINT32</b></para>
+      <para>The index of the texture to be bound to the pixel shader.</para>
+    </param>
+    <param name="resourceTexture">
+      <para>Type: <b><see cref="ID2D1ResourceTexture" />*</b></para>
+      <para>The created resource texture.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1DrawInfo" />
+  </member>
+  <member name="ID2D1DrawInfo.SetVertexProcessing">
+    <summary>
+      <para>Sets a vertex buffer, a corresponding vertex shader, and options to control how the vertices are to be handled by the Direct2D context.</para>
+    </summary>
+    <param name="vertexBuffer">
+      <para>Type: <b><see cref="ID2D1VertexBuffer" />*</b></para>
+      <para>The vertex buffer, if this is cleared, the default vertex shader and mapping to the transform rectangles will be used.</para>
+    </param>
+    <param name="vertexOptions">
+      <para>Type: <b><see cref="D2D1_VERTEX_OPTIONS" /></b></para>
+      <para>Options that influence how the renderer will interact with the vertex shader.</para>
+    </param>
+    <param name="blendDescription">
+      <para>Type: <b>const <see cref="D2D1_BLEND_DESCRIPTION" />*</b></para>
+      <para>How the vertices will be blended with the output texture.</para>
+    </param>
+    <param name="vertexRange">
+      <para>Type: <b>const <see cref="D2D1_VERTEX_RANGE" />*</b></para>
+      <para>The set of vertices to use from the buffer.</para>
+    </param>
+    <param name="vertexShader">
+      <para>Type: <b>GUID*</b></para>
+      <para>The GUID of the vertex shader.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The vertex shaders associated with the vertex buffer through the vertex shader GUID must have been loaded through the <see cref="ID2D1EffectContext.LoadVertexShader" /> method before this call is made.</para>
+      <para>If you pass the vertex option <see cref="D2D1_VERTEX_OPTIONS_DO_NOT_CLEAR" />, then the method fails unless the blend description is exactly this:</para>
+      <code>D2D1_BLEND_DESCRIPTION blendDesc =
+        {
+            D2D1_BLEND_ONE,
+            D2D1_BLEND_ZERO,
+            D2D1_BLEND_OPERATION_ADD,
+
+            D2D1_BLEND_ONE,
+            D2D1_BLEND_ZERO,
+            D2D1_BLEND_OPERATION_ADD,
+
+            { 1.0f, 1.0f, 1.0f, 1.0f }
+        };
+</code>
+      <para>If this call fails, the corresponding <see cref="ID2D1Effect" /> instance is placed into an error state and fails to draw.</para>
+      <para>If blendDescription is NULL, a foreground-over blend mode is used.</para>
+    </remarks>
+    <seealso cref="ID2D1DrawInfo" />
+    <seealso cref="ID2D1EffectContext.CreateVertexBuffer" />
+    <seealso cref="ID2D1EffectContext.LoadVertexShader" />
+  </member>
+  <member name="ID2D1DrawInfo.SetVertexShaderConstantBuffer">
+    <summary>
+      <para>Sets the constant buffer for this transform's vertex shader.</para>
+    </summary>
+    <param name="buffer">
+      <para>Type: <b>const BYTE*</b></para>
+      <para>The data applied to the constant buffer</para>
+    </param>
+    <param name="bufferCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of bytes of data in the constant buffer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. If it fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1DrawInfo" />
+  </member>
+  <member name="ID2D1DrawInfo">
+    <summary>
+      <para>This interface is used to describe a GPU rendering pass on a vertex or pixel shader. It is passed to <see cref="ID2D1DrawTransform" />.</para>
+    </summary>
+  </member>
+</doc>

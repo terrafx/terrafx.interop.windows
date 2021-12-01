@@ -7,15 +7,21 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_OUTDUPL_POINTER_SHAPE_INFO.xml' path='doc/member[@name="DXGI_OUTDUPL_POINTER_SHAPE_INFO"]/*' />
 public partial struct DXGI_OUTDUPL_POINTER_SHAPE_INFO
 {
+    /// <include file='DXGI_OUTDUPL_POINTER_SHAPE_INFO.xml' path='doc/member[@name="DXGI_OUTDUPL_POINTER_SHAPE_INFO.Type"]/*' />
     public uint Type;
 
+    /// <include file='DXGI_OUTDUPL_POINTER_SHAPE_INFO.xml' path='doc/member[@name="DXGI_OUTDUPL_POINTER_SHAPE_INFO.Width"]/*' />
     public uint Width;
 
+    /// <include file='DXGI_OUTDUPL_POINTER_SHAPE_INFO.xml' path='doc/member[@name="DXGI_OUTDUPL_POINTER_SHAPE_INFO.Height"]/*' />
     public uint Height;
 
+    /// <include file='DXGI_OUTDUPL_POINTER_SHAPE_INFO.xml' path='doc/member[@name="DXGI_OUTDUPL_POINTER_SHAPE_INFO.Pitch"]/*' />
     public uint Pitch;
 
+    /// <include file='DXGI_OUTDUPL_POINTER_SHAPE_INFO.xml' path='doc/member[@name="DXGI_OUTDUPL_POINTER_SHAPE_INFO.HotSpot"]/*' />
     public POINT HotSpot;
 }

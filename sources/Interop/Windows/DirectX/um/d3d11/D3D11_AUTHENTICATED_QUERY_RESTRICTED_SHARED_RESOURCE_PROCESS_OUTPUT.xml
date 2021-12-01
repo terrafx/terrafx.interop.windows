@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_AUTHENTICATED_QUERY_RESTRICTED_SHARED_RESOURCE_PROCESS_OUTPUT">
+    <summary>
+      <para>Contains the response to a <b>D3D11_AUTHENTICATED_QUERY_RESTRICTED_SHARED_RESOURCE_PROCESS</b> query.</para>
+    </summary>
+    <remarks>
+      <para>The Desktop Window Manager (DWM) process is identified by setting <b>ProcessIdentifier</b> equal to <b>D3D11_PROCESSIDTYPE_DWM</b>. Other processes are identified by setting the process handle in <b>ProcessHandle</b> and setting <b>ProcessIdentifier</b> equal to <b>D3D11_PROCESSIDTYPE_HANDLE</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+  </member>
+  <member name="D3D11_AUTHENTICATED_QUERY_RESTRICTED_SHARED_RESOURCE_PROCESS_OUTPUT.Output">
+    <summary>
+      <para>A <see cref="D3D11_AUTHENTICATED_QUERY_OUTPUT" /> structure that contains a Message Authentication Code (MAC) and other data.</para>
+    </summary>
+  </member>
+  <member name="D3D11_AUTHENTICATED_QUERY_RESTRICTED_SHARED_RESOURCE_PROCESS_OUTPUT.ProcessIndex">
+    <summary>
+      <para>The index of the process in the list of processes.</para>
+    </summary>
+  </member>
+  <member name="D3D11_AUTHENTICATED_QUERY_RESTRICTED_SHARED_RESOURCE_PROCESS_OUTPUT.ProcessIdentifier">
+    <summary>
+      <para>A <see cref="D3D11_AUTHENTICATED_PROCESS_IDENTIFIER_TYPE" /> value that specifies the type of process.</para>
+    </summary>
+  </member>
+  <member name="D3D11_AUTHENTICATED_QUERY_RESTRICTED_SHARED_RESOURCE_PROCESS_OUTPUT.ProcessHandle">
+    <summary>
+      <para>A process handle. If the <b>ProcessIdentifier</b> member equals <b>D3D11_PROCESSIDTYPE_HANDLE</b>, the <b>ProcessHandle</b> member contains a valid handle to a process. Otherwise, this member is ignored.</para>
+    </summary>
+  </member>
+</doc>

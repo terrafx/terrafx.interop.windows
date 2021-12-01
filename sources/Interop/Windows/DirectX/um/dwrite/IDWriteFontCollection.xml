@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFontCollection.FindFamilyName">
+    <summary>
+      <para>Finds the font family with the specified family name.</para>
+    </summary>
+    <param name="familyName">
+      <para>Type: <b>const WCHAR*</b></para>
+      <para>An array of characters, which is null-terminated, containing the name of the font family. The name is not case-sensitive but must otherwise exactly match a family name in the collection.</para>
+    </param>
+    <param name="index">
+      <para>Type: <b>UINT32*</b></para>
+      <para>When this method returns, contains the zero-based index of the matching font family if the family name was found; otherwise, <b>UINT_MAX</b>.</para>
+    </param>
+    <param name="exists">
+      <para>Type: <b>BOOL*</b></para>
+      <para>When this method returns, <b>TRUE</b> if the family name exists; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontCollection" />
+  </member>
+  <member name="IDWriteFontCollection.GetFontFamily">
+    <summary>
+      <para>Creates a font family object given a zero-based font family index.</para>
+    </summary>
+    <param name="index">
+      <para>Type: <b>UINT32</b></para>
+      <para>Zero-based index of the font family.</para>
+    </param>
+    <param name="fontFamily">
+      <para>Type: <b><see cref="IDWriteFontFamily" />**</b></para>
+      <para>When this method returns, contains the address of   a pointer to the newly created font family object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontCollection" />
+  </member>
+  <member name="IDWriteFontCollection.GetFontFamilyCount">
+    <summary>
+      <para>Gets the number of font families in the collection.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of font families in the collection.</para>
+    </returns>
+    <seealso cref="IDWriteFontCollection" />
+  </member>
+  <member name="IDWriteFontCollection.GetFontFromFontFace">
+    <summary>
+      <para>Gets the font object that corresponds to the same physical font as the specified font face object. The specified physical font must belong
+to the font collection.</para>
+    </summary>
+    <param name="fontFace">
+      <para>Type: <b><see cref="IDWriteFontFace" />*</b></para>
+      <para>A font face object that specifies the physical font.</para>
+    </param>
+    <param name="font">
+      <para>Type: <b><see cref="IDWriteFont" />**</b></para>
+      <para>When this method returns, contains the address of a pointer to the newly created font object if successful; otherwise, <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontCollection" />
+  </member>
+  <member name="IDWriteFontCollection">
+    <summary>
+      <para>An object that encapsulates a set of fonts, such as the set of fonts installed on the system, or the set of fonts in a particular directory. The font collection API can be used to discover what font families and fonts are available, and to obtain some metadata about the fonts.</para>
+    </summary>
+    <remarks>
+      <para>The <see cref="IDWriteFactory.GetSystemFontCollection" /> method will give you an <b>IDWriteFontCollection</b> object, which encapsulates the set of fonts installed on the system, as shown in the following code example.</para>
+      <code>IDWriteFontCollection* pFontCollection = NULL;
+
+// Get the system font collection.
+if (SUCCEEDED(hr))
+{
+    hr = pDWriteFactory-&gt;GetSystemFontCollection(&amp;amp;amp;amp;amp;amp;pFontCollection);
+}
+
+</code>
+      <para>
+        <see cref="IDWriteTextFormat" /> and <see cref="IDWriteTextLayout" /> both have a <see cref="GetFontCollection" /> method that returns the font collection being used by the object.  These interfaces use the system font collection by default, but can use a custom font collection instead.</para>
+      <para>To determine what fonts are available on the system,  get a reference to the system font collection.  You can then use the <see cref="IDWriteFontCollection.GetFontFamilyCount" /> method to determine the number of fonts and loop through the list. The following example enumerates the fonts in the system font collection, and prints the font family names to the console.</para>
+      <code>
+#include &lt;dwrite.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;new&gt;
+
+// SafeRelease inline function.
+template &lt;class T&gt; inline void SafeRelease(T **ppT)
+{
+    if (*ppT)
+    {
+        (*ppT)-&gt;Release();
+        *ppT = NULL;
+    }
+}
+
+void wmain()
+{
+    IDWriteFactory* pDWriteFactory = NULL;
+
+    HRESULT hr = DWriteCreateFactory(
+            DWRITE_FACTORY_TYPE_SHARED,
+            __uuidof(IDWriteFactory),
+            reinterpret_cast&lt;IUnknown**&gt;(&amp;amp;amp;amp;amp;amp;pDWriteFactory)
+            );
+
+    IDWriteFontCollection* pFontCollection = NULL;
+
+    // Get the system font collection.
+    if (SUCCEEDED(hr))
+    {
+        hr = pDWriteFactory-&gt;GetSystemFontCollection(&amp;amp;amp;amp;amp;amp;pFontCollection);
+    }
+
+    UINT32 familyCount = 0;
+
+    // Get the number of font families in the collection.
+    if (SUCCEEDED(hr))
+    {
+        familyCount = pFontCollection-&gt;GetFontFamilyCount();
+    }
+
+    for (UINT32 i = 0; i &lt; familyCount; ++i)
+    {
+        IDWriteFontFamily* pFontFamily = NULL;
+
+        // Get the font family.
+        if (SUCCEEDED(hr))
+        {
+            hr = pFontCollection-&gt;GetFontFamily(i, &amp;amp;amp;amp;amp;amp;pFontFamily);
+        }
+
+        IDWriteLocalizedStrings* pFamilyNames = NULL;
+
+        // Get a list of localized strings for the family name.
+        if (SUCCEEDED(hr))
+        {
+            hr = pFontFamily-&gt;GetFamilyNames(&amp;amp;amp;amp;amp;amp;pFamilyNames);
+        }
+
+        UINT32 index = 0;
+        BOOL exists = false;
+
+        wchar_t localeName[LOCALE_NAME_MAX_LENGTH];
+
+        if (SUCCEEDED(hr))
+        {
+            // Get the default locale for this user.
+            int defaultLocaleSuccess = GetUserDefaultLocaleName(localeName, LOCALE_NAME_MAX_LENGTH);
+
+            // If the default locale is returned, find that locale name, otherwise use "en-us".
+            if (defaultLocaleSuccess)
+            {
+                hr = pFamilyNames-&gt;FindLocaleName(localeName, &amp;amp;amp;amp;amp;amp;index, &amp;amp;amp;amp;amp;amp;exists);
+            }
+            if (SUCCEEDED(hr) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; !exists) // if the above find did not find a match, retry with US English
+            {
+                hr = pFamilyNames-&gt;FindLocaleName(L"en-us", &amp;amp;amp;amp;amp;amp;index, &amp;amp;amp;amp;amp;amp;exists);
+            }
+        }
+
+        // If the specified locale doesn't exist, select the first on the list.
+        if (!exists)
+            index = 0;
+
+        UINT32 length = 0;
+
+        // Get the string length.
+        if (SUCCEEDED(hr))
+        {
+            hr = pFamilyNames-&gt;GetStringLength(index, &amp;amp;amp;amp;amp;amp;length);
+        }
+
+        // Allocate a string big enough to hold the name.
+        wchar_t* name = new (std.nothrow) wchar_t[length+1];
+        if (name == NULL)
+        {
+            hr = E_OUTOFMEMORY;
+        }
+
+        // Get the family name.
+        if (SUCCEEDED(hr))
+        {
+            hr = pFamilyNames-&gt;GetString(index, name, length+1);
+        }
+        if (SUCCEEDED(hr))
+        {
+            // Print out the family name.
+            wprintf(L"%s\n", name);
+        }
+
+        SafeRelease(&amp;amp;amp;amp;amp;amp;pFontFamily);
+        SafeRelease(&amp;amp;amp;amp;amp;amp;pFamilyNames);
+
+        delete [] name;
+    }
+
+    SafeRelease(&amp;amp;amp;amp;amp;amp;pFontCollection);
+    SafeRelease(&amp;amp;amp;amp;amp;amp;pDWriteFactory);
+}
+
+
+</code>
+    </remarks>
+  </member>
+</doc>

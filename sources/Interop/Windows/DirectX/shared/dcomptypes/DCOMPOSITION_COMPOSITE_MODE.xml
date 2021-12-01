@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DCOMPOSITION_COMPOSITE_MODE">
+    <summary>
+      <para>The mode to use to blend the bitmap content of a visual with  the render target.</para>
+    </summary>
+    <remarks>
+      <para>A single visual can have any combination of visual properties. However, if a
+visual has the following combination of properties, the borders of the visual will default
+to <see cref="DCOMPOSITION_BORDER_MODE_HARD" />.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <code>SetCompositeMode(DCOMPOSITION_COMPOSITE_MODE_DESTINATION_INVERT)
+</code>
+          </description>
+        </item>
+        <item>
+          <description>
+            <code>SetBorderMode(DCOMPOSITION_BORDER_MODE_SOFT)
+</code>
+          </description>
+        </item>
+        <item>
+          <description>
+            <code>SetBitmapInterpolationMode(DCOMPOSITION_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR)</code>
+          </description>
+        </item>
+      </list>
+      <para>If you want a visual to be drawn with antialiasing, use <see cref="DCOMPOSITION_BITMAP_INTERPOLATION_MODE_LINEAR" /> for the content of the visual, and <see cref="DCOMPOSITION_BORDER_MODE_SOFT" /> for the edges.</para>
+    </remarks>
+    <seealso cref="IDCompositionVisual.SetCompositeMode" />
+  </member>
+  <member name="DCOMPOSITION_COMPOSITE_MODE.DCOMPOSITION_COMPOSITE_MODE_SOURCE_OVER">
+    <summary>
+      <para>The standard source-over-destination blend mode.</para>
+    </summary>
+  </member>
+  <member name="DCOMPOSITION_COMPOSITE_MODE.DCOMPOSITION_COMPOSITE_MODE_DESTINATION_INVERT">
+    <summary>
+      <para>The bitmap colors are inverted.</para>
+    </summary>
+  </member>
+  <member name="DCOMPOSITION_COMPOSITE_MODE.DCOMPOSITION_COMPOSITE_MODE_MIN_BLEND">
+    <summary>
+      <para>Bitmap colors subtract for color channels in the background.</para>
+    </summary>
+  </member>
+  <member name="DCOMPOSITION_COMPOSITE_MODE.DCOMPOSITION_COMPOSITE_MODE_INHERIT">
+    <summary>
+      <para>Bitmaps are blended according to the mode established by the parent visual.</para>
+    </summary>
+  </member>
+</doc>

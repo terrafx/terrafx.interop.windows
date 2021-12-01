@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_SVG_LINE_CAP">
+    <summary>
+      <para>Specifies a value for the SVG stroke-linecap property.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_LINE_CAP.D2D1_SVG_LINE_CAP_BUTT">
+    <summary>
+      <para>The property is set to SVG's 'butt' value.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_LINE_CAP.D2D1_SVG_LINE_CAP_SQUARE">
+    <summary>
+      <para>The property is set to SVG's 'square' value.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_LINE_CAP.D2D1_SVG_LINE_CAP_ROUND">
+    <summary>
+      <para>The property is set to SVG's 'round' value.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_LINE_CAP.D2D1_SVG_LINE_CAP_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

@@ -1,0 +1,1541 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11Device.CheckCounter">
+    <summary>
+      <para>Get the type, name, units of measure, and a description of an existing counter.</para>
+    </summary>
+    <param name="pDesc">
+      <para>Type: <b>const <see cref="D3D11_COUNTER_DESC" />*</b></para>
+      <para>Pointer to a counter description (see <see cref="D3D11_COUNTER_DESC" />). Specifies which counter information is to be retrieved about.</para>
+    </param>
+    <param name="pType">
+      <para>Type: <b><see cref="D3D11_COUNTER_TYPE" />*</b></para>
+      <para>Pointer to the data type of a counter (see <see cref="D3D11_COUNTER_TYPE" />). Specifies the data type of the counter being retrieved.</para>
+    </param>
+    <param name="pActiveCounters">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>Pointer to the number of hardware counters that are needed for this counter type to be created. All instances of the same counter type use the same hardware counters.</para>
+    </param>
+    <param name="szName">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPSTR</a></b></para>
+      <para>String to be filled with a brief name for the counter. May be <b>NULL</b> if the application is not interested in the name of the counter.</para>
+    </param>
+    <param name="pNameLength">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>Length of the string returned to szName. Can be <b>NULL</b>.</para>
+    </param>
+    <param name="szUnits">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPSTR</a></b></para>
+      <para>Name of the units a counter measures, provided the memory the pointer points to has enough room to hold the string. Can be <b>NULL</b>. The returned string will always be in English.</para>
+    </param>
+    <param name="pUnitsLength">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>Length of the string returned to szUnits. Can be <b>NULL</b>.</para>
+    </param>
+    <param name="szDescription">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPSTR</a></b></para>
+      <para>A description of the counter, provided the memory the pointer points to has enough room to hold the string. Can be <b>NULL</b>. The returned string will always be in English.</para>
+    </param>
+    <param name="pDescriptionLength">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>Length of the string returned to szDescription. Can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>Length parameters can be <b>NULL</b>, which indicates the application is not interested in the length nor the corresponding string value. When a length parameter is non-<b>NULL</b> and the corresponding string is <b>NULL</b>, the input value of the length parameter is ignored, and the length of the corresponding string (including terminating <b>NULL</b>) will be returned through the length parameter. When length and the corresponding parameter are both non-<b>NULL</b>, the input value of length is checked to ensure there is enough room, and then the length of the string (including terminating <b>NULL</b> character) is passed out through the length parameter.</para>
+      <para>
+        <b>Windows Phone 8:
+</b> This API is supported.</para>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CheckCounterInfo">
+    <summary>
+      <para>Get a counter's information.</para>
+    </summary>
+    <param name="pCounterInfo">
+      <para>Type: <b><see cref="D3D11_COUNTER_INFO" />*</b></para>
+      <para>Pointer to counter information (see <see cref="D3D11_COUNTER_INFO" />).</para>
+    </param>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CheckFeatureSupport">
+    <summary>
+      <para>Gets information about the features that are supported by the current graphics driver.</para>
+    </summary>
+    <param name="Feature">
+      <para>Type: <b><see cref="D3D11_FEATURE" /></b></para>
+      <para>A member of the <see cref="D3D11_FEATURE" /> enumerated type that describes which feature to query for support.</para>
+    </param>
+    <param name="pFeatureSupportData">
+      <para>Type: <b>void*</b></para>
+      <para>Upon completion of the method, the passed structure is filled with data that describes the feature support.</para>
+    </param>
+    <param name="FeatureSupportDataSize">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The size of the structure passed to the <i>pFeatureSupportData</i> parameter.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns S_OK if successful; otherwise, returns E_INVALIDARG if an unsupported data type is passed to the <i>pFeatureSupportData</i> parameter
+or a size mismatch is detected for the <i>FeatureSupportDataSize</i> parameter.</para>
+    </returns>
+    <remarks>
+      <para>To query for multi-threading support, pass the <b>D3D11_FEATURE_THREADING</b> value to the <i>Feature</i> parameter, pass
+the <see cref="D3D11_FEATURE_DATA_THREADING" /> structure to the  <i>pFeatureSupportData</i> parameter, and pass the size of
+the <b>D3D11_FEATURE_DATA_THREADING</b> structure to the <i>FeatureSupportDataSize</i> parameter.</para>
+      <para>Calling CheckFeatureSupport with <i>Feature</i> set to D3D11_FEATURE_FORMAT_SUPPORT causes the method to return the same information that would be returned
+by <see cref="ID3D11Device.CheckFormatSupport" />.</para>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CheckFormatSupport">
+    <summary>
+      <para>Get the support of a given format on the installed video device.</para>
+    </summary>
+    <param name="Format">
+      <para>Type: <b><see cref="DXGI_FORMAT" /></b></para>
+      <para>A <see cref="DXGI_FORMAT" /> enumeration that describes a format for which to check for support.</para>
+    </param>
+    <param name="pFormatSupport">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>A bitfield of <see cref="D3D11_FORMAT_SUPPORT" /> enumeration values describing how the specified format is supported on the installed device.
+The values are ORed together.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns S_OK if successful; otherwise, returns E_INVALIDARG if the <i>Format</i> parameter is <b>NULL</b>, or returns E_FAIL if the
+described format does not exist.</para>
+    </returns>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CheckMultisampleQualityLevels">
+    <summary>
+      <para>Get the number of quality levels available during multisampling.</para>
+    </summary>
+    <param name="Format">
+      <para>Type: <b><see cref="DXGI_FORMAT" /></b></para>
+      <para>The texture format. See <see cref="DXGI_FORMAT" />.</para>
+    </param>
+    <param name="SampleCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of samples during multisampling.</para>
+    </param>
+    <param name="pNumQualityLevels">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>Number of quality levels supported by the adapter. See <b>Remarks</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/win32/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>When multisampling a texture, the number of quality levels available for an adapter is dependent on the texture format used and the number of samples requested. The maximum number of quality levels is defined by <b>D3D11_MAX_MULTISAMPLE_SAMPLE_COUNT</b> in <code>D3D11.h</code>. If this method returns 0 (S_OK), and the output parameter <code>pNumQualityLevels</code> receives a positive value, then the format and sample count combination is supported for the device. When the combination is not supported, this method returns a failure <b>HRESULT</b> code (that is, a negative integer), or sets <code>pNumQualityLevels</code> output parameter to zero, or both.</para>
+      <para>Furthermore, the definition of a quality level is left to each hardware vendor to define; however no facility is provided by Direct3D to help discover this information.</para>
+      <para>Note that FEATURE_LEVEL_10_1 devices are required to support 4x MSAA for all render targets except R32G32B32A32 and R32G32B32. FEATURE_LEVEL_11_0 devices are required to support 4x MSAA for all render target formats, and 8x MSAA for all render target formats except R32G32B32A32 formats.</para>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreateBlendState">
+    <summary>
+      <para>Create a blend-state object that encapsulates blend state for the output-merger stage.</para>
+    </summary>
+    <param name="pBlendStateDesc">
+      <para>Type: <b>const <see cref="D3D11_BLEND_DESC" />*</b></para>
+      <para>Pointer to a blend-state description (see <see cref="D3D11_BLEND_DESC" />).</para>
+    </param>
+    <param name="ppBlendState">
+      <para>Type: <b><see cref="ID3D11BlendState" />**</b></para>
+      <para>Address of a pointer to the blend-state object created (see <see cref="ID3D11BlendState" />).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns E_OUTOFMEMORY if there is insufficient memory to create the blend-state object.
+See <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a> for other possible return values.</para>
+    </returns>
+    <remarks>
+      <para>An application can create up to 4096 unique blend-state objects. For each object created, the runtime checks to see if a previous object
+has the same state. If such a previous object exists, the runtime will return a pointer to previous instance instead of creating a duplicate object.</para>
+      <para>
+        <b>Windows Phone 8:
+</b> This API is supported.</para>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreateBuffer">
+    <summary>
+      <para>Creates a buffer (vertex buffer, index buffer, or shader-constant buffer).</para>
+    </summary>
+    <param name="pDesc">
+      <para>Type: <b>const <see cref="D3D11_BUFFER_DESC" />*</b></para>
+      <para>A pointer to a <see cref="D3D11_BUFFER_DESC" /> structure that describes the buffer.</para>
+    </param>
+    <param name="pInitialData">
+      <para>Type: <b>const <see cref="D3D11_SUBRESOURCE_DATA" />*</b></para>
+      <para>A pointer to a <see cref="D3D11_SUBRESOURCE_DATA" /> structure that describes  the initialization data;
+use <b>NULL</b> to allocate space only (with the exception that it cannot be <b>NULL</b> if the usage flag is <b>D3D11_USAGE_IMMUTABLE</b>).</para>
+      <para>If you don't pass anything to <i>pInitialData</i>, the initial content of the memory for the buffer is undefined.
+In this case, you need to write the buffer content some other way before the resource is read.</para>
+    </param>
+    <param name="ppBuffer">
+      <para>Type: <b><see cref="ID3D11Buffer" />**</b></para>
+      <para>Address of a pointer to the <see cref="ID3D11Buffer" /> interface for the buffer object created.
+Set this parameter to <b>NULL</b> to validate the other input parameters (<b>S_FALSE</b> indicates a pass).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns <b>E_OUTOFMEMORY</b> if there is insufficient memory to create the buffer.
+See <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a> for other possible return values.</para>
+    </returns>
+    <remarks>
+      <para>For example code, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-vertex-how-to">How to: Create a Vertex Buffer</a>,
+<a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-index-how-to">How to: Create an Index Buffer</a> or
+<a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-buffers-constant-how-to">How to: Create a Constant Buffer</a>.</para>
+      <para>For a constant buffer (<b>BindFlags</b> of  <see cref="D3D11_BUFFER_DESC" /> set to <see cref="D3D11_BIND_CONSTANT_BUFFER" />),
+you must set the <b>ByteWidth</b> value of  <b>D3D11_BUFFER_DESC</b> in multiples of 16, and less than or equal to <b>D3D11_REQ_CONSTANT_BUFFER_ELEMENT_COUNT</b>.</para>
+      <para>The Direct3D 11.1 runtime, which is available on Windows 8 and later operating systems, provides the following new functionality for <b>CreateBuffer</b>:</para>
+      <para>You can create a constant buffer that is larger than the maximum constant buffer size that a shader can access (4096 32-bit*4-component constants – 64KB).
+When you bind the constant buffer to the pipeline (for example, via <see cref="PSSetConstantBuffers" /> or <see cref="PSSetConstantBuffers1" />),
+you can define a range of the buffer that the shader can access that fits within the 4096 constant limit.</para>
+      <para>The Direct3D 11.1 runtime (available in Windows 8 and later operating systems) emulates this feature for <a href="https://docs.microsoft.com//windows/win32/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> 9.1, 9.2, and 9.3; therefore, this feature is supported for feature level 9.1, 9.2, and 9.3.</para>
+      <para>This feature is always available on new drivers for feature level 10 and higher.</para>
+      <para>On runtimes older than Direct3D 11.1, a call to <b>CreateBuffer</b> to request a constant buffer that is larger than 4096 fails.</para>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreateClassLinkage">
+    <summary>
+      <para>Creates class linkage libraries to enable dynamic shader linkage.</para>
+    </summary>
+    <param name="ppLinkage">
+      <para>Type: <b><see cref="ID3D11ClassLinkage" />**</b></para>
+      <para>A pointer to a class-linkage interface pointer (see <see cref="ID3D11ClassLinkage" />).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>The <see cref="ID3D11ClassLinkage" /> interface returned in <i>ppLinkage</i> is associated with a shader by passing it as a parameter to one of the <see cref="ID3D11Device" /> create shader methods such as <see cref="ID3D11Device.CreatePixelShader" />.</para>
+      <h4>Examples</h4>
+      <para>Using CreateClassLinkage</para>
+      <code>
+ID3D11ClassLinkage * g_pPSClassLinkage = NULL;
+pd3dDevice-&gt;CreateClassLinkage( &amp;amp;amp;amp;amp;amp;g_pPSClassLinkage );
+
+</code>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreateComputeShader">
+    <summary>
+      <para>Create a <a href="https://docs.microsoft.com//windows/desktop/direct3d11/direct3d-11-advanced-stages-compute-shader">compute shader</a>.</para>
+    </summary>
+    <param name="pShaderBytecode">
+      <para>Type: <b>const void*</b></para>
+      <para>A pointer to a compiled shader.</para>
+    </param>
+    <param name="BytecodeLength">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
+      <para>Size of the compiled shader in <i>pShaderBytecode</i>.</para>
+    </param>
+    <param name="pClassLinkage">
+      <para>Type: <b><see cref="ID3D11ClassLinkage" />*</b></para>
+      <para>A pointer to a <see cref="ID3D11ClassLinkage" />, which represents  class linkage interface; the value can be <b>NULL</b>.</para>
+    </param>
+    <param name="ppComputeShader">
+      <para>Type: <b><see cref="ID3D11ComputeShader" />**</b></para>
+      <para>Address of a pointer to an <see cref="ID3D11ComputeShader" /> interface. If this is <b>NULL</b>,
+all other parameters will be validated; if validation passes, CreateComputeShader returns S_FALSE instead of S_OK.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns E_OUTOFMEMORY if there is insufficient memory to create the compute shader.
+See <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a> for other possible return values.</para>
+    </returns>
+    <remarks>
+      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/direct3d-11-advanced-stages-compute-create">How To: Create a Compute Shader</a> and <a href="https://msdn.microsoft.com/library/ee416569(v=vs.85).aspx">HDRToneMappingCS11 Sample</a>.</para>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreateCounter">
+    <summary>
+      <para>Create a counter object for measuring GPU performance.</para>
+    </summary>
+    <param name="pCounterDesc">
+      <para>Type: <b>const <see cref="D3D11_COUNTER_DESC" />*</b></para>
+      <para>Pointer to a counter description (see <see cref="D3D11_COUNTER_DESC" />).</para>
+    </param>
+    <param name="ppCounter">
+      <para>Type: <b><see cref="ID3D11Counter" />**</b></para>
+      <para>Address of a pointer to a counter (see <see cref="ID3D11Counter" />).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this function succeeds, it will return S_OK. If it fails, possible return values are: S_FALSE, E_OUTOFMEMORY, DXGI_ERROR_UNSUPPORTED, DXGI_ERROR_NONEXCLUSIVE, or E_INVALIDARG.</para>
+      <para>DXGI_ERROR_UNSUPPORTED is returned whenever the application requests to create a well-known counter, but the current device does not support it.</para>
+      <para>DXGI_ERROR_NONEXCLUSIVE indicates that another device object is currently using the counters, so they cannot be used by this device at the moment.</para>
+      <para>E_INVALIDARG is returned whenever an out-of-range well-known or device-dependent counter is requested, or when the simulataneously active counters have been exhausted.</para>
+    </returns>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreateDeferredContext">
+    <summary>
+      <para>Creates a deferred context, which can record command lists.</para>
+    </summary>
+    <param name="ContextFlags">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Reserved for future use.
+Pass 0.</para>
+    </param>
+    <param name="ppDeferredContext">
+      <para>Type: <b><see cref="ID3D11DeviceContext" />**</b></para>
+      <para>Upon completion of the method, the passed pointer to an <see cref="ID3D11DeviceContext" /> interface pointer is initialized.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns S_OK if successful; otherwise, returns one of the following:</para>
+      <list type="bullet">
+        <item>
+          <description>Returns <b>DXGI_ERROR_DEVICE_REMOVED</b> if the video card has been physically removed from the system, or a driver upgrade for the video card has occurred.
+If this error occurs, you should destroy and recreate the device.
+</description>
+        </item>
+        <item>
+          <description>Returns <b>DXGI_ERROR_INVALID_CALL</b> if the <b>CreateDeferredContext</b> method cannot be called from the current context.
+For example, if the device was created with the <see cref="D3D11_CREATE_DEVICE_SINGLETHREADED" /> value,  <b>CreateDeferredContext</b> returns <b>DXGI_ERROR_INVALID_CALL</b>.
+</description>
+        </item>
+        <item>
+          <description>Returns <b>E_INVALIDARG</b> if the <i>ContextFlags</i> parameter is invalid.
+</description>
+        </item>
+        <item>
+          <description>Returns <b>E_OUTOFMEMORY</b> if the application has exhausted available memory.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A deferred context is a thread-safe context that you can use to record graphics commands on a thread other than the main rendering thread.
+Using a deferred context, you can record graphics commands into a command list that is encapsulated by the <see cref="ID3D11CommandList" /> interface.
+After all scene items are recorded, you can then submit them to the main render thread for final rendering.
+In this manner, you can perform rendering tasks concurrently across multiple threads and potentially improve performance in multi-core CPU scenarios.</para>
+      <para>You can create multiple deferred contexts.</para>
+      <para>
+        <b>Note</b>  If you use the <see cref="D3D11_CREATE_DEVICE_SINGLETHREADED" /> value to create the device that is represented by <see cref="ID3D11Device" />, the <b>CreateDeferredContext</b> method will fail, and you will not be able to create a deferred context.</para>
+      <para>For more information about deferred contexts, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-render">Immediate and Deferred Rendering</a>.</para>
+      <para>
+        <b>Windows Phone 8:
+</b> This API is supported.</para>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+    <seealso cref="ID3D11Device1.CreateDeferredContext1" />
+    <seealso cref="ID3D11Device2.CreateDeferredContext2" />
+    <seealso cref="ID3D11Device3.CreateDeferredContext3" />
+  </member>
+  <member name="ID3D11Device.CreateDepthStencilState">
+    <summary>
+      <para>Create a depth-stencil state object that encapsulates depth-stencil test information for the output-merger stage.</para>
+    </summary>
+    <param name="pDepthStencilDesc">
+      <para>Type: <b>const <see cref="D3D11_DEPTH_STENCIL_DESC" />*</b></para>
+      <para>Pointer to a depth-stencil state description (see <see cref="D3D11_DEPTH_STENCIL_DESC" />).</para>
+    </param>
+    <param name="ppDepthStencilState">
+      <para>Type: <b><see cref="ID3D11DepthStencilState" />**</b></para>
+      <para>Address of a pointer to the depth-stencil state object created (see <see cref="ID3D11DepthStencilState" />).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>4096 unique depth-stencil state objects can be created on a device at a time.</para>
+      <para>If an application attempts to create a depth-stencil-state interface with the same state as an existing interface, the same interface will be returned and the total number of unique depth-stencil state objects will stay the same.</para>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreateDepthStencilView">
+    <summary>
+      <para>Create a depth-stencil view for accessing resource data.</para>
+    </summary>
+    <param name="pResource">
+      <para>Type: <b><see cref="ID3D11Resource" />*</b></para>
+      <para>Pointer to the resource that will serve as the depth-stencil surface. This resource must have been created with the <see cref="D3D11_BIND_DEPTH_STENCIL" /> flag.</para>
+    </param>
+    <param name="pDesc">
+      <para>Type: <b>const <see cref="D3D11_DEPTH_STENCIL_VIEW_DESC" />*</b></para>
+      <para>Pointer to a depth-stencil-view description (see <see cref="D3D11_DEPTH_STENCIL_VIEW_DESC" />). Set this parameter to <b>NULL</b> to create a view that accesses mipmap level 0 of the entire resource (using the format the resource was created with).</para>
+    </param>
+    <param name="ppDepthStencilView">
+      <para>Type: <b><see cref="ID3D11DepthStencilView" />**</b></para>
+      <para>Address of a pointer to an <see cref="ID3D11DepthStencilView" />. Set this parameter to <b>NULL</b> to validate the other input parameters (the method will return S_FALSE if the other input parameters pass validation).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>A depth-stencil view can be bound to the output-merger stage by calling <see cref="ID3D11DeviceContext.OMSetRenderTargets" />.</para>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreateDomainShader">
+    <summary>
+      <para>Create a <a href="https://docs.microsoft.com//windows/desktop/direct3d11/direct3d-11-advanced-stages-tessellation">domain shader</a>.</para>
+    </summary>
+    <param name="pShaderBytecode">
+      <para>Type: <b>const void*</b></para>
+      <para>A pointer to a compiled shader.</para>
+    </param>
+    <param name="BytecodeLength">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
+      <para>Size of the compiled shader.</para>
+    </param>
+    <param name="pClassLinkage">
+      <para>Type: <b><see cref="ID3D11ClassLinkage" />*</b></para>
+      <para>A pointer to a class linkage interface (see <see cref="ID3D11ClassLinkage" />); the value can be <b>NULL</b>.</para>
+    </param>
+    <param name="ppDomainShader">
+      <para>Type: <b><see cref="ID3D11DomainShader" />**</b></para>
+      <para>Address of a pointer to a <see cref="ID3D11DomainShader" /> interface. If this is <b>NULL</b>, all other parameters will be validated, and if all parameters pass validation this API will return <b>S_FALSE</b> instead of <b>S_OK</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>The Direct3D 11.1 runtime, which is available starting with Windows 8, provides the following new functionality for <b>CreateDomainShader</b>.</para>
+      <para>The following shader model 5.0 instructions are available to just pixel shaders and compute shaders in the Direct3D 11.0 runtime. For the Direct3D 11.1 runtime, because unordered access views (UAV) are available at all shader stages, you can use these instructions in all shader stages.</para>
+      <para>Therefore, if you use the following shader model 5.0 instructions in a domain shader, you can successfully pass the compiled domain shader to <i>pShaderBytecode</i>. That is, the call to <b>CreateDomainShader</b> succeeds.</para>
+      <para>If you pass a compiled shader to <i>pShaderBytecode</i> that uses any of the following instructions on a device that doesn’t support UAVs at every shader stage (including existing drivers that are not implemented to support UAVs at every shader stage), <b>CreateDomainShader</b> fails.  <b>CreateDomainShader</b> also fails if the shader tries to use a UAV slot beyond the set of UAV slots that the hardware supports.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dcl-uav-typed--sm5---asm-">dcl_uav_typed</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dcl-uav-raw--sm5---asm-">dcl_uav_raw</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dcl-uav-structured--sm5---asm-">dcl_uav_structured</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/ld-raw--sm5---asm-">ld_raw</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/ld-structured--sm5---asm-">ld_structured</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/ld-uav-typed--sm5---asm-">ld_uav_typed</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/store-raw--sm5---asm-">store_raw</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/store-structured--sm5---asm-">store_structured</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/store-uav-typed--sm5---asm-">store_uav_typed</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/sync--sm5---asm-">sync_uglobal</a>
+          </description>
+        </item>
+        <item>
+          <description>All atomics and immediate atomics (for example, <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/atomic-and--sm5---asm-">atomic_and</a> and <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/imm-atomic-and--sm5---asm-">imm_atomic_and</a>)</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreateGeometryShader">
+    <summary>
+      <para>Create a geometry shader.</para>
+    </summary>
+    <param name="pShaderBytecode">
+      <para>Type: <b>const void*</b></para>
+      <para>A pointer to the compiled shader.</para>
+    </param>
+    <param name="BytecodeLength">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
+      <para>Size of the compiled geometry shader.</para>
+    </param>
+    <param name="pClassLinkage">
+      <para>Type: <b><see cref="ID3D11ClassLinkage" />*</b></para>
+      <para>A pointer to a class linkage interface (see <see cref="ID3D11ClassLinkage" />); the value can be <b>NULL</b>.</para>
+    </param>
+    <param name="ppGeometryShader">
+      <para>Type: <b><see cref="ID3D11GeometryShader" />**</b></para>
+      <para>Address of a pointer to a <see cref="ID3D11GeometryShader" /> interface. If this is <b>NULL</b>, all other parameters will be validated, and if all
+parameters pass validation this API will return S_FALSE instead of S_OK.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>After it is created, the shader can be set to the device by calling <see cref="ID3D11DeviceContext.GSSetShader" />.</para>
+      <para>The Direct3D 11.1 runtime, which is available starting with Windows 8, provides the following new functionality for <b>CreateGeometryShader</b>.</para>
+      <para>The following shader model 5.0 instructions are available to just pixel shaders and compute shaders in the Direct3D 11.0 runtime. For the Direct3D 11.1 runtime, because unordered access views (UAV) are available at all shader stages, you can use these instructions in all shader stages.</para>
+      <para>Therefore, if you use the following shader model 5.0 instructions in a geometry shader, you can successfully pass the compiled geometry shader to <i>pShaderBytecode</i>. That is, the call to <b>CreateGeometryShader</b> succeeds.</para>
+      <para>If you pass a compiled shader to <i>pShaderBytecode</i> that uses any of the following instructions on a device that doesn’t support UAVs at every shader stage (including existing drivers that are not implemented to support UAVs at every shader stage), <b>CreateGeometryShader</b> fails.  <b>CreateGeometryShader</b> also fails if the shader tries to use a UAV slot beyond the set of UAV slots that the hardware supports.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dcl-uav-typed--sm5---asm-">dcl_uav_typed</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dcl-uav-raw--sm5---asm-">dcl_uav_raw</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dcl-uav-structured--sm5---asm-">dcl_uav_structured</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/ld-raw--sm5---asm-">ld_raw</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/ld-structured--sm5---asm-">ld_structured</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/ld-uav-typed--sm5---asm-">ld_uav_typed</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/store-raw--sm5---asm-">store_raw</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/store-structured--sm5---asm-">store_structured</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/store-uav-typed--sm5---asm-">store_uav_typed</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/sync--sm5---asm-">sync_uglobal</a>
+          </description>
+        </item>
+        <item>
+          <description>All atomics and immediate atomics (for example, <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/atomic-and--sm5---asm-">atomic_and</a> and <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/imm-atomic-and--sm5---asm-">imm_atomic_and</a>)</description>
+        </item>
+      </list>
+      <h4>Examples</h4>
+      <para>Usage Example</para>
+      <code>
+ID3D11GeometryShader*       g_pGeometryShader11 = NULL;
+ID3DBlob* pGeometryShaderBuffer = NULL;
+ID3DBlob * errorbuffer = NULL;
+
+D3DX11CompileFromFile( str, NULL, NULL, "GS", "gs_4_0", dwShaderFlags, 0, NULL,
+                                         &amp;amp;amp;amp;amp;amp;pGeometryShaderBuffer, &amp;amp;amp;amp;amp;amp;errorbuffer, NULL );
+
+pd3dDevice-&gt;CreateGeometryShader( pGeometryShaderBuffer-&gt;GetBufferPointer(),
+               pGeometryShaderBuffer-&gt;GetBufferSize(), NULL, &amp;amp;amp;amp;amp;amp;g_pGeometryShader11 );
+
+
+</code>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreateGeometryShaderWithStreamOutput">
+    <summary>
+      <para>Creates a geometry shader that can write to streaming output buffers.</para>
+    </summary>
+    <param name="pShaderBytecode">
+      <para>Type: <b>const void*</b></para>
+      <para>A pointer to the compiled geometry shader for a standard geometry shader plus stream output. For info on how to get this pointer, see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-using-shaders-10">Getting a Pointer to a Compiled Shader</a>.</para>
+      <para>To create the stream output without using a geometry shader, pass a pointer to the output signature for the prior stage. To obtain this output signature, call the <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dgetoutputsignatureblob">D3DGetOutputSignatureBlob</a> compiler function. You can also pass a pointer to the compiled shader for the prior stage (for example, the <a href="https://docs.microsoft.com//previous-versions/bb205146(v=vs.85)">vertex-shader stage</a> or <a href="https://docs.microsoft.com//windows/desktop/direct3d11/direct3d-11-advanced-stages-tessellation">domain-shader stage</a>). This compiled shader provides the output signature for the data.</para>
+    </param>
+    <param name="BytecodeLength">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
+      <para>Size of the compiled geometry shader.</para>
+    </param>
+    <param name="pSODeclaration">
+      <para>Type: <b>const <see cref="D3D11_SO_DECLARATION_ENTRY" />*</b></para>
+      <para>Pointer to a <see cref="D3D11_SO_DECLARATION_ENTRY" /> array. Cannot be <b>NULL</b> if NumEntries &gt; 0.</para>
+    </param>
+    <param name="NumEntries">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of entries in the stream output declaration ( ranges from 0 to D3D11_SO_STREAM_COUNT * D3D11_SO_OUTPUT_COMPONENT_COUNT ).</para>
+    </param>
+    <param name="pBufferStrides">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>An array of buffer strides; each stride is the size of an element for that buffer.</para>
+    </param>
+    <param name="NumStrides">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of strides (or buffers) in <i>pBufferStrides</i> (ranges from 0 to D3D11_SO_BUFFER_SLOT_COUNT).</para>
+    </param>
+    <param name="RasterizedStream">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The index number of the stream to be sent to the rasterizer stage (ranges from 0 to D3D11_SO_STREAM_COUNT - 1).
+Set to D3D11_SO_NO_RASTERIZED_STREAM if no stream is to be rasterized.</para>
+    </param>
+    <param name="pClassLinkage">
+      <para>Type: <b><see cref="ID3D11ClassLinkage" />*</b></para>
+      <para>A pointer to a class linkage interface (see <see cref="ID3D11ClassLinkage" />); the value can be <b>NULL</b>.</para>
+    </param>
+    <param name="ppGeometryShader">
+      <para>Type: <b><see cref="ID3D11GeometryShader" />**</b></para>
+      <para>Address of a pointer to an <see cref="ID3D11GeometryShader" /> interface, representing the geometry shader that was created.
+Set this to <b>NULL</b> to validate the other parameters; if validation passes, the method will return S_FALSE instead of S_OK.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>For more info about using <b>CreateGeometryShaderWithStreamOutput</b>, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-stream-stage-getting-started">Create a Geometry-Shader Object with Stream Output</a>.</para>
+      <para>The Direct3D 11.1 runtime, which is available starting with Windows 8, provides the following new functionality for <b>CreateGeometryShaderWithStreamOutput</b>.</para>
+      <para>The following shader model 5.0 instructions are available to just pixel shaders and compute shaders in the Direct3D 11.0 runtime. For the Direct3D 11.1 runtime, because unordered access views (UAV) are available at all shader stages, you can use these instructions in all shader stages.</para>
+      <para>Therefore, if you use the following shader model 5.0 instructions in a geometry shader, you can successfully pass the compiled geometry shader to <i>pShaderBytecode</i>. That is, the call to <b>CreateGeometryShaderWithStreamOutput</b> succeeds.</para>
+      <para>If you pass a compiled shader to <i>pShaderBytecode</i> that uses any of the following instructions on a device that doesn’t support UAVs at every shader stage (including existing drivers that are not implemented to support UAVs at every shader stage), <b>CreateGeometryShaderWithStreamOutput</b> fails.  <b>CreateGeometryShaderWithStreamOutput</b> also fails if the shader tries to use a UAV slot beyond the set of UAV slots that the hardware supports.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dcl-uav-typed--sm5---asm-">dcl_uav_typed</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dcl-uav-raw--sm5---asm-">dcl_uav_raw</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dcl-uav-structured--sm5---asm-">dcl_uav_structured</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/ld-raw--sm5---asm-">ld_raw</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/ld-structured--sm5---asm-">ld_structured</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/ld-uav-typed--sm5---asm-">ld_uav_typed</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/store-raw--sm5---asm-">store_raw</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/store-structured--sm5---asm-">store_structured</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/store-uav-typed--sm5---asm-">store_uav_typed</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/sync--sm5---asm-">sync_uglobal</a>
+          </description>
+        </item>
+        <item>
+          <description>All atomics and immediate atomics (for example, <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/atomic-and--sm5---asm-">atomic_and</a> and <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/imm-atomic-and--sm5---asm-">imm_atomic_and</a>)
+</description>
+        </item>
+      </list>
+      <b>Windows Phone 8:
+</b> This API is supported.
+</remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreateHullShader">
+    <summary>
+      <para>Create a <a href="https://docs.microsoft.com//windows/desktop/direct3d11/direct3d-11-advanced-stages-tessellation">hull shader</a>.</para>
+    </summary>
+    <param name="pShaderBytecode">
+      <para>Type: <b>const void*</b></para>
+      <para>A pointer to a compiled shader.</para>
+    </param>
+    <param name="BytecodeLength">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
+      <para>Size of the compiled shader.</para>
+    </param>
+    <param name="pClassLinkage">
+      <para>Type: <b><see cref="ID3D11ClassLinkage" />*</b></para>
+      <para>A pointer to a class linkage interface (see <see cref="ID3D11ClassLinkage" />); the value can be <b>NULL</b>.</para>
+    </param>
+    <param name="ppHullShader">
+      <para>Type: <b><see cref="ID3D11HullShader" />**</b></para>
+      <para>Address of a pointer to a <see cref="ID3D11HullShader" /> interface.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>The Direct3D 11.1 runtime, which is available starting with Windows 8, provides the following new functionality for <b>CreateHullShader</b>.</para>
+      <para>The following shader model 5.0 instructions are available to just pixel shaders and compute shaders in the Direct3D 11.0 runtime. For the Direct3D 11.1 runtime, because unordered access views (UAV) are available at all shader stages, you can use these instructions in all shader stages.</para>
+      <para>Therefore, if you use the following shader model 5.0 instructions in a hull shader, you can successfully pass the compiled hull shader to <i>pShaderBytecode</i>. That is, the call to <b>CreateHullShader</b> succeeds.</para>
+      <para>If you pass a compiled shader to <i>pShaderBytecode</i> that uses any of the following instructions on a device that doesn’t support UAVs at every shader stage (including existing drivers that are not implemented to support UAVs at every shader stage), <b>CreateHullShader</b> fails.  <b>CreateHullShader</b> also fails if the shader tries to use a UAV slot beyond the set of UAV slots that the hardware supports.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dcl-uav-typed--sm5---asm-">dcl_uav_typed</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dcl-uav-raw--sm5---asm-">dcl_uav_raw</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dcl-uav-structured--sm5---asm-">dcl_uav_structured</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/ld-raw--sm5---asm-">ld_raw</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/ld-structured--sm5---asm-">ld_structured</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/ld-uav-typed--sm5---asm-">ld_uav_typed</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/store-raw--sm5---asm-">store_raw</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/store-structured--sm5---asm-">store_structured</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/store-uav-typed--sm5---asm-">store_uav_typed</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/sync--sm5---asm-">sync_uglobal</a>
+          </description>
+        </item>
+        <item>
+          <description>All atomics and immediate atomics (for example, <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/atomic-and--sm5---asm-">atomic_and</a> and <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/imm-atomic-and--sm5---asm-">imm_atomic_and</a>)</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreateInputLayout">
+    <summary>
+      <para>Create an input-layout object to describe the input-buffer data for the input-assembler stage.</para>
+    </summary>
+    <param name="pInputElementDescs">
+      <para>Type: <b>const <see cref="D3D11_INPUT_ELEMENT_DESC" />*</b></para>
+      <para>An array of the input-assembler stage input data types; each type is described by an element description (see <see cref="D3D11_INPUT_ELEMENT_DESC" />).</para>
+    </param>
+    <param name="NumElements">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of input-data types in the array of input-elements.</para>
+    </param>
+    <param name="pShaderBytecodeWithInputSignature">
+      <para>Type: <b>const void*</b></para>
+      <para>A pointer to the compiled shader.  The compiled shader code contains a input signature which is validated against the array of elements. See remarks.</para>
+    </param>
+    <param name="BytecodeLength">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
+      <para>Size of the compiled shader.</para>
+    </param>
+    <param name="ppInputLayout">
+      <para>Type: <b><see cref="ID3D11InputLayout" />**</b></para>
+      <para>A pointer to the input-layout object created (see <see cref="ID3D11InputLayout" />). To validate the other input parameters, set this pointer to be <b>NULL</b> and verify that the method returns S_FALSE.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the method succeeds, the return code is S_OK. See <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a> for failing error codes.</para>
+    </returns>
+    <remarks>
+      <para>After creating an input layout object, it must be bound to the input-assembler stage before calling a draw API.</para>
+      <para>Once an input-layout object is created from a shader signature, the input-layout object can be reused with any other shader that has an identical input signature (semantics included). This can simplify the creation of input-layout objects when you are working with many shaders with identical inputs.</para>
+      <para>If a data type in the input-layout declaration does not match the data type in a shader-input signature, CreateInputLayout will generate a warning during compilation. The warning is simply to call attention to the fact that the data may be reinterpreted when read from a register. You may either disregard this warning (if reinterpretation is intentional) or make the data types match in both declarations to eliminate the warning.</para>
+      <para>
+        <b>Windows Phone 8:
+</b> This API is supported.</para>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreatePixelShader">
+    <summary>
+      <para>Create a pixel shader.</para>
+    </summary>
+    <param name="pShaderBytecode">
+      <para>Type: <b>const void*</b></para>
+      <para>A pointer to the compiled shader.</para>
+    </param>
+    <param name="BytecodeLength">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
+      <para>Size of the compiled pixel shader.</para>
+    </param>
+    <param name="pClassLinkage">
+      <para>Type: <b><see cref="ID3D11ClassLinkage" />*</b></para>
+      <para>A pointer to a class linkage interface (see <see cref="ID3D11ClassLinkage" />); the value can be <b>NULL</b>.</para>
+    </param>
+    <param name="ppPixelShader">
+      <para>Type: <b><see cref="ID3D11PixelShader" />**</b></para>
+      <para>Address of a pointer to a <see cref="ID3D11PixelShader" /> interface. If this is <b>NULL</b>, all other parameters will be validated, and if all parameters pass validation this API will return S_FALSE instead of S_OK.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>After creating the pixel shader, you can set it to the device using <see cref="ID3D11DeviceContext.PSSetShader" />.</para>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreatePredicate">
+    <summary>
+      <para>Creates a predicate.</para>
+    </summary>
+    <param name="pPredicateDesc">
+      <para>Type: <b>const <see cref="D3D11_QUERY_DESC" />*</b></para>
+      <para>Pointer to a query description where the type of query must be a D3D11_QUERY_SO_OVERFLOW_PREDICATE or D3D11_QUERY_OCCLUSION_PREDICATE (see <see cref="D3D11_QUERY_DESC" />).</para>
+    </param>
+    <param name="ppPredicate">
+      <para>Type: <b><see cref="ID3D11Predicate" />**</b></para>
+      <para>Address of a pointer to a predicate (see <see cref="ID3D11Predicate" />).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreateQuery">
+    <summary>
+      <para>This interface encapsulates methods for querying information from the GPU.</para>
+    </summary>
+    <param name="pQueryDesc">
+      <para>Type: <b>const <see cref="D3D11_QUERY_DESC" />*</b></para>
+      <para>Pointer to a query description (see <see cref="D3D11_QUERY_DESC" />).</para>
+    </param>
+    <param name="ppQuery">
+      <para>Type: <b><see cref="ID3D11Query" />**</b></para>
+      <para>Address of a pointer to the query object created (see <see cref="ID3D11Query" />).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns E_OUTOFMEMORY if there is insufficient memory to create the query object.
+See <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a> for other possible return values.</para>
+    </returns>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreateRasterizerState">
+    <summary>
+      <para>Create a rasterizer state object that tells the rasterizer stage how to behave.</para>
+    </summary>
+    <param name="pRasterizerDesc">
+      <para>Type: <b>const <see cref="D3D11_RASTERIZER_DESC" />*</b></para>
+      <para>Pointer to a rasterizer state description (see <see cref="D3D11_RASTERIZER_DESC" />).</para>
+    </param>
+    <param name="ppRasterizerState">
+      <para>Type: <b><see cref="ID3D11RasterizerState" />**</b></para>
+      <para>Address of a pointer to the rasterizer state object created (see <see cref="ID3D11RasterizerState" />).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns E_OUTOFMEMORY if there is insufficient memory to create the compute shader.  See <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a> for other possible return values.</para>
+    </returns>
+    <remarks>
+      <para>4096 unique rasterizer state objects can be created on a device at a time.</para>
+      <para>If an application attempts to create a rasterizer-state interface with the same state as an existing interface, the same interface will be returned and the total number of unique rasterizer state objects will stay the same.</para>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreateRenderTargetView">
+    <summary>
+      <para>Creates a render-target view for accessing resource data.</para>
+    </summary>
+    <param name="pResource">
+      <para>Type: <b><see cref="ID3D11Resource" />*</b></para>
+      <para>Pointer to a <see cref="ID3D11Resource" /> that represents a render target. This resource must have been created with the <see cref="D3D11_BIND_RENDER_TARGET" /> flag.</para>
+    </param>
+    <param name="pDesc">
+      <para>Type: <b>const <see cref="D3D11_RENDER_TARGET_VIEW_DESC" />*</b></para>
+      <para>Pointer to a <see cref="D3D11_RENDER_TARGET_VIEW_DESC" /> that represents a render-target view description. Set this parameter to <b>NULL</b> to create a view that accesses all of the subresources in mipmap level 0.</para>
+    </param>
+    <param name="ppRTView">
+      <para>Type: <b><see cref="ID3D11RenderTargetView" />**</b></para>
+      <para>Address of a pointer to an <see cref="ID3D11RenderTargetView" />. Set this parameter to <b>NULL</b> to validate the other input parameters (the method will return S_FALSE if the other input parameters pass validation).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>A render-target view can be bound to the output-merger stage by calling <see cref="ID3D11DeviceContext.OMSetRenderTargets" />.</para>
+      <para>The Direct3D 11.1 runtime, which is available starting with Windows 8, allows you to use <b>CreateRenderTargetView</b> for the following new purpose.</para>
+      <para>You can create render-target views of video resources so that Direct3D shaders can process those render-target views. These video resources are either <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/sm5-object-texture2d">Texture2D</a> or <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/sm5-object-texture2darray">Texture2DArray</a>. The value in the <b>ViewDimension</b> member of the <see cref="D3D11_RENDER_TARGET_VIEW_DESC" /> structure for a created render-target view must match the type of video resource, D3D11_RTV_DIMENSION_TEXTURE2D          for Texture2D and D3D11_RTV_DIMENSION_TEXTURE2DARRAY for Texture2DArray. Additionally, the format of the underlying video resource restricts the formats that the view can use. The video resource format values on the <see cref="DXGI_FORMAT" /> reference page specify the format values that views are restricted to.</para>
+      <para>The runtime read+write conflict prevention logic (which stops a resource from being bound as an SRV and RTV or UAV at the same time) treats views of different parts of the same video surface as conflicting for simplicity.  Therefore, the runtime does not allow an application to read from luma while the application simultaneously renders to chroma in the same surface even though the hardware might allow these simultaneous operations.</para>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreateSamplerState">
+    <summary>
+      <para>Create a sampler-state object that encapsulates sampling information for a texture.</para>
+    </summary>
+    <param name="pSamplerDesc">
+      <para>Type: <b>const <see cref="D3D11_SAMPLER_DESC" />*</b></para>
+      <para>Pointer to a sampler state description (see <see cref="D3D11_SAMPLER_DESC" />).</para>
+    </param>
+    <param name="ppSamplerState">
+      <para>Type: <b><see cref="ID3D11SamplerState" />**</b></para>
+      <para>Address of a pointer to the sampler state object created (see <see cref="ID3D11SamplerState" />).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>4096 unique sampler state objects can be created on a device at a time.</para>
+      <para>If an application attempts to create a sampler-state interface with the same state as an existing interface, the same interface will be returned and the total number of unique sampler state objects will stay the same.</para>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreateShaderResourceView">
+    <summary>
+      <para>Create a shader-resource view for accessing data in a resource.</para>
+    </summary>
+    <param name="pResource">
+      <para>Type: <b><see cref="ID3D11Resource" />*</b></para>
+      <para>Pointer to the resource that will serve as input to a shader. This resource must have been created with the <see cref="D3D11_BIND_SHADER_RESOURCE " /> flag.</para>
+    </param>
+    <param name="pDesc">
+      <para>Type: <b>const <see cref="D3D11_SHADER_RESOURCE_VIEW_DESC" />*</b></para>
+      <para>Pointer to a shader-resource view description (see <see cref="D3D11_SHADER_RESOURCE_VIEW_DESC" />). Set this parameter to <b>NULL</b> to create a
+view that accesses the entire resource (using the format the resource was created with).</para>
+    </param>
+    <param name="ppSRView">
+      <para>Type: <b><see cref="ID3D11ShaderResourceView" />**</b></para>
+      <para>Address of a pointer to an <see cref="ID3D11ShaderResourceView" />. Set this parameter to <b>NULL</b> to validate the
+other input parameters (the method will return <b>S_FALSE</b> if the other input parameters pass validation).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>A resource is made up of one or more subresources; a view identifies which subresources to allow the pipeline to access. In addition, each resource is
+bound to the pipeline using a view. A shader-resource view is designed to bind any buffer or texture resource to the shader stages using the following
+API methods: <see cref="ID3D11DeviceContext.VSSetShaderResources" />, <see cref="ID3D11DeviceContext.GSSetShaderResources" /> and <see cref="ID3D11DeviceContext.PSSetShaderResources" />.</para>
+      <para>Because a view is fully typed, this means that typeless resources become fully typed when bound to the pipeline.</para>
+      <para>
+        <b>Note</b>  To successfully create a shader-resource view from a typeless buffer (for example, <see cref="DXGI_FORMAT_R32G32B32A32_TYPELESS" />), you must set the <see cref="D3D11_RESOURCE_MISC_BUFFER_ALLOW_RAW_VIEWS" /> flag when you create the buffer.</para>
+      <para>The Direct3D 11.1 runtime, which is available starting with Windows 8, allows you to use <b>CreateShaderResourceView</b> for the following new purpose.</para>
+      <para>You can create shader-resource views of video resources so that Direct3D shaders can process those shader-resource views. These video resources are either <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/sm5-object-texture2d">Texture2D</a> or <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/sm5-object-texture2darray">Texture2DArray</a>. The value in the <b>ViewDimension</b> member of the <see cref="D3D11_SHADER_RESOURCE_VIEW_DESC" /> structure for a created shader-resource view must match the type of video resource, D3D11_SRV_DIMENSION_TEXTURE2D          for Texture2D and D3D11_SRV_DIMENSION_TEXTURE2DARRAY for Texture2DArray. Additionally, the format of the underlying video resource restricts the formats that the view can use. The video resource format values on the <see cref="DXGI_FORMAT" /> reference page specify the format values that views are restricted to.</para>
+      <para>The runtime read+write conflict prevention logic (which stops a resource from being bound as an SRV and RTV or UAV at the same time) treats views of different parts of the same video surface as conflicting for simplicity.  Therefore, the runtime does not allow an application to read from luma while the application simultaneously renders to chroma in the same surface even though the hardware might allow these simultaneous operations.</para>
+      <para>
+        <b>Windows Phone 8:
+</b> This API is supported.</para>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreateTexture1D">
+    <summary>
+      <para>Creates an array of <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-textures-intro">1D textures</a>.</para>
+    </summary>
+    <param name="pDesc">
+      <para>Type: <b>const <see cref="D3D11_TEXTURE1D_DESC" />*</b></para>
+      <para>A pointer to a <see cref="D3D11_TEXTURE1D_DESC" /> structure that describes a 1D texture resource. To create a typeless resource that can be interpreted at runtime into different, compatible formats, specify a typeless format in the texture description. To generate mipmap levels automatically, set the number of mipmap levels to 0.</para>
+    </param>
+    <param name="pInitialData">
+      <para>Type: <b>const <see cref="D3D11_SUBRESOURCE_DATA" />*</b></para>
+      <para>A pointer to an array of <see cref="D3D11_SUBRESOURCE_DATA" /> structures that describe subresources for the 1D texture resource. Applications can't specify <b>NULL</b> for <i>pInitialData</i> when creating IMMUTABLE resources (see <see cref="D3D11_USAGE" />). If the resource is multisampled, <i>pInitialData</i> must be <b>NULL</b> because multisampled resources cannot be initialized with data when they are created.</para>
+      <para>If you don't pass anything to <i>pInitialData</i>, the initial content of the memory for the resource is undefined. In this case, you need to write the resource content some other way before the resource is read.</para>
+      <para>You can determine the size of this array from values in the <b>MipLevels</b> and <b>ArraySize</b> members of the <see cref="D3D11_TEXTURE1D_DESC" /> structure to which <i>pDesc</i> points by using the following calculation:</para>
+      <para>MipLevels * ArraySize</para>
+      <para>For more information about this array size, see Remarks.</para>
+    </param>
+    <param name="ppTexture1D">
+      <para>Type: <b><see cref="ID3D11Texture1D" />**</b></para>
+      <para>A pointer to a buffer that receives a pointer to a <see cref="ID3D11Texture1D" /> interface for the created texture. Set this parameter to <b>NULL</b> to validate the other input parameters (the method will return S_FALSE if the other input parameters pass validation).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the method succeeds, the return code is S_OK. See <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a> for failing error codes.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>CreateTexture1D</b> creates a 1D texture resource, which can contain a number of 1D subresources. The number of textures is specified in the texture description. All textures in a resource must have the same format, size, and number of mipmap levels.</para>
+      <para>All resources are made up of one or more subresources. To load data into the texture, applications can supply the data initially as an array of <see cref="D3D11_SUBRESOURCE_DATA" /> structures pointed to by <i>pInitialData</i>, or they can use one of the D3DX texture functions such as <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3dx11createtexturefromfile">D3DX11CreateTextureFromFile</a>.</para>
+      <para>For a 32 width texture with a full mipmap chain, the <i>pInitialData</i> array has the following 6 elements:</para>
+      <list type="bullet">
+        <item>
+          <description>pInitialData[0] = 32x1</description>
+        </item>
+        <item>
+          <description>pInitialData[1] = 16x1</description>
+        </item>
+        <item>
+          <description>pInitialData[2] = 8x1</description>
+        </item>
+        <item>
+          <description>pInitialData[3] = 4x1
+</description>
+        </item>
+        <item>
+          <description>pInitialData[4] = 2x1
+</description>
+        </item>
+        <item>
+          <description>pInitialData[5] = 1x1
+</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreateTexture2D">
+    <summary>
+      <para>Create an array of <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-textures-intro">2D textures</a>.</para>
+    </summary>
+    <param name="pDesc">
+      <para>Type: <b>const <see cref="D3D11_TEXTURE2D_DESC" />*</b></para>
+      <para>A pointer to a <see cref="D3D11_TEXTURE2D_DESC" /> structure that describes a 2D texture resource. To create a typeless resource that can be interpreted at runtime into different, compatible formats, specify a typeless format in the texture description. To generate mipmap levels automatically, set the number of mipmap levels to 0.</para>
+    </param>
+    <param name="pInitialData">
+      <para>Type: <b>const <see cref="D3D11_SUBRESOURCE_DATA" />*</b></para>
+      <para>A pointer to an array of <see cref="D3D11_SUBRESOURCE_DATA" /> structures that describe subresources for the 2D texture resource. Applications can't specify <b>NULL</b> for <i>pInitialData</i> when creating IMMUTABLE resources (see <see cref="D3D11_USAGE" />). If the resource is multisampled, <i>pInitialData</i> must be <b>NULL</b> because multisampled resources cannot be initialized with data when they are created.</para>
+      <para>If you don't pass anything to <i>pInitialData</i>, the initial content of the memory for the resource is undefined. In this case, you need to write the resource content some other way before the resource is read.</para>
+      <para>You can determine the size of this array from values in the <b>MipLevels</b> and <b>ArraySize</b> members of the <see cref="D3D11_TEXTURE2D_DESC" /> structure to which <i>pDesc</i> points by using the following calculation:</para>
+      <para>MipLevels * ArraySize</para>
+      <para>For more information about this array size, see Remarks.</para>
+    </param>
+    <param name="ppTexture2D">
+      <para>Type: <b><see cref="ID3D11Texture2D" />**</b></para>
+      <para>A pointer to a buffer that receives a pointer to a <see cref="ID3D11Texture2D" /> interface for the created texture. Set this parameter to <b>NULL</b> to validate the other input parameters (the method will return S_FALSE if the other input parameters pass validation).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the method succeeds, the return code is S_OK. See <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a> for failing error codes.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>CreateTexture2D</b> creates a 2D texture resource, which can contain a number of 2D subresources. The number of textures is specified in the texture description. All textures in a resource must have the same format, size, and number of mipmap levels.</para>
+      <para>All resources are made up of one or more subresources. To load data into the texture, applications can supply the data initially as an array of <see cref="D3D11_SUBRESOURCE_DATA" /> structures pointed to by <i>pInitialData</i>, or it may use one of the D3DX texture functions such as <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3dx11createtexturefromfile">D3DX11CreateTextureFromFile</a>.</para>
+      <para>For a 32 x 32 texture with a full mipmap chain, the <i>pInitialData</i> array has the following 6 elements:</para>
+      <list type="bullet">
+        <item>
+          <description>pInitialData[0] = 32x32</description>
+        </item>
+        <item>
+          <description>pInitialData[1] = 16x16</description>
+        </item>
+        <item>
+          <description>pInitialData[2] = 8x8</description>
+        </item>
+        <item>
+          <description>pInitialData[3] = 4x4
+</description>
+        </item>
+        <item>
+          <description>pInitialData[4] = 2x2
+</description>
+        </item>
+        <item>
+          <description>pInitialData[5] = 1x1
+</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreateTexture3D">
+    <summary>
+      <para>Create a single <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-textures-intro">3D texture</a>.</para>
+    </summary>
+    <param name="pDesc">
+      <para>Type: <b>const <see cref="D3D11_TEXTURE3D_DESC" />*</b></para>
+      <para>A pointer to a <see cref="D3D11_TEXTURE3D_DESC" /> structure that describes a 3D texture resource. To create a typeless resource that can be interpreted at runtime into different, compatible formats, specify a typeless format in the texture description. To generate mipmap levels automatically, set the number of mipmap levels to 0.</para>
+    </param>
+    <param name="pInitialData">
+      <para>Type: <b>const <see cref="D3D11_SUBRESOURCE_DATA" />*</b></para>
+      <para>A pointer to an array of <see cref="D3D11_SUBRESOURCE_DATA" /> structures that describe subresources for the 3D texture resource. Applications cannot specify <b>NULL</b> for <i>pInitialData</i> when creating IMMUTABLE resources (see <see cref="D3D11_USAGE" />). If the resource is multisampled, <i>pInitialData</i> must be <b>NULL</b> because multisampled resources cannot be initialized with data when they are created.</para>
+      <para>If you don't pass anything to <i>pInitialData</i>, the initial content of the memory for the resource is undefined. In this case, you need to write the resource content some other way before the resource is read.</para>
+      <para>You can determine the size of this array from the value in the <b>MipLevels</b> member of the <see cref="D3D11_TEXTURE3D_DESC" /> structure to which <i>pDesc</i> points. Arrays of 3D volume textures are not supported.</para>
+      <para>For more information about this array size, see Remarks.</para>
+    </param>
+    <param name="ppTexture3D">
+      <para>Type: <b><see cref="ID3D11Texture3D" />**</b></para>
+      <para>A pointer to a buffer that receives a pointer to a <see cref="ID3D11Texture3D" /> interface for the created texture. Set this parameter to <b>NULL</b> to validate the other input parameters (the method will return S_FALSE if the other input parameters pass validation).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the method succeeds, the return code is S_OK. See <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a> for failing error codes.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>CreateTexture3D</b> creates a 3D texture resource, which can contain a number of 3D subresources. The number of textures is specified in the texture description. All textures in a resource must have the same format, size, and number of mipmap levels.</para>
+      <para>All resources are made up of one or more subresources. To load data into the texture, applications can supply the data initially as an array of <see cref="D3D11_SUBRESOURCE_DATA" /> structures pointed to by <i>pInitialData</i>, or they can use one of the D3DX texture functions such as <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3dx11createtexturefromfile">D3DX11CreateTextureFromFile</a>.</para>
+      <para>Each element of <i>pInitialData</i> provides all of the slices that are defined for a given miplevel. For example, for a 32 x 32 x 4 volume texture with a full mipmap chain, the array has the following 6 elements:</para>
+      <list type="bullet">
+        <item>
+          <description>pInitialData[0] = 32x32 with 4 slices</description>
+        </item>
+        <item>
+          <description>pInitialData[1] = 16x16 with 2 slices</description>
+        </item>
+        <item>
+          <description>pInitialData[2] = 8x8 with 1 slice</description>
+        </item>
+        <item>
+          <description>pInitialData[3] = 4x4
+with 1 slice</description>
+        </item>
+        <item>
+          <description>pInitialData[4] = 2x2
+with 1 slice</description>
+        </item>
+        <item>
+          <description>pInitialData[5] = 1x1
+with 1 slice</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreateUnorderedAccessView">
+    <summary>
+      <para>Creates a view for accessing an <a href="https://docs.microsoft.com//windows/desktop/direct3d11/direct3d-11-advanced-stages-cs-resources">unordered access</a> resource.</para>
+    </summary>
+    <param name="pResource">
+      <para>Type: <b><see cref="ID3D11Resource" />*</b></para>
+      <para>Pointer to an <see cref="ID3D11Resource" /> that represents a resources that will serve as an input to a shader.</para>
+    </param>
+    <param name="pDesc">
+      <para>Type: <b>const <see cref="D3D11_UNORDERED_ACCESS_VIEW_DESC" />*</b></para>
+      <para>Pointer to an <see cref="D3D11_UNORDERED_ACCESS_VIEW_DESC" /> that represents a shader-resource view description. Set this parameter to <b>NULL</b> to create a view that accesses the entire resource (using the format the resource was created with).</para>
+    </param>
+    <param name="ppUAView">
+      <para>Type: <b><see cref="ID3D11UnorderedAccessView" />**</b></para>
+      <para>Address of a pointer to an <see cref="ID3D11UnorderedAccessView" /> that represents an unordered-access view. Set this parameter to <b>NULL</b> to validate the other input parameters (the method will return S_FALSE if the other input parameters pass validation).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>The Direct3D 11.1 runtime, which is available starting with Windows 8, allows you to use <b>CreateUnorderedAccessView</b> for the following new purpose.</para>
+      <para>You can create unordered-access views of video resources so that Direct3D shaders can process those unordered-access views. These video resources are either <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/sm5-object-texture2d">Texture2D</a> or <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/sm5-object-texture2darray">Texture2DArray</a>. The value in the <b>ViewDimension</b> member of the <see cref="D3D11_UNORDERED_ACCESS_VIEW_DESC" /> structure for a created unordered-access view must match the type of video resource, D3D11_UAV_DIMENSION_TEXTURE2D          for Texture2D and D3D11_UAV_DIMENSION_TEXTURE2DARRAY for Texture2DArray. Additionally, the format of the underlying video resource restricts the formats that the view can use. The video resource format values on the <see cref="DXGI_FORMAT" /> reference page specify the format values that views are restricted to.</para>
+      <para>The runtime read+write conflict prevention logic (which stops a resource from being bound as an SRV and RTV or UAV at the same time) treats views of different parts of the same video surface as conflicting for simplicity.  Therefore, the runtime does not allow an application to read from luma while the application simultaneously renders to chroma in the same surface even though the hardware might allow these simultaneous operations.</para>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.CreateVertexShader">
+    <summary>
+      <para>Create a vertex-shader object from a compiled shader.</para>
+    </summary>
+    <param name="pShaderBytecode">
+      <para>Type: <b>const void*</b></para>
+      <para>A pointer to the compiled shader.</para>
+    </param>
+    <param name="BytecodeLength">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
+      <para>Size of the compiled vertex shader.</para>
+    </param>
+    <param name="pClassLinkage">
+      <para>Type: <b><see cref="ID3D11ClassLinkage" />*</b></para>
+      <para>A pointer to a class linkage interface (see <see cref="ID3D11ClassLinkage" />); the value can be <b>NULL</b>.</para>
+    </param>
+    <param name="ppVertexShader">
+      <para>Type: <b><see cref="ID3D11VertexShader" />**</b></para>
+      <para>Address of a pointer to a <see cref="ID3D11VertexShader" /> interface. If this is <b>NULL</b>, all other parameters will be validated, and if all parameters pass validation this API will return <b>S_FALSE</b> instead of <b>S_OK</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>The Direct3D 11.1 runtime, which is available starting with Windows 8, provides the following new functionality for <b>CreateVertexShader</b>.</para>
+      <para>The following shader model 5.0 instructions are available to just pixel shaders and compute shaders in the Direct3D 11.0 runtime. For the Direct3D 11.1 runtime, because unordered access views (UAV) are available at all shader stages, you can use these instructions in all shader stages.</para>
+      <para>Therefore, if you use the following shader model 5.0 instructions in a vertex shader, you can successfully pass the compiled vertex shader to <i>pShaderBytecode</i>. That is, the call to <b>CreateVertexShader</b> succeeds.</para>
+      <para>If you pass a compiled shader to <i>pShaderBytecode</i> that uses any of the following instructions on a device that doesn’t support UAVs at every shader stage (including existing drivers that are not implemented to support UAVs at every shader stage), <b>CreateVertexShader</b> fails.  <b>CreateVertexShader</b> also fails if the shader tries to use a UAV slot beyond the set of UAV slots that the hardware supports.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dcl-uav-typed--sm5---asm-">dcl_uav_typed</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dcl-uav-raw--sm5---asm-">dcl_uav_raw</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dcl-uav-structured--sm5---asm-">dcl_uav_structured</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/ld-raw--sm5---asm-">ld_raw</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/ld-structured--sm5---asm-">ld_structured</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/ld-uav-typed--sm5---asm-">ld_uav_typed</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/store-raw--sm5---asm-">store_raw</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/store-structured--sm5---asm-">store_structured</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/store-uav-typed--sm5---asm-">store_uav_typed</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/sync--sm5---asm-">sync_uglobal</a>
+          </description>
+        </item>
+        <item>
+          <description>All atomics and immediate atomics (for example, <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/atomic-and--sm5---asm-">atomic_and</a> and <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/imm-atomic-and--sm5---asm-">imm_atomic_and</a>)</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.GetCreationFlags">
+    <summary>
+      <para>Get the flags used during the call to create the device with <see cref="D3D11CreateDevice" />.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A bitfield containing the flags used to create the device. See <see cref="D3D11_CREATE_DEVICE_FLAG" />.</para>
+    </returns>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.GetDeviceRemovedReason">
+    <summary>
+      <para>Get the reason why the device was removed.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Possible return values include:</para>
+      <list type="bullet">
+        <item>
+          <description>DXGI_ERROR_DEVICE_HUNG</description>
+        </item>
+        <item>
+          <description>DXGI_ERROR_DEVICE_REMOVED</description>
+        </item>
+        <item>
+          <description>DXGI_ERROR_DEVICE_RESET</description>
+        </item>
+        <item>
+          <description>DXGI_ERROR_DRIVER_INTERNAL_ERROR</description>
+        </item>
+        <item>
+          <description>DXGI_ERROR_INVALID_CALL</description>
+        </item>
+        <item>
+          <description>S_OK</description>
+        </item>
+      </list>
+      <para>For more detail on these return codes, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</para>
+    </returns>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.GetExceptionMode">
+    <summary>
+      <para>Get the exception-mode flags.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A value that contains one or more exception flags; each flag specifies a condition which will cause an exception to be raised. The flags are listed in <see cref="D3D11_RAISE_FLAG" />. A default value of 0 means there are no flags.</para>
+    </returns>
+    <remarks>
+      <para>An exception-mode flag is used to elevate an error condition to a non-continuable exception.</para>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.GetFeatureLevel">
+    <summary>
+      <para>Gets the feature level of the hardware device.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="D3D_FEATURE_LEVEL" /></b></para>
+      <para>A member of the <see cref="D3D_FEATURE_LEVEL" /> enumerated type that describes the feature level of the hardware device.</para>
+    </returns>
+    <remarks>
+      <para>
+        <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">Feature levels</a> determine the capabilities of your device.</para>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.GetImmediateContext">
+    <summary>
+      <para>Gets an immediate context, which can play back command lists.</para>
+    </summary>
+    <param name="ppImmediateContext">
+      <para>Type: <b><see cref="ID3D11DeviceContext" />**</b></para>
+      <para>Upon completion of the method, the passed pointer to an <see cref="ID3D11DeviceContext" /> interface pointer is initialized.</para>
+    </param>
+    <remarks>
+      <para>The <b>GetImmediateContext</b> method returns an <see cref="ID3D11DeviceContext" /> object that represents an immediate context which is used to perform rendering that you want immediately submitted to a device. For most applications, an immediate context is the primary object that is used to draw your scene.</para>
+      <para>The <b>GetImmediateContext</b> method increments the reference count of the immediate context by one. Therefore, you must call <see cref="Release" /> on the returned interface pointer when you are done with it to avoid a memory leak.</para>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.GetPrivateData">
+    <summary>
+      <para>Get application-defined data from a device.</para>
+    </summary>
+    <param name="guid">
+      <para>Type: <b><a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-oaut/6e7d7108-c213-40bc-8294-ac13fe68fd50">REFGUID</a></b></para>
+      <para>Guid associated with the data.</para>
+    </param>
+    <param name="pDataSize">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>A pointer to a variable that on input contains the size, in bytes, of the buffer that <i>pData</i> points to, and on output contains the size, in bytes, of the amount of data that <b>GetPrivateData</b> retrieved.</para>
+    </param>
+    <param name="pData">
+      <para>Type: <b>void*</b></para>
+      <para>A pointer to a buffer that <b>GetPrivateData</b>  fills with data from the device if <i>pDataSize</i> points to a value that specifies a buffer large enough to hold the data.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the codes described in the topic <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>If the data returned is a pointer to an <see cref="IUnknown" />, or one of its derivative classes, which was previously set by SetPrivateDataInterface, that interface will have its reference count incremented before the private data is returned.</para>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.OpenSharedResource">
+    <summary>
+      <para>Give a device access to a shared resource created on a different device.</para>
+    </summary>
+    <param name="hResource">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HANDLE</a></b></para>
+      <para>A resource handle. See remarks.</para>
+    </param>
+    <param name="ReturnedInterface">
+      <para>Type: <b>REFIID</b></para>
+      <para>The globally unique identifier (GUID) for the resource interface. See remarks.</para>
+    </param>
+    <param name="ppResource">
+      <para>Type: <b>void**</b></para>
+      <para>Address of a pointer to the resource we are gaining access to.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>The REFIID, or GUID, of the interface to the resource can be obtained by using the __uuidof() macro. For example, __uuidof(ID3D11Buffer) will get the GUID of the interface to a buffer resource.</para>
+      <para>The unique handle of the resource is obtained differently depending on the type of device that originally created the resource.</para>
+      <para>To share a resource between two Direct3D 11 devices the resource must have been created with the
+<see cref="D3D11_RESOURCE_MISC_SHARED" /> flag, if it was created using the ID3D11Device interface.
+If it was created using a DXGI device interface, then the resource is always shared.</para>
+      <para>The REFIID, or GUID, of the interface to the resource can be obtained by using the __uuidof() macro.
+For example, __uuidof(ID3D11Buffer) will get the GUID of the interface to a buffer resource.</para>
+      <para>When sharing a resource between two Direct3D 10/11 devices the unique handle of the resource can be obtained by querying the resource for the <see cref="IDXGIResource" /> interface and then calling <see cref="GetSharedHandle" />.</para>
+      <code>
+IDXGIResource* pOtherResource(NULL);
+hr = pOtherDeviceResource-&gt;QueryInterface( __uuidof(IDXGIResource), (void**)&amp;amp;amp;amp;amp;amp;pOtherResource );
+HANDLE sharedHandle;
+pOtherResource-&gt;GetSharedHandle(&amp;amp;amp;amp;amp;amp;sharedHandle);
+
+</code>
+      <para>The only resources that can be shared are 2D non-mipmapped textures.</para>
+      <para>To share a resource between a Direct3D 9 device and a Direct3D 11 device the texture must have been created using
+the <i>pSharedHandle</i> argument of <see cref="CreateTexture" />.
+The shared Direct3D 9 handle is then passed to OpenSharedResource in the <i>hResource</i> argument.</para>
+      <para>The following code illustrates the method calls involved.</para>
+      <code>
+sharedHandle = NULL; // must be set to NULL to create, can use a valid handle here to open in D3D9
+pDevice9-&gt;CreateTexture(..., pTex2D_9, &amp;amp;amp;amp;amp;amp;sharedHandle);
+...
+pDevice11-&gt;OpenSharedResource(sharedHandle, __uuidof(ID3D11Resource), (void**)(&amp;amp;amp;amp;amp;amp;tempResource11));
+tempResource11-&gt;QueryInterface(__uuidof(ID3D11Texture2D), (void**)(&amp;amp;amp;amp;amp;amp;pTex2D_11));
+tempResource11-&gt;Release();
+// now use pTex2D_11 with pDevice11
+
+</code>
+      <para>Textures being shared from D3D9 to D3D11 have the following restrictions.</para>
+      <list type="bullet">
+        <item>
+          <description>Textures must be 2D</description>
+        </item>
+        <item>
+          <description>Only 1 mip level is allowed</description>
+        </item>
+        <item>
+          <description>Texture must have default usage</description>
+        </item>
+        <item>
+          <description>Texture must be write only</description>
+        </item>
+        <item>
+          <description>MSAA textures are not allowed</description>
+        </item>
+        <item>
+          <description>Bind flags must have SHADER_RESOURCE and RENDER_TARGET set</description>
+        </item>
+        <item>
+          <description>Only R10G10B10A2_UNORM, R16G16B16A16_FLOAT and R8G8B8A8_UNORM formats are allowed</description>
+        </item>
+      </list>
+      <para>If a shared texture is updated on one device <see cref="ID3D11DeviceContext.Flush" /> must be called on that device.</para>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.SetExceptionMode">
+    <summary>
+      <para>Get the exception-mode flags.</para>
+    </summary>
+    <param name="RaiseFlags">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A value that contains one or more exception flags; each flag specifies a condition which will cause an exception to be raised. The flags are listed in <see cref="D3D11_RAISE_FLAG" />. A default value of 0 means there are no flags.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>Set an exception-mode flag to elevate an error condition to a non-continuable exception.</para>
+      <para>Whenever an error occurs, a Direct3D device enters the DEVICEREMOVED state and if the appropriate exception flag has been set, an exception is raised. A raised exception is designed to terminate an application. Before termination, the last chance an application has to persist data is by using an UnhandledExceptionFilter (see <a href="https://docs.microsoft.com//windows/desktop/Debug/structured-exception-handling">Structured Exception Handling</a>). In general, UnhandledExceptionFilters are leveraged to try to persist data when an application is crashing (to disk, for example). Any code that executes during an UnhandledExceptionFilter is not guaranteed to reliably execute (due to possible process corruption). Any data that the UnhandledExceptionFilter manages to persist, before the UnhandledExceptionFilter crashes again, should be treated as suspect, and therefore inspected by a new, non-corrupted process to see if it is usable.</para>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.SetPrivateData">
+    <summary>
+      <para>Set data to a device and associate that data with a guid.</para>
+    </summary>
+    <param name="guid">
+      <para>Type: <b><a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-oaut/6e7d7108-c213-40bc-8294-ac13fe68fd50">REFGUID</a></b></para>
+      <para>Guid associated with the data.</para>
+    </param>
+    <param name="DataSize">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Size of the data.</para>
+    </param>
+    <param name="pData">
+      <para>Type: <b>const void*</b></para>
+      <para>Pointer to the data to be stored with this device. If pData is <b>NULL</b>, DataSize must also be 0, and any data previously associated with the guid will be destroyed.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>The data stored in the device with this method can be retrieved with <see cref="ID3D11Device.GetPrivateData" />.</para>
+      <para>The data and guid set with this method will typically be application-defined.</para>
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-layers">debug layer</a> reports memory leaks by outputting a list of object interface pointers along with their friendly names. The default friendly name is "&lt;unnamed&gt;". You can set the friendly name so that you can determine if the corresponding object interface pointer caused the leak. To set the friendly name, use the <b>SetPrivateData</b> method and the <b>WKPDID_D3DDebugObjectName</b> GUID that is in D3Dcommon.h. For example, to give pContext a friendly name of <i>My name</i>, use the following code:</para>
+      <code>
+static const char c_szName[] = "My name";
+hr = pContext-&gt;SetPrivateData( WKPDID_D3DDebugObjectName, sizeof( c_szName ) - 1, c_szName );
+
+</code>
+    </remarks>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device.SetPrivateDataInterface">
+    <summary>
+      <para>Associate an IUnknown-derived interface with this device child and associate that interface with an application-defined guid.</para>
+    </summary>
+    <param name="guid">
+      <para>Type: <b><a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-oaut/6e7d7108-c213-40bc-8294-ac13fe68fd50">REFGUID</a></b></para>
+      <para>Guid associated with the interface.</para>
+    </param>
+    <param name="pData">
+      <para>Type: <b>const IUnknown*</b></para>
+      <para>Pointer to an IUnknown-derived interface to be associated with the device child.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D11Device" />
+  </member>
+  <member name="ID3D11Device">
+    <summary>
+      <para>The device interface represents a virtual adapter; it is used to create resources.
+<b>Note</b>  The latest version of this interface is <see cref="ID3D11Device5" /> introduced in the Windows 10 Creators Update. Applications targetting Windows 10 Creators Update should use the <b>ID3D11Device5</b> interface instead of <b>ID3D11Device</b>.</para>
+    </summary>
+    <remarks>
+      <para>A device is created using <see cref="D3D11CreateDevice" />.</para>
+      <para>
+        <b>Windows Phone 8:
+</b> This API is supported.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-interfaces">Core Interfaces</seealso>
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

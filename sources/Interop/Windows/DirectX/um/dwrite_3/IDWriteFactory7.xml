@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFactory7.GetSystemFontCollection">
+    <summary>
+      <para>Retrieves a collection of fonts, grouped into families.</para>
+    </summary>
+    <param name="includeDownloadableFonts">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOL</a></b></para>
+      <para>
+        <code>true</code> if you want to include downloadable fonts. <code>false</code> if you only want locally installed fonts.</para>
+    </param>
+    <param name="fontFamilyModel">
+      <para>Type: <b><see cref="DWRITE_FONT_FAMILY_MODEL" /></b></para>
+      <para>How to group families in the collection.</para>
+    </param>
+    <param name="fontCollection">
+      <para>Type: <b><see cref="IDWriteFontCollection3" />**</b></para>
+      <para>The address of a pointer to an <see cref="IDWriteFontCollection3" /> interface. On successful completion, the function sets the pointer to a newly created font collection object, otherwise it sets the pointer to <code>nullptr</code>.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+  </member>
+  <member name="IDWriteFactory7.GetSystemFontSet">
+    <summary>
+      <para>Retrieves the set of system fonts.</para>
+    </summary>
+    <param name="includeDownloadableFonts">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOL</a></b></para>
+      <para>
+        <code>true</code> if you want to include downloadable fonts. <code>false</code> if you only want locally installed fonts.</para>
+    </param>
+    <param name="fontSet">
+      <para>Type: <b><see cref="IDWriteFontSet2" />**</b></para>
+      <para>The address of a pointer to an <see cref="IDWriteFontSet2" /> interface. On successful completion, the function sets the pointer to the font set object, otherwise it sets the pointer to <code>nullptr</code>.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+  </member>
+  <member name="IDWriteFactory7">
+    <summary>
+      <para>This interface represents a factory object from which all DirectWrite objects are created. <b>IDWriteFactory7</b> adds new facilities for working with system fonts.</para>
+      <para>This interface extends <see cref="IDWriteFactory6" />.</para>
+    </summary>
+    <seealso cref="IDWriteFactory6" />
+  </member>
+</doc>

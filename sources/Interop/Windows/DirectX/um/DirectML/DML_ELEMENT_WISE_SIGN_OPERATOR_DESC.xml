@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_ELEMENT_WISE_SIGN_OPERATOR_DESC">
+    <summary>
+      <para>Returns a value representing the sign of each element of <i>InputTensor</i>, placing the result into the corresponding element of <i>OutputTensor</i>.</para>
+      <code>f(x) = -1, if x &lt; 0
+        1, if x &gt; 0
+        0, otherwise // This includes negative zero.
+</code>
+      <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias <i>InputTensor</i> during binding.</para>
+    </summary>
+  </member>
+  <member name="DML_ELEMENT_WISE_SIGN_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The input tensor to read from.</para>
+    </summary>
+  </member>
+  <member name="DML_ELEMENT_WISE_SIGN_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The output tensor to write the results to.</para>
+    </summary>
+  </member>
+</doc>

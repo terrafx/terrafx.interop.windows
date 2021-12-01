@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_SHADER_VARIABLE_DESC">
+    <summary>
+      <para>Describes a shader variable.</para>
+    </summary>
+    <remarks>
+      <para>Get a shader-variable description using reflection, by calling <see cref="ID3D10ShaderReflectionVariable.GetDesc" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-structures">Shader Structures</seealso>
+  </member>
+  <member name="D3D10_SHADER_VARIABLE_DESC.Name">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
+      <para>The variable name.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_VARIABLE_DESC.StartOffset">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Offset from the start of the parent structure, to the beginning of the variable.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_VARIABLE_DESC.Size">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Size of the variable (in bytes).</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_VARIABLE_DESC.uFlags">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Flags, which identify shader-variable properties (see <see cref="D3D10_SHADER_VARIABLE_FLAGS" />).</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_VARIABLE_DESC.DefaultValue">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPVOID</a></b></para>
+      <para>The default value for initializing the variable.</para>
+    </summary>
+  </member>
+</doc>

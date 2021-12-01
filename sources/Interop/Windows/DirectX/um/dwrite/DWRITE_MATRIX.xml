@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_MATRIX">
+    <summary>
+      <para>The <b>DWRITE_MATRIX</b> structure specifies the graphics transform to be applied to rendered glyphs.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_MATRIX.m11">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>A value indicating the horizontal scaling / cosine of rotation.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_MATRIX.m12">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>A value indicating the vertical shear / sine of rotation.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_MATRIX.m21">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>A value indicating the horizontal shear / negative sine of rotation.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_MATRIX.m22">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>A value indicating the vertical scaling / cosine of rotation.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_MATRIX.dx">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>A value indicating the horizontal shift (always orthogonal regardless of rotation).</para>
+    </summary>
+  </member>
+  <member name="DWRITE_MATRIX.dy">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>A value indicating the vertical shift (always orthogonal regardless of rotation.)</para>
+    </summary>
+  </member>
+</doc>

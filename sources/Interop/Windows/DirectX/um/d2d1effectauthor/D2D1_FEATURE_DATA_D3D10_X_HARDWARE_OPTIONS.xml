@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS">
+    <summary>
+      <para>Describes compute shader support, which is an option on D3D10 feature level.</para>
+    </summary>
+    <remarks>
+      <para>You can fill this structure by passing a D2D1_ FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS structure to <see cref="ID2D1EffectContext.CheckFeatureSupport" />.</para>
+    </remarks>
+  </member>
+  <member name="D2D1_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS.computeShaders_Plus_RawAndStructuredBuffers_Via_Shader_4_x">
+    <summary>
+      <para>Shader model 4 compute shaders are supported.</para>
+    </summary>
+  </member>
+</doc>

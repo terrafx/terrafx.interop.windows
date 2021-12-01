@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_CHANNEL_SELECTOR">
+    <summary>
+      <para>Specifies the color channel the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/displacement-map">Displacement map effect</a> extracts the intensity from and uses it to spatially displace the image in the X or Y direction.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CHANNEL_SELECTOR.D2D1_CHANNEL_SELECTOR_R">
+    <summary>
+      <para>The effect extracts the intensity output from the red channel.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CHANNEL_SELECTOR.D2D1_CHANNEL_SELECTOR_G">
+    <summary>
+      <para>The effect extracts the intensity output from the green channel.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CHANNEL_SELECTOR.D2D1_CHANNEL_SELECTOR_B">
+    <summary>
+      <para>The effect extracts the intensity output from the blue channel.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CHANNEL_SELECTOR.D2D1_CHANNEL_SELECTOR_A">
+    <summary>
+      <para>The effect extracts the intensity output from the alpha channel.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CHANNEL_SELECTOR.D2D1_CHANNEL_SELECTOR_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

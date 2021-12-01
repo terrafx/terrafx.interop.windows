@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_CHANNEL_SELECTOR.xml' path='doc/member[@name="D2D1_CHANNEL_SELECTOR"]/*' />
 public enum D2D1_CHANNEL_SELECTOR : uint
 {
+    /// <include file='D2D1_CHANNEL_SELECTOR.xml' path='doc/member[@name="D2D1_CHANNEL_SELECTOR.D2D1_CHANNEL_SELECTOR_R"]/*' />
     D2D1_CHANNEL_SELECTOR_R = 0,
+
+    /// <include file='D2D1_CHANNEL_SELECTOR.xml' path='doc/member[@name="D2D1_CHANNEL_SELECTOR.D2D1_CHANNEL_SELECTOR_G"]/*' />
     D2D1_CHANNEL_SELECTOR_G = 1,
+
+    /// <include file='D2D1_CHANNEL_SELECTOR.xml' path='doc/member[@name="D2D1_CHANNEL_SELECTOR.D2D1_CHANNEL_SELECTOR_B"]/*' />
     D2D1_CHANNEL_SELECTOR_B = 2,
+
+    /// <include file='D2D1_CHANNEL_SELECTOR.xml' path='doc/member[@name="D2D1_CHANNEL_SELECTOR.D2D1_CHANNEL_SELECTOR_A"]/*' />
     D2D1_CHANNEL_SELECTOR_A = 3,
+
+    /// <include file='D2D1_CHANNEL_SELECTOR.xml' path='doc/member[@name="D2D1_CHANNEL_SELECTOR.D2D1_CHANNEL_SELECTOR_FORCE_DWORD"]/*' />
     D2D1_CHANNEL_SELECTOR_FORCE_DWORD = 0xffffffff,
 }

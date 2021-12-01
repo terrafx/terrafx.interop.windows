@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC">
+    <summary>
+      <para>Performs a matrix multiplication function on quantized data. This operator is mathematically equivalent to dequantizing the inputs, then performing matrix multiply, and then quantizing the output.</para>
+      <para>This operator requires the matrix multiply input tensors to be 4D which are formatted as <code>{ BatchCount, ChannelCount, Height, Width }</code>. The matrix multiply operator will perform BatchCount * ChannelCount number of independent matrix multiplications.</para>
+      <para>For example, if <i>ATensor</i> has <i>Sizes</i> of <code>{ BatchCount, ChannelCount, M, K }</code>, and <i>BTensor</i> has <i>Sizes</i> of <code>{ BatchCount, ChannelCount, K, N }</code>, and <i>OutputTensor</i> has <i>Sizes</i> of <code>{ BatchCount, ChannelCount, M, N }</code>, then the matrix multiply operator will perform BatchCount * ChannelCount independent matrix multiplications of dimensions {M,K} x {K,N} = {M,N}.</para>
+      <h3>Dequantize function</h3>
+      <code>f(Input, Scale, ZeroPoint) = (Input - ZeroPoint) * Scale
+</code>
+      <h3>Quantize function</h3>
+      <code>f(Input, Scale, ZeroPoint) = clamp(round(Input / Scale) + ZeroPoint, Min, Max)
+</code>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC.ATensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the A data. This tensor's dimensions should be <code>{ BatchCount, ChannelCount, M, K }</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC.AScaleTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the ATensor scale data. The expected dimensions of the <code>AScaleTensor</code> are <code>{ 1, 1, 1, 1 }</code> if per tensor quantization is required, or <code>{ 1, 1, M, 1 }</code> if per row quantization is required. These scale values are used for dequantizing the A values.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC.AZeroPointTensor">
+    <summary>
+      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>An optional tensor containing the <i>ATensor</i> zero point data. The expected dimensions of the AZeroPointTensor are <code>{ 1, 1, 1, 1 }</code> if per tensor quantization is required, or <code>{ 1, 1, M, 1 }</code> if per row quantization is required. These zero point values are used for dequantizing the ATensor values.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC.BTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the B data. This tensor's dimensions should be <code>{ BatchCount, ChannelCount, K, N }</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC.BScaleTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the <i>BTensor</i> scale data. The expected dimensions of the <code>BScaleTensor</code> are <code>{ 1, 1, 1, 1 }</code> if per tensor quantization is required, or <code>{ 1, 1, 1, N }</code> if per column quantization is required. These scale values are used for dequantizing the <i>BTensor</i> values.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC.BZeroPointTensor">
+    <summary>
+      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>An optional tensor containing the <i>BTensor</i> zero point data. The expected dimensions of the <code>BZeroPointTensor</code> are <code>{ 1, 1, 1, 1 }</code> if per tensor quantization is required, or <code>{ 1, 1, 1, N }</code> if per column quantization is required. These zero point values are used for dequantizing the <i>BTensor</i> values.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC.OutputScaleTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the filter scale data. The expected dimensions of the <code>OutputScaleTensor</code> are <code>{ 1, 1, 1, 1 }</code> if per tensor quantization is required, or <code>{ 1, 1, M, 1 }</code> if per row quantization is required. This scale value is used for dequantizing the filter values.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC.OutputZeroPointTensor">
+    <summary>
+      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>An optional tensor containing the filter zero point data. The expected dimensions of the <code>OutputZeroPointTensor</code> are <code>{ 1, 1, 1, 1 }</code> if per tensor quantization is required or <code>{ 1, 1, M, 1 }</code> if per row quantization is required. This zero point value is used for dequantizing the filter values.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor to write the results to. This tensor's dimensions are <code>{ BatchCount, ChannelCount, M, N }</code>.</para>
+    </summary>
+  </member>
+</doc>

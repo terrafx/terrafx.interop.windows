@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_INFO_QUEUE_MESSAGE_SEVERITY">
+    <summary>
+      <para>Values that specify debug message severity levels for an information queue.</para>
+    </summary>
+    <remarks>
+      <para>Use this enumeration when you call <see cref="IDXGIInfoQueue.GetMessage" /> to retrieve a message and when you call <see cref="IDXGIInfoQueue.AddMessage" /> to add a message. Also, use this enumeration with <see cref="IDXGIInfoQueue.AddApplicationMessage" />.</para>
+      <para>
+        <b>Note</b>  This API requires the Windows Software Development Kit (SDK) for Windows 8.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-enums">DXGI Enumerations</seealso>
+  </member>
+  <member name="DXGI_INFO_QUEUE_MESSAGE_SEVERITY.DXGI_INFO_QUEUE_MESSAGE_SEVERITY_CORRUPTION">
+    <summary>
+      <para>Defines some type of corruption that has occurred.</para>
+    </summary>
+  </member>
+  <member name="DXGI_INFO_QUEUE_MESSAGE_SEVERITY.DXGI_INFO_QUEUE_MESSAGE_SEVERITY_ERROR">
+    <summary>
+      <para>Defines an error message.</para>
+    </summary>
+  </member>
+  <member name="DXGI_INFO_QUEUE_MESSAGE_SEVERITY.DXGI_INFO_QUEUE_MESSAGE_SEVERITY_WARNING">
+    <summary>
+      <para>Defines a warning message.</para>
+    </summary>
+  </member>
+  <member name="DXGI_INFO_QUEUE_MESSAGE_SEVERITY.DXGI_INFO_QUEUE_MESSAGE_SEVERITY_INFO">
+    <summary>
+      <para>Defines an information message.</para>
+    </summary>
+  </member>
+  <member name="DXGI_INFO_QUEUE_MESSAGE_SEVERITY.DXGI_INFO_QUEUE_MESSAGE_SEVERITY_MESSAGE">
+    <summary>
+      <para>Defines a message other than corruption, error, warning, or information.</para>
+    </summary>
+  </member>
+</doc>

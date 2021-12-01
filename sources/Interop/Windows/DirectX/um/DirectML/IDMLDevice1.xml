@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDMLDevice1.CompileGraph">
+    <summary>
+      <para>Compiles a graph of DirectML operators into an object that can be dispatched to the GPU.</para>
+      <para>A compiled operator represents the efficient, baked form of an operator suitable for execution on the GPU. A compiled operator holds state (such as shaders and other objects) required for execution. Because a compiled operator implements the <see cref="IDMLPageable" /> interface, you're able to evict one from GPU memory if you wish. See <see cref="IDMLDevice1.Evict" /> and <see cref="IDMLDevice1.MakeResident" /> for more info.</para>
+      <para>The compiled operator doesn't use nor reference the <see cref="IDMLOperator" /> objects supplied within the graph description after this method returns.</para>
+    </summary>
+    <param name="desc">
+      <para>Type: <b><see cref="DML_GRAPH_DESC" />*</b></para>
+      <para>A description of the graph to compile. See <see cref="DML_GRAPH_DESC" />.</para>
+    </param>
+    <param name="flags">
+      <para>Type: <see cref="DML_EXECUTION_FLAGS" /></para>
+      <para>Any flags to control the execution of this operator.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <i>ppv</i>. This is expected to be the GUID of <see cref="IDMLCompiledOperator" />.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>A pointer to a memory block that receives a pointer to the compiled operator. This is the address of a pointer to an <see cref="IDMLCompiledOperator" />, representing  the compiled operator created.</para>
+    </param>
+    <returns>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The DirectML operator graph API provides an abstract way to use DirectML efficiently across diverse hardware. DirectML applies tensor-level optimizations such as choosing the most efficient tensor layout based on the adapter being used. It also applies optimizations such as the removal of Join or Split operators.</para>
+      <para>We recommend that you apply high-level optimizations before building a DirectML graph. For example, fusing Convolution operators with BatchNorm, constant folding, and common subexpression elimination. The optimizations within DirectML's graph optimizer are intended to complement such device-independent optimizations, which are typically handled generically by machine learning frameworks.</para>
+    </remarks>
+    <seealso cref="IDMLDevice1" />
+  </member>
+  <member name="IDMLDevice1">
+    <summary>
+      <para>Represents a DirectML device, which is used to create operators, binding tables, command recorders, and other objects. The <b>IDMLDevice1</b> interface inherits from <see cref="IDMLDevice" />.</para>
+      <para>A DirectML device is always associated with exactly one underlying Direct3D 12 device. All objects created by the DirectML device maintain a strong reference to their parent device. Unlike the Direct3D 12 device, the DML device is not a singleton. Therefore, it's possible to create multiple DirectML devices over the same Direct3D 12 device. However, this isn't recommended as the DirectML device has no mutable state, so there's little advantage to creating multiple DML devices over the same Direct3D 12 device.</para>
+      <para>This object is thread-safe.</para>
+    </summary>
+    <seealso cref="IDMLDevice interface" />
+  </member>
+</doc>

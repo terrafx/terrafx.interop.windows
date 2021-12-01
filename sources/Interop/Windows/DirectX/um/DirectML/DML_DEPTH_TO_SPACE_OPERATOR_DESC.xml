@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_DEPTH_TO_SPACE_OPERATOR_DESC">
+    <summary>
+      <para>Rearranges (permutes) data from depth into blocks of spatial data. The operator outputs a copy of the input tensor where values from the depth dimension are moved in spatial blocks to the height and width dimensions.</para>
+      <para>This is the inverse transformation of <see cref="DML_SPACE_TO_DEPTH_OPERATOR_DESC" />.</para>
+    </summary>
+    <remarks>
+      <para>A newer version of this operator, <see cref="DML_DEPTH_TO_SPACE1_OPERATOR_DESC" />, was introduced in <code>DML_FEATURE_LEVEL_2_1</code>.</para>
+    </remarks>
+    <seealso cref="DML_DEPTH_TO_SPACE1_OPERATOR_DESC" />
+    <seealso cref="DML_SPACE_TO_DEPTH_OPERATOR_DESC" />
+  </member>
+  <member name="DML_DEPTH_TO_SPACE_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The tensor to read from. The input tensor's dimensions are <code>{ BatchCount, InputChannelCount, InputHeight, InputWidth }</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_DEPTH_TO_SPACE_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The tensor to write the results to. The output tensor's dimensions are <code>{ BatchCount, OutputChannelCount, OutputHeight, OutputWidth }</code>, where:</para>
+      <list type="bullet">
+        <item>
+          <description>OutputChannelCount is computed as InputChannelCount / (<i>BlockSize</i> * <i>BlockSize</i>).</description>
+        </item>
+        <item>
+          <description>OutputHeight is computed as InputHeight * <i>BlockSize</i>.</description>
+        </item>
+        <item>
+          <description>OutputWidth is computed as InputWidth * <i>BlockSize</i>.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="DML_DEPTH_TO_SPACE_OPERATOR_DESC.BlockSize">
+    <summary>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>The width and height of the blocks that are moved.</para>
+    </summary>
+  </member>
+</doc>

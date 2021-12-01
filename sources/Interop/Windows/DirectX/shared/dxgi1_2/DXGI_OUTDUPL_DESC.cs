@@ -7,11 +7,15 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_OUTDUPL_DESC.xml' path='doc/member[@name="DXGI_OUTDUPL_DESC"]/*' />
 public partial struct DXGI_OUTDUPL_DESC
 {
+    /// <include file='DXGI_OUTDUPL_DESC.xml' path='doc/member[@name="DXGI_OUTDUPL_DESC.ModeDesc"]/*' />
     public DXGI_MODE_DESC ModeDesc;
 
+    /// <include file='DXGI_OUTDUPL_DESC.xml' path='doc/member[@name="DXGI_OUTDUPL_DESC.Rotation"]/*' />
     public DXGI_MODE_ROTATION Rotation;
 
+    /// <include file='DXGI_OUTDUPL_DESC.xml' path='doc/member[@name="DXGI_OUTDUPL_DESC.DesktopImageInSystemMemory"]/*' />
     public BOOL DesktopImageInSystemMemory;
 }

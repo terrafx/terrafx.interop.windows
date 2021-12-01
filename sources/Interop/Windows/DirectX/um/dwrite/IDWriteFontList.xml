@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFontList.GetFont">
+    <summary>
+      <para>Gets a font given its zero-based index.</para>
+    </summary>
+    <param name="index">
+      <para>Type: <b>UINT32</b></para>
+      <para>Zero-based index of the font in the font list.</para>
+    </param>
+    <param name="font">
+      <para>Type: <b><see cref="IDWriteFont" />**</b></para>
+      <para>When this method returns, contains the address of a pointer to the newly created <see cref="IDWriteFont" /> object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontList" />
+  </member>
+  <member name="IDWriteFontList.GetFontCollection">
+    <summary>
+      <para>Gets the font collection that contains the fonts in
+the font list.</para>
+    </summary>
+    <param name="fontCollection">
+      <para>Type: <b><see cref="IDWriteFontCollection" />**</b></para>
+      <para>When this method returns, contains the address of a pointer to the current <see cref="IDWriteFontCollection" /> object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontList" />
+  </member>
+  <member name="IDWriteFontList.GetFontCount">
+    <summary>
+      <para>Gets the number of fonts in the font list.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of fonts in the font list.</para>
+    </returns>
+    <seealso cref="IDWriteFontList" />
+  </member>
+  <member name="IDWriteFontList">
+    <summary>
+      <para>Represents a list of fonts.</para>
+    </summary>
+  </member>
+</doc>

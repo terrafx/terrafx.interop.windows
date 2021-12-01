@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_READING_DIRECTION">
+    <summary>
+      <para>Specifies the direction in which reading progresses.</para>
+      <para>
+        <b>Note</b>  <b>DWRITE_READING_DIRECTION_TOP_TO_BOTTOM</b> and <b>DWRITE_READING_DIRECTION_BOTTOM_TO_TOP</b> are available in Windows 8.1 and later, only.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_READING_DIRECTION.DWRITE_READING_DIRECTION_LEFT_TO_RIGHT">
+    <summary>
+      <para>Indicates that reading progresses from left to right.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_READING_DIRECTION.DWRITE_READING_DIRECTION_RIGHT_TO_LEFT">
+    <summary>
+      <para>Indicates that reading progresses from right to left.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_READING_DIRECTION.DWRITE_READING_DIRECTION_TOP_TO_BOTTOM">
+    <summary>
+      <para>
+        <b>Note</b>  Windows 8.1 and later only.</para>
+      <para>Indicates that reading progresses from top to bottom.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_READING_DIRECTION.DWRITE_READING_DIRECTION_BOTTOM_TO_TOP">
+    <summary>
+      <para>
+        <b>Note</b>  Windows 8.1 and later only.</para>
+      <para>Indicates that reading progresses from bottom to top.</para>
+    </summary>
+  </member>
+</doc>

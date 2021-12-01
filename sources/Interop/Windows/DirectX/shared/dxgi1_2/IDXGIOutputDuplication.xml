@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDXGIOutputDuplication.AcquireNextFrame">
+    <summary>
+      <para>Indicates that the application is ready to process the next desktop image.</para>
+    </summary>
+    <param name="TimeoutInMilliseconds">
+      <para>The time-out interval, in milliseconds. This interval specifies the amount of time that this method waits for a new frame before it returns to the caller.  This method returns if the interval elapses, and a new desktop image is not available.</para>
+      <para>For more information about the time-out interval, see Remarks.</para>
+    </param>
+    <param name="pFrameInfo">
+      <para>A pointer to a memory location that receives the <see cref="DXGI_OUTDUPL_FRAME_INFO" /> structure that describes timing and presentation statistics for a frame.</para>
+    </param>
+    <param name="ppDesktopResource">
+      <para>A pointer to a variable that receives the <see cref="IDXGIResource" /> interface of the surface that contains the desktop bitmap.</para>
+    </param>
+    <returns>
+      <para>
+        <b>AcquireNextFrame</b> returns:</para>
+      <list type="bullet">
+        <item>
+          <description>S_OK if it successfully received the next desktop image.</description>
+        </item>
+        <item>
+          <description>DXGI_ERROR_ACCESS_LOST if the desktop duplication interface is invalid. The desktop duplication interface typically becomes invalid when a different type of image is displayed on the desktop.  Examples of this situation are: <list type="bullet"><item><description>Desktop switch</description></item><item><description>Mode change</description></item><item><description>Switch from DWM on, DWM off, or other full-screen application</description></item></list>In this situation, the application must release the <see cref="IDXGIOutputDuplication" /> interface and create a new <b>IDXGIOutputDuplication</b> for the new content.</description>
+        </item>
+        <item>
+          <description>DXGI_ERROR_WAIT_TIMEOUT if the time-out interval elapsed before the next desktop frame was available.</description>
+        </item>
+        <item>
+          <description>DXGI_ERROR_INVALID_CALL if the application called <b>AcquireNextFrame</b> without releasing the previous frame.</description>
+        </item>
+        <item>
+          <description>E_INVALIDARG if one of the parameters to <b>AcquireNextFrame</b> is incorrect; for example, if <i>pFrameInfo</i> is NULL.</description>
+        </item>
+        <item>
+          <description>Possibly other error codes that are described in the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> topic.</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When <b>AcquireNextFrame</b> returns successfully, the calling application can access the desktop image that <b>AcquireNextFrame</b> returns in the variable at <i>ppDesktopResource</i>.
+If the caller specifies a zero time-out interval in the <i>TimeoutInMilliseconds</i> parameter, <b>AcquireNextFrame</b> verifies whether there is a new desktop image available, returns immediately, and indicates its outcome with the return value.  If the caller specifies an <b>INFINITE</b> time-out interval in the <i>TimeoutInMilliseconds</i> parameter, the time-out interval never elapses.</para>
+      <para>
+        <b>Note</b>  You cannot cancel the wait that you specified in the <i>TimeoutInMilliseconds</i> parameter. Therefore, if you must periodically check for other conditions (for example, a terminate signal), you should specify a non-<b>INFINITE</b> time-out interval. After the time-out interval elapses, you can check for these other conditions and then call <b>AcquireNextFrame</b> again to wait for the next frame.</para>
+      <para>
+        <b>AcquireNextFrame</b> acquires a new desktop frame when the operating system either updates the desktop bitmap image or changes the shape or position of a hardware pointer.  The new frame that <b>AcquireNextFrame</b> acquires might have only the desktop image updated, only the pointer shape or position updated, or both.</para>
+    </remarks>
+    <seealso cref="IDXGIOutputDuplication" />
+  </member>
+  <member name="IDXGIOutputDuplication.GetDesc">
+    <summary>
+      <para>Retrieves a description of a duplicated output. This description specifies the dimensions of the surface that contains the desktop image.</para>
+    </summary>
+    <param name="pDesc">
+      <para>A pointer to a <see cref="DXGI_OUTDUPL_DESC" /> structure that describes the duplicated output. This parameter must not be <b>NULL</b>.</para>
+    </param>
+    <remarks>
+      <para>After an application creates an <see cref="IDXGIOutputDuplication" /> interface, it calls <b>GetDesc</b> to retrieve the dimensions of the surface that contains the desktop image. The format of the desktop image is always <see cref="DXGI_FORMAT_B8G8R8A8_UNORM" />.</para>
+    </remarks>
+    <seealso cref="IDXGIOutputDuplication" />
+  </member>
+  <member name="IDXGIOutputDuplication.GetFramePointerShape">
+    <summary>
+      <para>Gets information about the new pointer shape for the current desktop frame.</para>
+    </summary>
+    <param name="PointerShapeBufferSize">
+      <para>The size in bytes of the buffer that the caller passed to the  <i>pPointerShapeBuffer</i> parameter.</para>
+    </param>
+    <param name="pPointerShapeBuffer">
+      <para>A pointer to a buffer to which <b>GetFramePointerShape</b> copies and returns pixel data for the new pointer shape.</para>
+    </param>
+    <param name="pPointerShapeBufferSizeRequired">
+      <para>Pointer to a variable that receives the number of bytes that <b>GetFramePointerShape</b> needs to store the new pointer shape pixel data in the buffer at <i>pPointerShapeBuffer</i>.</para>
+      <para>For more information about returning the required buffer size, see Remarks.</para>
+    </param>
+    <param name="pPointerShapeInfo">
+      <para>Pointer to a <see cref="DXGI_OUTDUPL_POINTER_SHAPE_INFO" /> structure that receives the pointer shape information.</para>
+    </param>
+    <returns>
+      <para>
+        <b>GetFramePointerShape</b> returns:</para>
+      <list type="bullet">
+        <item>
+          <description>S_OK if it successfully retrieved information about the new pointer shape.</description>
+        </item>
+        <item>
+          <description>DXGI_ERROR_ACCESS_LOST if the desktop duplication interface is invalid. The desktop duplication interface typically becomes invalid when a different type of image is displayed on the desktop.  Examples of this situation are: <list type="bullet"><item><description>Desktop switch</description></item><item><description>Mode change</description></item><item><description>Switch from DWM on, DWM off, or other full-screen application</description></item></list>In this situation, the application must release the <see cref="IDXGIOutputDuplication" /> interface and create a new <b>IDXGIOutputDuplication</b> for the new content.</description>
+        </item>
+        <item>
+          <description>DXGI_ERROR_MORE_DATA if the buffer that the calling application provided was not big enough.</description>
+        </item>
+        <item>
+          <description>DXGI_ERROR_INVALID_CALL if the application called <b>GetFramePointerShape</b> without owning the desktop image.</description>
+        </item>
+        <item>
+          <description>E_INVALIDARG if one of the parameters to <b>GetFramePointerShape</b> is incorrect; for example, if <i>pPointerShapeInfo</i> is NULL.</description>
+        </item>
+        <item>
+          <description>Possibly other error codes that are described in the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> topic.</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>GetFramePointerShape</b>
+      </para>
+      <para>stores a size value in the variable at <i>pPointerShapeBufferSizeRequired</i>. This  value specifies the number of bytes that <i>pPointerShapeBufferSizeRequired</i> needs to store the new pointer shape pixel data. You can use the value in the following situations to determine the amount of memory to allocate for future buffers that you pass to <i>pPointerShapeBuffer</i>:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>GetFramePointerShape</b> fails with DXGI_ERROR_MORE_DATA because the buffer is not big enough.</description>
+        </item>
+        <item>
+          <description>
+            <b>GetFramePointerShape</b> supplies a bigger than necessary buffer. The size value returned at <i>pPointerShapeBufferSizeRequired</i> informs the caller how much buffer space was actually used compared to how much buffer space the caller allocated and specified in the  <i>PointerShapeBufferSize</i> parameter.</description>
+        </item>
+      </list>
+      <para>The <i>pPointerShapeInfo</i> parameter describes the new pointer shape.</para>
+    </remarks>
+    <seealso cref="IDXGIOutputDuplication" />
+  </member>
+  <member name="IDXGIOutputDuplication.MapDesktopSurface">
+    <summary>
+      <para>Provides the CPU with efficient access to a desktop image if that desktop image is already in system memory.</para>
+    </summary>
+    <param name="pLockedRect">
+      <para>A pointer to a <see cref="DXGI_MAPPED_RECT" /> structure that receives the surface data that the CPU needs to directly access the surface data.</para>
+    </param>
+    <returns>
+      <para>
+        <b>MapDesktopSurface</b> returns:</para>
+      <list type="bullet">
+        <item>
+          <description>S_OK if it successfully retrieved the surface data.</description>
+        </item>
+        <item>
+          <description>DXGI_ERROR_ACCESS_LOST if the desktop duplication interface is invalid. The desktop duplication interface typically becomes invalid when a different type of image is displayed on the desktop.  Examples of this situation are: <list type="bullet"><item><description>Desktop switch</description></item><item><description>Mode change</description></item><item><description>Switch from DWM on, DWM off, or other full-screen application</description></item></list>In this situation, the application must release the <see cref="IDXGIOutputDuplication" /> interface and create a new <b>IDXGIOutputDuplication</b> for the new content.</description>
+        </item>
+        <item>
+          <description>DXGI_ERROR_INVALID_CALL if the application already has an outstanding map on the desktop image.  The application must call <see cref="UnMapDesktopSurface" /> before it calls <b>MapDesktopSurface</b> again. DXGI_ERROR_INVALID_CALL is also returned if the application did not own the desktop image when it called <b>MapDesktopSurface</b>.</description>
+        </item>
+        <item>
+          <description>DXGI_ERROR_UNSUPPORTED if the desktop image is not in system memory. In this situation, the application must first transfer the image to a staging surface and then lock the image by calling the <see cref="IDXGISurface.Map" /> method.</description>
+        </item>
+        <item>
+          <description>E_INVALIDARG if the <i>pLockedRect</i> parameter is incorrect; for example, if <i>pLockedRect</i> is <b>NULL</b>.</description>
+        </item>
+        <item>
+          <description>Possibly other error codes that are described in the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> topic.</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You can successfully call <b>MapDesktopSurface</b> if the  <b>DesktopImageInSystemMemory</b> member of the <see cref="DXGI_OUTDUPL_DESC" /> structure is set to <b>TRUE</b>. If <b>DesktopImageInSystemMemory</b> is <b>FALSE</b>, <b>MapDesktopSurface</b> returns DXGI_ERROR_UNSUPPORTED. Call <see cref="IDXGIOutputDuplication.GetDesc" /> to retrieve the <b>DXGI_OUTDUPL_DESC</b> structure.</para>
+    </remarks>
+    <seealso cref="IDXGIOutputDuplication" />
+  </member>
+  <member name="IDXGIOutputDuplication.ReleaseFrame">
+    <summary>
+      <para>Indicates that the application finished processing the frame.</para>
+    </summary>
+    <returns>
+      <para>
+        <b>ReleaseFrame</b> returns:</para>
+      <list type="bullet">
+        <item>
+          <description>S_OK if it successfully completed.</description>
+        </item>
+        <item>
+          <description>DXGI_ERROR_INVALID_CALL if the application already released the frame.</description>
+        </item>
+        <item>
+          <description>DXGI_ERROR_ACCESS_LOST if the desktop duplication interface is invalid. The desktop duplication interface typically becomes invalid when a different type of image is displayed on the desktop.  Examples of this situation are: <list type="bullet"><item><description>Desktop switch</description></item><item><description>Mode change</description></item><item><description>Switch from DWM on, DWM off, or other full-screen application</description></item></list>In this situation, the application must release the <see cref="IDXGIOutputDuplication" /> interface and create a new <b>IDXGIOutputDuplication</b> for the new content.</description>
+        </item>
+        <item>
+          <description>Possibly other error codes that are described in the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> topic.</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The application must release the frame before it acquires the next frame.  After the frame is released, the surface that contains the desktop bitmap becomes invalid; you will not be able to use the surface in a DirectX graphics operation.</para>
+      <para>For performance reasons, we recommend that you release the frame just before you call the <see cref="IDXGIOutputDuplication.AcquireNextFrame" /> method to acquire the next frame.  When the client does not own the frame, the operating system copies all desktop updates to the surface. This can result in wasted GPU cycles if the operating system updates the same region for each frame that occurs.  When the client acquires the frame, the client is aware of only the final update to this region; therefore, any overlapping updates during previous frames are wasted. When the client acquires a frame, the client owns the surface; therefore, the operating system can track only the updated regions and cannot copy desktop updates to the surface. Because of this behavior, we recommend that you minimize the time between the call to release the current frame and the call to acquire the next frame.</para>
+    </remarks>
+    <seealso cref="IDXGIOutputDuplication" />
+  </member>
+  <member name="IDXGIOutputDuplication.UnMapDesktopSurface">
+    <summary>
+      <para>Invalidates the pointer to the desktop image that was retrieved by using <see cref="IDXGIOutputDuplication.MapDesktopSurface" />.</para>
+    </summary>
+    <returns>
+      <para>
+        <b>UnMapDesktopSurface</b> returns:</para>
+      <list type="bullet">
+        <item>
+          <description>S_OK if it successfully completed.</description>
+        </item>
+        <item>
+          <description>DXGI_ERROR_INVALID_CALL if the application did not map the desktop surface by calling <see cref="IDXGIOutputDuplication.MapDesktopSurface" />.</description>
+        </item>
+        <item>
+          <description>Possibly other error codes that are described in the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> topic.</description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IDXGIOutputDuplication" />
+  </member>
+  <member name="IDXGIOutputDuplication">
+    <summary>
+      <para>The <b>IDXGIOutputDuplication</b> interface accesses and manipulates the duplicated desktop image.</para>
+    </summary>
+    <remarks>
+      <para>A collaboration application can use <b>IDXGIOutputDuplication</b> to access the desktop image. <b>IDXGIOutputDuplication</b> is supported in Desktop Window Manager (DWM) on non-8bpp DirectX full-screen modes and non-8bpp OpenGL full-screen modes. 16-bit or 32-bit GDI non-DWM desktop modes are not supported.</para>
+      <para>An application can use <b>IDXGIOutputDuplication</b> on a separate thread to receive the desktop images and to feed them into their specific image-processing pipeline.  The application uses <b>IDXGIOutputDuplication</b> to perform the following operations:</para>
+      <list type="number">
+        <item>
+          <description>Acquire the next desktop image.</description>
+        </item>
+        <item>
+          <description>Retrieve the information that describes the image.</description>
+        </item>
+        <item>
+          <description>Perform an operation on the image. This operation can be as simple as copying the image to a staging buffer so that the application can read the pixel data on the image. The application reads the pixel data  after the application calls <see cref="IDXGISurface.Map" />. Alternatively, this operation can be more complex. For example, the application can run some pixel shaders on the updated regions of the image to encode those regions for transmission to a client.
+</description>
+        </item>
+        <item>
+          <description>After the application finishes  processing each desktop image, it releases the image, loops to step 1, and repeats the steps. The application repeats these steps until it is finished processing desktop images.</description>
+        </item>
+      </list>
+      <para>The following components of the operating system can generate the desktop image:</para>
+      <list type="bullet">
+        <item>
+          <description>The DWM by composing the desktop image
+</description>
+        </item>
+        <item>
+          <description>A full-screen DirectX or OpenGL application</description>
+        </item>
+        <item>
+          <description>An application by switching to a separate desktop, for example, the secure desktop that is used to display the login screen</description>
+        </item>
+      </list>
+      <para>All current <b>IDXGIOutputDuplication</b> interfaces become invalid when the operating system switches to a different component that produces the desktop image or when a mode change occurs.  In these situations, the application must destroy its current <b>IDXGIOutputDuplication</b> interface and create a new <b>IDXGIOutputDuplication</b> interface.</para>
+      <para>Examples of situations in which <b>IDXGIOutputDuplication</b> becomes invalid are:</para>
+      <list type="bullet">
+        <item>
+          <description>Desktop switch</description>
+        </item>
+        <item>
+          <description>Mode change</description>
+        </item>
+        <item>
+          <description>Switch from DWM on, DWM off, or other full-screen application
+</description>
+        </item>
+      </list>
+      <para>In these situations, the application must release the <b>IDXGIOutputDuplication</b> interface and must create a new <b>IDXGIOutputDuplication</b> interface for the new content.  If the application does not have the appropriate privilege to the new desktop image, its call to the <see cref="IDXGIOutput1.DuplicateOutput" /> method fails.</para>
+      <para>While the application processes each desktop image, the operating system accumulates all the desktop image updates into a single update. For more information about desktop updates, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/desktop-dup-api">Updating the desktop image data</a>.</para>
+      <para>The desktop image is always in the <see cref="DXGI_FORMAT_B8G8R8A8_UNORM" /> format.</para>
+      <para>The <b>IDXGIOutputDuplication</b> interface does not exist for Windows Store apps.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
+    <seealso cref="IDXGIObject" />
+  </member>
+</doc>

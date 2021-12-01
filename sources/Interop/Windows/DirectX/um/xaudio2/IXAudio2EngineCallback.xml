@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IXAudio2EngineCallback.OnCriticalError">
+    <summary>
+      <para>Called if a critical system error occurs that requires XAudio2 to be closed down and restarted.</para>
+    </summary>
+    <param name="Error">
+      <para>Error code returned by XAudio2.</para>
+    </param>
+    <remarks>
+      <para>If you provide the ID of a  specific device in the <i>szDeviceId</i> parameter to   <see cref="IXAudio2.CreateMasteringVoice" /> or use the XAUDIO2_NO_VIRTUAL_AUDIO_CLIENT flag, then a critical error will occur and <b>OnCriticalError</b> is raised if the underlying WASAPI rendering device becomes unavailable. This can occur when a headset or speaker is unplugged or when a USB audio device is removed, for example.   Once a critical error has occurred, audio processing stops and all further calls to XAudio2 fail. The only way to recover in this situation is to release the XAudio2 instance and create a new one.</para>
+      <para>If you specified NULL or  <i>szDeviceId</i> parameter to   <see cref="IXAudio2.CreateMasteringVoice" />, then the system uses a Virtual Audio Client to represent the audio endpoint. In this case, if the underlying WASAPI rendering device becomes unavailable, the system automatically selects a new audio rendering device for rendering, audio processing continues, and <b>OnCriticalError</b> is not raised.</para>
+      <para>On the mobile device family, a Virtual Audio Client is always used and <b>OnCriticalError</b> is never raised, regardless of the values you provide to    <see cref="CreateMasteringVoice" />.</para>
+      <para>For information about the <see cref="IXAudio2EngineCallback" /> interface methods, see the <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-callbacks">XAudio2 Callbacks</a> section.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso cref="IXAudio2EngineCallback" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-callbacks">XAudio2 Callbacks</seealso>
+  </member>
+  <member name="IXAudio2EngineCallback.OnProcessingPassEnd">
+    <summary>
+      <para>Called by XAudio2 just after an audio processing pass ends.</para>
+    </summary>
+    <remarks>
+      <para>For information about the <see cref="IXAudio2EngineCallback" /> interface methods, see the XAudio2 <a href="https://docs.microsoft.com//windows/desktop/xaudio2/callbacks">Callbacks</a> section.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso cref="IXAudio2EngineCallback" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-callbacks">XAudio2 Callbacks</seealso>
+  </member>
+  <member name="IXAudio2EngineCallback.OnProcessingPassStart">
+    <summary>
+      <para>Called by XAudio2 just before an audio processing pass begins.</para>
+    </summary>
+    <remarks>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso cref="IXAudio2EngineCallback" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-callbacks">XAudio2 Callbacks</seealso>
+  </member>
+</doc>

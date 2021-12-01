@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFontFace1.GetCaretMetrics">
+    <summary>
+      <para>Gets caret metrics for the font in design units.</para>
+    </summary>
+    <param name="caretMetrics">
+      <para>Type: <b>DWRITE_CARET_METRICS*</b></para>
+      <para>A pointer to the <see cref="DWRITE_CARET_METRICS" /> structure that is filled.</para>
+    </param>
+    <remarks>
+      <para>Caret metrics are used by
+text editors for drawing the correct caret placement and slant.</para>
+    </remarks>
+    <seealso cref="IDWriteFontFace1" />
+  </member>
+  <member name="IDWriteFontFace1.GetDesignGlyphAdvances">
+    <summary>
+      <para>Retrieves the advances in design units for a sequences of glyphs.</para>
+    </summary>
+    <param name="glyphCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of glyphs to retrieve advances for.</para>
+    </param>
+    <param name="glyphIndices">
+      <para>Type: <b>const UINT16*</b></para>
+      <para>An array of glyph id's to retrieve advances for.</para>
+    </param>
+    <param name="glyphAdvances">
+      <para>Type: <b>INT32*</b></para>
+      <para>The returned advances in font design units for
+each glyph.</para>
+    </param>
+    <param name="isSideways">
+      <para>Type: <b>BOOL</b></para>
+      <para>Retrieve the glyph's vertical advance height
+rather than horizontal advance widths.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is equivalent to calling GetGlyphMetrics and using only the
+advance width and height.</para>
+    </remarks>
+    <seealso cref="IDWriteFontFace1" />
+  </member>
+  <member name="IDWriteFontFace1.GetGdiCompatibleGlyphAdvances">
+    <summary>
+      <para>Returns the pixel-aligned advances for a sequences of glyphs.</para>
+    </summary>
+    <param name="emSize">
+      <para>Type: <b>FLOAT</b></para>
+      <para>Logical size of the font in DIP units. A DIP
+("device-independent pixel") equals 1/96 inch.</para>
+    </param>
+    <param name="pixelsPerDip">
+      <para>Type: <b>FLOAT</b></para>
+      <para>Number of physical pixels per DIP. For
+example, if the DPI of the rendering surface is 96 this value is
+1.0f. If the DPI is 120, this value is 120.0f/96.</para>
+    </param>
+    <param name="transform">
+      <para>Type: <b>const <see cref="DWRITE_MATRIX" />*</b></para>
+      <para>Optional transform applied to the glyphs and
+their positions. This transform is applied after the scaling
+specified by the font size and pixelsPerDip.</para>
+    </param>
+    <param name="useGdiNatural">
+      <para>Type: <b>BOOL</b></para>
+      <para>When FALSE, the metrics are the same as
+GDI aliased text (DWRITE_MEASURING_MODE_GDI_CLASSIC). When TRUE,
+the metrics are the same as those measured by GDI using a font
+using CLEARTYPE_NATURAL_QUALITY (DWRITE_MEASURING_MODE_GDI_NATURAL).</para>
+    </param>
+    <param name="isSideways">
+      <para>Type: <b>BOOL</b></para>
+      <para>Retrieve the glyph's vertical advances rather
+than horizontal advances.</para>
+    </param>
+    <param name="glyphCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>Total glyphs to retrieve adjustments for.</para>
+    </param>
+    <param name="glyphIndices">
+      <para>Type: <b>const UINT16*</b></para>
+      <para>An array of glyph id's to retrieve advances.</para>
+    </param>
+    <param name="glyphAdvances">
+      <para>Type: <b>const INT32*</b></para>
+      <para>The returned advances in font design units for
+each glyph.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is equivalent to calling <a href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritefontface-getgdicompatibleglyphmetrics">GetGdiCompatibleGlyphMetrics</a> and using only the advance width and height.</para>
+      <para>Like <a href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritefontface-getgdicompatibleglyphmetrics">GetGdiCompatibleGlyphMetrics</a>, these are in
+design units, meaning they must be scaled down by
+DWRITE_FONT_METRICS.designUnitsPerEm.</para>
+    </remarks>
+    <seealso cref="IDWriteFontFace1" />
+  </member>
+  <member name="IDWriteFontFace1.GetGdiCompatibleMetrics">
+    <summary>
+      <para>Obtains design units and common metrics for the font face.
+These metrics are applicable to all the glyphs within a fontface and are used by applications for layout calculations.</para>
+    </summary>
+    <param name="emSize">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The logical size of the font in DIP units.</para>
+    </param>
+    <param name="pixelsPerDip">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The number of physical pixels per DIP.</para>
+    </param>
+    <param name="transform">
+      <para>Type: <b>const <see cref="DWRITE_MATRIX" />*</b></para>
+      <para>An optional transform applied to the glyphs and their positions. This transform is applied after the scaling specified by the font size and <i>pixelsPerDip</i>.</para>
+    </param>
+    <param name="fontMetrics">
+      <para>Type: <b><see cref="DWRITE_FONT_METRICS1" />*</b></para>
+      <para>A pointer to a <see cref="DWRITE_FONT_METRICS1" /> structure to fill in. The metrics returned by this function are in font design units.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Standard HRESULT error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontFace" />
+    <seealso cref="IDWriteFontFace1" />
+  </member>
+  <member name="IDWriteFontFace1.GetKerningPairAdjustments">
+    <summary>
+      <para>Retrieves the kerning pair adjustments from the font's kern table.</para>
+    </summary>
+    <param name="glyphCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>Number of glyphs to retrieve adjustments for.</para>
+    </param>
+    <param name="glyphIndices">
+      <para>Type: <b>const UINT16*</b></para>
+      <para>An array of glyph id's to retrieve adjustments
+for.</para>
+    </param>
+    <param name="glyphAdvanceAdjustments">
+      <para>Type: <b>INT32*</b></para>
+      <para>The advances, returned in font design units, for
+each glyph. The last glyph adjustment is zero.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>GetKerningPairAdjustments</b> isn't a direct replacement for GDI's character based
+<see cref="GetKerningPairs" />, but it serves the same role, without the client
+needing to cache them locally. <b>GetKerningPairAdjustments</b> also uses glyph id's directly
+rather than UCS-2 characters (how the kern table actually stores
+them), which avoids glyph collapse and ambiguity, such as the dash
+and hyphen, or space and non-breaking space.</para>
+      <para>Newer fonts may have only GPOS kerning instead of the legacy pair-table kerning. Such fonts, like Gabriola, will only return 0's for
+adjustments. <b>GetKerningPairAdjustments</b> doesn't virtualize and flatten these
+GPOS entries into kerning pairs.</para>
+      <para>You can realize a performance benefit by calling <see cref="IDWriteFontFace1.HasKerningPairs" /> to determine whether you need to call  <b>GetKerningPairAdjustments</b>. If you previously called <b>IDWriteFontFace1.HasKerningPairs</b> and it returned FALSE, you can avoid calling <b>GetKerningPairAdjustments</b> because the font has no kerning pair-table entries. That is, in this situation, a call to <b>GetKerningPairAdjustments</b> would be a no-op.</para>
+    </remarks>
+    <seealso cref="IDWriteFontFace1" />
+    <seealso cref="IDWriteFontFace1.HasKerningPairs" />
+  </member>
+  <member name="IDWriteFontFace1.GetMetrics">
+    <summary>
+      <para>Obtains design units and common metrics for the font face.
+These metrics are applicable to all the glyphs within a font face and are used by applications for layout calculations.</para>
+    </summary>
+    <param name="fontMetrics">
+      <para>Type: <b><see cref="DWRITE_FONT_METRICS1" />*</b></para>
+      <para>A filled <see cref="DWRITE_FONT_METRICS1" /> structure that holds metrics for the current font face element.
+The metrics returned by this method are in font design units.</para>
+    </param>
+    <seealso cref="IDWriteFontFace1" />
+  </member>
+  <member name="IDWriteFontFace1.GetRecommendedRenderingMode">
+    <summary>
+      <para>Determines the recommended rendering mode for the font, using the specified size and rendering parameters.</para>
+    </summary>
+    <param name="fontEmSize">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The logical size of the font in DIP units. A DIP ("device-independent pixel") equals 1/96 inch.</para>
+    </param>
+    <param name="dpiX">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The number of physical pixels per DIP in a horizontal position. For example, if the DPI of the rendering surface is 96, this
+value is 1.0f. If the DPI is 120, this value is 120.0f/96.</para>
+    </param>
+    <param name="dpiY">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The number of physical pixels per DIP in a vertical position. For example, if the DPI of the rendering surface is 96, this
+value is 1.0f. If the DPI is 120, this value is 120.0f/96.</para>
+    </param>
+    <param name="transform">
+      <para>Type: <b>const DWRITE_MATRIX*</b></para>
+      <para>Specifies the world transform.</para>
+    </param>
+    <param name="isSideways">
+      <para>Type: <b>BOOL</b></para>
+      <para>Whether the glyphs in the run are sideways or not.</para>
+    </param>
+    <param name="outlineThreshold">
+      <para>Type: <b><see cref="DWRITE_OUTLINE_THRESHOLD" /></b></para>
+      <para>A <see cref="DWRITE_OUTLINE_THRESHOLD" />-typed value that specifies the quality of the graphics system's outline rendering,
+affects the size threshold above which outline rendering is used.</para>
+    </param>
+    <param name="measuringMode">
+      <para>Type: <b><see cref="DWRITE_MEASURING_MODE" /></b></para>
+      <para>The measuring method that will be used for glyphs in the font.
+Renderer implementations may choose different rendering modes for different measuring methods, for example:</para>
+      <list type="bullet">
+        <item>
+          <description>DWRITE_RENDERING_MODE_CLEARTYPE_NATURAL for <see cref="DWRITE_MEASURING_MODE_NATURAL" /></description>
+        </item>
+        <item>
+          <description>DWRITE_RENDERING_MODE_CLEARTYPE_GDI_CLASSIC for <see cref="DWRITE_MEASURING_MODE_GDI_CLASSIC" /></description>
+        </item>
+        <item>
+          <description>DWRITE_RENDERING_MODE_CLEARTYPE_GDI_NATURAL for <see cref="DWRITE_MEASURING_MODE_GDI_NATURAL" /></description>
+        </item>
+      </list>
+    </param>
+    <param name="renderingMode">
+      <para>Type: <b><see cref="DWRITE_RENDERING_MODE" />*</b></para>
+      <para>When this method returns, contains a value that indicates the recommended rendering mode to use.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method should be used to determine the actual rendering mode in cases where the rendering
+mode of the rendering params object is DWRITE_RENDERING_MODE_DEFAULT.</para>
+    </remarks>
+    <seealso cref="IDWriteFontFace1" />
+  </member>
+  <member name="IDWriteFontFace1.GetUnicodeRanges">
+    <summary>
+      <para>Retrieves a list of character ranges supported by a font.</para>
+    </summary>
+    <param name="maxRangeCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>Maximum number of character ranges passed
+in from the client.</para>
+    </param>
+    <param name="unicodeRanges">
+      <para>Type: <b><see cref="DWRITE_UNICODE_RANGE" />*</b></para>
+      <para>An array of <see cref="DWRITE_UNICODE_RANGE" /> structures that are filled with the character ranges.</para>
+    </param>
+    <param name="actualRangeCount">
+      <para>Type: <b>UINT32*</b></para>
+      <para>A pointer to the actual number of character ranges,
+regardless of the maximum count.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>S_OK</para>
+          </description>
+          <description>
+            <para>The method executed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>E_NOT_SUFFICIENT_BUFFER</para>
+          </description>
+          <description>
+            <para>The buffer is too small.  The <i>actualRangeCount</i> was more than the <i>maxRangeCount</i>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A
+list of character ranges supported by the font is
+useful for scenarios like character picking, glyph display, and
+efficient font selection lookup. This is similar to GDI's
+<see cref="GetFontUnicodeRanges" />, except that it returns the full Unicode range,
+not just 16-bit UCS-2.</para>
+      <para>These ranges are from the cmap, not the OS/2.ulCodePageRange1.</para>
+      <para>If this method is unavailable, you can use the <see cref="IDWriteFontFace.GetGlyphIndices" /> method to check for missing glyphs.  The method returns the 0 index for glyphs that aren't present in the font.</para>
+      <para>The <see cref="IDWriteFont.HasCharacter" /> method is often simpler in cases where you need to check a single character or a series of single characters in succession, such as in font fallback.</para>
+    </remarks>
+    <seealso cref="IDWriteFontFace1" />
+  </member>
+  <member name="IDWriteFontFace1.GetVerticalGlyphVariants">
+    <summary>
+      <para>Retrieves the vertical forms of the nominal glyphs retrieved from
+GetGlyphIndices.</para>
+    </summary>
+    <param name="glyphCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of glyphs to retrieve.</para>
+    </param>
+    <param name="nominalGlyphIndices">
+      <para>Type: <b>const UINT16*</b></para>
+      <para>Original glyph indices from cmap.</para>
+    </param>
+    <param name="verticalGlyphIndices">
+      <para>Type: <b>UINT16*</b></para>
+      <para>The vertical form of glyph indices.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The retrieval uses the font's 'vert' table. This is used in
+CJK vertical layout so the correct characters are shown.</para>
+      <para>Call <see cref="GetGlyphIndices" /> to get the nominal glyph indices, followed by
+calling this to remap the to the substituted forms, when the run
+is sideways, and the font has vertical glyph variants. See <see cref="HasVerticalGlyphVariants" /> for more info.</para>
+    </remarks>
+    <seealso cref="IDWriteFontFace1" />
+  </member>
+  <member name="IDWriteFontFace1.HasKerningPairs">
+    <summary>
+      <para>Determines whether the font supports pair-kerning.</para>
+    </summary>
+    <returns>
+      <para>Returns TRUE if the font supports kerning pairs, otherwise FALSE.</para>
+    </returns>
+    <remarks>
+      <para>If the font doesn't support pair table kerning, you don't need to
+call <see cref="IDWriteFontFace1.GetKerningPairAdjustments" /> because it would retrieve all zeroes.</para>
+    </remarks>
+    <seealso cref="IDWriteFontFace1" />
+    <seealso cref="IDWriteFontFace1.GetKerningPairAdjustments" />
+  </member>
+  <member name="IDWriteFontFace1.HasVerticalGlyphVariants">
+    <summary>
+      <para>Determines whether the font has any vertical glyph variants.</para>
+    </summary>
+    <returns>
+      <para>Returns TRUE if the font contains vertical glyph variants, otherwise FALSE.</para>
+    </returns>
+    <remarks>
+      <para>For OpenType fonts, <b>HasVerticalGlyphVariants</b> returns TRUE if the font contains a "vert"feature.</para>
+      <para>
+        <see cref="IDWriteFontFace1.GetVerticalGlyphVariants" /> retrieves the vertical forms of the nominal glyphs that are retrieved from <see cref="IDWriteFontFace.GetGlyphIndices" />.</para>
+    </remarks>
+    <seealso cref="IDWriteFontFace1" />
+    <seealso cref="IDWriteFontFace1.GetVerticalGlyphVariants" />
+    <seealso cref="IDWriteFontFace.GetGlyphIndices" />
+  </member>
+  <member name="IDWriteFontFace1.IsMonospacedFont">
+    <summary>
+      <para>Determines whether the font of a text range is monospaced, that is, the font characters are the
+same fixed-pitch width.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>BOOL</b></para>
+      <para>Returns TRUE if the font is monospaced, otherwise it returns FALSE.</para>
+    </returns>
+    <seealso cref="IDWriteFont.IsSymbolFont" />
+    <seealso cref="IDWriteFontFace1" />
+    <seealso cref="IDWriteFontFace.IsSymbolFont" />
+  </member>
+  <member name="IDWriteFontFace1">
+    <summary>
+      <para>Represents an absolute reference to a font face. This interface contains font face type, appropriate file references, and face identification data.</para>
+      <para>This interface extends <see cref="IDWriteFontFace" />. Various font data such as metrics, names, and glyph outlines are obtained from <b>IDWriteFontFace</b>.</para>
+    </summary>
+    <seealso cref="IDWriteFontFace" />
+  </member>
+</doc>

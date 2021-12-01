@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_BASELINE">
+    <summary>
+      <para>The <b>DWRITE_BASELINE</b> enumeration contains values that specify the baseline for text alignment.</para>
+    </summary>
+    <seealso cref="IDWriteTextAnalyzer1.GetBaseline" />
+  </member>
+  <member name="DWRITE_BASELINE.DWRITE_BASELINE_DEFAULT">
+    <summary>
+      <para>The Roman baseline for horizontal; the Central baseline for vertical.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_BASELINE.DWRITE_BASELINE_ROMAN">
+    <summary>
+      <para>The baseline that is used by alphabetic scripts such as Latin, Greek, and Cyrillic.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_BASELINE.DWRITE_BASELINE_CENTRAL">
+    <summary>
+      <para>Central baseline, which is generally used for vertical text.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_BASELINE.DWRITE_BASELINE_MATH">
+    <summary>
+      <para>Mathematical baseline, which math characters are centered on.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_BASELINE.DWRITE_BASELINE_HANGING">
+    <summary>
+      <para>Hanging baseline, which is used in scripts like Devanagari.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_BASELINE.DWRITE_BASELINE_IDEOGRAPHIC_BOTTOM">
+    <summary>
+      <para>Ideographic bottom baseline for CJK, left in vertical.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_BASELINE.DWRITE_BASELINE_IDEOGRAPHIC_TOP">
+    <summary>
+      <para>Ideographic top baseline for CJK, right in vertical.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_BASELINE.DWRITE_BASELINE_MINIMUM">
+    <summary>
+      <para>The bottom-most extent in horizontal, left-most in vertical.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_BASELINE.DWRITE_BASELINE_MAXIMUM">
+    <summary>
+      <para>The top-most extent in horizontal, right-most in vertical.</para>
+    </summary>
+  </member>
+</doc>

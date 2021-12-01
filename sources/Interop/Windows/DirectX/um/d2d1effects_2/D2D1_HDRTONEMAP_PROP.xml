@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_HDRTONEMAP_PROP">
+    <summary>
+      <para>Defines constants that identify the top level properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/hdr-tone-map-effect">HDR tone map effect</a>. The effect adjusts the maximum luminance of the source image to fit within the maximum output luminance supported. Input and output luminance values are specified in nits. Note that the color space of the target image is assumed to be scRGB.</para>
+    </summary>
+  </member>
+  <member name="D2D1_HDRTONEMAP_PROP.D2D1_HDRTONEMAP_PROP_INPUT_MAX_LUMINANCE (0)">
+    <summary>
+      <para>Identifies the <code>InputMaxLuminance</code> property of the effect. The property is of type FLOAT, and is specified in nits.</para>
+    </summary>
+  </member>
+  <member name="D2D1_HDRTONEMAP_PROP.D2D1_HDRTONEMAP_PROP_OUTPUT_MAX_LUMINANCE (1)">
+    <summary>
+      <para>Identifies the <code>OutputMaxLuminance</code> property of the effect. The property is of type FLOAT, and is specified in nits.</para>
+    </summary>
+  </member>
+  <member name="D2D1_HDRTONEMAP_PROP.D2D1_HDRTONEMAP_PROP_DISPLAY_MODE (2)">
+    <summary>
+      <para>Identifies the <code>DisplayMode</code> property of the effect. The property is of type <see cref="D2D1_HDRTONEMAP_DISPLAY_MODE" />.</para>
+    </summary>
+  </member>
+  <member name="D2D1_HDRTONEMAP_PROP.D2D1_HDRTONEMAP_PROP_FORCE_DWORD (0xFFFFFFFF)">
+    <summary></summary>
+  </member>
+</doc>

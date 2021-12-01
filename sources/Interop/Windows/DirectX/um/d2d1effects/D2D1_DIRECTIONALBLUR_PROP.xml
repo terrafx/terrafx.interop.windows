@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_DIRECTIONALBLUR_PROP">
+    <summary>
+      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/directional-blur">Directional blur effect</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DIRECTIONALBLUR_PROP.D2D1_DIRECTIONALBLUR_PROP_STANDARD_DEVIATION">
+    <summary>
+      <para>The amount of blur to be applied to the image. You can compute the blur radius of the kernel by multiplying the standard deviation by 3.
+The units of both the standard deviation and blur radius are DIPs. A value of 0 DIPs disables this effect.</para>
+      <para>The type is FLOAT.</para>
+      <para>The default value is 3.0f.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DIRECTIONALBLUR_PROP.D2D1_DIRECTIONALBLUR_PROP_ANGLE">
+    <summary>
+      <para>The angle of the blur relative to the x-axis, in the counterclockwise direction. The units are specified in degrees.</para>
+      <para>The blur kernel is first generated using the same process as for the Gaussian blur effect. The kernel values are then transformed according to the blur angle.</para>
+      <para>The type is FLOAT.</para>
+      <para>The default value is 0.0f.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DIRECTIONALBLUR_PROP.D2D1_DIRECTIONALBLUR_PROP_OPTIMIZATION">
+    <summary>
+      <para>The optimization mode. See Optimization modes for more info.</para>
+      <para>The type is <see cref="D2D1_DIRECTIONALBLUR_OPTIMIZATION" />.</para>
+      <para>The default value is D2D1_DIRECTIONALBLUR_OPTIMIZATION_BALANCED.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DIRECTIONALBLUR_PROP.D2D1_DIRECTIONALBLUR_PROP_BORDER_MODE">
+    <summary>
+      <para>The mode used to calculate the border of the image, soft or hard. See Border modes for more info.</para>
+      <para>The type is <see cref="D2D1_BORDER_MODE" />.</para>
+      <para>The default value is D2D1_BORDER_MODE_SOFT.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DIRECTIONALBLUR_PROP.D2D1_DIRECTIONALBLUR_PROP_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

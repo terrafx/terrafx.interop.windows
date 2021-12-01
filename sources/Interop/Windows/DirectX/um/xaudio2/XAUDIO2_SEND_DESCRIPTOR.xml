@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="XAUDIO2_SEND_DESCRIPTOR">
+    <summary>
+      <para>Defines a destination voice that is the target of a send from another voice and specifies whether a filter should be used.</para>
+    </summary>
+    <remarks>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--change-voice-volume">How to: Change Voice Volume</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--use-submix-voices">How to: Use Submix Voices</seealso>
+    <seealso cref="IXAudio2.CreateSourceVoice" />
+    <seealso cref="IXAudio2.CreateSubmixVoice" />
+    <seealso cref="IXAudio2Voice.SetOutputVoices" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/structures">XAudio Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-sample-rate-conversions">XAudio2 Sample Rate Conversions</seealso>
+  </member>
+  <member name="XAUDIO2_SEND_DESCRIPTOR.Flags">
+    <summary>
+      <para>Indicates whether a filter should be used on data sent to the voice pointed to by <b>pOutputVoice</b>. Flags can be 0 or XAUDIO2_SEND_USEFILTER.</para>
+    </summary>
+  </member>
+  <member name="XAUDIO2_SEND_DESCRIPTOR.pOutputVoice">
+    <summary>
+      <para>A pointer to an <see cref="IXAudio2Voice" /> that will be the target of the send. The <b>pOutputVoice</b> member cannot be NULL.</para>
+    </summary>
+  </member>
+</doc>

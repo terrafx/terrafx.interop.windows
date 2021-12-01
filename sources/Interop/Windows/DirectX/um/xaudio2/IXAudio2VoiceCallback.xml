@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IXAudio2VoiceCallback.OnBufferEnd">
+    <summary>
+      <para>Called when the voice finishes processing a buffer.</para>
+    </summary>
+    <param name="pBufferContext">
+      <para>Context pointer assigned to the <b>pContext</b> member of the <see cref="XAUDIO2_BUFFER" /> structure when the buffer was submitted.</para>
+    </param>
+    <remarks>
+      <para>After an <b>OnBufferEnd</b> callback the audio memory for the buffer associated with <i>pBufferContext</i> can safely be released.</para>
+      <para>
+        <i>pBufferContext</i> is the context pointer originally provided by the <b>pContext </b> member of the <see cref="XAUDIO2_BUFFER" /> structure, which may be NULL.</para>
+      <para>
+        <b>OnBufferEnd</b> is guaranteed to be called just after the last byte of the current buffer has been consumed and before the first byte of the next buffer is consumed. This callback can be used to overwrite or release the audio data referenced by the completed buffer, and to update other state associated with the voice as appropriate.</para>
+      <para>For information about <see cref="IXAudio2VoiceCallback" /> interface methods, see the <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-callbacks">XAudio2 Callbacks</a> topic.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--stream-a-sound-from-disk">How to: Stream a Sound from Disk</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--use-source-voice-callbacks">How to: Use Source Voice Callbacks</seealso>
+    <seealso cref="IXAudio2VoiceCallback" />
+  </member>
+  <member name="IXAudio2VoiceCallback.OnBufferStart">
+    <summary>
+      <para>Called when the voice is about to start processing a new audio buffer.</para>
+    </summary>
+    <param name="pBufferContext">
+      <para>Context pointer that was assigned to the pContext member of the <see cref="XAUDIO2_BUFFER" /> structure when the buffer was submitted.</para>
+    </param>
+    <remarks>
+      <para>
+        <i>pBufferContext</i> is the context pointer originally provided by the <b>pContext</b> member of the <see cref="XAUDIO2_BUFFER" /> structure, which may be NULL.</para>
+      <para>
+        <b>OnBufferStart</b> is guaranteed to be called just before the first byte of the current buffer is consumed. It is appropriate to use this callback for changes to the voice state such as the following.</para>
+      <list type="bullet">
+        <item>
+          <description>Submitting a new buffer to the voice
+</description>
+        </item>
+        <item>
+          <description>Adjusting the volume, pitch, and effect parameters of the voice
+</description>
+        </item>
+        <item>
+          <description>Enabling or disabling an effect in the voice's effect chain</description>
+        </item>
+      </list>All the actions listed above are synchronous when performed in an XAudio2 callback, so the changes will take effect immediately, affecting the buffer that is about to start.
+<para>It is also safe to use this callback to write audio data to the buffer directly, which can be useful for low-latency streaming scenarios. However, as with all XAudio2 callbacks, no work should be done that uses a significant amount of processor time or could block execution, including synchronous disk or network reads.</para><para>For information about the <see cref="IXAudio2VoiceCallback" /> interface methods, see the <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-callbacks">XAudio2 Callbacks</a> section.</para><h3>Platform Requirements</h3><para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para></remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--use-source-voice-callbacks">How to: Use Source Voice Callbacks</seealso>
+    <seealso cref="IXAudio2VoiceCallback" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-callbacks">XAudio2 Callbacks</seealso>
+  </member>
+  <member name="IXAudio2VoiceCallback.OnLoopEnd">
+    <summary>
+      <para>Called when the voice reaches the end position of a loop.</para>
+    </summary>
+    <param name="pBufferContext">
+      <para>Context pointer that was assigned to the <b>pContext</b> member of the <see cref="XAUDIO2_BUFFER" /> structure when the buffer was submitted.</para>
+    </param>
+    <remarks>
+      <para>
+        <i>pBufferContext</i> is the context pointer originally provided by the <b>pContext</b> member of the <see cref="XAUDIO2_BUFFER" /> structure, which may be NULL.</para>
+      <para>
+        <b>OnLoopEnd</b> is not sample-accurate; that is, actions in the callback do not occur at the exact moment that a given sample is being processed. It is only guaranteed to be called shortly after the last sample in the loop has been processed.</para>
+      <para>For information about the <see cref="IXAudio2VoiceCallback" /> interface methods, see the <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-callbacks">XAudio2 Callbacks</a> section.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--use-source-voice-callbacks">How to: Use Source Voice Callbacks</seealso>
+    <seealso cref="IXAudio2VoiceCallback" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-callbacks">XAudio2 Callbacks</seealso>
+  </member>
+  <member name="IXAudio2VoiceCallback.OnStreamEnd">
+    <summary>
+      <para>Called when the voice has just finished playing a contiguous audio stream.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>OnStreamEnd</b> is triggered when XAudio2 processes an <see cref="XAUDIO2_BUFFER" /> with the XAUDIO2_END_OF_STREAM flag set. See the <see cref="IXAudio2SourceVoice.SubmitSourceBuffer" /> method for more information.</para>
+      <para>The <b>OnStreamEnd</b> callback indicates that XAudio2 has finished consuming the last buffer submitted to the voice. With PCM data, all audio is guaranteed to have been played and the voice can be stopped or destroyed safely.</para>
+      <para>The <b>OnStreamEnd</b> callback only indicates that an <see cref="XAUDIO2_BUFFER" /> with the XAUDIO2_END_OF_STREAM flag set has been processed. The callback is strictly informational and does not change the state of the source voice that triggered it. A voice stays in the start state until <see cref="IXAudio2SourceVoice.Stop" />    is called and will continue to play submitted source buffers and to trigger additional callbacks.</para>
+      <para>
+        <b>OnStreamEnd</b> is guaranteed to be called just after the last byte of the current buffer has been consumed.</para>
+      <para>For information about <see cref="IXAudio2VoiceCallback" /> interface methods, see the <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-callbacks">XAudio2 Callbacks</a> topic.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--use-source-voice-callbacks">How to: Use Source Voice Callbacks</seealso>
+    <seealso cref="IXAudio2VoiceCallback" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-callbacks">XAudio2 Callbacks</seealso>
+  </member>
+  <member name="IXAudio2VoiceCallback.OnVoiceError">
+    <summary>
+      <para>Called when a critical error occurs during voice processing.</para>
+    </summary>
+    <param name="pBufferContext">
+      <para>Context pointer that was assigned to the <b>pContext</b> member of the <see cref="XAUDIO2_BUFFER" /> structure when the buffer was submitted.</para>
+    </param>
+    <param name="Error">
+      <para>The HRESULT code of the error encountered.</para>
+    </param>
+    <remarks>
+      <para>
+        <b>OnVoiceError</b> is called in the event of an error during voice processing, such as a hardware XMA decoder error on the Xbox 360. The arguments report which buffer was being processed at the time of the error, and its HRESULT code. If the error is not recoverable by destroying and re-creating the voice, the <see cref="OnCriticalError" /> engine callback will be called as well.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--use-source-voice-callbacks">How to: Use Source Voice Callbacks</seealso>
+    <seealso cref="IXAudio2VoiceCallback" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-callbacks">XAudio2 Callbacks</seealso>
+  </member>
+  <member name="IXAudio2VoiceCallback.OnVoiceProcessingPassEnd">
+    <summary>
+      <para>Called just after the processing pass for the voice ends.</para>
+    </summary>
+    <remarks>
+      <para>For information about <see cref="IXAudio2VoiceCallback" /> interface methods, see the <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-callbacks">XAudio2 Callbacks</a> topic.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--use-source-voice-callbacks">How to: Use Source Voice Callbacks</seealso>
+    <seealso cref="IXAudio2VoiceCallback" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-callbacks">XAudio2 Callbacks</seealso>
+  </member>
+  <member name="IXAudio2VoiceCallback.OnVoiceProcessingPassStart">
+    <summary>
+      <para>Called during each processing pass for each voice, just before XAudio2 reads data from the voice's buffer queue.</para>
+    </summary>
+    <param name="BytesRequired">
+      <para>The number of bytes that must be submitted immediately to avoid starvation. This allows the implementation of just-in-time streaming scenarios; the client can keep the absolute minimum data queued on the voice at all times, and pass it fresh data just before the data is required. This model provides the lowest possible latency attainable with XAudio2. For xWMA and XMA data <i>BytesRequired</i> will always be zero, since the concept of a frame of xWMA or XMA data is meaningless.</para>
+      <para>
+        <b>Note</b>  In a situation where there is always plenty of data available on the source voice, <i>BytesRequired</i> should always report zero, because it doesn't need any samples immediately to avoid glitching.</para>
+    </param>
+    <remarks>
+      <para>For information about <see cref="IXAudio2VoiceCallback" /> interface methods, see the <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-callbacks">XAudio2 Callbacks</a> topic.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--use-source-voice-callbacks">How to: Use Source Voice Callbacks</seealso>
+    <seealso cref="IXAudio2VoiceCallback" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-callbacks">XAudio2 Callbacks</seealso>
+  </member>
+</doc>

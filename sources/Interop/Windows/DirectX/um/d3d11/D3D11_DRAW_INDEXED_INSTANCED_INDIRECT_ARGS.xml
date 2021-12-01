@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_DRAW_INDEXED_INSTANCED_INDIRECT_ARGS">
+    <summary>
+      <para>Arguments for draw indexed instanced indirect.</para>
+    </summary>
+    <remarks>
+      <para>The members of this structure serve the same purpose as the parameters of
+<see cref="ID3D11DeviceContext.DrawIndexedInstanced" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-structures">Core Structures</seealso>
+  </member>
+  <member name="D3D11_DRAW_INDEXED_INSTANCED_INDIRECT_ARGS.IndexCountPerInstance">
+    <summary>
+      <para>The number of indices read from the index buffer for each instance.</para>
+    </summary>
+  </member>
+  <member name="D3D11_DRAW_INDEXED_INSTANCED_INDIRECT_ARGS.InstanceCount">
+    <summary>
+      <para>The number of instances to draw.</para>
+    </summary>
+  </member>
+  <member name="D3D11_DRAW_INDEXED_INSTANCED_INDIRECT_ARGS.StartIndexLocation">
+    <summary>
+      <para>The location of the first index read by the GPU from the index buffer.</para>
+    </summary>
+  </member>
+  <member name="D3D11_DRAW_INDEXED_INSTANCED_INDIRECT_ARGS.BaseVertexLocation">
+    <summary>
+      <para>A value added to each index before reading a vertex from the vertex buffer.</para>
+    </summary>
+  </member>
+  <member name="D3D11_DRAW_INDEXED_INSTANCED_INDIRECT_ARGS.StartInstanceLocation">
+    <summary>
+      <para>A value added to each index before reading per-instance data from a vertex buffer.</para>
+    </summary>
+  </member>
+</doc>

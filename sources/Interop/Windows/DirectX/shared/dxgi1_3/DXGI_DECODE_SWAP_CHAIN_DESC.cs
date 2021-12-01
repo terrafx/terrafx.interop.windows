@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_DECODE_SWAP_CHAIN_DESC.xml' path='doc/member[@name="DXGI_DECODE_SWAP_CHAIN_DESC"]/*' />
 public partial struct DXGI_DECODE_SWAP_CHAIN_DESC
 {
+    /// <include file='DXGI_DECODE_SWAP_CHAIN_DESC.xml' path='doc/member[@name="DXGI_DECODE_SWAP_CHAIN_DESC.Flags"]/*' />
     public uint Flags;
 }

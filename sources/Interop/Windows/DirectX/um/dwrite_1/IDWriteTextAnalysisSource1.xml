@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteTextAnalysisSource1.GetVerticalGlyphOrientation">
+    <summary>
+      <para>Used by the text analyzer to obtain the desired glyph
+orientation and resolved bidi level.</para>
+    </summary>
+    <param name="textPosition">
+      <para>Type: <b>UINT32</b></para>
+      <para>The text position.</para>
+    </param>
+    <param name="textLength">
+      <para>Type: <b>UINT32*</b></para>
+      <para>A pointer to the text length.</para>
+    </param>
+    <param name="glyphOrientation">
+      <para>Type: <b><see cref="DWRITE_VERTICAL_GLYPH_ORIENTATION" />*</b></para>
+      <para>A <see cref="DWRITE_VERTICAL_GLYPH_ORIENTATION" />-typed value that specifies the desired kind of glyph orientation for the text.</para>
+    </param>
+    <param name="bidiLevel">
+      <para>Type: <b>UINT8*</b></para>
+      <para>A pointer to the resolved bidi level.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returning an error will abort the
+analysis.</para>
+    </returns>
+    <remarks>
+      <para>The text analyzer calls back to this to get the desired glyph
+orientation and resolved bidi level, which it uses along with the
+script properties of the text to determine the actual orientation of
+each character, which it reports back to the client via the sink
+SetGlyphOrientation method.</para>
+    </remarks>
+    <seealso cref="IDWriteTextAnalysisSource1" />
+  </member>
+  <member name="IDWriteTextAnalysisSource1">
+    <summary>
+      <para>The interface you implement to provide needed information to  the text analyzer, like the text and associated text properties.</para>
+      <para>
+        <b>Note</b>   If any of these callbacks return an error, the analysis functions will  stop prematurely and return a callback error.</para>
+    </summary>
+    <seealso cref="IDWriteTextAnalysisSource" />
+  </member>
+</doc>

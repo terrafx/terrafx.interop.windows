@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_SHADER_TRACKING_RESOURCE_TYPE">
+    <summary>
+      <para>Indicates which resource types to track.</para>
+    </summary>
+    <remarks>
+      <para>The <see cref="ID3D11TracingDevice.SetShaderTrackingOptionsByType" /> or <see cref="ID3D11RefDefaultTrackingOptions.SetTrackingOptions" /> method tracks a specific type of resource.</para>
+      <para>
+        <b>Note</b>  This API requires the Windows Software Development Kit (SDK) for Windows 8.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-layer-enums">Layer Enumerations</seealso>
+  </member>
+  <member name="D3D11_SHADER_TRACKING_RESOURCE_TYPE.D3D11_SHADER_TRACKING_RESOURCE_TYPE_NONE">
+    <summary>
+      <para>No resource types are tracked.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_TRACKING_RESOURCE_TYPE.D3D11_SHADER_TRACKING_RESOURCE_TYPE_UAV_DEVICEMEMORY">
+    <summary>
+      <para>Track device memory that is created with unordered access view (UAV) bind flags.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_TRACKING_RESOURCE_TYPE.D3D11_SHADER_TRACKING_RESOURCE_TYPE_NON_UAV_DEVICEMEMORY">
+    <summary>
+      <para>Track device memory that is created without UAV bind flags.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_TRACKING_RESOURCE_TYPE.D3D11_SHADER_TRACKING_RESOURCE_TYPE_ALL_DEVICEMEMORY">
+    <summary>
+      <para>Track all device memory.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_TRACKING_RESOURCE_TYPE.D3D11_SHADER_TRACKING_RESOURCE_TYPE_GROUPSHARED_MEMORY">
+    <summary>
+      <para>Track all shaders that use group shared memory.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_TRACKING_RESOURCE_TYPE.D3D11_SHADER_TRACKING_RESOURCE_TYPE_ALL_SHARED_MEMORY">
+    <summary>
+      <para>Track all device memory except device memory that is created without UAV bind flags.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_TRACKING_RESOURCE_TYPE.D3D11_SHADER_TRACKING_RESOURCE_TYPE_GROUPSHARED_NON_UAV">
+    <summary>
+      <para>Track all device memory except device memory that is created with UAV bind flags.</para>
+    </summary>
+  </member>
+  <member name="D3D11_SHADER_TRACKING_RESOURCE_TYPE.D3D11_SHADER_TRACKING_RESOURCE_TYPE_ALL">
+    <summary>
+      <para>Track all memory on the device.</para>
+    </summary>
+  </member>
+</doc>

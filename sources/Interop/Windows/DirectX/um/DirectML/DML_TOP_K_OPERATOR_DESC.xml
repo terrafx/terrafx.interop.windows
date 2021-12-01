@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_TOP_K_OPERATOR_DESC">
+    <summary>
+      <para>Selects the largest <i>K</i> elements from each sequence along an axis of the <i>InputTensor</i>, and returns the values and indices of those elements in the <i>OutputValueTensor</i> and <i>OutputIndexTensor</i>, respectively. A <i>sequence</i> refers to one of the sets of elements that exist along the <i>Axis</i> dimension of the <i>InputTensor</i>.</para>
+    </summary>
+    <remarks>
+      <para>A newer version of this operator, <see cref="DML_TOP_K1_OPERATOR_DESC" />, was introduced in <code>DML_FEATURE_LEVEL_2_1</code>.</para>
+    </remarks>
+  </member>
+  <member name="DML_TOP_K_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The input tensor containing elements to select.</para>
+    </summary>
+  </member>
+  <member name="DML_TOP_K_OPERATOR_DESC.OutputValueTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The output tensor to write the values of the top <i>K</i> elements to. This tensor must have sizes equal to the <i>InputTensor</i>, <i>except</i> for the dimension specified by the <i>Axis</i> parameter, which must have a size equal to <i>K</i>.</para>
+      <para>The <i>K</i> values selected from each input sequence are guaranteed to be sorted descending (largest to smallest).</para>
+    </summary>
+  </member>
+  <member name="DML_TOP_K_OPERATOR_DESC.OutputIndexTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The output tensor to write the indices of the top <i>K</i> elements to. This tensor must have sizes equal to the <i>InputTensor</i>, <i>except</i> for the dimension specified by the <i>Axis</i> parameter, which must have a size equal to <i>K</i>.</para>
+      <para>The indices returned in this tensor are measured relative to the beginning of their sequence (as opposed to the beginning of the tensor). For example, an index of 0 always refers to the first element for all sequences in an axis.</para>
+      <para>In cases where two or more elements in the top-K have the same value (that is, when there is a tie), the indices of both elements are included, and are guaranteed to be ordered by ascending element index.</para>
+    </summary>
+  </member>
+  <member name="DML_TOP_K_OPERATOR_DESC.Axis">
+    <summary>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>The index of the dimension to select elements across. This value must be less than the <i>DimensionCount</i> of the <i>InputTensor</i>.</para>
+    </summary>
+  </member>
+  <member name="DML_TOP_K_OPERATOR_DESC.K">
+    <summary>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>The number of elements to select. <i>K</i> must be greater than 0, but less than the number of elements in the <i>InputTensor</i> along the dimension specified by <i>Axis</i>.</para>
+    </summary>
+  </member>
+</doc>

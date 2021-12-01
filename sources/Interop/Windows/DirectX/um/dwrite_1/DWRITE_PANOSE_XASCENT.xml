@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_PANOSE_XASCENT">
+    <summary>
+      <para>The <b>DWRITE_PANOSE_XASCENT</b> enumeration contains values that specify the relative size of the lowercase letters.</para>
+    </summary>
+    <seealso cref="DWRITE_PANOSE" />
+  </member>
+  <member name="DWRITE_PANOSE_XASCENT.DWRITE_PANOSE_XASCENT_ANY">
+    <summary>
+      <para>Any xascent.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_XASCENT.DWRITE_PANOSE_XASCENT_NO_FIT">
+    <summary>
+      <para>No fit for xascent.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_XASCENT.DWRITE_PANOSE_XASCENT_VERY_LOW">
+    <summary>
+      <para>Very low xascent.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_XASCENT.DWRITE_PANOSE_XASCENT_LOW">
+    <summary>
+      <para>Low xascent.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_XASCENT.DWRITE_PANOSE_XASCENT_MEDIUM">
+    <summary>
+      <para>Medium xascent.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_XASCENT.DWRITE_PANOSE_XASCENT_HIGH">
+    <summary>
+      <para>High xascent.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_XASCENT.DWRITE_PANOSE_XASCENT_VERY_HIGH">
+    <summary>
+      <para>Very high xascent.</para>
+    </summary>
+  </member>
+</doc>

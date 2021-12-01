@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_SVG_UNIT_TYPE">
+    <summary>
+      <para>Defines the coordinate system used for SVG gradient or clipPath elements.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_UNIT_TYPE.D2D1_SVG_UNIT_TYPE_USER_SPACE_ON_USE">
+    <summary>
+      <para>The property is set to SVG's 'userSpaceOnUse' value.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_UNIT_TYPE.D2D1_SVG_UNIT_TYPE_OBJECT_BOUNDING_BOX">
+    <summary>
+      <para>The property is set to SVG's 'objectBoundingBox' value.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_UNIT_TYPE.D2D1_SVG_UNIT_TYPE_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

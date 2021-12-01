@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_PROPERTY">
+    <summary>
+      <para>Specifies the indices of the system properties present on the <see cref="ID2D1Properties" /> interface for an <see cref="ID2D1Effect" />.</para>
+    </summary>
+    <remarks>
+      <para>Under normal circumstances the minimum and maximum number of inputs to the effect are the same. If the effect supports a variable number of inputs, the <see cref="ID2D1Effect.SetNumberOfInputs" /> method can be used to choose the number that the application will enable.</para>
+    </remarks>
+    <seealso cref="ID2D1Properties" />
+    <seealso cref="ID2D1Properties.GetPropertyName" />
+    <seealso cref="ID2D1Properties.GetPropertyNameLength" />
+    <seealso cref="ID2D1Properties.GetSubProperties" />
+    <seealso cref="ID2D1Properties.GetType" />
+    <seealso cref="ID2D1Properties.GetValue" />
+    <seealso cref="ID2D1Properties.GetValueSize" />
+    <seealso cref="ID2D1Properties.SetValue" />
+  </member>
+  <member name="D2D1_PROPERTY.D2D1_PROPERTY_CLSID">
+    <summary>
+      <para>The CLSID of the effect.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY.D2D1_PROPERTY_DISPLAYNAME">
+    <summary>
+      <para>The name of the effect.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY.D2D1_PROPERTY_AUTHOR">
+    <summary>
+      <para>The author of the effect.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY.D2D1_PROPERTY_CATEGORY">
+    <summary>
+      <para>The category of the effect.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY.D2D1_PROPERTY_DESCRIPTION">
+    <summary>
+      <para>The description of the effect.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY.D2D1_PROPERTY_INPUTS">
+    <summary>
+      <para>The names of the effect's inputs.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY.D2D1_PROPERTY_CACHED">
+    <summary>
+      <para>The output of the effect should be cached.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY.D2D1_PROPERTY_PRECISION">
+    <summary>
+      <para>The buffer precision of the effect output.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY.D2D1_PROPERTY_MIN_INPUTS">
+    <summary>
+      <para>The minimum number of inputs supported by the effect.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY.D2D1_PROPERTY_MAX_INPUTS">
+    <summary>
+      <para>The maximum number of inputs supported by the effect.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY.D2D1_PROPERTY_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

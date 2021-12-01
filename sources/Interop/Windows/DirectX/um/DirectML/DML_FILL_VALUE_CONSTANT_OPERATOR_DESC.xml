@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_FILL_VALUE_CONSTANT_OPERATOR_DESC">
+    <summary>
+      <para>Fills a tensor with the given constant <i>Value</i>. This operator performs the following pseudocode.</para>
+      <code>for each coordinate in OutputTensor
+    OutputTensor[coordinate] = Value
+endfor
+</code>
+    </summary>
+  </member>
+  <member name="DML_FILL_VALUE_CONSTANT_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The tensor to write the results to. This tensor may have any size.</para>
+    </summary>
+  </member>
+  <member name="DML_FILL_VALUE_CONSTANT_OPERATOR_DESC.ValueDataType">
+    <summary>
+      <para>Type: <b><see cref="DML_TENSOR_DATA_TYPE" /></b></para>
+      <para>The data type of the <i>Value</i> field, which must match <i>OutputTensor.DataType</i>.</para>
+    </summary>
+  </member>
+  <member name="DML_FILL_VALUE_CONSTANT_OPERATOR_DESC.Value">
+    <summary>
+      <para>Type: <b><see cref="DML_SCALAR_UNION" /></b></para>
+      <para>A constant value to fill the output, with <i>ValueDataType</i> determining how to interpret the field.</para>
+    </summary>
+  </member>
+</doc>

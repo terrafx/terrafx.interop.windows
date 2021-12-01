@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirectDrawColorControl.GetColorControls">
+    <summary>
+      <para>Retrieves the current color-control settings that are associated with an overlay or a primary surface.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff549237(v=vs.85)">DDCOLORCONTROL</a> structure that receives the current control settings.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <b>dwFlags</b> member of the <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff549237(v=vs.85)">DDCOLORCONTROL</a> structure indicates which of the color-control options are supported.</para>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetColorControls</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawColorControl" />
+  </member>
+  <member name="IDirectDrawColorControl.SetColorControls">
+    <summary>
+      <para>Sets the color-control options for an overlay or a primary surface.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff549237(v=vs.85)">DDCOLORCONTROL</a> structure that contains the new control settings to apply.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is DD_OK.</para>
+      <para>If it fails, the method can return one of the following error values:</para>
+      <list type="bullet">
+        <item>
+          <description>DDERR_INVALIDOBJECT</description>
+        </item>
+        <item>
+          <description>DDERR_INVALIDPARAMS</description>
+        </item>
+        <item>
+          <description>DDERR_UNSUPPORTED</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>SetColorControls</b> method.</para>
+    </remarks>
+    <seealso cref="IDirectDrawColorControl" />
+  </member>
+  <member name="IDirectDrawColorControl">
+    <summary>
+      <para>Applications use the methods of the <b>IDirectDrawColorControl</b> interface to get and set color controls.</para>
+    </summary>
+    <remarks>
+      <para>You can use the LPDIRECTDRAWCOLORCONTROL data type to declare a variable that contains a pointer to an <b>IDirectDrawColorControl</b> interface. The Ddraw.h header file declares this data type with the following code:</para>
+      <code>
+typedef struct IDirectDrawColorControl    FAR *LPDIRECTDRAWCOLORCONTROL;
+
+</code>
+    </remarks>
+  </member>
+</doc>

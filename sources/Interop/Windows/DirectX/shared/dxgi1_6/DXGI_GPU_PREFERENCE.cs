@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_GPU_PREFERENCE.xml' path='doc/member[@name="DXGI_GPU_PREFERENCE"]/*' />
 public enum DXGI_GPU_PREFERENCE
 {
+    /// <include file='DXGI_GPU_PREFERENCE.xml' path='doc/member[@name="DXGI_GPU_PREFERENCE.DXGI_GPU_PREFERENCE_UNSPECIFIED"]/*' />
     DXGI_GPU_PREFERENCE_UNSPECIFIED = 0,
+
+    /// <include file='DXGI_GPU_PREFERENCE.xml' path='doc/member[@name="DXGI_GPU_PREFERENCE.DXGI_GPU_PREFERENCE_MINIMUM_POWER"]/*' />
     DXGI_GPU_PREFERENCE_MINIMUM_POWER = (DXGI_GPU_PREFERENCE_UNSPECIFIED + 1),
+
+    /// <include file='DXGI_GPU_PREFERENCE.xml' path='doc/member[@name="DXGI_GPU_PREFERENCE.DXGI_GPU_PREFERENCE_HIGH_PERFORMANCE"]/*' />
     DXGI_GPU_PREFERENCE_HIGH_PERFORMANCE = (DXGI_GPU_PREFERENCE_MINIMUM_POWER + 1),
 }

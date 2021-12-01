@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11TracingDevice.SetShaderTrackingOptions">
+    <summary>
+      <para>Sets the reference rasterizer's race-condition tracking options for a specific shader.</para>
+    </summary>
+    <param name="pShader">
+      <para>A pointer to the <see cref="IUnknown" /> interface of a shader.</para>
+    </param>
+    <param name="Options">
+      <para>A combination of <see cref="D3D11_SHADER_TRACKING_OPTIONS" />-typed flags that are combined by using a bitwise <b>OR</b> operation. The resulting value identifies tracking options. If a flag is present, the tracking option that the flag represents is set to "on"; otherwise the tracking option is set to "off."</para>
+    </param>
+    <returns>
+      <para>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>
+        <see cref="D3D11_SHADER_TRACKING_OPTION_UAV_SPECIFIC_FLAGS" />) in the <i>Options</i> parameter for a compute shader, <b>SetShaderTrackingOptions</b> ignores it.</para>
+      <para>
+        <b>Note</b>  This API requires the Windows Software Development Kit (SDK) for Windows 8.</para>
+    </remarks>
+    <seealso cref="ID3D11TracingDevice" />
+  </member>
+  <member name="ID3D11TracingDevice.SetShaderTrackingOptionsByType">
+    <summary>
+      <para>Sets the reference rasterizer's default race-condition tracking options for the specified resource types.</para>
+    </summary>
+    <param name="ResourceTypeFlags">
+      <para>A <see cref="D3D11_SHADER_TRACKING_RESOURCE_TYPE" />-typed value that specifies the type of resource to track.</para>
+    </param>
+    <param name="Options">
+      <para>A combination of <see cref="D3D11_SHADER_TRACKING_OPTIONS" />-typed flags that are combined by using a bitwise <b>OR</b> operation. The resulting value identifies tracking options. If a flag is present, the tracking option that the flag represents is set to "on," otherwise the tracking option is set to "off."</para>
+    </param>
+    <returns>
+      <para>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>This API requires the Windows Software Development Kit (SDK) for Windows 8.</para>
+    </remarks>
+    <seealso cref="ID3D11TracingDevice" />
+  </member>
+  <member name="ID3D11TracingDevice">
+    <summary>
+      <para>The tracing device interface sets shader tracking information, which enables accurate logging and playback of shader execution.</para>
+    </summary>
+    <remarks>
+      <para>To get this interface, turn on the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-layers">debug layer</a> and use <see cref="IUnknown.QueryInterface" /> from the <see cref="ID3D11Device" />.</para>
+      <para>
+        <b>Note</b>  This API requires the Windows Software Development Kit (SDK) for Windows 8.</para>
+    </remarks>
+    <seealso cref="IUnknown" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-layer-interfaces">Layer Interfaces</seealso>
+  </member>
+</doc>

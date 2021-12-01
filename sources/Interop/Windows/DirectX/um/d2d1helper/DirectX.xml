@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DirectX.ArcSegment">
+    <summary>
+      <para>Creates a <see cref="D2D1_ARC_SEGMENT" /> structure.</para>
+    </summary>
+    <param name="point">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The end point of the arc.</para>
+    </param>
+    <param name="size">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-size-f">D2D1_SIZE_F</a></b></para>
+      <para>The x-radius and y-radius of the arc.</para>
+    </param>
+    <param name="rotationAngle">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The number of degrees that the ellipse is rotated relative to the current coordinate system. A positive number specifies a clockwise rotation and a negative number specifies a counterclockwise rotation.</para>
+    </param>
+    <param name="sweepDirection">
+      <para>Type: <b><see cref="D2D1_SWEEP_DIRECTION" /></b></para>
+      <para>A value that specifies whether the arc sweep is clockwise or counterclockwise.</para>
+    </param>
+    <param name="arcSize">
+      <para>Type: <b><see cref="D2D1_ARC_SIZE" /></b></para>
+      <para>A value  that specifies whether the arc is larger than 180 degrees.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="D2D1_ARC_SEGMENT" /></b></para>
+      <para>The new arc segment.</para>
+    </returns>
+    <seealso cref="ID2D1GeometrySink" />
+  </member>
+  <member name="DirectX.BezierSegment">
+    <summary>
+      <para>Creates a <see cref="D2D1_BEZIER_SEGMENT" /> structure.</para>
+    </summary>
+    <param name="point1">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The first control point for the Bezier segment.</para>
+    </param>
+    <param name="point2">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The second control point for the Bezier segment.</para>
+    </param>
+    <param name="point3">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The end point for the Bezier segment.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="D2D1_BEZIER_SEGMENT" /></b></para>
+      <para>The new Bezier segment.</para>
+    </returns>
+    <seealso cref="ID2D1GeometrySink" />
+  </member>
+  <member name="DirectX.BitmapBrushProperties">
+    <summary>
+      <para>Creates a <see cref="D2D1_BITMAP_BRUSH_PROPERTIES" /> structure.</para>
+    </summary>
+    <param name="extendModeX">
+      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
+      <para>A value that specifies how the brush horizontally tiles those areas that extend past its bitmap. The default value is <see cref="D2D1_EXTEND_MODE CLAMP" />.</para>
+    </param>
+    <param name="extendModeY">
+      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
+      <para>A value that specifies how the brush vertically tiles those areas that extend past its bitmap. The default value is <see cref="D2D1_EXTEND_MODE CLAMP" />.</para>
+    </param>
+    <param name="interpolationMode">
+      <para>Type: <b><see cref="D2D1_BITMAP_INTERPOLATION_MODE" /></b></para>
+      <para>A value that specifies the interpolation algorithm that is used when images are scaled or rotated. The default value is <see cref="D2D1_BITMAP_INTERPOLATION_MODE_LINEAR" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="D2D1_BITMAP_BRUSH_PROPERTIES" /></b></para>
+      <para>A structure that describes the extend modes and the interpolation mode of an <see cref="ID2D1BitmapBrush" />.</para>
+    </returns>
+    <seealso cref="ID2D1BitmapBrush" />
+  </member>
+  <member name="DirectX.BitmapProperties">
+    <summary>
+      <para>Creates a <see cref="D2D1_BITMAP_PROPERTIES" /> structure.</para>
+    </summary>
+    <param name="pixelFormat">
+      <para>Type: <b>const <see cref="D2D1_PIXEL_FORMAT" /></b></para>
+      <para>The bitmap's pixel format and alpha mode. The default value is a <see cref="D2D1_PIXEL_FORMAT" /> with a <b>format</b> of <see cref="DXGI_FORMAT_UNKNOWN" /> and an <b>alphaMode</b> of  <see cref="D2D1_ALPHA_MODE_UNKNOWN" />. For more information about pixel formats, see <a href="https://docs.microsoft.com//windows/desktop/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel Formats and Alpha Modes</a>.</para>
+    </param>
+    <param name="dpiX">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The horizontal dpi of the bitmap. The default value is 96.0f.</para>
+    </param>
+    <param name="dpiY">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The vertical dpi of the bitmap. The default value is 96.0f.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="D2D1_BITMAP_PROPERTIES" /></b></para>
+      <para>A structure that describes the pixel format and dpi
+of a bitmap.</para>
+    </returns>
+    <seealso cref="ID2D1Bitmap" />
+  </member>
+  <member name="DirectX.BrushProperties">
+    <summary>
+      <para>Creates a <see cref="D2D1_BRUSH_PROPERTIES" /> structure.</para>
+    </summary>
+    <param name="opacity">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The base opacity of the brush. The default value is 1.0.</para>
+    </param>
+    <param name="transform">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a></b></para>
+      <para>The transformation to apply to the brush. The default value is <see cref="D2D1.IdentityMatrix" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="D2D1_BRUSH_PROPERTIES" /></b></para>
+      <para>The new brush properties structure.</para>
+    </returns>
+    <seealso cref="ID2D1Brush" />
+  </member>
+  <member name="DirectX.DrawingStateDescription">
+    <summary>
+      <para>Creates a <see cref="D2D1_DRAWING_STATE_DESCRIPTION" /> structure.</para>
+    </summary>
+    <param name="antialiasMode">
+      <para>Type: <b><see cref="D2D1_ANTIALIAS_MODE" /></b></para>
+      <para>The antialiasing mode for subsequent non-text drawing operations. The default value is  <see cref="D2D1_ANTIALIAS_MODE_PER_PRIMITIVE" />.</para>
+    </param>
+    <param name="textAntialiasMode">
+      <para>Type: <b><see cref="D2D1_TEXT_ANTIALIAS_MODE" /></b></para>
+      <para>The antialiasing mode for subsequent text and glyph drawing operations. The default value is <see cref="D2D1_TEXT_ANTIALIAS_MODE_DEFAULT" />.</para>
+    </param>
+    <param name="tag1">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-tag">D2D1_TAG</a></b></para>
+      <para>A label for subsequent drawing operations. The default value is 0.</para>
+    </param>
+    <param name="tag2">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-tag">D2D1_TAG</a></b></para>
+      <para>A label for subsequent drawing operations. The default value is 0.</para>
+    </param>
+    <param name="transform">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a></b></para>
+      <para>The transformation to be applied to subsequent drawing operations.  The default value is provided by the <see cref=" D2D1.IdentityMatrix" /> function, which returns the identity matrix.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="D2D1_DRAWING_STATE_DESCRIPTION" /></b></para>
+      <para>A structure that describes the drawing state of a render target.</para>
+    </returns>
+  </member>
+  <member name="DirectX.Ellipse">
+    <summary>
+      <para>Creates a <see cref="D2D1_ELLIPSE" /> structure.</para>
+    </summary>
+    <param name="center">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The center point of the ellipse.</para>
+    </param>
+    <param name="radiusX">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The x-radius of the ellipse.</para>
+    </param>
+    <param name="radiusY">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The y-radius of the ellipse.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="D2D1_ELLIPSE" /></b></para>
+      <para>The new ellipse.</para>
+    </returns>
+  </member>
+  <member name="DirectX.FloatMax">
+    <summary>
+      <para>Returns the maximum floating-point value.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The maximum floating-point value.</para>
+    </returns>
+  </member>
+  <member name="DirectX.GradientStop">
+    <summary>
+      <para>Creates a <see cref="D2D1_GRADIENT_STOP" /> structure.</para>
+    </summary>
+    <param name="position">
+      <para>Type: <b>FLOAT</b></para>
+      <para>A value that indicates the relative position of the gradient stop in the brush. A value of 0.0 specifies that the stop is positioned at the beginning of the gradient vector, while a value of 1.0 specifies that the stop is positioned at the end of the gradient vector. Stops outside the 0.0-1.0 range might not be directly visible but still influence the gradient pattern.</para>
+    </param>
+    <param name="color">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-color-f">D2D1_COLOR_F</a></b></para>
+      <para>The color of the gradient stop.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="D2D1_GRADIENT_STOP" /></b></para>
+      <para>The new gradient stop.</para>
+    </returns>
+    <seealso cref="D2D1_GRADIENT_STOP" />
+    <seealso cref="ID2D1LinearGradientBrush" />
+    <seealso cref="ID2D1RadialGradientBrush" />
+  </member>
+  <member name="DirectX.HwndRenderTargetProperties">
+    <summary>
+      <para>Creates a <see cref="D2D1_HWND_RENDER_TARGET_PROPERTIES" /> structure.</para>
+    </summary>
+    <param name="hwnd">
+      <para>Type: <b>HWND</b></para>
+      <para>The HWND to which the render target issues the output from its drawing commands.</para>
+    </param>
+    <param name="pixelSize">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-size-u">D2D1_SIZE_U</a></b></para>
+      <para>The size of the render target, in pixels. The default value is a <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-size-u">D2D1_SIZE_U</a> that has a width and height of 0.</para>
+    </param>
+    <param name="presentOptions">
+      <para>Type: <b><see cref="D2D1_PRESENT_OPTIONS" /></b></para>
+      <para>A value that specifies whether the render target retains the frame after it is presented and whether the render target waits for the device to refresh before presenting. The default value is <see cref="D2D1_PRESENT_OPTIONS_NONE" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="D2D1_HWND_RENDER_TARGET_PROPERTIES" /></b></para>
+      <para>A structure that contains the HWND, pixel size, and presentation options for an <see cref="ID2D1HwndRenderTarget" />.</para>
+    </returns>
+  </member>
+  <member name="DirectX.IdentityMatrix">
+    <summary>
+      <para>Creates an identity matrix.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a></b></para>
+      <para>An identity matrix.</para>
+    </returns>
+    <remarks>
+      <para>The identity matrix is the 3x2 matrix with ones on the main diagonal and zeros elsewhere. When an identity transform is applied to an object, it does not change the position, shape, or size of the object. It is similar to the way that multiplying a number by 1 does not change the number. Any transform other than the identity transform will modify the position, shape, and/or size of objects.</para>
+      <para>Calling this function is the same as calling <see cref="D2D1.Matrix3x2F.Identity()" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</seealso>
+  </member>
+  <member name="DirectX.InfiniteRect">
+    <summary>
+      <para>Creates a rectangle that has its upper-left corner set to (negative infinity, negative infinity) and its lower-right corner set to (infinity, infinity).</para>
+    </summary>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
+      <para>A rectangle that has its upper-left corner set to (negative infinity, negative infinity) and its lower-right corner set to (infinity, infinity).</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</seealso>
+  </member>
+  <member name="DirectX.LayerParameters">
+    <summary>
+      <para>Creates a <see cref="D2D1_LAYER_PARAMETERS" /> structure.</para>
+    </summary>
+    <param name="contentBounds">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
+      <para>The content bounds of the layer. Content outside these bounds is not guaranteed to render.  The default value is <see cref="D2D1.InfiniteRect" />.</para>
+    </param>
+    <param name="geometricMask">
+      <para>Type: <b><see cref="ID2D1Geometry" />*</b></para>
+      <para>A mask that specifies the area of the  layer that is composited into the render target, or <b>NULL</b>. The default value is <b>NULL</b>.</para>
+    </param>
+    <param name="maskAntialiasMode">
+      <para>Type: <b><see cref="D2D1_ANTIALIAS_MODE" /></b></para>
+      <para>A value that specifies the antialiasing mode for the  geometric mask. The default value is   <see cref="D2D1_ANTIALIAS_MODE_PER_PRIMITIVE" />.</para>
+    </param>
+    <param name="maskTransform">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a></b></para>
+      <para>A value that specifies the transform that is applied to the geometric mask when composing the layer. The default value is <see cref="D2D1.IdentityMatrix" />.</para>
+    </param>
+    <param name="opacity">
+      <para>Type: <b>FLOAT</b></para>
+      <para>An opacity that is applied uniformly to all resources in the layer when compositing to the target. The default value is 1.0.</para>
+    </param>
+    <param name="opacityBrush">
+      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
+      <para>A brush that is used to alter the opacity of the layer. The brush
+is mapped to the layer, and the alpha channel of each mapped brush pixel is multiplied by the corresponding layer pixel.  The default value is <b>NULL</b>.</para>
+    </param>
+    <param name="layerOptions">
+      <para>Type: <b><see cref="D2D1_LAYER_OPTIONS" /></b></para>
+      <para>A value that specifies whether the layer intends to render text with ClearType antialiasing. The default value is <see cref="D2D1_LAYER_OPTIONS_NONE" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="D2D1_LAYER_PARAMETERS" /></b></para>
+      <para>A structure that contains the content bounds, mask information, opacity settings, and other options for a layer resource.</para>
+    </returns>
+    <seealso cref="D2D1_ANTIALIAS_MODE" />
+    <seealso cref="D2D1_LAYER_OPTIONS" />
+    <seealso cref="D2D1_LAYER_PARAMETERS" />
+    <seealso cref="ID2D1Brush" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-layers-overview">Layers Overview</seealso>
+  </member>
+  <member name="DirectX.LinearGradientBrushProperties">
+    <summary>
+      <para>Creates a <see cref="D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES" /> structure.</para>
+    </summary>
+    <param name="startPoint">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The start point, in the brush's coordinate space, of the gradient axis.</para>
+    </param>
+    <param name="endPoint">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The end point, in the brush's coordinate space, of the gradient axis.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="D2D1_LINEAR_GRADIENT_BRUSH_PROPERTIES" /></b></para>
+      <para>A structure that contains the start and end point of the gradient axis for an <see cref="ID2D1LinearGradientBrush" />.</para>
+    </returns>
+  </member>
+  <member name="DirectX.PixelFormat">
+    <summary>
+      <para>Creates a  <see cref="D2D1_PIXEL_FORMAT" /> structure.</para>
+    </summary>
+    <param name="dxgiFormat">
+      <para>Type: <b><see cref="DXGI_FORMAT" /></b></para>
+      <para>A value that specifies the size and arrangement of channels in each pixel. The default value is <see cref="DXGI_FORMAT_UNKNOWN" />.</para>
+    </param>
+    <param name="alphaMode">
+      <para>Type: <b><see cref="ALPHA_MODE" /></b></para>
+      <para>A value that specifies whether the alpha channel is using premultiplied alpha or  straight alpha, or whether it should be ignored and considered opaque. The default value is <see cref="D2D1_ALPHA_MODE_UNKNOWN" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="D2D1_PIXEL_FORMAT" /></b></para>
+      <para>A structure that  contains the data format and alpha mode for a bitmap or render target.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel Formats and Alpha Modes</seealso>
+  </member>
+  <member name="DirectX.Point2F">
+    <summary>
+      <para>Creates a <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a> structure that contains the specified x-coordinates and y-coordinates.</para>
+    </summary>
+    <param name="x">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The x-coordinate of the point. The default value is 0.f.</para>
+    </param>
+    <param name="y">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The y-coordinate of the point. The default value is 0.f.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The new point.</para>
+    </returns>
+  </member>
+  <member name="DirectX.Point2U">
+    <summary>
+      <para>Creates a <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2u">D2D1_POINT_2U</a> structure that contains the specified x-coordinates and y-coordinates.</para>
+    </summary>
+    <param name="x">
+      <para>Type: <b>UINT32</b></para>
+      <para>The x-coordinate of the point. The default value is 0.</para>
+    </param>
+    <param name="y">
+      <para>Type: <b>UINT32</b></para>
+      <para>The y-coordinate of the point. The default value is 0.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2u">D2D1_POINT_2U</a></b></para>
+      <para>The new point.</para>
+    </returns>
+  </member>
+  <member name="DirectX.QuadraticBezierSegment">
+    <summary>
+      <para>Creates a <see cref="D2D1_QUADRATIC_BEZIER_SEGMENT" /> structure.</para>
+    </summary>
+    <param name="point1">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The control point of the quadratic Bezier segment.</para>
+    </param>
+    <param name="point2">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The end point of the quadratic Bezier segment.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="D2D1_QUADRATIC_BEZIER_SEGMENT" /></b></para>
+      <para>The new quadratic Bezier curve segment.</para>
+    </returns>
+  </member>
+  <member name="DirectX.RadialGradientBrushProperties">
+    <summary>
+      <para>Creates a <see cref="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES" /> structure.</para>
+    </summary>
+    <param name="center">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>In the brush's coordinate space, the center of the gradient ellipse.</para>
+    </param>
+    <param name="gradientOriginOffset">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>In the brush's coordinate space, the offset of the gradient origin relative to the gradient ellipse's center.</para>
+    </param>
+    <param name="radiusX">
+      <para>Type: <b>const FLOAT</b></para>
+      <para>In the brush's coordinate space, the x-radius of the gradient ellipse.</para>
+    </param>
+    <param name="radiusY">
+      <para>Type: <b>const FLOAT</b></para>
+      <para>In the brush's coordinate space, the y-radius of the gradient ellipse.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES" /></b></para>
+      <para>A structure that contains the gradient origin offset and the size and position of the gradient ellipse for an <see cref="ID2D1RadialGradientBrush" />.</para>
+    </returns>
+  </member>
+  <member name="DirectX.RectF">
+    <summary>
+      <para>Creates a <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a> structure that contains the specified dimensions.</para>
+    </summary>
+    <param name="left">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The x-coordinate of the upper-left corner of the rectangle. The default value is 0.f.</para>
+    </param>
+    <param name="top">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The y-coordinate of the upper-left corner of the rectangle. The default value is 0.f.</para>
+    </param>
+    <param name="right">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The x-coordinate of the lower-right corner of the rectangle. The default value is 0.f.</para>
+    </param>
+    <param name="bottom">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The y-coordinate of the lower-right corner of the rectangle. The default value is 0.f.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
+      <para>A rectangle structure that contains the specified dimensions.</para>
+    </returns>
+  </member>
+  <member name="DirectX.RectU">
+    <summary>
+      <para>Creates a <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-u">D2D1_RECT_U</a> structure that contains the specified dimensions.</para>
+    </summary>
+    <param name="left">
+      <para>Type: <b>UINT32</b></para>
+      <para>The x-coordinate of the upper-left corner of the rectangle. The default value is 0.</para>
+    </param>
+    <param name="top">
+      <para>Type: <b>UINT32</b></para>
+      <para>The y-coordinate of the upper-left corner of the rectangle. The default value is 0.</para>
+    </param>
+    <param name="right">
+      <para>Type: <b>UINT32</b></para>
+      <para>The x-coordinate of the lower-right corner of the rectangle. The default value is 0.</para>
+    </param>
+    <param name="bottom">
+      <para>Type: <b>UINT32</b></para>
+      <para>The y-coordinate of the lower-right corner of the rectangle. The default value is 0.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-u">D2D1_RECT_U</a></b></para>
+      <para>A rectangle structure that contains the specified dimensions.</para>
+    </returns>
+  </member>
+  <member name="DirectX.RenderTargetProperties">
+    <summary>
+      <para>Creates a <see cref="D2D1_RENDER_TARGET_PROPERTIES" /> structure.</para>
+    </summary>
+    <param name="type">
+      <para>Type: <b><see cref="D2D1_RENDER_TARGET_TYPE" /></b></para>
+      <para>A value that specifies whether the render target must use hardware rendering or software rendering. The default value, <see cref="D2D1_RENDER_TARGET_TYPE_DEFAULT" />, specifies that hardware rendering be used; if hardware rendering is not available, the render target uses software rendering. Note that WIC bitmap render targets do not support hardware rendering.</para>
+    </param>
+    <param name="pixelFormat">
+      <para>Type: <b>const <see cref="D2D1_PIXEL_FORMAT" /></b></para>
+      <para>The pixel format and alpha mode of the render target. The default pixel format is <see cref="D2D1.PixelFormat" />, which tells Direct2D to select a pixel format that is supported by the render target.  For a list of pixel formats and alpha modes supported by each render target, see <a href="https://docs.microsoft.com//windows/desktop/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel Formats and Alpha Modes</a>.</para>
+    </param>
+    <param name="dpiX">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The horizontal DPI of the render target. The default value is 0.0. If both <i>dpiX</i> and <i>dpiY</i> are set to 0.0, the render target uses its default DPI.  For more information, see <see cref="D2D1_RENDER_TARGET_PROPERTIES" />.</para>
+    </param>
+    <param name="dpiY">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The vertical DPI of the render target. The default value is 0.0. If both <i>dpiX</i> and <i>dpiY</i> are set to 0.0, the render target uses its default DPI. For more information, see <see cref="D2D1_RENDER_TARGET_PROPERTIES" />.</para>
+    </param>
+    <param name="usage">
+      <para>Type: <b><see cref="D2D1_RENDER_TARGET_USAGE" /></b></para>
+      <para>Specifies how the render target is remotely rendered and whether it should be GDI-compatible.  The default value, <see cref="D2D1_RENDER_TARGET_USAGE_NONE" />, creates a render target that is not compatible with GDI and that uses Direct3D command-stream remote rendering, if it is available.</para>
+    </param>
+    <param name="minLevel">
+      <para>Type: <b><see cref="D2D1_FEATURE_LEVEL" /></b></para>
+      <para>The minimum Direct3D feature level that is required for hardware rendering. The default value, <see cref="D2D1_FEATURE_LEVEL_DEFAULT" />, indicates that Direct2D should determine whether the Direct3D feature level of the device is adequate. This field is used only when <see cref="ID2D1HwndRenderTarget" /> and <see cref="ID2D1DCRenderTarget" /> objects are created.  For more information, see <see cref="D2D1_RENDER_TARGET_PROPERTIES" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="D2D1_RENDER_TARGET_PROPERTIES" /></b></para>
+      <para>A <see cref="D2D1_RENDER_TARGET_PROPERTIES" /> that contains the specified settings.</para>
+    </returns>
+    <seealso cref="D2D1_RENDER_TARGET_PROPERTIES Structure" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel Formats and Alpha Modes</seealso>
+  </member>
+  <member name="DirectX.RoundedRect">
+    <summary>
+      <para>Creates a <see cref="D2D1_ROUNDED_RECT" /> structure.</para>
+    </summary>
+    <param name="rect">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
+      <para>The size and position of the rectangle.</para>
+    </param>
+    <param name="radiusX">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The x-radius for the quarter ellipse that is drawn to replace every corner of the rectangle.</para>
+    </param>
+    <param name="radiusY">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The y-radius for the quarter ellipse that is drawn to replace every corner of the rectangle.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="D2D1_ROUNDED_RECT" /></b></para>
+      <para>The new rounded rectangle.</para>
+    </returns>
+  </member>
+  <member name="DirectX.SizeF">
+    <summary>
+      <para>Creates a <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-size-f">D2D1_SIZE_F</a> structure that contains the specified width and height.</para>
+    </summary>
+    <param name="width">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The width of the size. The default value is 0.f.</para>
+    </param>
+    <param name="height">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The height of the size. The default value is 0.f.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-size-f">D2D1_SIZE_F</a></b></para>
+      <para>The new size structure.</para>
+    </returns>
+  </member>
+  <member name="DirectX.SizeU">
+    <summary>
+      <para>Creates a <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-size-u">D2D1_SIZE_U</a> structure that contains the specified width and height.</para>
+    </summary>
+    <param name="width">
+      <para>Type: <b>UINT32</b></para>
+      <para>The width of the size. The default value is 0.</para>
+    </param>
+    <param name="height">
+      <para>Type: <b>UINT32</b></para>
+      <para>The height of the size. The default value is 0.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-size-u">D2D1_SIZE_U</a></b></para>
+      <para>The new size structure.</para>
+    </returns>
+  </member>
+  <member name="DirectX.StrokeStyleProperties">
+    <summary>
+      <para>Creates a <see cref="D2D1_STROKE_STYLE_PROPERTIES" /> structure.</para>
+    </summary>
+    <param name="startCap">
+      <para>Type: <b><see cref="D2D1_CAP_STYLE" /></b></para>
+      <para>The shape at the beginning of a stroke. The default value is <see cref="D2D1_CAP_STYLE_FLAT" />.</para>
+    </param>
+    <param name="endCap">
+      <para>Type: <b><see cref="D2D1_CAP_STYLE" /></b></para>
+      <para>The shape at the end of a stroke. The default value is <see cref="D2D1_CAP_STYLE_FLAT" />.</para>
+    </param>
+    <param name="dashCap">
+      <para>Type: <b><see cref="D2D1_CAP_STYLE" /></b></para>
+      <para>The shape  at either end of each dash segment. The default value is <see cref="D2D1_CAP_STYLE_FLAT" />.</para>
+    </param>
+    <param name="lineJoin">
+      <para>Type: <b><see cref="D2D1_LINE_JOIN" /></b></para>
+      <para>A value that describes how segments are joined. The default value is <see cref="D2D1_LINE_JOIN_MITER" />.</para>
+    </param>
+    <param name="miterLimit">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The limit of the thickness of the join on a mitered corner. This value is always treated as though it is greater than or equal to 1.0f.</para>
+      <para>The default value is 10.0f.</para>
+    </param>
+    <param name="dashStyle">
+      <para>Type: <b><see cref="D2D1_DASH_STYLE" /></b></para>
+      <para>A value that specifies whether the stroke has a dash pattern and, if so, the dash style.</para>
+      <para>The default value is <see cref="D2D1_DASH_STYLE_SOLID" />.</para>
+    </param>
+    <param name="dashOffset">
+      <para>Type: <b>FLOAT</b></para>
+      <para>A value that specifies how far in the dash sequence the stroke will start.</para>
+      <para>The default value is 0.0f.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="D2D1_STROKE_STYLE_PROPERTIES" /></b></para>
+      <para>The new stroke style.</para>
+    </returns>
+  </member>
+</doc>

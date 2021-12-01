@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_DASH_STYLE.xml' path='doc/member[@name="D2D1_DASH_STYLE"]/*' />
 public enum D2D1_DASH_STYLE : uint
 {
+    /// <include file='D2D1_DASH_STYLE.xml' path='doc/member[@name="D2D1_DASH_STYLE.D2D1_DASH_STYLE_SOLID"]/*' />
     D2D1_DASH_STYLE_SOLID = 0,
+
+    /// <include file='D2D1_DASH_STYLE.xml' path='doc/member[@name="D2D1_DASH_STYLE.D2D1_DASH_STYLE_DASH"]/*' />
     D2D1_DASH_STYLE_DASH = 1,
+
+    /// <include file='D2D1_DASH_STYLE.xml' path='doc/member[@name="D2D1_DASH_STYLE.D2D1_DASH_STYLE_DOT"]/*' />
     D2D1_DASH_STYLE_DOT = 2,
+
+    /// <include file='D2D1_DASH_STYLE.xml' path='doc/member[@name="D2D1_DASH_STYLE.D2D1_DASH_STYLE_DASH_DOT"]/*' />
     D2D1_DASH_STYLE_DASH_DOT = 3,
+
+    /// <include file='D2D1_DASH_STYLE.xml' path='doc/member[@name="D2D1_DASH_STYLE.D2D1_DASH_STYLE_DASH_DOT_DOT"]/*' />
     D2D1_DASH_STYLE_DASH_DOT_DOT = 4,
+
+    /// <include file='D2D1_DASH_STYLE.xml' path='doc/member[@name="D2D1_DASH_STYLE.D2D1_DASH_STYLE_CUSTOM"]/*' />
     D2D1_DASH_STYLE_CUSTOM = 5,
+
+    /// <include file='D2D1_DASH_STYLE.xml' path='doc/member[@name="D2D1_DASH_STYLE.D2D1_DASH_STYLE_FORCE_DWORD"]/*' />
     D2D1_DASH_STYLE_FORCE_DWORD = 0xffffffff,
 }

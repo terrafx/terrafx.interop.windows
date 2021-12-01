@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_CUMULATIVE_SUMMATION_OPERATOR_DESC">
+    <summary>
+      <para>Sums the elements of a tensor along an axis, writing the running tally of the summation into the output tensor.</para>
+    </summary>
+    <remarks>
+      <para>This operator supports in-place execution, meaning that the <i>OutputTensor</i> is permitted to alias the <i>InputTensor</i> during binding.</para>
+    </remarks>
+  </member>
+  <member name="DML_CUMULATIVE_SUMMATION_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The input tensor containing elements to be summed.</para>
+    </summary>
+  </member>
+  <member name="DML_CUMULATIVE_SUMMATION_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The output tensor to write the resulting cumulative summations to. This tensor must have the same sizes and data type as the <i>InputTensor</i>.</para>
+    </summary>
+  </member>
+  <member name="DML_CUMULATIVE_SUMMATION_OPERATOR_DESC.Axis">
+    <summary>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>The index of the dimension to sum elements over. This value must be less than the <i>DimensionCount</i> of the <i>InputTensor</i>.</para>
+    </summary>
+  </member>
+  <member name="DML_CUMULATIVE_SUMMATION_OPERATOR_DESC.AxisDirection">
+    <summary>
+      <para>Type: <b><see cref="DML_AXIS_DIRECTION" /></b></para>
+      <para>One of the values of the <see cref="DML_AXIS_DIRECTION" /> enumeration. If set to <b>DML_AXIS_DIRECTION_INCREASING</b>, then the summation occurs by traversing the tensor along the specified axis by ascending element index. If set to <b>DML_AXIS_DIRECTION_DECREASING</b>, the reverse is true, and the summation occurs by traversing elements by descending index.</para>
+    </summary>
+  </member>
+  <member name="DML_CUMULATIVE_SUMMATION_OPERATOR_DESC.HasExclusiveSum">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>If <b>TRUE</b>, then the value of the current element is excluded when writing the running tally to the output tensor. If <b>FALSE</b>, then the value of the current element is included in the running tally.</para>
+    </summary>
+  </member>
+</doc>

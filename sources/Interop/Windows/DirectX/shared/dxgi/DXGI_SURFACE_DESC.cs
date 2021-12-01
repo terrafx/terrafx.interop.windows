@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_SURFACE_DESC.xml' path='doc/member[@name="DXGI_SURFACE_DESC"]/*' />
 public partial struct DXGI_SURFACE_DESC
 {
+    /// <include file='DXGI_SURFACE_DESC.xml' path='doc/member[@name="DXGI_SURFACE_DESC.Width"]/*' />
     public uint Width;
 
+    /// <include file='DXGI_SURFACE_DESC.xml' path='doc/member[@name="DXGI_SURFACE_DESC.Height"]/*' />
     public uint Height;
 
+    /// <include file='DXGI_SURFACE_DESC.xml' path='doc/member[@name="DXGI_SURFACE_DESC.Format"]/*' />
     public DXGI_FORMAT Format;
 
+    /// <include file='DXGI_SURFACE_DESC.xml' path='doc/member[@name="DXGI_SURFACE_DESC.SampleDesc"]/*' />
     public DXGI_SAMPLE_DESC SampleDesc;
 }

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE">
+    <summary>
+      <para>Values for the <see cref="D2D1_RGBTOHUE_PROP_OUTPUT_COLOR_SPACE" /> property of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/rgb-to-hue-effect">RGB to Hue effect</a>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/built-in-effects">Built-in Effects</seealso>
+    <seealso cref="CreateEffect" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/rgb-to-hue-effect">RGB to Hue effect</seealso>
+  </member>
+  <member name="D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE.D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE_HUE_SATURATION_VALUE">
+    <summary>
+      <para>The effect converts from RGB to Hue Saturation Value (HSV).</para>
+    </summary>
+  </member>
+  <member name="D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE.D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE_HUE_SATURATION_LIGHTNESS">
+    <summary>
+      <para>The effect converts from RGB to Hue Saturation Lightness (HSL).</para>
+    </summary>
+  </member>
+  <member name="D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE.D2D1_RGBTOHUE_OUTPUT_COLOR_SPACE_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

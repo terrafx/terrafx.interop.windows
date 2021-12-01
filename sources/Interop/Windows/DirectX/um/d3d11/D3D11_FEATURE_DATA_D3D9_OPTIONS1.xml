@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_FEATURE_DATA_D3D9_OPTIONS1">
+    <summary>
+      <para>
+        <b>Note</b>  This structure is supported by the Direct3D 11.2 runtime, which is available on Windows 8.1 and later operating systems. Describes Direct3D 9 feature options in the current graphics driver.</para>
+    </summary>
+    <remarks>
+      <para>You can use the <see cref="D3D11_FEATURE_D3D9_OPTIONS1" /> enumeration value with <see cref="ID3D11Device.CheckFeatureSupport" /> to query a driver about support for Direct3D 9 feature options rather than making multiple calls to <b>ID3D11Device.CheckFeatureSupport</b> by using <see cref="D3D11_FEATURE_D3D9_OPTIONS" />, <b>D3D11_FEATURE_D3D9_SHADOW_SUPPORT</b>, and <b>D3D11_FEATURE_D3D9_SIMPLE_INSTANCING_SUPPORT</b>, which provide identical info about supported Direct3D 9 feature options.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-structures">Core Structures</seealso>
+    <seealso cref="D3D11_FEATURE" />
+  </member>
+  <member name="D3D11_FEATURE_DATA_D3D9_OPTIONS1.FullNonPow2TextureSupported">
+    <summary>
+      <para>Specifies whether the driver supports the nonpowers-of-2-unconditionally feature. For more info about this feature, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a>. The runtime sets this member to <b>TRUE</b> for hardware at Direct3D 10 and higher feature levels.  For hardware at Direct3D 9.3 and lower feature levels, the runtime sets this member to <b>FALSE</b> if the hardware and driver support the powers-of-2 (2D textures must have widths and heights specified as powers of two) feature or the nonpowers-of-2-conditionally feature.</para>
+    </summary>
+  </member>
+  <member name="D3D11_FEATURE_DATA_D3D9_OPTIONS1.DepthAsTextureWithLessEqualComparisonFilterSupported">
+    <summary>
+      <para>Specifies whether the driver supports the shadowing feature with the comparison-filtering mode set to less than or equal to. The runtime sets this member to <b>TRUE</b> for hardware at Direct3D 10 and higher <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature levels</a>.  For hardware at Direct3D 9.3 and lower feature levels, the runtime sets this member to <b>TRUE</b> only if the hardware and driver support the shadowing feature; otherwise <b>FALSE</b>.</para>
+    </summary>
+  </member>
+  <member name="D3D11_FEATURE_DATA_D3D9_OPTIONS1.SimpleInstancingSupported">
+    <summary>
+      <para>Specifies whether the hardware and driver support simple instancing. The runtime sets this member to <b>TRUE</b> if  the hardware and driver support simple instancing.</para>
+    </summary>
+  </member>
+  <member name="D3D11_FEATURE_DATA_D3D9_OPTIONS1.TextureCubeFaceRenderTargetWithNonCubeDepthStencilSupported">
+    <summary>
+      <para>Specifies whether the hardware and driver support setting a single face of a <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/texturecube">TextureCube</a> as a render target while the depth stencil surface that is bound alongside can be a <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/sm5-object-texture2d">Texture2D</a> (as opposed to <b>TextureCube</b>). The runtime sets this member to <b>TRUE</b> if  the hardware and driver support this feature; otherwise <b>FALSE</b>.</para>
+      <para>If the hardware and driver don't support this feature, the app must match the render target surface type with the depth stencil surface type. Because hardware at Direct3D 9.3 and lower <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature levels</a> doesn't allow <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/texturecube">TextureCube</a> depth surfaces, the only way to render a scene into a <b>TextureCube</b> while having depth buffering enabled is to render each <b>TextureCube</b> face separately to a <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/sm5-object-texture2d">Texture2D</a> render target first (because that can be matched with a <b>Texture2D</b> depth), and then copy the results into the <b>TextureCube</b>.  If  the hardware and driver support this feature, the app can just render to the <b>TextureCube</b> faces directly while getting depth buffering out of a <b>Texture2D</b> depth buffer.</para>
+      <para>You only need to query this feature from  hardware at Direct3D 9.3 and lower <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature levels</a> because hardware at Direct3D 10.0 and higher feature levels allow <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/texturecube">TextureCube</a> depth surfaces.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_ELLIPSE">
+    <summary>
+      <para>Contains the center point, x-radius, and y-radius of an ellipse.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/how-to-draw-an-ellipse">How to Draw and Fill a Basic Shape</seealso>
+  </member>
+  <member name="D2D1_ELLIPSE.point">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
+      <para>The center point of the ellipse.</para>
+    </summary>
+  </member>
+  <member name="D2D1_ELLIPSE.radiusX">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The X-radius of the ellipse.</para>
+    </summary>
+  </member>
+  <member name="D2D1_ELLIPSE.radiusY">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The Y-radius of the ellipse.</para>
+    </summary>
+  </member>
+</doc>

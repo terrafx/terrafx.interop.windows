@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_GAMMA.xml' path='doc/member[@name="D2D1_GAMMA"]/*' />
 public enum D2D1_GAMMA : uint
 {
+    /// <include file='D2D1_GAMMA.xml' path='doc/member[@name="D2D1_GAMMA.D2D1_GAMMA_2_2"]/*' />
     D2D1_GAMMA_2_2 = 0,
+
+    /// <include file='D2D1_GAMMA.xml' path='doc/member[@name="D2D1_GAMMA.D2D1_GAMMA_1_0"]/*' />
     D2D1_GAMMA_1_0 = 1,
+
+    /// <include file='D2D1_GAMMA.xml' path='doc/member[@name="D2D1_GAMMA.D2D1_GAMMA_FORCE_DWORD"]/*' />
     D2D1_GAMMA_FORCE_DWORD = 0xffffffff,
 }

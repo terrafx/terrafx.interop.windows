@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_BLEND">
+    <summary>
+      <para>Specifies how one of the color sources is to be derived and optionally specifies a preblend operation on the color source.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration has the same numeric values as <see cref="D3D10_BLEND" />.</para>
+    </remarks>
+    <seealso cref="D2D1_BLEND_DESCRIPTION" />
+    <seealso cref="ID2D1BlendTransform" />
+  </member>
+  <member name="D2D1_BLEND.D2D1_BLEND_ZERO">
+    <summary>
+      <para>The data source is black (0, 0, 0, 0). There is no preblend operation.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BLEND.D2D1_BLEND_ONE">
+    <summary>
+      <para>The data source is white (1, 1, 1, 1). There is no preblend operation.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BLEND.D2D1_BLEND_SRC_COLOR">
+    <summary>
+      <para>The data source is color data (RGB) from the second input of the blend transform. There is not a preblend operation.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BLEND.D2D1_BLEND_INV_SRC_COLOR">
+    <summary>
+      <para>The data source is color data (RGB) from second input of the blend transform. The preblend operation inverts the data, generating 1 - RGB.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BLEND.D2D1_BLEND_SRC_ALPHA">
+    <summary>
+      <para>The data source is alpha data (A) from second input of the blend transform. There is no preblend operation.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BLEND.D2D1_BLEND_INV_SRC_ALPHA">
+    <summary>
+      <para>The data source is alpha data (A) from the second input of the blend transform. The preblend operation inverts the data, generating 1 - A.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BLEND.D2D1_BLEND_DEST_ALPHA">
+    <summary>
+      <para>The data source is alpha data (A) from the first input of the blend transform. There is no preblend operation.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BLEND.D2D1_BLEND_INV_DEST_ALPHA">
+    <summary>
+      <para>The data source is alpha data (A) from the first input of the blend transform. The preblend operation inverts the data, generating 1 - A.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BLEND.D2D1_BLEND_DEST_COLOR">
+    <summary>
+      <para>The data source is color data from the first input of the blend transform. There is no preblend operation.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BLEND.D2D1_BLEND_INV_DEST_COLOR">
+    <summary>
+      <para>The data source is color data from the first input of the blend transform. The preblend operation inverts the data, generating 1 - RGB.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BLEND.D2D1_BLEND_SRC_ALPHA_SAT">
+    <summary>
+      <para>The data source is alpha data from the second input of the blend transform. The preblend operation clamps the data to 1 or less.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BLEND.D2D1_BLEND_BLEND_FACTOR">
+    <summary>
+      <para>The data source is the blend factor. There is no preblend operation.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BLEND.D2D1_BLEND_INV_BLEND_FACTOR">
+    <summary>
+      <para>The data source is the blend factor. The preblend operation inverts the blend factor, generating 1 - blend_factor.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BLEND.D2D1_BLEND_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

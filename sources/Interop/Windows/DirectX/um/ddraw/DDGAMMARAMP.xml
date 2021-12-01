@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DDGAMMARAMP">
+    <summary>
+      <para>The <b>DDGAMMARAMP</b> structure contains red, green, and blue ramp data for the <see cref="IDirectDrawGammaControl.GetGammaRamp" /> and <see cref="IDirectDrawGammaControl.SetGammaRamp" /> methods.</para>
+    </summary>
+  </member>
+  <member name="DDGAMMARAMP.red">
+    <summary>
+      <para>Array of 256 WORD elements that describe the red gamma ramp.</para>
+    </summary>
+  </member>
+  <member name="DDGAMMARAMP.green">
+    <summary>
+      <para>Array of 256 WORD elements that describe the green gamma ramp.</para>
+    </summary>
+  </member>
+  <member name="DDGAMMARAMP.blue">
+    <summary>
+      <para>Array of 256 WORD elements that describe the blue gamma ramp.</para>
+    </summary>
+  </member>
+</doc>

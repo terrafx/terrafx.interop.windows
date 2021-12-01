@@ -8,9 +8,11 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG.xml' path='doc/member[@name="DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG"]/*' />
 [Flags]
 [SupportedOSPlatform("windows10.0")]
 public enum DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG
 {
+    /// <include file='DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG.xml' path='doc/member[@name="DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG.DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG_PRESENT"]/*' />
     DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG_PRESENT = 0x1,
 }

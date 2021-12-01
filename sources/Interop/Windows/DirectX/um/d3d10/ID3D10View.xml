@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D10View.GetResource">
+    <summary>
+      <para>Get the resource that is accessed through this view.</para>
+    </summary>
+    <param name="ppResource">
+      <para>Type: <b><see cref="ID3D10Resource" />**</b></para>
+      <para>Address of a pointer to the resource that is accessed through this view. (See <see cref="ID3D10Resource" />.)</para>
+    </param>
+    <remarks>
+      <para>This function increments the reference count of the resource by one, so it is necessary to call Release on the returned pointer when the application is done with it. Destroying (or losing) the returned pointer before Release is called will result in a memory leak.</para>
+    </remarks>
+    <seealso cref="ID3D10View Interface" />
+  </member>
+  <member name="ID3D10View">
+    <summary>
+      <para>A view interface specifies the parts of a resource the pipeline can access during rendering (see <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-access-views">view</a>).</para>
+    </summary>
+    <remarks>
+      <para>A view interface is the base interface for all views. There are three types of views; a depth-stencil view, a render-target view, and a shader-resource view.</para>
+      <list type="bullet">
+        <item>
+          <description>To create a render-target view, call <see cref="ID3D10Device.CreateRenderTargetView" />.</description>
+        </item>
+        <item>
+          <description>To create a depth-stencil view, call <see cref="ID3D10Device.CreateDepthStencilView" />.</description>
+        </item>
+        <item>
+          <description>To create a shader-resource view, call <see cref="ID3D10Device.CreateShaderResourceView" />.</description>
+        </item>
+      </list>
+      <para>All resources must be bound to the pipeline before they can be accessed.</para>
+      <list type="bullet">
+        <item>
+          <description>To bind a render-target view or a depth-stencil view, call <see cref="ID3D10Device.OMSetRenderTargets" />.</description>
+        </item>
+        <item>
+          <description>To bind a shader-resource view, call <see cref="ID3D10Device.VSSetShaderResources" />.</description>
+        </item>
+      </list>
+      <para>A view can also be used to access a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-access-views">typeless resource</a>.</para>
+    </remarks>
+    <seealso cref="ID3D10DeviceChild" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-resource-interfaces">Resource Interfaces</seealso>
+  </member>
+</doc>

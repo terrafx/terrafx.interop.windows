@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteTextAnalyzer2.CheckTypographicFeature">
+    <summary>
+      <para>Checks if a typographic feature is available for a glyph or a set of glyphs.</para>
+    </summary>
+    <param name="fontFace">
+      <para>The font face to read glyph information from.</para>
+    </param>
+    <param name="scriptAnalysis">
+      <para>The script analysis for the script or font to check.</para>
+    </param>
+    <param name="localeName">
+      <para>The locale name to check.</para>
+    </param>
+    <param name="featureTag">
+      <para>The font feature tag to check.</para>
+    </param>
+    <param name="glyphCount">
+      <para>The number of glyphs to check.</para>
+    </param>
+    <param name="glyphIndices">
+      <para>An array of glyph indices to check.</para>
+    </param>
+    <param name="featureApplies">
+      <para>An array of integers that indicate whether or not the font feature applies to each glyph specified.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextanalyzer2">IDWriteTextAnalyzer2</seealso>
+  </member>
+  <member name="IDWriteTextAnalyzer2.GetGlyphOrientationTransform">
+    <summary>
+      <para>Returns 2x3 transform matrix for the respective angle to draw the
+glyph run.</para>
+      <para>Extends <see cref="IDWriteTextAnalyzer1.GetGlyphOrientationTransform" /> to pass valid values for the baseline origin rather than zeroes.</para>
+    </summary>
+    <param name="glyphOrientationAngle">
+      <para>Type: <b><see cref="DWRITE_GLYPH_ORIENTATION_ANGLE" /></b></para>
+      <para>A <see cref="DWRITE_GLYPH_ORIENTATION_ANGLE" />-typed value that specifies the angle that was reported into
+<see cref="IDWriteTextAnalysisSink1.SetGlyphOrientation" />.</para>
+    </param>
+    <param name="isSideways">
+      <para>Type: <b>BOOL</b></para>
+      <para>Whether the run's glyphs are sideways or not.</para>
+    </param>
+    <param name="originX">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The X value of the baseline origin.</para>
+    </param>
+    <param name="originY">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The Y value of the baseline origin.</para>
+    </param>
+    <param name="transform">
+      <para>Type: <b><see cref="DWRITE_MATRIX" />*</b></para>
+      <para>Returned transform.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextanalyzer2">IDWriteTextAnalyzer2</seealso>
+  </member>
+  <member name="IDWriteTextAnalyzer2.GetTypographicFeatures">
+    <summary>
+      <para>Returns a complete list of OpenType features available for a script or font. If a feature is partially supported, then this method indicates that it is supported.</para>
+    </summary>
+    <param name="fontFace">
+      <para>Type: <b><see cref="IDWriteFontFace" />*</b></para>
+      <para>The font face to get features from.</para>
+    </param>
+    <param name="scriptAnalysis">
+      <para>Type: <b><see cref="DWRITE_SCRIPT_ANALYSIS" /></b></para>
+      <para>The script analysis for the script or font to check.</para>
+    </param>
+    <param name="localeName">
+      <para>Type: <b>const WCHAR*</b></para>
+      <para>The locale name to check.</para>
+    </param>
+    <param name="maxTagCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The maximum number of tags to return.</para>
+    </param>
+    <param name="actualTagCount">
+      <para>Type: <b>UINT32*</b></para>
+      <para>The actual number of tags returned.</para>
+    </param>
+    <param name="tags">
+      <para>Type: <b><see cref="DWRITE_FONT_FEATURE_TAG" />*</b></para>
+      <para>An array of OpenType font feature tags.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextanalyzer2">IDWriteTextAnalyzer2</seealso>
+  </member>
+  <member name="IDWriteTextAnalyzer2">
+    <summary>
+      <para>Analyzes various text properties for complex script processing.</para>
+    </summary>
+    <seealso cref="IDWriteTextAnalyzer1" />
+  </member>
+</doc>

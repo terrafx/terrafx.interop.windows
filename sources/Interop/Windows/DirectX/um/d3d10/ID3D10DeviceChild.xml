@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D10DeviceChild.GetDevice">
+    <summary>
+      <para>Get a pointer to the device that created this interface.</para>
+    </summary>
+    <param name="ppDevice">
+      <para>Type: <b><see cref="ID3D10Device" />**</b></para>
+      <para>Address of a pointer to a device (see <see cref="ID3D10Device Interface" />).</para>
+    </param>
+    <remarks>
+      <para>Any returned interfaces will have their reference count incremented by one, so be sure to call .release() on the returned pointer(s) before they are freed or else you will have a memory leak.</para>
+    </remarks>
+    <seealso cref="ID3D10DeviceChild Interface" />
+  </member>
+  <member name="ID3D10DeviceChild.GetPrivateData">
+    <summary>
+      <para>Get application-defined data from a device child.</para>
+    </summary>
+    <param name="guid">
+      <para>Type: <b><a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-oaut/6e7d7108-c213-40bc-8294-ac13fe68fd50">REFGUID</a></b></para>
+      <para>Guid associated with the data.</para>
+    </param>
+    <param name="pDataSize">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>Size of the data.</para>
+    </param>
+    <param name="pData">
+      <para>Type: <b>void*</b></para>
+      <para>Pointer to the data stored with the device child. If pData is <b>NULL</b>, DataSize must also be 0, and any data previously associated with the guid will be destroyed.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>The data stored in the device child is set with <see cref="ID3D10DeviceChild.SetPrivateData" />.</para>
+    </remarks>
+    <seealso cref="ID3D10DeviceChild Interface" />
+  </member>
+  <member name="ID3D10DeviceChild.SetPrivateData">
+    <summary>
+      <para>Set application-defined data to a device child and associate that data with an application-defined guid.</para>
+    </summary>
+    <param name="guid">
+      <para>Type: <b><a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-oaut/6e7d7108-c213-40bc-8294-ac13fe68fd50">REFGUID</a></b></para>
+      <para>Guid associated with the data.</para>
+    </param>
+    <param name="DataSize">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Size of the data.</para>
+    </param>
+    <param name="pData">
+      <para>Type: <b>const void*</b></para>
+      <para>Pointer to the data to be stored with this device child. If pData is <b>NULL</b>, DataSize must also be 0, and any data previously associated with the specified guid will be destroyed.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>The data stored in the device child with this method can be retrieved with <see cref="ID3D10DeviceChild.GetPrivateData" />.</para>
+    </remarks>
+    <seealso cref="ID3D10DeviceChild Interface" />
+  </member>
+  <member name="ID3D10DeviceChild.SetPrivateDataInterface">
+    <summary>
+      <para>Associate an <see cref="IUnknown" />-derived interface with this device child and associate that interface with an application-defined guid.</para>
+    </summary>
+    <param name="guid">
+      <para>Type: <b><a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-oaut/6e7d7108-c213-40bc-8294-ac13fe68fd50">REFGUID</a></b></para>
+      <para>Guid associated with the interface.</para>
+    </param>
+    <param name="pData">
+      <para>Type: <b>const IUnknown*</b></para>
+      <para>Pointer to an <see cref="IUnknown" />-derived interface to be associated with the device child.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>When this method is called .addref() will be called on the <see cref="IUnknown" />-derived interface, and when the device child is destroyed .release() will be called on the IUnknown-derived interface.</para>
+    </remarks>
+    <seealso cref="ID3D10DeviceChild Interface" />
+  </member>
+  <member name="ID3D10DeviceChild">
+    <summary>
+      <para>A device-child interface accesses data used by a device.</para>
+    </summary>
+    <remarks>
+      <para>There are several types of device child interfaces, all of which inherit this interface. They include shaders, state objects, and input layouts.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-interfaces">Core Interfaces</seealso>
+  </member>
+</doc>

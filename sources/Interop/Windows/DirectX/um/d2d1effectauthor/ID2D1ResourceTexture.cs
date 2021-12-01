@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID2D1ResourceTexture.xml' path='doc/member[@name="ID2D1ResourceTexture"]/*' />
 [Guid("688D15C3-02B0-438D-B13A-D1B44C32C39A")]
 [NativeTypeName("struct ID2D1ResourceTexture : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID2D1ResourceTexture : ID2D1ResourceTexture.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID2D1ResourceTexture : ID2D1ResourceTexture.Interfa
         return ((delegate* unmanaged<ID2D1ResourceTexture*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1ResourceTexture*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID2D1ResourceTexture : ID2D1ResourceTexture.Interfa
         return ((delegate* unmanaged<ID2D1ResourceTexture*, uint>)(lpVtbl[1]))((ID2D1ResourceTexture*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID2D1ResourceTexture : ID2D1ResourceTexture.Interfa
         return ((delegate* unmanaged<ID2D1ResourceTexture*, uint>)(lpVtbl[2]))((ID2D1ResourceTexture*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID2D1ResourceTexture.xml' path='doc/member[@name="ID2D1ResourceTexture.Update"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Update([NativeTypeName("const UINT32 *")] uint* minimumExtents, [NativeTypeName("const UINT32 *")] uint* maximimumExtents, [NativeTypeName("const UINT32 *")] uint* strides, [NativeTypeName("UINT32")] uint dimensions, [NativeTypeName("const BYTE *")] byte* data, [NativeTypeName("UINT32")] uint dataCount)

@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_SHADER_DEBUG_INFO">
+    <summary>
+      <para>Describes the format of the <see cref="ID3D10Blob Interface" /> returned by <see cref="D3D10GetShaderDebugInfo" />.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-structures">Shader Structures</seealso>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_INFO.Size">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Size of this structure.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_INFO.Creator">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Offset to LPCSTR for compiler version.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_INFO.EntrypointName">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Offset to LPCSTR for Entry point name.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_INFO.ShaderTarget">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Offset to LPCSTR for shader target.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_INFO.CompileFlags">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Flags used to compile.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_INFO.Files">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Number of included files.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_INFO.FileInfo">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Offset to array of <see cref="D3D10_SHADER_DEBUG_FILE_INFO" /> structures that has <b>Files</b> elements.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_INFO.Instructions">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Number of instructions.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_INFO.InstructionInfo">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Offset to array of <see cref="D3D10_SHADER_DEBUG_INST_INFO" /> structures that has <b>Instructions</b> elements.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_INFO.Variables">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Number of variables.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_INFO.VariableInfo">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Offset to array of <see cref="D3D10_SHADER_DEBUG_VAR_INFO" /> structures that has <b>Variables</b> elements.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_INFO.InputVariables">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Number of variables to initialize before running.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_INFO.InputVariableInfo">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Offset to array of <see cref="D3D10_SHADER_DEBUG_INPUT_INFO" /> structures that has <b>InputVariables</b> elements.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_INFO.Tokens">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Number of tokens to initialize.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_INFO.TokenInfo">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Offset to array of <see cref="D3D10_SHADER_DEBUG_TOKEN_INFO" /> structures that has <b>Tokens</b> elements.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_INFO.Scopes">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Number of scopes.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_INFO.ScopeInfo">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Offset to array of <see cref="D3D10_SHADER_DEBUG_SCOPE_INFO" /> structures that has <b>Scopes</b> elements.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_INFO.ScopeVariables">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Number of variables declared.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_INFO.ScopeVariableInfo">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Offset to array of <see cref="D3D10_SHADER_DEBUG_SCOPEVAR_INFO" /> structures that has <b>Scopes</b> elements.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_INFO.UintOffset">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Offset to the UINT datastore, all UINT offsets are from this offset.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_INFO.StringOffset">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Offset to the string datastore, all string offsets are from this offset.</para>
+    </summary>
+  </member>
+</doc>

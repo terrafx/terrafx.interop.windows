@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_FIGURE_BEGIN">
+    <summary>
+      <para>Indicates whether a specific <see cref="ID2D1SimplifiedGeometrySink" /> figure is filled or hollow.</para>
+    </summary>
+    <seealso cref="ID2D1SimplifiedGeometrySink" />
+    <seealso cref="ID2D1SimplifiedGeometrySink.BeginFigure" />
+    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/path-geometries-overview">Path Geometries Overview</seealso>
+  </member>
+  <member name="D2D1_FIGURE_BEGIN.D2D1_FIGURE_BEGIN_FILLED">
+    <summary>
+      <para>Indicates the figure will be filled by the FillGeometry (<see cref="ID2D1CommandSink.FillGeometry" /></para>
+      <para>or <see cref="ID2D1RenderTarget.FillGeometry" />) method.</para>
+    </summary>
+  </member>
+  <member name="D2D1_FIGURE_BEGIN.D2D1_FIGURE_BEGIN_HOLLOW">
+    <summary>
+      <para>Indicates the figure will not be filled by the FillGeometry (<see cref="ID2D1CommandSink.FillGeometry" /></para>
+      <para>or <see cref="ID2D1RenderTarget.FillGeometry" />) method and will only consist of an outline.
+Moreover, the bounds of a hollow figure are zero.
+D2D1_FIGURE_BEGIN_HOLLOW should be used for stroking, or for other geometry operations.</para>
+    </summary>
+  </member>
+  <member name="D2D1_FIGURE_BEGIN.D2D1_FIGURE_BEGIN_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

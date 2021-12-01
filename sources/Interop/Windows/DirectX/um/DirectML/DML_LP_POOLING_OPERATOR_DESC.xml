@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_LP_POOLING_OPERATOR_DESC">
+    <summary>
+      <para>Computes the Lp-normalized value across the elements within the sliding window over the input tensor.</para>
+    </summary>
+  </member>
+  <member name="DML_LP_POOLING_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>An input tensor with <i>Sizes</i><code>{ BatchCount, ChannelCount, Height, Width }</code> for 4D, and <code>{ BatchCount, ChannelCount, Depth, Height, Width }</code> for 5D.</para>
+    </summary>
+  </member>
+  <member name="DML_LP_POOLING_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The output tensor to write to. The <i>Sizes</i> of the output tensor can be computed as follows.</para>
+      <code>OutputTensor-&gt;Sizes[0] = InputTensor-&gt;Sizes[0];
+OutputTensor-&gt;Sizes[1] = InputTensor-&gt;Sizes[1];
+
+for (UINT i = 0; i &lt; DimensionCount; ++i) {
+  UINT PaddedSize = InputTensor-&gt;Sizes[i + 2] + StartPadding[i] + EndPadding[i];
+  OutputTensor-&gt;Sizes[i + 2] = (PaddedSize - WindowSizes[i]) / Strides[i] + 1;
+}
+</code>
+    </summary>
+  </member>
+  <member name="DML_LP_POOLING_OPERATOR_DESC.DimensionCount">
+    <summary>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>The number of spatial dimensions of the input tensor <i>InputTensor</i>, which also corresponds to the number of dimensions of the sliding window <i>WindowSize</i>. This value also determines the size of the <i>Strides</i>, <i>StartPadding</i>, and <i>EndPadding</i> arrays. It should be set to 2 when <i>InputTensor</i> is 4D, and 3 when it's a 5D tensor.</para>
+    </summary>
+  </member>
+  <member name="DML_LP_POOLING_OPERATOR_DESC.Strides">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
+      <para>An array containing the strides for the sliding window dimensions of sizes <code>{ Height, Width }</code> when the <i>DimensionCount</i> is set to 2, or <code>{ Depth, Height, Width }</code> when set to 3.</para>
+    </summary>
+  </member>
+  <member name="DML_LP_POOLING_OPERATOR_DESC.WindowSize">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
+      <para>An array containing the dimensions of the sliding window in <code>{ Height, Width }</code>when <i>DimensionCount</i> is set to 2, or <code>{ Depth, Height, Width }</code> when set to 3.</para>
+    </summary>
+  </member>
+  <member name="DML_LP_POOLING_OPERATOR_DESC.StartPadding">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
+      <para>An array containing the number of padding elements to be applied to the beginning of each spatial dimension of the input tensor <i>InputTensor</i>. The values are in <code>{ Height, Width }</code> when <i>DimensionCount</i> is set to 2, or <code>{ Depth, Height, Width }</code> when set to 3.</para>
+    </summary>
+  </member>
+  <member name="DML_LP_POOLING_OPERATOR_DESC.EndPadding">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
+      <para>An array containing the number of padding elements to be applied to the end of each spatial dimension of the input tensor <i>InputTensor</i>. The values are in <code>{ Height, Width }</code> when <i>DimensionCount</i> is set to 2, or <code>{ Depth, Height, Width }</code> when set to 3.</para>
+    </summary>
+  </member>
+  <member name="DML_LP_POOLING_OPERATOR_DESC.P">
+    <summary>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>The value of the <code>P</code> variable in the Lp-normalization function <code>Y = (X1^P + X2^P + ... + Xn^P) ^ (1/P)</code>, where <code>X1</code> to <code>Xn</code> representing each of the values within the sliding window. In common use cases, this value is either set to 1 or 2, representing either the L1 or L2 normalization respectively.</para>
+    </summary>
+  </member>
+</doc>

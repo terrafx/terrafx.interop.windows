@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CreateBitmapFromWicBitmap.CreateBitmapFromWicBitmap">
+    <summary>
+      <para>Creates an <see cref="ID2D1Bitmap" /> by copying the specified Microsoft Windows Imaging Component (WIC) bitmap.</para>
+    </summary>
+    <param name="wicBitmapSource">
+      <para>Type: <b><see cref="IWICBitmapSource" />*</b></para>
+      <para>The WIC bitmap to copy.</para>
+    </param>
+    <param name="bitmap">
+      <para>Type: <b><see cref="ID2D1Bitmap1" />**</b></para>
+      <para>When this method returns, contains a pointer to a pointer to the new bitmap. This parameter is passed uninitialized.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID2D1DeviceContext" />
+  </member>
+</doc>

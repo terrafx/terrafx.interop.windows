@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_MAPPED_TEXTURE3D">
+    <summary>
+      <para>Provides access to <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">subresource</a> data in a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">3D texture</a>.</para>
+    </summary>
+    <remarks>
+      <para>This structure is used to access subresource data when calling <see cref="ID3D10Texture3D.Map" />. To access data, you must cast the <b>pData</b> pointer; see <see cref="D3D10_MAPPED_TEXTURE2D" /> for an example.</para>
+      <para>To illustrate pitch for an uncompressed texture, assume a 3D texture with mipmap levels, as shown in the following illustration.</para>
+      <para>
+        <img alt="Illustration of a 3D texture with mipmap levels" src="https://docs.microsoft.com/windows/win32/api/d3d10mages/d3d10_resource_texture3d.png" />
+      </para>
+      <para>It is easiest to consider the top-level texture only, as shown in the following illustration.</para>
+      <para>
+        <img alt="Illustration of only the top-level texture" src="https://docs.microsoft.com/windows/win32/api/d3d10mages/d3d10_3d_texture_1.png" />
+      </para>
+      <para>And then visualize the top-level texture redrawn as a series of 2D textures, each one having a different depth value. This yields several texture planes, as shown in the following illustration.</para>
+      <para>
+        <img alt="Illustration of top-level texture drawn as 2D texture planes" src="https://docs.microsoft.com/windows/win32/api/d3d10mages/d3d10_3d_texture_conceptual.png" />
+      </para>
+      <para>However, the actual layout of all the elements from all the texture planes looks more like the following illustration.</para>
+      <para>
+        <img alt="Illustration of the row pitch and depth pitch in memory" src="https://docs.microsoft.com/windows/win32/api/d3d10mages/d3d10_3d_texture_memory.png" />
+      </para>
+      <para>Use row pitch to advance a pointer between rows within a single 2D texture plane; use depth pitch to advance a pointer between 2D texture planes.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures">Resource Structures</seealso>
+  </member>
+  <member name="D3D10_MAPPED_TEXTURE3D.pData">
+    <summary>
+      <para>Type: <b>void*</b></para>
+      <para>Pointer to the data.</para>
+    </summary>
+  </member>
+  <member name="D3D10_MAPPED_TEXTURE3D.RowPitch">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The pitch, or width, or physical size (in bytes) of one row of an uncompressed texture. Since a block-compressed texture is encoded in 4x4 blocks, the <b>RowPitch</b> for a compressed texture is the number of bytes in a block of 4x4 texels. See <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-block-compression">virtual size vs physical size</a> for more information on block compression.</para>
+    </summary>
+  </member>
+  <member name="D3D10_MAPPED_TEXTURE3D.DepthPitch">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The pitch or number of bytes in all rows for a single depth.</para>
+    </summary>
+  </member>
+</doc>

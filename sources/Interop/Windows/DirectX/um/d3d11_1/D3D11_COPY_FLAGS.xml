@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_COPY_FLAGS">
+    <summary>
+      <para>
+        <b>Note</b>  This enumeration is supported by the Direct3D 11.1 runtime, which is available on Windows 8 and later operating systems. Specifies how to handle the existing contents of a resource during a copy or update operation of a region within that resource.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-enums">Core Enumerations</seealso>
+    <seealso cref="ID3D11DeviceContext1.CopySubresourceRegion1" />
+    <seealso cref="ID3D11DeviceContext1.UpdateSubresource1" />
+  </member>
+  <member name="D3D11_COPY_FLAGS.D3D11_COPY_NO_OVERWRITE">
+    <summary>
+      <para>The existing contents of the resource cannot be overwritten.</para>
+    </summary>
+  </member>
+  <member name="D3D11_COPY_FLAGS.D3D11_COPY_DISCARD">
+    <summary>
+      <para>The existing contents of the resource are undefined and can be discarded.</para>
+    </summary>
+  </member>
+</doc>

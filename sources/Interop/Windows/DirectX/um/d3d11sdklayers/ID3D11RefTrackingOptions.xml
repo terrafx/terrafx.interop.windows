@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11RefTrackingOptions.SetTrackingOptions">
+    <summary>
+      <para>Sets graphics processing unit (GPU) debug reference tracking options.</para>
+    </summary>
+    <param name="uOptions">
+      <para>A combination of <see cref="D3D11_SHADER_TRACKING_OPTIONS" />-typed flags that are combined by using a bitwise <b>OR</b> operation. The resulting value identifies tracking options. If a flag is present, the tracking option that the flag represents is set to "on"; otherwise the tracking option is set to "off."</para>
+    </param>
+    <returns>
+      <para>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>This API requires the Windows Software Development Kit (SDK) for Windows 8.</para>
+    </remarks>
+    <seealso cref="ID3D11RefTrackingOptions" />
+  </member>
+  <member name="ID3D11RefTrackingOptions">
+    <summary>
+      <para>The tracking interface sets reference tracking options.</para>
+    </summary>
+    <remarks>
+      <para>These APIs require the Windows Software Development Kit (SDK) for Windows 8.</para>
+    </remarks>
+    <seealso cref="IUnknown" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-layer-interfaces">Layer Interfaces</seealso>
+  </member>
+</doc>

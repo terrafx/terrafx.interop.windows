@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Matrix4x4F.Determinant">
+    <summary>
+      <para>Calculates the determinant of the matrix.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The determinant.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</seealso>
+  </member>
+  <member name="Matrix4x4F.IsIdentity">
+    <summary>
+      <para>Indicates whether this matrix is the identity matrix.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>BOOL</b></para>
+      <para>Indicates whether this matrix is the identity matrix.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</seealso>
+  </member>
+  <member name="Matrix4x4F.PerspectiveProjection">
+    <summary>
+      <para>A perspective transformation given a depth value.</para>
+    </summary>
+    <param name="depth">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The depth for the perspective transform.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</a></b></para>
+      <para>The result matrix.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</seealso>
+  </member>
+  <member name="Matrix4x4F.ReinterpretBaseType">
+    <summary>
+      <para>Converts the specified <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_4X4_F</a> matrix to a <a href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</a> without making a copy.</para>
+    </summary>
+    <param name="pMatrix">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh848012(v=vs.85)">D2D1_MATRIX_4X4_F</a>*</b></para>
+      <para>The matrix to convert.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</a>*</b></para>
+      <para>The converted matrix.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</seealso>
+  </member>
+  <member name="Matrix4x4F.ReinterpretBaseType">
+    <summary>
+      <para>Converts the specified <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_4X4_F</a> matrix to a <a href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</a> without making a copy.</para>
+    </summary>
+    <param name="pMatrix">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh848012(v=vs.85)">D2D1_MATRIX_4X4_F</a>*</b></para>
+      <para>The matrix to convert.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</a>*</b></para>
+      <para>The converted matrix.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</seealso>
+  </member>
+  <member name="Matrix4x4F.RotationArbitraryAxis">
+    <summary>
+      <para>Determines the 3-D Rotation matrix for an arbitrary axis.</para>
+    </summary>
+    <param name="x">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The X point of the axis.</para>
+    </param>
+    <param name="y">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The Y point of the axis.</para>
+    </param>
+    <param name="z">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The Z point of the axis.</para>
+    </param>
+    <param name="degree">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The amount of rotation.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</a></b></para>
+      <para>The result matrix</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</seealso>
+  </member>
+  <member name="Matrix4x4F.RotationX">
+    <summary>
+      <para>Rotates the transform matrix around the X axis.</para>
+    </summary>
+    <param name="degreeX">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The amount of rotation.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</a></b></para>
+      <para>The result matrix.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</seealso>
+  </member>
+  <member name="Matrix4x4F.RotationY">
+    <summary>
+      <para>Rotates the transform matrix around the Y axis.</para>
+    </summary>
+    <param name="degreeY">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The amount of rotation.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</a></b></para>
+      <para>The result matrix.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</seealso>
+  </member>
+  <member name="Matrix4x4F.RotationZ">
+    <summary>
+      <para>Rotates the transform matrix around the Z axis.</para>
+    </summary>
+    <param name="degreeZ">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The amount of rotation.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</a></b></para>
+      <para>The result matrix.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</seealso>
+  </member>
+  <member name="Matrix4x4F.Scale">
+    <summary>
+      <para>Scales the perspective plane of the matrix.</para>
+    </summary>
+    <param name="x">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The scale in the X direction.</para>
+    </param>
+    <param name="y">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The scale in the Y direction.</para>
+    </param>
+    <param name="z">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The scale in the Z direction.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</a></b></para>
+      <para>The result matrix.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</seealso>
+  </member>
+  <member name="Matrix4x4F.SetProduct">
+    <summary>
+      <para>Multiplies the two matrices and stores the result in this matrix.</para>
+    </summary>
+    <param name="a">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</a></b></para>
+      <para>The first matrix to multiply.</para>
+    </param>
+    <param name="b">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</a></b></para>
+      <para>The second matrix to multiply.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</seealso>
+  </member>
+  <member name="Matrix4x4F.SkewX">
+    <summary>
+      <para>Skews the matrix in the X direction.</para>
+    </summary>
+    <param name="degreeX">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The skew amount.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</a></b></para>
+      <para>The result matrix.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</seealso>
+  </member>
+  <member name="Matrix4x4F.SkewY">
+    <summary>
+      <para>Skews the matrix in the Y direction.</para>
+    </summary>
+    <param name="degreeY">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The skew amount.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</a></b></para>
+      <para>The result matrix.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/d2d1_1helper/nl-d2d1_1helper-matrix4x4f">Matrix4x4F</seealso>
+  </member>
+</doc>

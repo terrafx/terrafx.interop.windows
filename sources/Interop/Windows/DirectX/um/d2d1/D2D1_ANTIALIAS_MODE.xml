@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_ANTIALIAS_MODE">
+    <summary>
+      <para>Specifies how the edges of nontext primitives are rendered.</para>
+    </summary>
+  </member>
+  <member name="D2D1_ANTIALIAS_MODE.D2D1_ANTIALIAS_MODE_PER_PRIMITIVE">
+    <summary>
+      <para>Edges are antialiased using the Direct2D per-primitive method of high-quality antialiasing.</para>
+    </summary>
+  </member>
+  <member name="D2D1_ANTIALIAS_MODE.D2D1_ANTIALIAS_MODE_ALIASED">
+    <summary>
+      <para>Objects are aliased in most cases. Objects are antialiased only when they are drawn to a render target created by the <see cref="CreateDxgiSurfaceRenderTarget" /> method and  Direct3D multisampling has been enabled on the backing DirectX Graphics Infrastructure (DXGI) surface.</para>
+    </summary>
+  </member>
+  <member name="D2D1_ANTIALIAS_MODE.D2D1_ANTIALIAS_MODE_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

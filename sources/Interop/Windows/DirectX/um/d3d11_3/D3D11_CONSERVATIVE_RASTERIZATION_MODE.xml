@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_CONSERVATIVE_RASTERIZATION_MODE">
+    <summary>
+      <para>Identifies whether conservative rasterization is on or off.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-enums">Core Enumerations</seealso>
+  </member>
+  <member name="D3D11_CONSERVATIVE_RASTERIZATION_MODE.D3D11_CONSERVATIVE_RASTERIZATION_MODE_OFF">
+    <summary>
+      <para>Conservative rasterization is off.</para>
+    </summary>
+  </member>
+  <member name="D3D11_CONSERVATIVE_RASTERIZATION_MODE.D3D11_CONSERVATIVE_RASTERIZATION_MODE_ON">
+    <summary>
+      <para>Conservative rasterization is on.</para>
+    </summary>
+  </member>
+</doc>

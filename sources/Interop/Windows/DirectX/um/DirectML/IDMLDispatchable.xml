@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDMLDispatchable.GetBindingProperties">
+    <summary>
+      <para>Retrieves the binding properties for a dispatchable object (an operator initializer, or a compiled operator). The binding properties
+value contains the required size of the binding table in descriptors, as well as the required size in bytes of the
+temporary and persistent resources required to execute this object.</para>
+      <para>When called on an operator initializer, the binding properties of the object may be different if retrieved both before and after a call
+to <see cref="IDMLOperatorInitializer.Reset" />.</para>
+    </summary>
+    <returns>
+      <para>Type: <see cref="DML_BINDING_PROPERTIES" /></para>
+      <para>A <see cref="DML_BINDING_PROPERTIES" /> value containing binding properties.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-binding">Binding in DirectML</seealso>
+    <seealso cref="IDMLDispatchable" />
+  </member>
+  <member name="IDMLDispatchable">
+    <summary>
+      <para>Implemented by objects that can be recorded into a command list for dispatch on the GPU, using <see cref="IDMLCommandRecorder.RecordDispatch" />. The <b>IDMLDispatchable</b> interface inherits from <see cref="IDMLPageable" />.</para>
+      <para>This interface is implemented by <see cref="IDMLCompiledOperator" /> and <see cref="IDMLOperatorInitializer" />.</para>
+    </summary>
+    <seealso cref="IDMLPageable" />
+  </member>
+</doc>

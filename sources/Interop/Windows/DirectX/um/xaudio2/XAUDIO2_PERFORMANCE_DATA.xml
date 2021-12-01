@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="XAUDIO2_PERFORMANCE_DATA">
+    <summary>
+      <para>Contains performance information.</para>
+    </summary>
+    <remarks>
+      <para>CPU cycles are recorded using . Use to convert these values.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso cref="IXAudio2.GetPerformanceData" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/structures">XAudio2 Structures</seealso>
+  </member>
+  <member name="XAUDIO2_PERFORMANCE_DATA.AudioCyclesSinceLastQuery">
+    <summary>
+      <para>CPU cycles spent on audio processing since the last call to the <see cref="IXAudio2.StartEngine" /> or <see cref="IXAudio2.GetPerformanceData" /> function.</para>
+    </summary>
+  </member>
+  <member name="XAUDIO2_PERFORMANCE_DATA.TotalCyclesSinceLastQuery">
+    <summary>
+      <para>Total CPU cycles elapsed since the last call.</para>
+      <para>
+        <b>Note</b>  This only counts cycles on the CPU on which XAudio2 is running.</para>
+    </summary>
+  </member>
+  <member name="XAUDIO2_PERFORMANCE_DATA.MinimumCyclesPerQuantum">
+    <summary>
+      <para>Fewest CPU cycles spent on processing any single audio quantum since the last call.</para>
+    </summary>
+  </member>
+  <member name="XAUDIO2_PERFORMANCE_DATA.MaximumCyclesPerQuantum">
+    <summary>
+      <para>Most CPU cycles spent on processing any single audio quantum since the last call.</para>
+    </summary>
+  </member>
+  <member name="XAUDIO2_PERFORMANCE_DATA.MemoryUsageInBytes">
+    <summary>
+      <para>Total memory currently in use.</para>
+    </summary>
+  </member>
+  <member name="XAUDIO2_PERFORMANCE_DATA.CurrentLatencyInSamples">
+    <summary>
+      <para>Minimum delay that occurs between the time a sample is read from a source buffer and the time it reaches the speakers.</para>
+      <list type="table">
+        <listheader>
+          <description>Windows</description>
+        </listheader>
+        <item>
+          <description>The delay reported is a variable value equal to the rough distance between the last sample submitted to the driver by XAudio2 and the sample currently playing. The following factors can affect the delay: playing multichannel audio on a hardware-accelerated device; the type of audio device (WavePci, WaveCyclic, or WaveRT); and, to a lesser extent, audio hardware implementation.
+</description>
+        </item>
+      </list>
+      <list type="table">
+        <listheader>
+          <description>Xbox 360</description>
+        </listheader>
+        <item>
+          <description>The delay reported is a fixed value, which is normally 1,024 samples (21.333 ms at 48 kHz). If <b>XOverrideSpeakerConfig</b> has been called using the <b>XAUDIOSPEAKERCONFIG_LOW_LATENCY</b> flag, the delay reported is 512 samples (10.667 ms at 48 kHz).
+</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="XAUDIO2_PERFORMANCE_DATA.GlitchesSinceEngineStarted">
+    <summary>
+      <para>Total audio dropouts since the engine started.</para>
+    </summary>
+  </member>
+  <member name="XAUDIO2_PERFORMANCE_DATA.ActiveSourceVoiceCount">
+    <summary>
+      <para>Number of source voices currently playing.</para>
+    </summary>
+  </member>
+  <member name="XAUDIO2_PERFORMANCE_DATA.TotalSourceVoiceCount">
+    <summary>
+      <para>Total number of source voices currently in existence.</para>
+    </summary>
+  </member>
+  <member name="XAUDIO2_PERFORMANCE_DATA.ActiveSubmixVoiceCount">
+    <summary>
+      <para>Number of submix voices currently playing.</para>
+    </summary>
+  </member>
+  <member name="XAUDIO2_PERFORMANCE_DATA.ActiveResamplerCount">
+    <summary>
+      <para>Number of resampler xAPOs currently active.</para>
+    </summary>
+  </member>
+  <member name="XAUDIO2_PERFORMANCE_DATA.ActiveMatrixMixCount">
+    <summary>
+      <para>Number of matrix mix xAPOs currently active.</para>
+    </summary>
+  </member>
+  <member name="XAUDIO2_PERFORMANCE_DATA.ActiveXmaSourceVoices">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>Windows</description>
+        </listheader>
+        <item>
+          <description>Unsupported.</description>
+        </item>
+      </list>
+      <list type="table">
+        <listheader>
+          <description>Xbox 360</description>
+        </listheader>
+        <item>
+          <description>Number of source voices decoding XMA data.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="XAUDIO2_PERFORMANCE_DATA.ActiveXmaStreams">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>Windows</description>
+        </listheader>
+        <item>
+          <description>Unsupported.</description>
+        </item>
+      </list>
+      <list type="table">
+        <listheader>
+          <description>Xbox 360</description>
+        </listheader>
+        <item>
+          <description>A voice can use more than one XMA stream.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

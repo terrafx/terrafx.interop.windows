@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_BOX">
+    <summary>
+      <para>Defines a 3D box.</para>
+    </summary>
+    <remarks>
+      <para>The following diagram shows a 3D box, where the origin is the left, front, top corner.</para>
+      <para>
+        <img alt="Diagram of a 3D box, where the origin is the left, front, top corner" src="https://docs.microsoft.com/windows/win32/api/d3d11mages/D3D10_box.png" />
+      </para>
+      <para>The values for <b>right</b>, <b>bottom</b>, and <b>back</b> are each one pixel past the end of the pixels that are included in the box region.  That is, the values for <b>left</b>, <b>top</b>, and <b>front</b> are included in the box region while the values for right, bottom, and back are excluded from the box region. For example, for a box that is one pixel wide, (right - left) == 1; the box region includes the left pixel but not the right pixel.</para>
+      <para>Coordinates of a box are in bytes for buffers and in texels for textures.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-structures">Core Structures</seealso>
+  </member>
+  <member name="D3D11_BOX.left">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The x position of the left hand side of the box.</para>
+    </summary>
+  </member>
+  <member name="D3D11_BOX.top">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The y position of the top of the box.</para>
+    </summary>
+  </member>
+  <member name="D3D11_BOX.front">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The z position of the front of the box.</para>
+    </summary>
+  </member>
+  <member name="D3D11_BOX.right">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The x position of the right hand side of the box.</para>
+    </summary>
+  </member>
+  <member name="D3D11_BOX.bottom">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The y position of the bottom of the box.</para>
+    </summary>
+  </member>
+  <member name="D3D11_BOX.back">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The z position of the back of the box.</para>
+    </summary>
+  </member>
+</doc>

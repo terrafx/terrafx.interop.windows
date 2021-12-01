@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_FONT_AXIS_VALUE">
+    <summary>
+      <para>Represents a value for a font axis. Used when querying and creating font instances (for example, see <see cref="IDWriteFontFace5.GetFontAxisValues" />).</para>
+    </summary>
+    <seealso cref="DWRITE_FONT_AXIS_TAG enumeration" />
+    <seealso cref="DWRITE_FONT_AXIS_RANGE structure" />
+  </member>
+  <member name="DWRITE_FONT_AXIS_VALUE.axisTag">
+    <summary>
+      <para>Type: <b><see cref="DWRITE_FONT_AXIS_TAG" /></b></para>
+      <para>The four-character identifier of the font axis (for example, weight, width, slant, italic, and so on).</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_AXIS_VALUE.value">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">FLOAT</a></b></para>
+      <para>A value for the axis specified in <code>axisTag</code>. The meaning and range of the value depends on the semantics of the particular axis. Certain well-known axes have standard ranges and defaults. Here are some examples.</para>
+      <list type="bullet">
+        <item>
+          <description>Weight (1..1000, default == 400)</description>
+        </item>
+        <item>
+          <description>Width (&gt;0, default == 100)</description>
+        </item>
+        <item>
+          <description>Slant (-90..90, default == -20)</description>
+        </item>
+        <item>
+          <description>Italic (0 or 1)</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

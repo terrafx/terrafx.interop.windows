@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_ELLIPSE.xml' path='doc/member[@name="D2D1_ELLIPSE"]/*' />
 public partial struct D2D1_ELLIPSE
 {
+    /// <include file='D2D1_ELLIPSE.xml' path='doc/member[@name="D2D1_ELLIPSE.point"]/*' />
     [NativeTypeName("D2D1_POINT_2F")]
     public D2D_POINT_2F point;
 
+    /// <include file='D2D1_ELLIPSE.xml' path='doc/member[@name="D2D1_ELLIPSE.radiusX"]/*' />
     public float radiusX;
 
+    /// <include file='D2D1_ELLIPSE.xml' path='doc/member[@name="D2D1_ELLIPSE.radiusY"]/*' />
     public float radiusY;
 }

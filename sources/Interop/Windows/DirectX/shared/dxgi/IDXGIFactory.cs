@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDXGIFactory.xml' path='doc/member[@name="IDXGIFactory"]/*' />
 [Guid("7B7166EC-21C7-44AE-B21A-C9AE321AE369")]
 [NativeTypeName("struct IDXGIFactory : IDXGIObject")]
 [NativeInheritance("IDXGIObject")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface
         return ((delegate* unmanaged<IDXGIFactory*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface
         return ((delegate* unmanaged<IDXGIFactory*, uint>)(lpVtbl[1]))((IDXGIFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface
         return ((delegate* unmanaged<IDXGIFactory*, uint>)(lpVtbl[2]))((IDXGIFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDXGIObject.SetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint DataSize, [NativeTypeName("const void *")] void* pData)
@@ -47,6 +52,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface
         return ((delegate* unmanaged<IDXGIFactory*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGIFactory*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
     }
 
+    /// <inheritdoc cref="IDXGIObject.SetPrivateDataInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown)
@@ -54,6 +60,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface
         return ((delegate* unmanaged<IDXGIFactory*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGIFactory*)Unsafe.AsPointer(ref this), Name, pUnknown);
     }
 
+    /// <inheritdoc cref="IDXGIObject.GetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint* pDataSize, void* pData)
@@ -61,6 +68,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface
         return ((delegate* unmanaged<IDXGIFactory*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGIFactory*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
     }
 
+    /// <inheritdoc cref="IDXGIObject.GetParent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetParent([NativeTypeName("const IID &")] Guid* riid, void** ppParent)
@@ -68,6 +76,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface
         return ((delegate* unmanaged<IDXGIFactory*, Guid*, void**, int>)(lpVtbl[6]))((IDXGIFactory*)Unsafe.AsPointer(ref this), riid, ppParent);
     }
 
+    /// <include file='IDXGIFactory.xml' path='doc/member[@name="IDXGIFactory.EnumAdapters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT EnumAdapters(uint Adapter, IDXGIAdapter** ppAdapter)
@@ -75,6 +84,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface
         return ((delegate* unmanaged<IDXGIFactory*, uint, IDXGIAdapter**, int>)(lpVtbl[7]))((IDXGIFactory*)Unsafe.AsPointer(ref this), Adapter, ppAdapter);
     }
 
+    /// <include file='IDXGIFactory.xml' path='doc/member[@name="IDXGIFactory.MakeWindowAssociation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT MakeWindowAssociation(HWND WindowHandle, uint Flags)
@@ -82,6 +92,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface
         return ((delegate* unmanaged<IDXGIFactory*, HWND, uint, int>)(lpVtbl[8]))((IDXGIFactory*)Unsafe.AsPointer(ref this), WindowHandle, Flags);
     }
 
+    /// <include file='IDXGIFactory.xml' path='doc/member[@name="IDXGIFactory.GetWindowAssociation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetWindowAssociation(HWND* pWindowHandle)
@@ -89,6 +100,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface
         return ((delegate* unmanaged<IDXGIFactory*, HWND*, int>)(lpVtbl[9]))((IDXGIFactory*)Unsafe.AsPointer(ref this), pWindowHandle);
     }
 
+    /// <include file='IDXGIFactory.xml' path='doc/member[@name="IDXGIFactory.CreateSwapChain"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT CreateSwapChain(IUnknown* pDevice, DXGI_SWAP_CHAIN_DESC* pDesc, IDXGISwapChain** ppSwapChain)
@@ -96,6 +108,7 @@ public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface
         return ((delegate* unmanaged<IDXGIFactory*, IUnknown*, DXGI_SWAP_CHAIN_DESC*, IDXGISwapChain**, int>)(lpVtbl[10]))((IDXGIFactory*)Unsafe.AsPointer(ref this), pDevice, pDesc, ppSwapChain);
     }
 
+    /// <include file='IDXGIFactory.xml' path='doc/member[@name="IDXGIFactory.CreateSoftwareAdapter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT CreateSoftwareAdapter(HMODULE Module, IDXGIAdapter** ppAdapter)

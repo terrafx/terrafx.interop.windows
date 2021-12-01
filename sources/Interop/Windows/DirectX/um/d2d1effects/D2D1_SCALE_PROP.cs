@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_SCALE_PROP.xml' path='doc/member[@name="D2D1_SCALE_PROP"]/*' />
 public enum D2D1_SCALE_PROP : uint
 {
+    /// <include file='D2D1_SCALE_PROP.xml' path='doc/member[@name="D2D1_SCALE_PROP.D2D1_SCALE_PROP_SCALE"]/*' />
     D2D1_SCALE_PROP_SCALE = 0,
+
+    /// <include file='D2D1_SCALE_PROP.xml' path='doc/member[@name="D2D1_SCALE_PROP.D2D1_SCALE_PROP_CENTER_POINT"]/*' />
     D2D1_SCALE_PROP_CENTER_POINT = 1,
+
+    /// <include file='D2D1_SCALE_PROP.xml' path='doc/member[@name="D2D1_SCALE_PROP.D2D1_SCALE_PROP_INTERPOLATION_MODE"]/*' />
     D2D1_SCALE_PROP_INTERPOLATION_MODE = 2,
+
+    /// <include file='D2D1_SCALE_PROP.xml' path='doc/member[@name="D2D1_SCALE_PROP.D2D1_SCALE_PROP_BORDER_MODE"]/*' />
     D2D1_SCALE_PROP_BORDER_MODE = 3,
+
+    /// <include file='D2D1_SCALE_PROP.xml' path='doc/member[@name="D2D1_SCALE_PROP.D2D1_SCALE_PROP_SHARPNESS"]/*' />
     D2D1_SCALE_PROP_SHARPNESS = 4,
+
+    /// <include file='D2D1_SCALE_PROP.xml' path='doc/member[@name="D2D1_SCALE_PROP.D2D1_SCALE_PROP_FORCE_DWORD"]/*' />
     D2D1_SCALE_PROP_FORCE_DWORD = 0xffffffff,
 }

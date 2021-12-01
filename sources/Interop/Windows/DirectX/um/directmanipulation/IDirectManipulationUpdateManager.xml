@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirectManipulationUpdateManager.RegisterWaitHandleCallback">
+    <summary>
+      <para>Registers a callback that is triggered by a handle.</para>
+    </summary>
+    <param name="handle">
+      <para>The event handle that triggers the callback.</para>
+    </param>
+    <param name="eventHandler">
+      <para>The event handler to call when the event is fired.</para>
+    </param>
+    <param name="cookie">
+      <para>The unique ID of the event callback instance.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationupdatemanager">IDirectManipulationUpdateManager</seealso>
+  </member>
+  <member name="IDirectManipulationUpdateManager.UnregisterWaitHandleCallback">
+    <summary>
+      <para>Deregisters a callback.</para>
+    </summary>
+    <param name="cookie">
+      <para>The unique ID of the event callback instance.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationupdatemanager">IDirectManipulationUpdateManager</seealso>
+  </member>
+  <member name="IDirectManipulationUpdateManager.Update">
+    <summary>
+      <para>Updates <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> at the current time.</para>
+    </summary>
+    <param name="frameInfo">
+      <para>The frame info provider used to predict the position of the content and compensate for latency during composition.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If the application provides its own implementation of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationcompositor">IDirectManipulationCompositor</a>, this implementation should call <b>Update</b> whenever there is a compositor update. Frame timing information can be provided to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> through the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationframeinfoprovider">IDirectManipulationFrameInfoProvider</a> interface.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationupdatemanager">IDirectManipulationUpdateManager</seealso>
+  </member>
+  <member name="IDirectManipulationUpdateManager">
+    <summary>
+      <para>Manages how compositor updates are sent to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a>.</para>
+      <para>This interface enables the compositor to trigger an update on <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> whenever there is a compositor update. The application should not call the methods of this interface directly.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-interfaces">Direct Manipulation Interfaces</seealso>
+  </member>
+</doc>

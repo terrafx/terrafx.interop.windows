@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDMLDebugDevice.SetMuteDebugOutput">
+    <summary>
+      <para>Determine whether to mute DirectML from sending messages to the <see cref="ID3D12InfoQueue" />.</para>
+    </summary>
+    <param name="mute">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>If <b>TRUE</b>, DirectML is muted, and it will not send messages to the <see cref="ID3D12InfoQueue" />. If <b>FALSE</b>, DirectML is not muted, and it will send messages to the <b>ID3D12InfoQueue</b>. The default value is <b>FALSE</b>.</para>
+    </param>
+    <seealso cref="IDMLDebugDevice" />
+  </member>
+  <member name="IDMLDebugDevice">
+    <summary>
+      <para>Controls the DirectML debug layers. The <b>IDMLDebugDevice</b> interface inherits from the <see cref="IUnknown" /> interface.</para>
+      <para>This interface may be retrieved from the <see cref="IDMLDevice" /> via QueryInterface. This interface is available only if the DirectML device was created with the <see cref="DML_CREATE_DEVICE_FLAG_DEBUG" /> flag. DirectML sends messages to the <see cref="ID3D12InfoQueue" /> associated with the <see cref="ID3D12Device" /> passed in at <see cref="DMLCreateDevice" />; the Direct3D 12 info queue can be retrieved via QueryInterface on the <b>ID3D12Device</b></para>
+      <para>This object is thread-safe.</para>
+    </summary>
+  </member>
+</doc>

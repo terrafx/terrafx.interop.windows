@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDCompositionEffectGroup.SetOpacity">
+    <summary>
+      <para>Changes the value of the Opacity property.</para>
+    </summary>
+    <param name="opacity">
+      <para>Type: <b>float</b></para>
+      <para>The new value of the Opacity property.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>The opacity is interpreted as completely transparent for all values less than or equal to 0, and as completely opaque for all values greater than or equal to 1. All values between 0 and 1 represent partial opacity.</para>
+      <para>This method fails if the <i>opacity</i> parameter is NaN, positive infinity, or negative infinity.</para>
+      <para>If the Opacity property was previously animated, this method removes the animation and sets the Opacity property to the specified static value.</para>
+    </remarks>
+    <seealso cref="IDCompositionEffectGroup" />
+  </member>
+  <member name="IDCompositionEffectGroup.SetOpacity">
+    <summary>
+      <para>Animates the value of the Opacity property.</para>
+    </summary>
+    <param name="animation">
+      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
+      <para>An animation that represents how the value of the Opacity property changes over time. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method makes a copy of the specified animation. If the object referenced by the <i>animation</i> parameter is changed after calling this method, the change does not affect the Opacity property unless this method is called again. If the Opacity property was previously animated, calling this method replaces the previous animation with the new animation.</para>
+      <para>This method fails if <i>animation</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface as the affected composition effect group. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
+    </remarks>
+    <seealso cref="IDCompositionEffectGroup" />
+  </member>
+  <member name="IDCompositionEffectGroup.SetTransform3D">
+    <summary>
+      <para>Sets the 3D transformation effect object that modifies the rasterization of the visuals that this effect group is applied to.</para>
+    </summary>
+    <param name="transform3D">
+      <para>Type: <b><see cref="IDCompositionTransform3D" />*</b></para>
+      <para>Pointer to an <see cref="IDCompositionTransform3D" /> interface or one of its derived interfaces. This parameter can be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method fails if <i>transform3D</i> is an invalid pointer, or if the pointer was not created by the same <see cref="IDCompositionDevice" /> interface as this effect group. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
+      <para>If the <i>transform3D</i> parameter is NULL, the effect group does not apply any perspective transformations to the visuals. Setting the transform to NULL is equivalent to setting the transform to an <see cref="IDCompositionMatrixTransform3D" /> object where the specified matrix is the identity matrix. However, an application should use a NULL transform whenever possible because it is slightly faster.</para>
+    </remarks>
+    <seealso cref="IDCompositionEffectGroup" />
+    <seealso cref="IDCompositionMatrixTransform3D" />
+    <seealso cref="IDCompositionRotateTransform3D" />
+    <seealso cref="IDCompositionScaleTransform3D" />
+    <seealso cref="IDCompositionTransform3D" />
+    <seealso cref="IDCompositionTranslateTransform3D" />
+  </member>
+  <member name="IDCompositionEffectGroup">
+    <summary>
+      <para>Represents a group of bitmap effects that are applied together to modify the rasterization of a visual's subtree.</para>
+    </summary>
+    <seealso cref="IDCompositionEffect" />
+    <seealso cref="IDCompositionVisual.SetEffect" />
+  </member>
+</doc>

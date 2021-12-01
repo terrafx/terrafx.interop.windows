@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_SHADER_BUFFER_DESC">
+    <summary>
+      <para>Describes a shader constant-buffer.</para>
+    </summary>
+    <remarks>
+      <para>Constants are supplied to shaders in a shader-constant buffer. Get the description of a shader-constant-buffer by calling <see cref="ID3D10ShaderReflectionConstantBuffer.GetDesc" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-structures">Shader Structures</seealso>
+  </member>
+  <member name="D3D10_SHADER_BUFFER_DESC.Name">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
+      <para>The name of the buffer.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_BUFFER_DESC.Type">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb204899(v=vs.85)">D3D10_CBUFFER_TYPE</a></b></para>
+      <para>The intended use of the constant data. See <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb204899(v=vs.85)">D3D10_CBUFFER_TYPE</a>.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_BUFFER_DESC.Variables">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of unique variables.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_BUFFER_DESC.Size">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Buffer size (in bytes).</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_BUFFER_DESC.uFlags">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Shader buffer properties. See <see cref="D3D10_SHADER_CBUFFER_FLAGS" />.</para>
+    </summary>
+  </member>
+</doc>

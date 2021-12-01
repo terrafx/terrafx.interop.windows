@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11VideoProcessorEnumerator1.CheckVideoProcessorFormatConversion">
+    <summary>
+      <para>Indicates whether the driver supports the specified combination of format and colorspace conversions.</para>
+    </summary>
+    <param name="InputFormat">
+      <para>Type: <b>DXGI_FORMAT</b></para>
+      <para>The format of the video processor input.</para>
+    </param>
+    <param name="InputColorSpace">
+      <para>Type: <b>DXGI_COLOR_SPACE_TYPE</b></para>
+      <para>The colorspace of the video processor input.</para>
+    </param>
+    <param name="OutputFormat">
+      <para>Type: <b>DXGI_FORMAT</b></para>
+      <para>The format of the video processor output.</para>
+    </param>
+    <param name="OutputColorSpace">
+      <para>Type: <b>DXGI_COLOR_SPACE_TYPE</b></para>
+      <para>The colorspace of the video processor output.</para>
+    </param>
+    <param name="pSupported">
+      <para>Type: <b>BOOL*</b></para>
+      <para>Pointer to a boolean that is set by the driver to indicate if the specified combination of format and colorspace conversions is supported. True if the conversion is supported; otherwise, false.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>S_OK</description>
+          <description>The operation completed successfully.</description>
+        </listheader>
+        <item>
+          <description>E_INVALIDARG</description>
+          <description>An invalid parameter was passed or this function was called using an invalid calling pattern.</description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ID3D11VideoProcessorEnumerator1" />
+  </member>
+  <member name="ID3D11VideoProcessorEnumerator1">
+    <summary>
+      <para>Enumerates the video processor capabilities of a Microsoft Direct3D 11 device.</para>
+    </summary>
+    <remarks>
+      <para>To get a pointer to this interface, call <see cref="ID3D11VideoDevice.CreateVideoProcessorEnumerator" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-interfaces">Direct3D 11 Video Interfaces</seealso>
+    <seealso cref="ID3D11VideoProcessorEnumerator" />
+  </member>
+</doc>

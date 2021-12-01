@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_SAMPLE_DESC.xml' path='doc/member[@name="DXGI_SAMPLE_DESC"]/*' />
 public partial struct DXGI_SAMPLE_DESC
 {
+    /// <include file='DXGI_SAMPLE_DESC.xml' path='doc/member[@name="DXGI_SAMPLE_DESC.Count"]/*' />
     public uint Count;
 
+    /// <include file='DXGI_SAMPLE_DESC.xml' path='doc/member[@name="DXGI_SAMPLE_DESC.Quality"]/*' />
     public uint Quality;
 }

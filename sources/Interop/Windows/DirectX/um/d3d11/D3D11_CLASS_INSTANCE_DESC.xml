@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_CLASS_INSTANCE_DESC">
+    <summary>
+      <para>Describes an HLSL class instance.</para>
+    </summary>
+    <remarks>
+      <para>The D3D11_CLASS_INSTANCE_DESC structure is returned by the <see cref="ID3D11ClassInstance.GetDesc" /> method.</para>
+      <para>The members of this structure except <b>InstanceIndex</b> are valid (non default values) if they describe a class instance acquired using  <see cref="ID3D11ClassLinkage.CreateClassInstance" />.  The <b>InstanceIndex</b> member is only valid when the class instance is aquired using <see cref="ID3D11ClassLinkage.GetClassInstance" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-shader-structures">Shader Structures</seealso>
+  </member>
+  <member name="D3D11_CLASS_INSTANCE_DESC.InstanceId">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The instance ID of an HLSL class; the default value is 0.</para>
+    </summary>
+  </member>
+  <member name="D3D11_CLASS_INSTANCE_DESC.InstanceIndex">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The instance index of an HLSL class; the default value is 0.</para>
+    </summary>
+  </member>
+  <member name="D3D11_CLASS_INSTANCE_DESC.TypeId">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The type ID of an HLSL class; the default value is 0.</para>
+    </summary>
+  </member>
+  <member name="D3D11_CLASS_INSTANCE_DESC.ConstantBuffer">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Describes the constant buffer associated with an HLSL class; the default value is 0.</para>
+    </summary>
+  </member>
+  <member name="D3D11_CLASS_INSTANCE_DESC.BaseConstantBufferOffset">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The base constant buffer offset associated with an HLSL class; the default value is 0.</para>
+    </summary>
+  </member>
+  <member name="D3D11_CLASS_INSTANCE_DESC.BaseTexture">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The base texture associated with an HLSL class; the default value is 127.</para>
+    </summary>
+  </member>
+  <member name="D3D11_CLASS_INSTANCE_DESC.BaseSampler">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The base sampler associated with an HLSL class; the default value is 15.</para>
+    </summary>
+  </member>
+  <member name="D3D11_CLASS_INSTANCE_DESC.Created">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>True if the class was created; the default value is false.</para>
+    </summary>
+  </member>
+</doc>

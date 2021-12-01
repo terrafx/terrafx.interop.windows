@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_TILE_RANGE_FLAG">
+    <summary>
+      <para>Specifies a range of tile mappings to use with <see cref="ID3D11DeviceContext2.UpdateTiles" />.</para>
+    </summary>
+    <seealso cref="ID3D11DeviceContext2.UpdateTiles" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-enums">Resource Enumerations</seealso>
+  </member>
+  <member name="D3D11_TILE_RANGE_FLAG.D3D11_TILE_RANGE_NULL">
+    <summary>
+      <para>The tile range is <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TILE_RANGE_FLAG.D3D11_TILE_RANGE_SKIP">
+    <summary>
+      <para>Skip the tile range.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TILE_RANGE_FLAG.D3D11_TILE_RANGE_REUSE_SINGLE_TILE">
+    <summary>
+      <para>Reuse a single tile in the tile range.</para>
+    </summary>
+  </member>
+</doc>

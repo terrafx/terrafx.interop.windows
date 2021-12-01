@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_VIDEO_PROCESSOR_FILTER">
+    <summary>
+      <para>Identifies a video processor filter.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-enumerations">Direct3D 11 Video Enumerations</seealso>
+    <seealso cref="ID3D11VideoContext.VideoProcessorSetStreamFilter" />
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_FILTER.D3D11_VIDEO_PROCESSOR_FILTER_BRIGHTNESS">
+    <summary>
+      <para>Brightness filter.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_FILTER.D3D11_VIDEO_PROCESSOR_FILTER_CONTRAST">
+    <summary>
+      <para>Contrast filter.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_FILTER.D3D11_VIDEO_PROCESSOR_FILTER_HUE">
+    <summary>
+      <para>Hue filter.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_FILTER.D3D11_VIDEO_PROCESSOR_FILTER_SATURATION">
+    <summary>
+      <para>Saturation filter.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_FILTER.D3D11_VIDEO_PROCESSOR_FILTER_NOISE_REDUCTION">
+    <summary>
+      <para>Noise reduction filter.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_FILTER.D3D11_VIDEO_PROCESSOR_FILTER_EDGE_ENHANCEMENT">
+    <summary>
+      <para>Edge enhancement filter.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_FILTER.D3D11_VIDEO_PROCESSOR_FILTER_ANAMORPHIC_SCALING">
+    <summary>
+      <para>Anamorphic scaling filter.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_FILTER.D3D11_VIDEO_PROCESSOR_FILTER_STEREO_ADJUSTMENT">
+    <summary>
+      <para>Stereo adjustment filter. When stereo 3D video is enabled, this filter adjusts the offset between the left and right views, allowing the user to reduce potential eye strain.</para>
+      <para>The filter value indicates the amount by which the left and right views are adjusted.  A positive value shifts the images away from each other: the left image toward the left, and the right image toward the right. A negative value shifts the images in the opposite directions, closer to each other.</para>
+    </summary>
+  </member>
+</doc>

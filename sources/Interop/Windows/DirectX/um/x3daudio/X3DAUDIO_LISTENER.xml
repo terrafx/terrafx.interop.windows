@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="X3DAUDIO_LISTENER">
+    <summary>
+      <para>Defines a point of 3D audio reception.</para>
+    </summary>
+    <remarks>
+      <para>X3DAudio uses a left-handed Cartesian coordinate system, with values on the x-axis increasing from left to right, on the y-axis from bottom to top, and on the z-axis from near to far. Azimuths are measured clockwise from a given reference direction.</para>
+      <para>To use X3DAudio with right-handed coordinates, you must negate the .z element of <i>OrientFront</i>, <i>OrientTop</i>, <i>Position</i>, and <i>Velocity</i>.</para>
+      <para>The parameter type <b>X3DAUDIO_VECTOR</b> is typed to DirectX.XMFLOAT3, to provide x, y and z floating-point values.</para>
+      <para>A listener's front and top vectors must be orthonormal. To be considered orthonormal, a pair of vectors must have a magnitude of 1 +- 1x10-5 and a dot product of 0 +- 1x10-5.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+  </member>
+  <member name="X3DAUDIO_LISTENER.OrientFront">
+    <summary>
+      <para>Orientation of front direction. When <b>pCone</b> is NULL <b>OrientFront</b> is used only for matrix and delay calculations. When <b>pCone</b> is not NULL <b>OrientFront</b> is used for matrix, LPF (both direct and reverb paths), and reverb calculations. This value must be orthonormal with <b>OrientTop</b> when used.</para>
+    </summary>
+  </member>
+  <member name="X3DAUDIO_LISTENER.OrientTop">
+    <summary>
+      <para>Orientation of top direction, used only for matrix and delay calculations. This value must be orthonormal with <b>OrientFront</b> when used.</para>
+    </summary>
+  </member>
+  <member name="X3DAUDIO_LISTENER.Position">
+    <summary>
+      <para>Position in user-defined world units. This value does not affect <b>Velocity</b>.</para>
+    </summary>
+  </member>
+  <member name="X3DAUDIO_LISTENER.Velocity">
+    <summary>
+      <para>Velocity vector in user-defined world units per second, used only for doppler calculations. This value does not affect <b>Position</b>.</para>
+    </summary>
+  </member>
+  <member name="X3DAUDIO_LISTENER.pCone">
+    <summary>
+      <para>Pointer to an <see cref="X3DAUDIO_CONE" /> structure for this listener. Providing a listener cone will specify that additional calculations are performed when determining the volume and filter DSP parameters for individual sound sources. A NULL <b>pCone</b> value specifies an omnidirectional sound and no cone processing is applied. <b>pCone</b> is only used for matrix, LPF (both direct and reverb paths), and reverb calculations.</para>
+    </summary>
+  </member>
+</doc>

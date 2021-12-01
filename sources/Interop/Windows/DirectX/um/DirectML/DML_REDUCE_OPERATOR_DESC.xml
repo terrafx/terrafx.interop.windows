@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_REDUCE_OPERATOR_DESC">
+    <summary>
+      <para>Outputs the reduction of elements (sum, product, minimum, and so on) within one or more dimensions of the input tensor.</para>
+      <para>Each output element is the result of applying a reduction function on a subset of the input tensor. A reduction function, such as <i>sum</i>, maps <code>N</code> input elements to a single output element. The input elements involved in each reduction are determined by the provided input axes: <code>N</code> is equal to the product of the sizes of the reduced axes. If all input axes are specified, then the operator performs a reduction on the entire input tensor and produces a single output element.</para>
+    </summary>
+    <seealso cref="DML_REDUCE_FUNCTION_ARGMAX" />
+    <seealso cref="DML_ARGMAX_OPERATOR_DESC" />
+    <seealso cref="DML_ARGMIN_OPERATOR_DESC" />
+  </member>
+  <member name="DML_REDUCE_OPERATOR_DESC.Function">
+    <summary>
+      <para>Type: <see cref="DML_REDUCE_FUNCTION" /></para>
+      <para>Specifies the reduction function to apply to the input.</para>
+    </summary>
+  </member>
+  <member name="DML_REDUCE_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The tensor to read from.</para>
+    </summary>
+  </member>
+  <member name="DML_REDUCE_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The tensor to write the results to. Each output element is the result of a reduction on a subset of elements from the <i>InputTensor</i>.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <i>DimensionCount</i> must match <i>InputTensor.DimensionCount</i> (the rank of the input tensor is preserved).</description>
+        </item>
+        <item>
+          <description>
+            <i>Sizes</i> must match <i>InputTensor.Sizes</i>, except for dimensions included in the reduced <i>Axes</i>, which must be size 1.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="DML_REDUCE_OPERATOR_DESC.AxisCount">
+    <summary>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>The number of axes to reduce. This field determines the size of the <i>Axes</i> array.</para>
+    </summary>
+  </member>
+  <member name="DML_REDUCE_OPERATOR_DESC.Axes">
+    <summary>
+      <para>Type: _Field_size_(AxisCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
+      <para>The axes along which to reduce. Values must be in the range <code>[0, InputTensor.DimensionCount - 1]</code>.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_EMBOSS_PROP.xml' path='doc/member[@name="D2D1_EMBOSS_PROP"]/*' />
 public enum D2D1_EMBOSS_PROP : uint
 {
+    /// <include file='D2D1_EMBOSS_PROP.xml' path='doc/member[@name="D2D1_EMBOSS_PROP.D2D1_EMBOSS_PROP_HEIGHT"]/*' />
     D2D1_EMBOSS_PROP_HEIGHT = 0,
+
+    /// <include file='D2D1_EMBOSS_PROP.xml' path='doc/member[@name="D2D1_EMBOSS_PROP.D2D1_EMBOSS_PROP_DIRECTION"]/*' />
     D2D1_EMBOSS_PROP_DIRECTION = 1,
+
+    /// <include file='D2D1_EMBOSS_PROP.xml' path='doc/member[@name="D2D1_EMBOSS_PROP.D2D1_EMBOSS_PROP_FORCE_DWORD"]/*' />
     D2D1_EMBOSS_PROP_FORCE_DWORD = 0xffffffff,
 }

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFontSet3.GetFontSourceName">
+    <summary>
+      <para>Copies the font source name (for the specified font) into an output array.</para>
+    </summary>
+    <param name="listIndex">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>Zero-based index of the font.</para>
+    </param>
+    <param name="stringBuffer">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">WCHAR</a>*</b></para>
+      <para>Character array that receives the string. Call <see cref="GetFontSourceNameLength" /> to determine the size of array to allocate.</para>
+    </param>
+    <param name="stringBufferSize">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>Size of the array in characters. The size must include space for the terminating null character.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+    <seealso cref="GetFontSourceNameLength" />
+  </member>
+  <member name="IDWriteFontSet3.GetFontSourceNameLength">
+    <summary>
+      <para>Retrieves the length of the font source name for the specified font.</para>
+    </summary>
+    <param name="listIndex">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>Zero-based index of the font.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>The length of the font source name for the specified font.</para>
+    </returns>
+    <seealso cref="GetFontSourceName" />
+  </member>
+  <member name="IDWriteFontSet3.GetFontSourceType">
+    <summary>
+      <para>Retrieves the font source type of the specified font.</para>
+    </summary>
+    <param name="fontIndex">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
+      <para>Zero-based index of the font.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_FONT_SOURCE_TYPE" /></b></para>
+      <para>The font source type of the specified font.</para>
+    </returns>
+  </member>
+  <member name="IDWriteFontSet3">
+    <summary>
+      <para>Represents a font set.</para>
+      <para>This interface extends <see cref="IDWriteFontSet2" />.</para>
+    </summary>
+    <seealso cref="IDWriteFontSet2" />
+  </member>
+</doc>

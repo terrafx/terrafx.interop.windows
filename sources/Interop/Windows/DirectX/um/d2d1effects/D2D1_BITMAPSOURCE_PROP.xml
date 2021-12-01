@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_BITMAPSOURCE_PROP">
+    <summary>
+      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/bitmap-source">Bitmap source effect</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BITMAPSOURCE_PROP.D2D1_BITMAPSOURCE_PROP_WIC_BITMAP_SOURCE">
+    <summary>
+      <para>The IWICBitmapSource containing the image data to be loaded.</para>
+      <para>The type is IWICBitmapSource.</para>
+      <para>The default value is NULL.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BITMAPSOURCE_PROP.D2D1_BITMAPSOURCE_PROP_SCALE">
+    <summary>
+      <para>The scale amount in the X and Y direction. The effect multiplies the width by the X value and the height by the Y value.
+This property is a D2D1_VECTOR_2F defined as: (X scale, Y scale). The scale amounts are FLOAT, unitless, and must be positive or 0.</para>
+      <para>The type is D2D1_VECTOR_2F.</para>
+      <para>The default value is {1.0f, 1.0f}.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BITMAPSOURCE_PROP.D2D1_BITMAPSOURCE_PROP_INTERPOLATION_MODE">
+    <summary>
+      <para>The interpolation mode used to scale the image.
+If the mode disables the mipmap, then BitmapSouce will cache the image at the resolution determined by the Scale and EnableDPICorrection properties.</para>
+      <para>The type is <see cref="D2D1_BITMAPSOURCE_INTERPOLATION_MODE" />.</para>
+      <para>The default value is D2D1_BITMAPSOURCE_INTERPOLATION_MODE_LINEAR.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BITMAPSOURCE_PROP.D2D1_BITMAPSOURCE_PROP_ENABLE_DPI_CORRECTION">
+    <summary>
+      <para>If you set this to TRUE, the effect will scale the input image to convert the DPI reported by IWICBitmapSource to the DPI of the device context.
+The effect uses the interpolation mode you set with the InterpolationMode property. If you set this to FALSE, the effect uses a DPI of 96.0 for the output image.</para>
+      <para>The type is BOOL.</para>
+      <para>The default value is FALSE.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BITMAPSOURCE_PROP.D2D1_BITMAPSOURCE_PROP_ALPHA_MODE">
+    <summary>
+      <para>The alpha mode of the output. This can be either premultiplied or straight.</para>
+      <para>The type is <see cref="D2D1_BITMAPSOURCE_ALPHA_MODE" />.</para>
+      <para>The default value is D2D1_BITMAPSOURCE_ALPHA_MODE_PREMULTIPLIED.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BITMAPSOURCE_PROP.D2D1_BITMAPSOURCE_PROP_ORIENTATION">
+    <summary>
+      <para>A flip and/or rotation operation to be performed on the image.</para>
+      <para>The type is <see cref="D2D1_BITMAPSOURCE_ORIENTATION" />.</para>
+      <para>The default value is D2D1_BITMAPSOURCE_ORIENTATION_DEFAULT.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BITMAPSOURCE_PROP.D2D1_BITMAPSOURCE_PROP_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

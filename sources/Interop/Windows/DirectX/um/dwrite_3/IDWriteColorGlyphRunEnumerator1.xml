@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteColorGlyphRunEnumerator1.GetCurrentRun">
+    <summary>
+      <para>Gets the current color glyph run.</para>
+    </summary>
+    <param name="colorGlyphRun">
+      <para>Type: <b><see cref="DWRITE_COLOR_GLYPH_RUN1" /></b></para>
+      <para>Receives a pointer to the color glyph run. The pointer remains valid until the next call to
+MoveNext or until the interface is released.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Standard HRESULT error code. An error is returned if there is
+no current glyph run, i.e., if MoveNext has not yet been called
+or if the end of the sequence has been reached.</para>
+    </returns>
+    <seealso cref="IDWriteColorGlyphRunEnumerator1" />
+  </member>
+  <member name="IDWriteColorGlyphRunEnumerator1">
+    <summary>
+      <para>Enumerator for an ordered collection of color glyph runs.</para>
+    </summary>
+  </member>
+</doc>

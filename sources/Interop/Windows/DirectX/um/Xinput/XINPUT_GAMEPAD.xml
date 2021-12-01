@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="XINPUT_GAMEPAD">
+    <summary>
+      <para>Describes the current state of the Xbox 360 Controller.</para>
+    </summary>
+    <remarks>
+      <para>This structure is used by the <see cref="XINPUT_STATE" /> structure when polling for changes in the state of the controller.</para>
+      <para>The specific mapping of button to game function varies depending on the game type.</para>
+      <para>The constant XINPUT_GAMEPAD_TRIGGER_THRESHOLD may be used as the value which <i>bLeftTrigger</i> and <i>bRightTrigger</i> must be greater than to register as pressed. This is optional, but often desirable. Xbox 360 Controller buttons do not manifest crosstalk.</para>
+    </remarks>
+    <seealso cref="XINPUT_STATE" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xinput/structures">XInput Structures</seealso>
+    <seealso cref="XInputGetfState" />
+  </member>
+  <member name="XINPUT_GAMEPAD.wButtons">
+    <summary>
+      <para>Bitmask of the device digital buttons, as follows. A set bit indicates that the corresponding button is pressed.</para>
+      <list type="table">
+        <listheader>
+          <description>Device button</description>
+          <description>Bitmask</description>
+        </listheader>
+        <item>
+          <description>XINPUT_GAMEPAD_DPAD_UP</description>
+          <description> 0x0001</description>
+        </item>
+        <item>
+          <description>XINPUT_GAMEPAD_DPAD_DOWN</description>
+          <description>        0x0002</description>
+        </item>
+        <item>
+          <description>XINPUT_GAMEPAD_DPAD_LEFT</description>
+          <description>       0x0004</description>
+        </item>
+        <item>
+          <description>XINPUT_GAMEPAD_DPAD_RIGHT</description>
+          <description>      0x0008</description>
+        </item>
+        <item>
+          <description>XINPUT_GAMEPAD_START</description>
+          <description>          0x0010</description>
+        </item>
+        <item>
+          <description>XINPUT_GAMEPAD_BACK</description>
+          <description>             0x0020</description>
+        </item>
+        <item>
+          <description>XINPUT_GAMEPAD_LEFT_THUMB</description>
+          <description>       0x0040</description>
+        </item>
+        <item>
+          <description>XINPUT_GAMEPAD_RIGHT_THUMB</description>
+          <description>      0x0080</description>
+        </item>
+        <item>
+          <description>XINPUT_GAMEPAD_LEFT_SHOULDER</description>
+          <description>    0x0100</description>
+        </item>
+        <item>
+          <description>XINPUT_GAMEPAD_RIGHT_SHOULDER</description>
+          <description>   0x0200</description>
+        </item>
+        <item>
+          <description>XINPUT_GAMEPAD_A</description>
+          <description>                0x1000</description>
+        </item>
+        <item>
+          <description>XINPUT_GAMEPAD_B</description>
+          <description>                0x2000</description>
+        </item>
+        <item>
+          <description>XINPUT_GAMEPAD_X</description>
+          <description>                0x4000</description>
+        </item>
+        <item>
+          <description>XINPUT_GAMEPAD_Y</description>
+          <description>                0x8000</description>
+        </item>
+      </list>
+      <para>Bits that are set but not defined above are reserved, and their state is undefined.</para>
+    </summary>
+  </member>
+  <member name="XINPUT_GAMEPAD.bLeftTrigger">
+    <summary>
+      <para>The current value of the left trigger analog control. The value is between 0 and 255.</para>
+    </summary>
+  </member>
+  <member name="XINPUT_GAMEPAD.bRightTrigger">
+    <summary>
+      <para>The current value of the right trigger analog control. The value is between 0 and 255.</para>
+    </summary>
+  </member>
+  <member name="XINPUT_GAMEPAD.sThumbLX">
+    <summary>
+      <para>Left thumbstick x-axis value. Each of the thumbstick axis members is a signed value between -32768 and 32767 describing the position of the thumbstick. A value of 0 is centered. Negative values signify down or to the left. Positive values signify up or to the right. The constants XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE or XINPUT_GAMEPAD_RIGHT_THUMB_DEADZONE can be used as a positive and negative value to filter a thumbstick input.</para>
+    </summary>
+  </member>
+  <member name="XINPUT_GAMEPAD.sThumbLY">
+    <summary>
+      <para>Left thumbstick y-axis value. The value is between -32768 and 32767.</para>
+    </summary>
+  </member>
+  <member name="XINPUT_GAMEPAD.sThumbRX">
+    <summary>
+      <para>Right thumbstick x-axis value. The value is between -32768 and 32767.</para>
+    </summary>
+  </member>
+  <member name="XINPUT_GAMEPAD.sThumbRY">
+    <summary>
+      <para>Right thumbstick y-axis value. The value is between -32768 and 32767.</para>
+    </summary>
+  </member>
+</doc>

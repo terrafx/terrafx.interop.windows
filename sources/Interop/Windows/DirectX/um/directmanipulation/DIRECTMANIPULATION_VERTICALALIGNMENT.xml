@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DIRECTMANIPULATION_VERTICALALIGNMENT">
+    <summary>
+      <para>Defines  the vertical alignment settings for content within the viewport.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-enumerations">Direct Manipulation Enumerations</seealso>
+  </member>
+  <member name="DIRECTMANIPULATION_VERTICALALIGNMENT.DIRECTMANIPULATION_VERTICALALIGNMENT_NONE">
+    <summary>
+      <para>No alignment. The object can be positioned anywhere within the viewport.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_VERTICALALIGNMENT.DIRECTMANIPULATION_VERTICALALIGNMENT_TOP">
+    <summary>
+      <para>Align object along the top of the viewport.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_VERTICALALIGNMENT.DIRECTMANIPULATION_VERTICALALIGNMENT_CENTER">
+    <summary>
+      <para>Align object to the center of the viewport.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_VERTICALALIGNMENT.DIRECTMANIPULATION_VERTICALALIGNMENT_BOTTOM">
+    <summary>
+      <para>Align object along the bottom of the viewport.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_VERTICALALIGNMENT.DIRECTMANIPULATION_VERTICALALIGNMENT_UNLOCKCENTER">
+    <summary>
+      <para>Content zooms around the center point of the contacts, instead of being locked with the vertical alignment.</para>
+    </summary>
+  </member>
+</doc>

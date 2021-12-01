@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteRemoteFontFileStream.BeginDownload">
+    <summary>
+      <para>Begins downloading all or part of the font file.</para>
+    </summary>
+    <param name="downloadOperationID">
+      <para>Type: <b>UUID</b></para>
+    </param>
+    <param name="fileFragments">
+      <para>Type: <b><see cref="DWRITE_FILE_FRAGMENT" /></b></para>
+      <para>Array of structures, each specifying a byte range to download.</para>
+    </param>
+    <param name="fragmentCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>Number of elements in the fileFragments array. This can be zero to just download file information, such as the size.</para>
+    </param>
+    <param name="asyncResult">
+      <para>Type: <b><i>COM_Outptr_result_maybenull</i></b></para>
+      <para>Receives an object that can be used to wait for the asynchronous download to complete and to get the download result upon
+completion. The result may be NULL if the download completes synchronously. For example, this can happen if method determines that the requested data
+is already local.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="IDWriteRemoteFontFileStream" />
+  </member>
+  <member name="IDWriteRemoteFontFileStream.GetFileFragmentLocality">
+    <summary>
+      <para>Returns information about the locality of a byte range (i.e., font fragment) within the font file stream.</para>
+    </summary>
+    <param name="fileOffset">
+      <para>Type: <b>UINT64</b></para>
+      <para>Offset of the fragment from the beginning of the font file.</para>
+    </param>
+    <param name="fragmentSize">
+      <para>Type: <b>UINT64</b></para>
+      <para>Size of the fragment in bytes.</para>
+    </param>
+    <param name="isLocal">
+      <para>Type: <b>BOOL*</b></para>
+      <para>Receives TRUE if the first byte of the fragment is local, FALSE if not.</para>
+    </param>
+    <param name="partialSize">
+      <para>Type: <b>UINT64*</b></para>
+      <para>Receives the number of contiguous bytes from the start of the fragment that have the same locality as the first byte.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="IDWriteRemoteFontFileStream" />
+  </member>
+  <member name="IDWriteRemoteFontFileStream.GetLocalFileSize">
+    <summary>
+      <para>GetLocalFileSize returns the number of bytes of the font file that are currently local, which should always be less than or equal to the full
+file size returned by <see cref="GetFileSize" />.
+If the locality is remote, the return value is zero. If the file is fully local, the return value must be the
+same as <see cref="GetFileSize" />.</para>
+    </summary>
+    <param name="localFileSize">
+      <para>Type: <b>UINT64*</b></para>
+      <para>Receives the local size of the file.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns an HRESULT success or error code.</para>
+    </returns>
+    <seealso cref="IDWriteRemoteFontFileStream" />
+  </member>
+  <member name="IDWriteRemoteFontFileStream.GetLocality">
+    <summary>
+      <para>Gets the current locality of the file.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_LOCALITY" /></b></para>
+      <para>Returns the current locality (i.e., remote, partial, or local).</para>
+    </returns>
+    <seealso cref="IDWriteRemoteFontFileStream" />
+  </member>
+  <member name="IDWriteRemoteFontFileStream">
+    <summary>
+      <para>Represents a font file stream, parts of which may be non-local.
+Non-local data must be downloaded before it can be accessed using
+ReadFragment. The interface exposes methods to download font data and query the locality of font data.</para>
+    </summary>
+    <remarks>
+      <para>For more information, see the description of IDWriteRemoteFontFileLoader.</para>
+    </remarks>
+  </member>
+</doc>

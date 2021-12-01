@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_STROKE_STYLE_PROPERTIES">
+    <summary>
+      <para>Describes the stroke that outlines a shape.</para>
+    </summary>
+    <remarks>
+      <para>The following illustration shows different <i>dashOffset</i> values for the same custom dash style.</para>
+      <para>
+        <img alt="Illustration of four dashes with the same style and different dashOffset values" src="https://docs.microsoft.com/windows/win32/api/d2d1mages/StrokeStyle_DashOffset.png" />
+      </para>
+    </remarks>
+  </member>
+  <member name="D2D1_STROKE_STYLE_PROPERTIES.startCap">
+    <summary>
+      <para>Type: <b><see cref="D2D1_CAP_STYLE" /></b></para>
+      <para>The cap applied to the start of all the open figures in a stroked geometry.</para>
+    </summary>
+  </member>
+  <member name="D2D1_STROKE_STYLE_PROPERTIES.endCap">
+    <summary>
+      <para>Type: <b><see cref="D2D1_CAP_STYLE" /></b></para>
+      <para>The cap applied to the end of all the open figures in a stroked geometry.</para>
+    </summary>
+  </member>
+  <member name="D2D1_STROKE_STYLE_PROPERTIES.dashCap">
+    <summary>
+      <para>Type: <b><see cref="D2D1_CAP_STYLE" /></b></para>
+      <para>The shape  at either end of each dash segment.</para>
+    </summary>
+  </member>
+  <member name="D2D1_STROKE_STYLE_PROPERTIES.lineJoin">
+    <summary>
+      <para>Type: <b><see cref="D2D1_LINE_JOIN" /></b></para>
+      <para>A value that describes how segments are joined. This value is ignored for a vertex if the segment flags specify that the segment should have a smooth join.</para>
+    </summary>
+  </member>
+  <member name="D2D1_STROKE_STYLE_PROPERTIES.miterLimit">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The limit of the thickness of the join on a mitered corner. This value is always treated as though it is greater than or equal to 1.0f.</para>
+    </summary>
+  </member>
+  <member name="D2D1_STROKE_STYLE_PROPERTIES.dashStyle">
+    <summary>
+      <para>Type: <b><see cref="D2D1_DASH_STYLE" /></b></para>
+      <para>A value that specifies whether the stroke has a dash pattern and, if so, the dash style.</para>
+    </summary>
+  </member>
+  <member name="D2D1_STROKE_STYLE_PROPERTIES.dashOffset">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>A value that specifies an offset in the dash sequence.   A positive dash offset value  shifts the dash pattern, in units of  stroke width, toward the start of the stroked geometry.  A negative dash offset value  shifts the dash pattern, in units of  stroke width, toward the end of the stroked geometry.</para>
+    </summary>
+  </member>
+</doc>

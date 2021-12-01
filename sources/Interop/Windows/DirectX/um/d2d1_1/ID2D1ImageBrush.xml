@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1ImageBrush.GetExtendModeX">
+    <summary>
+      <para>Gets the extend mode of the image brush on the x-axis.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
+      <para>This method returns the x-extend mode.</para>
+    </returns>
+    <seealso cref="ID2D1ImageBrush" />
+  </member>
+  <member name="ID2D1ImageBrush.GetExtendModeY">
+    <summary>
+      <para>Gets the extend mode of the image brush on the y-axis of the image.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
+      <para>This method returns the  y-extend mode.</para>
+    </returns>
+    <seealso cref="ID2D1ImageBrush" />
+  </member>
+  <member name="ID2D1ImageBrush.GetImage">
+    <summary>
+      <para>Gets the image associated with the image brush.</para>
+    </summary>
+    <param name="image">
+      <para>Type: <b><see cref="ID2D1Image" />**</b></para>
+      <para>When this method returns, contains the address of a pointer to the image associated with  this brush.</para>
+    </param>
+    <seealso cref="ID2D1ImageBrush" />
+  </member>
+  <member name="ID2D1ImageBrush.GetInterpolationMode">
+    <summary>
+      <para>Gets the interpolation mode of the image brush.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
+      <para>This method returns the  interpolation mode.</para>
+    </returns>
+    <seealso cref="ID2D1ImageBrush" />
+  </member>
+  <member name="ID2D1ImageBrush.GetSourceRectangle">
+    <summary>
+      <para>Gets the rectangle that will be used as the bounds of the image when drawn as an image brush.</para>
+    </summary>
+    <param name="sourceRectangle">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
+      <para>When this method returns, contains the address of the output source rectangle.</para>
+    </param>
+    <seealso cref="ID2D1ImageBrush" />
+  </member>
+  <member name="ID2D1ImageBrush.SetExtendModeX">
+    <summary>
+      <para>Sets how the content inside the source rectangle in the image brush will be extended on the x-axis.</para>
+    </summary>
+    <param name="extendModeX">
+      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
+      <para>The extend mode on the x-axis of the image.</para>
+    </param>
+    <seealso cref="ID2D1ImageBrush" />
+  </member>
+  <member name="ID2D1ImageBrush.SetExtendModeY">
+    <summary>
+      <para>Sets the extend mode on the y-axis.</para>
+    </summary>
+    <param name="extendModeY">
+      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
+      <para>The extend mode on the y-axis of the image.</para>
+    </param>
+    <seealso cref="ID2D1ImageBrush" />
+  </member>
+  <member name="ID2D1ImageBrush.SetImage">
+    <summary>
+      <para>Sets the image associated with the provided image brush.</para>
+    </summary>
+    <param name="image">
+      <para>Type: <b><see cref="ID2D1Image" />*</b></para>
+      <para>The image to be associated with the image brush.</para>
+    </param>
+    <seealso cref="ID2D1ImageBrush" />
+  </member>
+  <member name="ID2D1ImageBrush.SetInterpolationMode">
+    <summary>
+      <para>Sets the interpolation mode for the image brush.</para>
+    </summary>
+    <param name="interpolationMode">
+      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
+      <para>How the contents of the image will be interpolated to handle the brush transform.</para>
+    </param>
+    <seealso cref="ID2D1ImageBrush" />
+  </member>
+  <member name="ID2D1ImageBrush.SetSourceRectangle">
+    <summary>
+      <para>Sets the source rectangle in the image brush.</para>
+    </summary>
+    <param name="sourceRectangle">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
+      <para>The source rectangle that defines the portion of the image to tile.</para>
+    </param>
+    <remarks>
+      <para>The top left corner of the <i>sourceRectangle</i> parameter maps to the brush space origin. That is, if the  brush and world transforms are both identity, the portion of the image in the top left corner of the source rectangle will be rendered at (0,0) in the render target.</para>
+      <para>The source rectangle will be expanded differently depending on whether the input image is based on   pixels (a bitmap or effect) or by a command list.</para>
+      <list type="bullet">
+        <item>
+          <description>If the input image is a bitmap or an effect, the rectangle will be expanded to encapsulate a full input pixel before being additionally down-scaled to ensure that the projected rectangle will be correct in the final scene-space.</description>
+        </item>
+        <item>
+          <description>If the input image is a command list, the command list will be slightly expanded to encapsulate a full input pixel.
+</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="ID2D1ImageBrush" />
+  </member>
+  <member name="ID2D1ImageBrush">
+    <summary>
+      <para>Represents a brush based on an <see cref="ID2D1Image" />.</para>
+    </summary>
+    <seealso cref="ID2D1Brush" />
+  </member>
+</doc>

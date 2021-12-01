@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_TILE_PROP.xml' path='doc/member[@name="D2D1_TILE_PROP"]/*' />
 public enum D2D1_TILE_PROP : uint
 {
+    /// <include file='D2D1_TILE_PROP.xml' path='doc/member[@name="D2D1_TILE_PROP.D2D1_TILE_PROP_RECT"]/*' />
     D2D1_TILE_PROP_RECT = 0,
+
+    /// <include file='D2D1_TILE_PROP.xml' path='doc/member[@name="D2D1_TILE_PROP.D2D1_TILE_PROP_FORCE_DWORD"]/*' />
     D2D1_TILE_PROP_FORCE_DWORD = 0xffffffff,
 }

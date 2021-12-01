@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11InputLayout">
+    <summary>
+      <para>An input-layout interface holds a definition of how to feed vertex data that is laid out in memory into the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage">input-assembler stage</a> of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-graphics-pipeline">graphics pipeline</a>.</para>
+    </summary>
+    <remarks>
+      <para>To create an input-layout object, call <see cref="ID3D11Device.CreateInputLayout" />. To bind the input-layout object to the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage">input-assembler stage</a>, call <see cref="ID3D11DeviceContext.IASetInputLayout" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-interfaces">Core Interfaces</seealso>
+    <seealso cref="ID3D11DeviceChild" />
+  </member>
+</doc>

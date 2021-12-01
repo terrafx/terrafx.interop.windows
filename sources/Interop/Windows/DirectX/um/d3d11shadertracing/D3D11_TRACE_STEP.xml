@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_TRACE_STEP">
+    <summary>
+      <para>Describes a trace step, which is an instruction.</para>
+    </summary>
+    <remarks>
+      <para>This API requires the Windows Software Development Kit (SDK) for Windows 8.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-shader-structures">Shader Structures</seealso>
+  </member>
+  <member name="D3D11_TRACE_STEP.ID">
+    <summary>
+      <para>A number that identifies the instruction, as an offset into the executable instructions that are present in the shader.</para>
+      <para>HLSL debugging information uses the same convention. Therefore, HLSL instructions are matched to a set of IDs. You can then map an ID to a disassembled string that can be displayed to the user.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TRACE_STEP.InstructionActive">
+    <summary>
+      <para>A value that specifies whether the instruction is active. This value is TRUE if something happened; therefore, you should parse other data in this structure. Otherwise, nothing happened; for example, if an instruction is disabled due to flow control even though other pixels in the stamp execute it.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TRACE_STEP.NumRegistersWritten">
+    <summary>
+      <para>The number of registers for the instruction that are written to. The range of registers is [0...NumRegistersWritten-1]. You can pass a register number to the <i>writtenRegisterIndex</i> parameter of  <see cref="ID3D11ShaderTrace.GetWrittenRegister" /> to retrieve individual write-register information.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TRACE_STEP.NumRegistersRead">
+    <summary>
+      <para>The number of registers for the instruction that are read from. The range of registers is [0...NumRegistersRead-1]. You can pass a register number to the <i>readRegisterIndex</i> parameter of  <see cref="ID3D11ShaderTrace.GetReadRegister" /> to retrieve individual read-register information.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TRACE_STEP.MiscOperations">
+    <summary>
+      <para>A combination of the following values that are combined by using a bitwise <b>OR</b> operation. The resulting value specifies the mask for the trace miscellaneous operations. These flags indicate the possible effect of a shader operation when it does not write any output registers.  For example, the "add r0, r1 ,r2" operation writes to the r0 register; therefore, you can look at the trace-written register's information to determine what the operation changed.  However, some shader instructions do not write any registers, but still effect those registers.</para>
+      <list type="table">
+        <listheader>
+          <description>Flag</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>D3D11_TRACE_MISC_GS_EMIT (0x1)</description>
+          <description>The operation was a geometry shader data emit.</description>
+        </item>
+        <item>
+          <description>D3D11_TRACE_MISC_GS_CUT (0x2)</description>
+          <description>The operation was a geometry shader strip cut.</description>
+        </item>
+        <item>
+          <description>D3D11_TRACE_MISC_PS_DISCARD (0x4)</description>
+          <description>The operation was a pixel shader discard, which rejects the pixel.</description>
+        </item>
+        <item>
+          <description>D3D11_TRACE_MISC_GS_EMIT_STREAM (0x8)</description>
+          <description>Same as D3D11_TRACE_MISC_GS_EMIT, except in <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/overviews-direct3d-11-hlsl">shader model 5</a> where you can specify a particular stream to emit to.</description>
+        </item>
+        <item>
+          <description>D3D11_TRACE_MISC_GS_CUT_STREAM (0x10)</description>
+          <description>Same as D3D11_TRACE_MISC_GS_CUT, except in <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/overviews-direct3d-11-hlsl">shader model 5</a> where you can specify a particular stream to strip cut.</description>
+        </item>
+        <item>
+          <description>D3D11_TRACE_MISC_HALT (0x20)</description>
+          <description>The operation was a shader halt instruction, which stops shader execution. The HLSL <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/abort">abort</a> intrinsic function causes a halt.</description>
+        </item>
+        <item>
+          <description>D3D11_TRACE_MISC_MESSAGE (0x40)</description>
+          <description>The operation was a shader message output, which can be logged to the information queue. The HLSL <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/printf">printf</a> and <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/errorf">errorf</a> intrinsic functions cause messages.</description>
+        </item>
+      </list>
+      <para>If the <b>NumRegistersWritten</b> member is 0, examine this member although this member still might be empty (0).</para>
+    </summary>
+  </member>
+  <member name="D3D11_TRACE_STEP.OpcodeType">
+    <summary>
+      <para>A number that specifies the type of instruction (for example, <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/add---vs">add</a>, <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-mul">mul</a>, and so on). You can ignore this member if you do not know the number for the instruction type. This member offers a minor convenience at the cost of bloating the trace slightly.  You can use the <b>ID</b> member and map back to the original shader code to retrieve the full information about the instruction.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TRACE_STEP.CurrentGlobalCycle">
+    <summary>
+      <para>The global cycle count for this step.  You can use this member to correlate parallel thread execution via multiple simultaneous traces, for example, for the compute shader.</para>
+      <para>
+        <b>Note</b>  Multiple threads at the same point in execution might log the same <b>CurrentGlobalCycle</b>.</para>
+    </summary>
+  </member>
+</doc>

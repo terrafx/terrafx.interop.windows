@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_RAISE_FLAG">
+    <summary>
+      <para>Option(s) for raising an error to a non-continuable exception.</para>
+    </summary>
+    <remarks>
+      <para>These flags are used by <see cref="ID3D11Device.GetExceptionMode" /> and <see cref="ID3D11Device.SetExceptionMode" />. Use 0 to indicate no flags; multiple flags can be logically OR'ed together.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-enums">Core Enumerations</seealso>
+  </member>
+  <member name="D3D11_RAISE_FLAG.D3D11_RAISE_FLAG_DRIVER_INTERNAL_ERROR">
+    <summary>
+      <para>Raise an internal driver error to a non-continuable exception.</para>
+    </summary>
+  </member>
+</doc>

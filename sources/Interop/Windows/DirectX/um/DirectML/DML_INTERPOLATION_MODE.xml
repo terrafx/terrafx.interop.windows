@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_INTERPOLATION_MODE">
+    <summary>
+      <para>Defines constants that specify a mode for the DirectML upsample 2-D operator (as described by the <see cref="DML_UPSAMPLE_2D_OPERATOR_DESC" /> structure).</para>
+    </summary>
+    <seealso cref="DML_UPSAMPLE_2D_OPERATOR_DESC" />
+  </member>
+  <member name="DML_INTERPOLATION_MODE.DML_INTERPOLATION_MODE_NEAREST_NEIGHBOR">
+    <summary>
+      <para>Specifies the nearest-neighbor mode.</para>
+    </summary>
+  </member>
+  <member name="DML_INTERPOLATION_MODE.DML_INTERPOLATION_MODE_LINEAR">
+    <summary>
+      <para>Specifies a linear (including bilinear, trilinear, etc.) mode.</para>
+    </summary>
+  </member>
+</doc>

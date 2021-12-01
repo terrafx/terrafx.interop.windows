@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_PADDING_OPERATOR_DESC">
+    <summary>
+      <para>Inflates the input tensor with constant or mirrored values on the edges, and writes the result to the output.</para>
+    </summary>
+  </member>
+  <member name="DML_PADDING_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the input data.</para>
+    </summary>
+  </member>
+  <member name="DML_PADDING_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the output data. For each dimension <code>i</code>, <code>OutputTensor.Sizes[i] = InputTensor.Sizes[i] + StartPadding[i] + EndPadding[i]</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_PADDING_OPERATOR_DESC.PaddingMode">
+    <summary>
+      <para>Type: <see cref="DML_PADDING_MODE" /></para>
+      <para>The padding mode to use when filling the padding regions.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>DML_PADDING_MODE_CONSTANT</b>. Uses a single constant value defined by <i>PaddingValue</i> for all padding values (see <b>Example 1</b>).</description>
+        </item>
+        <item>
+          <description>
+            <b>DML_PADDING_MODE_EDGE</b>. For each dimension, use the edge values of that dimension for all padding values (see <b>Example 2</b>).</description>
+        </item>
+        <item>
+          <description>
+            <b>DML_PADDING_MODE_REFLECTION</b>. Mirror the values of the tensor as if we folded it right on the edges, which means that edges are not mirrored. Note that <code>StartPadding[i] &gt;= InputTensor.Sizes[i]</code>, and <code>EndPadding[i] &gt;= InputTensor.Sizes[i]</code> is valid, which means that we can mirror new padding regions periodically by folding them over previous padding regions (see <b>Example 3</b>).</description>
+        </item>
+        <item>
+          <description>
+            <b>DML_PADDING_MODE_SYMMETRIC</b>. Similar to <b>DML_PADDING_MODE_REFLECTION</b>, but edges are also mirrored. Note that <code>StartPadding[i] &gt; InputTensor.Sizes[i]</code>, and <code>EndPadding[i] &gt; InputTensor.Sizes[i]</code> is valid, which means that we can mirror new padding regions periodically by folding them over previous padding regions (see <b>Example 4</b>). <b>This mode was introduced in feature level <code>DML_FEATURE_LEVEL_3_0</code></b>.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="DML_PADDING_OPERATOR_DESC.PaddingValue">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
+      <para>The padding value to use when <code>PaddingMode == DML_PADDING_MODE_CONSTANT</code>. This value is ignored for other padding modes. Note that if the <i>DataType</i> of the tensors is not <see cref="DML_TENSOR_DATA_TYPE_FLOAT16" /> or <b>DML_TENSOR_DATA_TYPE_FLOAT32</b>, then the value might be truncated (for example, 10.6 will become 10).</para>
+    </summary>
+  </member>
+  <member name="DML_PADDING_OPERATOR_DESC.DimensionCount">
+    <summary>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>The size of the arrays pointed to by <i>StartPadding</i> and <i>EndPadding</i>. This value must be the same value as the dimension count of <i>InputTensor</i> and <i>OutputTensor</i>.</para>
+    </summary>
+  </member>
+  <member name="DML_PADDING_OPERATOR_DESC.StartPadding">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
+      <para>The sizes of the padding regions to add at the beginning of each dimension. For each dimension <code>i</code>, <code>StartPadding[i] = OutputTensor.Sizes[i] - InputTensor.Sizes[i] - EndPadding[i]</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_PADDING_OPERATOR_DESC.EndPadding">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
+      <para>The sizes of the padding regions to add at the end of each dimension. For each dimension <code>i</code>, <code>EndPadding[i] = OutputTensor.Sizes[i] - InputTensor.Sizes[i] - StartPadding[i]</code>.</para>
+    </summary>
+  </member>
+</doc>

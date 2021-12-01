@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_BITMAP_PROPERTIES.xml' path='doc/member[@name="D2D1_BITMAP_PROPERTIES"]/*' />
 public partial struct D2D1_BITMAP_PROPERTIES
 {
+    /// <include file='D2D1_BITMAP_PROPERTIES.xml' path='doc/member[@name="D2D1_BITMAP_PROPERTIES.pixelFormat"]/*' />
     public D2D1_PIXEL_FORMAT pixelFormat;
 
+    /// <include file='D2D1_BITMAP_PROPERTIES.xml' path='doc/member[@name="D2D1_BITMAP_PROPERTIES.dpiX"]/*' />
     public float dpiX;
 
+    /// <include file='D2D1_BITMAP_PROPERTIES.xml' path='doc/member[@name="D2D1_BITMAP_PROPERTIES.dpiY"]/*' />
     public float dpiY;
 }

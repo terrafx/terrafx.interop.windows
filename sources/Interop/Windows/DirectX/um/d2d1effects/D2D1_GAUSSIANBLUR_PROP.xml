@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_GAUSSIANBLUR_PROP">
+    <summary>
+      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/gaussian-blur">Gaussian blur effect</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_GAUSSIANBLUR_PROP.D2D1_GAUSSIANBLUR_PROP_STANDARD_DEVIATION">
+    <summary>
+      <para>The amount of blur to be applied to the image. You can compute the blur radius of the kernel by multiplying the standard deviation by 3.
+The units of both the standard deviation and blur radius are DIPs. A value of zero DIPs disables this effect entirely.</para>
+      <para>The type is FLOAT.</para>
+      <para>The default value is 3.0f.</para>
+    </summary>
+  </member>
+  <member name="D2D1_GAUSSIANBLUR_PROP.D2D1_GAUSSIANBLUR_PROP_OPTIMIZATION">
+    <summary>
+      <para>The optimization mode.</para>
+      <para>The type is <see cref="D2D1_GAUSSIANBLUR_OPTIMIZATION" />.</para>
+      <para>The default value is D2D1_GAUSSIANBLUR_OPTIMIZATION_BALANCED.</para>
+    </summary>
+  </member>
+  <member name="D2D1_GAUSSIANBLUR_PROP.D2D1_GAUSSIANBLUR_PROP_BORDER_MODE">
+    <summary>
+      <para>The mode used to calculate the border of the image, soft or hard.</para>
+      <para>The type is <see cref="D2D1_GAUSSIANBLUR_OPTIMIZATION" />.</para>
+      <para>The default value is D2D1_BORDER_MODE_SOFT.</para>
+    </summary>
+  </member>
+  <member name="D2D1_GAUSSIANBLUR_PROP.D2D1_GAUSSIANBLUR_PROP_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

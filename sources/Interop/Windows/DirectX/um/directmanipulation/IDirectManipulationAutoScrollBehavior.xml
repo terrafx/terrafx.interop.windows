@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirectManipulationAutoScrollBehavior.SetConfiguration">
+    <summary>
+      <para>Performs the auto-scroll animation for the viewport this behavior is attached to.</para>
+    </summary>
+    <param name="motionTypes">
+      <para>A combination of <b>DIRECTMANIPULATION_MOTION_TRANSLATEX</b> and <b>DIRECTMANIPULATION_MOTION_TRANSLATEY</b> from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_motion_types">DIRECTMANIPULATION_MOTION_TYPES</a>. <b>DIRECTMANIPULATION_MOTION_NONE</b> cannot be specified.</para>
+    </param>
+    <param name="scrollMotion">
+      <para>One of the values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_autoscroll_configuration">DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION</a>.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>SetConfiguration</b> takes effect immediately. If the content is not in inertia, and <b>DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION_STOP</b> is specified for <i>scrollMotion</i>, then this method returns S_FALSE.</para>
+      <h4>Examples</h4>
+      <code>spAutoScrollBehavior-&gt;SetConfiguration(DIRECTMANIPULATION_MOTION_TRANSLATEX, DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION_FORWARD));
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationautoscrollbehavior">IDirectManipulationAutoScrollBehavior</seealso>
+  </member>
+  <member name="IDirectManipulationAutoScrollBehavior">
+    <summary>
+      <para>Represents  the auto-scroll animation behavior of content as it approaches the boundary of a given axis or axes.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-interfaces">Direct Manipulation Interfaces</seealso>
+  </member>
+</doc>

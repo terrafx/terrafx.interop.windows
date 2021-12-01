@@ -7,11 +7,19 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_ADAPTER_FLAG.xml' path='doc/member[@name="DXGI_ADAPTER_FLAG"]/*' />
 [Flags]
 public enum DXGI_ADAPTER_FLAG : uint
 {
+    /// <include file='DXGI_ADAPTER_FLAG.xml' path='doc/member[@name="DXGI_ADAPTER_FLAG.DXGI_ADAPTER_FLAG_NONE"]/*' />
     DXGI_ADAPTER_FLAG_NONE = 0,
+
+    /// <include file='DXGI_ADAPTER_FLAG.xml' path='doc/member[@name="DXGI_ADAPTER_FLAG.DXGI_ADAPTER_FLAG_REMOTE"]/*' />
     DXGI_ADAPTER_FLAG_REMOTE = 1,
+
+    /// <include file='DXGI_ADAPTER_FLAG.xml' path='doc/member[@name="DXGI_ADAPTER_FLAG.DXGI_ADAPTER_FLAG_SOFTWARE"]/*' />
     DXGI_ADAPTER_FLAG_SOFTWARE = 2,
+
+    /// <include file='DXGI_ADAPTER_FLAG.xml' path='doc/member[@name="DXGI_ADAPTER_FLAG.DXGI_ADAPTER_FLAG_FORCE_DWORD"]/*' />
     DXGI_ADAPTER_FLAG_FORCE_DWORD = 0xffffffff,
 }

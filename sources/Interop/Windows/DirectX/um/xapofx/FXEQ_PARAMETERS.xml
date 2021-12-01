@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FXEQ_PARAMETERS">
+    <summary>
+      <para>Parameters for use with the FXEQ XAPO.</para>
+    </summary>
+    <remarks>
+      <para>Each band ranges from <b>FrequencyCenterN</b> - (<b>BandwidthN</b> / 2) to <b>FrequencyCenterN</b> + (<b>BandwidthN</b> / 2).</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/structures">Structures</seealso>
+  </member>
+  <member name="FXEQ_PARAMETERS.FrequencyCenter0">
+    <summary>
+      <para>Center frequency in Hz for band 0. Must be between FXEQ_MIN_FREQUENCY_CENTER and FXEQ_MAX_FREQUENCY_CENTER.</para>
+    </summary>
+  </member>
+  <member name="FXEQ_PARAMETERS.Gain0">
+    <summary>
+      <para>The boost or decrease to frequencies in band 0. Must be between FXEQ_MIN_GAIN and FXEQ_MAX_GAIN</para>
+    </summary>
+  </member>
+  <member name="FXEQ_PARAMETERS.Bandwidth0">
+    <summary>
+      <para>Width of band 0. Must be between FXEQ_MIN_BANDWIDTH and FXEQ_MAX_BANDWIDTH.</para>
+    </summary>
+  </member>
+  <member name="FXEQ_PARAMETERS.FrequencyCenter1">
+    <summary>
+      <para>Center frequency in Hz for band 1. Must be between FXEQ_MIN_FREQUENCY_CENTER and FXEQ_MAX_FREQUENCY_CENTER.</para>
+    </summary>
+  </member>
+  <member name="FXEQ_PARAMETERS.Gain1">
+    <summary>
+      <para>The boost or decrease to frequencies in band 1. Must be between FXEQ_MIN_GAIN and FXEQ_MAX_GAIN</para>
+    </summary>
+  </member>
+  <member name="FXEQ_PARAMETERS.Bandwidth1">
+    <summary>
+      <para>Width of band 1. Must be between FXEQ_MIN_BANDWIDTH and FXEQ_MAX_BANDWIDTH.</para>
+    </summary>
+  </member>
+  <member name="FXEQ_PARAMETERS.FrequencyCenter2">
+    <summary>
+      <para>Center frequency in Hz for band 2. Must be between FXEQ_MIN_FREQUENCY_CENTER and FXEQ_MAX_FREQUENCY_CENTER.</para>
+    </summary>
+  </member>
+  <member name="FXEQ_PARAMETERS.Gain2">
+    <summary>
+      <para>The boost or decrease to frequencies in band 2. Must be between FXEQ_MIN_GAIN and FXEQ_MAX_GAIN</para>
+    </summary>
+  </member>
+  <member name="FXEQ_PARAMETERS.Bandwidth2">
+    <summary>
+      <para>Width of band 2. Must be between FXEQ_MIN_BANDWIDTH and FXEQ_MAX_BANDWIDTH.</para>
+    </summary>
+  </member>
+  <member name="FXEQ_PARAMETERS.FrequencyCenter3">
+    <summary>
+      <para>Center frequency in Hz for band 3. Must be between FXEQ_MIN_FREQUENCY_CENTER and FXEQ_MAX_FREQUENCY_CENTER.</para>
+    </summary>
+  </member>
+  <member name="FXEQ_PARAMETERS.Gain3">
+    <summary>
+      <para>The boost or decrease to frequencies in band 3. Must be between FXEQ_MIN_GAIN and FXEQ_MAX_GAIN</para>
+    </summary>
+  </member>
+  <member name="FXEQ_PARAMETERS.Bandwidth3">
+    <summary>
+      <para>Width of band 3. Must be between FXEQ_MIN_BANDWIDTH and FXEQ_MAX_BANDWIDTH.</para>
+    </summary>
+  </member>
+</doc>

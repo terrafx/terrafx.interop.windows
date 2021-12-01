@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_EFFECT_VARIABLE_DESC">
+    <summary>
+      <para>Describes an effect variable.</para>
+    </summary>
+    <remarks>
+      <para>To get an effect-variable description, call <see cref="ID3D10EffectVariable.GetDesc" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-structures">Effect Structures (Direct3D 10)</seealso>
+  </member>
+  <member name="D3D10_EFFECT_VARIABLE_DESC.Name">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
+      <para>A string that contains the variable name.</para>
+    </summary>
+  </member>
+  <member name="D3D10_EFFECT_VARIABLE_DESC.Semantic">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
+      <para>The semantic attached to the variable; otherwise <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="D3D10_EFFECT_VARIABLE_DESC.Flags">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Optional <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-constants">flags</a> for effect variables.</para>
+    </summary>
+  </member>
+  <member name="D3D10_EFFECT_VARIABLE_DESC.Annotations">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of annotations; otherwise 0.</para>
+    </summary>
+  </member>
+  <member name="D3D10_EFFECT_VARIABLE_DESC.BufferOffset">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The offset between the beginning of the constant buffer and this variable; otherwise 0.</para>
+    </summary>
+  </member>
+  <member name="D3D10_EFFECT_VARIABLE_DESC.ExplicitBindPoint">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The register that this variable is bound to. To bind a variable explicitly use the D3D10_EFFECT_VARIABLE_EXPLICIT_BIND_POINT flag.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_VIDEO_PROCESSOR_PROCESSOR_CAPS">
+    <summary>
+      <para>Specifies video processing capabilities that relate to deinterlacing, inverse telecine (IVTC), and frame-rate conversion.</para>
+    </summary>
+    <seealso cref="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-enumerations">Direct3D 11 Video Enumerations</seealso>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_PROCESSOR_CAPS.D3D11_VIDEO_PROCESSOR_PROCESSOR_CAPS_DEINTERLACE_BLEND">
+    <summary>
+      <para>The video processor can perform blend deinterlacing.</para>
+      <para>In blend deinterlacing, the two fields from an interlaced frame are blended into a single progressive frame. A video processor uses blend deinterlacing when it deinterlaces at half rate, as when converting 60i to 30p. Blend deinterlacing does not require reference frames.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_PROCESSOR_CAPS.D3D11_VIDEO_PROCESSOR_PROCESSOR_CAPS_DEINTERLACE_BOB">
+    <summary>
+      <para>The video processor can perform bob deinterlacing.</para>
+      <para>In bob deinterlacing, missing field lines are interpolated from the lines above and below. Bob deinterlacing does not require reference frames.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_PROCESSOR_CAPS.D3D11_VIDEO_PROCESSOR_PROCESSOR_CAPS_DEINTERLACE_ADAPTIVE">
+    <summary>
+      <para>The video processor can perform adaptive deinterlacing.</para>
+      <para>Adaptive deinterlacing uses spatial or temporal interpolation, and switches between the two on a field-by-field basis, depending on the amount of motion. If the video processor does not receive enough reference frames to perform adaptive deinterlacing, it falls back to bob deinterlacing.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_PROCESSOR_CAPS.D3D11_VIDEO_PROCESSOR_PROCESSOR_CAPS_DEINTERLACE_MOTION_COMPENSATION">
+    <summary>
+      <para>The video processor can perform motion-compensated deinterlacing.</para>
+      <para>Motion-compensated deinterlacing uses motion vectors to recreate missing lines. If the video processor does not receive enough reference frames to perform motion-compensated deinterlacing, it falls back to bob deinterlacing.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_PROCESSOR_CAPS.D3D11_VIDEO_PROCESSOR_PROCESSOR_CAPS_INVERSE_TELECINE">
+    <summary>
+      <para>The video processor can perform inverse telecine (IVTC).</para>
+      <para>If the video processor supports this capability, the <b>ITelecineCaps</b> member of the <see cref="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS" /> structure specifies which IVTC modes are supported.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_PROCESSOR_CAPS.D3D11_VIDEO_PROCESSOR_PROCESSOR_CAPS_FRAME_RATE_CONVERSION">
+    <summary>
+      <para>The video processor can convert the frame rate by interpolating frames.</para>
+    </summary>
+  </member>
+</doc>

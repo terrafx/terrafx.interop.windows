@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_YCBCR_PROP.xml' path='doc/member[@name="D2D1_YCBCR_PROP"]/*' />
 public enum D2D1_YCBCR_PROP : uint
 {
+    /// <include file='D2D1_YCBCR_PROP.xml' path='doc/member[@name="D2D1_YCBCR_PROP.D2D1_YCBCR_PROP_CHROMA_SUBSAMPLING"]/*' />
     D2D1_YCBCR_PROP_CHROMA_SUBSAMPLING = 0,
+
+    /// <include file='D2D1_YCBCR_PROP.xml' path='doc/member[@name="D2D1_YCBCR_PROP.D2D1_YCBCR_PROP_TRANSFORM_MATRIX"]/*' />
     D2D1_YCBCR_PROP_TRANSFORM_MATRIX = 1,
+
+    /// <include file='D2D1_YCBCR_PROP.xml' path='doc/member[@name="D2D1_YCBCR_PROP.D2D1_YCBCR_PROP_INTERPOLATION_MODE"]/*' />
     D2D1_YCBCR_PROP_INTERPOLATION_MODE = 2,
+
+    /// <include file='D2D1_YCBCR_PROP.xml' path='doc/member[@name="D2D1_YCBCR_PROP.D2D1_YCBCR_PROP_FORCE_DWORD"]/*' />
     D2D1_YCBCR_PROP_FORCE_DWORD = 0xffffffff,
 }

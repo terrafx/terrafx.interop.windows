@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D_POINT_2F">
+    <summary>
+      <para>Represents an x-coordinate and y-coordinate pair, expressed as floating-point values, in two-dimensional space.</para>
+    </summary>
+  </member>
+  <member name="D2D_POINT_2F.x">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The x-coordinate of the point.</para>
+    </summary>
+  </member>
+  <member name="D2D_POINT_2F.y">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The y-coordinate of the point.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_BINDING_DESC">
+    <summary>
+      <para>Contains the description of a binding so that you can add it to the binding table via a call to one of the <see cref="IDMLBindingTable" /> methods.</para>
+      <para>A binding can refer to an input or an output tensor resource, or to a persistent or a temporary resource, and there are methods on <see cref="IDMLBindingTable" /> to bind each kind. The type of the structure pointed to by <i>Desc</i> depends on the value of <i>Type</i>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-binding">Binding in DirectML</seealso>
+    <seealso cref="IDMLBindingTable.BindInputs" />
+    <seealso cref="IDMLBindingTable.BindOutputs" />
+    <seealso cref="IDMLBindingTable.BindPersistentResource" />
+    <seealso cref="IDMLBindingTable.BindTemporaryResource" />
+  </member>
+  <member name="DML_BINDING_DESC.Type">
+    <summary>
+      <para>Type: <see cref="DML_BINDING_TYPE" /></para>
+      <para>A <see cref="DML_BINDING_TYPE" /> specifying the type of the binding; whether it refers to a single buffer, or to an array of buffers.</para>
+    </summary>
+  </member>
+  <member name="DML_BINDING_DESC.Desc">
+    <summary>
+      <para>Type: <b>const void*</b></para>
+      <para>A pointer to a constant structure whose type depends on the value <i>Type</i>. If <i>Type</i> is <see cref="DML_BINDING_TYPE_BUFFER" />, then <i>Desc</i> should point to a <see cref="DML_BUFFER_BINDING" />. If <i>Type</i> is <see cref="DML_BINDING_TYPE_BUFFER_ARRAY" />, then <i>Desc</i> should point to a <see cref="DML_BUFFER_ARRAY_BINDING" />.</para>
+    </summary>
+  </member>
+</doc>

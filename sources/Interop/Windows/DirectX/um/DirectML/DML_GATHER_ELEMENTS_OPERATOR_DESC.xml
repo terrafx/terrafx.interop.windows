@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_GATHER_ELEMENTS_OPERATOR_DESC">
+    <summary>
+      <para>Gathers elements from the input tensor along the given axis using the indices tensor to remap into the input. This operator performs the following pseudocode, with the exact behavior dependent on the axis, input dimension count, and indices dimension count.</para>
+      <code>output[i, j, k, ...] = input[index[i, j, k, ...], j, k, ...] // if axis == 0
+output[i, j, k, ...] = input[i, index[i, j, k, ...], k, ...] // if axis == 1
+output[i, j, k, ...] = input[i, j, index[i, j, k, ...], ...] // if axis == 2
+...
+</code>
+    </summary>
+  </member>
+  <member name="DML_GATHER_ELEMENTS_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The tensor to read from.</para>
+    </summary>
+  </member>
+  <member name="DML_GATHER_ELEMENTS_OPERATOR_DESC.IndicesTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The indices into the input tensor along the active axis. The <i>Sizes</i> must match <i>InputTensor.Sizes</i> for every dimension except <i>Axis</i>.</para>
+      <para>Starting with <code>DML_FEATURE_LEVEL_3_0</code>, this operator supports negative index values when using a signed integral type with this tensor. Negative indices are interpreted as being relative to the end of the axis dimension. For example, an index of -1 refers to the last element along that dimension.</para>
+    </summary>
+  </member>
+  <member name="DML_GATHER_ELEMENTS_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The tensor to write the results to. The <i>Sizes</i> must match <i>IndicesTensor.Sizes</i>, and <i>DataType</i> must match <i>InputTensor.DataType</i>.</para>
+    </summary>
+  </member>
+  <member name="DML_GATHER_ELEMENTS_OPERATOR_DESC.Axis">
+    <summary>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>The axis dimension of <i>InputTensor</i> to gather along, ranging <code>[0, *InputTensor.DimensionCount*)</code>.</para>
+    </summary>
+  </member>
+</doc>

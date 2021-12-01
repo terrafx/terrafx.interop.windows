@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID2D1Bitmap.xml' path='doc/member[@name="ID2D1Bitmap"]/*' />
 [Guid("A2296057-EA42-4099-983B-539FB6505426")]
 [NativeTypeName("struct ID2D1Bitmap : ID2D1Image")]
 [NativeInheritance("ID2D1Image")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID2D1Bitmap : ID2D1Bitmap.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID2D1Bitmap : ID2D1Bitmap.Interface
         return ((delegate* unmanaged<ID2D1Bitmap*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1Bitmap*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID2D1Bitmap : ID2D1Bitmap.Interface
         return ((delegate* unmanaged<ID2D1Bitmap*, uint>)(lpVtbl[1]))((ID2D1Bitmap*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID2D1Bitmap : ID2D1Bitmap.Interface
         return ((delegate* unmanaged<ID2D1Bitmap*, uint>)(lpVtbl[2]))((ID2D1Bitmap*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void GetFactory(ID2D1Factory** factory)
@@ -47,6 +52,7 @@ public unsafe partial struct ID2D1Bitmap : ID2D1Bitmap.Interface
         ((delegate* unmanaged<ID2D1Bitmap*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1Bitmap*)Unsafe.AsPointer(ref this), factory);
     }
 
+    /// <include file='ID2D1Bitmap.xml' path='doc/member[@name="ID2D1Bitmap.GetSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     [return: NativeTypeName("D2D1_SIZE_F")]
@@ -56,6 +62,7 @@ public unsafe partial struct ID2D1Bitmap : ID2D1Bitmap.Interface
         return *((delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap*, D2D_SIZE_F*, D2D_SIZE_F*>)(lpVtbl[4]))((ID2D1Bitmap*)Unsafe.AsPointer(ref this), &result);
     }
 
+    /// <include file='ID2D1Bitmap.xml' path='doc/member[@name="ID2D1Bitmap.GetPixelSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     [return: NativeTypeName("D2D1_SIZE_U")]
@@ -65,6 +72,7 @@ public unsafe partial struct ID2D1Bitmap : ID2D1Bitmap.Interface
         return *((delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap*, D2D_SIZE_U*, D2D_SIZE_U*>)(lpVtbl[5]))((ID2D1Bitmap*)Unsafe.AsPointer(ref this), &result);
     }
 
+    /// <include file='ID2D1Bitmap.xml' path='doc/member[@name="ID2D1Bitmap.GetPixelFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public D2D1_PIXEL_FORMAT GetPixelFormat()
@@ -73,6 +81,7 @@ public unsafe partial struct ID2D1Bitmap : ID2D1Bitmap.Interface
         return *((delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap*, D2D1_PIXEL_FORMAT*, D2D1_PIXEL_FORMAT*>)(lpVtbl[6]))((ID2D1Bitmap*)Unsafe.AsPointer(ref this), &result);
     }
 
+    /// <include file='ID2D1Bitmap.xml' path='doc/member[@name="ID2D1Bitmap.GetDpi"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public void GetDpi(float* dpiX, float* dpiY)
@@ -80,6 +89,7 @@ public unsafe partial struct ID2D1Bitmap : ID2D1Bitmap.Interface
         ((delegate* unmanaged[SuppressGCTransition]<ID2D1Bitmap*, float*, float*, void>)(lpVtbl[7]))((ID2D1Bitmap*)Unsafe.AsPointer(ref this), dpiX, dpiY);
     }
 
+    /// <include file='ID2D1Bitmap.xml' path='doc/member[@name="ID2D1Bitmap.CopyFromBitmap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT CopyFromBitmap([NativeTypeName("const D2D1_POINT_2U *")] D2D_POINT_2U* destPoint, ID2D1Bitmap* bitmap, [NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* srcRect)
@@ -87,6 +97,7 @@ public unsafe partial struct ID2D1Bitmap : ID2D1Bitmap.Interface
         return ((delegate* unmanaged<ID2D1Bitmap*, D2D_POINT_2U*, ID2D1Bitmap*, D2D_RECT_U*, int>)(lpVtbl[8]))((ID2D1Bitmap*)Unsafe.AsPointer(ref this), destPoint, bitmap, srcRect);
     }
 
+    /// <include file='ID2D1Bitmap.xml' path='doc/member[@name="ID2D1Bitmap.CopyFromRenderTarget"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT CopyFromRenderTarget([NativeTypeName("const D2D1_POINT_2U *")] D2D_POINT_2U* destPoint, ID2D1RenderTarget* renderTarget, [NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* srcRect)
@@ -94,6 +105,7 @@ public unsafe partial struct ID2D1Bitmap : ID2D1Bitmap.Interface
         return ((delegate* unmanaged<ID2D1Bitmap*, D2D_POINT_2U*, ID2D1RenderTarget*, D2D_RECT_U*, int>)(lpVtbl[9]))((ID2D1Bitmap*)Unsafe.AsPointer(ref this), destPoint, renderTarget, srcRect);
     }
 
+    /// <include file='ID2D1Bitmap.xml' path='doc/member[@name="ID2D1Bitmap.CopyFromMemory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT CopyFromMemory([NativeTypeName("const D2D1_RECT_U *")] D2D_RECT_U* dstRect, [NativeTypeName("const void *")] void* srcData, [NativeTypeName("UINT32")] uint pitch)

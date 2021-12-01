@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DirectX.D2D1ComputeMaximumScaleFactor">
+    <summary>
+      <para>Computes the maximum factor by which a given transform can stretch any vector.</para>
+    </summary>
+    <param name="matrix">
+      <para>The input transform matrix.</para>
+    </param>
+    <returns>
+      <para>The scale factor.</para>
+    </returns>
+    <remarks>
+      <para>Formally, if M is the input matrix, this method will return the maximum value of |V * M| / |V| for all vectors V, where |.| denotes length.</para>
+      <para>
+        <b>Note</b>  Since this describes how M affects vectors (rather than points), the translation components (_31 and _32) of M are ignored.</para>
+    </remarks>
+  </member>
+</doc>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_SWAP_CHAIN_FULLSCREEN_DESC">
+    <summary>
+      <para>Describes full-screen mode for a swap chain.</para>
+    </summary>
+    <remarks>
+      <para>This structure is used by the <see cref="CreateSwapChainForHwnd" /> and <see cref="GetFullscreenDesc" /> methods.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
+  </member>
+  <member name="DXGI_SWAP_CHAIN_FULLSCREEN_DESC.RefreshRate">
+    <summary>
+      <para>A <see cref="DXGI_RATIONAL" /> structure that describes the refresh rate in hertz.</para>
+    </summary>
+  </member>
+  <member name="DXGI_SWAP_CHAIN_FULLSCREEN_DESC.ScanlineOrdering">
+    <summary>
+      <para>A member of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173067(v=vs.85)">DXGI_MODE_SCANLINE_ORDER</a> enumerated type that describes the scan-line drawing mode.</para>
+    </summary>
+  </member>
+  <member name="DXGI_SWAP_CHAIN_FULLSCREEN_DESC.Scaling">
+    <summary>
+      <para>A member of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173066(v=vs.85)">DXGI_MODE_SCALING</a> enumerated type that describes the scaling mode.</para>
+    </summary>
+  </member>
+  <member name="DXGI_SWAP_CHAIN_FULLSCREEN_DESC.Windowed">
+    <summary>
+      <para>A Boolean value that specifies whether the swap chain is in windowed mode. <b>TRUE</b> if the swap chain is in windowed mode; otherwise, <b>FALSE</b>.</para>
+    </summary>
+  </member>
+</doc>

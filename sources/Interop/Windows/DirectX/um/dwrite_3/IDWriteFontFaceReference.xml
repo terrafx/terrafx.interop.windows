@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFontFaceReference.CreateFontFace">
+    <summary>
+      <para>Creates a font face from the reference for use with layout, shaping, or rendering.</para>
+    </summary>
+    <param name="fontFace">
+      <para>Type: <b><see cref="IDWriteFontFace3" />**</b></para>
+      <para>Newly created font face object, or nullptr in the case of failure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This function can fail with DWRITE_E_REMOTEFONT if the font is not local.</para>
+    </remarks>
+    <seealso cref="IDWriteFontFaceReference" />
+  </member>
+  <member name="IDWriteFontFaceReference.CreateFontFaceWithSimulations">
+    <summary>
+      <para>Creates a font face with alternate font simulations, for example, to explicitly simulate a bold font face out of a regular variant.</para>
+    </summary>
+    <param name="fontFaceSimulationFlags">
+      <para>Type: <b><see cref="DWRITE_FONT_SIMULATIONS" /></b></para>
+      <para>Font face simulation flags for algorithmic emboldening and italicization.</para>
+    </param>
+    <param name="fontFace">
+      <para>Type: <b><see cref="IDWriteFontFace3" />**</b></para>
+      <para>Newly created font face object, or nullptr in the case of failure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This function can fail with DWRITE_E_REMOTEFONT if the font is not local.</para>
+    </remarks>
+    <seealso cref="IDWriteFontFaceReference" />
+  </member>
+  <member name="IDWriteFontFaceReference.EnqueueCharacterDownloadRequest">
+    <summary>
+      <para>Adds a request to the font download queue (<see cref="IDWriteFontDownloadQueue" />).</para>
+    </summary>
+    <param name="characters">
+      <para>Type: <b>const WCHAR*</b></para>
+      <para>Array of characters to download.</para>
+    </param>
+    <param name="characterCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of elements in the character array.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Downloading a character involves downloading every glyph it depends on directly or indirectly, via font tables (cmap, GSUB, COLR, glyf).</para>
+    </remarks>
+    <seealso cref="IDWriteFontFaceReference" />
+  </member>
+  <member name="IDWriteFontFaceReference.EnqueueFileFragmentDownloadRequest">
+    <summary>
+      <para>Adds a request to the font download queue (<see cref="IDWriteFontDownloadQueue" />).</para>
+    </summary>
+    <param name="fileOffset">
+      <para>Type: <b>UINT64</b></para>
+      <para>Offset of the fragment from the beginning of the font file.</para>
+    </param>
+    <param name="fragmentSize">
+      <para>Type: <b>UINT64</b></para>
+      <para>Size of the fragment in bytes.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontFaceReference" />
+  </member>
+  <member name="IDWriteFontFaceReference.EnqueueFontDownloadRequest">
+    <summary>
+      <para>Adds a request to the font download queue (<see cref="IDWriteFontDownloadQueue" />).</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontFaceReference" />
+  </member>
+  <member name="IDWriteFontFaceReference.EnqueueGlyphDownloadRequest">
+    <summary>
+      <para>Adds a request to the font download queue (<see cref="IDWriteFontDownloadQueue" />).</para>
+    </summary>
+    <param name="glyphIndices">
+      <para>Type: <b>const UINT16*</b></para>
+      <para>Array of glyph indices to download.</para>
+    </param>
+    <param name="glyphCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of elements in the glyph index array.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Downloading a glyph involves downloading any other glyphs it depends on from the font tables (GSUB, COLR, glyf).</para>
+    </remarks>
+    <seealso cref="IDWriteFontFaceReference" />
+  </member>
+  <member name="IDWriteFontFaceReference.GetFileSize">
+    <summary>
+      <para>Get the total size of the font face in bytes.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>UINT64</b></para>
+      <para>Returns the total size of the font face in bytes. If the locality is remote, this value is unknown and will be zero.</para>
+    </returns>
+    <seealso cref="IDWriteFontFaceReference" />
+  </member>
+  <member name="IDWriteFontFaceReference.GetFileTime">
+    <summary>
+      <para>Get the last modified date.</para>
+    </summary>
+    <param name="lastWriteTime">
+      <para>Type: <b>FILETIME*</b></para>
+      <para>Returns the last modified date. The time may be zero if the font file loader does not expose file time.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontFaceReference" />
+  </member>
+  <member name="IDWriteFontFaceReference.GetFontFaceIndex">
+    <summary>
+      <para>Obtains the zero-based index of the font face in its font file or files. If the font files contain a single face,
+the return value is zero.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>UINT32</b></para>
+      <para>the zero-based index of the font face in its font file or files. If the font files contain a single face,
+the return value is zero.</para>
+    </returns>
+    <seealso cref="IDWriteFontFaceReference" />
+  </member>
+  <member name="IDWriteFontFaceReference.GetFontFile">
+    <summary>
+      <para>Obtains the font file representing a font face.</para>
+    </summary>
+    <param name="fontFile">
+      <para>Type: <b><see cref="IDWriteFontFile" />**</b></para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontFaceReference" />
+  </member>
+  <member name="IDWriteFontFaceReference.GetLocalFileSize">
+    <summary>
+      <para>Get the local size of the font face in bytes, which will always be
+less than or equal to GetFullSize. If the locality is remote, this
+value is zero. If full, this value will equal GetFileSize.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>UINT64</b></para>
+      <para>the local size of the font face in bytes, which will always be
+less than or equal to GetFullSize. If the locality is remote, this
+value is zero. If full, this value will equal <see cref="GetFileSize" />.</para>
+    </returns>
+    <seealso cref="IDWriteFontFaceReference" />
+  </member>
+  <member name="IDWriteFontFaceReference.GetLocality">
+    <summary>
+      <para>Get the locality of this font face reference.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_LOCALITY" /></b></para>
+      <para>Returns the locality of this font face reference.</para>
+    </returns>
+    <remarks>
+      <para>You can always successfully
+create a font face from a fully local font. Attempting to create a font
+face on a remote or partially local font may fail with DWRITE_E_REMOTEFONT.
+This function may change between calls depending on background downloads
+and whether cached data expires.</para>
+    </remarks>
+    <seealso cref="IDWriteFontFaceReference" />
+  </member>
+  <member name="IDWriteFontFaceReference.GetSimulations">
+    <summary>
+      <para>Obtains the algorithmic style simulation flags of a font face.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_FONT_SIMULATIONS" /></b></para>
+      <para>Returns the algorithmic style simulation flags of a font face.</para>
+    </returns>
+    <seealso cref="IDWriteFontFaceReference" />
+  </member>
+  <member name="IDWriteFontFaceReference">
+    <summary>
+      <para>Represents a reference to a font face.
+A uniquely identifying reference to a font, from which you can create a font
+face to query font metrics and use for rendering. A font face reference
+consists of a font file, font face index, and font face simulation. The file
+data may or may not be physically present on the local machine yet.</para>
+    </summary>
+  </member>
+</doc>

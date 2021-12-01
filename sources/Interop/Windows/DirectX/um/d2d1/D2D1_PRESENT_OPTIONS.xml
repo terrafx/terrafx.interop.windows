@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_PRESENT_OPTIONS">
+    <summary>
+      <para>Describes how a render target behaves when it presents its content. This enumeration allows a bitwise combination of its member values.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PRESENT_OPTIONS.D2D1_PRESENT_OPTIONS_NONE">
+    <summary>
+      <para>The render target waits until the display refreshes to present and discards the frame upon presenting.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PRESENT_OPTIONS.D2D1_PRESENT_OPTIONS_RETAIN_CONTENTS">
+    <summary>
+      <para>The render target does not discard the frame upon presenting.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PRESENT_OPTIONS.D2D1_PRESENT_OPTIONS_IMMEDIATELY">
+    <summary>
+      <para>The render target does not wait until the display refreshes to present.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PRESENT_OPTIONS.D2D1_PRESENT_OPTIONS_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

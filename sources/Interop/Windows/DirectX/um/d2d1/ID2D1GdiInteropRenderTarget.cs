@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID2D1GdiInteropRenderTarget.xml' path='doc/member[@name="ID2D1GdiInteropRenderTarget"]/*' />
 [Guid("E0DB51C3-6F77-4BAE-B3D5-E47509B35838")]
 [NativeTypeName("struct ID2D1GdiInteropRenderTarget : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID2D1GdiInteropRenderTarget : ID2D1GdiInteropRender
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID2D1GdiInteropRenderTarget : ID2D1GdiInteropRender
         return ((delegate* unmanaged<ID2D1GdiInteropRenderTarget*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1GdiInteropRenderTarget*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID2D1GdiInteropRenderTarget : ID2D1GdiInteropRender
         return ((delegate* unmanaged<ID2D1GdiInteropRenderTarget*, uint>)(lpVtbl[1]))((ID2D1GdiInteropRenderTarget*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID2D1GdiInteropRenderTarget : ID2D1GdiInteropRender
         return ((delegate* unmanaged<ID2D1GdiInteropRenderTarget*, uint>)(lpVtbl[2]))((ID2D1GdiInteropRenderTarget*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID2D1GdiInteropRenderTarget.xml' path='doc/member[@name="ID2D1GdiInteropRenderTarget.GetDC"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDC(D2D1_DC_INITIALIZE_MODE mode, HDC* hdc)
@@ -47,6 +52,7 @@ public unsafe partial struct ID2D1GdiInteropRenderTarget : ID2D1GdiInteropRender
         return ((delegate* unmanaged<ID2D1GdiInteropRenderTarget*, D2D1_DC_INITIALIZE_MODE, HDC*, int>)(lpVtbl[3]))((ID2D1GdiInteropRenderTarget*)Unsafe.AsPointer(ref this), mode, hdc);
     }
 
+    /// <include file='ID2D1GdiInteropRenderTarget.xml' path='doc/member[@name="ID2D1GdiInteropRenderTarget.ReleaseDC"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ReleaseDC([NativeTypeName("const RECT *")] RECT* update)

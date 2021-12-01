@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11VideoDecoder.GetCreationParameters">
+    <summary>
+      <para>Gets the parameters that were used to create the decoder.</para>
+    </summary>
+    <param name="pVideoDesc">
+      <para>A pointer to a <see cref="D3D11_VIDEO_DECODER_DESC" /> structure that receives a description of the video stream.</para>
+    </param>
+    <param name="pConfig">
+      <para>A pointer to a <see cref="D3D11_VIDEO_DECODER_CONFIG" /> structure that receives the decoder configuration.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ID3D11VideoDecoder" />
+  </member>
+  <member name="ID3D11VideoDecoder.GetDriverHandle">
+    <summary>
+      <para>Gets a handle to the driver.</para>
+    </summary>
+    <param name="pDriverHandle">
+      <para>Receives a handle to the driver.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The driver handle can be used to configure content protection.</para>
+    </remarks>
+    <seealso cref="ID3D11VideoDecoder" />
+  </member>
+  <member name="ID3D11VideoDecoder">
+    <summary>
+      <para>Represents a hardware-accelerated video decoder for Microsoft Direct3D 11.</para>
+    </summary>
+    <remarks>
+      <para>To get a pointer to this interface, call <see cref="ID3D11VideoDevice.CreateVideoDecoder" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-interfaces">Direct3D 11 Video Interfaces</seealso>
+    <seealso cref="ID3D11DeviceChild" />
+  </member>
+</doc>

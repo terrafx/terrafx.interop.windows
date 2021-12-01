@@ -11,6 +11,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDXGIDecodeSwapChain.xml' path='doc/member[@name="IDXGIDecodeSwapChain"]/*' />
 [Guid("2633066B-4514-4C7A-8FD8-12EA98059D18")]
 [NativeTypeName("struct IDXGIDecodeSwapChain : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
         return ((delegate* unmanaged<IDXGIDecodeSwapChain*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
         return ((delegate* unmanaged<IDXGIDecodeSwapChain*, uint>)(lpVtbl[1]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
         return ((delegate* unmanaged<IDXGIDecodeSwapChain*, uint>)(lpVtbl[2]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDXGIDecodeSwapChain.xml' path='doc/member[@name="IDXGIDecodeSwapChain.PresentBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT PresentBuffer(uint BufferToPresent, uint SyncInterval, uint Flags)
@@ -49,6 +54,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
         return ((delegate* unmanaged<IDXGIDecodeSwapChain*, uint, uint, uint, int>)(lpVtbl[3]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), BufferToPresent, SyncInterval, Flags);
     }
 
+    /// <include file='IDXGIDecodeSwapChain.xml' path='doc/member[@name="IDXGIDecodeSwapChain.SetSourceRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetSourceRect([NativeTypeName("const RECT *")] RECT* pRect)
@@ -56,6 +62,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
         return ((delegate* unmanaged<IDXGIDecodeSwapChain*, RECT*, int>)(lpVtbl[4]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), pRect);
     }
 
+    /// <include file='IDXGIDecodeSwapChain.xml' path='doc/member[@name="IDXGIDecodeSwapChain.SetTargetRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetTargetRect([NativeTypeName("const RECT *")] RECT* pRect)
@@ -63,6 +70,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
         return ((delegate* unmanaged<IDXGIDecodeSwapChain*, RECT*, int>)(lpVtbl[5]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), pRect);
     }
 
+    /// <include file='IDXGIDecodeSwapChain.xml' path='doc/member[@name="IDXGIDecodeSwapChain.SetDestSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetDestSize(uint Width, uint Height)
@@ -70,6 +78,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
         return ((delegate* unmanaged<IDXGIDecodeSwapChain*, uint, uint, int>)(lpVtbl[6]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), Width, Height);
     }
 
+    /// <include file='IDXGIDecodeSwapChain.xml' path='doc/member[@name="IDXGIDecodeSwapChain.GetSourceRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetSourceRect(RECT* pRect)
@@ -77,6 +86,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
         return ((delegate* unmanaged<IDXGIDecodeSwapChain*, RECT*, int>)(lpVtbl[7]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), pRect);
     }
 
+    /// <include file='IDXGIDecodeSwapChain.xml' path='doc/member[@name="IDXGIDecodeSwapChain.GetTargetRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetTargetRect(RECT* pRect)
@@ -84,6 +94,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
         return ((delegate* unmanaged<IDXGIDecodeSwapChain*, RECT*, int>)(lpVtbl[8]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), pRect);
     }
 
+    /// <include file='IDXGIDecodeSwapChain.xml' path='doc/member[@name="IDXGIDecodeSwapChain.GetDestSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetDestSize(uint* pWidth, uint* pHeight)
@@ -91,6 +102,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
         return ((delegate* unmanaged<IDXGIDecodeSwapChain*, uint*, uint*, int>)(lpVtbl[9]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), pWidth, pHeight);
     }
 
+    /// <include file='IDXGIDecodeSwapChain.xml' path='doc/member[@name="IDXGIDecodeSwapChain.SetColorSpace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetColorSpace(DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS ColorSpace)
@@ -98,6 +110,7 @@ public unsafe partial struct IDXGIDecodeSwapChain : IDXGIDecodeSwapChain.Interfa
         return ((delegate* unmanaged<IDXGIDecodeSwapChain*, DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS, int>)(lpVtbl[10]))((IDXGIDecodeSwapChain*)Unsafe.AsPointer(ref this), ColorSpace);
     }
 
+    /// <include file='IDXGIDecodeSwapChain.xml' path='doc/member[@name="IDXGIDecodeSwapChain.GetColorSpace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS GetColorSpace()

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_ADAPTER_DESC3">
+    <summary>
+      <para>Describes an adapter (or video card) that uses Microsoft DirectX Graphics Infrastructure (DXGI) 1.6.</para>
+    </summary>
+    <remarks>
+      <para>The <b>DXGI_ADAPTER_DESC3</b> structure provides a DXGI 1.6 description of an adapter.  This structure is initialized by using the <see cref="IDXGIAdapter4.GetDesc3" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
+    <seealso cref="IDXGIAdapter4.GetDesc3" />
+  </member>
+  <member name="DXGI_ADAPTER_DESC3.Description">
+    <summary>
+      <para>A string that contains the adapter description.</para>
+    </summary>
+  </member>
+  <member name="DXGI_ADAPTER_DESC3.VendorId">
+    <summary>
+      <para>The PCI ID of the hardware vendor.</para>
+    </summary>
+  </member>
+  <member name="DXGI_ADAPTER_DESC3.DeviceId">
+    <summary>
+      <para>The PCI ID of the hardware device.</para>
+    </summary>
+  </member>
+  <member name="DXGI_ADAPTER_DESC3.SubSysId">
+    <summary>
+      <para>The PCI ID of the sub system.</para>
+    </summary>
+  </member>
+  <member name="DXGI_ADAPTER_DESC3.Revision">
+    <summary>
+      <para>The PCI ID of the revision number of the adapter.</para>
+    </summary>
+  </member>
+  <member name="DXGI_ADAPTER_DESC3.DedicatedVideoMemory">
+    <summary>
+      <para>The number of bytes of dedicated video memory that are not shared with the CPU.</para>
+    </summary>
+  </member>
+  <member name="DXGI_ADAPTER_DESC3.DedicatedSystemMemory">
+    <summary>
+      <para>The number of bytes of dedicated system memory that are not shared with the CPU. This memory is allocated from available system memory at boot time.</para>
+    </summary>
+  </member>
+  <member name="DXGI_ADAPTER_DESC3.SharedSystemMemory">
+    <summary>
+      <para>The number of bytes of shared system memory. This is the maximum value of system memory that may be consumed by the adapter during operation. Any incidental memory consumed by the driver as it manages and uses video memory is additional.</para>
+    </summary>
+  </member>
+  <member name="DXGI_ADAPTER_DESC3.AdapterLuid">
+    <summary>
+      <para>A unique value that identifies the adapter. See <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff549708(v=vs.85)">LUID</a> for a definition of the structure. <b>LUID</b> is defined in dxgi.h.</para>
+    </summary>
+  </member>
+  <member name="DXGI_ADAPTER_DESC3.Flags">
+    <summary>
+      <para>A value of the <see cref="DXGI_ADAPTER_FLAG3" /> enumeration that describes the adapter type.  The <b>DXGI_ADAPTER_FLAG_REMOTE</b> flag is reserved.</para>
+    </summary>
+  </member>
+  <member name="DXGI_ADAPTER_DESC3.GraphicsPreemptionGranularity">
+    <summary>
+      <para>A value of the <see cref="DXGI_GRAPHICS_PREEMPTION_GRANULARITY" /> enumerated type that describes the granularity level at which the GPU can be preempted from performing its current graphics rendering task.</para>
+    </summary>
+  </member>
+  <member name="DXGI_ADAPTER_DESC3.ComputePreemptionGranularity">
+    <summary>
+      <para>A value of the <see cref="DXGI_COMPUTE_PREEMPTION_GRANULARITY" /> enumerated type that describes the granularity level at which the GPU can be preempted from performing its current compute task.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11On12Device1.GetD3D12Device">
+    <summary>
+      <para>Retrieves the <see cref="Direct3D 12 device" /> being interoperated with. This enables better interoperability with a component that might be handed a Direct3D 11 device, but which wants to leverage Direct3D 12 instead.</para>
+    </summary>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <code>ppvDevice</code>. This is expected to be the GUID of <see cref="ID3D12Device" />.</para>
+    </param>
+    <param name="ppvDevice">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">void</a>**</b></para>
+      <para>A pointer to a memory block that receives a pointer to the device. This is the address of a pointer to an <see cref="ID3D12Device" />, representing the Direct3D 12 device.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/desktop/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+    <seealso cref="ID3D12Device interface" />
+  </member>
+  <member name="ID3D11On12Device1">
+    <summary>
+      <para>Enables better interoperability with a component that might be handed a Direct3D 11 device, but which wants to leverage Direct3D 12 instead. This interface extends <see cref="ID3D11On12Device" /> to retrieve the <see cref="Direct3D 12 device" /> being interoperated with.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-11on12-interfaces">11on12 Interfaces</seealso>
+    <seealso cref="ID3D11On12Device interface" />
+  </member>
+</doc>

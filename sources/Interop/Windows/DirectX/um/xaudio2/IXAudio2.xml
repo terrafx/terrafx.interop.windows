@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IXAudio2.AddRef">
+    <summary>
+      <para>Adds a reference to the XAudio2 object.</para>
+    </summary>
+    <returns>
+      <para>Always 0.</para>
+    </returns>
+    <remarks>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso cref="IXAudio2" />
+  </member>
+  <member name="IXAudio2.CommitChanges">
+    <summary>
+      <para>Atomically applies a set of operations that are tagged with a given identifier.</para>
+    </summary>
+    <param name="OperationSet">
+      <para>Identifier of the set of operations to be applied. To commit all pending operations, pass <b>XAUDIO2_COMMIT_ALL</b>.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful; returns an error code otherwise. See <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-error-codes">XAudio2 Error Codes</a> for descriptions of XAudio2 specific error codes.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>CommitChanges</b> does nothing if no operations are tagged with the given identifier.</para>
+      <para>See the <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-operation-sets">XAudio2 Operation Sets</a> overview about working with <b>CommitChanges</b> and XAudio2 interface methods that may be deferred.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso cref="IXAudio2" />
+  </member>
+  <member name="IXAudio2.CreateMasteringVoice">
+    <summary>
+      <para>Creates and configures a mastering voice.</para>
+    </summary>
+    <param name="ppMasteringVoice">
+      <para>If successful, returns a pointer to the new <see cref="IXAudio2MasteringVoice" /> object.</para>
+    </param>
+    <param name="X2DEFAULT">
+      <para>TBD</para>
+    </param>
+    <param name="Flags">
+      <para>Flags that specify the behavior of the mastering voice. Must be 0.</para>
+    </param>
+    <param name="InputChannels">
+      <para>Number of channels the mastering voice expects in its input audio.
+<i>InputChannels</i> must be less than or equal to XAUDIO2_MAX_AUDIO_CHANNELS.</para>
+      <para>You can set <i>InputChannels</i> to XAUDIO2_DEFAULT_CHANNELS, which causes XAudio2 to try to detect the system speaker configuration setup.</para>
+    </param>
+    <param name="InputSampleRate">
+      <para>Sample rate of the input audio data of the mastering voice. This rate must be a multiple of XAUDIO2_QUANTUM_DENOMINATOR.
+<i>InputSampleRate</i> must be between XAUDIO2_MIN_SAMPLE_RATE and XAUDIO2_MAX_SAMPLE_RATE.</para>
+      <para>You can set <i>InputSampleRate</i> to XAUDIO2_DEFAULT_SAMPLERATE, with the default being determined by the current platform.</para>
+      <para>Windows XP defaults to 44100.</para>
+      <para>Windows Vista and Windows 7 default to the setting specified in the Sound Control Panel. The default for this setting is 44100 (or 48000 if required by the driver).</para>
+      <para>Flags</para>
+    </param>
+    <param name="StreamCategory">
+      <para>The audio stream category to use for this mastering voice.</para>
+    </param>
+    <param name="pEffectChain">
+      <para>Pointer to an <see cref="XAUDIO2_EFFECT_CHAIN" /> structure that describes an effect chain to use in the mastering voice, or NULL to use no effects.</para>
+    </param>
+    <param name="szDeviceId">
+      <para>Identifier of the device to receive the output audio. Specifying the default value of NULL causes XAudio2 to select the global default audio device.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful; otherwise, an error code. Returns ERROR_NOT_FOUND if no default audio device exists and NULL is passed in as the szDeviceId parameter.</para>
+      <para>See <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-error-codes">XAudio2 Error Codes</a> for descriptions of XAudio2 specific error codes.</para>
+    </returns>
+    <remarks>
+      <para>Mastering voices receive the output of one or more source or submix voices. They process the data, and send it to the audio output device.</para>
+      <para>Typically, you should create a mastering voice with an input sample rate that will be used by the majority of the title's audio content. The mastering voice performs a sample rate conversion from this input sample rate to the actual device output rate.</para>
+      <para>You cannot create a source or submix voices until a mastering voice exists. You cannot destroy a mastering voice if any source or submix voices still exist.</para>
+      <para>Mastering voices are always processed after all source and submix voices. This means that you need not specify a <i>ProcessingStage</i> parameter to control the processing order.</para>
+      <para>XAudio2 only allows one mastering voice to exist at once. If you attempt to create more than one voice, XAUDIO2_E_INVALID_CALL is returned. If an additional mastering voice is needed, for example for an output device with a different audio category set, you will need to create an additional XAudio2 instance.</para>
+      <para>When first created, mastering voices are in the started state.</para>
+      <para>It is invalid to call <b>CreateMasteringVoice</b> from within a callback (that is, <see cref="IXAudio2EngineCallback" /> or <see cref="IXAudio2VoiceCallback" />). If you call <b>CreateMasteringVoice</b> within a callback, it returns XAUDIO2_E_INVALID_CALL.</para>
+      <para>The <see cref="XAUDIO2_EFFECT_CHAIN" /> that is passed in as the pEffectChain argument and any <see cref="XAUDIO2_EFFECT_DESCRIPTOR" /> information contained within it are no longer needed after <b>CreateMasteringVoice</b> successfully completes, and may be deleted immediately after <b>CreateMasteringVoice</b> is called.</para>
+      <para>Note that the DirectX SDK XAUDIO2 version of <b>CreateMasteringVoice</b> took a DeviceIndex argument instead of a szDeviceId and a StreamCategory argument. This reflects the changes needed for the standard Windows device enumeration model.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9);
+Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--build-a-basic-audio-processing-graph">How to: Build a Basic Audio Processing Graph</seealso>
+    <seealso cref="IXAudio2" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xapo-overview">XAPO Overview</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-sample-rate-conversions">XAudio2 Sample Rate Conversions</seealso>
+  </member>
+  <member name="IXAudio2.CreateSourceVoice">
+    <summary>
+      <para>Creates and configures a source voice.</para>
+    </summary>
+    <param name="ppSourceVoice">
+      <para>If successful, returns a pointer to the new <see cref="IXAudio2SourceVoice" /> object.</para>
+    </param>
+    <param name="pSourceFormat">
+      <para>Pointer to a one of the structures in the table below. This structure contains the expected format for all audio buffers submitted to the source voice.
+XAudio2 supports PCM and ADPCM voice types.</para>
+      <list type="table">
+        <listheader>
+          <description>Format tag</description>
+          <description>Wave format structure</description>
+          <description>Size (in bytes)</description>
+        </listheader>
+        <item>
+          <description>WAVE_FORMAT_PCM (0x0001) </description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/dd743663(v=vs.85)">PCMWAVEFORMAT</a>
+          </description>
+          <description>16</description>
+        </item>
+        <item>
+          <description>-or-</description>
+          <description>
+            <see cref="WAVEFORMATEX" />
+          </description>
+          <description>18</description>
+        </item>
+        <item>
+          <description>WAVE_FORMAT_IEEE_FLOAT (0x0003) [32-bit]</description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/dd743663(v=vs.85)">PCMWAVEFORMAT</a>
+          </description>
+          <description>18</description>
+        </item>
+        <item>
+          <description>WAVE_FORMAT_ADPCM (0x0002) [MS-ADPCM]</description>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/dd743663(v=vs.85)">ADPCMWAVEFORMAT</a>
+          </description>
+          <description>50</description>
+        </item>
+        <item>
+          <description>WAVE_FORMAT_EXTENSIBLE (0xFFFE)</description>
+          <description>
+            <a href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible">WAVEFORMATEXTENSIBLE</a>
+          </description>
+          <description>40</description>
+        </item>
+      </list>
+      <para>XAudio2 supports the following PCM formats.</para>
+      <list type="bullet">
+        <item>
+          <description>8-bit (unsigned) integer PCM
+</description>
+        </item>
+        <item>
+          <description>16-bit integer PCM (optimal format for XAudio2)
+</description>
+        </item>
+        <item>
+          <description>20-bit integer PCM (either in 24 or 32 bit containers)
+</description>
+        </item>
+        <item>
+          <description>24-bit integer PCM (either in 24 or 32 bit containers)
+</description>
+        </item>
+        <item>
+          <description>32-bit integer PCM
+</description>
+        </item>
+        <item>
+          <description>32-bit float PCM (preferred format after 16-bit integer)
+</description>
+        </item>
+      </list>
+      <para>The number of channels in a source voice must be less than or equal to XAUDIO2_MAX_AUDIO_CHANNELS. The sample rate of a source voice must be between XAUDIO2_MIN_SAMPLE_RATE and XAUDIO2_MAX_SAMPLE_RATE.</para>
+      <para>
+        <b>Note</b>  PCM data formats such as <a href="https://docs.microsoft.com//previous-versions/dd743663(v=vs.85)">PCMWAVEFORMAT</a> and  <b>ADPCMWAVEFORMAT</b> that require more information than provided by <b>WAVEFORMATEX</b> have a <b>WAVEFORMATEX</b> structure as the first member in their format structures. When you create a source voice with one of those formats, cast the format's structure as a <b>WAVEFORMATEX</b> structure and use it as the value for <i>pSourceFormat</i>.</para>
+    </param>
+    <param name="X2DEFAULT">
+      <para>TBD</para>
+    </param>
+    <param name="Flags">
+      <para>Flags that specify the behavior of the source voice. A flag can be 0 or a combination of one or more of the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>XAUDIO2_VOICE_NOPITCH</description>
+          <description>No pitch control is available on the voice. </description>
+        </item>
+        <item>
+          <description>XAUDIO2_VOICE_NOSRC</description>
+          <description>No sample rate conversion is available on the voice.
+The voice's outputs must have the same sample rate.<b>Note</b>  The XAUDIO2_VOICE_NOSRC flag causes the voice to behave as though the XAUDIO2_VOICE_NOPITCH flag also is specified.
+</description>
+        </item>
+        <item>
+          <description>XAUDIO2_VOICE_USEFILTER</description>
+          <description>The filter effect should be available on this voice. </description>
+        </item>
+      </list>
+      <para>
+        <b>Note</b>  The XAUDIO2_VOICE_MUSIC flag is not supported on Windows.</para>
+    </param>
+    <param name="MaxFrequencyRatio">
+      <para>Highest allowable frequency ratio that can be set on this voice. The value for this argument must be between XAUDIO2_MIN_FREQ_RATIO and XAUDIO2_MAX_FREQ_RATIO. Subsequent calls to <see cref="IXAudio2SourceVoice.SetFrequencyRatio" /> are clamped between XAUDIO2_MIN_FREQ_RATIO and <b>MaxFrequencyRatio</b>.
+The maximum value for this argument is defined as XAUDIO2_MAX_FREQ_RATIO, which allows pitch to be raised by up to 10 octaves.</para>
+      <para>If <i>MaxFrequencyRatio</i> is less than 1.0, the voice will use that ratio immediately after being created (rather than the default of 1.0).</para>
+      <list type="table">
+        <listheader>
+          <description>Xbox 360</description>
+        </listheader>
+        <item>
+          <description>For XMA voices, there is one more restriction on the <i>MaxFrequencyRatio</i> argument and the voice's sample rate. The product of these two numbers cannot exceed XAUDIO2_MAX_RATIO_TIMES_RATE_XMA_MONO for one-channel voices or XAUDIO2_MAX_RATIO_TIMES_RATE_XMA_MULTICHANNEL for voices with any other number of channels. If the value specified for <i>MaxFrequencyRatio</i> is too high for the specified format, the call to <b>CreateSourceVoice</b> fails and produces a debug message.
+</description>
+        </item>
+      </list>
+      <para>
+        <b>Note</b>  You can use the lowest possible <i>MaxFrequencyRatio</i> value to reduce XAudio2's memory usage.</para>
+    </param>
+    <param name="pCallback">
+      <para>Pointer to a client-provided callback interface, <see cref="IXAudio2VoiceCallback" />.</para>
+    </param>
+    <param name="pEffectChain">
+      <para>Pointer to a list of <see cref="XAUDIO2_EFFECT_CHAIN" /> structures that describe an effect chain to use in the source voice.</para>
+    </param>
+    <param name="pSendList">
+      <para>Pointer to a list of <see cref="XAUDIO2_VOICE_SENDS" /> structures that describe the set of destination voices for the source voice. If pSendList is NULL, the send list defaults to a single output to the first mastering voice created.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful; otherwise, an error code.</para>
+      <para>See <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-error-codes">XAudio2 Error Codes</a> for descriptions of XAudio2-specific error codes.</para>
+    </returns>
+    <remarks>
+      <para>Source voices read audio data from the client. They process the data and send it to the XAudio2 processing graph.</para>
+      <para>A source voice includes a variable-rate sample rate conversion, to convert data from the source format sample rate to the output rate required for the voice send list. If you use a NULL send list, the target sample rate will be the mastering voice's input sample rate. If you provide a single voice in pSendList, that voice's input sample rate is the target rate. If you provide multiple voices in the pSendList, all the source voice's output voices must be running at the same input sample rate.</para>
+      <para>You cannot create any source or submix voices until a mastering voice exists, and you cannot destroy a mastering voice if any source or submix voices still exist.</para>
+      <para>Source voices are always processed before any submix or mastering voices. This means that you do not need a ProcessingStage parameter to control the processing order.</para>
+      <para>When first created, source voices are in the stopped state.</para>
+      <para>XAudio2 uses an internal memory pooler for voices with the same format. This means memory allocation for voices will occur less frequently as more voices are created and then destroyed. To minimize just-in-time allocations, a title can create the anticipated maximum number of voices needed up front, and then delete them as necessary. Voices will then be reused from the XAudio2 pool. The memory pool is tied to an XAudio2 engine instance. You can reclaim all the memory used by an instance of the XAudio2 engine by destroying the XAudio2 object and recreating it as necessary (forcing the memory pool to grow via preallocation would have to be reapplied as needed).</para>
+      <para>It is invalid to call <b>CreateSourceVoice</b> from within a callback (that is, <see cref="IXAudio2EngineCallback" /> or <see cref="IXAudio2VoiceCallback" />). If you call <b>CreateSourceVoice</b> within a callback, it returns XAUDIO2_E_INVALID_CALL.</para>
+      <para>The <see cref="XAUDIO2_EFFECT_CHAIN" /> that is passed in as the pEffectChain argument and any <see cref="XAUDIO2_EFFECT_DESCRIPTOR" /> information contained within it are no longer needed after <b>CreateSourceVoice</b> successfully completes, and may be deleted immediately after <b>CreateSourceVoice</b> is called.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9);
+Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--build-a-basic-audio-processing-graph">How to: Build a Basic Audio Processing Graph</seealso>
+    <seealso cref="IXAudio2" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xapo-overview">XAPO Overview</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-sample-rate-conversions">XAudio2 Sample Rate Conversions</seealso>
+  </member>
+  <member name="IXAudio2.CreateSubmixVoice">
+    <summary>
+      <para>Creates and configures a submix voice.</para>
+    </summary>
+    <param name="ppSubmixVoice">
+      <para>On success, returns a pointer to the new <see cref="IXAudio2SubmixVoice" /> object.</para>
+    </param>
+    <param name="InputChannels">
+      <para>Number of channels in the input audio data of the submix voice.
+<i>InputChannels</i> must be less than or equal to XAUDIO2_MAX_AUDIO_CHANNELS.</para>
+    </param>
+    <param name="InputSampleRate">
+      <para>Sample rate of the input audio data of submix voice. This rate must be a multiple of XAUDIO2_QUANTUM_DENOMINATOR. <i>InputSampleRate</i> must be between XAUDIO2_MIN_SAMPLE_RATE and XAUDIO2_MAX_SAMPLE_RATE.</para>
+    </param>
+    <param name="X2DEFAULT">
+      <para>TBD</para>
+    </param>
+    <param name="Flags">
+      <para>Flags that specify the behavior of the submix voice. It can be 0 or the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>XAUDIO2_VOICE_USEFILTER</description>
+          <description>The filter effect should be available on this voice.</description>
+        </item>
+      </list>
+    </param>
+    <param name="ProcessingStage">
+      <para>An arbitrary number that specifies when this voice is processed with respect to other submix voices, if the XAudio2 engine is running other submix voices. The voice is processed after all other voices that include a smaller <i>ProcessingStage</i> value and before all other voices that include a larger <i>ProcessingStage</i> value. Voices that include the same <i>ProcessingStage</i> value are processed in any order. A submix voice cannot send to another submix voice with a lower or equal <i>ProcessingStage</i> value. This prevents audio being lost due to a submix cycle.</para>
+    </param>
+    <param name="pEffectChain">
+      <para>Pointer to a list of <see cref="XAUDIO2_EFFECT_CHAIN" /> structures that describe an effect chain to use in the submix voice.</para>
+    </param>
+    <param name="pSendList">
+      <para>Pointer to a list of <see cref="XAUDIO2_VOICE_SENDS" /> structures that describe the set of destination voices for the submix voice. If <i>pSendList</i> is NULL, the send list will default to a single output to the first mastering voice created.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful; otherwise, an error code.</para>
+      <para>See <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-error-codes">XAudio2 Error Codes</a> for descriptions of XAudio2 specific error codes.</para>
+    </returns>
+    <remarks>
+      <para>Submix voices receive the output of one or more source or submix voices. They process the output, and then send it to another submix voice or to a mastering voice.</para>
+      <para>A submix voice performs a sample rate conversion from the input sample rate to the input rate of its output voices in <i>pSendList</i>. If you specify multiple voice sends, they must all have the input same sample rate.</para>
+      <para>You cannot create any source or submix voices until a mastering voice exists, and you cannot destroy a mastering voice if any source or submix voices still exist.</para>
+      <para>When first created, submix voices are in the started state.</para>
+      <para>XAudio2 uses an internal memory pooler for voices with the same format. This means that memory allocation for voices will occur less frequently as more voices are created and then destroyed. To minimize just-in-time allocations, a title can create the anticipated maximum number of voices needed up front, and then delete them as necessary. Voices will then be reused from the XAudio2 pool. The memory pool is tied to an XAudio2 engine instance. You can reclaim all the memory used by an instance of the XAudio2 engine by destroying the XAudio2 object and recreating it as necessary (forcing the memory pool to grow via preallocation would have to be reapplied as needed).</para>
+      <para>It is invalid to call <b>CreateSubmixVoice</b> from within a callback (that is, <see cref="IXAudio2EngineCallback" /> or <see cref="IXAudio2VoiceCallback" />). If you call <b>CreateSubmixVoice</b> within a callback, it returns XAUDIO2_E_INVALID_CALL.</para>
+      <para>The <see cref="XAUDIO2_EFFECT_CHAIN" /> that is passed in as the <i>pEffectChain</i> argument and any <see cref="XAUDIO2_EFFECT_DESCRIPTOR" /> information contained within it are no longer needed after <b>CreateSubmixVoice</b> successfully completes, and may be deleted immediately after <b>CreateSubmixVoice</b> is called.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso cref="IXAudio2" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-sample-rate-conversions">XAudio2 Sample Rate Conversions</seealso>
+  </member>
+  <member name="IXAudio2.GetPerformanceData">
+    <summary>
+      <para>Returns current resource usage details, such as available memory or CPU usage.</para>
+    </summary>
+    <param name="pPerfData">
+      <para>On success, pointer to an <see cref="XAUDIO2_PERFORMANCE_DATA" /> structure that is returned.</para>
+    </param>
+    <remarks>
+      <para>For specific information on the statistics returned by <b>GetPerformanceData</b>, see the <see cref="XAUDIO2_PERFORMANCE_DATA" /> structure reference.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso cref="IXAudio2" />
+  </member>
+  <member name="IXAudio2.QueryInterface">
+    <summary>
+      <para>Queries for a given COM interface on the XAudio2 object.</para>
+    </summary>
+    <param name="riid">
+      <para>The REFIID that identifies the interface to query for.</para>
+    </param>
+    <param name="ppvInterface">
+      <para>Address of a pointer that receives the interface.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful, an error code otherwise. See <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-error-codes">XAudio2 Error Codes</a> for descriptions of XAudio2 specific error codes.</para>
+    </returns>
+    <remarks>
+      <para>Only IID_IUnknown and IID_IXAudio2 are provided by XAudio2.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso cref="IXAudio2" />
+  </member>
+  <member name="IXAudio2.RegisterForCallbacks">
+    <summary>
+      <para>Adds an <see cref="IXAudio2EngineCallback" /> pointer to the <see cref="XAudio2" /> engine callback list.</para>
+    </summary>
+    <param name="pCallback">
+      <para>
+        <see cref="IXAudio2EngineCallback" /> pointer to add to the <see cref="XAudio2" /> engine callback list.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful, an error code otherwise. See <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-error-codes">XAudio2 Error Codes</a> for descriptions of XAudio2 specific error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method can be called multiple times, allowing different components or layers of the same application to manage their own engine callback implementations separately.</para>
+      <para>It is invalid to call <b>RegisterForCallbacks</b> from within a callback (that is, <see cref="IXAudio2EngineCallback" /> or <see cref="IXAudio2VoiceCallback" />). If <b>RegisterForCallbacks</b> is called within a callback, it returns XAUDIO2_E_INVALID_CALL.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso cref="IXAudio2" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-callbacks">XAudio2 Callbacks</seealso>
+  </member>
+  <member name="IXAudio2.Release">
+    <summary>
+      <para>Releases a reference to the XAudio2 object.</para>
+    </summary>
+    <returns>
+      <para>Always returns 0.</para>
+    </returns>
+    <remarks>
+      <para>When the final <b>Release</b> is called on a given XAudio2 object, all voice objects that are associated with it are destroyed. Any pointers to these objects that are still held by the client become invalid immediately. Any calls that are made to them cause undefined behavior. The audio processing engine is also stopped. This is so that after <b>Release</b> is returned, the client can safely free any data that is referenced by the graph (for example, audio source buffers or callback handling objects).</para>
+      <para>
+        <b>Release</b> is a synchronous call. While glitching should not occur (since it only briefly takes the processing lock), a title can avoid potential thread wait times by calling this method in an XAudio2 callback.</para>
+      <para>It is invalid to call <b>Release</b> from within a callback (that is, <see cref="IXAudio2EngineCallback" /> or <see cref="IXAudio2VoiceCallback" />).</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9);
+Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso cref="IXAudio2" />
+  </member>
+  <member name="IXAudio2.SetDebugConfiguration">
+    <summary>
+      <para>Changes global debug logging options for XAudio2.</para>
+    </summary>
+    <param name="pDebugConfiguration">
+      <para>Pointer to a <see cref="XAUDIO2_DEBUG_CONFIGURATION" /> structure that contains the new debug configuration.</para>
+    </param>
+    <param name="X2DEFAULT">
+      <para>This parameter is reserved and must be NULL.</para>
+    </param>
+    <remarks>
+      <para>SetDebugConfiguration sets the debug configuration for the given instance of XAudio2 engine. See <see cref="XAUDIO2_DEBUG_CONFIGURATION" /> Structure for supported debug options. By default, XAudio2 does not log debug output or break on errors.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso cref="IXAudio2" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/functions">XAudio2 Functions</seealso>
+  </member>
+  <member name="IXAudio2.StartEngine">
+    <summary>
+      <para>Starts the audio processing thread.</para>
+    </summary>
+    <returns>
+      <para>Returns S_OK if successful, an error code otherwise. See <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-error-codes">XAudio2 Error Codes</a> for descriptions of XAudio2 specific error codes.</para>
+    </returns>
+    <remarks>
+      <para>After <b>StartEngine</b> is called, all started voices begin to consume audio. All enabled effects start running, and the resulting audio is sent to any connected output devices. When XAudio2 is first initialized, the engine is already in the started state.</para>
+      <para>It is invalid to call <b>StartEngine</b> from within a callback (that is, <see cref="IXAudio2EngineCallback" /> or <see cref="IXAudio2VoiceCallback" />). If <b>StartEngine</b> is called within a callback, it returns XAUDIO2_E_INVALID_CALL.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso cref="IXAudio2" />
+  </member>
+  <member name="IXAudio2.StopEngine">
+    <summary>
+      <para>Stops the audio processing thread.</para>
+    </summary>
+    <remarks>
+      <para>When <b>StopEngine</b> is called, all output is stopped immediately. However, the audio graph is left untouched, preserving effect parameters, effect histories (for example, the data stored by a reverb effect in order to emit echoes of a previous sound), voice states, pending source buffers, cursor positions, and so forth. When the engine is restarted, the resulting audio output will be identical—apart from a period of silence—to the output that would have been produced if the engine had never been stopped.</para>
+      <para>It is invalid to call <b>StopEngine</b> from within a callback (that is, <see cref="IXAudio2EngineCallback" /> or <see cref="IXAudio2VoiceCallback" />).</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9);
+Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso cref="IXAudio2" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xapo-overview">XAPO Overview</seealso>
+  </member>
+  <member name="IXAudio2.UnregisterForCallbacks">
+    <summary>
+      <para>Removes an <see cref="IXAudio2EngineCallback" /> pointer from the <see cref="XAudio2" /> engine callback list.</para>
+    </summary>
+    <param name="pCallback">
+      <para>
+        <see cref="IXAudio2EngineCallback" /> pointer to remove from the <see cref="XAudio2" /> engine callback list.
+If the given pointer is present more than once in the list, only the first instance in the list will be removed.</para>
+    </param>
+    <remarks>
+      <para>It is invalid to call <b>UnregisterForCallbacks</b> from within a callback (that is, <see cref="IXAudio2EngineCallback" /> or <see cref="IXAudio2VoiceCallback" />).</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso cref="IXAudio2" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xaudio2-callbacks">XAudio2 Callbacks</seealso>
+  </member>
+</doc>

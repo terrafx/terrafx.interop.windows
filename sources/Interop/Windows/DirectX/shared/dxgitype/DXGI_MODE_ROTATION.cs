@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_MODE_ROTATION.xml' path='doc/member[@name="DXGI_MODE_ROTATION"]/*' />
 public enum DXGI_MODE_ROTATION
 {
+    /// <include file='DXGI_MODE_ROTATION.xml' path='doc/member[@name="DXGI_MODE_ROTATION.DXGI_MODE_ROTATION_UNSPECIFIED"]/*' />
     DXGI_MODE_ROTATION_UNSPECIFIED = 0,
+
+    /// <include file='DXGI_MODE_ROTATION.xml' path='doc/member[@name="DXGI_MODE_ROTATION.DXGI_MODE_ROTATION_IDENTITY"]/*' />
     DXGI_MODE_ROTATION_IDENTITY = 1,
+
+    /// <include file='DXGI_MODE_ROTATION.xml' path='doc/member[@name="DXGI_MODE_ROTATION.DXGI_MODE_ROTATION_ROTATE90"]/*' />
     DXGI_MODE_ROTATION_ROTATE90 = 2,
+
+    /// <include file='DXGI_MODE_ROTATION.xml' path='doc/member[@name="DXGI_MODE_ROTATION.DXGI_MODE_ROTATION_ROTATE180"]/*' />
     DXGI_MODE_ROTATION_ROTATE180 = 3,
+
+    /// <include file='DXGI_MODE_ROTATION.xml' path='doc/member[@name="DXGI_MODE_ROTATION.DXGI_MODE_ROTATION_ROTATE270"]/*' />
     DXGI_MODE_ROTATION_ROTATE270 = 4,
 }

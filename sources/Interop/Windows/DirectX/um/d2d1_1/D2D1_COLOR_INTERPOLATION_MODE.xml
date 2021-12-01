@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_COLOR_INTERPOLATION_MODE">
+    <summary>
+      <para>Defines how to interpolate between colors.</para>
+    </summary>
+  </member>
+  <member name="D2D1_COLOR_INTERPOLATION_MODE.D2D1_COLOR_INTERPOLATION_MODE_STRAIGHT">
+    <summary>
+      <para>Colors are interpolated with straight alpha.</para>
+    </summary>
+  </member>
+  <member name="D2D1_COLOR_INTERPOLATION_MODE.D2D1_COLOR_INTERPOLATION_MODE_PREMULTIPLIED">
+    <summary>
+      <para>Colors are interpolated with premultiplied alpha.</para>
+    </summary>
+  </member>
+  <member name="D2D1_COLOR_INTERPOLATION_MODE.D2D1_COLOR_INTERPOLATION_MODE_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

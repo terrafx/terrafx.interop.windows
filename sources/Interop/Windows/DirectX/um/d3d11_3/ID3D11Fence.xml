@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11Fence.CreateSharedHandle">
+    <summary>
+      <para>Creates a shared handle to a fence object.</para>
+      <para>This method is equivalent to the Direct3D 12 <see cref="ID3D12Device.CreateSharedHandle" /> method, and it applies in scenarios involving interoperation between Direct3D 11 and Direct3D 12. In DirecX 11, you can open the shared fence handle with the <see cref="ID3D11Device5.OpenSharedFence" /> method. In DirecX 12, you can open the shared fence handle with the <see cref="ID3D12Device.OpenSharedHandle" /> method.</para>
+    </summary>
+    <param name="pAttributes">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa379560(v=vs.85)">SECURITY_ATTRIBUTES</a>*</b></para>
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa379560(v=vs.85)">SECURITY_ATTRIBUTES</a> structure that contains two separate but related data members: an optional security descriptor, and a <b>Boolean</b> value that determines whether child processes can inherit the returned handle.</para>
+      <para>Set this parameter to <b>NULL</b> if you want child processes that the
+application might create to not  inherit  the handle returned by
+<b>CreateSharedHandle</b>, and if you want the resource that is associated with the returned handle to get a default security
+descriptor.</para>
+      <para>The <b>lpSecurityDescriptor</b> member of the structure specifies a
+<see cref="SECURITY_DESCRIPTOR" /> for the resource.
+Set this member to <b>NULL</b> if you want the runtime to assign a default security descriptor to the resource that is associated with the returned handle.
+The ACLs in the default security descriptor for the resource come from the primary or impersonation token of the creator.
+For more info, see <a href="https://docs.microsoft.com//windows/desktop/Sync/synchronization-object-security-and-access-rights">Synchronization Object Security and Access Rights</a>.</para>
+    </param>
+    <param name="dwAccess">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
+      <para>Currently the only value this parameter accepts is GENERIC_ALL.</para>
+    </param>
+    <param name="lpName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A <b>NULL</b>-terminated <b>UNICODE</b> string that contains the name to associate with the shared heap.
+The name is limited to MAX_PATH characters.
+Name comparison is case-sensitive.</para>
+      <para>If <i>Name</i> matches the name of an existing resource, <b>CreateSharedHandle</b> fails with <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR_NAME_ALREADY_EXISTS</a>.
+This occurs because these objects share the same namespace.</para>
+      <para>The name can have a "Global" or "Local" prefix to explicitly create the object in the global or session namespace.
+The remainder of the name can contain any character except the backslash character (\).
+For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/TermServ/kernel-object-namespaces">Kernel Object Namespaces</a>.
+Fast user switching is implemented using Terminal Services sessions.
+Kernel object names must follow the guidelines outlined for Terminal Services so that applications can support multiple users.</para>
+      <para>The object can be created in a private namespace.
+For more information, see <a href="https://docs.microsoft.com//windows/desktop/Sync/object-namespaces">Object Namespaces</a>.</para>
+    </param>
+    <param name="pHandle">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HANDLE</a>*</b></para>
+      <para>A pointer to a variable that receives the NT HANDLE value to the resource to share.
+You can use this handle in calls to access the resource.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns S_OK if successful; otherwise, returns one of the following values:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR_INVALID_CALL</a> if one of the parameters is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR_NAME_ALREADY_EXISTS</a> if the supplied name of the resource to share is already associated with another resource.
+</description>
+        </item>
+        <item>
+          <description>E_ACCESSDENIED if the object is being created in a protected namespace.</description>
+        </item>
+        <item>
+          <description>E_OUTOFMEMORY if sufficient memory is not available to create the handle.</description>
+        </item>
+        <item>
+          <description>Possibly other error codes that are described in the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a> topic.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>In order to to create a shared handle for the specified fence, the fence must have been created with either the <b>D3D11_FENCE_FLAG_SHARED</b> or <b>D3D11_FENCE_FLAG_SHARED_CROSS_ADAPTER</b> flags. For more information see the <see cref="D3D11_FENCE_FLAG" /> enumeration.</para>
+    </remarks>
+    <seealso cref="ID3D11Fence" />
+  </member>
+  <member name="ID3D11Fence.GetCompletedValue">
+    <summary>
+      <para>Gets the current value of the fence.</para>
+      <para>This member function is equivalent to the Direct3D 12 <see cref="ID3D12Fence.GetCompletedValue" /> member function, and applies between Direct3D 11 and Direct3D 12 in interop scenarios.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">UINT64</a></b></para>
+      <para>Returns the current value of the fence.</para>
+    </returns>
+    <seealso cref="ID3D11Fence" />
+    <seealso href="https://docs.microsoft.com//windows/win32/direct3d12/user-mode-heap-synchronization">Multi-engine synchronization</seealso>
+  </member>
+  <member name="ID3D11Fence.SetEventOnCompletion">
+    <summary>
+      <para>Specifies an event that should be fired when the fence reaches a certain value.</para>
+      <para>This member function is equivalent to the Direct3D 12 <see cref="ID3D12Fence.SetEventOnCompletion" /> member function, and applies between Direct3D 11 and Direct3D 12 in interop scenarios.</para>
+    </summary>
+    <param name="Value">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">UINT64</a></b></para>
+      <para>The fence value when the event is to be signaled.</para>
+    </param>
+    <param name="hEvent">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">HANDLE</a></b></para>
+      <para>A handle to the event object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method returns <b>E_OUTOFMEMORY</b> if the kernel components don’t have sufficient memory to store the event in a list. See <a href="https://docs.microsoft.com//windows/win32/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a> for other possible return values.</para>
+    </returns>
+    <seealso cref="ID3D11Fence" />
+    <seealso href="https://docs.microsoft.com//windows/win32/direct3d12/user-mode-heap-synchronization">Multi-engine synchronization</seealso>
+  </member>
+  <member name="ID3D11Fence">
+    <summary>
+      <para>Represents a fence, an object used for synchronization of the CPU and one or more GPUs.</para>
+      <para>This interface is equivalent to the Direct3D 12 <see cref="ID3D12Fence" /> interface, and is also used for synchronization between Direct3D 11 and Direct3D 12 in interop scenarios.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/win32/direct3d11/d3d11-graphics-reference-d3d11-core-interfaces">Core Interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/win32/direct3d12/fence-based-resource-management">Fence Based Resource Management (Direct3D 12)</seealso>
+    <seealso cref="ID3D11DeviceChild" />
+    <seealso href="https://docs.microsoft.com//windows/win32/direct3d12/user-mode-heap-synchronization">Multi-engine synchronization</seealso>
+  </member>
+</doc>

@@ -11,6 +11,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DXGIDeclareAdapterRemovalSupport"]/*' />
     [DllImport("dxgi", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.17134.0")]
     public static extern HRESULT DXGIDeclareAdapterRemovalSupport();

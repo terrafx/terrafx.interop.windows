@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D10EffectVectorVariable.GetBoolVector">
+    <summary>
+      <para>Get a four-component vector that contains boolean data.</para>
+    </summary>
+    <param name="pData">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a>*</b></para>
+      <para>A pointer to the first component.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D10EffectVectorVariable Interface" />
+  </member>
+  <member name="ID3D10EffectVectorVariable.GetBoolVectorArray">
+    <summary>
+      <para>Get an array of four-component vectors that contain boolean data.</para>
+    </summary>
+    <param name="pData">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a>*</b></para>
+      <para>A pointer to the start of the data to set.</para>
+    </param>
+    <param name="Offset">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Must be set to 0; this is reserved for future use.</para>
+    </param>
+    <param name="Count">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of array elements to set.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D10EffectVectorVariable Interface" />
+  </member>
+  <member name="ID3D10EffectVectorVariable.GetFloatVector">
+    <summary>
+      <para>Get a four-component vector that contains floating-point data.</para>
+    </summary>
+    <param name="pData">
+      <para>Type: <b>float*</b></para>
+      <para>A pointer to the first component.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D10EffectVectorVariable Interface" />
+  </member>
+  <member name="ID3D10EffectVectorVariable.GetFloatVectorArray">
+    <summary>
+      <para>Get an array of four-component vectors that contain floating-point data.</para>
+    </summary>
+    <param name="pData">
+      <para>Type: <b>float*</b></para>
+      <para>A pointer to the start of the data to set.</para>
+    </param>
+    <param name="Offset">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Must be set to 0; this is reserved for future use.</para>
+    </param>
+    <param name="Count">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of array elements to set.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D10EffectVectorVariable Interface" />
+  </member>
+  <member name="ID3D10EffectVectorVariable.GetIntVector">
+    <summary>
+      <para>Get a four-component vector that contains integer data.</para>
+    </summary>
+    <param name="pData">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">int</a>*</b></para>
+      <para>A pointer to the first component.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D10EffectVectorVariable Interface" />
+  </member>
+  <member name="ID3D10EffectVectorVariable.GetIntVectorArray">
+    <summary>
+      <para>Get an array of four-component vectors that contain integer data.</para>
+    </summary>
+    <param name="pData">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">int</a>*</b></para>
+      <para>A pointer to the start of the data to set.</para>
+    </param>
+    <param name="Offset">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Must be set to 0; this is reserved for future use.</para>
+    </param>
+    <param name="Count">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of array elements to set.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D10EffectVectorVariable Interface" />
+  </member>
+  <member name="ID3D10EffectVectorVariable.SetBoolVector">
+    <summary>
+      <para>Set a four-component vector that contains boolean data.</para>
+    </summary>
+    <param name="pData">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a>*</b></para>
+      <para>A pointer to the first component.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D10EffectVectorVariable Interface" />
+  </member>
+  <member name="ID3D10EffectVectorVariable.SetBoolVectorArray">
+    <summary>
+      <para>Set an array of four-component vectors that contain boolean data.</para>
+    </summary>
+    <param name="pData">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a>*</b></para>
+      <para>A pointer to the start of the data to set.</para>
+    </param>
+    <param name="Offset">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Must be set to 0; this is reserved for future use.</para>
+    </param>
+    <param name="Count">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of array elements to set.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D10EffectVectorVariable Interface" />
+  </member>
+  <member name="ID3D10EffectVectorVariable.SetFloatVector">
+    <summary>
+      <para>Set a four-component vector that contains floating-point data.</para>
+    </summary>
+    <param name="pData">
+      <para>Type: <b>float*</b></para>
+      <para>A pointer to the first component.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D10EffectVectorVariable Interface" />
+  </member>
+  <member name="ID3D10EffectVectorVariable.SetFloatVectorArray">
+    <summary>
+      <para>Set an array of four-component vectors that contain floating-point data.</para>
+    </summary>
+    <param name="pData">
+      <para>Type: <b>float*</b></para>
+      <para>A pointer to the start of the data to set.</para>
+    </param>
+    <param name="Offset">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Must be set to 0; this is reserved for future use.</para>
+    </param>
+    <param name="Count">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of array elements to set.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D10EffectVectorVariable Interface" />
+  </member>
+  <member name="ID3D10EffectVectorVariable.SetIntVector">
+    <summary>
+      <para>Set a four-component vector that contains integer data.</para>
+    </summary>
+    <param name="pData">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">int</a>*</b></para>
+      <para>A pointer to the first component.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D10EffectVectorVariable Interface" />
+  </member>
+  <member name="ID3D10EffectVectorVariable.SetIntVectorArray">
+    <summary>
+      <para>Set an array of four-component vectors that contain integer data.</para>
+    </summary>
+    <param name="pData">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">int</a>*</b></para>
+      <para>A pointer to the start of the data to set.</para>
+    </param>
+    <param name="Offset">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Must be set to 0; this is reserved for future use.</para>
+    </param>
+    <param name="Count">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of array elements to set.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <seealso cref="ID3D10EffectVectorVariable Interface" />
+  </member>
+  <member name="ID3D10EffectVectorVariable">
+    <summary>
+      <para>A vector-variable interface accesses a four-component vector.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-interfaces">Effect Interfaces (Direct3D 10)</seealso>
+    <seealso cref="ID3D10EffectVariable" />
+  </member>
+</doc>

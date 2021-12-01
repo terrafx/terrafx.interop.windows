@@ -8,16 +8,22 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DCOMPOSITION_FRAME_STATISTICS.xml' path='doc/member[@name="DCOMPOSITION_FRAME_STATISTICS"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct DCOMPOSITION_FRAME_STATISTICS
 {
+    /// <include file='DCOMPOSITION_FRAME_STATISTICS.xml' path='doc/member[@name="DCOMPOSITION_FRAME_STATISTICS.lastFrameTime"]/*' />
     public LARGE_INTEGER lastFrameTime;
 
+    /// <include file='DCOMPOSITION_FRAME_STATISTICS.xml' path='doc/member[@name="DCOMPOSITION_FRAME_STATISTICS.currentCompositionRate"]/*' />
     public DXGI_RATIONAL currentCompositionRate;
 
+    /// <include file='DCOMPOSITION_FRAME_STATISTICS.xml' path='doc/member[@name="DCOMPOSITION_FRAME_STATISTICS.currentTime"]/*' />
     public LARGE_INTEGER currentTime;
 
+    /// <include file='DCOMPOSITION_FRAME_STATISTICS.xml' path='doc/member[@name="DCOMPOSITION_FRAME_STATISTICS.timeFrequency"]/*' />
     public LARGE_INTEGER timeFrequency;
 
+    /// <include file='DCOMPOSITION_FRAME_STATISTICS.xml' path='doc/member[@name="DCOMPOSITION_FRAME_STATISTICS.nextEstimatedFrameTime"]/*' />
     public LARGE_INTEGER nextEstimatedFrameTime;
 }

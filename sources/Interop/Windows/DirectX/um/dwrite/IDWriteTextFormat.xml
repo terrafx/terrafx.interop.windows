@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteTextFormat.GetFlowDirection">
+    <summary>
+      <para>Gets the direction that text lines flow.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_FLOW_DIRECTION" /></b></para>
+      <para>The direction that text lines flow within their parent container.  For example, <see cref="DWRITE_FLOW_DIRECTION_TOP_TO_BOTTOM" /> indicates that text lines are placed from top to bottom.</para>
+    </returns>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.GetFontCollection">
+    <summary>
+      <para>Gets the current font collection.</para>
+    </summary>
+    <param name="fontCollection">
+      <para>Type: <b><see cref="IDWriteFontCollection" />**</b></para>
+      <para>When this method returns, contains an address of a pointer to the font collection being used for the current text.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.GetFontFamilyName">
+    <summary>
+      <para>Gets a copy of the font family name.</para>
+    </summary>
+    <param name="fontFamilyName">
+      <para>Type: <b>WCHAR*</b></para>
+      <para>When this method returns, contains a pointer to a character array, which is null-terminated, that receives the current font family name. The buffer allocated for this array should be at least the size, in elements, of <i>nameSize</i>.</para>
+    </param>
+    <param name="nameSize">
+      <para>Type: <b>UINT32</b></para>
+      <para>The size of the <i>fontFamilyName</i> character array, in character count, including the terminated <b>NULL</b> character.  To find the size of <i>fontFamilyName</i>, use <see cref="GetFontFamilyNameLength" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.GetFontFamilyNameLength">
+    <summary>
+      <para>Gets the length of the font family name.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>UINT32</b></para>
+      <para>The size of the character array, in character count, not including the terminated <b>NULL</b> character.</para>
+    </returns>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.GetFontSize">
+    <summary>
+      <para>Gets the font  size in DIP unites.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The current font size in DIP units.</para>
+    </returns>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.GetFontStretch">
+    <summary>
+      <para>Gets the font stretch of the text.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_FONT_STRETCH" /></b></para>
+      <para>A value which indicates the type of font stretch (such as  normal or condensed).</para>
+    </returns>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.GetFontStyle">
+    <summary>
+      <para>Gets the font style of the text.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_FONT_STYLE" /></b></para>
+      <para>A value which indicates the type of font style (such as  slope or incline).</para>
+    </returns>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.GetFontWeight">
+    <summary>
+      <para>Gets the font weight of the text.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_FONT_WEIGHT" /></b></para>
+      <para>A value that indicates the type of weight (such as normal, bold, or black).</para>
+    </returns>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.GetIncrementalTabStop">
+    <summary>
+      <para>Gets the  incremental tab stop position.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The incremental tab stop value.</para>
+    </returns>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.GetLineSpacing">
+    <summary>
+      <para>Gets the line spacing adjustment set for a multiline text paragraph.</para>
+    </summary>
+    <param name="lineSpacingMethod">
+      <para>Type: <b><see cref="DWRITE_LINE_SPACING_METHOD" />*</b></para>
+      <para>A value that indicates how line height is determined.</para>
+    </param>
+    <param name="lineSpacing">
+      <para>Type: <b>FLOAT*</b></para>
+      <para>When this method returns, contains the line height, or  distance between one baseline to another.</para>
+    </param>
+    <param name="baseline">
+      <para>Type: <b>FLOAT*</b></para>
+      <para>When this method returns, contains the distance from top of line to baseline. A reasonable ratio to <i>lineSpacing</i> is 80 percent.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.GetLocaleName">
+    <summary>
+      <para>Gets a copy of the locale name.</para>
+    </summary>
+    <param name="localeName">
+      <para>Type: <b>WCHAR*</b></para>
+      <para>Contains a character array that receives the current locale name.</para>
+    </param>
+    <param name="nameSize">
+      <para>Type: <b>UINT32</b></para>
+      <para>The size of the character array, in character count, including the terminated <b>NULL</b> character. Use <see cref="GetLocaleNameLength" /> to get the size of the locale name character array.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.GetLocaleNameLength">
+    <summary>
+      <para>Gets the length of the locale name.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>UINT32</b></para>
+      <para>The size of the character array in character count, not including the terminated <b>NULL</b> character.</para>
+    </returns>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.GetParagraphAlignment">
+    <summary>
+      <para>Gets the alignment option of a paragraph which is  relative to the top and bottom edges of a layout box.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_PARAGRAPH_ALIGNMENT" /></b></para>
+      <para>A value that indicates the current paragraph alignment option.</para>
+    </returns>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.GetReadingDirection">
+    <summary>
+      <para>Gets the  current reading direction for text in a paragraph.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_READING_DIRECTION" /></b></para>
+      <para>A value that indicates the current reading direction for text in a  paragraph.</para>
+    </returns>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.GetTextAlignment">
+    <summary>
+      <para>Gets the alignment option of text relative to the layout box's leading and trailing edge.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_TEXT_ALIGNMENT" /></b></para>
+      <para>Returns the text alignment option of the current paragraph.</para>
+    </returns>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.GetTrimming">
+    <summary>
+      <para>Gets the trimming options for text that overflows the layout box.</para>
+    </summary>
+    <param name="trimmingOptions">
+      <para>Type: <b><see cref="DWRITE_TRIMMING" />*</b></para>
+      <para>When this method returns, it contains a pointer to a <see cref="DWRITE_TRIMMING" /> structure that holds the text trimming options for the overflowing text.</para>
+    </param>
+    <param name="trimmingSign">
+      <para>Type: <b><see cref="IDWriteInlineObject" />**</b></para>
+      <para>When this method returns, contains an address of a pointer to a trimming omission sign. This parameter may be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.GetWordWrapping">
+    <summary>
+      <para>Gets the word wrapping option.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_WORD_WRAPPING" /></b></para>
+      <para>Returns the word wrapping option; see <see cref="DWRITE_WORD_WRAPPING" /> for more information.</para>
+    </returns>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.SetFlowDirection">
+    <summary>
+      <para>Sets the  paragraph flow direction.</para>
+    </summary>
+    <param name="flowDirection">
+      <para>Type: <b><see cref="DWRITE_FLOW_DIRECTION" /></b></para>
+      <para>The paragraph flow direction; see <see cref="DWRITE_FLOW_DIRECTION" /> for more information.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.SetIncrementalTabStop">
+    <summary>
+      <para>Sets a fixed distance between two adjacent tab stops.</para>
+    </summary>
+    <param name="incrementalTabStop">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The fixed distance between two adjacent tab stops.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.SetLineSpacing">
+    <summary>
+      <para>Sets the  line spacing.</para>
+    </summary>
+    <param name="lineSpacingMethod">
+      <para>Type: <b><see cref="DWRITE_LINE_SPACING_METHOD" /></b></para>
+      <para>Specifies how line height is being determined; see <see cref="DWRITE_LINE_SPACING_METHOD" /> for more information.</para>
+    </param>
+    <param name="lineSpacing">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The line height, or distance between one baseline to another.</para>
+    </param>
+    <param name="baseline">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The distance from top of line to baseline. A reasonable ratio to <i>lineSpacing</i> is 80 percent.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>For the default method, spacing depends solely on the content.
+For uniform spacing, the specified line height overrides the content.</para>
+    </remarks>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.SetParagraphAlignment">
+    <summary>
+      <para>Sets the alignment option of a paragraph relative to the layout box's top and bottom edge.</para>
+    </summary>
+    <param name="paragraphAlignment">
+      <para>Type: <b><see cref="DWRITE_PARAGRAPH_ALIGNMENT" /></b></para>
+      <para>The paragraph alignment option being set for a paragraph; see <see cref="DWRITE_PARAGRAPH_ALIGNMENT" /> for more information.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.SetReadingDirection">
+    <summary>
+      <para>Sets the paragraph reading direction.</para>
+    </summary>
+    <param name="readingDirection">
+      <para>Type: <b><see cref="DWRITE_READING_DIRECTION" /></b></para>
+      <para>The text reading direction (for example, <see cref="DWRITE_READING_DIRECTION_RIGHT_TO_LEFT" /> for languages, such as
+Arabic, that read from right to left) for a paragraph.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The reading direction and flow direction must always be set 90 degrees orthogonal to each other, or else you will get the error DWRITE_E_FLOWDIRECTIONCONFLICTS when you
+use layout functions like Draw or GetMetrics. So if you set a vertical reading direction (for example, to DWRITE_READING_DIRECTION_TOP_TO_BOTTOM), then you must also
+use SetFlowDirection to set the flow direction appropriately (for example, to DWRITE_FLOW_DIRECTION_RIGHT_TO_LEFT).</para>
+    </remarks>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.SetTextAlignment">
+    <summary>
+      <para>Sets the alignment of text in a paragraph, relative to the leading and trailing edge of a layout box for a <see cref="IDWriteTextFormat" /> interface.</para>
+    </summary>
+    <param name="textAlignment">
+      <para>Type: <b><see cref="DWRITE_TEXT_ALIGNMENT" /></b></para>
+      <para>The text alignment option being set for the paragraph of type DWRITE_TEXT_ALIGNMENT.  For more information, see Remarks.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The textAlignment argument is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The text can be aligned to the leading or trailing edge of the layout box, or it can be centered.  The following illustration shows text with the alignment set to <see cref="DWRITE_TEXT_ALIGNMENT_LEADING" />, <b>DWRITE_TEXT_ALIGNMENT_CENTER</b>, and <b>DWRITE_TEXT_ALIGNMENT_TRAILING</b>, respectively.</para>
+      <para>
+        <img alt="Illustration of text paragraphs with leading, centered, and trailing alignment" src="https://docs.microsoft.com/windows/win32/api/dwritemages/TextAlignment.png" />
+      </para>
+      <para>
+        <b>Note</b>  The alignment is dependent on reading direction, the above is for left-to-right reading direction.  For right-to-left reading direction it would be the opposite.</para>
+      <para>See <see cref="DWRITE_TEXT_ALIGNMENT" /> for more information.</para>
+      <h4>Examples</h4>
+      <code>if (SUCCEEDED(hr))
+{
+    hr = pTextFormat_-&gt;SetTextAlignment(DWRITE_TEXT_ALIGNMENT_CENTER);
+}
+
+</code>
+    </remarks>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.SetTrimming">
+    <summary>
+      <para>Sets trimming options for text overflowing the layout width.</para>
+    </summary>
+    <param name="trimmingOptions">
+      <para>Type: <b>const <see cref="DWRITE_TRIMMING" />*</b></para>
+      <para>Text trimming options.</para>
+    </param>
+    <param name="trimmingSign">
+      <para>Type: <b><see cref="IDWriteInlineObject" />*</b></para>
+      <para>Application-defined omission sign. This parameter may be <b>NULL</b>. See <see cref="IDWriteInlineObject" /> for more information.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat.SetWordWrapping">
+    <summary>
+      <para>Sets the word wrapping option.</para>
+    </summary>
+    <param name="wordWrapping">
+      <para>Type: <b><see cref="DWRITE_WORD_WRAPPING" /></b></para>
+      <para>The word wrapping option being set for a paragraph; see <see cref="DWRITE_WORD_WRAPPING" /> for more information.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteTextFormat" />
+  </member>
+  <member name="IDWriteTextFormat">
+    <summary>
+      <para>The <b>IDWriteTextFormat</b> interface describes the font and paragraph properties used to format text, and it describes locale information.</para>
+    </summary>
+    <remarks>
+      <para>To get a reference to the <b>IDWriteTextFormat</b> interface, the application must call the <see cref="IDWriteFactory.CreateTextFormat" /> method as shown in the following code.</para>
+      <code>
+if (SUCCEEDED(hr))
+{
+    hr = pDWriteFactory_-&gt;CreateTextFormat(
+        L"Gabriola",
+        NULL,
+        DWRITE_FONT_WEIGHT_REGULAR,
+        DWRITE_FONT_STYLE_NORMAL,
+        DWRITE_FONT_STRETCH_NORMAL,
+        72.0f,
+        L"en-us",
+        &amp;amp;amp;amp;amp;amp;pTextFormat_
+        );
+}
+
+
+</code>
+      <para>When creating an <b>IDWriteTextFormat</b> object using the <see cref="CreateTextFormat" /> function, the application specifies the  font family, font collection, font weight, font size, and locale name for the text format.</para>
+      <para>These properties cannot be changed after the <b>IDWriteTextFormat</b> object is created.  To change these properties, a new <b>IDWriteTextFormat</b> object must be created with the desired properties.</para>
+      <para>The <b>IDWriteTextFormat</b> interface is used to draw text with a single format</para>
+      <para>To draw text with multiple formats, or to use a custom text renderer, use the <see cref="IDWriteTextLayout" /> interface.  <b>IDWriteTextLayout</b> enables the application to change the format for ranges of text within the string.  The <see cref="IDWriteFactory.CreateTextLayout" /> takes an <b>IDWriteTextFormat</b> object as a parameter and initially applies the format information to the entire string.</para>
+      <para>This object may not be thread-safe, and it may carry the state of text format change.</para>
+      <h3>DirectWrite and Direct2D</h3>
+      <para>To draw simple text with a single format, <a href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-portal">Direct2D</a> provides the  <see cref="ID2D1RenderTarget.DrawText" /> method, which draws a string using the format information provided by an <b>IDWriteTextFormat</b> object.</para>
+    </remarks>
+  </member>
+</doc>

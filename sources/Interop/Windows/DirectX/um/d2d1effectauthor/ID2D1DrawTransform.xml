@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1DrawTransform.SetDrawInfo">
+    <summary>
+      <para>Provides the GPU render info interface to the transform implementation.</para>
+    </summary>
+    <param name="drawInfo">
+      <para>Type: <b><see cref="ID2D1DrawInfo" />*</b></para>
+      <para>The interface supplied back to the calling method to allow it to specify the GPU based transform pass.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Any HRESULT value can be returned when implementing this method. A failure will be returned from the corresponding <see cref="ID2D1DeviceContext.EndDraw" /> call.</para>
+    </returns>
+    <remarks>
+      <para>The transform can maintain a  reference to this interface for its lifetime. If any properties change on the transform, it can apply these changes to the corresponding <i>drawInfo</i> interface.</para>
+      <para>This is also used to determine that the corresponding nodes in the graph are dirty.</para>
+    </remarks>
+    <seealso cref="ID2D1DrawTransform" />
+  </member>
+  <member name="ID2D1DrawTransform">
+    <summary>
+      <para>A specialized implementation of the Shantzis calculations to a transform implemented on the GPU. These  calculations are described in the paper <a href="https://dl.acm.org/citation.cfm?id=192191">A model for efficient and flexible image computing</a>.</para>
+      <para>The information required to specify a “Pass” in the rendering algorithm on a Pixel Shader is passed to the implementation through the <see cref="SetDrawInfo" /> method.</para>
+    </summary>
+  </member>
+</doc>

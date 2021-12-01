@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_VDOV_DIMENSION">
+    <summary>
+      <para>Specifies how to access a resource that is used in a video decoding output view.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration is used with the <see cref="D3D11_VIDEO_DECODER_OUTPUT_VIEW_DESC" /> structure.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-enumerations">Direct3D 11 Video Enumerations</seealso>
+    <seealso cref="ID3D11VideoDevice.CreateVideoDecoderOutputView" />
+  </member>
+  <member name="D3D11_VDOV_DIMENSION.D3D11_VDOV_DIMENSION_UNKNOWN">
+    <summary>
+      <para>Not a valid value.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VDOV_DIMENSION.D3D11_VDOV_DIMENSION_TEXTURE2D">
+    <summary>
+      <para>The resource will be accessed as a 2D texture.</para>
+    </summary>
+  </member>
+</doc>

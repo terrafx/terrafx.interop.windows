@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11VideoContext2.VideoProcessorGetOutputHDRMetaData">
+    <summary>
+      <para>Gets the HDR metadata describing the display on which the content will be presented.</para>
+    </summary>
+    <param name="pVideoProcessor">
+      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface.</para>
+    </param>
+    <param name="pType">
+      <para>The type of HDR metadata supplied.</para>
+    </param>
+    <param name="Size">
+      <para>The size of the memory referenced by <i>pHDRMetaData</i>.</para>
+      <para>If <i>pHDRMetaData</i> is NULL, <i>Size</i> should be 0.</para>
+    </param>
+    <param name="pMetaData">
+      <para>Pointer to a buffer that receives the HDR metadata.</para>
+      <para>This parameter can be NULL.</para>
+    </param>
+    <remarks>
+      <para>This can be called multiple times, the first time to get the <i>Type</i> (in which case <i>Size</i> can be 0 and <i>pHDRMetaData</i> can be NULL) and then again to with non-NULL values to retrieve the actual metadata.</para>
+    </remarks>
+    <seealso cref="ID3D11VideoContext2" />
+    <seealso cref="ID3DVideoContext2" />
+  </member>
+  <member name="ID3D11VideoContext2.VideoProcessorGetStreamHDRMetaData">
+    <summary>
+      <para>Gets the HDR metadata associated with the video stream.</para>
+    </summary>
+    <param name="pVideoProcessor">
+      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface.</para>
+    </param>
+    <param name="StreamIndex">
+      <para>Identifies the input stream.</para>
+    </param>
+    <param name="pType">
+      <para>The type of the HDR metadata currently associated with the stream.</para>
+    </param>
+    <param name="Size">
+      <para>The size of the memory referenced by <i>pHDRMetaData</i>.</para>
+      <para>If <i>pHDRMetaData</i> is NULL, <i>Size</i> should be 0.</para>
+    </param>
+    <param name="pMetaData">
+      <para>Pointer to a buffer that receives the HDR metadata.</para>
+      <para>This parameter can be NULL.</para>
+    </param>
+    <remarks>
+      <para>This can be called multiple times, the first time to get the <i>Type</i> (in which case <i>Size</i> can be 0 and <i>pHDRMetaData</i> can be NULL) and then again to with non-NULL values to retrieve the actual metadata.</para>
+    </remarks>
+    <seealso cref="ID3D11VideoContext2" />
+    <seealso cref="ID3DVideoContext2" />
+  </member>
+  <member name="ID3D11VideoContext2.VideoProcessorSetOutputHDRMetaData">
+    <summary>
+      <para>Sets the HDR metadata describing the display on which the content will be presented.</para>
+    </summary>
+    <param name="pVideoProcessor">
+      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface.</para>
+    </param>
+    <param name="Type">
+      <para>The type of HDR metadata supplied.</para>
+    </param>
+    <param name="Size">
+      <para>The size of the HDR metadata supplied in <i>pHDRMetaData</i>.</para>
+      <para>For <b>DXGI_HDR_METADATA_TYPE_NONE</b>, the size should be 0.</para>
+      <para>For <b>DXGI_HDR_METADATA_TYPE_HDR10</b>, the size is <code>sizeof(DXGI_HDR_METADATA_HDR10)</code>.</para>
+    </param>
+    <param name="pHDRMetaData">
+      <para>Pointer to the metadata information.</para>
+      <para>For <b>DXGI_HDR_METADATA_TYPE_NONE</b>, this should be NULL.</para>
+      <para>For <b>DXGI_HDR_METADATA_TYPE_HDR10</b>, this is a pointer to a <see cref="DXGI_HDR_METADATA_HDR10" /> structure.</para>
+    </param>
+    <remarks>
+      <para>When processing an HDR stream, the driver may use this metadata optimize the video for the output display.</para>
+    </remarks>
+    <seealso cref="ID3D11VideoContext2" />
+    <seealso cref="ID3DVideoContext2" />
+  </member>
+  <member name="ID3D11VideoContext2.VideoProcessorSetStreamHDRMetaData">
+    <summary>
+      <para>Sets the HDR metadata associated with the video stream.</para>
+    </summary>
+    <param name="pVideoProcessor">
+      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface.</para>
+    </param>
+    <param name="StreamIndex">
+      <para>Identifies the input stream.</para>
+    </param>
+    <param name="Type">
+      <para>The type of HDR metadata supplied.</para>
+    </param>
+    <param name="Size">
+      <para>The size of the HDR metadata supplied in <i>pHDRMetaData</i>.</para>
+      <para>For <b>DXGI_HDR_METADATA_TYPE_NONE</b>, the size should be 0.</para>
+      <para>For <b>DXGI_HDR_METADATA_TYPE_HDR10</b>, the size is <code>sizeof(DXGI_HDR_METADATA_HDR10)</code>.</para>
+    </param>
+    <param name="pHDRMetaData">
+      <para>Pointer to the metadata information.</para>
+      <para>For <b>DXGI_HDR_METADATA_TYPE_NONE</b>, this should be NULL.</para>
+      <para>For <b>DXGI_HDR_METADATA_TYPE_HDR10</b>, this is a pointer to a <see cref="DXGI_HDR_METADATA_HDR10" /> structure.</para>
+    </param>
+    <remarks>
+      <para>When processing an HDR stream, the driver may use this information to tone map the video content to optimize it for the output display.</para>
+    </remarks>
+    <seealso cref="ID3D11VideoContext2" />
+    <seealso cref="ID3DVideoContext2" />
+  </member>
+  <member name="ID3D11VideoContext2">
+    <summary>
+      <para>Provides the video functionality of a Microsoft Direct3D 11 device.</para>
+    </summary>
+    <seealso cref="ID3D11VideoContext1" />
+  </member>
+</doc>

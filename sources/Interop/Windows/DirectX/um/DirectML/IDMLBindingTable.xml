@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDMLBindingTable.BindInputs">
+    <summary>
+      <para>Binds a set of resources as input tensors.</para>
+      <para>If binding for a compiled operator, the number of bindings must exactly match the number of inputs of the operator, including optional tensors. This can be determined from the operator description used to create the operator. If too many or too few bindings are provided, device removal will occur. For optional tensors, you may use <see cref="DML_BINDING_TYPE_NONE" /> to specify 'no binding'. Otherwise, the binding type must match the tensor type when the operator was created.</para>
+      <para>For operator initializers, input bindings are expected to be of type <see cref="DML_BINDING_TYPE_BUFFER_ARRAY" /> with one input binding per operator to initialize, supplied in the order that you specified the operators during creation or reset of the initializer. Each buffer array should have a size equal to the number of inputs of its corresponding operator to initialize. Input tensors that had the <see cref="DML_TENSOR_FLAG_OWNED_BY_DML" /> flag set should be bound during initialize—otherwise, nothing should be bound for that tensor. If there is nothing to be bound as input for initialization of an operator (that is, there are no tensors with the <see cref="DML_TENSOR_FLAG_OWNED_BY_DML" /> flag set) then you may supply <code>nullptr</code> or an empty <see cref="DML_BUFFER_ARRAY_BINDING" /> to indicate 'no binding'.</para>
+      <para>To unbind all input resources, supply a <i>rangeCount</i> of 0, and a value of <code>nullptr</code> for <i>bindings</i>.</para>
+      <para>If an input tensor has the <see cref="DML_TENSOR_FLAG_OWNED_BY_DML" /> flag set, it may only be bound when executing an operator initializer. Otherwise, if the <see cref="DML_TENSOR_FLAG_OWNED_BY_DML" /> flag is not set, the opposite is true—the input tensor must not be bound when executing the initializer, but must be bound when executing the operator itself.</para>
+      <para>All buffers being bound as input must have heap type <see cref="D3D12_HEAP_TYPE_DEFAULT" />, except when the <see cref="DML_TENSOR_FLAG_OWNED_BY_DML" /> flag is set. If the <see cref="DML_TENSOR_FLAG_OWNED_BY_DML" /> is set for a tensor that is being bound as input for an initializer, the buffer's heap type may be either <see cref="D3D12_HEAP_TYPE_DEFAULT" /> or <see cref="D3D12_HEAP_TYPE_UPLOAD" />.</para>
+      <para>Each binding is not required to point to a unique resource. It is legal, for example, to supply all inputs as suballocations from the same Direct3D 12 buffer resource. Ranges for inputs are permitted to overlap. No Direct3D 12 resource bound for input may simultaneously be bound for output, except if the operator explicitly permits in-place execution. If using in-place execution, the input and output tensors must have the exact same sizes, strides, and total tensor size. Additionally, the input and output bindings must have the exact same offset size.</para>
+    </summary>
+    <param name="bindingCount">
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>This parameter determines the size of the <i>bindings</i> array (if provided).</para>
+    </param>
+    <param name="bindings">
+      <para>Type: <b>const <see cref="DML_BINDING_DESC" />*</b></para>
+      <para>An optional pointer to a constant array of <see cref="DML_BINDING_DESC" /> containing descriptions of the tensor resources to bind.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-binding">Binding in DirectML</seealso>
+    <seealso cref="IDMLBindingTable" />
+  </member>
+  <member name="IDMLBindingTable.BindOutputs">
+    <summary>
+      <para>Binds a set of resources as output tensors.</para>
+      <para>If binding for a compiled operator, the number of bindings must exactly match the number of inputs of the operator, including optional tensors. This can be determined from the operator description used to create the operator. If too many or too few bindings are provided, device removal will occur. For optional tensors, you may use DML_BINDING_TYPE_NONE](/windows/win32/api/directml/ne-directml-dml_binding_type) to specify 'no binding'. Otherwise, the binding type must match the tensor type when the operator was created.</para>
+      <para>For operator initializers, the output bindings are the persistent resources of each operator, supplied in the order the operators were given when creating or resetting the initializer. If a particular operator does not require a persistent resource, you should prove an empty binding in that slot.</para>
+      <para>To unbind all input resources, supply a <i>rangeCount</i> of 0, and a value of <b>nullptr</b> for <i>bindings</i>.</para>
+      <para>The writable areas of two output tensors must not overlap with one another. The 'writable area' of an output buffer being bound is defined as being the start offset of the buffer range, up to the <i>TotalTensorSizeInBytes</i> as specified in the tensors description.</para>
+      <para>All buffers being bound as output must have heap type <see cref="D3D12_HEAP_TYPE_DEFAULT" />.</para>
+    </summary>
+    <param name="bindingCount">
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>This parameter determines the size of the <i>bindings</i> array (if provided).</para>
+    </param>
+    <param name="bindings">
+      <para>Type: <b>const <see cref="DML_BINDING_DESC" />*</b></para>
+      <para>An optional pointer to a constant array of <see cref="DML_BINDING_DESC" /> containing descriptions of the tensor resources to bind.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-binding">Binding in DirectML</seealso>
+    <seealso cref="IDMLBindingTable" />
+  </member>
+  <member name="IDMLBindingTable.BindPersistentResource">
+    <summary>
+      <para>Binds a buffer as a persistent resource. You can determine the required size of this buffer range by calling <see cref="IDMLDispatchable.GetBindingProperties" />.</para>
+      <para>If the binding properties for the operator specify a size of zero for the persistent resource, then you may supply <b>nullptr</b> to this method (which indicates no resource to bind). Otherwise, a binding of type <see cref="DML_BINDING_TYPE_BUFFER" /> must be supplied that is at least as large as the required <b>PersistentResourceSize</b> returned by <see cref="IDMLDispatchable.GetBindingProperties" />.</para>
+      <para>Unlike the temporary resource, the persistent resource's contents and lifetime must persist as long as the compiled operator does. That is, if an operator requires a persistent resource, then your application must supply it during initialization and subsequently also supply it to all future executes of the operator without modifying its contents.</para>
+      <para>The persistent resource is typically used by DirectML to store lookup tables or other long-lived data that is computed during initialization of an operator and reused on future executions of that operator.</para>
+      <para>As the persistent resource's data is opaque, once initialized it cannot be copied or moved to another buffer.</para>
+      <para>The persistent resource is only written to during initialization of an operator and is thereafter immutable; all subsequent executions are guaranteed not to write to the persistent resource.</para>
+      <para>The supplied buffer range to be bound as the persistent buffer must have its start offset aligned to <a href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-directml-constants">DML_PERSISTENT_BUFFER_ALIGNMENT</a>. The type of the heap underlying the buffer must be <see cref="D3D12_HEAP_TYPE_DEFAULT" />.</para>
+    </summary>
+    <param name="binding">
+      <para>Type: <b>const <see cref="DML_BINDING_DESC" />*</b></para>
+      <para>An optional pointer to a <see cref="DML_BINDING_DESC" /> containing the description of a tensor resource to bind.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-binding">Binding in DirectML</seealso>
+    <seealso cref="IDMLBindingTable" />
+  </member>
+  <member name="IDMLBindingTable.BindTemporaryResource">
+    <summary>
+      <para>Binds a buffer to use as temporary scratch memory. You can determine the required size of this buffer range by calling <see cref="IDMLDispatchable.GetBindingProperties" />.</para>
+      <para>If the binding properties for the <see cref="IDMLDispatchable" /> specify a size of zero for the temporary resource, then you may
+supply <b>nullptr</b> to this method (which indicates no resource to bind). Otherwise, a binding of type
+<see cref="DML_BINDING_TYPE_BUFFER" /> must be supplied that is at least as large as the required <b>TemporaryResourceSize</b></para>
+      <para>returned by <see cref="IDMLDispatchable.GetBindingProperties" />.</para>
+      <para>The temporary resource is typically used as scratch memory during execution of an operator. The contents
+of a temporary resource need not be defined prior to execution. For example, DirectML doesn't require that
+you zero the contents of the temporary resource prior to binding or executing an operator.</para>
+      <para>You don't need to preserve the contents of the temporary buffer, and your application is free to overwrite or
+reuse its contents as soon as execution of an operator or initializer completes on the GPU. This is in contrast
+to a persistent resource, whose contents must be preserved and lifetime extended for the lifetime of the
+operator.</para>
+      <para>The supplied buffer range to be bound as the temporary buffer must have its start offset aligned to
+<a href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-directml-constants">DML_TEMPORARY_BUFFER_ALIGNMENT</a>. The type of the heap underlying the buffer must be <see cref="D3D12_HEAP_TYPE_DEFAULT" />.</para>
+    </summary>
+    <param name="binding">
+      <para>Type: <b>const <see cref="DML_BINDING_DESC" />*</b></para>
+      <para>An optional pointer to a <see cref="DML_BINDING_DESC" /> containing the description of a tensor resource to bind.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-binding">Binding in DirectML</seealso>
+    <seealso cref="IDMLBindingTable" />
+  </member>
+  <member name="IDMLBindingTable.Reset">
+    <summary>
+      <para>Resets the binding table to wrap a new range of descriptors, potentially for a different operator or
+initializer. This allows dynamic reuse of the binding table.</para>
+      <para>Resetting a binding table doesn't modify any previous bindings created by the table. Because of this, it is
+safe to reset the binding table immediately after supplying it to <see cref="IDMLCommandRecorder.RecordDispatch" />, even if that work has not yet completed execution on the GPU, so long as the
+underlying descriptors remain valid.</para>
+      <para>See <see cref="IDMLDevice.CreateBindingTable" /> for more information on the parameters supplied to this method.</para>
+    </summary>
+    <param name="desc">
+      <para>Type: <b>const <see cref="DML_BINDING_TABLE_DESC" />*</b></para>
+      <para>An optional pointer to a <see cref="DML_BINDING_TABLE_DESC" /> containing the binding table parameters. This may be <b>nullptr</b>, indicating an empty binding table.</para>
+    </param>
+    <returns>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-binding">Binding in DirectML</seealso>
+    <seealso cref="IDMLBindingTable" />
+  </member>
+  <member name="IDMLBindingTable">
+    <summary>
+      <para>Wraps a range of an application-managed descriptor heap, and is used by DirectML to create bindings for resources. To create this object, call <see cref="IDMLDevice.CreateBindingTable" />. The <b>IDMLBindingTable</b> interface inherits from <see cref="IDMLDeviceChild" />.</para>
+      <para>The binding table is created over a range of CPU and GPU descriptor handles. When an IDMLBindingTable.Bind* method is called, DirectML writes one or more descriptors into the range of CPU descriptors. When you use the binding table during a call to <see cref="IDMLCommandRecorder.RecordDispatch" />, DirectML binds the corresponding GPU descriptors to the pipeline.</para>
+      <para>The CPU and GPU descriptor handles aren't required to point to the same entries in a descriptor heap, however it is then your application's responsibility to ensure that the entire descriptor range referred to by the CPU descriptor handle is copied into the range referred to by the GPU descriptor handle prior to execution using this binding table.</para>
+      <para>It is your application's responsibility to perform correct synchronization between the CPU and GPU work that uses this binding table. For example, you must take care not to overwrite the bindings created by the binding table (for example, by calling Bind* again on the binding table, or by overwriting the descriptor heap manually) until all work using the binding table has completed execution on the GPU. In addition, since the binding table doesn't maintain a reference on the descriptor heap it writes into, you must not release the backing shader-visible descriptor heap until all work using that binding table has completed execution on the GPU.</para>
+      <para>The binding table is associated with exactly one dispatchable object (an operator initializer, or a compiled operator), and represents the bindings for that particular object. You can reuse a binding table by calling <see cref="IDMLBindingTable.Reset" />, however. Note that since the binding table doesn't own the descriptor heap itself, it is safe to call <b>Reset</b> and reuse the binding table for a different dispatchable object even before any outstanding executions have completed on the GPU.</para>
+      <para>The binding table doesn't keep strong references on any resources bound using it—your application must ensure that resources are not deleted while still in use by the GPU.</para>
+      <para>This object is not thread safe—your application must not call methods on the binding table simultaneously from different threads without synchronization.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-binding">Binding in DirectML</seealso>
+    <seealso cref="IDMLDeviceChild" />
+  </member>
+</doc>

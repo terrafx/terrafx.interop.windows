@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="XINPUT_VIBRATION">
+    <summary>
+      <para>Specifies motor speed levels for the vibration function of a controller.</para>
+    </summary>
+    <remarks>
+      <para>The left motor is the low-frequency rumble motor. The right motor is the high-frequency rumble motor. The two motors are not the same, and they create different vibration effects.</para>
+    </remarks>
+    <seealso cref="XINPUT_GAMEPAD" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xinput/structures">XInput Structures</seealso>
+    <seealso cref="XInputGetCapabilities" />
+    <seealso cref="XInputSetState" />
+  </member>
+  <member name="XINPUT_VIBRATION.wLeftMotorSpeed">
+    <summary>
+      <para>Speed of the left motor. Valid values are in the range 0 to 65,535. Zero signifies no motor use; 65,535 signifies 100 percent motor use.</para>
+    </summary>
+  </member>
+  <member name="XINPUT_VIBRATION.wRightMotorSpeed">
+    <summary>
+      <para>Speed of the right motor. Valid values are in the range 0 to 65,535. Zero signifies no motor use; 65,535 signifies 100 percent motor use.</para>
+    </summary>
+  </member>
+</doc>

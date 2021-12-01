@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS">
+    <summary>
+      <para>Defines a group of video processor capabilities that are associated with frame-rate conversion, including deinterlacing and inverse telecine.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS.PastFrames">
+    <summary>
+      <para>The number of past reference frames required to perform the optimal video processing.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS.FutureFrames">
+    <summary>
+      <para>The number of future reference frames required to perform the optimal video processing.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS.ProcessorCaps">
+    <summary>
+      <para>A bitwise <b>OR</b> of zero or more flags from the <see cref="D3D11_VIDEO_PROCESSOR_PROCESSOR_CAPS" /> enumeration.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS.ITelecineCaps">
+    <summary>
+      <para>A bitwise <b>OR</b> of zero or more flags from the <see cref="D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS" /> enumeration.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS.CustomRateCount">
+    <summary>
+      <para>The number of custom frame rates that the driver supports. To get the list of custom frame rates, call the <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCustomRate" /> method.</para>
+    </summary>
+  </member>
+</doc>

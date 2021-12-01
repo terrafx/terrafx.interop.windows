@@ -5,16 +5,36 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_FILTER.xml' path='doc/member[@name="D2D1_FILTER"]/*' />
 public enum D2D1_FILTER : uint
 {
+    /// <include file='D2D1_FILTER.xml' path='doc/member[@name="D2D1_FILTER.D2D1_FILTER_MIN_MAG_MIP_POINT"]/*' />
     D2D1_FILTER_MIN_MAG_MIP_POINT = 0x00,
+
+    /// <include file='D2D1_FILTER.xml' path='doc/member[@name="D2D1_FILTER.D2D1_FILTER_MIN_MAG_POINT_MIP_LINEAR"]/*' />
     D2D1_FILTER_MIN_MAG_POINT_MIP_LINEAR = 0x01,
+
+    /// <include file='D2D1_FILTER.xml' path='doc/member[@name="D2D1_FILTER.D2D1_FILTER_MIN_POINT_MAG_LINEAR_MIP_POINT"]/*' />
     D2D1_FILTER_MIN_POINT_MAG_LINEAR_MIP_POINT = 0x04,
+
+    /// <include file='D2D1_FILTER.xml' path='doc/member[@name="D2D1_FILTER.D2D1_FILTER_MIN_POINT_MAG_MIP_LINEAR"]/*' />
     D2D1_FILTER_MIN_POINT_MAG_MIP_LINEAR = 0x05,
+
+    /// <include file='D2D1_FILTER.xml' path='doc/member[@name="D2D1_FILTER.D2D1_FILTER_MIN_LINEAR_MAG_MIP_POINT"]/*' />
     D2D1_FILTER_MIN_LINEAR_MAG_MIP_POINT = 0x10,
+
+    /// <include file='D2D1_FILTER.xml' path='doc/member[@name="D2D1_FILTER.D2D1_FILTER_MIN_LINEAR_MAG_POINT_MIP_LINEAR"]/*' />
     D2D1_FILTER_MIN_LINEAR_MAG_POINT_MIP_LINEAR = 0x11,
+
+    /// <include file='D2D1_FILTER.xml' path='doc/member[@name="D2D1_FILTER.D2D1_FILTER_MIN_MAG_LINEAR_MIP_POINT"]/*' />
     D2D1_FILTER_MIN_MAG_LINEAR_MIP_POINT = 0x14,
+
+    /// <include file='D2D1_FILTER.xml' path='doc/member[@name="D2D1_FILTER.D2D1_FILTER_MIN_MAG_MIP_LINEAR"]/*' />
     D2D1_FILTER_MIN_MAG_MIP_LINEAR = 0x15,
+
+    /// <include file='D2D1_FILTER.xml' path='doc/member[@name="D2D1_FILTER.D2D1_FILTER_ANISOTROPIC"]/*' />
     D2D1_FILTER_ANISOTROPIC = 0x55,
+
+    /// <include file='D2D1_FILTER.xml' path='doc/member[@name="D2D1_FILTER.D2D1_FILTER_FORCE_DWORD"]/*' />
     D2D1_FILTER_FORCE_DWORD = 0xffffffff,
 }

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_2DAFFINETRANSFORM_PROP">
+    <summary>
+      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/2d-affine-transform">2D affine transform effect</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_2DAFFINETRANSFORM_PROP.D2D1_2DAFFINETRANSFORM_PROP_INTERPOLATION_MODE">
+    <summary>
+      <para>The interpolation mode used to scale the image. There are 6 scale modes that range in quality and speed.</para>
+      <para>Type is <see cref="D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE" />.</para>
+      <para>Default value is D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE_LINEAR.</para>
+    </summary>
+  </member>
+  <member name="D2D1_2DAFFINETRANSFORM_PROP.D2D1_2DAFFINETRANSFORM_PROP_BORDER_MODE">
+    <summary>
+      <para>The mode used to calculate the border of the image, soft or hard.</para>
+      <para>Type is <see cref="D2D1_BORDER_MODE" />.</para>
+      <para>Default value is D2D1_BORDER_MODE_SOFT.</para>
+    </summary>
+  </member>
+  <member name="D2D1_2DAFFINETRANSFORM_PROP.D2D1_2DAFFINETRANSFORM_PROP_TRANSFORM_MATRIX">
+    <summary>
+      <para>The 3x2 matrix to transform the image using the Direct2D matrix transform.</para>
+      <para>Type is <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>.</para>
+      <para>Default value is Matrix3x2F.Identity().</para>
+    </summary>
+  </member>
+  <member name="D2D1_2DAFFINETRANSFORM_PROP.D2D1_2DAFFINETRANSFORM_PROP_SHARPNESS">
+    <summary>
+      <para>In the high quality cubic interpolation mode, the sharpness level of the scaling filter as a float between 0 and 1. The values are unitless. You can use sharpness to adjust the quality of an image when you scale the image.
+The sharpness factor affects the shape of the kernel. The higher the sharpness factor, the smaller the kernel.</para>
+      <para>
+        <b>Note</b>  This property affects only the high quality cubic interpolation mode.</para>
+      <para>Type is FLOAT.</para>
+      <para>Default value is 1.0f.</para>
+    </summary>
+  </member>
+  <member name="D2D1_2DAFFINETRANSFORM_PROP.D2D1_2DAFFINETRANSFORM_PROP_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

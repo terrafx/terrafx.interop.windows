@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID2D1ConcreteTransform.xml' path='doc/member[@name="ID2D1ConcreteTransform"]/*' />
 [Guid("1A799D8A-69F7-4E4C-9FED-437CCC6684CC")]
 [NativeTypeName("struct ID2D1ConcreteTransform : ID2D1TransformNode")]
 [NativeInheritance("ID2D1TransformNode")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID2D1ConcreteTransform : ID2D1ConcreteTransform.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID2D1ConcreteTransform : ID2D1ConcreteTransform.Int
         return ((delegate* unmanaged<ID2D1ConcreteTransform*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1ConcreteTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID2D1ConcreteTransform : ID2D1ConcreteTransform.Int
         return ((delegate* unmanaged<ID2D1ConcreteTransform*, uint>)(lpVtbl[1]))((ID2D1ConcreteTransform*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID2D1ConcreteTransform : ID2D1ConcreteTransform.Int
         return ((delegate* unmanaged<ID2D1ConcreteTransform*, uint>)(lpVtbl[2]))((ID2D1ConcreteTransform*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1TransformNode.GetInputCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("UINT32")]
@@ -48,6 +53,7 @@ public unsafe partial struct ID2D1ConcreteTransform : ID2D1ConcreteTransform.Int
         return ((delegate* unmanaged<ID2D1ConcreteTransform*, uint>)(lpVtbl[3]))((ID2D1ConcreteTransform*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID2D1ConcreteTransform.xml' path='doc/member[@name="ID2D1ConcreteTransform.SetOutputBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetOutputBuffer(D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth)
@@ -55,6 +61,7 @@ public unsafe partial struct ID2D1ConcreteTransform : ID2D1ConcreteTransform.Int
         return ((delegate* unmanaged<ID2D1ConcreteTransform*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int>)(lpVtbl[4]))((ID2D1ConcreteTransform*)Unsafe.AsPointer(ref this), bufferPrecision, channelDepth);
     }
 
+    /// <include file='ID2D1ConcreteTransform.xml' path='doc/member[@name="ID2D1ConcreteTransform.SetCached"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void SetCached(BOOL isCached)

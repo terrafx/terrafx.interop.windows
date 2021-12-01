@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D10Effect.GetConstantBufferByIndex">
+    <summary>
+      <para>Get a constant buffer by index.</para>
+    </summary>
+    <param name="Index">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A zero-based index.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="ID3D10EffectConstantBuffer" />*</b></para>
+      <para>A pointer to a <see cref="ID3D10EffectConstantBuffer Interface" />.</para>
+    </returns>
+    <remarks>
+      <para>An effect that contains a variable that will be read/written by an application requires at least one constant buffer. For best performance, an effect should organize variables into one or more constant buffers based on their frequency of update.</para>
+    </remarks>
+    <seealso cref="ID3D10Effect Interface" />
+  </member>
+  <member name="ID3D10Effect.GetConstantBufferByName">
+    <summary>
+      <para>Get a constant buffer by name.</para>
+    </summary>
+    <param name="Name">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
+      <para>The constant-buffer name.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="ID3D10EffectConstantBuffer" />*</b></para>
+      <para>A pointer to the constant buffer indicated by the Name. See <see cref="ID3D10EffectConstantBuffer" />.</para>
+    </returns>
+    <remarks>
+      <para>An effect that contains a variable that will be read/written by an application requires at least one constant buffer. For best performance, an effect should organize variables into one or more constant buffers based on their frequency of update.</para>
+    </remarks>
+    <seealso cref="ID3D10Effect Interface" />
+  </member>
+  <member name="ID3D10Effect.GetDesc">
+    <summary>
+      <para>Get an effect description.</para>
+    </summary>
+    <param name="pDesc">
+      <para>Type: <b><see cref="D3D10_EFFECT_DESC" />*</b></para>
+      <para>A pointer to an effect description (see <see cref="D3D10_EFFECT_DESC" />).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>An effect description contains basic information about an effect such as the techniques it contains and the constant buffer resources it requires.</para>
+    </remarks>
+    <seealso cref="ID3D10Effect Interface" />
+  </member>
+  <member name="ID3D10Effect.GetDevice">
+    <summary>
+      <para>Get the device that created the effect.</para>
+    </summary>
+    <param name="ppDevice">
+      <para>Type: <b><see cref="ID3D10Device" />**</b></para>
+      <para>A pointer to an <see cref="ID3D10Device Interface" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>An effect is created for a specific device, by calling a function such as <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3dx10createeffectfromfile">D3DX10CreateEffectFromFile</a>.</para>
+    </remarks>
+    <seealso cref="ID3D10Effect Interface" />
+  </member>
+  <member name="ID3D10Effect.GetTechniqueByIndex">
+    <summary>
+      <para>Get a technique by index.</para>
+    </summary>
+    <param name="Index">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A zero-based index.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="ID3D10EffectTechnique" />*</b></para>
+      <para>A pointer to an <see cref="ID3D10EffectTechnique Interface" />.</para>
+    </returns>
+    <remarks>
+      <para>An effect contains one or more techniques; each technique contains one or more passes. You can access a technique using its name or with an index.
+For more about techniques, see <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-effects-organize">techniques and passes</a>.</para>
+    </remarks>
+    <seealso cref="ID3D10Effect Interface" />
+  </member>
+  <member name="ID3D10Effect.GetTechniqueByName">
+    <summary>
+      <para>Get a technique by name.</para>
+    </summary>
+    <param name="Name">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
+      <para>The name of the technique.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="ID3D10EffectTechnique" />*</b></para>
+      <para>A pointer to an <see cref="ID3D10EffectTechnique Interface" />, or <b>NULL</b> if the technique is not found.</para>
+    </returns>
+    <remarks>
+      <para>An effect contains one or more techniques; each technique contains one or more passes. You can access a technique using its name or with an index. For more about techniques, see <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-effects-organize">techniques and passes</a>.</para>
+    </remarks>
+    <seealso cref="ID3D10Effect Interface" />
+  </member>
+  <member name="ID3D10Effect.GetVariableByIndex">
+    <summary>
+      <para>Get a variable by index.</para>
+    </summary>
+    <param name="Index">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A zero-based index.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="ID3D10EffectVariable" />*</b></para>
+      <para>A pointer to a <see cref="ID3D10EffectVariable Interface" />.</para>
+    </returns>
+    <remarks>
+      <para>An effect may contain one or more variables. Variables outside of a technique are considered global to all effects, those located inside of a technique are local to that technique. You can access any local non-static effect variable using its name or with an index.</para>
+      <para>The method returns a pointer to an <see cref="effect-variable interface" /> if a variable is not found; you can call <see cref="ID3D10Effect.IsValid" /> to verify whether or not the index exists.</para>
+    </remarks>
+    <seealso cref="ID3D10Effect Interface" />
+  </member>
+  <member name="ID3D10Effect.GetVariableByName">
+    <summary>
+      <para>Get a variable by name.</para>
+    </summary>
+    <param name="Name">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
+      <para>The variable name.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="ID3D10EffectVariable" />*</b></para>
+      <para>A pointer to an <see cref="ID3D10EffectVariable Interface" />.</para>
+    </returns>
+    <remarks>
+      <para>An effect may contain one or more variables. Variables outside of a technique are considered global to all effects, those located inside of a technique are local to that technique. You can access an effect variable using its name or with an index.</para>
+      <para>The method returns a pointer to an <see cref="effect-variable interface" /> if a variable is not found; you can call <see cref="ID3D10Effect.IsValid" /> to verify whether or not the name exists.</para>
+    </remarks>
+    <seealso cref="ID3D10Effect Interface" />
+  </member>
+  <member name="ID3D10Effect.GetVariableBySemantic">
+    <summary>
+      <para>Get a variable by semantic.</para>
+    </summary>
+    <param name="Semantic">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
+      <para>The semantic name.</para>
+    </param>
+    <returns>
+      <para>Type: <b><see cref="ID3D10EffectVariable" />*</b></para>
+      <para>A pointer to the effect variable indicated by the Semantic. See <see cref="ID3D10EffectVariable Interface" />.</para>
+    </returns>
+    <remarks>
+      <para>Each effect variable can have a semantic attached, which is a user defined metadata string. Some <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics">system-value semantics</a> are reserved words that trigger built in functionality by pipeline stages.</para>
+      <para>The method returns a pointer to an <see cref="effect-variable interface" /> if a variable is not found; you can call <see cref="ID3D10Effect.IsValid" /> to verify whether or not the semantic exists.</para>
+    </remarks>
+    <seealso cref="ID3D10Effect Interface" />
+  </member>
+  <member name="ID3D10Effect.IsOptimized">
+    <summary>
+      <para>Test an effect to see if the reflection metadata has been removed from memory.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>
+        <b>TRUE</b> if the effect is optimized; otherwise <b>FALSE</b>.</para>
+    </returns>
+    <remarks>
+      <para>An effect uses memory space two different ways: to store the information required by the runtime to execute an effect, and to store the metadata required to reflect information back to an application using the API. You can minimize the amount of memory required by an effect by calling <see cref="ID3D10Effect.Optimize" /> which removes the reflection metadata from memory. Of course, API methods to read variables will no longer work once reflection data has been removed.</para>
+    </remarks>
+    <seealso cref="ID3D10Effect Interface" />
+  </member>
+  <member name="ID3D10Effect.IsPool">
+    <summary>
+      <para>Test an effect to see if it is part of a memory pool.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>
+        <b>TRUE</b> if the effect is pooled; otherwise <b>FALSE</b>. See <see cref="ID3D10EffectPool Interface" />.</para>
+    </returns>
+    <seealso cref="ID3D10Effect Interface" />
+  </member>
+  <member name="ID3D10Effect.IsValid">
+    <summary>
+      <para>Test an effect to see if it contains valid syntax.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>
+        <b>TRUE</b> if the code syntax is valid; otherwise <b>FALSE</b>.</para>
+    </returns>
+    <seealso cref="ID3D10Effect Interface" />
+  </member>
+  <member name="ID3D10Effect.Optimize">
+    <summary>
+      <para>Minimize the amount of memory required for an effect.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>An effect uses memory space two different ways: to store the information required by the runtime to execute an effect, and to store the metadata
+required to reflect information back to an application using the API. You can minimize the amount of memory required by an effect by
+calling <b>ID3D10Effect.Optimize</b> which removes the reflection metadata from memory. API methods to read variables will no
+longer work once reflection data has been removed.</para>
+      <para>The following methods will fail after Optimize has been called on an effect.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="ID3D10Effect.GetConstantBufferByIndex" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="ID3D10Effect.GetConstantBufferByName" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="ID3D10Effect.GetDesc" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="ID3D10Effect.GetDevice" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="ID3D10Effect.GetTechniqueByIndex" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="ID3D10Effect.GetTechniqueByName" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="ID3D10Effect.GetVariableByIndex" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="ID3D10Effect.GetVariableByName" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="ID3D10Effect.GetVariableBySemantic" />
+          </description>
+        </item>
+      </list>
+      <para>Note that references retrieved with these methods before calling <b>ID3D10Effect.Optimize</b> are still valid
+after <b>ID3D10Effect.Optimize</b> is called.  This allows the application to get all the variables, techniques, and passes it will use,
+call Optimize, and then use the effect.</para>
+    </remarks>
+    <seealso cref="ID3D10Effect Interface" />
+  </member>
+</doc>

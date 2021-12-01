@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_ONE_HOT_OPERATOR_DESC">
+    <summary>
+      <para>Produces a tensor filled with <i>one-hot encoded</i> values. This operator produces an output tensor where, for all sequences in a chosen axis, all but one element in that sequence is set to <i>OffValue</i>, and the remaining single element is set to <i>OnValue</i>. A <i>sequence</i> refers to one of the sets of elements that exist along the <i>Axis</i> dimension of the <i>OutputTensor</i>.</para>
+      <para>The location of the <i>OnValue</i> for each sequence and the choice of <i>OnValue</i>/<i>OffValue</i> are determined by the <i>IndicesTensor</i> and <i>ValuesTensor</i>, respectively.</para>
+    </summary>
+  </member>
+  <member name="DML_ONE_HOT_OPERATOR_DESC.IndicesTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the index in elements of the <i>OnValue</i>, for each sequence along the <i>Axis</i>. Indices are measured relative to the beginning of their sequence (as opposed to the beginning of the tensor). For example, an index of 0 always refers to the first element for all sequences in an axis.</para>
+      <para>If an index value for a sequence exceeds the number of elements along the <i>Axis</i> dimension in the <i>OutputTensor</i>, then that index value is ignored, and all elements in that sequence will be set to <i>OffValue</i>.</para>
+      <para>Starting with <code>DML_FEATURE_LEVEL_3_0</code>, this operator supports negative index values when using a signed integral type with this tensor. Negative indices are interpreted as being relative to the end of the sequence. For example, an index of -1 refers to the last element in the sequence.</para>
+      <para>This tensor must have dimension count and sizes equal to the <i>OutputTensor</i>, <i>except</i> for the dimension specified by the <i>Axis</i> parameter. The size of the <i>Axis</i> dimension must be 1. For example if the <i>OutputTensor</i> has sizes of <code>{2,3,4,5}</code> and <i>Axis</i> is 1, the sizes of the <i>IndicesTensor</i> must be <code>{2,1,4,5}</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_ONE_HOT_OPERATOR_DESC.ValuesTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>This tensor may have any size, so long as it contains at least two elements. The 0th element of this tensor is interpreted as the <i>OffValue</i>, and the 1st element along the fastest-changing dimension of size &gt;1 is interpreted as the <i>OnValue</i>.</para>
+    </summary>
+  </member>
+  <member name="DML_ONE_HOT_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The output tensor to write the results to. This tensor must have dimension count and sizes equal to the <i>IndicesTensor</i>, <i>except</i> for the dimension specified by the <i>Axis</i> parameter. The size of the <i>Axis</i> dimension in this tensor may have any value greater than 0.</para>
+    </summary>
+  </member>
+  <member name="DML_ONE_HOT_OPERATOR_DESC.Axis">
+    <summary>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>The index of the dimension to produce one-hot encoded sequences along. This value must be less than the DimensionCount of the <i>IndicesTensor</i>.</para>
+    </summary>
+  </member>
+</doc>

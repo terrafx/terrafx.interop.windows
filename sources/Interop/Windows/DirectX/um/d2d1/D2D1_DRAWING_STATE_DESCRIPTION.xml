@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_DRAWING_STATE_DESCRIPTION">
+    <summary>
+      <para>Describes the drawing state of a render target.</para>
+    </summary>
+    <seealso cref="ID2D1DrawingStateBlock" />
+    <seealso cref="ID2D1RenderTarget" />
+    <seealso cref="RestoreDrawingState" />
+    <seealso cref="SaveDrawingState" />
+  </member>
+  <member name="D2D1_DRAWING_STATE_DESCRIPTION.antialiasMode">
+    <summary>
+      <para>Type: <b><see cref="D2D1_ANTIALIAS_MODE" /></b></para>
+      <para>The antialiasing mode for subsequent nontext drawing operations.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DRAWING_STATE_DESCRIPTION.textAntialiasMode">
+    <summary>
+      <para>Type: <b><see cref="D2D1_TEXT_ANTIALIAS_MODE" /></b></para>
+      <para>The antialiasing mode for subsequent text and glyph drawing operations.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DRAWING_STATE_DESCRIPTION.tag1">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-tag">D2D1_TAG</a></b></para>
+      <para>A label for subsequent drawing operations.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DRAWING_STATE_DESCRIPTION.tag2">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-tag">D2D1_TAG</a></b></para>
+      <para>A label for subsequent drawing operations.</para>
+    </summary>
+  </member>
+  <member name="D2D1_DRAWING_STATE_DESCRIPTION.transform">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a></b></para>
+      <para>The transformation to apply to subsequent drawing operations.</para>
+    </summary>
+  </member>
+</doc>

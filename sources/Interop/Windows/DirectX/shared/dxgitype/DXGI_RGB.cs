@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_RGB.xml' path='doc/member[@name="DXGI_RGB"]/*' />
 public partial struct DXGI_RGB
 {
+    /// <include file='DXGI_RGB.xml' path='doc/member[@name="DXGI_RGB.Red"]/*' />
     public float Red;
 
+    /// <include file='DXGI_RGB.xml' path='doc/member[@name="DXGI_RGB.Green"]/*' />
     public float Green;
 
+    /// <include file='DXGI_RGB.xml' path='doc/member[@name="DXGI_RGB.Blue"]/*' />
     public float Blue;
 }

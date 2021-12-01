@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_QUERY_MISC_FLAG">
+    <summary>
+      <para>Flags that describe miscellaneous query behavior.</para>
+    </summary>
+    <remarks>
+      <para>This flag is part of a query description (see <see cref="D3D11_QUERY_DESC" />).</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-enums">Core Enumerations</seealso>
+  </member>
+  <member name="D3D11_QUERY_MISC_FLAG.D3D11_QUERY_MISC_PREDICATEHINT">
+    <summary>
+      <para>Tell the hardware that if it is not yet sure if something is hidden or not to draw it anyway. This is only used with an occlusion predicate. Predication data cannot be returned to your application via <see cref="ID3D11DeviceContext.GetData" /> when using this flag.</para>
+    </summary>
+  </member>
+</doc>

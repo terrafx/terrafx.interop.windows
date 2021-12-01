@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CD3D11_SAMPLER_DESC.CD3D11_SAMPLER_DESC">
+    <summary>
+      <para>Instantiates a new instance of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151678(v=vs.85)">CD3D11_SAMPLER_DESC</a> structure that is initialized with default sampler-state values.</para>
+    </summary>
+    <param name="unnamedParam1">
+      <para>Default sampler-state values.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151678(v=vs.85)">CD3D11_SAMPLER_DESC</seealso>
+  </member>
+  <member name="CD3D11_SAMPLER_DESC.CD3D11_SAMPLER_DESC">
+    <summary>
+      <para>Instantiates a new instance of a  <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151678(v=vs.85)">CD3D11_SAMPLER_DESC</a> structure that is initialized with a <see cref="D3D11_SAMPLER_DESC" /> structure.</para>
+    </summary>
+    <param name="o">
+      <para>Type: <b>const <see cref="D3D11_SAMPLER_DESC" /></b></para>
+      <para>Address of the <see cref="D3D11_SAMPLER_DESC" /> structure that initializes the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151678(v=vs.85)">CD3D11_SAMPLER_DESC</a> structure.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151678(v=vs.85)">CD3D11_SAMPLER_DESC</seealso>
+  </member>
+  <member name="CD3D11_SAMPLER_DESC.CD3D11_SAMPLER_DESC">
+    <summary>
+      <para>Instantiates a new instance of a  <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151678(v=vs.85)">CD3D11_SAMPLER_DESC</a> structure that is initialized with a <see cref="D3D11_SAMPLER_DESC" /> structure.</para>
+    </summary>
+    <param name="filter">
+      <para>TBD</para>
+    </param>
+    <param name="addressU">
+      <para>TBD</para>
+    </param>
+    <param name="addressV">
+      <para>TBD</para>
+    </param>
+    <param name="addressW">
+      <para>TBD</para>
+    </param>
+    <param name="mipLODBias">
+      <para>TBD</para>
+    </param>
+    <param name="maxAnisotropy">
+      <para>TBD</para>
+    </param>
+    <param name="comparisonFunc">
+      <para>TBD</para>
+    </param>
+    <param name="borderColor">
+      <para>TBD</para>
+    </param>
+    <param name="minLOD">
+      <para>TBD</para>
+    </param>
+    <param name="maxLOD">
+      <para>TBD</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151678(v=vs.85)">CD3D11_SAMPLER_DESC</seealso>
+  </member>
+  <member name="CD3D11_SAMPLER_DESC.CD3D11_SAMPLER_DESC">
+    <summary>
+      <para>Instantiates a new instance of an uninitialized <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151678(v=vs.85)">CD3D11_SAMPLER_DESC</a> structure.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/jj151678(v=vs.85)">CD3D11_SAMPLER_DESC</seealso>
+  </member>
+</doc>

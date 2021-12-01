@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_PANOSE_DECORATIVE_TOPOLOGY">
+    <summary>
+      <para>The <b>DWRITE_PANOSE_DECORATIVE_TOPOLOGY</b> enumeration contains values that specify the overall shape characteristics of the font.</para>
+    </summary>
+    <seealso cref="DWRITE_PANOSE" />
+  </member>
+  <member name="DWRITE_PANOSE_DECORATIVE_TOPOLOGY.DWRITE_PANOSE_DECORATIVE_TOPOLOGY_ANY">
+    <summary>
+      <para>Any decorative topology.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_DECORATIVE_TOPOLOGY.DWRITE_PANOSE_DECORATIVE_TOPOLOGY_NO_FIT">
+    <summary>
+      <para>No fit for decorative topology.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_DECORATIVE_TOPOLOGY.DWRITE_PANOSE_DECORATIVE_TOPOLOGY_STANDARD">
+    <summary>
+      <para>Standard decorative topology.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_DECORATIVE_TOPOLOGY.DWRITE_PANOSE_DECORATIVE_TOPOLOGY_SQUARE">
+    <summary>
+      <para>Square decorative topology.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_DECORATIVE_TOPOLOGY.DWRITE_PANOSE_DECORATIVE_TOPOLOGY_MULTIPLE_SEGMENT">
+    <summary>
+      <para>Multiple segment decorative topology.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_DECORATIVE_TOPOLOGY.DWRITE_PANOSE_DECORATIVE_TOPOLOGY_ART_DECO">
+    <summary>
+      <para>Art deco decorative topology.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_DECORATIVE_TOPOLOGY.DWRITE_PANOSE_DECORATIVE_TOPOLOGY_UNEVEN_WEIGHTING">
+    <summary>
+      <para>Uneven weighting decorative topology.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_DECORATIVE_TOPOLOGY.DWRITE_PANOSE_DECORATIVE_TOPOLOGY_DIVERSE_ARMS">
+    <summary>
+      <para>Diverse arms decorative topology.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_DECORATIVE_TOPOLOGY.DWRITE_PANOSE_DECORATIVE_TOPOLOGY_DIVERSE_FORMS">
+    <summary>
+      <para>Diverse forms decorative topology.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_DECORATIVE_TOPOLOGY.DWRITE_PANOSE_DECORATIVE_TOPOLOGY_LOMBARDIC_FORMS">
+    <summary>
+      <para>Lombardic forms decorative topology.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_DECORATIVE_TOPOLOGY.DWRITE_PANOSE_DECORATIVE_TOPOLOGY_UPPER_CASE_IN_LOWER_CASE">
+    <summary>
+      <para>Upper case in lower case decorative topology.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_DECORATIVE_TOPOLOGY.DWRITE_PANOSE_DECORATIVE_TOPOLOGY_IMPLIED_TOPOLOGY">
+    <summary>
+      <para>The decorative topology is implied.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_DECORATIVE_TOPOLOGY.DWRITE_PANOSE_DECORATIVE_TOPOLOGY_HORSESHOE_E_AND_A">
+    <summary>
+      <para>Horseshoe E and A decorative topology.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_DECORATIVE_TOPOLOGY.DWRITE_PANOSE_DECORATIVE_TOPOLOGY_CURSIVE">
+    <summary>
+      <para>Cursive decorative topology.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_DECORATIVE_TOPOLOGY.DWRITE_PANOSE_DECORATIVE_TOPOLOGY_BLACKLETTER">
+    <summary>
+      <para>Blackletter decorative topology.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_DECORATIVE_TOPOLOGY.DWRITE_PANOSE_DECORATIVE_TOPOLOGY_SWASH_VARIANCE">
+    <summary>
+      <para>Swash variance decorative topology.</para>
+    </summary>
+  </member>
+</doc>

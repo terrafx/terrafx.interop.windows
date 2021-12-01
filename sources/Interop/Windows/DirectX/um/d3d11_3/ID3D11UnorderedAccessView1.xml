@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11UnorderedAccessView1.GetDesc1">
+    <summary>
+      <para>Gets a description of the resource.</para>
+    </summary>
+    <param name="pDesc1">
+      <para>Type: <b><see cref="D3D11_UNORDERED_ACCESS_VIEW_DESC1" />*</b></para>
+      <para>A pointer to a <see cref="D3D11_UNORDERED_ACCESS_VIEW_DESC1" /> structure that receives the description of the unordered-access resource.</para>
+    </param>
+    <seealso cref="ID3D11UnorderedAccessView1" />
+  </member>
+  <member name="ID3D11UnorderedAccessView1">
+    <summary>
+      <para>An unordered-access-view interface represents the parts of a resource the pipeline can access during rendering.</para>
+    </summary>
+    <remarks>
+      <para>To create a view for an unordered access resource, call  <see cref="ID3D11Device3.CreateUnorderedAccessView1" />.</para>
+      <para>All resources must be bound to the pipeline before they can be accessed. Call <see cref="ID3D11DeviceContext.CSSetUnorderedAccessViews" /> to bind an unordered access view to a compute shader; call <see cref="ID3D11DeviceContext.OMSetRenderTargetsAndUnorderedAccessViews" /> to bind an unordered access view to a pixel shader.</para>
+    </remarks>
+    <seealso cref="ID3D11UnorderedAccessView" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-interfaces">Resource Interfaces</seealso>
+  </member>
+</doc>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_BUFFER_DESC">
+    <summary>
+      <para>Describes a <a href="https://docs.microsoft.com//windows/win32/direct3d10/d3d10-graphics-programming-guide-resources-types">buffer</a> resource.</para>
+    </summary>
+    <remarks>
+      <para>
+        <code>byteWidth</code>
+Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Size of the buffer in bytes.</para>
+      <para>
+        <code>bindFlags</code>
+Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Identify how the buffer will be bound to the <a href="https://docs.microsoft.com//windows/win32/direct3d10/d3d10-graphics-programming-guide-pipeline-stages">pipeline</a>. Applications can logically OR flags together (see <see cref="D3D10_BIND_FLAG" />) to indicate that the buffer can be accessed in different ways.</para>
+      <para>
+        <code>usage</code>
+Type: <b><see cref="D3D10_USAGE" /></b></para>
+      <para>Identify how the buffer is expected to be read from and written to. Frequency of update is a key factor. The most common value is typically D3D10_USAGE_DEFAULT; see <see cref="D3D10_USAGE" /> for all possible values.</para>
+      <para>
+        <code>cpuAccessFlags</code>
+Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">UINT</a></b></para>
+      <para>CPU access flags (see <see cref="D3D10_CPU_ACCESS_FLAG" />) or 0 if no CPU access is necessary. Applications can logically OR flags together.</para>
+      <para>
+        <code>miscFlags</code>
+Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Miscellaneous flags (see <see cref="D3D10_RESOURCE_MISC_FLAG" />) or 0 if unused. Applications can logically OR flags together.</para>
+      <para>This structure is used by <see cref="ID3D10Device.CreateBuffer" /> to create buffer resources.</para>
+      <para>In addition to this structure, there is also a derived structure in D3D10.h (CD3D10_BUFFER_DESC) which behaves like an inherited class to help create a buffer description.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/win32/direct3d10/d3d10-graphics-reference-resource-structures">Resource Structures</seealso>
+  </member>
+  <member name="D3D10_BUFFER_DESC">
+    <summary>
+      <para>Describes a <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">buffer</a> resource.</para>
+    </summary>
+    <remarks>
+      <para>This structure is used by <see cref="ID3D10Device.CreateBuffer" /> to create buffer resources.</para>
+      <para>In addition to this structure, there is also a derived structure in D3D10.h (CD3D10_BUFFER_DESC) which behaves like an inherited class to help create a buffer description.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures">Resource structures</seealso>
+  </member>
+  <member name="D3D10_BUFFER_DESC.ByteWidth">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Size of the buffer in bytes.</para>
+    </summary>
+  </member>
+  <member name="D3D10_BUFFER_DESC.Usage">
+    <summary>
+      <para>Type: <b><see cref="D3D10_USAGE" /></b></para>
+      <para>Identify how the buffer is expected to be read from and written to. Frequency of update is a key factor. The most common value is typically D3D10_USAGE_DEFAULT; see <see cref="D3D10_USAGE" /> for all possible values.</para>
+    </summary>
+  </member>
+  <member name="D3D10_BUFFER_DESC.BindFlags">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Identify how the buffer will be bound to the <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-pipeline-stages">pipeline</a>. Applications can logically OR flags together (see <see cref="D3D10_BIND_FLAG" />) to indicate that the buffer can be accessed in different ways.</para>
+    </summary>
+  </member>
+  <member name="D3D10_BUFFER_DESC.CPUAccessFlags">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>CPU access flags (see <see cref="D3D10_CPU_ACCESS_FLAG" />) or 0 if no CPU access is necessary. Applications can logically OR flags together.</para>
+    </summary>
+  </member>
+  <member name="D3D10_BUFFER_DESC.MiscFlags">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Miscellaneous flags (see <see cref="D3D10_RESOURCE_MISC_FLAG" />) or 0 if unused. Applications can logically OR flags together.</para>
+    </summary>
+  </member>
+</doc>

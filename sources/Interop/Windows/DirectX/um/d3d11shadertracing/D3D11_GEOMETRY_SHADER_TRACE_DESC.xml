@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_GEOMETRY_SHADER_TRACE_DESC">
+    <summary>
+      <para>Describes an instance of a geometry shader to trace.</para>
+    </summary>
+    <remarks>
+      <para>This API requires the Windows Software Development Kit (SDK) for Windows 8.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-shader-structures">Shader Structures</seealso>
+  </member>
+  <member name="D3D11_GEOMETRY_SHADER_TRACE_DESC.Invocation">
+    <summary>
+      <para>The invocation number of the instance of the geometry shader.</para>
+    </summary>
+  </member>
+</doc>

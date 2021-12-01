@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_EXTEND_MODE.xml' path='doc/member[@name="D2D1_EXTEND_MODE"]/*' />
 public enum D2D1_EXTEND_MODE : uint
 {
+    /// <include file='D2D1_EXTEND_MODE.xml' path='doc/member[@name="D2D1_EXTEND_MODE.D2D1_EXTEND_MODE_CLAMP"]/*' />
     D2D1_EXTEND_MODE_CLAMP = 0,
+
+    /// <include file='D2D1_EXTEND_MODE.xml' path='doc/member[@name="D2D1_EXTEND_MODE.D2D1_EXTEND_MODE_WRAP"]/*' />
     D2D1_EXTEND_MODE_WRAP = 1,
+
+    /// <include file='D2D1_EXTEND_MODE.xml' path='doc/member[@name="D2D1_EXTEND_MODE.D2D1_EXTEND_MODE_MIRROR"]/*' />
     D2D1_EXTEND_MODE_MIRROR = 2,
+
+    /// <include file='D2D1_EXTEND_MODE.xml' path='doc/member[@name="D2D1_EXTEND_MODE.D2D1_EXTEND_MODE_FORCE_DWORD"]/*' />
     D2D1_EXTEND_MODE_FORCE_DWORD = 0xffffffff,
 }

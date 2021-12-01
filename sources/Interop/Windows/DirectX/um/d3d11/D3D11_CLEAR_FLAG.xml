@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_CLEAR_FLAG">
+    <summary>
+      <para>Specifies the parts of the depth stencil to clear.</para>
+    </summary>
+    <remarks>
+      <para>These flags are used when calling <see cref="ID3D11DeviceContext.ClearDepthStencilView" />; the flags can be combined with a bitwise OR.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-enums">Core Enumerations</seealso>
+  </member>
+  <member name="D3D11_CLEAR_FLAG.D3D11_CLEAR_DEPTH">
+    <summary>
+      <para>Clear the depth buffer, using fast clear if possible, then place the resource in a compressed state.</para>
+    </summary>
+  </member>
+  <member name="D3D11_CLEAR_FLAG.D3D11_CLEAR_STENCIL">
+    <summary>
+      <para>Clear the stencil buffer, using fast clear if possible, then place the resource in a compressed state.</para>
+    </summary>
+  </member>
+</doc>

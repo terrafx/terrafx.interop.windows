@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDXGIAdapter4.xml' path='doc/member[@name="IDXGIAdapter4"]/*' />
 [Guid("3C8D99D1-4FBF-4181-A82C-AF66BF7BD24E")]
 [NativeTypeName("struct IDXGIAdapter4 : IDXGIAdapter3")]
 [NativeInheritance("IDXGIAdapter3")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
         return ((delegate* unmanaged<IDXGIAdapter4*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
         return ((delegate* unmanaged<IDXGIAdapter4*, uint>)(lpVtbl[1]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
         return ((delegate* unmanaged<IDXGIAdapter4*, uint>)(lpVtbl[2]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDXGIObject.SetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint DataSize, [NativeTypeName("const void *")] void* pData)
@@ -47,6 +52,7 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
         return ((delegate* unmanaged<IDXGIAdapter4*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
     }
 
+    /// <inheritdoc cref="IDXGIObject.SetPrivateDataInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown)
@@ -54,6 +60,7 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
         return ((delegate* unmanaged<IDXGIAdapter4*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), Name, pUnknown);
     }
 
+    /// <inheritdoc cref="IDXGIObject.GetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint* pDataSize, void* pData)
@@ -61,6 +68,7 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
         return ((delegate* unmanaged<IDXGIAdapter4*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
     }
 
+    /// <inheritdoc cref="IDXGIObject.GetParent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetParent([NativeTypeName("const IID &")] Guid* riid, void** ppParent)
@@ -68,6 +76,7 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
         return ((delegate* unmanaged<IDXGIAdapter4*, Guid*, void**, int>)(lpVtbl[6]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), riid, ppParent);
     }
 
+    /// <inheritdoc cref="IDXGIAdapter.EnumOutputs" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT EnumOutputs(uint Output, IDXGIOutput** ppOutput)
@@ -75,6 +84,7 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
         return ((delegate* unmanaged<IDXGIAdapter4*, uint, IDXGIOutput**, int>)(lpVtbl[7]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), Output, ppOutput);
     }
 
+    /// <inheritdoc cref="IDXGIAdapter.GetDesc" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetDesc(DXGI_ADAPTER_DESC* pDesc)
@@ -82,6 +92,7 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
         return ((delegate* unmanaged[SuppressGCTransition]<IDXGIAdapter4*, DXGI_ADAPTER_DESC*, int>)(lpVtbl[8]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), pDesc);
     }
 
+    /// <inheritdoc cref="IDXGIAdapter.CheckInterfaceSupport" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT CheckInterfaceSupport([NativeTypeName("const GUID &")] Guid* InterfaceName, LARGE_INTEGER* pUMDVersion)
@@ -89,6 +100,7 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
         return ((delegate* unmanaged<IDXGIAdapter4*, Guid*, LARGE_INTEGER*, int>)(lpVtbl[9]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), InterfaceName, pUMDVersion);
     }
 
+    /// <inheritdoc cref="IDXGIAdapter1.GetDesc1" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetDesc1(DXGI_ADAPTER_DESC1* pDesc)
@@ -96,6 +108,7 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
         return ((delegate* unmanaged[SuppressGCTransition]<IDXGIAdapter4*, DXGI_ADAPTER_DESC1*, int>)(lpVtbl[10]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), pDesc);
     }
 
+    /// <inheritdoc cref="IDXGIAdapter2.GetDesc2" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetDesc2(DXGI_ADAPTER_DESC2* pDesc)
@@ -103,6 +116,7 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
         return ((delegate* unmanaged[SuppressGCTransition]<IDXGIAdapter4*, DXGI_ADAPTER_DESC2*, int>)(lpVtbl[11]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), pDesc);
     }
 
+    /// <inheritdoc cref="IDXGIAdapter3.RegisterHardwareContentProtectionTeardownStatusEvent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT RegisterHardwareContentProtectionTeardownStatusEvent(HANDLE hEvent, [NativeTypeName("DWORD *")] uint* pdwCookie)
@@ -110,6 +124,7 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
         return ((delegate* unmanaged<IDXGIAdapter4*, HANDLE, uint*, int>)(lpVtbl[12]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), hEvent, pdwCookie);
     }
 
+    /// <inheritdoc cref="IDXGIAdapter3.UnregisterHardwareContentProtectionTeardownStatus" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public void UnregisterHardwareContentProtectionTeardownStatus([NativeTypeName("DWORD")] uint dwCookie)
@@ -117,6 +132,7 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
         ((delegate* unmanaged<IDXGIAdapter4*, uint, void>)(lpVtbl[13]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), dwCookie);
     }
 
+    /// <inheritdoc cref="IDXGIAdapter3.QueryVideoMemoryInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT QueryVideoMemoryInfo(uint NodeIndex, DXGI_MEMORY_SEGMENT_GROUP MemorySegmentGroup, DXGI_QUERY_VIDEO_MEMORY_INFO* pVideoMemoryInfo)
@@ -124,6 +140,7 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
         return ((delegate* unmanaged<IDXGIAdapter4*, uint, DXGI_MEMORY_SEGMENT_GROUP, DXGI_QUERY_VIDEO_MEMORY_INFO*, int>)(lpVtbl[14]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), NodeIndex, MemorySegmentGroup, pVideoMemoryInfo);
     }
 
+    /// <inheritdoc cref="IDXGIAdapter3.SetVideoMemoryReservation" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SetVideoMemoryReservation(uint NodeIndex, DXGI_MEMORY_SEGMENT_GROUP MemorySegmentGroup, [NativeTypeName("UINT64")] ulong Reservation)
@@ -131,6 +148,7 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
         return ((delegate* unmanaged<IDXGIAdapter4*, uint, DXGI_MEMORY_SEGMENT_GROUP, ulong, int>)(lpVtbl[15]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), NodeIndex, MemorySegmentGroup, Reservation);
     }
 
+    /// <inheritdoc cref="IDXGIAdapter3.RegisterVideoMemoryBudgetChangeNotificationEvent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT RegisterVideoMemoryBudgetChangeNotificationEvent(HANDLE hEvent, [NativeTypeName("DWORD *")] uint* pdwCookie)
@@ -138,6 +156,7 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
         return ((delegate* unmanaged<IDXGIAdapter4*, HANDLE, uint*, int>)(lpVtbl[16]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), hEvent, pdwCookie);
     }
 
+    /// <inheritdoc cref="IDXGIAdapter3.UnregisterVideoMemoryBudgetChangeNotification" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public void UnregisterVideoMemoryBudgetChangeNotification([NativeTypeName("DWORD")] uint dwCookie)
@@ -145,6 +164,7 @@ public unsafe partial struct IDXGIAdapter4 : IDXGIAdapter4.Interface
         ((delegate* unmanaged<IDXGIAdapter4*, uint, void>)(lpVtbl[17]))((IDXGIAdapter4*)Unsafe.AsPointer(ref this), dwCookie);
     }
 
+    /// <include file='IDXGIAdapter4.xml' path='doc/member[@name="IDXGIAdapter4.GetDesc3"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT GetDesc3(DXGI_ADAPTER_DESC3* pDesc)

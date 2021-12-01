@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_RESOURCE_TEXTURE_PROPERTIES">
+    <summary>
+      <para>Defines a resource texture when the original resource texture is created.</para>
+    </summary>
+    <seealso cref="ID2D1EffectContext.CreateResourceTexture" />
+  </member>
+  <member name="D2D1_RESOURCE_TEXTURE_PROPERTIES.extents">
+    <summary>
+      <para>The extents of the resource table in each dimension.</para>
+    </summary>
+  </member>
+  <member name="D2D1_RESOURCE_TEXTURE_PROPERTIES.dimensions">
+    <summary>
+      <para>The number of dimensions in the resource texture. This must be a number from 1 to 3.</para>
+    </summary>
+  </member>
+  <member name="D2D1_RESOURCE_TEXTURE_PROPERTIES.bufferPrecision">
+    <summary>
+      <para>The precision of the resource texture to create.</para>
+    </summary>
+  </member>
+  <member name="D2D1_RESOURCE_TEXTURE_PROPERTIES.channelDepth">
+    <summary>
+      <para>The number of channels in the resource texture.</para>
+    </summary>
+  </member>
+  <member name="D2D1_RESOURCE_TEXTURE_PROPERTIES.filter">
+    <summary>
+      <para>The filtering mode to use on the texture.</para>
+    </summary>
+  </member>
+  <member name="D2D1_RESOURCE_TEXTURE_PROPERTIES.extendModes">
+    <summary>
+      <para>Specifies how pixel values beyond the extent of the texture will be sampled, in every dimension.</para>
+    </summary>
+  </member>
+</doc>

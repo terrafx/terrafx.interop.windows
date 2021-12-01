@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11ShaderTraceFactory.CreateShaderTrace">
+    <summary>
+      <para>Creates a shader-trace interface for a shader-trace information object.</para>
+    </summary>
+    <param name="pShader">
+      <para>A pointer to the interface of the shader to create the shader-trace interface for. For example, <i>pShader</i> can be an instance of <see cref="ID3D11VertexShader" />, <see cref="ID3D11PixelShader" />, and so on.</para>
+    </param>
+    <param name="pTraceDesc">
+      <para>A pointer to a  <see cref="D3D11_SHADER_TRACE_DESC" /> structure that describes the shader-trace object to create. This parameter cannot be <b>NULL</b>.</para>
+    </param>
+    <param name="ppShaderTrace">
+      <para>A pointer to a variable that receives a pointer to the <see cref="ID3D11ShaderTrace" /> interface for the shader-trace object that <b>CreateShaderTrace</b> creates.</para>
+    </param>
+    <returns>
+      <para>
+        <b>CreateShaderTrace</b> returns:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>S_OK</b> if the method created the shader-trace information object.</description>
+        </item>
+        <item>
+          <description>
+            <b>E_FAIL</b> if the reference device, which supports tracing, is not being used.</description>
+        </item>
+        <item>
+          <description>
+            <b>E_OUTOFMEMORY</b> if memory is unavailable to complete the operation.</description>
+        </item>
+        <item>
+          <description>
+            <b>E_INVALIDARG</b> if any parameter is NULL or invalid.</description>
+        </item>
+        <item>
+          <description>Possibly other error codes that are described in <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This API requires the Windows Software Development Kit (SDK) for Windows 8.</para>
+    </remarks>
+    <seealso cref="ID3D11ShaderTraceFactory" />
+  </member>
+  <member name="ID3D11ShaderTraceFactory">
+    <summary>
+      <para>An <b>ID3D11ShaderTraceFactory</b> interface implements a method for generating shader trace information objects.</para>
+    </summary>
+    <remarks>
+      <para>These APIs require the Windows Software Development Kit (SDK) for Windows 8.</para>
+      <para>To retrieve an instance of <b>ID3D11ShaderTraceFactory</b>, call <see cref="IUnknown.QueryInterface" /> on a <see cref="ID3D11Device" /> that you created with <see cref="D3D11_CREATE_DEVICE_DEBUGGABLE" />.</para>
+    </remarks>
+    <seealso cref="IUnknown" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-shader-interfaces">Shader Interfaces</seealso>
+  </member>
+</doc>

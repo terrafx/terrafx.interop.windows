@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='IDXGIResource.xml' path='doc/member[@name="IDXGIResource"]/*' />
 [Guid("035F3AB4-482E-4E50-B41F-8A7F8BD8960B")]
 [NativeTypeName("struct IDXGIResource : IDXGIDeviceSubObject")]
 [NativeInheritance("IDXGIDeviceSubObject")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDXGIResource : IDXGIResource.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDXGIResource : IDXGIResource.Interface
         return ((delegate* unmanaged<IDXGIResource*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIResource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDXGIResource : IDXGIResource.Interface
         return ((delegate* unmanaged<IDXGIResource*, uint>)(lpVtbl[1]))((IDXGIResource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDXGIResource : IDXGIResource.Interface
         return ((delegate* unmanaged<IDXGIResource*, uint>)(lpVtbl[2]))((IDXGIResource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDXGIObject.SetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint DataSize, [NativeTypeName("const void *")] void* pData)
@@ -47,6 +52,7 @@ public unsafe partial struct IDXGIResource : IDXGIResource.Interface
         return ((delegate* unmanaged<IDXGIResource*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGIResource*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
     }
 
+    /// <inheritdoc cref="IDXGIObject.SetPrivateDataInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown)
@@ -54,6 +60,7 @@ public unsafe partial struct IDXGIResource : IDXGIResource.Interface
         return ((delegate* unmanaged<IDXGIResource*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGIResource*)Unsafe.AsPointer(ref this), Name, pUnknown);
     }
 
+    /// <inheritdoc cref="IDXGIObject.GetPrivateData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint* pDataSize, void* pData)
@@ -61,6 +68,7 @@ public unsafe partial struct IDXGIResource : IDXGIResource.Interface
         return ((delegate* unmanaged<IDXGIResource*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGIResource*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
     }
 
+    /// <inheritdoc cref="IDXGIObject.GetParent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetParent([NativeTypeName("const IID &")] Guid* riid, void** ppParent)
@@ -68,6 +76,7 @@ public unsafe partial struct IDXGIResource : IDXGIResource.Interface
         return ((delegate* unmanaged<IDXGIResource*, Guid*, void**, int>)(lpVtbl[6]))((IDXGIResource*)Unsafe.AsPointer(ref this), riid, ppParent);
     }
 
+    /// <inheritdoc cref="IDXGIDeviceSubObject.GetDevice" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDevice([NativeTypeName("const IID &")] Guid* riid, void** ppDevice)
@@ -75,6 +84,7 @@ public unsafe partial struct IDXGIResource : IDXGIResource.Interface
         return ((delegate* unmanaged<IDXGIResource*, Guid*, void**, int>)(lpVtbl[7]))((IDXGIResource*)Unsafe.AsPointer(ref this), riid, ppDevice);
     }
 
+    /// <include file='IDXGIResource.xml' path='doc/member[@name="IDXGIResource.GetSharedHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetSharedHandle(HANDLE* pSharedHandle)
@@ -82,6 +92,7 @@ public unsafe partial struct IDXGIResource : IDXGIResource.Interface
         return ((delegate* unmanaged<IDXGIResource*, HANDLE*, int>)(lpVtbl[8]))((IDXGIResource*)Unsafe.AsPointer(ref this), pSharedHandle);
     }
 
+    /// <include file='IDXGIResource.xml' path='doc/member[@name="IDXGIResource.GetUsage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetUsage([NativeTypeName("DXGI_USAGE *")] uint* pUsage)
@@ -89,6 +100,7 @@ public unsafe partial struct IDXGIResource : IDXGIResource.Interface
         return ((delegate* unmanaged<IDXGIResource*, uint*, int>)(lpVtbl[9]))((IDXGIResource*)Unsafe.AsPointer(ref this), pUsage);
     }
 
+    /// <include file='IDXGIResource.xml' path='doc/member[@name="IDXGIResource.SetEvictionPriority"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetEvictionPriority(uint EvictionPriority)
@@ -96,6 +108,7 @@ public unsafe partial struct IDXGIResource : IDXGIResource.Interface
         return ((delegate* unmanaged<IDXGIResource*, uint, int>)(lpVtbl[10]))((IDXGIResource*)Unsafe.AsPointer(ref this), EvictionPriority);
     }
 
+    /// <include file='IDXGIResource.xml' path='doc/member[@name="IDXGIResource.GetEvictionPriority"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetEvictionPriority(uint* pEvictionPriority)

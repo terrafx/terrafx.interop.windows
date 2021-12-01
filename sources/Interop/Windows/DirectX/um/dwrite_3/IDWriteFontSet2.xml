@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFontSet2.GetExpirationEvent">
+    <summary>
+      <para>Retrieves the expiration event for the font set, if any. The expiration event is set on a system font set object if it is out of date due to fonts being installed, uninstalled, or updated. You should handle the event by getting a new system font set.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">HANDLE</a></b></para>
+      <para>An event handle, if called on the system font set, or <code>nullptr</code> if called on a custom font set.</para>
+    </returns>
+    <remarks>
+      <para>You mustn't call <b>CloseHandle</b> on the returned event handle. The handle is owned by the font set object, and it remains valid as long as you hold a reference to the font set. You can wait on the returned event, or use <see cref="RegisterWaitForSingleObject" /> to request a callback when the event is set.</para>
+    </remarks>
+  </member>
+  <member name="IDWriteFontSet2">
+    <summary>
+      <para>Represents a font set.</para>
+      <para>This interface extends <see cref="IDWriteFontSet1" />.</para>
+    </summary>
+    <seealso cref="IDWriteFontSet1" />
+  </member>
+</doc>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_ADAPTER_FLAG3">
+    <summary>
+      <para>Identifies the type of DXGI adapter.</para>
+    </summary>
+    <remarks>
+      <para>The <b>DXGI_ADAPTER_FLAG3</b> enumerated type is used by the <b>Flags</b> member of the <see cref="DXGI_ADAPTER_DESC3" /> structure to ientify the type of DXGI adapter.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-enums">DXGI Enumerations</seealso>
+  </member>
+  <member name="DXGI_ADAPTER_FLAG3.DXGI_ADAPTER_FLAG3_NONE">
+    <summary>
+      <para>Specifies no flags.</para>
+    </summary>
+  </member>
+  <member name="DXGI_ADAPTER_FLAG3.DXGI_ADAPTER_FLAG3_REMOTE">
+    <summary>
+      <para>Value always set to 0. This flag is reserved.</para>
+    </summary>
+  </member>
+  <member name="DXGI_ADAPTER_FLAG3.DXGI_ADAPTER_FLAG3_SOFTWARE">
+    <summary>
+      <para>Specifies a software adapter. For more info about this flag, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-programming-guide-dxgi">new info in Windows 8 about enumerating adapters</a>.</para>
+      <para>
+        <b>Direct3D 11:  </b>This enumeration value is supported starting with Windows 8.</para>
+    </summary>
+  </member>
+  <member name="DXGI_ADAPTER_FLAG3.DXGI_ADAPTER_FLAG3_ACG_COMPATIBLE">
+    <summary>
+      <para>Specifies that the adapter's driver has been confirmed to work in an OS process where Arbitrary Code Guard (ACG) is enabled (i.e. dynamic code generation is disallowed).</para>
+    </summary>
+  </member>
+  <member name="DXGI_ADAPTER_FLAG3.DXGI_ADAPTER_FLAG3_SUPPORT_MONITORED_FENCES">
+    <summary>
+      <para>Specifies that the adapter supports monitored fences. These adapters support the <see cref="ID3D12Device.CreateFence" /> and <see cref="ID3D11Device5.CreateFence" /> functions.</para>
+    </summary>
+  </member>
+  <member name="DXGI_ADAPTER_FLAG3.DXGI_ADAPTER_FLAG3_SUPPORT_NON_MONITORED_FENCES">
+    <summary>
+      <para>Specifies that the adapter supports non-monitored fences. These adapters support the <see cref="ID3D12Device.CreateFence" /> function together with the <see cref="D3D12_FENCE_FLAG_NON_MONITORED" /> flag.</para>
+      <para>
+        <b>Note</b>  For adapters that support both monitored and non-monitored fences, non-monitored fences are only supported when created with the <see cref="D3D12_FENCE_FLAG_SHARED" /> and <b>D3D12_FENCE_FLAG_SHARED_CROSS_ADAPTER</b> flags. Monitored fences should always be used by supporting adapters unless communicating with an adapter that only supports non-monitored fences.</para>
+    </summary>
+  </member>
+  <member name="DXGI_ADAPTER_FLAG3.DXGI_ADAPTER_FLAG3_KEYED_MUTEX_CONFORMANCE">
+    <summary>
+      <para>Specifies that the adapter claims keyed mutex conformance. This signals a stronger guarantee that the <see cref="IDXGIKeyedMutex" /> interface behaves correctly.</para>
+    </summary>
+  </member>
+  <member name="DXGI_ADAPTER_FLAG3.DXGI_ADAPTER_FLAG3_FORCE_DWORD">
+    <summary>
+      <para>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. This value is not used.</para>
+    </summary>
+  </member>
+</doc>

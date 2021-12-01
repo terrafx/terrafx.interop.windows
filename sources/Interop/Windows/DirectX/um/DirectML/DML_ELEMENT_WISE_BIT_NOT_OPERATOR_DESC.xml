@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_ELEMENT_WISE_BIT_NOT_OPERATOR_DESC">
+    <summary>
+      <para>Computes the bitwise NOT for each element of the input tensor, and writes the result into the output tensor.</para>
+      <para>The bitwise operation is applied to tensor data in its native encoding. Therefore, the tensor data type is ignored except for determining the width of each element.</para>
+      <para>This operator supports in-place execution, meaning that the output tensor is permitted to alias the input tensor during binding.</para>
+    </summary>
+  </member>
+  <member name="DML_ELEMENT_WISE_BIT_NOT_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The input tensor to read from.</para>
+    </summary>
+  </member>
+  <member name="DML_ELEMENT_WISE_BIT_NOT_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The output tensor to write the results to.</para>
+    </summary>
+  </member>
+</doc>

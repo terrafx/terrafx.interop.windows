@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_OUTPUT_DESC">
+    <summary>
+      <para>Describes an output or physical connection between the adapter (video card) and a device.</para>
+    </summary>
+    <remarks>
+      <para>The <b>DXGI_OUTPUT_DESC</b> structure is initialized by the <see cref="IDXGIOutput.GetDesc" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
+  </member>
+  <member name="DXGI_OUTPUT_DESC.DeviceName">
+    <summary>
+      <para>Type: <b>WCHAR[32]</b></para>
+      <para>A string that contains the name of the output device.</para>
+    </summary>
+  </member>
+  <member name="DXGI_OUTPUT_DESC.DesktopCoordinates">
+    <summary>
+      <para>Type: <b><see cref="RECT" /></b></para>
+      <para>A <see cref="RECT" /> structure containing the bounds of the output in desktop coordinates. Desktop coordinates depend on the dots per inch (DPI) of the desktop.
+For info about writing DPI-aware Win32 apps, see <a href="https://docs.microsoft.com//windows/desktop/hidpi/high-dpi-desktop-application-development-on-windows">High DPI</a>.</para>
+    </summary>
+  </member>
+  <member name="DXGI_OUTPUT_DESC.AttachedToDesktop">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>True if the output is attached to the desktop; otherwise, false.</para>
+    </summary>
+  </member>
+  <member name="DXGI_OUTPUT_DESC.Rotation">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173065(v=vs.85)">DXGI_MODE_ROTATION</a></b></para>
+      <para>A member of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173065(v=vs.85)">DXGI_MODE_ROTATION</a> enumerated type describing on how an image is rotated by the output.</para>
+    </summary>
+  </member>
+  <member name="DXGI_OUTPUT_DESC.Monitor">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HMONITOR</a></b></para>
+      <para>An <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HMONITOR</a> handle that represents the display monitor. For more information, see <a href="https://docs.microsoft.com//windows/desktop/gdi/hmonitor-and-the-device-context">HMONITOR and the Device Context</a>.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D_SIZE_F">
+    <summary>
+      <para>Stores an ordered pair of floating-point values, typically the width and height of a rectangle.</para>
+    </summary>
+  </member>
+  <member name="D2D_SIZE_F.width">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The horizontal component of this size.</para>
+    </summary>
+  </member>
+  <member name="D2D_SIZE_F.height">
+    <summary>
+      <para>Type: <b>FLOAT</b></para>
+      <para>The vertical component of this size.</para>
+    </summary>
+  </member>
+</doc>

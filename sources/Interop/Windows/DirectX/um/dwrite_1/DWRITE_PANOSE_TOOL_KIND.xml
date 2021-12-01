@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_PANOSE_TOOL_KIND">
+    <summary>
+      <para>The <b>DWRITE_PANOSE_TOOL_KIND</b> enumeration contains values that specify the kind of tool that is used to create character forms.</para>
+    </summary>
+    <seealso cref="DWRITE_PANOSE" />
+  </member>
+  <member name="DWRITE_PANOSE_TOOL_KIND.DWRITE_PANOSE_TOOL_KIND_ANY">
+    <summary>
+      <para>Any kind of tool.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_TOOL_KIND.DWRITE_PANOSE_TOOL_KIND_NO_FIT">
+    <summary>
+      <para>No fit for the kind of tool.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_TOOL_KIND.DWRITE_PANOSE_TOOL_KIND_FLAT_NIB">
+    <summary>
+      <para>Flat NIB tool.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_TOOL_KIND.DWRITE_PANOSE_TOOL_KIND_PRESSURE_POINT">
+    <summary>
+      <para>Pressure point tool.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_TOOL_KIND.DWRITE_PANOSE_TOOL_KIND_ENGRAVED">
+    <summary>
+      <para>Engraved tool.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_TOOL_KIND.DWRITE_PANOSE_TOOL_KIND_BALL">
+    <summary>
+      <para>Ball tool.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_TOOL_KIND.DWRITE_PANOSE_TOOL_KIND_BRUSH">
+    <summary>
+      <para>Brush tool.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_TOOL_KIND.DWRITE_PANOSE_TOOL_KIND_ROUGH">
+    <summary>
+      <para>Rough tool.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_TOOL_KIND.DWRITE_PANOSE_TOOL_KIND_FELT_PEN_BRUSH_TIP">
+    <summary>
+      <para>Felt-pen-brush-tip tool.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_TOOL_KIND.DWRITE_PANOSE_TOOL_KIND_WILD_BRUSH">
+    <summary>
+      <para>Wild-brush tool.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_FEATURE">
+    <summary>
+      <para>Specifies a range of hardware features, to be used when checking for feature support.</para>
+    </summary>
+    <remarks>
+      <para>This enum is used by the <see cref="CheckFeatureSupport" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-enums">DXGI Enumerations</seealso>
+  </member>
+  <member name="DXGI_FEATURE.DXGI_FEATURE_PRESENT_ALLOW_TEARING">
+    <summary>
+      <para>The display supports tearing, a requirement of variable refresh rate displays.</para>
+    </summary>
+  </member>
+</doc>

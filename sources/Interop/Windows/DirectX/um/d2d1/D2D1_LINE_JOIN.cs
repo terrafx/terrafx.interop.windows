@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_LINE_JOIN.xml' path='doc/member[@name="D2D1_LINE_JOIN"]/*' />
 public enum D2D1_LINE_JOIN : uint
 {
+    /// <include file='D2D1_LINE_JOIN.xml' path='doc/member[@name="D2D1_LINE_JOIN.D2D1_LINE_JOIN_MITER"]/*' />
     D2D1_LINE_JOIN_MITER = 0,
+
+    /// <include file='D2D1_LINE_JOIN.xml' path='doc/member[@name="D2D1_LINE_JOIN.D2D1_LINE_JOIN_BEVEL"]/*' />
     D2D1_LINE_JOIN_BEVEL = 1,
+
+    /// <include file='D2D1_LINE_JOIN.xml' path='doc/member[@name="D2D1_LINE_JOIN.D2D1_LINE_JOIN_ROUND"]/*' />
     D2D1_LINE_JOIN_ROUND = 2,
+
+    /// <include file='D2D1_LINE_JOIN.xml' path='doc/member[@name="D2D1_LINE_JOIN.D2D1_LINE_JOIN_MITER_OR_BEVEL"]/*' />
     D2D1_LINE_JOIN_MITER_OR_BEVEL = 3,
+
+    /// <include file='D2D1_LINE_JOIN.xml' path='doc/member[@name="D2D1_LINE_JOIN.D2D1_LINE_JOIN_FORCE_DWORD"]/*' />
     D2D1_LINE_JOIN_FORCE_DWORD = 0xffffffff,
 }

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDXGIDebug.ReportLiveObjects">
+    <summary>
+      <para>Reports info about the lifetime of an object or objects.</para>
+      <para>See the <a href="https://github.com/microsoft/directx-graphics-samples/tree/master/techniquedemos/d3d12memorymanagement">Memory management sample</a>.</para>
+    </summary>
+    <param name="apiid">
+      <para>The globally unique identifier (GUID) of the object or objects to get info about. Use one of the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-debug-id">DXGI_DEBUG_ID</a> GUIDs.</para>
+    </param>
+    <param name="flags">
+      <para>A <see cref="DXGI_DEBUG_RLO_FLAGS" />-typed value that specifies the amount of info to report.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful; an error code otherwise. For a list of error codes, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>Note</b>  This API requires the Windows Software Development Kit (SDK) for Windows 8.</para>
+    </remarks>
+    <seealso cref="IDXGIDebug" />
+    <seealso href="https://github.com/microsoft/directx-graphics-samples/tree/master/techniquedemos/d3d12memorymanagement">Memory management sample</seealso>
+  </member>
+  <member name="IDXGIDebug">
+    <summary>
+      <para>This interface controls debug settings, and can only be used if the debug layer is turned on.</para>
+    </summary>
+    <remarks>
+      <para>This interface is obtained by calling the <see cref="DXGIGetDebugInterface" /> function.</para>
+      <para>For more info about the debug layer, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-layers">Debug Layer</a>.</para>
+      <para>
+        <b>Windows Phone 8:
+</b> This API is supported.</para>
+      <para>
+        <b>Note</b>  This API requires the Windows Software Development Kit (SDK) for Windows 8.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

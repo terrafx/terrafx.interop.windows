@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDXGIFactory4.EnumAdapterByLuid">
+    <summary>
+      <para>Outputs the <see cref="IDXGIAdapter" /> for the specified LUID.</para>
+    </summary>
+    <param name="AdapterLuid">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff549708(v=vs.85)">LUID</a></b></para>
+      <para>A unique value that identifies the adapter.
+See <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff549708(v=vs.85)">LUID</a> for a definition of the structure.
+<b>LUID</b> is defined in dxgi.h.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>The globally unique identifier (GUID) of the <see cref="IDXGIAdapter" /> object referenced by the <i>ppvAdapter</i> parameter.</para>
+    </param>
+    <param name="ppvAdapter">
+      <para>Type: <b>void**</b></para>
+      <para>The address of an <see cref="IDXGIAdapter" /> interface pointer to the adapter.
+This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns S_OK if successful; an error code otherwise.
+For a list of error codes, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.
+See also Direct3D 12 Return Codes.</para>
+    </returns>
+    <remarks>
+      <para>For Direct3D 12, it's no longer possible to backtrack from a device to the <see cref="IDXGIAdapter" /> that was used to create it.
+<b>IDXGIFactory4.EnumAdapterByLuid</b> enables an app to retrieve information about the adapter where a D3D12 device was created.
+<b>IDXGIFactory4.EnumAdapterByLuid</b> is designed to be paired with <see cref="ID3D12Device.GetAdapterLuid" />.
+For more information, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-1-4-improvements">DXGI 1.4 Improvements</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
+    <seealso cref="IDXGIFactory4" />
+  </member>
+  <member name="IDXGIFactory4.EnumWarpAdapter">
+    <summary>
+      <para>Provides an adapter which can be provided to D3D12CreateDevice to use the WARP renderer.</para>
+    </summary>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>The globally unique identifier (GUID) of the <see cref="IDXGIAdapter" /> object referenced by the <i>ppvAdapter</i> parameter.</para>
+    </param>
+    <param name="ppvAdapter">
+      <para>Type: <b>void**</b></para>
+      <para>The address of an <see cref="IDXGIAdapter" /> interface pointer to the adapter.
+This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns S_OK if successful; an error code otherwise.
+For a list of error codes, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.
+See also Direct3D 12 Return Codes.</para>
+    </returns>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-1-4-improvements">DXGI 1.4 Improvements</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
+    <seealso cref="IDXGIFactory4" />
+  </member>
+  <member name="IDXGIFactory4">
+    <summary>
+      <para>Enables creating Microsoft DirectX Graphics Infrastructure (DXGI) objects.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
+    <seealso cref="IDXGIFactory1" />
+    <seealso cref="IDXGIFactory2" />
+    <seealso cref="IDXGIFactory3" />
+  </member>
+</doc>

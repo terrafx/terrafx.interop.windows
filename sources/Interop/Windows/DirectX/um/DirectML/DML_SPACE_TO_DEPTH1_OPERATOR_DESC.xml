@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_SPACE_TO_DEPTH1_OPERATOR_DESC">
+    <summary>
+      <para>Rearranges blocks of spatial data into depth. The operator outputs a copy of the input tensor where values from the height and width dimensions are moved to the depth dimension.</para>
+      <para>This is the inverse transformation of <see cref="DML_DEPTH_TO_SPACE1_OPERATOR_DESC" />.</para>
+    </summary>
+    <remarks>
+      <para>When the <i>Order</i> parameter is set to <see cref="DML_DEPTH_SPACE_ORDER_DEPTH_COLUMN_ROW" />, this operator is equivalent to <see cref="DML_SPACE_TO_DEPTH_OPERATOR_DESC" />.</para>
+    </remarks>
+  </member>
+  <member name="DML_SPACE_TO_DEPTH1_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The tensor to read from. The input tensor's dimensions are <code>{ Batch, Channels, Height, Width }</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_SPACE_TO_DEPTH1_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The tensor to write the results to. The output tensor's dimensions are <code>{ Batch, Channels / (BlockSize * BlockSize), Height * BlockSize, Width * BlockSize }</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_SPACE_TO_DEPTH1_OPERATOR_DESC.BlockSize">
+    <summary>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>The width and height of the Blocks that are moved.</para>
+    </summary>
+  </member>
+  <member name="DML_SPACE_TO_DEPTH1_OPERATOR_DESC.Order">
+    <summary>
+      <para>Type: <b><see cref="DML_DEPTH_SPACE_ORDER" /></b></para>
+      <para>See <see cref="DML_DEPTH_SPACE_ORDER" />.</para>
+    </summary>
+  </member>
+</doc>

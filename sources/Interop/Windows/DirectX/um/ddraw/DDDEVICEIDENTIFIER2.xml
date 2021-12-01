@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DDDEVICEIDENTIFIER2">
+    <summary>
+      <para>The <b>DDDEVICEIDENTIFIER2</b> structure is passed to the <see cref="IDirectDraw7.GetDeviceIdentifier" /> method to obtain information about a device.</para>
+    </summary>
+    <remarks>
+      <para>The values in <b>szDriver</b> and <b>szDescription</b> are for presentation to the user only. They should not be used to identify particular drivers because different strings might be associated with the same device, or the same driver from different vendors might be described differently.</para>
+      <para>The <b>dwVendorId</b>, <b>dwDeviceId</b>, <b>dwSubSysId</b>, and <b>dwRevision</b> members can be used to identify particular chipsets, but use extreme caution.</para>
+    </remarks>
+  </member>
+  <member name="DDDEVICEIDENTIFIER2.szDriver">
+    <summary>
+      <para>Name of the driver.</para>
+    </summary>
+  </member>
+  <member name="DDDEVICEIDENTIFIER2.szDescription">
+    <summary>
+      <para>Description of the driver.</para>
+    </summary>
+  </member>
+  <member name="DDDEVICEIDENTIFIER2.liDriverVersion">
+    <summary>
+      <para>Version of the driver. It is valid to do less than and greater than comparisons on all 64 bits. Caution should be exercised if you use this element to identify problematic drivers; instead, use the <b>guidDeviceIdentifier</b> member for this purpose.</para>
+      <para>The data takes the following form:</para>
+      <code>
+wProduct = HIWORD(liDriverVersion.HighPart)
+wVersion = LOWORD(liDriverVersion.HighPart)
+wSubVersion = HIWORD(liDriverVersion.LowPart)
+wBuild = LOWORD(liDriverVersion.LowPart)
+
+</code>
+    </summary>
+  </member>
+  <member name="DDDEVICEIDENTIFIER2.dwDriverVersionLowPart">
+    <summary></summary>
+  </member>
+  <member name="DDDEVICEIDENTIFIER2.dwDriverVersionHighPart">
+    <summary></summary>
+  </member>
+  <member name="DDDEVICEIDENTIFIER2.dwVendorId">
+    <summary>
+      <para>Identifier of the manufacturer. Can be 0 if unknown.</para>
+    </summary>
+  </member>
+  <member name="DDDEVICEIDENTIFIER2.dwDeviceId">
+    <summary>
+      <para>Identifier of the type of chipset. Can be 0 if unknown.</para>
+    </summary>
+  </member>
+  <member name="DDDEVICEIDENTIFIER2.dwSubSysId">
+    <summary>
+      <para>Identifier of the subsystem. Typically, this means the particular board. Can be 0 if unknown.</para>
+    </summary>
+  </member>
+  <member name="DDDEVICEIDENTIFIER2.dwRevision">
+    <summary>
+      <para>Identifier of the revision level of the chipset. Can be 0 if unknown.</para>
+    </summary>
+  </member>
+  <member name="DDDEVICEIDENTIFIER2.guidDeviceIdentifier">
+    <summary>
+      <para>Unique identifier for the driver and chipset pair. Use this value if you want to track changes to the driver or chipset to reprofile the graphics subsystem. It can also be used to identify particular problematic drivers.</para>
+    </summary>
+  </member>
+  <member name="DDDEVICEIDENTIFIER2.dwWHQLLevel">
+    <summary>
+      <para>The Windows Hardware Quality Lab (WHQL) certification level for the device and driver pair.</para>
+    </summary>
+  </member>
+</doc>

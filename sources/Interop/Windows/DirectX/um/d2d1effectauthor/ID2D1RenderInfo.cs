@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID2D1RenderInfo.xml' path='doc/member[@name="ID2D1RenderInfo"]/*' />
 [Guid("519AE1BD-D19A-420D-B849-364F594776B7")]
 [NativeTypeName("struct ID2D1RenderInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID2D1RenderInfo : ID2D1RenderInfo.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID2D1RenderInfo : ID2D1RenderInfo.Interface
         return ((delegate* unmanaged<ID2D1RenderInfo*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1RenderInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID2D1RenderInfo : ID2D1RenderInfo.Interface
         return ((delegate* unmanaged<ID2D1RenderInfo*, uint>)(lpVtbl[1]))((ID2D1RenderInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID2D1RenderInfo : ID2D1RenderInfo.Interface
         return ((delegate* unmanaged<ID2D1RenderInfo*, uint>)(lpVtbl[2]))((ID2D1RenderInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ID2D1RenderInfo.xml' path='doc/member[@name="ID2D1RenderInfo.SetInputDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetInputDescription([NativeTypeName("UINT32")] uint inputIndex, D2D1_INPUT_DESCRIPTION inputDescription)
@@ -47,6 +52,7 @@ public unsafe partial struct ID2D1RenderInfo : ID2D1RenderInfo.Interface
         return ((delegate* unmanaged<ID2D1RenderInfo*, uint, D2D1_INPUT_DESCRIPTION, int>)(lpVtbl[3]))((ID2D1RenderInfo*)Unsafe.AsPointer(ref this), inputIndex, inputDescription);
     }
 
+    /// <include file='ID2D1RenderInfo.xml' path='doc/member[@name="ID2D1RenderInfo.SetOutputBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetOutputBuffer(D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth)
@@ -54,6 +60,7 @@ public unsafe partial struct ID2D1RenderInfo : ID2D1RenderInfo.Interface
         return ((delegate* unmanaged<ID2D1RenderInfo*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int>)(lpVtbl[4]))((ID2D1RenderInfo*)Unsafe.AsPointer(ref this), bufferPrecision, channelDepth);
     }
 
+    /// <include file='ID2D1RenderInfo.xml' path='doc/member[@name="ID2D1RenderInfo.SetCached"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void SetCached(BOOL isCached)
@@ -61,6 +68,7 @@ public unsafe partial struct ID2D1RenderInfo : ID2D1RenderInfo.Interface
         ((delegate* unmanaged<ID2D1RenderInfo*, BOOL, void>)(lpVtbl[5]))((ID2D1RenderInfo*)Unsafe.AsPointer(ref this), isCached);
     }
 
+    /// <include file='ID2D1RenderInfo.xml' path='doc/member[@name="ID2D1RenderInfo.SetInstructionCountHint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public void SetInstructionCountHint([NativeTypeName("UINT32")] uint instructionCount)

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_ENCRYPTION_GUID_COUNT_OUTPUT">
+    <summary>
+      <para>Contains the response to a <b>D3D11_AUTHENTICATED_QUERY_ENCRYPTION_WHEN_ACCESSIBLE_GUID_COUNT</b> query.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+  </member>
+  <member name="D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_ENCRYPTION_GUID_COUNT_OUTPUT.Output">
+    <summary>
+      <para>A <see cref="D3D11_AUTHENTICATED_QUERY_OUTPUT" /> structure that contains a Message Authentication Code (MAC) and other data.</para>
+    </summary>
+  </member>
+  <member name="D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_ENCRYPTION_GUID_COUNT_OUTPUT.EncryptionGuidCount">
+    <summary>
+      <para>The number of encryption GUIDs.</para>
+    </summary>
+  </member>
+</doc>

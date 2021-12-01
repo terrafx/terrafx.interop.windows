@@ -7,11 +7,19 @@ using System;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_RENDER_TARGET_USAGE.xml' path='doc/member[@name="D2D1_RENDER_TARGET_USAGE"]/*' />
 [Flags]
 public enum D2D1_RENDER_TARGET_USAGE : uint
 {
+    /// <include file='D2D1_RENDER_TARGET_USAGE.xml' path='doc/member[@name="D2D1_RENDER_TARGET_USAGE.D2D1_RENDER_TARGET_USAGE_NONE"]/*' />
     D2D1_RENDER_TARGET_USAGE_NONE = 0x00000000,
+
+    /// <include file='D2D1_RENDER_TARGET_USAGE.xml' path='doc/member[@name="D2D1_RENDER_TARGET_USAGE.D2D1_RENDER_TARGET_USAGE_FORCE_BITMAP_REMOTING"]/*' />
     D2D1_RENDER_TARGET_USAGE_FORCE_BITMAP_REMOTING = 0x00000001,
+
+    /// <include file='D2D1_RENDER_TARGET_USAGE.xml' path='doc/member[@name="D2D1_RENDER_TARGET_USAGE.D2D1_RENDER_TARGET_USAGE_GDI_COMPATIBLE"]/*' />
     D2D1_RENDER_TARGET_USAGE_GDI_COMPATIBLE = 0x00000002,
+
+    /// <include file='D2D1_RENDER_TARGET_USAGE.xml' path='doc/member[@name="D2D1_RENDER_TARGET_USAGE.D2D1_RENDER_TARGET_USAGE_FORCE_DWORD"]/*' />
     D2D1_RENDER_TARGET_USAGE_FORCE_DWORD = 0xffffffff,
 }

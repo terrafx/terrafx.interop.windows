@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_RENDER_TARGET_USAGE">
+    <summary>
+      <para>Describes how a render target is remoted and whether it should be GDI-compatible. This enumeration allows a bitwise combination of its member values.</para>
+    </summary>
+    <seealso cref="D2D1_RENDER_TARGET_PROPERTIES" />
+  </member>
+  <member name="D2D1_RENDER_TARGET_USAGE.D2D1_RENDER_TARGET_USAGE_NONE">
+    <summary>
+      <para>The render target attempts to use Direct3D command-stream remoting and uses bitmap remoting if stream remoting fails. The render target is not GDI-compatible.</para>
+    </summary>
+  </member>
+  <member name="D2D1_RENDER_TARGET_USAGE.D2D1_RENDER_TARGET_USAGE_FORCE_BITMAP_REMOTING">
+    <summary>
+      <para>The render target renders content locally and sends it to the terminal services client as a bitmap.</para>
+    </summary>
+  </member>
+  <member name="D2D1_RENDER_TARGET_USAGE.D2D1_RENDER_TARGET_USAGE_GDI_COMPATIBLE">
+    <summary>
+      <para>The render target can be used efficiently with GDI.</para>
+    </summary>
+  </member>
+  <member name="D2D1_RENDER_TARGET_USAGE.D2D1_RENDER_TARGET_USAGE_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

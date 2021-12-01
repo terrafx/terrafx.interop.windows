@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_AUTHENTICATED_CONFIGURE_INPUT">
+    <summary>
+      <para>Contains input data for the <see cref="ID3D11VideoContext.ConfigureAuthenticatedChannel" /> method.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+  </member>
+  <member name="D3D11_AUTHENTICATED_CONFIGURE_INPUT.omac">
+    <summary>
+      <para>A <see cref="D3D11_OMAC" /> structure that contains a Message Authentication Code (MAC) of the data. The driver uses AES-based one-key CBC MAC (OMAC) to calculate this value for the block of data that appears after this structure member.</para>
+    </summary>
+  </member>
+  <member name="D3D11_AUTHENTICATED_CONFIGURE_INPUT.ConfigureType">
+    <summary>
+      <para>A GUID that specifies the command. The following GUIDs are defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>D3D11_AUTHENTICATED_CONFIGURE_CRYPTO_SESSION</b>
+          </description>
+          <description>
+            <para>Associates a cryptographic session with a decoder device and a Direct3D device.</para>
+            <para>Input data: <see cref="D3D11_AUTHENTICATED_CONFIGURE_CRYPTO_SESSION_INPUT" /></para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>D3D11_AUTHENTICATED_CONFIGURE_ENCRYPTION_WHEN_ACCESSIBLE</b>
+          </description>
+          <description>
+            <para>Sets the level of encryption that is performed before protected content becomes accessible to the CPU or bus.</para>
+            <para>Input data: <see cref="D3D11_AUTHENTICATED_CONFIGURE_ACCESSIBLE_ENCRYPTION_INPUT" /></para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>D3D11_AUTHENTICATED_CONFIGURE_INITIALIZE</b>
+          </description>
+          <description>
+            <para>Initializes the authenticated channel.</para>
+            <para>Input data: <see cref="D3D11_AUTHENTICATED_CONFIGURE_INITIALIZE_INPUT" /></para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>D3D11_AUTHENTICATED_CONFIGURE_PROTECTION</b>
+          </description>
+          <description>
+            <para>Enables or disables protection for the device.</para>
+            <para>Input data: <see cref="D3D11_AUTHENTICATED_CONFIGURE_PROTECTION_INPUT" /></para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>D3D11_AUTHENTICATED_CONFIGURE_SHARED_RESOURCE</b>
+          </description>
+          <description>
+            <para>Enables a process to open a shared resource, or disables a process from opening shared resources.</para>
+            <para>Input data: <see cref="D3D11_AUTHENTICATED_CONFIGURE_SHARED_RESOURCE_INPUT" /></para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="D3D11_AUTHENTICATED_CONFIGURE_INPUT.hChannel">
+    <summary>
+      <para>A handle to the authenticated channel. To get the handle, call the <see cref="ID3D11AuthenticatedChannel.GetChannelHandle" /> method.</para>
+    </summary>
+  </member>
+  <member name="D3D11_AUTHENTICATED_CONFIGURE_INPUT.SequenceNumber">
+    <summary>
+      <para>The query sequence number. At the start of the session, generate a cryptographically secure 32-bit random number to use as the starting sequence number. For each query, increment the sequence number by 1.</para>
+    </summary>
+  </member>
+</doc>

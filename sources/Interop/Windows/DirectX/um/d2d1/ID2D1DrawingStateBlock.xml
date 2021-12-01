@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1DrawingStateBlock.GetDescription">
+    <summary>
+      <para>Retrieves the antialiasing mode, transform, and tags portion of the drawing state.</para>
+    </summary>
+    <param name="stateDescription">
+      <para>Type: <b><see cref="D2D1_DRAWING_STATE_DESCRIPTION" />*</b></para>
+      <para>When this method returns, contains the antialiasing mode, transform, and tags portion of the drawing state. You must allocate storage for this parameter.</para>
+    </param>
+    <seealso cref="D2D1_DRAWING_STATE_DESCRIPTION" />
+    <seealso cref="ID2D1DrawingStateBlock" />
+  </member>
+  <member name="ID2D1DrawingStateBlock.GetTextRenderingParams">
+    <summary>
+      <para>Retrieves the text-rendering configuration of the drawing state.</para>
+    </summary>
+    <param name="textRenderingParams">
+      <para>Type: <b><see cref="IDWriteRenderingParams" />**</b></para>
+      <para>When this method returns, contains the address of a pointer to an <see cref="IDWriteRenderingParams" /> object that describes the text-rendering configuration of the drawing state.</para>
+    </param>
+    <seealso cref="ID2D1DrawingStateBlock" />
+  </member>
+  <member name="ID2D1DrawingStateBlock.SetDescription">
+    <summary>
+      <para>Specifies the antialiasing mode, transform, and tags portion of the drawing state.</para>
+    </summary>
+    <param name="stateDescription">
+      <para>Type: <b><see cref="D2D1_DRAWING_STATE_DESCRIPTION" />*</b></para>
+      <para>The antialiasing mode, transform, and tags portion of the drawing state.</para>
+    </param>
+    <seealso cref="ID2D1DrawingStateBlock" />
+  </member>
+  <member name="ID2D1DrawingStateBlock.SetDescription">
+    <summary>
+      <para>Specifies the antialiasing mode, transform, and tags portion of the drawing state.</para>
+    </summary>
+    <param name="stateDescription">
+      <para>Type: <b>const <see cref="D2D1_DRAWING_STATE_DESCRIPTION" /></b></para>
+      <para>The antialiasing mode, transform, and tags portion of the drawing state.</para>
+    </param>
+    <seealso cref="ID2D1DrawingStateBlock" />
+  </member>
+  <member name="ID2D1DrawingStateBlock.SetTextRenderingParams">
+    <summary>
+      <para>Specifies the text-rendering configuration of the drawing state.</para>
+    </summary>
+    <param name="textRenderingParams">
+      <para>Type: <b><see cref="IDWriteRenderingParams" />*</b></para>
+      <para>The text-rendering configuration of the drawing state, or NULL to use default settings.</para>
+    </param>
+    <seealso cref="ID2D1DrawingStateBlock" />
+  </member>
+  <member name="ID2D1DrawingStateBlock">
+    <summary>
+      <para>Represents the drawing state of a render target: the antialiasing mode, transform, tags, and text-rendering options.</para>
+    </summary>
+    <remarks>
+      <h3>Creating ID2D1DrawingStateBlock Objects</h3>
+      <para>To create an <b>ID2D1DrawingStateBlock</b>, use the <a href="https://docs.microsoft.com//windows/win32/Direct2D/id2d1factory-createdrawingstateblock">ID2D1Factory.CreateDrawingStateBlock</a> method.</para>
+      <para>A drawing state block is a device-independent resource; you can create it once and retain it for the life of your application. For more information about resources, see the <a href="https://docs.microsoft.com//windows/win32/Direct2D/resources-and-resource-domains">Resources Overview</a>.</para>
+    </remarks>
+    <seealso cref="ID2D1Resource" />
+  </member>
+</doc>

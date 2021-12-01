@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_DRIVER_TYPE">
+    <summary>
+      <para>The device-driver type.</para>
+    </summary>
+    <remarks>
+      <para>The device-driver type needs to be specified when the device is created (using <see cref="D3D10CreateDevice" /> or <see cref="D3D10CreateDeviceAndSwapChain" />).</para>
+      <para>For information about limitations creating nonhardware-type devices on certain feature levels, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-limitations">Limitations Creating WARP and Reference Devices</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-enums">Core Enumerations</seealso>
+  </member>
+  <member name="D3D10_DRIVER_TYPE.D3D10_DRIVER_TYPE_HARDWARE">
+    <summary>
+      <para>A hardware device; commonly called a HAL device.</para>
+    </summary>
+  </member>
+  <member name="D3D10_DRIVER_TYPE.D3D10_DRIVER_TYPE_REFERENCE">
+    <summary>
+      <para>A reference device; commonly called a REF device.</para>
+    </summary>
+  </member>
+  <member name="D3D10_DRIVER_TYPE.D3D10_DRIVER_TYPE_NULL">
+    <summary>
+      <para>A NULL device; which is a reference device without render capability.</para>
+    </summary>
+  </member>
+  <member name="D3D10_DRIVER_TYPE.D3D10_DRIVER_TYPE_SOFTWARE">
+    <summary>
+      <para>Reserved for later use.</para>
+    </summary>
+  </member>
+  <member name="D3D10_DRIVER_TYPE.D3D10_DRIVER_TYPE_WARP">
+    <summary>
+      <para>A WARP driver, which is a high-performance software rasterizer. The rasterizer supports feature level 9_1 through level 10.1 with a
+high performance software implementation when hardware is not available. For more information about using a WARP driver, see <a href="https://docs.microsoft.com//windows/desktop/direct3darticles/directx-warp">Windows Advanced Rasterization Platform (WARP) In-Depth Guide</a>.
+Note that WARP is only available with the DirectX 11 Runtime (Windows 7, Windows Server 2008 R2, updated Windows Vista [KB971644]).</para>
+    </summary>
+  </member>
+</doc>

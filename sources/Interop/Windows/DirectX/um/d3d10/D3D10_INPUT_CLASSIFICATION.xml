@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_INPUT_CLASSIFICATION">
+    <summary>
+      <para>Type of data contained in an input slot.</para>
+    </summary>
+    <remarks>
+      <para>Use these values to specify the type of data for a particular input element (see <see cref="D3D10_INPUT_ELEMENT_DESC" />) of an input-layout object.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-enums">Core Enumerations</seealso>
+  </member>
+  <member name="D3D10_INPUT_CLASSIFICATION.D3D10_INPUT_PER_VERTEX_DATA">
+    <summary>
+      <para>Input data is per-vertex data.</para>
+    </summary>
+  </member>
+  <member name="D3D10_INPUT_CLASSIFICATION.D3D10_INPUT_PER_INSTANCE_DATA">
+    <summary>
+      <para>Input data is per-instance data.</para>
+    </summary>
+  </member>
+</doc>

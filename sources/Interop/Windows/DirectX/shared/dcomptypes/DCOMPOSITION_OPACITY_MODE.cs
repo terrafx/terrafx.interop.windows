@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DCOMPOSITION_OPACITY_MODE.xml' path='doc/member[@name="DCOMPOSITION_OPACITY_MODE"]/*' />
 public enum DCOMPOSITION_OPACITY_MODE
 {
+    /// <include file='DCOMPOSITION_OPACITY_MODE.xml' path='doc/member[@name="DCOMPOSITION_OPACITY_MODE.DCOMPOSITION_OPACITY_MODE_LAYER"]/*' />
     DCOMPOSITION_OPACITY_MODE_LAYER = 0,
+
+    /// <include file='DCOMPOSITION_OPACITY_MODE.xml' path='doc/member[@name="DCOMPOSITION_OPACITY_MODE.DCOMPOSITION_OPACITY_MODE_MULTIPLY"]/*' />
     DCOMPOSITION_OPACITY_MODE_MULTIPLY = 1,
+
+    /// <include file='DCOMPOSITION_OPACITY_MODE.xml' path='doc/member[@name="DCOMPOSITION_OPACITY_MODE.DCOMPOSITION_OPACITY_MODE_INHERIT"]/*' />
     DCOMPOSITION_OPACITY_MODE_INHERIT = unchecked((int)(0xffffffff)),
 }

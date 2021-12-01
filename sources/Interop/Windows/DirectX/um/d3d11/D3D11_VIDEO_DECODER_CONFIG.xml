@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_VIDEO_DECODER_CONFIG">
+    <summary>
+      <para>Describes the configuration of a Microsoft Direct3D 11 decoder device for DirectX Video Acceleration (DXVA).</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_CONFIG.guidConfigBitstreamEncryption">
+    <summary>
+      <para>If the bitstream data buffers are encrypted using the D3D11CryptoSession mechanism, this GUID should be set to zero. If no encryption is applied, the value is <b>DXVA_NoEncrypt</b>. If <b>ConfigBitstreamRaw</b> is 0, the value must be <b>DXVA_NoEncrypt</b>.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_CONFIG.guidConfigMBcontrolEncryption">
+    <summary>
+      <para>If the macroblock control data buffers are  encrypted using the D3D11CryptoSession mechanism, this GUID should be set to zero.  If no encryption is applied, the value is <b>DXVA_NoEncrypt</b>. If <b>ConfigBitstreamRaw</b> is 1, the value must be <b>DXVA_NoEncrypt</b>.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_CONFIG.guidConfigResidDiffEncryption">
+    <summary>
+      <para>If the residual difference decoding data buffers are  encrypted using the D3D11CryptoSession mechanism, this GUID should be set to zero.   If no encryption is applied, the value is <b>DXVA_NoEncrypt</b>. If <b>ConfigBitstreamRaw</b> is 1, the value must be <b>DXVA_NoEncrypt</b>.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_CONFIG.ConfigBitstreamRaw">
+    <summary>
+      <para>Indicates whether the host-decoder sends raw bit-stream data. If the value is 1, the data for the pictures will be sent in bit-stream buffers as raw bit-stream content. If the value is 0, picture data will be sent using macroblock control command buffers. If either <b>ConfigResidDiffHost</b> or <b>ConfigResidDiffAccelerator</b> is 1, the value must be 0.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_CONFIG.ConfigMBcontrolRasterOrder">
+    <summary>
+      <para>Specifies whether macroblock control commands are in raster scan order or in arbitrary order. If the value is 1, the macroblock control commands within each macroblock control command buffer are in raster-scan order. If the value is 0, the order is arbitrary. For some types of bit streams, forcing raster order either greatly increases the number of required macroblock control buffers that must be processed, or requires host reordering of the control information. Therefore, supporting arbitrary order can be more efficient.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_CONFIG.ConfigResidDiffHost">
+    <summary>
+      <para>Contains the host residual difference configuration. If the value is 1, some residual difference decoding data may be sent as blocks in the spatial domain from the host. If the value is 0, spatial domain data will not be sent.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_CONFIG.ConfigSpatialResid8">
+    <summary>
+      <para>Indicates the word size used to represent residual difference spatial-domain blocks for predicted (non-intra) pictures when using host-based residual difference decoding.</para>
+      <para>If <b>ConfigResidDiffHost</b> is 1 and <b>ConfigSpatialResid8</b> is 1, the host will send residual difference spatial-domain blocks for non-intra macroblocks using 8-bit signed samples and for intra macroblocks in predicted (non-intra) pictures in a format that depends on the value of <b>ConfigIntraResidUnsigned</b>:</para>
+      <list type="bullet">
+        <item>
+          <description>If <b>ConfigIntraResidUnsigned</b> is 0, spatial-domain blocks for intra macroblocks are sent as 8-bit signed integer values relative to a constant reference value of 2^(BPP–1).
+</description>
+        </item>
+        <item>
+          <description>If <b>ConfigIntraResidUnsigned</b> is 1, spatial-domain blocks for intra macroblocks are sent as 8-bit unsigned integer values relative to a constant reference value of 0.
+</description>
+        </item>
+      </list>
+      <para>If <b>ConfigResidDiffHost</b> is 1 and <b>ConfigSpatialResid8</b> is 0, the host will send residual difference spatial-domain blocks of data for non-intra macroblocks using 16-bit signed samples and for intra macroblocks in predicted (non-intra) pictures in a format that depends on the value of <b>ConfigIntraResidUnsigned</b>:</para>
+      <list type="bullet">
+        <item>
+          <description>If <b>ConfigIntraResidUnsigned</b> is 0, spatial domain blocks for intra macroblocks are sent as 16-bit signed integer values relative to a constant reference value of 2^(BPP–1).
+</description>
+        </item>
+        <item>
+          <description>If <b>ConfigIntraResidUnsigned</b> is 1, spatial domain blocks for intra macroblocks are sent as 16-bit unsigned integer values relative to a constant reference value of 0.
+</description>
+        </item>
+      </list>
+      <para>If <b>ConfigResidDiffHost</b> is 0, <b>ConfigSpatialResid8</b> must be 0.</para>
+      <para>For intra pictures, spatial-domain blocks must be sent using 8-bit samples if bits-per-pixel (BPP) is 8, and using 16-bit samples if BPP &gt; 8. If <b>ConfigIntraResidUnsigned</b> is 0, these samples are sent as signed integer values relative to a constant reference value of 2^(BPP–1), and if <b>ConfigIntraResidUnsigned</b> is 1, these samples are sent as unsigned integer values relative to a constant reference value of 0.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_CONFIG.ConfigResid8Subtraction">
+    <summary>
+      <para>If the value is 1, 8-bit difference overflow blocks are subtracted rather than added. The value must be 0 unless <b>ConfigSpatialResid8</b> is 1.</para>
+      <para>The ability to subtract differences rather than add them enables 8-bit difference decoding to be fully compliant with the full ±255 range of values required in video decoder specifications, because +255 cannot be represented as the addition of two signed 8-bit numbers, but any number in the range ±255 can be represented as the difference between two signed 8-bit numbers (+255 = +127 minus –128).</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_CONFIG.ConfigSpatialHost8or9Clipping">
+    <summary>
+      <para>If the value is 1, spatial-domain blocks for intra macroblocks must be clipped to an 8-bit range on the host and spatial-domain blocks for non-intra macroblocks must be clipped to a 9-bit range on the host. If the value is 0, no such clipping is necessary by the host.</para>
+      <para>The value must be 0 unless <b>ConfigSpatialResid8</b> is 0 and <b>ConfigResidDiffHost</b> is 1.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_CONFIG.ConfigSpatialResidInterleaved">
+    <summary>
+      <para>If the value is 1, any spatial-domain residual difference data must be sent in a chrominance-interleaved form matching the YUV format chrominance interleaving pattern. The value must be 0 unless <b>ConfigResidDiffHost</b> is 1 and the YUV format is NV12 or NV21.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_CONFIG.ConfigIntraResidUnsigned">
+    <summary>
+      <para>Indicates the method of representation of spatial-domain blocks of residual difference data for intra blocks when using host-based difference decoding.</para>
+      <para>If <b>ConfigResidDiffHost</b> is 1 and <b>ConfigIntraResidUnsigned</b> is 0, spatial-domain residual difference data blocks for intra macroblocks must be sent as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>In a non-intra picture, if <b>ConfigSpatialResid8</b> is 0, the spatial-domain residual difference data blocks for intra macroblocks are sent as 16-bit signed integer values relative to a constant reference value of 2^(BPP–1).
+</description>
+        </item>
+        <item>
+          <description>In a non-intra picture, if <b>ConfigSpatialResid8</b> is 1, the spatial-domain residual difference data blocks for intra macroblocks are sent as 8-bit signed integer values relative to a constant reference value of 2^(BPP–1).
+</description>
+        </item>
+        <item>
+          <description>In an intra picture, if BPP is 8, the spatial-domain residual difference data blocks for intra macroblocks are sent as 8-bit signed integer values relative to a constant reference value of 2^(BPP–1), regardless of the value of <b>ConfigSpatialResid8</b>.
+</description>
+        </item>
+      </list>
+      <para>If <b>ConfigResidDiffHost</b> is 1 and <b>ConfigIntraResidUnsigned</b> is 1, spatial-domain residual difference data blocks for intra macroblocks must be sent as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>In a non-intra picture, if <b>ConfigSpatialResid8</b> is 0, the spatial-domain residual difference data blocks for intra macroblocks must be sent as 16-bit unsigned integer values relative to a constant reference value of 0.
+</description>
+        </item>
+        <item>
+          <description>In a non-intra picture, if <b>ConfigSpatialResid8</b> is 1, the spatial-domain residual difference data blocks for intra macroblocks are sent as 8-bit unsigned integer values relative to a constant reference value of 0.
+</description>
+        </item>
+        <item>
+          <description>In an intra picture, if BPP is 8, the spatial-domain residual difference data blocks for intra macroblocks are sent as 8-bit unsigned integer values relative to a constant reference value of 0, regardless of the value of <b>ConfigSpatialResid8</b>.
+</description>
+        </item>
+      </list>
+      <para>The value of the member must be 0 unless <b>ConfigResidDiffHost</b> is 1.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_CONFIG.ConfigResidDiffAccelerator">
+    <summary>
+      <para>If the value is 1, transform-domain blocks of coefficient data may be sent from the host for accelerator-based IDCT. If the value is 0, accelerator-based IDCT will not be used. If both <b>ConfigResidDiffHost</b> and <b>ConfigResidDiffAccelerator</b> are 1, this indicates that some residual difference decoding will be done on the host and some on the accelerator, as indicated by macroblock-level control commands.</para>
+      <para>The value must be 0 if <b>ConfigBitstreamRaw</b> is 1.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_CONFIG.ConfigHostInverseScan">
+    <summary>
+      <para>If the value is 1, the inverse scan for transform-domain block processing will be performed on the host, and absolute indices will be sent instead for any transform coefficients. If the value is 0, the inverse scan will be performed on the accelerator.</para>
+      <para>The value must be 0 if <b>ConfigResidDiffAccelerator</b> is 0 or if <b>Config4GroupedCoefs</b> is 1.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_CONFIG.ConfigSpecificIDCT">
+    <summary>
+      <para>If the value is 1, the IDCT specified in Annex W of ITU-T Recommendation H.263 is used. If the value is 0, any compliant IDCT can be used for off-host IDCT.</para>
+      <para>The H.263 annex does not comply with the IDCT requirements of MPEG-2 corrigendum 2, so the value must not be 1 for use with MPEG-2 video.</para>
+      <para>The value must be 0 if <b>ConfigResidDiffAccelerator</b> is 0, indicating purely host-based residual difference decoding.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_CONFIG.Config4GroupedCoefs">
+    <summary>
+      <para>If the value is 1, transform coefficients for off-host IDCT will be sent using the <a href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_tcoef4group">DXVA_TCoef4Group</a> structure. If the value is 0, the <a href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/dxva/ns-dxva-_dxva_tcoefsingle">DXVA_TCoefSingle</a> structure is used. The value must be 0 if <b>ConfigResidDiffAccelerator</b> is 0 or if <b>ConfigHostInverseScan</b> is 1.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_CONFIG.ConfigMinRenderTargetBuffCount">
+    <summary>
+      <para>Specifies how many frames the decoder device processes at any one time.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_DECODER_CONFIG.ConfigDecoderSpecific">
+    <summary>
+      <para>Contains decoder-specific configuration information.</para>
+    </summary>
+  </member>
+</doc>

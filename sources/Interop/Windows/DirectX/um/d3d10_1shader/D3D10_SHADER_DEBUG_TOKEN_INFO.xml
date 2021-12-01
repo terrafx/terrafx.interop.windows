@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D10_SHADER_DEBUG_TOKEN_INFO">
+    <summary>
+      <para>Gives the source location for a shader element.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-structures">Shader Structures</seealso>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_TOKEN_INFO.File">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Offset into file list.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_TOKEN_INFO.Line">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Line number.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_TOKEN_INFO.Column">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Column number.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_TOKEN_INFO.TokenLength">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Length of the token.</para>
+    </summary>
+  </member>
+  <member name="D3D10_SHADER_DEBUG_TOKEN_INFO.TokenId">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Offset to LPCSTR of length <b>TokenLength</b> in string datastore.</para>
+    </summary>
+  </member>
+</doc>

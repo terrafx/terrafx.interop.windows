@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_CAP_STYLE">
+    <summary>
+      <para>Describes the shape at the end of a line or segment.</para>
+    </summary>
+    <remarks>
+      <para>The following illustration shows the available cap styles for lines or segments. The red portion of the line shows the extra area added by the line cap setting.</para>
+      <para>
+        <img alt="Illustration of four cap styles" src="https://docs.microsoft.com/windows/win32/api/d2d1mages/linecaps.png" />
+      </para>
+    </remarks>
+  </member>
+  <member name="D2D1_CAP_STYLE.D2D1_CAP_STYLE_FLAT">
+    <summary>
+      <para>A cap that does not extend past the last point of the line. Comparable to cap used for objects other than lines.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CAP_STYLE.D2D1_CAP_STYLE_SQUARE">
+    <summary>
+      <para>Half of a square that has a length equal to the line thickness.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CAP_STYLE.D2D1_CAP_STYLE_ROUND">
+    <summary>
+      <para>A semicircle that has a diameter equal to the line thickness.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CAP_STYLE.D2D1_CAP_STYLE_TRIANGLE">
+    <summary>
+      <para>An isosceles right triangle whose hypotenuse is equal in length to the thickness of the line.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CAP_STYLE.D2D1_CAP_STYLE_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

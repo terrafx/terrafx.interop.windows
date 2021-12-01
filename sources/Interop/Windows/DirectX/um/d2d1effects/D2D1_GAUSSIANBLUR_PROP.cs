@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_GAUSSIANBLUR_PROP.xml' path='doc/member[@name="D2D1_GAUSSIANBLUR_PROP"]/*' />
 public enum D2D1_GAUSSIANBLUR_PROP : uint
 {
+    /// <include file='D2D1_GAUSSIANBLUR_PROP.xml' path='doc/member[@name="D2D1_GAUSSIANBLUR_PROP.D2D1_GAUSSIANBLUR_PROP_STANDARD_DEVIATION"]/*' />
     D2D1_GAUSSIANBLUR_PROP_STANDARD_DEVIATION = 0,
+
+    /// <include file='D2D1_GAUSSIANBLUR_PROP.xml' path='doc/member[@name="D2D1_GAUSSIANBLUR_PROP.D2D1_GAUSSIANBLUR_PROP_OPTIMIZATION"]/*' />
     D2D1_GAUSSIANBLUR_PROP_OPTIMIZATION = 1,
+
+    /// <include file='D2D1_GAUSSIANBLUR_PROP.xml' path='doc/member[@name="D2D1_GAUSSIANBLUR_PROP.D2D1_GAUSSIANBLUR_PROP_BORDER_MODE"]/*' />
     D2D1_GAUSSIANBLUR_PROP_BORDER_MODE = 2,
+
+    /// <include file='D2D1_GAUSSIANBLUR_PROP.xml' path='doc/member[@name="D2D1_GAUSSIANBLUR_PROP.D2D1_GAUSSIANBLUR_PROP_FORCE_DWORD"]/*' />
     D2D1_GAUSSIANBLUR_PROP_FORCE_DWORD = 0xffffffff,
 }

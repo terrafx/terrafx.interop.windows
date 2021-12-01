@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_LINE_JOIN">
+    <summary>
+      <para>Describes the shape that joins two lines or segments.</para>
+    </summary>
+    <remarks>
+      <para>A miter limit affects how sharp miter joins are allowed to be.
+If the line join style is <b>D2D1_LINE_JOIN_MITER_OR_BEVEL</b>, then the join will be mitered with regular angular vertices if it doesn't extend
+beyond the miter limit; otherwise, the line join will be beveled.</para>
+      <para>The following illustration shows  different line join settings for the same stroked path geometry.</para>
+      <para>
+        <img alt="Illustration of line join settings" src="https://docs.microsoft.com/windows/win32/api/d2d1mages/StrokeStyle_Join.png" />
+      </para>
+    </remarks>
+  </member>
+  <member name="D2D1_LINE_JOIN.D2D1_LINE_JOIN_MITER">
+    <summary>
+      <para>Regular angular vertices.</para>
+    </summary>
+  </member>
+  <member name="D2D1_LINE_JOIN.D2D1_LINE_JOIN_BEVEL">
+    <summary>
+      <para>Beveled vertices.</para>
+    </summary>
+  </member>
+  <member name="D2D1_LINE_JOIN.D2D1_LINE_JOIN_ROUND">
+    <summary>
+      <para>Rounded vertices.</para>
+    </summary>
+  </member>
+  <member name="D2D1_LINE_JOIN.D2D1_LINE_JOIN_MITER_OR_BEVEL">
+    <summary>
+      <para>Regular angular vertices unless the join would extend beyond the miter limit; otherwise, beveled vertices.</para>
+    </summary>
+  </member>
+  <member name="D2D1_LINE_JOIN.D2D1_LINE_JOIN_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

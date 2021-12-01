@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_PANOSE_ARM_STYLE">
+    <summary>
+      <para>The <b>DWRITE_PANOSE_ARM_STYLE</b> enumeration contains values that specify the style of termination of stems and rounded letterforms for text.</para>
+    </summary>
+    <seealso cref="DWRITE_PANOSE" />
+  </member>
+  <member name="DWRITE_PANOSE_ARM_STYLE.DWRITE_PANOSE_ARM_STYLE_ANY">
+    <summary>
+      <para>Any arm style.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ARM_STYLE.DWRITE_PANOSE_ARM_STYLE_NO_FIT">
+    <summary>
+      <para>No fit arm style.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ARM_STYLE.DWRITE_PANOSE_ARM_STYLE_STRAIGHT_ARMS_HORIZONTAL">
+    <summary>
+      <para>The arm style is straight horizontal.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ARM_STYLE.DWRITE_PANOSE_ARM_STYLE_STRAIGHT_ARMS_WEDGE">
+    <summary>
+      <para>The arm style is straight wedge.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ARM_STYLE.DWRITE_PANOSE_ARM_STYLE_STRAIGHT_ARMS_VERTICAL">
+    <summary>
+      <para>The arm style is straight vertical.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ARM_STYLE.DWRITE_PANOSE_ARM_STYLE_STRAIGHT_ARMS_SINGLE_SERIF">
+    <summary>
+      <para>The arm style is straight single serif.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ARM_STYLE.DWRITE_PANOSE_ARM_STYLE_STRAIGHT_ARMS_DOUBLE_SERIF">
+    <summary>
+      <para>The arm style is straight double serif.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ARM_STYLE.DWRITE_PANOSE_ARM_STYLE_NONSTRAIGHT_ARMS_HORIZONTAL">
+    <summary>
+      <para>The arm style is non-straight horizontal.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ARM_STYLE.DWRITE_PANOSE_ARM_STYLE_NONSTRAIGHT_ARMS_WEDGE">
+    <summary>
+      <para>The arm style is non-straight wedge.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ARM_STYLE.DWRITE_PANOSE_ARM_STYLE_NONSTRAIGHT_ARMS_VERTICAL">
+    <summary>
+      <para>The arm style is non-straight vertical.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ARM_STYLE.DWRITE_PANOSE_ARM_STYLE_NONSTRAIGHT_ARMS_SINGLE_SERIF">
+    <summary>
+      <para>The arm style is non-straight single serif.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ARM_STYLE.DWRITE_PANOSE_ARM_STYLE_NONSTRAIGHT_ARMS_DOUBLE_SERIF">
+    <summary>
+      <para>The arm style is non-straight double serif.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ARM_STYLE.DWRITE_PANOSE_ARM_STYLE_STRAIGHT_ARMS_HORZ">
+    <summary>
+      <para>The arm style is straight horizontal.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ARM_STYLE.DWRITE_PANOSE_ARM_STYLE_STRAIGHT_ARMS_VERT">
+    <summary>
+      <para>The arm style is straight vertical.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ARM_STYLE.DWRITE_PANOSE_ARM_STYLE_BENT_ARMS_HORZ">
+    <summary>
+      <para>The arm style is non-straight horizontal.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ARM_STYLE.DWRITE_PANOSE_ARM_STYLE_BENT_ARMS_WEDGE">
+    <summary>
+      <para>The arm style is non-straight wedge.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ARM_STYLE.DWRITE_PANOSE_ARM_STYLE_BENT_ARMS_VERT">
+    <summary>
+      <para>The arm style is non-straight vertical.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ARM_STYLE.DWRITE_PANOSE_ARM_STYLE_BENT_ARMS_SINGLE_SERIF">
+    <summary>
+      <para>The arm style is non-straight single serif.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_ARM_STYLE.DWRITE_PANOSE_ARM_STYLE_BENT_ARMS_DOUBLE_SERIF">
+    <summary>
+      <para>The arm style is non-straight double serif.</para>
+    </summary>
+  </member>
+</doc>

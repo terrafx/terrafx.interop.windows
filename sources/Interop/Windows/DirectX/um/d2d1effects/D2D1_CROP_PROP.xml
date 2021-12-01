@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_CROP_PROP">
+    <summary>
+      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/crop">Crop effect</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CROP_PROP.D2D1_CROP_PROP_RECT">
+    <summary>
+      <para>The region to be cropped specified as a vector in the form (left, top, width, height). Units are in DIPs.</para>
+      <para>
+        <b>Note</b>  The rectangle will be truncated if it overlaps the edge boundaries of the input image.</para>
+      <para>Type is <see cref="D2D1_VECTOR_4F" /></para>
+      <para>Default value is {-FLT_MAX, -FLT_MAX, FLT_MAX, FLT_MAX}</para>
+    </summary>
+  </member>
+  <member name="D2D1_CROP_PROP.D2D1_CROP_PROP_BORDER_MODE">
+    <summary>
+      <para>Indicates how the effect handles the crop rectangle falling on fractional pixel coordinates.</para>
+      <para>Type is <see cref="D2D1_BORDER_MODE" />.</para>
+      <para>Default value is D2D1_BORDER_MODE_SOFT.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CROP_PROP.D2D1_CROP_PROP_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

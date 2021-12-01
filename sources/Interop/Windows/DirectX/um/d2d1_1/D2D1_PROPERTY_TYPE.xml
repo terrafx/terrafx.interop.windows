@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_PROPERTY_TYPE">
+    <summary>
+      <para>Specifies the types of properties supported by the Direct2D property interface.</para>
+    </summary>
+    <seealso cref="ID2D1Properties" />
+    <seealso cref="ID2D1Properties.GetType" />
+  </member>
+  <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_UNKNOWN">
+    <summary>
+      <para>An unknown property.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_STRING">
+    <summary>
+      <para>An arbitrary-length string.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_BOOL">
+    <summary>
+      <para>A 32-bit integer value constrained to be either 0 or 1.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_UINT32">
+    <summary>
+      <para>An unsigned 32-bit integer.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_INT32">
+    <summary>
+      <para>A signed 32-bit integer.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_FLOAT">
+    <summary>
+      <para>A 32-bit float.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_VECTOR2">
+    <summary>
+      <para>Two 32-bit float values.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_VECTOR3">
+    <summary>
+      <para>Three 32-bit float values.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_VECTOR4">
+    <summary>
+      <para>Four 32-bit float values.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_BLOB">
+    <summary>
+      <para>An arbitrary number of bytes.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_IUNKNOWN">
+    <summary>
+      <para>A returned COM or nano-COM interface.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_ENUM">
+    <summary>
+      <para>An enumeration. The value should be treated as a <b>UINT32</b> with a defined array of fields to specify the bindings to human-readable strings.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_ARRAY">
+    <summary>
+      <para>An enumeration. The value is the count of sub-properties in the array. The set of array elements will be contained in the sub-property.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_CLSID">
+    <summary>
+      <para>A CLSID.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_MATRIX_3X2">
+    <summary>
+      <para>A 3x2 matrix of  float values.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_MATRIX_4X3">
+    <summary>
+      <para>A 4x2 matrix of  float values.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_MATRIX_4X4">
+    <summary>
+      <para>A 4x4 matrix of  float values.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_MATRIX_5X4">
+    <summary>
+      <para>A 5x4 matrix of  float values.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_COLOR_CONTEXT">
+    <summary>
+      <para>A nano-COM color context interface pointer.</para>
+    </summary>
+  </member>
+  <member name="D2D1_PROPERTY_TYPE.D2D1_PROPERTY_TYPE_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

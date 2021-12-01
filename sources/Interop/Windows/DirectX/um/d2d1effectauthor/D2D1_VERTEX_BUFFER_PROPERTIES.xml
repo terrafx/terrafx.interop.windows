@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_VERTEX_BUFFER_PROPERTIES">
+    <summary>
+      <para>Defines the properties of a vertex buffer that are standard for all vertex shader definitions.</para>
+    </summary>
+    <remarks>
+      <para>If <b>usage</b> is dynamic, the system might return a system memory buffer and copy these vertices into the rendering vertex buffer for each element.</para>
+      <para>If the initialization data is not specified, the buffer will be uninitialized.</para>
+    </remarks>
+    <seealso cref="D2D1_VERTEX_USAGE" />
+    <seealso cref="ID2D1EffectContext.CreateVertexBuffer" />
+    <seealso cref="ID2D1EffectContext.LoadVertexShader" />
+  </member>
+  <member name="D2D1_VERTEX_BUFFER_PROPERTIES.inputCount">
+    <summary>
+      <para>The number of inputs to the vertex shader.</para>
+    </summary>
+  </member>
+  <member name="D2D1_VERTEX_BUFFER_PROPERTIES.usage">
+    <summary>
+      <para>Indicates how frequently the vertex buffer is likely to be updated.</para>
+    </summary>
+  </member>
+  <member name="D2D1_VERTEX_BUFFER_PROPERTIES.data">
+    <summary>
+      <para>The initial contents of the vertex buffer.</para>
+    </summary>
+  </member>
+  <member name="D2D1_VERTEX_BUFFER_PROPERTIES.byteWidth">
+    <summary>
+      <para>The size of the vertex buffer, in bytes.</para>
+    </summary>
+  </member>
+</doc>

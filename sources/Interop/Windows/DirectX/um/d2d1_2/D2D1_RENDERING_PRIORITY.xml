@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_RENDERING_PRIORITY">
+    <summary>
+      <para>The rendering priority affects the extent to which <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a> will throttle its rendering workload.</para>
+    </summary>
+  </member>
+  <member name="D2D1_RENDERING_PRIORITY.D2D1_RENDERING_PRIORITY_NORMAL">
+    <summary>
+      <para>No change in rendering workload priority.</para>
+    </summary>
+  </member>
+  <member name="D2D1_RENDERING_PRIORITY.D2D1_RENDERING_PRIORITY_LOW">
+    <summary>
+      <para>The device and its associated device contexts are given a lower priority than others.</para>
+    </summary>
+  </member>
+  <member name="D2D1_RENDERING_PRIORITY.D2D1_RENDERING_PRIORITY_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

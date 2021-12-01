@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_AUTHENTICATED_CHANNEL_TYPE">
+    <summary>
+      <para>Specifies the type of Microsoft Direct3D authenticated channel.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-enumerations">Direct3D 11 Video Enumerations</seealso>
+  </member>
+  <member name="D3D11_AUTHENTICATED_CHANNEL_TYPE.D3D11_AUTHENTICATED_CHANNEL_D3D11">
+    <summary>
+      <para>Direct3D 11 channel. This channel provides communication with the Direct3D runtime.</para>
+    </summary>
+  </member>
+  <member name="D3D11_AUTHENTICATED_CHANNEL_TYPE.D3D11_AUTHENTICATED_CHANNEL_DRIVER_SOFTWARE">
+    <summary>
+      <para>Software driver channel. This channel provides communication with a driver that implements content protection mechanisms in software.</para>
+    </summary>
+  </member>
+  <member name="D3D11_AUTHENTICATED_CHANNEL_TYPE.D3D11_AUTHENTICATED_CHANNEL_DRIVER_HARDWARE">
+    <summary>
+      <para>Hardware driver channel. This channel provides communication with a driver that implements content protection mechanisms in the GPU hardware.</para>
+    </summary>
+  </member>
+</doc>

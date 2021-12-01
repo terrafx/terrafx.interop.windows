@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_SVG_ATTRIBUTE_POD_TYPE">
+    <summary>
+      <para>Defines the type of SVG POD attribute to set or get.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_ATTRIBUTE_POD_TYPE.D2D1_SVG_ATTRIBUTE_POD_TYPE_FLOAT">
+    <summary>
+      <para>The attribute is a FLOAT.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_ATTRIBUTE_POD_TYPE.D2D1_SVG_ATTRIBUTE_POD_TYPE_COLOR">
+    <summary>
+      <para>The attribute is a D2D1_COLOR_F.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_ATTRIBUTE_POD_TYPE.D2D1_SVG_ATTRIBUTE_POD_TYPE_FILL_MODE">
+    <summary>
+      <para>The attribute is a D2D1_FILL_MODE.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_ATTRIBUTE_POD_TYPE.D2D1_SVG_ATTRIBUTE_POD_TYPE_DISPLAY">
+    <summary>
+      <para>The attribute is a D2D1_SVG_DISPLAY.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_ATTRIBUTE_POD_TYPE.D2D1_SVG_ATTRIBUTE_POD_TYPE_OVERFLOW">
+    <summary>
+      <para>The attribute is a D2D1_SVG_OVERFLOW.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_ATTRIBUTE_POD_TYPE.D2D1_SVG_ATTRIBUTE_POD_TYPE_LINE_CAP">
+    <summary>
+      <para>The attribute is a D2D1_SVG_LINE_CAP.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_ATTRIBUTE_POD_TYPE.D2D1_SVG_ATTRIBUTE_POD_TYPE_LINE_JOIN">
+    <summary>
+      <para>The attribute is a D2D1_SVG_LINE_JOIN.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_ATTRIBUTE_POD_TYPE.D2D1_SVG_ATTRIBUTE_POD_TYPE_VISIBILITY">
+    <summary>
+      <para>The attribute is a D2D1_SVG_VISIBILITY.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_ATTRIBUTE_POD_TYPE.D2D1_SVG_ATTRIBUTE_POD_TYPE_MATRIX">
+    <summary>
+      <para>The attribute is a D2D1_MATRIX_3X2_F.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_ATTRIBUTE_POD_TYPE.D2D1_SVG_ATTRIBUTE_POD_TYPE_UNIT_TYPE">
+    <summary>
+      <para>The attribute is a D2D1_SVG_UNIT_TYPE.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_ATTRIBUTE_POD_TYPE.D2D1_SVG_ATTRIBUTE_POD_TYPE_EXTEND_MODE">
+    <summary>
+      <para>The attribute is a D2D1_EXTEND_MODE.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_ATTRIBUTE_POD_TYPE.D2D1_SVG_ATTRIBUTE_POD_TYPE_PRESERVE_ASPECT_RATIO">
+    <summary>
+      <para>The attribute is a D2D1_SVG_PRESERVE_ASPECT_RATIO.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_ATTRIBUTE_POD_TYPE.D2D1_SVG_ATTRIBUTE_POD_TYPE_VIEWBOX">
+    <summary>
+      <para>The attribute is a D2D1_SVG_VIEWBOX.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_ATTRIBUTE_POD_TYPE.D2D1_SVG_ATTRIBUTE_POD_TYPE_LENGTH">
+    <summary>
+      <para>The attribute is a D2D1_SVG_LENGTH.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_ATTRIBUTE_POD_TYPE.D2D1_SVG_ATTRIBUTE_POD_TYPE_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

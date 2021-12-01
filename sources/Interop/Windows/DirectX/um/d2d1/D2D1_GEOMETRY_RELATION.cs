@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_GEOMETRY_RELATION.xml' path='doc/member[@name="D2D1_GEOMETRY_RELATION"]/*' />
 public enum D2D1_GEOMETRY_RELATION : uint
 {
+    /// <include file='D2D1_GEOMETRY_RELATION.xml' path='doc/member[@name="D2D1_GEOMETRY_RELATION.D2D1_GEOMETRY_RELATION_UNKNOWN"]/*' />
     D2D1_GEOMETRY_RELATION_UNKNOWN = 0,
+
+    /// <include file='D2D1_GEOMETRY_RELATION.xml' path='doc/member[@name="D2D1_GEOMETRY_RELATION.D2D1_GEOMETRY_RELATION_DISJOINT"]/*' />
     D2D1_GEOMETRY_RELATION_DISJOINT = 1,
+
+    /// <include file='D2D1_GEOMETRY_RELATION.xml' path='doc/member[@name="D2D1_GEOMETRY_RELATION.D2D1_GEOMETRY_RELATION_IS_CONTAINED"]/*' />
     D2D1_GEOMETRY_RELATION_IS_CONTAINED = 2,
+
+    /// <include file='D2D1_GEOMETRY_RELATION.xml' path='doc/member[@name="D2D1_GEOMETRY_RELATION.D2D1_GEOMETRY_RELATION_CONTAINS"]/*' />
     D2D1_GEOMETRY_RELATION_CONTAINS = 3,
+
+    /// <include file='D2D1_GEOMETRY_RELATION.xml' path='doc/member[@name="D2D1_GEOMETRY_RELATION.D2D1_GEOMETRY_RELATION_OVERLAP"]/*' />
     D2D1_GEOMETRY_RELATION_OVERLAP = 4,
+
+    /// <include file='D2D1_GEOMETRY_RELATION.xml' path='doc/member[@name="D2D1_GEOMETRY_RELATION.D2D1_GEOMETRY_RELATION_FORCE_DWORD"]/*' />
     D2D1_GEOMETRY_RELATION_FORCE_DWORD = 0xffffffff,
 }

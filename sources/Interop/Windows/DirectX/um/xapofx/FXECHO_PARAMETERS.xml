@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FXECHO_PARAMETERS">
+    <summary>
+      <para>Parameters for use with the <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xapofx-overview">FXECHO XAPOFX</a>.</para>
+    </summary>
+    <remarks>
+      <para>Echo only supports FLOAT32 audio formats.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/structures">Structures</seealso>
+  </member>
+  <member name="FXECHO_PARAMETERS.WetDryMix">
+    <summary>
+      <para>Ratio of wet (processed) signal to dry (original) signal.</para>
+    </summary>
+  </member>
+  <member name="FXECHO_PARAMETERS.Feedback">
+    <summary>
+      <para>Amount of output to feed back into input.</para>
+    </summary>
+  </member>
+  <member name="FXECHO_PARAMETERS.Delay">
+    <summary>
+      <para>Delay to all channels in milliseconds. This value must be between <b>FXECHO_MIN_DELAY</b> and <see cref="FXECHO_INITDATA" />.<b>MaxDelay</b>.</para>
+    </summary>
+  </member>
+</doc>

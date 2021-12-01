@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DIRECTMANIPULATION_CONFIGURATION">
+    <summary>
+      <para>Defines the interaction configuration states available in <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-activateconfiguration">ActivateConfiguration</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-addconfiguration">AddConfiguration</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-enumerations">Direct Manipulation Enumerations</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-removeconfiguration">RemoveConfiguration</seealso>
+  </member>
+  <member name="DIRECTMANIPULATION_CONFIGURATION.DIRECTMANIPULATION_CONFIGURATION_NONE">
+    <summary>
+      <para>No interaction is defined.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_CONFIGURATION.DIRECTMANIPULATION_CONFIGURATION_INTERACTION">
+    <summary>
+      <para>An interaction is defined. To enable interactions, this value must be included.</para>
+      <para>Required when setting a configuration other than <b>DIRECTMANIPULATION_CONFIGURATION_NONE</b>.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_CONFIGURATION.DIRECTMANIPULATION_CONFIGURATION_TRANSLATION_X">
+    <summary>
+      <para>Translation in the horizontal axis.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_CONFIGURATION.DIRECTMANIPULATION_CONFIGURATION_TRANSLATION_Y">
+    <summary>
+      <para>Translation in the vertical axis.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_CONFIGURATION.DIRECTMANIPULATION_CONFIGURATION_SCALING">
+    <summary>
+      <para>Zoom.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_CONFIGURATION.DIRECTMANIPULATION_CONFIGURATION_TRANSLATION_INERTIA">
+    <summary>
+      <para>Inertia for translation as defined by <b>DIRECTMANIPULATION_CONFIGURATION_TRANSLATION_X</b> and <b>DIRECTMANIPULATION_CONFIGURATION_TRANSLATION_Y</b>.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_CONFIGURATION.DIRECTMANIPULATION_CONFIGURATION_SCALING_INERTIA">
+    <summary>
+      <para>Inertia for zoom as defined by <b>DIRECTMANIPULATION_CONFIGURATION _SCALING</b>.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_CONFIGURATION.DIRECTMANIPULATION_CONFIGURATION_RAILS_X">
+    <summary>
+      <para>Rails on the horizontal axis.</para>
+    </summary>
+  </member>
+  <member name="DIRECTMANIPULATION_CONFIGURATION.DIRECTMANIPULATION_CONFIGURATION_RAILS_Y">
+    <summary>
+      <para>Rails on the vertical axis.</para>
+    </summary>
+  </member>
+</doc>

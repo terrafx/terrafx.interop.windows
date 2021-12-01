@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_VIDEO_USAGE">
+    <summary>
+      <para>Specifies the intended use for a video processor.</para>
+    </summary>
+    <seealso cref="D3D11_VIDEO_PROCESSOR_CONTENT_DESC" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-enumerations">Direct3D 11 Video Enumerations</seealso>
+  </member>
+  <member name="D3D11_VIDEO_USAGE.D3D11_VIDEO_USAGE_PLAYBACK_NORMAL">
+    <summary>
+      <para>Normal video playback. The graphics driver should expose a set of capabilities that are appropriate for real-time video playback.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_USAGE.D3D11_VIDEO_USAGE_OPTIMAL_SPEED">
+    <summary>
+      <para>Optimal speed. The graphics driver should expose a minimal set of capabilities that are optimized for performance.</para>
+      <para>Use this setting if you want better performance and can accept some reduction in video quality. For example, you might use this setting in power-saving mode or to play video thumbnails.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_USAGE.D3D11_VIDEO_USAGE_OPTIMAL_QUALITY">
+    <summary>
+      <para>Optimal quality. The graphics driver should expose its maximum set of capabilities.</para>
+      <para>Specify this setting to get the best video quality possible. It is appropriate for tasks such as video editing, when quality is more important than speed. It is not appropriate for real-time playback.</para>
+    </summary>
+  </member>
+</doc>

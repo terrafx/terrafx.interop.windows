@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_VERTEX_RANGE.xml' path='doc/member[@name="D2D1_VERTEX_RANGE"]/*' />
 public partial struct D2D1_VERTEX_RANGE
 {
+    /// <include file='D2D1_VERTEX_RANGE.xml' path='doc/member[@name="D2D1_VERTEX_RANGE.startVertex"]/*' />
     [NativeTypeName("UINT32")]
     public uint startVertex;
 
+    /// <include file='D2D1_VERTEX_RANGE.xml' path='doc/member[@name="D2D1_VERTEX_RANGE.vertexCount"]/*' />
     [NativeTypeName("UINT32")]
     public uint vertexCount;
 }

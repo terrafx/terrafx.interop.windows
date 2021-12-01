@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_RANDOM_GENERATOR_OPERATOR_DESC">
+    <summary>
+      <para>Fills an output tensor with deterministically-generated, pseudo-random, uniformly-distributed bits. This operator optionally may also output an updated internal generator state, which can be used during subsequent executions of the operator.</para>
+      <para>This operator is deterministic, and behaves as if it were a pure function—that is, its execution produces no side-effects, and uses no global state. The pseudo-random output produced by this operator is solely dependent on the values supplied in the <i>InputStateTensor</i>.</para>
+      <para>The generators implemented by this operator are not cryptographically secure; therefore, this operator should not be used for encryption, key generation, or other applications which require cryptographically secure random number generation.</para>
+    </summary>
+    <remarks>
+      <para>On each execution of this operator, the 128-bit counter should be incremented. If the <i>OutputStateTensor</i> is supplied, THEN this operator increments the counter with the correct value on your behalf, and writes the result into the <i>OutputStateTensor</i>. The amount it should be incremented by depends on the number of 32-bit output elements generated, and the type of the generator.</para>
+      <para>For <b>DML_RANDOM_GENERATOR_TYPE_PHILOX_4X32_10</b>, the 128-bit counter should be incremented by <code>ceil(outputSize / 4)</code> on each execution, where <code>outputSize</code> is the number of elements in the <i>OutputTensor</i>.</para>
+      <para>Consider an example where the value of the 128-bit counter is currently <code>0x48656c6c'6f46726f'6d536561'74746c65</code>, and the OutputTensor's size is <code>{3,3,20,7219}</code>. After executing this operator once, the counter should be incremented by 324,855 (the number of output elements generated divided by 4, rounded up) resulting in a counter value of <code>0x48656c6c'6f46726f'6d536561'746f776e</code>. This updated value should then be supplied as an input for the next execution of this operator.</para>
+    </remarks>
+  </member>
+  <member name="DML_RANDOM_GENERATOR_OPERATOR_DESC.InputStateTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>An input tensor containing the internal generator state. The size and format of this input tensor depends on the <see cref="DML_RANDOM_GENERATOR_TYPE" />.</para>
+      <para>For <b>DML_RANDOM_GENERATOR_TYPE_PHILOX_4X32_10</b>, this tensor must be of type <b>UINT32</b>, and have sizes <code>{1,1,1,6}</code>. The first four 32-bit values contain a monotonically increasing 128-bit counter. The last two 32-bit values contain the 64-bit key value for the generator.</para>
+      <code>    Element        0       1       2       3       4       5
+(32-bits each) |-------|-------|-------|-------|-------|-------|
+                &lt;--------128-bit counter------&gt;&lt;-64-bit key--&gt;
+</code>
+      <para>When initializing the generator's input state for the first time, typically the 128-bit counter (the first four 32-bit UINT32 values) should be initialized to 0. The key can be arbitrarily chosen; different key values will produce different sequences of numbers. The value for the key is usually generated using a user-provided <i>seed</i>.</para>
+    </summary>
+  </member>
+  <member name="DML_RANDOM_GENERATOR_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>An output tensor which holds the resulting pseudo-random values. This tensor can be of any size.</para>
+    </summary>
+  </member>
+  <member name="DML_RANDOM_GENERATOR_OPERATOR_DESC.OutputStateTensor">
+    <summary>
+      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>An optional output tensor THAT holds the updated internal generator state. If supplied, this operator uses the <i>InputStateTensor</i> to compute an appropriate updated generator state, and writes the result into the <i>OutputStateTensor</i>. Typically, callers would save this result and supply it as the input state on a subsequent execution of this operator.</para>
+    </summary>
+  </member>
+  <member name="DML_RANDOM_GENERATOR_OPERATOR_DESC.Type">
+    <summary>
+      <para>Type: <b><see cref="DML_RANDOM_GENERATOR_TYPE" /></b></para>
+      <para>One of the values from the <see cref="DML_RANDOM_GENERATOR_TYPE" /> enum, indicating the type of generator to use. Currently the only valid value is <b>DML_RANDOM_GENERATOR_TYPE_PHILOX_4X32_10</b>, which generates pseudo-random numbers according to the <a href="http://www.thesalmons.org/john/random123/papers/random123sc11.pdf">Philox 4x32-10 algorithm</a>.</para>
+    </summary>
+  </member>
+</doc>

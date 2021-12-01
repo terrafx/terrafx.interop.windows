@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_FEATURE.xml' path='doc/member[@name="DXGI_FEATURE"]/*' />
 public enum DXGI_FEATURE
 {
+    /// <include file='DXGI_FEATURE.xml' path='doc/member[@name="DXGI_FEATURE.DXGI_FEATURE_PRESENT_ALLOW_TEARING"]/*' />
     DXGI_FEATURE_PRESENT_ALLOW_TEARING = 0,
 }

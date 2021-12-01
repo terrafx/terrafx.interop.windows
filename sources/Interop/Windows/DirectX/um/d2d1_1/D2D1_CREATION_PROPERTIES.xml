@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_CREATION_PROPERTIES">
+    <summary>
+      <para>Specifies the options with which the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a> device, factory, and device context are created.</para>
+    </summary>
+    <remarks>
+      <para>The root objects referred to here are the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a> device, Direct2D factory and the Direct2D device context.</para>
+    </remarks>
+    <seealso cref="D2D1CreateDevice" />
+    <seealso cref="D2D1CreateDeviceContext" />
+  </member>
+  <member name="D2D1_CREATION_PROPERTIES.threadingMode">
+    <summary>
+      <para>The threading mode with which the corresponding root objects will be created.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CREATION_PROPERTIES.debugLevel">
+    <summary>
+      <para>The debug level that the root objects should be created with.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CREATION_PROPERTIES.options">
+    <summary>
+      <para>The device context options that the root objects should be created with.</para>
+    </summary>
+  </member>
+</doc>

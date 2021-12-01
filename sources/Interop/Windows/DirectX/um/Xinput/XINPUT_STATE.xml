@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="XINPUT_STATE">
+    <summary>
+      <para>Represents the state of a controller.</para>
+    </summary>
+    <remarks>
+      <para>The <i>dwPacketNumber</i> member is incremented only if the status of the controller has changed since the controller was last polled.</para>
+    </remarks>
+    <seealso cref="XINPUT_GAMEPAD" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/xinput/structures">XInput Structures</seealso>
+    <seealso cref="XInputGetState" />
+  </member>
+  <member name="XINPUT_STATE.dwPacketNumber">
+    <summary>
+      <para>State packet number. The packet number indicates whether there have been any changes in the state of the controller. If the <i>dwPacketNumber</i> member is the same in sequentially returned <b>XINPUT_STATE</b> structures, the controller state has not changed.</para>
+    </summary>
+  </member>
+  <member name="XINPUT_STATE.Gamepad">
+    <summary>
+      <para>
+        <see cref="XINPUT_GAMEPAD" /> structure containing the current state of an Xbox 360 Controller.</para>
+    </summary>
+  </member>
+</doc>

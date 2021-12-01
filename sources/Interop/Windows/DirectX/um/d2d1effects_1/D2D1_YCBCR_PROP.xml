@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_YCBCR_PROP">
+    <summary>
+      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/ycbcr-effect">YCbCr effect</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_YCBCR_PROP.D2D1_YCBCR_PROP_CHROMA_SUBSAMPLING">
+    <summary>
+      <para>Specifies the chroma subsampling of the input chroma image.</para>
+      <para>The type is <see cref="D2D1_YCBCR_CHROMA_SUBSAMPLING" />.</para>
+      <para>The default value is D2D1_YCBCR_CHROMA_SUBSAMPLING_AUTO.</para>
+    </summary>
+  </member>
+  <member name="D2D1_YCBCR_PROP.D2D1_YCBCR_PROP_TRANSFORM_MATRIX">
+    <summary>
+      <para>A 3x2 Matrix specifying the axis-aligned affine transform of the image. Axis aligned transforms include Scale, Flips, and 90 degree rotations.</para>
+      <para>The type is <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>.</para>
+      <para>The default value is Matrix3x2F.Identity().</para>
+    </summary>
+  </member>
+  <member name="D2D1_YCBCR_PROP.D2D1_YCBCR_PROP_INTERPOLATION_MODE">
+    <summary>
+      <para>The interpolation mode.</para>
+      <para>The type is <see cref="D2D1_YCBCR_INTERPOLATION_MODE" />.</para>
+    </summary>
+  </member>
+  <member name="D2D1_YCBCR_PROP.D2D1_YCBCR_PROP_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

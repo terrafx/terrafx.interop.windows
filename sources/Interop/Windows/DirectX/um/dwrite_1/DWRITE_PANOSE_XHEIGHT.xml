@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_PANOSE_XHEIGHT">
+    <summary>
+      <para>The <b>DWRITE_PANOSE_XHEIGHT</b> enumeration contains values that specify info about the relative size of lowercase letters and the treatment of diacritic marks (xheight).</para>
+    </summary>
+    <seealso cref="DWRITE_PANOSE" />
+  </member>
+  <member name="DWRITE_PANOSE_XHEIGHT.DWRITE_PANOSE_XHEIGHT_ANY">
+    <summary>
+      <para>Any xheight.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_XHEIGHT.DWRITE_PANOSE_XHEIGHT_NO_FIT">
+    <summary>
+      <para>No fit xheight.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_XHEIGHT.DWRITE_PANOSE_XHEIGHT_CONSTANT_SMALL">
+    <summary>
+      <para>Constant small xheight.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_XHEIGHT.DWRITE_PANOSE_XHEIGHT_CONSTANT_STANDARD">
+    <summary>
+      <para>Constant standard xheight.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_XHEIGHT.DWRITE_PANOSE_XHEIGHT_CONSTANT_LARGE">
+    <summary>
+      <para>Constant large xheight.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_XHEIGHT.DWRITE_PANOSE_XHEIGHT_DUCKING_SMALL">
+    <summary>
+      <para>Ducking small xheight.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_XHEIGHT.DWRITE_PANOSE_XHEIGHT_DUCKING_STANDARD">
+    <summary>
+      <para>Ducking standard xheight.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_XHEIGHT.DWRITE_PANOSE_XHEIGHT_DUCKING_LARGE">
+    <summary>
+      <para>Ducking large xheight.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_XHEIGHT.DWRITE_PANOSE_XHEIGHT_CONSTANT_STD">
+    <summary>
+      <para>Constant standard xheight.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_XHEIGHT.DWRITE_PANOSE_XHEIGHT_DUCKING_STD">
+    <summary>
+      <para>Ducking standard xheight.</para>
+    </summary>
+  </member>
+</doc>

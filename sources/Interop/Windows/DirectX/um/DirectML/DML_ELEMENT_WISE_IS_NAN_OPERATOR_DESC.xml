@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_ELEMENT_WISE_IS_NAN_OPERATOR_DESC">
+    <summary>
+      <para>For each element of the input tensor, returns 1 if the input is NaN (as defined by IEEE-754), and 0 otherwise. The result is placed into the corresponding element of the output tensor.</para>
+    </summary>
+  </member>
+  <member name="DML_ELEMENT_WISE_IS_NAN_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The input tensor to read from.</para>
+    </summary>
+  </member>
+  <member name="DML_ELEMENT_WISE_IS_NAN_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The output tensor to write the results to.</para>
+    </summary>
+  </member>
+</doc>

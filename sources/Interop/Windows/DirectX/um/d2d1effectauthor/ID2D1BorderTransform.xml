@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1BorderTransform.GetExtendModeX">
+    <summary>
+      <para>Gets the extend mode in the x direction.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
+      <para>This method returns the extend mode in the x direction.</para>
+    </returns>
+    <seealso cref="ID2D1BorderTransform" />
+  </member>
+  <member name="ID2D1BorderTransform.GetExtendModeY">
+    <summary>
+      <para>Gets the extend mode in the y direction.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
+      <para>This method returns the extend mode in the y direction.</para>
+    </returns>
+    <seealso cref="ID2D1BorderTransform" />
+  </member>
+  <member name="ID2D1BorderTransform.SetExtendModeX">
+    <summary>
+      <para>Sets the extend mode in the x direction.</para>
+    </summary>
+    <param name="extendMode">
+      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
+      <para>The extend mode in the x direction.</para>
+    </param>
+    <remarks>
+      <para>If the extend mode enumeration is invalid, this operation is ignored.</para>
+    </remarks>
+    <seealso cref="ID2D1BorderTransform" />
+  </member>
+  <member name="ID2D1BorderTransform.SetExtendModeY">
+    <summary>
+      <para>Sets the extend mode in the y direction.</para>
+    </summary>
+    <param name="extendMode">
+      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
+      <para>The extend mode in the y direction.</para>
+    </param>
+    <remarks>
+      <para>If the extend mode enumeration is invalid, this operation is ignored.</para>
+    </remarks>
+    <seealso cref="ID2D1BorderTransform" />
+  </member>
+  <member name="ID2D1BorderTransform">
+    <summary>
+      <para>Extends the input rectangle to infinity using the specified extend modes.</para>
+    </summary>
+    <seealso cref="ID2D1ConcreteTransform" />
+  </member>
+</doc>

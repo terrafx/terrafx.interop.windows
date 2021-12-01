@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_ALPHA_MODE.xml' path='doc/member[@name="DXGI_ALPHA_MODE"]/*' />
 public enum DXGI_ALPHA_MODE : uint
 {
+    /// <include file='DXGI_ALPHA_MODE.xml' path='doc/member[@name="DXGI_ALPHA_MODE.DXGI_ALPHA_MODE_UNSPECIFIED"]/*' />
     DXGI_ALPHA_MODE_UNSPECIFIED = 0,
+
+    /// <include file='DXGI_ALPHA_MODE.xml' path='doc/member[@name="DXGI_ALPHA_MODE.DXGI_ALPHA_MODE_PREMULTIPLIED"]/*' />
     DXGI_ALPHA_MODE_PREMULTIPLIED = 1,
+
+    /// <include file='DXGI_ALPHA_MODE.xml' path='doc/member[@name="DXGI_ALPHA_MODE.DXGI_ALPHA_MODE_STRAIGHT"]/*' />
     DXGI_ALPHA_MODE_STRAIGHT = 2,
+
+    /// <include file='DXGI_ALPHA_MODE.xml' path='doc/member[@name="DXGI_ALPHA_MODE.DXGI_ALPHA_MODE_IGNORE"]/*' />
     DXGI_ALPHA_MODE_IGNORE = 3,
+
+    /// <include file='DXGI_ALPHA_MODE.xml' path='doc/member[@name="DXGI_ALPHA_MODE.DXGI_ALPHA_MODE_FORCE_DWORD"]/*' />
     DXGI_ALPHA_MODE_FORCE_DWORD = 0xffffffff,
 }

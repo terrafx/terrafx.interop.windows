@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1OffsetTransform.GetOffset">
+    <summary>
+      <para>Gets the offset currently in the offset transform.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh847948(v=vs.85)">D2D1_POINT_2L</a></b></para>
+      <para>The current transform offset.</para>
+    </returns>
+    <seealso cref="ID2D1EffectContext.CreateResourceTexture" />
+    <seealso cref="ID2D1OffsetTransform" />
+  </member>
+  <member name="ID2D1OffsetTransform.SetOffset">
+    <summary>
+      <para>Sets the offset in the current offset transform.</para>
+    </summary>
+    <param name="offset">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh847948(v=vs.85)">D2D1_POINT_2L</a></b></para>
+      <para>The new offset to apply to the offset transform.</para>
+    </param>
+    <seealso cref="ID2D1EffectContext.CreateResourceTexture" />
+    <seealso cref="ID2D1OffsetTransform" />
+  </member>
+  <member name="ID2D1OffsetTransform">
+    <summary>
+      <para>Instructs the effect-rendering system to offset an input bitmap without inserting a rendering pass.</para>
+    </summary>
+    <remarks>
+      <para>Because a rendering pass is not required, the interface derives from a transform node. This allows it to be inserted into a graph but does not allow an output buffer to be specified.</para>
+    </remarks>
+    <seealso cref="I2D1DeviceContext.CreateOffsetTransform" />
+    <seealso cref="ID2D1TransformNode" />
+  </member>
+</doc>

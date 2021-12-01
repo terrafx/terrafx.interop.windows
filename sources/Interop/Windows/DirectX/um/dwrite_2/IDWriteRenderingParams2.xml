@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteRenderingParams2.GetGridFitMode">
+    <summary>
+      <para>Gets the grid fitting mode.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="DWRITE_GRID_FIT_MODE" /></b></para>
+      <para>Returns a <see cref="DWRITE_GRID_FIT_MODE" />-typed value for the grid fitting mode.</para>
+    </returns>
+    <seealso cref="IDWriteRenderingParams2" />
+  </member>
+  <member name="IDWriteRenderingParams2">
+    <summary>
+      <para>Represents text rendering settings for glyph rasterization and filtering.</para>
+    </summary>
+    <seealso cref="IDWriteRenderingParams1" />
+  </member>
+</doc>

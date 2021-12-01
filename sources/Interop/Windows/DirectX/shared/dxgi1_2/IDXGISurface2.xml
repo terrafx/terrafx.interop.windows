@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDXGISurface2.GetResource">
+    <summary>
+      <para>Gets the parent resource and subresource index that support a subresource surface.</para>
+    </summary>
+    <param name="riid">
+      <para>The globally unique identifier (GUID)  of the requested interface type.</para>
+    </param>
+    <param name="ppParentResource">
+      <para>A pointer to a buffer that receives a pointer to the parent resource object for the subresource surface.</para>
+    </param>
+    <param name="pSubresourceIndex">
+      <para>A pointer to a variable that receives the index of the subresource surface.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful; otherwise, returns one of the following values:</para>
+      <list type="bullet">
+        <item>
+          <description>E_NOINTERFACE if the object does not implement the GUID that the <i>riid</i> parameter specifies.</description>
+        </item>
+        <item>
+          <description>Possibly other error codes that are described in the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> topic.</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>For subresource surface objects that the <see cref="IDXGIResource1.CreateSubresourceSurface" /> method creates, <b>GetResource</b> simply returns the values that were used to create the subresource surface.</para>
+      <para>Current objects that implement <see cref="IDXGISurface" /> are either resources or views.  <b>GetResource</b> for these objects returns “this” or the resource that supports the view respectively.  In this situation, the subresource index is 0.</para>
+    </remarks>
+    <seealso cref="IDXGISurface2" />
+  </member>
+  <member name="IDXGISurface2">
+    <summary>
+      <para>The <b>IDXGISurface2</b> interface extends the <see cref="IDXGISurface1" /> interface by adding support for subresource surfaces and getting a handle to a shared resource.</para>
+    </summary>
+    <remarks>
+      <para>An image-data object is a 2D section of memory, commonly called a surface. To get the surface from an output, call <see cref="IDXGIOutput.GetDisplaySurfaceData" />. Then, call <see cref="QueryInterface" /> on the <see cref="IDXGISurface" /> object that <b>IDXGIOutput.GetDisplaySurfaceData</b> returns to retrieve the <b>IDXGISurface2</b> interface.</para>
+      <para>Any object that supports <see cref="IDXGISurface" /> also supports <b>IDXGISurface2</b>.</para>
+      <para>The runtime automatically creates an <b>IDXGISurface2</b> interface when it creates a Direct3D resource object that represents a surface. For example, the runtime creates an <b>IDXGISurface2</b> interface when you call <see cref="ID3D11Device.CreateTexture2D" /> to create a 2D texture. To retrieve the <b>IDXGISurface2</b> interface that represents the 2D texture surface, call <see cref="ID3D11Texture2D.QueryInterface" />. In this call, you must pass the identifier of <b>IDXGISurface2</b>. If the 2D texture has only a single MIP-map level and does not consist of an array of textures, <b>QueryInterface</b> succeeds and returns a pointer to the <b>IDXGISurface2</b> interface pointer. Otherwise, <b>QueryInterface</b> fails and does not return the pointer to <b>IDXGISurface2</b>.</para>
+      <para>You can call the <see cref="IDXGIResource1.CreateSubresourceSurface" /> method to create an <b>IDXGISurface2</b> interface that refers to one subresource of a stereo resource.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
+    <seealso cref="IDXGISurface1" />
+  </member>
+</doc>

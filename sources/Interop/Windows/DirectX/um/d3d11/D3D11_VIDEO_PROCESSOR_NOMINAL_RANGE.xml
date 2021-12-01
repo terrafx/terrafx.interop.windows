@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE">
+    <summary>
+      <para>Specifies values for the luminance range of YUV data.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-enumerations">Direct3D 11 Video Enumerations</seealso>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE.D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE_UNDEFINED">
+    <summary>
+      <para>Driver defaults are used, which should be Studio luminance range [16-235],</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE.D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE_16_235">
+    <summary>
+      <para>Studio luminance range [16-235]</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE.D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE_0_255">
+    <summary>
+      <para>Full luminance range [0-255]</para>
+    </summary>
+  </member>
+</doc>

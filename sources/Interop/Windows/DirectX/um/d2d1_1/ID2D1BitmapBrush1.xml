@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1BitmapBrush1.GetInterpolationMode1">
+    <summary>
+      <para>Returns the current interpolation mode of the brush.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
+      <para>The current interpolation mode.</para>
+    </returns>
+    <seealso cref="ID2D1BitmapBrush1" />
+  </member>
+  <member name="ID2D1BitmapBrush1.SetInterpolationMode1">
+    <summary>
+      <para>Sets the interpolation mode for the brush.</para>
+    </summary>
+    <param name="interpolationMode">
+      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
+      <para>The mode to use.</para>
+    </param>
+    <returns>
+      <para>
+        <b>Note</b>  If <i>interpolationMode</i> is not a valid member of D2D1_INTERPOLATION_MODE, then this method silently ignores the call.</para>
+    </returns>
+    <seealso cref="ID2D1BitmapBrush1" />
+  </member>
+  <member name="ID2D1BitmapBrush1">
+    <summary>
+      <para>Paints an area with a bitmap.</para>
+    </summary>
+    <seealso cref="ID2D1BitmapBrush" />
+  </member>
+</doc>

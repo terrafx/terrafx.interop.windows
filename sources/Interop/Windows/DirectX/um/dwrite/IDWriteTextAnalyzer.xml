@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteTextAnalyzer.AnalyzeBidi">
+    <summary>
+      <para>Analyzes a text range for script directionality, reading attributes
+from the source and reporting levels to the sink callback <see cref="SetBidiLevel" />.</para>
+    </summary>
+    <param name="analysisSource">
+      <para>Type: <b><see cref="IDWriteTextAnalysisSource" />*</b></para>
+      <para>A pointer to a source object to analyze.</para>
+    </param>
+    <param name="textPosition">
+      <para>Type: <b>UINT32</b></para>
+      <para>The starting text position within the source object.</para>
+    </param>
+    <param name="textLength">
+      <para>Type: <b>UINT32</b></para>
+      <para>The text length to analyze.</para>
+    </param>
+    <param name="analysisSink">
+      <para>Type: <b><see cref="IDWriteTextAnalysisSink" />*</b></para>
+      <para>A pointer to the sink callback object that receives the text analysis.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>While the function can handle multiple paragraphs, the text range
+should not arbitrarily split the middle of paragraphs. Otherwise, the
+returned levels may be wrong, because the Bidi algorithm is meant to
+apply to the paragraph as a whole.</para>
+    </remarks>
+    <seealso cref="IDWriteTextAnalyzer" />
+  </member>
+  <member name="IDWriteTextAnalyzer.AnalyzeLineBreakpoints">
+    <summary>
+      <para>Analyzes a text range for potential breakpoint opportunities, reading
+attributes from the source and reporting breakpoint opportunities to
+the sink callback <see cref="SetLineBreakpoints" />.</para>
+    </summary>
+    <param name="analysisSource">
+      <para>Type: <b><see cref="IDWriteTextAnalysisSource" />*</b></para>
+      <para>A pointer to the source object to analyze.</para>
+    </param>
+    <param name="textPosition">
+      <para>Type: <b>UINT32</b></para>
+      <para>The starting text position within the source object.</para>
+    </param>
+    <param name="textLength">
+      <para>Type: <b>UINT32</b></para>
+      <para>The text length to analyze.</para>
+    </param>
+    <param name="analysisSink">
+      <para>Type: <b><see cref="IDWriteTextAnalysisSink" />*</b></para>
+      <para>A pointer to the  sink callback object that receives the text analysis.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Although the function can handle multiple paragraphs, the text range
+should not arbitrarily split the middle of paragraphs, unless the
+specified text span is considered a whole unit. Otherwise, the
+returned properties for the first and last characters will
+inappropriately allow breaks.</para>
+    </remarks>
+    <seealso cref="IDWriteTextAnalyzer" />
+  </member>
+  <member name="IDWriteTextAnalyzer.AnalyzeNumberSubstitution">
+    <summary>
+      <para>Analyzes a text range for spans where number substitution is applicable,
+reading attributes from the source and reporting substitutable ranges
+to the sink callback <see cref="SetNumberSubstitution" />.</para>
+    </summary>
+    <param name="analysisSource">
+      <para>Type: <b><see cref="IDWriteTextAnalysisSource" />*</b></para>
+      <para>The source object to analyze.</para>
+    </param>
+    <param name="textPosition">
+      <para>Type: <b>UINT32</b></para>
+      <para>The starting position within the source object.</para>
+    </param>
+    <param name="textLength">
+      <para>Type: <b>UINT32</b></para>
+      <para>The length to analyze.</para>
+    </param>
+    <param name="analysisSink">
+      <para>Type: <b><see cref="IDWriteTextAnalysisSink" />*</b></para>
+      <para>A pointer to the sink callback object that receives the text analysis.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Although the function can handle multiple ranges of differing number
+substitutions, the text ranges should not arbitrarily split the
+middle of numbers. Otherwise, it will treat the numbers separately
+and will not translate any intervening punctuation.</para>
+    </remarks>
+    <seealso cref="IDWriteTextAnalyzer" />
+  </member>
+  <member name="IDWriteTextAnalyzer.AnalyzeScript">
+    <summary>
+      <para>Analyzes a text range for script boundaries, reading text attributes
+from the source and reporting the Unicode script ID to the sink
+callback <see cref="SetScript" />.</para>
+    </summary>
+    <param name="analysisSource">
+      <para>Type: <b><see cref="IDWriteTextAnalysisSource" />*</b></para>
+      <para>A pointer to the source object to analyze.</para>
+    </param>
+    <param name="textPosition">
+      <para>Type: <b>UINT32</b></para>
+      <para>The starting text position within the source object.</para>
+    </param>
+    <param name="textLength">
+      <para>Type: <b>UINT32</b></para>
+      <para>The text length to analyze.</para>
+    </param>
+    <param name="analysisSink">
+      <para>Type: <b><see cref="IDWriteTextAnalysisSink" />*</b></para>
+      <para>A pointer to the sink callback object that receives the text analysis.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteTextAnalyzer" />
+  </member>
+  <member name="IDWriteTextAnalyzer.GetGdiCompatibleGlyphPlacements">
+    <summary>
+      <para>Place glyphs output from the <see cref="GetGlyphs" /> method according to the font
+and the writing system's rendering rules.</para>
+    </summary>
+    <param name="textString">
+      <para>Type: <b>const WCHAR*</b></para>
+      <para>An array of characters containing the original string from which the glyphs came.</para>
+    </param>
+    <param name="clusterMap">
+      <para>Type: <b>const UINT16*</b></para>
+      <para>A pointer to the mapping from character ranges to glyph
+ranges. This is returned by <see cref="GetGlyphs" />.</para>
+    </param>
+    <param name="textProps">
+      <para>Type: <b><see cref="DWRITE_SHAPING_TEXT_PROPERTIES" />*</b></para>
+      <para>A pointer to an array of structures that contains  shaping properties for each character. This structure is returned by
+<see cref="GetGlyphs" />.</para>
+    </param>
+    <param name="textLength">
+      <para>Type: <b>UINT32</b></para>
+      <para>The text length of <i>textString</i>.</para>
+    </param>
+    <param name="glyphIndices">
+      <para>Type: <b>const UINT16*</b></para>
+      <para>An array of glyph indices returned by <see cref="GetGlyphs" />.</para>
+    </param>
+    <param name="glyphProps">
+      <para>Type: <b>const <see cref="DWRITE_SHAPING_GLYPH_PROPERTIES" />*</b></para>
+      <para>A pointer to an array of structures that contain  shaping properties for each glyph returned by <see cref="GetGlyphs" />.</para>
+    </param>
+    <param name="glyphCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of glyphs returned from <see cref="GetGlyphs" />.</para>
+    </param>
+    <param name="fontFace">
+      <para>Type: <b><see cref="IDWriteFontFace" />*</b></para>
+      <para>A pointer to the font face that is the source for the output glyphs.</para>
+    </param>
+    <param name="fontEmSize">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The logical font size in DIPs.</para>
+    </param>
+    <param name="pixelsPerDip">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The number of physical pixels per DIP.</para>
+    </param>
+    <param name="transform">
+      <para>Type: <b>const <see cref="DWRITE_MATRIX" />*</b></para>
+      <para>An optional transform applied to the glyphs and their positions. This transform is applied after the scaling specified by the font size and <i>pixelsPerDip</i>.</para>
+    </param>
+    <param name="useGdiNatural">
+      <para>Type: <b>BOOL</b></para>
+      <para>When set to <b>FALSE</b>, the metrics are the same as the metrics of GDI aliased text.  When set to <b>TRUE</b>, the metrics are the same as the metrics of text measured by GDI using a font created with <b>CLEARTYPE_NATURAL_QUALITY</b>.</para>
+    </param>
+    <param name="isSideways">
+      <para>Type: <b>BOOL</b></para>
+      <para>A Boolean flag set to <b>TRUE</b> if the text is intended to be
+drawn vertically.</para>
+    </param>
+    <param name="isRightToLeft">
+      <para>Type: <b>BOOL</b></para>
+      <para>A Boolean flag set to <b>TRUE</b> for right-to-left text.</para>
+    </param>
+    <param name="scriptAnalysis">
+      <para>Type: <b>const <see cref="DWRITE_SCRIPT_ANALYSIS" />*</b></para>
+      <para>A pointer to a Script analysis result from an<see cref="AnalyzeScript" /> call.</para>
+    </param>
+    <param name="localeName">
+      <para>Type: <b>const WCHAR*</b></para>
+      <para>An array of characters containing the locale to use when selecting glyphs.
+For example, the same character may map to different glyphs for ja-jp versus zh-chs.
+If this is <b>NULL</b>, then the default mapping based on the script is used.</para>
+    </param>
+    <param name="features">
+      <para>Type: <b>const <see cref="DWRITE_TYPOGRAPHIC_FEATURES" />**</b></para>
+      <para>An array of pointers to the sets of typographic
+features to use in each feature range.</para>
+    </param>
+    <param name="featureRangeLengths">
+      <para>Type: <b>const UINT32*</b></para>
+      <para>The length of each feature range, in characters.
+The sum of all lengths should be equal to <i>textLength</i>.</para>
+    </param>
+    <param name="featureRanges">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of feature ranges.</para>
+    </param>
+    <param name="glyphAdvances">
+      <para>Type: <b>FLOAT*</b></para>
+      <para>When this method returns, contains the advance width of each glyph.</para>
+    </param>
+    <param name="glyphOffsets">
+      <para>Type: <b><see cref="DWRITE_GLYPH_OFFSET" />*</b></para>
+      <para>When this method returns, contains the offset of the origin of each glyph.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteTextAnalyzer" />
+  </member>
+  <member name="IDWriteTextAnalyzer.GetGlyphPlacements">
+    <summary>
+      <para>Places glyphs output from the <see cref="GetGlyphs" /> method according to the font
+and the writing system's rendering rules.</para>
+    </summary>
+    <param name="textString">
+      <para>Type: <b>const WCHAR*</b></para>
+      <para>An array of characters containing the original string from which the glyphs came.</para>
+    </param>
+    <param name="clusterMap">
+      <para>Type: <b>const UINT16*</b></para>
+      <para>A pointer to the mapping from character ranges to glyph
+ranges. This is returned by <see cref="GetGlyphs" />.</para>
+    </param>
+    <param name="textProps">
+      <para>Type: <b><see cref="DWRITE_SHAPING_TEXT_PROPERTIES" />*</b></para>
+      <para>A pointer to an array of structures that contains  shaping properties for each character. This structure is returned by
+<see cref="GetGlyphs" />.</para>
+    </param>
+    <param name="textLength">
+      <para>Type: <b>UINT32</b></para>
+      <para>The text length of <i>textString</i>.</para>
+    </param>
+    <param name="glyphIndices">
+      <para>Type: <b>const UINT16*</b></para>
+      <para>An array of glyph indices returned by <see cref="GetGlyphs" />.</para>
+    </param>
+    <param name="glyphProps">
+      <para>Type: <b>const <see cref="DWRITE_SHAPING_GLYPH_PROPERTIES" />*</b></para>
+      <para>A pointer to an array of structures that contain  shaping properties for each glyph returned by <see cref="GetGlyphs" />.</para>
+    </param>
+    <param name="glyphCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of glyphs returned from <see cref="GetGlyphs" />.</para>
+    </param>
+    <param name="fontFace">
+      <para>Type: <b><see cref="IDWriteFontFace" />*</b></para>
+      <para>A pointer to the font face that is the source for the output glyphs.</para>
+    </param>
+    <param name="fontEmSize">
+      <para>Type: <b>FLOAT</b></para>
+      <para>The logical font size in DIPs.</para>
+    </param>
+    <param name="isSideways">
+      <para>Type: <b>BOOL</b></para>
+      <para>A Boolean flag set to <b>TRUE</b> if the text is intended to be
+drawn vertically.</para>
+    </param>
+    <param name="isRightToLeft">
+      <para>Type: <b>BOOL</b></para>
+      <para>A Boolean flag set to <b>TRUE</b> for right-to-left text.</para>
+    </param>
+    <param name="scriptAnalysis">
+      <para>Type: <b>const <see cref="DWRITE_SCRIPT_ANALYSIS" />*</b></para>
+      <para>A pointer to a Script analysis result from an <see cref="AnalyzeScript" /> call.</para>
+    </param>
+    <param name="localeName">
+      <para>Type: <b>const WCHAR*</b></para>
+      <para>An array of characters containing the locale to use when selecting glyphs.
+For example, the same character may map to different glyphs for ja-jp versus zh-chs.
+If this is <b>NULL</b>, the default mapping based on the script is used.</para>
+    </param>
+    <param name="features">
+      <para>Type: <b>const <see cref="DWRITE_TYPOGRAPHIC_FEATURES" />**</b></para>
+      <para>An array of pointers to the sets of typographic
+features to use in each feature range.</para>
+    </param>
+    <param name="featureRangeLengths">
+      <para>Type: <b>const UINT32*</b></para>
+      <para>The length of each feature range, in characters.
+The sum of all lengths should be equal to <i>textLength</i>.</para>
+    </param>
+    <param name="featureRanges">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of feature ranges.</para>
+    </param>
+    <param name="glyphAdvances">
+      <para>Type: <b>FLOAT*</b></para>
+      <para>When this method returns, contains the advance width of each glyph.</para>
+    </param>
+    <param name="glyphOffsets">
+      <para>Type: <b><see cref="DWRITE_GLYPH_OFFSET" />*</b></para>
+      <para>When this method returns, contains the offset of the origin of each glyph.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteTextAnalyzer" />
+  </member>
+  <member name="IDWriteTextAnalyzer.GetGlyphs">
+    <summary>
+      <para>Parses the input text string and maps it to the set of glyphs and associated glyph data
+according to the font and the writing system's rendering rules.</para>
+    </summary>
+    <param name="textString">
+      <para>Type: <b>const WCHAR*</b></para>
+      <para>An array of characters to convert to glyphs.</para>
+    </param>
+    <param name="textLength">
+      <para>Type: <b>UINT32</b></para>
+      <para>The length of <i>textString</i>.</para>
+    </param>
+    <param name="fontFace">
+      <para>Type: <b><see cref="IDWriteFontFace" />*</b></para>
+      <para>The font face that is the source of the output glyphs.</para>
+    </param>
+    <param name="isSideways">
+      <para>Type: <b>BOOL</b></para>
+      <para>A Boolean flag set to <b>TRUE</b> if the text is intended to be
+drawn vertically.</para>
+    </param>
+    <param name="isRightToLeft">
+      <para>Type: <b>BOOL</b></para>
+      <para>A Boolean flag set to <b>TRUE</b> for right-to-left text.</para>
+    </param>
+    <param name="scriptAnalysis">
+      <para>Type: <b>const <see cref="DWRITE_SCRIPT_ANALYSIS" />*</b></para>
+      <para>A pointer to a Script analysis result from an <see cref="AnalyzeScript" /> call.</para>
+    </param>
+    <param name="localeName">
+      <para>Type: <b>const WCHAR*</b></para>
+      <para>The locale to use when selecting glyphs.
+For example the same character may map to different glyphs for ja-jp versus zh-chs.
+If this is <b>NULL</b>, then the default mapping based on the script is used.</para>
+    </param>
+    <param name="numberSubstitution">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritenumbersubstitution">IDWriteNumberSubstitution</a>*</b></para>
+      <para>A pointer to an optional number substitution which selects the appropriate glyphs for digits and related numeric characters, depending on the results obtained from <see cref="AnalyzeNumberSubstitution" />. Passing <b>NULL</b> indicates that no substitution is needed and that the digits should receive nominal glyphs.</para>
+    </param>
+    <param name="features">
+      <para>Type: <b>const <see cref="DWRITE_TYPOGRAPHIC_FEATURES" />**</b></para>
+      <para>An array of pointers to the sets of typographic
+features to use in each feature range.</para>
+    </param>
+    <param name="featureRangeLengths">
+      <para>Type: <b>const UINT32*</b></para>
+      <para>The length of each feature range, in characters.
+The sum of all lengths should be equal to <i>textLength</i>.</para>
+    </param>
+    <param name="featureRanges">
+      <para>Type: <b>UINT32</b></para>
+      <para>The number of feature ranges.</para>
+    </param>
+    <param name="maxGlyphCount">
+      <para>Type: <b>UINT32</b></para>
+      <para>The maximum number of glyphs that can be
+returned.</para>
+    </param>
+    <param name="clusterMap">
+      <para>Type: <b>UINT16*</b></para>
+      <para>When this method returns, contains the mapping from character ranges to glyph
+ranges.</para>
+    </param>
+    <param name="textProps">
+      <para>Type: <b><see cref="DWRITE_SHAPING_TEXT_PROPERTIES" />*</b></para>
+      <para>When this method returns, contains a pointer to an array of structures that contains  shaping properties for each character.</para>
+    </param>
+    <param name="glyphIndices">
+      <para>Type: <b>UINT16*</b></para>
+      <para>The output glyph indices.</para>
+    </param>
+    <param name="glyphProps">
+      <para>Type: <b><see cref="DWRITE_SHAPING_GLYPH_PROPERTIES" />*</b></para>
+      <para>When this method returns, contains a pointer to an array of structures that contain  shaping properties for each output glyph.</para>
+    </param>
+    <param name="actualGlyphCount">
+      <para>Type: <b>UINT32*</b></para>
+      <para>When this method returns, contains the actual number of glyphs returned if
+the call succeeds.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Note that the mapping from characters to glyphs is, in general, many-to-many.  The recommended estimate for the per-glyph output buffers is (3 * <i>textLength</i> / 2 + 16).  This is not guaranteed to be sufficient.</para>
+      <para>The value of the <i>actualGlyphCount</i> parameter is only valid if the call succeeds.  In the event that <i>maxGlyphCount</i> is not big enough, <b>HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)</b> will be returned. The application should allocate a larger buffer and try again.</para>
+    </remarks>
+    <seealso cref="IDWriteTextAnalyzer" />
+  </member>
+  <member name="IDWriteTextAnalyzer">
+    <summary>
+      <para>Analyzes various text properties for complex script processing such as bidirectional (bidi) support for languages like Arabic, determination of line break opportunities, glyph placement, and number substitution.</para>
+    </summary>
+  </member>
+</doc>

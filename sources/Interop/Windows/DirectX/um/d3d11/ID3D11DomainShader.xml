@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11DomainShader">
+    <summary>
+      <para>A domain-shader interface manages an executable program (a domain shader) that controls the domain-shader stage.</para>
+    </summary>
+    <remarks>
+      <para>The domain-shader interface has no methods; use HLSL to implement your shader functionality. All shaders are implemented from a common set of features referred to as the common-shader core..</para>
+      <para>To create a domain-shader interface, call <see cref="ID3D11Device.CreateDomainShader" />. Before using a domain shader you must bind it to the device by calling <see cref="ID3D11DeviceContext.DSSetShader" />.</para>
+      <para>This interface is defined in D3D11.h.</para>
+    </remarks>
+    <seealso cref="ID3D11DeviceChild" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-shader-interfaces">Shader Interfaces</seealso>
+  </member>
+</doc>

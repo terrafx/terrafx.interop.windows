@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_UPSAMPLE_2D_OPERATOR_DESC">
+    <summary>
+      <para>Upsamples the input image, writing the result into the output tensor. The order of the dimensions should be NCHW (BatchSize, ChannelCount, Height, Width) or NCDHW (BatchSize, ChannelCount, Depth, Height, Width), but strides can be used if the data is stored in a different format. Unlike <see cref="DML_RESAMPLE_OPERATOR_DESC" />, only the last 2 dimensions (height and width) can be upsampled.</para>
+      <para>If available, you should prefer <see cref="DML_RESAMPLE_OPERATOR_DESC" /> since it is a more flexible version of <b>DML_UPSAMPLE_2D_OPERATOR_DESC</b>.</para>
+    </summary>
+  </member>
+  <member name="DML_UPSAMPLE_2D_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the input data. The expected dimensions of the InputTensor are <code>{ InputBatchCount, InputChannelCount, InputHeight, InputWidth }</code> for 4D, and <code>{ InputBatchCount, InputChannelCount, InputDepth, InputHeight, InputWidth }</code> for 5D.</para>
+    </summary>
+  </member>
+  <member name="DML_UPSAMPLE_2D_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the input data. The expected dimensions of the OutputTensor are <code>{ InputBatchCount, InputChannelCount, InputHeight * HeightScale, InputWidth * WidthScale }</code> for 4D, and <code>{ InputBatchCount, InputChannelCount, InputDepth, InputHeight * HeightScale, InputWidth * WidthScale }</code> for 5D.</para>
+    </summary>
+  </member>
+  <member name="DML_UPSAMPLE_2D_OPERATOR_DESC.ScaleSize">
+    <summary>
+      <para>Type: <see cref="DML_SIZE_2D" /></para>
+      <para>The width and height scales of type UINT to apply when upsampling the input. <code>0 &lt; ScaleSize.Height &lt;= UINT_MAX / InputHeight</code> and <code>0 &lt; ScaleSize.Width &lt;= UINT_MAX / InputWidth</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_UPSAMPLE_2D_OPERATOR_DESC.InterpolationMode">
+    <summary>
+      <para>Type: <b><see cref="DML_INTERPOLATION_MODE" /></b></para>
+      <para>This field determines the kind of interpolation used to choose output pixels.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="DML_INTERPOLATION_MODE_NEAREST_NEIGHBOR" />. Uses the <i>Nearest Neighbor</i> algorithm, which chooses the input element nearest to the corresponding pixel center for each output element.</description>
+        </item>
+        <item>
+          <description>
+            <b>DML_INTERPOLATION_MODE_LINEAR</b>. Uses the <i>Bilinear</i> algorithm, which computes the output element by doing the weighted average of the 2 nearest neighboring input elements in the height dimension, and the 2 nearest neighboring input elements in the width dimension, for a total of 4 elements. This is true even if the input/output DimensionCount is 5. That is, samples are only ever averaged along the width and height dimensions, and never along the batch, channel, or depth.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

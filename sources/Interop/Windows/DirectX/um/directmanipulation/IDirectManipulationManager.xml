@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirectManipulationManager.Activate">
+    <summary>
+      <para>Activates <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> for processing input and  handling callbacks on the specified window.</para>
+    </summary>
+    <param name="window">
+      <para>The window in which to activate <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a>.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The manipulation manager is deactivated, by default. The manager does not receive or respond to input and callbacks until <b>Activate</b> is called for the window.</para>
+      <para>Calls to <b>Activate</b> and <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationmanager-deactivate">Deactivate</a> are reference counted.</para>
+      <h4>Examples</h4>
+      <para>The following example shows how to activate and deactivate input processing.</para>
+      <code>LRESULT WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam )
+{
+    BOOL handled = FALSE;
+    switch ( msg )
+    {
+    case WM_SIZE:
+        switch ( wParam)
+        {
+        case SIZE_MINIMIZED:
+        case SIZE_MAXHIDE:
+            pManipulationManager-&gt;Deactivate(hwnd);
+            break;
+
+        default:
+            pManipulationManager-&gt;Activate(hwnd);
+            break;
+        }
+        break;
+    }
+    if ( !handled)
+    {
+        return DefWindowProc(hwnd,msg,wParam,lParam);
+    }
+    else
+    {
+        return 0;
+    }
+}
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationmanager">IDirectManipulationManager</seealso>
+  </member>
+  <member name="IDirectManipulationManager.CreateContent">
+    <summary>
+      <para>The factory method that is used to create an instance of secondary content (such as a panning indicator) inside a viewport.</para>
+    </summary>
+    <param name="frameInfo">
+      <para>The frame info provider for the secondary content. This should match the frame info provider used to create the viewport.</para>
+    </param>
+    <param name="clsid">
+      <para>Class identifier (CLSID) of the secondary content. This ID specifies the content type.</para>
+    </param>
+    <param name="riid">
+      <para>IID of the interface.</para>
+    </param>
+    <param name="object">
+      <para>The secondary content object that implements the specified interface.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Primary content is automatically created at the same time as the viewport and has a one-to-one relationship to a viewport. Therefore, it is not possible to create, add, or remove primary content.</para>
+      <para>Secondary content is created independently from the viewport. There is no limit to how much secondary content can be added or removed from a viewport. All secondary content transforms are derived from those supported by the primary content with specific rules applied based on the intended purpose of the element (identified by its Class identifier (CLSID)).</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationmanager">IDirectManipulationManager</seealso>
+  </member>
+  <member name="IDirectManipulationManager.CreateViewport">
+    <summary>
+      <para>The factory method that is used to create a new <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</a> object.</para>
+      <para>The viewport manages the interaction state and mapping of input to output actions.</para>
+    </summary>
+    <param name="frameInfo">
+      <para>The frame info provider for the viewport.</para>
+    </param>
+    <param name="window">
+      <para>The handle of the main app window to associate with the viewport.</para>
+    </param>
+    <param name="riid">
+      <para>IID to the interface.</para>
+    </param>
+    <param name="object">
+      <para>The new <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</a> object.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationmanager">IDirectManipulationManager</seealso>
+  </member>
+  <member name="IDirectManipulationManager.Deactivate">
+    <summary>
+      <para>Deactivates <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> for processing input and  handling callbacks on the specified window.</para>
+    </summary>
+    <param name="window">
+      <para>The window in which to deactivate input.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The manipulation manager is deactivated by default. The manager does not receive or respond to input until <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationmanager-activate">Activate</a> is called. The manipulation manager should be deactivated when the app does not receive or respond to input. For example, when the app is minimized.</para>
+      <para>Calls to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationmanager-activate">Activate</a> and <b>Deactivate</b> are reference counted.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationmanager">IDirectManipulationManager</seealso>
+  </member>
+  <member name="IDirectManipulationManager.GetUpdateManager">
+    <summary>
+      <para>Gets a pointer to an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationupdatemanager">IDirectManipulationUpdateManager</a> object that receives compositor updates.</para>
+    </summary>
+    <param name="riid">
+      <para>IID to the interface.</para>
+    </param>
+    <param name="object">
+      <para>Pointer to the new <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationupdatemanager">IDirectManipulationUpdateManager</a> object.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>For the compositor to respond to update events from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a>, you must associate <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationupdatemanager">IDirectManipulationUpdateManager</a> to an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationcompositor">IDirectManipulationCompositor</a> object during initialization. Use  <b>GetUpdateManager</b> to obtain a pointer to a <b>IDirectManipulationUpdateManager</b> object. Pass this pointer to the compositor using the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationcompositor-setupdatemanager">SetUpdateManager</a> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationmanager">IDirectManipulationManager</seealso>
+  </member>
+  <member name="IDirectManipulationManager.ProcessInput">
+    <summary>
+      <para>Passes keyboard and mouse messages to the manipulation manager on the app's UI thread.</para>
+    </summary>
+    <param name="message">
+      <para>The input message to process.</para>
+    </param>
+    <param name="handled">
+      <para>
+        <b>TRUE</b> if no further processing should be done with this message; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Call this method for mouse and keyboard input.</para>
+      <h4>Examples</h4>
+      <para>The following example shows how to pass messages to the manipulation manager.</para>
+      <code>LRESULT WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+    BOOL handled = FALSE;
+
+LRESULT WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+    BOOL handled = FALSE;
+    switch (msg)
+    {
+    case WM_KEYDOWN:
+    case WM_POINTERWHEEL:
+    case WM_POINTERHWHEEL:
+    case WM_MOUSEWHEEL:
+    case WM_MOUSEHWHEEL:
+        MSG msg = {};
+        msg.hwnd = hwnd;
+        msg.message = message;
+        msg.lParam = lParam;
+        msg.wParam = wParam;
+
+        if (FAILED(m_pManipulationManager-&gt;ProcessInput(&amp;amp;amp;amp;amp;amp;msg, &amp;amp;amp;amp;amp;amp;handled)))
+        {
+            handled = false;
+        }
+        break;
+    }
+
+    if ( !handled)
+    {
+        return DefWindowProc(hwnd,msg,wParam,lParam);
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationmanager">IDirectManipulationManager</seealso>
+  </member>
+  <member name="IDirectManipulationManager.RegisterHitTestTarget">
+    <summary>
+      <para>Registers a dedicated thread for hit testing.</para>
+    </summary>
+    <param name="window">
+      <para>The handle of the main app window (typically created from the UI thread).</para>
+    </param>
+    <param name="hitTestWindow">
+      <para>The handle of the window in which hit testing is registered (should be created from the hit testing thread). Pass in nullptr to unregister a previously registered hit-test target.</para>
+    </param>
+    <param name="type">
+      <para>One of the values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_hittest_type">DIRECTMANIPULATION_HITTEST_TYPE</a>. Specifies whether the UI window or the hit testing window (or both) receives the hit testing <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/wm-pointerdown">WM_POINTERDOWN</a> message , and in what order.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Hit testing is typically performed on the application UI thread. The application receives a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/wm-pointerdown">WM_POINTERDOWN</a> message on which hit-testing is performed. If a manipulation is required, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setcontact">SetContact</a> is called on one or more viewports. An application can use the <b>RegisterHitTestTarget</b> method to delegate this hit-testing responsibility to a separate hit-testing thread.</para>
+      <para>Once a dedicated hit-test target is successfully registered, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/wm-pointerdown">WM_POINTERDOWN</a> messages are processed on the hit-testing thread. If a manipulation, such as pan or zoom, is required, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setcontact">SetContact</a> is called from this thread.</para>
+      <para>If <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setcontact">SetContact</a> is not called from the hit-testing thread, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/wm-pointerdown">WM_POINTERDOWN</a> messages may be processed on the UI thread, depending on the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_hittest_type">DIRECTMANIPULATION_HITTEST_TYPE</a> specified during registration.</para>
+      <para>If <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setcontact">SetContact</a> is not called by either the hit-test thread or the UI thread, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> ignores the input which is then handled on the UI thread.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationmanager">IDirectManipulationManager</seealso>
+  </member>
+  <member name="IDirectManipulationManager">
+    <summary>
+      <para>Provides access to all the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> features and APIs available to the client application.</para>
+      <para>This is the first COM object (the object factory) created by the application to retrieve other COM objects in the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> API surface. It also serves to activate and deactivate Direct Manipulation functionality on a per-HWND basis.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-interfaces">Direct Manipulation Interfaces</seealso>
+  </member>
+</doc>

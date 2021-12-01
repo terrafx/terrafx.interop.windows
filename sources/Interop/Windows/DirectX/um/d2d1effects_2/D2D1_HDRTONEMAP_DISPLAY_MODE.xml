@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_HDRTONEMAP_DISPLAY_MODE">
+    <summary>
+      <para>Defines constants that specify a value for the <see cref="D2D1_HDRTONEMAP_PROP_DISPLAY_MODE" /> property of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/hdr-tone-map-effect">HDR tone map effect</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_HDRTONEMAP_DISPLAY_MODE.D2D1_HDRTONEMAP_DISPLAY_MODE_SDR (0)">
+    <summary>
+      <para>Specifies that the tone mapper algorithm be optimized for best appearance on a standard dynamic range (SDR) display.</para>
+    </summary>
+  </member>
+  <member name="D2D1_HDRTONEMAP_DISPLAY_MODE.D2D1_HDRTONEMAP_DISPLAY_MODE_HDR (1)">
+    <summary>
+      <para>Specifies that the tone mapper algorithm be optimized for best appearance on a high dynamic range (HDR) display.</para>
+    </summary>
+  </member>
+  <member name="D2D1_HDRTONEMAP_DISPLAY_MODE.D2D1_HDRTONEMAP_DISPLAY_MODE_FORCE_DWORD (0xFFFFFFFF)">
+    <summary></summary>
+  </member>
+</doc>

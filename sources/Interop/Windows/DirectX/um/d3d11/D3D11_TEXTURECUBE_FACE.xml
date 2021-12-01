@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_TEXTURECUBE_FACE">
+    <summary>
+      <para>The different faces of a cube texture.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-enums">Core Enumerations</seealso>
+  </member>
+  <member name="D3D11_TEXTURECUBE_FACE.D3D11_TEXTURECUBE_FACE_POSITIVE_X">
+    <summary>
+      <para>Positive X face.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURECUBE_FACE.D3D11_TEXTURECUBE_FACE_NEGATIVE_X">
+    <summary>
+      <para>Negative X face.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURECUBE_FACE.D3D11_TEXTURECUBE_FACE_POSITIVE_Y">
+    <summary>
+      <para>Positive Y face.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURECUBE_FACE.D3D11_TEXTURECUBE_FACE_NEGATIVE_Y">
+    <summary>
+      <para>Negative Y face.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURECUBE_FACE.D3D11_TEXTURECUBE_FACE_POSITIVE_Z">
+    <summary>
+      <para>Positive Z face.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TEXTURECUBE_FACE.D3D11_TEXTURECUBE_FACE_NEGATIVE_Z">
+    <summary>
+      <para>Negative Z face.</para>
+    </summary>
+  </member>
+</doc>

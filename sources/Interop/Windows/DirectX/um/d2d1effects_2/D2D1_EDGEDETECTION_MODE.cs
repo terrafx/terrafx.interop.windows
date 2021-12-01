@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_EDGEDETECTION_MODE.xml' path='doc/member[@name="D2D1_EDGEDETECTION_MODE"]/*' />
 public enum D2D1_EDGEDETECTION_MODE : uint
 {
+    /// <include file='D2D1_EDGEDETECTION_MODE.xml' path='doc/member[@name="D2D1_EDGEDETECTION_MODE.D2D1_EDGEDETECTION_MODE_SOBEL"]/*' />
     D2D1_EDGEDETECTION_MODE_SOBEL = 0,
+
+    /// <include file='D2D1_EDGEDETECTION_MODE.xml' path='doc/member[@name="D2D1_EDGEDETECTION_MODE.D2D1_EDGEDETECTION_MODE_PREWITT"]/*' />
     D2D1_EDGEDETECTION_MODE_PREWITT = 1,
+
+    /// <include file='D2D1_EDGEDETECTION_MODE.xml' path='doc/member[@name="D2D1_EDGEDETECTION_MODE.D2D1_EDGEDETECTION_MODE_FORCE_DWORD"]/*' />
     D2D1_EDGEDETECTION_MODE_FORCE_DWORD = 0xffffffff,
 }

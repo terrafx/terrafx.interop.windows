@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_RECLAIM_RESOURCE_RESULTS">
+    <summary>
+      <para>Specifies result flags for the <see cref="ReclaimResources1" /> method.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-enums">DXGI Enumerations</seealso>
+  </member>
+  <member name="DXGI_RECLAIM_RESOURCE_RESULTS.DXGI_RECLAIM_RESOURCE_RESULT_OK">
+    <summary>
+      <para>The surface was successfully reclaimed and has valid content. This result is identical to the <i>false</i> value returned by the older <see cref="ReclaimResources" /> API.</para>
+    </summary>
+  </member>
+  <member name="DXGI_RECLAIM_RESOURCE_RESULTS.DXGI_RECLAIM_RESOURCE_RESULT_DISCARDED">
+    <summary>
+      <para>The surface was reclaimed, but the old content was lost and must be regenerated. This result is identical to the <i>true</i> value returned by the older <see cref="ReclaimResources" /> API.</para>
+    </summary>
+  </member>
+  <member name="DXGI_RECLAIM_RESOURCE_RESULTS.DXGI_RECLAIM_RESOURCE_RESULT_NOT_COMMITTED">
+    <summary>
+      <para>Both the surface and its contents are lost and invalid. The surface must be
+recreated and the content regenerated in order to be used. All future use of that resource is invalid. Attempts to bind it to the pipeline or map a resource which returns this value will never succeed, and the resource cannot be reclaimed again.</para>
+    </summary>
+  </member>
+</doc>

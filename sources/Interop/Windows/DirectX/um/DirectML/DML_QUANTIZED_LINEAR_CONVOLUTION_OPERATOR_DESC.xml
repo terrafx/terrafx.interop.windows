@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC">
+    <summary>
+      <para>Performs a convolution of the <i>FilterTensor</i> with the <i>InputTensor</i>. This operator performs forward convolution on quantized data. This operator is mathematically equivalent to dequantizing the inputs, convolving, and then quantizing the output.</para>
+      <para>The quantize linear functions used by this operator are the linear quantization functions</para>
+      <h3>Dequantize function</h3>
+      <code>f(Input, Scale, ZeroPoint) = (Input - ZeroPoint) * Scale
+</code>
+      <h3>Quantize function</h3>
+      <code>f(Input, Scale, ZeroPoint) = clamp(round(Input / Scale) + ZeroPoint, Min, Max)
+</code>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC.InputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the input data. The expected dimensions of the <i>InputTensor</i> are <code>{ InputBatchCount, InputChannelCount, InputHeight, InputWidth }</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC.InputScaleTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the input scale data. The expected dimensions of the <code>InputScaleTensor</code> are <code>{ 1, 1, 1, 1 }</code>. This scale value is used for dequantizing the input values.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC.InputZeroPointTensor">
+    <summary>
+      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>An optional tensor containing the input zero point data. The expected dimensions of the <i>InputZeroPointTensor</i> are <code>{ 1, 1, 1, 1 }</code>. This zero point value is used for dequantizing the input values.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC.FilterTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the filter data. The expected dimensions of the <i>FilterTensor</i> are <code>{ FilterBatchCount, FilterChannelCount, FilterHeight, FilterWidth }</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC.FilterScaleTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the filter scale data. The expected dimensions of the <code>FilterScaleTensor</code> are <code>{ 1, 1, 1, 1 }</code> if per tensor quantization is required, or <code>{ 1, OutputChannelCount, 1, 1 }</code> if per channel quantization is required. This scale value is used for dequantizing the filter values.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC.FilterZeroPointTensor">
+    <summary>
+      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>An optional tensor containing the filter zero point data. The expected dimensions of the <i>FilterZeroPointTensor</i> are <code>{ 1, 1, 1, 1 }</code> if per tensor quantization is required, or <code>{ 1, OutputChannelCount, 1, 1 }</code> if per channel quantization is required. This zero point value is used for dequantizing the filter values.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC.BiasTensor">
+    <summary>
+      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the bias data. The bias tensor is a tensor containing data which is broadcasted across the output tensor at the end of the convolution which is added to the result. The expected dimensions of the BiasTensor are <code>{ 1, OutputChannelCount, 1, 1 }</code> for 4D.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC.OutputScaleTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the output scale data. The expected dimensions of the OutputScaleTensor are <code>{ 1, 1, 1, 1 }</code>. This input scale value is used for quantizing the convolution output values.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC.OutputZeroPointTensor">
+    <summary>
+      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>An optional tensor containing the filter zero point data. The expected dimensions of the OutputZeroPointTensor are <code>{ 1, 1, 1, 1 }</code>. This input zero point value is used for quantizing the convolution the output values.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor to write the results to. The expected dimensions of the OutputTensor are <code>{ OutputBatchCount, OutputChannelCount, OutputHeight, OutputWidth }</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC.DimensionCount">
+    <summary>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>The number of spatial dimensions for the convolution operation. Spatial dimensions are the lower dimensions of the convolution filter tensor <i>FilterTensor</i>. This value also determines the size of the <i>Strides</i>, <i>Dilations</i>, <i>StartPadding</i>, and <i>EndPadding</i> arrays. Only a value of 2 is supported.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC.Strides">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>The strides of the convolution operation. These strides are applied to the convolution filter. They are separate from the tensor strides included in <see cref="DML_TENSOR_DESC" />.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC.Dilations">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>The Dilations of the convolution operation. Dilations are strides applied to the elements of the filter kernel. This has the effect of simulating a larger filter kernel by padding the internal filter kernel elements with zeros.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC.StartPadding">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>The padding values to be applied to the beginning of each spatial dimension of the filter and input tensor of the convolution operation.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC.EndPadding">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>The padding values to be applied to the end of each spatial dimension of the filter and input tensor of the convolution operation.</para>
+    </summary>
+  </member>
+  <member name="DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC.GroupCount">
+    <summary>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>The number of groups which to divide the convolution operation into. <i>GroupCount</i> can be used to achieve depth-wise convolution by setting the <i>GroupCount</i> equal to the input channel count. This divides the convolution up into a separate convolution per input channel.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_GEMM_OPERATOR_DESC">
+    <summary>
+      <para>Performs a general matrix multiplication function of the form <code>Output = FusedActivation(Alpha * TransA(A) x TransB(B) + Beta * C)</code>, where <code>x</code> denotes matrix multiplication, and <code>*</code> denotes multiplication with a scalar.</para>
+      <para>This operator requires 4D tensors with layout <code>{ BatchCount, ChannelCount, Height, Width }</code>, and it will perform BatchCount * ChannelCount number of independent matrix multiplications.</para>
+      <para>For example, if <i>ATensor</i> has <i>Sizes</i> of <code>{ BatchCount, ChannelCount, M, K }</code>, and <i>BTensor</i> has <i>Sizes</i> of <code>{ BatchCount, ChannelCount, K, N }</code>, and <i>OutputTensor</i> has <i>Sizes</i> of <code>{ BatchCount, ChannelCount, M, N }</code>, then this operator performs BatchCount * ChannelCount independent matrix multiplications of dimensions {M,K} x {K,N} = {M,N}.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-fused-activations">Using fused operators for improved performance</seealso>
+  </member>
+  <member name="DML_GEMM_OPERATOR_DESC.ATensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the A matrix. This tensor's <i>Sizes</i> should be <code>{ BatchCount, ChannelCount, M, K }</code> if <i>TransA</i> is <see cref="DML_MATRIX_TRANSFORM_NONE" />, or <code>{ BatchCount, ChannelCount, K, M }</code> if <i>TransA</i> is <b>DML_MATRIX_TRANSFORM_TRANSPOSE</b>.</para>
+    </summary>
+  </member>
+  <member name="DML_GEMM_OPERATOR_DESC.BTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the B matrix. This tensor's <i>Sizes</i> should be <code>{ BatchCount, ChannelCount, K, N }</code> if <i>TransB</i> is <see cref="DML_MATRIX_TRANSFORM_NONE" />, or <code>{ BatchCount, ChannelCount, N, K }</code> if <i>TransB</i> is <b>DML_MATRIX_TRANSFORM_TRANSPOSE</b>.</para>
+    </summary>
+  </member>
+  <member name="DML_GEMM_OPERATOR_DESC.CTensor">
+    <summary>
+      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>A tensor containing the C matrix, or <code>nullptr</code>. Values default to 0 when not provided. If provided, this tensor's <i>Sizes</i> should be <code>{ BatchCount, ChannelCount, M, N }</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_GEMM_OPERATOR_DESC.OutputTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The tensor to write the results to. This tensor's <i>Sizes</i> are <code>{ BatchCount, ChannelCount, M, N }</code>.</para>
+    </summary>
+  </member>
+  <member name="DML_GEMM_OPERATOR_DESC.TransA">
+    <summary>
+      <para>Type: <see cref="DML_MATRIX_TRANSFORM" /></para>
+      <para>The transform to be applied to <i>ATensor</i>; either a transpose, or no transform.</para>
+    </summary>
+  </member>
+  <member name="DML_GEMM_OPERATOR_DESC.TransB">
+    <summary>
+      <para>Type: <see cref="DML_MATRIX_TRANSFORM" /></para>
+      <para>The transform to be applied to <i>BTensor</i>; either a transpose, or no transform.</para>
+    </summary>
+  </member>
+  <member name="DML_GEMM_OPERATOR_DESC.Alpha">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
+      <para>The value of the scalar multiplier for the product of inputs <i>ATensor</i> and <i>BTensor</i>.</para>
+    </summary>
+  </member>
+  <member name="DML_GEMM_OPERATOR_DESC.Beta">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
+      <para>The value of the scalar multiplier for the optional input <i>CTensor</i>. If <i>CTensor</i> is not provided, then this value is ignored.</para>
+    </summary>
+  </member>
+  <member name="DML_GEMM_OPERATOR_DESC.FusedActivation">
+    <summary>
+      <para>Type: _Maybenull_ <b>const <see cref="DML_OPERATOR_DESC" />*</b></para>
+      <para>An optional fused activation layer to apply after the GEMM.</para>
+    </summary>
+  </member>
+</doc>

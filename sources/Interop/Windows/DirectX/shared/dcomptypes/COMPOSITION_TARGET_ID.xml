@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COMPOSITION_TARGET_ID">
+    <summary>
+      <para>Contains information about a composition render target.</para>
+    </summary>
+    <seealso cref="DCompositionGetStatistics" />
+    <seealso cref="DCompositionGetTargetStatistics" />
+  </member>
+  <member name="COMPOSITION_TARGET_ID.displayAdapterLuid">
+    <summary>
+      <para>Type: <b><see cref="LUID" /></b></para>
+      <para>The locally unique identifier (LUID) of the display adapter to which the monitor is connected.</para>
+    </summary>
+  </member>
+  <member name="COMPOSITION_TARGET_ID.renderAdapterLuid">
+    <summary>
+      <para>Type: <b><see cref="LUID" /></b></para>
+      <para>The locally unique identifier (LUID) of the render adapter.</para>
+    </summary>
+  </member>
+  <member name="COMPOSITION_TARGET_ID.vidPnSourceId">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The unique ID of the video present source.</para>
+    </summary>
+  </member>
+  <member name="COMPOSITION_TARGET_ID.vidPnTargetId">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The unique ID of the video present target.</para>
+    </summary>
+  </member>
+  <member name="COMPOSITION_TARGET_ID.uniqueId">
+    <summary>
+      <para>A unique identifier for this <code>COMPOSITION_TARGET_ID</code>.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_LAYER_OPTIONS1">
+    <summary>
+      <para>Specifies how the layer contents should be prepared.</para>
+    </summary>
+  </member>
+  <member name="D2D1_LAYER_OPTIONS1.D2D1_LAYER_OPTIONS1_NONE">
+    <summary>
+      <para>Default layer behavior. A premultiplied layer target is pushed and its contents are cleared to transparent black.</para>
+    </summary>
+  </member>
+  <member name="D2D1_LAYER_OPTIONS1.D2D1_LAYER_OPTIONS1_INITIALIZE_FROM_BACKGROUND">
+    <summary>
+      <para>The layer is not cleared to transparent black.</para>
+    </summary>
+  </member>
+  <member name="D2D1_LAYER_OPTIONS1.D2D1_LAYER_OPTIONS1_IGNORE_ALPHA">
+    <summary>
+      <para>The layer is always created as ignore alpha. All content rendered into the layer will be treated as opaque.</para>
+    </summary>
+  </member>
+  <member name="D2D1_LAYER_OPTIONS1.D2D1_LAYER_OPTIONS1_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

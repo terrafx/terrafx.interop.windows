@@ -7,16 +7,22 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_GAMMA_CONTROL_CAPABILITIES.xml' path='doc/member[@name="DXGI_GAMMA_CONTROL_CAPABILITIES"]/*' />
 public unsafe partial struct DXGI_GAMMA_CONTROL_CAPABILITIES
 {
+    /// <include file='DXGI_GAMMA_CONTROL_CAPABILITIES.xml' path='doc/member[@name="DXGI_GAMMA_CONTROL_CAPABILITIES.ScaleAndOffsetSupported"]/*' />
     public BOOL ScaleAndOffsetSupported;
 
+    /// <include file='DXGI_GAMMA_CONTROL_CAPABILITIES.xml' path='doc/member[@name="DXGI_GAMMA_CONTROL_CAPABILITIES.MaxConvertedValue"]/*' />
     public float MaxConvertedValue;
 
+    /// <include file='DXGI_GAMMA_CONTROL_CAPABILITIES.xml' path='doc/member[@name="DXGI_GAMMA_CONTROL_CAPABILITIES.MinConvertedValue"]/*' />
     public float MinConvertedValue;
 
+    /// <include file='DXGI_GAMMA_CONTROL_CAPABILITIES.xml' path='doc/member[@name="DXGI_GAMMA_CONTROL_CAPABILITIES.NumGammaControlPoints"]/*' />
     public uint NumGammaControlPoints;
 
+    /// <include file='DXGI_GAMMA_CONTROL_CAPABILITIES.xml' path='doc/member[@name="DXGI_GAMMA_CONTROL_CAPABILITIES.ControlPointPositions"]/*' />
     [NativeTypeName("float [1025]")]
     public fixed float ControlPointPositions[1025];
 }

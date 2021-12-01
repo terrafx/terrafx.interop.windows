@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDXGIOutput5.DuplicateOutput1">
+    <summary>
+      <para>Allows specifying a list of supported formats for fullscreen surfaces that can be returned by the <see cref="IDXGIOutputDuplication" /> object.</para>
+    </summary>
+    <param name="pDevice">
+      <para>Type: <b>IUnknown*</b></para>
+      <para>A pointer to the Direct3D device interface that you can use to process the desktop image. This device must be created from the adapter to which the output is connected.</para>
+    </param>
+    <param name="Flags">
+      <para>Type: <b>UINT</b></para>
+      <para>Reserved for future use; must be zero.</para>
+    </param>
+    <param name="SupportedFormatsCount">
+      <para>Type: <b>UINT</b></para>
+      <para>Specifies the number of supported formats.</para>
+    </param>
+    <param name="pSupportedFormats">
+      <para>Type: <b>const <see cref="DXGI_FORMAT" />*</b></para>
+      <para>Specifies an array, of length  <i>SupportedFormatsCount</i> of  <see cref="DXGI_FORMAT" /> entries.</para>
+    </param>
+    <param name="ppOutputDuplication">
+      <para>Type: <b>IDXGIOutputDuplication**</b></para>
+      <para>A pointer to a variable that receives the new <see cref="IDXGIOutputDuplication" /> interface.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <list type="bullet">
+        <item>
+          <description>S_OK if <b>DuplicateOutput1</b> successfully created the desktop duplication interface.</description>
+        </item>
+        <item>
+          <description>E_INVALIDARG for one of the following reasons: <list type="bullet"><item><description>The specified device (<i>pDevice</i>) is invalid, was not created on the correct adapter, or was not created from <see cref="IDXGIFactory1" /> (or a later version of a DXGI factory interface that inherits from <b>IDXGIFactory1</b>).</description></item><item><description>The calling application is already duplicating this desktop output.</description></item></list></description>
+        </item>
+        <item>
+          <description>E_ACCESSDENIED if the application does not have access privilege  to the current desktop image.  For example, only an application that runs at LOCAL_SYSTEM can access the secure desktop.</description>
+        </item>
+        <item>
+          <description>
+            <para>DXGI_ERROR_UNSUPPORTED if the created <see cref="IDXGIOutputDuplication" /> interface does not support the current desktop mode or scenario.  For example, 8bpp and non-DWM desktop modes are not supported.</para>
+            <para>If <b>DuplicateOutput1</b> fails with DXGI_ERROR_UNSUPPORTED, the application can wait for system notification of desktop switches and mode changes and then call <b>DuplicateOutput1</b> again after such a notification occurs.  For more information, see the desktop switch (<a href="https://docs.microsoft.com//windows/desktop/WinAuto/event-constants">EVENT_SYSTEM_DESKTOPSWITCH</a>) and mode change notification (<a href="https://docs.microsoft.com//windows/desktop/gdi/wm-displaychange">WM_DISPLAYCHANGE</a>).</para>
+          </description>
+        </item>
+        <item>
+          <description>DXGI_ERROR_NOT_CURRENTLY_AVAILABLE if DXGI reached the limit on the maximum number of concurrent duplication applications (default of four). Therefore, the calling application cannot create any desktop duplication interfaces until the other applications close.</description>
+        </item>
+        <item>
+          <description>DXGI_ERROR_SESSION_DISCONNECTED if <b>DuplicateOutput1</b> failed because the session is currently disconnected.</description>
+        </item>
+        <item>
+          <description>Other error codes are described in the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> topic.</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method allows directly receiving the original back buffer format used by a running fullscreen application. For comparison, using the original <see cref="DuplicateOutput" /> function always converts the fullscreen surface to a 32-bit BGRA format. In cases where the current fullscreen application is using a different buffer format, a conversion to 32-bit BGRA incurs a performance penalty. Besides the performance benefit of being able to skip format conversion, using <b>DuplicateOutput1</b> also allows receiving the full gamut of colors in cases where a high-color format (such as R10G10B10A2) is being presented.</para>
+      <para>The <i>pSupportedFormats</i> array should only contain display scan-out formats. See <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/format-support-for-direct3d-11-0-feature-level-hardware">Format Support for Direct3D Feature Level 11.0 Hardware</a> for  required scan-out formats at each feature level. If the current fullscreen buffer format is not contained in the <i>pSupportedFormats</i> array, DXGI will pick one of the supplied formats and convert the fullscreen buffer to that format before returning from <see cref="IDXGIOutputDuplication.AcquireNextFrame" />. The list of supported formats should always contain DXGI_FORMAT_B8G8R8A8_UNORM, as this is the most common format for the desktop.</para>
+    </remarks>
+    <seealso cref="DuplicateOutput" />
+    <seealso cref="IDXGIOutput5" />
+  </member>
+  <member name="IDXGIOutput5">
+    <summary>
+      <para>Represents an adapter output (such as a monitor). The <b>IDXGIOutput5</b> interface exposes a single method to specify a list of supported formats for fullscreen surfaces.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
+    <seealso cref="IDXGIOutput4" />
+  </member>
+</doc>

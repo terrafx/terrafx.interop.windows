@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="XAUDIO2_VOICE_DETAILS">
+    <summary>
+      <para>Contains information about the creation flags, input channels, and sample rate of a voice.</para>
+    </summary>
+    <remarks>
+      <para>Note the DirectX SDK versions of XAUDIO2 do not support the <b>ActiveFlags</b> member.</para>
+      <h3>Platform Requirements</h3>
+      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/structures">Structures</seealso>
+  </member>
+  <member name="XAUDIO2_VOICE_DETAILS.CreationFlags">
+    <summary>
+      <para>Flags used to create the voice; see the individual voice <a href="https://docs.microsoft.com//windows/desktop/xaudio2/interfaces">interfaces</a> for more information.</para>
+    </summary>
+  </member>
+  <member name="XAUDIO2_VOICE_DETAILS.ActiveFlags">
+    <summary>
+      <para>Flags that are currently set on the voice.</para>
+    </summary>
+  </member>
+  <member name="XAUDIO2_VOICE_DETAILS.InputChannels">
+    <summary>
+      <para>The number of input channels the voice expects.</para>
+    </summary>
+  </member>
+  <member name="XAUDIO2_VOICE_DETAILS.InputSampleRate">
+    <summary>
+      <para>The input sample rate the voice expects.</para>
+    </summary>
+  </member>
+</doc>

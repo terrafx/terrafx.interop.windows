@@ -10,6 +10,7 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='ID2D1LinearGradientBrush.xml' path='doc/member[@name="ID2D1LinearGradientBrush"]/*' />
 [Guid("2CD906AB-12E2-11DC-9FED-001143A055F9")]
 [NativeTypeName("struct ID2D1LinearGradientBrush : ID2D1Brush")]
 [NativeInheritance("ID2D1Brush")]
@@ -17,6 +18,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
         return ((delegate* unmanaged<ID2D1LinearGradientBrush*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
         return ((delegate* unmanaged<ID2D1LinearGradientBrush*, uint>)(lpVtbl[1]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
         return ((delegate* unmanaged<ID2D1LinearGradientBrush*, uint>)(lpVtbl[2]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void GetFactory(ID2D1Factory** factory)
@@ -47,6 +52,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
         ((delegate* unmanaged<ID2D1LinearGradientBrush*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), factory);
     }
 
+    /// <inheritdoc cref="ID2D1Brush.SetOpacity" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void SetOpacity(float opacity)
@@ -54,6 +60,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
         ((delegate* unmanaged<ID2D1LinearGradientBrush*, float, void>)(lpVtbl[4]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), opacity);
     }
 
+    /// <inheritdoc cref="ID2D1Brush.SetTransform" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void SetTransform([NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
@@ -61,6 +68,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
         ((delegate* unmanaged<ID2D1LinearGradientBrush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[5]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), transform);
     }
 
+    /// <inheritdoc cref="ID2D1Brush.GetOpacity" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public float GetOpacity()
@@ -68,6 +76,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
         return ((delegate* unmanaged[SuppressGCTransition]<ID2D1LinearGradientBrush*, float>)(lpVtbl[6]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ID2D1Brush.GetTransform" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
@@ -75,6 +84,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
         ((delegate* unmanaged[SuppressGCTransition]<ID2D1LinearGradientBrush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), transform);
     }
 
+    /// <include file='ID2D1LinearGradientBrush.xml' path='doc/member[@name="ID2D1LinearGradientBrush.SetStartPoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public void SetStartPoint([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F startPoint)
@@ -82,6 +92,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
         ((delegate* unmanaged<ID2D1LinearGradientBrush*, D2D_POINT_2F, void>)(lpVtbl[8]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), startPoint);
     }
 
+    /// <include file='ID2D1LinearGradientBrush.xml' path='doc/member[@name="ID2D1LinearGradientBrush.SetEndPoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public void SetEndPoint([NativeTypeName("D2D1_POINT_2F")] D2D_POINT_2F endPoint)
@@ -89,6 +100,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
         ((delegate* unmanaged<ID2D1LinearGradientBrush*, D2D_POINT_2F, void>)(lpVtbl[9]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), endPoint);
     }
 
+    /// <include file='ID2D1LinearGradientBrush.xml' path='doc/member[@name="ID2D1LinearGradientBrush.GetStartPoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     [return: NativeTypeName("D2D1_POINT_2F")]
@@ -98,6 +110,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
         return *((delegate* unmanaged[SuppressGCTransition]<ID2D1LinearGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*>)(lpVtbl[10]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), &result);
     }
 
+    /// <include file='ID2D1LinearGradientBrush.xml' path='doc/member[@name="ID2D1LinearGradientBrush.GetEndPoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     [return: NativeTypeName("D2D1_POINT_2F")]
@@ -107,6 +120,7 @@ public unsafe partial struct ID2D1LinearGradientBrush : ID2D1LinearGradientBrush
         return *((delegate* unmanaged[SuppressGCTransition]<ID2D1LinearGradientBrush*, D2D_POINT_2F*, D2D_POINT_2F*>)(lpVtbl[11]))((ID2D1LinearGradientBrush*)Unsafe.AsPointer(ref this), &result);
     }
 
+    /// <include file='ID2D1LinearGradientBrush.xml' path='doc/member[@name="ID2D1LinearGradientBrush.GetGradientStopCollection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public void GetGradientStopCollection(ID2D1GradientStopCollection** gradientStopCollection)

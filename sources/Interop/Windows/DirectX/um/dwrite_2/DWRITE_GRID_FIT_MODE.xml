@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_GRID_FIT_MODE">
+    <summary>
+      <para>Specifies whether to enable grid-fitting of glyph outlines (also known as hinting).</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GRID_FIT_MODE.DWRITE_GRID_FIT_MODE_DEFAULT">
+    <summary>
+      <para>Choose grid fitting based on the font's table information.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GRID_FIT_MODE.DWRITE_GRID_FIT_MODE_DISABLED">
+    <summary>
+      <para>Always disable grid fitting, using the ideal glyph outlines.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_GRID_FIT_MODE.DWRITE_GRID_FIT_MODE_ENABLED">
+    <summary>
+      <para>Enable grid fitting, adjusting glyph outlines for device pixel display.</para>
+    </summary>
+  </member>
+</doc>

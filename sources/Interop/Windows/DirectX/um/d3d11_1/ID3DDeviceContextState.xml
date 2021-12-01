@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3DDeviceContextState">
+    <summary>
+      <para>The <b>ID3DDeviceContextState</b> interface represents a context state object, which holds state and behavior information about a Microsoft Direct3D device.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-interfaces">Core Interfaces</seealso>
+    <seealso cref="ID3D11Device1.CreateDeviceContextState" />
+    <seealso cref="ID3D11DeviceChild" />
+    <seealso cref="ID3D11DeviceContext1.SwapDeviceContextState" />
+  </member>
+</doc>

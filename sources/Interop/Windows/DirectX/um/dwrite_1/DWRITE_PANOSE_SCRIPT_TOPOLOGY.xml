@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_PANOSE_SCRIPT_TOPOLOGY">
+    <summary>
+      <para>The <b>DWRITE_PANOSE_SCRIPT_TOPOLOGY</b> enumeration contains values that specify the topology of letterforms.</para>
+    </summary>
+    <seealso cref="DWRITE_PANOSE" />
+  </member>
+  <member name="DWRITE_PANOSE_SCRIPT_TOPOLOGY.DWRITE_PANOSE_SCRIPT_TOPOLOGY_ANY">
+    <summary>
+      <para>Any script topology.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_SCRIPT_TOPOLOGY.DWRITE_PANOSE_SCRIPT_TOPOLOGY_NO_FIT">
+    <summary>
+      <para>No fit for script topology.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_SCRIPT_TOPOLOGY.DWRITE_PANOSE_SCRIPT_TOPOLOGY_ROMAN_DISCONNECTED">
+    <summary>
+      <para>Script topology is roman disconnected.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_SCRIPT_TOPOLOGY.DWRITE_PANOSE_SCRIPT_TOPOLOGY_ROMAN_TRAILING">
+    <summary>
+      <para>Script topology is roman trailing.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_SCRIPT_TOPOLOGY.DWRITE_PANOSE_SCRIPT_TOPOLOGY_ROMAN_CONNECTED">
+    <summary>
+      <para>Script topology is roman connected.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_SCRIPT_TOPOLOGY.DWRITE_PANOSE_SCRIPT_TOPOLOGY_CURSIVE_DISCONNECTED">
+    <summary>
+      <para>Script topology is cursive disconnected.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_SCRIPT_TOPOLOGY.DWRITE_PANOSE_SCRIPT_TOPOLOGY_CURSIVE_TRAILING">
+    <summary>
+      <para>Script topology is cursive trailing.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_SCRIPT_TOPOLOGY.DWRITE_PANOSE_SCRIPT_TOPOLOGY_CURSIVE_CONNECTED">
+    <summary>
+      <para>Script topology is cursive connected.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_SCRIPT_TOPOLOGY.DWRITE_PANOSE_SCRIPT_TOPOLOGY_BLACKLETTER_DISCONNECTED">
+    <summary>
+      <para>Script topology is black-letter disconnected.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_SCRIPT_TOPOLOGY.DWRITE_PANOSE_SCRIPT_TOPOLOGY_BLACKLETTER_TRAILING">
+    <summary>
+      <para>Script topology is black-letter trailing.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_PANOSE_SCRIPT_TOPOLOGY.DWRITE_PANOSE_SCRIPT_TOPOLOGY_BLACKLETTER_CONNECTED">
+    <summary>
+      <para>Script topology is black-letter connected.</para>
+    </summary>
+  </member>
+</doc>

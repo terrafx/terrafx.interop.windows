@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_FEATURE_DATA_D3D11_OPTIONS5">
+    <summary>
+      <para>Describes the level of support for shared resources in the current graphics driver.</para>
+    </summary>
+    <remarks>
+      <para>Use this structure with the <b>D3D11_FEATURE_D3D11_OPTIONS5</b> member of <see cref="D3D11_FEATURE" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/win32/direct3d11/d3d11-graphics-reference-d3d11-core-structures">Direct3D 11 core structures</seealso>
+  </member>
+  <member name="D3D11_FEATURE_DATA_D3D11_OPTIONS5.SharedResourceTier">
+    <summary>
+      <para>Type: <b><see cref="D3D11_SHARED_RESOURCE_TIER" /></b></para>
+      <para>A shared resource support tier.</para>
+    </summary>
+  </member>
+</doc>

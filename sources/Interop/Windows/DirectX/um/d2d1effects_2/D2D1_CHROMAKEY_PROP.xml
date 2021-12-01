@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_CHROMAKEY_PROP">
+    <summary>
+      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/chromakey-effect">Chroma-key effect</a>.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CHROMAKEY_PROP.D2D1_CHROMAKEY_PROP_COLOR">
+    <summary>
+      <para>The D2D1_CHROMAKEY_PROP_COLOR property is a vector4 value indicating the color that should be converted to alpha.  The default color is black.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CHROMAKEY_PROP.D2D1_CHROMAKEY_PROP_TOLERANCE">
+    <summary>
+      <para>The D2D1_CHROMAKEY_PROP_TOLERANCE property is a float value indicating the tolerance for matching the color specified in the D2D1_CHROMAKEY_PROP_COLOR property.
+The allowed range is 0.0 to 1.0.  The default value is 0.1.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CHROMAKEY_PROP.D2D1_CHROMAKEY_PROP_INVERT_ALPHA">
+    <summary>
+      <para>The D2D1_CHROMAKEY_PROP_INVERT_ALPHA property is a boolean value indicating whether the alpha values should be inverted.  The default value if False.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CHROMAKEY_PROP.D2D1_CHROMAKEY_PROP_FEATHER">
+    <summary>
+      <para>The D2D1_CHROMAKEY_PROP_FEATHER property is a boolean value whether the edges of the output should be softened in the alpha channel.
+When set to False, the alpha output by the effect is 1-bit: either fully opaque or fully transparent. Setting to True results in a softening of edges in the alpha channel of the Chroma Key output.
+The default value is False.</para>
+    </summary>
+  </member>
+  <member name="D2D1_CHROMAKEY_PROP.D2D1_CHROMAKEY_PROP_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

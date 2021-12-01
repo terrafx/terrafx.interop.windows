@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_TILE_COPY_FLAG">
+    <summary>
+      <para>Identifies how to copy a tile.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-enums">Resource Enumerations</seealso>
+  </member>
+  <member name="D3D11_TILE_COPY_FLAG.D3D11_TILE_COPY_NO_OVERWRITE">
+    <summary>
+      <para>Indicates that the GPU isn't currently referencing any of the
+portions of destination memory being written.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TILE_COPY_FLAG.D3D11_TILE_COPY_LINEAR_BUFFER_TO_SWIZZLED_TILED_RESOURCE">
+    <summary>
+      <para>Indicates that the <see cref="ID3D11DeviceContext2.CopyTiles" /> operation involves copying a linear buffer to a swizzled tiled resource. This means to copy tile data from the
+specified buffer location, reading tiles sequentially,
+to the specified tile region (in x,y,z order if the region is a box), swizzling to optimal hardware memory layout as needed.
+In this <b>ID3D11DeviceContext2.CopyTiles</b> call, you specify the source data with the  <i>pBuffer</i> parameter and the destination with the <i>pTiledResource</i> parameter.</para>
+    </summary>
+  </member>
+  <member name="D3D11_TILE_COPY_FLAG.D3D11_TILE_COPY_SWIZZLED_TILED_RESOURCE_TO_LINEAR_BUFFER">
+    <summary>
+      <para>Indicates that the <see cref="ID3D11DeviceContext2.CopyTiles" /> operation involves copying a swizzled tiled resource to a linear buffer. This means to copy tile data from the tile region, reading tiles sequentially (in x,y,z order if the region is a box),
+to the specified buffer location, deswizzling to linear memory layout as needed.
+In this <b>ID3D11DeviceContext2.CopyTiles</b> call, you specify the source data with the <i>pTiledResource</i> parameter and the destination with the  <i>pBuffer</i> parameter.</para>
+    </summary>
+  </member>
+</doc>

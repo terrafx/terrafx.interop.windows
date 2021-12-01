@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COMPOSITION_FRAME_ID_TYPE">
+    <summary>
+      <para>Defines constants that specify the status of a compositor frame.</para>
+    </summary>
+  </member>
+  <member name="COMPOSITION_FRAME_ID_TYPE.COMPOSITION_FRAME_ID_CREATED">
+    <summary>
+      <para>The compositor has started working on the frame.</para>
+    </summary>
+  </member>
+  <member name="COMPOSITION_FRAME_ID_TYPE.COMPOSITION_FRAME_ID_CONFIRMED">
+    <summary>
+      <para>CPU work is completed and any presents have taken place.</para>
+    </summary>
+  </member>
+  <member name="COMPOSITION_FRAME_ID_TYPE.COMPOSITION_FRAME_ID_COMPLETED">
+    <summary>
+      <para>GPU work is completed for all render targets associated with the frame.</para>
+    </summary>
+  </member>
+</doc>

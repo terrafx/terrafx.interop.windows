@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11VideoContext3.DecoderBeginFrame1">
+    <summary>
+      <para>Starts a decoding operation to decode a video frame.</para>
+    </summary>
+    <param name="pDecoder">
+      <para>A pointer to the <see cref="ID3D11VideoDecoder" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoDecoder" /></para>
+    </param>
+    <param name="pView">
+      <para>A pointer to a <see cref="ID3D11VideoDecoderOutputView" /> interface. This interface describes the resource that will receive the decoded frame. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoDecoderOutputView" />.</para>
+    </param>
+    <param name="ContentKeySize">
+      <para>The size of the content key that is specified in <i>pContentKey</i>. If <i>pContentKey</i> is NULL, set <i>ContentKeySize</i> to zero.</para>
+    </param>
+    <param name="pContentKey">
+      <para>An optional pointer to a content key that was used to encrypt the frame data. If no content key was used, set this parameter to NULL. If the caller provides a content key, the caller must use the session key to encrypt the content key.</para>
+    </param>
+    <param name="NumComponentHistograms">
+      <para>The number of components to record a histograms for.  Use <see cref="D3D11_FEATURE_VIDEO_DECODE_HISTOGRAM" /> to check for support.  Use zero when not recording histograms or when the feature is not supported.  Specifying fewer components than are in the format implies that those components do not have histogram recording enabled. The maximum number of components is defined as <b>D3D11_4_VIDEO_DECODER_MAX_HISTOGRAM_COMPONENTS</b>.</para>
+    </param>
+    <param name="pHistogramOffsets">
+      <para>An array of starting buffer offset locations within the <i>ppHistogramBuffers</i> parallel array.  Use <see cref="D3D11_VIDEO_DECODE_HISTOGRAM_COMPONENT" /> to index the array.  If a component is not requested, specify an offset of zero.   The offsets must be 256-byte aligned.</para>
+    </param>
+    <param name="ppHistogramBuffers">
+      <para>An array of target buffers for hardware to write the components histogram.  Use <see cref="D3D11_VIDEO_DECODE_HISTOGRAM_COMPONENT" /> to index the array.  Set this parameter to <b>nullptr</b> when the component histogram is disabled or unsupported</para>
+    </param>
+    <returns>
+      <para>Returns <b>S_OK</b> if successful.</para>
+    </returns>
+    <remarks>
+      <para>The following <see cref="D3D11_RESOURCE_MISC" /> flags are allowed when allocating resources for video decode histograms.</para>
+      <list type="bullet">
+        <item>
+          <description>D3D11_RESOURCE_MISC_SHARED</description>
+        </item>
+        <item>
+          <description>D3D11_RESOURCE_MISC_DRAWINDIRECT_ARGS</description>
+        </item>
+        <item>
+          <description>D3D11_RESOURCE_MISC_BUFFER_ALLOW_RAW_VIEWS</description>
+        </item>
+        <item>
+          <description>D3D11_RESOURCE_MISC_BUFFER_STRUCTURED</description>
+        </item>
+        <item>
+          <description>D3D11_RESOURCE_MISC_SHARED_KEYEDMUTEX</description>
+        </item>
+        <item>
+          <description>D3D11_RESOURCE_MISC_SHARED_NTHANDLE</description>
+        </item>
+        <item>
+          <description>D3D11_RESOURCE_MISC_RESTRICT_SHARED_RESOURCE</description>
+        </item>
+        <item>
+          <description>D3D11_RESOURCE_MISC_RESTRICT_SHARED_RESOURCE_DRIVER</description>
+        </item>
+      </list>
+      <para>All other D3D11_RESOURCE_MISC flags are disallowed.</para>
+    </remarks>
+  </member>
+  <member name="ID3D11VideoContext3">
+    <summary>
+      <para>Provides the video functionality of a Microsoft Direct3D 11 device. This interface provides the <see cref="DecoderBeginFrame1" /> method, which provides support for decode histograms.</para>
+    </summary>
+  </member>
+</doc>

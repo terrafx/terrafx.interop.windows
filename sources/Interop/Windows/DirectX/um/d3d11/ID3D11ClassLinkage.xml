@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D11ClassLinkage.CreateClassInstance">
+    <summary>
+      <para>Initializes a class-instance object that represents an HLSL class instance.</para>
+    </summary>
+    <param name="pClassTypeName">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
+      <para>The type name of a class to initialize.</para>
+    </param>
+    <param name="ConstantBufferOffset">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Identifies the constant buffer that contains the class data.</para>
+    </param>
+    <param name="ConstantVectorOffset">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The four-component vector offset from the start of the constant buffer where the class data will begin. Consequently, this is not a byte offset.</para>
+    </param>
+    <param name="TextureOffset">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The texture slot for the first texture; there may be multiple textures following the offset.</para>
+    </param>
+    <param name="SamplerOffset">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The sampler slot for the first sampler; there may be multiple samplers following the offset.</para>
+    </param>
+    <param name="ppInstance">
+      <para>Type: <b><see cref="ID3D11ClassInstance" />**</b></para>
+      <para>The address of a pointer to an <see cref="ID3D11ClassInstance" /> interface to initialize.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns S_OK if successful; otherwise, returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>Instances can be created (or gotten) before or after a shader is created. Use the same shader linkage object to acquire a class instance and create the shader the instance is going to be used in.</para>
+      <para>For more information about using the <see cref="ID3D11ClassLinkage" /> interface, see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/overviews-direct3d-11-hlsl-dynamic-linking">Dynamic Linking</a>.</para>
+      <para>
+        <b>Windows Phone 8:
+</b> This API is supported.</para>
+    </remarks>
+    <seealso cref="ID3D11ClassLinkage" />
+  </member>
+  <member name="ID3D11ClassLinkage.GetClassInstance">
+    <summary>
+      <para>Gets the class-instance object that represents the specified HLSL class.</para>
+    </summary>
+    <param name="pClassInstanceName">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
+      <para>The name of a class for which to get the class instance.</para>
+    </param>
+    <param name="InstanceIndex">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The index of the class instance.</para>
+    </param>
+    <param name="ppInstance">
+      <para>Type: <b><see cref="ID3D11ClassInstance" />**</b></para>
+      <para>The address of a pointer to an <see cref="ID3D11ClassInstance" /> interface to initialize.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns S_OK if successful; otherwise, returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
+    </returns>
+    <remarks>
+      <para>For more information about using the <see cref="ID3D11ClassLinkage" /> interface, see
+<a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/overviews-direct3d-11-hlsl-dynamic-linking">Dynamic Linking</a>.</para>
+      <para>A class instance must have at least 1 data member in order to be available for the runtime to use with
+<b>ID3D11ClassLinkage.GetClassInstance</b>.
+Any instance with no members will be optimized out of a compiled shader blob as a zero-sized object.
+If you have a class with no data members, use
+<see cref="ID3D11ClassLinkage.CreateClassInstance" /> instead.</para>
+      <para>
+        <b>Windows Phone 8:
+</b> This API is supported.</para>
+    </remarks>
+    <seealso cref="ID3D11ClassInstance" />
+    <seealso cref="ID3D11ClassLinkage" />
+  </member>
+  <member name="ID3D11ClassLinkage">
+    <summary>
+      <para>This interface encapsulates an HLSL dynamic linkage.</para>
+    </summary>
+    <remarks>
+      <para>A class linkage object can hold up to 64K gotten instances. A gotten instance is a handle that references a variable name in any shader that is created with that linkage object. When you create a shader with a class linkage object, the runtime gathers these instances and stores them in the class linkage object. For more information about how a class linkage object is used, see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/storing-variables-and-types-for-shaders-to-share">Storing Variables and Types for Shaders to Share</a>.</para>
+      <para>An <b>ID3D11ClassLinkage</b> object is created using the <see cref="ID3D11Device.CreateClassLinkage" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-interfaces">Core Interfaces</seealso>
+    <seealso cref="ID3D11DeviceChild" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-shader-interfaces">Shader Interfaces</seealso>
+  </member>
+</doc>

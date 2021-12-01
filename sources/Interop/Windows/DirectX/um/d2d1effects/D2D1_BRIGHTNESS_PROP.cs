@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_BRIGHTNESS_PROP.xml' path='doc/member[@name="D2D1_BRIGHTNESS_PROP"]/*' />
 public enum D2D1_BRIGHTNESS_PROP : uint
 {
+    /// <include file='D2D1_BRIGHTNESS_PROP.xml' path='doc/member[@name="D2D1_BRIGHTNESS_PROP.D2D1_BRIGHTNESS_PROP_WHITE_POINT"]/*' />
     D2D1_BRIGHTNESS_PROP_WHITE_POINT = 0,
+
+    /// <include file='D2D1_BRIGHTNESS_PROP.xml' path='doc/member[@name="D2D1_BRIGHTNESS_PROP.D2D1_BRIGHTNESS_PROP_BLACK_POINT"]/*' />
     D2D1_BRIGHTNESS_PROP_BLACK_POINT = 1,
+
+    /// <include file='D2D1_BRIGHTNESS_PROP.xml' path='doc/member[@name="D2D1_BRIGHTNESS_PROP.D2D1_BRIGHTNESS_PROP_FORCE_DWORD"]/*' />
     D2D1_BRIGHTNESS_PROP_FORCE_DWORD = 0xffffffff,
 }

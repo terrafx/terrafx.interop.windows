@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_SLICE_GRAD_OPERATOR_DESC">
+    <summary>
+      <para>Computes backpropagation gradients for Slice (see <see cref="DML_SLICE1_OPERATOR_DESC" />).</para>
+      <para>Recall that <see cref="DML_SLICE1_OPERATOR_DESC" /> extracts a subregion of an input tensor. Given an <i>InputGradientTensor</i> with the same sizes as the <i>output</i> of an equivalent <b>DML_SLICE1_OPERATOR_DESC</b>, this operator produces an <i>OutputGradientTensor</i> with the same sizes as the <i>input</i> of <b>DML_SLICE1_OPERATOR_DESC</b>. The sliced elements are propagated to the output, and all other elements are set to 0.</para>
+      <para>As an example, consider a <b>DML_SLICE1_OPERATOR_DESC</b> that extracts the following elements from a tensor:</para>
+      <code>InputTensor            OutputTensor
+[[a, b, c, d],
+ [e, f, g, h],   Slice   [[a, c],
+ [i, j, k, l],    --&gt;     [i, k]]
+ [m, n, o, p]]
+</code>
+      <para>If provided the same <i>InputWindowOffsets</i>/<i>Sizes</i>/<i>Strides</i> as in the above example, this operator would then perform the following transform.</para>
+      <code>InputGradientTensor       OutputGradientTensor
+                             [[a, 0, c, 0],
+      [[a, c],   SliceGrad    [0, 0, 0, 0],
+       [i, k]]      --&gt;       [i, 0, k, 0],
+                              [0, 0, 0, 0]]
+</code>
+    </summary>
+  </member>
+  <member name="DML_SLICE_GRAD_OPERATOR_DESC.InputGradientTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>The incoming gradient tensor. This is typically obtained from the output of backpropagation of a preceding layer. Typically, this tensor would have the same sizes as the <i>output</i> of the corresponding <see cref="DML_SLICE1_OPERATOR_DESC" /> in the forward pass.</para>
+    </summary>
+  </member>
+  <member name="DML_SLICE_GRAD_OPERATOR_DESC.OutputGradientTensor">
+    <summary>
+      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
+      <para>An output tensor containing the backpropagated gradients. Typically, this tensor would have the same sizes as the <i>input</i> of the corresponding <see cref="DML_SLICE1_OPERATOR_DESC" /> in the forward pass.</para>
+    </summary>
+  </member>
+  <member name="DML_SLICE_GRAD_OPERATOR_DESC.DimensionCount">
+    <summary>
+      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
+      <para>The number of elements in the <i>InputWindowOffsets</i>, <i>InputWindowSizes</i>, and <i>InputWindowStrides</i> arrays. This value must equal the <i>DimensionCount</i> provided in the <i>InputGradientTensor</i> and <i>OutputGradientTensor</i>.</para>
+    </summary>
+  </member>
+  <member name="DML_SLICE_GRAD_OPERATOR_DESC.InputWindowOffsets">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
+      <para>See <i>InputWindowOffsets</i> in <see cref="DML_SLICE1_OPERATOR_DESC" />.</para>
+    </summary>
+  </member>
+  <member name="DML_SLICE_GRAD_OPERATOR_DESC.InputWindowSizes">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
+      <para>See <i>InputWindowSizes</i> in <see cref="DML_SLICE1_OPERATOR_DESC" />.</para>
+    </summary>
+  </member>
+  <member name="DML_SLICE_GRAD_OPERATOR_DESC.InputWindowStrides">
+    <summary>
+      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
+      <para>See <i>InputWindowStrides</i> in <see cref="DML_SLICE1_OPERATOR_DESC" />.</para>
+      <para>Note that unlike <b>DML_SLICE1_OPERATOR_DESC</b>, this operator requires non-zero strides. That's because with a zero stride, it's ambiguous as to which input element should map to each output element, and therefore backpropagation can't be performed. Like <b>DML_SLICE1_OPERATOR_DESC</b>, negative strides flip the input window direction along that axis.</para>
+    </summary>
+  </member>
+</doc>

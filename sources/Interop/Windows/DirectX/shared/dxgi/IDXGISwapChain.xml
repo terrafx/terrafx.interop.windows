@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDXGISwapChain.GetBuffer">
+    <summary>
+      <para>Accesses one of the swap-chain's back buffers.</para>
+    </summary>
+    <param name="Buffer">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A zero-based buffer index.</para>
+      <para>If the swap chain's swap effect is <see cref="DXGI_SWAP_EFFECT_DISCARD" />, this method can only access the first buffer; for this situation, set the index to zero.</para>
+      <para>If the swap chain's swap effect is either <see cref="DXGI_SWAP_EFFECT_SEQUENTIAL" /> or <see cref="DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL" />, only the swap chain's zero-index buffer can be read from and written to. The swap chain's buffers with indexes greater than zero can only be read from; so if you call the <see cref="IDXGIResource.GetUsage" /> method for such buffers, they have the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-usage">DXGI_USAGE_READ_ONLY</a> flag set.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>The type of interface used to manipulate the buffer.</para>
+    </param>
+    <param name="ppSurface">
+      <para>Type: <b>void**</b></para>
+      <para>A pointer to a back-buffer interface.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</para>
+    </returns>
+    <seealso cref="IDXGISwapChain" />
+  </member>
+  <member name="IDXGISwapChain.GetContainingOutput">
+    <summary>
+      <para>Get the output (the display monitor) that contains the majority of the client area of the target window.</para>
+    </summary>
+    <param name="ppOutput">
+      <para>Type: <b><see cref="IDXGIOutput" />**</b></para>
+      <para>A pointer to the output interface (see <see cref="IDXGIOutput" />).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</para>
+    </returns>
+    <remarks>
+      <para>If the method succeeds, the output interface will be filled and its reference count incremented. When you are finished with it, be sure to release the interface to avoid a memory leak.</para>
+      <para>The output is also owned by the adapter on which the swap chain's device was created.</para>
+      <para>You cannot call <b>GetContainingOutput</b> on a swap chain that you created with <see cref="IDXGIFactory2.CreateSwapChainForComposition" />.</para>
+      <para>To determine the output corresponding to such a swap chain, you should call <see cref="IDXGIFactory.EnumAdapters" /> and then <see cref="IDXGIAdapter.EnumOutputs" /> to enumerate over all of the available outputs. You should then intersect the bounds of your <a href="https://docs.microsoft.com//uwp/api/windows.ui.core.corewindow.bounds">CoreWindow.Bounds</a> with the desktop coordinates of each output, as reported by <see cref="DXGI_OUTPUT_DESC1.DesktopCoordinates" /> or <see cref="DXGI_OUTPUT_DESC.DesktopCoordinates" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
+    <seealso cref="IDXGISwapChain" />
+  </member>
+  <member name="IDXGISwapChain.GetFrameStatistics">
+    <summary>
+      <para>Gets performance statistics about the last render frame.</para>
+    </summary>
+    <param name="pStats">
+      <para>Type: <b><see cref="DXGI_FRAME_STATISTICS" />*</b></para>
+      <para>A pointer to a <see cref="DXGI_FRAME_STATISTICS" /> structure for the frame statistics.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> values.</para>
+    </returns>
+    <remarks>
+      <para>You cannot use <b>GetFrameStatistics</b> for swap chains that both use the bit-block transfer (bitblt) presentation model and draw in windowed mode.</para>
+      <para>You can only use <b>GetFrameStatistics</b> for swap chains that either use the flip presentation model or draw in full-screen mode. You set the <see cref="DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL" /> value in the <b>SwapEffect</b> member of the <see cref="DXGI_SWAP_CHAIN_DESC1" /> structure to specify that the swap chain uses the flip presentation model.</para>
+      <para>Statistics are not reliable in many multiple monitor scenarios, as well as scenarios where other fullscreen apps are running.</para>
+    </remarks>
+    <seealso cref="IDXGISwapChain" />
+  </member>
+  <member name="IDXGISwapChain.GetFullscreenState">
+    <summary>
+      <para>Get the state associated with full-screen mode.</para>
+    </summary>
+    <param name="pFullscreen">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a>*</b></para>
+      <para>A pointer to a boolean whose value is either:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>TRUE</b> if the swap chain is in full-screen mode</description>
+        </item>
+        <item>
+          <description>
+            <b>FALSE</b> if the swap chain is in windowed mode</description>
+        </item>
+      </list>
+    </param>
+    <param name="ppTarget">
+      <para>Type: <b><see cref="IDXGIOutput" />**</b></para>
+      <para>A pointer to the output target (see <see cref="IDXGIOutput" />) when the mode is full screen; otherwise <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</para>
+    </returns>
+    <remarks>
+      <para>When the swap chain is in full-screen mode, a pointer to the  target output will be returned and its reference count will be incremented.</para>
+    </remarks>
+    <seealso cref="IDXGISwapChain" />
+  </member>
+  <member name="IDXGISwapChain.GetLastPresentCount">
+    <summary>
+      <para>Gets the number of times  that <see cref="IDXGISwapChain.Present" /> or <see cref="IDXGISwapChain1.Present1" /> has been called.</para>
+    </summary>
+    <param name="pLastPresentCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
+      <para>A pointer to a variable that receives the number of calls.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> values.</para>
+    </returns>
+    <remarks>
+      <para>For info about presentation statistics for a frame, see <see cref="DXGI_FRAME_STATISTICS" />.</para>
+    </remarks>
+    <seealso cref="IDXGISwapChain" />
+  </member>
+  <member name="IDXGISwapChain.Present">
+    <summary>
+      <para>Presents a rendered image to the user.</para>
+    </summary>
+    <param name="SyncInterval">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>An integer that specifies how to synchronize presentation of a frame with the vertical blank.</para>
+      <para>For the bit-block transfer (bitblt) model (<see cref="DXGI_SWAP_EFFECT_DISCARD" /> or <see cref="DXGI_SWAP_EFFECT_SEQUENTIAL" />), values are:</para>
+      <list type="bullet">
+        <item>
+          <description>0 - The presentation occurs immediately, there is no synchronization.</description>
+        </item>
+        <item>
+          <description>1 through 4 - Synchronize presentation after the <i>n</i>th vertical blank.</description>
+        </item>
+      </list>
+      <para>For the flip model (<see cref="DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL" />), values are:</para>
+      <list type="bullet">
+        <item>
+          <description>0 - Cancel the remaining time on the previously presented frame and discard this frame if a newer frame is queued.
+</description>
+        </item>
+        <item>
+          <description>1 through 4 - Synchronize presentation for at least <i>n</i> vertical blanks. </description>
+        </item>
+      </list>
+      <para>For an example that shows how sync-interval values affect a flip presentation queue, see Remarks.</para>
+      <para>If the update region straddles more than one output (each represented by <see cref="IDXGIOutput" />), <b>Present</b> performs the synchronization to the output that contains the largest sub-rectangle of the target window's client area.</para>
+    </param>
+    <param name="Flags">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>An integer value that contains swap-chain presentation options. These options are defined by the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-present">DXGI_PRESENT</a> constants.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Possible return values include: S_OK, DXGI_ERROR_DEVICE_RESET or DXGI_ERROR_DEVICE_REMOVED (see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>), DXGI_STATUS_OCCLUDED (see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-status">DXGI_STATUS</a>), or D3DDDIERR_DEVICEREMOVED.</para>
+      <para>
+        <b>Note</b>  The <b>Present</b> method can return either DXGI_ERROR_DEVICE_REMOVED or D3DDDIERR_DEVICEREMOVED if a video card has been physically removed from the computer, or a driver upgrade for the video card has occurred.</para>
+    </returns>
+    <remarks>
+      <para>Starting with Direct3D 11.1, consider using <see cref="IDXGISwapChain1.Present1" /> because you can then use dirty rectangles and the scroll rectangle in the swap chain presentation and as such use less memory bandwidth and as a result less system power. For more info about using dirty rectangles and the scroll rectangle in swap chain presentation, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-1-2-presentation-improvements">Using dirty rectangles and the scroll rectangle in swap chain presentation</a>.</para>
+      <para>For the best performance when flipping swap-chain buffers in a full-screen application, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-programming-guide-dxgi">Full-Screen Application Performance Hints</a>.</para>
+      <para>Because calling <b>Present</b> might cause the render thread to wait on the message-pump thread, be careful when calling this method in an application that uses multiple threads. For more details, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-programming-guide-dxgi">Multithreading Considerations</a>.</para>
+      <list type="table">
+        <listheader>
+          <description>
+            <para>Differences between Direct3D 9 and Direct3D 10:</para>
+            <para>Specifying <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-present">DXGI_PRESENT_TEST</a> in the <i>Flags</i> parameter is analogous to <see cref="IDirect3DDevice9.TestCooperativeLevel" /> in Direct3D 9.</para>
+          </description>
+        </listheader>
+      </list>
+      <para>For flip presentation model swap chains that you create with the <see cref="DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL" /> value set, a successful presentation unbinds back buffer 0 from the graphics pipeline, except for when you pass the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-present">DXGI_PRESENT_DO_NOT_SEQUENCE</a> flag in the <i>Flags</i> parameter.</para>
+      <para>For info about how data values change when you present content to the screen, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/converting-data-color-space">Converting data for the color space</a>.</para>
+      <h3>Flip presentation model queue</h3>
+      <para>Suppose the following frames with sync-interval values are queued from oldest (A) to newest (E) before you call <b>Present</b>.</para>
+      <para>A: 3, B: 0, C: 0, D: 1, E: 0</para>
+      <para>When you call <b>Present</b>, the runtime shows frame A for only 1 vertical blank interval. The runtime terminates frame A early because of the sync interval 0 in frame B.   Then the runtime shows frame D for 1 vertical blank interval, and then frame E until you submit a new presentation. The runtime discards frames B and C.</para>
+      <h3>Variable refresh rate displays</h3>
+      <para>It is a requirement of variable refresh rate displays that tearing is enabled. The <see cref="CheckFeatureSupport" /> method can be used to determine if this feature is available, and to set the required flags refer to the descriptions of <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-present">DXGI_PRESENT_ALLOW_TEARING</a> and <see cref="DXGI_SWAP_CHAIN_FLAG_ALLOW_TEARING" />, and the <b>Variable refresh rate displays/Vsync off</b> section of <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-1-5-improvements">DXGI 1.5 Improvements</a>.</para>
+    </remarks>
+    <seealso cref="IDXGISwapChain" />
+  </member>
+  <member name="IDXGISwapChain.ResizeBuffers">
+    <summary>
+      <para>Changes the swap chain's back buffer size, format, and number of buffers.
+This should be called when the application window is resized.</para>
+    </summary>
+    <param name="BufferCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of buffers in the swap chain (including all back and front buffers).
+This number can be different from the number of buffers with which you created the swap chain.
+This number can't be greater than <b>DXGI_MAX_SWAP_CHAIN_BUFFERS</b>.
+Set this number to zero to preserve the existing number of buffers in the swap chain.
+You can't specify less than two buffers for the flip presentation model.</para>
+    </param>
+    <param name="Width">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The new width of the back buffer.
+If you specify zero, DXGI will use the width of the client area of the target window.
+You can't specify the width as zero if you called the <see cref="IDXGIFactory2.CreateSwapChainForComposition" /> method to create the swap chain for a composition surface.</para>
+    </param>
+    <param name="Height">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The new height of the back buffer.
+If you specify zero, DXGI will use the height of the client area of the target window.
+You can't specify the height as zero if you called the <see cref="IDXGIFactory2.CreateSwapChainForComposition" /> method to create the swap chain for a composition surface.</para>
+    </param>
+    <param name="NewFormat">
+      <para>Type: <b><see cref="DXGI_FORMAT" /></b></para>
+      <para>A <see cref="DXGI_FORMAT" />-typed value for the new format of the back buffer.
+Set this value to <see cref="DXGI_FORMAT_UNKNOWN" /> to preserve the existing format of the back buffer.
+The flip presentation model supports a more restricted set of formats than the bit-block transfer (bitblt) model.</para>
+    </param>
+    <param name="SwapChainFlags">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A combination of <see cref="DXGI_SWAP_CHAIN_FLAG" />-typed values that are combined by using a bitwise OR operation.
+The resulting value specifies options for swap-chain behavior.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns S_OK if successful; an error code otherwise.
+For a list of error codes, see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</para>
+    </returns>
+    <remarks>
+      <para>You can't resize a swap chain unless you release all outstanding references to its back buffers.
+You must release all of its direct and indirect references on the back buffers in order for <b>ResizeBuffers</b> to succeed.</para>
+      <para>Direct references are held by the application after it calls <see cref="AddRef" /> on a resource.</para>
+      <para>Indirect references are held by views to a resource, binding a view of the resource to a device context,
+a command list that used the resource, a command list that used a view to that resource, a command list that executed another command list that used the
+resource, and so on.</para>
+      <para>Before you call <b>ResizeBuffers</b>, ensure that the application releases all references
+(by calling the appropriate number of <see cref="Release" /> invocations) on the resources, any views to the resource, and any command lists that use either the resources or views,
+and ensure that neither the resource nor a view is still bound to a device context.
+You can use <see cref="ID3D11DeviceContext.ClearState" /> to ensure that all references are released.
+If a view is bound to a deferred context, you must discard the partially built command list as well (by calling
+<b>ID3D11DeviceContext.ClearState</b>, then
+<see cref="ID3D11DeviceContext.FinishCommandList" />, then
+<b>Release</b> on the command list).
+After you call <b>ResizeBuffers</b>, you can re-query interfaces via <see cref="IDXGISwapChain.GetBuffer" />.</para>
+      <para>For swap chains that you created with <see cref="DXGI_SWAP_CHAIN_FLAG_GDI_COMPATIBLE" />,
+before you call <b>ResizeBuffers</b>, also call <see cref="IDXGISurface1.ReleaseDC" /> on the swap chain's back-buffer surface
+to ensure that you have no outstanding GDI device contexts (DCs) open.</para>
+      <para>We recommend that you call <b>ResizeBuffers</b> when a client window is resized (that is, when an application receives a WM_SIZE message).</para>
+      <para>The only difference between <b>IDXGISwapChain.ResizeBuffers</b> in Windows 8 versus Windows 7 is with
+flip presentation model swap chains that you create with the <see cref="DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL" /> or DXGI_SWAP_EFFECT_FLIP_DISCARD value set.
+In Windows 8, you must call <b>ResizeBuffers</b> to realize a transition between full-screen mode and windowed mode;
+otherwise, your next call to the <see cref="IDXGISwapChain.Present" /> method fails.</para>
+    </remarks>
+    <seealso cref="IDXGISwapChain" />
+  </member>
+  <member name="IDXGISwapChain.ResizeTarget">
+    <summary>
+      <para>Resizes the output target.</para>
+    </summary>
+    <param name="pNewTargetParameters">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173064(v=vs.85)">DXGI_MODE_DESC</a>*</b></para>
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173064(v=vs.85)">DXGI_MODE_DESC</a> structure that describes the mode, which specifies the new width, height, format, and refresh rate of the target.
+If the format is <see cref="DXGI_FORMAT_UNKNOWN" />, <b>ResizeTarget</b> uses the existing format. We only recommend that you use <b>DXGI_FORMAT_UNKNOWN</b> when the swap chain is in full-screen
+mode as this method is not thread safe.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns a code that indicates success or failure. <b>DXGI_STATUS_MODE_CHANGE_IN_PROGRESS</b> is returned if a full-screen/windowed mode transition is occurring
+when this API is called. See <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR</a> for additional DXGI error codes.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>ResizeTarget</b> resizes the target window when the swap chain is in windowed mode, and changes the display mode on the target output when the swap
+chain is in full-screen mode. Therefore, apps can call <b>ResizeTarget</b> to resize the target window (rather than a Microsoft Win32API such as <see cref="SetWindowPos" />)
+without knowledge of the swap chain display mode.</para>
+      <para>If a Windows Store app calls <b>ResizeTarget</b>, it fails with <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR_NOT_CURRENTLY_AVAILABLE</a>.</para>
+      <para>You cannot call <b>ResizeTarget</b> on a swap chain that you created with <see cref="IDXGIFactory2.CreateSwapChainForComposition" />.</para>
+      <para>Apps must still call <see cref="IDXGISwapChain.ResizeBuffers" /> after they call <b>ResizeTarget</b> because only <b>ResizeBuffers</b> can change the back buffers. But, if those apps have implemented window resize processing to call <b>ResizeBuffers</b>, they don't need to explicitly call <b>ResizeBuffers</b> after they call <b>ResizeTarget</b> because the window resize processing will achieve what the app requires.</para>
+    </remarks>
+    <seealso cref="IDXGISwapChain" />
+  </member>
+  <member name="IDXGISwapChain.SetFullscreenState">
+    <summary>
+      <para>Sets the display state to windowed or full screen.</para>
+    </summary>
+    <param name="Fullscreen">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>A Boolean value that specifies whether to set the display state to windowed or full screen. <b>TRUE</b> for full screen, and <b>FALSE</b> for windowed.</para>
+    </param>
+    <param name="pTarget">
+      <para>Type: [in, optional] <b><see cref="IDXGIOutput" />*</b></para>
+      <para>If you pass <b>TRUE</b> to the <i>Fullscreen</i> parameter to set the display state to full screen, you can optionally set this parameter to a pointer to an <see cref="IDXGIOutput" /> interface for the output target that contains the swap chain. If you set this parameter to <b>NULL</b>, DXGI will choose the output based on the swap-chain's device and the output window's placement. If you pass <b>FALSE</b> to <i>Fullscreen</i>, then you must set this parameter to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method returns one of these values.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>S_OK</b> if the action succeeded and the swap chain was placed in the requested state.</description>
+        </item>
+        <item>
+          <description>
+            <b>DXGI_ERROR_NOT_CURRENTLY_AVAILABLE</b> if the action failed. When this error is returned, your application can continue to run in windowed mode and try to switch to full-screen mode later. There are many reasons why a windowed-mode swap chain cannot switch to full-screen mode. Here are some examples.</description>
+        </item>
+        <item>
+          <description>The application is running over Terminal Server.</description>
+        </item>
+        <item>
+          <description>The output window is occluded.</description>
+        </item>
+        <item>
+          <description>The output window does not have keyboard focus.</description>
+        </item>
+        <item>
+          <description>Another application is already in full-screen mode.</description>
+        </item>
+        <item>
+          <description>
+            <b>DXGI_STATUS_MODE_CHANGE_IN_PROGRESS</b> is returned if a fullscreen/windowed mode transition is occurring when this API is called.</description>
+        </item>
+        <item>
+          <description>Other error codes if you run out of memory or encounter another unexpected fault; these codes may be treated as hard, non-continuable errors.</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>DXGI may change the display state of a swap chain in response to end user or system requests.</para>
+      <para>We recommend that you create a windowed swap chain and allow the end user to change the swap chain to full screen through <b>SetFullscreenState</b>; that is, do not set the <b>Windowed</b> member of <see cref="DXGI_SWAP_CHAIN_DESC" /> to FALSE to force the swap chain to be full screen. However, if you create the swap chain as full screen, also provide the end user with a list of supported display modes because a swap chain that is created with an unsupported display mode might cause the display to go black and prevent the end user from seeing anything. Also, we recommend that you have a time-out confirmation screen or other fallback mechanism when you allow the end user to change display modes.</para>
+      <h3>Notes for Windows Store apps</h3>
+      <para>If a Windows Store app calls <b>SetFullscreenState</b> to set the display state to full screen, <b>SetFullscreenState</b> fails with <a href="https://docs.microsoft.com//windows/win32/direct3ddxgi/dxgi-error">DXGI_ERROR_NOT_CURRENTLY_AVAILABLE</a>.</para>
+      <para>You cannot call <b>SetFullscreenState</b> on a swap chain that you created with <see cref="IDXGIFactory2.CreateSwapChainForComposition" />.</para>
+      <para>For the <a href="https://docs.microsoft.com//windows/win32/direct3ddxgi/dxgi-flip-model">flip presentation model</a>, after you transition the display state to full screen, you must call <see cref="ResizeBuffers" /> to ensure that your call to <see cref="IDXGISwapChain1.Present1" /> succeeds.</para>
+    </remarks>
+    <seealso cref="IDXGISwapChain" />
+  </member>
+  <member name="IDXGISwapChain">
+    <summary>
+      <para>An <b>IDXGISwapChain</b> interface implements one or more <see cref="surfaces" /> for storing rendered data before presenting it to an output.</para>
+    </summary>
+    <remarks>
+      <para>You can create a swap chain by
+calling <see cref="IDXGIFactory2.CreateSwapChainForHwnd" />, <see cref="IDXGIFactory2.CreateSwapChainForCoreWindow" />, or <see cref="IDXGIFactory2.CreateSwapChainForComposition" />. You can also create a swap chain when you call <see cref="D3D11CreateDeviceAndSwapChain" />; however, you can then only access the sub-set of swap-chain functionality that the <b>IDXGISwapChain</b> interface provides.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
+    <seealso cref="IDXGIDeviceSubObject" />
+  </member>
+</doc>

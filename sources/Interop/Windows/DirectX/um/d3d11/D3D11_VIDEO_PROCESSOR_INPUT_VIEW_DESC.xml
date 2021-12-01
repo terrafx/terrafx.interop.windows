@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC">
+    <summary>
+      <para>Describes a video processor input view.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+    <seealso cref="ID3D11VideoDevice.CreateVideoProcessorInputView" />
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC.FourCC">
+    <summary>
+      <para>The surface format. If zero, the driver uses the DXGI format that was used to create the resource. If you are using feature level 9, the value must be zero.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC.ViewDimension">
+    <summary>
+      <para>The resource type of the view, specified as a member of the <see cref="D3D11_VPIV_DIMENSION" /> enumeration.</para>
+    </summary>
+  </member>
+  <member name="D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC.Texture2D">
+    <summary>
+      <para>A <see cref="D3D11_TEX2D_VPIV" /> structure that identifies the texture resource.</para>
+    </summary>
+  </member>
+</doc>

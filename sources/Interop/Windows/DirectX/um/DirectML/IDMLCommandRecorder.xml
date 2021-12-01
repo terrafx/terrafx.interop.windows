@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDMLCommandRecorder.RecordDispatch">
+    <summary>
+      <para>Records execution of a dispatchable object (an operator initializer, or a compiled operator) onto a command
+list.</para>
+      <para>This method doesn't submit the execution to the GPU; it merely records it onto the command list. You are responsible for closing the command list and submitting it to the Direct3D 12 command queue.</para>
+      <para>Prior to execution of this call on the GPU, all resources bound must be in the <see cref="D3D12_RESOURCE_STATE_UNORDERED_ACCESS" /> state, or a
+state implicitly promotable to <b>D3D12_RESOURCE_STATE_UNORDERED_ACCESS</b>, such as <b>D3D12_RESOURCE_STATE_COMMON</b>. After this call completes, the resources
+remain in the <b>D3D12_RESOURCE_STATE_UNORDERED_ACCESS</b> state. The only exception to this is for upload heaps bound when executing an
+operator initializer and while one or more tensors has the <see cref="DML_TENSOR_FLAG_OWNED_BY_DML" /> flag set. In that case, any
+upload heaps bound for input must be in the <b>D3D12_RESOURCE_STATE_GENERIC_READ</b> state and will remain in that state, as required by
+all upload heaps.</para>
+      <para>This method resets the following state on the command list.</para>
+      <list type="bullet">
+        <item>
+          <description>Compute root signature</description>
+        </item>
+        <item>
+          <description>Pipeline state</description>
+        </item>
+      </list>No other command list state is modified.
+<para>Although this method takes a binding table representing the resources to bind to the pipeline, it doesn't
+set the descriptor heaps containing the descriptors themselves. Therefore, your application is responsible for
+calling <see cref="ID3D12GraphicsCommandList.SetDescriptorHeaps" /> to bind the correct descriptor heaps to the pipeline.</para><para>If <see cref="DML_EXECUTION_FLAG_DESCRIPTORS_VOLATILE" /> was not set when compiling the operator, then all bindings must
+be set on the binding table before <b>RecordDispatch</b> is called, otherwise the behavior is undefined. Otherwise,
+if the <b>_DESCRIPTORS_VOLATILE</b> flag is set, binding of resources may be deferred until the Direct3D 12 command list is
+submitted to the command queue for execution.</para><para>This method acts logically like a call to <see cref="ID3D12GraphicsCommandList.Dispatch" />. As such, unordered access view (UAV) barriers are
+necessary to ensure correct ordering if there are data dependencies between dispatches. This method does not
+insert UAV barriers on input nor output resources. Your application must ensure that the correct UAV barriers
+are performed on any inputs if their contents depend on an upstream dispatch, and on any outputs if there are
+downstream dispatches that depend on those outputs.</para><para>This method doesn't hold references to any of the interfaces passed in. It is your responsibility to
+ensure that the <see cref="IDMLDispatchable" /> object is not released until all dispatches using it have completed execution
+on the GPU.</para></summary>
+    <param name="commandList">
+      <para>Type: <b><see cref="ID3D12CommandList" />*</b></para>
+      <para>A pointer to an <see cref="ID3D12CommandList" /> interface representing the command list to record the execution into. The command list must be open and must have type
+<see cref="D3D12_COMMAND_LIST_TYPE_DIRECT" /> or <b>D3D12_COMMAND_LIST_TYPE_COMPUTE</b>.</para>
+    </param>
+    <param name="dispatchable">
+      <para>Type: <b><see cref="IDMLDispatchable" />*</b></para>
+      <para>A pointer to an <see cref="IDMLDispatchable" /> interface representing the object (an operator initializer, or a compiled operator) whose execution will be recorded into the command list.</para>
+    </param>
+    <param name="bindings">
+      <para>Type: <b><see cref="IDMLBindingTable" />*</b></para>
+      <para>A pointer to an <see cref="IDMLBindingTable" /> interface representing the bindings to use for executing the dispatchable object. If the <see cref="DML_EXECUTION_FLAG_DESCRIPTORS_VOLATILE" />
+flag was not set, then you must fill out all required bindings, otherwise an error will result.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-binding">Binding in DirectML</seealso>
+    <seealso cref="IDMLCommandRecorder" />
+  </member>
+  <member name="IDMLCommandRecorder">
+    <summary>
+      <para>Records dispatches of DirectML work into a Direct3D 12 command list. The <b>IDMLCommandRecorder</b> interface inherits from <see cref="IDMLDeviceChild" />.</para>
+      <para>The command recorder is a stateless object whose purpose is to record commands into a Direct3D 12 command list. DirectML
+doesn't create command lists, command allocators, nor command queues; nor does it directly submit any work for
+execution on the GPU. Instead, your application manages its own command lists and queues, and it uses the
+<b>IDMLCommandRecorder</b> to record work into its existing command lists. You're then responsible for executing
+the command list on a queue of your choice.</para>
+      <para>This object is thread-safe.</para>
+    </summary>
+    <seealso cref="IDMLDeviceChild" />
+  </member>
+</doc>

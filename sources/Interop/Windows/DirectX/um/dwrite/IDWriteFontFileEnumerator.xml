@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDWriteFontFileEnumerator.GetCurrentFontFile">
+    <summary>
+      <para>Gets a reference to the current font file.</para>
+    </summary>
+    <param name="fontFile">
+      <para>Type: <b><see cref="IDWriteFontFile" />**</b></para>
+      <para>When this method returns, the address of a pointer to the newly created <see cref="IDWriteFontFile" />  object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontFileEnumerator" />
+  </member>
+  <member name="IDWriteFontFileEnumerator.MoveNext">
+    <summary>
+      <para>Advances to the next font file in the collection. When it is first created, the enumerator is positioned
+before the first element of the collection and the first call to <b>MoveNext</b> advances to the first file.</para>
+    </summary>
+    <param name="hasCurrentFile">
+      <para>Type: <b>BOOL*</b></para>
+      <para>When the method returns, contains  the value <b>TRUE</b> if the enumerator advances to a file; otherwise, <b>FALSE</b> if
+the enumerator advances past the last file in the collection.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDWriteFontFileEnumerator" />
+  </member>
+  <member name="IDWriteFontFileEnumerator">
+    <summary>
+      <para>Encapsulates a collection of font files. The font system uses this interface to enumerate font files when building a font collection.</para>
+    </summary>
+  </member>
+</doc>

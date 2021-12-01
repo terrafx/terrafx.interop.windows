@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_QUERY_VIDEO_MEMORY_INFO.xml' path='doc/member[@name="DXGI_QUERY_VIDEO_MEMORY_INFO"]/*' />
 public partial struct DXGI_QUERY_VIDEO_MEMORY_INFO
 {
+    /// <include file='DXGI_QUERY_VIDEO_MEMORY_INFO.xml' path='doc/member[@name="DXGI_QUERY_VIDEO_MEMORY_INFO.Budget"]/*' />
     [NativeTypeName("UINT64")]
     public ulong Budget;
 
+    /// <include file='DXGI_QUERY_VIDEO_MEMORY_INFO.xml' path='doc/member[@name="DXGI_QUERY_VIDEO_MEMORY_INFO.CurrentUsage"]/*' />
     [NativeTypeName("UINT64")]
     public ulong CurrentUsage;
 
+    /// <include file='DXGI_QUERY_VIDEO_MEMORY_INFO.xml' path='doc/member[@name="DXGI_QUERY_VIDEO_MEMORY_INFO.AvailableForReservation"]/*' />
     [NativeTypeName("UINT64")]
     public ulong AvailableForReservation;
 
+    /// <include file='DXGI_QUERY_VIDEO_MEMORY_INFO.xml' path='doc/member[@name="DXGI_QUERY_VIDEO_MEMORY_INFO.CurrentReservation"]/*' />
     [NativeTypeName("UINT64")]
     public ulong CurrentReservation;
 }

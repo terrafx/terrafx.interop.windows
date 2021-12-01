@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_SHAPING_TEXT_PROPERTIES">
+    <summary>
+      <para>Shaping output properties for an output glyph.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_SHAPING_TEXT_PROPERTIES.isShapedAlone">
+    <summary>
+      <para>Type: <b>UINT16</b></para>
+      <para>Indicates that the glyph is shaped alone.</para>
+    </summary>
+  </member>
+  <member name="DWRITE_SHAPING_TEXT_PROPERTIES.reserved1">
+    <summary></summary>
+  </member>
+  <member name="DWRITE_SHAPING_TEXT_PROPERTIES.canBreakShapingAfter">
+    <summary></summary>
+  </member>
+  <member name="DWRITE_SHAPING_TEXT_PROPERTIES.reserved">
+    <summary>
+      <para>Type: <b>UINT16</b></para>
+      <para>Reserved for future use.</para>
+    </summary>
+  </member>
+</doc>

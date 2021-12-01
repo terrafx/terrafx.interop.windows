@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_BUFFER_PRECISION">
+    <summary>
+      <para>Represents the bit depth of the imaging pipeline in Direct2D.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>Note</b>   Feature level 9 may or may not support precision types other than 8BPC.</para>
+    </remarks>
+    <seealso cref="D2D1_RENDERING_CONTROLS" />
+    <seealso cref="ID2D1DeviceContext.GetRenderingControls" />
+    <seealso cref="ID2D1DeviceContext.SetRenderingControls" />
+  </member>
+  <member name="D2D1_BUFFER_PRECISION.D2D1_BUFFER_PRECISION_UNKNOWN">
+    <summary>
+      <para>The buffer precision is not specified.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BUFFER_PRECISION.D2D1_BUFFER_PRECISION_8BPC_UNORM">
+    <summary>
+      <para>Use 8-bit normalized integer per channel.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BUFFER_PRECISION.D2D1_BUFFER_PRECISION_8BPC_UNORM_SRGB">
+    <summary>
+      <para>Use 8-bit normalized integer standard RGB data per channel.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BUFFER_PRECISION.D2D1_BUFFER_PRECISION_16BPC_UNORM">
+    <summary>
+      <para>Use 16-bit normalized integer per channel.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BUFFER_PRECISION.D2D1_BUFFER_PRECISION_16BPC_FLOAT">
+    <summary>
+      <para>Use 16-bit floats per channel.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BUFFER_PRECISION.D2D1_BUFFER_PRECISION_32BPC_FLOAT">
+    <summary>
+      <para>Use 32-bit floats per channel.</para>
+    </summary>
+  </member>
+  <member name="D2D1_BUFFER_PRECISION.D2D1_BUFFER_PRECISION_FORCE_DWORD">
+    <summary>
+      <para>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits.</para>
+      <para>Do not use this value.</para>
+    </summary>
+  </member>
+</doc>

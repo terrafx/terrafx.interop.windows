@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG">
+    <summary>
+      <para>Specifies support for overlay color space.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-enums">DXGI Enumerations</seealso>
+  </member>
+  <member name="DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG.DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG_PRESENT">
+    <summary>
+      <para>Overlay color space support is present.</para>
+    </summary>
+  </member>
+</doc>

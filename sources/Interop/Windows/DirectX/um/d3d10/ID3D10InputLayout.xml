@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D10InputLayout">
+    <summary>
+      <para>An input-layout interface accesses the input data for the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-input-assembler-stage">input-assembler stage</a>.</para>
+    </summary>
+    <remarks>
+      <para>This interface is created by calling <see cref="ID3D10Device.CreateInputLayout" />; use <see cref="ID3D10Device.IASetInputLayout" /> to bind it to the graphics pipeline.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-interfaces">Core Interfaces</seealso>
+    <seealso cref="ID3D10DeviceChild" />
+  </member>
+</doc>

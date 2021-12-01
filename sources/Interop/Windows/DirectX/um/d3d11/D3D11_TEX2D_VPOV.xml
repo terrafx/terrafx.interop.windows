@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_TEX2D_VPOV">
+    <summary>
+      <para>Identifies a texture resource for a video  processor output view.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+    <seealso cref="ID3D11VideoDevice.CreateVideoProcessorOutputView" />
+  </member>
+  <member name="D3D11_TEX2D_VPOV.MipSlice">
+    <summary>
+      <para>The zero-based index into the array of subtextures.</para>
+    </summary>
+  </member>
+</doc>

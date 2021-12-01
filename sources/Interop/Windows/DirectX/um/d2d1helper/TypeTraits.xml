@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TypeTraits">
+    <summary>
+      <para>Contains implementations of <b>Point</b>, <b>Size</b>, and <b>Rect</b> that store their data using the specified type.</para>
+    </summary>
+  </member>
+  <member name="TypeTraits.field">
+    <summary>
+      <para>Contains the typedef for <b>Point</b>, <b>Size</b>, or <b>Rect</b> with the type specified in the template type.</para>
+    </summary>
+  </member>
+  <member name="TypeTraits..Type">
+    <summary>
+      <para>The template type.</para>
+    </summary>
+  </member>
+</doc>

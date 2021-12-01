@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_GRADIENT_STOP.xml' path='doc/member[@name="D2D1_GRADIENT_STOP"]/*' />
 public partial struct D2D1_GRADIENT_STOP
 {
+    /// <include file='D2D1_GRADIENT_STOP.xml' path='doc/member[@name="D2D1_GRADIENT_STOP.position"]/*' />
     public float position;
 
+    /// <include file='D2D1_GRADIENT_STOP.xml' path='doc/member[@name="D2D1_GRADIENT_STOP.color"]/*' />
     [NativeTypeName("D2D1_COLOR_F")]
     public DXGI_RGBA color;
 }

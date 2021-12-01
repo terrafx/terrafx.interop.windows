@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWRITE_FONT_STRETCH">
+    <summary>
+      <para>Represents the degree to which a font has been stretched compared to a font's normal aspect ratio.The enumerated values correspond to the <i>usWidthClass</i> definition in the OpenType specification. The usWidthClass represents an integer value between 1 and 9—lower values indicate narrower widths; higher values indicate wider widths.</para>
+    </summary>
+    <remarks>
+      <para>A font stretch describes the degree to which a font form is stretched from its normal aspect ratio, which is the original width to height ratio specified for the glyphs in the font.
+The following illustration shows an example of Normal and Condensed stretches for the Rockwell Bold typeface.</para>
+      <para>
+        <img alt="Illustration of “D2D” text in Normal and Condensed font stretch" src="https://docs.microsoft.com/windows/win32/api/dwritemages/FontStretch_for_RockwellBold.png" />
+      </para>
+      <para>
+        <b>Note</b>  Values other than the ones defined in the enumeration are considered to be invalid, and are rejected by font API functions.</para>
+    </remarks>
+  </member>
+  <member name="DWRITE_FONT_STRETCH.DWRITE_FONT_STRETCH_UNDEFINED">
+    <summary>
+      <para>Predefined font stretch : Not known (0).</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_STRETCH.DWRITE_FONT_STRETCH_ULTRA_CONDENSED">
+    <summary>
+      <para>Predefined font stretch : Ultra-condensed (1).</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_STRETCH.DWRITE_FONT_STRETCH_EXTRA_CONDENSED">
+    <summary>
+      <para>Predefined font stretch : Extra-condensed (2).</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_STRETCH.DWRITE_FONT_STRETCH_CONDENSED">
+    <summary>
+      <para>Predefined font stretch : Condensed (3).</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_STRETCH.DWRITE_FONT_STRETCH_SEMI_CONDENSED">
+    <summary>
+      <para>Predefined font stretch : Semi-condensed (4).</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_STRETCH.DWRITE_FONT_STRETCH_NORMAL">
+    <summary>
+      <para>Predefined font stretch : Normal (5).</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_STRETCH.DWRITE_FONT_STRETCH_MEDIUM">
+    <summary>
+      <para>Predefined font stretch : Medium (5).</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_STRETCH.DWRITE_FONT_STRETCH_SEMI_EXPANDED">
+    <summary>
+      <para>Predefined font stretch : Semi-expanded (6).</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_STRETCH.DWRITE_FONT_STRETCH_EXPANDED">
+    <summary>
+      <para>Predefined font stretch : Expanded (7).</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_STRETCH.DWRITE_FONT_STRETCH_EXTRA_EXPANDED">
+    <summary>
+      <para>Predefined font stretch : Extra-expanded (8).</para>
+    </summary>
+  </member>
+  <member name="DWRITE_FONT_STRETCH.DWRITE_FONT_STRETCH_ULTRA_EXPANDED">
+    <summary>
+      <para>Predefined font stretch : Ultra-expanded (9).</para>
+    </summary>
+  </member>
+</doc>

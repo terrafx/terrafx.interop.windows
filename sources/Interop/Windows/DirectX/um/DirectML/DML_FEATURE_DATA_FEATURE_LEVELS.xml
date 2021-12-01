@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_FEATURE_DATA_FEATURE_LEVELS">
+    <summary>
+      <para>Provides detail about the feature levels supported by a DirectML device. See <see cref="IDMLDevice.CheckFeatureSupport" />. The feature constant is <b>DML_FEATURE_FEATURE_LEVELS</b>, and the query data type is <see cref="DML_FEATURE_QUERY_FEATURE_LEVELS" />.</para>
+    </summary>
+    <seealso cref="IDMLDevice.CheckFeatureSupport method" />
+    <seealso href="https://docs.microsoft.com//windows/win32/direct3d12/ne-directml-dml_feature">DML_FEATURE enumeration</seealso>
+    <seealso href="https://docs.microsoft.com//windows/win32/direct3d12/ns-directml-dml_feature_query_feature_levels">DML_FEATURE_QUERY_FEATURE_LEVELS structure</seealso>
+  </member>
+  <member name="DML_FEATURE_DATA_FEATURE_LEVELS.MaxSupportedFeatureLevel">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/direct3d12/ne-directml-dml_feature_level">DML_FEATURE_LEVEL</a></b></para>
+      <para>The highest feature level supplied in the query structure's <i>RequestedFeatureLevels</i> (see <a href="https://docs.microsoft.com//windows/win32/direct3d12/ns-directml-dml_feature_data_feature_levels">DML_FEATURE_DATA_FEATURE_LEVELS</a>) that is supported by this device.</para>
+      <blockquote>
+        <para>[!NOTE]
+Because this feature query only ever returns one of the values supplied in <i>RequestedFeatureLevels</i>, it's possible that the device supports an even higher feature level than the one returned by this query.</para>
+      </blockquote>
+      <para>For example, DirectML version <code>1.4.0</code> supports a feature level of <code>DML_FEATURE_LEVEL_3_0</code>. If the <i>RequestedFeatureLevels</i> array contained only <code>DML_FEATURE_LEVEL_1_0</code> and <code>DML_FEATURE_LEVEL_2_0</code>, then this query would return <code>DML_FEATURE_LEVEL_2_0</code>, which is lower than the true feature level (3_0) supported by the device.</para>
+    </summary>
+  </member>
+</doc>

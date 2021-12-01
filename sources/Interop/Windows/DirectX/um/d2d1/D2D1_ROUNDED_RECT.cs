@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_ROUNDED_RECT.xml' path='doc/member[@name="D2D1_ROUNDED_RECT"]/*' />
 public partial struct D2D1_ROUNDED_RECT
 {
+    /// <include file='D2D1_ROUNDED_RECT.xml' path='doc/member[@name="D2D1_ROUNDED_RECT.rect"]/*' />
     [NativeTypeName("D2D1_RECT_F")]
     public D2D_RECT_F rect;
 
+    /// <include file='D2D1_ROUNDED_RECT.xml' path='doc/member[@name="D2D1_ROUNDED_RECT.radiusX"]/*' />
     public float radiusX;
 
+    /// <include file='D2D1_ROUNDED_RECT.xml' path='doc/member[@name="D2D1_ROUNDED_RECT.radiusY"]/*' />
     public float radiusY;
 }

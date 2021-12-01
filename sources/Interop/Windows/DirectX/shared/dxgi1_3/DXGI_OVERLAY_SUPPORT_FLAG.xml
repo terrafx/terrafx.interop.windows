@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_OVERLAY_SUPPORT_FLAG">
+    <summary>
+      <para>Specifies overlay support to check for in a call to <see cref="IDXGIOutput3.CheckOverlaySupport" />.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-enums">DXGI Enumerations</seealso>
+  </member>
+  <member name="DXGI_OVERLAY_SUPPORT_FLAG.DXGI_OVERLAY_SUPPORT_FLAG_DIRECT">
+    <summary>
+      <para>Direct overlay support.</para>
+    </summary>
+  </member>
+  <member name="DXGI_OVERLAY_SUPPORT_FLAG.DXGI_OVERLAY_SUPPORT_FLAG_SCALING">
+    <summary>
+      <para>Scaling overlay support.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='D2D1_DEBUG_LEVEL.xml' path='doc/member[@name="D2D1_DEBUG_LEVEL"]/*' />
 public enum D2D1_DEBUG_LEVEL : uint
 {
+    /// <include file='D2D1_DEBUG_LEVEL.xml' path='doc/member[@name="D2D1_DEBUG_LEVEL.D2D1_DEBUG_LEVEL_NONE"]/*' />
     D2D1_DEBUG_LEVEL_NONE = 0,
+
+    /// <include file='D2D1_DEBUG_LEVEL.xml' path='doc/member[@name="D2D1_DEBUG_LEVEL.D2D1_DEBUG_LEVEL_ERROR"]/*' />
     D2D1_DEBUG_LEVEL_ERROR = 1,
+
+    /// <include file='D2D1_DEBUG_LEVEL.xml' path='doc/member[@name="D2D1_DEBUG_LEVEL.D2D1_DEBUG_LEVEL_WARNING"]/*' />
     D2D1_DEBUG_LEVEL_WARNING = 2,
+
+    /// <include file='D2D1_DEBUG_LEVEL.xml' path='doc/member[@name="D2D1_DEBUG_LEVEL.D2D1_DEBUG_LEVEL_INFORMATION"]/*' />
     D2D1_DEBUG_LEVEL_INFORMATION = 3,
+
+    /// <include file='D2D1_DEBUG_LEVEL.xml' path='doc/member[@name="D2D1_DEBUG_LEVEL.D2D1_DEBUG_LEVEL_FORCE_DWORD"]/*' />
     D2D1_DEBUG_LEVEL_FORCE_DWORD = 0xffffffff,
 }

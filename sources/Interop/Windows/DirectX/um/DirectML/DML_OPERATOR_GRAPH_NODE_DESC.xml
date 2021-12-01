@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_OPERATOR_GRAPH_NODE_DESC">
+    <summary>
+      <para>Decribes a node within a graph of DirectML operators defined by <see cref="DML_GRAPH_DESC" /> and passed to <see cref="IDMLDevice1.CompileGraph" />.</para>
+      <para>The behavior of this node is defined by a DirectML operator.</para>
+    </summary>
+    <seealso cref="IDMLDevice1.CompileGraph method" />
+    <seealso cref="DML_GRAPH_DESC structure" />
+    <seealso cref="DML_GRAPH_NODE_DESC structure" />
+  </member>
+  <member name="DML_OPERATOR_GRAPH_NODE_DESC.Operator">
+    <summary>
+      <para>Type: <b><see cref="IDMLOperator" />*</b></para>
+      <para>A DirectML operator defining the behavior of the node.</para>
+    </summary>
+  </member>
+  <member name="DML_OPERATOR_GRAPH_NODE_DESC.Name">
+    <summary>
+      <para>Type: _Field_z_ _Maybenull_ <b>const char*</b></para>
+      <para>An optional name for the graph connection. If provided, this might be used within certain error messages emitted by the DirectML debug layer.</para>
+    </summary>
+  </member>
+</doc>

@@ -7,9 +7,12 @@ using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
+/// <include file='DXGI_OUTDUPL_MOVE_RECT.xml' path='doc/member[@name="DXGI_OUTDUPL_MOVE_RECT"]/*' />
 public partial struct DXGI_OUTDUPL_MOVE_RECT
 {
+    /// <include file='DXGI_OUTDUPL_MOVE_RECT.xml' path='doc/member[@name="DXGI_OUTDUPL_MOVE_RECT.SourcePoint"]/*' />
     public POINT SourcePoint;
 
+    /// <include file='DXGI_OUTDUPL_MOVE_RECT.xml' path='doc/member[@name="DXGI_OUTDUPL_MOVE_RECT.DestinationRect"]/*' />
     public RECT DestinationRect;
 }

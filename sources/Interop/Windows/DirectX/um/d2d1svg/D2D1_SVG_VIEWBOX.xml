@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_SVG_VIEWBOX">
+    <summary>
+      <para>Represents an SVG viewBox.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_VIEWBOX.x">
+    <summary>
+      <para>X coordinate of the view box.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_VIEWBOX.y">
+    <summary>
+      <para>Y coordinate of the view box.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_VIEWBOX.width">
+    <summary>
+      <para>Width of the view box.</para>
+    </summary>
+  </member>
+  <member name="D2D1_SVG_VIEWBOX.height">
+    <summary>
+      <para>Height of the view box.</para>
+    </summary>
+  </member>
+</doc>
