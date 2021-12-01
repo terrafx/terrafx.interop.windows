@@ -13,4 +13,23 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/coml2api.h
 --with-librarypath
-*=ole32
+FmtIdToPropStgName=ole32
+GetConvertStg=ole32
+GetHGlobalFromILockBytes=ole32
+PropStgNameToFmtId=ole32
+ReadClassStg=ole32
+ReadClassStm=ole32
+StgCreateDocfile=ole32
+StgCreateDocfileOnILockBytes=ole32
+StgCreatePropSetStg=ole32
+StgCreatePropStg=ole32
+StgCreateStorageEx=ole32
+StgIsStorageFile=ole32
+StgIsStorageILockBytes=ole32
+StgOpenPropStg=ole32
+StgOpenStorage=ole32
+StgOpenStorageEx=ole32
+StgOpenStorageOnILockBytes=ole32
+StgSetTimes=ole32
+WriteClassStg=ole32
+WriteClassStm=ole32
