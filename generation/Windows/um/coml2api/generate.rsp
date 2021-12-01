@@ -14,6 +14,7 @@ TerraFX.Interop.Windows
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/coml2api.h
 --with-librarypath
 FmtIdToPropStgName=ole32
+CreateILockBytesOnHGlobal=ole32
 GetConvertStg=ole32
 GetHGlobalFromILockBytes=ole32
 PropStgNameToFmtId=ole32
